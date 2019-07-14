@@ -1,0 +1,577 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "v2",
+    "title": "MOTC Transport API V2",
+    "description": "本平臺提供涵蓋全國尺度之公車、臺鐵、高鐵、捷運、航空、自行車等公共運輸旅運資料服務API，歡迎各產政學單位介接使用。\r\n                                                    <br><span class=swagger-description-indicatation>利用本平臺開放資料進行各項應用服務開發時，請考量不同特性使用者(如:性別/身心障礙/老幼等)的需求，並歡迎回饋寶貴意見。</span>\r\n                                                    <br><br>資料使用葵花寶典:[請點我](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/)\r\n                                                    <br>資料服務開發實作參考手冊:[請點我](https://docs.google.com/viewer?url=https://github.com/ptxmotc/PTX_Web/blob/master/Swagger%E6%9C%8D%E5%8B%99%E8%AA%AA%E6%98%8E%E4%B8%8A%E5%82%B3%E5%8F%83%E8%80%83%E6%AA%94%E6%A1%88/%E5%85%AC%E5%85%B1%E9%81%8B%E8%BC%B8%E6%95%B4%E5%90%88%E8%B3%87%E8%A8%8A%E5%B9%B3%E5%8F%B0%E8%B3%87%E6%96%99%E6%9C%8D%E5%8B%99%E9%96%8B%E7%99%BC%E5%AF%A6%E4%BD%9C.pdf?raw=true)\r\n                                                    <br>API URI Convention文件說明:[請點我](https://docs.google.com/viewer?url=https://github.com/ptxmotc/PTX_Web/blob/master/Swagger%E6%9C%8D%E5%8B%99%E8%AA%AA%E6%98%8E%E4%B8%8A%E5%82%B3%E5%8F%83%E8%80%83%E6%AA%94%E6%A1%88/API_URI_Convention%E6%96%87%E4%BB%B6_v1.pdf?raw=true)<br>資料文本OAS描述:[請點我](http://ptx.transportdata.tw/MOTC/v2/Basic/api-docs/oas)"
+  },
+  "host": "ptx.transportdata.tw",
+  "basePath": "/MOTC/",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/v2/Basic/Authority": {
+      "get": {
+        "tags": [
+          "Basic"
+        ],
+        "operationId": "BasicApi_Authority",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "string",
+            "default": "30"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Service.DTO.Version2.Base.Authority"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/Basic/Provider": {
+      "get": {
+        "tags": [
+          "Basic"
+        ],
+        "operationId": "BasicApi_Provider",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "string",
+            "default": "30"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Service.DTO.Version2.Base.Provider"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/Basic/Operator": {
+      "get": {
+        "tags": [
+          "Basic"
+        ],
+        "operationId": "BasicApi_Operator",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "string",
+            "default": "30"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Service.DTO.Version2.Base.Operator"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/PTX/Web/News": {
+      "get": {
+        "tags": [
+          "Basic"
+        ],
+        "operationId": "WebSiteApi_News",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "string",
+            "default": "30"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$count",
+            "in": "query",
+            "description": "查詢數量",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/MOTC.API.Basic.Models.Version2.BasicWrapper[Service.DTO.Version2.Base.News]"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Service.DTO.Version2.Base.Authority": {
+      "title": "Authority",
+      "description": "業管機關資料型別",
+      "required": [
+        "AuthorityID",
+        "AuthorityName",
+        "AuthorityCode",
+        "UpdateTime"
+      ],
+      "type": "object",
+      "properties": {
+        "AuthorityID": {
+          "description": "業管機關代碼",
+          "type": "string"
+        },
+        "AuthorityName": {
+          "$ref": "#/definitions/Service.DTO.Version2.Base.NameType",
+          "title": "NameType",
+          "description": "業管機關名稱"
+        },
+        "AuthorityPhone": {
+          "description": "業管機關連絡電話",
+          "type": "string"
+        },
+        "AuthorityEmail": {
+          "description": "業管機關電子信箱",
+          "type": "string"
+        },
+        "AuthorityUrl": {
+          "description": "業管機關網址鏈結",
+          "type": "string"
+        },
+        "AuthorityCode": {
+          "description": "業管機關簡碼",
+          "type": "string"
+        },
+        "UpdateTime": {
+          "title": "DateTime",
+          "description": "資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        }
+      }
+    },
+    "Service.DTO.Version2.Base.NameType": {
+      "title": "NameType",
+      "description": "名稱資料型別",
+      "type": "object",
+      "properties": {
+        "Zh_tw": {
+          "description": "中文繁體名稱",
+          "type": "string"
+        },
+        "En": {
+          "description": "英文名稱",
+          "type": "string"
+        }
+      }
+    },
+    "MOTC.API.Basic.Models.Version2.BasicWrapper[Service.DTO.Version2.Base.News]": {
+      "title": "NewsList",
+      "type": "object",
+      "properties": {
+        "UpdateTime": {
+          "title": "DateTime",
+          "description": "更新日期時間",
+          "type": "string"
+        },
+        "UpdateInterval": {
+          "format": "int32",
+          "description": "資料更新週期(秒)",
+          "type": "integer"
+        },
+        "Newses": {
+          "description": "資料(陣列)",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version2.Base.News"
+          }
+        },
+        "Count": {
+          "format": "int64",
+          "type": "integer"
+        }
+      }
+    },
+    "Service.DTO.Version2.Base.News": {
+      "title": "News",
+      "description": "業管機關資料型別",
+      "required": [
+        "NewsID",
+        "Language",
+        "Description"
+      ],
+      "type": "object",
+      "properties": {
+        "NewsID": {
+          "format": "uuid",
+          "description": "最新消息原單位發布代碼",
+          "type": "string",
+          "example": "00000000-0000-0000-0000-000000000000"
+        },
+        "Language": {
+          "description": "語系",
+          "type": "string"
+        },
+        "Department": {
+          "description": "發布單位",
+          "type": "string"
+        },
+        "Title": {
+          "description": "消息標題",
+          "type": "string"
+        },
+        "NewsCategory": {
+          "description": "消息類別",
+          "enum": [
+            "1: 最新消息",
+            "2: 新聞稿",
+            "3: 營運資訊",
+            "4: 轉乘資訊",
+            "5: 活動訊息",
+            "6: 系統公告",
+            "7: 新服務上架",
+            "8: API修正",
+            "9: 來源異常",
+            "99: 其他"
+          ],
+          "type": "string"
+        },
+        "Description": {
+          "description": "內容描述",
+          "type": "string"
+        },
+        "NewsURL": {
+          "description": "報導網站連結",
+          "type": "string"
+        },
+        "AttachmentURL": {
+          "description": "相關網站連結",
+          "type": "string"
+        },
+        "PublishTime": {
+          "title": "DateTime",
+          "description": "消息公告日期時間",
+          "type": "string"
+        },
+        "StartTime": {
+          "title": "DateTime",
+          "description": "開始時間",
+          "type": "string"
+        },
+        "EndTime": {
+          "title": "DateTime",
+          "description": "結束時間",
+          "type": "string"
+        },
+        "UpdateTime": {
+          "title": "DateTime",
+          "description": "消息更新時間",
+          "type": "string"
+        }
+      }
+    },
+    "Service.DTO.Version2.Base.Operator": {
+      "title": "Operator",
+      "description": "營運業者資料型別",
+      "required": [
+        "ProviderID",
+        "OperatorID",
+        "OperatorName",
+        "OperatorCode",
+        "AuthorityCode",
+        "OperatorNo",
+        "UpdateTime"
+      ],
+      "type": "object",
+      "properties": {
+        "ProviderID": {
+          "description": "資料提供平台代碼",
+          "type": "string"
+        },
+        "OperatorID": {
+          "description": "營運業者代碼",
+          "type": "string"
+        },
+        "OperatorName": {
+          "$ref": "#/definitions/Service.DTO.Version2.Base.NameType",
+          "title": "NameType",
+          "description": "營運業者名稱"
+        },
+        "OperatorPhone": {
+          "description": "營運業者連絡電話",
+          "type": "string"
+        },
+        "OperatorEmail": {
+          "description": "營運業者電子信箱",
+          "type": "string"
+        },
+        "OperatorUrl": {
+          "description": "營運業者網址鏈結",
+          "type": "string"
+        },
+        "ReservationUrl": {
+          "description": "訂票網址鏈結",
+          "type": "string"
+        },
+        "ReservationPhone": {
+          "description": "訂票連絡電話",
+          "type": "string"
+        },
+        "OperatorCode": {
+          "description": "營運業者簡碼",
+          "type": "string"
+        },
+        "AuthorityCode": {
+          "description": "營運業者業管機關簡碼(對於於公路客運/國道客運而言為THB)",
+          "type": "string"
+        },
+        "SubAuthorityCode": {
+          "description": "營運業者所屬業管子機關簡碼(對於公路客運/國道客運路線而言為區監理所如THB-VO10-1..等)",
+          "type": "string"
+        },
+        "OperatorNo": {
+          "description": "營運業者編號[交通部票證資料系統定義]",
+          "type": "string"
+        },
+        "UpdateTime": {
+          "title": "DateTime",
+          "description": "資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        }
+      }
+    },
+    "Service.DTO.Version2.Base.Provider": {
+      "title": "Provider",
+      "description": "資料提供平台資料型別",
+      "required": [
+        "ProviderID",
+        "ProviderName",
+        "UpdateTime",
+        "ProviderCode"
+      ],
+      "type": "object",
+      "properties": {
+        "ProviderID": {
+          "description": "資料提供平台代碼",
+          "type": "string"
+        },
+        "ProviderName": {
+          "$ref": "#/definitions/Service.DTO.Version2.Base.NameType",
+          "title": "NameType",
+          "description": "資料提供平台名稱"
+        },
+        "ProviderPhone": {
+          "description": "資料提供平台連絡電話",
+          "type": "string"
+        },
+        "ProviderEmail": {
+          "description": "資料提供平台電子信箱",
+          "type": "string"
+        },
+        "ProviderUrl": {
+          "description": "資料提供平台網址鏈結",
+          "type": "string"
+        },
+        "UpdateTime": {
+          "title": "DateTime",
+          "description": "資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "ProviderCode": {
+          "description": "資料提供平台簡碼",
+          "type": "string"
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Basic"
+    }
+  ]
+}

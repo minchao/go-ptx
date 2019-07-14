@@ -1,0 +1,3751 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "v2",
+    "title": "MOTC Transport API V2",
+    "description": "本平臺提供涵蓋全國尺度之公車、臺鐵、高鐵、捷運、航空、自行車等公共運輸旅運資料服務API，歡迎各產政學單位介接使用。\r\n                <br><span class=swagger-description-indicatation>利用本平臺開放資料進行各項應用服務開發時，請考量不同特性使用者(如:性別/身心障礙/老幼等)的需求，並歡迎回饋寶貴意見。</span>\r\n                <br><br>資料使用葵花寶典:[請點我](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/)\r\n                <br>資料服務開發實作參考手冊:[請點我](https://docs.google.com/viewer?url=https://github.com/ptxmotc/PTX_Web/blob/master/Swagger%E6%9C%8D%E5%8B%99%E8%AA%AA%E6%98%8E%E4%B8%8A%E5%82%B3%E5%8F%83%E8%80%83%E6%AA%94%E6%A1%88/%E5%85%AC%E5%85%B1%E9%81%8B%E8%BC%B8%E6%95%B4%E5%90%88%E8%B3%87%E8%A8%8A%E5%B9%B3%E5%8F%B0%E8%B3%87%E6%96%99%E6%9C%8D%E5%8B%99%E9%96%8B%E7%99%BC%E5%AF%A6%E4%BD%9C.pdf?raw=true)\r\n                <br>API URI Convention文件說明:[請點我](https://docs.google.com/viewer?url=https://github.com/ptxmotc/PTX_Web/blob/master/Swagger%E6%9C%8D%E5%8B%99%E8%AA%AA%E6%98%8E%E4%B8%8A%E5%82%B3%E5%8F%83%E8%80%83%E6%AA%94%E6%A1%88/API_URI_Convention%E6%96%87%E4%BB%B6_v1.pdf?raw=true)<br>資料文本OAS描述:[請點我](http://ptx.transportdata.tw/MOTC/v2/Tourism/api-docs/oas)"
+  },
+  "host": "ptx.transportdata.tw",
+  "basePath": "/MOTC/",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/v2/Tourism/ScenicSpot": {
+      "get": {
+        "tags": [
+          "Tourism"
+        ],
+        "summary": "取得所有觀光景點資料",
+        "description": "取得所有觀光景點資料",
+        "operationId": "TourismApi_ScenicSpot",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "string",
+            "default": "30"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$spatialFilter",
+            "in": "query",
+            "description": "空間過濾",
+            "type": "string"
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Service.DTO.Version2.Application.ScenicSpotTourismInfo"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/Tourism/ScenicSpot/{City}": {
+      "get": {
+        "tags": [
+          "Tourism"
+        ],
+        "summary": "取得指定[縣市]觀光景點資料",
+        "description": "取得指定[縣市]觀光景點資料",
+        "operationId": "TourismApi_ScenicSpot_0",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "City",
+            "in": "path",
+            "description": "縣市名稱",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "Taipei",
+              "NewTaipei",
+              "Taoyuan",
+              "Taichung",
+              "Tainan",
+              "Kaohsiung",
+              "Keelung",
+              "Hsinchu",
+              "HsinchuCounty",
+              "MiaoliCounty",
+              "ChanghuaCounty",
+              "NantouCounty",
+              "YunlinCounty",
+              "ChiayiCounty",
+              "Chiayi",
+              "PingtungCounty",
+              "YilanCounty",
+              "HualienCounty",
+              "TaitungCounty",
+              "KinmenCounty",
+              "PenghuCounty",
+              "LienchiangCounty"
+            ],
+            "x-enum": {
+              "LienchiangCounty": "連江縣",
+              "Taipei": "臺北市",
+              "PingtungCounty": "屏東縣",
+              "NantouCounty": "南投縣",
+              "YilanCounty": "宜蘭縣",
+              "TaitungCounty": "臺東縣",
+              "Chiayi": "嘉義市",
+              "Kaohsiung": "高雄市",
+              "YunlinCounty": "雲林縣",
+              "MiaoliCounty": "苗栗縣",
+              "Taoyuan": "桃園市",
+              "ChanghuaCounty": "彰化縣",
+              "HsinchuCounty": "新竹縣",
+              "Taichung": "臺中市",
+              "PenghuCounty": "澎湖縣",
+              "ChiayiCounty": "嘉義縣",
+              "Keelung": "基隆市",
+              "KinmenCounty": "金門縣",
+              "HualienCounty": "花蓮縣",
+              "Tainan": "臺南市",
+              "NewTaipei": "新北市",
+              "Hsinchu": "新竹市"
+            }
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "string",
+            "default": "30"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$spatialFilter",
+            "in": "query",
+            "description": "空間過濾",
+            "type": "string"
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Service.DTO.Version2.Application.ScenicSpotTourismInfo"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/Tourism/Restaurant": {
+      "get": {
+        "tags": [
+          "Tourism"
+        ],
+        "summary": "取得所有觀光餐飲資料",
+        "description": "取得所有觀光餐飲資料",
+        "operationId": "TourismApi_Restaurant",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "string",
+            "default": "30"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$spatialFilter",
+            "in": "query",
+            "description": "空間過濾",
+            "type": "string"
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Service.DTO.Version2.Application.RestaurantTourismInfo"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/Tourism/Restaurant/{City}": {
+      "get": {
+        "tags": [
+          "Tourism"
+        ],
+        "summary": "取得指定[縣市]觀光餐飲資料",
+        "description": "取得指定[縣市]觀光餐飲資料",
+        "operationId": "TourismApi_Restaurant_0",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "City",
+            "in": "path",
+            "description": "縣市名稱",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "Taipei",
+              "NewTaipei",
+              "Taoyuan",
+              "Taichung",
+              "Tainan",
+              "Kaohsiung",
+              "Keelung",
+              "Hsinchu",
+              "HsinchuCounty",
+              "MiaoliCounty",
+              "ChanghuaCounty",
+              "NantouCounty",
+              "YunlinCounty",
+              "ChiayiCounty",
+              "Chiayi",
+              "PingtungCounty",
+              "YilanCounty",
+              "HualienCounty",
+              "TaitungCounty",
+              "KinmenCounty",
+              "PenghuCounty",
+              "LienchiangCounty"
+            ],
+            "x-enum": {
+              "LienchiangCounty": "連江縣",
+              "Taoyuan": "桃園市",
+              "YilanCounty": "宜蘭縣",
+              "Taipei": "臺北市",
+              "NantouCounty": "南投縣",
+              "Keelung": "基隆市",
+              "PingtungCounty": "屏東縣",
+              "Hsinchu": "新竹市",
+              "ChanghuaCounty": "彰化縣",
+              "Tainan": "臺南市",
+              "HsinchuCounty": "新竹縣",
+              "Kaohsiung": "高雄市",
+              "KinmenCounty": "金門縣",
+              "YunlinCounty": "雲林縣",
+              "Chiayi": "嘉義市",
+              "Taichung": "臺中市",
+              "ChiayiCounty": "嘉義縣",
+              "HualienCounty": "花蓮縣",
+              "MiaoliCounty": "苗栗縣",
+              "PenghuCounty": "澎湖縣",
+              "TaitungCounty": "臺東縣",
+              "NewTaipei": "新北市"
+            }
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "string",
+            "default": "30"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$spatialFilter",
+            "in": "query",
+            "description": "空間過濾",
+            "type": "string"
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Service.DTO.Version2.Application.RestaurantTourismInfo"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/Tourism/Hotel": {
+      "get": {
+        "tags": [
+          "Tourism"
+        ],
+        "summary": "取得所有觀光旅宿資料",
+        "description": "取得所有觀光旅宿資料",
+        "operationId": "TourismApi_Hotel",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "string",
+            "default": "30"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$spatialFilter",
+            "in": "query",
+            "description": "空間過濾",
+            "type": "string"
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Service.DTO.Version2.Application.HotelTourismInfo"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/Tourism/Hotel/{City}": {
+      "get": {
+        "tags": [
+          "Tourism"
+        ],
+        "summary": "取得指定[縣市]觀光旅宿資料",
+        "description": "取得指定[縣市]觀光旅宿資料",
+        "operationId": "TourismApi_Hotel_0",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "City",
+            "in": "path",
+            "description": "縣市名稱",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "Taipei",
+              "NewTaipei",
+              "Taoyuan",
+              "Taichung",
+              "Tainan",
+              "Kaohsiung",
+              "Keelung",
+              "Hsinchu",
+              "HsinchuCounty",
+              "MiaoliCounty",
+              "ChanghuaCounty",
+              "NantouCounty",
+              "YunlinCounty",
+              "ChiayiCounty",
+              "Chiayi",
+              "PingtungCounty",
+              "YilanCounty",
+              "HualienCounty",
+              "TaitungCounty",
+              "KinmenCounty",
+              "PenghuCounty",
+              "LienchiangCounty"
+            ],
+            "x-enum": {
+              "NantouCounty": "南投縣",
+              "Kaohsiung": "高雄市",
+              "Taipei": "臺北市",
+              "YilanCounty": "宜蘭縣",
+              "Chiayi": "嘉義市",
+              "KinmenCounty": "金門縣",
+              "YunlinCounty": "雲林縣",
+              "LienchiangCounty": "連江縣",
+              "ChanghuaCounty": "彰化縣",
+              "TaitungCounty": "臺東縣",
+              "HualienCounty": "花蓮縣",
+              "Keelung": "基隆市",
+              "MiaoliCounty": "苗栗縣",
+              "NewTaipei": "新北市",
+              "Taoyuan": "桃園市",
+              "PingtungCounty": "屏東縣",
+              "Hsinchu": "新竹市",
+              "Tainan": "臺南市",
+              "PenghuCounty": "澎湖縣",
+              "HsinchuCounty": "新竹縣",
+              "ChiayiCounty": "嘉義縣",
+              "Taichung": "臺中市"
+            }
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "string",
+            "default": "30"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$spatialFilter",
+            "in": "query",
+            "description": "空間過濾",
+            "type": "string"
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Service.DTO.Version2.Application.HotelTourismInfo"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/Tourism/Activity": {
+      "get": {
+        "tags": [
+          "Tourism"
+        ],
+        "summary": "取得所有觀光活動資料",
+        "description": "取得所有觀光活動資料",
+        "operationId": "TourismApi_Activity",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "string",
+            "default": "30"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$spatialFilter",
+            "in": "query",
+            "description": "空間過濾",
+            "type": "string"
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Service.DTO.Version2.Application.ActivityTourismInfo"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/Tourism/Activity/{City}": {
+      "get": {
+        "tags": [
+          "Tourism"
+        ],
+        "summary": "取得指定[縣市]觀光活動資料",
+        "description": "取得指定[縣市]觀光活動資料",
+        "operationId": "TourismApi_Activity_0",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "City",
+            "in": "path",
+            "description": "縣市名稱",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "Taipei",
+              "NewTaipei",
+              "Taoyuan",
+              "Taichung",
+              "Tainan",
+              "Kaohsiung",
+              "Keelung",
+              "Hsinchu",
+              "HsinchuCounty",
+              "MiaoliCounty",
+              "ChanghuaCounty",
+              "NantouCounty",
+              "YunlinCounty",
+              "ChiayiCounty",
+              "Chiayi",
+              "PingtungCounty",
+              "YilanCounty",
+              "HualienCounty",
+              "TaitungCounty",
+              "KinmenCounty",
+              "PenghuCounty",
+              "LienchiangCounty"
+            ],
+            "x-enum": {
+              "HsinchuCounty": "新竹縣",
+              "Taoyuan": "桃園市",
+              "Hsinchu": "新竹市",
+              "NantouCounty": "南投縣",
+              "KinmenCounty": "金門縣",
+              "PingtungCounty": "屏東縣",
+              "Kaohsiung": "高雄市",
+              "Chiayi": "嘉義市",
+              "MiaoliCounty": "苗栗縣",
+              "YilanCounty": "宜蘭縣",
+              "Keelung": "基隆市",
+              "LienchiangCounty": "連江縣",
+              "YunlinCounty": "雲林縣",
+              "ChiayiCounty": "嘉義縣",
+              "Taipei": "臺北市",
+              "NewTaipei": "新北市",
+              "Taichung": "臺中市",
+              "TaitungCounty": "臺東縣",
+              "HualienCounty": "花蓮縣",
+              "Tainan": "臺南市",
+              "ChanghuaCounty": "彰化縣",
+              "PenghuCounty": "澎湖縣"
+            }
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "string",
+            "default": "30"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$spatialFilter",
+            "in": "query",
+            "description": "空間過濾",
+            "type": "string"
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Service.DTO.Version2.Application.ActivityTourismInfo"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/Tourism/Bus/RealTimeByFrequency/TaiwanTrip": {
+      "get": {
+        "tags": [
+          "TaiwanTripBus"
+        ],
+        "summary": "取得台灣好行公車的動態定時資料(A1)",
+        "description": "取得台灣好行公車的動態定時資料(A1)",
+        "operationId": "TaiwanTripBusApi_RealTimeByFrequency",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "string",
+            "default": "30"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$spatialFilter",
+            "in": "query",
+            "description": "空間過濾",
+            "type": "string"
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Service.DTO.Version2.TaiwanTripBus.BusA1Data"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/Tourism/Bus/RealTimeByFrequency/TaiwanTrip/{TaiwanTripName}": {
+      "get": {
+        "tags": [
+          "TaiwanTripBus"
+        ],
+        "summary": "取得指定[路線名稱]的台灣好行公車的動態定時資料(A1)",
+        "description": "取得指定[路線名稱]的台灣好行公車的動態定時資料(A1)",
+        "operationId": "TaiwanTripBusApi_RealTimeByFrequency_1",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "TaiwanTripName",
+            "in": "path",
+            "description": "台灣好行繁體中文路線名稱，如'黃金福隆線'",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "string",
+            "default": "30"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$spatialFilter",
+            "in": "query",
+            "description": "空間過濾",
+            "type": "string"
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Service.DTO.Version2.TaiwanTripBus.BusA1Data"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/Tourism/Bus/RealTimeNearStop/TaiwanTrip": {
+      "get": {
+        "tags": [
+          "TaiwanTripBus"
+        ],
+        "summary": "取得台灣好行公車的動態定點資料(A2)",
+        "description": "取得台灣好行公車的動態定點資料(A2)",
+        "operationId": "TaiwanTripBusApi_RealTimeNearStop",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "string",
+            "default": "30"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Service.DTO.Version2.TaiwanTripBus.BusA2Data"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/Tourism/Bus/RealTimeNearStop/TaiwanTrip/{TaiwanTripName}": {
+      "get": {
+        "tags": [
+          "TaiwanTripBus"
+        ],
+        "summary": "取得指定[路線名稱]的台灣好行公車的動態定點資料(A2)",
+        "description": "取得指定[路線名稱]的台灣好行公車的動態定點資料(A2)",
+        "operationId": "TaiwanTripBusApi_RealTimeNearStop_1",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "TaiwanTripName",
+            "in": "path",
+            "description": "台灣好行繁體中文路線名稱，如'黃金福隆線'",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "string",
+            "default": "30"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Service.DTO.Version2.TaiwanTripBus.BusA2Data"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/Tourism/Bus/EstimatedTimeOfArrival/TaiwanTrip": {
+      "get": {
+        "tags": [
+          "TaiwanTripBus"
+        ],
+        "summary": "取得台灣好行公車的預估到站資料(N1)",
+        "description": "取得台灣好行公車的預估到站資料(N1)",
+        "operationId": "TaiwanTripBusApi_EstimatedTimeOfArrival",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "string",
+            "default": "30"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Service.DTO.Version2.TaiwanTripBus.BusN1EstimateTime"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/Tourism/Bus/EstimatedTimeOfArrival/TaiwanTrip/{TaiwanTripName}": {
+      "get": {
+        "tags": [
+          "TaiwanTripBus"
+        ],
+        "summary": "取得指定[路線名稱]的台灣好行公車的預估到站資料(N1)",
+        "description": "取得指定[路線名稱]的台灣好行公車的預估到站資料(N1)",
+        "operationId": "TaiwanTripBusApi_EstimatedTimeOfArrival_1",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "TaiwanTripName",
+            "in": "path",
+            "description": "台灣好行繁體中文路線名稱，如'黃金福隆線'",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "string",
+            "default": "30"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Service.DTO.Version2.TaiwanTripBus.BusN1EstimateTime"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/Tourism/Bus/Route/TaiwanTrip": {
+      "get": {
+        "tags": [
+          "TaiwanTripBus"
+        ],
+        "summary": "取得台灣好行公車路線資料",
+        "description": "取得台灣好行公車路線資料",
+        "operationId": "TaiwanTripBusApi_Route",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "string",
+            "default": "30"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Service.DTO.Version2.TaiwanTripBus.BusRoute"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/Tourism/Bus/Route/TaiwanTrip/{TaiwanTripName}": {
+      "get": {
+        "tags": [
+          "TaiwanTripBus"
+        ],
+        "summary": "取得指定[路線名稱]的台灣好行公車路線資料",
+        "description": "取得指定[路線名稱]的台灣好行公車路線資料",
+        "operationId": "TaiwanTripBusApi_Route_1",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "TaiwanTripName",
+            "in": "path",
+            "description": "台灣好行繁體中文路線名稱，如'黃金福隆線'",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "string",
+            "default": "30"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Service.DTO.Version2.TaiwanTripBus.BusRoute"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/Tourism/Bus/StopOfRoute/TaiwanTrip": {
+      "get": {
+        "tags": [
+          "TaiwanTripBus"
+        ],
+        "summary": "取得台灣好行公車路線與站牌資料",
+        "description": "取得台灣好行公車路線與站牌資料",
+        "operationId": "TaiwanTripBusApi_StopOfRoute",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "string",
+            "default": "30"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Service.DTO.Version2.TaiwanTripBus.BusStopOfRoute"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/Tourism/Bus/StopOfRoute/TaiwanTrip/{TaiwanTripName}": {
+      "get": {
+        "tags": [
+          "TaiwanTripBus"
+        ],
+        "summary": "取得指定[路線名稱]的台灣好行公車路線與站牌資料",
+        "description": "取得指定[路線名稱]的台灣好行公車路線與站牌資料",
+        "operationId": "TaiwanTripBusApi_StopOfRoute_1",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "TaiwanTripName",
+            "in": "path",
+            "description": "台灣好行繁體中文路線名稱，如'黃金福隆線'",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "string",
+            "default": "30"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Service.DTO.Version2.TaiwanTripBus.BusStopOfRoute"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/Tourism/Bus/Schedule/TaiwanTrip": {
+      "get": {
+        "tags": [
+          "TaiwanTripBus"
+        ],
+        "summary": "取得台灣好行公車路線班表資料",
+        "description": "取得台灣好行公車路線班表資料",
+        "operationId": "TaiwanTripBusApi_Schedule",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "string",
+            "default": "30"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Service.DTO.Version2.TaiwanTripBus.BusSchedule"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/Tourism/Bus/Schedule/TaiwanTrip/{TaiwanTripName}": {
+      "get": {
+        "tags": [
+          "TaiwanTripBus"
+        ],
+        "summary": "取得指定[路線名稱]的台灣好行公車路線班表資料",
+        "description": "取得指定[路線名稱]的台灣好行公車路線班表資料",
+        "operationId": "TaiwanTripBusApi_Schedule_1",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "TaiwanTripName",
+            "in": "path",
+            "description": "台灣好行繁體中文路線名稱，如'黃金福隆線'",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "string",
+            "default": "30"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Service.DTO.Version2.TaiwanTripBus.BusSchedule"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/Tourism/Bus/Shape/TaiwanTrip": {
+      "get": {
+        "tags": [
+          "TaiwanTripBus"
+        ],
+        "summary": "取得台灣好行公車線型資料",
+        "description": "取得台灣好行公車線型資料",
+        "operationId": "TaiwanTripBusApi_Shape",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "string",
+            "default": "30"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Service.DTO.Version2.TaiwanTripBus.BusTaiwanTripShape"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/Tourism/Bus/Shape/TaiwanTrip/{TaiwanTripName}": {
+      "get": {
+        "tags": [
+          "TaiwanTripBus"
+        ],
+        "summary": "取得指定[路線名稱]的台灣好行公車線型資料",
+        "description": "取得指定[路線名稱]的台灣好行公車線型資料",
+        "operationId": "TaiwanTripBusApi_Shape_1",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "TaiwanTripName",
+            "in": "path",
+            "description": "台灣好行繁體中文路線名稱，如'黃金福隆線'",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "string",
+            "default": "30"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Service.DTO.Version2.TaiwanTripBus.BusTaiwanTripShape"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/Tourism/Bus/S2TravelTime/TaiwanTrip": {
+      "get": {
+        "tags": [
+          "TaiwanTripBus"
+        ],
+        "summary": "取得台灣好行公車路線站間旅行時間基本資料",
+        "description": "取得台灣好行公車路線站間旅行時間基本資料",
+        "operationId": "TaiwanTripBusApi_S2TravelTime",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "string",
+            "default": "30"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Service.DTO.Version2.TaiwanTripBus.BusTaiwanTripS2STravelTime"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/Tourism/Bus/News/TaiwanTrip": {
+      "get": {
+        "tags": [
+          "TaiwanTripBus"
+        ],
+        "summary": "取得台灣好行公車之最新消息",
+        "description": "取得台灣好行公車之最新消息",
+        "operationId": "TaiwanTripBusApi_News",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "string",
+            "default": "30"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Service.DTO.Version2.TaiwanTripBus.BusTaiwanTripNews"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Service.DTO.Version2.TaiwanTripBus.BusA1Data": {
+      "title": "BusA1Data",
+      "description": "定時車機資料型別",
+      "required": [
+        "PlateNumb",
+        "Speed",
+        "Azimuth",
+        "DutyStatus",
+        "BusStatus",
+        "GPSTime",
+        "UpdateTime"
+      ],
+      "type": "object",
+      "properties": {
+        "PlateNumb": {
+          "description": "車牌號碼",
+          "type": "string"
+        },
+        "OperatorID": {
+          "description": "營運業者代碼",
+          "type": "string"
+        },
+        "RouteUID": {
+          "description": "路線唯一識別代碼，規則為 {業管機關代碼} + {RouteID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢",
+          "type": "string"
+        },
+        "RouteID": {
+          "description": "地區既用中之路線代碼(為原資料內碼)",
+          "type": "string"
+        },
+        "TaiwanTripName": {
+          "$ref": "#/definitions/Service.DTO.Version2.Base.NameType",
+          "title": "NameType",
+          "description": "台灣好行路線名稱"
+        },
+        "SubRouteUID": {
+          "description": "子路線唯一識別代碼，規則為 {業管機關代碼} + {SubRouteID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢",
+          "type": "string"
+        },
+        "SubRouteID": {
+          "description": "地區既用中之子路線代碼(為原資料內碼)",
+          "type": "string"
+        },
+        "SubRouteName": {
+          "$ref": "#/definitions/Service.DTO.Version2.Base.NameType",
+          "title": "NameType",
+          "description": "子路線名稱"
+        },
+        "Direction": {
+          "description": "去返程",
+          "enum": [
+            "0: 去程",
+            "1: 返程",
+            "2: 迴圈",
+            "255: 未知"
+          ],
+          "type": "string"
+        },
+        "BusPosition": {
+          "$ref": "#/definitions/Service.DTO.Version2.Base.PointType",
+          "title": "PointType",
+          "description": "車輛位置經度"
+        },
+        "Speed": {
+          "format": "double",
+          "description": "行駛速度(kph)",
+          "type": "number"
+        },
+        "Azimuth": {
+          "format": "double",
+          "description": "方位角",
+          "type": "number"
+        },
+        "DutyStatus": {
+          "description": "勤務狀態",
+          "enum": [
+            "0: 正常",
+            "1: 開始",
+            "2: 結束"
+          ],
+          "type": "string"
+        },
+        "BusStatus": {
+          "description": "行車狀況",
+          "enum": [
+            "0: 正常",
+            "1: 車禍",
+            "2: 故障",
+            "3: 塞車",
+            "4: 緊急求援",
+            "5: 加油",
+            "90: 不明",
+            "91: 去回不明",
+            "98: 偏移路線",
+            "99: 非營運狀態",
+            "100: 客滿",
+            "101: 包車出租",
+            "255: 未知"
+          ],
+          "type": "string"
+        },
+        "MessageType": {
+          "description": "資料型態種類",
+          "enum": [
+            "0: 未知",
+            "1: 定期",
+            "2: 非定期"
+          ],
+          "type": "string"
+        },
+        "GPSTime": {
+          "title": "DateTime",
+          "description": "車機時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "TransTime": {
+          "title": "DateTime",
+          "description": "車機資料傳輸時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "SrcRecTime": {
+          "title": "DateTime",
+          "description": "來源端平台接收時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "SrcUpdateTime": {
+          "title": "DateTime",
+          "description": "來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "UpdateTime": {
+          "title": "DateTime",
+          "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        }
+      }
+    },
+    "Service.DTO.Version2.Base.NameType": {
+      "title": "NameType",
+      "description": "名稱資料型別",
+      "type": "object",
+      "properties": {
+        "Zh_tw": {
+          "description": "中文繁體名稱",
+          "type": "string"
+        },
+        "En": {
+          "description": "英文名稱",
+          "type": "string"
+        }
+      }
+    },
+    "Service.DTO.Version2.Base.PointType": {
+      "title": "PointType",
+      "description": "座標資料型別",
+      "type": "object",
+      "properties": {
+        "PositionLat": {
+          "format": "double",
+          "description": "位置緯度(WGS84)",
+          "type": "number"
+        },
+        "PositionLon": {
+          "format": "double",
+          "description": "位置經度(WGS84)",
+          "type": "number"
+        }
+      }
+    },
+    "Service.DTO.Version2.TaiwanTripBus.BusA2Data": {
+      "title": "BusA2Data",
+      "description": "定點車機資料型別",
+      "required": [
+        "PlateNumb",
+        "Direction",
+        "GPSTime",
+        "UpdateTime"
+      ],
+      "type": "object",
+      "properties": {
+        "PlateNumb": {
+          "description": "車牌號碼",
+          "type": "string"
+        },
+        "OperatorID": {
+          "description": "營運業者代碼",
+          "type": "string"
+        },
+        "RouteUID": {
+          "description": "路線唯一識別代碼，規則為 {業管機關代碼} + {RouteID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢",
+          "type": "string"
+        },
+        "RouteID": {
+          "description": "地區既用中之路線代碼(為原資料內碼)",
+          "type": "string"
+        },
+        "TaiwanTripName": {
+          "$ref": "#/definitions/Service.DTO.Version2.Base.NameType",
+          "title": "NameType",
+          "description": "台灣好行路線名稱"
+        },
+        "SubRouteUID": {
+          "description": "子路線唯一識別代碼，規則為 {業管機關代碼} + {SubRouteID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢",
+          "type": "string"
+        },
+        "SubRouteID": {
+          "description": "地區既用中之子路線代碼(為原資料內碼)",
+          "type": "string"
+        },
+        "SubRouteName": {
+          "$ref": "#/definitions/Service.DTO.Version2.Base.NameType",
+          "title": "NameType",
+          "description": "子路線名稱"
+        },
+        "Direction": {
+          "description": "去返程",
+          "enum": [
+            "0: 去程",
+            "1: 返程",
+            "2: 迴圈",
+            "255: 未知"
+          ],
+          "type": "string"
+        },
+        "StopUID": {
+          "description": "站牌唯一識別代碼，規則為 {平台代碼} + {StopID}，其中 {平台代碼} 可於Provider API中的ProviderCode欄位查詢",
+          "type": "string"
+        },
+        "StopID": {
+          "description": "地區既用中之站牌代號(為原資料內碼)",
+          "type": "string"
+        },
+        "StopName": {
+          "$ref": "#/definitions/Service.DTO.Version2.Base.NameType",
+          "title": "NameType",
+          "description": "站牌名"
+        },
+        "MessageType": {
+          "description": "資料型態種類",
+          "enum": [
+            "0: 未知",
+            "1: 定期",
+            "2: 非定期"
+          ],
+          "type": "string"
+        },
+        "DutyStatus": {
+          "description": "勤務狀態",
+          "enum": [
+            "0: 正常",
+            "1: 開始",
+            "2: 結束"
+          ],
+          "type": "string"
+        },
+        "BusStatus": {
+          "description": "行車狀況",
+          "enum": [
+            "0: 正常",
+            "1: 車禍",
+            "2: 故障",
+            "3: 塞車",
+            "4: 緊急求援",
+            "5: 加油",
+            "90: 不明",
+            "91: 去回不明",
+            "98: 偏移路線",
+            "99: 非營運狀態",
+            "100: 客滿",
+            "101: 包車出租",
+            "255: 未知"
+          ],
+          "type": "string"
+        },
+        "A2EventType": {
+          "description": "進站離站",
+          "enum": [
+            "0: 離站",
+            "1: 進站"
+          ],
+          "type": "string"
+        },
+        "GPSTime": {
+          "title": "DateTime",
+          "description": "車機時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "TransTime": {
+          "title": "DateTime",
+          "description": "車機資料傳輸時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "SrcRecTime": {
+          "title": "DateTime",
+          "description": "來源端平台接收時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "SrcUpdateTime": {
+          "title": "DateTime",
+          "description": "來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "UpdateTime": {
+          "title": "DateTime",
+          "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        }
+      }
+    },
+    "Service.DTO.Version2.Application.ActivityTourismInfo": {
+      "title": "ActivityTourismInfo",
+      "description": "取得觀光活動資料",
+      "required": [
+        "ID",
+        "SrcUpdateTime",
+        "UpdateTime"
+      ],
+      "type": "object",
+      "properties": {
+        "ID": {
+          "description": "活動訊息代碼",
+          "type": "string"
+        },
+        "Name": {
+          "description": "活動名稱",
+          "type": "string"
+        },
+        "Description": {
+          "description": "活動簡述",
+          "type": "string"
+        },
+        "Particpation": {
+          "description": "活動參與對象",
+          "type": "string"
+        },
+        "Location": {
+          "description": "主要活動地點名稱",
+          "type": "string"
+        },
+        "Address": {
+          "description": "主要活動地點地址",
+          "type": "string"
+        },
+        "Phone": {
+          "description": "活動聯絡電話",
+          "type": "string"
+        },
+        "Organizer": {
+          "description": "活動主辦單位",
+          "type": "string"
+        },
+        "StartTime": {
+          "title": "DateTime",
+          "description": "活動開始時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "EndTime": {
+          "title": "DateTime",
+          "description": "活動結束時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "Cycle": {
+          "description": "週期性活動執行時間",
+          "type": "string"
+        },
+        "NonCycle": {
+          "description": "非週期性活動執行時間",
+          "type": "string"
+        },
+        "WebsiteUrl": {
+          "description": "活動網址",
+          "type": "string"
+        },
+        "Picture": {
+          "$ref": "#/definitions/Service.DTO.Version2.Application.TourismPicture",
+          "title": "TourismPicture",
+          "description": "活動照片"
+        },
+        "Position": {
+          "$ref": "#/definitions/Service.DTO.Version2.Base.PointType",
+          "title": "PointType",
+          "description": "活動位置"
+        },
+        "Class1": {
+          "description": "活動分類1",
+          "type": "string"
+        },
+        "Class2": {
+          "description": "活動分類2",
+          "type": "string"
+        },
+        "MapUrl": {
+          "description": "活動地圖/簡圖連結網址",
+          "type": "string"
+        },
+        "TravelInfo": {
+          "description": "交通資訊",
+          "type": "string"
+        },
+        "ParkingInfo": {
+          "description": "停車資訊",
+          "type": "string"
+        },
+        "Charge": {
+          "description": "費用標示",
+          "type": "string"
+        },
+        "Remarks": {
+          "description": "備註(其他活動相關事項)",
+          "type": "string"
+        },
+        "City": {
+          "description": "所屬縣市",
+          "type": "string"
+        },
+        "SrcUpdateTime": {
+          "title": "DateTime",
+          "description": "觀光局檔案更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "UpdateTime": {
+          "title": "DateTime",
+          "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        }
+      }
+    },
+    "Service.DTO.Version2.Application.TourismPicture": {
+      "title": "TourismPicture",
+      "description": "觀光照片資料型別",
+      "type": "object",
+      "properties": {
+        "PictureUrl1": {
+          "description": "照片連結網址1",
+          "type": "string"
+        },
+        "PictureDescription1": {
+          "description": "照片說明1",
+          "type": "string"
+        },
+        "PictureUrl2": {
+          "description": "照片連結網址2",
+          "type": "string"
+        },
+        "PictureDescription2": {
+          "description": "照片說明2",
+          "type": "string"
+        },
+        "PictureUrl3": {
+          "description": "照片連結網址3",
+          "type": "string"
+        },
+        "PictureDescription3": {
+          "description": "照片說明3",
+          "type": "string"
+        }
+      }
+    },
+    "Service.DTO.Version2.Application.HotelTourismInfo": {
+      "title": "HotelTourismInfo",
+      "description": "取得觀光旅宿資料",
+      "required": [
+        "ID",
+        "SrcUpdateTime",
+        "UpdateTime"
+      ],
+      "type": "object",
+      "properties": {
+        "ID": {
+          "description": "旅館民宿代碼",
+          "type": "string"
+        },
+        "Name": {
+          "description": "旅館民宿名稱",
+          "type": "string"
+        },
+        "Description": {
+          "description": "旅館民宿簡述",
+          "type": "string"
+        },
+        "Grade": {
+          "description": "觀光旅館星級",
+          "type": "string"
+        },
+        "Address": {
+          "description": "旅館民宿地址",
+          "type": "string"
+        },
+        "ZipCode": {
+          "description": "郵遞區號",
+          "type": "string"
+        },
+        "Phone": {
+          "description": "旅館民宿電話",
+          "type": "string"
+        },
+        "Fax": {
+          "description": "旅館民宿傳真",
+          "type": "string"
+        },
+        "WebsiteUrl": {
+          "description": "旅館民宿網站網址",
+          "type": "string"
+        },
+        "Picture": {
+          "$ref": "#/definitions/Service.DTO.Version2.Application.TourismPicture",
+          "title": "TourismPicture",
+          "description": "旅館民宿照片"
+        },
+        "Position": {
+          "$ref": "#/definitions/Service.DTO.Version2.Base.PointType",
+          "title": "PointType",
+          "description": "旅館民宿位置"
+        },
+        "Class": {
+          "description": "旅館民宿分類",
+          "type": "string"
+        },
+        "MapUrl": {
+          "description": "旅館民宿地點簡圖連結網址",
+          "type": "string"
+        },
+        "Spec": {
+          "description": "房型、價目及數量說明",
+          "type": "string"
+        },
+        "ServiceInfo": {
+          "description": "服務內容介紹",
+          "type": "string"
+        },
+        "ParkingInfo": {
+          "description": "停車資訊",
+          "type": "string"
+        },
+        "City": {
+          "description": "所屬縣市",
+          "type": "string"
+        },
+        "SrcUpdateTime": {
+          "title": "DateTime",
+          "description": "觀光局檔案更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "UpdateTime": {
+          "title": "DateTime",
+          "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        }
+      }
+    },
+    "Service.DTO.Version2.TaiwanTripBus.BusN1EstimateTime": {
+      "title": "BusN1EstimateTime",
+      "required": [
+        "Direction",
+        "UpdateTime"
+      ],
+      "type": "object",
+      "properties": {
+        "PlateNumb": {
+          "description": "車牌號碼",
+          "type": "string"
+        },
+        "StopUID": {
+          "description": "站牌唯一識別代碼，規則為 {業管機關代碼} + {StopID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢",
+          "type": "string"
+        },
+        "StopID": {
+          "description": "地區既用中之站牌代碼(為原資料內碼)",
+          "type": "string"
+        },
+        "StopName": {
+          "$ref": "#/definitions/Service.DTO.Version2.Base.NameType",
+          "title": "NameType",
+          "description": "站牌名"
+        },
+        "RouteUID": {
+          "description": "路線唯一識別代碼，規則為 {業管機關代碼} + {RouteID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢",
+          "type": "string"
+        },
+        "RouteID": {
+          "description": "地區既用中之路線代碼(為原資料內碼)",
+          "type": "string"
+        },
+        "TaiwanTripName": {
+          "$ref": "#/definitions/Service.DTO.Version2.Base.NameType",
+          "title": "NameType",
+          "description": "台灣好行路線名稱"
+        },
+        "SubRouteUID": {
+          "description": "子路線唯一識別代碼，規則為 {業管機關代碼} + {SubRouteID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢",
+          "type": "string"
+        },
+        "SubRouteID": {
+          "description": "地區既用中之子路線代碼(為原資料內碼)",
+          "type": "string"
+        },
+        "SubRouteName": {
+          "$ref": "#/definitions/Service.DTO.Version2.Base.NameType",
+          "title": "NameType",
+          "description": "子路線名稱"
+        },
+        "Direction": {
+          "description": "去返程",
+          "enum": [
+            "0: 去程",
+            "1: 返程",
+            "2: 迴圈",
+            "255: 未知"
+          ],
+          "type": "string"
+        },
+        "EstimateTime": {
+          "format": "int32",
+          "description": "到站時間預估(秒)",
+          "type": "integer"
+        },
+        "StopCountDown": {
+          "format": "int32",
+          "description": "車輛距離本站站數",
+          "type": "integer"
+        },
+        "CurrentStop": {
+          "description": "車輛目前所在站牌代碼",
+          "type": "string"
+        },
+        "DestinationStop": {
+          "description": "車輛目的站牌代碼",
+          "type": "string"
+        },
+        "StopStatus": {
+          "description": "車輛狀態備註",
+          "enum": [
+            "0: 正常",
+            "1: 尚未發車",
+            "2: 交管不停靠",
+            "3: 末班車已過",
+            "4: 今日未營運"
+          ],
+          "type": "string"
+        },
+        "MessageType": {
+          "description": "資料型態種類",
+          "enum": [
+            "0: 未知",
+            "1: 定期",
+            "2: 非定期"
+          ],
+          "type": "string"
+        },
+        "NextBusTime": {
+          "title": "DateTime",
+          "description": "下一班公車到達時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "IsLastBus": {
+          "description": "是否為末班車",
+          "type": "boolean"
+        },
+        "TransTime": {
+          "title": "DateTime",
+          "description": "車機資料傳輸時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "SrcRecTime": {
+          "title": "DateTime",
+          "description": "來源端平台接收時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "SrcUpdateTime": {
+          "title": "DateTime",
+          "description": "來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "UpdateTime": {
+          "title": "DateTime",
+          "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        }
+      }
+    },
+    "Service.DTO.Version2.TaiwanTripBus.BusTaiwanTripNews": {
+      "title": "BusTaiwanTripNews",
+      "description": "台灣好行最新消息資料",
+      "required": [
+        "NewsID",
+        "Language",
+        "Title",
+        "Description",
+        "UpdateTime"
+      ],
+      "type": "object",
+      "properties": {
+        "NewsID": {
+          "description": "最新消息原單位發布代碼",
+          "type": "string"
+        },
+        "Language": {
+          "description": "語系",
+          "type": "string"
+        },
+        "NewsCategory": {
+          "description": "消息類別",
+          "type": "string"
+        },
+        "Title": {
+          "description": "消息標題",
+          "type": "string"
+        },
+        "Description": {
+          "description": "內容描述",
+          "type": "string"
+        },
+        "PublishTime": {
+          "title": "DateTime",
+          "description": "消息公告日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "StartTime": {
+          "title": "DateTime",
+          "description": "開始時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "EndTime": {
+          "title": "DateTime",
+          "description": "結束時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "UpdateTime": {
+          "title": "DateTime",
+          "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        }
+      }
+    },
+    "Service.DTO.Version2.Application.RestaurantTourismInfo": {
+      "title": "RestaurantTourismInfo",
+      "description": "取得觀光餐飲資料",
+      "required": [
+        "ID",
+        "SrcUpdateTime",
+        "UpdateTime"
+      ],
+      "type": "object",
+      "properties": {
+        "ID": {
+          "description": "餐飲店家代碼",
+          "type": "string"
+        },
+        "Name": {
+          "description": "餐飲店家名稱",
+          "type": "string"
+        },
+        "Description": {
+          "description": "店家簡述",
+          "type": "string"
+        },
+        "Address": {
+          "description": "店家地址",
+          "type": "string"
+        },
+        "ZipCode": {
+          "description": "郵遞區號",
+          "type": "string"
+        },
+        "Phone": {
+          "description": "預約電話",
+          "type": "string"
+        },
+        "OpenTime": {
+          "description": "營業時間",
+          "type": "string"
+        },
+        "WebsiteUrl": {
+          "description": "店家網站網址",
+          "type": "string"
+        },
+        "Picture": {
+          "$ref": "#/definitions/Service.DTO.Version2.Application.TourismPicture",
+          "title": "TourismPicture",
+          "description": "店家照片"
+        },
+        "Position": {
+          "$ref": "#/definitions/Service.DTO.Version2.Base.PointType",
+          "title": "PointType",
+          "description": "店家位置"
+        },
+        "Class": {
+          "description": "店家分類",
+          "type": "string"
+        },
+        "MapUrl": {
+          "description": "店家地圖/簡圖介紹網址",
+          "type": "string"
+        },
+        "ParkingInfo": {
+          "description": "停車資訊",
+          "type": "string"
+        },
+        "City": {
+          "description": "所屬縣市",
+          "type": "string"
+        },
+        "SrcUpdateTime": {
+          "title": "DateTime",
+          "description": "觀光局檔案更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "UpdateTime": {
+          "title": "DateTime",
+          "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        }
+      }
+    },
+    "Service.DTO.Version2.TaiwanTripBus.BusRoute": {
+      "title": "BusRoute",
+      "description": "路線資料型別",
+      "required": [
+        "RouteUID",
+        "RouteID",
+        "HasSubRoutes",
+        "OperatorIDs",
+        "Operators",
+        "AuthorityID",
+        "ProviderID",
+        "BusRouteType",
+        "TaiwanTripName",
+        "UpdateTime"
+      ],
+      "type": "object",
+      "properties": {
+        "RouteUID": {
+          "description": "路線唯一識別代碼，規則為 {業管機關代碼} + {RouteID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢",
+          "type": "string"
+        },
+        "RouteID": {
+          "description": "地區既用中之路線代碼(為原資料內碼)",
+          "type": "string"
+        },
+        "HasSubRoutes": {
+          "description": "實際上是否有多條附屬路線。(此欄位值與SubRoutes結構並無強烈的絕對關聯。詳細說明請參閱swagger上方的【資料服務使用注意事項】)",
+          "type": "boolean"
+        },
+        "OperatorIDs": {
+          "description": "營運業者代碼",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "Operators": {
+          "description": "營運業者",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version2.Bus.RouteOperator"
+          }
+        },
+        "AuthorityID": {
+          "description": "業管單位代碼",
+          "type": "string"
+        },
+        "ProviderID": {
+          "description": "資料提供平台代碼",
+          "type": "string"
+        },
+        "SubRoutes": {
+          "description": "附屬路線資料(如果原始資料並無提供附屬路線ID，而本平台基於跨來源資料之一致性，會以SubRouteID=RouteID產製一份相對應的附屬路線資料(若有去返程，則會有兩筆))",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version2.Bus.BusSubRoute"
+          }
+        },
+        "BusRouteType": {
+          "description": "公車路線類別",
+          "enum": [
+            "11: 市區公車",
+            "12: 公路客運",
+            "13: 國道客運",
+            "14: 接駁車"
+          ],
+          "type": "string"
+        },
+        "TaiwanTripName": {
+          "$ref": "#/definitions/Service.DTO.Version2.Base.NameType",
+          "title": "NameType",
+          "description": "台灣好行路線名稱"
+        },
+        "DepartureStopNameZh": {
+          "description": "起站中文名稱",
+          "type": "string"
+        },
+        "DepartureStopNameEn": {
+          "description": "起站英文名稱",
+          "type": "string"
+        },
+        "DestinationStopNameZh": {
+          "description": "終點站中文名稱",
+          "type": "string"
+        },
+        "DestinationStopNameEn": {
+          "description": "終點站英文名稱",
+          "type": "string"
+        },
+        "TicketPriceDescriptionZh": {
+          "description": "票價中文敘述",
+          "type": "string"
+        },
+        "TicketPriceDescriptionEn": {
+          "description": "票價英文敘述",
+          "type": "string"
+        },
+        "FareBufferZoneDescriptionZh": {
+          "description": "收費緩衝區中文敘述",
+          "type": "string"
+        },
+        "FareBufferZoneDescriptionEn": {
+          "description": "收費緩衝區英文敘述",
+          "type": "string"
+        },
+        "RouteUrl": {
+          "description": "路線資訊說明網址",
+          "type": "string"
+        },
+        "LiveBusUrl": {
+          "description": "路線公車動態資訊網址",
+          "type": "string"
+        },
+        "RouteMapImageUrl": {
+          "description": "路線簡圖網址",
+          "type": "string"
+        },
+        "City": {
+          "description": "路線權管所屬縣市(相當於市區公車API的City參數)[若為公路/國道客運路線則為空值]",
+          "type": "string"
+        },
+        "CityCode": {
+          "description": "路線權管所屬縣市之代碼(國際ISO 3166-2 三碼城市代碼)[若為公路/國道客運路線則為空值]",
+          "type": "string"
+        },
+        "UpdateTime": {
+          "title": "DateTime",
+          "description": "資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        }
+      }
+    },
+    "Service.DTO.Version2.Bus.RouteOperator": {
+      "title": "RouteOperator",
+      "description": "營運業者資訊",
+      "required": [
+        "OperatorID",
+        "OperatorName",
+        "OperatorCode",
+        "OperatorNo"
+      ],
+      "type": "object",
+      "properties": {
+        "OperatorID": {
+          "description": "營運業者代碼",
+          "type": "string"
+        },
+        "OperatorName": {
+          "$ref": "#/definitions/Service.DTO.Version2.Base.NameType",
+          "title": "NameType",
+          "description": "營運業者名稱"
+        },
+        "OperatorCode": {
+          "description": "營運業者簡碼",
+          "type": "string"
+        },
+        "OperatorNo": {
+          "description": "營運業者編號[交通部票證資料系統定義]",
+          "type": "string"
+        }
+      }
+    },
+    "Service.DTO.Version2.Bus.BusSubRoute": {
+      "title": "BusSubRoute",
+      "description": "附屬路線資料型別",
+      "required": [
+        "SubRouteUID",
+        "SubRouteID",
+        "OperatorIDs",
+        "SubRouteName",
+        "Direction"
+      ],
+      "type": "object",
+      "properties": {
+        "SubRouteUID": {
+          "description": "附屬路線唯一識別代碼，規則為 {業管機關簡碼} + {SubRouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
+          "type": "string"
+        },
+        "SubRouteID": {
+          "description": "地區既用中之附屬路線代碼(為原資料內碼)",
+          "type": "string"
+        },
+        "OperatorIDs": {
+          "description": "營運業者代碼",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "SubRouteName": {
+          "$ref": "#/definitions/Service.DTO.Version2.Base.NameType",
+          "title": "NameType",
+          "description": "附屬路線名稱"
+        },
+        "Headsign": {
+          "description": "車頭描述",
+          "type": "string"
+        },
+        "HeadsignEn": {
+          "description": "車頭英文描述",
+          "type": "string"
+        },
+        "Direction": {
+          "description": "去返程",
+          "enum": [
+            "0: 去程",
+            "1: 返程",
+            "2: 迴圈",
+            "255: 未知"
+          ],
+          "type": "string"
+        },
+        "FirstBusTime": {
+          "description": "平日第一班發車時間",
+          "type": "string"
+        },
+        "LastBusTime": {
+          "description": "平日返程第一班發車時間",
+          "type": "string"
+        },
+        "HolidayFirstBusTime": {
+          "description": "假日去程第一班發車時間",
+          "type": "string"
+        },
+        "HolidayLastBusTime": {
+          "description": "假日返程第一班發車時間",
+          "type": "string"
+        }
+      }
+    },
+    "Service.DTO.Version2.TaiwanTripBus.BusTaiwanTripS2STravelTime": {
+      "title": "BusTaiwanTripS2STravelTime",
+      "required": [
+        "RouteUID",
+        "RouteID",
+        "TravelTimes"
+      ],
+      "type": "object",
+      "properties": {
+        "RouteUID": {
+          "description": "路線唯一識別代碼，規則為 {業管機關簡碼} + {RouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
+          "type": "string"
+        },
+        "RouteID": {
+          "description": "路線代碼",
+          "type": "string"
+        },
+        "SubRouteUID": {
+          "description": "附屬路線唯一識別代碼，規則為 {業管機關簡碼} + {SubRouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
+          "type": "string"
+        },
+        "SubRouteID": {
+          "description": "附屬路線代碼",
+          "type": "string"
+        },
+        "TravelTimes": {
+          "description": "站間運行時間資訊",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version2.TaiwanTripBus.BusTaiwanTripS2STravelTime.TravelTime"
+          }
+        }
+      }
+    },
+    "Service.DTO.Version2.TaiwanTripBus.BusTaiwanTripS2STravelTime.TravelTime": {
+      "title": "TravelTime",
+      "required": [
+        "Sequence",
+        "FromStopID",
+        "ToStopID",
+        "Distance",
+        "RunTime",
+        "StopTime"
+      ],
+      "type": "object",
+      "properties": {
+        "Sequence": {
+          "format": "int32",
+          "description": "站間序號",
+          "type": "integer"
+        },
+        "FromStopID": {
+          "description": "起站站牌代碼",
+          "type": "string"
+        },
+        "ToStopID": {
+          "description": "迄站站牌代碼",
+          "type": "string"
+        },
+        "Distance": {
+          "format": "float",
+          "description": "站間距離",
+          "type": "number"
+        },
+        "RunTime": {
+          "format": "int32",
+          "description": "站間預估行駛時間",
+          "type": "integer"
+        },
+        "StopTime": {
+          "format": "int32",
+          "description": "起站停靠時間",
+          "type": "integer"
+        }
+      }
+    },
+    "Service.DTO.Version2.Application.ScenicSpotTourismInfo": {
+      "title": "ScenicSpotTourismInfo",
+      "description": "取得觀光景點資料",
+      "required": [
+        "ID",
+        "SrcUpdateTime",
+        "UpdateTime"
+      ],
+      "type": "object",
+      "properties": {
+        "ID": {
+          "description": "景點代碼",
+          "type": "string"
+        },
+        "Name": {
+          "description": "景點名稱",
+          "type": "string"
+        },
+        "DescriptionDetail": {
+          "description": "景點特色詳細說明",
+          "type": "string"
+        },
+        "Description": {
+          "description": "景點特色精簡說明",
+          "type": "string"
+        },
+        "Phone": {
+          "description": "景點服務電話",
+          "type": "string"
+        },
+        "Address": {
+          "description": "景點地址",
+          "type": "string"
+        },
+        "ZipCode": {
+          "description": "郵遞區號",
+          "type": "string"
+        },
+        "TravelInfo": {
+          "description": "交通資訊",
+          "type": "string"
+        },
+        "OpenTime": {
+          "description": "開放時間",
+          "type": "string"
+        },
+        "Picture": {
+          "$ref": "#/definitions/Service.DTO.Version2.Application.TourismPicture",
+          "title": "TourismPicture",
+          "description": "景點照片"
+        },
+        "MapUrl": {
+          "description": "景點地圖/簡圖介紹網址",
+          "type": "string"
+        },
+        "Position": {
+          "$ref": "#/definitions/Service.DTO.Version2.Base.PointType",
+          "title": "PointType",
+          "description": "景點位置"
+        },
+        "Class1": {
+          "description": "景點分類1",
+          "type": "string"
+        },
+        "Class2": {
+          "description": "景點分類2",
+          "type": "string"
+        },
+        "Class3": {
+          "description": "景點分類3",
+          "type": "string"
+        },
+        "Level": {
+          "description": "古蹟分級",
+          "type": "string"
+        },
+        "WebsiteUrl": {
+          "description": "景點官方網站網址",
+          "type": "string"
+        },
+        "ParkingInfo": {
+          "description": "停車資訊",
+          "type": "string"
+        },
+        "ParkingPosition": {
+          "$ref": "#/definitions/Service.DTO.Version2.Base.PointType",
+          "title": "PointType",
+          "description": "景點主要停車場位置"
+        },
+        "TicketInfo": {
+          "description": "票價資訊",
+          "type": "string"
+        },
+        "Remarks": {
+          "description": "警告及注意事項",
+          "type": "string"
+        },
+        "Keyword": {
+          "description": "常用搜尋關鍵字",
+          "type": "string"
+        },
+        "City": {
+          "description": "所屬縣市",
+          "type": "string"
+        },
+        "SrcUpdateTime": {
+          "title": "DateTime",
+          "description": "觀光局檔案更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "UpdateTime": {
+          "title": "DateTime",
+          "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        }
+      }
+    },
+    "Service.DTO.Version2.TaiwanTripBus.BusSchedule": {
+      "title": "BusSchedule",
+      "required": [
+        "RouteUID",
+        "RouteID",
+        "TaiwanTripName",
+        "SubRouteUID",
+        "SubRouteID",
+        "SubRouteName",
+        "Direction"
+      ],
+      "type": "object",
+      "properties": {
+        "RouteUID": {
+          "description": "路線唯一識別代碼，規則為 {業管機關代碼} + {RouteID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢",
+          "type": "string"
+        },
+        "RouteID": {
+          "description": "地區既用中之路線代碼(為原資料內碼)",
+          "type": "string"
+        },
+        "TaiwanTripName": {
+          "$ref": "#/definitions/Service.DTO.Version2.Base.NameType",
+          "title": "NameType",
+          "description": "台灣好行路線名稱"
+        },
+        "SubRouteUID": {
+          "description": "子路線唯一識別代碼，規則為 {業管機關代碼} + {SubRouteID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢",
+          "type": "string"
+        },
+        "SubRouteID": {
+          "description": "地區既用中之子路線代碼(為原資料內碼)",
+          "type": "string"
+        },
+        "SubRouteName": {
+          "$ref": "#/definitions/Service.DTO.Version2.Base.NameType",
+          "title": "NameType",
+          "description": "子路線名稱"
+        },
+        "Direction": {
+          "description": "去返程",
+          "enum": [
+            "0: 去程",
+            "1: 返程",
+            "2: 迴圈",
+            "255: 未知"
+          ],
+          "type": "string"
+        },
+        "Timetables": {
+          "description": "預定班表",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version2.Bus.BusTimetable"
+          }
+        },
+        "Frequencys": {
+          "description": "發車班距",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version2.Bus.BusFrequency"
+          }
+        }
+      }
+    },
+    "Service.DTO.Version2.Bus.BusTimetable": {
+      "title": "BusTimetable",
+      "required": [
+        "StopTimes"
+      ],
+      "type": "object",
+      "properties": {
+        "TripID": {
+          "description": "班次代碼，為無意義之編碼",
+          "type": "string"
+        },
+        "ServiceDay": {
+          "$ref": "#/definitions/Service.DTO.Version2.Bus.ServiceDay",
+          "title": "ServiceDay",
+          "description": "週內營運日"
+        },
+        "SpecialDays": {
+          "description": "特殊營運日",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version2.Bus.SpecialDay"
+          }
+        },
+        "StopTimes": {
+          "description": "公車停靠時間資料",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version2.Bus.BusStopTime"
+          }
+        }
+      }
+    },
+    "Service.DTO.Version2.Bus.BusFrequency": {
+      "title": "BusFrequency",
+      "required": [
+        "StartTime",
+        "EndTime",
+        "MinHeadwayMins",
+        "MaxHeadwayMins"
+      ],
+      "type": "object",
+      "properties": {
+        "StartTime": {
+          "description": "發車班距起始適用時間，格式為: HH:mm",
+          "type": "string"
+        },
+        "EndTime": {
+          "description": "發車班距結束適用時間，格式為: HH:mm",
+          "type": "string"
+        },
+        "MinHeadwayMins": {
+          "format": "int32",
+          "description": "最小班距時間(分鐘)",
+          "type": "integer"
+        },
+        "MaxHeadwayMins": {
+          "format": "int32",
+          "description": "最大班距時間(分鐘)",
+          "type": "integer"
+        },
+        "ServiceDay": {
+          "$ref": "#/definitions/Service.DTO.Version2.Bus.ServiceDay",
+          "title": "ServiceDay",
+          "description": "週內營運日"
+        },
+        "SpecialDays": {
+          "description": "特殊營運日",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version2.Bus.SpecialDay"
+          }
+        }
+      }
+    },
+    "Service.DTO.Version2.Bus.ServiceDay": {
+      "title": "ServiceDay",
+      "required": [
+        "Sunday",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday"
+      ],
+      "type": "object",
+      "properties": {
+        "Sunday": {
+          "description": "星期日是否營運",
+          "enum": [
+            "0: 否",
+            "1: 是"
+          ],
+          "type": "string"
+        },
+        "Monday": {
+          "description": "星期一是否營運",
+          "enum": [
+            "0: 否",
+            "1: 是"
+          ],
+          "type": "string"
+        },
+        "Tuesday": {
+          "description": "星期二是否營運",
+          "enum": [
+            "0: 否",
+            "1: 是"
+          ],
+          "type": "string"
+        },
+        "Wednesday": {
+          "description": "星期三是否營運",
+          "enum": [
+            "0: 否",
+            "1: 是"
+          ],
+          "type": "string"
+        },
+        "Thursday": {
+          "description": "星期四是否營運",
+          "enum": [
+            "0: 否",
+            "1: 是"
+          ],
+          "type": "string"
+        },
+        "Friday": {
+          "description": "星期五是否營運",
+          "enum": [
+            "0: 否",
+            "1: 是"
+          ],
+          "type": "string"
+        },
+        "Saturday": {
+          "description": "星期六是否營運",
+          "enum": [
+            "0: 否",
+            "1: 是"
+          ],
+          "type": "string"
+        },
+        "NationalHolidays": {
+          "description": "國定假日是否營運",
+          "enum": [
+            "0: 否",
+            "1: 是"
+          ],
+          "type": "string"
+        }
+      }
+    },
+    "Service.DTO.Version2.Bus.SpecialDay": {
+      "title": "SpecialDay",
+      "type": "object",
+      "properties": {
+        "Dates": {
+          "description": "不連續特殊日期",
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "DatePeriod": {
+          "$ref": "#/definitions/Service.DTO.Version2.Bus.DatePeriod",
+          "title": "DatePeriod",
+          "description": "連續特殊日期"
+        },
+        "ServiceStatus": {
+          "description": "營運服務狀態代碼",
+          "enum": [
+            "0: 正常營運",
+            "1: 加班營運",
+            "2: 取消/停駛營運"
+          ],
+          "type": "string"
+        },
+        "Description": {
+          "description": "特殊營運描述",
+          "type": "string"
+        }
+      }
+    },
+    "Service.DTO.Version2.Bus.BusStopTime": {
+      "title": "BusStopTime",
+      "description": "公車停靠時間資料",
+      "required": [
+        "StopSequence",
+        "StopUID",
+        "StopID",
+        "StopName",
+        "ArrivalTime",
+        "DepartureTime"
+      ],
+      "type": "object",
+      "properties": {
+        "StopSequence": {
+          "format": "int32",
+          "description": "路線經過站牌之順序(由1開始)",
+          "type": "integer"
+        },
+        "StopUID": {
+          "description": "站牌唯一識別代碼，規則為 {業管機關代碼} + {StopID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢",
+          "type": "string"
+        },
+        "StopID": {
+          "description": "地區既用中之站牌代碼(為原資料內碼)",
+          "type": "string"
+        },
+        "StopName": {
+          "$ref": "#/definitions/Service.DTO.Version2.Base.NameType",
+          "title": "NameType",
+          "description": "站牌名稱"
+        },
+        "ArrivalTime": {
+          "description": "到站時間，格式為:HH:mm",
+          "type": "string"
+        },
+        "DepartureTime": {
+          "description": "離站時間，格式為:HH:mm",
+          "type": "string"
+        }
+      }
+    },
+    "Service.DTO.Version2.Bus.DatePeriod": {
+      "title": "DatePeriod",
+      "type": "object",
+      "properties": {
+        "StartDate": {
+          "description": "營運起始日(格式: yyyy-MM-dd)",
+          "type": "string"
+        },
+        "EndDate": {
+          "description": "營運結束日(格式: yyyy-MM-dd)",
+          "type": "string"
+        }
+      }
+    },
+    "Service.DTO.Version2.TaiwanTripBus.BusTaiwanTripShape": {
+      "title": "BusTaiwanTripShape",
+      "description": "台灣好行線型資料",
+      "required": [
+        "RouteUID",
+        "RouteID",
+        "Direction",
+        "Geometry",
+        "SrcUpdateTime",
+        "UpdateTime"
+      ],
+      "type": "object",
+      "properties": {
+        "RouteUID": {
+          "description": "路線唯一識別代碼，規則為 {業管機關簡碼} + {RouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
+          "type": "string"
+        },
+        "RouteID": {
+          "description": "地區既用中之路線代碼(為原資料內碼)",
+          "type": "string"
+        },
+        "TaiwanTripName": {
+          "$ref": "#/definitions/Service.DTO.Version2.Base.NameType",
+          "title": "NameType",
+          "description": "台灣好行路線名稱"
+        },
+        "Direction": {
+          "description": "去返程，若無值則表示來源尚無區分去返程",
+          "enum": [
+            "0: 去程",
+            "1: 返程",
+            "2: 迴圈",
+            "255: 未知"
+          ],
+          "type": "string"
+        },
+        "Geometry": {
+          "description": "well-known text，為路線軌跡資料",
+          "type": "string"
+        },
+        "SrcUpdateTime": {
+          "title": "DateTime",
+          "description": "來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "UpdateTime": {
+          "title": "DateTime",
+          "description": "資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        }
+      }
+    },
+    "Service.DTO.Version2.TaiwanTripBus.BusStopOfRoute": {
+      "title": "BusStopOfRoute",
+      "description": "路線與站牌對應資料",
+      "required": [
+        "RouteUID",
+        "RouteID",
+        "TaiwanTripName",
+        "KeyPattern",
+        "SubRouteUID",
+        "SubRouteID",
+        "SubRouteName",
+        "Direction",
+        "Stops"
+      ],
+      "type": "object",
+      "properties": {
+        "RouteUID": {
+          "description": "路線唯一識別代碼，規則為 {業管機關代碼} + {RouteID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢",
+          "type": "string"
+        },
+        "RouteID": {
+          "description": "地區既用中之路線代碼(為原資料內碼)",
+          "type": "string"
+        },
+        "TaiwanTripName": {
+          "$ref": "#/definitions/Service.DTO.Version2.Base.NameType",
+          "title": "NameType",
+          "description": "台灣好行路線名稱"
+        },
+        "KeyPattern": {
+          "description": "是否為主路線",
+          "type": "boolean"
+        },
+        "SubRouteUID": {
+          "description": "子路線唯一識別代碼，規則為 {業管機關代碼} + {SubRouteID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢",
+          "type": "string"
+        },
+        "SubRouteID": {
+          "description": "地區既用中之子路線代碼(為原資料內碼)",
+          "type": "string"
+        },
+        "SubRouteName": {
+          "$ref": "#/definitions/Service.DTO.Version2.Base.NameType",
+          "title": "NameType",
+          "description": "子路線名稱"
+        },
+        "Direction": {
+          "description": "去返程",
+          "enum": [
+            "0: 去程",
+            "1: 返程",
+            "2: 迴圈",
+            "255: 未知"
+          ],
+          "type": "string"
+        },
+        "Stops": {
+          "description": "所有經過站牌",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version2.Bus.Stop"
+          }
+        }
+      }
+    },
+    "Service.DTO.Version2.Bus.Stop": {
+      "title": "Stop",
+      "description": "站牌代碼資料",
+      "required": [
+        "StopUID",
+        "StopID",
+        "StopName",
+        "StopSequence",
+        "StopPosition",
+        "StationNameID"
+      ],
+      "type": "object",
+      "properties": {
+        "StopUID": {
+          "description": "站牌唯一識別代碼，規則為 {業管機關簡碼} + {StopID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
+          "type": "string"
+        },
+        "StopID": {
+          "description": "地區既用中之站牌代碼(為原資料內碼)",
+          "type": "string"
+        },
+        "StopName": {
+          "$ref": "#/definitions/Service.DTO.Version2.Base.NameType",
+          "title": "NameType",
+          "description": "站牌名稱"
+        },
+        "StopBoarding": {
+          "description": "上下車站別",
+          "enum": [
+            "0: 可上下車",
+            "1: 可上車",
+            "-1: 可下車"
+          ],
+          "type": "string"
+        },
+        "StopSequence": {
+          "format": "int32",
+          "description": "路線經過站牌之順序",
+          "type": "integer"
+        },
+        "StopPosition": {
+          "$ref": "#/definitions/Service.DTO.Version2.Base.PointType",
+          "title": "PointType",
+          "description": "站牌位置"
+        },
+        "StationID": {
+          "description": "站牌所屬的站位ID",
+          "type": "string"
+        },
+        "StationNameID": {
+          "description": "站牌所屬的站名碼ID",
+          "type": "string"
+        },
+        "LocationCityCode": {
+          "description": "站牌位置縣市之代碼(國際ISO 3166-2 三碼城市代碼)[若為公路/國道客運路線則為空值]",
+          "type": "string"
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Tourism"
+    },
+    {
+      "name": "TaiwanTripBus"
+    }
+  ]
+}

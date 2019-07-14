@@ -1,0 +1,6151 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "v3",
+    "title": "MOTC Transport API V3",
+    "description": "本平臺提供涵蓋全國尺度之公車、臺鐵、高鐵、捷運、航空、自行車等公共運輸旅運資料服務API，歡迎各產政學單位介接使用。\r\n                <br><span class=swagger-description-indicatation>利用本平臺開放資料進行各項應用服務開發時，請考量不同特性使用者(如:性別/身心障礙/老幼等)的需求，並歡迎回饋寶貴意見。</span>\r\n                <br><br>資料使用葵花寶典:[請點我](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/)\r\n                <br>資料服務開發實作參考手冊:[請點我](https://docs.google.com/viewer?url=https://github.com/ptxmotc/PTX_Web/blob/master/Swagger%E6%9C%8D%E5%8B%99%E8%AA%AA%E6%98%8E%E4%B8%8A%E5%82%B3%E5%8F%83%E8%80%83%E6%AA%94%E6%A1%88/%E5%85%AC%E5%85%B1%E9%81%8B%E8%BC%B8%E6%95%B4%E5%90%88%E8%B3%87%E8%A8%8A%E5%B9%B3%E5%8F%B0%E8%B3%87%E6%96%99%E6%9C%8D%E5%8B%99%E9%96%8B%E7%99%BC%E5%AF%A6%E4%BD%9C.pdf?raw=true)\r\n                <br>API URI Convention文件說明:[請點我](https://docs.google.com/viewer?url=https://github.com/ptxmotc/PTX_Web/blob/master/Swagger%E6%9C%8D%E5%8B%99%E8%AA%AA%E6%98%8E%E4%B8%8A%E5%82%B3%E5%8F%83%E8%80%83%E6%AA%94%E6%A1%88/API_URI_Convention%E6%96%87%E4%BB%B6_v1.pdf?raw=true)<br>資料文本OAS描述:[請點我](http://ptx.transportdata.tw/MOTC/v3/Rail/api-docs/oas)"
+  },
+  "host": "ptx.transportdata.tw",
+  "basePath": "/MOTC/",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/v3/Rail/TRA/Network": {
+      "get": {
+        "tags": [
+          "TRA"
+        ],
+        "summary": "取得臺鐵路網資料",
+        "description": "取得臺鐵路網資料",
+        "operationId": "NetworkApiController_Get",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "string",
+            "default": "30"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$count",
+            "in": "query",
+            "description": "查詢數量",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/MOTC.API.Rail.Models.TRABaseWrapper[Service.DTO.Version3.Rail.TRA.Network.Network]"
+            }
+          }
+        }
+      }
+    },
+    "/v3/Rail/TRA/Station": {
+      "get": {
+        "tags": [
+          "TRA"
+        ],
+        "summary": "取得車站基本資料",
+        "description": "取得車站基本資料",
+        "operationId": "StationApiController_Get",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "string",
+            "default": "30"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$count",
+            "in": "query",
+            "description": "查詢數量",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/MOTC.API.Rail.Models.TRABaseWrapper[Service.DTO.Version3.Rail.TRA.Station]"
+            }
+          }
+        }
+      }
+    },
+    "/v3/Rail/TRA/StationExit": {
+      "get": {
+        "tags": [
+          "TRA"
+        ],
+        "summary": "取得車站出入口基本資料",
+        "description": "取得車站出入口基本資料",
+        "operationId": "StationExitApiController_Get",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "string",
+            "default": "30"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$count",
+            "in": "query",
+            "description": "查詢數量",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/MOTC.API.Rail.Models.TRABaseWrapper[Service.DTO.Version3.Rail.TRA.StationExit.StationExit]"
+            }
+          }
+        }
+      }
+    },
+    "/v3/Rail/TRA/StationFacility": {
+      "get": {
+        "tags": [
+          "TRA"
+        ],
+        "summary": "取得車站設施資料",
+        "description": "取得車站設施資料",
+        "operationId": "StationFacilityApiController_Get",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "string",
+            "default": "30"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$count",
+            "in": "query",
+            "description": "查詢數量",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/MOTC.API.Rail.Models.TRABaseWrapper[Service.DTO.Version3.Rail.TRA.StationFacility.StationFacility]"
+            }
+          }
+        }
+      }
+    },
+    "/v3/Rail/TRA/Line": {
+      "get": {
+        "tags": [
+          "TRA"
+        ],
+        "summary": "取得路線基本資料",
+        "description": "取得路線基本資料",
+        "operationId": "LineApiController_Get",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "string",
+            "default": "30"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$count",
+            "in": "query",
+            "description": "查詢數量",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/MOTC.API.Rail.Models.TRABaseWrapper[Service.DTO.Version3.Rail.TRA.Line]"
+            }
+          }
+        }
+      }
+    },
+    "/v3/Rail/TRA/StationOfLine": {
+      "get": {
+        "tags": [
+          "TRA"
+        ],
+        "summary": "取得路線車站基本資料",
+        "description": "取得路線車站基本資料",
+        "operationId": "StationOfLineApiController_Get",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "string",
+            "default": "30"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$count",
+            "in": "query",
+            "description": "查詢數量",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/MOTC.API.Rail.Models.TRABaseWrapper[Service.DTO.Version3.Rail.TRA.StationOfLine.StationOfLine]"
+            }
+          }
+        }
+      }
+    },
+    "/v3/Rail/TRA/TrainType": {
+      "get": {
+        "tags": [
+          "TRA"
+        ],
+        "summary": "取得所有列車車種資料",
+        "description": "取得所有列車車種資料",
+        "operationId": "TrainTypeApiController_Get",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "string",
+            "default": "30"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$count",
+            "in": "query",
+            "description": "查詢數量",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/MOTC.API.Rail.Models.TRABaseWrapper[Service.DTO.Version3.Rail.TRA.TrainType]"
+            }
+          }
+        }
+      }
+    },
+    "/v3/Rail/TRA/ODFare": {
+      "get": {
+        "tags": [
+          "TRA"
+        ],
+        "summary": "取得票價資料(附件)",
+        "description": "取得Gzip壓縮檔",
+        "operationId": "ODFareApiControllerApiController_Get",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [],
+        "responses": {
+          "200": {
+            "description": "Gzipped Attachment Response",
+            "schema": {
+              "$ref": "#/definitions/MOTC.API.Rail.Models.TRAODFareWrapper[Service.DTO.Version3.Rail.TRA.ODFare.ODFare]"
+            }
+          }
+        }
+      }
+    },
+    "/v3/Rail/TRA/ODFare/{OriginStationID}/to/{DestinationStationID}": {
+      "get": {
+        "tags": [
+          "TRA"
+        ],
+        "summary": "取得指定起迄站間票價資料",
+        "description": "取得指定起迄站間票價資料",
+        "operationId": "ODFareApiControllerApiController_Get_1",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "OriginStationID",
+            "in": "path",
+            "description": "起點車站代碼",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "DestinationStationID",
+            "in": "path",
+            "description": "迄點車站代碼",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "string",
+            "default": "30"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$count",
+            "in": "query",
+            "description": "查詢數量",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/MOTC.API.Rail.Models.TRAODFareWrapper[Service.DTO.Version3.Rail.TRA.ODFare.ODFare]"
+            }
+          }
+        }
+      }
+    },
+    "/v3/Rail/TRA/GeneralTrainTimetable": {
+      "get": {
+        "tags": [
+          "TRA"
+        ],
+        "summary": "取得所有車次的定期時刻表資料",
+        "description": "取得所有車次的定期時刻表資料",
+        "operationId": "GeneralTrainTimetableApiController_Get",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "string",
+            "default": "30"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$count",
+            "in": "query",
+            "description": "查詢數量",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/MOTC.API.Rail.Models.TRAGeneralTrainWrapper[Service.DTO.Version3.Rail.TRA.GeneralTrainTimetable]"
+            }
+          }
+        }
+      }
+    },
+    "/v3/Rail/TRA/GeneralTrainTimetable/TrainNo/{TrainNo}": {
+      "get": {
+        "tags": [
+          "TRA"
+        ],
+        "summary": "取得指定[車次]的定期時刻表資料",
+        "description": "取得指定[車次]的定期時刻表資料",
+        "operationId": "GeneralTrainTimetableApiController_Get_1",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "TrainNo",
+            "in": "path",
+            "description": "欲查詢車次的代碼",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "string",
+            "default": "30"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$count",
+            "in": "query",
+            "description": "查詢數量",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/MOTC.API.Rail.Models.TRAGeneralTrainWrapper[Service.DTO.Version3.Rail.TRA.GeneralTrainTimetable]"
+            }
+          }
+        }
+      }
+    },
+    "/v3/Rail/TRA/GeneralStationTimetable": {
+      "get": {
+        "tags": [
+          "TRA"
+        ],
+        "summary": "取得各站的定期站別時刻表資料",
+        "description": "取得各站的定期站別時刻表資料",
+        "operationId": "GeneralStationTimetableApiController_Get",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "string",
+            "default": "30"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$count",
+            "in": "query",
+            "description": "查詢數量",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/MOTC.API.Rail.Models.TRAGeneralStationWrapper[Service.DTO.Version3.Rail.TRA.GeneralStationTimetable.GeneralStationTimetable]"
+            }
+          }
+        }
+      }
+    },
+    "/v3/Rail/TRA/GeneralStationTimetable/Station/{StationID}": {
+      "get": {
+        "tags": [
+          "TRA"
+        ],
+        "summary": "取得指定[車站]的定期站別時刻表資料",
+        "description": "取得指定[車站]的定期站別時刻表資料",
+        "operationId": "GeneralStationTimetableApiController_Get_1",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "StationID",
+            "in": "path",
+            "description": "欲查詢車站的代碼",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "string",
+            "default": "30"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$count",
+            "in": "query",
+            "description": "查詢數量",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/MOTC.API.Rail.Models.TRAGeneralStationWrapper[Service.DTO.Version3.Rail.TRA.GeneralStationTimetable.GeneralStationTimetable]"
+            }
+          }
+        }
+      }
+    },
+    "/v3/Rail/TRA/SpecificTrainTimetable": {
+      "get": {
+        "tags": [
+          "TRA"
+        ],
+        "summary": "取得所有特殊車次時刻表資料",
+        "description": "取得所有特殊車次時刻表資料",
+        "operationId": "SpecificTrainTimetableApiController_Get",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "string",
+            "default": "30"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$count",
+            "in": "query",
+            "description": "查詢數量",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/MOTC.API.Rail.Models.TRASpecificWrapper[Service.DTO.Version3.Rail.TRA.SpecificTrainTimetable]"
+            }
+          }
+        }
+      }
+    },
+    "/v3/Rail/TRA/SpecificTrainTimetable/TrainNo/{TrainNo}": {
+      "get": {
+        "tags": [
+          "TRA"
+        ],
+        "summary": "取得指定[車次]的特殊車次時刻表資料",
+        "description": "取得指定[車次]的特殊車次時刻表資料",
+        "operationId": "SpecificTrainTimetableApiController_Get_1",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "TrainNo",
+            "in": "path",
+            "description": "欲查詢車次的代碼",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "string",
+            "default": "30"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$count",
+            "in": "query",
+            "description": "查詢數量",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/MOTC.API.Rail.Models.TRASpecificWrapper[Service.DTO.Version3.Rail.TRA.SpecificTrainTimetable]"
+            }
+          }
+        }
+      }
+    },
+    "/v3/Rail/TRA/DailyTrainTimetable/Today": {
+      "get": {
+        "tags": [
+          "TRA"
+        ],
+        "summary": "取得當天車次時刻表資料",
+        "description": "取得當天車次時刻表資料",
+        "operationId": "DailyTrainTimeTableApiController_Get",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "string",
+            "default": "30"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$count",
+            "in": "query",
+            "description": "查詢數量",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/MOTC.API.Rail.Models.TraDailyTrainWrapper[Service.DTO.Version3.Rail.TRA.DailyTrainTimeTable.TrainTimetable]"
+            }
+          }
+        }
+      }
+    },
+    "/v3/Rail/TRA/DailyTrainTimetable/Today/TrainNo/{TrainNo}": {
+      "get": {
+        "tags": [
+          "TRA"
+        ],
+        "summary": "取得當天指定[車次]的時刻表資料",
+        "description": "取得當天指定[車次]的時刻表資料",
+        "operationId": "DailyTrainTimeTableApiController_Get_1",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "TrainNo",
+            "in": "path",
+            "description": "欲查詢車次的代碼",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "string",
+            "default": "30"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$count",
+            "in": "query",
+            "description": "查詢數量",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/MOTC.API.Rail.Models.TraDailyTrainWrapper[Service.DTO.Version3.Rail.TRA.DailyTrainTimeTable.TrainTimetable]"
+            }
+          }
+        }
+      }
+    },
+    "/v3/Rail/TRA/DailyTrainTimetable/TrainDate/{TrainDate}": {
+      "get": {
+        "tags": [
+          "TRA"
+        ],
+        "summary": "取得指定[日期]所有車次的時刻表資料",
+        "description": "取得指定[日期]所有車次的時刻表資料(台鐵提供近60天每日時刻表)",
+        "operationId": "DailyTrainTimeTableApiController_Get_2",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "TrainDate",
+            "in": "path",
+            "description": "欲查詢車次的日期(格式: yyyy-MM-dd)",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "string",
+            "default": "30"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$count",
+            "in": "query",
+            "description": "查詢數量",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/MOTC.API.Rail.Models.TraDailyTrainWrapper[Service.DTO.Version3.Rail.TRA.DailyTrainTimeTable.TrainTimetable]"
+            }
+          }
+        }
+      }
+    },
+    "/v3/Rail/TRA/DailyTrainTimetable/OD/{OriginStationID}/to/{DestinationStationID}/{TrainDate}": {
+      "get": {
+        "tags": [
+          "TRA"
+        ],
+        "summary": "取得指定[日期],[起迄站間]之站間時刻表資料(僅列出查詢的停靠站)",
+        "description": "取得指定[日期],[起迄站間]之站間時刻表資料(僅列出查詢的停靠站)",
+        "operationId": "DailyTrainTimeTableApiController_Get_3",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "TrainDate",
+            "in": "path",
+            "description": "欲查詢的日期(格式: yyyy-MM-dd)",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "OriginStationID",
+            "in": "path",
+            "description": "起點車站代碼",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "DestinationStationID",
+            "in": "path",
+            "description": "迄點車站代碼",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "string",
+            "default": "30"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$count",
+            "in": "query",
+            "description": "查詢數量",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/MOTC.API.Rail.Models.TraDailyTrainWrapper[Service.DTO.Version3.Rail.TRA.DailyTrainTimeTable.TrainTimetable]"
+            }
+          }
+        }
+      }
+    },
+    "/v3/Rail/TRA/DailyTrainTimetable/OD/Inclusive/{OriginStationID}/to/{DestinationStationID}/{TrainDate}": {
+      "get": {
+        "tags": [
+          "TRA"
+        ],
+        "summary": "取得指定[日期],[起迄站間]之站間時刻表資料",
+        "description": "取得指定[日期],[起迄站間]之站間時刻表資料",
+        "operationId": "DailyTrainTimeTableApiController_Get_4",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "TrainDate",
+            "in": "path",
+            "description": "欲查詢的日期(格式: yyyy-MM-dd)",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "OriginStationID",
+            "in": "path",
+            "description": "起點車站代碼",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "DestinationStationID",
+            "in": "path",
+            "description": "迄點車站代碼",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "string",
+            "default": "30"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$count",
+            "in": "query",
+            "description": "查詢數量",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/MOTC.API.Rail.Models.TraDailyTrainWrapper[Service.DTO.Version3.Rail.TRA.DailyTrainTimeTable.TrainTimetable]"
+            }
+          }
+        }
+      }
+    },
+    "/v3/Rail/TRA/DailyStationTimetable/Today": {
+      "get": {
+        "tags": [
+          "TRA"
+        ],
+        "summary": "取得當天各站站別時刻表資料",
+        "description": "取得當天各站站別時刻表資料",
+        "operationId": "DailyStationTimeTableApiController_Get",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "string",
+            "default": "30"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$count",
+            "in": "query",
+            "description": "查詢數量",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/MOTC.API.Rail.Models.TraDailyStationWrapper[Service.DTO.Version3.Rail.TRA.DailyStationTimeTable.StationTimetable]"
+            }
+          }
+        }
+      }
+    },
+    "/v3/Rail/TRA/DailyStationTimetable/Today/Station/{StationID}": {
+      "get": {
+        "tags": [
+          "TRA"
+        ],
+        "summary": "取得當天指定[車站]的時刻表資料",
+        "description": "取得當天指定[車站]的時刻表資料",
+        "operationId": "DailyStationTimeTableApiController_Get_1",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "StationID",
+            "in": "path",
+            "description": "欲查詢車站的代碼",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "string",
+            "default": "30"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$count",
+            "in": "query",
+            "description": "查詢數量",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/MOTC.API.Rail.Models.TraDailyStationWrapper[Service.DTO.Version3.Rail.TRA.DailyStationTimeTable.StationTimetable]"
+            }
+          }
+        }
+      }
+    },
+    "/v3/Rail/TRA/DailyStationTimetable/TrainDate/{TrainDate}": {
+      "get": {
+        "tags": [
+          "TRA"
+        ],
+        "summary": "取得各站每日站別時刻表資料",
+        "description": "取得各站每日站別時刻表資料",
+        "operationId": "DailyStationTimeTableApiController_Get_2",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "TrainDate",
+            "in": "path",
+            "description": "欲查詢的日期(格式: yyyy-MM-dd)",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "string",
+            "default": "30"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$count",
+            "in": "query",
+            "description": "查詢數量",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/MOTC.API.Rail.Models.TraDailyStationWrapper[Service.DTO.Version3.Rail.TRA.DailyStationTimeTable.StationTimetable]"
+            }
+          }
+        }
+      }
+    },
+    "/v3/Rail/TRA/StationLiveBoard": {
+      "get": {
+        "tags": [
+          "TRA"
+        ],
+        "summary": "取得列車即時到離站資料",
+        "description": "取得列車即時到離站資料",
+        "operationId": "StationLiveBoardApiController_Get",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "string",
+            "default": "30"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$count",
+            "in": "query",
+            "description": "查詢數量",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/MOTC.API.Rail.Models.TRARealTimeWrapper[Service.DTO.Version3.Rail.TRA.TRAStationLiveBoardList.StationLiveBoard]"
+            }
+          }
+        }
+      }
+    },
+    "/v3/Rail/TRA/StationLiveBoard/Station/{StationID}": {
+      "get": {
+        "tags": [
+          "TRA"
+        ],
+        "summary": "取得指定[車站]的列車即時到離站資料",
+        "description": "取得指定[車站]的列車即時到離站資料",
+        "operationId": "StationLiveBoardApiController_Get_1",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "StationID",
+            "in": "path",
+            "description": "欲查詢車站的代碼",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "string",
+            "default": "30"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$count",
+            "in": "query",
+            "description": "查詢數量",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/MOTC.API.Rail.Models.TRARealTimeWrapper[Service.DTO.Version3.Rail.TRA.TRAStationLiveBoardList.StationLiveBoard]"
+            }
+          }
+        }
+      }
+    },
+    "/v3/Rail/TRA/TrainLiveBoard": {
+      "get": {
+        "tags": [
+          "TRA"
+        ],
+        "summary": "取得列車即時位置動態資料",
+        "description": "取得列車即時位置動態資料\r\n\r\n## 使用注意事項\r\n1.  本項資料為「列車目前所在之車站」資料，而更新資料的時機點為「列車離站時」(由 CTC 提供)，其內容之車站資料可能為經過站，也可能為停靠站。\r\n2.  以「145車次」為例，如果車站名稱為「萬華」，表示 145 車次剛從萬華離開，而不是正前往萬華，另萬華站為145 車次之經過站，非停靠站。\r\n3.  提供所有經過站資料是為確保車次的準誤點資料都會是最新的 (尤其是東部幹線普悠瑪、太魯閣車次，因停靠站少，更新頻率低的話會使呈現的準誤點時間誤差過大)。\r\n4.  基於上述原因，本項資料並非僅提供列車停靠站資料，因為這樣提供方式會使列車位置資訊更狹隘，例如:只知道離開台北站，不曉得經過哪一站了，故請加值者使用時多加注意。",
+        "operationId": "TrainLiveBoardApiController_Get",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "string",
+            "default": "30"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$count",
+            "in": "query",
+            "description": "查詢數量",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/MOTC.API.Rail.Models.TRARealTimeWrapper[Service.DTO.Version3.Rail.TRA.TRATrainLiveBoardList.TrainLiveBoard]"
+            }
+          }
+        }
+      }
+    },
+    "/v3/Rail/TRA/TrainLiveBoard/TrainNo/{TrainNo}": {
+      "get": {
+        "tags": [
+          "TRA"
+        ],
+        "summary": "取得指定[車次]的列車即時位置動態資料",
+        "description": "取得指定[車次]的列車即時位置動態資料\r\n\r\n## 使用注意事項\r\n1.  本項資料為「列車目前所在之車站」資料，而更新資料的時機點為「列車離站時」(由 CTC 提供)，其內容之車站資料可能為經過站，也可能為停靠站。\r\n2.  以「145車次」為例，如果車站名稱為「萬華」，表示 145 車次剛從萬華離開，而不是正前往萬華，另萬華站為145 車次之經過站，非停靠站。\r\n3.  提供所有經過站資料是為確保車次的準誤點資料都會是最新的 (尤其是東部幹線普悠瑪、太魯閣車次，因停靠站少，更新頻率低的話會使呈現的準誤點時間誤差過大)。\r\n4.  基於上述原因，本項資料並非僅提供列車停靠站資料，因為這樣提供方式會使列車位置資訊更狹隘，例如:只知道離開台北站，不曉得經過哪一站了，故請加值者使用時多加注意。",
+        "operationId": "TrainLiveBoardApiController_Get_1",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "TrainNo",
+            "in": "path",
+            "description": "欲查詢車次的代碼",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "string",
+            "default": "30"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$count",
+            "in": "query",
+            "description": "查詢數量",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/MOTC.API.Rail.Models.TRARealTimeWrapper[Service.DTO.Version3.Rail.TRA.TRATrainLiveBoardList.TrainLiveBoard]"
+            }
+          }
+        }
+      }
+    },
+    "/v3/Rail/TRA/LineTransfer": {
+      "get": {
+        "tags": [
+          "TRA"
+        ],
+        "summary": "取得內部路線轉乘資料",
+        "description": "取得內部路線轉乘資料",
+        "operationId": "LineTransferApiController_Get",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "string",
+            "default": "30"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$count",
+            "in": "query",
+            "description": "查詢數量",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/MOTC.API.Rail.Models.TRABaseWrapper[Service.DTO.Version3.Rail.TRA.LineTransfer]"
+            }
+          }
+        }
+      }
+    },
+    "/v3/Rail/TRA/StationTransfer": {
+      "get": {
+        "tags": [
+          "TRA"
+        ],
+        "summary": "取得車站跨運具轉乘資訊",
+        "description": "取得車站跨運具轉乘資訊",
+        "operationId": "StationTransferApiController_Get",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "string",
+            "default": "30"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$count",
+            "in": "query",
+            "description": "查詢數量",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/MOTC.API.Rail.Models.TRABaseWrapper[Service.DTO.Version3.Rail.TRA.StationTransfer.StationTransfer]"
+            }
+          }
+        }
+      }
+    },
+    "/v3/Rail/TRA/News": {
+      "get": {
+        "tags": [
+          "TRA"
+        ],
+        "summary": "取得最新消息",
+        "description": "取得最新消息",
+        "operationId": "NewsApiController_Get",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "string",
+            "default": "30"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$count",
+            "in": "query",
+            "description": "查詢數量",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/MOTC.API.Rail.Models.TRARealTimeWrapper[Service.DTO.Version3.Rail.TRA.TRANewsList.News]"
+            }
+          }
+        }
+      }
+    },
+    "/v3/Rail/TRA/Alert": {
+      "get": {
+        "tags": [
+          "TRA"
+        ],
+        "summary": "取得營運通阻資料",
+        "description": "取得營運通阻資料",
+        "operationId": "AlertApiController_Get",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "string",
+            "default": "30"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$count",
+            "in": "query",
+            "description": "查詢數量",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/MOTC.API.Rail.Models.TRARealTimeWrapper[Service.DTO.Version3.Rail.TRA.TRAAlertList.Alert]"
+            }
+          }
+        }
+      }
+    },
+    "/v3/Rail/TRA/Shape": {
+      "get": {
+        "tags": [
+          "TRA"
+        ],
+        "summary": "取得線型基本資料",
+        "description": "取得線型基本資料",
+        "operationId": "ShapeApiController_Get",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "string",
+            "default": "30"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$count",
+            "in": "query",
+            "description": "查詢數量",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/MOTC.API.Rail.Models.TRABaseWrapper[Service.DTO.Version3.Rail.TRA.Shape]"
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "MOTC.API.Rail.Models.TRARealTimeWrapper[Service.DTO.Version3.Rail.TRA.TRAAlertList.Alert]": {
+      "title": "TRAAlertList",
+      "required": [
+        "UpdateInterval",
+        "SrcUpdateTime",
+        "SrcUpdateInterval",
+        "AuthorityCode",
+        "Alerts"
+      ],
+      "type": "object",
+      "properties": {
+        "UpdateTime": {
+          "title": "DateTime",
+          "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "UpdateInterval": {
+          "format": "int32",
+          "description": "本平台資料更新週期(秒)",
+          "type": "integer"
+        },
+        "SrcUpdateTime": {
+          "title": "DateTime",
+          "description": "來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "SrcUpdateInterval": {
+          "format": "int32",
+          "description": "來源端平台資料更新週期(秒)",
+          "type": "integer"
+        },
+        "AuthorityCode": {
+          "description": "業管機關簡碼",
+          "type": "string"
+        },
+        "Alerts": {
+          "description": "資料(陣列)",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version3.Rail.TRA.TRAAlertList.Alert"
+          }
+        },
+        "Count": {
+          "format": "int64",
+          "description": "資料總筆數",
+          "type": "integer"
+        }
+      }
+    },
+    "Service.DTO.Version3.Rail.TRA.TRAAlertList.Alert": {
+      "title": "Alert",
+      "required": [
+        "AlertID",
+        "Title",
+        "Description",
+        "Status",
+        "Scope",
+        "UpdateTime"
+      ],
+      "type": "object",
+      "properties": {
+        "AlertID": {
+          "description": "通阻訊息代碼",
+          "type": "string"
+        },
+        "Title": {
+          "description": "通阻訊息標題",
+          "type": "string"
+        },
+        "Description": {
+          "description": "通阻訊息說明",
+          "type": "string"
+        },
+        "Status": {
+          "description": "營運狀況",
+          "enum": [
+            "0: 全線營運停止",
+            "1: 全線營運正常",
+            "2: 有異常狀況"
+          ],
+          "type": "string"
+        },
+        "Scope": {
+          "$ref": "#/definitions/Service.DTO.Version3.Rail.TRA.TRAAlertList.AlertScope",
+          "title": "AlertScope",
+          "description": "影響範圍"
+        },
+        "Direction": {
+          "description": "影響方向",
+          "enum": [
+            "0: 南下",
+            "1: 北上",
+            "2: 雙向"
+          ],
+          "type": "string"
+        },
+        "Level": {
+          "description": "影響等級程度",
+          "enum": [
+            "1: 重度",
+            "2: 中度",
+            "3: 輕度"
+          ],
+          "type": "string"
+        },
+        "Effect": {
+          "description": "影響說明",
+          "type": "string"
+        },
+        "Reason": {
+          "description": "影響原因",
+          "type": "string"
+        },
+        "AlertURL": {
+          "description": "通阻訊息網址連結",
+          "type": "string"
+        },
+        "StartTime": {
+          "title": "DateTime",
+          "description": "訊息起始日期時間",
+          "type": "string"
+        },
+        "EndTime": {
+          "title": "DateTime",
+          "description": "訊息結束日期時間",
+          "type": "string"
+        },
+        "PublishTime": {
+          "title": "DateTime",
+          "description": "消息發佈日期時間",
+          "type": "string"
+        },
+        "UpdateTime": {
+          "title": "DateTime",
+          "description": "消息更新日期時間",
+          "type": "string"
+        }
+      }
+    },
+    "Service.DTO.Version3.Rail.TRA.TRAAlertList.AlertScope": {
+      "title": "AlertScope",
+      "required": [
+        "Stations",
+        "Lines",
+        "Routes",
+        "Trains",
+        "LineSections"
+      ],
+      "type": "object",
+      "properties": {
+        "NetworkList": {
+          "$ref": "#/definitions/Service.DTO.Version3.Rail.TRA.TRAAlertList.AlertScopeNetwork",
+          "title": "AlertScopeNetwork",
+          "description": "受影響的路網"
+        },
+        "Stations": {
+          "description": "受影響的車站",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version3.Rail.TRA.TRAAlertList.AlertScopeStation"
+          }
+        },
+        "Lines": {
+          "description": "受影響的實體路線",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version3.Rail.TRA.TRAAlertList.AlertScopeLine"
+          }
+        },
+        "Routes": {
+          "description": "受影響的營運路線",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version3.Rail.TRA.TRAAlertList.AlertScopeRoute"
+          }
+        },
+        "Trains": {
+          "description": "受影響的車次",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version3.Rail.TRA.TRAAlertList.AlertScopeTrain"
+          }
+        },
+        "LineSections": {
+          "description": "受影響的路線區間",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version3.Rail.TRA.TRAAlertList.AlertScopeLineSection"
+          }
+        }
+      }
+    },
+    "Service.DTO.Version3.Rail.TRA.TRAAlertList.AlertScopeNetwork": {
+      "title": "AlertScopeNetwork",
+      "type": "object",
+      "properties": {
+        "NetworkID": {
+          "description": "路網代碼",
+          "type": "string"
+        },
+        "NetworkName": {
+          "description": "路網名稱",
+          "type": "string"
+        }
+      }
+    },
+    "Service.DTO.Version3.Rail.TRA.TRAAlertList.AlertScopeStation": {
+      "title": "AlertScopeStation",
+      "type": "object",
+      "properties": {
+        "StationID": {
+          "description": "車站代碼",
+          "type": "string"
+        },
+        "StationName": {
+          "description": "車站名稱",
+          "type": "string"
+        }
+      }
+    },
+    "Service.DTO.Version3.Rail.TRA.TRAAlertList.AlertScopeLine": {
+      "title": "AlertScopeLine",
+      "type": "object",
+      "properties": {
+        "LineID": {
+          "description": "實體路線代碼",
+          "type": "string"
+        },
+        "LineName": {
+          "description": "實體路線名稱",
+          "type": "string"
+        }
+      }
+    },
+    "Service.DTO.Version3.Rail.TRA.TRAAlertList.AlertScopeRoute": {
+      "title": "AlertScopeRoute",
+      "type": "object",
+      "properties": {
+        "RouteID": {
+          "description": "營運路線代碼",
+          "type": "string"
+        },
+        "RouteName": {
+          "description": "營運路線名稱",
+          "type": "string"
+        }
+      }
+    },
+    "Service.DTO.Version3.Rail.TRA.TRAAlertList.AlertScopeTrain": {
+      "title": "AlertScopeTrain",
+      "type": "object",
+      "properties": {
+        "TrainNo": {
+          "description": "受影響的車次",
+          "type": "string"
+        }
+      }
+    },
+    "Service.DTO.Version3.Rail.TRA.TRAAlertList.AlertScopeLineSection": {
+      "title": "AlertScopeLineSection",
+      "type": "object",
+      "properties": {
+        "LineID": {
+          "description": "路線區間所在路線代碼",
+          "type": "string"
+        },
+        "StartingStationID": {
+          "description": "區間起站車站代碼",
+          "type": "string"
+        },
+        "StartingStationName": {
+          "description": "區間起站車站名稱",
+          "type": "string"
+        },
+        "EndingStationID": {
+          "description": "區間迄站車站代碼",
+          "type": "string"
+        },
+        "EndingStationName": {
+          "description": "區間迄站車站名稱",
+          "type": "string"
+        },
+        "Description": {
+          "description": "影響區間輔助描述",
+          "type": "string"
+        }
+      }
+    },
+    "MOTC.API.Rail.Models.TraDailyStationWrapper[Service.DTO.Version3.Rail.TRA.DailyStationTimeTable.StationTimetable]": {
+      "title": "TRADailyStationTimeTableList",
+      "required": [
+        "UpdateInterval",
+        "SrcUpdateTime",
+        "SrcUpdateInterval",
+        "AuthorityCode",
+        "StationTimetables"
+      ],
+      "type": "object",
+      "properties": {
+        "UpdateTime": {
+          "title": "DateTime",
+          "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "UpdateInterval": {
+          "format": "int32",
+          "description": "本平台資料更新週期(秒)",
+          "type": "integer"
+        },
+        "SrcUpdateTime": {
+          "title": "DateTime",
+          "description": "來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "SrcUpdateInterval": {
+          "format": "int32",
+          "description": "來源端平台資料更新週期(秒)",
+          "type": "integer"
+        },
+        "AuthorityCode": {
+          "description": "業管機關簡碼",
+          "type": "string"
+        },
+        "TrainDate": {
+          "description": "營運日說明(yyyy-MM-dd)",
+          "type": "string"
+        },
+        "StationTimetables": {
+          "description": "資料(陣列)",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version3.Rail.TRA.DailyStationTimeTable.StationTimetable"
+          }
+        },
+        "Count": {
+          "format": "int64",
+          "description": "資料總筆數",
+          "type": "integer"
+        }
+      }
+    },
+    "Service.DTO.Version3.Rail.TRA.DailyStationTimeTable.StationTimetable": {
+      "title": "StationTimetable",
+      "required": [
+        "TimeTables"
+      ],
+      "type": "object",
+      "properties": {
+        "RouteID": {
+          "description": "營運路線代碼",
+          "type": "string"
+        },
+        "StationID": {
+          "description": "車站代碼",
+          "type": "string"
+        },
+        "StationName": {
+          "$ref": "#/definitions/Service.DTO.Version3.Base.NameType",
+          "title": "NameType",
+          "description": "車站名稱"
+        },
+        "Direction": {
+          "description": "行駛方向",
+          "enum": [
+            "0: 順行",
+            "1: 逆行"
+          ],
+          "type": "string"
+        },
+        "DestinationStationID": {
+          "description": "目的站車站代號",
+          "type": "string"
+        },
+        "DestinationStationName": {
+          "$ref": "#/definitions/Service.DTO.Version3.Base.NameType",
+          "title": "NameType",
+          "description": "目的站車站名稱"
+        },
+        "TimeTables": {
+          "description": "目的站車站名稱",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version3.Rail.TRA.DailyStationTimeTable.TimeTable"
+          }
+        }
+      }
+    },
+    "Service.DTO.Version3.Base.NameType": {
+      "title": "NameType",
+      "description": "名稱資料型別",
+      "type": "object",
+      "properties": {
+        "Zh_tw": {
+          "description": "中文繁體名稱",
+          "type": "string"
+        },
+        "En": {
+          "description": "英文名稱",
+          "type": "string"
+        }
+      }
+    },
+    "Service.DTO.Version3.Rail.TRA.DailyStationTimeTable.TimeTable": {
+      "title": "TimeTable",
+      "required": [
+        "Sequence"
+      ],
+      "type": "object",
+      "properties": {
+        "Sequence": {
+          "format": "int32",
+          "description": "發車順序",
+          "type": "integer"
+        },
+        "TrainNo": {
+          "description": "車次代碼",
+          "type": "string"
+        },
+        "TrainTypeID": {
+          "description": "車種代嗎",
+          "type": "string"
+        },
+        "TrainTypeCode": {
+          "description": "車種簡碼 = ['1: 太魯閣', '2: 普悠瑪', '3: 自強', '4: 莒光', '5: 復興', '6: 區間', '7: 普快', '10: 區間快']",
+          "type": "string"
+        },
+        "TrainTypeName": {
+          "$ref": "#/definitions/Service.DTO.Version3.Base.NameType",
+          "title": "NameType",
+          "description": "車種名稱"
+        },
+        "ArrivalTime": {
+          "description": "到站時刻",
+          "type": "string"
+        },
+        "DepartureTime": {
+          "description": "發車時刻",
+          "type": "string"
+        }
+      }
+    },
+    "MOTC.API.Rail.Models.TraDailyTrainWrapper[Service.DTO.Version3.Rail.TRA.DailyTrainTimeTable.TrainTimetable]": {
+      "title": "TRADailyTrainTimeTableList",
+      "required": [
+        "UpdateInterval",
+        "SrcUpdateTime",
+        "SrcUpdateInterval",
+        "AuthorityCode"
+      ],
+      "type": "object",
+      "properties": {
+        "UpdateTime": {
+          "title": "DateTime",
+          "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "UpdateInterval": {
+          "format": "int32",
+          "description": "本平台資料更新週期(秒)",
+          "type": "integer"
+        },
+        "SrcUpdateTime": {
+          "title": "DateTime",
+          "description": "來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "SrcUpdateInterval": {
+          "format": "int32",
+          "description": "來源端平台資料更新週期(秒)",
+          "type": "integer"
+        },
+        "AuthorityCode": {
+          "description": "業管機關簡碼",
+          "type": "string"
+        },
+        "TrainDate": {
+          "description": "營運日說明(yyyy-MM-dd)",
+          "type": "string"
+        },
+        "TrainTimetables": {
+          "description": "資料(陣列)",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version3.Rail.TRA.DailyTrainTimeTable.TrainTimetable"
+          }
+        },
+        "Count": {
+          "format": "int64",
+          "description": "資料總筆數",
+          "type": "integer"
+        }
+      }
+    },
+    "Service.DTO.Version3.Rail.TRA.DailyTrainTimeTable.TrainTimetable": {
+      "title": "TrainTimetable",
+      "required": [
+        "TrainInfo",
+        "StopTimes"
+      ],
+      "type": "object",
+      "properties": {
+        "TrainInfo": {
+          "$ref": "#/definitions/Service.DTO.Version3.Rail.TRA.DailyTrainTimeTable.TrainInfo",
+          "title": "TrainInfo",
+          "description": "車次資料"
+        },
+        "StopTimes": {
+          "description": "停靠站資料",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version3.Rail.TRA.DailyTrainTimeTable.StopTime"
+          }
+        }
+      }
+    },
+    "Service.DTO.Version3.Rail.TRA.DailyTrainTimeTable.TrainInfo": {
+      "title": "TrainInfo",
+      "required": [
+        "TrainNo",
+        "RouteID",
+        "Direction",
+        "TrainTypeName",
+        "StartingStationName",
+        "EndingStationName",
+        "WheelChairFlag",
+        "PackageServiceFlag",
+        "DiningFlag",
+        "BreastFeedFlag",
+        "BikeFlag",
+        "DailyFlag",
+        "ExtraTrainFlag"
+      ],
+      "type": "object",
+      "properties": {
+        "TrainNo": {
+          "description": "車次代碼",
+          "type": "string"
+        },
+        "RouteID": {
+          "description": "營運路線代碼",
+          "type": "string"
+        },
+        "Direction": {
+          "description": "行駛方向",
+          "enum": [
+            "0: 順行",
+            "1: 逆行"
+          ],
+          "type": "string"
+        },
+        "TrainTypeID": {
+          "description": "車種代嗎",
+          "type": "string"
+        },
+        "TrainTypeCode": {
+          "description": "車種簡碼 = ['1: 太魯閣', '2: 普悠瑪', '3: 自強', '4: 莒光', '5: 復興', '6: 區間', '7: 普快', '10: 區間快']",
+          "type": "string"
+        },
+        "TrainTypeName": {
+          "$ref": "#/definitions/Service.DTO.Version3.Base.NameType",
+          "title": "NameType",
+          "description": "車種名稱"
+        },
+        "TripHeadSign": {
+          "description": "車次之目的地方向描述",
+          "type": "string"
+        },
+        "StartingStationID": {
+          "description": "車次之起始站車站代號",
+          "type": "string"
+        },
+        "StartingStationName": {
+          "$ref": "#/definitions/Service.DTO.Version3.Base.NameType",
+          "title": "NameType",
+          "description": "車次之起始站車站名稱"
+        },
+        "EndingStationID": {
+          "description": "車次之終點站車站代號",
+          "type": "string"
+        },
+        "EndingStationName": {
+          "$ref": "#/definitions/Service.DTO.Version3.Base.NameType",
+          "title": "NameType",
+          "description": "車次之終點站車站名稱"
+        },
+        "OverNightStationID": {
+          "description": "跨夜車站代碼",
+          "type": "string"
+        },
+        "TripLine": {
+          "description": "山海線類型",
+          "enum": [
+            "0: 不經山海線",
+            "1: 山線",
+            "2: 海線"
+          ],
+          "type": "string"
+        },
+        "WheelChairFlag": {
+          "description": "是否設身障旅客專用座位車",
+          "enum": [
+            "0: 否",
+            "1: 是"
+          ],
+          "type": "string"
+        },
+        "PackageServiceFlag": {
+          "description": "是否提供行李服務",
+          "enum": [
+            "0: 否",
+            "1: 是"
+          ],
+          "type": "string"
+        },
+        "DiningFlag": {
+          "description": "是否提供餐車服務",
+          "enum": [
+            "0: 否",
+            "1: 是"
+          ],
+          "type": "string"
+        },
+        "BreastFeedFlag": {
+          "description": "是否設有哺(集)乳室車廂",
+          "enum": [
+            "0: 否",
+            "1: 是"
+          ],
+          "type": "string"
+        },
+        "BikeFlag": {
+          "description": "是否人車同行班次(置於攜車袋之自行車各級列車均可乘車)",
+          "enum": [
+            "0: 否",
+            "1: 是"
+          ],
+          "type": "string"
+        },
+        "CarFlag": {
+          "description": "是否提供小汽車上火車服務",
+          "enum": [
+            "0: 否",
+            "1: 是"
+          ],
+          "type": "string"
+        },
+        "DailyFlag": {
+          "description": "是否提供小汽車上火車服務",
+          "enum": [
+            "0: 否",
+            "1: 是"
+          ],
+          "type": "string"
+        },
+        "ExtraTrainFlag": {
+          "description": "是否為加班車",
+          "enum": [
+            "0: 否",
+            "1: 是"
+          ],
+          "type": "string"
+        },
+        "Note": {
+          "description": "附註說明",
+          "type": "string"
+        }
+      }
+    },
+    "Service.DTO.Version3.Rail.TRA.DailyTrainTimeTable.StopTime": {
+      "title": "StopTime",
+      "required": [
+        "StopSequence",
+        "StationID",
+        "StationName"
+      ],
+      "type": "object",
+      "properties": {
+        "StopSequence": {
+          "format": "int32",
+          "description": "停靠站序",
+          "type": "integer"
+        },
+        "StationID": {
+          "description": "車站代碼",
+          "type": "string"
+        },
+        "StationName": {
+          "$ref": "#/definitions/Service.DTO.Version3.Base.NameType",
+          "title": "NameType",
+          "description": "車站名稱"
+        },
+        "ArrivalTime": {
+          "description": "到站時間",
+          "type": "string"
+        },
+        "DepartureTime": {
+          "description": "離站時間",
+          "type": "string"
+        }
+      }
+    },
+    "MOTC.API.Rail.Models.TRAGeneralStationWrapper[Service.DTO.Version3.Rail.TRA.GeneralStationTimetable.GeneralStationTimetable]": {
+      "title": "TRAGeneralStationTimetableList",
+      "required": [
+        "UpdateInterval",
+        "SrcUpdateTime",
+        "SrcUpdateInterval",
+        "AuthorityCode",
+        "EffectiveDate",
+        "StationTimetables"
+      ],
+      "type": "object",
+      "properties": {
+        "UpdateTime": {
+          "title": "DateTime",
+          "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "UpdateInterval": {
+          "format": "int32",
+          "description": "本平台資料更新週期(秒)",
+          "type": "integer"
+        },
+        "SrcUpdateTime": {
+          "title": "DateTime",
+          "description": "來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "SrcUpdateInterval": {
+          "format": "int32",
+          "description": "來源端平台資料更新週期(秒)",
+          "type": "integer"
+        },
+        "AuthorityCode": {
+          "description": "業管機關簡碼",
+          "type": "string"
+        },
+        "EffectiveDate": {
+          "title": "DateTime",
+          "description": "有效起始日期",
+          "type": "string"
+        },
+        "ExpireDate": {
+          "title": "DateTime",
+          "description": "有效終止日期",
+          "type": "string"
+        },
+        "SrcVersion": {
+          "description": "來源版號",
+          "type": "string"
+        },
+        "TimetableName": {
+          "description": "定期性站別時刻表名稱",
+          "type": "string"
+        },
+        "ValidityDesciption": {
+          "description": "時刻表適用情形說明",
+          "type": "string"
+        },
+        "StationTimetables": {
+          "description": "資料(陣列)",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version3.Rail.TRA.GeneralStationTimetable.GeneralStationTimetable"
+          }
+        },
+        "Count": {
+          "format": "int64",
+          "description": "資料總筆數",
+          "type": "integer"
+        }
+      }
+    },
+    "Service.DTO.Version3.Rail.TRA.GeneralStationTimetable.GeneralStationTimetable": {
+      "title": "GeneralStationTimetable",
+      "description": "台鐵車站站別時刻表資料型別",
+      "required": [
+        "StationID",
+        "Direction",
+        "Timetables",
+        "ServiceDay"
+      ],
+      "type": "object",
+      "properties": {
+        "RouteID": {
+          "description": "營運路線代碼",
+          "type": "string"
+        },
+        "StationID": {
+          "description": "車站代碼",
+          "type": "string"
+        },
+        "StationName": {
+          "$ref": "#/definitions/Service.DTO.Version3.Base.NameType",
+          "title": "NameType",
+          "description": "車站名稱"
+        },
+        "Direction": {
+          "description": "行駛方向",
+          "enum": [
+            "0: 順行",
+            "1: 逆行"
+          ],
+          "type": "string"
+        },
+        "DestinationStationID": {
+          "description": "目的站車站代號",
+          "type": "string"
+        },
+        "DestinationStationName": {
+          "$ref": "#/definitions/Service.DTO.Version3.Base.NameType",
+          "title": "NameType",
+          "description": "目的站車站"
+        },
+        "Timetables": {
+          "description": "車次停靠站資料",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version3.Rail.TRA.GeneralStationTimetable.Timetable"
+          }
+        },
+        "ServiceDay": {
+          "$ref": "#/definitions/Service.DTO.Version3.Rail.TRA.GeneralStationTimetable.ServiceDay",
+          "title": "ServiceDay",
+          "description": "服務日型態"
+        }
+      }
+    },
+    "Service.DTO.Version3.Rail.TRA.GeneralStationTimetable.Timetable": {
+      "title": "Timetable",
+      "description": "車次停靠站資料",
+      "type": "object",
+      "properties": {
+        "Sequence": {
+          "format": "int32",
+          "description": "發車順序",
+          "type": "integer"
+        },
+        "TrainNo": {
+          "description": "車次代碼",
+          "type": "string"
+        },
+        "TrainTypeID": {
+          "description": "車種代嗎",
+          "type": "string"
+        },
+        "TrainTypeCode": {
+          "description": "車種簡碼 = ['1: 太魯閣', '2: 普悠瑪', '3: 自強', '4: 莒光', '5: 復興', '6: 區間', '7: 普快', '10: 區間快']",
+          "type": "string"
+        },
+        "TrainTypeName": {
+          "$ref": "#/definitions/Service.DTO.Version3.Base.NameType",
+          "title": "NameType",
+          "description": "車種名稱"
+        },
+        "ArrivalTime": {
+          "description": "到站時刻",
+          "type": "string"
+        },
+        "DepartureTime": {
+          "description": "發車時刻",
+          "type": "string"
+        }
+      }
+    },
+    "Service.DTO.Version3.Rail.TRA.GeneralStationTimetable.ServiceDay": {
+      "title": "ServiceDay",
+      "description": "服務日型態",
+      "required": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday"
+      ],
+      "type": "object",
+      "properties": {
+        "ServiceTag": {
+          "description": "服務日標籤",
+          "type": "string"
+        },
+        "Monday": {
+          "description": "星期一營運與否",
+          "type": "boolean"
+        },
+        "Tuesday": {
+          "description": "星期二營運與否",
+          "type": "boolean"
+        },
+        "Wednesday": {
+          "description": "星期三營運與否",
+          "type": "boolean"
+        },
+        "Thursday": {
+          "description": "星期四營運與否",
+          "type": "boolean"
+        },
+        "Friday": {
+          "description": "星期五營運與否",
+          "type": "boolean"
+        },
+        "Saturday": {
+          "description": "星期六營運與否",
+          "type": "boolean"
+        },
+        "Sunday": {
+          "description": "星期日營運與否",
+          "type": "boolean"
+        },
+        "NationalHolidays": {
+          "description": "國定假日營運與否",
+          "type": "boolean"
+        },
+        "DayBeforeHoliday": {
+          "description": "假日前一日營運與否",
+          "type": "boolean"
+        },
+        "DayAfterHoliday": {
+          "description": "假日後一日營運與否",
+          "type": "boolean"
+        },
+        "TyphoonDay": {
+          "description": "颱風停止上班上課期間營運與否",
+          "type": "boolean"
+        }
+      }
+    },
+    "MOTC.API.Rail.Models.TRAGeneralTrainWrapper[Service.DTO.Version3.Rail.TRA.GeneralTrainTimetable]": {
+      "title": "TRAGeneralTrainTimetableList",
+      "required": [
+        "UpdateInterval",
+        "SrcUpdateTime",
+        "SrcUpdateInterval",
+        "AuthorityCode",
+        "EffectiveDate",
+        "TrainTimetables"
+      ],
+      "type": "object",
+      "properties": {
+        "UpdateTime": {
+          "title": "DateTime",
+          "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "UpdateInterval": {
+          "format": "int32",
+          "description": "本平台資料更新週期(秒)",
+          "type": "integer"
+        },
+        "SrcUpdateTime": {
+          "title": "DateTime",
+          "description": "來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "SrcUpdateInterval": {
+          "format": "int32",
+          "description": "來源端平台資料更新週期(秒)",
+          "type": "integer"
+        },
+        "AuthorityCode": {
+          "description": "業管機關簡碼",
+          "type": "string"
+        },
+        "EffectiveDate": {
+          "title": "DateTime",
+          "description": "有效起始日期",
+          "type": "string"
+        },
+        "ExpireDate": {
+          "title": "DateTime",
+          "description": "有效終止日期",
+          "type": "string"
+        },
+        "SrcVersion": {
+          "description": "來源版號",
+          "type": "string"
+        },
+        "TimetableName": {
+          "description": "定期性站別時刻表名稱",
+          "type": "string"
+        },
+        "ValidityDesciption": {
+          "description": "時刻表適用情形說明",
+          "type": "string"
+        },
+        "TrainTimetables": {
+          "description": "資料(陣列)",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version3.Rail.TRA.GeneralTrainTimetable"
+          }
+        },
+        "Count": {
+          "format": "int64",
+          "description": "資料總筆數",
+          "type": "integer"
+        }
+      }
+    },
+    "Service.DTO.Version3.Rail.TRA.GeneralTrainTimetable": {
+      "title": "GeneralTrainTimetable",
+      "description": "台鐵定期時刻表資料型別",
+      "required": [
+        "TrainInfo",
+        "StopTimes",
+        "ServiceDay"
+      ],
+      "type": "object",
+      "properties": {
+        "TrainInfo": {
+          "$ref": "#/definitions/Service.DTO.Version3.Rail.TRA.Common.TrainInfo",
+          "title": "TrainInfo",
+          "description": "定期車次資料"
+        },
+        "StopTimes": {
+          "description": "停靠時間資料",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version3.Rail.TRA.Common.StopTime"
+          }
+        },
+        "ServiceDay": {
+          "$ref": "#/definitions/Service.DTO.Version3.Rail.TRA.Common.ServiceDay",
+          "title": "ServiceDay",
+          "description": "營運日型態"
+        }
+      }
+    },
+    "Service.DTO.Version3.Rail.TRA.Common.TrainInfo": {
+      "title": "TrainInfo",
+      "description": "臺鐵車次定期資料型別(時刻表用)",
+      "required": [
+        "TrainNo",
+        "Direction",
+        "WheelChairFlag",
+        "PackageServiceFlag",
+        "DiningFlag",
+        "BreastFeedFlag",
+        "BikeFlag",
+        "CarFlag",
+        "DailyFlag",
+        "ExtraTrainFlag"
+      ],
+      "type": "object",
+      "properties": {
+        "TrainNo": {
+          "description": "車次代碼",
+          "type": "string"
+        },
+        "RouteID": {
+          "description": "營運路線代碼",
+          "type": "string"
+        },
+        "Direction": {
+          "description": "行駛方向",
+          "enum": [
+            "0: 順行",
+            "1: 逆行"
+          ],
+          "type": "string"
+        },
+        "TrainTypeID": {
+          "description": "車種代嗎",
+          "type": "string"
+        },
+        "TrainTypeCode": {
+          "description": "車種簡碼 = ['1: 太魯閣', '2: 普悠瑪', '3: 自強', '4: 莒光', '5: 復興', '6: 區間', '7: 普快', '10: 區間快']",
+          "type": "string"
+        },
+        "TrainTypeName": {
+          "$ref": "#/definitions/Service.DTO.Version3.Base.NameType",
+          "title": "NameType",
+          "description": "車種名稱"
+        },
+        "TripHeadSign": {
+          "description": "車次之目的地方向描述",
+          "type": "string"
+        },
+        "StartingStationID": {
+          "description": "列車起點車站代號",
+          "type": "string"
+        },
+        "StartingStationName": {
+          "$ref": "#/definitions/Service.DTO.Version3.Base.NameType",
+          "title": "NameType",
+          "description": "列車起點車站名稱"
+        },
+        "EndingStationID": {
+          "description": "列車終點車站代號",
+          "type": "string"
+        },
+        "EndingStationName": {
+          "$ref": "#/definitions/Service.DTO.Version3.Base.NameType",
+          "title": "NameType",
+          "description": "列車終點車站名稱"
+        },
+        "OverNightStationID": {
+          "description": "跨夜車站代碼",
+          "type": "string"
+        },
+        "TripLine": {
+          "description": "山海線類型",
+          "enum": [
+            "0: 不經山海線",
+            "1: 山線",
+            "2: 海線"
+          ],
+          "type": "string"
+        },
+        "WheelChairFlag": {
+          "description": "是否設身障旅客專用座位車",
+          "enum": [
+            "0: 否",
+            "1: 是"
+          ],
+          "type": "string"
+        },
+        "PackageServiceFlag": {
+          "description": "是否提供行李服務",
+          "enum": [
+            "0: 否",
+            "1: 是"
+          ],
+          "type": "string"
+        },
+        "DiningFlag": {
+          "description": "是否提供餐車服務",
+          "enum": [
+            "0: 否",
+            "1: 是"
+          ],
+          "type": "string"
+        },
+        "BreastFeedFlag": {
+          "description": "是否設有哺(集)乳室車廂",
+          "enum": [
+            "0: 否",
+            "1: 是"
+          ],
+          "type": "string"
+        },
+        "BikeFlag": {
+          "description": "是否人車同行班次(置於攜車袋之自行車各級列車均可乘車)",
+          "enum": [
+            "0: 否",
+            "1: 是"
+          ],
+          "type": "string"
+        },
+        "CarFlag": {
+          "description": "是否提供小客車",
+          "enum": [
+            "0: 否",
+            "1: 是"
+          ],
+          "type": "string"
+        },
+        "DailyFlag": {
+          "description": "是否為每日行駛",
+          "enum": [
+            "0: 否",
+            "1: 是"
+          ],
+          "type": "string"
+        },
+        "ExtraTrainFlag": {
+          "description": "是否為加班車",
+          "enum": [
+            "0: 否",
+            "1: 是"
+          ],
+          "type": "string"
+        },
+        "Note": {
+          "description": "附註說明",
+          "type": "string"
+        }
+      }
+    },
+    "Service.DTO.Version3.Rail.TRA.Common.StopTime": {
+      "title": "StopTime",
+      "description": "台鐵停靠時間資料",
+      "required": [
+        "StopSequence",
+        "StationID",
+        "StationName",
+        "ArrivalTime",
+        "DepartureTime"
+      ],
+      "type": "object",
+      "properties": {
+        "StopSequence": {
+          "format": "int32",
+          "description": "停靠站序(由1開始)",
+          "type": "integer"
+        },
+        "StationID": {
+          "description": "車站代碼",
+          "type": "string"
+        },
+        "StationName": {
+          "$ref": "#/definitions/Service.DTO.Version3.Base.NameType",
+          "title": "NameType",
+          "description": "車站名稱"
+        },
+        "ArrivalTime": {
+          "description": "到站時間(格式: HH:mm)",
+          "type": "string"
+        },
+        "DepartureTime": {
+          "description": "離站時間(格式: HH:mm)",
+          "type": "string"
+        }
+      }
+    },
+    "Service.DTO.Version3.Rail.TRA.Common.ServiceDay": {
+      "title": "ServiceDay",
+      "description": "台鐵服務日型態",
+      "required": [
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday",
+        "NationalHolidays",
+        "DayBeforeHoliday",
+        "DayAfterHoliday",
+        "TyphoonDay"
+      ],
+      "type": "object",
+      "properties": {
+        "ServiceTag": {
+          "description": "服務日標籤",
+          "type": "string"
+        },
+        "Monday": {
+          "description": "星期一是否營運",
+          "enum": [
+            "0: 否",
+            "1: 是"
+          ],
+          "type": "string"
+        },
+        "Tuesday": {
+          "description": "星期二是否營運",
+          "enum": [
+            "0: 否",
+            "1: 是"
+          ],
+          "type": "string"
+        },
+        "Wednesday": {
+          "description": "星期三是否營運",
+          "enum": [
+            "0: 否",
+            "1: 是"
+          ],
+          "type": "string"
+        },
+        "Thursday": {
+          "description": "星期四是否營運",
+          "enum": [
+            "0: 否",
+            "1: 是"
+          ],
+          "type": "string"
+        },
+        "Friday": {
+          "description": "星期五是否營運",
+          "enum": [
+            "0: 否",
+            "1: 是"
+          ],
+          "type": "string"
+        },
+        "Saturday": {
+          "description": "星期六是否營運",
+          "enum": [
+            "0: 否",
+            "1: 是"
+          ],
+          "type": "string"
+        },
+        "Sunday": {
+          "description": "星期日是否營運",
+          "enum": [
+            "0: 否",
+            "1: 是"
+          ],
+          "type": "string"
+        },
+        "NationalHolidays": {
+          "description": "國定假日是否營運",
+          "enum": [
+            "0: 否",
+            "1: 是"
+          ],
+          "type": "string"
+        },
+        "DayBeforeHoliday": {
+          "description": "假日前一日是否營運",
+          "enum": [
+            "0: 否",
+            "1: 是"
+          ],
+          "type": "string"
+        },
+        "DayAfterHoliday": {
+          "description": "假日後一日是否營運",
+          "enum": [
+            "0: 否",
+            "1: 是"
+          ],
+          "type": "string"
+        },
+        "TyphoonDay": {
+          "description": "颱風停止上班上課期間營運營運",
+          "enum": [
+            "0: 否",
+            "1: 是"
+          ],
+          "type": "string"
+        }
+      }
+    },
+    "MOTC.API.Rail.Models.TRABaseWrapper[Service.DTO.Version3.Rail.TRA.Line]": {
+      "title": "TRALineList",
+      "required": [
+        "UpdateInterval",
+        "SrcUpdateTime",
+        "SrcUpdateInterval",
+        "AuthorityCode",
+        "Lines"
+      ],
+      "type": "object",
+      "properties": {
+        "UpdateTime": {
+          "title": "DateTime",
+          "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "UpdateInterval": {
+          "format": "int32",
+          "description": "本平台資料更新週期(秒)",
+          "type": "integer"
+        },
+        "SrcUpdateTime": {
+          "title": "DateTime",
+          "description": "來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "SrcUpdateInterval": {
+          "format": "int32",
+          "description": "來源端平台資料更新週期(秒)",
+          "type": "integer"
+        },
+        "AuthorityCode": {
+          "description": "業管機關簡碼",
+          "type": "string"
+        },
+        "Lines": {
+          "description": "資料(陣列)",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version3.Rail.TRA.Line"
+          }
+        },
+        "Count": {
+          "format": "int64",
+          "description": "資料總筆數",
+          "type": "integer"
+        }
+      }
+    },
+    "Service.DTO.Version3.Rail.TRA.Line": {
+      "title": "Line",
+      "description": "路線基本資料",
+      "required": [
+        "LineNo",
+        "LineID",
+        "LineName",
+        "LineSectionName",
+        "IsBranch"
+      ],
+      "type": "object",
+      "properties": {
+        "LineNo": {
+          "description": "路線編號",
+          "type": "string"
+        },
+        "LineID": {
+          "description": "路線代碼",
+          "type": "string"
+        },
+        "LineName": {
+          "$ref": "#/definitions/Service.DTO.Version3.Base.NameType",
+          "title": "NameType",
+          "description": "路線名稱"
+        },
+        "LineSectionName": {
+          "$ref": "#/definitions/Service.DTO.Version3.Base.NameType",
+          "title": "NameType",
+          "description": "路線區間名稱"
+        },
+        "LineColor": {
+          "description": "路線顏色",
+          "type": "string"
+        },
+        "IsBranch": {
+          "description": "是否位於支線",
+          "type": "boolean"
+        },
+        "LineGroup": {
+          "description": "路線群組",
+          "type": "string"
+        },
+        "LineURL": {
+          "description": "路線群組",
+          "type": "string"
+        }
+      }
+    },
+    "MOTC.API.Rail.Models.TRABaseWrapper[Service.DTO.Version3.Rail.TRA.LineTransfer]": {
+      "title": "TRALineTransferList",
+      "required": [
+        "UpdateInterval",
+        "SrcUpdateTime",
+        "SrcUpdateInterval",
+        "AuthorityCode",
+        "LineTransfers"
+      ],
+      "type": "object",
+      "properties": {
+        "UpdateTime": {
+          "title": "DateTime",
+          "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "UpdateInterval": {
+          "format": "int32",
+          "description": "本平台資料更新週期(秒)",
+          "type": "integer"
+        },
+        "SrcUpdateTime": {
+          "title": "DateTime",
+          "description": "來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "SrcUpdateInterval": {
+          "format": "int32",
+          "description": "來源端平台資料更新週期(秒)",
+          "type": "integer"
+        },
+        "AuthorityCode": {
+          "description": "業管機關簡碼",
+          "type": "string"
+        },
+        "LineTransfers": {
+          "description": "資料(陣列)",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version3.Rail.TRA.LineTransfer"
+          }
+        },
+        "Count": {
+          "format": "int64",
+          "description": "資料總筆數",
+          "type": "integer"
+        }
+      }
+    },
+    "Service.DTO.Version3.Rail.TRA.LineTransfer": {
+      "title": "LineTransfer",
+      "description": "台鐵路線站間轉乘基本資料",
+      "required": [
+        "FromLineID",
+        "FromLineName",
+        "FromStationID",
+        "FromStationName",
+        "ToLineID",
+        "ToLineName",
+        "ToStationID",
+        "ToStationName",
+        "MinTransferTime",
+        "TransferDescription"
+      ],
+      "type": "object",
+      "properties": {
+        "FromLineID": {
+          "description": "路線間轉乘(起)之路線代碼",
+          "type": "string"
+        },
+        "FromLineName": {
+          "$ref": "#/definitions/Service.DTO.Version3.Base.NameType",
+          "title": "NameType",
+          "description": "路線間轉乘(起)之路線名稱"
+        },
+        "FromStationID": {
+          "description": "路線間轉乘(起)之車站代碼",
+          "type": "string"
+        },
+        "FromStationName": {
+          "$ref": "#/definitions/Service.DTO.Version3.Base.NameType",
+          "title": "NameType",
+          "description": "路線間轉乘(起)之車站名稱"
+        },
+        "ToLineID": {
+          "description": "路線間轉乘(迄)之路線代碼",
+          "type": "string"
+        },
+        "ToLineName": {
+          "$ref": "#/definitions/Service.DTO.Version3.Base.NameType",
+          "title": "NameType",
+          "description": "路線間轉乘(迄)之路線名稱"
+        },
+        "ToStationID": {
+          "description": "路線間轉乘(迄)之車站代碼",
+          "type": "string"
+        },
+        "ToStationName": {
+          "$ref": "#/definitions/Service.DTO.Version3.Base.NameType",
+          "title": "NameType",
+          "description": "路線間轉乘(迄)之車站名稱"
+        },
+        "MinTransferTime": {
+          "format": "int32",
+          "description": "轉乘耗時參考時間(分)",
+          "type": "integer"
+        },
+        "TransferDescription": {
+          "description": "轉乘方式文字描述",
+          "type": "string"
+        }
+      }
+    },
+    "MOTC.API.Rail.Models.TRABaseWrapper[Service.DTO.Version3.Rail.TRA.Network.Network]": {
+      "title": "TRANetworkList",
+      "required": [
+        "UpdateInterval",
+        "SrcUpdateTime",
+        "SrcUpdateInterval",
+        "AuthorityCode",
+        "Networks"
+      ],
+      "type": "object",
+      "properties": {
+        "UpdateTime": {
+          "title": "DateTime",
+          "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "UpdateInterval": {
+          "format": "int32",
+          "description": "本平台資料更新週期(秒)",
+          "type": "integer"
+        },
+        "SrcUpdateTime": {
+          "title": "DateTime",
+          "description": "來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "SrcUpdateInterval": {
+          "format": "int32",
+          "description": "來源端平台資料更新週期(秒)",
+          "type": "integer"
+        },
+        "AuthorityCode": {
+          "description": "業管機關簡碼",
+          "type": "string"
+        },
+        "Networks": {
+          "description": "資料(陣列)",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version3.Rail.TRA.Network.Network"
+          }
+        },
+        "Count": {
+          "format": "int64",
+          "description": "資料總筆數",
+          "type": "integer"
+        }
+      }
+    },
+    "Service.DTO.Version3.Rail.TRA.Network.Network": {
+      "title": "Network",
+      "description": "臺鐵路網資料",
+      "required": [
+        "NetworkID",
+        "NetworkName",
+        "OperatorCode",
+        "OperatorName",
+        "NetworkMapURL",
+        "Lines"
+      ],
+      "type": "object",
+      "properties": {
+        "NetworkID": {
+          "description": "臺鐵路網代碼",
+          "type": "string"
+        },
+        "NetworkName": {
+          "$ref": "#/definitions/Service.DTO.Version3.Base.NameType",
+          "title": "NameType",
+          "description": "臺鐵路網名稱"
+        },
+        "OperatorCode": {
+          "description": "營運業者代碼",
+          "type": "string"
+        },
+        "OperatorName": {
+          "$ref": "#/definitions/Service.DTO.Version3.Base.NameType",
+          "title": "NameType",
+          "description": "營運業者名稱"
+        },
+        "NetworkMapURL": {
+          "$ref": "#/definitions/Service.DTO.Version3.Rail.TRA.Network.MapNameType",
+          "title": "MapNameType",
+          "description": "臺鐵路網圖網址URL"
+        },
+        "Lines": {
+          "description": "臺鐵路線資訊",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version3.Rail.TRA.Network.Line"
+          }
+        }
+      }
+    },
+    "Service.DTO.Version3.Rail.TRA.Network.MapNameType": {
+      "title": "MapNameType",
+      "type": "object",
+      "properties": {
+        "MapName": {
+          "description": "路網圖名稱",
+          "type": "string"
+        },
+        "Zh_tw": {
+          "description": "臺鐵路網圖網址(中文版)",
+          "type": "string"
+        },
+        "En": {
+          "description": "臺鐵路網圖網址(英文版)",
+          "type": "string"
+        }
+      }
+    },
+    "Service.DTO.Version3.Rail.TRA.Network.Line": {
+      "title": "Line",
+      "description": "路線基本資料",
+      "required": [
+        "LineNo",
+        "LineID"
+      ],
+      "type": "object",
+      "properties": {
+        "LineNo": {
+          "description": "路線編號",
+          "type": "string"
+        },
+        "LineID": {
+          "description": "路線代碼",
+          "type": "string"
+        }
+      }
+    },
+    "MOTC.API.Rail.Models.TRARealTimeWrapper[Service.DTO.Version3.Rail.TRA.TRANewsList.News]": {
+      "title": "TRANewsList",
+      "required": [
+        "UpdateInterval",
+        "SrcUpdateTime",
+        "SrcUpdateInterval",
+        "AuthorityCode",
+        "Newses"
+      ],
+      "type": "object",
+      "properties": {
+        "UpdateTime": {
+          "title": "DateTime",
+          "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "UpdateInterval": {
+          "format": "int32",
+          "description": "本平台資料更新週期(秒)",
+          "type": "integer"
+        },
+        "SrcUpdateTime": {
+          "title": "DateTime",
+          "description": "來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "SrcUpdateInterval": {
+          "format": "int32",
+          "description": "來源端平台資料更新週期(秒)",
+          "type": "integer"
+        },
+        "AuthorityCode": {
+          "description": "業管機關簡碼",
+          "type": "string"
+        },
+        "Newses": {
+          "description": "資料(陣列)",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version3.Rail.TRA.TRANewsList.News"
+          }
+        },
+        "Count": {
+          "format": "int64",
+          "description": "資料總筆數",
+          "type": "integer"
+        }
+      }
+    },
+    "Service.DTO.Version3.Rail.TRA.TRANewsList.News": {
+      "title": "News",
+      "required": [
+        "NewsID",
+        "Language",
+        "Title",
+        "NewsCategory",
+        "Description",
+        "PublishTime",
+        "UpdateTime"
+      ],
+      "type": "object",
+      "properties": {
+        "NewsID": {
+          "description": "消息代碼",
+          "type": "string"
+        },
+        "Language": {
+          "description": "語系",
+          "enum": [
+            "1: Zh_tw",
+            "2: En_us",
+            "3: Zh_cn",
+            "4: Ja",
+            "5: Ko",
+            "99: Other"
+          ],
+          "type": "string"
+        },
+        "Department": {
+          "description": "發布單位",
+          "type": "string"
+        },
+        "Title": {
+          "description": "消息標題",
+          "type": "string"
+        },
+        "NewsCategory": {
+          "description": "消息類別",
+          "enum": [
+            "1: 最新消息",
+            "2: 新聞稿",
+            "3: 營運資訊",
+            "4: 轉乘資訊",
+            "5: 活動訊息",
+            "6: 系統公告",
+            "7: 新服務上架",
+            "8: API修正",
+            "9: 來源異常",
+            "99: 其他"
+          ],
+          "type": "string"
+        },
+        "Description": {
+          "description": "內容描述",
+          "type": "string"
+        },
+        "NewsURL": {
+          "description": "消息網址連結",
+          "type": "string"
+        },
+        "AttachmentURL": {
+          "description": "附件網址連結",
+          "type": "string"
+        },
+        "StartTime": {
+          "title": "DateTime",
+          "description": "消息起始日期時間",
+          "type": "string"
+        },
+        "EndTime": {
+          "title": "DateTime",
+          "description": "消息結束日期時間",
+          "type": "string"
+        },
+        "PublishTime": {
+          "title": "DateTime",
+          "description": "消息發佈日期時間",
+          "type": "string"
+        },
+        "UpdateTime": {
+          "title": "DateTime",
+          "description": "本筆資料之更新日期時間",
+          "type": "string"
+        }
+      }
+    },
+    "MOTC.API.Rail.Models.TRAODFareWrapper[Service.DTO.Version3.Rail.TRA.ODFare.ODFare]": {
+      "title": "TRAODFareList",
+      "required": [
+        "UpdateInterval",
+        "SrcUpdateTime",
+        "SrcUpdateInterval",
+        "AuthorityCode",
+        "ODFares"
+      ],
+      "type": "object",
+      "properties": {
+        "UpdateTime": {
+          "title": "DateTime",
+          "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "UpdateInterval": {
+          "format": "int32",
+          "description": "本平台資料更新週期(秒)",
+          "type": "integer"
+        },
+        "SrcUpdateTime": {
+          "title": "DateTime",
+          "description": "來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "SrcUpdateInterval": {
+          "format": "int32",
+          "description": "來源端平台資料更新週期(秒)",
+          "type": "integer"
+        },
+        "AuthorityCode": {
+          "description": "業管機關簡碼",
+          "type": "string"
+        },
+        "EffectiveDate": {
+          "description": "有效起始日期",
+          "type": "string"
+        },
+        "ExpireDate": {
+          "description": "有效終止日期",
+          "type": "string"
+        },
+        "SrcVersion": {
+          "description": "資料版本",
+          "type": "string"
+        },
+        "ODFares": {
+          "description": "資料(陣列)",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version3.Rail.TRA.ODFare.ODFare"
+          }
+        },
+        "Count": {
+          "format": "int64",
+          "description": "資料總筆數",
+          "type": "integer"
+        }
+      }
+    },
+    "Service.DTO.Version3.Rail.TRA.ODFare.ODFare": {
+      "title": "ODFare",
+      "required": [
+        "OriginStationID",
+        "OriginStationName",
+        "DestinationStationID",
+        "DestinationStationName",
+        "TrainType",
+        "Fares"
+      ],
+      "type": "object",
+      "properties": {
+        "OriginStationID": {
+          "description": "起點車站代碼",
+          "type": "string"
+        },
+        "OriginStationName": {
+          "$ref": "#/definitions/Service.DTO.Version3.Base.NameType",
+          "title": "NameType",
+          "description": "起點車站名稱"
+        },
+        "DestinationStationID": {
+          "description": "迄點車站代碼",
+          "type": "string"
+        },
+        "DestinationStationName": {
+          "$ref": "#/definitions/Service.DTO.Version3.Base.NameType",
+          "title": "NameType",
+          "description": "迄點車站名稱"
+        },
+        "Direction": {
+          "description": "方向",
+          "enum": [
+            "0: 順行",
+            "1: 逆行"
+          ],
+          "type": "string"
+        },
+        "TrainType": {
+          "format": "int32",
+          "description": "車種簡碼 = ['1: 太魯閣', '2: 普悠瑪', '3: 自強', '4: 莒光', '5: 復興', '6: 區間', '7: 普快', '10: 區間快']",
+          "type": "integer"
+        },
+        "Fares": {
+          "description": "票價",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version3.Rail.TRA.ODFare.Fare"
+          }
+        },
+        "TravelDistance": {
+          "format": "float",
+          "description": "起迄站間乘車距離",
+          "type": "number"
+        }
+      }
+    },
+    "Service.DTO.Version3.Rail.TRA.ODFare.Fare": {
+      "title": "Fare",
+      "required": [
+        "TicketType",
+        "FareClass",
+        "CabinClass",
+        "Price"
+      ],
+      "type": "object",
+      "properties": {
+        "TicketType": {
+          "format": "int32",
+          "description": "票種類型 = ['1: 一般票', '2: 來回票', '3: 電子票證', '4: 回數票', '5: 定期票(30天期)', '6: 定期票(60天期)', '7: 早鳥票']",
+          "type": "integer"
+        },
+        "FareClass": {
+          "format": "int32",
+          "description": "費率等級 = ['1: 成人', '2: 學生', '3: 孩童', '4: 敬老', '5: 愛心', '6: 愛心孩童', '7: 愛心優待/愛心陪伴', '8: 團體', '9: 軍警']",
+          "type": "integer"
+        },
+        "CabinClass": {
+          "format": "int32",
+          "description": "艙等 = ['1: 標準座車廂', '2: 商務座車廂', '3: 自由座車廂']",
+          "type": "integer"
+        },
+        "Price": {
+          "format": "int32",
+          "description": "計費價格(新台幣)",
+          "type": "integer"
+        }
+      }
+    },
+    "MOTC.API.Rail.Models.TRABaseWrapper[Service.DTO.Version3.Rail.TRA.Shape]": {
+      "title": "TRAShapeList",
+      "required": [
+        "UpdateInterval",
+        "SrcUpdateTime",
+        "SrcUpdateInterval",
+        "AuthorityCode",
+        "Shapes"
+      ],
+      "type": "object",
+      "properties": {
+        "UpdateTime": {
+          "title": "DateTime",
+          "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "UpdateInterval": {
+          "format": "int32",
+          "description": "本平台資料更新週期(秒)",
+          "type": "integer"
+        },
+        "SrcUpdateTime": {
+          "title": "DateTime",
+          "description": "來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "SrcUpdateInterval": {
+          "format": "int32",
+          "description": "來源端平台資料更新週期(秒)",
+          "type": "integer"
+        },
+        "AuthorityCode": {
+          "description": "業管機關簡碼",
+          "type": "string"
+        },
+        "Shapes": {
+          "description": "資料(陣列)",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version3.Rail.TRA.Shape"
+          }
+        },
+        "Count": {
+          "format": "int64",
+          "description": "資料總筆數",
+          "type": "integer"
+        }
+      }
+    },
+    "Service.DTO.Version3.Rail.TRA.Shape": {
+      "title": "Shape",
+      "description": "臺鐵線型資料",
+      "required": [
+        "LineNo",
+        "LineID",
+        "LineName",
+        "Geometry",
+        "UpdateTime"
+      ],
+      "type": "object",
+      "properties": {
+        "LineNo": {
+          "description": "路線編號",
+          "type": "string"
+        },
+        "LineID": {
+          "description": "路線代碼",
+          "type": "string"
+        },
+        "LineName": {
+          "$ref": "#/definitions/Service.DTO.Version3.Base.NameType",
+          "title": "NameType",
+          "description": "路線名稱"
+        },
+        "Geometry": {
+          "description": "well-known text，為路線軌跡資料",
+          "type": "string"
+        },
+        "UpdateTime": {
+          "title": "DateTime",
+          "description": "資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        }
+      }
+    },
+    "MOTC.API.Rail.Models.TRASpecificWrapper[Service.DTO.Version3.Rail.TRA.SpecificTrainTimetable]": {
+      "title": "TRASpecificTrainTimetableList",
+      "required": [
+        "UpdateInterval",
+        "SrcUpdateTime",
+        "SrcUpdateInterval",
+        "AuthorityCode",
+        "EffectiveDate",
+        "TrainTimetables"
+      ],
+      "type": "object",
+      "properties": {
+        "UpdateTime": {
+          "title": "DateTime",
+          "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "UpdateInterval": {
+          "format": "int32",
+          "description": "本平台資料更新週期(秒)",
+          "type": "integer"
+        },
+        "SrcUpdateTime": {
+          "title": "DateTime",
+          "description": "來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "SrcUpdateInterval": {
+          "format": "int32",
+          "description": "來源端平台資料更新週期(秒)",
+          "type": "integer"
+        },
+        "AuthorityCode": {
+          "description": "業管機關簡碼",
+          "type": "string"
+        },
+        "EffectiveDate": {
+          "title": "DateTime",
+          "description": "有效起始日期",
+          "type": "string"
+        },
+        "ExpireDate": {
+          "title": "DateTime",
+          "description": "有效終止日期",
+          "type": "string"
+        },
+        "SrcVersion": {
+          "description": "來源版號",
+          "type": "string"
+        },
+        "TimetableName": {
+          "description": "定期性站別時刻表名稱",
+          "type": "string"
+        },
+        "ValidityDesciption": {
+          "description": "時刻表適用情形說明",
+          "type": "string"
+        },
+        "TrainTimetables": {
+          "description": "資料(陣列)",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version3.Rail.TRA.SpecificTrainTimetable"
+          }
+        },
+        "Count": {
+          "format": "int64",
+          "description": "資料總筆數",
+          "type": "integer"
+        }
+      }
+    },
+    "Service.DTO.Version3.Rail.TRA.SpecificTrainTimetable": {
+      "title": "SpecificTrainTimetable",
+      "description": "台鐵特殊車次時刻表資料型別",
+      "required": [
+        "TrainInfo",
+        "StopTimes",
+        "SpecialDay"
+      ],
+      "type": "object",
+      "properties": {
+        "TrainInfo": {
+          "$ref": "#/definitions/Service.DTO.Version3.Rail.TRA.Common.TrainInfo",
+          "title": "TrainInfo",
+          "description": "定期車次資料"
+        },
+        "StopTimes": {
+          "description": "停靠時間資料",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version3.Rail.TRA.Common.StopTime"
+          }
+        },
+        "SpecialDay": {
+          "$ref": "#/definitions/Service.DTO.Version3.Rail.TRA.Common.SpecialDay",
+          "title": "SpecialDay",
+          "description": "營運日型態"
+        }
+      }
+    },
+    "Service.DTO.Version3.Rail.TRA.Common.SpecialDay": {
+      "title": "SpecialDay",
+      "description": "台鐵特定日期",
+      "type": "object",
+      "properties": {
+        "Dates": {
+          "description": "不連續特殊日期",
+          "type": "string"
+        },
+        "StartDate": {
+          "title": "DateTime",
+          "description": "開始日期",
+          "type": "string"
+        },
+        "EndDate": {
+          "title": "DateTime",
+          "description": "結束日期",
+          "type": "string"
+        },
+        "ServiceStatus": {
+          "description": "營運服務狀態代碼",
+          "enum": [
+            "0: 停止營運",
+            "1: 正常營運",
+            "2: 加班營運"
+          ],
+          "type": "string"
+        },
+        "Description": {
+          "description": "特殊營運描述",
+          "type": "string"
+        }
+      }
+    },
+    "MOTC.API.Rail.Models.TRABaseWrapper[Service.DTO.Version3.Rail.TRA.Station]": {
+      "title": "TRAStationList",
+      "required": [
+        "UpdateInterval",
+        "SrcUpdateTime",
+        "SrcUpdateInterval",
+        "AuthorityCode",
+        "Stations"
+      ],
+      "type": "object",
+      "properties": {
+        "UpdateTime": {
+          "title": "DateTime",
+          "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "UpdateInterval": {
+          "format": "int32",
+          "description": "本平台資料更新週期(秒)",
+          "type": "integer"
+        },
+        "SrcUpdateTime": {
+          "title": "DateTime",
+          "description": "來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "SrcUpdateInterval": {
+          "format": "int32",
+          "description": "來源端平台資料更新週期(秒)",
+          "type": "integer"
+        },
+        "AuthorityCode": {
+          "description": "業管機關簡碼",
+          "type": "string"
+        },
+        "Stations": {
+          "description": "資料(陣列)",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version3.Rail.TRA.Station"
+          }
+        },
+        "Count": {
+          "format": "int64",
+          "description": "資料總筆數",
+          "type": "integer"
+        }
+      }
+    },
+    "Service.DTO.Version3.Rail.TRA.Station": {
+      "title": "Station",
+      "description": "台鐵車站資料",
+      "required": [
+        "StationID",
+        "StationName",
+        "StationPosition"
+      ],
+      "type": "object",
+      "properties": {
+        "StationID": {
+          "description": "臺鐵車站代碼",
+          "type": "string"
+        },
+        "ReservationCode": {
+          "description": "訂票車站代碼",
+          "type": "string"
+        },
+        "StationName": {
+          "$ref": "#/definitions/Service.DTO.Version3.Base.NameType",
+          "title": "NameType",
+          "description": "車站名稱"
+        },
+        "StationPosition": {
+          "$ref": "#/definitions/Service.DTO.Version3.Base.PointType",
+          "title": "PointType",
+          "description": "車站座標(WGS84)"
+        },
+        "StationAddress": {
+          "description": "車站地址",
+          "type": "string"
+        },
+        "StationPhone": {
+          "description": "車站聯絡電話",
+          "type": "string"
+        },
+        "StationClass": {
+          "description": "車站級別 = ['0: 特等', '1: 一等', '2: 二等', '3: 三等', '4: 簡易', '5: 招呼', '6: 號誌', 'A: 貨運', 'B: 基地', 'X: 非車']",
+          "type": "string"
+        },
+        "StationURL": {
+          "description": "車站資訊說明網址",
+          "type": "string"
+        }
+      }
+    },
+    "Service.DTO.Version3.Base.PointType": {
+      "title": "PointType",
+      "description": "座標資料型別",
+      "type": "object",
+      "properties": {
+        "PositionLat": {
+          "format": "double",
+          "description": "位置緯度(WGS84)",
+          "type": "number"
+        },
+        "PositionLon": {
+          "format": "double",
+          "description": "位置經度(WGS84)",
+          "type": "number"
+        }
+      }
+    },
+    "MOTC.API.Rail.Models.TRABaseWrapper[Service.DTO.Version3.Rail.TRA.StationExit.StationExit]": {
+      "title": "TRAStationExitList",
+      "required": [
+        "UpdateInterval",
+        "SrcUpdateTime",
+        "SrcUpdateInterval",
+        "AuthorityCode",
+        "StationExits"
+      ],
+      "type": "object",
+      "properties": {
+        "UpdateTime": {
+          "title": "DateTime",
+          "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "UpdateInterval": {
+          "format": "int32",
+          "description": "本平台資料更新週期(秒)",
+          "type": "integer"
+        },
+        "SrcUpdateTime": {
+          "title": "DateTime",
+          "description": "來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "SrcUpdateInterval": {
+          "format": "int32",
+          "description": "來源端平台資料更新週期(秒)",
+          "type": "integer"
+        },
+        "AuthorityCode": {
+          "description": "業管機關簡碼",
+          "type": "string"
+        },
+        "StationExits": {
+          "description": "資料(陣列)",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version3.Rail.TRA.StationExit.StationExit"
+          }
+        },
+        "Count": {
+          "format": "int64",
+          "description": "資料總筆數",
+          "type": "integer"
+        }
+      }
+    },
+    "Service.DTO.Version3.Rail.TRA.StationExit.StationExit": {
+      "title": "StationExit",
+      "description": "台鐵車站出入口資料",
+      "required": [
+        "StationID",
+        "StationName",
+        "Exits"
+      ],
+      "type": "object",
+      "properties": {
+        "StationID": {
+          "description": "出入口所屬車站代碼",
+          "type": "string"
+        },
+        "StationName": {
+          "$ref": "#/definitions/Service.DTO.Version3.Base.NameType",
+          "title": "NameType",
+          "description": "車站名稱"
+        },
+        "Exits": {
+          "description": "車站出入口",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version3.Rail.TRA.StationExit.Exit"
+          }
+        },
+        "ExitMapURLs": {
+          "description": "車站出入口簡圖網址連結資訊",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version3.Rail.TRA.StationExit.ExitMapURL"
+          }
+        }
+      }
+    },
+    "Service.DTO.Version3.Rail.TRA.StationExit.Exit": {
+      "title": "Exit",
+      "description": "車站出入口",
+      "required": [
+        "ExitID",
+        "ExitName",
+        "ExitPosition",
+        "Escalator"
+      ],
+      "type": "object",
+      "properties": {
+        "ExitID": {
+          "description": "出入口代碼",
+          "type": "string"
+        },
+        "ExitName": {
+          "$ref": "#/definitions/Service.DTO.Version3.Base.NameType",
+          "title": "NameType",
+          "description": "出入口名稱"
+        },
+        "ExitPosition": {
+          "$ref": "#/definitions/Service.DTO.Version3.Base.PointType",
+          "title": "PointType",
+          "description": "出入口座標"
+        },
+        "Bearing": {
+          "description": "出入口所在道路路段方位角",
+          "type": "string"
+        },
+        "RoadName": {
+          "description": "出入口所在道路名稱",
+          "type": "string"
+        },
+        "LocationDescription": {
+          "description": "地址描述",
+          "type": "string"
+        },
+        "Stair": {
+          "description": "是否有樓梯",
+          "type": "boolean"
+        },
+        "Escalator": {
+          "format": "int32",
+          "description": "是否有電扶梯 = ['0: 沒有', '1: 雙向皆有', '2: 出站有', '3: 入站有']",
+          "type": "integer"
+        },
+        "Elevator": {
+          "description": "是否有電梯",
+          "type": "boolean"
+        }
+      }
+    },
+    "Service.DTO.Version3.Rail.TRA.StationExit.ExitMapURL": {
+      "title": "ExitMapURL",
+      "required": [
+        "MapName"
+      ],
+      "type": "object",
+      "properties": {
+        "MapName": {
+          "$ref": "#/definitions/Service.DTO.Version3.Base.NameType",
+          "title": "NameType",
+          "description": "車站出入口簡圖名稱"
+        },
+        "MapURL": {
+          "description": "車站出入口簡圖網址",
+          "type": "string"
+        },
+        "FloorLevel": {
+          "description": "樓層",
+          "type": "string"
+        }
+      }
+    },
+    "MOTC.API.Rail.Models.TRABaseWrapper[Service.DTO.Version3.Rail.TRA.StationFacility.StationFacility]": {
+      "title": "TRAStationFacilityList",
+      "required": [
+        "UpdateInterval",
+        "SrcUpdateTime",
+        "SrcUpdateInterval",
+        "AuthorityCode",
+        "StationFacilities"
+      ],
+      "type": "object",
+      "properties": {
+        "UpdateTime": {
+          "title": "DateTime",
+          "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "UpdateInterval": {
+          "format": "int32",
+          "description": "本平台資料更新週期(秒)",
+          "type": "integer"
+        },
+        "SrcUpdateTime": {
+          "title": "DateTime",
+          "description": "來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "SrcUpdateInterval": {
+          "format": "int32",
+          "description": "來源端平台資料更新週期(秒)",
+          "type": "integer"
+        },
+        "AuthorityCode": {
+          "description": "業管機關簡碼",
+          "type": "string"
+        },
+        "StationFacilities": {
+          "description": "資料(陣列)",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version3.Rail.TRA.StationFacility.StationFacility"
+          }
+        },
+        "Count": {
+          "format": "int64",
+          "description": "資料總筆數",
+          "type": "integer"
+        }
+      }
+    },
+    "Service.DTO.Version3.Rail.TRA.StationFacility.StationFacility": {
+      "title": "StationFacility",
+      "description": "車站設施資訊",
+      "required": [
+        "StationID",
+        "StationName",
+        "FacilityMapURLs",
+        "Elevators",
+        "InformationSpots",
+        "DrinkingFountains",
+        "Toilets"
+      ],
+      "type": "object",
+      "properties": {
+        "StationID": {
+          "description": "車站代碼",
+          "type": "string"
+        },
+        "StationName": {
+          "$ref": "#/definitions/Service.DTO.Version3.Base.NameType",
+          "title": "NameType",
+          "description": "車站名稱"
+        },
+        "FacilityMapURLs": {
+          "description": "車站出入口",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version3.Rail.TRA.StationFacility.FacilityMapURL"
+          }
+        },
+        "Elevators": {
+          "description": "無障礙電梯位置資訊",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version3.Rail.TRA.StationFacility.FacilityInfo"
+          }
+        },
+        "InformationSpots": {
+          "description": "詢問處位置資訊",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version3.Rail.TRA.StationFacility.FacilityInfo"
+          }
+        },
+        "DrinkingFountains": {
+          "description": "飲水機位置資訊",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version3.Rail.TRA.StationFacility.FacilityInfo"
+          }
+        },
+        "Toilets": {
+          "description": "廁所位置資訊",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version3.Rail.TRA.StationFacility.FacilityInfo"
+          }
+        }
+      }
+    },
+    "Service.DTO.Version3.Rail.TRA.StationFacility.FacilityMapURL": {
+      "title": "FacilityMapURL",
+      "description": "車站設施簡圖網址連結資訊",
+      "required": [
+        "MapName",
+        "MapURL"
+      ],
+      "type": "object",
+      "properties": {
+        "MapName": {
+          "$ref": "#/definitions/Service.DTO.Version3.Base.NameType",
+          "title": "NameType",
+          "description": "車站設施簡圖名稱"
+        },
+        "MapURL": {
+          "description": "車站設施簡圖網址",
+          "type": "string"
+        },
+        "FloorLevel": {
+          "description": "樓層",
+          "type": "string"
+        }
+      }
+    },
+    "Service.DTO.Version3.Rail.TRA.StationFacility.FacilityInfo": {
+      "title": "FacilityInfo",
+      "required": [
+        "Description"
+      ],
+      "type": "object",
+      "properties": {
+        "Description": {
+          "description": "位置描述",
+          "type": "string"
+        },
+        "FloorLevel": {
+          "description": "樓層",
+          "type": "string"
+        }
+      }
+    },
+    "MOTC.API.Rail.Models.TRARealTimeWrapper[Service.DTO.Version3.Rail.TRA.TRAStationLiveBoardList.StationLiveBoard]": {
+      "title": "TRAStationLiveBoardList",
+      "required": [
+        "UpdateInterval",
+        "SrcUpdateTime",
+        "SrcUpdateInterval",
+        "AuthorityCode",
+        "StationLiveBoards"
+      ],
+      "type": "object",
+      "properties": {
+        "UpdateTime": {
+          "title": "DateTime",
+          "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "UpdateInterval": {
+          "format": "int32",
+          "description": "本平台資料更新週期(秒)",
+          "type": "integer"
+        },
+        "SrcUpdateTime": {
+          "title": "DateTime",
+          "description": "來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "SrcUpdateInterval": {
+          "format": "int32",
+          "description": "來源端平台資料更新週期(秒)",
+          "type": "integer"
+        },
+        "AuthorityCode": {
+          "description": "業管機關簡碼",
+          "type": "string"
+        },
+        "StationLiveBoards": {
+          "description": "資料(陣列)",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version3.Rail.TRA.TRAStationLiveBoardList.StationLiveBoard"
+          }
+        },
+        "Count": {
+          "format": "int64",
+          "description": "資料總筆數",
+          "type": "integer"
+        }
+      }
+    },
+    "Service.DTO.Version3.Rail.TRA.TRAStationLiveBoardList.StationLiveBoard": {
+      "title": "StationLiveBoard",
+      "required": [
+        "StationID",
+        "StationName",
+        "TrainNo",
+        "TrainTypeName",
+        "EndingStationName",
+        "DelayTime",
+        "UpdateTime"
+      ],
+      "type": "object",
+      "properties": {
+        "StationID": {
+          "description": "車站代號",
+          "type": "string"
+        },
+        "StationName": {
+          "$ref": "#/definitions/Service.DTO.Version3.Base.NameType",
+          "title": "NameType",
+          "description": "車站名稱"
+        },
+        "TrainNo": {
+          "description": "車次代碼",
+          "type": "string"
+        },
+        "Direction": {
+          "description": "行駛方向",
+          "enum": [
+            "0: 順行",
+            "1: 逆行"
+          ],
+          "type": "string"
+        },
+        "TrainTypeID": {
+          "description": "車種代嗎",
+          "type": "string"
+        },
+        "TrainTypeCode": {
+          "description": "車種簡碼 = ['1: 太魯閣', '2: 普悠瑪', '3: 自強', '4: 莒光', '5: 復興', '6: 區間', '7: 普快', '10: 區間快']",
+          "type": "string"
+        },
+        "TrainTypeName": {
+          "$ref": "#/definitions/Service.DTO.Version3.Base.NameType",
+          "title": "NameType",
+          "description": "車種名稱"
+        },
+        "EndingStationID": {
+          "description": "終點站代碼",
+          "type": "string"
+        },
+        "EndingStationName": {
+          "$ref": "#/definitions/Service.DTO.Version3.Base.NameType",
+          "title": "NameType",
+          "description": "終點站名稱"
+        },
+        "TripLine": {
+          "description": "山海線類型",
+          "enum": [
+            "0: 不經山海線",
+            "1: 山線",
+            "2: 海線"
+          ],
+          "type": "string"
+        },
+        "Platform": {
+          "description": "停靠月台(00代表當時尚未確定停靠的月台，待確定好停靠的月台後，就會更新Platfrom。)",
+          "type": "string"
+        },
+        "ScheduleArrivalTime": {
+          "description": "表訂到站時刻",
+          "type": "string"
+        },
+        "ScheduleDepartureTime": {
+          "description": "表定離站時刻",
+          "type": "string"
+        },
+        "DelayTime": {
+          "format": "int32",
+          "description": "延誤分鐘",
+          "type": "integer"
+        },
+        "RunningStatus": {
+          "description": "列車狀態",
+          "enum": [
+            "0: 準點",
+            "1: 誤點",
+            "2: 取消"
+          ],
+          "type": "string"
+        },
+        "UpdateTime": {
+          "title": "DateTime",
+          "description": "本筆資料之更新日期時間",
+          "type": "string"
+        }
+      }
+    },
+    "MOTC.API.Rail.Models.TRABaseWrapper[Service.DTO.Version3.Rail.TRA.StationOfLine.StationOfLine]": {
+      "title": "TRAStationOfLineList",
+      "required": [
+        "UpdateInterval",
+        "SrcUpdateTime",
+        "SrcUpdateInterval",
+        "AuthorityCode",
+        "StationOfLines"
+      ],
+      "type": "object",
+      "properties": {
+        "UpdateTime": {
+          "title": "DateTime",
+          "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "UpdateInterval": {
+          "format": "int32",
+          "description": "本平台資料更新週期(秒)",
+          "type": "integer"
+        },
+        "SrcUpdateTime": {
+          "title": "DateTime",
+          "description": "來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "SrcUpdateInterval": {
+          "format": "int32",
+          "description": "來源端平台資料更新週期(秒)",
+          "type": "integer"
+        },
+        "AuthorityCode": {
+          "description": "業管機關簡碼",
+          "type": "string"
+        },
+        "StationOfLines": {
+          "description": "資料(陣列)",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version3.Rail.TRA.StationOfLine.StationOfLine"
+          }
+        },
+        "Count": {
+          "format": "int64",
+          "description": "資料總筆數",
+          "type": "integer"
+        }
+      }
+    },
+    "Service.DTO.Version3.Rail.TRA.StationOfLine.StationOfLine": {
+      "title": "StationOfLine",
+      "description": "路線車站基本資料",
+      "required": [
+        "LineNo",
+        "LineID",
+        "Stations"
+      ],
+      "type": "object",
+      "properties": {
+        "LineNo": {
+          "description": "路線編號",
+          "type": "string"
+        },
+        "LineID": {
+          "description": "路線代碼",
+          "type": "string"
+        },
+        "Stations": {
+          "description": "路線車站資訊",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version3.Rail.TRA.StationOfLine.LineStation"
+          }
+        }
+      }
+    },
+    "Service.DTO.Version3.Rail.TRA.StationOfLine.LineStation": {
+      "title": "LineStation",
+      "description": "路線車站資訊",
+      "required": [
+        "Sequence",
+        "StationID",
+        "StationName",
+        "CumulativeDistance"
+      ],
+      "type": "object",
+      "properties": {
+        "Sequence": {
+          "format": "int32",
+          "description": "站序",
+          "type": "integer"
+        },
+        "StationID": {
+          "description": "車站代碼",
+          "type": "string"
+        },
+        "StationName": {
+          "$ref": "#/definitions/Service.DTO.Version3.Base.NameType",
+          "title": "NameType",
+          "description": "車站名稱"
+        },
+        "CumulativeDistance": {
+          "format": "float",
+          "description": "已累積之里程距離(公里)",
+          "type": "number"
+        }
+      }
+    },
+    "MOTC.API.Rail.Models.TRABaseWrapper[Service.DTO.Version3.Rail.TRA.StationTransfer.StationTransfer]": {
+      "title": "TRAStationTransferList",
+      "required": [
+        "UpdateInterval",
+        "SrcUpdateTime",
+        "SrcUpdateInterval",
+        "AuthorityCode",
+        "StationTransfers"
+      ],
+      "type": "object",
+      "properties": {
+        "UpdateTime": {
+          "title": "DateTime",
+          "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "UpdateInterval": {
+          "format": "int32",
+          "description": "本平台資料更新週期(秒)",
+          "type": "integer"
+        },
+        "SrcUpdateTime": {
+          "title": "DateTime",
+          "description": "來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "SrcUpdateInterval": {
+          "format": "int32",
+          "description": "來源端平台資料更新週期(秒)",
+          "type": "integer"
+        },
+        "AuthorityCode": {
+          "description": "業管機關簡碼",
+          "type": "string"
+        },
+        "StationTransfers": {
+          "description": "資料(陣列)",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version3.Rail.TRA.StationTransfer.StationTransfer"
+          }
+        },
+        "Count": {
+          "format": "int64",
+          "description": "資料總筆數",
+          "type": "integer"
+        }
+      }
+    },
+    "Service.DTO.Version3.Rail.TRA.StationTransfer.StationTransfer": {
+      "title": "StationTransfer",
+      "description": "車站跨運具轉乘資訊",
+      "required": [
+        "StationID",
+        "StationName",
+        "InteriorMapURLs",
+        "ExteriorMapURLs",
+        "Transfers"
+      ],
+      "type": "object",
+      "properties": {
+        "StationID": {
+          "description": "車站代碼",
+          "type": "string"
+        },
+        "StationName": {
+          "$ref": "#/definitions/Service.DTO.Version3.Base.NameType",
+          "title": "NameType",
+          "description": "車站名稱"
+        },
+        "TransferDescription": {
+          "description": "轉乘文字描述",
+          "type": "string"
+        },
+        "InteriorMapURLs": {
+          "description": "車站內部地圖簡圖連結資訊",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version3.Rail.TRA.StationTransfer.MapURL"
+          }
+        },
+        "ExteriorMapURLs": {
+          "description": "外部轉乘地圖簡圖連結資訊",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version3.Rail.TRA.StationTransfer.MapURL"
+          }
+        },
+        "Transfers": {
+          "description": "跨運具轉乘資訊",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version3.Rail.TRA.StationTransfer.Transfer"
+          }
+        }
+      }
+    },
+    "Service.DTO.Version3.Rail.TRA.StationTransfer.MapURL": {
+      "title": "MapURL",
+      "description": "轉乘地圖簡圖連結資訊",
+      "required": [
+        "MapName",
+        "MapURL"
+      ],
+      "type": "object",
+      "properties": {
+        "MapName": {
+          "description": "地圖名稱",
+          "type": "string"
+        },
+        "MapURL": {
+          "description": "地圖簡圖連結",
+          "type": "string"
+        },
+        "FloorLevel": {
+          "description": "樓層",
+          "type": "string"
+        }
+      }
+    },
+    "Service.DTO.Version3.Rail.TRA.StationTransfer.Transfer": {
+      "title": "Transfer",
+      "description": "跨運具轉乘資訊",
+      "required": [
+        "ExitID",
+        "ExitName",
+        "RailTransfers",
+        "BusTransfers",
+        "AirportTransfers",
+        "BikeTransfers",
+        "ParkingTransfers",
+        "TaxiTransfers",
+        "FerryTransfers"
+      ],
+      "type": "object",
+      "properties": {
+        "ExitID": {
+          "description": "出口代碼",
+          "type": "string"
+        },
+        "ExitName": {
+          "description": "出口名稱",
+          "type": "string"
+        },
+        "RailTransfers": {
+          "description": "軌道轉乘資訊",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version3.Rail.TRA.StationTransfer.RailTransfer"
+          }
+        },
+        "BusTransfers": {
+          "description": "公車運具轉乘資訊",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version3.Rail.TRA.StationTransfer.BusTransfer"
+          }
+        },
+        "AirportTransfers": {
+          "description": "航空運具轉乘資訊",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version3.Rail.TRA.StationTransfer.AirportTransfer"
+          }
+        },
+        "BikeTransfers": {
+          "description": "公共自行車轉乘資訊",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version3.Rail.TRA.StationTransfer.BikeTransfer"
+          }
+        },
+        "ParkingTransfers": {
+          "description": "停車場轉乘資訊",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version3.Rail.TRA.StationTransfer.ParkingTransfer"
+          }
+        },
+        "TaxiTransfers": {
+          "description": "計程車轉乘資訊",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version3.Rail.TRA.StationTransfer.TaxiTransfer"
+          }
+        },
+        "FerryTransfers": {
+          "description": "航運轉乘資訊",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version3.Rail.TRA.StationTransfer.FerryTransfer"
+          }
+        }
+      }
+    },
+    "Service.DTO.Version3.Rail.TRA.StationTransfer.RailTransfer": {
+      "title": "RailTransfer",
+      "description": "軌道轉乘資訊",
+      "required": [
+        "Mode",
+        "OperatorCode",
+        "OperatorName",
+        "StationID",
+        "StationName"
+      ],
+      "type": "object",
+      "properties": {
+        "Mode": {
+          "description": "運具種類代碼",
+          "type": "string"
+        },
+        "OperatorCode": {
+          "description": "軌道營運業者簡碼",
+          "type": "string"
+        },
+        "OperatorName": {
+          "$ref": "#/definitions/Service.DTO.Version3.Base.NameType",
+          "title": "NameType",
+          "description": "軌道營運業者名稱"
+        },
+        "StationID": {
+          "description": "軌道場站代碼",
+          "type": "string"
+        },
+        "StationName": {
+          "$ref": "#/definitions/Service.DTO.Version3.Base.NameType",
+          "title": "NameType",
+          "description": "軌道場站名稱"
+        },
+        "MinTransferTime": {
+          "format": "int32",
+          "description": "最短轉乘時間",
+          "type": "integer"
+        },
+        "FloorLevel": {
+          "description": "轉乘樓層",
+          "type": "string"
+        },
+        "Description": {
+          "description": "轉乘描述",
+          "type": "string"
+        },
+        "IsOnSiteTransfer": {
+          "description": "是否為站內或站外轉乘",
+          "type": "boolean"
+        }
+      }
+    },
+    "Service.DTO.Version3.Rail.TRA.StationTransfer.BusTransfer": {
+      "title": "BusTransfer",
+      "description": "公車運具轉乘資訊",
+      "required": [
+        "Mode",
+        "OperatorCode",
+        "OperatorName",
+        "RouteID",
+        "RouteName",
+        "StopID",
+        "StopName",
+        "Destination"
+      ],
+      "type": "object",
+      "properties": {
+        "Mode": {
+          "description": "運具種類代碼",
+          "type": "string"
+        },
+        "OperatorCode": {
+          "description": "公車營運業者簡碼",
+          "type": "string"
+        },
+        "OperatorName": {
+          "$ref": "#/definitions/Service.DTO.Version3.Base.NameType",
+          "title": "NameType",
+          "description": "公車營運業者名稱"
+        },
+        "RouteID": {
+          "description": "轉乘公車路線代碼",
+          "type": "string"
+        },
+        "RouteName": {
+          "$ref": "#/definitions/Service.DTO.Version3.Base.NameType",
+          "title": "NameType",
+          "description": "轉乘公車路線名稱"
+        },
+        "StopID": {
+          "description": "轉乘公車站牌代碼",
+          "type": "string"
+        },
+        "StopName": {
+          "$ref": "#/definitions/Service.DTO.Version3.Base.NameType",
+          "title": "NameType",
+          "description": "轉乘公車站牌名稱"
+        },
+        "Destination": {
+          "description": "轉乘公車開往方向",
+          "type": "string"
+        },
+        "MinTransferTime": {
+          "format": "int32",
+          "description": "最短轉乘時間",
+          "type": "integer"
+        },
+        "FloorLevel": {
+          "description": "轉乘樓層",
+          "type": "string"
+        },
+        "Description": {
+          "description": "轉乘描述",
+          "type": "string"
+        },
+        "IsOnSiteTransfer": {
+          "description": "是否為站內或站外轉乘",
+          "type": "boolean"
+        },
+        "Platform": {
+          "description": "轉乘公車所在月台",
+          "type": "string"
+        }
+      }
+    },
+    "Service.DTO.Version3.Rail.TRA.StationTransfer.AirportTransfer": {
+      "title": "AirportTransfer",
+      "description": "航空運具轉乘資訊",
+      "required": [
+        "Mode",
+        "OperatorCode",
+        "OperatorName",
+        "AirportID",
+        "AirportName"
+      ],
+      "type": "object",
+      "properties": {
+        "Mode": {
+          "description": "運具種類代碼",
+          "type": "string"
+        },
+        "OperatorCode": {
+          "description": "機場營運業者簡碼",
+          "type": "string"
+        },
+        "OperatorName": {
+          "$ref": "#/definitions/Service.DTO.Version3.Base.NameType",
+          "title": "NameType",
+          "description": "機場營運業者名稱"
+        },
+        "AirportID": {
+          "description": "機場代碼",
+          "type": "string"
+        },
+        "AirportName": {
+          "$ref": "#/definitions/Service.DTO.Version3.Base.NameType",
+          "title": "NameType",
+          "description": "機場名稱"
+        },
+        "MinTransferTime": {
+          "format": "int32",
+          "description": "最短轉乘時間",
+          "type": "integer"
+        },
+        "FloorLevel": {
+          "description": "轉乘樓層",
+          "type": "string"
+        },
+        "Description": {
+          "description": "轉乘描述",
+          "type": "string"
+        },
+        "IsOnSiteTransfer": {
+          "description": "是否為站內或站外轉乘",
+          "type": "boolean"
+        }
+      }
+    },
+    "Service.DTO.Version3.Rail.TRA.StationTransfer.BikeTransfer": {
+      "title": "BikeTransfer",
+      "description": "公共自行車轉乘資訊",
+      "required": [
+        "Mode",
+        "OperatorCode",
+        "OperatorName",
+        "StationID",
+        "StationName"
+      ],
+      "type": "object",
+      "properties": {
+        "Mode": {
+          "description": "運具種類代碼",
+          "type": "string"
+        },
+        "OperatorCode": {
+          "description": "公共自行車營運業者簡碼",
+          "type": "string"
+        },
+        "OperatorName": {
+          "$ref": "#/definitions/Service.DTO.Version3.Base.NameType",
+          "title": "NameType",
+          "description": "公共自行車營運業者名稱"
+        },
+        "StationID": {
+          "description": "公共自行車租借站位代碼",
+          "type": "string"
+        },
+        "StationName": {
+          "$ref": "#/definitions/Service.DTO.Version3.Base.NameType",
+          "title": "NameType",
+          "description": "公共自行車租借站位名稱"
+        },
+        "MinTransferTime": {
+          "format": "int32",
+          "description": "最短轉乘時間",
+          "type": "integer"
+        },
+        "FloorLevel": {
+          "description": "轉乘樓層",
+          "type": "string"
+        },
+        "Description": {
+          "description": "轉乘描述",
+          "type": "string"
+        },
+        "IsOnSiteTransfer": {
+          "description": "是否為站內或站外轉乘",
+          "type": "boolean"
+        }
+      }
+    },
+    "Service.DTO.Version3.Rail.TRA.StationTransfer.ParkingTransfer": {
+      "title": "ParkingTransfer",
+      "description": "停車場轉乘資訊",
+      "required": [
+        "Mode",
+        "CarParkID",
+        "CarParkName"
+      ],
+      "type": "object",
+      "properties": {
+        "Mode": {
+          "description": "運具種類代碼",
+          "type": "string"
+        },
+        "CarParkID": {
+          "description": "停車場代碼",
+          "type": "string"
+        },
+        "CarParkName": {
+          "$ref": "#/definitions/Service.DTO.Version3.Base.NameType",
+          "title": "NameType",
+          "description": "停車場名稱"
+        },
+        "MinTransferTime": {
+          "format": "int32",
+          "description": "最短轉乘時間",
+          "type": "integer"
+        },
+        "FloorLevel": {
+          "description": "轉乘樓層",
+          "type": "string"
+        },
+        "Description": {
+          "description": "轉乘描述",
+          "type": "string"
+        },
+        "IsOnSiteTransfer": {
+          "description": "是否為站內或站外轉乘",
+          "type": "boolean"
+        }
+      }
+    },
+    "Service.DTO.Version3.Rail.TRA.StationTransfer.TaxiTransfer": {
+      "title": "TaxiTransfer",
+      "description": "計程車轉乘資訊",
+      "required": [
+        "Mode",
+        "TaxiStopName"
+      ],
+      "type": "object",
+      "properties": {
+        "Mode": {
+          "description": "運具種類代碼",
+          "type": "string"
+        },
+        "TaxiStopID": {
+          "description": "計程車招呼站代碼",
+          "type": "string"
+        },
+        "TaxiStopName": {
+          "$ref": "#/definitions/Service.DTO.Version3.Base.NameType",
+          "title": "NameType",
+          "description": "計程車招呼站名稱"
+        },
+        "MinTransferTime": {
+          "format": "int32",
+          "description": "最短轉乘時間",
+          "type": "integer"
+        },
+        "FloorLevel": {
+          "description": "轉乘樓層",
+          "type": "string"
+        },
+        "Description": {
+          "description": "轉乘描述",
+          "type": "string"
+        },
+        "IsOnSiteTransfer": {
+          "description": "是否為站內或站外轉乘",
+          "type": "boolean"
+        }
+      }
+    },
+    "Service.DTO.Version3.Rail.TRA.StationTransfer.FerryTransfer": {
+      "title": "FerryTransfer",
+      "description": "航運轉乘資訊",
+      "required": [
+        "Mode",
+        "OperatorCode",
+        "OperatorName",
+        "FerryStationName"
+      ],
+      "type": "object",
+      "properties": {
+        "Mode": {
+          "description": "運具種類代碼",
+          "type": "string"
+        },
+        "OperatorCode": {
+          "description": "航運營運業者簡碼",
+          "type": "string"
+        },
+        "OperatorName": {
+          "$ref": "#/definitions/Service.DTO.Version3.Base.NameType",
+          "title": "NameType",
+          "description": "航運營運業者名稱"
+        },
+        "FerryStationID": {
+          "description": "計程車招呼站代碼",
+          "type": "string"
+        },
+        "FerryStationName": {
+          "$ref": "#/definitions/Service.DTO.Version3.Base.NameType",
+          "title": "NameType",
+          "description": "計程車招呼站名稱"
+        },
+        "MinTransferTime": {
+          "format": "int32",
+          "description": "最短轉乘時間",
+          "type": "integer"
+        },
+        "FloorLevel": {
+          "description": "轉乘樓層",
+          "type": "string"
+        },
+        "Description": {
+          "description": "轉乘描述",
+          "type": "string"
+        },
+        "IsOnSiteTransfer": {
+          "description": "是否為站內或站外轉乘",
+          "type": "boolean"
+        }
+      }
+    },
+    "MOTC.API.Rail.Models.TRARealTimeWrapper[Service.DTO.Version3.Rail.TRA.TRATrainLiveBoardList.TrainLiveBoard]": {
+      "title": "TRATrainLiveBoardList",
+      "required": [
+        "UpdateInterval",
+        "SrcUpdateTime",
+        "SrcUpdateInterval",
+        "AuthorityCode",
+        "TrainLiveBoards"
+      ],
+      "type": "object",
+      "properties": {
+        "UpdateTime": {
+          "title": "DateTime",
+          "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "UpdateInterval": {
+          "format": "int32",
+          "description": "本平台資料更新週期(秒)",
+          "type": "integer"
+        },
+        "SrcUpdateTime": {
+          "title": "DateTime",
+          "description": "來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "SrcUpdateInterval": {
+          "format": "int32",
+          "description": "來源端平台資料更新週期(秒)",
+          "type": "integer"
+        },
+        "AuthorityCode": {
+          "description": "業管機關簡碼",
+          "type": "string"
+        },
+        "TrainLiveBoards": {
+          "description": "資料(陣列)",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version3.Rail.TRA.TRATrainLiveBoardList.TrainLiveBoard"
+          }
+        },
+        "Count": {
+          "format": "int64",
+          "description": "資料總筆數",
+          "type": "integer"
+        }
+      }
+    },
+    "Service.DTO.Version3.Rail.TRA.TRATrainLiveBoardList.TrainLiveBoard": {
+      "title": "TrainLiveBoard",
+      "required": [
+        "TrainTypeName",
+        "StationName",
+        "DelayTime",
+        "UpdateTime"
+      ],
+      "type": "object",
+      "properties": {
+        "TrainNo": {
+          "description": "車次代碼",
+          "type": "string"
+        },
+        "TrainTypeID": {
+          "description": "車種代嗎",
+          "type": "string"
+        },
+        "TrainTypeCode": {
+          "description": "車種簡碼 = ['1: 太魯閣', '2: 普悠瑪', '3: 自強', '4: 莒光', '5: 復興', '6: 區間', '7: 普快', '10: 區間快']",
+          "type": "string"
+        },
+        "TrainTypeName": {
+          "$ref": "#/definitions/Service.DTO.Version3.Base.NameType",
+          "title": "NameType",
+          "description": "車種名稱"
+        },
+        "StationID": {
+          "description": "車站代號",
+          "type": "string"
+        },
+        "StationName": {
+          "$ref": "#/definitions/Service.DTO.Version3.Base.NameType",
+          "title": "NameType",
+          "description": "車站名稱"
+        },
+        "TrainStationStatus": {
+          "description": "列車目前所在之車站狀態",
+          "enum": [
+            "0: 進站中",
+            "1: 在站上",
+            "2: 已離站"
+          ],
+          "type": "string"
+        },
+        "DelayTime": {
+          "format": "int32",
+          "description": "延誤分鐘",
+          "type": "integer"
+        },
+        "UpdateTime": {
+          "title": "DateTime",
+          "description": "本筆位置資料之更新日期時間",
+          "type": "string"
+        }
+      }
+    },
+    "MOTC.API.Rail.Models.TRABaseWrapper[Service.DTO.Version3.Rail.TRA.TrainType]": {
+      "title": "TRATrainTypeList",
+      "required": [
+        "UpdateInterval",
+        "SrcUpdateTime",
+        "SrcUpdateInterval",
+        "AuthorityCode",
+        "TrainTypes"
+      ],
+      "type": "object",
+      "properties": {
+        "UpdateTime": {
+          "title": "DateTime",
+          "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "UpdateInterval": {
+          "format": "int32",
+          "description": "本平台資料更新週期(秒)",
+          "type": "integer"
+        },
+        "SrcUpdateTime": {
+          "title": "DateTime",
+          "description": "來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "SrcUpdateInterval": {
+          "format": "int32",
+          "description": "來源端平台資料更新週期(秒)",
+          "type": "integer"
+        },
+        "AuthorityCode": {
+          "description": "業管機關簡碼",
+          "type": "string"
+        },
+        "TrainTypes": {
+          "description": "資料(陣列)",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version3.Rail.TRA.TrainType"
+          }
+        },
+        "Count": {
+          "format": "int64",
+          "description": "資料總筆數",
+          "type": "integer"
+        }
+      }
+    },
+    "Service.DTO.Version3.Rail.TRA.TrainType": {
+      "title": "TrainType",
+      "description": "臺鐵列車車種資料",
+      "required": [
+        "TrainTypeID",
+        "TrainTypeCode",
+        "TrainTypeName"
+      ],
+      "type": "object",
+      "properties": {
+        "TrainTypeID": {
+          "description": "列車車種代碼",
+          "type": "string"
+        },
+        "TrainTypeCode": {
+          "description": "車種簡碼 = ['1: 太魯閣', '2: 普悠瑪', '3: 自強', '4: 莒光', '5: 復興', '6: 區間', '7: 普快', '10: 區間快']",
+          "type": "string"
+        },
+        "TrainTypeName": {
+          "$ref": "#/definitions/Service.DTO.Version3.Base.NameType",
+          "title": "NameType",
+          "description": "列車車種名稱"
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "TRA"
+    },
+    {
+      "name": "THSR"
+    },
+    {
+      "name": "Metro"
+    }
+  ]
+}

@@ -1,0 +1,1920 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "version": "v2",
+    "title": "MOTC Transport API V2",
+    "description": "本平臺提供涵蓋全國尺度之公車、臺鐵、高鐵、捷運、航空、自行車等公共運輸旅運資料服務API，歡迎各產政學單位介接使用。\r\n                                                    <br><span class=swagger-description-indicatation>利用本平臺開放資料進行各項應用服務開發時，請考量不同特性使用者(如:性別/身心障礙/老幼等)的需求，並歡迎回饋寶貴意見。</span>\r\n                                                    <br><br>資料使用葵花寶典:[請點我](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/)\r\n                                                    <br>資料服務開發實作參考手冊:[請點我](https://docs.google.com/viewer?url=https://github.com/ptxmotc/PTX_Web/blob/master/Swagger%E6%9C%8D%E5%8B%99%E8%AA%AA%E6%98%8E%E4%B8%8A%E5%82%B3%E5%8F%83%E8%80%83%E6%AA%94%E6%A1%88/%E5%85%AC%E5%85%B1%E9%81%8B%E8%BC%B8%E6%95%B4%E5%90%88%E8%B3%87%E8%A8%8A%E5%B9%B3%E5%8F%B0%E8%B3%87%E6%96%99%E6%9C%8D%E5%8B%99%E9%96%8B%E7%99%BC%E5%AF%A6%E4%BD%9C.pdf?raw=true)\r\n                                                    <br>API URI Convention文件說明:[請點我](https://docs.google.com/viewer?url=https://github.com/ptxmotc/PTX_Web/blob/master/Swagger%E6%9C%8D%E5%8B%99%E8%AA%AA%E6%98%8E%E4%B8%8A%E5%82%B3%E5%8F%83%E8%80%83%E6%AA%94%E6%A1%88/API_URI_Convention%E6%96%87%E4%BB%B6_v1.pdf?raw=true)<br>資料文本OAS描述:[請點我](http://ptx.transportdata.tw/MOTC/v2/Air/api-docs/oas)"
+  },
+  "host": "ptx.transportdata.tw",
+  "basePath": "/MOTC/",
+  "schemes": [
+    "https"
+  ],
+  "paths": {
+    "/v2/Air/Airport": {
+      "get": {
+        "tags": [
+          "Air"
+        ],
+        "summary": "取得機場資料",
+        "description": "取得所有機場資料",
+        "operationId": "AirApi_Airport",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "string",
+            "default": "30"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$spatialFilter",
+            "in": "query",
+            "description": "空間過濾",
+            "type": "string"
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Service.DTO.Version2.Aviation.Airport"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/Air/Airport/{IATA}": {
+      "get": {
+        "tags": [
+          "Air"
+        ],
+        "summary": "取得指定[機場]資料",
+        "description": "取得指定[機場]資料",
+        "operationId": "AirApi_Airport_1",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json",
+          "application/xml",
+          "text/xml"
+        ],
+        "parameters": [
+          {
+            "name": "IATA",
+            "in": "path",
+            "description": "機場代碼",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Service.DTO.Version2.Aviation.Airport"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Air/Airline/{IATA}": {
+      "get": {
+        "tags": [
+          "Air"
+        ],
+        "summary": "取得指定[航空公司]資料",
+        "description": "取得指定[航空公司]資料",
+        "operationId": "AirApi_Airline",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json",
+          "application/xml",
+          "text/xml"
+        ],
+        "parameters": [
+          {
+            "name": "IATA",
+            "in": "path",
+            "description": "航空公司代碼",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/Service.DTO.Version2.Aviation.Airline"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Air/Airline": {
+      "get": {
+        "tags": [
+          "Air"
+        ],
+        "summary": "取得航空公司資料",
+        "description": "取得所有航空公司資料",
+        "operationId": "AirApi_Airline_1",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "string",
+            "default": "30"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Service.DTO.Version2.Aviation.Airline"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/Air/FIDS/Airport/Departure": {
+      "get": {
+        "tags": [
+          "Air"
+        ],
+        "summary": "取得機場的即時出境航班",
+        "description": "取得機場的即時出境航班",
+        "operationId": "AirApi_Departure",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "string",
+            "default": "30"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Service.DTO.Version2.Aviation.FIDSDeparture"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/Air/FIDS/Airport/Departure/{IATA}": {
+      "get": {
+        "tags": [
+          "Air"
+        ],
+        "summary": "取得指定[機場的即時出境航班]",
+        "description": "取得指定的[機場即時出境航班]",
+        "operationId": "AirApi_Departure_1",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "IATA",
+            "in": "path",
+            "description": "機場代碼",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "string",
+            "default": "30"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Service.DTO.Version2.Aviation.FIDSDeparture"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/Air/FIDS/Airport/Arrival": {
+      "get": {
+        "tags": [
+          "Air"
+        ],
+        "summary": "取得機場的即時入境航班",
+        "description": "取得機場的即時入境航班",
+        "operationId": "AirApi_Arrival",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "string",
+            "default": "30"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Service.DTO.Version2.Aviation.FIDSArrival"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/Air/FIDS/Airport/Arrival/{IATA}": {
+      "get": {
+        "tags": [
+          "Air"
+        ],
+        "summary": "取得指定[機場的即時入境航班]",
+        "description": "取得[指定機場]的即時入境航班",
+        "operationId": "AirApi_Arrival_1",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "IATA",
+            "in": "path",
+            "description": "機場代碼",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "string",
+            "default": "30"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Service.DTO.Version2.Aviation.FIDSArrival"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/Air/FIDS/Flight": {
+      "get": {
+        "tags": [
+          "Air"
+        ],
+        "summary": "取得即時航班資料",
+        "description": "取得即時航班資料",
+        "operationId": "AirApi_Flight",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "string",
+            "default": "30"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Service.DTO.Version2.Aviation.FIDS"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/Air/FIDS/Flight/{FlightNo}": {
+      "get": {
+        "tags": [
+          "Air"
+        ],
+        "summary": "取得指定[即時航班]資料",
+        "operationId": "AirApi_Flight_1",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "FlightNo",
+            "in": "path",
+            "description": "航機班號",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "string",
+            "default": "30"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Service.DTO.Version2.Aviation.FIDS"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/Air/FIDS/Airport": {
+      "get": {
+        "tags": [
+          "Air"
+        ],
+        "summary": "取得機場的即時航班資料",
+        "description": "取得即時航班資料",
+        "operationId": "AirApi_FIDS",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "string",
+            "default": "30"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Service.DTO.Version2.Aviation.Airport_FIDS"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/Air/FIDS/Airport/{IATA}": {
+      "get": {
+        "tags": [
+          "Air"
+        ],
+        "summary": "取得指定[機場的即時航班]資料",
+        "description": "取得指定[機場的即時航班]資料",
+        "operationId": "AirApi_FIDS_1",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "IATA",
+            "in": "path",
+            "description": "機場代碼",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "string",
+            "default": "30"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Service.DTO.Version2.Aviation.Airport_FIDS"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/Air/METAR/Airport": {
+      "get": {
+        "tags": [
+          "Air"
+        ],
+        "summary": "取得[國內機場]氣象資訊觀測資料",
+        "description": "取得[國內機場]氣象資訊觀測資料\r\n<br />目前提供之機場氣象觀測站代碼清單\r\n<br />RCSS:松山機場    RCKH:高雄機場\r\n<br />RCTP:桃園機場    RCMT:北竿機場\r\n<br />RCFG:南竿機場    RCBS:金門機場\r\n<br />RCQC:馬公機場    RCMQ:臺中機場\r\n<br />RCKU:嘉義機場    RCNN:臺南機場\r\n<br />RCYU:花蓮機場    RCFN:臺東機場\r\n<br />RCLY:蘭嶼機場    RCGI:綠島機場",
+        "operationId": "AirApi_METAR",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "string",
+            "default": "30"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$spatialFilter",
+            "in": "query",
+            "description": "空間過濾",
+            "type": "string"
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Service.DTO.Version2.Application.METAR"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/Air/METAR/Airport/{IATA}": {
+      "get": {
+        "tags": [
+          "Air"
+        ],
+        "summary": "取得指定[國內機場]氣象資訊觀測資料",
+        "description": "取得指定[國內機場]氣象資訊觀測資料",
+        "operationId": "AirApi_METAR_1",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "IATA",
+            "in": "path",
+            "description": "機場代碼",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "string",
+            "default": "30"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$spatialFilter",
+            "in": "query",
+            "description": "空間過濾",
+            "type": "string"
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Service.DTO.Version2.Application.METAR"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/Air/GeneralSchedule/Domestic": {
+      "get": {
+        "tags": [
+          "Air"
+        ],
+        "summary": "取得國內航空定期時刻表",
+        "operationId": "AirApi_Domestic",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "string",
+            "default": "30"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Service.DTO.Version2.Aviation.GeneralFlightSchedule"
+              }
+            }
+          }
+        }
+      }
+    },
+    "/v2/Air/GeneralSchedule/International": {
+      "get": {
+        "tags": [
+          "Air"
+        ],
+        "summary": "取得國際航空定期時刻表",
+        "operationId": "AirApi_International",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "string",
+            "default": "30"
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Service.DTO.Version2.Aviation.GeneralFlightSchedule"
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "definitions": {
+    "Service.DTO.Version2.Aviation.Airline": {
+      "title": "Airline",
+      "description": "航空公司資料",
+      "required": [
+        "AirlineID",
+        "UpdateTime",
+        "VersionID"
+      ],
+      "type": "object",
+      "properties": {
+        "AirlineID": {
+          "description": "航空公司IATA國際代碼",
+          "type": "string"
+        },
+        "AirlineName": {
+          "$ref": "#/definitions/Service.DTO.Version2.Base.NameType",
+          "title": "NameType",
+          "description": "航空公司名稱"
+        },
+        "AirlineNameAlias": {
+          "$ref": "#/definitions/Service.DTO.Version2.Base.NameType",
+          "title": "NameType",
+          "description": "航空公司簡稱"
+        },
+        "AirlineIATA": {
+          "description": "航空公司IATA國際代碼",
+          "type": "string"
+        },
+        "AirlineICAO": {
+          "description": "航空公司ICAO國際代碼",
+          "type": "string"
+        },
+        "AirlineEmail": {
+          "description": "航空公司電子信箱",
+          "type": "string"
+        },
+        "AirlineAddress": {
+          "description": "航空公司地址",
+          "type": "string"
+        },
+        "AirlinePhone": {
+          "description": "航空公司聯繫電話",
+          "type": "string"
+        },
+        "AirlineNationality": {
+          "description": "航空公司國籍",
+          "type": "string"
+        },
+        "UpdateTime": {
+          "title": "DateTime",
+          "description": "資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "VersionID": {
+          "format": "int32",
+          "description": "資料版本編號",
+          "type": "integer"
+        }
+      }
+    },
+    "Service.DTO.Version2.Base.NameType": {
+      "title": "NameType",
+      "description": "名稱資料型別",
+      "type": "object",
+      "properties": {
+        "Zh_tw": {
+          "description": "中文繁體名稱",
+          "type": "string"
+        },
+        "En": {
+          "description": "英文名稱",
+          "type": "string"
+        }
+      }
+    },
+    "Service.DTO.Version2.Aviation.Airport": {
+      "title": "Airport",
+      "description": "機場資料",
+      "required": [
+        "AirportID",
+        "UpdateTime",
+        "VersionID"
+      ],
+      "type": "object",
+      "properties": {
+        "AirportID": {
+          "description": "機場IATA國際代碼",
+          "type": "string"
+        },
+        "AirportName": {
+          "$ref": "#/definitions/Service.DTO.Version2.Base.NameType",
+          "title": "NameType",
+          "description": "機場中文名稱"
+        },
+        "AirportIATA": {
+          "description": "機場IATA國際代碼",
+          "type": "string"
+        },
+        "AirportICAO": {
+          "description": "機場ICAO國際代碼",
+          "type": "string"
+        },
+        "AirportPosition": {
+          "$ref": "#/definitions/Service.DTO.Version2.Base.PointType",
+          "title": "PointType",
+          "description": "機場位置"
+        },
+        "AirportCityName": {
+          "$ref": "#/definitions/Service.DTO.Version2.Base.NameType",
+          "title": "NameType",
+          "description": "機場所屬城市"
+        },
+        "AirportAdrress": {
+          "description": "機場地址",
+          "type": "string"
+        },
+        "AirportPhone": {
+          "description": "機場聯繫電話",
+          "type": "string"
+        },
+        "AirportNationality": {
+          "description": "機場國籍",
+          "type": "string"
+        },
+        "AuthorityID": {
+          "description": "業管機關代碼(流水號)",
+          "maxLength": 2,
+          "minLength": 0,
+          "type": "string"
+        },
+        "UpdateTime": {
+          "title": "DateTime",
+          "description": "資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "VersionID": {
+          "format": "int32",
+          "description": "資料版本編號",
+          "type": "integer"
+        }
+      }
+    },
+    "Service.DTO.Version2.Base.PointType": {
+      "title": "PointType",
+      "description": "座標資料型別",
+      "type": "object",
+      "properties": {
+        "PositionLat": {
+          "format": "double",
+          "description": "位置緯度(WGS84)",
+          "type": "number"
+        },
+        "PositionLon": {
+          "format": "double",
+          "description": "位置經度(WGS84)",
+          "type": "number"
+        }
+      }
+    },
+    "Service.DTO.Version2.Aviation.Airport_FIDS": {
+      "title": "Airport_FIDS",
+      "description": "航班顯示資料(以機場角度)",
+      "required": [
+        "AirportID",
+        "UpdateTime"
+      ],
+      "type": "object",
+      "properties": {
+        "AirportID": {
+          "description": "機場IATA國際代碼",
+          "type": "string"
+        },
+        "FIDSDeparture": {
+          "description": "出發航班顯示資料",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version2.Aviation.FIDSDeparture"
+          }
+        },
+        "FIDSArrival": {
+          "description": "抵達航班顯示資料",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version2.Aviation.FIDSArrival"
+          }
+        },
+        "UpdateTime": {
+          "title": "DateTime",
+          "description": "資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        }
+      }
+    },
+    "Service.DTO.Version2.Aviation.FIDSDeparture": {
+      "title": "FIDSDeparture",
+      "description": "出發航班顯示資料",
+      "required": [
+        "FlightDate",
+        "FlightNumber",
+        "AirlineID",
+        "DepartureAirportID",
+        "ArrivalAirportID",
+        "UpdateTime"
+      ],
+      "type": "object",
+      "properties": {
+        "FlightDate": {
+          "title": "DateTime",
+          "description": "航班日期(ISO8601格式:yyyy-MM-dd)",
+          "type": "string"
+        },
+        "FlightNumber": {
+          "description": "航機班號",
+          "type": "string"
+        },
+        "AirRouteType": {
+          "description": "航線種類(目前民航局與桃機的FIDS系統都尚未提供此欄位資料)",
+          "enum": [
+            "1: 國際",
+            "2: 國內",
+            "3: 兩岸",
+            "4: 國際包機",
+            "5: 國內包機",
+            "6: 兩岸包機",
+            "-2: 特殊"
+          ],
+          "type": "string"
+        },
+        "AirlineID": {
+          "description": "航空公司IATA國際代碼",
+          "type": "string"
+        },
+        "DepartureAirportID": {
+          "description": "起點機場IATA國際代碼",
+          "type": "string"
+        },
+        "ArrivalAirportID": {
+          "description": "目的地機場IATA國際代碼",
+          "type": "string"
+        },
+        "ScheduleDepartureTime": {
+          "title": "DateTime",
+          "description": "表訂出發時間(ISO8601格式:yyyy-MM-ddTHH:mm)",
+          "type": "string"
+        },
+        "ActualDepartureTime": {
+          "title": "DateTime",
+          "description": "實際出發時間(ISO8601格式:yyyy-MM-ddTHH:mm)",
+          "type": "string"
+        },
+        "EstimatedDepartureTime": {
+          "title": "DateTime",
+          "description": "預估出發時間(ISO8601格式:yyyy-MM-ddTHH:mm)",
+          "type": "string"
+        },
+        "DepartureRemark": {
+          "description": "航班屬性狀態, ,為該機場觀點的狀態",
+          "type": "string"
+        },
+        "DepartureRemarkEn": {
+          "description": "航班屬性狀態(英文)",
+          "type": "string"
+        },
+        "Terminal": {
+          "description": "航廈",
+          "type": "string"
+        },
+        "Gate": {
+          "description": "登機門",
+          "type": "string"
+        },
+        "CodeShare": {
+          "description": "航班共用班號",
+          "type": "string"
+        },
+        "IsCargo": {
+          "description": "是否為貨機",
+          "type": "boolean"
+        },
+        "AcType": {
+          "description": "航空器型號",
+          "type": "string"
+        },
+        "BaggageClaim": {
+          "description": "行李轉盤(離站FIDS沒有「行李轉盤」資訊, 到站FIDS才可能有)",
+          "type": "string"
+        },
+        "CheckCounter": {
+          "description": "報到櫃檯(離站FIDS可能有「報到櫃台」資訊, 到站FIDS不會有)",
+          "type": "string"
+        },
+        "UpdateTime": {
+          "title": "DateTime",
+          "description": "資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        }
+      }
+    },
+    "Service.DTO.Version2.Aviation.FIDSArrival": {
+      "title": "FIDSArrival",
+      "description": "抵達航班顯示資料",
+      "required": [
+        "FlightDate",
+        "FlightNumber",
+        "AirlineID",
+        "DepartureAirportID",
+        "ArrivalAirportID",
+        "UpdateTime"
+      ],
+      "type": "object",
+      "properties": {
+        "FlightDate": {
+          "title": "DateTime",
+          "description": "航班日期(ISO8601格式:yyyy-MM-dd)",
+          "type": "string"
+        },
+        "FlightNumber": {
+          "description": "航機班號",
+          "type": "string"
+        },
+        "AirRouteType": {
+          "description": "航線種類(目前民航局與桃機的FIDS系統都尚未提供此欄位資料)",
+          "enum": [
+            "1: 國際",
+            "2: 國內",
+            "3: 兩岸",
+            "4: 國際包機",
+            "5: 國內包機",
+            "6: 兩岸包機",
+            "-2: 特殊"
+          ],
+          "type": "string"
+        },
+        "AirlineID": {
+          "description": "航空公司IATA國際代碼",
+          "type": "string"
+        },
+        "DepartureAirportID": {
+          "description": "起點機場IATA國際代碼",
+          "type": "string"
+        },
+        "ArrivalAirportID": {
+          "description": "目的地機場IATA國際代碼",
+          "type": "string"
+        },
+        "ScheduleArrivalTime": {
+          "title": "DateTime",
+          "description": "表訂抵達時間(ISO8601格式:yyyy-MM-ddTHH:mm)",
+          "type": "string"
+        },
+        "ActualArrivalTime": {
+          "title": "DateTime",
+          "description": "實際抵達時間(ISO8601格式:yyyy-MM-ddTHH:mm)",
+          "type": "string"
+        },
+        "EstimatedArrivalTime": {
+          "title": "DateTime",
+          "description": "預估抵達時間(ISO8601格式:yyyy-MM-ddTHH:mm)",
+          "type": "string"
+        },
+        "ArrivalRemark": {
+          "description": "航班屬性狀態,為該機場觀點的狀態",
+          "type": "string"
+        },
+        "ArrivalRemarkEn": {
+          "description": "航班屬性狀態(英文)",
+          "type": "string"
+        },
+        "Terminal": {
+          "description": "航廈",
+          "type": "string"
+        },
+        "Gate": {
+          "description": "登機門",
+          "type": "string"
+        },
+        "CodeShare": {
+          "description": "航班共用班號",
+          "type": "string"
+        },
+        "IsCargo": {
+          "description": "是否為貨機",
+          "type": "boolean"
+        },
+        "AcType": {
+          "description": "航空器型號",
+          "type": "string"
+        },
+        "BaggageClaim": {
+          "description": "行李轉盤(到站FIDS可能有「行李轉盤」資訊, 離站FIDS不會有)",
+          "type": "string"
+        },
+        "CheckCounter": {
+          "description": "報到櫃檯(到站FIDS不會有「報到櫃台」資訊, 離站FIDS才可能有)",
+          "type": "string"
+        },
+        "UpdateTime": {
+          "title": "DateTime",
+          "description": "資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        }
+      }
+    },
+    "Service.DTO.Version2.Aviation.FIDS": {
+      "title": "FIDS",
+      "description": "航班顯示資料",
+      "required": [
+        "FlightDate",
+        "FlightNumber",
+        "AirlineID",
+        "DepartureAirportID",
+        "ArrivalAirportID",
+        "UpdateTime"
+      ],
+      "type": "object",
+      "properties": {
+        "FlightDate": {
+          "title": "DateTime",
+          "description": "航班日期(ISO8601格式:yyyy-MM-dd)",
+          "type": "string"
+        },
+        "FlightNumber": {
+          "description": "航機班號",
+          "type": "string"
+        },
+        "AirRouteType": {
+          "description": "航線種類",
+          "enum": [
+            "1: 國際",
+            "2: 國內",
+            "3: 兩岸",
+            "4: 國際包機",
+            "5: 國內包機",
+            "6: 兩岸包機",
+            "-2: 特殊"
+          ],
+          "type": "string"
+        },
+        "AirlineID": {
+          "description": "航空公司IATA國際代碼",
+          "type": "string"
+        },
+        "DepartureAirportID": {
+          "description": "起點機場IATA國際代碼",
+          "type": "string"
+        },
+        "ArrivalAirportID": {
+          "description": "目的地機場IATA國際代碼",
+          "type": "string"
+        },
+        "ScheduleDepartureTime": {
+          "title": "DateTime",
+          "description": "表訂出發時間(ISO8601格式:yyyy-MM-ddTHH:mm)",
+          "type": "string"
+        },
+        "ActualDepartureTime": {
+          "title": "DateTime",
+          "description": "實際出發時間(ISO8601格式:yyyy-MM-ddTHH:mm)",
+          "type": "string"
+        },
+        "EstimatedDepartureTime": {
+          "title": "DateTime",
+          "description": "預估出發時間(ISO8601格式:yyyy-MM-ddTHH:mm)",
+          "type": "string"
+        },
+        "ScheduleArrivalTime": {
+          "title": "DateTime",
+          "description": "表訂抵達時間(ISO8601格式:yyyy-MM-ddTHH:mm)",
+          "type": "string"
+        },
+        "ActualArrivalTime": {
+          "title": "DateTime",
+          "description": "實際抵達時間(ISO8601格式:yyyy-MM-ddTHH:mm)",
+          "type": "string"
+        },
+        "EstimatedArrivalTime": {
+          "title": "DateTime",
+          "description": "預估抵達時間(ISO8601格式:yyyy-MM-ddTHH:mm)",
+          "type": "string"
+        },
+        "DepartureRemark": {
+          "description": "航班屬性狀態,為第三方觀點的狀態(資料來源:民航局)",
+          "type": "string"
+        },
+        "DepartureRemarkEn": {
+          "description": "航班屬性狀態(英文)",
+          "type": "string"
+        },
+        "ArrivalRemark": {
+          "description": "航班屬性狀態,為該機場觀點的狀態",
+          "type": "string"
+        },
+        "ArrivalRemarkEn": {
+          "description": "航班屬性狀態(英文)",
+          "type": "string"
+        },
+        "FlightStatus": {
+          "description": "航班運行狀態,以航班的角度的狀態",
+          "type": "string"
+        },
+        "FlightStatusEn": {
+          "description": "航班運行狀態(英文)",
+          "type": "string"
+        },
+        "FlightStatusPC": {
+          "description": "航班運行狀態百分比(國內線)",
+          "type": "string"
+        },
+        "FlightRemark": {
+          "description": "航班屬性",
+          "type": "string"
+        },
+        "ArrivalTerminal": {
+          "description": "抵達航廈",
+          "type": "string"
+        },
+        "DepartureTerminal": {
+          "description": "出發航廈",
+          "type": "string"
+        },
+        "ArrivalGate": {
+          "description": "抵達登機門",
+          "type": "string"
+        },
+        "DepartureGate": {
+          "description": "出發登機門",
+          "type": "string"
+        },
+        "CodeShare": {
+          "description": "航班共用班號",
+          "type": "string"
+        },
+        "IsCargo": {
+          "description": "是否為貨機",
+          "type": "boolean"
+        },
+        "AcType": {
+          "description": "航空器型號",
+          "type": "string"
+        },
+        "BaggageClaim": {
+          "description": "行李轉盤",
+          "type": "string"
+        },
+        "CheckCounter": {
+          "description": "報到櫃檯",
+          "type": "string"
+        },
+        "UpdateTime": {
+          "title": "DateTime",
+          "description": "資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        }
+      }
+    },
+    "Service.DTO.Version2.Aviation.GeneralFlightSchedule": {
+      "title": "GeneralFlightSchedule",
+      "description": "航空定期時刻表資料",
+      "required": [
+        "AirlineID",
+        "ScheduleStartDate",
+        "ScheduleEndDate",
+        "FlightNumber",
+        "DepartureAirportID",
+        "DepartureTime",
+        "ArrivalAirportID",
+        "ArrivalTime",
+        "Monday",
+        "Tuesday",
+        "Wednesday",
+        "Thursday",
+        "Friday",
+        "Saturday",
+        "Sunday",
+        "UpdateTime",
+        "VersionID"
+      ],
+      "type": "object",
+      "properties": {
+        "AirlineID": {
+          "description": "航空公司IATA國際代碼",
+          "type": "string"
+        },
+        "ScheduleStartDate": {
+          "title": "DateTime",
+          "description": "班表開始日期(ISO8601格式:yyyy-MM-dd)",
+          "type": "string"
+        },
+        "ScheduleEndDate": {
+          "title": "DateTime",
+          "description": "班表結束日期(ISO8601格式:yyyy-MM-dd)",
+          "type": "string"
+        },
+        "FlightNumber": {
+          "description": "班機號碼",
+          "type": "string"
+        },
+        "DepartureAirportID": {
+          "description": "起點機場IATA國際代碼",
+          "type": "string"
+        },
+        "DepartureTime": {
+          "description": "起點機場出發時間 (格式: HH:mm 當地時間，跨日以+1 表示)",
+          "type": "string"
+        },
+        "CodeShare": {
+          "description": "共用班號",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version2.Aviation.CodeShare"
+          }
+        },
+        "ArrivalAirportID": {
+          "description": "目的地機場IATA國際代碼",
+          "type": "string"
+        },
+        "ArrivalTime": {
+          "description": "終點機場抵達時間 (格式: HH:mm 當地時間，跨日以+1 表示)",
+          "type": "string"
+        },
+        "Monday": {
+          "description": "週一飛行與否",
+          "type": "boolean"
+        },
+        "Tuesday": {
+          "description": "週二飛行與否",
+          "type": "boolean"
+        },
+        "Wednesday": {
+          "description": "週三飛行與否",
+          "type": "boolean"
+        },
+        "Thursday": {
+          "description": "週四飛行與否",
+          "type": "boolean"
+        },
+        "Friday": {
+          "description": "週五飛行與否",
+          "type": "boolean"
+        },
+        "Saturday": {
+          "description": "週六飛行與否",
+          "type": "boolean"
+        },
+        "Sunday": {
+          "description": "週日飛行與否",
+          "type": "boolean"
+        },
+        "Terminal": {
+          "description": "航廈",
+          "type": "string"
+        },
+        "UpdateTime": {
+          "title": "DateTime",
+          "description": "資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "VersionID": {
+          "format": "int32",
+          "description": "資料版本編號",
+          "type": "integer"
+        }
+      }
+    },
+    "Service.DTO.Version2.Aviation.CodeShare": {
+      "title": "CodeShare",
+      "description": "共用班號",
+      "required": [
+        "AirlineID",
+        "FlightNumber"
+      ],
+      "type": "object",
+      "properties": {
+        "AirlineID": {
+          "description": "航空公司IATA國際代碼",
+          "type": "string"
+        },
+        "FlightNumber": {
+          "description": "班機號碼",
+          "type": "string"
+        }
+      }
+    },
+    "Service.DTO.Version2.Application.METAR": {
+      "title": "METAR",
+      "required": [
+        "AirportID",
+        "StationID",
+        "CountryName",
+        "CityName",
+        "AirportName",
+        "StationPosition",
+        "ObservationTime",
+        "MetarText",
+        "MetarTime",
+        "WindDirection",
+        "WindSpeed",
+        "Visibility",
+        "Ceiling",
+        "Temperature",
+        "WeatherDescription",
+        "UpdateTime"
+      ],
+      "type": "object",
+      "properties": {
+        "AirportID": {
+          "description": "機場代碼(IATA)",
+          "type": "string"
+        },
+        "StationID": {
+          "description": "機場氣象觀測站代碼(ICAO)",
+          "type": "string"
+        },
+        "CountryName": {
+          "$ref": "#/definitions/Service.DTO.Version2.Base.NameType",
+          "title": "NameType",
+          "description": "國家名稱"
+        },
+        "CityName": {
+          "$ref": "#/definitions/Service.DTO.Version2.Base.NameType",
+          "title": "NameType",
+          "description": "機場所屬城市"
+        },
+        "AirportName": {
+          "$ref": "#/definitions/Service.DTO.Version2.Base.NameType",
+          "title": "NameType",
+          "description": "機場名稱"
+        },
+        "StationPosition": {
+          "$ref": "#/definitions/Service.DTO.Version2.Base.PointType",
+          "title": "PointType",
+          "description": "機場氣象觀測站座標"
+        },
+        "ObservationTime": {
+          "title": "DateTime",
+          "description": "觀測時間",
+          "type": "string"
+        },
+        "MetarText": {
+          "description": "機場天氣報告(METAR/SPECI)",
+          "type": "string"
+        },
+        "MetarTime": {
+          "description": "機場天氣報告時間(地方時)",
+          "type": "string"
+        },
+        "WindDirection": {
+          "description": "風向(含單位)",
+          "type": "string"
+        },
+        "WindSpeed": {
+          "description": "風速(含單位)",
+          "type": "string"
+        },
+        "Visibility": {
+          "description": "盛行能見度(含單位，9999以10公里以上表示)",
+          "type": "string"
+        },
+        "Ceiling": {
+          "description": "雲冪(含單位)",
+          "type": "string"
+        },
+        "Temperature": {
+          "description": "溫度(含單位)",
+          "type": "string"
+        },
+        "WeatherDescription": {
+          "$ref": "#/definitions/Service.DTO.Version2.Base.NameType",
+          "title": "NameType",
+          "description": "天氣描述"
+        },
+        "UpdateTime": {
+          "title": "DateTime",
+          "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        }
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "Air"
+    }
+  ]
+}
