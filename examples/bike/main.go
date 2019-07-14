@@ -6,8 +6,8 @@ import (
 	"net/http"
 	"os"
 
-	apiclient "github.com/minchao/go-ptx/bike/client"
-	"github.com/minchao/go-ptx/bike/client/bike"
+	apiclient "github.com/minchao/go-ptx/bike/v2/client"
+	"github.com/minchao/go-ptx/bike/v2/client/bike"
 	"github.com/minchao/go-ptx/transport"
 )
 

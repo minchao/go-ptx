@@ -5,8 +5,8 @@ import (
 	"net/http"
 	"os"
 
-	apiclient "github.com/minchao/go-ptx/bus/client"
-	"github.com/minchao/go-ptx/bus/client/city_bus"
+	apiclient "github.com/minchao/go-ptx/bus/v2/client"
+	"github.com/minchao/go-ptx/bus/v2/client/city_bus"
 	"github.com/minchao/go-ptx/transport"
 )
 
@@ -26,6 +26,6 @@ func main() {
 	if err != nil {
 		panic(err)
 	}
-	fmt.Printf("VersionID: %d\n", *res.Payload.VersionID)
+	fmt.Printf("VersionID: %d\n", res.Payload.VersionID)
 	fmt.Printf("UpdateTime: %s\n", *res.Payload.UpdateTime)
 }
