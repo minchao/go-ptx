@@ -24,18 +24,17 @@ go-ptx 是[公共運輸整合資訊流通服務平臺](https://ptx.transportdata
 
 ```go
 import (
-	httptransport "github.com/go-openapi/runtime/client"
 	apiclient "github.com/minchao/go-ptx/bus/client"
-	"github.com/minchao/go-ptx/httpclient"
+	"github.com/minchao/go-ptx/transport"
 )
 
 func main() {
 	httpClient := http.DefaultClient
-	httpClient.Transport = &httpclient.AuthTransport{
+	httpClient.Transport = &transport.AuthTransport{
 		AppId:  "YOUR_APP_ID",
 		AppKey: "YOUR_APP_KEY",
 	}
-	t := httptransport.NewWithClient(apiclient.DefaultHost, apiclient.DefaultBasePath, nil, httpClient)
+	t := transport.NewWithClient(httpClient)
 	client := apiclient.New(t, nil)
 }
 ```

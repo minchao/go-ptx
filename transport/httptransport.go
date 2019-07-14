@@ -1,4 +1,4 @@
-package httpclient
+package transport
 
 import (
 	"crypto/hmac"

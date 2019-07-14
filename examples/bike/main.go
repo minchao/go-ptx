@@ -8,12 +8,12 @@ import (
 
 	apiclient "github.com/minchao/go-ptx/bike/client"
 	"github.com/minchao/go-ptx/bike/client/bike"
-	"github.com/minchao/go-ptx/httpclient"
+	"github.com/minchao/go-ptx/transport"
 )
 
 func main() {
 	httpClient := http.DefaultClient
-	httpClient.Transport = &httpclient.AuthTransport{
+	httpClient.Transport = &transport.AuthTransport{
 		AppId:  os.Getenv("APP_ID"),
 		AppKey: os.Getenv("APP_KEY"),
 	}
