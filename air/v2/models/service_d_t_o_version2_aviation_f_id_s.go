@@ -35,8 +35,8 @@ type ServiceDTOVersion2AviationFIDS struct {
 	ActualDepartureTime string `json:"ActualDepartureTime,omitempty"`
 
 	// 航線種類
-	// Enum: [1: 國際 2: 國內 3: 兩岸 4: 國際包機 5: 國內包機 6: 兩岸包機 -2: 特殊]
-	AirRouteType string `json:"AirRouteType,omitempty"`
+	// Enum: [1 2 3 4 5 6 -2]
+	AirRouteType int64 `json:"AirRouteType,omitempty"`
 
 	// 航空公司IATA國際代碼
 	// Required: true
@@ -176,8 +176,8 @@ func (m *ServiceDTOVersion2AviationFIDS) Validate(formats strfmt.Registry) error
 var serviceDTOVersion2AviationFIdSTypeAirRouteTypePropEnum []interface{}
 
 func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["1: 國際","2: 國內","3: 兩岸","4: 國際包機","5: 國內包機","6: 兩岸包機","-2: 特殊"]`), &res); err != nil {
+	var res []int64
+	if err := json.Unmarshal([]byte(`[1,2,3,4,5,6,-2]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -185,32 +185,8 @@ func init() {
 	}
 }
 
-const (
-
-	// ServiceDTOVersion2AviationFIDSAirRouteTypeNr1國際 captures enum value "1: 國際"
-	ServiceDTOVersion2AviationFIDSAirRouteTypeNr1國際 string = "1: 國際"
-
-	// ServiceDTOVersion2AviationFIDSAirRouteTypeNr2國內 captures enum value "2: 國內"
-	ServiceDTOVersion2AviationFIDSAirRouteTypeNr2國內 string = "2: 國內"
-
-	// ServiceDTOVersion2AviationFIDSAirRouteTypeNr3兩岸 captures enum value "3: 兩岸"
-	ServiceDTOVersion2AviationFIDSAirRouteTypeNr3兩岸 string = "3: 兩岸"
-
-	// ServiceDTOVersion2AviationFIDSAirRouteTypeNr4國際包機 captures enum value "4: 國際包機"
-	ServiceDTOVersion2AviationFIDSAirRouteTypeNr4國際包機 string = "4: 國際包機"
-
-	// ServiceDTOVersion2AviationFIDSAirRouteTypeNr5國內包機 captures enum value "5: 國內包機"
-	ServiceDTOVersion2AviationFIDSAirRouteTypeNr5國內包機 string = "5: 國內包機"
-
-	// ServiceDTOVersion2AviationFIDSAirRouteTypeNr6兩岸包機 captures enum value "6: 兩岸包機"
-	ServiceDTOVersion2AviationFIDSAirRouteTypeNr6兩岸包機 string = "6: 兩岸包機"
-
-	// ServiceDTOVersion2AviationFIDSAirRouteTypeMinus2特殊 captures enum value "-2: 特殊"
-	ServiceDTOVersion2AviationFIDSAirRouteTypeMinus2特殊 string = "-2: 特殊"
-)
-
 // prop value enum
-func (m *ServiceDTOVersion2AviationFIDS) validateAirRouteTypeEnum(path, location string, value string) error {
+func (m *ServiceDTOVersion2AviationFIDS) validateAirRouteTypeEnum(path, location string, value int64) error {
 	if err := validate.Enum(path, location, value, serviceDTOVersion2AviationFIdSTypeAirRouteTypePropEnum); err != nil {
 		return err
 	}

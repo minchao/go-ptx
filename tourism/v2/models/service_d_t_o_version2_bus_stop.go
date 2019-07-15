@@ -32,8 +32,8 @@ type ServiceDTOVersion2BusStop struct {
 	StationNameID *string `json:"StationNameID"`
 
 	// 上下車站別
-	// Enum: [0: 可上下車 1: 可上車 -1: 可下車]
-	StopBoarding string `json:"StopBoarding,omitempty"`
+	// Enum: [0 1 -1]
+	StopBoarding int64 `json:"StopBoarding,omitempty"`
 
 	// 地區既用中之站牌代碼(為原資料內碼)
 	// Required: true
@@ -110,8 +110,8 @@ func (m *ServiceDTOVersion2BusStop) validateStationNameID(formats strfmt.Registr
 var serviceDTOVersion2BusStopTypeStopBoardingPropEnum []interface{}
 
 func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["0: 可上下車","1: 可上車","-1: 可下車"]`), &res); err != nil {
+	var res []int64
+	if err := json.Unmarshal([]byte(`[0,1,-1]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -119,20 +119,8 @@ func init() {
 	}
 }
 
-const (
-
-	// ServiceDTOVersion2BusStopStopBoardingNr0可上下車 captures enum value "0: 可上下車"
-	ServiceDTOVersion2BusStopStopBoardingNr0可上下車 string = "0: 可上下車"
-
-	// ServiceDTOVersion2BusStopStopBoardingNr1可上車 captures enum value "1: 可上車"
-	ServiceDTOVersion2BusStopStopBoardingNr1可上車 string = "1: 可上車"
-
-	// ServiceDTOVersion2BusStopStopBoardingMinus1可下車 captures enum value "-1: 可下車"
-	ServiceDTOVersion2BusStopStopBoardingMinus1可下車 string = "-1: 可下車"
-)
-
 // prop value enum
-func (m *ServiceDTOVersion2BusStop) validateStopBoardingEnum(path, location string, value string) error {
+func (m *ServiceDTOVersion2BusStop) validateStopBoardingEnum(path, location string, value int64) error {
 	if err := validate.Enum(path, location, value, serviceDTOVersion2BusStopTypeStopBoardingPropEnum); err != nil {
 		return err
 	}

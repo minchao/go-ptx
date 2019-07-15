@@ -30,8 +30,8 @@ type ServiceDTOVersion2AviationFIDSDeparture struct {
 	ActualDepartureTime string `json:"ActualDepartureTime,omitempty"`
 
 	// 航線種類(目前民航局與桃機的FIDS系統都尚未提供此欄位資料)
-	// Enum: [1: 國際 2: 國內 3: 兩岸 4: 國際包機 5: 國內包機 6: 兩岸包機 -2: 特殊]
-	AirRouteType string `json:"AirRouteType,omitempty"`
+	// Enum: [1 2 3 4 5 6 -2]
+	AirRouteType int64 `json:"AirRouteType,omitempty"`
 
 	// 航空公司IATA國際代碼
 	// Required: true
@@ -137,8 +137,8 @@ func (m *ServiceDTOVersion2AviationFIDSDeparture) Validate(formats strfmt.Regist
 var serviceDTOVersion2AviationFIdSDepartureTypeAirRouteTypePropEnum []interface{}
 
 func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["1: 國際","2: 國內","3: 兩岸","4: 國際包機","5: 國內包機","6: 兩岸包機","-2: 特殊"]`), &res); err != nil {
+	var res []int64
+	if err := json.Unmarshal([]byte(`[1,2,3,4,5,6,-2]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -146,32 +146,8 @@ func init() {
 	}
 }
 
-const (
-
-	// ServiceDTOVersion2AviationFIDSDepartureAirRouteTypeNr1國際 captures enum value "1: 國際"
-	ServiceDTOVersion2AviationFIDSDepartureAirRouteTypeNr1國際 string = "1: 國際"
-
-	// ServiceDTOVersion2AviationFIDSDepartureAirRouteTypeNr2國內 captures enum value "2: 國內"
-	ServiceDTOVersion2AviationFIDSDepartureAirRouteTypeNr2國內 string = "2: 國內"
-
-	// ServiceDTOVersion2AviationFIDSDepartureAirRouteTypeNr3兩岸 captures enum value "3: 兩岸"
-	ServiceDTOVersion2AviationFIDSDepartureAirRouteTypeNr3兩岸 string = "3: 兩岸"
-
-	// ServiceDTOVersion2AviationFIDSDepartureAirRouteTypeNr4國際包機 captures enum value "4: 國際包機"
-	ServiceDTOVersion2AviationFIDSDepartureAirRouteTypeNr4國際包機 string = "4: 國際包機"
-
-	// ServiceDTOVersion2AviationFIDSDepartureAirRouteTypeNr5國內包機 captures enum value "5: 國內包機"
-	ServiceDTOVersion2AviationFIDSDepartureAirRouteTypeNr5國內包機 string = "5: 國內包機"
-
-	// ServiceDTOVersion2AviationFIDSDepartureAirRouteTypeNr6兩岸包機 captures enum value "6: 兩岸包機"
-	ServiceDTOVersion2AviationFIDSDepartureAirRouteTypeNr6兩岸包機 string = "6: 兩岸包機"
-
-	// ServiceDTOVersion2AviationFIDSDepartureAirRouteTypeMinus2特殊 captures enum value "-2: 特殊"
-	ServiceDTOVersion2AviationFIDSDepartureAirRouteTypeMinus2特殊 string = "-2: 特殊"
-)
-
 // prop value enum
-func (m *ServiceDTOVersion2AviationFIDSDeparture) validateAirRouteTypeEnum(path, location string, value string) error {
+func (m *ServiceDTOVersion2AviationFIDSDeparture) validateAirRouteTypeEnum(path, location string, value int64) error {
 	if err := validate.Enum(path, location, value, serviceDTOVersion2AviationFIdSDepartureTypeAirRouteTypePropEnum); err != nil {
 		return err
 	}

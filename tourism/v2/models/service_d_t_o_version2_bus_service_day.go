@@ -21,42 +21,42 @@ type ServiceDTOVersion2BusServiceDay struct {
 
 	// 星期五是否營運
 	// Required: true
-	// Enum: [0: 否 1: 是]
-	Friday *string `json:"Friday"`
+	// Enum: [0 1]
+	Friday *int64 `json:"Friday"`
 
 	// 星期一是否營運
 	// Required: true
-	// Enum: [0: 否 1: 是]
-	Monday *string `json:"Monday"`
+	// Enum: [0 1]
+	Monday *int64 `json:"Monday"`
 
 	// 國定假日是否營運
-	// Enum: [0: 否 1: 是]
-	NationalHolidays string `json:"NationalHolidays,omitempty"`
+	// Enum: [0 1]
+	NationalHolidays int64 `json:"NationalHolidays,omitempty"`
 
 	// 星期六是否營運
 	// Required: true
-	// Enum: [0: 否 1: 是]
-	Saturday *string `json:"Saturday"`
+	// Enum: [0 1]
+	Saturday *int64 `json:"Saturday"`
 
 	// 星期日是否營運
 	// Required: true
-	// Enum: [0: 否 1: 是]
-	Sunday *string `json:"Sunday"`
+	// Enum: [0 1]
+	Sunday *int64 `json:"Sunday"`
 
 	// 星期四是否營運
 	// Required: true
-	// Enum: [0: 否 1: 是]
-	Thursday *string `json:"Thursday"`
+	// Enum: [0 1]
+	Thursday *int64 `json:"Thursday"`
 
 	// 星期二是否營運
 	// Required: true
-	// Enum: [0: 否 1: 是]
-	Tuesday *string `json:"Tuesday"`
+	// Enum: [0 1]
+	Tuesday *int64 `json:"Tuesday"`
 
 	// 星期三是否營運
 	// Required: true
-	// Enum: [0: 否 1: 是]
-	Wednesday *string `json:"Wednesday"`
+	// Enum: [0 1]
+	Wednesday *int64 `json:"Wednesday"`
 }
 
 // Validate validates this service d t o version2 bus service day
@@ -104,8 +104,8 @@ func (m *ServiceDTOVersion2BusServiceDay) Validate(formats strfmt.Registry) erro
 var serviceDTOVersion2BusServiceDayTypeFridayPropEnum []interface{}
 
 func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["0: 否","1: 是"]`), &res); err != nil {
+	var res []int64
+	if err := json.Unmarshal([]byte(`[0,1]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -113,17 +113,8 @@ func init() {
 	}
 }
 
-const (
-
-	// ServiceDTOVersion2BusServiceDayFridayNr0否 captures enum value "0: 否"
-	ServiceDTOVersion2BusServiceDayFridayNr0否 string = "0: 否"
-
-	// ServiceDTOVersion2BusServiceDayFridayNr1是 captures enum value "1: 是"
-	ServiceDTOVersion2BusServiceDayFridayNr1是 string = "1: 是"
-)
-
 // prop value enum
-func (m *ServiceDTOVersion2BusServiceDay) validateFridayEnum(path, location string, value string) error {
+func (m *ServiceDTOVersion2BusServiceDay) validateFridayEnum(path, location string, value int64) error {
 	if err := validate.Enum(path, location, value, serviceDTOVersion2BusServiceDayTypeFridayPropEnum); err != nil {
 		return err
 	}
@@ -147,8 +138,8 @@ func (m *ServiceDTOVersion2BusServiceDay) validateFriday(formats strfmt.Registry
 var serviceDTOVersion2BusServiceDayTypeMondayPropEnum []interface{}
 
 func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["0: 否","1: 是"]`), &res); err != nil {
+	var res []int64
+	if err := json.Unmarshal([]byte(`[0,1]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -156,17 +147,8 @@ func init() {
 	}
 }
 
-const (
-
-	// ServiceDTOVersion2BusServiceDayMondayNr0否 captures enum value "0: 否"
-	ServiceDTOVersion2BusServiceDayMondayNr0否 string = "0: 否"
-
-	// ServiceDTOVersion2BusServiceDayMondayNr1是 captures enum value "1: 是"
-	ServiceDTOVersion2BusServiceDayMondayNr1是 string = "1: 是"
-)
-
 // prop value enum
-func (m *ServiceDTOVersion2BusServiceDay) validateMondayEnum(path, location string, value string) error {
+func (m *ServiceDTOVersion2BusServiceDay) validateMondayEnum(path, location string, value int64) error {
 	if err := validate.Enum(path, location, value, serviceDTOVersion2BusServiceDayTypeMondayPropEnum); err != nil {
 		return err
 	}
@@ -190,8 +172,8 @@ func (m *ServiceDTOVersion2BusServiceDay) validateMonday(formats strfmt.Registry
 var serviceDTOVersion2BusServiceDayTypeNationalHolidaysPropEnum []interface{}
 
 func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["0: 否","1: 是"]`), &res); err != nil {
+	var res []int64
+	if err := json.Unmarshal([]byte(`[0,1]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -199,17 +181,8 @@ func init() {
 	}
 }
 
-const (
-
-	// ServiceDTOVersion2BusServiceDayNationalHolidaysNr0否 captures enum value "0: 否"
-	ServiceDTOVersion2BusServiceDayNationalHolidaysNr0否 string = "0: 否"
-
-	// ServiceDTOVersion2BusServiceDayNationalHolidaysNr1是 captures enum value "1: 是"
-	ServiceDTOVersion2BusServiceDayNationalHolidaysNr1是 string = "1: 是"
-)
-
 // prop value enum
-func (m *ServiceDTOVersion2BusServiceDay) validateNationalHolidaysEnum(path, location string, value string) error {
+func (m *ServiceDTOVersion2BusServiceDay) validateNationalHolidaysEnum(path, location string, value int64) error {
 	if err := validate.Enum(path, location, value, serviceDTOVersion2BusServiceDayTypeNationalHolidaysPropEnum); err != nil {
 		return err
 	}
@@ -233,8 +206,8 @@ func (m *ServiceDTOVersion2BusServiceDay) validateNationalHolidays(formats strfm
 var serviceDTOVersion2BusServiceDayTypeSaturdayPropEnum []interface{}
 
 func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["0: 否","1: 是"]`), &res); err != nil {
+	var res []int64
+	if err := json.Unmarshal([]byte(`[0,1]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -242,17 +215,8 @@ func init() {
 	}
 }
 
-const (
-
-	// ServiceDTOVersion2BusServiceDaySaturdayNr0否 captures enum value "0: 否"
-	ServiceDTOVersion2BusServiceDaySaturdayNr0否 string = "0: 否"
-
-	// ServiceDTOVersion2BusServiceDaySaturdayNr1是 captures enum value "1: 是"
-	ServiceDTOVersion2BusServiceDaySaturdayNr1是 string = "1: 是"
-)
-
 // prop value enum
-func (m *ServiceDTOVersion2BusServiceDay) validateSaturdayEnum(path, location string, value string) error {
+func (m *ServiceDTOVersion2BusServiceDay) validateSaturdayEnum(path, location string, value int64) error {
 	if err := validate.Enum(path, location, value, serviceDTOVersion2BusServiceDayTypeSaturdayPropEnum); err != nil {
 		return err
 	}
@@ -276,8 +240,8 @@ func (m *ServiceDTOVersion2BusServiceDay) validateSaturday(formats strfmt.Regist
 var serviceDTOVersion2BusServiceDayTypeSundayPropEnum []interface{}
 
 func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["0: 否","1: 是"]`), &res); err != nil {
+	var res []int64
+	if err := json.Unmarshal([]byte(`[0,1]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -285,17 +249,8 @@ func init() {
 	}
 }
 
-const (
-
-	// ServiceDTOVersion2BusServiceDaySundayNr0否 captures enum value "0: 否"
-	ServiceDTOVersion2BusServiceDaySundayNr0否 string = "0: 否"
-
-	// ServiceDTOVersion2BusServiceDaySundayNr1是 captures enum value "1: 是"
-	ServiceDTOVersion2BusServiceDaySundayNr1是 string = "1: 是"
-)
-
 // prop value enum
-func (m *ServiceDTOVersion2BusServiceDay) validateSundayEnum(path, location string, value string) error {
+func (m *ServiceDTOVersion2BusServiceDay) validateSundayEnum(path, location string, value int64) error {
 	if err := validate.Enum(path, location, value, serviceDTOVersion2BusServiceDayTypeSundayPropEnum); err != nil {
 		return err
 	}
@@ -319,8 +274,8 @@ func (m *ServiceDTOVersion2BusServiceDay) validateSunday(formats strfmt.Registry
 var serviceDTOVersion2BusServiceDayTypeThursdayPropEnum []interface{}
 
 func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["0: 否","1: 是"]`), &res); err != nil {
+	var res []int64
+	if err := json.Unmarshal([]byte(`[0,1]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -328,17 +283,8 @@ func init() {
 	}
 }
 
-const (
-
-	// ServiceDTOVersion2BusServiceDayThursdayNr0否 captures enum value "0: 否"
-	ServiceDTOVersion2BusServiceDayThursdayNr0否 string = "0: 否"
-
-	// ServiceDTOVersion2BusServiceDayThursdayNr1是 captures enum value "1: 是"
-	ServiceDTOVersion2BusServiceDayThursdayNr1是 string = "1: 是"
-)
-
 // prop value enum
-func (m *ServiceDTOVersion2BusServiceDay) validateThursdayEnum(path, location string, value string) error {
+func (m *ServiceDTOVersion2BusServiceDay) validateThursdayEnum(path, location string, value int64) error {
 	if err := validate.Enum(path, location, value, serviceDTOVersion2BusServiceDayTypeThursdayPropEnum); err != nil {
 		return err
 	}
@@ -362,8 +308,8 @@ func (m *ServiceDTOVersion2BusServiceDay) validateThursday(formats strfmt.Regist
 var serviceDTOVersion2BusServiceDayTypeTuesdayPropEnum []interface{}
 
 func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["0: 否","1: 是"]`), &res); err != nil {
+	var res []int64
+	if err := json.Unmarshal([]byte(`[0,1]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -371,17 +317,8 @@ func init() {
 	}
 }
 
-const (
-
-	// ServiceDTOVersion2BusServiceDayTuesdayNr0否 captures enum value "0: 否"
-	ServiceDTOVersion2BusServiceDayTuesdayNr0否 string = "0: 否"
-
-	// ServiceDTOVersion2BusServiceDayTuesdayNr1是 captures enum value "1: 是"
-	ServiceDTOVersion2BusServiceDayTuesdayNr1是 string = "1: 是"
-)
-
 // prop value enum
-func (m *ServiceDTOVersion2BusServiceDay) validateTuesdayEnum(path, location string, value string) error {
+func (m *ServiceDTOVersion2BusServiceDay) validateTuesdayEnum(path, location string, value int64) error {
 	if err := validate.Enum(path, location, value, serviceDTOVersion2BusServiceDayTypeTuesdayPropEnum); err != nil {
 		return err
 	}
@@ -405,8 +342,8 @@ func (m *ServiceDTOVersion2BusServiceDay) validateTuesday(formats strfmt.Registr
 var serviceDTOVersion2BusServiceDayTypeWednesdayPropEnum []interface{}
 
 func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["0: 否","1: 是"]`), &res); err != nil {
+	var res []int64
+	if err := json.Unmarshal([]byte(`[0,1]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -414,17 +351,8 @@ func init() {
 	}
 }
 
-const (
-
-	// ServiceDTOVersion2BusServiceDayWednesdayNr0否 captures enum value "0: 否"
-	ServiceDTOVersion2BusServiceDayWednesdayNr0否 string = "0: 否"
-
-	// ServiceDTOVersion2BusServiceDayWednesdayNr1是 captures enum value "1: 是"
-	ServiceDTOVersion2BusServiceDayWednesdayNr1是 string = "1: 是"
-)
-
 // prop value enum
-func (m *ServiceDTOVersion2BusServiceDay) validateWednesdayEnum(path, location string, value string) error {
+func (m *ServiceDTOVersion2BusServiceDay) validateWednesdayEnum(path, location string, value int64) error {
 	if err := validate.Enum(path, location, value, serviceDTOVersion2BusServiceDayTypeWednesdayPropEnum); err != nil {
 		return err
 	}

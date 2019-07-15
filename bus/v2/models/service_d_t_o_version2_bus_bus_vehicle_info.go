@@ -33,8 +33,8 @@ type ServiceDTOVersion2BusBusVehicleInfo struct {
 
 	// 車輛種類
 	// Required: true
-	// Enum: [0: 一般 1: 低地板 2: 復康巴士 3: 小型巴士]
-	VehicleType *string `json:"VehicleType"`
+	// Enum: [0 1 2 3]
+	VehicleType *int64 `json:"VehicleType"`
 }
 
 // Validate validates this service d t o version2 bus bus vehicle info
@@ -80,8 +80,8 @@ func (m *ServiceDTOVersion2BusBusVehicleInfo) validateUpdateTime(formats strfmt.
 var serviceDTOVersion2BusBusVehicleInfoTypeVehicleTypePropEnum []interface{}
 
 func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["0: 一般","1: 低地板","2: 復康巴士","3: 小型巴士"]`), &res); err != nil {
+	var res []int64
+	if err := json.Unmarshal([]byte(`[0,1,2,3]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -89,23 +89,8 @@ func init() {
 	}
 }
 
-const (
-
-	// ServiceDTOVersion2BusBusVehicleInfoVehicleTypeNr0一般 captures enum value "0: 一般"
-	ServiceDTOVersion2BusBusVehicleInfoVehicleTypeNr0一般 string = "0: 一般"
-
-	// ServiceDTOVersion2BusBusVehicleInfoVehicleTypeNr1低地板 captures enum value "1: 低地板"
-	ServiceDTOVersion2BusBusVehicleInfoVehicleTypeNr1低地板 string = "1: 低地板"
-
-	// ServiceDTOVersion2BusBusVehicleInfoVehicleTypeNr2復康巴士 captures enum value "2: 復康巴士"
-	ServiceDTOVersion2BusBusVehicleInfoVehicleTypeNr2復康巴士 string = "2: 復康巴士"
-
-	// ServiceDTOVersion2BusBusVehicleInfoVehicleTypeNr3小型巴士 captures enum value "3: 小型巴士"
-	ServiceDTOVersion2BusBusVehicleInfoVehicleTypeNr3小型巴士 string = "3: 小型巴士"
-)
-
 // prop value enum
-func (m *ServiceDTOVersion2BusBusVehicleInfo) validateVehicleTypeEnum(path, location string, value string) error {
+func (m *ServiceDTOVersion2BusBusVehicleInfo) validateVehicleTypeEnum(path, location string, value int64) error {
 	if err := validate.Enum(path, location, value, serviceDTOVersion2BusBusVehicleInfoTypeVehicleTypePropEnum); err != nil {
 		return err
 	}

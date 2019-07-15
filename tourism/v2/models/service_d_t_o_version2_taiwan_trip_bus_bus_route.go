@@ -28,8 +28,8 @@ type ServiceDTOVersion2TaiwanTripBusBusRoute struct {
 
 	// 公車路線類別
 	// Required: true
-	// Enum: [11: 市區公車 12: 公路客運 13: 國道客運 14: 接駁車]
-	BusRouteType *string `json:"BusRouteType"`
+	// Enum: [11 12 13 14]
+	BusRouteType *int64 `json:"BusRouteType"`
 
 	// 路線權管所屬縣市(相當於市區公車API的City參數)[若為公路/國道客運路線則為空值]
 	City string `json:"City,omitempty"`
@@ -176,8 +176,8 @@ func (m *ServiceDTOVersion2TaiwanTripBusBusRoute) validateAuthorityID(formats st
 var serviceDTOVersion2TaiwanTripBusBusRouteTypeBusRouteTypePropEnum []interface{}
 
 func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["11: 市區公車","12: 公路客運","13: 國道客運","14: 接駁車"]`), &res); err != nil {
+	var res []int64
+	if err := json.Unmarshal([]byte(`[11,12,13,14]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -185,23 +185,8 @@ func init() {
 	}
 }
 
-const (
-
-	// ServiceDTOVersion2TaiwanTripBusBusRouteBusRouteTypeNr11市區公車 captures enum value "11: 市區公車"
-	ServiceDTOVersion2TaiwanTripBusBusRouteBusRouteTypeNr11市區公車 string = "11: 市區公車"
-
-	// ServiceDTOVersion2TaiwanTripBusBusRouteBusRouteTypeNr12公路客運 captures enum value "12: 公路客運"
-	ServiceDTOVersion2TaiwanTripBusBusRouteBusRouteTypeNr12公路客運 string = "12: 公路客運"
-
-	// ServiceDTOVersion2TaiwanTripBusBusRouteBusRouteTypeNr13國道客運 captures enum value "13: 國道客運"
-	ServiceDTOVersion2TaiwanTripBusBusRouteBusRouteTypeNr13國道客運 string = "13: 國道客運"
-
-	// ServiceDTOVersion2TaiwanTripBusBusRouteBusRouteTypeNr14接駁車 captures enum value "14: 接駁車"
-	ServiceDTOVersion2TaiwanTripBusBusRouteBusRouteTypeNr14接駁車 string = "14: 接駁車"
-)
-
 // prop value enum
-func (m *ServiceDTOVersion2TaiwanTripBusBusRoute) validateBusRouteTypeEnum(path, location string, value string) error {
+func (m *ServiceDTOVersion2TaiwanTripBusBusRoute) validateBusRouteTypeEnum(path, location string, value int64) error {
 	if err := validate.Enum(path, location, value, serviceDTOVersion2TaiwanTripBusBusRouteTypeBusRouteTypePropEnum); err != nil {
 		return err
 	}

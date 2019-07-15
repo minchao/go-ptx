@@ -24,8 +24,8 @@ type ServiceDTOVersion3RailTRATRAStationLiveBoardListStationLiveBoard struct {
 	DelayTime *int32 `json:"DelayTime"`
 
 	// 行駛方向
-	// Enum: [0: 順行 1: 逆行]
-	Direction string `json:"Direction,omitempty"`
+	// Enum: [0 1]
+	Direction int64 `json:"Direction,omitempty"`
 
 	// 終點站代碼
 	EndingStationID string `json:"EndingStationID,omitempty"`
@@ -40,8 +40,8 @@ type ServiceDTOVersion3RailTRATRAStationLiveBoardListStationLiveBoard struct {
 	Platform string `json:"Platform,omitempty"`
 
 	// 列車狀態
-	// Enum: [0: 準點 1: 誤點 2: 取消]
-	RunningStatus string `json:"RunningStatus,omitempty"`
+	// Enum: [0 1 2]
+	RunningStatus int64 `json:"RunningStatus,omitempty"`
 
 	// 表訂到站時刻
 	ScheduleArrivalTime string `json:"ScheduleArrivalTime,omitempty"`
@@ -76,8 +76,8 @@ type ServiceDTOVersion3RailTRATRAStationLiveBoardListStationLiveBoard struct {
 	TrainTypeName *ServiceDTOVersion3BaseNameType `json:"TrainTypeName"`
 
 	// 山海線類型
-	// Enum: [0: 不經山海線 1: 山線 2: 海線]
-	TripLine string `json:"TripLine,omitempty"`
+	// Enum: [0 1 2]
+	TripLine int64 `json:"TripLine,omitempty"`
 
 	// DateTime
 	//
@@ -148,8 +148,8 @@ func (m *ServiceDTOVersion3RailTRATRAStationLiveBoardListStationLiveBoard) valid
 var serviceDTOVersion3RailTRATRAStationLiveBoardListStationLiveBoardTypeDirectionPropEnum []interface{}
 
 func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["0: 順行","1: 逆行"]`), &res); err != nil {
+	var res []int64
+	if err := json.Unmarshal([]byte(`[0,1]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -157,17 +157,8 @@ func init() {
 	}
 }
 
-const (
-
-	// ServiceDTOVersion3RailTRATRAStationLiveBoardListStationLiveBoardDirectionNr0順行 captures enum value "0: 順行"
-	ServiceDTOVersion3RailTRATRAStationLiveBoardListStationLiveBoardDirectionNr0順行 string = "0: 順行"
-
-	// ServiceDTOVersion3RailTRATRAStationLiveBoardListStationLiveBoardDirectionNr1逆行 captures enum value "1: 逆行"
-	ServiceDTOVersion3RailTRATRAStationLiveBoardListStationLiveBoardDirectionNr1逆行 string = "1: 逆行"
-)
-
 // prop value enum
-func (m *ServiceDTOVersion3RailTRATRAStationLiveBoardListStationLiveBoard) validateDirectionEnum(path, location string, value string) error {
+func (m *ServiceDTOVersion3RailTRATRAStationLiveBoardListStationLiveBoard) validateDirectionEnum(path, location string, value int64) error {
 	if err := validate.Enum(path, location, value, serviceDTOVersion3RailTRATRAStationLiveBoardListStationLiveBoardTypeDirectionPropEnum); err != nil {
 		return err
 	}
@@ -209,8 +200,8 @@ func (m *ServiceDTOVersion3RailTRATRAStationLiveBoardListStationLiveBoard) valid
 var serviceDTOVersion3RailTRATRAStationLiveBoardListStationLiveBoardTypeRunningStatusPropEnum []interface{}
 
 func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["0: 準點","1: 誤點","2: 取消"]`), &res); err != nil {
+	var res []int64
+	if err := json.Unmarshal([]byte(`[0,1,2]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -218,20 +209,8 @@ func init() {
 	}
 }
 
-const (
-
-	// ServiceDTOVersion3RailTRATRAStationLiveBoardListStationLiveBoardRunningStatusNr0準點 captures enum value "0: 準點"
-	ServiceDTOVersion3RailTRATRAStationLiveBoardListStationLiveBoardRunningStatusNr0準點 string = "0: 準點"
-
-	// ServiceDTOVersion3RailTRATRAStationLiveBoardListStationLiveBoardRunningStatusNr1誤點 captures enum value "1: 誤點"
-	ServiceDTOVersion3RailTRATRAStationLiveBoardListStationLiveBoardRunningStatusNr1誤點 string = "1: 誤點"
-
-	// ServiceDTOVersion3RailTRATRAStationLiveBoardListStationLiveBoardRunningStatusNr2取消 captures enum value "2: 取消"
-	ServiceDTOVersion3RailTRATRAStationLiveBoardListStationLiveBoardRunningStatusNr2取消 string = "2: 取消"
-)
-
 // prop value enum
-func (m *ServiceDTOVersion3RailTRATRAStationLiveBoardListStationLiveBoard) validateRunningStatusEnum(path, location string, value string) error {
+func (m *ServiceDTOVersion3RailTRATRAStationLiveBoardListStationLiveBoard) validateRunningStatusEnum(path, location string, value int64) error {
 	if err := validate.Enum(path, location, value, serviceDTOVersion3RailTRATRAStationLiveBoardListStationLiveBoardTypeRunningStatusPropEnum); err != nil {
 		return err
 	}
@@ -309,8 +288,8 @@ func (m *ServiceDTOVersion3RailTRATRAStationLiveBoardListStationLiveBoard) valid
 var serviceDTOVersion3RailTRATRAStationLiveBoardListStationLiveBoardTypeTripLinePropEnum []interface{}
 
 func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["0: 不經山海線","1: 山線","2: 海線"]`), &res); err != nil {
+	var res []int64
+	if err := json.Unmarshal([]byte(`[0,1,2]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -318,20 +297,8 @@ func init() {
 	}
 }
 
-const (
-
-	// ServiceDTOVersion3RailTRATRAStationLiveBoardListStationLiveBoardTripLineNr0不經山海線 captures enum value "0: 不經山海線"
-	ServiceDTOVersion3RailTRATRAStationLiveBoardListStationLiveBoardTripLineNr0不經山海線 string = "0: 不經山海線"
-
-	// ServiceDTOVersion3RailTRATRAStationLiveBoardListStationLiveBoardTripLineNr1山線 captures enum value "1: 山線"
-	ServiceDTOVersion3RailTRATRAStationLiveBoardListStationLiveBoardTripLineNr1山線 string = "1: 山線"
-
-	// ServiceDTOVersion3RailTRATRAStationLiveBoardListStationLiveBoardTripLineNr2海線 captures enum value "2: 海線"
-	ServiceDTOVersion3RailTRATRAStationLiveBoardListStationLiveBoardTripLineNr2海線 string = "2: 海線"
-)
-
 // prop value enum
-func (m *ServiceDTOVersion3RailTRATRAStationLiveBoardListStationLiveBoard) validateTripLineEnum(path, location string, value string) error {
+func (m *ServiceDTOVersion3RailTRATRAStationLiveBoardListStationLiveBoard) validateTripLineEnum(path, location string, value int64) error {
 	if err := validate.Enum(path, location, value, serviceDTOVersion3RailTRATRAStationLiveBoardListStationLiveBoardTypeTripLinePropEnum); err != nil {
 		return err
 	}

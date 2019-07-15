@@ -24,18 +24,18 @@ type ServiceDTOVersion2BusBusRouteFare struct {
 
 	// 描述該路線計費方式
 	// Required: true
-	// Enum: [0: 段次計費 1: 起迄站間計費 2: 計費站區間計費]
-	FarePricingType *string `json:"FarePricingType"`
+	// Enum: [0 1 2]
+	FarePricingType *int64 `json:"FarePricingType"`
 
 	// 該收費方式是否應用到所有附屬路線
 	// Required: true
-	// Enum: [0: 否 1: 是]
-	IsForAllSubRoutes *string `json:"IsForAllSubRoutes"`
+	// Enum: [0 1]
+	IsForAllSubRoutes *int64 `json:"IsForAllSubRoutes"`
 
 	// 是否為免費公車
 	// Required: true
-	// Enum: [0: 否 1: 是]
-	IsFreeBus *string `json:"IsFreeBus"`
+	// Enum: [0 1]
+	IsFreeBus *int64 `json:"IsFreeBus"`
 
 	// 營運業者代碼
 	// Required: true
@@ -105,8 +105,8 @@ func (m *ServiceDTOVersion2BusBusRouteFare) Validate(formats strfmt.Registry) er
 var serviceDTOVersion2BusBusRouteFareTypeFarePricingTypePropEnum []interface{}
 
 func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["0: 段次計費","1: 起迄站間計費","2: 計費站區間計費"]`), &res); err != nil {
+	var res []int64
+	if err := json.Unmarshal([]byte(`[0,1,2]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -114,20 +114,8 @@ func init() {
 	}
 }
 
-const (
-
-	// ServiceDTOVersion2BusBusRouteFareFarePricingTypeNr0段次計費 captures enum value "0: 段次計費"
-	ServiceDTOVersion2BusBusRouteFareFarePricingTypeNr0段次計費 string = "0: 段次計費"
-
-	// ServiceDTOVersion2BusBusRouteFareFarePricingTypeNr1起迄站間計費 captures enum value "1: 起迄站間計費"
-	ServiceDTOVersion2BusBusRouteFareFarePricingTypeNr1起迄站間計費 string = "1: 起迄站間計費"
-
-	// ServiceDTOVersion2BusBusRouteFareFarePricingTypeNr2計費站區間計費 captures enum value "2: 計費站區間計費"
-	ServiceDTOVersion2BusBusRouteFareFarePricingTypeNr2計費站區間計費 string = "2: 計費站區間計費"
-)
-
 // prop value enum
-func (m *ServiceDTOVersion2BusBusRouteFare) validateFarePricingTypeEnum(path, location string, value string) error {
+func (m *ServiceDTOVersion2BusBusRouteFare) validateFarePricingTypeEnum(path, location string, value int64) error {
 	if err := validate.Enum(path, location, value, serviceDTOVersion2BusBusRouteFareTypeFarePricingTypePropEnum); err != nil {
 		return err
 	}
@@ -151,8 +139,8 @@ func (m *ServiceDTOVersion2BusBusRouteFare) validateFarePricingType(formats strf
 var serviceDTOVersion2BusBusRouteFareTypeIsForAllSubRoutesPropEnum []interface{}
 
 func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["0: 否","1: 是"]`), &res); err != nil {
+	var res []int64
+	if err := json.Unmarshal([]byte(`[0,1]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -160,17 +148,8 @@ func init() {
 	}
 }
 
-const (
-
-	// ServiceDTOVersion2BusBusRouteFareIsForAllSubRoutesNr0否 captures enum value "0: 否"
-	ServiceDTOVersion2BusBusRouteFareIsForAllSubRoutesNr0否 string = "0: 否"
-
-	// ServiceDTOVersion2BusBusRouteFareIsForAllSubRoutesNr1是 captures enum value "1: 是"
-	ServiceDTOVersion2BusBusRouteFareIsForAllSubRoutesNr1是 string = "1: 是"
-)
-
 // prop value enum
-func (m *ServiceDTOVersion2BusBusRouteFare) validateIsForAllSubRoutesEnum(path, location string, value string) error {
+func (m *ServiceDTOVersion2BusBusRouteFare) validateIsForAllSubRoutesEnum(path, location string, value int64) error {
 	if err := validate.Enum(path, location, value, serviceDTOVersion2BusBusRouteFareTypeIsForAllSubRoutesPropEnum); err != nil {
 		return err
 	}
@@ -194,8 +173,8 @@ func (m *ServiceDTOVersion2BusBusRouteFare) validateIsForAllSubRoutes(formats st
 var serviceDTOVersion2BusBusRouteFareTypeIsFreeBusPropEnum []interface{}
 
 func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["0: 否","1: 是"]`), &res); err != nil {
+	var res []int64
+	if err := json.Unmarshal([]byte(`[0,1]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -203,17 +182,8 @@ func init() {
 	}
 }
 
-const (
-
-	// ServiceDTOVersion2BusBusRouteFareIsFreeBusNr0否 captures enum value "0: 否"
-	ServiceDTOVersion2BusBusRouteFareIsFreeBusNr0否 string = "0: 否"
-
-	// ServiceDTOVersion2BusBusRouteFareIsFreeBusNr1是 captures enum value "1: 是"
-	ServiceDTOVersion2BusBusRouteFareIsFreeBusNr1是 string = "1: 是"
-)
-
 // prop value enum
-func (m *ServiceDTOVersion2BusBusRouteFare) validateIsFreeBusEnum(path, location string, value string) error {
+func (m *ServiceDTOVersion2BusBusRouteFare) validateIsFreeBusEnum(path, location string, value int64) error {
 	if err := validate.Enum(path, location, value, serviceDTOVersion2BusBusRouteFareTypeIsFreeBusPropEnum); err != nil {
 		return err
 	}

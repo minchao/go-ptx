@@ -2073,12 +2073,12 @@
         "Direction": {
           "description": "去返程",
           "enum": [
-            "0: 去程",
-            "1: 返程",
-            "2: 迴圈",
-            "255: 未知"
+            0,
+            1,
+            2,
+            255
           ],
-          "type": "string"
+          "type": "integer"
         },
         "BusPosition": {
           "$ref": "#/definitions/Service.DTO.Version2.Base.PointType",
@@ -2098,39 +2098,39 @@
         "DutyStatus": {
           "description": "勤務狀態",
           "enum": [
-            "0: 正常",
-            "1: 開始",
-            "2: 結束"
+            0,
+            1,
+            2
           ],
-          "type": "string"
+          "type": "integer"
         },
         "BusStatus": {
           "description": "行車狀況",
           "enum": [
-            "0: 正常",
-            "1: 車禍",
-            "2: 故障",
-            "3: 塞車",
-            "4: 緊急求援",
-            "5: 加油",
-            "90: 不明",
-            "91: 去回不明",
-            "98: 偏移路線",
-            "99: 非營運狀態",
-            "100: 客滿",
-            "101: 包車出租",
-            "255: 未知"
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            90,
+            91,
+            98,
+            99,
+            100,
+            101,
+            255
           ],
-          "type": "string"
+          "type": "integer"
         },
         "MessageType": {
           "description": "資料型態種類",
           "enum": [
-            "0: 未知",
-            "1: 定期",
-            "2: 非定期"
+            0,
+            1,
+            2
           ],
-          "type": "string"
+          "type": "integer"
         },
         "GPSTime": {
           "title": "DateTime",
@@ -2239,12 +2239,12 @@
         "Direction": {
           "description": "去返程",
           "enum": [
-            "0: 去程",
-            "1: 返程",
-            "2: 迴圈",
-            "255: 未知"
+            0,
+            1,
+            2,
+            255
           ],
-          "type": "string"
+          "type": "integer"
         },
         "StopUID": {
           "description": "站牌唯一識別代碼，規則為 {平台代碼} + {StopID}，其中 {平台代碼} 可於Provider API中的ProviderCode欄位查詢",
@@ -2262,47 +2262,47 @@
         "MessageType": {
           "description": "資料型態種類",
           "enum": [
-            "0: 未知",
-            "1: 定期",
-            "2: 非定期"
+            0,
+            1,
+            2
           ],
-          "type": "string"
+          "type": "integer"
         },
         "DutyStatus": {
           "description": "勤務狀態",
           "enum": [
-            "0: 正常",
-            "1: 開始",
-            "2: 結束"
+            0,
+            1,
+            2
           ],
-          "type": "string"
+          "type": "integer"
         },
         "BusStatus": {
           "description": "行車狀況",
           "enum": [
-            "0: 正常",
-            "1: 車禍",
-            "2: 故障",
-            "3: 塞車",
-            "4: 緊急求援",
-            "5: 加油",
-            "90: 不明",
-            "91: 去回不明",
-            "98: 偏移路線",
-            "99: 非營運狀態",
-            "100: 客滿",
-            "101: 包車出租",
-            "255: 未知"
+            0,
+            1,
+            2,
+            3,
+            4,
+            5,
+            90,
+            91,
+            98,
+            99,
+            100,
+            101,
+            255
           ],
-          "type": "string"
+          "type": "integer"
         },
         "A2EventType": {
           "description": "進站離站",
           "enum": [
-            "0: 離站",
-            "1: 進站"
+            0,
+            1
           ],
-          "type": "string"
+          "type": "integer"
         },
         "GPSTime": {
           "title": "DateTime",
@@ -2626,12 +2626,12 @@
         "Direction": {
           "description": "去返程",
           "enum": [
-            "0: 去程",
-            "1: 返程",
-            "2: 迴圈",
-            "255: 未知"
+            0,
+            1,
+            2,
+            255
           ],
-          "type": "string"
+          "type": "integer"
         },
         "EstimateTime": {
           "format": "int32",
@@ -2654,22 +2654,22 @@
         "StopStatus": {
           "description": "車輛狀態備註",
           "enum": [
-            "0: 正常",
-            "1: 尚未發車",
-            "2: 交管不停靠",
-            "3: 末班車已過",
-            "4: 今日未營運"
+            0,
+            1,
+            2,
+            3,
+            4
           ],
-          "type": "string"
+          "type": "integer"
         },
         "MessageType": {
           "description": "資料型態種類",
           "enum": [
-            "0: 未知",
-            "1: 定期",
-            "2: 非定期"
+            0,
+            1,
+            2
           ],
-          "type": "string"
+          "type": "integer"
         },
         "NextBusTime": {
           "title": "DateTime",
@@ -2897,12 +2897,12 @@
         "BusRouteType": {
           "description": "公車路線類別",
           "enum": [
-            "11: 市區公車",
-            "12: 公路客運",
-            "13: 國道客運",
-            "14: 接駁車"
+            11,
+            12,
+            13,
+            14
           ],
-          "type": "string"
+          "type": "integer"
         },
         "TaiwanTripName": {
           "$ref": "#/definitions/Service.DTO.Version2.Base.NameType",
@@ -3041,12 +3041,12 @@
         "Direction": {
           "description": "去返程",
           "enum": [
-            "0: 去程",
-            "1: 返程",
-            "2: 迴圈",
-            "255: 未知"
+            0,
+            1,
+            2,
+            255
           ],
-          "type": "string"
+          "type": "integer"
         },
         "FirstBusTime": {
           "description": "平日第一班發車時間",
@@ -3301,12 +3301,12 @@
         "Direction": {
           "description": "去返程",
           "enum": [
-            "0: 去程",
-            "1: 返程",
-            "2: 迴圈",
-            "255: 未知"
+            0,
+            1,
+            2,
+            255
           ],
-          "type": "string"
+          "type": "integer"
         },
         "Timetables": {
           "description": "預定班表",
@@ -3414,66 +3414,66 @@
         "Sunday": {
           "description": "星期日是否營運",
           "enum": [
-            "0: 否",
-            "1: 是"
+            0,
+            1
           ],
-          "type": "string"
+          "type": "integer"
         },
         "Monday": {
           "description": "星期一是否營運",
           "enum": [
-            "0: 否",
-            "1: 是"
+            0,
+            1
           ],
-          "type": "string"
+          "type": "integer"
         },
         "Tuesday": {
           "description": "星期二是否營運",
           "enum": [
-            "0: 否",
-            "1: 是"
+            0,
+            1
           ],
-          "type": "string"
+          "type": "integer"
         },
         "Wednesday": {
           "description": "星期三是否營運",
           "enum": [
-            "0: 否",
-            "1: 是"
+            0,
+            1
           ],
-          "type": "string"
+          "type": "integer"
         },
         "Thursday": {
           "description": "星期四是否營運",
           "enum": [
-            "0: 否",
-            "1: 是"
+            0,
+            1
           ],
-          "type": "string"
+          "type": "integer"
         },
         "Friday": {
           "description": "星期五是否營運",
           "enum": [
-            "0: 否",
-            "1: 是"
+            0,
+            1
           ],
-          "type": "string"
+          "type": "integer"
         },
         "Saturday": {
           "description": "星期六是否營運",
           "enum": [
-            "0: 否",
-            "1: 是"
+            0,
+            1
           ],
-          "type": "string"
+          "type": "integer"
         },
         "NationalHolidays": {
           "description": "國定假日是否營運",
           "enum": [
-            "0: 否",
-            "1: 是"
+            0,
+            1
           ],
-          "type": "string"
+          "type": "integer"
         }
       }
     },
@@ -3496,11 +3496,11 @@
         "ServiceStatus": {
           "description": "營運服務狀態代碼",
           "enum": [
-            "0: 正常營運",
-            "1: 加班營運",
-            "2: 取消/停駛營運"
+            0,
+            1,
+            2
           ],
-          "type": "string"
+          "type": "integer"
         },
         "Description": {
           "description": "特殊營運描述",
@@ -3592,12 +3592,12 @@
         "Direction": {
           "description": "去返程，若無值則表示來源尚無區分去返程",
           "enum": [
-            "0: 去程",
-            "1: 返程",
-            "2: 迴圈",
-            "255: 未知"
+            0,
+            1,
+            2,
+            255
           ],
-          "type": "string"
+          "type": "integer"
         },
         "Geometry": {
           "description": "well-known text，為路線軌跡資料",
@@ -3664,12 +3664,12 @@
         "Direction": {
           "description": "去返程",
           "enum": [
-            "0: 去程",
-            "1: 返程",
-            "2: 迴圈",
-            "255: 未知"
+            0,
+            1,
+            2,
+            255
           ],
-          "type": "string"
+          "type": "integer"
         },
         "Stops": {
           "description": "所有經過站牌",
@@ -3709,11 +3709,11 @@
         "StopBoarding": {
           "description": "上下車站別",
           "enum": [
-            "0: 可上下車",
-            "1: 可上車",
-            "-1: 可下車"
+            0,
+            1,
+            -1
           ],
-          "type": "string"
+          "type": "integer"
         },
         "StopSequence": {
           "format": "int32",

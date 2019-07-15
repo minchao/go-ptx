@@ -27,8 +27,8 @@ type ServiceDTOVersion2TaiwanTripBusBusN1EstimateTime struct {
 
 	// 去返程
 	// Required: true
-	// Enum: [0: 去程 1: 返程 2: 迴圈 255: 未知]
-	Direction *string `json:"Direction"`
+	// Enum: [0 1 2 255]
+	Direction *int64 `json:"Direction"`
 
 	// 到站時間預估(秒)
 	EstimateTime int32 `json:"EstimateTime,omitempty"`
@@ -37,8 +37,8 @@ type ServiceDTOVersion2TaiwanTripBusBusN1EstimateTime struct {
 	IsLastBus bool `json:"IsLastBus,omitempty"`
 
 	// 資料型態種類
-	// Enum: [0: 未知 1: 定期 2: 非定期]
-	MessageType string `json:"MessageType,omitempty"`
+	// Enum: [0 1 2]
+	MessageType int64 `json:"MessageType,omitempty"`
 
 	// DateTime
 	//
@@ -76,8 +76,8 @@ type ServiceDTOVersion2TaiwanTripBusBusN1EstimateTime struct {
 	StopName *ServiceDTOVersion2BaseNameType `json:"StopName,omitempty"`
 
 	// 車輛狀態備註
-	// Enum: [0: 正常 1: 尚未發車 2: 交管不停靠 3: 末班車已過 4: 今日未營運]
-	StopStatus string `json:"StopStatus,omitempty"`
+	// Enum: [0 1 2 3 4]
+	StopStatus int64 `json:"StopStatus,omitempty"`
 
 	// 站牌唯一識別代碼，規則為 {業管機關代碼} + {StopID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢
 	StopUID string `json:"StopUID,omitempty"`
@@ -151,8 +151,8 @@ func (m *ServiceDTOVersion2TaiwanTripBusBusN1EstimateTime) Validate(formats strf
 var serviceDTOVersion2TaiwanTripBusBusN1EstimateTimeTypeDirectionPropEnum []interface{}
 
 func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["0: 去程","1: 返程","2: 迴圈","255: 未知"]`), &res); err != nil {
+	var res []int64
+	if err := json.Unmarshal([]byte(`[0,1,2,255]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -160,23 +160,8 @@ func init() {
 	}
 }
 
-const (
-
-	// ServiceDTOVersion2TaiwanTripBusBusN1EstimateTimeDirectionNr0去程 captures enum value "0: 去程"
-	ServiceDTOVersion2TaiwanTripBusBusN1EstimateTimeDirectionNr0去程 string = "0: 去程"
-
-	// ServiceDTOVersion2TaiwanTripBusBusN1EstimateTimeDirectionNr1返程 captures enum value "1: 返程"
-	ServiceDTOVersion2TaiwanTripBusBusN1EstimateTimeDirectionNr1返程 string = "1: 返程"
-
-	// ServiceDTOVersion2TaiwanTripBusBusN1EstimateTimeDirectionNr2迴圈 captures enum value "2: 迴圈"
-	ServiceDTOVersion2TaiwanTripBusBusN1EstimateTimeDirectionNr2迴圈 string = "2: 迴圈"
-
-	// ServiceDTOVersion2TaiwanTripBusBusN1EstimateTimeDirectionNr255未知 captures enum value "255: 未知"
-	ServiceDTOVersion2TaiwanTripBusBusN1EstimateTimeDirectionNr255未知 string = "255: 未知"
-)
-
 // prop value enum
-func (m *ServiceDTOVersion2TaiwanTripBusBusN1EstimateTime) validateDirectionEnum(path, location string, value string) error {
+func (m *ServiceDTOVersion2TaiwanTripBusBusN1EstimateTime) validateDirectionEnum(path, location string, value int64) error {
 	if err := validate.Enum(path, location, value, serviceDTOVersion2TaiwanTripBusBusN1EstimateTimeTypeDirectionPropEnum); err != nil {
 		return err
 	}
@@ -200,8 +185,8 @@ func (m *ServiceDTOVersion2TaiwanTripBusBusN1EstimateTime) validateDirection(for
 var serviceDTOVersion2TaiwanTripBusBusN1EstimateTimeTypeMessageTypePropEnum []interface{}
 
 func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["0: 未知","1: 定期","2: 非定期"]`), &res); err != nil {
+	var res []int64
+	if err := json.Unmarshal([]byte(`[0,1,2]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -209,20 +194,8 @@ func init() {
 	}
 }
 
-const (
-
-	// ServiceDTOVersion2TaiwanTripBusBusN1EstimateTimeMessageTypeNr0未知 captures enum value "0: 未知"
-	ServiceDTOVersion2TaiwanTripBusBusN1EstimateTimeMessageTypeNr0未知 string = "0: 未知"
-
-	// ServiceDTOVersion2TaiwanTripBusBusN1EstimateTimeMessageTypeNr1定期 captures enum value "1: 定期"
-	ServiceDTOVersion2TaiwanTripBusBusN1EstimateTimeMessageTypeNr1定期 string = "1: 定期"
-
-	// ServiceDTOVersion2TaiwanTripBusBusN1EstimateTimeMessageTypeNr2非定期 captures enum value "2: 非定期"
-	ServiceDTOVersion2TaiwanTripBusBusN1EstimateTimeMessageTypeNr2非定期 string = "2: 非定期"
-)
-
 // prop value enum
-func (m *ServiceDTOVersion2TaiwanTripBusBusN1EstimateTime) validateMessageTypeEnum(path, location string, value string) error {
+func (m *ServiceDTOVersion2TaiwanTripBusBusN1EstimateTime) validateMessageTypeEnum(path, location string, value int64) error {
 	if err := validate.Enum(path, location, value, serviceDTOVersion2TaiwanTripBusBusN1EstimateTimeTypeMessageTypePropEnum); err != nil {
 		return err
 	}
@@ -264,8 +237,8 @@ func (m *ServiceDTOVersion2TaiwanTripBusBusN1EstimateTime) validateStopName(form
 var serviceDTOVersion2TaiwanTripBusBusN1EstimateTimeTypeStopStatusPropEnum []interface{}
 
 func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["0: 正常","1: 尚未發車","2: 交管不停靠","3: 末班車已過","4: 今日未營運"]`), &res); err != nil {
+	var res []int64
+	if err := json.Unmarshal([]byte(`[0,1,2,3,4]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -273,26 +246,8 @@ func init() {
 	}
 }
 
-const (
-
-	// ServiceDTOVersion2TaiwanTripBusBusN1EstimateTimeStopStatusNr0正常 captures enum value "0: 正常"
-	ServiceDTOVersion2TaiwanTripBusBusN1EstimateTimeStopStatusNr0正常 string = "0: 正常"
-
-	// ServiceDTOVersion2TaiwanTripBusBusN1EstimateTimeStopStatusNr1尚未發車 captures enum value "1: 尚未發車"
-	ServiceDTOVersion2TaiwanTripBusBusN1EstimateTimeStopStatusNr1尚未發車 string = "1: 尚未發車"
-
-	// ServiceDTOVersion2TaiwanTripBusBusN1EstimateTimeStopStatusNr2交管不停靠 captures enum value "2: 交管不停靠"
-	ServiceDTOVersion2TaiwanTripBusBusN1EstimateTimeStopStatusNr2交管不停靠 string = "2: 交管不停靠"
-
-	// ServiceDTOVersion2TaiwanTripBusBusN1EstimateTimeStopStatusNr3末班車已過 captures enum value "3: 末班車已過"
-	ServiceDTOVersion2TaiwanTripBusBusN1EstimateTimeStopStatusNr3末班車已過 string = "3: 末班車已過"
-
-	// ServiceDTOVersion2TaiwanTripBusBusN1EstimateTimeStopStatusNr4今日未營運 captures enum value "4: 今日未營運"
-	ServiceDTOVersion2TaiwanTripBusBusN1EstimateTimeStopStatusNr4今日未營運 string = "4: 今日未營運"
-)
-
 // prop value enum
-func (m *ServiceDTOVersion2TaiwanTripBusBusN1EstimateTime) validateStopStatusEnum(path, location string, value string) error {
+func (m *ServiceDTOVersion2TaiwanTripBusBusN1EstimateTime) validateStopStatusEnum(path, location string, value int64) error {
 	if err := validate.Enum(path, location, value, serviceDTOVersion2TaiwanTripBusBusN1EstimateTimeTypeStopStatusPropEnum); err != nil {
 		return err
 	}

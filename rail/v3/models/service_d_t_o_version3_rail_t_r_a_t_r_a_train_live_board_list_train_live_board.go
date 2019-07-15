@@ -36,8 +36,8 @@ type ServiceDTOVersion3RailTRATRATrainLiveBoardListTrainLiveBoard struct {
 	TrainNo string `json:"TrainNo,omitempty"`
 
 	// 列車目前所在之車站狀態
-	// Enum: [0: 進站中 1: 在站上 2: 已離站]
-	TrainStationStatus string `json:"TrainStationStatus,omitempty"`
+	// Enum: [0 1 2]
+	TrainStationStatus int64 `json:"TrainStationStatus,omitempty"`
 
 	// 車種簡碼 = ['1: 太魯閣', '2: 普悠瑪', '3: 自強', '4: 莒光', '5: 復興', '6: 區間', '7: 普快', '10: 區間快']
 	TrainTypeCode string `json:"TrainTypeCode,omitempty"`
@@ -118,8 +118,8 @@ func (m *ServiceDTOVersion3RailTRATRATrainLiveBoardListTrainLiveBoard) validateS
 var serviceDTOVersion3RailTRATRATrainLiveBoardListTrainLiveBoardTypeTrainStationStatusPropEnum []interface{}
 
 func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["0: 進站中","1: 在站上","2: 已離站"]`), &res); err != nil {
+	var res []int64
+	if err := json.Unmarshal([]byte(`[0,1,2]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -127,20 +127,8 @@ func init() {
 	}
 }
 
-const (
-
-	// ServiceDTOVersion3RailTRATRATrainLiveBoardListTrainLiveBoardTrainStationStatusNr0進站中 captures enum value "0: 進站中"
-	ServiceDTOVersion3RailTRATRATrainLiveBoardListTrainLiveBoardTrainStationStatusNr0進站中 string = "0: 進站中"
-
-	// ServiceDTOVersion3RailTRATRATrainLiveBoardListTrainLiveBoardTrainStationStatusNr1在站上 captures enum value "1: 在站上"
-	ServiceDTOVersion3RailTRATRATrainLiveBoardListTrainLiveBoardTrainStationStatusNr1在站上 string = "1: 在站上"
-
-	// ServiceDTOVersion3RailTRATRATrainLiveBoardListTrainLiveBoardTrainStationStatusNr2已離站 captures enum value "2: 已離站"
-	ServiceDTOVersion3RailTRATRATrainLiveBoardListTrainLiveBoardTrainStationStatusNr2已離站 string = "2: 已離站"
-)
-
 // prop value enum
-func (m *ServiceDTOVersion3RailTRATRATrainLiveBoardListTrainLiveBoard) validateTrainStationStatusEnum(path, location string, value string) error {
+func (m *ServiceDTOVersion3RailTRATRATrainLiveBoardListTrainLiveBoard) validateTrainStationStatusEnum(path, location string, value int64) error {
 	if err := validate.Enum(path, location, value, serviceDTOVersion3RailTRATRATrainLiveBoardListTrainLiveBoardTypeTrainStationStatusPropEnum); err != nil {
 		return err
 	}

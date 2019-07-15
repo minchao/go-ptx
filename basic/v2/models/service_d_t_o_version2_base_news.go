@@ -41,8 +41,8 @@ type ServiceDTOVersion2BaseNews struct {
 	Language *string `json:"Language"`
 
 	// 消息類別
-	// Enum: [1: 最新消息 2: 新聞稿 3: 營運資訊 4: 轉乘資訊 5: 活動訊息 6: 系統公告 7: 新服務上架 8: API修正 9: 來源異常 99: 其他]
-	NewsCategory string `json:"NewsCategory,omitempty"`
+	// Enum: [1 2 3 4 5 6 7 8 9 99]
+	NewsCategory int64 `json:"NewsCategory,omitempty"`
 
 	// 最新消息原單位發布代碼
 	// Required: true
@@ -118,8 +118,8 @@ func (m *ServiceDTOVersion2BaseNews) validateLanguage(formats strfmt.Registry) e
 var serviceDTOVersion2BaseNewsTypeNewsCategoryPropEnum []interface{}
 
 func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["1: 最新消息","2: 新聞稿","3: 營運資訊","4: 轉乘資訊","5: 活動訊息","6: 系統公告","7: 新服務上架","8: API修正","9: 來源異常","99: 其他"]`), &res); err != nil {
+	var res []int64
+	if err := json.Unmarshal([]byte(`[1,2,3,4,5,6,7,8,9,99]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -127,41 +127,8 @@ func init() {
 	}
 }
 
-const (
-
-	// ServiceDTOVersion2BaseNewsNewsCategoryNr1最新消息 captures enum value "1: 最新消息"
-	ServiceDTOVersion2BaseNewsNewsCategoryNr1最新消息 string = "1: 最新消息"
-
-	// ServiceDTOVersion2BaseNewsNewsCategoryNr2新聞稿 captures enum value "2: 新聞稿"
-	ServiceDTOVersion2BaseNewsNewsCategoryNr2新聞稿 string = "2: 新聞稿"
-
-	// ServiceDTOVersion2BaseNewsNewsCategoryNr3營運資訊 captures enum value "3: 營運資訊"
-	ServiceDTOVersion2BaseNewsNewsCategoryNr3營運資訊 string = "3: 營運資訊"
-
-	// ServiceDTOVersion2BaseNewsNewsCategoryNr4轉乘資訊 captures enum value "4: 轉乘資訊"
-	ServiceDTOVersion2BaseNewsNewsCategoryNr4轉乘資訊 string = "4: 轉乘資訊"
-
-	// ServiceDTOVersion2BaseNewsNewsCategoryNr5活動訊息 captures enum value "5: 活動訊息"
-	ServiceDTOVersion2BaseNewsNewsCategoryNr5活動訊息 string = "5: 活動訊息"
-
-	// ServiceDTOVersion2BaseNewsNewsCategoryNr6系統公告 captures enum value "6: 系統公告"
-	ServiceDTOVersion2BaseNewsNewsCategoryNr6系統公告 string = "6: 系統公告"
-
-	// ServiceDTOVersion2BaseNewsNewsCategoryNr7新服務上架 captures enum value "7: 新服務上架"
-	ServiceDTOVersion2BaseNewsNewsCategoryNr7新服務上架 string = "7: 新服務上架"
-
-	// ServiceDTOVersion2BaseNewsNewsCategoryNr8API修正 captures enum value "8: API修正"
-	ServiceDTOVersion2BaseNewsNewsCategoryNr8API修正 string = "8: API修正"
-
-	// ServiceDTOVersion2BaseNewsNewsCategoryNr9來源異常 captures enum value "9: 來源異常"
-	ServiceDTOVersion2BaseNewsNewsCategoryNr9來源異常 string = "9: 來源異常"
-
-	// ServiceDTOVersion2BaseNewsNewsCategoryNr99其他 captures enum value "99: 其他"
-	ServiceDTOVersion2BaseNewsNewsCategoryNr99其他 string = "99: 其他"
-)
-
 // prop value enum
-func (m *ServiceDTOVersion2BaseNews) validateNewsCategoryEnum(path, location string, value string) error {
+func (m *ServiceDTOVersion2BaseNews) validateNewsCategoryEnum(path, location string, value int64) error {
 	if err := validate.Enum(path, location, value, serviceDTOVersion2BaseNewsTypeNewsCategoryPropEnum); err != nil {
 		return err
 	}

@@ -33,8 +33,8 @@ type ServiceDTOVersion3RailTRACommonSpecialDay struct {
 	EndDate string `json:"EndDate,omitempty"`
 
 	// 營運服務狀態代碼
-	// Enum: [0: 停止營運 1: 正常營運 2: 加班營運]
-	ServiceStatus string `json:"ServiceStatus,omitempty"`
+	// Enum: [0 1 2]
+	ServiceStatus int64 `json:"ServiceStatus,omitempty"`
 
 	// DateTime
 	//
@@ -59,8 +59,8 @@ func (m *ServiceDTOVersion3RailTRACommonSpecialDay) Validate(formats strfmt.Regi
 var serviceDTOVersion3RailTRACommonSpecialDayTypeServiceStatusPropEnum []interface{}
 
 func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["0: 停止營運","1: 正常營運","2: 加班營運"]`), &res); err != nil {
+	var res []int64
+	if err := json.Unmarshal([]byte(`[0,1,2]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -68,20 +68,8 @@ func init() {
 	}
 }
 
-const (
-
-	// ServiceDTOVersion3RailTRACommonSpecialDayServiceStatusNr0停止營運 captures enum value "0: 停止營運"
-	ServiceDTOVersion3RailTRACommonSpecialDayServiceStatusNr0停止營運 string = "0: 停止營運"
-
-	// ServiceDTOVersion3RailTRACommonSpecialDayServiceStatusNr1正常營運 captures enum value "1: 正常營運"
-	ServiceDTOVersion3RailTRACommonSpecialDayServiceStatusNr1正常營運 string = "1: 正常營運"
-
-	// ServiceDTOVersion3RailTRACommonSpecialDayServiceStatusNr2加班營運 captures enum value "2: 加班營運"
-	ServiceDTOVersion3RailTRACommonSpecialDayServiceStatusNr2加班營運 string = "2: 加班營運"
-)
-
 // prop value enum
-func (m *ServiceDTOVersion3RailTRACommonSpecialDay) validateServiceStatusEnum(path, location string, value string) error {
+func (m *ServiceDTOVersion3RailTRACommonSpecialDay) validateServiceStatusEnum(path, location string, value int64) error {
 	if err := validate.Enum(path, location, value, serviceDTOVersion3RailTRACommonSpecialDayTypeServiceStatusPropEnum); err != nil {
 		return err
 	}

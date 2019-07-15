@@ -27,8 +27,8 @@ type ServiceDTOVersion2BusBusFare struct {
 
 	// 費率等級
 	// Required: true
-	// Enum: [1: 成人 2: 學生 3: 孩童 4: 敬老 5: 愛心 6: 愛心孩童 7: 愛心優待或愛心陪伴 8: 團體 9: 軍警 10: 由各運業者自行定義的半票]
-	FareClass *string `json:"FareClass"`
+	// Enum: [1 2 3 4 5 6 7 8 9 10]
+	FareClass *int64 `json:"FareClass"`
 
 	// 票價名稱
 	FareName string `json:"FareName,omitempty"`
@@ -39,8 +39,8 @@ type ServiceDTOVersion2BusBusFare struct {
 
 	// 票種類型
 	// Required: true
-	// Enum: [1: 一般票 2: 來回票 3: 電子票證 4: 回數票 5: 定期票30天期 6: 定期票60天期 7: 早鳥票 8: 定期票90天期]
-	TicketType *string `json:"TicketType"`
+	// Enum: [1 2 3 4 5 6 7 8]
+	TicketType *int64 `json:"TicketType"`
 }
 
 // Validate validates this service d t o version2 bus bus fare
@@ -97,8 +97,8 @@ func (m *ServiceDTOVersion2BusBusFare) validateDiscountPeriods(formats strfmt.Re
 var serviceDTOVersion2BusBusFareTypeFareClassPropEnum []interface{}
 
 func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["1: 成人","2: 學生","3: 孩童","4: 敬老","5: 愛心","6: 愛心孩童","7: 愛心優待或愛心陪伴","8: 團體","9: 軍警","10: 由各運業者自行定義的半票"]`), &res); err != nil {
+	var res []int64
+	if err := json.Unmarshal([]byte(`[1,2,3,4,5,6,7,8,9,10]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -106,41 +106,8 @@ func init() {
 	}
 }
 
-const (
-
-	// ServiceDTOVersion2BusBusFareFareClassNr1成人 captures enum value "1: 成人"
-	ServiceDTOVersion2BusBusFareFareClassNr1成人 string = "1: 成人"
-
-	// ServiceDTOVersion2BusBusFareFareClassNr2學生 captures enum value "2: 學生"
-	ServiceDTOVersion2BusBusFareFareClassNr2學生 string = "2: 學生"
-
-	// ServiceDTOVersion2BusBusFareFareClassNr3孩童 captures enum value "3: 孩童"
-	ServiceDTOVersion2BusBusFareFareClassNr3孩童 string = "3: 孩童"
-
-	// ServiceDTOVersion2BusBusFareFareClassNr4敬老 captures enum value "4: 敬老"
-	ServiceDTOVersion2BusBusFareFareClassNr4敬老 string = "4: 敬老"
-
-	// ServiceDTOVersion2BusBusFareFareClassNr5愛心 captures enum value "5: 愛心"
-	ServiceDTOVersion2BusBusFareFareClassNr5愛心 string = "5: 愛心"
-
-	// ServiceDTOVersion2BusBusFareFareClassNr6愛心孩童 captures enum value "6: 愛心孩童"
-	ServiceDTOVersion2BusBusFareFareClassNr6愛心孩童 string = "6: 愛心孩童"
-
-	// ServiceDTOVersion2BusBusFareFareClassNr7愛心優待或愛心陪伴 captures enum value "7: 愛心優待或愛心陪伴"
-	ServiceDTOVersion2BusBusFareFareClassNr7愛心優待或愛心陪伴 string = "7: 愛心優待或愛心陪伴"
-
-	// ServiceDTOVersion2BusBusFareFareClassNr8團體 captures enum value "8: 團體"
-	ServiceDTOVersion2BusBusFareFareClassNr8團體 string = "8: 團體"
-
-	// ServiceDTOVersion2BusBusFareFareClassNr9軍警 captures enum value "9: 軍警"
-	ServiceDTOVersion2BusBusFareFareClassNr9軍警 string = "9: 軍警"
-
-	// ServiceDTOVersion2BusBusFareFareClassNr10由各運業者自行定義的半票 captures enum value "10: 由各運業者自行定義的半票"
-	ServiceDTOVersion2BusBusFareFareClassNr10由各運業者自行定義的半票 string = "10: 由各運業者自行定義的半票"
-)
-
 // prop value enum
-func (m *ServiceDTOVersion2BusBusFare) validateFareClassEnum(path, location string, value string) error {
+func (m *ServiceDTOVersion2BusBusFare) validateFareClassEnum(path, location string, value int64) error {
 	if err := validate.Enum(path, location, value, serviceDTOVersion2BusBusFareTypeFareClassPropEnum); err != nil {
 		return err
 	}
@@ -173,8 +140,8 @@ func (m *ServiceDTOVersion2BusBusFare) validatePrice(formats strfmt.Registry) er
 var serviceDTOVersion2BusBusFareTypeTicketTypePropEnum []interface{}
 
 func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["1: 一般票","2: 來回票","3: 電子票證","4: 回數票","5: 定期票30天期","6: 定期票60天期","7: 早鳥票","8: 定期票90天期"]`), &res); err != nil {
+	var res []int64
+	if err := json.Unmarshal([]byte(`[1,2,3,4,5,6,7,8]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -182,35 +149,8 @@ func init() {
 	}
 }
 
-const (
-
-	// ServiceDTOVersion2BusBusFareTicketTypeNr1一般票 captures enum value "1: 一般票"
-	ServiceDTOVersion2BusBusFareTicketTypeNr1一般票 string = "1: 一般票"
-
-	// ServiceDTOVersion2BusBusFareTicketTypeNr2來回票 captures enum value "2: 來回票"
-	ServiceDTOVersion2BusBusFareTicketTypeNr2來回票 string = "2: 來回票"
-
-	// ServiceDTOVersion2BusBusFareTicketTypeNr3電子票證 captures enum value "3: 電子票證"
-	ServiceDTOVersion2BusBusFareTicketTypeNr3電子票證 string = "3: 電子票證"
-
-	// ServiceDTOVersion2BusBusFareTicketTypeNr4回數票 captures enum value "4: 回數票"
-	ServiceDTOVersion2BusBusFareTicketTypeNr4回數票 string = "4: 回數票"
-
-	// ServiceDTOVersion2BusBusFareTicketTypeNr5定期票30天期 captures enum value "5: 定期票30天期"
-	ServiceDTOVersion2BusBusFareTicketTypeNr5定期票30天期 string = "5: 定期票30天期"
-
-	// ServiceDTOVersion2BusBusFareTicketTypeNr6定期票60天期 captures enum value "6: 定期票60天期"
-	ServiceDTOVersion2BusBusFareTicketTypeNr6定期票60天期 string = "6: 定期票60天期"
-
-	// ServiceDTOVersion2BusBusFareTicketTypeNr7早鳥票 captures enum value "7: 早鳥票"
-	ServiceDTOVersion2BusBusFareTicketTypeNr7早鳥票 string = "7: 早鳥票"
-
-	// ServiceDTOVersion2BusBusFareTicketTypeNr8定期票90天期 captures enum value "8: 定期票90天期"
-	ServiceDTOVersion2BusBusFareTicketTypeNr8定期票90天期 string = "8: 定期票90天期"
-)
-
 // prop value enum
-func (m *ServiceDTOVersion2BusBusFare) validateTicketTypeEnum(path, location string, value string) error {
+func (m *ServiceDTOVersion2BusBusFare) validateTicketTypeEnum(path, location string, value int64) error {
 	if err := validate.Enum(path, location, value, serviceDTOVersion2BusBusFareTypeTicketTypePropEnum); err != nil {
 		return err
 	}

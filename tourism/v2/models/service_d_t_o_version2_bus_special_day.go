@@ -31,8 +31,8 @@ type ServiceDTOVersion2BusSpecialDay struct {
 	Description string `json:"Description,omitempty"`
 
 	// 營運服務狀態代碼
-	// Enum: [0: 正常營運 1: 加班營運 2: 取消/停駛營運]
-	ServiceStatus string `json:"ServiceStatus,omitempty"`
+	// Enum: [0 1 2]
+	ServiceStatus int64 `json:"ServiceStatus,omitempty"`
 }
 
 // Validate validates this service d t o version2 bus special day
@@ -74,8 +74,8 @@ func (m *ServiceDTOVersion2BusSpecialDay) validateDatePeriod(formats strfmt.Regi
 var serviceDTOVersion2BusSpecialDayTypeServiceStatusPropEnum []interface{}
 
 func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["0: 正常營運","1: 加班營運","2: 取消/停駛營運"]`), &res); err != nil {
+	var res []int64
+	if err := json.Unmarshal([]byte(`[0,1,2]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -83,20 +83,8 @@ func init() {
 	}
 }
 
-const (
-
-	// ServiceDTOVersion2BusSpecialDayServiceStatusNr0正常營運 captures enum value "0: 正常營運"
-	ServiceDTOVersion2BusSpecialDayServiceStatusNr0正常營運 string = "0: 正常營運"
-
-	// ServiceDTOVersion2BusSpecialDayServiceStatusNr1加班營運 captures enum value "1: 加班營運"
-	ServiceDTOVersion2BusSpecialDayServiceStatusNr1加班營運 string = "1: 加班營運"
-
-	// ServiceDTOVersion2BusSpecialDayServiceStatusNr2取消停駛營運 captures enum value "2: 取消/停駛營運"
-	ServiceDTOVersion2BusSpecialDayServiceStatusNr2取消停駛營運 string = "2: 取消/停駛營運"
-)
-
 // prop value enum
-func (m *ServiceDTOVersion2BusSpecialDay) validateServiceStatusEnum(path, location string, value string) error {
+func (m *ServiceDTOVersion2BusSpecialDay) validateServiceStatusEnum(path, location string, value int64) error {
 	if err := validate.Enum(path, location, value, serviceDTOVersion2BusSpecialDayTypeServiceStatusPropEnum); err != nil {
 		return err
 	}

@@ -1330,20 +1330,15 @@
       "title": "FIDSDeparture",
       "description": "出發航班顯示資料",
       "required": [
-        "UpdateTime",
         "FlightDate",
         "FlightNumber",
         "AirlineID",
         "DepartureAirportID",
-        "ArrivalAirportID"
+        "ArrivalAirportID",
+        "UpdateTime"
       ],
       "type": "object",
       "properties": {
-        "UpdateTime": {
-          "title": "DateTime",
-          "description": "資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
-          "type": "string"
-        },
         "FlightDate": {
           "title": "DateTime",
           "description": "航班日期(ISO8601格式:yyyy-MM-dd)",
@@ -1356,15 +1351,15 @@
         "AirRouteType": {
           "description": "航線種類(目前民航局與桃機的FIDS系統都尚未提供此欄位資料)",
           "enum": [
-            "1: 國際",
-            "2: 國內",
-            "3: 兩岸",
-            "4: 國際包機",
-            "5: 國內包機",
-            "6: 兩岸包機",
-            "-2: 特殊"
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            -2
           ],
-          "type": "string"
+          "type": "integer"
         },
         "AirlineID": {
           "description": "航空公司IATA國際代碼",
@@ -1428,6 +1423,11 @@
         "CheckCounter": {
           "description": "報到櫃檯(離站FIDS可能有「報到櫃台」資訊, 到站FIDS不會有)",
           "type": "string"
+        },
+        "UpdateTime": {
+          "title": "DateTime",
+          "description": "資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
         }
       }
     },
@@ -1456,15 +1456,15 @@
         "AirRouteType": {
           "description": "航線種類(目前民航局與桃機的FIDS系統都尚未提供此欄位資料)",
           "enum": [
-            "1: 國際",
-            "2: 國內",
-            "3: 兩岸",
-            "4: 國際包機",
-            "5: 國內包機",
-            "6: 兩岸包機",
-            "-2: 特殊"
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            -2
           ],
-          "type": "string"
+          "type": "integer"
         },
         "AirlineID": {
           "description": "航空公司IATA國際代碼",
@@ -1561,15 +1561,15 @@
         "AirRouteType": {
           "description": "航線種類",
           "enum": [
-            "1: 國際",
-            "2: 國內",
-            "3: 兩岸",
-            "4: 國際包機",
-            "5: 國內包機",
-            "6: 兩岸包機",
-            "-2: 特殊"
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            -2
           ],
-          "type": "string"
+          "type": "integer"
         },
         "AirlineID": {
           "description": "航空公司IATA國際代碼",

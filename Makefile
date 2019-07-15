@@ -12,3 +12,7 @@ generate:
 .PHONY: lint
 lint:
 	golangci-lint run -E gofmt ./...
+
+.PHONY: spec
+spec:
+	go run spec/main.go

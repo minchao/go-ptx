@@ -2619,11 +2619,11 @@
         "Status": {
           "description": "營運狀況",
           "enum": [
-            "0: 全線營運停止",
-            "1: 全線營運正常",
-            "2: 有異常狀況"
+            0,
+            1,
+            2
           ],
-          "type": "string"
+          "type": "integer"
         },
         "Scope": {
           "$ref": "#/definitions/Service.DTO.Version3.Rail.TRA.TRAAlertList.AlertScope",
@@ -2633,11 +2633,11 @@
         "Direction": {
           "description": "影響方向",
           "enum": [
-            "0: 南下",
-            "1: 北上",
-            "2: 雙向"
+            0,
+            1,
+            2
           ],
-          "type": "string"
+          "type": "integer"
         },
         "Level": {
           "description": "影響等級程度",
@@ -2907,10 +2907,10 @@
         "Direction": {
           "description": "行駛方向",
           "enum": [
-            "0: 順行",
-            "1: 逆行"
+            0,
+            1
           ],
-          "type": "string"
+          "type": "integer"
         },
         "DestinationStationID": {
           "description": "目的站車站代號",
@@ -3088,10 +3088,10 @@
         "Direction": {
           "description": "行駛方向",
           "enum": [
-            "0: 順行",
-            "1: 逆行"
+            0,
+            1
           ],
-          "type": "string"
+          "type": "integer"
         },
         "TrainTypeID": {
           "description": "車種代嗎",
@@ -3135,75 +3135,75 @@
         "TripLine": {
           "description": "山海線類型",
           "enum": [
-            "0: 不經山海線",
-            "1: 山線",
-            "2: 海線"
+            0,
+            1,
+            2
           ],
-          "type": "string"
+          "type": "integer"
         },
         "WheelChairFlag": {
           "description": "是否設身障旅客專用座位車",
           "enum": [
-            "0: 否",
-            "1: 是"
+            0,
+            1
           ],
-          "type": "string"
+          "type": "integer"
         },
         "PackageServiceFlag": {
           "description": "是否提供行李服務",
           "enum": [
-            "0: 否",
-            "1: 是"
+            0,
+            1
           ],
-          "type": "string"
+          "type": "integer"
         },
         "DiningFlag": {
           "description": "是否提供餐車服務",
           "enum": [
-            "0: 否",
-            "1: 是"
+            0,
+            1
           ],
-          "type": "string"
+          "type": "integer"
         },
         "BreastFeedFlag": {
           "description": "是否設有哺(集)乳室車廂",
           "enum": [
-            "0: 否",
-            "1: 是"
+            0,
+            1
           ],
-          "type": "string"
+          "type": "integer"
         },
         "BikeFlag": {
           "description": "是否人車同行班次(置於攜車袋之自行車各級列車均可乘車)",
           "enum": [
-            "0: 否",
-            "1: 是"
+            0,
+            1
           ],
-          "type": "string"
+          "type": "integer"
         },
         "CarFlag": {
           "description": "是否提供小汽車上火車服務",
           "enum": [
-            "0: 否",
-            "1: 是"
+            0,
+            1
           ],
-          "type": "string"
+          "type": "integer"
         },
         "DailyFlag": {
           "description": "是否提供小汽車上火車服務",
           "enum": [
-            "0: 否",
-            "1: 是"
+            0,
+            1
           ],
-          "type": "string"
+          "type": "integer"
         },
         "ExtraTrainFlag": {
           "description": "是否為加班車",
           "enum": [
-            "0: 否",
-            "1: 是"
+            0,
+            1
           ],
-          "type": "string"
+          "type": "integer"
         },
         "Note": {
           "description": "附註說明",
@@ -3343,10 +3343,10 @@
         "Direction": {
           "description": "行駛方向",
           "enum": [
-            "0: 順行",
-            "1: 逆行"
+            0,
+            1
           ],
-          "type": "string"
+          "type": "integer"
         },
         "DestinationStationID": {
           "description": "目的站車站代號",
@@ -3601,10 +3601,10 @@
         "Direction": {
           "description": "行駛方向",
           "enum": [
-            "0: 順行",
-            "1: 逆行"
+            0,
+            1
           ],
-          "type": "string"
+          "type": "integer"
         },
         "TrainTypeID": {
           "description": "車種代嗎",
@@ -3648,75 +3648,75 @@
         "TripLine": {
           "description": "山海線類型",
           "enum": [
-            "0: 不經山海線",
-            "1: 山線",
-            "2: 海線"
+            0,
+            1,
+            2
           ],
-          "type": "string"
+          "type": "integer"
         },
         "WheelChairFlag": {
           "description": "是否設身障旅客專用座位車",
           "enum": [
-            "0: 否",
-            "1: 是"
+            0,
+            1
           ],
-          "type": "string"
+          "type": "integer"
         },
         "PackageServiceFlag": {
           "description": "是否提供行李服務",
           "enum": [
-            "0: 否",
-            "1: 是"
+            0,
+            1
           ],
-          "type": "string"
+          "type": "integer"
         },
         "DiningFlag": {
           "description": "是否提供餐車服務",
           "enum": [
-            "0: 否",
-            "1: 是"
+            0,
+            1
           ],
-          "type": "string"
+          "type": "integer"
         },
         "BreastFeedFlag": {
           "description": "是否設有哺(集)乳室車廂",
           "enum": [
-            "0: 否",
-            "1: 是"
+            0,
+            1
           ],
-          "type": "string"
+          "type": "integer"
         },
         "BikeFlag": {
           "description": "是否人車同行班次(置於攜車袋之自行車各級列車均可乘車)",
           "enum": [
-            "0: 否",
-            "1: 是"
+            0,
+            1
           ],
-          "type": "string"
+          "type": "integer"
         },
         "CarFlag": {
           "description": "是否提供小客車",
           "enum": [
-            "0: 否",
-            "1: 是"
+            0,
+            1
           ],
-          "type": "string"
+          "type": "integer"
         },
         "DailyFlag": {
           "description": "是否為每日行駛",
           "enum": [
-            "0: 否",
-            "1: 是"
+            0,
+            1
           ],
-          "type": "string"
+          "type": "integer"
         },
         "ExtraTrainFlag": {
           "description": "是否為加班車",
           "enum": [
-            "0: 否",
-            "1: 是"
+            0,
+            1
           ],
-          "type": "string"
+          "type": "integer"
         },
         "Note": {
           "description": "附註說明",
@@ -3785,90 +3785,90 @@
         "Monday": {
           "description": "星期一是否營運",
           "enum": [
-            "0: 否",
-            "1: 是"
+            0,
+            1
           ],
-          "type": "string"
+          "type": "integer"
         },
         "Tuesday": {
           "description": "星期二是否營運",
           "enum": [
-            "0: 否",
-            "1: 是"
+            0,
+            1
           ],
-          "type": "string"
+          "type": "integer"
         },
         "Wednesday": {
           "description": "星期三是否營運",
           "enum": [
-            "0: 否",
-            "1: 是"
+            0,
+            1
           ],
-          "type": "string"
+          "type": "integer"
         },
         "Thursday": {
           "description": "星期四是否營運",
           "enum": [
-            "0: 否",
-            "1: 是"
+            0,
+            1
           ],
-          "type": "string"
+          "type": "integer"
         },
         "Friday": {
           "description": "星期五是否營運",
           "enum": [
-            "0: 否",
-            "1: 是"
+            0,
+            1
           ],
-          "type": "string"
+          "type": "integer"
         },
         "Saturday": {
           "description": "星期六是否營運",
           "enum": [
-            "0: 否",
-            "1: 是"
+            0,
+            1
           ],
-          "type": "string"
+          "type": "integer"
         },
         "Sunday": {
           "description": "星期日是否營運",
           "enum": [
-            "0: 否",
-            "1: 是"
+            0,
+            1
           ],
-          "type": "string"
+          "type": "integer"
         },
         "NationalHolidays": {
           "description": "國定假日是否營運",
           "enum": [
-            "0: 否",
-            "1: 是"
+            0,
+            1
           ],
-          "type": "string"
+          "type": "integer"
         },
         "DayBeforeHoliday": {
           "description": "假日前一日是否營運",
           "enum": [
-            "0: 否",
-            "1: 是"
+            0,
+            1
           ],
-          "type": "string"
+          "type": "integer"
         },
         "DayAfterHoliday": {
           "description": "假日後一日是否營運",
           "enum": [
-            "0: 否",
-            "1: 是"
+            0,
+            1
           ],
-          "type": "string"
+          "type": "integer"
         },
         "TyphoonDay": {
           "description": "颱風停止上班上課期間營運營運",
           "enum": [
-            "0: 否",
-            "1: 是"
+            0,
+            1
           ],
-          "type": "string"
+          "type": "integer"
         }
       }
     },
@@ -4443,10 +4443,10 @@
         "Direction": {
           "description": "方向",
           "enum": [
-            "0: 順行",
-            "1: 逆行"
+            0,
+            1
           ],
-          "type": "string"
+          "type": "integer"
         },
         "TrainType": {
           "format": "int32",
@@ -4707,11 +4707,11 @@
         "ServiceStatus": {
           "description": "營運服務狀態代碼",
           "enum": [
-            "0: 停止營運",
-            "1: 正常營運",
-            "2: 加班營運"
+            0,
+            1,
+            2
           ],
-          "type": "string"
+          "type": "integer"
         },
         "Description": {
           "description": "特殊營運描述",
@@ -5217,10 +5217,10 @@
         "Direction": {
           "description": "行駛方向",
           "enum": [
-            "0: 順行",
-            "1: 逆行"
+            0,
+            1
           ],
-          "type": "string"
+          "type": "integer"
         },
         "TrainTypeID": {
           "description": "車種代嗎",
@@ -5247,11 +5247,11 @@
         "TripLine": {
           "description": "山海線類型",
           "enum": [
-            "0: 不經山海線",
-            "1: 山線",
-            "2: 海線"
+            0,
+            1,
+            2
           ],
-          "type": "string"
+          "type": "integer"
         },
         "Platform": {
           "description": "停靠月台(00代表當時尚未確定停靠的月台，待確定好停靠的月台後，就會更新Platfrom。)",
@@ -5273,11 +5273,11 @@
         "RunningStatus": {
           "description": "列車狀態",
           "enum": [
-            "0: 準點",
-            "1: 誤點",
-            "2: 取消"
+            0,
+            1,
+            2
           ],
-          "type": "string"
+          "type": "integer"
         },
         "UpdateTime": {
           "title": "DateTime",
@@ -6044,11 +6044,11 @@
         "TrainStationStatus": {
           "description": "列車目前所在之車站狀態",
           "enum": [
-            "0: 進站中",
-            "1: 在站上",
-            "2: 已離站"
+            0,
+            1,
+            2
           ],
-          "type": "string"
+          "type": "integer"
         },
         "DelayTime": {
           "format": "int32",

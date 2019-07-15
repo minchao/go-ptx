@@ -31,8 +31,8 @@ type ServiceDTOVersion3RailTRATRAAlertListAlert struct {
 	Description *string `json:"Description"`
 
 	// 影響方向
-	// Enum: [0: 南下 1: 北上 2: 雙向]
-	Direction string `json:"Direction,omitempty"`
+	// Enum: [0 1 2]
+	Direction int64 `json:"Direction,omitempty"`
 
 	// 影響說明
 	Effect string `json:"Effect,omitempty"`
@@ -67,8 +67,8 @@ type ServiceDTOVersion3RailTRATRAAlertListAlert struct {
 
 	// 營運狀況
 	// Required: true
-	// Enum: [0: 全線營運停止 1: 全線營運正常 2: 有異常狀況]
-	Status *string `json:"Status"`
+	// Enum: [0 1 2]
+	Status *int64 `json:"Status"`
 
 	// 通阻訊息標題
 	// Required: true
@@ -144,8 +144,8 @@ func (m *ServiceDTOVersion3RailTRATRAAlertListAlert) validateDescription(formats
 var serviceDTOVersion3RailTRATRAAlertListAlertTypeDirectionPropEnum []interface{}
 
 func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["0: 南下","1: 北上","2: 雙向"]`), &res); err != nil {
+	var res []int64
+	if err := json.Unmarshal([]byte(`[0,1,2]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -153,20 +153,8 @@ func init() {
 	}
 }
 
-const (
-
-	// ServiceDTOVersion3RailTRATRAAlertListAlertDirectionNr0南下 captures enum value "0: 南下"
-	ServiceDTOVersion3RailTRATRAAlertListAlertDirectionNr0南下 string = "0: 南下"
-
-	// ServiceDTOVersion3RailTRATRAAlertListAlertDirectionNr1北上 captures enum value "1: 北上"
-	ServiceDTOVersion3RailTRATRAAlertListAlertDirectionNr1北上 string = "1: 北上"
-
-	// ServiceDTOVersion3RailTRATRAAlertListAlertDirectionNr2雙向 captures enum value "2: 雙向"
-	ServiceDTOVersion3RailTRATRAAlertListAlertDirectionNr2雙向 string = "2: 雙向"
-)
-
 // prop value enum
-func (m *ServiceDTOVersion3RailTRATRAAlertListAlert) validateDirectionEnum(path, location string, value string) error {
+func (m *ServiceDTOVersion3RailTRATRAAlertListAlert) validateDirectionEnum(path, location string, value int64) error {
 	if err := validate.Enum(path, location, value, serviceDTOVersion3RailTRATRAAlertListAlertTypeDirectionPropEnum); err != nil {
 		return err
 	}
@@ -254,8 +242,8 @@ func (m *ServiceDTOVersion3RailTRATRAAlertListAlert) validateScope(formats strfm
 var serviceDTOVersion3RailTRATRAAlertListAlertTypeStatusPropEnum []interface{}
 
 func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["0: 全線營運停止","1: 全線營運正常","2: 有異常狀況"]`), &res); err != nil {
+	var res []int64
+	if err := json.Unmarshal([]byte(`[0,1,2]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -263,20 +251,8 @@ func init() {
 	}
 }
 
-const (
-
-	// ServiceDTOVersion3RailTRATRAAlertListAlertStatusNr0全線營運停止 captures enum value "0: 全線營運停止"
-	ServiceDTOVersion3RailTRATRAAlertListAlertStatusNr0全線營運停止 string = "0: 全線營運停止"
-
-	// ServiceDTOVersion3RailTRATRAAlertListAlertStatusNr1全線營運正常 captures enum value "1: 全線營運正常"
-	ServiceDTOVersion3RailTRATRAAlertListAlertStatusNr1全線營運正常 string = "1: 全線營運正常"
-
-	// ServiceDTOVersion3RailTRATRAAlertListAlertStatusNr2有異常狀況 captures enum value "2: 有異常狀況"
-	ServiceDTOVersion3RailTRATRAAlertListAlertStatusNr2有異常狀況 string = "2: 有異常狀況"
-)
-
 // prop value enum
-func (m *ServiceDTOVersion3RailTRATRAAlertListAlert) validateStatusEnum(path, location string, value string) error {
+func (m *ServiceDTOVersion3RailTRATRAAlertListAlert) validateStatusEnum(path, location string, value int64) error {
 	if err := validate.Enum(path, location, value, serviceDTOVersion3RailTRATRAAlertListAlertTypeStatusPropEnum); err != nil {
 		return err
 	}

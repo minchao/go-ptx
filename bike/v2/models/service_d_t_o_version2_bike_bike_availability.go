@@ -28,8 +28,8 @@ type ServiceDTOVersion2BikeBikeAvailability struct {
 	AvailableReturnBikes int32 `json:"AvailableReturnBikes,omitempty"`
 
 	// 服務狀態
-	// Enum: [0: 停止營運 1: 正常營運]
-	ServieAvailable string `json:"ServieAvailable,omitempty"`
+	// Enum: [0 1]
+	ServieAvailable int64 `json:"ServieAvailable,omitempty"`
 
 	// DateTime
 	//
@@ -75,8 +75,8 @@ func (m *ServiceDTOVersion2BikeBikeAvailability) Validate(formats strfmt.Registr
 var serviceDTOVersion2BikeBikeAvailabilityTypeServieAvailablePropEnum []interface{}
 
 func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["0: 停止營運","1: 正常營運"]`), &res); err != nil {
+	var res []int64
+	if err := json.Unmarshal([]byte(`[0,1]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -84,17 +84,8 @@ func init() {
 	}
 }
 
-const (
-
-	// ServiceDTOVersion2BikeBikeAvailabilityServieAvailableNr0停止營運 captures enum value "0: 停止營運"
-	ServiceDTOVersion2BikeBikeAvailabilityServieAvailableNr0停止營運 string = "0: 停止營運"
-
-	// ServiceDTOVersion2BikeBikeAvailabilityServieAvailableNr1正常營運 captures enum value "1: 正常營運"
-	ServiceDTOVersion2BikeBikeAvailabilityServieAvailableNr1正常營運 string = "1: 正常營運"
-)
-
 // prop value enum
-func (m *ServiceDTOVersion2BikeBikeAvailability) validateServieAvailableEnum(path, location string, value string) error {
+func (m *ServiceDTOVersion2BikeBikeAvailability) validateServieAvailableEnum(path, location string, value int64) error {
 	if err := validate.Enum(path, location, value, serviceDTOVersion2BikeBikeAvailabilityTypeServieAvailablePropEnum); err != nil {
 		return err
 	}

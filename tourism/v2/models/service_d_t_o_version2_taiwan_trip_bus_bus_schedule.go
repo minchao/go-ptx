@@ -22,8 +22,8 @@ type ServiceDTOVersion2TaiwanTripBusBusSchedule struct {
 
 	// 去返程
 	// Required: true
-	// Enum: [0: 去程 1: 返程 2: 迴圈 255: 未知]
-	Direction *string `json:"Direction"`
+	// Enum: [0 1 2 255]
+	Direction *int64 `json:"Direction"`
 
 	// 發車班距
 	Frequencys []*ServiceDTOVersion2BusBusFrequency `json:"Frequencys"`
@@ -109,8 +109,8 @@ func (m *ServiceDTOVersion2TaiwanTripBusBusSchedule) Validate(formats strfmt.Reg
 var serviceDTOVersion2TaiwanTripBusBusScheduleTypeDirectionPropEnum []interface{}
 
 func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["0: 去程","1: 返程","2: 迴圈","255: 未知"]`), &res); err != nil {
+	var res []int64
+	if err := json.Unmarshal([]byte(`[0,1,2,255]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -118,23 +118,8 @@ func init() {
 	}
 }
 
-const (
-
-	// ServiceDTOVersion2TaiwanTripBusBusScheduleDirectionNr0去程 captures enum value "0: 去程"
-	ServiceDTOVersion2TaiwanTripBusBusScheduleDirectionNr0去程 string = "0: 去程"
-
-	// ServiceDTOVersion2TaiwanTripBusBusScheduleDirectionNr1返程 captures enum value "1: 返程"
-	ServiceDTOVersion2TaiwanTripBusBusScheduleDirectionNr1返程 string = "1: 返程"
-
-	// ServiceDTOVersion2TaiwanTripBusBusScheduleDirectionNr2迴圈 captures enum value "2: 迴圈"
-	ServiceDTOVersion2TaiwanTripBusBusScheduleDirectionNr2迴圈 string = "2: 迴圈"
-
-	// ServiceDTOVersion2TaiwanTripBusBusScheduleDirectionNr255未知 captures enum value "255: 未知"
-	ServiceDTOVersion2TaiwanTripBusBusScheduleDirectionNr255未知 string = "255: 未知"
-)
-
 // prop value enum
-func (m *ServiceDTOVersion2TaiwanTripBusBusSchedule) validateDirectionEnum(path, location string, value string) error {
+func (m *ServiceDTOVersion2TaiwanTripBusBusSchedule) validateDirectionEnum(path, location string, value int64) error {
 	if err := validate.Enum(path, location, value, serviceDTOVersion2TaiwanTripBusBusScheduleTypeDirectionPropEnum); err != nil {
 		return err
 	}

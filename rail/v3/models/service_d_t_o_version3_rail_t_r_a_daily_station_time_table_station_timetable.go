@@ -29,8 +29,8 @@ type ServiceDTOVersion3RailTRADailyStationTimeTableStationTimetable struct {
 	DestinationStationName *ServiceDTOVersion3BaseNameType `json:"DestinationStationName,omitempty"`
 
 	// 行駛方向
-	// Enum: [0: 順行 1: 逆行]
-	Direction string `json:"Direction,omitempty"`
+	// Enum: [0 1]
+	Direction int64 `json:"Direction,omitempty"`
 
 	// 營運路線代碼
 	RouteID string `json:"RouteID,omitempty"`
@@ -95,8 +95,8 @@ func (m *ServiceDTOVersion3RailTRADailyStationTimeTableStationTimetable) validat
 var serviceDTOVersion3RailTRADailyStationTimeTableStationTimetableTypeDirectionPropEnum []interface{}
 
 func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["0: 順行","1: 逆行"]`), &res); err != nil {
+	var res []int64
+	if err := json.Unmarshal([]byte(`[0,1]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -104,17 +104,8 @@ func init() {
 	}
 }
 
-const (
-
-	// ServiceDTOVersion3RailTRADailyStationTimeTableStationTimetableDirectionNr0順行 captures enum value "0: 順行"
-	ServiceDTOVersion3RailTRADailyStationTimeTableStationTimetableDirectionNr0順行 string = "0: 順行"
-
-	// ServiceDTOVersion3RailTRADailyStationTimeTableStationTimetableDirectionNr1逆行 captures enum value "1: 逆行"
-	ServiceDTOVersion3RailTRADailyStationTimeTableStationTimetableDirectionNr1逆行 string = "1: 逆行"
-)
-
 // prop value enum
-func (m *ServiceDTOVersion3RailTRADailyStationTimeTableStationTimetable) validateDirectionEnum(path, location string, value string) error {
+func (m *ServiceDTOVersion3RailTRADailyStationTimeTableStationTimetable) validateDirectionEnum(path, location string, value int64) error {
 	if err := validate.Enum(path, location, value, serviceDTOVersion3RailTRADailyStationTimeTableStationTimetableTypeDirectionPropEnum); err != nil {
 		return err
 	}

@@ -30,16 +30,16 @@ type ServiceDTOVersion2BusBusA1Data struct {
 	BusPosition *ServiceDTOVersion2BasePointType `json:"BusPosition,omitempty"`
 
 	// 行車狀況
-	// Enum: [0: 正常 1: 車禍 2: 故障 3: 塞車 4: 緊急求援 5: 加油 90: 不明 91: 去回不明 98: 偏移路線 99: 非營運狀態 100: 客滿 101: 包車出租 255: 未知]
-	BusStatus string `json:"BusStatus,omitempty"`
+	// Enum: [0 1 2 3 4 5 90 91 98 99 100 101 255]
+	BusStatus int64 `json:"BusStatus,omitempty"`
 
 	// 去返程
-	// Enum: [0: 去程 1: 返程 2: 迴圈 255: 未知]
-	Direction string `json:"Direction,omitempty"`
+	// Enum: [0 1 2 255]
+	Direction int64 `json:"Direction,omitempty"`
 
 	// 勤務狀態
-	// Enum: [0: 正常 1: 開始 2: 結束]
-	DutyStatus string `json:"DutyStatus,omitempty"`
+	// Enum: [0 1 2]
+	DutyStatus int64 `json:"DutyStatus,omitempty"`
 
 	// DateTime
 	//
@@ -48,8 +48,8 @@ type ServiceDTOVersion2BusBusA1Data struct {
 	GPSTime *string `json:"GPSTime"`
 
 	// 資料型態種類
-	// Enum: [0: 未知 1: 定期 2: 非定期]
-	MessageType string `json:"MessageType,omitempty"`
+	// Enum: [0 1 2]
+	MessageType int64 `json:"MessageType,omitempty"`
 
 	// 營運業者代碼
 	OperatorID string `json:"OperatorID,omitempty"`
@@ -181,8 +181,8 @@ func (m *ServiceDTOVersion2BusBusA1Data) validateBusPosition(formats strfmt.Regi
 var serviceDTOVersion2BusBusA1DataTypeBusStatusPropEnum []interface{}
 
 func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["0: 正常","1: 車禍","2: 故障","3: 塞車","4: 緊急求援","5: 加油","90: 不明","91: 去回不明","98: 偏移路線","99: 非營運狀態","100: 客滿","101: 包車出租","255: 未知"]`), &res); err != nil {
+	var res []int64
+	if err := json.Unmarshal([]byte(`[0,1,2,3,4,5,90,91,98,99,100,101,255]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -190,50 +190,8 @@ func init() {
 	}
 }
 
-const (
-
-	// ServiceDTOVersion2BusBusA1DataBusStatusNr0正常 captures enum value "0: 正常"
-	ServiceDTOVersion2BusBusA1DataBusStatusNr0正常 string = "0: 正常"
-
-	// ServiceDTOVersion2BusBusA1DataBusStatusNr1車禍 captures enum value "1: 車禍"
-	ServiceDTOVersion2BusBusA1DataBusStatusNr1車禍 string = "1: 車禍"
-
-	// ServiceDTOVersion2BusBusA1DataBusStatusNr2故障 captures enum value "2: 故障"
-	ServiceDTOVersion2BusBusA1DataBusStatusNr2故障 string = "2: 故障"
-
-	// ServiceDTOVersion2BusBusA1DataBusStatusNr3塞車 captures enum value "3: 塞車"
-	ServiceDTOVersion2BusBusA1DataBusStatusNr3塞車 string = "3: 塞車"
-
-	// ServiceDTOVersion2BusBusA1DataBusStatusNr4緊急求援 captures enum value "4: 緊急求援"
-	ServiceDTOVersion2BusBusA1DataBusStatusNr4緊急求援 string = "4: 緊急求援"
-
-	// ServiceDTOVersion2BusBusA1DataBusStatusNr5加油 captures enum value "5: 加油"
-	ServiceDTOVersion2BusBusA1DataBusStatusNr5加油 string = "5: 加油"
-
-	// ServiceDTOVersion2BusBusA1DataBusStatusNr90不明 captures enum value "90: 不明"
-	ServiceDTOVersion2BusBusA1DataBusStatusNr90不明 string = "90: 不明"
-
-	// ServiceDTOVersion2BusBusA1DataBusStatusNr91去回不明 captures enum value "91: 去回不明"
-	ServiceDTOVersion2BusBusA1DataBusStatusNr91去回不明 string = "91: 去回不明"
-
-	// ServiceDTOVersion2BusBusA1DataBusStatusNr98偏移路線 captures enum value "98: 偏移路線"
-	ServiceDTOVersion2BusBusA1DataBusStatusNr98偏移路線 string = "98: 偏移路線"
-
-	// ServiceDTOVersion2BusBusA1DataBusStatusNr99非營運狀態 captures enum value "99: 非營運狀態"
-	ServiceDTOVersion2BusBusA1DataBusStatusNr99非營運狀態 string = "99: 非營運狀態"
-
-	// ServiceDTOVersion2BusBusA1DataBusStatusNr100客滿 captures enum value "100: 客滿"
-	ServiceDTOVersion2BusBusA1DataBusStatusNr100客滿 string = "100: 客滿"
-
-	// ServiceDTOVersion2BusBusA1DataBusStatusNr101包車出租 captures enum value "101: 包車出租"
-	ServiceDTOVersion2BusBusA1DataBusStatusNr101包車出租 string = "101: 包車出租"
-
-	// ServiceDTOVersion2BusBusA1DataBusStatusNr255未知 captures enum value "255: 未知"
-	ServiceDTOVersion2BusBusA1DataBusStatusNr255未知 string = "255: 未知"
-)
-
 // prop value enum
-func (m *ServiceDTOVersion2BusBusA1Data) validateBusStatusEnum(path, location string, value string) error {
+func (m *ServiceDTOVersion2BusBusA1Data) validateBusStatusEnum(path, location string, value int64) error {
 	if err := validate.Enum(path, location, value, serviceDTOVersion2BusBusA1DataTypeBusStatusPropEnum); err != nil {
 		return err
 	}
@@ -257,8 +215,8 @@ func (m *ServiceDTOVersion2BusBusA1Data) validateBusStatus(formats strfmt.Regist
 var serviceDTOVersion2BusBusA1DataTypeDirectionPropEnum []interface{}
 
 func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["0: 去程","1: 返程","2: 迴圈","255: 未知"]`), &res); err != nil {
+	var res []int64
+	if err := json.Unmarshal([]byte(`[0,1,2,255]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -266,23 +224,8 @@ func init() {
 	}
 }
 
-const (
-
-	// ServiceDTOVersion2BusBusA1DataDirectionNr0去程 captures enum value "0: 去程"
-	ServiceDTOVersion2BusBusA1DataDirectionNr0去程 string = "0: 去程"
-
-	// ServiceDTOVersion2BusBusA1DataDirectionNr1返程 captures enum value "1: 返程"
-	ServiceDTOVersion2BusBusA1DataDirectionNr1返程 string = "1: 返程"
-
-	// ServiceDTOVersion2BusBusA1DataDirectionNr2迴圈 captures enum value "2: 迴圈"
-	ServiceDTOVersion2BusBusA1DataDirectionNr2迴圈 string = "2: 迴圈"
-
-	// ServiceDTOVersion2BusBusA1DataDirectionNr255未知 captures enum value "255: 未知"
-	ServiceDTOVersion2BusBusA1DataDirectionNr255未知 string = "255: 未知"
-)
-
 // prop value enum
-func (m *ServiceDTOVersion2BusBusA1Data) validateDirectionEnum(path, location string, value string) error {
+func (m *ServiceDTOVersion2BusBusA1Data) validateDirectionEnum(path, location string, value int64) error {
 	if err := validate.Enum(path, location, value, serviceDTOVersion2BusBusA1DataTypeDirectionPropEnum); err != nil {
 		return err
 	}
@@ -306,8 +249,8 @@ func (m *ServiceDTOVersion2BusBusA1Data) validateDirection(formats strfmt.Regist
 var serviceDTOVersion2BusBusA1DataTypeDutyStatusPropEnum []interface{}
 
 func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["0: 正常","1: 開始","2: 結束"]`), &res); err != nil {
+	var res []int64
+	if err := json.Unmarshal([]byte(`[0,1,2]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -315,20 +258,8 @@ func init() {
 	}
 }
 
-const (
-
-	// ServiceDTOVersion2BusBusA1DataDutyStatusNr0正常 captures enum value "0: 正常"
-	ServiceDTOVersion2BusBusA1DataDutyStatusNr0正常 string = "0: 正常"
-
-	// ServiceDTOVersion2BusBusA1DataDutyStatusNr1開始 captures enum value "1: 開始"
-	ServiceDTOVersion2BusBusA1DataDutyStatusNr1開始 string = "1: 開始"
-
-	// ServiceDTOVersion2BusBusA1DataDutyStatusNr2結束 captures enum value "2: 結束"
-	ServiceDTOVersion2BusBusA1DataDutyStatusNr2結束 string = "2: 結束"
-)
-
 // prop value enum
-func (m *ServiceDTOVersion2BusBusA1Data) validateDutyStatusEnum(path, location string, value string) error {
+func (m *ServiceDTOVersion2BusBusA1Data) validateDutyStatusEnum(path, location string, value int64) error {
 	if err := validate.Enum(path, location, value, serviceDTOVersion2BusBusA1DataTypeDutyStatusPropEnum); err != nil {
 		return err
 	}
@@ -361,8 +292,8 @@ func (m *ServiceDTOVersion2BusBusA1Data) validateGPSTime(formats strfmt.Registry
 var serviceDTOVersion2BusBusA1DataTypeMessageTypePropEnum []interface{}
 
 func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["0: 未知","1: 定期","2: 非定期"]`), &res); err != nil {
+	var res []int64
+	if err := json.Unmarshal([]byte(`[0,1,2]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -370,20 +301,8 @@ func init() {
 	}
 }
 
-const (
-
-	// ServiceDTOVersion2BusBusA1DataMessageTypeNr0未知 captures enum value "0: 未知"
-	ServiceDTOVersion2BusBusA1DataMessageTypeNr0未知 string = "0: 未知"
-
-	// ServiceDTOVersion2BusBusA1DataMessageTypeNr1定期 captures enum value "1: 定期"
-	ServiceDTOVersion2BusBusA1DataMessageTypeNr1定期 string = "1: 定期"
-
-	// ServiceDTOVersion2BusBusA1DataMessageTypeNr2非定期 captures enum value "2: 非定期"
-	ServiceDTOVersion2BusBusA1DataMessageTypeNr2非定期 string = "2: 非定期"
-)
-
 // prop value enum
-func (m *ServiceDTOVersion2BusBusA1Data) validateMessageTypeEnum(path, location string, value string) error {
+func (m *ServiceDTOVersion2BusBusA1Data) validateMessageTypeEnum(path, location string, value int64) error {
 	if err := validate.Enum(path, location, value, serviceDTOVersion2BusBusA1DataTypeMessageTypePropEnum); err != nil {
 		return err
 	}

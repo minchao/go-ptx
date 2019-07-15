@@ -23,33 +23,33 @@ type ServiceDTOVersion3RailTRACommonTrainInfo struct {
 
 	// 是否人車同行班次(置於攜車袋之自行車各級列車均可乘車)
 	// Required: true
-	// Enum: [0: 否 1: 是]
-	BikeFlag *string `json:"BikeFlag"`
+	// Enum: [0 1]
+	BikeFlag *int64 `json:"BikeFlag"`
 
 	// 是否設有哺(集)乳室車廂
 	// Required: true
-	// Enum: [0: 否 1: 是]
-	BreastFeedFlag *string `json:"BreastFeedFlag"`
+	// Enum: [0 1]
+	BreastFeedFlag *int64 `json:"BreastFeedFlag"`
 
 	// 是否提供小客車
 	// Required: true
-	// Enum: [0: 否 1: 是]
-	CarFlag *string `json:"CarFlag"`
+	// Enum: [0 1]
+	CarFlag *int64 `json:"CarFlag"`
 
 	// 是否為每日行駛
 	// Required: true
-	// Enum: [0: 否 1: 是]
-	DailyFlag *string `json:"DailyFlag"`
+	// Enum: [0 1]
+	DailyFlag *int64 `json:"DailyFlag"`
 
 	// 是否提供餐車服務
 	// Required: true
-	// Enum: [0: 否 1: 是]
-	DiningFlag *string `json:"DiningFlag"`
+	// Enum: [0 1]
+	DiningFlag *int64 `json:"DiningFlag"`
 
 	// 行駛方向
 	// Required: true
-	// Enum: [0: 順行 1: 逆行]
-	Direction *string `json:"Direction"`
+	// Enum: [0 1]
+	Direction *int64 `json:"Direction"`
 
 	// 列車終點車站代號
 	EndingStationID string `json:"EndingStationID,omitempty"`
@@ -61,8 +61,8 @@ type ServiceDTOVersion3RailTRACommonTrainInfo struct {
 
 	// 是否為加班車
 	// Required: true
-	// Enum: [0: 否 1: 是]
-	ExtraTrainFlag *string `json:"ExtraTrainFlag"`
+	// Enum: [0 1]
+	ExtraTrainFlag *int64 `json:"ExtraTrainFlag"`
 
 	// 附註說明
 	Note string `json:"Note,omitempty"`
@@ -72,8 +72,8 @@ type ServiceDTOVersion3RailTRACommonTrainInfo struct {
 
 	// 是否提供行李服務
 	// Required: true
-	// Enum: [0: 否 1: 是]
-	PackageServiceFlag *string `json:"PackageServiceFlag"`
+	// Enum: [0 1]
+	PackageServiceFlag *int64 `json:"PackageServiceFlag"`
 
 	// 營運路線代碼
 	RouteID string `json:"RouteID,omitempty"`
@@ -105,13 +105,13 @@ type ServiceDTOVersion3RailTRACommonTrainInfo struct {
 	TripHeadSign string `json:"TripHeadSign,omitempty"`
 
 	// 山海線類型
-	// Enum: [0: 不經山海線 1: 山線 2: 海線]
-	TripLine string `json:"TripLine,omitempty"`
+	// Enum: [0 1 2]
+	TripLine int64 `json:"TripLine,omitempty"`
 
 	// 是否設身障旅客專用座位車
 	// Required: true
-	// Enum: [0: 否 1: 是]
-	WheelChairFlag *string `json:"WheelChairFlag"`
+	// Enum: [0 1]
+	WheelChairFlag *int64 `json:"WheelChairFlag"`
 }
 
 // Validate validates this service d t o version3 rail t r a common train info
@@ -183,8 +183,8 @@ func (m *ServiceDTOVersion3RailTRACommonTrainInfo) Validate(formats strfmt.Regis
 var serviceDTOVersion3RailTRACommonTrainInfoTypeBikeFlagPropEnum []interface{}
 
 func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["0: 否","1: 是"]`), &res); err != nil {
+	var res []int64
+	if err := json.Unmarshal([]byte(`[0,1]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -192,17 +192,8 @@ func init() {
 	}
 }
 
-const (
-
-	// ServiceDTOVersion3RailTRACommonTrainInfoBikeFlagNr0否 captures enum value "0: 否"
-	ServiceDTOVersion3RailTRACommonTrainInfoBikeFlagNr0否 string = "0: 否"
-
-	// ServiceDTOVersion3RailTRACommonTrainInfoBikeFlagNr1是 captures enum value "1: 是"
-	ServiceDTOVersion3RailTRACommonTrainInfoBikeFlagNr1是 string = "1: 是"
-)
-
 // prop value enum
-func (m *ServiceDTOVersion3RailTRACommonTrainInfo) validateBikeFlagEnum(path, location string, value string) error {
+func (m *ServiceDTOVersion3RailTRACommonTrainInfo) validateBikeFlagEnum(path, location string, value int64) error {
 	if err := validate.Enum(path, location, value, serviceDTOVersion3RailTRACommonTrainInfoTypeBikeFlagPropEnum); err != nil {
 		return err
 	}
@@ -226,8 +217,8 @@ func (m *ServiceDTOVersion3RailTRACommonTrainInfo) validateBikeFlag(formats strf
 var serviceDTOVersion3RailTRACommonTrainInfoTypeBreastFeedFlagPropEnum []interface{}
 
 func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["0: 否","1: 是"]`), &res); err != nil {
+	var res []int64
+	if err := json.Unmarshal([]byte(`[0,1]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -235,17 +226,8 @@ func init() {
 	}
 }
 
-const (
-
-	// ServiceDTOVersion3RailTRACommonTrainInfoBreastFeedFlagNr0否 captures enum value "0: 否"
-	ServiceDTOVersion3RailTRACommonTrainInfoBreastFeedFlagNr0否 string = "0: 否"
-
-	// ServiceDTOVersion3RailTRACommonTrainInfoBreastFeedFlagNr1是 captures enum value "1: 是"
-	ServiceDTOVersion3RailTRACommonTrainInfoBreastFeedFlagNr1是 string = "1: 是"
-)
-
 // prop value enum
-func (m *ServiceDTOVersion3RailTRACommonTrainInfo) validateBreastFeedFlagEnum(path, location string, value string) error {
+func (m *ServiceDTOVersion3RailTRACommonTrainInfo) validateBreastFeedFlagEnum(path, location string, value int64) error {
 	if err := validate.Enum(path, location, value, serviceDTOVersion3RailTRACommonTrainInfoTypeBreastFeedFlagPropEnum); err != nil {
 		return err
 	}
@@ -269,8 +251,8 @@ func (m *ServiceDTOVersion3RailTRACommonTrainInfo) validateBreastFeedFlag(format
 var serviceDTOVersion3RailTRACommonTrainInfoTypeCarFlagPropEnum []interface{}
 
 func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["0: 否","1: 是"]`), &res); err != nil {
+	var res []int64
+	if err := json.Unmarshal([]byte(`[0,1]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -278,17 +260,8 @@ func init() {
 	}
 }
 
-const (
-
-	// ServiceDTOVersion3RailTRACommonTrainInfoCarFlagNr0否 captures enum value "0: 否"
-	ServiceDTOVersion3RailTRACommonTrainInfoCarFlagNr0否 string = "0: 否"
-
-	// ServiceDTOVersion3RailTRACommonTrainInfoCarFlagNr1是 captures enum value "1: 是"
-	ServiceDTOVersion3RailTRACommonTrainInfoCarFlagNr1是 string = "1: 是"
-)
-
 // prop value enum
-func (m *ServiceDTOVersion3RailTRACommonTrainInfo) validateCarFlagEnum(path, location string, value string) error {
+func (m *ServiceDTOVersion3RailTRACommonTrainInfo) validateCarFlagEnum(path, location string, value int64) error {
 	if err := validate.Enum(path, location, value, serviceDTOVersion3RailTRACommonTrainInfoTypeCarFlagPropEnum); err != nil {
 		return err
 	}
@@ -312,8 +285,8 @@ func (m *ServiceDTOVersion3RailTRACommonTrainInfo) validateCarFlag(formats strfm
 var serviceDTOVersion3RailTRACommonTrainInfoTypeDailyFlagPropEnum []interface{}
 
 func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["0: 否","1: 是"]`), &res); err != nil {
+	var res []int64
+	if err := json.Unmarshal([]byte(`[0,1]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -321,17 +294,8 @@ func init() {
 	}
 }
 
-const (
-
-	// ServiceDTOVersion3RailTRACommonTrainInfoDailyFlagNr0否 captures enum value "0: 否"
-	ServiceDTOVersion3RailTRACommonTrainInfoDailyFlagNr0否 string = "0: 否"
-
-	// ServiceDTOVersion3RailTRACommonTrainInfoDailyFlagNr1是 captures enum value "1: 是"
-	ServiceDTOVersion3RailTRACommonTrainInfoDailyFlagNr1是 string = "1: 是"
-)
-
 // prop value enum
-func (m *ServiceDTOVersion3RailTRACommonTrainInfo) validateDailyFlagEnum(path, location string, value string) error {
+func (m *ServiceDTOVersion3RailTRACommonTrainInfo) validateDailyFlagEnum(path, location string, value int64) error {
 	if err := validate.Enum(path, location, value, serviceDTOVersion3RailTRACommonTrainInfoTypeDailyFlagPropEnum); err != nil {
 		return err
 	}
@@ -355,8 +319,8 @@ func (m *ServiceDTOVersion3RailTRACommonTrainInfo) validateDailyFlag(formats str
 var serviceDTOVersion3RailTRACommonTrainInfoTypeDiningFlagPropEnum []interface{}
 
 func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["0: 否","1: 是"]`), &res); err != nil {
+	var res []int64
+	if err := json.Unmarshal([]byte(`[0,1]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -364,17 +328,8 @@ func init() {
 	}
 }
 
-const (
-
-	// ServiceDTOVersion3RailTRACommonTrainInfoDiningFlagNr0否 captures enum value "0: 否"
-	ServiceDTOVersion3RailTRACommonTrainInfoDiningFlagNr0否 string = "0: 否"
-
-	// ServiceDTOVersion3RailTRACommonTrainInfoDiningFlagNr1是 captures enum value "1: 是"
-	ServiceDTOVersion3RailTRACommonTrainInfoDiningFlagNr1是 string = "1: 是"
-)
-
 // prop value enum
-func (m *ServiceDTOVersion3RailTRACommonTrainInfo) validateDiningFlagEnum(path, location string, value string) error {
+func (m *ServiceDTOVersion3RailTRACommonTrainInfo) validateDiningFlagEnum(path, location string, value int64) error {
 	if err := validate.Enum(path, location, value, serviceDTOVersion3RailTRACommonTrainInfoTypeDiningFlagPropEnum); err != nil {
 		return err
 	}
@@ -398,8 +353,8 @@ func (m *ServiceDTOVersion3RailTRACommonTrainInfo) validateDiningFlag(formats st
 var serviceDTOVersion3RailTRACommonTrainInfoTypeDirectionPropEnum []interface{}
 
 func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["0: 順行","1: 逆行"]`), &res); err != nil {
+	var res []int64
+	if err := json.Unmarshal([]byte(`[0,1]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -407,17 +362,8 @@ func init() {
 	}
 }
 
-const (
-
-	// ServiceDTOVersion3RailTRACommonTrainInfoDirectionNr0順行 captures enum value "0: 順行"
-	ServiceDTOVersion3RailTRACommonTrainInfoDirectionNr0順行 string = "0: 順行"
-
-	// ServiceDTOVersion3RailTRACommonTrainInfoDirectionNr1逆行 captures enum value "1: 逆行"
-	ServiceDTOVersion3RailTRACommonTrainInfoDirectionNr1逆行 string = "1: 逆行"
-)
-
 // prop value enum
-func (m *ServiceDTOVersion3RailTRACommonTrainInfo) validateDirectionEnum(path, location string, value string) error {
+func (m *ServiceDTOVersion3RailTRACommonTrainInfo) validateDirectionEnum(path, location string, value int64) error {
 	if err := validate.Enum(path, location, value, serviceDTOVersion3RailTRACommonTrainInfoTypeDirectionPropEnum); err != nil {
 		return err
 	}
@@ -459,8 +405,8 @@ func (m *ServiceDTOVersion3RailTRACommonTrainInfo) validateEndingStationName(for
 var serviceDTOVersion3RailTRACommonTrainInfoTypeExtraTrainFlagPropEnum []interface{}
 
 func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["0: 否","1: 是"]`), &res); err != nil {
+	var res []int64
+	if err := json.Unmarshal([]byte(`[0,1]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -468,17 +414,8 @@ func init() {
 	}
 }
 
-const (
-
-	// ServiceDTOVersion3RailTRACommonTrainInfoExtraTrainFlagNr0否 captures enum value "0: 否"
-	ServiceDTOVersion3RailTRACommonTrainInfoExtraTrainFlagNr0否 string = "0: 否"
-
-	// ServiceDTOVersion3RailTRACommonTrainInfoExtraTrainFlagNr1是 captures enum value "1: 是"
-	ServiceDTOVersion3RailTRACommonTrainInfoExtraTrainFlagNr1是 string = "1: 是"
-)
-
 // prop value enum
-func (m *ServiceDTOVersion3RailTRACommonTrainInfo) validateExtraTrainFlagEnum(path, location string, value string) error {
+func (m *ServiceDTOVersion3RailTRACommonTrainInfo) validateExtraTrainFlagEnum(path, location string, value int64) error {
 	if err := validate.Enum(path, location, value, serviceDTOVersion3RailTRACommonTrainInfoTypeExtraTrainFlagPropEnum); err != nil {
 		return err
 	}
@@ -502,8 +439,8 @@ func (m *ServiceDTOVersion3RailTRACommonTrainInfo) validateExtraTrainFlag(format
 var serviceDTOVersion3RailTRACommonTrainInfoTypePackageServiceFlagPropEnum []interface{}
 
 func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["0: 否","1: 是"]`), &res); err != nil {
+	var res []int64
+	if err := json.Unmarshal([]byte(`[0,1]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -511,17 +448,8 @@ func init() {
 	}
 }
 
-const (
-
-	// ServiceDTOVersion3RailTRACommonTrainInfoPackageServiceFlagNr0否 captures enum value "0: 否"
-	ServiceDTOVersion3RailTRACommonTrainInfoPackageServiceFlagNr0否 string = "0: 否"
-
-	// ServiceDTOVersion3RailTRACommonTrainInfoPackageServiceFlagNr1是 captures enum value "1: 是"
-	ServiceDTOVersion3RailTRACommonTrainInfoPackageServiceFlagNr1是 string = "1: 是"
-)
-
 // prop value enum
-func (m *ServiceDTOVersion3RailTRACommonTrainInfo) validatePackageServiceFlagEnum(path, location string, value string) error {
+func (m *ServiceDTOVersion3RailTRACommonTrainInfo) validatePackageServiceFlagEnum(path, location string, value int64) error {
 	if err := validate.Enum(path, location, value, serviceDTOVersion3RailTRACommonTrainInfoTypePackageServiceFlagPropEnum); err != nil {
 		return err
 	}
@@ -590,8 +518,8 @@ func (m *ServiceDTOVersion3RailTRACommonTrainInfo) validateTrainTypeName(formats
 var serviceDTOVersion3RailTRACommonTrainInfoTypeTripLinePropEnum []interface{}
 
 func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["0: 不經山海線","1: 山線","2: 海線"]`), &res); err != nil {
+	var res []int64
+	if err := json.Unmarshal([]byte(`[0,1,2]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -599,20 +527,8 @@ func init() {
 	}
 }
 
-const (
-
-	// ServiceDTOVersion3RailTRACommonTrainInfoTripLineNr0不經山海線 captures enum value "0: 不經山海線"
-	ServiceDTOVersion3RailTRACommonTrainInfoTripLineNr0不經山海線 string = "0: 不經山海線"
-
-	// ServiceDTOVersion3RailTRACommonTrainInfoTripLineNr1山線 captures enum value "1: 山線"
-	ServiceDTOVersion3RailTRACommonTrainInfoTripLineNr1山線 string = "1: 山線"
-
-	// ServiceDTOVersion3RailTRACommonTrainInfoTripLineNr2海線 captures enum value "2: 海線"
-	ServiceDTOVersion3RailTRACommonTrainInfoTripLineNr2海線 string = "2: 海線"
-)
-
 // prop value enum
-func (m *ServiceDTOVersion3RailTRACommonTrainInfo) validateTripLineEnum(path, location string, value string) error {
+func (m *ServiceDTOVersion3RailTRACommonTrainInfo) validateTripLineEnum(path, location string, value int64) error {
 	if err := validate.Enum(path, location, value, serviceDTOVersion3RailTRACommonTrainInfoTypeTripLinePropEnum); err != nil {
 		return err
 	}
@@ -636,8 +552,8 @@ func (m *ServiceDTOVersion3RailTRACommonTrainInfo) validateTripLine(formats strf
 var serviceDTOVersion3RailTRACommonTrainInfoTypeWheelChairFlagPropEnum []interface{}
 
 func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["0: 否","1: 是"]`), &res); err != nil {
+	var res []int64
+	if err := json.Unmarshal([]byte(`[0,1]`), &res); err != nil {
 		panic(err)
 	}
 	for _, v := range res {
@@ -645,17 +561,8 @@ func init() {
 	}
 }
 
-const (
-
-	// ServiceDTOVersion3RailTRACommonTrainInfoWheelChairFlagNr0否 captures enum value "0: 否"
-	ServiceDTOVersion3RailTRACommonTrainInfoWheelChairFlagNr0否 string = "0: 否"
-
-	// ServiceDTOVersion3RailTRACommonTrainInfoWheelChairFlagNr1是 captures enum value "1: 是"
-	ServiceDTOVersion3RailTRACommonTrainInfoWheelChairFlagNr1是 string = "1: 是"
-)
-
 // prop value enum
-func (m *ServiceDTOVersion3RailTRACommonTrainInfo) validateWheelChairFlagEnum(path, location string, value string) error {
+func (m *ServiceDTOVersion3RailTRACommonTrainInfo) validateWheelChairFlagEnum(path, location string, value int64) error {
 	if err := validate.Enum(path, location, value, serviceDTOVersion3RailTRACommonTrainInfoTypeWheelChairFlagPropEnum); err != nil {
 		return err
 	}
