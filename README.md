@@ -10,7 +10,7 @@ go-ptx 是[公共運輸整合資訊流通服務平臺](https://ptx.transportdata
 - 基本 [V2](https://ptx.transportdata.tw/MOTC/v2/Basic/api-docs/oas)
 - 航空 [V2](https://ptx.transportdata.tw/MOTC/v2/Air/api-docs/oas)
 - 公車 [V2](https://ptx.transportdata.tw/MOTC/v2/Bus/api-docs/oas)
-- 軌道 [V3](https://ptx.transportdata.tw/MOTC/v3/Rail/api-docs/oas)
+- 軌道 [V2](https://ptx.transportdata.tw/MOTC/v2/Rail/api-docs/oas)、[V3](https://ptx.transportdata.tw/MOTC/v3/Rail/api-docs/oas)
 - 自行車 [V2](https://ptx.transportdata.tw/MOTC/v2/Bike/api-docs/oas)
 - 觀光 [V2](https://ptx.transportdata.tw/MOTC/v2/Tourism/api-docs/oas)
 
