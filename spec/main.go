@@ -35,6 +35,15 @@ func main() {
 			},
 		},
 		{
+			Filename: "oas.rail.v2.json",
+			URL:      "https://ptx.transportdata.tw/MOTC/v2/Rail/api-docs/oas",
+			Pipeline: []Step{
+				fixDefaultTop,
+				fixLineColorIsRequiredButNotDefinedInRailV2,
+				fixEnumInRailV2,
+			},
+		},
+		{
 			Filename: "oas.rail.v3.json",
 			URL:      "https://ptx.transportdata.tw/MOTC/v3/Rail/api-docs/oas",
 			Pipeline: []Step{
@@ -101,8 +110,18 @@ func writeFile(filename string, data []byte) {
 	_ = ioutil.WriteFile(filename, bf.Bytes(), 0644)
 }
 
+// issue #1
 func fixDefaultTop(data []byte) []byte {
 	return bytes.Replace(data, []byte(`"default":30`), []byte(`"default":"30"`), -1)
+}
+
+// issue #3
+func fixLineColorIsRequiredButNotDefinedInRailV2(data []byte) []byte {
+	return bytes.Replace(
+		data,
+		[]byte(`"required":["LineNo","LineID","LineNameZh","LineNameEn","LineSectionNameZh","LineSectionNameEn","LineColor","IsBranch","UpdateTime"]`),
+		[]byte(`"required":["LineNo","LineID","LineNameZh","LineNameEn","LineSectionNameZh","LineSectionNameEn","IsBranch","UpdateTime"]`),
+		1)
 }
 
 func fixEnumInBasic(data []byte) []byte {
@@ -190,6 +209,45 @@ func fixEnumInBus(data []byte) []byte {
 	data = bytes.Replace(
 		data,
 		[]byte(`"enum":["0: 正常營運","1: 加班營運","2: 取消/停駛營運"],"type":"string"`),
+		[]byte(`"enum":[0,1,2],"type":"integer"`),
+		-1)
+	return data
+}
+
+func fixEnumInRailV2(data []byte) []byte {
+	data = bytes.Replace(
+		data,
+		[]byte(`"enum":["0: 南下","1: 北上"],"type":"string"`),
+		[]byte(`"enum":[0,1],"type":"integer"`),
+		-1)
+	data = bytes.Replace(
+		data,
+		[]byte(`"enum":["0: 順行","1: 逆行"],"type":"string"`),
+		[]byte(`"enum":[0,1],"type":"integer"`),
+		-1)
+	data = bytes.Replace(
+		data,
+		[]byte(`"enum":["0: 否","1: 是"],"type":"string"`),
+		[]byte(`"enum":[0,1],"type":"integer"`),
+		-1)
+	data = bytes.Replace(
+		data,
+		[]byte(`"enum":["0: 站外","1: 站內"],"type":"string"`),
+		[]byte(`"enum":[0,1],"type":"integer"`),
+		-1)
+	data = bytes.Replace(
+		data,
+		[]byte(`"enum":["0: 特等站","1: 一等站","2: 二等站","3: 三等站","4: 簡易站","5: 招呼站","6: 未知"],"type":"string"`),
+		[]byte(`"enum":[0,1,2,3,4,5,6],"type":"integer"`),
+		-1)
+	data = bytes.Replace(
+		data,
+		[]byte(`"enum":["0: 去程","1: 返程"],"type":"string"`),
+		[]byte(`"enum":[0,1],"type":"integer"`),
+		-1)
+	data = bytes.Replace(
+		data,
+		[]byte(`"enum":["0: 不經山海線","1: 山線","2: 海線"],"type":"string"`),
 		[]byte(`"enum":[0,1,2],"type":"integer"`),
 		-1)
 	return data
