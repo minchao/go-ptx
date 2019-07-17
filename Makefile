@@ -1,18 +1,6 @@
 SHELL=/bin/bash -o pipefail
 
-.PHONY: generate
-generate:
-	swagger generate client -f ./oas.basic.v2.json -t ./basic/v2
-	swagger generate client -f ./oas.air.v2.json -t ./air/v2
-	swagger generate client -f ./oas.bus.v2.json -t ./bus/v2
-	swagger generate client -f ./oas.rail.v2.json -t ./rail/v2
-	swagger generate client -f ./oas.rail.v3.json -t ./rail/v3
-	swagger generate client -f ./oas.bike.v2.json -t ./bike/v2
-	swagger generate client -f ./oas.tourism.v2.json -t ./tourism/v2
-
-.PHONY: lint
-lint:
-	golangci-lint run -E gofmt ./...
+SPECS=$$(find ./ -maxdepth 1 -type f -name "oas.*")
 
 .PHONY: spec
 spec:
@@ -20,7 +8,21 @@ spec:
 
 .PHONY: validate
 validate:
-	@for SPEC in $$(find ./ -maxdepth 1 -type f -name "oas.*"); do \
+	@for SPEC in ${SPECS}; do \
 		echo "Specification: $${SPEC}"; \
 		swagger validate $${SPEC} --skip-warnings --stop-on-error; \
 	done
+
+.PHONY: generate
+generate:
+	@for SPEC in ${SPECS}; do \
+		IFS='.' read -r -a substrings <<< "$${SPEC}"; \
+		CLIENT_DIR="./$${substrings[2]}/$${substrings[3]}"; \
+		rm -r "$${CLIENT_DIR}"; \
+		mkdir -p "$${CLIENT_DIR}"; \
+        swagger generate client -f "$${SPEC}" -t "$${CLIENT_DIR}"; \
+	done
+
+.PHONY: lint
+lint:
+	golangci-lint run -E gofmt ./...
