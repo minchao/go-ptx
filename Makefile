@@ -17,3 +17,10 @@ lint:
 .PHONY: spec
 spec:
 	go run spec/main.go
+
+.PHONY: validate
+validate:
+	@for SPEC in $$(find ./ -maxdepth 1 -type f -name "oas.*"); do \
+		echo "Specification: $${SPEC}"; \
+		swagger validate $${SPEC} --skip-warnings --stop-on-error; \
+	done
