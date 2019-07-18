@@ -25,4 +25,5 @@ install:
 script:
   - make validate
   - make lint
+  - make test
   - go test -v ./test/integration/...

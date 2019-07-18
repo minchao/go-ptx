@@ -26,3 +26,7 @@ generate:
 .PHONY: lint
 lint:
 	golangci-lint run -E gofmt ./...
+
+.PHONY: test
+test:
+	go test -v ./transport/...
