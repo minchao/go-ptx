@@ -20,6 +20,11 @@ go-ptx 使用 [go-swagger](https://github.com/go-swagger/go-swagger) 自動從 P
 
 ### 必要條件
 
+- Go >= 1.11
+- GNU Make
+- golangci-lint
+- go-swagger
+
 安裝依賴工具：
 
 ```bash
