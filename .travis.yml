@@ -1,11 +1,12 @@
 language: go
-
-go:
-  - 1.11.x
-  - 1.12.x
-  - master
+dist: xenial
 
 matrix:
+  include:
+    - go: 1.11.x
+    - go: 1.12.x
+      env: DEPLOY=true
+    - go: master
   allow_failures:
     - go: master
 
@@ -23,7 +24,18 @@ install:
   - go mod download
 
 script:
+  - if [[ $TRAVIS_BRANCH == "test" ]]; then
+    make spec;
+    fi
   - make validate
   - make lint
   - make test
   - go test -v ./test/integration/...
+
+deploy:
+  - provider: script
+    skip_cleanup: true
+    script: bash ${TRAVIS_BUILD_DIR}/scripts/check-spec.sh
+    on:
+      branch: test
+      condition: $DEPLOY = true
