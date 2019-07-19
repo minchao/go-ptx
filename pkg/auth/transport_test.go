@@ -1,4 +1,4 @@
-package transport
+package auth
 
 import (
 	"net/http"
@@ -17,20 +17,24 @@ const (
 	appKey = "APP_KEY"
 )
 
-func TestAuthTransport(t *testing.T) {
-	server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+func setup() (serverURL *url.URL, mux *http.ServeMux, teardown func()) {
+	mux = http.NewServeMux()
+	server := httptest.NewServer(mux)
+	u, _ := url.Parse(server.URL)
+	return u, mux, server.Close
+}
+
+func authHandlerFunc(t *testing.T) func(w http.ResponseWriter, r *http.Request) {
+	return func(w http.ResponseWriter, r *http.Request) {
 		date := r.Header.Get("x-date")
 		require.NotEmpty(t, date)
 		auth := r.Header.Get("Authorization")
 		require.Equal(t, authorization(appId, signature(appKey, date)), auth)
-	}))
-	defer server.Close()
+	}
+}
 
-	httpClient := http.DefaultClient
-	httpClient.Transport = &AuthTransport{AppId: appId, AppKey: appKey}
-	u, _ := url.Parse(server.URL)
-	apiclient := client.NewWithClient(u.Host, "/", []string{"http"}, httpClient)
-	_, err := apiclient.Submit(&runtime.ClientOperation{
+func newTestClientOperation() *runtime.ClientOperation {
+	return &runtime.ClientOperation{
 		Method:      "GET",
 		PathPattern: "/",
 		Params: runtime.ClientRequestWriterFunc(func(req runtime.ClientRequest, _ strfmt.Registry) error {
@@ -39,17 +43,29 @@ func TestAuthTransport(t *testing.T) {
 		Reader: runtime.ClientResponseReaderFunc(func(response runtime.ClientResponse, consumer runtime.Consumer) (interface{}, error) {
 			return nil, nil
 		}),
-	})
+	}
+}
+
+func TestAuthTransport(t *testing.T) {
+	serverURL, mux, teardown := setup()
+	defer teardown()
+
+	mux.HandleFunc("/", authHandlerFunc(t))
+
+	httpClient := http.DefaultClient
+	httpClient.Transport = NewTransport(appId, appKey)
+	apiclient := client.NewWithClient(serverURL.Host, serverURL.Path, []string{"http"}, httpClient)
+	_, err := apiclient.Submit(newTestClientOperation())
 	require.NoError(t, err)
 }
 
 func TestAuthTransport_transport(t *testing.T) {
 	// default transport
-	tp := &AuthTransport{}
+	tp := &Transport{}
 	require.Equal(t, http.DefaultTransport, tp.transport())
 
 	// custom transport
-	tp = &AuthTransport{
+	tp = &Transport{
 		Transport: &http.Transport{},
 	}
 	require.NotEqual(t, http.DefaultTransport, tp.transport())

@@ -63,7 +63,7 @@ $ go test -v ./test/integration/...
 ### 整合測試
 
 目錄 [./test/integration](./test/integration) 提供基本的整合測試，這些測試會使用實際的 PTX API 服務進行，
-當測試發生錯誤時測試即停止，以盡可能發現任何不相容的修改。
+當測試發生錯誤時即停止，以盡可能發現任何不相容的修改。
 
 手動執行以下指令，並將 `APP_ID` 與 `APP_KEY` 替換成您申請的憑證：
 
@@ -77,21 +77,29 @@ $ APP_ID=YOUR_APP_ID APP_KEY=YOUR_APP_KEY go test -v ./test/integration/...
 
 ### 認證
 
-客戶端庫本身不會處理認證，所以我們在建立客戶端時，需要傳遞一個用來處理認證的 http.Client，為每個請求產生 HMAC 簽章：
+客戶端庫本身不會處理認證，所以我們在建立客戶端時，需要一個用來處理認證的 `Authentication`，為每個請求產生 HMAC 簽章：
 
 ```go
 import (
-	apiclient "github.com/minchao/go-ptx/bus/v2/client"
-	"github.com/minchao/go-ptx/transport"
+	apiclient "github.com/minchao/go-ptx/basic/v2/client"
+	"github.com/minchao/go-ptx/pkg/auth"
+	"github.com/minchao/go-ptx/pkg/transport"
 )
 
 func main() {
+	tp := transport.New()
+	tp.DefaultAuthentication = auth.NewAuthentication("YOUR_APP_ID", "YOUR_APP_KEY")
+	client := apiclient.New(tp, nil)
+}
+```
+
+此外，也可以使用自訂的 `http.Client`：
+
+```go
+func main() {
 	httpClient := http.DefaultClient
-	httpClient.Transport = &transport.AuthTransport{
-		AppId:  "YOUR_APP_ID",
-		AppKey: "YOUR_APP_KEY",
-	}
-	t := transport.NewWithClient(httpClient)
-	client := apiclient.New(t, nil)
+	httpClient.Transport = auth.NewTransport("YOUR_APP_ID", "YOUR_APP_KEY")
+	tp := transport.NewWithClient(httpClient)
+	client := apiclient.New(tp, nil)
 }
 ```

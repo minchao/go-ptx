@@ -8,12 +8,12 @@ import (
 
 	apiclient "github.com/minchao/go-ptx/bike/v2/client"
 	"github.com/minchao/go-ptx/bike/v2/client/bike"
-	"github.com/minchao/go-ptx/transport"
+	"github.com/minchao/go-ptx/pkg/auth"
 )
 
 func main() {
 	httpClient := http.DefaultClient
-	httpClient.Transport = &transport.AuthTransport{
+	httpClient.Transport = &auth.Transport{
 		AppId:  os.Getenv("APP_ID"),
 		AppKey: os.Getenv("APP_KEY"),
 	}
@@ -22,14 +22,14 @@ func main() {
 		WithContext(context.Background()).
 		WithDollarFormat("JSON").
 		WithCity("Taipei")
-	res, err := apiclient.Default.Bike.BikeAPIStation(params)
+	result, err := apiclient.Default.Bike.BikeAPIStation(params)
 	if err != nil {
 		panic(err)
 	}
-	for _, b := range res.Payload {
-		fmt.Printf("StationID: %s\n", b.StationID)
-		fmt.Printf("  StationName: %s\n", b.StationName.ZhTw)
-		fmt.Printf("  StationAddress: %s\n", b.StationAddress.ZhTw)
-		fmt.Printf("  BikesCapacity: %d\n", b.BikesCapacity)
+	for _, station := range result.Payload {
+		fmt.Printf("StationID: %s\n", station.StationID)
+		fmt.Printf("  StationName: %s\n", station.StationName.ZhTw)
+		fmt.Printf("  StationAddress: %s\n", station.StationAddress.ZhTw)
+		fmt.Printf("  BikesCapacity: %d\n", station.BikesCapacity)
 	}
 }

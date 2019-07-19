@@ -5,8 +5,8 @@ import (
 	"os"
 
 	"github.com/go-openapi/runtime/client"
-
-	tp "github.com/minchao/go-ptx/transport"
+	"github.com/minchao/go-ptx/pkg/auth"
+	tp "github.com/minchao/go-ptx/pkg/transport"
 )
 
 var (
@@ -16,10 +16,7 @@ var (
 func getTransport() *client.Runtime {
 	if transport == nil {
 		httpClient := http.DefaultClient
-		httpClient.Transport = &tp.AuthTransport{
-			AppId:  os.Getenv("APP_ID"),
-			AppKey: os.Getenv("APP_KEY"),
-		}
+		httpClient.Transport = auth.NewTransport(os.Getenv("APP_ID"), os.Getenv("APP_KEY"))
 		transport = tp.NewWithClient(httpClient)
 	}
 	return transport
