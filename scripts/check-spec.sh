@@ -28,7 +28,7 @@ function git_diff() {
         IFS='.' read -r -a substrings <<< "${spec}"
         target_folders="${target_folders} ${substrings[2]}"
     done
-    output=$(eval "git diff origin/master -- ${target_folders}")
+    output=$(eval "git diff origin/master -- ${target_folders} README.md")
     export output
 
     echo "1"
