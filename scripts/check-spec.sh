@@ -38,6 +38,10 @@ function git_push() {
     export new_branch
     message="OAS spec changes on the ${version}"
     export message
+
+    echo "${new_branch}"
+    echo "${message}"
+
     git checkout -b "${new_branch}"
     git add ${target_folders} README.md
     git commit -m "${message}"
