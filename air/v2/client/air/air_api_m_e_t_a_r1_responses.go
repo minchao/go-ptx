@@ -53,6 +53,10 @@ func (o *AirAPIMETAR1OK) Error() string {
 	return fmt.Sprintf("[GET /v2/Air/METAR/Airport/{IATA}][%d] airApiMETAR1OK  %+v", 200, o.Payload)
 }
 
+func (o *AirAPIMETAR1OK) GetPayload() []*models.ServiceDTOVersion2ApplicationMETAR {
+	return o.Payload
+}
+
 func (o *AirAPIMETAR1OK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	// response payload

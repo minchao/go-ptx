@@ -53,6 +53,10 @@ func (o *MetroAPIFirstLastTimetableOK) Error() string {
 	return fmt.Sprintf("[GET /v2/Rail/Metro/FirstLastTimetable/{Operator}][%d] metroApiFirstLastTimetableOK  %+v", 200, o.Payload)
 }
 
+func (o *MetroAPIFirstLastTimetableOK) GetPayload() []*models.ServiceDTOVersion2RailMetroFirstLastTimetable {
+	return o.Payload
+}
+
 func (o *MetroAPIFirstLastTimetableOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	// response payload

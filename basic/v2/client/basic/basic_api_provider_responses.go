@@ -53,6 +53,10 @@ func (o *BasicAPIProviderOK) Error() string {
 	return fmt.Sprintf("[GET /v2/Basic/Provider][%d] basicApiProviderOK  %+v", 200, o.Payload)
 }
 
+func (o *BasicAPIProviderOK) GetPayload() []*models.ServiceDTOVersion2BaseProvider {
+	return o.Payload
+}
+
 func (o *BasicAPIProviderOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	// response payload

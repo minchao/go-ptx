@@ -53,6 +53,10 @@ func (o *StationFacilityAPIControllerGetOK) Error() string {
 	return fmt.Sprintf("[GET /v3/Rail/TRA/StationFacility][%d] stationFacilityApiControllerGetOK  %+v", 200, o.Payload)
 }
 
+func (o *StationFacilityAPIControllerGetOK) GetPayload() *models.MOTCAPIRailModelsTRABaseWrapperServiceDTOVersion3RailTRAStationFacilityStationFacility {
+	return o.Payload
+}
+
 func (o *StationFacilityAPIControllerGetOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	o.Payload = new(models.MOTCAPIRailModelsTRABaseWrapperServiceDTOVersion3RailTRAStationFacilityStationFacility)

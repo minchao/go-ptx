@@ -53,6 +53,10 @@ func (o *THSRAPIGeneralTimetable1OK) Error() string {
 	return fmt.Sprintf("[GET /v2/Rail/THSR/GeneralTimetable/TrainNo/{TrainNo}][%d] tHSRApiGeneralTimetable1OK  %+v", 200, o.Payload)
 }
 
+func (o *THSRAPIGeneralTimetable1OK) GetPayload() []*models.ServiceDTOVersion2RailTHSRRailGeneralTimetable {
+	return o.Payload
+}
+
 func (o *THSRAPIGeneralTimetable1OK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	// response payload

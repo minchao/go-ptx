@@ -53,6 +53,10 @@ func (o *TRAAPILineOK) Error() string {
 	return fmt.Sprintf("[GET /v2/Rail/TRA/Line][%d] tRAApiLineOK  %+v", 200, o.Payload)
 }
 
+func (o *TRAAPILineOK) GetPayload() []*models.ServiceDTOVersion2RailTRALine {
+	return o.Payload
+}
+
 func (o *TRAAPILineOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	// response payload

@@ -53,6 +53,10 @@ func (o *TRAAPIODDailyTimetableOK) Error() string {
 	return fmt.Sprintf("[GET /v2/Rail/TRA/DailyTimetable/OD/{OriginStationID}/to/{DestinationStationID}/{TrainDate}][%d] tRAApiODDailyTimetableOK  %+v", 200, o.Payload)
 }
 
+func (o *TRAAPIODDailyTimetableOK) GetPayload() []*models.ServiceDTOVersion2RailTRARailODDailyTimetable {
+	return o.Payload
+}
+
 func (o *TRAAPIODDailyTimetableOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	// response payload

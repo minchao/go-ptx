@@ -53,6 +53,10 @@ func (o *WebSiteAPINewsOK) Error() string {
 	return fmt.Sprintf("[GET /v2/PTX/Web/News][%d] webSiteApiNewsOK  %+v", 200, o.Payload)
 }
 
+func (o *WebSiteAPINewsOK) GetPayload() *models.MOTCAPIBasicModelsVersion2BasicWrapperServiceDTOVersion2BaseNews {
+	return o.Payload
+}
+
 func (o *WebSiteAPINewsOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	o.Payload = new(models.MOTCAPIBasicModelsVersion2BasicWrapperServiceDTOVersion2BaseNews)
