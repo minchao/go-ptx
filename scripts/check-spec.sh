@@ -41,8 +41,9 @@ function git_push() {
 
     echo "${new_branch}"
     echo "${message}"
+    echo ${target_folders}
 
-    git checkout -b "${new_branch}"
+    git checkout -b ${new_branch}
     git add ${target_folders} README.md
     git commit -m "${message}"
     git push --quiet origin "${new_branch}"
