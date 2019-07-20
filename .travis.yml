@@ -20,7 +20,16 @@ cache:
 
 install:
   - curl -sfL https://install.goreleaser.com/github.com/golangci/golangci-lint.sh | sh -s -- -b $(go env GOPATH)/bin latest
-  - go get -u github.com/go-swagger/go-swagger/cmd/swagger
+  # install specific version of go-swagger
+  - |
+    mkdir -p $GOPATH/src/github.com/go-swagger
+    cd $GOPATH/src/github.com/go-swagger
+    git clone https://github.com/go-swagger/go-swagger
+    cd go-swagger
+    git checkout 2f32a5a8
+    go install github.com/go-swagger/go-swagger/cmd/swagger
+    swagger version
+    cd $TRAVIS_BUILD_DIR
   - go mod download
 
 script:
