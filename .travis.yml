@@ -33,7 +33,7 @@ install:
   - go mod download
 
 script:
-  - if [[ $TRAVIS_BRANCH == "check-spec" ]]; then
+  - if [[ $TRAVIS_BRANCH == "check-oas-spec" ]]; then
     make spec;
     make generate;
     fi
@@ -45,7 +45,7 @@ script:
 deploy:
   - provider: script
     skip_cleanup: true
-    script: bash ${TRAVIS_BUILD_DIR}/scripts/check-spec.sh
+    script: bash ${TRAVIS_BUILD_DIR}/scripts/check-oas-spec.sh
     on:
-      branch: check-spec
+      branch: check-oas-spec
       condition: $DEPLOY = true
