@@ -53,6 +53,10 @@ func (o *CityBusAPIDataVersionOK) Error() string {
 	return fmt.Sprintf("[GET /v2/Bus/DataVersion/City/{City}][%d] cityBusApiDataVersionOK  %+v", 200, o.Payload)
 }
 
+func (o *CityBusAPIDataVersionOK) GetPayload() *models.ServiceDTOVersion2BusBusVersion {
+	return o.Payload
+}
+
 func (o *CityBusAPIDataVersionOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	o.Payload = new(models.ServiceDTOVersion2BusBusVersion)

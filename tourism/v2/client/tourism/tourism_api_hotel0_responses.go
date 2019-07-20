@@ -53,6 +53,10 @@ func (o *TourismAPIHotel0OK) Error() string {
 	return fmt.Sprintf("[GET /v2/Tourism/Hotel/{City}][%d] tourismApiHotel0OK  %+v", 200, o.Payload)
 }
 
+func (o *TourismAPIHotel0OK) GetPayload() []*models.ServiceDTOVersion2ApplicationHotelTourismInfo {
+	return o.Payload
+}
+
 func (o *TourismAPIHotel0OK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	// response payload

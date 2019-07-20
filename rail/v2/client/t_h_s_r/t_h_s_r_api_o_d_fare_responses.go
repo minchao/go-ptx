@@ -53,6 +53,10 @@ func (o *THSRAPIODFareOK) Error() string {
 	return fmt.Sprintf("[GET /v2/Rail/THSR/ODFare][%d] tHSRApiODFareOK  %+v", 200, o.Payload)
 }
 
+func (o *THSRAPIODFareOK) GetPayload() []*models.ServiceDTOVersion2RailTHSRRailODFare {
+	return o.Payload
+}
+
 func (o *THSRAPIODFareOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	// response payload

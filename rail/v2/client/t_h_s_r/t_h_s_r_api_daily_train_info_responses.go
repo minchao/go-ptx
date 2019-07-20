@@ -53,6 +53,10 @@ func (o *THSRAPIDailyTrainInfoOK) Error() string {
 	return fmt.Sprintf("[GET /v2/Rail/THSR/DailyTrainInfo/Today][%d] tHSRApiDailyTrainInfoOK  %+v", 200, o.Payload)
 }
 
+func (o *THSRAPIDailyTrainInfoOK) GetPayload() []*models.ServiceDTOVersion2RailTHSRRailDailyTrainInfo {
+	return o.Payload
+}
+
 func (o *THSRAPIDailyTrainInfoOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	// response payload

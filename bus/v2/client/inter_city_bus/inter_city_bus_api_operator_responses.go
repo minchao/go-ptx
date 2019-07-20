@@ -53,6 +53,10 @@ func (o *InterCityBusAPIOperatorOK) Error() string {
 	return fmt.Sprintf("[GET /v2/Bus/Operator/InterCity][%d] interCityBusApiOperatorOK  %+v", 200, o.Payload)
 }
 
+func (o *InterCityBusAPIOperatorOK) GetPayload() []*models.ServiceDTOVersion2BaseOperator {
+	return o.Payload
+}
+
 func (o *InterCityBusAPIOperatorOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	// response payload

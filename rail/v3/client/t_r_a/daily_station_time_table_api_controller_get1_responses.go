@@ -53,6 +53,10 @@ func (o *DailyStationTimeTableAPIControllerGet1OK) Error() string {
 	return fmt.Sprintf("[GET /v3/Rail/TRA/DailyStationTimetable/Today/Station/{StationID}][%d] dailyStationTimeTableApiControllerGet1OK  %+v", 200, o.Payload)
 }
 
+func (o *DailyStationTimeTableAPIControllerGet1OK) GetPayload() *models.MOTCAPIRailModelsTraDailyStationWrapperServiceDTOVersion3RailTRADailyStationTimeTableStationTimetable {
+	return o.Payload
+}
+
 func (o *DailyStationTimeTableAPIControllerGet1OK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	o.Payload = new(models.MOTCAPIRailModelsTraDailyStationWrapperServiceDTOVersion3RailTRADailyStationTimeTableStationTimetable)
