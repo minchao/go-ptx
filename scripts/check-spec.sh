@@ -20,7 +20,7 @@ function setup() {
 function git_diff() {
     local specs
     specs=$(find . -maxdepth 1 -type f -name "oas.*")
-    for spec in ${specs}
+    for spec in "${specs[@]}"
     do
         IFS='.' read -r -a substrings <<< "${spec}"
         target_folders="${target_folders} ${substrings[2]}"
