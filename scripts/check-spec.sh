@@ -33,7 +33,7 @@ function git_diff() {
 
 function git_push() {
     local version
-    version=$(printf -v date '%(%Y-%m-%d)T\n' -1)
+    version=$(printf '%(%Y-%m-%d)T\n' -1)
     new_branch="spec-changes-on-${version}"
     export new_branch
     message="OAS spec changes on the ${version}"
