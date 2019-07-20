@@ -77,7 +77,7 @@ $ APP_ID=YOUR_APP_ID APP_KEY=YOUR_APP_KEY go test -v ./test/integration/...
 
 ### 認證
 
-客戶端庫本身不會處理認證，所以我們在建立客戶端時，需要一個用來處理認證的 `Authentication`，為每個請求產生 HMAC 簽章：
+客戶端庫本身不會處理認證，所以我們在建立客戶端時，需要透過處理認證的 `Authentication`，為每個請求產生 HMAC 簽章：
 
 ```go
 import (
