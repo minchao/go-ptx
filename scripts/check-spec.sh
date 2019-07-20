@@ -32,8 +32,12 @@ function git_diff() {
 }
 
 function git_push() {
-    new_branch="spec-changes-on-$(date +"%Y%m%d")"
-    message="OAS spec changes on the $(date +"%Y%m%d")"
+    local version
+    version=$(printf -v date '%(%Y-%m-%d)T\n' -1)
+    new_branch="spec-changes-on-${version}"
+    export new_branch
+    message="OAS spec changes on the ${version}"
+    export message
     git checkout -b "${new_branch}"
     git add ${target_folders} README.md
     git commit -m "${message}"
