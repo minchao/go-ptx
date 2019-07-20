@@ -53,6 +53,10 @@ func (o *TaiwanTripBusAPIStopOfRouteOK) Error() string {
 	return fmt.Sprintf("[GET /v2/Tourism/Bus/StopOfRoute/TaiwanTrip][%d] taiwanTripBusApiStopOfRouteOK  %+v", 200, o.Payload)
 }
 
+func (o *TaiwanTripBusAPIStopOfRouteOK) GetPayload() []*models.ServiceDTOVersion2TaiwanTripBusBusStopOfRoute {
+	return o.Payload
+}
+
 func (o *TaiwanTripBusAPIStopOfRouteOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	// response payload

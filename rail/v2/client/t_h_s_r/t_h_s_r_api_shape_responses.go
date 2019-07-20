@@ -53,6 +53,10 @@ func (o *THSRAPIShapeOK) Error() string {
 	return fmt.Sprintf("[GET /v2/Rail/THSR/Shape][%d] tHSRApiShapeOK  %+v", 200, o.Payload)
 }
 
+func (o *THSRAPIShapeOK) GetPayload() []*models.ServiceDTOVersion2RailTHSRTHSRShape {
+	return o.Payload
+}
+
 func (o *THSRAPIShapeOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	// response payload

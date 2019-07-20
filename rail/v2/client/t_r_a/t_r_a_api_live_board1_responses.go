@@ -53,6 +53,10 @@ func (o *TRAAPILiveBoard1OK) Error() string {
 	return fmt.Sprintf("[GET /v2/Rail/TRA/LiveBoard/Station/{StationID}][%d] tRAApiLiveBoard1OK  %+v", 200, o.Payload)
 }
 
+func (o *TRAAPILiveBoard1OK) GetPayload() []*models.ServiceDTOVersion2RailTRARailLiveBoard {
+	return o.Payload
+}
+
 func (o *TRAAPILiveBoard1OK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	// response payload

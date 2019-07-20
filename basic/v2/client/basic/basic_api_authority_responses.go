@@ -53,6 +53,10 @@ func (o *BasicAPIAuthorityOK) Error() string {
 	return fmt.Sprintf("[GET /v2/Basic/Authority][%d] basicApiAuthorityOK  %+v", 200, o.Payload)
 }
 
+func (o *BasicAPIAuthorityOK) GetPayload() []*models.ServiceDTOVersion2BaseAuthority {
+	return o.Payload
+}
+
 func (o *BasicAPIAuthorityOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	// response payload

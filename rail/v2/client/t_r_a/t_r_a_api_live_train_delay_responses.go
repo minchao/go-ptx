@@ -53,6 +53,10 @@ func (o *TRAAPILiveTrainDelayOK) Error() string {
 	return fmt.Sprintf("[GET /v2/Rail/TRA/LiveTrainDelay][%d] tRAApiLiveTrainDelayOK  %+v", 200, o.Payload)
 }
 
+func (o *TRAAPILiveTrainDelayOK) GetPayload() []*models.ServiceDTOVersion2RailTRARailLiveTrainDelay {
+	return o.Payload
+}
+
 func (o *TRAAPILiveTrainDelayOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	// response payload

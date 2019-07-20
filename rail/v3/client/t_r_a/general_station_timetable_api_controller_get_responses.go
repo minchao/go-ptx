@@ -53,6 +53,10 @@ func (o *GeneralStationTimetableAPIControllerGetOK) Error() string {
 	return fmt.Sprintf("[GET /v3/Rail/TRA/GeneralStationTimetable][%d] generalStationTimetableApiControllerGetOK  %+v", 200, o.Payload)
 }
 
+func (o *GeneralStationTimetableAPIControllerGetOK) GetPayload() *models.MOTCAPIRailModelsTRAGeneralStationWrapperServiceDTOVersion3RailTRAGeneralStationTimetableGeneralStationTimetable {
+	return o.Payload
+}
+
 func (o *GeneralStationTimetableAPIControllerGetOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	o.Payload = new(models.MOTCAPIRailModelsTRAGeneralStationWrapperServiceDTOVersion3RailTRAGeneralStationTimetableGeneralStationTimetable)

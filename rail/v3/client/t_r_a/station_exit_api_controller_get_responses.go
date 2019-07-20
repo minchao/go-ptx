@@ -53,6 +53,10 @@ func (o *StationExitAPIControllerGetOK) Error() string {
 	return fmt.Sprintf("[GET /v3/Rail/TRA/StationExit][%d] stationExitApiControllerGetOK  %+v", 200, o.Payload)
 }
 
+func (o *StationExitAPIControllerGetOK) GetPayload() *models.MOTCAPIRailModelsTRABaseWrapperServiceDTOVersion3RailTRAStationExitStationExit {
+	return o.Payload
+}
+
 func (o *StationExitAPIControllerGetOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	o.Payload = new(models.MOTCAPIRailModelsTRABaseWrapperServiceDTOVersion3RailTRAStationExitStationExit)
