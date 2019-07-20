@@ -53,6 +53,10 @@ func (o *AirAPIDomesticOK) Error() string {
 	return fmt.Sprintf("[GET /v2/Air/GeneralSchedule/Domestic][%d] airApiDomesticOK  %+v", 200, o.Payload)
 }
 
+func (o *AirAPIDomesticOK) GetPayload() []*models.ServiceDTOVersion2AviationGeneralFlightSchedule {
+	return o.Payload
+}
+
 func (o *AirAPIDomesticOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	// response payload

@@ -53,6 +53,10 @@ func (o *AirAPIFIDSOK) Error() string {
 	return fmt.Sprintf("[GET /v2/Air/FIDS/Airport][%d] airApiFIdSOK  %+v", 200, o.Payload)
 }
 
+func (o *AirAPIFIDSOK) GetPayload() []*models.ServiceDTOVersion2AviationAirportFIDS {
+	return o.Payload
+}
+
 func (o *AirAPIFIDSOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	// response payload
