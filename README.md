@@ -71,13 +71,18 @@ $ go test -v ./test/integration/...
 $ APP_ID=YOUR_APP_ID APP_KEY=YOUR_APP_KEY go test -v ./test/integration/...
 ```
 
+### 更新客戶端庫
+
+PTX 會不定期更新 OAS API 定義檔來提供新功能或修正，為了減輕維護第三方客戶端庫的負擔，
+go-ptx 透過 Travis CI 的 Cron Jobs 機制，定期檢查 OAS 定義檔的更新，當發現異動時，自動產生 Pull request。
+
 ## 使用
 
 請參考[範例](./examples)。
 
 ### 認證
 
-客戶端庫本身不會處理認證，所以我們在建立客戶端時，需要一個用來處理認證的 `Authentication`，為每個請求產生 HMAC 簽章：
+客戶端庫本身不會處理認證，所以我們在建立客戶端時，需要透過處理認證的 `Authentication`，為每個請求產生 HMAC 簽章：
 
 ```go
 import (

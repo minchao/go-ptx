@@ -1,6 +1,6 @@
 SHELL=/bin/bash -o pipefail
 
-SPECS=$$(find ./ -maxdepth 1 -type f -name "oas.*")
+SPECS=$$(find . -maxdepth 1 -type f -name "oas.*")
 
 .PHONY: spec
 spec:
