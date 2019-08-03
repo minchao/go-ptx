@@ -13,6 +13,7 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
 	cr "github.com/go-openapi/runtime/client"
+	"github.com/go-openapi/swag"
 
 	strfmt "github.com/go-openapi/strfmt"
 )
@@ -21,7 +22,7 @@ import (
 // with the default values initialized.
 func NewTRAAPILineParams() *TRAAPILineParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &TRAAPILineParams{
 		DollarTop: &dollarTopDefault,
@@ -34,7 +35,7 @@ func NewTRAAPILineParams() *TRAAPILineParams {
 // with the default values initialized, and the ability to set a timeout on a request
 func NewTRAAPILineParamsWithTimeout(timeout time.Duration) *TRAAPILineParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &TRAAPILineParams{
 		DollarTop: &dollarTopDefault,
@@ -47,7 +48,7 @@ func NewTRAAPILineParamsWithTimeout(timeout time.Duration) *TRAAPILineParams {
 // with the default values initialized, and the ability to set a context for a request
 func NewTRAAPILineParamsWithContext(ctx context.Context) *TRAAPILineParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &TRAAPILineParams{
 		DollarTop: &dollarTopDefault,
@@ -60,7 +61,7 @@ func NewTRAAPILineParamsWithContext(ctx context.Context) *TRAAPILineParams {
 // with the default values initialized, and the ability to set a custom HTTPClient for a request
 func NewTRAAPILineParamsWithHTTPClient(client *http.Client) *TRAAPILineParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &TRAAPILineParams{
 		DollarTop:  &dollarTopDefault,
@@ -102,7 +103,7 @@ type TRAAPILineParams struct {
 	  取前幾筆
 
 	*/
-	DollarTop *string
+	DollarTop *int64
 
 	timeout    time.Duration
 	Context    context.Context
@@ -198,13 +199,13 @@ func (o *TRAAPILineParams) SetDollarSkip(dollarSkip *string) {
 }
 
 // WithDollarTop adds the dollarTop to the t r a Api line params
-func (o *TRAAPILineParams) WithDollarTop(dollarTop *string) *TRAAPILineParams {
+func (o *TRAAPILineParams) WithDollarTop(dollarTop *int64) *TRAAPILineParams {
 	o.SetDollarTop(dollarTop)
 	return o
 }
 
 // SetDollarTop adds the dollarTop to the t r a Api line params
-func (o *TRAAPILineParams) SetDollarTop(dollarTop *string) {
+func (o *TRAAPILineParams) SetDollarTop(dollarTop *int64) {
 	o.DollarTop = dollarTop
 }
 
@@ -292,11 +293,11 @@ func (o *TRAAPILineParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Re
 	if o.DollarTop != nil {
 
 		// query param $top
-		var qrDollarTop string
+		var qrDollarTop int64
 		if o.DollarTop != nil {
 			qrDollarTop = *o.DollarTop
 		}
-		qDollarTop := qrDollarTop
+		qDollarTop := swag.FormatInt64(qrDollarTop)
 		if qDollarTop != "" {
 			if err := r.SetQueryParam("$top", qDollarTop); err != nil {
 				return err

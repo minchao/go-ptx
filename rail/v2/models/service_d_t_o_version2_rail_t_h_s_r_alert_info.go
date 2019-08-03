@@ -6,8 +6,6 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	"encoding/json"
-
 	strfmt "github.com/go-openapi/strfmt"
 
 	"github.com/go-openapi/errors"
@@ -37,10 +35,11 @@ type ServiceDTOVersion2RailTHSRAlertInfo struct {
 	// Required: true
 	Effects *string `json:"Effects"`
 
-	// 動態事件影響等級(本資料僅作參考，實際資料請參考高鐵http://www.thsrc.com.tw/tw/Operation)
+	// integer
+	//
+	// 動態事件影響等級(本資料僅作參考，實際資料請參考高鐵http://www.thsrc.com.tw/tw/Operation) : [1:'全線正常運行',2:'有異常狀況']
 	// Required: true
-	// Enum: [1: 全線正常運行 2: 有異常狀況]
-	Level *string `json:"Level"`
+	Level *int32 `json:"Level"`
 
 	// DateTime
 	//
@@ -155,43 +154,9 @@ func (m *ServiceDTOVersion2RailTHSRAlertInfo) validateEffects(formats strfmt.Reg
 	return nil
 }
 
-var serviceDTOVersion2RailTHSRAlertInfoTypeLevelPropEnum []interface{}
-
-func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["1: 全線正常運行","2: 有異常狀況"]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		serviceDTOVersion2RailTHSRAlertInfoTypeLevelPropEnum = append(serviceDTOVersion2RailTHSRAlertInfoTypeLevelPropEnum, v)
-	}
-}
-
-const (
-
-	// ServiceDTOVersion2RailTHSRAlertInfoLevelNr1全線正常運行 captures enum value "1: 全線正常運行"
-	ServiceDTOVersion2RailTHSRAlertInfoLevelNr1全線正常運行 string = "1: 全線正常運行"
-
-	// ServiceDTOVersion2RailTHSRAlertInfoLevelNr2有異常狀況 captures enum value "2: 有異常狀況"
-	ServiceDTOVersion2RailTHSRAlertInfoLevelNr2有異常狀況 string = "2: 有異常狀況"
-)
-
-// prop value enum
-func (m *ServiceDTOVersion2RailTHSRAlertInfo) validateLevelEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, serviceDTOVersion2RailTHSRAlertInfoTypeLevelPropEnum); err != nil {
-		return err
-	}
-	return nil
-}
-
 func (m *ServiceDTOVersion2RailTHSRAlertInfo) validateLevel(formats strfmt.Registry) error {
 
 	if err := validate.Required("Level", "body", m.Level); err != nil {
-		return err
-	}
-
-	// value enum
-	if err := m.validateLevelEnum("Level", "body", *m.Level); err != nil {
 		return err
 	}
 

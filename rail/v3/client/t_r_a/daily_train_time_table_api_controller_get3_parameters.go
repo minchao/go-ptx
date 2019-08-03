@@ -13,6 +13,7 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
 	cr "github.com/go-openapi/runtime/client"
+	"github.com/go-openapi/swag"
 
 	strfmt "github.com/go-openapi/strfmt"
 )
@@ -21,7 +22,7 @@ import (
 // with the default values initialized.
 func NewDailyTrainTimeTableAPIControllerGet3Params() *DailyTrainTimeTableAPIControllerGet3Params {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &DailyTrainTimeTableAPIControllerGet3Params{
 		DollarTop: &dollarTopDefault,
@@ -34,7 +35,7 @@ func NewDailyTrainTimeTableAPIControllerGet3Params() *DailyTrainTimeTableAPICont
 // with the default values initialized, and the ability to set a timeout on a request
 func NewDailyTrainTimeTableAPIControllerGet3ParamsWithTimeout(timeout time.Duration) *DailyTrainTimeTableAPIControllerGet3Params {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &DailyTrainTimeTableAPIControllerGet3Params{
 		DollarTop: &dollarTopDefault,
@@ -47,7 +48,7 @@ func NewDailyTrainTimeTableAPIControllerGet3ParamsWithTimeout(timeout time.Durat
 // with the default values initialized, and the ability to set a context for a request
 func NewDailyTrainTimeTableAPIControllerGet3ParamsWithContext(ctx context.Context) *DailyTrainTimeTableAPIControllerGet3Params {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &DailyTrainTimeTableAPIControllerGet3Params{
 		DollarTop: &dollarTopDefault,
@@ -60,7 +61,7 @@ func NewDailyTrainTimeTableAPIControllerGet3ParamsWithContext(ctx context.Contex
 // with the default values initialized, and the ability to set a custom HTTPClient for a request
 func NewDailyTrainTimeTableAPIControllerGet3ParamsWithHTTPClient(client *http.Client) *DailyTrainTimeTableAPIControllerGet3Params {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &DailyTrainTimeTableAPIControllerGet3Params{
 		DollarTop:  &dollarTopDefault,
@@ -107,7 +108,7 @@ type DailyTrainTimeTableAPIControllerGet3Params struct {
 	  取前幾筆
 
 	*/
-	DollarTop *string
+	DollarTop *int64
 	/*DestinationStationID
 	  迄點車站代碼
 
@@ -229,13 +230,13 @@ func (o *DailyTrainTimeTableAPIControllerGet3Params) SetDollarSkip(dollarSkip *s
 }
 
 // WithDollarTop adds the dollarTop to the daily train time table Api controller get 3 params
-func (o *DailyTrainTimeTableAPIControllerGet3Params) WithDollarTop(dollarTop *string) *DailyTrainTimeTableAPIControllerGet3Params {
+func (o *DailyTrainTimeTableAPIControllerGet3Params) WithDollarTop(dollarTop *int64) *DailyTrainTimeTableAPIControllerGet3Params {
 	o.SetDollarTop(dollarTop)
 	return o
 }
 
 // SetDollarTop adds the dollarTop to the daily train time table Api controller get 3 params
-func (o *DailyTrainTimeTableAPIControllerGet3Params) SetDollarTop(dollarTop *string) {
+func (o *DailyTrainTimeTableAPIControllerGet3Params) SetDollarTop(dollarTop *int64) {
 	o.DollarTop = dollarTop
 }
 
@@ -372,11 +373,11 @@ func (o *DailyTrainTimeTableAPIControllerGet3Params) WriteToRequest(r runtime.Cl
 	if o.DollarTop != nil {
 
 		// query param $top
-		var qrDollarTop string
+		var qrDollarTop int64
 		if o.DollarTop != nil {
 			qrDollarTop = *o.DollarTop
 		}
-		qDollarTop := qrDollarTop
+		qDollarTop := swag.FormatInt64(qrDollarTop)
 		if qDollarTop != "" {
 			if err := r.SetQueryParam("$top", qDollarTop); err != nil {
 				return err

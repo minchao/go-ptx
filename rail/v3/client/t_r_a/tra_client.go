@@ -639,7 +639,7 @@ func (a *Client) NewsAPIControllerGet(params *NewsAPIControllerGetParams) (*News
 }
 
 /*
-ODFareAPIControllerAPIControllerGet 取得票價資料s 附件
+ODFareAPIControllerAPIControllerGet 取得票價資料s 檔案
 
 取得Gzip壓縮檔
 */

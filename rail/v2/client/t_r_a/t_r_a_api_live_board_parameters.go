@@ -13,6 +13,7 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
 	cr "github.com/go-openapi/runtime/client"
+	"github.com/go-openapi/swag"
 
 	strfmt "github.com/go-openapi/strfmt"
 )
@@ -21,7 +22,7 @@ import (
 // with the default values initialized.
 func NewTRAAPILiveBoardParams() *TRAAPILiveBoardParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &TRAAPILiveBoardParams{
 		DollarTop: &dollarTopDefault,
@@ -34,7 +35,7 @@ func NewTRAAPILiveBoardParams() *TRAAPILiveBoardParams {
 // with the default values initialized, and the ability to set a timeout on a request
 func NewTRAAPILiveBoardParamsWithTimeout(timeout time.Duration) *TRAAPILiveBoardParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &TRAAPILiveBoardParams{
 		DollarTop: &dollarTopDefault,
@@ -47,7 +48,7 @@ func NewTRAAPILiveBoardParamsWithTimeout(timeout time.Duration) *TRAAPILiveBoard
 // with the default values initialized, and the ability to set a context for a request
 func NewTRAAPILiveBoardParamsWithContext(ctx context.Context) *TRAAPILiveBoardParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &TRAAPILiveBoardParams{
 		DollarTop: &dollarTopDefault,
@@ -60,7 +61,7 @@ func NewTRAAPILiveBoardParamsWithContext(ctx context.Context) *TRAAPILiveBoardPa
 // with the default values initialized, and the ability to set a custom HTTPClient for a request
 func NewTRAAPILiveBoardParamsWithHTTPClient(client *http.Client) *TRAAPILiveBoardParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &TRAAPILiveBoardParams{
 		DollarTop:  &dollarTopDefault,
@@ -102,7 +103,7 @@ type TRAAPILiveBoardParams struct {
 	  取前幾筆
 
 	*/
-	DollarTop *string
+	DollarTop *int64
 
 	timeout    time.Duration
 	Context    context.Context
@@ -198,13 +199,13 @@ func (o *TRAAPILiveBoardParams) SetDollarSkip(dollarSkip *string) {
 }
 
 // WithDollarTop adds the dollarTop to the t r a Api live board params
-func (o *TRAAPILiveBoardParams) WithDollarTop(dollarTop *string) *TRAAPILiveBoardParams {
+func (o *TRAAPILiveBoardParams) WithDollarTop(dollarTop *int64) *TRAAPILiveBoardParams {
 	o.SetDollarTop(dollarTop)
 	return o
 }
 
 // SetDollarTop adds the dollarTop to the t r a Api live board params
-func (o *TRAAPILiveBoardParams) SetDollarTop(dollarTop *string) {
+func (o *TRAAPILiveBoardParams) SetDollarTop(dollarTop *int64) {
 	o.DollarTop = dollarTop
 }
 
@@ -292,11 +293,11 @@ func (o *TRAAPILiveBoardParams) WriteToRequest(r runtime.ClientRequest, reg strf
 	if o.DollarTop != nil {
 
 		// query param $top
-		var qrDollarTop string
+		var qrDollarTop int64
 		if o.DollarTop != nil {
 			qrDollarTop = *o.DollarTop
 		}
-		qDollarTop := qrDollarTop
+		qDollarTop := swag.FormatInt64(qrDollarTop)
 		if qDollarTop != "" {
 			if err := r.SetQueryParam("$top", qDollarTop); err != nil {
 				return err

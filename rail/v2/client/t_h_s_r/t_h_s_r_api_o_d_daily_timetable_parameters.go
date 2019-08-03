@@ -13,6 +13,7 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
 	cr "github.com/go-openapi/runtime/client"
+	"github.com/go-openapi/swag"
 
 	strfmt "github.com/go-openapi/strfmt"
 )
@@ -21,7 +22,7 @@ import (
 // with the default values initialized.
 func NewTHSRAPIODDailyTimetableParams() *THSRAPIODDailyTimetableParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &THSRAPIODDailyTimetableParams{
 		DollarTop: &dollarTopDefault,
@@ -34,7 +35,7 @@ func NewTHSRAPIODDailyTimetableParams() *THSRAPIODDailyTimetableParams {
 // with the default values initialized, and the ability to set a timeout on a request
 func NewTHSRAPIODDailyTimetableParamsWithTimeout(timeout time.Duration) *THSRAPIODDailyTimetableParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &THSRAPIODDailyTimetableParams{
 		DollarTop: &dollarTopDefault,
@@ -47,7 +48,7 @@ func NewTHSRAPIODDailyTimetableParamsWithTimeout(timeout time.Duration) *THSRAPI
 // with the default values initialized, and the ability to set a context for a request
 func NewTHSRAPIODDailyTimetableParamsWithContext(ctx context.Context) *THSRAPIODDailyTimetableParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &THSRAPIODDailyTimetableParams{
 		DollarTop: &dollarTopDefault,
@@ -60,7 +61,7 @@ func NewTHSRAPIODDailyTimetableParamsWithContext(ctx context.Context) *THSRAPIOD
 // with the default values initialized, and the ability to set a custom HTTPClient for a request
 func NewTHSRAPIODDailyTimetableParamsWithHTTPClient(client *http.Client) *THSRAPIODDailyTimetableParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &THSRAPIODDailyTimetableParams{
 		DollarTop:  &dollarTopDefault,
@@ -102,7 +103,7 @@ type THSRAPIODDailyTimetableParams struct {
 	  取前幾筆
 
 	*/
-	DollarTop *string
+	DollarTop *int64
 	/*DestinationStationID
 	  迄點車站代碼
 
@@ -213,13 +214,13 @@ func (o *THSRAPIODDailyTimetableParams) SetDollarSkip(dollarSkip *string) {
 }
 
 // WithDollarTop adds the dollarTop to the t h s r Api o d daily timetable params
-func (o *THSRAPIODDailyTimetableParams) WithDollarTop(dollarTop *string) *THSRAPIODDailyTimetableParams {
+func (o *THSRAPIODDailyTimetableParams) WithDollarTop(dollarTop *int64) *THSRAPIODDailyTimetableParams {
 	o.SetDollarTop(dollarTop)
 	return o
 }
 
 // SetDollarTop adds the dollarTop to the t h s r Api o d daily timetable params
-func (o *THSRAPIODDailyTimetableParams) SetDollarTop(dollarTop *string) {
+func (o *THSRAPIODDailyTimetableParams) SetDollarTop(dollarTop *int64) {
 	o.DollarTop = dollarTop
 }
 
@@ -340,11 +341,11 @@ func (o *THSRAPIODDailyTimetableParams) WriteToRequest(r runtime.ClientRequest, 
 	if o.DollarTop != nil {
 
 		// query param $top
-		var qrDollarTop string
+		var qrDollarTop int64
 		if o.DollarTop != nil {
 			qrDollarTop = *o.DollarTop
 		}
-		qDollarTop := qrDollarTop
+		qDollarTop := swag.FormatInt64(qrDollarTop)
 		if qDollarTop != "" {
 			if err := r.SetQueryParam("$top", qDollarTop); err != nil {
 				return err

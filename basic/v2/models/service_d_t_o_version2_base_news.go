@@ -6,8 +6,6 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	"encoding/json"
-
 	strfmt "github.com/go-openapi/strfmt"
 
 	"github.com/go-openapi/errors"
@@ -40,9 +38,10 @@ type ServiceDTOVersion2BaseNews struct {
 	// Required: true
 	Language *string `json:"Language"`
 
-	// 消息類別
-	// Enum: [1 2 3 4 5 6 7 8 9 99]
-	NewsCategory int64 `json:"NewsCategory,omitempty"`
+	// integer
+	//
+	// 消息類別 : [1:'最新消息',2:'新聞稿',3:'營運資訊',4:'轉乘資訊',5:'活動訊息',6:'系統公告',7:'新服務上架',8:'API修正',9:'來源異常',99:'其他']
+	NewsCategory int32 `json:"NewsCategory,omitempty"`
 
 	// 最新消息原單位發布代碼
 	// Required: true
@@ -83,10 +82,6 @@ func (m *ServiceDTOVersion2BaseNews) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
-	if err := m.validateNewsCategory(formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.validateNewsID(formats); err != nil {
 		res = append(res, err)
 	}
@@ -109,40 +104,6 @@ func (m *ServiceDTOVersion2BaseNews) validateDescription(formats strfmt.Registry
 func (m *ServiceDTOVersion2BaseNews) validateLanguage(formats strfmt.Registry) error {
 
 	if err := validate.Required("Language", "body", m.Language); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-var serviceDTOVersion2BaseNewsTypeNewsCategoryPropEnum []interface{}
-
-func init() {
-	var res []int64
-	if err := json.Unmarshal([]byte(`[1,2,3,4,5,6,7,8,9,99]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		serviceDTOVersion2BaseNewsTypeNewsCategoryPropEnum = append(serviceDTOVersion2BaseNewsTypeNewsCategoryPropEnum, v)
-	}
-}
-
-// prop value enum
-func (m *ServiceDTOVersion2BaseNews) validateNewsCategoryEnum(path, location string, value int64) error {
-	if err := validate.Enum(path, location, value, serviceDTOVersion2BaseNewsTypeNewsCategoryPropEnum); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (m *ServiceDTOVersion2BaseNews) validateNewsCategory(formats strfmt.Registry) error {
-
-	if swag.IsZero(m.NewsCategory) { // not required
-		return nil
-	}
-
-	// value enum
-	if err := m.validateNewsCategoryEnum("NewsCategory", "body", m.NewsCategory); err != nil {
 		return err
 	}
 

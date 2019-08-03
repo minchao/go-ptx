@@ -13,6 +13,7 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
 	cr "github.com/go-openapi/runtime/client"
+	"github.com/go-openapi/swag"
 
 	strfmt "github.com/go-openapi/strfmt"
 )
@@ -21,7 +22,7 @@ import (
 // with the default values initialized.
 func NewCityBusAPIShape1Params() *CityBusAPIShape1Params {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &CityBusAPIShape1Params{
 		DollarTop: &dollarTopDefault,
@@ -34,7 +35,7 @@ func NewCityBusAPIShape1Params() *CityBusAPIShape1Params {
 // with the default values initialized, and the ability to set a timeout on a request
 func NewCityBusAPIShape1ParamsWithTimeout(timeout time.Duration) *CityBusAPIShape1Params {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &CityBusAPIShape1Params{
 		DollarTop: &dollarTopDefault,
@@ -47,7 +48,7 @@ func NewCityBusAPIShape1ParamsWithTimeout(timeout time.Duration) *CityBusAPIShap
 // with the default values initialized, and the ability to set a context for a request
 func NewCityBusAPIShape1ParamsWithContext(ctx context.Context) *CityBusAPIShape1Params {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &CityBusAPIShape1Params{
 		DollarTop: &dollarTopDefault,
@@ -60,7 +61,7 @@ func NewCityBusAPIShape1ParamsWithContext(ctx context.Context) *CityBusAPIShape1
 // with the default values initialized, and the ability to set a custom HTTPClient for a request
 func NewCityBusAPIShape1ParamsWithHTTPClient(client *http.Client) *CityBusAPIShape1Params {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &CityBusAPIShape1Params{
 		DollarTop:  &dollarTopDefault,
@@ -102,7 +103,7 @@ type CityBusAPIShape1Params struct {
 	  取前幾筆
 
 	*/
-	DollarTop *string
+	DollarTop *int64
 	/*City
 	  欲查詢縣市
 
@@ -208,13 +209,13 @@ func (o *CityBusAPIShape1Params) SetDollarSkip(dollarSkip *string) {
 }
 
 // WithDollarTop adds the dollarTop to the city bus Api shape 1 params
-func (o *CityBusAPIShape1Params) WithDollarTop(dollarTop *string) *CityBusAPIShape1Params {
+func (o *CityBusAPIShape1Params) WithDollarTop(dollarTop *int64) *CityBusAPIShape1Params {
 	o.SetDollarTop(dollarTop)
 	return o
 }
 
 // SetDollarTop adds the dollarTop to the city bus Api shape 1 params
-func (o *CityBusAPIShape1Params) SetDollarTop(dollarTop *string) {
+func (o *CityBusAPIShape1Params) SetDollarTop(dollarTop *int64) {
 	o.DollarTop = dollarTop
 }
 
@@ -324,11 +325,11 @@ func (o *CityBusAPIShape1Params) WriteToRequest(r runtime.ClientRequest, reg str
 	if o.DollarTop != nil {
 
 		// query param $top
-		var qrDollarTop string
+		var qrDollarTop int64
 		if o.DollarTop != nil {
 			qrDollarTop = *o.DollarTop
 		}
-		qDollarTop := qrDollarTop
+		qDollarTop := swag.FormatInt64(qrDollarTop)
 		if qDollarTop != "" {
 			if err := r.SetQueryParam("$top", qDollarTop); err != nil {
 				return err

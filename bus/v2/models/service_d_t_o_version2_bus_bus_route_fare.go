@@ -6,7 +6,6 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	"encoding/json"
 	"strconv"
 
 	strfmt "github.com/go-openapi/strfmt"
@@ -22,20 +21,23 @@ import (
 // swagger:model Service.DTO.Version2.Bus.BusRouteFare
 type ServiceDTOVersion2BusBusRouteFare struct {
 
-	// 描述該路線計費方式
+	// integer
+	//
+	// 描述該路線計費方式 : [0:'段次計費',1:'起迄站間計費',2:'計費站區間計費']
 	// Required: true
-	// Enum: [0 1 2]
-	FarePricingType *int64 `json:"FarePricingType"`
+	FarePricingType *int32 `json:"FarePricingType"`
 
-	// 該收費方式是否應用到所有附屬路線
+	// integer
+	//
+	// 該收費方式是否應用到所有附屬路線 : [0:'否',1:'是']
 	// Required: true
-	// Enum: [0 1]
-	IsForAllSubRoutes *int64 `json:"IsForAllSubRoutes"`
+	IsForAllSubRoutes *int32 `json:"IsForAllSubRoutes"`
 
-	// 是否為免費公車
+	// integer
+	//
+	// 是否為免費公車 : [0:'否',1:'是']
 	// Required: true
-	// Enum: [0 1]
-	IsFreeBus *int64 `json:"IsFreeBus"`
+	IsFreeBus *int32 `json:"IsFreeBus"`
 
 	// 營運業者代碼
 	// Required: true
@@ -102,57 +104,12 @@ func (m *ServiceDTOVersion2BusBusRouteFare) Validate(formats strfmt.Registry) er
 	return nil
 }
 
-var serviceDTOVersion2BusBusRouteFareTypeFarePricingTypePropEnum []interface{}
-
-func init() {
-	var res []int64
-	if err := json.Unmarshal([]byte(`[0,1,2]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		serviceDTOVersion2BusBusRouteFareTypeFarePricingTypePropEnum = append(serviceDTOVersion2BusBusRouteFareTypeFarePricingTypePropEnum, v)
-	}
-}
-
-// prop value enum
-func (m *ServiceDTOVersion2BusBusRouteFare) validateFarePricingTypeEnum(path, location string, value int64) error {
-	if err := validate.Enum(path, location, value, serviceDTOVersion2BusBusRouteFareTypeFarePricingTypePropEnum); err != nil {
-		return err
-	}
-	return nil
-}
-
 func (m *ServiceDTOVersion2BusBusRouteFare) validateFarePricingType(formats strfmt.Registry) error {
 
 	if err := validate.Required("FarePricingType", "body", m.FarePricingType); err != nil {
 		return err
 	}
 
-	// value enum
-	if err := m.validateFarePricingTypeEnum("FarePricingType", "body", *m.FarePricingType); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-var serviceDTOVersion2BusBusRouteFareTypeIsForAllSubRoutesPropEnum []interface{}
-
-func init() {
-	var res []int64
-	if err := json.Unmarshal([]byte(`[0,1]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		serviceDTOVersion2BusBusRouteFareTypeIsForAllSubRoutesPropEnum = append(serviceDTOVersion2BusBusRouteFareTypeIsForAllSubRoutesPropEnum, v)
-	}
-}
-
-// prop value enum
-func (m *ServiceDTOVersion2BusBusRouteFare) validateIsForAllSubRoutesEnum(path, location string, value int64) error {
-	if err := validate.Enum(path, location, value, serviceDTOVersion2BusBusRouteFareTypeIsForAllSubRoutesPropEnum); err != nil {
-		return err
-	}
 	return nil
 }
 
@@ -162,42 +119,12 @@ func (m *ServiceDTOVersion2BusBusRouteFare) validateIsForAllSubRoutes(formats st
 		return err
 	}
 
-	// value enum
-	if err := m.validateIsForAllSubRoutesEnum("IsForAllSubRoutes", "body", *m.IsForAllSubRoutes); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-var serviceDTOVersion2BusBusRouteFareTypeIsFreeBusPropEnum []interface{}
-
-func init() {
-	var res []int64
-	if err := json.Unmarshal([]byte(`[0,1]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		serviceDTOVersion2BusBusRouteFareTypeIsFreeBusPropEnum = append(serviceDTOVersion2BusBusRouteFareTypeIsFreeBusPropEnum, v)
-	}
-}
-
-// prop value enum
-func (m *ServiceDTOVersion2BusBusRouteFare) validateIsFreeBusEnum(path, location string, value int64) error {
-	if err := validate.Enum(path, location, value, serviceDTOVersion2BusBusRouteFareTypeIsFreeBusPropEnum); err != nil {
-		return err
-	}
 	return nil
 }
 
 func (m *ServiceDTOVersion2BusBusRouteFare) validateIsFreeBus(formats strfmt.Registry) error {
 
 	if err := validate.Required("IsFreeBus", "body", m.IsFreeBus); err != nil {
-		return err
-	}
-
-	// value enum
-	if err := m.validateIsFreeBusEnum("IsFreeBus", "body", *m.IsFreeBus); err != nil {
 		return err
 	}
 

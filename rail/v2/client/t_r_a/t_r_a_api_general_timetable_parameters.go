@@ -13,6 +13,7 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
 	cr "github.com/go-openapi/runtime/client"
+	"github.com/go-openapi/swag"
 
 	strfmt "github.com/go-openapi/strfmt"
 )
@@ -21,7 +22,7 @@ import (
 // with the default values initialized.
 func NewTRAAPIGeneralTimetableParams() *TRAAPIGeneralTimetableParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &TRAAPIGeneralTimetableParams{
 		DollarTop: &dollarTopDefault,
@@ -34,7 +35,7 @@ func NewTRAAPIGeneralTimetableParams() *TRAAPIGeneralTimetableParams {
 // with the default values initialized, and the ability to set a timeout on a request
 func NewTRAAPIGeneralTimetableParamsWithTimeout(timeout time.Duration) *TRAAPIGeneralTimetableParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &TRAAPIGeneralTimetableParams{
 		DollarTop: &dollarTopDefault,
@@ -47,7 +48,7 @@ func NewTRAAPIGeneralTimetableParamsWithTimeout(timeout time.Duration) *TRAAPIGe
 // with the default values initialized, and the ability to set a context for a request
 func NewTRAAPIGeneralTimetableParamsWithContext(ctx context.Context) *TRAAPIGeneralTimetableParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &TRAAPIGeneralTimetableParams{
 		DollarTop: &dollarTopDefault,
@@ -60,7 +61,7 @@ func NewTRAAPIGeneralTimetableParamsWithContext(ctx context.Context) *TRAAPIGene
 // with the default values initialized, and the ability to set a custom HTTPClient for a request
 func NewTRAAPIGeneralTimetableParamsWithHTTPClient(client *http.Client) *TRAAPIGeneralTimetableParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &TRAAPIGeneralTimetableParams{
 		DollarTop:  &dollarTopDefault,
@@ -102,7 +103,7 @@ type TRAAPIGeneralTimetableParams struct {
 	  取前幾筆
 
 	*/
-	DollarTop *string
+	DollarTop *int64
 
 	timeout    time.Duration
 	Context    context.Context
@@ -198,13 +199,13 @@ func (o *TRAAPIGeneralTimetableParams) SetDollarSkip(dollarSkip *string) {
 }
 
 // WithDollarTop adds the dollarTop to the t r a Api general timetable params
-func (o *TRAAPIGeneralTimetableParams) WithDollarTop(dollarTop *string) *TRAAPIGeneralTimetableParams {
+func (o *TRAAPIGeneralTimetableParams) WithDollarTop(dollarTop *int64) *TRAAPIGeneralTimetableParams {
 	o.SetDollarTop(dollarTop)
 	return o
 }
 
 // SetDollarTop adds the dollarTop to the t r a Api general timetable params
-func (o *TRAAPIGeneralTimetableParams) SetDollarTop(dollarTop *string) {
+func (o *TRAAPIGeneralTimetableParams) SetDollarTop(dollarTop *int64) {
 	o.DollarTop = dollarTop
 }
 
@@ -292,11 +293,11 @@ func (o *TRAAPIGeneralTimetableParams) WriteToRequest(r runtime.ClientRequest, r
 	if o.DollarTop != nil {
 
 		// query param $top
-		var qrDollarTop string
+		var qrDollarTop int64
 		if o.DollarTop != nil {
 			qrDollarTop = *o.DollarTop
 		}
-		qDollarTop := qrDollarTop
+		qDollarTop := swag.FormatInt64(qrDollarTop)
 		if qDollarTop != "" {
 			if err := r.SetQueryParam("$top", qDollarTop); err != nil {
 				return err

@@ -13,6 +13,7 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
 	cr "github.com/go-openapi/runtime/client"
+	"github.com/go-openapi/swag"
 
 	strfmt "github.com/go-openapi/strfmt"
 )
@@ -21,7 +22,7 @@ import (
 // with the default values initialized.
 func NewMetroAPIRouteParams() *MetroAPIRouteParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &MetroAPIRouteParams{
 		DollarTop: &dollarTopDefault,
@@ -34,7 +35,7 @@ func NewMetroAPIRouteParams() *MetroAPIRouteParams {
 // with the default values initialized, and the ability to set a timeout on a request
 func NewMetroAPIRouteParamsWithTimeout(timeout time.Duration) *MetroAPIRouteParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &MetroAPIRouteParams{
 		DollarTop: &dollarTopDefault,
@@ -47,7 +48,7 @@ func NewMetroAPIRouteParamsWithTimeout(timeout time.Duration) *MetroAPIRoutePara
 // with the default values initialized, and the ability to set a context for a request
 func NewMetroAPIRouteParamsWithContext(ctx context.Context) *MetroAPIRouteParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &MetroAPIRouteParams{
 		DollarTop: &dollarTopDefault,
@@ -60,7 +61,7 @@ func NewMetroAPIRouteParamsWithContext(ctx context.Context) *MetroAPIRouteParams
 // with the default values initialized, and the ability to set a custom HTTPClient for a request
 func NewMetroAPIRouteParamsWithHTTPClient(client *http.Client) *MetroAPIRouteParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &MetroAPIRouteParams{
 		DollarTop:  &dollarTopDefault,
@@ -102,7 +103,7 @@ type MetroAPIRouteParams struct {
 	  取前幾筆
 
 	*/
-	DollarTop *string
+	DollarTop *int64
 	/*Operator
 	  欲查詢縣市
 
@@ -203,13 +204,13 @@ func (o *MetroAPIRouteParams) SetDollarSkip(dollarSkip *string) {
 }
 
 // WithDollarTop adds the dollarTop to the metro Api route params
-func (o *MetroAPIRouteParams) WithDollarTop(dollarTop *string) *MetroAPIRouteParams {
+func (o *MetroAPIRouteParams) WithDollarTop(dollarTop *int64) *MetroAPIRouteParams {
 	o.SetDollarTop(dollarTop)
 	return o
 }
 
 // SetDollarTop adds the dollarTop to the metro Api route params
-func (o *MetroAPIRouteParams) SetDollarTop(dollarTop *string) {
+func (o *MetroAPIRouteParams) SetDollarTop(dollarTop *int64) {
 	o.DollarTop = dollarTop
 }
 
@@ -308,11 +309,11 @@ func (o *MetroAPIRouteParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 	if o.DollarTop != nil {
 
 		// query param $top
-		var qrDollarTop string
+		var qrDollarTop int64
 		if o.DollarTop != nil {
 			qrDollarTop = *o.DollarTop
 		}
-		qDollarTop := qrDollarTop
+		qDollarTop := swag.FormatInt64(qrDollarTop)
 		if qDollarTop != "" {
 			if err := r.SetQueryParam("$top", qDollarTop); err != nil {
 				return err

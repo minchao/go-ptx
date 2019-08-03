@@ -47,8 +47,8 @@
             "name": "$top",
             "in": "query",
             "description": "取前幾筆",
-            "type": "string",
-            "default": "30"
+            "type": "integer",
+            "default": 30
           },
           {
             "name": "$skip",
@@ -132,28 +132,28 @@
               "LienchiangCounty"
             ],
             "x-enum": {
+              "ChiayiCounty": "嘉義縣",
               "LienchiangCounty": "連江縣",
-              "Taipei": "臺北市",
-              "PingtungCounty": "屏東縣",
-              "NantouCounty": "南投縣",
-              "YilanCounty": "宜蘭縣",
               "TaitungCounty": "臺東縣",
+              "Taoyuan": "桃園市",
+              "Keelung": "基隆市",
+              "MiaoliCounty": "苗栗縣",
               "Chiayi": "嘉義市",
               "Kaohsiung": "高雄市",
-              "YunlinCounty": "雲林縣",
-              "MiaoliCounty": "苗栗縣",
-              "Taoyuan": "桃園市",
               "ChanghuaCounty": "彰化縣",
-              "HsinchuCounty": "新竹縣",
-              "Taichung": "臺中市",
+              "YilanCounty": "宜蘭縣",
               "PenghuCounty": "澎湖縣",
-              "ChiayiCounty": "嘉義縣",
-              "Keelung": "基隆市",
-              "KinmenCounty": "金門縣",
-              "HualienCounty": "花蓮縣",
-              "Tainan": "臺南市",
               "NewTaipei": "新北市",
-              "Hsinchu": "新竹市"
+              "Tainan": "臺南市",
+              "HsinchuCounty": "新竹縣",
+              "Hsinchu": "新竹市",
+              "Taipei": "臺北市",
+              "NantouCounty": "南投縣",
+              "PingtungCounty": "屏東縣",
+              "YunlinCounty": "雲林縣",
+              "HualienCounty": "花蓮縣",
+              "KinmenCounty": "金門縣",
+              "Taichung": "臺中市"
             }
           },
           {
@@ -178,8 +178,8 @@
             "name": "$top",
             "in": "query",
             "description": "取前幾筆",
-            "type": "string",
-            "default": "30"
+            "type": "integer",
+            "default": 30
           },
           {
             "name": "$skip",
@@ -254,8 +254,8 @@
             "name": "$top",
             "in": "query",
             "description": "取前幾筆",
-            "type": "string",
-            "default": "30"
+            "type": "integer",
+            "default": 30
           },
           {
             "name": "$skip",
@@ -339,27 +339,27 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "LienchiangCounty": "連江縣",
-              "Taoyuan": "桃園市",
-              "YilanCounty": "宜蘭縣",
-              "Taipei": "臺北市",
-              "NantouCounty": "南投縣",
-              "Keelung": "基隆市",
-              "PingtungCounty": "屏東縣",
               "Hsinchu": "新竹市",
-              "ChanghuaCounty": "彰化縣",
-              "Tainan": "臺南市",
-              "HsinchuCounty": "新竹縣",
-              "Kaohsiung": "高雄市",
-              "KinmenCounty": "金門縣",
-              "YunlinCounty": "雲林縣",
-              "Chiayi": "嘉義市",
-              "Taichung": "臺中市",
-              "ChiayiCounty": "嘉義縣",
+              "LienchiangCounty": "連江縣",
               "HualienCounty": "花蓮縣",
-              "MiaoliCounty": "苗栗縣",
+              "Taipei": "臺北市",
+              "ChanghuaCounty": "彰化縣",
+              "Taoyuan": "桃園市",
+              "NantouCounty": "南投縣",
+              "ChiayiCounty": "嘉義縣",
+              "YilanCounty": "宜蘭縣",
               "PenghuCounty": "澎湖縣",
+              "YunlinCounty": "雲林縣",
+              "MiaoliCounty": "苗栗縣",
+              "KinmenCounty": "金門縣",
               "TaitungCounty": "臺東縣",
+              "Taichung": "臺中市",
+              "Chiayi": "嘉義市",
+              "PingtungCounty": "屏東縣",
+              "Tainan": "臺南市",
+              "Keelung": "基隆市",
+              "Kaohsiung": "高雄市",
+              "HsinchuCounty": "新竹縣",
               "NewTaipei": "新北市"
             }
           },
@@ -385,8 +385,8 @@
             "name": "$top",
             "in": "query",
             "description": "取前幾筆",
-            "type": "string",
-            "default": "30"
+            "type": "integer",
+            "default": 30
           },
           {
             "name": "$skip",
@@ -461,8 +461,8 @@
             "name": "$top",
             "in": "query",
             "description": "取前幾筆",
-            "type": "string",
-            "default": "30"
+            "type": "integer",
+            "default": 30
           },
           {
             "name": "$skip",
@@ -546,28 +546,28 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "NantouCounty": "南投縣",
               "Kaohsiung": "高雄市",
-              "Taipei": "臺北市",
               "YilanCounty": "宜蘭縣",
-              "Chiayi": "嘉義市",
-              "KinmenCounty": "金門縣",
-              "YunlinCounty": "雲林縣",
-              "LienchiangCounty": "連江縣",
-              "ChanghuaCounty": "彰化縣",
-              "TaitungCounty": "臺東縣",
-              "HualienCounty": "花蓮縣",
-              "Keelung": "基隆市",
-              "MiaoliCounty": "苗栗縣",
-              "NewTaipei": "新北市",
               "Taoyuan": "桃園市",
-              "PingtungCounty": "屏東縣",
-              "Hsinchu": "新竹市",
               "Tainan": "臺南市",
-              "PenghuCounty": "澎湖縣",
-              "HsinchuCounty": "新竹縣",
+              "NantouCounty": "南投縣",
+              "YunlinCounty": "雲林縣",
+              "Taipei": "臺北市",
+              "NewTaipei": "新北市",
               "ChiayiCounty": "嘉義縣",
-              "Taichung": "臺中市"
+              "MiaoliCounty": "苗栗縣",
+              "KinmenCounty": "金門縣",
+              "Taichung": "臺中市",
+              "Chiayi": "嘉義市",
+              "PingtungCounty": "屏東縣",
+              "HualienCounty": "花蓮縣",
+              "PenghuCounty": "澎湖縣",
+              "Hsinchu": "新竹市",
+              "TaitungCounty": "臺東縣",
+              "HsinchuCounty": "新竹縣",
+              "ChanghuaCounty": "彰化縣",
+              "Keelung": "基隆市",
+              "LienchiangCounty": "連江縣"
             }
           },
           {
@@ -592,8 +592,8 @@
             "name": "$top",
             "in": "query",
             "description": "取前幾筆",
-            "type": "string",
-            "default": "30"
+            "type": "integer",
+            "default": 30
           },
           {
             "name": "$skip",
@@ -668,8 +668,8 @@
             "name": "$top",
             "in": "query",
             "description": "取前幾筆",
-            "type": "string",
-            "default": "30"
+            "type": "integer",
+            "default": 30
           },
           {
             "name": "$skip",
@@ -753,28 +753,28 @@
               "LienchiangCounty"
             ],
             "x-enum": {
+              "KinmenCounty": "金門縣",
+              "Kaohsiung": "高雄市",
+              "PingtungCounty": "屏東縣",
+              "MiaoliCounty": "苗栗縣",
               "HsinchuCounty": "新竹縣",
+              "NantouCounty": "南投縣",
+              "Keelung": "基隆市",
               "Taoyuan": "桃園市",
               "Hsinchu": "新竹市",
-              "NantouCounty": "南投縣",
-              "KinmenCounty": "金門縣",
-              "PingtungCounty": "屏東縣",
-              "Kaohsiung": "高雄市",
-              "Chiayi": "嘉義市",
-              "MiaoliCounty": "苗栗縣",
               "YilanCounty": "宜蘭縣",
-              "Keelung": "基隆市",
-              "LienchiangCounty": "連江縣",
-              "YunlinCounty": "雲林縣",
-              "ChiayiCounty": "嘉義縣",
-              "Taipei": "臺北市",
-              "NewTaipei": "新北市",
-              "Taichung": "臺中市",
+              "PenghuCounty": "澎湖縣",
               "TaitungCounty": "臺東縣",
-              "HualienCounty": "花蓮縣",
-              "Tainan": "臺南市",
+              "Taichung": "臺中市",
               "ChanghuaCounty": "彰化縣",
-              "PenghuCounty": "澎湖縣"
+              "HualienCounty": "花蓮縣",
+              "YunlinCounty": "雲林縣",
+              "Taipei": "臺北市",
+              "LienchiangCounty": "連江縣",
+              "NewTaipei": "新北市",
+              "Chiayi": "嘉義市",
+              "ChiayiCounty": "嘉義縣",
+              "Tainan": "臺南市"
             }
           },
           {
@@ -799,8 +799,8 @@
             "name": "$top",
             "in": "query",
             "description": "取前幾筆",
-            "type": "string",
-            "default": "30"
+            "type": "integer",
+            "default": 30
           },
           {
             "name": "$skip",
@@ -842,7 +842,7 @@
     "/v2/Tourism/Bus/RealTimeByFrequency/TaiwanTrip": {
       "get": {
         "tags": [
-          "TaiwanTripBus"
+          "Tourism"
         ],
         "summary": "取得台灣好行公車的動態定時資料(A1)",
         "description": "取得台灣好行公車的動態定時資料(A1)",
@@ -875,8 +875,8 @@
             "name": "$top",
             "in": "query",
             "description": "取前幾筆",
-            "type": "string",
-            "default": "30"
+            "type": "integer",
+            "default": 30
           },
           {
             "name": "$skip",
@@ -918,7 +918,7 @@
     "/v2/Tourism/Bus/RealTimeByFrequency/TaiwanTrip/{TaiwanTripName}": {
       "get": {
         "tags": [
-          "TaiwanTripBus"
+          "Tourism"
         ],
         "summary": "取得指定[路線名稱]的台灣好行公車的動態定時資料(A1)",
         "description": "取得指定[路線名稱]的台灣好行公車的動態定時資料(A1)",
@@ -958,8 +958,8 @@
             "name": "$top",
             "in": "query",
             "description": "取前幾筆",
-            "type": "string",
-            "default": "30"
+            "type": "integer",
+            "default": 30
           },
           {
             "name": "$skip",
@@ -1001,7 +1001,7 @@
     "/v2/Tourism/Bus/RealTimeNearStop/TaiwanTrip": {
       "get": {
         "tags": [
-          "TaiwanTripBus"
+          "Tourism"
         ],
         "summary": "取得台灣好行公車的動態定點資料(A2)",
         "description": "取得台灣好行公車的動態定點資料(A2)",
@@ -1034,8 +1034,8 @@
             "name": "$top",
             "in": "query",
             "description": "取前幾筆",
-            "type": "string",
-            "default": "30"
+            "type": "integer",
+            "default": 30
           },
           {
             "name": "$skip",
@@ -1071,7 +1071,7 @@
     "/v2/Tourism/Bus/RealTimeNearStop/TaiwanTrip/{TaiwanTripName}": {
       "get": {
         "tags": [
-          "TaiwanTripBus"
+          "Tourism"
         ],
         "summary": "取得指定[路線名稱]的台灣好行公車的動態定點資料(A2)",
         "description": "取得指定[路線名稱]的台灣好行公車的動態定點資料(A2)",
@@ -1111,8 +1111,8 @@
             "name": "$top",
             "in": "query",
             "description": "取前幾筆",
-            "type": "string",
-            "default": "30"
+            "type": "integer",
+            "default": 30
           },
           {
             "name": "$skip",
@@ -1148,7 +1148,7 @@
     "/v2/Tourism/Bus/EstimatedTimeOfArrival/TaiwanTrip": {
       "get": {
         "tags": [
-          "TaiwanTripBus"
+          "Tourism"
         ],
         "summary": "取得台灣好行公車的預估到站資料(N1)",
         "description": "取得台灣好行公車的預估到站資料(N1)",
@@ -1181,8 +1181,8 @@
             "name": "$top",
             "in": "query",
             "description": "取前幾筆",
-            "type": "string",
-            "default": "30"
+            "type": "integer",
+            "default": 30
           },
           {
             "name": "$skip",
@@ -1218,7 +1218,7 @@
     "/v2/Tourism/Bus/EstimatedTimeOfArrival/TaiwanTrip/{TaiwanTripName}": {
       "get": {
         "tags": [
-          "TaiwanTripBus"
+          "Tourism"
         ],
         "summary": "取得指定[路線名稱]的台灣好行公車的預估到站資料(N1)",
         "description": "取得指定[路線名稱]的台灣好行公車的預估到站資料(N1)",
@@ -1258,8 +1258,8 @@
             "name": "$top",
             "in": "query",
             "description": "取前幾筆",
-            "type": "string",
-            "default": "30"
+            "type": "integer",
+            "default": 30
           },
           {
             "name": "$skip",
@@ -1295,7 +1295,7 @@
     "/v2/Tourism/Bus/Route/TaiwanTrip": {
       "get": {
         "tags": [
-          "TaiwanTripBus"
+          "Tourism"
         ],
         "summary": "取得台灣好行公車路線資料",
         "description": "取得台灣好行公車路線資料",
@@ -1328,8 +1328,8 @@
             "name": "$top",
             "in": "query",
             "description": "取前幾筆",
-            "type": "string",
-            "default": "30"
+            "type": "integer",
+            "default": 30
           },
           {
             "name": "$skip",
@@ -1365,7 +1365,7 @@
     "/v2/Tourism/Bus/Route/TaiwanTrip/{TaiwanTripName}": {
       "get": {
         "tags": [
-          "TaiwanTripBus"
+          "Tourism"
         ],
         "summary": "取得指定[路線名稱]的台灣好行公車路線資料",
         "description": "取得指定[路線名稱]的台灣好行公車路線資料",
@@ -1405,8 +1405,8 @@
             "name": "$top",
             "in": "query",
             "description": "取前幾筆",
-            "type": "string",
-            "default": "30"
+            "type": "integer",
+            "default": 30
           },
           {
             "name": "$skip",
@@ -1442,7 +1442,7 @@
     "/v2/Tourism/Bus/StopOfRoute/TaiwanTrip": {
       "get": {
         "tags": [
-          "TaiwanTripBus"
+          "Tourism"
         ],
         "summary": "取得台灣好行公車路線與站牌資料",
         "description": "取得台灣好行公車路線與站牌資料",
@@ -1475,8 +1475,8 @@
             "name": "$top",
             "in": "query",
             "description": "取前幾筆",
-            "type": "string",
-            "default": "30"
+            "type": "integer",
+            "default": 30
           },
           {
             "name": "$skip",
@@ -1512,7 +1512,7 @@
     "/v2/Tourism/Bus/StopOfRoute/TaiwanTrip/{TaiwanTripName}": {
       "get": {
         "tags": [
-          "TaiwanTripBus"
+          "Tourism"
         ],
         "summary": "取得指定[路線名稱]的台灣好行公車路線與站牌資料",
         "description": "取得指定[路線名稱]的台灣好行公車路線與站牌資料",
@@ -1552,8 +1552,8 @@
             "name": "$top",
             "in": "query",
             "description": "取前幾筆",
-            "type": "string",
-            "default": "30"
+            "type": "integer",
+            "default": 30
           },
           {
             "name": "$skip",
@@ -1589,7 +1589,7 @@
     "/v2/Tourism/Bus/Schedule/TaiwanTrip": {
       "get": {
         "tags": [
-          "TaiwanTripBus"
+          "Tourism"
         ],
         "summary": "取得台灣好行公車路線班表資料",
         "description": "取得台灣好行公車路線班表資料",
@@ -1622,8 +1622,8 @@
             "name": "$top",
             "in": "query",
             "description": "取前幾筆",
-            "type": "string",
-            "default": "30"
+            "type": "integer",
+            "default": 30
           },
           {
             "name": "$skip",
@@ -1659,7 +1659,7 @@
     "/v2/Tourism/Bus/Schedule/TaiwanTrip/{TaiwanTripName}": {
       "get": {
         "tags": [
-          "TaiwanTripBus"
+          "Tourism"
         ],
         "summary": "取得指定[路線名稱]的台灣好行公車路線班表資料",
         "description": "取得指定[路線名稱]的台灣好行公車路線班表資料",
@@ -1699,8 +1699,8 @@
             "name": "$top",
             "in": "query",
             "description": "取前幾筆",
-            "type": "string",
-            "default": "30"
+            "type": "integer",
+            "default": 30
           },
           {
             "name": "$skip",
@@ -1736,7 +1736,7 @@
     "/v2/Tourism/Bus/Shape/TaiwanTrip": {
       "get": {
         "tags": [
-          "TaiwanTripBus"
+          "Tourism"
         ],
         "summary": "取得台灣好行公車線型資料",
         "description": "取得台灣好行公車線型資料",
@@ -1769,8 +1769,8 @@
             "name": "$top",
             "in": "query",
             "description": "取前幾筆",
-            "type": "string",
-            "default": "30"
+            "type": "integer",
+            "default": 30
           },
           {
             "name": "$skip",
@@ -1806,7 +1806,7 @@
     "/v2/Tourism/Bus/Shape/TaiwanTrip/{TaiwanTripName}": {
       "get": {
         "tags": [
-          "TaiwanTripBus"
+          "Tourism"
         ],
         "summary": "取得指定[路線名稱]的台灣好行公車線型資料",
         "description": "取得指定[路線名稱]的台灣好行公車線型資料",
@@ -1846,8 +1846,8 @@
             "name": "$top",
             "in": "query",
             "description": "取前幾筆",
-            "type": "string",
-            "default": "30"
+            "type": "integer",
+            "default": 30
           },
           {
             "name": "$skip",
@@ -1883,7 +1883,7 @@
     "/v2/Tourism/Bus/S2TravelTime/TaiwanTrip": {
       "get": {
         "tags": [
-          "TaiwanTripBus"
+          "Tourism"
         ],
         "summary": "取得台灣好行公車路線站間旅行時間基本資料",
         "description": "取得台灣好行公車路線站間旅行時間基本資料",
@@ -1916,8 +1916,8 @@
             "name": "$top",
             "in": "query",
             "description": "取前幾筆",
-            "type": "string",
-            "default": "30"
+            "type": "integer",
+            "default": 30
           },
           {
             "name": "$skip",
@@ -1953,7 +1953,7 @@
     "/v2/Tourism/Bus/News/TaiwanTrip": {
       "get": {
         "tags": [
-          "TaiwanTripBus"
+          "Tourism"
         ],
         "summary": "取得台灣好行公車之最新消息",
         "description": "取得台灣好行公車之最新消息",
@@ -1986,8 +1986,8 @@
             "name": "$top",
             "in": "query",
             "description": "取前幾筆",
-            "type": "string",
-            "default": "30"
+            "type": "integer",
+            "default": 30
           },
           {
             "name": "$skip",
@@ -2071,13 +2071,9 @@
           "description": "子路線名稱"
         },
         "Direction": {
-          "description": "去返程",
-          "enum": [
-            0,
-            1,
-            2,
-            255
-          ],
+          "format": "int32",
+          "title": "integer",
+          "description": "去返程 : [0:'去程',1:'返程',2:'迴圈',255:'未知']",
           "type": "integer"
         },
         "BusPosition": {
@@ -2096,40 +2092,21 @@
           "type": "number"
         },
         "DutyStatus": {
-          "description": "勤務狀態",
-          "enum": [
-            0,
-            1,
-            2
-          ],
+          "format": "int32",
+          "title": "integer",
+          "description": "勤務狀態 : [0:'正常',1:'開始',2:'結束']",
           "type": "integer"
         },
         "BusStatus": {
-          "description": "行車狀況",
-          "enum": [
-            0,
-            1,
-            2,
-            3,
-            4,
-            5,
-            90,
-            91,
-            98,
-            99,
-            100,
-            101,
-            255
-          ],
+          "format": "int32",
+          "title": "integer",
+          "description": "行車狀況 : [0:'正常',1:'車禍',2:'故障',3:'塞車',4:'緊急求援',5:'加油',90:'不明',91:'去回不明',98:'偏移路線',99:'非營運狀態',100:'客滿',101:'包車出租',255:'未知']",
           "type": "integer"
         },
         "MessageType": {
-          "description": "資料型態種類",
-          "enum": [
-            0,
-            1,
-            2
-          ],
+          "format": "int32",
+          "title": "integer",
+          "description": "資料型態種類 : [0:'未知',1:'定期',2:'非定期']",
           "type": "integer"
         },
         "GPSTime": {
@@ -2237,13 +2214,9 @@
           "description": "子路線名稱"
         },
         "Direction": {
-          "description": "去返程",
-          "enum": [
-            0,
-            1,
-            2,
-            255
-          ],
+          "format": "int32",
+          "title": "integer",
+          "description": "去返程 : [0:'去程',1:'返程',2:'迴圈',255:'未知']",
           "type": "integer"
         },
         "StopUID": {
@@ -2260,48 +2233,27 @@
           "description": "站牌名"
         },
         "MessageType": {
-          "description": "資料型態種類",
-          "enum": [
-            0,
-            1,
-            2
-          ],
+          "format": "int32",
+          "title": "integer",
+          "description": "資料型態種類 : [0:'未知',1:'定期',2:'非定期']",
           "type": "integer"
         },
         "DutyStatus": {
-          "description": "勤務狀態",
-          "enum": [
-            0,
-            1,
-            2
-          ],
+          "format": "int32",
+          "title": "integer",
+          "description": "勤務狀態 : [0:'正常',1:'開始',2:'結束']",
           "type": "integer"
         },
         "BusStatus": {
-          "description": "行車狀況",
-          "enum": [
-            0,
-            1,
-            2,
-            3,
-            4,
-            5,
-            90,
-            91,
-            98,
-            99,
-            100,
-            101,
-            255
-          ],
+          "format": "int32",
+          "title": "integer",
+          "description": "行車狀況 : [0:'正常',1:'車禍',2:'故障',3:'塞車',4:'緊急求援',5:'加油',90:'不明',91:'去回不明',98:'偏移路線',99:'非營運狀態',100:'客滿',101:'包車出租',255:'未知']",
           "type": "integer"
         },
         "A2EventType": {
-          "description": "進站離站",
-          "enum": [
-            0,
-            1
-          ],
+          "format": "int32",
+          "title": "integer",
+          "description": "進站離站 : [0:'離站',1:'進站']",
           "type": "integer"
         },
         "GPSTime": {
@@ -2624,13 +2576,9 @@
           "description": "子路線名稱"
         },
         "Direction": {
-          "description": "去返程",
-          "enum": [
-            0,
-            1,
-            2,
-            255
-          ],
+          "format": "int32",
+          "title": "integer",
+          "description": "去返程 : [0:'去程',1:'返程',2:'迴圈',255:'未知']",
           "type": "integer"
         },
         "EstimateTime": {
@@ -2652,23 +2600,15 @@
           "type": "string"
         },
         "StopStatus": {
-          "description": "車輛狀態備註",
-          "enum": [
-            0,
-            1,
-            2,
-            3,
-            4
-          ],
+          "format": "int32",
+          "title": "integer",
+          "description": "車輛狀態備註 : [0:'正常',1:'尚未發車',2:'交管不停靠',3:'末班車已過',4:'今日未營運']",
           "type": "integer"
         },
         "MessageType": {
-          "description": "資料型態種類",
-          "enum": [
-            0,
-            1,
-            2
-          ],
+          "format": "int32",
+          "title": "integer",
+          "description": "資料型態種類 : [0:'未知',1:'定期',2:'非定期']",
           "type": "integer"
         },
         "NextBusTime": {
@@ -2895,13 +2835,9 @@
           }
         },
         "BusRouteType": {
-          "description": "公車路線類別",
-          "enum": [
-            11,
-            12,
-            13,
-            14
-          ],
+          "format": "int32",
+          "title": "integer",
+          "description": "公車路線類別 : [11:'市區公車',12:'公路客運',13:'國道客運',14:'接駁車']",
           "type": "integer"
         },
         "TaiwanTripName": {
@@ -3039,13 +2975,9 @@
           "type": "string"
         },
         "Direction": {
-          "description": "去返程",
-          "enum": [
-            0,
-            1,
-            2,
-            255
-          ],
+          "format": "int32",
+          "title": "integer",
+          "description": "去返程 : [0:'去程',1:'返程',2:'迴圈',255:'未知']",
           "type": "integer"
         },
         "FirstBusTime": {
@@ -3071,7 +3003,8 @@
       "required": [
         "RouteUID",
         "RouteID",
-        "TravelTimes"
+        "TravelTimes",
+        "UpdateTime"
       ],
       "type": "object",
       "properties": {
@@ -3097,6 +3030,11 @@
           "items": {
             "$ref": "#/definitions/Service.DTO.Version2.TaiwanTripBus.BusTaiwanTripS2STravelTime.TravelTime"
           }
+        },
+        "UpdateTime": {
+          "title": "DateTime",
+          "description": "資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
         }
       }
     },
@@ -3268,7 +3206,8 @@
         "SubRouteUID",
         "SubRouteID",
         "SubRouteName",
-        "Direction"
+        "Direction",
+        "UpdateTime"
       ],
       "type": "object",
       "properties": {
@@ -3299,13 +3238,9 @@
           "description": "子路線名稱"
         },
         "Direction": {
-          "description": "去返程",
-          "enum": [
-            0,
-            1,
-            2,
-            255
-          ],
+          "format": "int32",
+          "title": "integer",
+          "description": "去返程 : [0:'去程',1:'返程',2:'迴圈',255:'未知']",
           "type": "integer"
         },
         "Timetables": {
@@ -3321,6 +3256,11 @@
           "items": {
             "$ref": "#/definitions/Service.DTO.Version2.Bus.BusFrequency"
           }
+        },
+        "UpdateTime": {
+          "title": "DateTime",
+          "description": "資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
         }
       }
     },
@@ -3412,67 +3352,51 @@
       "type": "object",
       "properties": {
         "Sunday": {
-          "description": "星期日是否營運",
-          "enum": [
-            0,
-            1
-          ],
+          "format": "int32",
+          "title": "integer",
+          "description": "星期日是否營運 : [0:'否',1:'是']",
           "type": "integer"
         },
         "Monday": {
-          "description": "星期一是否營運",
-          "enum": [
-            0,
-            1
-          ],
+          "format": "int32",
+          "title": "integer",
+          "description": "星期一是否營運 : [0:'否',1:'是']",
           "type": "integer"
         },
         "Tuesday": {
-          "description": "星期二是否營運",
-          "enum": [
-            0,
-            1
-          ],
+          "format": "int32",
+          "title": "integer",
+          "description": "星期二是否營運 : [0:'否',1:'是']",
           "type": "integer"
         },
         "Wednesday": {
-          "description": "星期三是否營運",
-          "enum": [
-            0,
-            1
-          ],
+          "format": "int32",
+          "title": "integer",
+          "description": "星期三是否營運 : [0:'否',1:'是']",
           "type": "integer"
         },
         "Thursday": {
-          "description": "星期四是否營運",
-          "enum": [
-            0,
-            1
-          ],
+          "format": "int32",
+          "title": "integer",
+          "description": "星期四是否營運 : [0:'否',1:'是']",
           "type": "integer"
         },
         "Friday": {
-          "description": "星期五是否營運",
-          "enum": [
-            0,
-            1
-          ],
+          "format": "int32",
+          "title": "integer",
+          "description": "星期五是否營運 : [0:'否',1:'是']",
           "type": "integer"
         },
         "Saturday": {
-          "description": "星期六是否營運",
-          "enum": [
-            0,
-            1
-          ],
+          "format": "int32",
+          "title": "integer",
+          "description": "星期六是否營運 : [0:'否',1:'是']",
           "type": "integer"
         },
         "NationalHolidays": {
-          "description": "國定假日是否營運",
-          "enum": [
-            0,
-            1
-          ],
+          "format": "int32",
+          "title": "integer",
+          "description": "國定假日是否營運 : [0:'否',1:'是']",
           "type": "integer"
         }
       }
@@ -3494,12 +3418,9 @@
           "description": "連續特殊日期"
         },
         "ServiceStatus": {
-          "description": "營運服務狀態代碼",
-          "enum": [
-            0,
-            1,
-            2
-          ],
+          "format": "int32",
+          "title": "integer",
+          "description": "營運服務狀態代碼 : [0:'正常營運',1:'加班營運',2:'取消/停駛營運']",
           "type": "integer"
         },
         "Description": {
@@ -3590,13 +3511,9 @@
           "description": "台灣好行路線名稱"
         },
         "Direction": {
-          "description": "去返程，若無值則表示來源尚無區分去返程",
-          "enum": [
-            0,
-            1,
-            2,
-            255
-          ],
+          "format": "int32",
+          "title": "integer",
+          "description": "去返程，若無值則表示來源尚無區分去返程 : [0:'去程',1:'返程',2:'迴圈',255:'未知']",
           "type": "integer"
         },
         "Geometry": {
@@ -3627,7 +3544,8 @@
         "SubRouteID",
         "SubRouteName",
         "Direction",
-        "Stops"
+        "Stops",
+        "UpdateTime"
       ],
       "type": "object",
       "properties": {
@@ -3662,13 +3580,9 @@
           "description": "子路線名稱"
         },
         "Direction": {
-          "description": "去返程",
-          "enum": [
-            0,
-            1,
-            2,
-            255
-          ],
+          "format": "int32",
+          "title": "integer",
+          "description": "去返程 : [0:'去程',1:'返程',2:'迴圈',255:'未知']",
           "type": "integer"
         },
         "Stops": {
@@ -3677,6 +3591,11 @@
           "items": {
             "$ref": "#/definitions/Service.DTO.Version2.Bus.Stop"
           }
+        },
+        "UpdateTime": {
+          "title": "DateTime",
+          "description": "資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
         }
       }
     },
@@ -3707,12 +3626,9 @@
           "description": "站牌名稱"
         },
         "StopBoarding": {
-          "description": "上下車站別",
-          "enum": [
-            0,
-            1,
-            -1
-          ],
+          "format": "int32",
+          "title": "integer",
+          "description": "上下車站別 : [-1:'可下車',0:'可上下車',1:'可上車']",
           "type": "integer"
         },
         "StopSequence": {
@@ -3743,9 +3659,6 @@
   "tags": [
     {
       "name": "Tourism"
-    },
-    {
-      "name": "TaiwanTripBus"
     }
   ]
 }

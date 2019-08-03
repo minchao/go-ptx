@@ -13,6 +13,7 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
 	cr "github.com/go-openapi/runtime/client"
+	"github.com/go-openapi/swag"
 
 	strfmt "github.com/go-openapi/strfmt"
 )
@@ -21,7 +22,7 @@ import (
 // with the default values initialized.
 func NewTRAAPIStationTimetableParams() *TRAAPIStationTimetableParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &TRAAPIStationTimetableParams{
 		DollarTop: &dollarTopDefault,
@@ -34,7 +35,7 @@ func NewTRAAPIStationTimetableParams() *TRAAPIStationTimetableParams {
 // with the default values initialized, and the ability to set a timeout on a request
 func NewTRAAPIStationTimetableParamsWithTimeout(timeout time.Duration) *TRAAPIStationTimetableParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &TRAAPIStationTimetableParams{
 		DollarTop: &dollarTopDefault,
@@ -47,7 +48,7 @@ func NewTRAAPIStationTimetableParamsWithTimeout(timeout time.Duration) *TRAAPISt
 // with the default values initialized, and the ability to set a context for a request
 func NewTRAAPIStationTimetableParamsWithContext(ctx context.Context) *TRAAPIStationTimetableParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &TRAAPIStationTimetableParams{
 		DollarTop: &dollarTopDefault,
@@ -60,7 +61,7 @@ func NewTRAAPIStationTimetableParamsWithContext(ctx context.Context) *TRAAPIStat
 // with the default values initialized, and the ability to set a custom HTTPClient for a request
 func NewTRAAPIStationTimetableParamsWithHTTPClient(client *http.Client) *TRAAPIStationTimetableParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &TRAAPIStationTimetableParams{
 		DollarTop:  &dollarTopDefault,
@@ -102,7 +103,7 @@ type TRAAPIStationTimetableParams struct {
 	  取前幾筆
 
 	*/
-	DollarTop *string
+	DollarTop *int64
 	/*StationID
 	  車站代號
 
@@ -208,13 +209,13 @@ func (o *TRAAPIStationTimetableParams) SetDollarSkip(dollarSkip *string) {
 }
 
 // WithDollarTop adds the dollarTop to the t r a Api station timetable params
-func (o *TRAAPIStationTimetableParams) WithDollarTop(dollarTop *string) *TRAAPIStationTimetableParams {
+func (o *TRAAPIStationTimetableParams) WithDollarTop(dollarTop *int64) *TRAAPIStationTimetableParams {
 	o.SetDollarTop(dollarTop)
 	return o
 }
 
 // SetDollarTop adds the dollarTop to the t r a Api station timetable params
-func (o *TRAAPIStationTimetableParams) SetDollarTop(dollarTop *string) {
+func (o *TRAAPIStationTimetableParams) SetDollarTop(dollarTop *int64) {
 	o.DollarTop = dollarTop
 }
 
@@ -324,11 +325,11 @@ func (o *TRAAPIStationTimetableParams) WriteToRequest(r runtime.ClientRequest, r
 	if o.DollarTop != nil {
 
 		// query param $top
-		var qrDollarTop string
+		var qrDollarTop int64
 		if o.DollarTop != nil {
 			qrDollarTop = *o.DollarTop
 		}
-		qDollarTop := qrDollarTop
+		qDollarTop := swag.FormatInt64(qrDollarTop)
 		if qDollarTop != "" {
 			if err := r.SetQueryParam("$top", qDollarTop); err != nil {
 				return err

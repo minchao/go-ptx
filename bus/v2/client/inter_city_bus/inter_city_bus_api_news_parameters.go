@@ -13,6 +13,7 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
 	cr "github.com/go-openapi/runtime/client"
+	"github.com/go-openapi/swag"
 
 	strfmt "github.com/go-openapi/strfmt"
 )
@@ -21,7 +22,7 @@ import (
 // with the default values initialized.
 func NewInterCityBusAPINewsParams() *InterCityBusAPINewsParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &InterCityBusAPINewsParams{
 		DollarTop: &dollarTopDefault,
@@ -34,7 +35,7 @@ func NewInterCityBusAPINewsParams() *InterCityBusAPINewsParams {
 // with the default values initialized, and the ability to set a timeout on a request
 func NewInterCityBusAPINewsParamsWithTimeout(timeout time.Duration) *InterCityBusAPINewsParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &InterCityBusAPINewsParams{
 		DollarTop: &dollarTopDefault,
@@ -47,7 +48,7 @@ func NewInterCityBusAPINewsParamsWithTimeout(timeout time.Duration) *InterCityBu
 // with the default values initialized, and the ability to set a context for a request
 func NewInterCityBusAPINewsParamsWithContext(ctx context.Context) *InterCityBusAPINewsParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &InterCityBusAPINewsParams{
 		DollarTop: &dollarTopDefault,
@@ -60,7 +61,7 @@ func NewInterCityBusAPINewsParamsWithContext(ctx context.Context) *InterCityBusA
 // with the default values initialized, and the ability to set a custom HTTPClient for a request
 func NewInterCityBusAPINewsParamsWithHTTPClient(client *http.Client) *InterCityBusAPINewsParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &InterCityBusAPINewsParams{
 		DollarTop:  &dollarTopDefault,
@@ -102,7 +103,7 @@ type InterCityBusAPINewsParams struct {
 	  取前幾筆
 
 	*/
-	DollarTop *string
+	DollarTop *int64
 
 	timeout    time.Duration
 	Context    context.Context
@@ -198,13 +199,13 @@ func (o *InterCityBusAPINewsParams) SetDollarSkip(dollarSkip *string) {
 }
 
 // WithDollarTop adds the dollarTop to the inter city bus Api news params
-func (o *InterCityBusAPINewsParams) WithDollarTop(dollarTop *string) *InterCityBusAPINewsParams {
+func (o *InterCityBusAPINewsParams) WithDollarTop(dollarTop *int64) *InterCityBusAPINewsParams {
 	o.SetDollarTop(dollarTop)
 	return o
 }
 
 // SetDollarTop adds the dollarTop to the inter city bus Api news params
-func (o *InterCityBusAPINewsParams) SetDollarTop(dollarTop *string) {
+func (o *InterCityBusAPINewsParams) SetDollarTop(dollarTop *int64) {
 	o.DollarTop = dollarTop
 }
 
@@ -292,11 +293,11 @@ func (o *InterCityBusAPINewsParams) WriteToRequest(r runtime.ClientRequest, reg 
 	if o.DollarTop != nil {
 
 		// query param $top
-		var qrDollarTop string
+		var qrDollarTop int64
 		if o.DollarTop != nil {
 			qrDollarTop = *o.DollarTop
 		}
-		qDollarTop := qrDollarTop
+		qDollarTop := swag.FormatInt64(qrDollarTop)
 		if qDollarTop != "" {
 			if err := r.SetQueryParam("$top", qDollarTop); err != nil {
 				return err

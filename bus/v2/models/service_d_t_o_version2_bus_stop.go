@@ -6,8 +6,6 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	"encoding/json"
-
 	strfmt "github.com/go-openapi/strfmt"
 
 	"github.com/go-openapi/errors"
@@ -31,9 +29,10 @@ type ServiceDTOVersion2BusStop struct {
 	// Required: true
 	StationNameID *string `json:"StationNameID"`
 
-	// 上下車站別
-	// Enum: [0 1 -1]
-	StopBoarding int64 `json:"StopBoarding,omitempty"`
+	// integer
+	//
+	// 上下車站別 : [-1:'可下車',0:'可上下車',1:'可上車']
+	StopBoarding int32 `json:"StopBoarding,omitempty"`
 
 	// 地區既用中之站牌代碼(為原資料內碼)
 	// Required: true
@@ -68,10 +67,6 @@ func (m *ServiceDTOVersion2BusStop) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
-	if err := m.validateStopBoarding(formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.validateStopID(formats); err != nil {
 		res = append(res, err)
 	}
@@ -101,40 +96,6 @@ func (m *ServiceDTOVersion2BusStop) Validate(formats strfmt.Registry) error {
 func (m *ServiceDTOVersion2BusStop) validateStationNameID(formats strfmt.Registry) error {
 
 	if err := validate.Required("StationNameID", "body", m.StationNameID); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-var serviceDTOVersion2BusStopTypeStopBoardingPropEnum []interface{}
-
-func init() {
-	var res []int64
-	if err := json.Unmarshal([]byte(`[0,1,-1]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		serviceDTOVersion2BusStopTypeStopBoardingPropEnum = append(serviceDTOVersion2BusStopTypeStopBoardingPropEnum, v)
-	}
-}
-
-// prop value enum
-func (m *ServiceDTOVersion2BusStop) validateStopBoardingEnum(path, location string, value int64) error {
-	if err := validate.Enum(path, location, value, serviceDTOVersion2BusStopTypeStopBoardingPropEnum); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (m *ServiceDTOVersion2BusStop) validateStopBoarding(formats strfmt.Registry) error {
-
-	if swag.IsZero(m.StopBoarding) { // not required
-		return nil
-	}
-
-	// value enum
-	if err := m.validateStopBoardingEnum("StopBoarding", "body", m.StopBoarding); err != nil {
 		return err
 	}
 

@@ -13,6 +13,7 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
 	cr "github.com/go-openapi/runtime/client"
+	"github.com/go-openapi/swag"
 
 	strfmt "github.com/go-openapi/strfmt"
 )
@@ -21,7 +22,7 @@ import (
 // with the default values initialized.
 func NewAirAPIFIDS1Params() *AirAPIFIDS1Params {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &AirAPIFIDS1Params{
 		DollarTop: &dollarTopDefault,
@@ -34,7 +35,7 @@ func NewAirAPIFIDS1Params() *AirAPIFIDS1Params {
 // with the default values initialized, and the ability to set a timeout on a request
 func NewAirAPIFIDS1ParamsWithTimeout(timeout time.Duration) *AirAPIFIDS1Params {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &AirAPIFIDS1Params{
 		DollarTop: &dollarTopDefault,
@@ -47,7 +48,7 @@ func NewAirAPIFIDS1ParamsWithTimeout(timeout time.Duration) *AirAPIFIDS1Params {
 // with the default values initialized, and the ability to set a context for a request
 func NewAirAPIFIDS1ParamsWithContext(ctx context.Context) *AirAPIFIDS1Params {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &AirAPIFIDS1Params{
 		DollarTop: &dollarTopDefault,
@@ -60,7 +61,7 @@ func NewAirAPIFIDS1ParamsWithContext(ctx context.Context) *AirAPIFIDS1Params {
 // with the default values initialized, and the ability to set a custom HTTPClient for a request
 func NewAirAPIFIDS1ParamsWithHTTPClient(client *http.Client) *AirAPIFIDS1Params {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &AirAPIFIDS1Params{
 		DollarTop:  &dollarTopDefault,
@@ -102,7 +103,7 @@ type AirAPIFIDS1Params struct {
 	  取前幾筆
 
 	*/
-	DollarTop *string
+	DollarTop *int64
 	/*IATA
 	  機場代碼
 
@@ -203,13 +204,13 @@ func (o *AirAPIFIDS1Params) SetDollarSkip(dollarSkip *string) {
 }
 
 // WithDollarTop adds the dollarTop to the air Api f ID s 1 params
-func (o *AirAPIFIDS1Params) WithDollarTop(dollarTop *string) *AirAPIFIDS1Params {
+func (o *AirAPIFIDS1Params) WithDollarTop(dollarTop *int64) *AirAPIFIDS1Params {
 	o.SetDollarTop(dollarTop)
 	return o
 }
 
 // SetDollarTop adds the dollarTop to the air Api f ID s 1 params
-func (o *AirAPIFIDS1Params) SetDollarTop(dollarTop *string) {
+func (o *AirAPIFIDS1Params) SetDollarTop(dollarTop *int64) {
 	o.DollarTop = dollarTop
 }
 
@@ -308,11 +309,11 @@ func (o *AirAPIFIDS1Params) WriteToRequest(r runtime.ClientRequest, reg strfmt.R
 	if o.DollarTop != nil {
 
 		// query param $top
-		var qrDollarTop string
+		var qrDollarTop int64
 		if o.DollarTop != nil {
 			qrDollarTop = *o.DollarTop
 		}
-		qDollarTop := qrDollarTop
+		qDollarTop := swag.FormatInt64(qrDollarTop)
 		if qDollarTop != "" {
 			if err := r.SetQueryParam("$top", qDollarTop); err != nil {
 				return err

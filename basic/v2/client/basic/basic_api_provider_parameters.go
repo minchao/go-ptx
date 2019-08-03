@@ -13,6 +13,7 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
 	cr "github.com/go-openapi/runtime/client"
+	"github.com/go-openapi/swag"
 
 	strfmt "github.com/go-openapi/strfmt"
 )
@@ -21,7 +22,7 @@ import (
 // with the default values initialized.
 func NewBasicAPIProviderParams() *BasicAPIProviderParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &BasicAPIProviderParams{
 		DollarTop: &dollarTopDefault,
@@ -34,7 +35,7 @@ func NewBasicAPIProviderParams() *BasicAPIProviderParams {
 // with the default values initialized, and the ability to set a timeout on a request
 func NewBasicAPIProviderParamsWithTimeout(timeout time.Duration) *BasicAPIProviderParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &BasicAPIProviderParams{
 		DollarTop: &dollarTopDefault,
@@ -47,7 +48,7 @@ func NewBasicAPIProviderParamsWithTimeout(timeout time.Duration) *BasicAPIProvid
 // with the default values initialized, and the ability to set a context for a request
 func NewBasicAPIProviderParamsWithContext(ctx context.Context) *BasicAPIProviderParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &BasicAPIProviderParams{
 		DollarTop: &dollarTopDefault,
@@ -60,7 +61,7 @@ func NewBasicAPIProviderParamsWithContext(ctx context.Context) *BasicAPIProvider
 // with the default values initialized, and the ability to set a custom HTTPClient for a request
 func NewBasicAPIProviderParamsWithHTTPClient(client *http.Client) *BasicAPIProviderParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &BasicAPIProviderParams{
 		DollarTop:  &dollarTopDefault,
@@ -102,7 +103,7 @@ type BasicAPIProviderParams struct {
 	  取前幾筆
 
 	*/
-	DollarTop *string
+	DollarTop *int64
 
 	timeout    time.Duration
 	Context    context.Context
@@ -198,13 +199,13 @@ func (o *BasicAPIProviderParams) SetDollarSkip(dollarSkip *string) {
 }
 
 // WithDollarTop adds the dollarTop to the basic Api provider params
-func (o *BasicAPIProviderParams) WithDollarTop(dollarTop *string) *BasicAPIProviderParams {
+func (o *BasicAPIProviderParams) WithDollarTop(dollarTop *int64) *BasicAPIProviderParams {
 	o.SetDollarTop(dollarTop)
 	return o
 }
 
 // SetDollarTop adds the dollarTop to the basic Api provider params
-func (o *BasicAPIProviderParams) SetDollarTop(dollarTop *string) {
+func (o *BasicAPIProviderParams) SetDollarTop(dollarTop *int64) {
 	o.DollarTop = dollarTop
 }
 
@@ -292,11 +293,11 @@ func (o *BasicAPIProviderParams) WriteToRequest(r runtime.ClientRequest, reg str
 	if o.DollarTop != nil {
 
 		// query param $top
-		var qrDollarTop string
+		var qrDollarTop int64
 		if o.DollarTop != nil {
 			qrDollarTop = *o.DollarTop
 		}
-		qDollarTop := qrDollarTop
+		qDollarTop := swag.FormatInt64(qrDollarTop)
 		if qDollarTop != "" {
 			if err := r.SetQueryParam("$top", qDollarTop); err != nil {
 				return err

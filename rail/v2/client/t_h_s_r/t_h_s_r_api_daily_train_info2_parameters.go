@@ -13,6 +13,7 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
 	cr "github.com/go-openapi/runtime/client"
+	"github.com/go-openapi/swag"
 
 	strfmt "github.com/go-openapi/strfmt"
 )
@@ -21,7 +22,7 @@ import (
 // with the default values initialized.
 func NewTHSRAPIDailyTrainInfo2Params() *THSRAPIDailyTrainInfo2Params {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &THSRAPIDailyTrainInfo2Params{
 		DollarTop: &dollarTopDefault,
@@ -34,7 +35,7 @@ func NewTHSRAPIDailyTrainInfo2Params() *THSRAPIDailyTrainInfo2Params {
 // with the default values initialized, and the ability to set a timeout on a request
 func NewTHSRAPIDailyTrainInfo2ParamsWithTimeout(timeout time.Duration) *THSRAPIDailyTrainInfo2Params {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &THSRAPIDailyTrainInfo2Params{
 		DollarTop: &dollarTopDefault,
@@ -47,7 +48,7 @@ func NewTHSRAPIDailyTrainInfo2ParamsWithTimeout(timeout time.Duration) *THSRAPID
 // with the default values initialized, and the ability to set a context for a request
 func NewTHSRAPIDailyTrainInfo2ParamsWithContext(ctx context.Context) *THSRAPIDailyTrainInfo2Params {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &THSRAPIDailyTrainInfo2Params{
 		DollarTop: &dollarTopDefault,
@@ -60,7 +61,7 @@ func NewTHSRAPIDailyTrainInfo2ParamsWithContext(ctx context.Context) *THSRAPIDai
 // with the default values initialized, and the ability to set a custom HTTPClient for a request
 func NewTHSRAPIDailyTrainInfo2ParamsWithHTTPClient(client *http.Client) *THSRAPIDailyTrainInfo2Params {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &THSRAPIDailyTrainInfo2Params{
 		DollarTop:  &dollarTopDefault,
@@ -102,7 +103,7 @@ type THSRAPIDailyTrainInfo2Params struct {
 	  取前幾筆
 
 	*/
-	DollarTop *string
+	DollarTop *int64
 	/*TrainDate
 	  欲查詢車次的日期(格式: yyyy-MM-dd)
 
@@ -203,13 +204,13 @@ func (o *THSRAPIDailyTrainInfo2Params) SetDollarSkip(dollarSkip *string) {
 }
 
 // WithDollarTop adds the dollarTop to the t h s r Api daily train info 2 params
-func (o *THSRAPIDailyTrainInfo2Params) WithDollarTop(dollarTop *string) *THSRAPIDailyTrainInfo2Params {
+func (o *THSRAPIDailyTrainInfo2Params) WithDollarTop(dollarTop *int64) *THSRAPIDailyTrainInfo2Params {
 	o.SetDollarTop(dollarTop)
 	return o
 }
 
 // SetDollarTop adds the dollarTop to the t h s r Api daily train info 2 params
-func (o *THSRAPIDailyTrainInfo2Params) SetDollarTop(dollarTop *string) {
+func (o *THSRAPIDailyTrainInfo2Params) SetDollarTop(dollarTop *int64) {
 	o.DollarTop = dollarTop
 }
 
@@ -308,11 +309,11 @@ func (o *THSRAPIDailyTrainInfo2Params) WriteToRequest(r runtime.ClientRequest, r
 	if o.DollarTop != nil {
 
 		// query param $top
-		var qrDollarTop string
+		var qrDollarTop int64
 		if o.DollarTop != nil {
 			qrDollarTop = *o.DollarTop
 		}
-		qDollarTop := qrDollarTop
+		qDollarTop := swag.FormatInt64(qrDollarTop)
 		if qDollarTop != "" {
 			if err := r.SetQueryParam("$top", qDollarTop); err != nil {
 				return err

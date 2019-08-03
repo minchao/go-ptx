@@ -6,8 +6,6 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	"encoding/json"
-
 	strfmt "github.com/go-openapi/strfmt"
 
 	"github.com/go-openapi/errors"
@@ -32,10 +30,11 @@ type ServiceDTOVersion2RailTRARailStation struct {
 	// Required: true
 	StationAddress *string `json:"StationAddress"`
 
-	// 車站級別
+	// integer
+	//
+	// 車站級別 : [0:'特等站',1:'一等站',2:'二等站',3:'三等站',4:'簡易站',5:'招呼站',6:'未知']
 	// Required: true
-	// Enum: [0 1 2 3 4 5 6]
-	StationClass *int64 `json:"StationClass"`
+	StationClass *int32 `json:"StationClass"`
 
 	// 車站代碼
 	// Required: true
@@ -135,34 +134,9 @@ func (m *ServiceDTOVersion2RailTRARailStation) validateStationAddress(formats st
 	return nil
 }
 
-var serviceDTOVersion2RailTRARailStationTypeStationClassPropEnum []interface{}
-
-func init() {
-	var res []int64
-	if err := json.Unmarshal([]byte(`[0,1,2,3,4,5,6]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		serviceDTOVersion2RailTRARailStationTypeStationClassPropEnum = append(serviceDTOVersion2RailTRARailStationTypeStationClassPropEnum, v)
-	}
-}
-
-// prop value enum
-func (m *ServiceDTOVersion2RailTRARailStation) validateStationClassEnum(path, location string, value int64) error {
-	if err := validate.Enum(path, location, value, serviceDTOVersion2RailTRARailStationTypeStationClassPropEnum); err != nil {
-		return err
-	}
-	return nil
-}
-
 func (m *ServiceDTOVersion2RailTRARailStation) validateStationClass(formats strfmt.Registry) error {
 
 	if err := validate.Required("StationClass", "body", m.StationClass); err != nil {
-		return err
-	}
-
-	// value enum
-	if err := m.validateStationClassEnum("StationClass", "body", *m.StationClass); err != nil {
 		return err
 	}
 

@@ -11,7 +11,6 @@ import (
 
 	strfmt "github.com/go-openapi/strfmt"
 
-	"github.com/minchao/go-ptx/tourism/v2/client/taiwan_trip_bus"
 	"github.com/minchao/go-ptx/tourism/v2/client/tourism"
 )
 
@@ -57,8 +56,6 @@ func New(transport runtime.ClientTransport, formats strfmt.Registry) *MOTCTransp
 
 	cli := new(MOTCTransportAPIV2)
 	cli.Transport = transport
-
-	cli.TaiwanTripBus = taiwan_trip_bus.New(transport, formats)
 
 	cli.Tourism = tourism.New(transport, formats)
 
@@ -106,8 +103,6 @@ func (cfg *TransportConfig) WithSchemes(schemes []string) *TransportConfig {
 
 // MOTCTransportAPIV2 is a client for m o t c transport API v2
 type MOTCTransportAPIV2 struct {
-	TaiwanTripBus *taiwan_trip_bus.Client
-
 	Tourism *tourism.Client
 
 	Transport runtime.ClientTransport
@@ -116,8 +111,6 @@ type MOTCTransportAPIV2 struct {
 // SetTransport changes the transport on the client and all its subresources
 func (c *MOTCTransportAPIV2) SetTransport(transport runtime.ClientTransport) {
 	c.Transport = transport
-
-	c.TaiwanTripBus.SetTransport(transport)
 
 	c.Tourism.SetTransport(transport)
 

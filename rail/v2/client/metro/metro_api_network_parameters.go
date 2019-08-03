@@ -13,6 +13,7 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
 	cr "github.com/go-openapi/runtime/client"
+	"github.com/go-openapi/swag"
 
 	strfmt "github.com/go-openapi/strfmt"
 )
@@ -21,7 +22,7 @@ import (
 // with the default values initialized.
 func NewMetroAPINetworkParams() *MetroAPINetworkParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &MetroAPINetworkParams{
 		DollarTop: &dollarTopDefault,
@@ -34,7 +35,7 @@ func NewMetroAPINetworkParams() *MetroAPINetworkParams {
 // with the default values initialized, and the ability to set a timeout on a request
 func NewMetroAPINetworkParamsWithTimeout(timeout time.Duration) *MetroAPINetworkParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &MetroAPINetworkParams{
 		DollarTop: &dollarTopDefault,
@@ -47,7 +48,7 @@ func NewMetroAPINetworkParamsWithTimeout(timeout time.Duration) *MetroAPINetwork
 // with the default values initialized, and the ability to set a context for a request
 func NewMetroAPINetworkParamsWithContext(ctx context.Context) *MetroAPINetworkParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &MetroAPINetworkParams{
 		DollarTop: &dollarTopDefault,
@@ -60,7 +61,7 @@ func NewMetroAPINetworkParamsWithContext(ctx context.Context) *MetroAPINetworkPa
 // with the default values initialized, and the ability to set a custom HTTPClient for a request
 func NewMetroAPINetworkParamsWithHTTPClient(client *http.Client) *MetroAPINetworkParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &MetroAPINetworkParams{
 		DollarTop:  &dollarTopDefault,
@@ -102,7 +103,12 @@ type MetroAPINetworkParams struct {
 	  取前幾筆
 
 	*/
-	DollarTop *string
+	DollarTop *int64
+	/*Operator
+	  欲查詢縣市
+
+	*/
+	Operator string
 
 	timeout    time.Duration
 	Context    context.Context
@@ -198,14 +204,25 @@ func (o *MetroAPINetworkParams) SetDollarSkip(dollarSkip *string) {
 }
 
 // WithDollarTop adds the dollarTop to the metro Api network params
-func (o *MetroAPINetworkParams) WithDollarTop(dollarTop *string) *MetroAPINetworkParams {
+func (o *MetroAPINetworkParams) WithDollarTop(dollarTop *int64) *MetroAPINetworkParams {
 	o.SetDollarTop(dollarTop)
 	return o
 }
 
 // SetDollarTop adds the dollarTop to the metro Api network params
-func (o *MetroAPINetworkParams) SetDollarTop(dollarTop *string) {
+func (o *MetroAPINetworkParams) SetDollarTop(dollarTop *int64) {
 	o.DollarTop = dollarTop
+}
+
+// WithOperator adds the operator to the metro Api network params
+func (o *MetroAPINetworkParams) WithOperator(operator string) *MetroAPINetworkParams {
+	o.SetOperator(operator)
+	return o
+}
+
+// SetOperator adds the operator to the metro Api network params
+func (o *MetroAPINetworkParams) SetOperator(operator string) {
+	o.Operator = operator
 }
 
 // WriteToRequest writes these params to a swagger request
@@ -292,17 +309,22 @@ func (o *MetroAPINetworkParams) WriteToRequest(r runtime.ClientRequest, reg strf
 	if o.DollarTop != nil {
 
 		// query param $top
-		var qrDollarTop string
+		var qrDollarTop int64
 		if o.DollarTop != nil {
 			qrDollarTop = *o.DollarTop
 		}
-		qDollarTop := qrDollarTop
+		qDollarTop := swag.FormatInt64(qrDollarTop)
 		if qDollarTop != "" {
 			if err := r.SetQueryParam("$top", qDollarTop); err != nil {
 				return err
 			}
 		}
 
+	}
+
+	// path param Operator
+	if err := r.SetPathParam("Operator", o.Operator); err != nil {
+		return err
 	}
 
 	if len(res) > 0 {

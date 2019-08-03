@@ -6,8 +6,6 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	"encoding/json"
-
 	strfmt "github.com/go-openapi/strfmt"
 
 	"github.com/go-openapi/errors"
@@ -29,10 +27,11 @@ type ServiceDTOVersion2RailTHSRRailStationTimetable struct {
 	// Required: true
 	DepartureTime *string `json:"DepartureTime"`
 
-	// 順逆行
+	// integer
+	//
+	// 順逆行 : [0:'南下',1:'北上']
 	// Required: true
-	// Enum: [0 1]
-	Direction *int64 `json:"Direction"`
+	Direction *int32 `json:"Direction"`
 
 	// 終點車站代號
 	// Required: true
@@ -159,34 +158,9 @@ func (m *ServiceDTOVersion2RailTHSRRailStationTimetable) validateDepartureTime(f
 	return nil
 }
 
-var serviceDTOVersion2RailTHSRRailStationTimetableTypeDirectionPropEnum []interface{}
-
-func init() {
-	var res []int64
-	if err := json.Unmarshal([]byte(`[0,1]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		serviceDTOVersion2RailTHSRRailStationTimetableTypeDirectionPropEnum = append(serviceDTOVersion2RailTHSRRailStationTimetableTypeDirectionPropEnum, v)
-	}
-}
-
-// prop value enum
-func (m *ServiceDTOVersion2RailTHSRRailStationTimetable) validateDirectionEnum(path, location string, value int64) error {
-	if err := validate.Enum(path, location, value, serviceDTOVersion2RailTHSRRailStationTimetableTypeDirectionPropEnum); err != nil {
-		return err
-	}
-	return nil
-}
-
 func (m *ServiceDTOVersion2RailTHSRRailStationTimetable) validateDirection(formats strfmt.Registry) error {
 
 	if err := validate.Required("Direction", "body", m.Direction); err != nil {
-		return err
-	}
-
-	// value enum
-	if err := m.validateDirectionEnum("Direction", "body", *m.Direction); err != nil {
 		return err
 	}
 

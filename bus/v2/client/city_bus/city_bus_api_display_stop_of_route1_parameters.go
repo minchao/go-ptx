@@ -13,6 +13,7 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
 	cr "github.com/go-openapi/runtime/client"
+	"github.com/go-openapi/swag"
 
 	strfmt "github.com/go-openapi/strfmt"
 )
@@ -21,7 +22,7 @@ import (
 // with the default values initialized.
 func NewCityBusAPIDisplayStopOfRoute1Params() *CityBusAPIDisplayStopOfRoute1Params {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &CityBusAPIDisplayStopOfRoute1Params{
 		DollarTop: &dollarTopDefault,
@@ -34,7 +35,7 @@ func NewCityBusAPIDisplayStopOfRoute1Params() *CityBusAPIDisplayStopOfRoute1Para
 // with the default values initialized, and the ability to set a timeout on a request
 func NewCityBusAPIDisplayStopOfRoute1ParamsWithTimeout(timeout time.Duration) *CityBusAPIDisplayStopOfRoute1Params {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &CityBusAPIDisplayStopOfRoute1Params{
 		DollarTop: &dollarTopDefault,
@@ -47,7 +48,7 @@ func NewCityBusAPIDisplayStopOfRoute1ParamsWithTimeout(timeout time.Duration) *C
 // with the default values initialized, and the ability to set a context for a request
 func NewCityBusAPIDisplayStopOfRoute1ParamsWithContext(ctx context.Context) *CityBusAPIDisplayStopOfRoute1Params {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &CityBusAPIDisplayStopOfRoute1Params{
 		DollarTop: &dollarTopDefault,
@@ -60,7 +61,7 @@ func NewCityBusAPIDisplayStopOfRoute1ParamsWithContext(ctx context.Context) *Cit
 // with the default values initialized, and the ability to set a custom HTTPClient for a request
 func NewCityBusAPIDisplayStopOfRoute1ParamsWithHTTPClient(client *http.Client) *CityBusAPIDisplayStopOfRoute1Params {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &CityBusAPIDisplayStopOfRoute1Params{
 		DollarTop:  &dollarTopDefault,
@@ -102,7 +103,7 @@ type CityBusAPIDisplayStopOfRoute1Params struct {
 	  取前幾筆
 
 	*/
-	DollarTop *string
+	DollarTop *int64
 	/*City
 	  欲查詢縣市
 
@@ -208,13 +209,13 @@ func (o *CityBusAPIDisplayStopOfRoute1Params) SetDollarSkip(dollarSkip *string) 
 }
 
 // WithDollarTop adds the dollarTop to the city bus Api display stop of route 1 params
-func (o *CityBusAPIDisplayStopOfRoute1Params) WithDollarTop(dollarTop *string) *CityBusAPIDisplayStopOfRoute1Params {
+func (o *CityBusAPIDisplayStopOfRoute1Params) WithDollarTop(dollarTop *int64) *CityBusAPIDisplayStopOfRoute1Params {
 	o.SetDollarTop(dollarTop)
 	return o
 }
 
 // SetDollarTop adds the dollarTop to the city bus Api display stop of route 1 params
-func (o *CityBusAPIDisplayStopOfRoute1Params) SetDollarTop(dollarTop *string) {
+func (o *CityBusAPIDisplayStopOfRoute1Params) SetDollarTop(dollarTop *int64) {
 	o.DollarTop = dollarTop
 }
 
@@ -324,11 +325,11 @@ func (o *CityBusAPIDisplayStopOfRoute1Params) WriteToRequest(r runtime.ClientReq
 	if o.DollarTop != nil {
 
 		// query param $top
-		var qrDollarTop string
+		var qrDollarTop int64
 		if o.DollarTop != nil {
 			qrDollarTop = *o.DollarTop
 		}
-		qDollarTop := qrDollarTop
+		qDollarTop := swag.FormatInt64(qrDollarTop)
 		if qDollarTop != "" {
 			if err := r.SetQueryParam("$top", qDollarTop); err != nil {
 				return err

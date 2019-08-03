@@ -23,6 +23,9 @@ type ServiceDTOVersion2RailTRALine struct {
 	// Required: true
 	IsBranch *bool `json:"IsBranch"`
 
+	// 路線顏色
+	LineColor string `json:"LineColor,omitempty"`
+
 	// 路線代碼
 	// Required: true
 	LineID *string `json:"LineID"`

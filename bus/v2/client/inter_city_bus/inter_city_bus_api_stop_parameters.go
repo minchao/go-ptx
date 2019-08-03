@@ -13,6 +13,7 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
 	cr "github.com/go-openapi/runtime/client"
+	"github.com/go-openapi/swag"
 
 	strfmt "github.com/go-openapi/strfmt"
 )
@@ -21,7 +22,7 @@ import (
 // with the default values initialized.
 func NewInterCityBusAPIStopParams() *InterCityBusAPIStopParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &InterCityBusAPIStopParams{
 		DollarTop: &dollarTopDefault,
@@ -34,7 +35,7 @@ func NewInterCityBusAPIStopParams() *InterCityBusAPIStopParams {
 // with the default values initialized, and the ability to set a timeout on a request
 func NewInterCityBusAPIStopParamsWithTimeout(timeout time.Duration) *InterCityBusAPIStopParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &InterCityBusAPIStopParams{
 		DollarTop: &dollarTopDefault,
@@ -47,7 +48,7 @@ func NewInterCityBusAPIStopParamsWithTimeout(timeout time.Duration) *InterCityBu
 // with the default values initialized, and the ability to set a context for a request
 func NewInterCityBusAPIStopParamsWithContext(ctx context.Context) *InterCityBusAPIStopParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &InterCityBusAPIStopParams{
 		DollarTop: &dollarTopDefault,
@@ -60,7 +61,7 @@ func NewInterCityBusAPIStopParamsWithContext(ctx context.Context) *InterCityBusA
 // with the default values initialized, and the ability to set a custom HTTPClient for a request
 func NewInterCityBusAPIStopParamsWithHTTPClient(client *http.Client) *InterCityBusAPIStopParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &InterCityBusAPIStopParams{
 		DollarTop:  &dollarTopDefault,
@@ -107,7 +108,7 @@ type InterCityBusAPIStopParams struct {
 	  取前幾筆
 
 	*/
-	DollarTop *string
+	DollarTop *int64
 
 	timeout    time.Duration
 	Context    context.Context
@@ -214,13 +215,13 @@ func (o *InterCityBusAPIStopParams) SetDollarSpatialFilter(dollarSpatialFilter *
 }
 
 // WithDollarTop adds the dollarTop to the inter city bus Api stop params
-func (o *InterCityBusAPIStopParams) WithDollarTop(dollarTop *string) *InterCityBusAPIStopParams {
+func (o *InterCityBusAPIStopParams) WithDollarTop(dollarTop *int64) *InterCityBusAPIStopParams {
 	o.SetDollarTop(dollarTop)
 	return o
 }
 
 // SetDollarTop adds the dollarTop to the inter city bus Api stop params
-func (o *InterCityBusAPIStopParams) SetDollarTop(dollarTop *string) {
+func (o *InterCityBusAPIStopParams) SetDollarTop(dollarTop *int64) {
 	o.DollarTop = dollarTop
 }
 
@@ -324,11 +325,11 @@ func (o *InterCityBusAPIStopParams) WriteToRequest(r runtime.ClientRequest, reg 
 	if o.DollarTop != nil {
 
 		// query param $top
-		var qrDollarTop string
+		var qrDollarTop int64
 		if o.DollarTop != nil {
 			qrDollarTop = *o.DollarTop
 		}
-		qDollarTop := qrDollarTop
+		qDollarTop := swag.FormatInt64(qrDollarTop)
 		if qDollarTop != "" {
 			if err := r.SetQueryParam("$top", qDollarTop); err != nil {
 				return err

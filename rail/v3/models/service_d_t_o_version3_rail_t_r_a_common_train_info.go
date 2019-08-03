@@ -6,8 +6,6 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	"encoding/json"
-
 	strfmt "github.com/go-openapi/strfmt"
 
 	"github.com/go-openapi/errors"
@@ -21,35 +19,41 @@ import (
 // swagger:model Service.DTO.Version3.Rail.TRA.Common.TrainInfo
 type ServiceDTOVersion3RailTRACommonTrainInfo struct {
 
-	// 是否人車同行班次(置於攜車袋之自行車各級列車均可乘車)
+	// integer
+	//
+	// 是否人車同行班次(置於攜車袋之自行車各級列車均可乘車) : [0:'否',1:'是']
 	// Required: true
-	// Enum: [0 1]
-	BikeFlag *int64 `json:"BikeFlag"`
+	BikeFlag *int32 `json:"BikeFlag"`
 
-	// 是否設有哺(集)乳室車廂
+	// integer
+	//
+	// 是否設有哺(集)乳室車廂 : [0:'否',1:'是']
 	// Required: true
-	// Enum: [0 1]
-	BreastFeedFlag *int64 `json:"BreastFeedFlag"`
+	BreastFeedFlag *int32 `json:"BreastFeedFlag"`
 
-	// 是否提供小客車
+	// integer
+	//
+	// 是否提供小客車 : [0:'否',1:'是']
 	// Required: true
-	// Enum: [0 1]
-	CarFlag *int64 `json:"CarFlag"`
+	CarFlag *int32 `json:"CarFlag"`
 
-	// 是否為每日行駛
+	// integer
+	//
+	// 是否為每日行駛 : [0:'否',1:'是']
 	// Required: true
-	// Enum: [0 1]
-	DailyFlag *int64 `json:"DailyFlag"`
+	DailyFlag *int32 `json:"DailyFlag"`
 
-	// 是否提供餐車服務
+	// integer
+	//
+	// 是否提供餐車服務 : [0:'否',1:'是']
 	// Required: true
-	// Enum: [0 1]
-	DiningFlag *int64 `json:"DiningFlag"`
+	DiningFlag *int32 `json:"DiningFlag"`
 
-	// 行駛方向
+	// integer
+	//
+	// 行駛方向 : [0:'順行',1:'逆行']
 	// Required: true
-	// Enum: [0 1]
-	Direction *int64 `json:"Direction"`
+	Direction *int32 `json:"Direction"`
 
 	// 列車終點車站代號
 	EndingStationID string `json:"EndingStationID,omitempty"`
@@ -59,10 +63,11 @@ type ServiceDTOVersion3RailTRACommonTrainInfo struct {
 	// 列車終點車站名稱
 	EndingStationName *ServiceDTOVersion3BaseNameType `json:"EndingStationName,omitempty"`
 
-	// 是否為加班車
+	// integer
+	//
+	// 是否為加班車 : [0:'否',1:'是']
 	// Required: true
-	// Enum: [0 1]
-	ExtraTrainFlag *int64 `json:"ExtraTrainFlag"`
+	ExtraTrainFlag *int32 `json:"ExtraTrainFlag"`
 
 	// 附註說明
 	Note string `json:"Note,omitempty"`
@@ -70,10 +75,11 @@ type ServiceDTOVersion3RailTRACommonTrainInfo struct {
 	// 跨夜車站代碼
 	OverNightStationID string `json:"OverNightStationID,omitempty"`
 
-	// 是否提供行李服務
+	// integer
+	//
+	// 是否提供行李服務 : [0:'否',1:'是']
 	// Required: true
-	// Enum: [0 1]
-	PackageServiceFlag *int64 `json:"PackageServiceFlag"`
+	PackageServiceFlag *int32 `json:"PackageServiceFlag"`
 
 	// 營運路線代碼
 	RouteID string `json:"RouteID,omitempty"`
@@ -104,14 +110,16 @@ type ServiceDTOVersion3RailTRACommonTrainInfo struct {
 	// 車次之目的地方向描述
 	TripHeadSign string `json:"TripHeadSign,omitempty"`
 
-	// 山海線類型
-	// Enum: [0 1 2]
-	TripLine int64 `json:"TripLine,omitempty"`
+	// integer
+	//
+	// 山海線類型 : [0:'不經山海線',1:'山線',2:'海線']
+	TripLine int32 `json:"TripLine,omitempty"`
 
-	// 是否設身障旅客專用座位車
+	// integer
+	//
+	// 是否設身障旅客專用座位車 : [0:'否',1:'是']
 	// Required: true
-	// Enum: [0 1]
-	WheelChairFlag *int64 `json:"WheelChairFlag"`
+	WheelChairFlag *int32 `json:"WheelChairFlag"`
 }
 
 // Validate validates this service d t o version3 rail t r a common train info
@@ -166,10 +174,6 @@ func (m *ServiceDTOVersion3RailTRACommonTrainInfo) Validate(formats strfmt.Regis
 		res = append(res, err)
 	}
 
-	if err := m.validateTripLine(formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.validateWheelChairFlag(formats); err != nil {
 		res = append(res, err)
 	}
@@ -180,57 +184,12 @@ func (m *ServiceDTOVersion3RailTRACommonTrainInfo) Validate(formats strfmt.Regis
 	return nil
 }
 
-var serviceDTOVersion3RailTRACommonTrainInfoTypeBikeFlagPropEnum []interface{}
-
-func init() {
-	var res []int64
-	if err := json.Unmarshal([]byte(`[0,1]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		serviceDTOVersion3RailTRACommonTrainInfoTypeBikeFlagPropEnum = append(serviceDTOVersion3RailTRACommonTrainInfoTypeBikeFlagPropEnum, v)
-	}
-}
-
-// prop value enum
-func (m *ServiceDTOVersion3RailTRACommonTrainInfo) validateBikeFlagEnum(path, location string, value int64) error {
-	if err := validate.Enum(path, location, value, serviceDTOVersion3RailTRACommonTrainInfoTypeBikeFlagPropEnum); err != nil {
-		return err
-	}
-	return nil
-}
-
 func (m *ServiceDTOVersion3RailTRACommonTrainInfo) validateBikeFlag(formats strfmt.Registry) error {
 
 	if err := validate.Required("BikeFlag", "body", m.BikeFlag); err != nil {
 		return err
 	}
 
-	// value enum
-	if err := m.validateBikeFlagEnum("BikeFlag", "body", *m.BikeFlag); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-var serviceDTOVersion3RailTRACommonTrainInfoTypeBreastFeedFlagPropEnum []interface{}
-
-func init() {
-	var res []int64
-	if err := json.Unmarshal([]byte(`[0,1]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		serviceDTOVersion3RailTRACommonTrainInfoTypeBreastFeedFlagPropEnum = append(serviceDTOVersion3RailTRACommonTrainInfoTypeBreastFeedFlagPropEnum, v)
-	}
-}
-
-// prop value enum
-func (m *ServiceDTOVersion3RailTRACommonTrainInfo) validateBreastFeedFlagEnum(path, location string, value int64) error {
-	if err := validate.Enum(path, location, value, serviceDTOVersion3RailTRACommonTrainInfoTypeBreastFeedFlagPropEnum); err != nil {
-		return err
-	}
 	return nil
 }
 
@@ -240,31 +199,6 @@ func (m *ServiceDTOVersion3RailTRACommonTrainInfo) validateBreastFeedFlag(format
 		return err
 	}
 
-	// value enum
-	if err := m.validateBreastFeedFlagEnum("BreastFeedFlag", "body", *m.BreastFeedFlag); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-var serviceDTOVersion3RailTRACommonTrainInfoTypeCarFlagPropEnum []interface{}
-
-func init() {
-	var res []int64
-	if err := json.Unmarshal([]byte(`[0,1]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		serviceDTOVersion3RailTRACommonTrainInfoTypeCarFlagPropEnum = append(serviceDTOVersion3RailTRACommonTrainInfoTypeCarFlagPropEnum, v)
-	}
-}
-
-// prop value enum
-func (m *ServiceDTOVersion3RailTRACommonTrainInfo) validateCarFlagEnum(path, location string, value int64) error {
-	if err := validate.Enum(path, location, value, serviceDTOVersion3RailTRACommonTrainInfoTypeCarFlagPropEnum); err != nil {
-		return err
-	}
 	return nil
 }
 
@@ -274,31 +208,6 @@ func (m *ServiceDTOVersion3RailTRACommonTrainInfo) validateCarFlag(formats strfm
 		return err
 	}
 
-	// value enum
-	if err := m.validateCarFlagEnum("CarFlag", "body", *m.CarFlag); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-var serviceDTOVersion3RailTRACommonTrainInfoTypeDailyFlagPropEnum []interface{}
-
-func init() {
-	var res []int64
-	if err := json.Unmarshal([]byte(`[0,1]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		serviceDTOVersion3RailTRACommonTrainInfoTypeDailyFlagPropEnum = append(serviceDTOVersion3RailTRACommonTrainInfoTypeDailyFlagPropEnum, v)
-	}
-}
-
-// prop value enum
-func (m *ServiceDTOVersion3RailTRACommonTrainInfo) validateDailyFlagEnum(path, location string, value int64) error {
-	if err := validate.Enum(path, location, value, serviceDTOVersion3RailTRACommonTrainInfoTypeDailyFlagPropEnum); err != nil {
-		return err
-	}
 	return nil
 }
 
@@ -308,31 +217,6 @@ func (m *ServiceDTOVersion3RailTRACommonTrainInfo) validateDailyFlag(formats str
 		return err
 	}
 
-	// value enum
-	if err := m.validateDailyFlagEnum("DailyFlag", "body", *m.DailyFlag); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-var serviceDTOVersion3RailTRACommonTrainInfoTypeDiningFlagPropEnum []interface{}
-
-func init() {
-	var res []int64
-	if err := json.Unmarshal([]byte(`[0,1]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		serviceDTOVersion3RailTRACommonTrainInfoTypeDiningFlagPropEnum = append(serviceDTOVersion3RailTRACommonTrainInfoTypeDiningFlagPropEnum, v)
-	}
-}
-
-// prop value enum
-func (m *ServiceDTOVersion3RailTRACommonTrainInfo) validateDiningFlagEnum(path, location string, value int64) error {
-	if err := validate.Enum(path, location, value, serviceDTOVersion3RailTRACommonTrainInfoTypeDiningFlagPropEnum); err != nil {
-		return err
-	}
 	return nil
 }
 
@@ -342,42 +226,12 @@ func (m *ServiceDTOVersion3RailTRACommonTrainInfo) validateDiningFlag(formats st
 		return err
 	}
 
-	// value enum
-	if err := m.validateDiningFlagEnum("DiningFlag", "body", *m.DiningFlag); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-var serviceDTOVersion3RailTRACommonTrainInfoTypeDirectionPropEnum []interface{}
-
-func init() {
-	var res []int64
-	if err := json.Unmarshal([]byte(`[0,1]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		serviceDTOVersion3RailTRACommonTrainInfoTypeDirectionPropEnum = append(serviceDTOVersion3RailTRACommonTrainInfoTypeDirectionPropEnum, v)
-	}
-}
-
-// prop value enum
-func (m *ServiceDTOVersion3RailTRACommonTrainInfo) validateDirectionEnum(path, location string, value int64) error {
-	if err := validate.Enum(path, location, value, serviceDTOVersion3RailTRACommonTrainInfoTypeDirectionPropEnum); err != nil {
-		return err
-	}
 	return nil
 }
 
 func (m *ServiceDTOVersion3RailTRACommonTrainInfo) validateDirection(formats strfmt.Registry) error {
 
 	if err := validate.Required("Direction", "body", m.Direction); err != nil {
-		return err
-	}
-
-	// value enum
-	if err := m.validateDirectionEnum("Direction", "body", *m.Direction); err != nil {
 		return err
 	}
 
@@ -402,68 +256,18 @@ func (m *ServiceDTOVersion3RailTRACommonTrainInfo) validateEndingStationName(for
 	return nil
 }
 
-var serviceDTOVersion3RailTRACommonTrainInfoTypeExtraTrainFlagPropEnum []interface{}
-
-func init() {
-	var res []int64
-	if err := json.Unmarshal([]byte(`[0,1]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		serviceDTOVersion3RailTRACommonTrainInfoTypeExtraTrainFlagPropEnum = append(serviceDTOVersion3RailTRACommonTrainInfoTypeExtraTrainFlagPropEnum, v)
-	}
-}
-
-// prop value enum
-func (m *ServiceDTOVersion3RailTRACommonTrainInfo) validateExtraTrainFlagEnum(path, location string, value int64) error {
-	if err := validate.Enum(path, location, value, serviceDTOVersion3RailTRACommonTrainInfoTypeExtraTrainFlagPropEnum); err != nil {
-		return err
-	}
-	return nil
-}
-
 func (m *ServiceDTOVersion3RailTRACommonTrainInfo) validateExtraTrainFlag(formats strfmt.Registry) error {
 
 	if err := validate.Required("ExtraTrainFlag", "body", m.ExtraTrainFlag); err != nil {
 		return err
 	}
 
-	// value enum
-	if err := m.validateExtraTrainFlagEnum("ExtraTrainFlag", "body", *m.ExtraTrainFlag); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-var serviceDTOVersion3RailTRACommonTrainInfoTypePackageServiceFlagPropEnum []interface{}
-
-func init() {
-	var res []int64
-	if err := json.Unmarshal([]byte(`[0,1]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		serviceDTOVersion3RailTRACommonTrainInfoTypePackageServiceFlagPropEnum = append(serviceDTOVersion3RailTRACommonTrainInfoTypePackageServiceFlagPropEnum, v)
-	}
-}
-
-// prop value enum
-func (m *ServiceDTOVersion3RailTRACommonTrainInfo) validatePackageServiceFlagEnum(path, location string, value int64) error {
-	if err := validate.Enum(path, location, value, serviceDTOVersion3RailTRACommonTrainInfoTypePackageServiceFlagPropEnum); err != nil {
-		return err
-	}
 	return nil
 }
 
 func (m *ServiceDTOVersion3RailTRACommonTrainInfo) validatePackageServiceFlag(formats strfmt.Registry) error {
 
 	if err := validate.Required("PackageServiceFlag", "body", m.PackageServiceFlag); err != nil {
-		return err
-	}
-
-	// value enum
-	if err := m.validatePackageServiceFlagEnum("PackageServiceFlag", "body", *m.PackageServiceFlag); err != nil {
 		return err
 	}
 
@@ -515,68 +319,9 @@ func (m *ServiceDTOVersion3RailTRACommonTrainInfo) validateTrainTypeName(formats
 	return nil
 }
 
-var serviceDTOVersion3RailTRACommonTrainInfoTypeTripLinePropEnum []interface{}
-
-func init() {
-	var res []int64
-	if err := json.Unmarshal([]byte(`[0,1,2]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		serviceDTOVersion3RailTRACommonTrainInfoTypeTripLinePropEnum = append(serviceDTOVersion3RailTRACommonTrainInfoTypeTripLinePropEnum, v)
-	}
-}
-
-// prop value enum
-func (m *ServiceDTOVersion3RailTRACommonTrainInfo) validateTripLineEnum(path, location string, value int64) error {
-	if err := validate.Enum(path, location, value, serviceDTOVersion3RailTRACommonTrainInfoTypeTripLinePropEnum); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (m *ServiceDTOVersion3RailTRACommonTrainInfo) validateTripLine(formats strfmt.Registry) error {
-
-	if swag.IsZero(m.TripLine) { // not required
-		return nil
-	}
-
-	// value enum
-	if err := m.validateTripLineEnum("TripLine", "body", m.TripLine); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-var serviceDTOVersion3RailTRACommonTrainInfoTypeWheelChairFlagPropEnum []interface{}
-
-func init() {
-	var res []int64
-	if err := json.Unmarshal([]byte(`[0,1]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		serviceDTOVersion3RailTRACommonTrainInfoTypeWheelChairFlagPropEnum = append(serviceDTOVersion3RailTRACommonTrainInfoTypeWheelChairFlagPropEnum, v)
-	}
-}
-
-// prop value enum
-func (m *ServiceDTOVersion3RailTRACommonTrainInfo) validateWheelChairFlagEnum(path, location string, value int64) error {
-	if err := validate.Enum(path, location, value, serviceDTOVersion3RailTRACommonTrainInfoTypeWheelChairFlagPropEnum); err != nil {
-		return err
-	}
-	return nil
-}
-
 func (m *ServiceDTOVersion3RailTRACommonTrainInfo) validateWheelChairFlag(formats strfmt.Registry) error {
 
 	if err := validate.Required("WheelChairFlag", "body", m.WheelChairFlag); err != nil {
-		return err
-	}
-
-	// value enum
-	if err := m.validateWheelChairFlagEnum("WheelChairFlag", "body", *m.WheelChairFlag); err != nil {
 		return err
 	}
 

@@ -13,6 +13,7 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
 	cr "github.com/go-openapi/runtime/client"
+	"github.com/go-openapi/swag"
 
 	strfmt "github.com/go-openapi/strfmt"
 )
@@ -21,7 +22,7 @@ import (
 // with the default values initialized.
 func NewAlertAPIControllerGetParams() *AlertAPIControllerGetParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &AlertAPIControllerGetParams{
 		DollarTop: &dollarTopDefault,
@@ -34,7 +35,7 @@ func NewAlertAPIControllerGetParams() *AlertAPIControllerGetParams {
 // with the default values initialized, and the ability to set a timeout on a request
 func NewAlertAPIControllerGetParamsWithTimeout(timeout time.Duration) *AlertAPIControllerGetParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &AlertAPIControllerGetParams{
 		DollarTop: &dollarTopDefault,
@@ -47,7 +48,7 @@ func NewAlertAPIControllerGetParamsWithTimeout(timeout time.Duration) *AlertAPIC
 // with the default values initialized, and the ability to set a context for a request
 func NewAlertAPIControllerGetParamsWithContext(ctx context.Context) *AlertAPIControllerGetParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &AlertAPIControllerGetParams{
 		DollarTop: &dollarTopDefault,
@@ -60,7 +61,7 @@ func NewAlertAPIControllerGetParamsWithContext(ctx context.Context) *AlertAPICon
 // with the default values initialized, and the ability to set a custom HTTPClient for a request
 func NewAlertAPIControllerGetParamsWithHTTPClient(client *http.Client) *AlertAPIControllerGetParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &AlertAPIControllerGetParams{
 		DollarTop:  &dollarTopDefault,
@@ -107,7 +108,7 @@ type AlertAPIControllerGetParams struct {
 	  取前幾筆
 
 	*/
-	DollarTop *string
+	DollarTop *int64
 
 	timeout    time.Duration
 	Context    context.Context
@@ -214,13 +215,13 @@ func (o *AlertAPIControllerGetParams) SetDollarSkip(dollarSkip *string) {
 }
 
 // WithDollarTop adds the dollarTop to the alert Api controller get params
-func (o *AlertAPIControllerGetParams) WithDollarTop(dollarTop *string) *AlertAPIControllerGetParams {
+func (o *AlertAPIControllerGetParams) WithDollarTop(dollarTop *int64) *AlertAPIControllerGetParams {
 	o.SetDollarTop(dollarTop)
 	return o
 }
 
 // SetDollarTop adds the dollarTop to the alert Api controller get params
-func (o *AlertAPIControllerGetParams) SetDollarTop(dollarTop *string) {
+func (o *AlertAPIControllerGetParams) SetDollarTop(dollarTop *int64) {
 	o.DollarTop = dollarTop
 }
 
@@ -324,11 +325,11 @@ func (o *AlertAPIControllerGetParams) WriteToRequest(r runtime.ClientRequest, re
 	if o.DollarTop != nil {
 
 		// query param $top
-		var qrDollarTop string
+		var qrDollarTop int64
 		if o.DollarTop != nil {
 			qrDollarTop = *o.DollarTop
 		}
-		qDollarTop := qrDollarTop
+		qDollarTop := swag.FormatInt64(qrDollarTop)
 		if qDollarTop != "" {
 			if err := r.SetQueryParam("$top", qDollarTop); err != nil {
 				return err

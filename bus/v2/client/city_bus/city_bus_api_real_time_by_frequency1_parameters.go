@@ -13,6 +13,7 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
 	cr "github.com/go-openapi/runtime/client"
+	"github.com/go-openapi/swag"
 
 	strfmt "github.com/go-openapi/strfmt"
 )
@@ -21,7 +22,7 @@ import (
 // with the default values initialized.
 func NewCityBusAPIRealTimeByFrequency1Params() *CityBusAPIRealTimeByFrequency1Params {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &CityBusAPIRealTimeByFrequency1Params{
 		DollarTop: &dollarTopDefault,
@@ -34,7 +35,7 @@ func NewCityBusAPIRealTimeByFrequency1Params() *CityBusAPIRealTimeByFrequency1Pa
 // with the default values initialized, and the ability to set a timeout on a request
 func NewCityBusAPIRealTimeByFrequency1ParamsWithTimeout(timeout time.Duration) *CityBusAPIRealTimeByFrequency1Params {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &CityBusAPIRealTimeByFrequency1Params{
 		DollarTop: &dollarTopDefault,
@@ -47,7 +48,7 @@ func NewCityBusAPIRealTimeByFrequency1ParamsWithTimeout(timeout time.Duration) *
 // with the default values initialized, and the ability to set a context for a request
 func NewCityBusAPIRealTimeByFrequency1ParamsWithContext(ctx context.Context) *CityBusAPIRealTimeByFrequency1Params {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &CityBusAPIRealTimeByFrequency1Params{
 		DollarTop: &dollarTopDefault,
@@ -60,7 +61,7 @@ func NewCityBusAPIRealTimeByFrequency1ParamsWithContext(ctx context.Context) *Ci
 // with the default values initialized, and the ability to set a custom HTTPClient for a request
 func NewCityBusAPIRealTimeByFrequency1ParamsWithHTTPClient(client *http.Client) *CityBusAPIRealTimeByFrequency1Params {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &CityBusAPIRealTimeByFrequency1Params{
 		DollarTop:  &dollarTopDefault,
@@ -107,7 +108,7 @@ type CityBusAPIRealTimeByFrequency1Params struct {
 	  取前幾筆
 
 	*/
-	DollarTop *string
+	DollarTop *int64
 	/*City
 	  欲查詢縣市
 
@@ -224,13 +225,13 @@ func (o *CityBusAPIRealTimeByFrequency1Params) SetDollarSpatialFilter(dollarSpat
 }
 
 // WithDollarTop adds the dollarTop to the city bus Api real time by frequency 1 params
-func (o *CityBusAPIRealTimeByFrequency1Params) WithDollarTop(dollarTop *string) *CityBusAPIRealTimeByFrequency1Params {
+func (o *CityBusAPIRealTimeByFrequency1Params) WithDollarTop(dollarTop *int64) *CityBusAPIRealTimeByFrequency1Params {
 	o.SetDollarTop(dollarTop)
 	return o
 }
 
 // SetDollarTop adds the dollarTop to the city bus Api real time by frequency 1 params
-func (o *CityBusAPIRealTimeByFrequency1Params) SetDollarTop(dollarTop *string) {
+func (o *CityBusAPIRealTimeByFrequency1Params) SetDollarTop(dollarTop *int64) {
 	o.DollarTop = dollarTop
 }
 
@@ -356,11 +357,11 @@ func (o *CityBusAPIRealTimeByFrequency1Params) WriteToRequest(r runtime.ClientRe
 	if o.DollarTop != nil {
 
 		// query param $top
-		var qrDollarTop string
+		var qrDollarTop int64
 		if o.DollarTop != nil {
 			qrDollarTop = *o.DollarTop
 		}
-		qDollarTop := qrDollarTop
+		qDollarTop := swag.FormatInt64(qrDollarTop)
 		if qDollarTop != "" {
 			if err := r.SetQueryParam("$top", qDollarTop); err != nil {
 				return err

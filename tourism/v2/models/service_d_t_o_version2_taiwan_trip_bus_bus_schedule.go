@@ -6,7 +6,6 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	"encoding/json"
 	"strconv"
 
 	strfmt "github.com/go-openapi/strfmt"
@@ -20,10 +19,11 @@ import (
 // swagger:model Service.DTO.Version2.TaiwanTripBus.BusSchedule
 type ServiceDTOVersion2TaiwanTripBusBusSchedule struct {
 
-	// 去返程
+	// integer
+	//
+	// 去返程 : [0:'去程',1:'返程',2:'迴圈',255:'未知']
 	// Required: true
-	// Enum: [0 1 2 255]
-	Direction *int64 `json:"Direction"`
+	Direction *int32 `json:"Direction"`
 
 	// 發車班距
 	Frequencys []*ServiceDTOVersion2BusBusFrequency `json:"Frequencys"`
@@ -58,6 +58,12 @@ type ServiceDTOVersion2TaiwanTripBusBusSchedule struct {
 
 	// 預定班表
 	Timetables []*ServiceDTOVersion2BusBusTimetable `json:"Timetables"`
+
+	// DateTime
+	//
+	// 資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
+	// Required: true
+	UpdateTime *string `json:"UpdateTime"`
 }
 
 // Validate validates this service d t o version2 taiwan trip bus bus schedule
@@ -100,28 +106,12 @@ func (m *ServiceDTOVersion2TaiwanTripBusBusSchedule) Validate(formats strfmt.Reg
 		res = append(res, err)
 	}
 
+	if err := m.validateUpdateTime(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
-	}
-	return nil
-}
-
-var serviceDTOVersion2TaiwanTripBusBusScheduleTypeDirectionPropEnum []interface{}
-
-func init() {
-	var res []int64
-	if err := json.Unmarshal([]byte(`[0,1,2,255]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		serviceDTOVersion2TaiwanTripBusBusScheduleTypeDirectionPropEnum = append(serviceDTOVersion2TaiwanTripBusBusScheduleTypeDirectionPropEnum, v)
-	}
-}
-
-// prop value enum
-func (m *ServiceDTOVersion2TaiwanTripBusBusSchedule) validateDirectionEnum(path, location string, value int64) error {
-	if err := validate.Enum(path, location, value, serviceDTOVersion2TaiwanTripBusBusScheduleTypeDirectionPropEnum); err != nil {
-		return err
 	}
 	return nil
 }
@@ -129,11 +119,6 @@ func (m *ServiceDTOVersion2TaiwanTripBusBusSchedule) validateDirectionEnum(path,
 func (m *ServiceDTOVersion2TaiwanTripBusBusSchedule) validateDirection(formats strfmt.Registry) error {
 
 	if err := validate.Required("Direction", "body", m.Direction); err != nil {
-		return err
-	}
-
-	// value enum
-	if err := m.validateDirectionEnum("Direction", "body", *m.Direction); err != nil {
 		return err
 	}
 
@@ -257,6 +242,15 @@ func (m *ServiceDTOVersion2TaiwanTripBusBusSchedule) validateTimetables(formats 
 			}
 		}
 
+	}
+
+	return nil
+}
+
+func (m *ServiceDTOVersion2TaiwanTripBusBusSchedule) validateUpdateTime(formats strfmt.Registry) error {
+
+	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
+		return err
 	}
 
 	return nil

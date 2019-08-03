@@ -13,6 +13,7 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
 	cr "github.com/go-openapi/runtime/client"
+	"github.com/go-openapi/swag"
 
 	strfmt "github.com/go-openapi/strfmt"
 )
@@ -21,7 +22,7 @@ import (
 // with the default values initialized.
 func NewAirAPIAirportParams() *AirAPIAirportParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &AirAPIAirportParams{
 		DollarTop: &dollarTopDefault,
@@ -34,7 +35,7 @@ func NewAirAPIAirportParams() *AirAPIAirportParams {
 // with the default values initialized, and the ability to set a timeout on a request
 func NewAirAPIAirportParamsWithTimeout(timeout time.Duration) *AirAPIAirportParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &AirAPIAirportParams{
 		DollarTop: &dollarTopDefault,
@@ -47,7 +48,7 @@ func NewAirAPIAirportParamsWithTimeout(timeout time.Duration) *AirAPIAirportPara
 // with the default values initialized, and the ability to set a context for a request
 func NewAirAPIAirportParamsWithContext(ctx context.Context) *AirAPIAirportParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &AirAPIAirportParams{
 		DollarTop: &dollarTopDefault,
@@ -60,7 +61,7 @@ func NewAirAPIAirportParamsWithContext(ctx context.Context) *AirAPIAirportParams
 // with the default values initialized, and the ability to set a custom HTTPClient for a request
 func NewAirAPIAirportParamsWithHTTPClient(client *http.Client) *AirAPIAirportParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &AirAPIAirportParams{
 		DollarTop:  &dollarTopDefault,
@@ -107,7 +108,7 @@ type AirAPIAirportParams struct {
 	  取前幾筆
 
 	*/
-	DollarTop *string
+	DollarTop *int64
 
 	timeout    time.Duration
 	Context    context.Context
@@ -214,13 +215,13 @@ func (o *AirAPIAirportParams) SetDollarSpatialFilter(dollarSpatialFilter *string
 }
 
 // WithDollarTop adds the dollarTop to the air Api airport params
-func (o *AirAPIAirportParams) WithDollarTop(dollarTop *string) *AirAPIAirportParams {
+func (o *AirAPIAirportParams) WithDollarTop(dollarTop *int64) *AirAPIAirportParams {
 	o.SetDollarTop(dollarTop)
 	return o
 }
 
 // SetDollarTop adds the dollarTop to the air Api airport params
-func (o *AirAPIAirportParams) SetDollarTop(dollarTop *string) {
+func (o *AirAPIAirportParams) SetDollarTop(dollarTop *int64) {
 	o.DollarTop = dollarTop
 }
 
@@ -324,11 +325,11 @@ func (o *AirAPIAirportParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 	if o.DollarTop != nil {
 
 		// query param $top
-		var qrDollarTop string
+		var qrDollarTop int64
 		if o.DollarTop != nil {
 			qrDollarTop = *o.DollarTop
 		}
-		qDollarTop := qrDollarTop
+		qDollarTop := swag.FormatInt64(qrDollarTop)
 		if qDollarTop != "" {
 			if err := r.SetQueryParam("$top", qDollarTop); err != nil {
 				return err

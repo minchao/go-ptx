@@ -13,6 +13,7 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
 	cr "github.com/go-openapi/runtime/client"
+	"github.com/go-openapi/swag"
 
 	strfmt "github.com/go-openapi/strfmt"
 )
@@ -21,7 +22,7 @@ import (
 // with the default values initialized.
 func NewMetroAPIShapeParams() *MetroAPIShapeParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &MetroAPIShapeParams{
 		DollarTop: &dollarTopDefault,
@@ -34,7 +35,7 @@ func NewMetroAPIShapeParams() *MetroAPIShapeParams {
 // with the default values initialized, and the ability to set a timeout on a request
 func NewMetroAPIShapeParamsWithTimeout(timeout time.Duration) *MetroAPIShapeParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &MetroAPIShapeParams{
 		DollarTop: &dollarTopDefault,
@@ -47,7 +48,7 @@ func NewMetroAPIShapeParamsWithTimeout(timeout time.Duration) *MetroAPIShapePara
 // with the default values initialized, and the ability to set a context for a request
 func NewMetroAPIShapeParamsWithContext(ctx context.Context) *MetroAPIShapeParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &MetroAPIShapeParams{
 		DollarTop: &dollarTopDefault,
@@ -60,7 +61,7 @@ func NewMetroAPIShapeParamsWithContext(ctx context.Context) *MetroAPIShapeParams
 // with the default values initialized, and the ability to set a custom HTTPClient for a request
 func NewMetroAPIShapeParamsWithHTTPClient(client *http.Client) *MetroAPIShapeParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &MetroAPIShapeParams{
 		DollarTop:  &dollarTopDefault,
@@ -102,7 +103,7 @@ type MetroAPIShapeParams struct {
 	  取前幾筆
 
 	*/
-	DollarTop *string
+	DollarTop *int64
 	/*Operator*/
 	Operator string
 
@@ -200,13 +201,13 @@ func (o *MetroAPIShapeParams) SetDollarSkip(dollarSkip *string) {
 }
 
 // WithDollarTop adds the dollarTop to the metro Api shape params
-func (o *MetroAPIShapeParams) WithDollarTop(dollarTop *string) *MetroAPIShapeParams {
+func (o *MetroAPIShapeParams) WithDollarTop(dollarTop *int64) *MetroAPIShapeParams {
 	o.SetDollarTop(dollarTop)
 	return o
 }
 
 // SetDollarTop adds the dollarTop to the metro Api shape params
-func (o *MetroAPIShapeParams) SetDollarTop(dollarTop *string) {
+func (o *MetroAPIShapeParams) SetDollarTop(dollarTop *int64) {
 	o.DollarTop = dollarTop
 }
 
@@ -305,11 +306,11 @@ func (o *MetroAPIShapeParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 	if o.DollarTop != nil {
 
 		// query param $top
-		var qrDollarTop string
+		var qrDollarTop int64
 		if o.DollarTop != nil {
 			qrDollarTop = *o.DollarTop
 		}
-		qDollarTop := qrDollarTop
+		qDollarTop := swag.FormatInt64(qrDollarTop)
 		if qDollarTop != "" {
 			if err := r.SetQueryParam("$top", qDollarTop); err != nil {
 				return err

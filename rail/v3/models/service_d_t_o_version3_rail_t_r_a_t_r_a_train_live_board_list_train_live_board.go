@@ -6,8 +6,6 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	"encoding/json"
-
 	strfmt "github.com/go-openapi/strfmt"
 
 	"github.com/go-openapi/errors"
@@ -35,9 +33,10 @@ type ServiceDTOVersion3RailTRATRATrainLiveBoardListTrainLiveBoard struct {
 	// 車次代碼
 	TrainNo string `json:"TrainNo,omitempty"`
 
-	// 列車目前所在之車站狀態
-	// Enum: [0 1 2]
-	TrainStationStatus int64 `json:"TrainStationStatus,omitempty"`
+	// integer
+	//
+	// 列車目前所在之車站狀態 : [0:'進站中',1:'在站上',2:'已離站']
+	TrainStationStatus int32 `json:"TrainStationStatus,omitempty"`
 
 	// 車種簡碼 = ['1: 太魯閣', '2: 普悠瑪', '3: 自強', '4: 莒光', '5: 復興', '6: 區間', '7: 普快', '10: 區間快']
 	TrainTypeCode string `json:"TrainTypeCode,omitempty"`
@@ -67,10 +66,6 @@ func (m *ServiceDTOVersion3RailTRATRATrainLiveBoardListTrainLiveBoard) Validate(
 	}
 
 	if err := m.validateStationName(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateTrainStationStatus(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -110,40 +105,6 @@ func (m *ServiceDTOVersion3RailTRATRATrainLiveBoardListTrainLiveBoard) validateS
 			}
 			return err
 		}
-	}
-
-	return nil
-}
-
-var serviceDTOVersion3RailTRATRATrainLiveBoardListTrainLiveBoardTypeTrainStationStatusPropEnum []interface{}
-
-func init() {
-	var res []int64
-	if err := json.Unmarshal([]byte(`[0,1,2]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		serviceDTOVersion3RailTRATRATrainLiveBoardListTrainLiveBoardTypeTrainStationStatusPropEnum = append(serviceDTOVersion3RailTRATRATrainLiveBoardListTrainLiveBoardTypeTrainStationStatusPropEnum, v)
-	}
-}
-
-// prop value enum
-func (m *ServiceDTOVersion3RailTRATRATrainLiveBoardListTrainLiveBoard) validateTrainStationStatusEnum(path, location string, value int64) error {
-	if err := validate.Enum(path, location, value, serviceDTOVersion3RailTRATRATrainLiveBoardListTrainLiveBoardTypeTrainStationStatusPropEnum); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (m *ServiceDTOVersion3RailTRATRATrainLiveBoardListTrainLiveBoard) validateTrainStationStatus(formats strfmt.Registry) error {
-
-	if swag.IsZero(m.TrainStationStatus) { // not required
-		return nil
-	}
-
-	// value enum
-	if err := m.validateTrainStationStatusEnum("TrainStationStatus", "body", m.TrainStationStatus); err != nil {
-		return err
 	}
 
 	return nil

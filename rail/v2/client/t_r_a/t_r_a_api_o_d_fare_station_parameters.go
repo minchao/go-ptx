@@ -13,6 +13,7 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
 	cr "github.com/go-openapi/runtime/client"
+	"github.com/go-openapi/swag"
 
 	strfmt "github.com/go-openapi/strfmt"
 )
@@ -21,7 +22,7 @@ import (
 // with the default values initialized.
 func NewTRAAPIODFareStationParams() *TRAAPIODFareStationParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &TRAAPIODFareStationParams{
 		DollarTop: &dollarTopDefault,
@@ -34,7 +35,7 @@ func NewTRAAPIODFareStationParams() *TRAAPIODFareStationParams {
 // with the default values initialized, and the ability to set a timeout on a request
 func NewTRAAPIODFareStationParamsWithTimeout(timeout time.Duration) *TRAAPIODFareStationParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &TRAAPIODFareStationParams{
 		DollarTop: &dollarTopDefault,
@@ -47,7 +48,7 @@ func NewTRAAPIODFareStationParamsWithTimeout(timeout time.Duration) *TRAAPIODFar
 // with the default values initialized, and the ability to set a context for a request
 func NewTRAAPIODFareStationParamsWithContext(ctx context.Context) *TRAAPIODFareStationParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &TRAAPIODFareStationParams{
 		DollarTop: &dollarTopDefault,
@@ -60,7 +61,7 @@ func NewTRAAPIODFareStationParamsWithContext(ctx context.Context) *TRAAPIODFareS
 // with the default values initialized, and the ability to set a custom HTTPClient for a request
 func NewTRAAPIODFareStationParamsWithHTTPClient(client *http.Client) *TRAAPIODFareStationParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &TRAAPIODFareStationParams{
 		DollarTop:  &dollarTopDefault,
@@ -102,7 +103,7 @@ type TRAAPIODFareStationParams struct {
 	  取前幾筆
 
 	*/
-	DollarTop *string
+	DollarTop *int64
 	/*DestinationStationID
 	  迄點車站代碼
 
@@ -208,13 +209,13 @@ func (o *TRAAPIODFareStationParams) SetDollarSkip(dollarSkip *string) {
 }
 
 // WithDollarTop adds the dollarTop to the t r a Api o d fare station params
-func (o *TRAAPIODFareStationParams) WithDollarTop(dollarTop *string) *TRAAPIODFareStationParams {
+func (o *TRAAPIODFareStationParams) WithDollarTop(dollarTop *int64) *TRAAPIODFareStationParams {
 	o.SetDollarTop(dollarTop)
 	return o
 }
 
 // SetDollarTop adds the dollarTop to the t r a Api o d fare station params
-func (o *TRAAPIODFareStationParams) SetDollarTop(dollarTop *string) {
+func (o *TRAAPIODFareStationParams) SetDollarTop(dollarTop *int64) {
 	o.DollarTop = dollarTop
 }
 
@@ -324,11 +325,11 @@ func (o *TRAAPIODFareStationParams) WriteToRequest(r runtime.ClientRequest, reg 
 	if o.DollarTop != nil {
 
 		// query param $top
-		var qrDollarTop string
+		var qrDollarTop int64
 		if o.DollarTop != nil {
 			qrDollarTop = *o.DollarTop
 		}
-		qDollarTop := qrDollarTop
+		qDollarTop := swag.FormatInt64(qrDollarTop)
 		if qDollarTop != "" {
 			if err := r.SetQueryParam("$top", qDollarTop); err != nil {
 				return err

@@ -13,6 +13,7 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
 	cr "github.com/go-openapi/runtime/client"
+	"github.com/go-openapi/swag"
 
 	strfmt "github.com/go-openapi/strfmt"
 )
@@ -21,7 +22,7 @@ import (
 // with the default values initialized.
 func NewTRAAPILiveTrainDelayParams() *TRAAPILiveTrainDelayParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &TRAAPILiveTrainDelayParams{
 		DollarTop: &dollarTopDefault,
@@ -34,7 +35,7 @@ func NewTRAAPILiveTrainDelayParams() *TRAAPILiveTrainDelayParams {
 // with the default values initialized, and the ability to set a timeout on a request
 func NewTRAAPILiveTrainDelayParamsWithTimeout(timeout time.Duration) *TRAAPILiveTrainDelayParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &TRAAPILiveTrainDelayParams{
 		DollarTop: &dollarTopDefault,
@@ -47,7 +48,7 @@ func NewTRAAPILiveTrainDelayParamsWithTimeout(timeout time.Duration) *TRAAPILive
 // with the default values initialized, and the ability to set a context for a request
 func NewTRAAPILiveTrainDelayParamsWithContext(ctx context.Context) *TRAAPILiveTrainDelayParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &TRAAPILiveTrainDelayParams{
 		DollarTop: &dollarTopDefault,
@@ -60,7 +61,7 @@ func NewTRAAPILiveTrainDelayParamsWithContext(ctx context.Context) *TRAAPILiveTr
 // with the default values initialized, and the ability to set a custom HTTPClient for a request
 func NewTRAAPILiveTrainDelayParamsWithHTTPClient(client *http.Client) *TRAAPILiveTrainDelayParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &TRAAPILiveTrainDelayParams{
 		DollarTop:  &dollarTopDefault,
@@ -102,7 +103,7 @@ type TRAAPILiveTrainDelayParams struct {
 	  取前幾筆
 
 	*/
-	DollarTop *string
+	DollarTop *int64
 
 	timeout    time.Duration
 	Context    context.Context
@@ -198,13 +199,13 @@ func (o *TRAAPILiveTrainDelayParams) SetDollarSkip(dollarSkip *string) {
 }
 
 // WithDollarTop adds the dollarTop to the t r a Api live train delay params
-func (o *TRAAPILiveTrainDelayParams) WithDollarTop(dollarTop *string) *TRAAPILiveTrainDelayParams {
+func (o *TRAAPILiveTrainDelayParams) WithDollarTop(dollarTop *int64) *TRAAPILiveTrainDelayParams {
 	o.SetDollarTop(dollarTop)
 	return o
 }
 
 // SetDollarTop adds the dollarTop to the t r a Api live train delay params
-func (o *TRAAPILiveTrainDelayParams) SetDollarTop(dollarTop *string) {
+func (o *TRAAPILiveTrainDelayParams) SetDollarTop(dollarTop *int64) {
 	o.DollarTop = dollarTop
 }
 
@@ -292,11 +293,11 @@ func (o *TRAAPILiveTrainDelayParams) WriteToRequest(r runtime.ClientRequest, reg
 	if o.DollarTop != nil {
 
 		// query param $top
-		var qrDollarTop string
+		var qrDollarTop int64
 		if o.DollarTop != nil {
 			qrDollarTop = *o.DollarTop
 		}
-		qDollarTop := qrDollarTop
+		qDollarTop := swag.FormatInt64(qrDollarTop)
 		if qDollarTop != "" {
 			if err := r.SetQueryParam("$top", qDollarTop); err != nil {
 				return err

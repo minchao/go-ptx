@@ -13,6 +13,7 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
 	cr "github.com/go-openapi/runtime/client"
+	"github.com/go-openapi/swag"
 
 	strfmt "github.com/go-openapi/strfmt"
 )
@@ -21,7 +22,7 @@ import (
 // with the default values initialized.
 func NewCityBusAPIEstimatedTimeOfArrivalParams() *CityBusAPIEstimatedTimeOfArrivalParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &CityBusAPIEstimatedTimeOfArrivalParams{
 		DollarTop: &dollarTopDefault,
@@ -34,7 +35,7 @@ func NewCityBusAPIEstimatedTimeOfArrivalParams() *CityBusAPIEstimatedTimeOfArriv
 // with the default values initialized, and the ability to set a timeout on a request
 func NewCityBusAPIEstimatedTimeOfArrivalParamsWithTimeout(timeout time.Duration) *CityBusAPIEstimatedTimeOfArrivalParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &CityBusAPIEstimatedTimeOfArrivalParams{
 		DollarTop: &dollarTopDefault,
@@ -47,7 +48,7 @@ func NewCityBusAPIEstimatedTimeOfArrivalParamsWithTimeout(timeout time.Duration)
 // with the default values initialized, and the ability to set a context for a request
 func NewCityBusAPIEstimatedTimeOfArrivalParamsWithContext(ctx context.Context) *CityBusAPIEstimatedTimeOfArrivalParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &CityBusAPIEstimatedTimeOfArrivalParams{
 		DollarTop: &dollarTopDefault,
@@ -60,7 +61,7 @@ func NewCityBusAPIEstimatedTimeOfArrivalParamsWithContext(ctx context.Context) *
 // with the default values initialized, and the ability to set a custom HTTPClient for a request
 func NewCityBusAPIEstimatedTimeOfArrivalParamsWithHTTPClient(client *http.Client) *CityBusAPIEstimatedTimeOfArrivalParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &CityBusAPIEstimatedTimeOfArrivalParams{
 		DollarTop:  &dollarTopDefault,
@@ -102,7 +103,7 @@ type CityBusAPIEstimatedTimeOfArrivalParams struct {
 	  取前幾筆
 
 	*/
-	DollarTop *string
+	DollarTop *int64
 	/*City
 	  欲查詢縣市
 
@@ -203,13 +204,13 @@ func (o *CityBusAPIEstimatedTimeOfArrivalParams) SetDollarSkip(dollarSkip *strin
 }
 
 // WithDollarTop adds the dollarTop to the city bus Api estimated time of arrival params
-func (o *CityBusAPIEstimatedTimeOfArrivalParams) WithDollarTop(dollarTop *string) *CityBusAPIEstimatedTimeOfArrivalParams {
+func (o *CityBusAPIEstimatedTimeOfArrivalParams) WithDollarTop(dollarTop *int64) *CityBusAPIEstimatedTimeOfArrivalParams {
 	o.SetDollarTop(dollarTop)
 	return o
 }
 
 // SetDollarTop adds the dollarTop to the city bus Api estimated time of arrival params
-func (o *CityBusAPIEstimatedTimeOfArrivalParams) SetDollarTop(dollarTop *string) {
+func (o *CityBusAPIEstimatedTimeOfArrivalParams) SetDollarTop(dollarTop *int64) {
 	o.DollarTop = dollarTop
 }
 
@@ -308,11 +309,11 @@ func (o *CityBusAPIEstimatedTimeOfArrivalParams) WriteToRequest(r runtime.Client
 	if o.DollarTop != nil {
 
 		// query param $top
-		var qrDollarTop string
+		var qrDollarTop int64
 		if o.DollarTop != nil {
 			qrDollarTop = *o.DollarTop
 		}
-		qDollarTop := qrDollarTop
+		qDollarTop := swag.FormatInt64(qrDollarTop)
 		if qDollarTop != "" {
 			if err := r.SetQueryParam("$top", qDollarTop); err != nil {
 				return err

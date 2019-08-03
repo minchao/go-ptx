@@ -13,6 +13,7 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
 	cr "github.com/go-openapi/runtime/client"
+	"github.com/go-openapi/swag"
 
 	strfmt "github.com/go-openapi/strfmt"
 )
@@ -21,7 +22,7 @@ import (
 // with the default values initialized.
 func NewODFareAPIControllerAPIControllerGet1Params() *ODFareAPIControllerAPIControllerGet1Params {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &ODFareAPIControllerAPIControllerGet1Params{
 		DollarTop: &dollarTopDefault,
@@ -34,7 +35,7 @@ func NewODFareAPIControllerAPIControllerGet1Params() *ODFareAPIControllerAPICont
 // with the default values initialized, and the ability to set a timeout on a request
 func NewODFareAPIControllerAPIControllerGet1ParamsWithTimeout(timeout time.Duration) *ODFareAPIControllerAPIControllerGet1Params {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &ODFareAPIControllerAPIControllerGet1Params{
 		DollarTop: &dollarTopDefault,
@@ -47,7 +48,7 @@ func NewODFareAPIControllerAPIControllerGet1ParamsWithTimeout(timeout time.Durat
 // with the default values initialized, and the ability to set a context for a request
 func NewODFareAPIControllerAPIControllerGet1ParamsWithContext(ctx context.Context) *ODFareAPIControllerAPIControllerGet1Params {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &ODFareAPIControllerAPIControllerGet1Params{
 		DollarTop: &dollarTopDefault,
@@ -60,7 +61,7 @@ func NewODFareAPIControllerAPIControllerGet1ParamsWithContext(ctx context.Contex
 // with the default values initialized, and the ability to set a custom HTTPClient for a request
 func NewODFareAPIControllerAPIControllerGet1ParamsWithHTTPClient(client *http.Client) *ODFareAPIControllerAPIControllerGet1Params {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &ODFareAPIControllerAPIControllerGet1Params{
 		DollarTop:  &dollarTopDefault,
@@ -107,7 +108,7 @@ type ODFareAPIControllerAPIControllerGet1Params struct {
 	  取前幾筆
 
 	*/
-	DollarTop *string
+	DollarTop *int64
 	/*DestinationStationID
 	  迄點車站代碼
 
@@ -224,13 +225,13 @@ func (o *ODFareAPIControllerAPIControllerGet1Params) SetDollarSkip(dollarSkip *s
 }
 
 // WithDollarTop adds the dollarTop to the o d fare Api controller Api controller get 1 params
-func (o *ODFareAPIControllerAPIControllerGet1Params) WithDollarTop(dollarTop *string) *ODFareAPIControllerAPIControllerGet1Params {
+func (o *ODFareAPIControllerAPIControllerGet1Params) WithDollarTop(dollarTop *int64) *ODFareAPIControllerAPIControllerGet1Params {
 	o.SetDollarTop(dollarTop)
 	return o
 }
 
 // SetDollarTop adds the dollarTop to the o d fare Api controller Api controller get 1 params
-func (o *ODFareAPIControllerAPIControllerGet1Params) SetDollarTop(dollarTop *string) {
+func (o *ODFareAPIControllerAPIControllerGet1Params) SetDollarTop(dollarTop *int64) {
 	o.DollarTop = dollarTop
 }
 
@@ -356,11 +357,11 @@ func (o *ODFareAPIControllerAPIControllerGet1Params) WriteToRequest(r runtime.Cl
 	if o.DollarTop != nil {
 
 		// query param $top
-		var qrDollarTop string
+		var qrDollarTop int64
 		if o.DollarTop != nil {
 			qrDollarTop = *o.DollarTop
 		}
-		qDollarTop := qrDollarTop
+		qDollarTop := swag.FormatInt64(qrDollarTop)
 		if qDollarTop != "" {
 			if err := r.SetQueryParam("$top", qDollarTop); err != nil {
 				return err

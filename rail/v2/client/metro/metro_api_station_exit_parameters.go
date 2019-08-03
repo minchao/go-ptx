@@ -13,6 +13,7 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
 	cr "github.com/go-openapi/runtime/client"
+	"github.com/go-openapi/swag"
 
 	strfmt "github.com/go-openapi/strfmt"
 )
@@ -21,7 +22,7 @@ import (
 // with the default values initialized.
 func NewMetroAPIStationExitParams() *MetroAPIStationExitParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &MetroAPIStationExitParams{
 		DollarTop: &dollarTopDefault,
@@ -34,7 +35,7 @@ func NewMetroAPIStationExitParams() *MetroAPIStationExitParams {
 // with the default values initialized, and the ability to set a timeout on a request
 func NewMetroAPIStationExitParamsWithTimeout(timeout time.Duration) *MetroAPIStationExitParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &MetroAPIStationExitParams{
 		DollarTop: &dollarTopDefault,
@@ -47,7 +48,7 @@ func NewMetroAPIStationExitParamsWithTimeout(timeout time.Duration) *MetroAPISta
 // with the default values initialized, and the ability to set a context for a request
 func NewMetroAPIStationExitParamsWithContext(ctx context.Context) *MetroAPIStationExitParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &MetroAPIStationExitParams{
 		DollarTop: &dollarTopDefault,
@@ -60,7 +61,7 @@ func NewMetroAPIStationExitParamsWithContext(ctx context.Context) *MetroAPIStati
 // with the default values initialized, and the ability to set a custom HTTPClient for a request
 func NewMetroAPIStationExitParamsWithHTTPClient(client *http.Client) *MetroAPIStationExitParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &MetroAPIStationExitParams{
 		DollarTop:  &dollarTopDefault,
@@ -107,7 +108,7 @@ type MetroAPIStationExitParams struct {
 	  取前幾筆
 
 	*/
-	DollarTop *string
+	DollarTop *int64
 	/*Operator
 	  欲查詢縣市
 
@@ -219,13 +220,13 @@ func (o *MetroAPIStationExitParams) SetDollarSpatialFilter(dollarSpatialFilter *
 }
 
 // WithDollarTop adds the dollarTop to the metro Api station exit params
-func (o *MetroAPIStationExitParams) WithDollarTop(dollarTop *string) *MetroAPIStationExitParams {
+func (o *MetroAPIStationExitParams) WithDollarTop(dollarTop *int64) *MetroAPIStationExitParams {
 	o.SetDollarTop(dollarTop)
 	return o
 }
 
 // SetDollarTop adds the dollarTop to the metro Api station exit params
-func (o *MetroAPIStationExitParams) SetDollarTop(dollarTop *string) {
+func (o *MetroAPIStationExitParams) SetDollarTop(dollarTop *int64) {
 	o.DollarTop = dollarTop
 }
 
@@ -340,11 +341,11 @@ func (o *MetroAPIStationExitParams) WriteToRequest(r runtime.ClientRequest, reg 
 	if o.DollarTop != nil {
 
 		// query param $top
-		var qrDollarTop string
+		var qrDollarTop int64
 		if o.DollarTop != nil {
 			qrDollarTop = *o.DollarTop
 		}
-		qDollarTop := qrDollarTop
+		qDollarTop := swag.FormatInt64(qrDollarTop)
 		if qDollarTop != "" {
 			if err := r.SetQueryParam("$top", qDollarTop); err != nil {
 				return err

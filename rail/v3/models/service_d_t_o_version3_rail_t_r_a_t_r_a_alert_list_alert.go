@@ -6,8 +6,6 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	"encoding/json"
-
 	strfmt "github.com/go-openapi/strfmt"
 
 	"github.com/go-openapi/errors"
@@ -30,9 +28,10 @@ type ServiceDTOVersion3RailTRATRAAlertListAlert struct {
 	// Required: true
 	Description *string `json:"Description"`
 
-	// 影響方向
-	// Enum: [0 1 2]
-	Direction int64 `json:"Direction,omitempty"`
+	// integer
+	//
+	// 影響方向 : [0:'南下',1:'北上',2:'雙向']
+	Direction int32 `json:"Direction,omitempty"`
 
 	// 影響說明
 	Effect string `json:"Effect,omitempty"`
@@ -42,9 +41,10 @@ type ServiceDTOVersion3RailTRATRAAlertListAlert struct {
 	// 訊息結束日期時間
 	EndTime string `json:"EndTime,omitempty"`
 
-	// 影響等級程度
-	// Enum: [1: 重度 2: 中度 3: 輕度]
-	Level string `json:"Level,omitempty"`
+	// integer
+	//
+	// 影響等級程度 : [1:'重度',2:'中度',3:'輕度']
+	Level int32 `json:"Level,omitempty"`
 
 	// DateTime
 	//
@@ -65,10 +65,11 @@ type ServiceDTOVersion3RailTRATRAAlertListAlert struct {
 	// 訊息起始日期時間
 	StartTime string `json:"StartTime,omitempty"`
 
-	// 營運狀況
+	// integer
+	//
+	// 營運狀況 : [0:'全線營運停止',1:'全線營運正常',2:'有異常狀況']
 	// Required: true
-	// Enum: [0 1 2]
-	Status *int64 `json:"Status"`
+	Status *int32 `json:"Status"`
 
 	// 通阻訊息標題
 	// Required: true
@@ -90,14 +91,6 @@ func (m *ServiceDTOVersion3RailTRATRAAlertListAlert) Validate(formats strfmt.Reg
 	}
 
 	if err := m.validateDescription(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateDirection(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateLevel(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -141,86 +134,6 @@ func (m *ServiceDTOVersion3RailTRATRAAlertListAlert) validateDescription(formats
 	return nil
 }
 
-var serviceDTOVersion3RailTRATRAAlertListAlertTypeDirectionPropEnum []interface{}
-
-func init() {
-	var res []int64
-	if err := json.Unmarshal([]byte(`[0,1,2]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		serviceDTOVersion3RailTRATRAAlertListAlertTypeDirectionPropEnum = append(serviceDTOVersion3RailTRATRAAlertListAlertTypeDirectionPropEnum, v)
-	}
-}
-
-// prop value enum
-func (m *ServiceDTOVersion3RailTRATRAAlertListAlert) validateDirectionEnum(path, location string, value int64) error {
-	if err := validate.Enum(path, location, value, serviceDTOVersion3RailTRATRAAlertListAlertTypeDirectionPropEnum); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (m *ServiceDTOVersion3RailTRATRAAlertListAlert) validateDirection(formats strfmt.Registry) error {
-
-	if swag.IsZero(m.Direction) { // not required
-		return nil
-	}
-
-	// value enum
-	if err := m.validateDirectionEnum("Direction", "body", m.Direction); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-var serviceDTOVersion3RailTRATRAAlertListAlertTypeLevelPropEnum []interface{}
-
-func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["1: 重度","2: 中度","3: 輕度"]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		serviceDTOVersion3RailTRATRAAlertListAlertTypeLevelPropEnum = append(serviceDTOVersion3RailTRATRAAlertListAlertTypeLevelPropEnum, v)
-	}
-}
-
-const (
-
-	// ServiceDTOVersion3RailTRATRAAlertListAlertLevelNr1重度 captures enum value "1: 重度"
-	ServiceDTOVersion3RailTRATRAAlertListAlertLevelNr1重度 string = "1: 重度"
-
-	// ServiceDTOVersion3RailTRATRAAlertListAlertLevelNr2中度 captures enum value "2: 中度"
-	ServiceDTOVersion3RailTRATRAAlertListAlertLevelNr2中度 string = "2: 中度"
-
-	// ServiceDTOVersion3RailTRATRAAlertListAlertLevelNr3輕度 captures enum value "3: 輕度"
-	ServiceDTOVersion3RailTRATRAAlertListAlertLevelNr3輕度 string = "3: 輕度"
-)
-
-// prop value enum
-func (m *ServiceDTOVersion3RailTRATRAAlertListAlert) validateLevelEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, serviceDTOVersion3RailTRATRAAlertListAlertTypeLevelPropEnum); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (m *ServiceDTOVersion3RailTRATRAAlertListAlert) validateLevel(formats strfmt.Registry) error {
-
-	if swag.IsZero(m.Level) { // not required
-		return nil
-	}
-
-	// value enum
-	if err := m.validateLevelEnum("Level", "body", m.Level); err != nil {
-		return err
-	}
-
-	return nil
-}
-
 func (m *ServiceDTOVersion3RailTRATRAAlertListAlert) validateScope(formats strfmt.Registry) error {
 
 	if err := validate.Required("Scope", "body", m.Scope); err != nil {
@@ -239,34 +152,9 @@ func (m *ServiceDTOVersion3RailTRATRAAlertListAlert) validateScope(formats strfm
 	return nil
 }
 
-var serviceDTOVersion3RailTRATRAAlertListAlertTypeStatusPropEnum []interface{}
-
-func init() {
-	var res []int64
-	if err := json.Unmarshal([]byte(`[0,1,2]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		serviceDTOVersion3RailTRATRAAlertListAlertTypeStatusPropEnum = append(serviceDTOVersion3RailTRATRAAlertListAlertTypeStatusPropEnum, v)
-	}
-}
-
-// prop value enum
-func (m *ServiceDTOVersion3RailTRATRAAlertListAlert) validateStatusEnum(path, location string, value int64) error {
-	if err := validate.Enum(path, location, value, serviceDTOVersion3RailTRATRAAlertListAlertTypeStatusPropEnum); err != nil {
-		return err
-	}
-	return nil
-}
-
 func (m *ServiceDTOVersion3RailTRATRAAlertListAlert) validateStatus(formats strfmt.Registry) error {
 
 	if err := validate.Required("Status", "body", m.Status); err != nil {
-		return err
-	}
-
-	// value enum
-	if err := m.validateStatusEnum("Status", "body", *m.Status); err != nil {
 		return err
 	}
 

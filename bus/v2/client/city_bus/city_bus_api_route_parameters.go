@@ -13,6 +13,7 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
 	cr "github.com/go-openapi/runtime/client"
+	"github.com/go-openapi/swag"
 
 	strfmt "github.com/go-openapi/strfmt"
 )
@@ -21,7 +22,7 @@ import (
 // with the default values initialized.
 func NewCityBusAPIRouteParams() *CityBusAPIRouteParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &CityBusAPIRouteParams{
 		DollarTop: &dollarTopDefault,
@@ -34,7 +35,7 @@ func NewCityBusAPIRouteParams() *CityBusAPIRouteParams {
 // with the default values initialized, and the ability to set a timeout on a request
 func NewCityBusAPIRouteParamsWithTimeout(timeout time.Duration) *CityBusAPIRouteParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &CityBusAPIRouteParams{
 		DollarTop: &dollarTopDefault,
@@ -47,7 +48,7 @@ func NewCityBusAPIRouteParamsWithTimeout(timeout time.Duration) *CityBusAPIRoute
 // with the default values initialized, and the ability to set a context for a request
 func NewCityBusAPIRouteParamsWithContext(ctx context.Context) *CityBusAPIRouteParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &CityBusAPIRouteParams{
 		DollarTop: &dollarTopDefault,
@@ -60,7 +61,7 @@ func NewCityBusAPIRouteParamsWithContext(ctx context.Context) *CityBusAPIRoutePa
 // with the default values initialized, and the ability to set a custom HTTPClient for a request
 func NewCityBusAPIRouteParamsWithHTTPClient(client *http.Client) *CityBusAPIRouteParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &CityBusAPIRouteParams{
 		DollarTop:  &dollarTopDefault,
@@ -102,7 +103,7 @@ type CityBusAPIRouteParams struct {
 	  取前幾筆
 
 	*/
-	DollarTop *string
+	DollarTop *int64
 	/*City
 	  欲查詢縣市
 
@@ -203,13 +204,13 @@ func (o *CityBusAPIRouteParams) SetDollarSkip(dollarSkip *string) {
 }
 
 // WithDollarTop adds the dollarTop to the city bus Api route params
-func (o *CityBusAPIRouteParams) WithDollarTop(dollarTop *string) *CityBusAPIRouteParams {
+func (o *CityBusAPIRouteParams) WithDollarTop(dollarTop *int64) *CityBusAPIRouteParams {
 	o.SetDollarTop(dollarTop)
 	return o
 }
 
 // SetDollarTop adds the dollarTop to the city bus Api route params
-func (o *CityBusAPIRouteParams) SetDollarTop(dollarTop *string) {
+func (o *CityBusAPIRouteParams) SetDollarTop(dollarTop *int64) {
 	o.DollarTop = dollarTop
 }
 
@@ -308,11 +309,11 @@ func (o *CityBusAPIRouteParams) WriteToRequest(r runtime.ClientRequest, reg strf
 	if o.DollarTop != nil {
 
 		// query param $top
-		var qrDollarTop string
+		var qrDollarTop int64
 		if o.DollarTop != nil {
 			qrDollarTop = *o.DollarTop
 		}
-		qDollarTop := qrDollarTop
+		qDollarTop := swag.FormatInt64(qrDollarTop)
 		if qDollarTop != "" {
 			if err := r.SetQueryParam("$top", qDollarTop); err != nil {
 				return err

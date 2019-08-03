@@ -13,6 +13,7 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
 	cr "github.com/go-openapi/runtime/client"
+	"github.com/go-openapi/swag"
 
 	strfmt "github.com/go-openapi/strfmt"
 )
@@ -21,7 +22,7 @@ import (
 // with the default values initialized.
 func NewCyclingAPIShapeParams() *CyclingAPIShapeParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &CyclingAPIShapeParams{
 		DollarTop: &dollarTopDefault,
@@ -34,7 +35,7 @@ func NewCyclingAPIShapeParams() *CyclingAPIShapeParams {
 // with the default values initialized, and the ability to set a timeout on a request
 func NewCyclingAPIShapeParamsWithTimeout(timeout time.Duration) *CyclingAPIShapeParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &CyclingAPIShapeParams{
 		DollarTop: &dollarTopDefault,
@@ -47,7 +48,7 @@ func NewCyclingAPIShapeParamsWithTimeout(timeout time.Duration) *CyclingAPIShape
 // with the default values initialized, and the ability to set a context for a request
 func NewCyclingAPIShapeParamsWithContext(ctx context.Context) *CyclingAPIShapeParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &CyclingAPIShapeParams{
 		DollarTop: &dollarTopDefault,
@@ -60,7 +61,7 @@ func NewCyclingAPIShapeParamsWithContext(ctx context.Context) *CyclingAPIShapePa
 // with the default values initialized, and the ability to set a custom HTTPClient for a request
 func NewCyclingAPIShapeParamsWithHTTPClient(client *http.Client) *CyclingAPIShapeParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &CyclingAPIShapeParams{
 		DollarTop:  &dollarTopDefault,
@@ -102,7 +103,7 @@ type CyclingAPIShapeParams struct {
 	  取前幾筆
 
 	*/
-	DollarTop *string
+	DollarTop *int64
 	/*City
 	  欲查詢縣市
 
@@ -203,13 +204,13 @@ func (o *CyclingAPIShapeParams) SetDollarSkip(dollarSkip *string) {
 }
 
 // WithDollarTop adds the dollarTop to the cycling Api shape params
-func (o *CyclingAPIShapeParams) WithDollarTop(dollarTop *string) *CyclingAPIShapeParams {
+func (o *CyclingAPIShapeParams) WithDollarTop(dollarTop *int64) *CyclingAPIShapeParams {
 	o.SetDollarTop(dollarTop)
 	return o
 }
 
 // SetDollarTop adds the dollarTop to the cycling Api shape params
-func (o *CyclingAPIShapeParams) SetDollarTop(dollarTop *string) {
+func (o *CyclingAPIShapeParams) SetDollarTop(dollarTop *int64) {
 	o.DollarTop = dollarTop
 }
 
@@ -308,11 +309,11 @@ func (o *CyclingAPIShapeParams) WriteToRequest(r runtime.ClientRequest, reg strf
 	if o.DollarTop != nil {
 
 		// query param $top
-		var qrDollarTop string
+		var qrDollarTop int64
 		if o.DollarTop != nil {
 			qrDollarTop = *o.DollarTop
 		}
-		qDollarTop := qrDollarTop
+		qDollarTop := swag.FormatInt64(qrDollarTop)
 		if qDollarTop != "" {
 			if err := r.SetQueryParam("$top", qDollarTop); err != nil {
 				return err

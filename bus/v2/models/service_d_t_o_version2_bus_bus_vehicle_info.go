@@ -6,8 +6,6 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	"encoding/json"
-
 	strfmt "github.com/go-openapi/strfmt"
 
 	"github.com/go-openapi/errors"
@@ -31,10 +29,11 @@ type ServiceDTOVersion2BusBusVehicleInfo struct {
 	// Required: true
 	UpdateTime *string `json:"UpdateTime"`
 
-	// 車輛種類
+	// integer
+	//
+	// 車輛種類 : [0:'一般',1:'低地板',2:'復康巴士',3:'小型巴士']
 	// Required: true
-	// Enum: [0 1 2 3]
-	VehicleType *int64 `json:"VehicleType"`
+	VehicleType *int32 `json:"VehicleType"`
 }
 
 // Validate validates this service d t o version2 bus bus vehicle info
@@ -77,34 +76,9 @@ func (m *ServiceDTOVersion2BusBusVehicleInfo) validateUpdateTime(formats strfmt.
 	return nil
 }
 
-var serviceDTOVersion2BusBusVehicleInfoTypeVehicleTypePropEnum []interface{}
-
-func init() {
-	var res []int64
-	if err := json.Unmarshal([]byte(`[0,1,2,3]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		serviceDTOVersion2BusBusVehicleInfoTypeVehicleTypePropEnum = append(serviceDTOVersion2BusBusVehicleInfoTypeVehicleTypePropEnum, v)
-	}
-}
-
-// prop value enum
-func (m *ServiceDTOVersion2BusBusVehicleInfo) validateVehicleTypeEnum(path, location string, value int64) error {
-	if err := validate.Enum(path, location, value, serviceDTOVersion2BusBusVehicleInfoTypeVehicleTypePropEnum); err != nil {
-		return err
-	}
-	return nil
-}
-
 func (m *ServiceDTOVersion2BusBusVehicleInfo) validateVehicleType(formats strfmt.Registry) error {
 
 	if err := validate.Required("VehicleType", "body", m.VehicleType); err != nil {
-		return err
-	}
-
-	// value enum
-	if err := m.validateVehicleTypeEnum("VehicleType", "body", *m.VehicleType); err != nil {
 		return err
 	}
 

@@ -13,6 +13,7 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
 	cr "github.com/go-openapi/runtime/client"
+	"github.com/go-openapi/swag"
 
 	strfmt "github.com/go-openapi/strfmt"
 )
@@ -21,7 +22,7 @@ import (
 // with the default values initialized.
 func NewBikeAPIStationParams() *BikeAPIStationParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &BikeAPIStationParams{
 		DollarTop: &dollarTopDefault,
@@ -34,7 +35,7 @@ func NewBikeAPIStationParams() *BikeAPIStationParams {
 // with the default values initialized, and the ability to set a timeout on a request
 func NewBikeAPIStationParamsWithTimeout(timeout time.Duration) *BikeAPIStationParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &BikeAPIStationParams{
 		DollarTop: &dollarTopDefault,
@@ -47,7 +48,7 @@ func NewBikeAPIStationParamsWithTimeout(timeout time.Duration) *BikeAPIStationPa
 // with the default values initialized, and the ability to set a context for a request
 func NewBikeAPIStationParamsWithContext(ctx context.Context) *BikeAPIStationParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &BikeAPIStationParams{
 		DollarTop: &dollarTopDefault,
@@ -60,7 +61,7 @@ func NewBikeAPIStationParamsWithContext(ctx context.Context) *BikeAPIStationPara
 // with the default values initialized, and the ability to set a custom HTTPClient for a request
 func NewBikeAPIStationParamsWithHTTPClient(client *http.Client) *BikeAPIStationParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &BikeAPIStationParams{
 		DollarTop:  &dollarTopDefault,
@@ -107,7 +108,7 @@ type BikeAPIStationParams struct {
 	  取前幾筆
 
 	*/
-	DollarTop *string
+	DollarTop *int64
 	/*City
 	  欲查詢縣市
 
@@ -219,13 +220,13 @@ func (o *BikeAPIStationParams) SetDollarSpatialFilter(dollarSpatialFilter *strin
 }
 
 // WithDollarTop adds the dollarTop to the bike Api station params
-func (o *BikeAPIStationParams) WithDollarTop(dollarTop *string) *BikeAPIStationParams {
+func (o *BikeAPIStationParams) WithDollarTop(dollarTop *int64) *BikeAPIStationParams {
 	o.SetDollarTop(dollarTop)
 	return o
 }
 
 // SetDollarTop adds the dollarTop to the bike Api station params
-func (o *BikeAPIStationParams) SetDollarTop(dollarTop *string) {
+func (o *BikeAPIStationParams) SetDollarTop(dollarTop *int64) {
 	o.DollarTop = dollarTop
 }
 
@@ -340,11 +341,11 @@ func (o *BikeAPIStationParams) WriteToRequest(r runtime.ClientRequest, reg strfm
 	if o.DollarTop != nil {
 
 		// query param $top
-		var qrDollarTop string
+		var qrDollarTop int64
 		if o.DollarTop != nil {
 			qrDollarTop = *o.DollarTop
 		}
-		qDollarTop := qrDollarTop
+		qDollarTop := swag.FormatInt64(qrDollarTop)
 		if qDollarTop != "" {
 			if err := r.SetQueryParam("$top", qDollarTop); err != nil {
 				return err

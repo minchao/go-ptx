@@ -13,6 +13,7 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
 	cr "github.com/go-openapi/runtime/client"
+	"github.com/go-openapi/swag"
 
 	strfmt "github.com/go-openapi/strfmt"
 )
@@ -21,7 +22,7 @@ import (
 // with the default values initialized.
 func NewTourismAPIActivity0Params() *TourismAPIActivity0Params {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &TourismAPIActivity0Params{
 		DollarTop: &dollarTopDefault,
@@ -34,7 +35,7 @@ func NewTourismAPIActivity0Params() *TourismAPIActivity0Params {
 // with the default values initialized, and the ability to set a timeout on a request
 func NewTourismAPIActivity0ParamsWithTimeout(timeout time.Duration) *TourismAPIActivity0Params {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &TourismAPIActivity0Params{
 		DollarTop: &dollarTopDefault,
@@ -47,7 +48,7 @@ func NewTourismAPIActivity0ParamsWithTimeout(timeout time.Duration) *TourismAPIA
 // with the default values initialized, and the ability to set a context for a request
 func NewTourismAPIActivity0ParamsWithContext(ctx context.Context) *TourismAPIActivity0Params {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &TourismAPIActivity0Params{
 		DollarTop: &dollarTopDefault,
@@ -60,7 +61,7 @@ func NewTourismAPIActivity0ParamsWithContext(ctx context.Context) *TourismAPIAct
 // with the default values initialized, and the ability to set a custom HTTPClient for a request
 func NewTourismAPIActivity0ParamsWithHTTPClient(client *http.Client) *TourismAPIActivity0Params {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &TourismAPIActivity0Params{
 		DollarTop:  &dollarTopDefault,
@@ -107,7 +108,7 @@ type TourismAPIActivity0Params struct {
 	  取前幾筆
 
 	*/
-	DollarTop *string
+	DollarTop *int64
 	/*City
 	  縣市名稱
 
@@ -219,13 +220,13 @@ func (o *TourismAPIActivity0Params) SetDollarSpatialFilter(dollarSpatialFilter *
 }
 
 // WithDollarTop adds the dollarTop to the tourism Api activity 0 params
-func (o *TourismAPIActivity0Params) WithDollarTop(dollarTop *string) *TourismAPIActivity0Params {
+func (o *TourismAPIActivity0Params) WithDollarTop(dollarTop *int64) *TourismAPIActivity0Params {
 	o.SetDollarTop(dollarTop)
 	return o
 }
 
 // SetDollarTop adds the dollarTop to the tourism Api activity 0 params
-func (o *TourismAPIActivity0Params) SetDollarTop(dollarTop *string) {
+func (o *TourismAPIActivity0Params) SetDollarTop(dollarTop *int64) {
 	o.DollarTop = dollarTop
 }
 
@@ -340,11 +341,11 @@ func (o *TourismAPIActivity0Params) WriteToRequest(r runtime.ClientRequest, reg 
 	if o.DollarTop != nil {
 
 		// query param $top
-		var qrDollarTop string
+		var qrDollarTop int64
 		if o.DollarTop != nil {
 			qrDollarTop = *o.DollarTop
 		}
-		qDollarTop := qrDollarTop
+		qDollarTop := swag.FormatInt64(qrDollarTop)
 		if qDollarTop != "" {
 			if err := r.SetQueryParam("$top", qDollarTop); err != nil {
 				return err

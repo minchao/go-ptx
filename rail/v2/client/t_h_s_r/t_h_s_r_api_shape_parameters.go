@@ -13,6 +13,7 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
 	cr "github.com/go-openapi/runtime/client"
+	"github.com/go-openapi/swag"
 
 	strfmt "github.com/go-openapi/strfmt"
 )
@@ -21,7 +22,7 @@ import (
 // with the default values initialized.
 func NewTHSRAPIShapeParams() *THSRAPIShapeParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &THSRAPIShapeParams{
 		DollarTop: &dollarTopDefault,
@@ -34,7 +35,7 @@ func NewTHSRAPIShapeParams() *THSRAPIShapeParams {
 // with the default values initialized, and the ability to set a timeout on a request
 func NewTHSRAPIShapeParamsWithTimeout(timeout time.Duration) *THSRAPIShapeParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &THSRAPIShapeParams{
 		DollarTop: &dollarTopDefault,
@@ -47,7 +48,7 @@ func NewTHSRAPIShapeParamsWithTimeout(timeout time.Duration) *THSRAPIShapeParams
 // with the default values initialized, and the ability to set a context for a request
 func NewTHSRAPIShapeParamsWithContext(ctx context.Context) *THSRAPIShapeParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &THSRAPIShapeParams{
 		DollarTop: &dollarTopDefault,
@@ -60,7 +61,7 @@ func NewTHSRAPIShapeParamsWithContext(ctx context.Context) *THSRAPIShapeParams {
 // with the default values initialized, and the ability to set a custom HTTPClient for a request
 func NewTHSRAPIShapeParamsWithHTTPClient(client *http.Client) *THSRAPIShapeParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &THSRAPIShapeParams{
 		DollarTop:  &dollarTopDefault,
@@ -102,7 +103,7 @@ type THSRAPIShapeParams struct {
 	  取前幾筆
 
 	*/
-	DollarTop *string
+	DollarTop *int64
 
 	timeout    time.Duration
 	Context    context.Context
@@ -198,13 +199,13 @@ func (o *THSRAPIShapeParams) SetDollarSkip(dollarSkip *string) {
 }
 
 // WithDollarTop adds the dollarTop to the t h s r Api shape params
-func (o *THSRAPIShapeParams) WithDollarTop(dollarTop *string) *THSRAPIShapeParams {
+func (o *THSRAPIShapeParams) WithDollarTop(dollarTop *int64) *THSRAPIShapeParams {
 	o.SetDollarTop(dollarTop)
 	return o
 }
 
 // SetDollarTop adds the dollarTop to the t h s r Api shape params
-func (o *THSRAPIShapeParams) SetDollarTop(dollarTop *string) {
+func (o *THSRAPIShapeParams) SetDollarTop(dollarTop *int64) {
 	o.DollarTop = dollarTop
 }
 
@@ -292,11 +293,11 @@ func (o *THSRAPIShapeParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.
 	if o.DollarTop != nil {
 
 		// query param $top
-		var qrDollarTop string
+		var qrDollarTop int64
 		if o.DollarTop != nil {
 			qrDollarTop = *o.DollarTop
 		}
-		qDollarTop := qrDollarTop
+		qDollarTop := swag.FormatInt64(qrDollarTop)
 		if qDollarTop != "" {
 			if err := r.SetQueryParam("$top", qDollarTop); err != nil {
 				return err

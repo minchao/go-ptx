@@ -13,6 +13,7 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
 	cr "github.com/go-openapi/runtime/client"
+	"github.com/go-openapi/swag"
 
 	strfmt "github.com/go-openapi/strfmt"
 )
@@ -21,7 +22,7 @@ import (
 // with the default values initialized.
 func NewMetroAPIS2STravelTimeParams() *MetroAPIS2STravelTimeParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &MetroAPIS2STravelTimeParams{
 		DollarTop: &dollarTopDefault,
@@ -34,7 +35,7 @@ func NewMetroAPIS2STravelTimeParams() *MetroAPIS2STravelTimeParams {
 // with the default values initialized, and the ability to set a timeout on a request
 func NewMetroAPIS2STravelTimeParamsWithTimeout(timeout time.Duration) *MetroAPIS2STravelTimeParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &MetroAPIS2STravelTimeParams{
 		DollarTop: &dollarTopDefault,
@@ -47,7 +48,7 @@ func NewMetroAPIS2STravelTimeParamsWithTimeout(timeout time.Duration) *MetroAPIS
 // with the default values initialized, and the ability to set a context for a request
 func NewMetroAPIS2STravelTimeParamsWithContext(ctx context.Context) *MetroAPIS2STravelTimeParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &MetroAPIS2STravelTimeParams{
 		DollarTop: &dollarTopDefault,
@@ -60,7 +61,7 @@ func NewMetroAPIS2STravelTimeParamsWithContext(ctx context.Context) *MetroAPIS2S
 // with the default values initialized, and the ability to set a custom HTTPClient for a request
 func NewMetroAPIS2STravelTimeParamsWithHTTPClient(client *http.Client) *MetroAPIS2STravelTimeParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &MetroAPIS2STravelTimeParams{
 		DollarTop:  &dollarTopDefault,
@@ -102,7 +103,7 @@ type MetroAPIS2STravelTimeParams struct {
 	  取前幾筆
 
 	*/
-	DollarTop *string
+	DollarTop *int64
 	/*Operator
 	  欲查詢縣市
 
@@ -203,13 +204,13 @@ func (o *MetroAPIS2STravelTimeParams) SetDollarSkip(dollarSkip *string) {
 }
 
 // WithDollarTop adds the dollarTop to the metro Api s2 s travel time params
-func (o *MetroAPIS2STravelTimeParams) WithDollarTop(dollarTop *string) *MetroAPIS2STravelTimeParams {
+func (o *MetroAPIS2STravelTimeParams) WithDollarTop(dollarTop *int64) *MetroAPIS2STravelTimeParams {
 	o.SetDollarTop(dollarTop)
 	return o
 }
 
 // SetDollarTop adds the dollarTop to the metro Api s2 s travel time params
-func (o *MetroAPIS2STravelTimeParams) SetDollarTop(dollarTop *string) {
+func (o *MetroAPIS2STravelTimeParams) SetDollarTop(dollarTop *int64) {
 	o.DollarTop = dollarTop
 }
 
@@ -308,11 +309,11 @@ func (o *MetroAPIS2STravelTimeParams) WriteToRequest(r runtime.ClientRequest, re
 	if o.DollarTop != nil {
 
 		// query param $top
-		var qrDollarTop string
+		var qrDollarTop int64
 		if o.DollarTop != nil {
 			qrDollarTop = *o.DollarTop
 		}
-		qDollarTop := qrDollarTop
+		qDollarTop := swag.FormatInt64(qrDollarTop)
 		if qDollarTop != "" {
 			if err := r.SetQueryParam("$top", qDollarTop); err != nil {
 				return err

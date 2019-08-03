@@ -13,6 +13,7 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
 	cr "github.com/go-openapi/runtime/client"
+	"github.com/go-openapi/swag"
 
 	strfmt "github.com/go-openapi/strfmt"
 )
@@ -21,7 +22,7 @@ import (
 // with the default values initialized.
 func NewStationOfLineAPIControllerGetParams() *StationOfLineAPIControllerGetParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &StationOfLineAPIControllerGetParams{
 		DollarTop: &dollarTopDefault,
@@ -34,7 +35,7 @@ func NewStationOfLineAPIControllerGetParams() *StationOfLineAPIControllerGetPara
 // with the default values initialized, and the ability to set a timeout on a request
 func NewStationOfLineAPIControllerGetParamsWithTimeout(timeout time.Duration) *StationOfLineAPIControllerGetParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &StationOfLineAPIControllerGetParams{
 		DollarTop: &dollarTopDefault,
@@ -47,7 +48,7 @@ func NewStationOfLineAPIControllerGetParamsWithTimeout(timeout time.Duration) *S
 // with the default values initialized, and the ability to set a context for a request
 func NewStationOfLineAPIControllerGetParamsWithContext(ctx context.Context) *StationOfLineAPIControllerGetParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &StationOfLineAPIControllerGetParams{
 		DollarTop: &dollarTopDefault,
@@ -60,7 +61,7 @@ func NewStationOfLineAPIControllerGetParamsWithContext(ctx context.Context) *Sta
 // with the default values initialized, and the ability to set a custom HTTPClient for a request
 func NewStationOfLineAPIControllerGetParamsWithHTTPClient(client *http.Client) *StationOfLineAPIControllerGetParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &StationOfLineAPIControllerGetParams{
 		DollarTop:  &dollarTopDefault,
@@ -107,7 +108,7 @@ type StationOfLineAPIControllerGetParams struct {
 	  取前幾筆
 
 	*/
-	DollarTop *string
+	DollarTop *int64
 
 	timeout    time.Duration
 	Context    context.Context
@@ -214,13 +215,13 @@ func (o *StationOfLineAPIControllerGetParams) SetDollarSkip(dollarSkip *string) 
 }
 
 // WithDollarTop adds the dollarTop to the station of line Api controller get params
-func (o *StationOfLineAPIControllerGetParams) WithDollarTop(dollarTop *string) *StationOfLineAPIControllerGetParams {
+func (o *StationOfLineAPIControllerGetParams) WithDollarTop(dollarTop *int64) *StationOfLineAPIControllerGetParams {
 	o.SetDollarTop(dollarTop)
 	return o
 }
 
 // SetDollarTop adds the dollarTop to the station of line Api controller get params
-func (o *StationOfLineAPIControllerGetParams) SetDollarTop(dollarTop *string) {
+func (o *StationOfLineAPIControllerGetParams) SetDollarTop(dollarTop *int64) {
 	o.DollarTop = dollarTop
 }
 
@@ -324,11 +325,11 @@ func (o *StationOfLineAPIControllerGetParams) WriteToRequest(r runtime.ClientReq
 	if o.DollarTop != nil {
 
 		// query param $top
-		var qrDollarTop string
+		var qrDollarTop int64
 		if o.DollarTop != nil {
 			qrDollarTop = *o.DollarTop
 		}
-		qDollarTop := qrDollarTop
+		qDollarTop := swag.FormatInt64(qrDollarTop)
 		if qDollarTop != "" {
 			if err := r.SetQueryParam("$top", qDollarTop); err != nil {
 				return err

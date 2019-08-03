@@ -6,8 +6,6 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	"encoding/json"
-
 	strfmt "github.com/go-openapi/strfmt"
 
 	"github.com/go-openapi/errors"
@@ -29,9 +27,10 @@ type ServiceDTOVersion2AviationFIDSArrival struct {
 	// 實際抵達時間(ISO8601格式:yyyy-MM-ddTHH:mm)
 	ActualArrivalTime string `json:"ActualArrivalTime,omitempty"`
 
-	// 航線種類(目前民航局與桃機的FIDS系統都尚未提供此欄位資料)
-	// Enum: [1 2 3 4 5 6 -2]
-	AirRouteType int64 `json:"AirRouteType,omitempty"`
+	// integer
+	//
+	// 航線種類(目前民航局與桃機的FIDS系統都尚未提供此欄位資料) : [-2:'特殊',1:'國際',2:'國內',3:'兩岸',4:'國際包機',5:'國內包機',6:'兩岸包機']
+	AirRouteType int32 `json:"AirRouteType,omitempty"`
 
 	// 航空公司IATA國際代碼
 	// Required: true
@@ -100,10 +99,6 @@ type ServiceDTOVersion2AviationFIDSArrival struct {
 func (m *ServiceDTOVersion2AviationFIDSArrival) Validate(formats strfmt.Registry) error {
 	var res []error
 
-	if err := m.validateAirRouteType(formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.validateAirlineID(formats); err != nil {
 		res = append(res, err)
 	}
@@ -131,40 +126,6 @@ func (m *ServiceDTOVersion2AviationFIDSArrival) Validate(formats strfmt.Registry
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
-	return nil
-}
-
-var serviceDTOVersion2AviationFIdSArrivalTypeAirRouteTypePropEnum []interface{}
-
-func init() {
-	var res []int64
-	if err := json.Unmarshal([]byte(`[1,2,3,4,5,6,-2]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		serviceDTOVersion2AviationFIdSArrivalTypeAirRouteTypePropEnum = append(serviceDTOVersion2AviationFIdSArrivalTypeAirRouteTypePropEnum, v)
-	}
-}
-
-// prop value enum
-func (m *ServiceDTOVersion2AviationFIDSArrival) validateAirRouteTypeEnum(path, location string, value int64) error {
-	if err := validate.Enum(path, location, value, serviceDTOVersion2AviationFIdSArrivalTypeAirRouteTypePropEnum); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (m *ServiceDTOVersion2AviationFIDSArrival) validateAirRouteType(formats strfmt.Registry) error {
-
-	if swag.IsZero(m.AirRouteType) { // not required
-		return nil
-	}
-
-	// value enum
-	if err := m.validateAirRouteTypeEnum("AirRouteType", "body", m.AirRouteType); err != nil {
-		return err
-	}
-
 	return nil
 }
 

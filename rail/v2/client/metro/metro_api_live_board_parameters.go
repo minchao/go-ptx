@@ -13,6 +13,7 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
 	cr "github.com/go-openapi/runtime/client"
+	"github.com/go-openapi/swag"
 
 	strfmt "github.com/go-openapi/strfmt"
 )
@@ -21,7 +22,7 @@ import (
 // with the default values initialized.
 func NewMetroAPILiveBoardParams() *MetroAPILiveBoardParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &MetroAPILiveBoardParams{
 		DollarTop: &dollarTopDefault,
@@ -34,7 +35,7 @@ func NewMetroAPILiveBoardParams() *MetroAPILiveBoardParams {
 // with the default values initialized, and the ability to set a timeout on a request
 func NewMetroAPILiveBoardParamsWithTimeout(timeout time.Duration) *MetroAPILiveBoardParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &MetroAPILiveBoardParams{
 		DollarTop: &dollarTopDefault,
@@ -47,7 +48,7 @@ func NewMetroAPILiveBoardParamsWithTimeout(timeout time.Duration) *MetroAPILiveB
 // with the default values initialized, and the ability to set a context for a request
 func NewMetroAPILiveBoardParamsWithContext(ctx context.Context) *MetroAPILiveBoardParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &MetroAPILiveBoardParams{
 		DollarTop: &dollarTopDefault,
@@ -60,7 +61,7 @@ func NewMetroAPILiveBoardParamsWithContext(ctx context.Context) *MetroAPILiveBoa
 // with the default values initialized, and the ability to set a custom HTTPClient for a request
 func NewMetroAPILiveBoardParamsWithHTTPClient(client *http.Client) *MetroAPILiveBoardParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &MetroAPILiveBoardParams{
 		DollarTop:  &dollarTopDefault,
@@ -102,7 +103,7 @@ type MetroAPILiveBoardParams struct {
 	  取前幾筆
 
 	*/
-	DollarTop *string
+	DollarTop *int64
 	/*Operator
 	  欲查詢縣市
 
@@ -203,13 +204,13 @@ func (o *MetroAPILiveBoardParams) SetDollarSkip(dollarSkip *string) {
 }
 
 // WithDollarTop adds the dollarTop to the metro Api live board params
-func (o *MetroAPILiveBoardParams) WithDollarTop(dollarTop *string) *MetroAPILiveBoardParams {
+func (o *MetroAPILiveBoardParams) WithDollarTop(dollarTop *int64) *MetroAPILiveBoardParams {
 	o.SetDollarTop(dollarTop)
 	return o
 }
 
 // SetDollarTop adds the dollarTop to the metro Api live board params
-func (o *MetroAPILiveBoardParams) SetDollarTop(dollarTop *string) {
+func (o *MetroAPILiveBoardParams) SetDollarTop(dollarTop *int64) {
 	o.DollarTop = dollarTop
 }
 
@@ -308,11 +309,11 @@ func (o *MetroAPILiveBoardParams) WriteToRequest(r runtime.ClientRequest, reg st
 	if o.DollarTop != nil {
 
 		// query param $top
-		var qrDollarTop string
+		var qrDollarTop int64
 		if o.DollarTop != nil {
 			qrDollarTop = *o.DollarTop
 		}
-		qDollarTop := qrDollarTop
+		qDollarTop := swag.FormatInt64(qrDollarTop)
 		if qDollarTop != "" {
 			if err := r.SetQueryParam("$top", qDollarTop); err != nil {
 				return err

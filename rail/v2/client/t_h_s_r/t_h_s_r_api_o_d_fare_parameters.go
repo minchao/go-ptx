@@ -13,6 +13,7 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
 	cr "github.com/go-openapi/runtime/client"
+	"github.com/go-openapi/swag"
 
 	strfmt "github.com/go-openapi/strfmt"
 )
@@ -21,7 +22,7 @@ import (
 // with the default values initialized.
 func NewTHSRAPIODFareParams() *THSRAPIODFareParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &THSRAPIODFareParams{
 		DollarTop: &dollarTopDefault,
@@ -34,7 +35,7 @@ func NewTHSRAPIODFareParams() *THSRAPIODFareParams {
 // with the default values initialized, and the ability to set a timeout on a request
 func NewTHSRAPIODFareParamsWithTimeout(timeout time.Duration) *THSRAPIODFareParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &THSRAPIODFareParams{
 		DollarTop: &dollarTopDefault,
@@ -47,7 +48,7 @@ func NewTHSRAPIODFareParamsWithTimeout(timeout time.Duration) *THSRAPIODFarePara
 // with the default values initialized, and the ability to set a context for a request
 func NewTHSRAPIODFareParamsWithContext(ctx context.Context) *THSRAPIODFareParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &THSRAPIODFareParams{
 		DollarTop: &dollarTopDefault,
@@ -60,7 +61,7 @@ func NewTHSRAPIODFareParamsWithContext(ctx context.Context) *THSRAPIODFareParams
 // with the default values initialized, and the ability to set a custom HTTPClient for a request
 func NewTHSRAPIODFareParamsWithHTTPClient(client *http.Client) *THSRAPIODFareParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &THSRAPIODFareParams{
 		DollarTop:  &dollarTopDefault,
@@ -102,7 +103,7 @@ type THSRAPIODFareParams struct {
 	  取前幾筆
 
 	*/
-	DollarTop *string
+	DollarTop *int64
 
 	timeout    time.Duration
 	Context    context.Context
@@ -198,13 +199,13 @@ func (o *THSRAPIODFareParams) SetDollarSkip(dollarSkip *string) {
 }
 
 // WithDollarTop adds the dollarTop to the t h s r Api o d fare params
-func (o *THSRAPIODFareParams) WithDollarTop(dollarTop *string) *THSRAPIODFareParams {
+func (o *THSRAPIODFareParams) WithDollarTop(dollarTop *int64) *THSRAPIODFareParams {
 	o.SetDollarTop(dollarTop)
 	return o
 }
 
 // SetDollarTop adds the dollarTop to the t h s r Api o d fare params
-func (o *THSRAPIODFareParams) SetDollarTop(dollarTop *string) {
+func (o *THSRAPIODFareParams) SetDollarTop(dollarTop *int64) {
 	o.DollarTop = dollarTop
 }
 
@@ -292,11 +293,11 @@ func (o *THSRAPIODFareParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 	if o.DollarTop != nil {
 
 		// query param $top
-		var qrDollarTop string
+		var qrDollarTop int64
 		if o.DollarTop != nil {
 			qrDollarTop = *o.DollarTop
 		}
-		qDollarTop := qrDollarTop
+		qDollarTop := swag.FormatInt64(qrDollarTop)
 		if qDollarTop != "" {
 			if err := r.SetQueryParam("$top", qDollarTop); err != nil {
 				return err

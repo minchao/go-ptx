@@ -13,6 +13,7 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
 	cr "github.com/go-openapi/runtime/client"
+	"github.com/go-openapi/swag"
 
 	strfmt "github.com/go-openapi/strfmt"
 )
@@ -21,7 +22,7 @@ import (
 // with the default values initialized.
 func NewStationAPIControllerGetParams() *StationAPIControllerGetParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &StationAPIControllerGetParams{
 		DollarTop: &dollarTopDefault,
@@ -34,7 +35,7 @@ func NewStationAPIControllerGetParams() *StationAPIControllerGetParams {
 // with the default values initialized, and the ability to set a timeout on a request
 func NewStationAPIControllerGetParamsWithTimeout(timeout time.Duration) *StationAPIControllerGetParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &StationAPIControllerGetParams{
 		DollarTop: &dollarTopDefault,
@@ -47,7 +48,7 @@ func NewStationAPIControllerGetParamsWithTimeout(timeout time.Duration) *Station
 // with the default values initialized, and the ability to set a context for a request
 func NewStationAPIControllerGetParamsWithContext(ctx context.Context) *StationAPIControllerGetParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &StationAPIControllerGetParams{
 		DollarTop: &dollarTopDefault,
@@ -60,7 +61,7 @@ func NewStationAPIControllerGetParamsWithContext(ctx context.Context) *StationAP
 // with the default values initialized, and the ability to set a custom HTTPClient for a request
 func NewStationAPIControllerGetParamsWithHTTPClient(client *http.Client) *StationAPIControllerGetParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &StationAPIControllerGetParams{
 		DollarTop:  &dollarTopDefault,
@@ -107,7 +108,7 @@ type StationAPIControllerGetParams struct {
 	  取前幾筆
 
 	*/
-	DollarTop *string
+	DollarTop *int64
 
 	timeout    time.Duration
 	Context    context.Context
@@ -214,13 +215,13 @@ func (o *StationAPIControllerGetParams) SetDollarSkip(dollarSkip *string) {
 }
 
 // WithDollarTop adds the dollarTop to the station Api controller get params
-func (o *StationAPIControllerGetParams) WithDollarTop(dollarTop *string) *StationAPIControllerGetParams {
+func (o *StationAPIControllerGetParams) WithDollarTop(dollarTop *int64) *StationAPIControllerGetParams {
 	o.SetDollarTop(dollarTop)
 	return o
 }
 
 // SetDollarTop adds the dollarTop to the station Api controller get params
-func (o *StationAPIControllerGetParams) SetDollarTop(dollarTop *string) {
+func (o *StationAPIControllerGetParams) SetDollarTop(dollarTop *int64) {
 	o.DollarTop = dollarTop
 }
 
@@ -324,11 +325,11 @@ func (o *StationAPIControllerGetParams) WriteToRequest(r runtime.ClientRequest, 
 	if o.DollarTop != nil {
 
 		// query param $top
-		var qrDollarTop string
+		var qrDollarTop int64
 		if o.DollarTop != nil {
 			qrDollarTop = *o.DollarTop
 		}
-		qDollarTop := qrDollarTop
+		qDollarTop := swag.FormatInt64(qrDollarTop)
 		if qDollarTop != "" {
 			if err := r.SetQueryParam("$top", qDollarTop); err != nil {
 				return err

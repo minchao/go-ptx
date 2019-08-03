@@ -6,7 +6,6 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	"encoding/json"
 	"strconv"
 
 	strfmt "github.com/go-openapi/strfmt"
@@ -22,9 +21,10 @@ import (
 // swagger:model Service.DTO.Version2.Bus.BusDisplayStopOfRoute
 type ServiceDTOVersion2BusBusDisplayStopOfRoute struct {
 
-	// 去返程
-	// Enum: [0 1 2 255]
-	Direction int64 `json:"Direction,omitempty"`
+	// integer
+	//
+	// 去返程 : [0:'去程',1:'返程',2:'迴圈',255:'未知']
+	Direction int32 `json:"Direction,omitempty"`
 
 	// 地區既用中之路線代碼(為原資料內碼)
 	// Required: true
@@ -59,10 +59,6 @@ type ServiceDTOVersion2BusBusDisplayStopOfRoute struct {
 func (m *ServiceDTOVersion2BusBusDisplayStopOfRoute) Validate(formats strfmt.Registry) error {
 	var res []error
 
-	if err := m.validateDirection(formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.validateRouteID(formats); err != nil {
 		res = append(res, err)
 	}
@@ -90,40 +86,6 @@ func (m *ServiceDTOVersion2BusBusDisplayStopOfRoute) Validate(formats strfmt.Reg
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
-	return nil
-}
-
-var serviceDTOVersion2BusBusDisplayStopOfRouteTypeDirectionPropEnum []interface{}
-
-func init() {
-	var res []int64
-	if err := json.Unmarshal([]byte(`[0,1,2,255]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		serviceDTOVersion2BusBusDisplayStopOfRouteTypeDirectionPropEnum = append(serviceDTOVersion2BusBusDisplayStopOfRouteTypeDirectionPropEnum, v)
-	}
-}
-
-// prop value enum
-func (m *ServiceDTOVersion2BusBusDisplayStopOfRoute) validateDirectionEnum(path, location string, value int64) error {
-	if err := validate.Enum(path, location, value, serviceDTOVersion2BusBusDisplayStopOfRouteTypeDirectionPropEnum); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (m *ServiceDTOVersion2BusBusDisplayStopOfRoute) validateDirection(formats strfmt.Registry) error {
-
-	if swag.IsZero(m.Direction) { // not required
-		return nil
-	}
-
-	// value enum
-	if err := m.validateDirectionEnum("Direction", "body", m.Direction); err != nil {
-		return err
-	}
-
 	return nil
 }
 
