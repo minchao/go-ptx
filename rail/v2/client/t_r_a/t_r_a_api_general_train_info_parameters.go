@@ -13,6 +13,7 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
 	cr "github.com/go-openapi/runtime/client"
+	"github.com/go-openapi/swag"
 
 	strfmt "github.com/go-openapi/strfmt"
 )
@@ -21,7 +22,7 @@ import (
 // with the default values initialized.
 func NewTRAAPIGeneralTrainInfoParams() *TRAAPIGeneralTrainInfoParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &TRAAPIGeneralTrainInfoParams{
 		DollarTop: &dollarTopDefault,
@@ -34,7 +35,7 @@ func NewTRAAPIGeneralTrainInfoParams() *TRAAPIGeneralTrainInfoParams {
 // with the default values initialized, and the ability to set a timeout on a request
 func NewTRAAPIGeneralTrainInfoParamsWithTimeout(timeout time.Duration) *TRAAPIGeneralTrainInfoParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &TRAAPIGeneralTrainInfoParams{
 		DollarTop: &dollarTopDefault,
@@ -47,7 +48,7 @@ func NewTRAAPIGeneralTrainInfoParamsWithTimeout(timeout time.Duration) *TRAAPIGe
 // with the default values initialized, and the ability to set a context for a request
 func NewTRAAPIGeneralTrainInfoParamsWithContext(ctx context.Context) *TRAAPIGeneralTrainInfoParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &TRAAPIGeneralTrainInfoParams{
 		DollarTop: &dollarTopDefault,
@@ -60,7 +61,7 @@ func NewTRAAPIGeneralTrainInfoParamsWithContext(ctx context.Context) *TRAAPIGene
 // with the default values initialized, and the ability to set a custom HTTPClient for a request
 func NewTRAAPIGeneralTrainInfoParamsWithHTTPClient(client *http.Client) *TRAAPIGeneralTrainInfoParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &TRAAPIGeneralTrainInfoParams{
 		DollarTop:  &dollarTopDefault,
@@ -102,7 +103,7 @@ type TRAAPIGeneralTrainInfoParams struct {
 	  取前幾筆
 
 	*/
-	DollarTop *string
+	DollarTop *int64
 
 	timeout    time.Duration
 	Context    context.Context
@@ -198,13 +199,13 @@ func (o *TRAAPIGeneralTrainInfoParams) SetDollarSkip(dollarSkip *string) {
 }
 
 // WithDollarTop adds the dollarTop to the t r a Api general train info params
-func (o *TRAAPIGeneralTrainInfoParams) WithDollarTop(dollarTop *string) *TRAAPIGeneralTrainInfoParams {
+func (o *TRAAPIGeneralTrainInfoParams) WithDollarTop(dollarTop *int64) *TRAAPIGeneralTrainInfoParams {
 	o.SetDollarTop(dollarTop)
 	return o
 }
 
 // SetDollarTop adds the dollarTop to the t r a Api general train info params
-func (o *TRAAPIGeneralTrainInfoParams) SetDollarTop(dollarTop *string) {
+func (o *TRAAPIGeneralTrainInfoParams) SetDollarTop(dollarTop *int64) {
 	o.DollarTop = dollarTop
 }
 
@@ -292,11 +293,11 @@ func (o *TRAAPIGeneralTrainInfoParams) WriteToRequest(r runtime.ClientRequest, r
 	if o.DollarTop != nil {
 
 		// query param $top
-		var qrDollarTop string
+		var qrDollarTop int64
 		if o.DollarTop != nil {
 			qrDollarTop = *o.DollarTop
 		}
-		qDollarTop := qrDollarTop
+		qDollarTop := swag.FormatInt64(qrDollarTop)
 		if qDollarTop != "" {
 			if err := r.SetQueryParam("$top", qDollarTop); err != nil {
 				return err

@@ -6,8 +6,6 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	"encoding/json"
-
 	strfmt "github.com/go-openapi/strfmt"
 
 	"github.com/go-openapi/errors"
@@ -23,9 +21,10 @@ type ServiceDTOVersion3RailTRATRAStationLiveBoardListStationLiveBoard struct {
 	// Required: true
 	DelayTime *int32 `json:"DelayTime"`
 
-	// 行駛方向
-	// Enum: [0 1]
-	Direction int64 `json:"Direction,omitempty"`
+	// integer
+	//
+	// 行駛方向 : [0:'順行',1:'逆行']
+	Direction int32 `json:"Direction,omitempty"`
 
 	// 終點站代碼
 	EndingStationID string `json:"EndingStationID,omitempty"`
@@ -39,9 +38,10 @@ type ServiceDTOVersion3RailTRATRAStationLiveBoardListStationLiveBoard struct {
 	// 停靠月台(00代表當時尚未確定停靠的月台，待確定好停靠的月台後，就會更新Platfrom。)
 	Platform string `json:"Platform,omitempty"`
 
-	// 列車狀態
-	// Enum: [0 1 2]
-	RunningStatus int64 `json:"RunningStatus,omitempty"`
+	// integer
+	//
+	// 列車狀態 : [0:'準點',1:'誤點',2:'取消']
+	RunningStatus int32 `json:"RunningStatus,omitempty"`
 
 	// 表訂到站時刻
 	ScheduleArrivalTime string `json:"ScheduleArrivalTime,omitempty"`
@@ -75,9 +75,10 @@ type ServiceDTOVersion3RailTRATRAStationLiveBoardListStationLiveBoard struct {
 	// Required: true
 	TrainTypeName *ServiceDTOVersion3BaseNameType `json:"TrainTypeName"`
 
-	// 山海線類型
-	// Enum: [0 1 2]
-	TripLine int64 `json:"TripLine,omitempty"`
+	// integer
+	//
+	// 山海線類型 : [0:'不經山海線',1:'山線',2:'海線']
+	TripLine int32 `json:"TripLine,omitempty"`
 
 	// DateTime
 	//
@@ -94,15 +95,7 @@ func (m *ServiceDTOVersion3RailTRATRAStationLiveBoardListStationLiveBoard) Valid
 		res = append(res, err)
 	}
 
-	if err := m.validateDirection(formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.validateEndingStationName(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateRunningStatus(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -119,10 +112,6 @@ func (m *ServiceDTOVersion3RailTRATRAStationLiveBoardListStationLiveBoard) Valid
 	}
 
 	if err := m.validateTrainTypeName(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateTripLine(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -145,40 +134,6 @@ func (m *ServiceDTOVersion3RailTRATRAStationLiveBoardListStationLiveBoard) valid
 	return nil
 }
 
-var serviceDTOVersion3RailTRATRAStationLiveBoardListStationLiveBoardTypeDirectionPropEnum []interface{}
-
-func init() {
-	var res []int64
-	if err := json.Unmarshal([]byte(`[0,1]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		serviceDTOVersion3RailTRATRAStationLiveBoardListStationLiveBoardTypeDirectionPropEnum = append(serviceDTOVersion3RailTRATRAStationLiveBoardListStationLiveBoardTypeDirectionPropEnum, v)
-	}
-}
-
-// prop value enum
-func (m *ServiceDTOVersion3RailTRATRAStationLiveBoardListStationLiveBoard) validateDirectionEnum(path, location string, value int64) error {
-	if err := validate.Enum(path, location, value, serviceDTOVersion3RailTRATRAStationLiveBoardListStationLiveBoardTypeDirectionPropEnum); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (m *ServiceDTOVersion3RailTRATRAStationLiveBoardListStationLiveBoard) validateDirection(formats strfmt.Registry) error {
-
-	if swag.IsZero(m.Direction) { // not required
-		return nil
-	}
-
-	// value enum
-	if err := m.validateDirectionEnum("Direction", "body", m.Direction); err != nil {
-		return err
-	}
-
-	return nil
-}
-
 func (m *ServiceDTOVersion3RailTRATRAStationLiveBoardListStationLiveBoard) validateEndingStationName(formats strfmt.Registry) error {
 
 	if err := validate.Required("EndingStationName", "body", m.EndingStationName); err != nil {
@@ -192,40 +147,6 @@ func (m *ServiceDTOVersion3RailTRATRAStationLiveBoardListStationLiveBoard) valid
 			}
 			return err
 		}
-	}
-
-	return nil
-}
-
-var serviceDTOVersion3RailTRATRAStationLiveBoardListStationLiveBoardTypeRunningStatusPropEnum []interface{}
-
-func init() {
-	var res []int64
-	if err := json.Unmarshal([]byte(`[0,1,2]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		serviceDTOVersion3RailTRATRAStationLiveBoardListStationLiveBoardTypeRunningStatusPropEnum = append(serviceDTOVersion3RailTRATRAStationLiveBoardListStationLiveBoardTypeRunningStatusPropEnum, v)
-	}
-}
-
-// prop value enum
-func (m *ServiceDTOVersion3RailTRATRAStationLiveBoardListStationLiveBoard) validateRunningStatusEnum(path, location string, value int64) error {
-	if err := validate.Enum(path, location, value, serviceDTOVersion3RailTRATRAStationLiveBoardListStationLiveBoardTypeRunningStatusPropEnum); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (m *ServiceDTOVersion3RailTRATRAStationLiveBoardListStationLiveBoard) validateRunningStatus(formats strfmt.Registry) error {
-
-	if swag.IsZero(m.RunningStatus) { // not required
-		return nil
-	}
-
-	// value enum
-	if err := m.validateRunningStatusEnum("RunningStatus", "body", m.RunningStatus); err != nil {
-		return err
 	}
 
 	return nil
@@ -280,40 +201,6 @@ func (m *ServiceDTOVersion3RailTRATRAStationLiveBoardListStationLiveBoard) valid
 			}
 			return err
 		}
-	}
-
-	return nil
-}
-
-var serviceDTOVersion3RailTRATRAStationLiveBoardListStationLiveBoardTypeTripLinePropEnum []interface{}
-
-func init() {
-	var res []int64
-	if err := json.Unmarshal([]byte(`[0,1,2]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		serviceDTOVersion3RailTRATRAStationLiveBoardListStationLiveBoardTypeTripLinePropEnum = append(serviceDTOVersion3RailTRATRAStationLiveBoardListStationLiveBoardTypeTripLinePropEnum, v)
-	}
-}
-
-// prop value enum
-func (m *ServiceDTOVersion3RailTRATRAStationLiveBoardListStationLiveBoard) validateTripLineEnum(path, location string, value int64) error {
-	if err := validate.Enum(path, location, value, serviceDTOVersion3RailTRATRAStationLiveBoardListStationLiveBoardTypeTripLinePropEnum); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (m *ServiceDTOVersion3RailTRATRAStationLiveBoardListStationLiveBoard) validateTripLine(formats strfmt.Registry) error {
-
-	if swag.IsZero(m.TripLine) { // not required
-		return nil
-	}
-
-	// value enum
-	if err := m.validateTripLineEnum("TripLine", "body", m.TripLine); err != nil {
-		return err
 	}
 
 	return nil

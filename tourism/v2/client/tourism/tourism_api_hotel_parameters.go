@@ -13,6 +13,7 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
 	cr "github.com/go-openapi/runtime/client"
+	"github.com/go-openapi/swag"
 
 	strfmt "github.com/go-openapi/strfmt"
 )
@@ -21,7 +22,7 @@ import (
 // with the default values initialized.
 func NewTourismAPIHotelParams() *TourismAPIHotelParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &TourismAPIHotelParams{
 		DollarTop: &dollarTopDefault,
@@ -34,7 +35,7 @@ func NewTourismAPIHotelParams() *TourismAPIHotelParams {
 // with the default values initialized, and the ability to set a timeout on a request
 func NewTourismAPIHotelParamsWithTimeout(timeout time.Duration) *TourismAPIHotelParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &TourismAPIHotelParams{
 		DollarTop: &dollarTopDefault,
@@ -47,7 +48,7 @@ func NewTourismAPIHotelParamsWithTimeout(timeout time.Duration) *TourismAPIHotel
 // with the default values initialized, and the ability to set a context for a request
 func NewTourismAPIHotelParamsWithContext(ctx context.Context) *TourismAPIHotelParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &TourismAPIHotelParams{
 		DollarTop: &dollarTopDefault,
@@ -60,7 +61,7 @@ func NewTourismAPIHotelParamsWithContext(ctx context.Context) *TourismAPIHotelPa
 // with the default values initialized, and the ability to set a custom HTTPClient for a request
 func NewTourismAPIHotelParamsWithHTTPClient(client *http.Client) *TourismAPIHotelParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &TourismAPIHotelParams{
 		DollarTop:  &dollarTopDefault,
@@ -107,7 +108,7 @@ type TourismAPIHotelParams struct {
 	  取前幾筆
 
 	*/
-	DollarTop *string
+	DollarTop *int64
 
 	timeout    time.Duration
 	Context    context.Context
@@ -214,13 +215,13 @@ func (o *TourismAPIHotelParams) SetDollarSpatialFilter(dollarSpatialFilter *stri
 }
 
 // WithDollarTop adds the dollarTop to the tourism Api hotel params
-func (o *TourismAPIHotelParams) WithDollarTop(dollarTop *string) *TourismAPIHotelParams {
+func (o *TourismAPIHotelParams) WithDollarTop(dollarTop *int64) *TourismAPIHotelParams {
 	o.SetDollarTop(dollarTop)
 	return o
 }
 
 // SetDollarTop adds the dollarTop to the tourism Api hotel params
-func (o *TourismAPIHotelParams) SetDollarTop(dollarTop *string) {
+func (o *TourismAPIHotelParams) SetDollarTop(dollarTop *int64) {
 	o.DollarTop = dollarTop
 }
 
@@ -324,11 +325,11 @@ func (o *TourismAPIHotelParams) WriteToRequest(r runtime.ClientRequest, reg strf
 	if o.DollarTop != nil {
 
 		// query param $top
-		var qrDollarTop string
+		var qrDollarTop int64
 		if o.DollarTop != nil {
 			qrDollarTop = *o.DollarTop
 		}
-		qDollarTop := qrDollarTop
+		qDollarTop := swag.FormatInt64(qrDollarTop)
 		if qDollarTop != "" {
 			if err := r.SetQueryParam("$top", qDollarTop); err != nil {
 				return err

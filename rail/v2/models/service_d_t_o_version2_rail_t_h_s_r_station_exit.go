@@ -47,6 +47,12 @@ type ServiceDTOVersion2RailTHSRStationExit struct {
 	// Required: true
 	LocationDescription *string `json:"LocationDescription"`
 
+	// DateTime
+	//
+	// 來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
+	// Required: true
+	SrcUpdateTime *string `json:"SrcUpdateTime"`
+
 	// 是否有樓梯
 	// Required: true
 	Stair *bool `json:"Stair"`
@@ -60,6 +66,12 @@ type ServiceDTOVersion2RailTHSRStationExit struct {
 	// 車站名稱
 	// Required: true
 	StationName *ServiceDTOVersion2BaseNameType `json:"StationName"`
+
+	// DateTime
+	//
+	// 本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
+	// Required: true
+	UpdateTime *string `json:"UpdateTime"`
 }
 
 // Validate validates this service d t o version2 rail t h s r station exit
@@ -90,6 +102,10 @@ func (m *ServiceDTOVersion2RailTHSRStationExit) Validate(formats strfmt.Registry
 		res = append(res, err)
 	}
 
+	if err := m.validateSrcUpdateTime(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateStair(formats); err != nil {
 		res = append(res, err)
 	}
@@ -99,6 +115,10 @@ func (m *ServiceDTOVersion2RailTHSRStationExit) Validate(formats strfmt.Registry
 	}
 
 	if err := m.validateStationName(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateUpdateTime(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -180,6 +200,15 @@ func (m *ServiceDTOVersion2RailTHSRStationExit) validateLocationDescription(form
 	return nil
 }
 
+func (m *ServiceDTOVersion2RailTHSRStationExit) validateSrcUpdateTime(formats strfmt.Registry) error {
+
+	if err := validate.Required("SrcUpdateTime", "body", m.SrcUpdateTime); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *ServiceDTOVersion2RailTHSRStationExit) validateStair(formats strfmt.Registry) error {
 
 	if err := validate.Required("Stair", "body", m.Stair); err != nil {
@@ -211,6 +240,15 @@ func (m *ServiceDTOVersion2RailTHSRStationExit) validateStationName(formats strf
 			}
 			return err
 		}
+	}
+
+	return nil
+}
+
+func (m *ServiceDTOVersion2RailTHSRStationExit) validateUpdateTime(formats strfmt.Registry) error {
+
+	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
+		return err
 	}
 
 	return nil

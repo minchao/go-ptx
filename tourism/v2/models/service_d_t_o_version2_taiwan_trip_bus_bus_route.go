@@ -6,7 +6,6 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	"encoding/json"
 	"strconv"
 
 	strfmt "github.com/go-openapi/strfmt"
@@ -26,10 +25,11 @@ type ServiceDTOVersion2TaiwanTripBusBusRoute struct {
 	// Required: true
 	AuthorityID *string `json:"AuthorityID"`
 
-	// 公車路線類別
+	// integer
+	//
+	// 公車路線類別 : [11:'市區公車',12:'公路客運',13:'國道客運',14:'接駁車']
 	// Required: true
-	// Enum: [11 12 13 14]
-	BusRouteType *int64 `json:"BusRouteType"`
+	BusRouteType *int32 `json:"BusRouteType"`
 
 	// 路線權管所屬縣市(相當於市區公車API的City參數)[若為公路/國道客運路線則為空值]
 	City string `json:"City,omitempty"`
@@ -173,34 +173,9 @@ func (m *ServiceDTOVersion2TaiwanTripBusBusRoute) validateAuthorityID(formats st
 	return nil
 }
 
-var serviceDTOVersion2TaiwanTripBusBusRouteTypeBusRouteTypePropEnum []interface{}
-
-func init() {
-	var res []int64
-	if err := json.Unmarshal([]byte(`[11,12,13,14]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		serviceDTOVersion2TaiwanTripBusBusRouteTypeBusRouteTypePropEnum = append(serviceDTOVersion2TaiwanTripBusBusRouteTypeBusRouteTypePropEnum, v)
-	}
-}
-
-// prop value enum
-func (m *ServiceDTOVersion2TaiwanTripBusBusRoute) validateBusRouteTypeEnum(path, location string, value int64) error {
-	if err := validate.Enum(path, location, value, serviceDTOVersion2TaiwanTripBusBusRouteTypeBusRouteTypePropEnum); err != nil {
-		return err
-	}
-	return nil
-}
-
 func (m *ServiceDTOVersion2TaiwanTripBusBusRoute) validateBusRouteType(formats strfmt.Registry) error {
 
 	if err := validate.Required("BusRouteType", "body", m.BusRouteType); err != nil {
-		return err
-	}
-
-	// value enum
-	if err := m.validateBusRouteTypeEnum("BusRouteType", "body", *m.BusRouteType); err != nil {
 		return err
 	}
 

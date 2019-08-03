@@ -6,7 +6,6 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	"encoding/json"
 	"strconv"
 
 	strfmt "github.com/go-openapi/strfmt"
@@ -32,10 +31,11 @@ type ServiceDTOVersion2RailTHSRRailODFare struct {
 	// Required: true
 	DestinationStationName *ServiceDTOVersion2BaseNameType `json:"DestinationStationName"`
 
-	// 行駛方向
+	// integer
+	//
+	// 行駛方向 : [0:'南下',1:'北上']
 	// Required: true
-	// Enum: [0 1]
-	Direction *int64 `json:"Direction"`
+	Direction *int32 `json:"Direction"`
 
 	// 票價收費資訊(本項僅列標準、商務及自由之基本票價，其他優待票及團體票之折扣計算請參考高鐵網站票價產品一覽表http://www.thsrc.com.tw/tw/Article/ArticleContent/caa6fac8-b875-4ad6-b1e6-96c2902d12a6 說明)
 	// Required: true
@@ -141,34 +141,9 @@ func (m *ServiceDTOVersion2RailTHSRRailODFare) validateDestinationStationName(fo
 	return nil
 }
 
-var serviceDTOVersion2RailTHSRRailODFareTypeDirectionPropEnum []interface{}
-
-func init() {
-	var res []int64
-	if err := json.Unmarshal([]byte(`[0,1]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		serviceDTOVersion2RailTHSRRailODFareTypeDirectionPropEnum = append(serviceDTOVersion2RailTHSRRailODFareTypeDirectionPropEnum, v)
-	}
-}
-
-// prop value enum
-func (m *ServiceDTOVersion2RailTHSRRailODFare) validateDirectionEnum(path, location string, value int64) error {
-	if err := validate.Enum(path, location, value, serviceDTOVersion2RailTHSRRailODFareTypeDirectionPropEnum); err != nil {
-		return err
-	}
-	return nil
-}
-
 func (m *ServiceDTOVersion2RailTHSRRailODFare) validateDirection(formats strfmt.Registry) error {
 
 	if err := validate.Required("Direction", "body", m.Direction); err != nil {
-		return err
-	}
-
-	// value enum
-	if err := m.validateDirectionEnum("Direction", "body", *m.Direction); err != nil {
 		return err
 	}
 

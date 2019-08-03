@@ -13,6 +13,7 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
 	cr "github.com/go-openapi/runtime/client"
+	"github.com/go-openapi/swag"
 
 	strfmt "github.com/go-openapi/strfmt"
 )
@@ -21,7 +22,7 @@ import (
 // with the default values initialized.
 func NewDailyStationTimeTableAPIControllerGet1Params() *DailyStationTimeTableAPIControllerGet1Params {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &DailyStationTimeTableAPIControllerGet1Params{
 		DollarTop: &dollarTopDefault,
@@ -34,7 +35,7 @@ func NewDailyStationTimeTableAPIControllerGet1Params() *DailyStationTimeTableAPI
 // with the default values initialized, and the ability to set a timeout on a request
 func NewDailyStationTimeTableAPIControllerGet1ParamsWithTimeout(timeout time.Duration) *DailyStationTimeTableAPIControllerGet1Params {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &DailyStationTimeTableAPIControllerGet1Params{
 		DollarTop: &dollarTopDefault,
@@ -47,7 +48,7 @@ func NewDailyStationTimeTableAPIControllerGet1ParamsWithTimeout(timeout time.Dur
 // with the default values initialized, and the ability to set a context for a request
 func NewDailyStationTimeTableAPIControllerGet1ParamsWithContext(ctx context.Context) *DailyStationTimeTableAPIControllerGet1Params {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &DailyStationTimeTableAPIControllerGet1Params{
 		DollarTop: &dollarTopDefault,
@@ -60,7 +61,7 @@ func NewDailyStationTimeTableAPIControllerGet1ParamsWithContext(ctx context.Cont
 // with the default values initialized, and the ability to set a custom HTTPClient for a request
 func NewDailyStationTimeTableAPIControllerGet1ParamsWithHTTPClient(client *http.Client) *DailyStationTimeTableAPIControllerGet1Params {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &DailyStationTimeTableAPIControllerGet1Params{
 		DollarTop:  &dollarTopDefault,
@@ -107,7 +108,7 @@ type DailyStationTimeTableAPIControllerGet1Params struct {
 	  取前幾筆
 
 	*/
-	DollarTop *string
+	DollarTop *int64
 	/*StationID
 	  欲查詢車站的代碼
 
@@ -219,13 +220,13 @@ func (o *DailyStationTimeTableAPIControllerGet1Params) SetDollarSkip(dollarSkip 
 }
 
 // WithDollarTop adds the dollarTop to the daily station time table Api controller get 1 params
-func (o *DailyStationTimeTableAPIControllerGet1Params) WithDollarTop(dollarTop *string) *DailyStationTimeTableAPIControllerGet1Params {
+func (o *DailyStationTimeTableAPIControllerGet1Params) WithDollarTop(dollarTop *int64) *DailyStationTimeTableAPIControllerGet1Params {
 	o.SetDollarTop(dollarTop)
 	return o
 }
 
 // SetDollarTop adds the dollarTop to the daily station time table Api controller get 1 params
-func (o *DailyStationTimeTableAPIControllerGet1Params) SetDollarTop(dollarTop *string) {
+func (o *DailyStationTimeTableAPIControllerGet1Params) SetDollarTop(dollarTop *int64) {
 	o.DollarTop = dollarTop
 }
 
@@ -340,11 +341,11 @@ func (o *DailyStationTimeTableAPIControllerGet1Params) WriteToRequest(r runtime.
 	if o.DollarTop != nil {
 
 		// query param $top
-		var qrDollarTop string
+		var qrDollarTop int64
 		if o.DollarTop != nil {
 			qrDollarTop = *o.DollarTop
 		}
-		qDollarTop := qrDollarTop
+		qDollarTop := swag.FormatInt64(qrDollarTop)
 		if qDollarTop != "" {
 			if err := r.SetQueryParam("$top", qDollarTop); err != nil {
 				return err

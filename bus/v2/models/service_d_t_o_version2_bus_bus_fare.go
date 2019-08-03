@@ -6,7 +6,6 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	"encoding/json"
 	"strconv"
 
 	strfmt "github.com/go-openapi/strfmt"
@@ -25,10 +24,11 @@ type ServiceDTOVersion2BusBusFare struct {
 	// 優惠時段
 	DiscountPeriods []*ServiceDTOVersion2BusBusDiscountPeriods `json:"DiscountPeriods"`
 
-	// 費率等級
+	// integer
+	//
+	// 費率等級 : [1:'成人',2:'學生',3:'孩童',4:'敬老',5:'愛心',6:'愛心孩童',7:'愛心優待或愛心陪伴',8:'團體',9:'軍警',10:'由各運業者自行定義的半票']
 	// Required: true
-	// Enum: [1 2 3 4 5 6 7 8 9 10]
-	FareClass *int64 `json:"FareClass"`
+	FareClass *int32 `json:"FareClass"`
 
 	// 票價名稱
 	FareName string `json:"FareName,omitempty"`
@@ -37,10 +37,11 @@ type ServiceDTOVersion2BusBusFare struct {
 	// Required: true
 	Price *int32 `json:"Price"`
 
-	// 票種類型
+	// integer
+	//
+	// 票種類型 : [1:'一般票',2:'來回票',3:'電子票證',4:'回數票',5:'定期票30天期',6:'定期票60天期',7:'早鳥票',8:'定期票90天期']
 	// Required: true
-	// Enum: [1 2 3 4 5 6 7 8]
-	TicketType *int64 `json:"TicketType"`
+	TicketType *int32 `json:"TicketType"`
 }
 
 // Validate validates this service d t o version2 bus bus fare
@@ -94,34 +95,9 @@ func (m *ServiceDTOVersion2BusBusFare) validateDiscountPeriods(formats strfmt.Re
 	return nil
 }
 
-var serviceDTOVersion2BusBusFareTypeFareClassPropEnum []interface{}
-
-func init() {
-	var res []int64
-	if err := json.Unmarshal([]byte(`[1,2,3,4,5,6,7,8,9,10]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		serviceDTOVersion2BusBusFareTypeFareClassPropEnum = append(serviceDTOVersion2BusBusFareTypeFareClassPropEnum, v)
-	}
-}
-
-// prop value enum
-func (m *ServiceDTOVersion2BusBusFare) validateFareClassEnum(path, location string, value int64) error {
-	if err := validate.Enum(path, location, value, serviceDTOVersion2BusBusFareTypeFareClassPropEnum); err != nil {
-		return err
-	}
-	return nil
-}
-
 func (m *ServiceDTOVersion2BusBusFare) validateFareClass(formats strfmt.Registry) error {
 
 	if err := validate.Required("FareClass", "body", m.FareClass); err != nil {
-		return err
-	}
-
-	// value enum
-	if err := m.validateFareClassEnum("FareClass", "body", *m.FareClass); err != nil {
 		return err
 	}
 
@@ -137,34 +113,9 @@ func (m *ServiceDTOVersion2BusBusFare) validatePrice(formats strfmt.Registry) er
 	return nil
 }
 
-var serviceDTOVersion2BusBusFareTypeTicketTypePropEnum []interface{}
-
-func init() {
-	var res []int64
-	if err := json.Unmarshal([]byte(`[1,2,3,4,5,6,7,8]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		serviceDTOVersion2BusBusFareTypeTicketTypePropEnum = append(serviceDTOVersion2BusBusFareTypeTicketTypePropEnum, v)
-	}
-}
-
-// prop value enum
-func (m *ServiceDTOVersion2BusBusFare) validateTicketTypeEnum(path, location string, value int64) error {
-	if err := validate.Enum(path, location, value, serviceDTOVersion2BusBusFareTypeTicketTypePropEnum); err != nil {
-		return err
-	}
-	return nil
-}
-
 func (m *ServiceDTOVersion2BusBusFare) validateTicketType(formats strfmt.Registry) error {
 
 	if err := validate.Required("TicketType", "body", m.TicketType); err != nil {
-		return err
-	}
-
-	// value enum
-	if err := m.validateTicketTypeEnum("TicketType", "body", *m.TicketType); err != nil {
 		return err
 	}
 

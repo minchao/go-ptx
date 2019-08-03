@@ -13,6 +13,7 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
 	cr "github.com/go-openapi/runtime/client"
+	"github.com/go-openapi/swag"
 
 	strfmt "github.com/go-openapi/strfmt"
 )
@@ -21,7 +22,7 @@ import (
 // with the default values initialized.
 func NewCityBusAPIOperatorParams() *CityBusAPIOperatorParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &CityBusAPIOperatorParams{
 		DollarTop: &dollarTopDefault,
@@ -34,7 +35,7 @@ func NewCityBusAPIOperatorParams() *CityBusAPIOperatorParams {
 // with the default values initialized, and the ability to set a timeout on a request
 func NewCityBusAPIOperatorParamsWithTimeout(timeout time.Duration) *CityBusAPIOperatorParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &CityBusAPIOperatorParams{
 		DollarTop: &dollarTopDefault,
@@ -47,7 +48,7 @@ func NewCityBusAPIOperatorParamsWithTimeout(timeout time.Duration) *CityBusAPIOp
 // with the default values initialized, and the ability to set a context for a request
 func NewCityBusAPIOperatorParamsWithContext(ctx context.Context) *CityBusAPIOperatorParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &CityBusAPIOperatorParams{
 		DollarTop: &dollarTopDefault,
@@ -60,7 +61,7 @@ func NewCityBusAPIOperatorParamsWithContext(ctx context.Context) *CityBusAPIOper
 // with the default values initialized, and the ability to set a custom HTTPClient for a request
 func NewCityBusAPIOperatorParamsWithHTTPClient(client *http.Client) *CityBusAPIOperatorParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &CityBusAPIOperatorParams{
 		DollarTop:  &dollarTopDefault,
@@ -102,7 +103,7 @@ type CityBusAPIOperatorParams struct {
 	  取前幾筆
 
 	*/
-	DollarTop *string
+	DollarTop *int64
 	/*City
 	  欲查詢縣市
 
@@ -203,13 +204,13 @@ func (o *CityBusAPIOperatorParams) SetDollarSkip(dollarSkip *string) {
 }
 
 // WithDollarTop adds the dollarTop to the city bus Api operator params
-func (o *CityBusAPIOperatorParams) WithDollarTop(dollarTop *string) *CityBusAPIOperatorParams {
+func (o *CityBusAPIOperatorParams) WithDollarTop(dollarTop *int64) *CityBusAPIOperatorParams {
 	o.SetDollarTop(dollarTop)
 	return o
 }
 
 // SetDollarTop adds the dollarTop to the city bus Api operator params
-func (o *CityBusAPIOperatorParams) SetDollarTop(dollarTop *string) {
+func (o *CityBusAPIOperatorParams) SetDollarTop(dollarTop *int64) {
 	o.DollarTop = dollarTop
 }
 
@@ -308,11 +309,11 @@ func (o *CityBusAPIOperatorParams) WriteToRequest(r runtime.ClientRequest, reg s
 	if o.DollarTop != nil {
 
 		// query param $top
-		var qrDollarTop string
+		var qrDollarTop int64
 		if o.DollarTop != nil {
 			qrDollarTop = *o.DollarTop
 		}
-		qDollarTop := qrDollarTop
+		qDollarTop := swag.FormatInt64(qrDollarTop)
 		if qDollarTop != "" {
 			if err := r.SetQueryParam("$top", qDollarTop); err != nil {
 				return err

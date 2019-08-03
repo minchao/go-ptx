@@ -6,8 +6,6 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	"encoding/json"
-
 	strfmt "github.com/go-openapi/strfmt"
 
 	"github.com/go-openapi/errors"
@@ -25,10 +23,11 @@ type ServiceDTOVersion2RailTRARailLiveBoard struct {
 	// Required: true
 	DelayTime *int32 `json:"DelayTime"`
 
-	// 順逆行
+	// integer
+	//
+	// 順逆行 : [0:'順行',1:'逆行']
 	// Required: true
-	// Enum: [0 1]
-	Direction *int64 `json:"Direction"`
+	Direction *int32 `json:"Direction"`
 
 	// 車次終點車站代號
 	// Required: true
@@ -82,9 +81,10 @@ type ServiceDTOVersion2RailTRARailLiveBoard struct {
 	// Required: true
 	TrainTypeName *ServiceDTOVersion2BaseNameType `json:"TrainTypeName"`
 
-	// 山海線類型
-	// Enum: [0 1 2]
-	TripLine int64 `json:"TripLine,omitempty"`
+	// integer
+	//
+	// 山海線類型 : [0:'不經山海線',1:'山線',2:'海線']
+	TripLine int32 `json:"TripLine,omitempty"`
 
 	// DateTime
 	//
@@ -149,10 +149,6 @@ func (m *ServiceDTOVersion2RailTRARailLiveBoard) Validate(formats strfmt.Registr
 		res = append(res, err)
 	}
 
-	if err := m.validateTripLine(formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.validateUpdateTime(formats); err != nil {
 		res = append(res, err)
 	}
@@ -172,34 +168,9 @@ func (m *ServiceDTOVersion2RailTRARailLiveBoard) validateDelayTime(formats strfm
 	return nil
 }
 
-var serviceDTOVersion2RailTRARailLiveBoardTypeDirectionPropEnum []interface{}
-
-func init() {
-	var res []int64
-	if err := json.Unmarshal([]byte(`[0,1]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		serviceDTOVersion2RailTRARailLiveBoardTypeDirectionPropEnum = append(serviceDTOVersion2RailTRARailLiveBoardTypeDirectionPropEnum, v)
-	}
-}
-
-// prop value enum
-func (m *ServiceDTOVersion2RailTRARailLiveBoard) validateDirectionEnum(path, location string, value int64) error {
-	if err := validate.Enum(path, location, value, serviceDTOVersion2RailTRARailLiveBoardTypeDirectionPropEnum); err != nil {
-		return err
-	}
-	return nil
-}
-
 func (m *ServiceDTOVersion2RailTRARailLiveBoard) validateDirection(formats strfmt.Registry) error {
 
 	if err := validate.Required("Direction", "body", m.Direction); err != nil {
-		return err
-	}
-
-	// value enum
-	if err := m.validateDirectionEnum("Direction", "body", *m.Direction); err != nil {
 		return err
 	}
 
@@ -327,40 +298,6 @@ func (m *ServiceDTOVersion2RailTRARailLiveBoard) validateTrainTypeName(formats s
 			}
 			return err
 		}
-	}
-
-	return nil
-}
-
-var serviceDTOVersion2RailTRARailLiveBoardTypeTripLinePropEnum []interface{}
-
-func init() {
-	var res []int64
-	if err := json.Unmarshal([]byte(`[0,1,2]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		serviceDTOVersion2RailTRARailLiveBoardTypeTripLinePropEnum = append(serviceDTOVersion2RailTRARailLiveBoardTypeTripLinePropEnum, v)
-	}
-}
-
-// prop value enum
-func (m *ServiceDTOVersion2RailTRARailLiveBoard) validateTripLineEnum(path, location string, value int64) error {
-	if err := validate.Enum(path, location, value, serviceDTOVersion2RailTRARailLiveBoardTypeTripLinePropEnum); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (m *ServiceDTOVersion2RailTRARailLiveBoard) validateTripLine(formats strfmt.Registry) error {
-
-	if swag.IsZero(m.TripLine) { // not required
-		return nil
-	}
-
-	// value enum
-	if err := m.validateTripLineEnum("TripLine", "body", m.TripLine); err != nil {
-		return err
 	}
 
 	return nil

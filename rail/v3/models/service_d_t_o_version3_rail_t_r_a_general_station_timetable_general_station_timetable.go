@@ -6,7 +6,6 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	"encoding/json"
 	"strconv"
 
 	strfmt "github.com/go-openapi/strfmt"
@@ -30,10 +29,11 @@ type ServiceDTOVersion3RailTRAGeneralStationTimetableGeneralStationTimetable str
 	// 目的站車站
 	DestinationStationName *ServiceDTOVersion3BaseNameType `json:"DestinationStationName,omitempty"`
 
-	// 行駛方向
+	// integer
+	//
+	// 行駛方向 : [0:'順行',1:'逆行']
 	// Required: true
-	// Enum: [0 1]
-	Direction *int64 `json:"Direction"`
+	Direction *int32 `json:"Direction"`
 
 	// 營運路線代碼
 	RouteID string `json:"RouteID,omitempty"`
@@ -110,34 +110,9 @@ func (m *ServiceDTOVersion3RailTRAGeneralStationTimetableGeneralStationTimetable
 	return nil
 }
 
-var serviceDTOVersion3RailTRAGeneralStationTimetableGeneralStationTimetableTypeDirectionPropEnum []interface{}
-
-func init() {
-	var res []int64
-	if err := json.Unmarshal([]byte(`[0,1]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		serviceDTOVersion3RailTRAGeneralStationTimetableGeneralStationTimetableTypeDirectionPropEnum = append(serviceDTOVersion3RailTRAGeneralStationTimetableGeneralStationTimetableTypeDirectionPropEnum, v)
-	}
-}
-
-// prop value enum
-func (m *ServiceDTOVersion3RailTRAGeneralStationTimetableGeneralStationTimetable) validateDirectionEnum(path, location string, value int64) error {
-	if err := validate.Enum(path, location, value, serviceDTOVersion3RailTRAGeneralStationTimetableGeneralStationTimetableTypeDirectionPropEnum); err != nil {
-		return err
-	}
-	return nil
-}
-
 func (m *ServiceDTOVersion3RailTRAGeneralStationTimetableGeneralStationTimetable) validateDirection(formats strfmt.Registry) error {
 
 	if err := validate.Required("Direction", "body", m.Direction); err != nil {
-		return err
-	}
-
-	// value enum
-	if err := m.validateDirectionEnum("Direction", "body", *m.Direction); err != nil {
 		return err
 	}
 

@@ -6,7 +6,6 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	"encoding/json"
 	"strconv"
 
 	strfmt "github.com/go-openapi/strfmt"
@@ -28,10 +27,11 @@ type ServiceDTOVersion2BusBusStageFare struct {
 	// Required: true
 	DestinationStage *ServiceDTOVersion2BusBusStage `json:"DestinationStage"`
 
-	// 方向性描述
+	// integer
+	//
+	// 方向性描述 : [0:'去程',1:'返程',2:'迴圈',255:'未知']
 	// Required: true
-	// Enum: [0 1 2 255]
-	Direction *int64 `json:"Direction"`
+	Direction *int32 `json:"Direction"`
 
 	// 票價內容
 	// Required: true
@@ -88,34 +88,9 @@ func (m *ServiceDTOVersion2BusBusStageFare) validateDestinationStage(formats str
 	return nil
 }
 
-var serviceDTOVersion2BusBusStageFareTypeDirectionPropEnum []interface{}
-
-func init() {
-	var res []int64
-	if err := json.Unmarshal([]byte(`[0,1,2,255]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		serviceDTOVersion2BusBusStageFareTypeDirectionPropEnum = append(serviceDTOVersion2BusBusStageFareTypeDirectionPropEnum, v)
-	}
-}
-
-// prop value enum
-func (m *ServiceDTOVersion2BusBusStageFare) validateDirectionEnum(path, location string, value int64) error {
-	if err := validate.Enum(path, location, value, serviceDTOVersion2BusBusStageFareTypeDirectionPropEnum); err != nil {
-		return err
-	}
-	return nil
-}
-
 func (m *ServiceDTOVersion2BusBusStageFare) validateDirection(formats strfmt.Registry) error {
 
 	if err := validate.Required("Direction", "body", m.Direction); err != nil {
-		return err
-	}
-
-	// value enum
-	if err := m.validateDirectionEnum("Direction", "body", *m.Direction); err != nil {
 		return err
 	}
 

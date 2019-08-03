@@ -6,8 +6,6 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	"encoding/json"
-
 	strfmt "github.com/go-openapi/strfmt"
 
 	"github.com/go-openapi/errors"
@@ -27,9 +25,10 @@ type ServiceDTOVersion2BikeBikeAvailability struct {
 	// 可歸還車數
 	AvailableReturnBikes int32 `json:"AvailableReturnBikes,omitempty"`
 
-	// 服務狀態
-	// Enum: [0 1]
-	ServieAvailable int64 `json:"ServieAvailable,omitempty"`
+	// integer
+	//
+	// 服務狀態 : [0:'停止營運',1:'正常營運']
+	ServieAvailable int32 `json:"ServieAvailable,omitempty"`
 
 	// DateTime
 	//
@@ -54,10 +53,6 @@ type ServiceDTOVersion2BikeBikeAvailability struct {
 func (m *ServiceDTOVersion2BikeBikeAvailability) Validate(formats strfmt.Registry) error {
 	var res []error
 
-	if err := m.validateServieAvailable(formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.validateSrcUpdateTime(formats); err != nil {
 		res = append(res, err)
 	}
@@ -69,40 +64,6 @@ func (m *ServiceDTOVersion2BikeBikeAvailability) Validate(formats strfmt.Registr
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
-	return nil
-}
-
-var serviceDTOVersion2BikeBikeAvailabilityTypeServieAvailablePropEnum []interface{}
-
-func init() {
-	var res []int64
-	if err := json.Unmarshal([]byte(`[0,1]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		serviceDTOVersion2BikeBikeAvailabilityTypeServieAvailablePropEnum = append(serviceDTOVersion2BikeBikeAvailabilityTypeServieAvailablePropEnum, v)
-	}
-}
-
-// prop value enum
-func (m *ServiceDTOVersion2BikeBikeAvailability) validateServieAvailableEnum(path, location string, value int64) error {
-	if err := validate.Enum(path, location, value, serviceDTOVersion2BikeBikeAvailabilityTypeServieAvailablePropEnum); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (m *ServiceDTOVersion2BikeBikeAvailability) validateServieAvailable(formats strfmt.Registry) error {
-
-	if swag.IsZero(m.ServieAvailable) { // not required
-		return nil
-	}
-
-	// value enum
-	if err := m.validateServieAvailableEnum("ServieAvailable", "body", m.ServieAvailable); err != nil {
-		return err
-	}
-
 	return nil
 }
 

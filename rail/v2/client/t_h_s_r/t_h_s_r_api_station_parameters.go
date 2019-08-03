@@ -13,6 +13,7 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
 	cr "github.com/go-openapi/runtime/client"
+	"github.com/go-openapi/swag"
 
 	strfmt "github.com/go-openapi/strfmt"
 )
@@ -21,7 +22,7 @@ import (
 // with the default values initialized.
 func NewTHSRAPIStationParams() *THSRAPIStationParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &THSRAPIStationParams{
 		DollarTop: &dollarTopDefault,
@@ -34,7 +35,7 @@ func NewTHSRAPIStationParams() *THSRAPIStationParams {
 // with the default values initialized, and the ability to set a timeout on a request
 func NewTHSRAPIStationParamsWithTimeout(timeout time.Duration) *THSRAPIStationParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &THSRAPIStationParams{
 		DollarTop: &dollarTopDefault,
@@ -47,7 +48,7 @@ func NewTHSRAPIStationParamsWithTimeout(timeout time.Duration) *THSRAPIStationPa
 // with the default values initialized, and the ability to set a context for a request
 func NewTHSRAPIStationParamsWithContext(ctx context.Context) *THSRAPIStationParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &THSRAPIStationParams{
 		DollarTop: &dollarTopDefault,
@@ -60,7 +61,7 @@ func NewTHSRAPIStationParamsWithContext(ctx context.Context) *THSRAPIStationPara
 // with the default values initialized, and the ability to set a custom HTTPClient for a request
 func NewTHSRAPIStationParamsWithHTTPClient(client *http.Client) *THSRAPIStationParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &THSRAPIStationParams{
 		DollarTop:  &dollarTopDefault,
@@ -107,7 +108,7 @@ type THSRAPIStationParams struct {
 	  取前幾筆
 
 	*/
-	DollarTop *string
+	DollarTop *int64
 
 	timeout    time.Duration
 	Context    context.Context
@@ -214,13 +215,13 @@ func (o *THSRAPIStationParams) SetDollarSpatialFilter(dollarSpatialFilter *strin
 }
 
 // WithDollarTop adds the dollarTop to the t h s r Api station params
-func (o *THSRAPIStationParams) WithDollarTop(dollarTop *string) *THSRAPIStationParams {
+func (o *THSRAPIStationParams) WithDollarTop(dollarTop *int64) *THSRAPIStationParams {
 	o.SetDollarTop(dollarTop)
 	return o
 }
 
 // SetDollarTop adds the dollarTop to the t h s r Api station params
-func (o *THSRAPIStationParams) SetDollarTop(dollarTop *string) {
+func (o *THSRAPIStationParams) SetDollarTop(dollarTop *int64) {
 	o.DollarTop = dollarTop
 }
 
@@ -324,11 +325,11 @@ func (o *THSRAPIStationParams) WriteToRequest(r runtime.ClientRequest, reg strfm
 	if o.DollarTop != nil {
 
 		// query param $top
-		var qrDollarTop string
+		var qrDollarTop int64
 		if o.DollarTop != nil {
 			qrDollarTop = *o.DollarTop
 		}
-		qDollarTop := qrDollarTop
+		qDollarTop := swag.FormatInt64(qrDollarTop)
 		if qDollarTop != "" {
 			if err := r.SetQueryParam("$top", qDollarTop); err != nil {
 				return err

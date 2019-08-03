@@ -13,6 +13,7 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
 	cr "github.com/go-openapi/runtime/client"
+	"github.com/go-openapi/swag"
 
 	strfmt "github.com/go-openapi/strfmt"
 )
@@ -21,7 +22,7 @@ import (
 // with the default values initialized.
 func NewSpecificTrainTimetableAPIControllerGetParams() *SpecificTrainTimetableAPIControllerGetParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &SpecificTrainTimetableAPIControllerGetParams{
 		DollarTop: &dollarTopDefault,
@@ -34,7 +35,7 @@ func NewSpecificTrainTimetableAPIControllerGetParams() *SpecificTrainTimetableAP
 // with the default values initialized, and the ability to set a timeout on a request
 func NewSpecificTrainTimetableAPIControllerGetParamsWithTimeout(timeout time.Duration) *SpecificTrainTimetableAPIControllerGetParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &SpecificTrainTimetableAPIControllerGetParams{
 		DollarTop: &dollarTopDefault,
@@ -47,7 +48,7 @@ func NewSpecificTrainTimetableAPIControllerGetParamsWithTimeout(timeout time.Dur
 // with the default values initialized, and the ability to set a context for a request
 func NewSpecificTrainTimetableAPIControllerGetParamsWithContext(ctx context.Context) *SpecificTrainTimetableAPIControllerGetParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &SpecificTrainTimetableAPIControllerGetParams{
 		DollarTop: &dollarTopDefault,
@@ -60,7 +61,7 @@ func NewSpecificTrainTimetableAPIControllerGetParamsWithContext(ctx context.Cont
 // with the default values initialized, and the ability to set a custom HTTPClient for a request
 func NewSpecificTrainTimetableAPIControllerGetParamsWithHTTPClient(client *http.Client) *SpecificTrainTimetableAPIControllerGetParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &SpecificTrainTimetableAPIControllerGetParams{
 		DollarTop:  &dollarTopDefault,
@@ -107,7 +108,7 @@ type SpecificTrainTimetableAPIControllerGetParams struct {
 	  取前幾筆
 
 	*/
-	DollarTop *string
+	DollarTop *int64
 
 	timeout    time.Duration
 	Context    context.Context
@@ -214,13 +215,13 @@ func (o *SpecificTrainTimetableAPIControllerGetParams) SetDollarSkip(dollarSkip 
 }
 
 // WithDollarTop adds the dollarTop to the specific train timetable Api controller get params
-func (o *SpecificTrainTimetableAPIControllerGetParams) WithDollarTop(dollarTop *string) *SpecificTrainTimetableAPIControllerGetParams {
+func (o *SpecificTrainTimetableAPIControllerGetParams) WithDollarTop(dollarTop *int64) *SpecificTrainTimetableAPIControllerGetParams {
 	o.SetDollarTop(dollarTop)
 	return o
 }
 
 // SetDollarTop adds the dollarTop to the specific train timetable Api controller get params
-func (o *SpecificTrainTimetableAPIControllerGetParams) SetDollarTop(dollarTop *string) {
+func (o *SpecificTrainTimetableAPIControllerGetParams) SetDollarTop(dollarTop *int64) {
 	o.DollarTop = dollarTop
 }
 
@@ -324,11 +325,11 @@ func (o *SpecificTrainTimetableAPIControllerGetParams) WriteToRequest(r runtime.
 	if o.DollarTop != nil {
 
 		// query param $top
-		var qrDollarTop string
+		var qrDollarTop int64
 		if o.DollarTop != nil {
 			qrDollarTop = *o.DollarTop
 		}
-		qDollarTop := qrDollarTop
+		qDollarTop := swag.FormatInt64(qrDollarTop)
 		if qDollarTop != "" {
 			if err := r.SetQueryParam("$top", qDollarTop); err != nil {
 				return err

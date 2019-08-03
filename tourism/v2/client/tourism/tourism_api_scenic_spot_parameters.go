@@ -13,6 +13,7 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
 	cr "github.com/go-openapi/runtime/client"
+	"github.com/go-openapi/swag"
 
 	strfmt "github.com/go-openapi/strfmt"
 )
@@ -21,7 +22,7 @@ import (
 // with the default values initialized.
 func NewTourismAPIScenicSpotParams() *TourismAPIScenicSpotParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &TourismAPIScenicSpotParams{
 		DollarTop: &dollarTopDefault,
@@ -34,7 +35,7 @@ func NewTourismAPIScenicSpotParams() *TourismAPIScenicSpotParams {
 // with the default values initialized, and the ability to set a timeout on a request
 func NewTourismAPIScenicSpotParamsWithTimeout(timeout time.Duration) *TourismAPIScenicSpotParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &TourismAPIScenicSpotParams{
 		DollarTop: &dollarTopDefault,
@@ -47,7 +48,7 @@ func NewTourismAPIScenicSpotParamsWithTimeout(timeout time.Duration) *TourismAPI
 // with the default values initialized, and the ability to set a context for a request
 func NewTourismAPIScenicSpotParamsWithContext(ctx context.Context) *TourismAPIScenicSpotParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &TourismAPIScenicSpotParams{
 		DollarTop: &dollarTopDefault,
@@ -60,7 +61,7 @@ func NewTourismAPIScenicSpotParamsWithContext(ctx context.Context) *TourismAPISc
 // with the default values initialized, and the ability to set a custom HTTPClient for a request
 func NewTourismAPIScenicSpotParamsWithHTTPClient(client *http.Client) *TourismAPIScenicSpotParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &TourismAPIScenicSpotParams{
 		DollarTop:  &dollarTopDefault,
@@ -107,7 +108,7 @@ type TourismAPIScenicSpotParams struct {
 	  取前幾筆
 
 	*/
-	DollarTop *string
+	DollarTop *int64
 
 	timeout    time.Duration
 	Context    context.Context
@@ -214,13 +215,13 @@ func (o *TourismAPIScenicSpotParams) SetDollarSpatialFilter(dollarSpatialFilter 
 }
 
 // WithDollarTop adds the dollarTop to the tourism Api scenic spot params
-func (o *TourismAPIScenicSpotParams) WithDollarTop(dollarTop *string) *TourismAPIScenicSpotParams {
+func (o *TourismAPIScenicSpotParams) WithDollarTop(dollarTop *int64) *TourismAPIScenicSpotParams {
 	o.SetDollarTop(dollarTop)
 	return o
 }
 
 // SetDollarTop adds the dollarTop to the tourism Api scenic spot params
-func (o *TourismAPIScenicSpotParams) SetDollarTop(dollarTop *string) {
+func (o *TourismAPIScenicSpotParams) SetDollarTop(dollarTop *int64) {
 	o.DollarTop = dollarTop
 }
 
@@ -324,11 +325,11 @@ func (o *TourismAPIScenicSpotParams) WriteToRequest(r runtime.ClientRequest, reg
 	if o.DollarTop != nil {
 
 		// query param $top
-		var qrDollarTop string
+		var qrDollarTop int64
 		if o.DollarTop != nil {
 			qrDollarTop = *o.DollarTop
 		}
-		qDollarTop := qrDollarTop
+		qDollarTop := swag.FormatInt64(qrDollarTop)
 		if qDollarTop != "" {
 			if err := r.SetQueryParam("$top", qDollarTop); err != nil {
 				return err

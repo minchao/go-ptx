@@ -6,7 +6,6 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	"encoding/json"
 	"strconv"
 
 	strfmt "github.com/go-openapi/strfmt"
@@ -26,10 +25,11 @@ type ServiceDTOVersion2RailTHSRAvailableSeat struct {
 	// Required: true
 	DepartureTime *string `json:"DepartureTime"`
 
-	// 方向
+	// integer
+	//
+	// 方向 : [0:'南下',1:'北上']
 	// Required: true
-	// Enum: [0 1]
-	Direction *int64 `json:"Direction"`
+	Direction *int32 `json:"Direction"`
 
 	// 終點車站代碼
 	// Required: true
@@ -131,34 +131,9 @@ func (m *ServiceDTOVersion2RailTHSRAvailableSeat) validateDepartureTime(formats 
 	return nil
 }
 
-var serviceDTOVersion2RailTHSRAvailableSeatTypeDirectionPropEnum []interface{}
-
-func init() {
-	var res []int64
-	if err := json.Unmarshal([]byte(`[0,1]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		serviceDTOVersion2RailTHSRAvailableSeatTypeDirectionPropEnum = append(serviceDTOVersion2RailTHSRAvailableSeatTypeDirectionPropEnum, v)
-	}
-}
-
-// prop value enum
-func (m *ServiceDTOVersion2RailTHSRAvailableSeat) validateDirectionEnum(path, location string, value int64) error {
-	if err := validate.Enum(path, location, value, serviceDTOVersion2RailTHSRAvailableSeatTypeDirectionPropEnum); err != nil {
-		return err
-	}
-	return nil
-}
-
 func (m *ServiceDTOVersion2RailTHSRAvailableSeat) validateDirection(formats strfmt.Registry) error {
 
 	if err := validate.Required("Direction", "body", m.Direction); err != nil {
-		return err
-	}
-
-	// value enum
-	if err := m.validateDirectionEnum("Direction", "body", *m.Direction); err != nil {
 		return err
 	}
 

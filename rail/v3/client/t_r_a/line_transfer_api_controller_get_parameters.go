@@ -13,6 +13,7 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
 	cr "github.com/go-openapi/runtime/client"
+	"github.com/go-openapi/swag"
 
 	strfmt "github.com/go-openapi/strfmt"
 )
@@ -21,7 +22,7 @@ import (
 // with the default values initialized.
 func NewLineTransferAPIControllerGetParams() *LineTransferAPIControllerGetParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &LineTransferAPIControllerGetParams{
 		DollarTop: &dollarTopDefault,
@@ -34,7 +35,7 @@ func NewLineTransferAPIControllerGetParams() *LineTransferAPIControllerGetParams
 // with the default values initialized, and the ability to set a timeout on a request
 func NewLineTransferAPIControllerGetParamsWithTimeout(timeout time.Duration) *LineTransferAPIControllerGetParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &LineTransferAPIControllerGetParams{
 		DollarTop: &dollarTopDefault,
@@ -47,7 +48,7 @@ func NewLineTransferAPIControllerGetParamsWithTimeout(timeout time.Duration) *Li
 // with the default values initialized, and the ability to set a context for a request
 func NewLineTransferAPIControllerGetParamsWithContext(ctx context.Context) *LineTransferAPIControllerGetParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &LineTransferAPIControllerGetParams{
 		DollarTop: &dollarTopDefault,
@@ -60,7 +61,7 @@ func NewLineTransferAPIControllerGetParamsWithContext(ctx context.Context) *Line
 // with the default values initialized, and the ability to set a custom HTTPClient for a request
 func NewLineTransferAPIControllerGetParamsWithHTTPClient(client *http.Client) *LineTransferAPIControllerGetParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &LineTransferAPIControllerGetParams{
 		DollarTop:  &dollarTopDefault,
@@ -107,7 +108,7 @@ type LineTransferAPIControllerGetParams struct {
 	  取前幾筆
 
 	*/
-	DollarTop *string
+	DollarTop *int64
 
 	timeout    time.Duration
 	Context    context.Context
@@ -214,13 +215,13 @@ func (o *LineTransferAPIControllerGetParams) SetDollarSkip(dollarSkip *string) {
 }
 
 // WithDollarTop adds the dollarTop to the line transfer Api controller get params
-func (o *LineTransferAPIControllerGetParams) WithDollarTop(dollarTop *string) *LineTransferAPIControllerGetParams {
+func (o *LineTransferAPIControllerGetParams) WithDollarTop(dollarTop *int64) *LineTransferAPIControllerGetParams {
 	o.SetDollarTop(dollarTop)
 	return o
 }
 
 // SetDollarTop adds the dollarTop to the line transfer Api controller get params
-func (o *LineTransferAPIControllerGetParams) SetDollarTop(dollarTop *string) {
+func (o *LineTransferAPIControllerGetParams) SetDollarTop(dollarTop *int64) {
 	o.DollarTop = dollarTop
 }
 
@@ -324,11 +325,11 @@ func (o *LineTransferAPIControllerGetParams) WriteToRequest(r runtime.ClientRequ
 	if o.DollarTop != nil {
 
 		// query param $top
-		var qrDollarTop string
+		var qrDollarTop int64
 		if o.DollarTop != nil {
 			qrDollarTop = *o.DollarTop
 		}
-		qDollarTop := qrDollarTop
+		qDollarTop := swag.FormatInt64(qrDollarTop)
 		if qDollarTop != "" {
 			if err := r.SetQueryParam("$top", qDollarTop); err != nil {
 				return err

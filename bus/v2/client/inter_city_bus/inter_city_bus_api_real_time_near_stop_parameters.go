@@ -13,6 +13,7 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
 	cr "github.com/go-openapi/runtime/client"
+	"github.com/go-openapi/swag"
 
 	strfmt "github.com/go-openapi/strfmt"
 )
@@ -21,7 +22,7 @@ import (
 // with the default values initialized.
 func NewInterCityBusAPIRealTimeNearStopParams() *InterCityBusAPIRealTimeNearStopParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &InterCityBusAPIRealTimeNearStopParams{
 		DollarTop: &dollarTopDefault,
@@ -34,7 +35,7 @@ func NewInterCityBusAPIRealTimeNearStopParams() *InterCityBusAPIRealTimeNearStop
 // with the default values initialized, and the ability to set a timeout on a request
 func NewInterCityBusAPIRealTimeNearStopParamsWithTimeout(timeout time.Duration) *InterCityBusAPIRealTimeNearStopParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &InterCityBusAPIRealTimeNearStopParams{
 		DollarTop: &dollarTopDefault,
@@ -47,7 +48,7 @@ func NewInterCityBusAPIRealTimeNearStopParamsWithTimeout(timeout time.Duration) 
 // with the default values initialized, and the ability to set a context for a request
 func NewInterCityBusAPIRealTimeNearStopParamsWithContext(ctx context.Context) *InterCityBusAPIRealTimeNearStopParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &InterCityBusAPIRealTimeNearStopParams{
 		DollarTop: &dollarTopDefault,
@@ -60,7 +61,7 @@ func NewInterCityBusAPIRealTimeNearStopParamsWithContext(ctx context.Context) *I
 // with the default values initialized, and the ability to set a custom HTTPClient for a request
 func NewInterCityBusAPIRealTimeNearStopParamsWithHTTPClient(client *http.Client) *InterCityBusAPIRealTimeNearStopParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &InterCityBusAPIRealTimeNearStopParams{
 		DollarTop:  &dollarTopDefault,
@@ -102,7 +103,7 @@ type InterCityBusAPIRealTimeNearStopParams struct {
 	  取前幾筆
 
 	*/
-	DollarTop *string
+	DollarTop *int64
 
 	timeout    time.Duration
 	Context    context.Context
@@ -198,13 +199,13 @@ func (o *InterCityBusAPIRealTimeNearStopParams) SetDollarSkip(dollarSkip *string
 }
 
 // WithDollarTop adds the dollarTop to the inter city bus Api real time near stop params
-func (o *InterCityBusAPIRealTimeNearStopParams) WithDollarTop(dollarTop *string) *InterCityBusAPIRealTimeNearStopParams {
+func (o *InterCityBusAPIRealTimeNearStopParams) WithDollarTop(dollarTop *int64) *InterCityBusAPIRealTimeNearStopParams {
 	o.SetDollarTop(dollarTop)
 	return o
 }
 
 // SetDollarTop adds the dollarTop to the inter city bus Api real time near stop params
-func (o *InterCityBusAPIRealTimeNearStopParams) SetDollarTop(dollarTop *string) {
+func (o *InterCityBusAPIRealTimeNearStopParams) SetDollarTop(dollarTop *int64) {
 	o.DollarTop = dollarTop
 }
 
@@ -292,11 +293,11 @@ func (o *InterCityBusAPIRealTimeNearStopParams) WriteToRequest(r runtime.ClientR
 	if o.DollarTop != nil {
 
 		// query param $top
-		var qrDollarTop string
+		var qrDollarTop int64
 		if o.DollarTop != nil {
 			qrDollarTop = *o.DollarTop
 		}
-		qDollarTop := qrDollarTop
+		qDollarTop := swag.FormatInt64(qrDollarTop)
 		if qDollarTop != "" {
 			if err := r.SetQueryParam("$top", qDollarTop); err != nil {
 				return err

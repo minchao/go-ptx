@@ -36,6 +36,12 @@ type ServiceDTOVersion2TaiwanTripBusBusTaiwanTripS2STravelTime struct {
 	// 站間運行時間資訊
 	// Required: true
 	TravelTimes []*ServiceDTOVersion2TaiwanTripBusBusTaiwanTripS2STravelTimeTravelTime `json:"TravelTimes"`
+
+	// DateTime
+	//
+	// 資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
+	// Required: true
+	UpdateTime *string `json:"UpdateTime"`
 }
 
 // Validate validates this service d t o version2 taiwan trip bus bus taiwan trip s2 s travel time
@@ -51,6 +57,10 @@ func (m *ServiceDTOVersion2TaiwanTripBusBusTaiwanTripS2STravelTime) Validate(for
 	}
 
 	if err := m.validateTravelTimes(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateUpdateTime(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -98,6 +108,15 @@ func (m *ServiceDTOVersion2TaiwanTripBusBusTaiwanTripS2STravelTime) validateTrav
 			}
 		}
 
+	}
+
+	return nil
+}
+
+func (m *ServiceDTOVersion2TaiwanTripBusBusTaiwanTripS2STravelTime) validateUpdateTime(formats strfmt.Registry) error {
+
+	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
+		return err
 	}
 
 	return nil

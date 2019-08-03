@@ -13,6 +13,7 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
 	cr "github.com/go-openapi/runtime/client"
+	"github.com/go-openapi/swag"
 
 	strfmt "github.com/go-openapi/strfmt"
 )
@@ -21,7 +22,7 @@ import (
 // with the default values initialized.
 func NewTHSRAPIAvailableSeatStatusListParams() *THSRAPIAvailableSeatStatusListParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &THSRAPIAvailableSeatStatusListParams{
 		DollarTop: &dollarTopDefault,
@@ -34,7 +35,7 @@ func NewTHSRAPIAvailableSeatStatusListParams() *THSRAPIAvailableSeatStatusListPa
 // with the default values initialized, and the ability to set a timeout on a request
 func NewTHSRAPIAvailableSeatStatusListParamsWithTimeout(timeout time.Duration) *THSRAPIAvailableSeatStatusListParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &THSRAPIAvailableSeatStatusListParams{
 		DollarTop: &dollarTopDefault,
@@ -47,7 +48,7 @@ func NewTHSRAPIAvailableSeatStatusListParamsWithTimeout(timeout time.Duration) *
 // with the default values initialized, and the ability to set a context for a request
 func NewTHSRAPIAvailableSeatStatusListParamsWithContext(ctx context.Context) *THSRAPIAvailableSeatStatusListParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &THSRAPIAvailableSeatStatusListParams{
 		DollarTop: &dollarTopDefault,
@@ -60,7 +61,7 @@ func NewTHSRAPIAvailableSeatStatusListParamsWithContext(ctx context.Context) *TH
 // with the default values initialized, and the ability to set a custom HTTPClient for a request
 func NewTHSRAPIAvailableSeatStatusListParamsWithHTTPClient(client *http.Client) *THSRAPIAvailableSeatStatusListParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &THSRAPIAvailableSeatStatusListParams{
 		DollarTop:  &dollarTopDefault,
@@ -102,7 +103,7 @@ type THSRAPIAvailableSeatStatusListParams struct {
 	  取前幾筆
 
 	*/
-	DollarTop *string
+	DollarTop *int64
 	/*StationID
 	  起點車站代碼
 
@@ -203,13 +204,13 @@ func (o *THSRAPIAvailableSeatStatusListParams) SetDollarSkip(dollarSkip *string)
 }
 
 // WithDollarTop adds the dollarTop to the t h s r Api available seat status list params
-func (o *THSRAPIAvailableSeatStatusListParams) WithDollarTop(dollarTop *string) *THSRAPIAvailableSeatStatusListParams {
+func (o *THSRAPIAvailableSeatStatusListParams) WithDollarTop(dollarTop *int64) *THSRAPIAvailableSeatStatusListParams {
 	o.SetDollarTop(dollarTop)
 	return o
 }
 
 // SetDollarTop adds the dollarTop to the t h s r Api available seat status list params
-func (o *THSRAPIAvailableSeatStatusListParams) SetDollarTop(dollarTop *string) {
+func (o *THSRAPIAvailableSeatStatusListParams) SetDollarTop(dollarTop *int64) {
 	o.DollarTop = dollarTop
 }
 
@@ -308,11 +309,11 @@ func (o *THSRAPIAvailableSeatStatusListParams) WriteToRequest(r runtime.ClientRe
 	if o.DollarTop != nil {
 
 		// query param $top
-		var qrDollarTop string
+		var qrDollarTop int64
 		if o.DollarTop != nil {
 			qrDollarTop = *o.DollarTop
 		}
-		qDollarTop := qrDollarTop
+		qDollarTop := swag.FormatInt64(qrDollarTop)
 		if qDollarTop != "" {
 			if err := r.SetQueryParam("$top", qDollarTop); err != nil {
 				return err

@@ -13,6 +13,7 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
 	cr "github.com/go-openapi/runtime/client"
+	"github.com/go-openapi/swag"
 
 	strfmt "github.com/go-openapi/strfmt"
 )
@@ -21,7 +22,7 @@ import (
 // with the default values initialized.
 func NewMetroAPIFirstLastTimetableParams() *MetroAPIFirstLastTimetableParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &MetroAPIFirstLastTimetableParams{
 		DollarTop: &dollarTopDefault,
@@ -34,7 +35,7 @@ func NewMetroAPIFirstLastTimetableParams() *MetroAPIFirstLastTimetableParams {
 // with the default values initialized, and the ability to set a timeout on a request
 func NewMetroAPIFirstLastTimetableParamsWithTimeout(timeout time.Duration) *MetroAPIFirstLastTimetableParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &MetroAPIFirstLastTimetableParams{
 		DollarTop: &dollarTopDefault,
@@ -47,7 +48,7 @@ func NewMetroAPIFirstLastTimetableParamsWithTimeout(timeout time.Duration) *Metr
 // with the default values initialized, and the ability to set a context for a request
 func NewMetroAPIFirstLastTimetableParamsWithContext(ctx context.Context) *MetroAPIFirstLastTimetableParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &MetroAPIFirstLastTimetableParams{
 		DollarTop: &dollarTopDefault,
@@ -60,7 +61,7 @@ func NewMetroAPIFirstLastTimetableParamsWithContext(ctx context.Context) *MetroA
 // with the default values initialized, and the ability to set a custom HTTPClient for a request
 func NewMetroAPIFirstLastTimetableParamsWithHTTPClient(client *http.Client) *MetroAPIFirstLastTimetableParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &MetroAPIFirstLastTimetableParams{
 		DollarTop:  &dollarTopDefault,
@@ -102,7 +103,7 @@ type MetroAPIFirstLastTimetableParams struct {
 	  取前幾筆
 
 	*/
-	DollarTop *string
+	DollarTop *int64
 	/*Operator
 	  欲查詢縣市
 
@@ -203,13 +204,13 @@ func (o *MetroAPIFirstLastTimetableParams) SetDollarSkip(dollarSkip *string) {
 }
 
 // WithDollarTop adds the dollarTop to the metro Api first last timetable params
-func (o *MetroAPIFirstLastTimetableParams) WithDollarTop(dollarTop *string) *MetroAPIFirstLastTimetableParams {
+func (o *MetroAPIFirstLastTimetableParams) WithDollarTop(dollarTop *int64) *MetroAPIFirstLastTimetableParams {
 	o.SetDollarTop(dollarTop)
 	return o
 }
 
 // SetDollarTop adds the dollarTop to the metro Api first last timetable params
-func (o *MetroAPIFirstLastTimetableParams) SetDollarTop(dollarTop *string) {
+func (o *MetroAPIFirstLastTimetableParams) SetDollarTop(dollarTop *int64) {
 	o.DollarTop = dollarTop
 }
 
@@ -308,11 +309,11 @@ func (o *MetroAPIFirstLastTimetableParams) WriteToRequest(r runtime.ClientReques
 	if o.DollarTop != nil {
 
 		// query param $top
-		var qrDollarTop string
+		var qrDollarTop int64
 		if o.DollarTop != nil {
 			qrDollarTop = *o.DollarTop
 		}
-		qDollarTop := qrDollarTop
+		qDollarTop := swag.FormatInt64(qrDollarTop)
 		if qDollarTop != "" {
 			if err := r.SetQueryParam("$top", qDollarTop); err != nil {
 				return err

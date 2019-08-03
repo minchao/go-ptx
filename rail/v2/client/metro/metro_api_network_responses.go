@@ -50,7 +50,7 @@ type MetroAPINetworkOK struct {
 }
 
 func (o *MetroAPINetworkOK) Error() string {
-	return fmt.Sprintf("[GET /v2/Rail/Metro/Network][%d] metroApiNetworkOK  %+v", 200, o.Payload)
+	return fmt.Sprintf("[GET /v2/Rail/Metro/Network/{Operator}][%d] metroApiNetworkOK  %+v", 200, o.Payload)
 }
 
 func (o *MetroAPINetworkOK) GetPayload() []*models.ServiceDTOVersion2RailMetroNetwork {

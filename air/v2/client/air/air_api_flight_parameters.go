@@ -13,6 +13,7 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
 	cr "github.com/go-openapi/runtime/client"
+	"github.com/go-openapi/swag"
 
 	strfmt "github.com/go-openapi/strfmt"
 )
@@ -21,7 +22,7 @@ import (
 // with the default values initialized.
 func NewAirAPIFlightParams() *AirAPIFlightParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &AirAPIFlightParams{
 		DollarTop: &dollarTopDefault,
@@ -34,7 +35,7 @@ func NewAirAPIFlightParams() *AirAPIFlightParams {
 // with the default values initialized, and the ability to set a timeout on a request
 func NewAirAPIFlightParamsWithTimeout(timeout time.Duration) *AirAPIFlightParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &AirAPIFlightParams{
 		DollarTop: &dollarTopDefault,
@@ -47,7 +48,7 @@ func NewAirAPIFlightParamsWithTimeout(timeout time.Duration) *AirAPIFlightParams
 // with the default values initialized, and the ability to set a context for a request
 func NewAirAPIFlightParamsWithContext(ctx context.Context) *AirAPIFlightParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &AirAPIFlightParams{
 		DollarTop: &dollarTopDefault,
@@ -60,7 +61,7 @@ func NewAirAPIFlightParamsWithContext(ctx context.Context) *AirAPIFlightParams {
 // with the default values initialized, and the ability to set a custom HTTPClient for a request
 func NewAirAPIFlightParamsWithHTTPClient(client *http.Client) *AirAPIFlightParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &AirAPIFlightParams{
 		DollarTop:  &dollarTopDefault,
@@ -102,7 +103,7 @@ type AirAPIFlightParams struct {
 	  取前幾筆
 
 	*/
-	DollarTop *string
+	DollarTop *int64
 
 	timeout    time.Duration
 	Context    context.Context
@@ -198,13 +199,13 @@ func (o *AirAPIFlightParams) SetDollarSkip(dollarSkip *string) {
 }
 
 // WithDollarTop adds the dollarTop to the air Api flight params
-func (o *AirAPIFlightParams) WithDollarTop(dollarTop *string) *AirAPIFlightParams {
+func (o *AirAPIFlightParams) WithDollarTop(dollarTop *int64) *AirAPIFlightParams {
 	o.SetDollarTop(dollarTop)
 	return o
 }
 
 // SetDollarTop adds the dollarTop to the air Api flight params
-func (o *AirAPIFlightParams) SetDollarTop(dollarTop *string) {
+func (o *AirAPIFlightParams) SetDollarTop(dollarTop *int64) {
 	o.DollarTop = dollarTop
 }
 
@@ -292,11 +293,11 @@ func (o *AirAPIFlightParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.
 	if o.DollarTop != nil {
 
 		// query param $top
-		var qrDollarTop string
+		var qrDollarTop int64
 		if o.DollarTop != nil {
 			qrDollarTop = *o.DollarTop
 		}
-		qDollarTop := qrDollarTop
+		qDollarTop := swag.FormatInt64(qrDollarTop)
 		if qDollarTop != "" {
 			if err := r.SetQueryParam("$top", qDollarTop); err != nil {
 				return err

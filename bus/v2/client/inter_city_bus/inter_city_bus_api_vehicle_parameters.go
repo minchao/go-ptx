@@ -13,6 +13,7 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
 	cr "github.com/go-openapi/runtime/client"
+	"github.com/go-openapi/swag"
 
 	strfmt "github.com/go-openapi/strfmt"
 )
@@ -21,7 +22,7 @@ import (
 // with the default values initialized.
 func NewInterCityBusAPIVehicleParams() *InterCityBusAPIVehicleParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &InterCityBusAPIVehicleParams{
 		DollarTop: &dollarTopDefault,
@@ -34,7 +35,7 @@ func NewInterCityBusAPIVehicleParams() *InterCityBusAPIVehicleParams {
 // with the default values initialized, and the ability to set a timeout on a request
 func NewInterCityBusAPIVehicleParamsWithTimeout(timeout time.Duration) *InterCityBusAPIVehicleParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &InterCityBusAPIVehicleParams{
 		DollarTop: &dollarTopDefault,
@@ -47,7 +48,7 @@ func NewInterCityBusAPIVehicleParamsWithTimeout(timeout time.Duration) *InterCit
 // with the default values initialized, and the ability to set a context for a request
 func NewInterCityBusAPIVehicleParamsWithContext(ctx context.Context) *InterCityBusAPIVehicleParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &InterCityBusAPIVehicleParams{
 		DollarTop: &dollarTopDefault,
@@ -60,7 +61,7 @@ func NewInterCityBusAPIVehicleParamsWithContext(ctx context.Context) *InterCityB
 // with the default values initialized, and the ability to set a custom HTTPClient for a request
 func NewInterCityBusAPIVehicleParamsWithHTTPClient(client *http.Client) *InterCityBusAPIVehicleParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &InterCityBusAPIVehicleParams{
 		DollarTop:  &dollarTopDefault,
@@ -102,7 +103,7 @@ type InterCityBusAPIVehicleParams struct {
 	  取前幾筆
 
 	*/
-	DollarTop *string
+	DollarTop *int64
 
 	timeout    time.Duration
 	Context    context.Context
@@ -198,13 +199,13 @@ func (o *InterCityBusAPIVehicleParams) SetDollarSkip(dollarSkip *string) {
 }
 
 // WithDollarTop adds the dollarTop to the inter city bus Api vehicle params
-func (o *InterCityBusAPIVehicleParams) WithDollarTop(dollarTop *string) *InterCityBusAPIVehicleParams {
+func (o *InterCityBusAPIVehicleParams) WithDollarTop(dollarTop *int64) *InterCityBusAPIVehicleParams {
 	o.SetDollarTop(dollarTop)
 	return o
 }
 
 // SetDollarTop adds the dollarTop to the inter city bus Api vehicle params
-func (o *InterCityBusAPIVehicleParams) SetDollarTop(dollarTop *string) {
+func (o *InterCityBusAPIVehicleParams) SetDollarTop(dollarTop *int64) {
 	o.DollarTop = dollarTop
 }
 
@@ -292,11 +293,11 @@ func (o *InterCityBusAPIVehicleParams) WriteToRequest(r runtime.ClientRequest, r
 	if o.DollarTop != nil {
 
 		// query param $top
-		var qrDollarTop string
+		var qrDollarTop int64
 		if o.DollarTop != nil {
 			qrDollarTop = *o.DollarTop
 		}
-		qDollarTop := qrDollarTop
+		qDollarTop := swag.FormatInt64(qrDollarTop)
 		if qDollarTop != "" {
 			if err := r.SetQueryParam("$top", qDollarTop); err != nil {
 				return err

@@ -6,8 +6,6 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	"encoding/json"
-
 	strfmt "github.com/go-openapi/strfmt"
 
 	"github.com/go-openapi/errors"
@@ -30,10 +28,11 @@ type ServiceDTOVersion2BusBusN1EstimateTime struct {
 	// 車輛目的站牌代碼
 	DestinationStop string `json:"DestinationStop,omitempty"`
 
-	// 去返程(該方向指的是此車牌車輛目前所在路線的去返程方向，非指站站牌所在路線的去返程方向，使用時請加值業者多加注意)
+	// integer
+	//
+	// 去返程(該方向指的是此車牌車輛目前所在路線的去返程方向，非指站站牌所在路線的去返程方向，使用時請加值業者多加注意) : [0:'去程',1:'返程',2:'迴圈',255:'未知']
 	// Required: true
-	// Enum: [0 1 2 255]
-	Direction *int64 `json:"Direction"`
+	Direction *int32 `json:"Direction"`
 
 	// 到站時間預估(秒) [當StopStatus値為1~4或PlateNumb値為-1時，EstimateTime値為空値; 反之，EstimateTime有値]
 	EstimateTime int32 `json:"EstimateTime,omitempty"`
@@ -41,9 +40,10 @@ type ServiceDTOVersion2BusBusN1EstimateTime struct {
 	// 是否為末班車
 	IsLastBus bool `json:"IsLastBus,omitempty"`
 
-	// 資料型態種類
-	// Enum: [0 1 2]
-	MessageType int64 `json:"MessageType,omitempty"`
+	// integer
+	//
+	// 資料型態種類 : [0:'未知',1:'定期',2:'非定期']
+	MessageType int32 `json:"MessageType,omitempty"`
 
 	// DateTime
 	//
@@ -93,9 +93,10 @@ type ServiceDTOVersion2BusBusN1EstimateTime struct {
 	// 路線經過站牌之順序
 	StopSequence int32 `json:"StopSequence,omitempty"`
 
-	// 車輛狀態備註
-	// Enum: [0 1 2 3 4]
-	StopStatus int64 `json:"StopStatus,omitempty"`
+	// integer
+	//
+	// 車輛狀態備註 : [0:'正常',1:'尚未發車',2:'交管不停靠',3:'末班車已過',4:'今日未營運']
+	StopStatus int32 `json:"StopStatus,omitempty"`
 
 	// 站牌唯一識別代碼，規則為 {業管機關簡碼} + {StopID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢
 	StopUID string `json:"StopUID,omitempty"`
@@ -131,19 +132,11 @@ func (m *ServiceDTOVersion2BusBusN1EstimateTime) Validate(formats strfmt.Registr
 		res = append(res, err)
 	}
 
-	if err := m.validateMessageType(formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.validateRouteName(formats); err != nil {
 		res = append(res, err)
 	}
 
 	if err := m.validateStopName(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateStopStatus(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -161,68 +154,9 @@ func (m *ServiceDTOVersion2BusBusN1EstimateTime) Validate(formats strfmt.Registr
 	return nil
 }
 
-var serviceDTOVersion2BusBusN1EstimateTimeTypeDirectionPropEnum []interface{}
-
-func init() {
-	var res []int64
-	if err := json.Unmarshal([]byte(`[0,1,2,255]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		serviceDTOVersion2BusBusN1EstimateTimeTypeDirectionPropEnum = append(serviceDTOVersion2BusBusN1EstimateTimeTypeDirectionPropEnum, v)
-	}
-}
-
-// prop value enum
-func (m *ServiceDTOVersion2BusBusN1EstimateTime) validateDirectionEnum(path, location string, value int64) error {
-	if err := validate.Enum(path, location, value, serviceDTOVersion2BusBusN1EstimateTimeTypeDirectionPropEnum); err != nil {
-		return err
-	}
-	return nil
-}
-
 func (m *ServiceDTOVersion2BusBusN1EstimateTime) validateDirection(formats strfmt.Registry) error {
 
 	if err := validate.Required("Direction", "body", m.Direction); err != nil {
-		return err
-	}
-
-	// value enum
-	if err := m.validateDirectionEnum("Direction", "body", *m.Direction); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-var serviceDTOVersion2BusBusN1EstimateTimeTypeMessageTypePropEnum []interface{}
-
-func init() {
-	var res []int64
-	if err := json.Unmarshal([]byte(`[0,1,2]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		serviceDTOVersion2BusBusN1EstimateTimeTypeMessageTypePropEnum = append(serviceDTOVersion2BusBusN1EstimateTimeTypeMessageTypePropEnum, v)
-	}
-}
-
-// prop value enum
-func (m *ServiceDTOVersion2BusBusN1EstimateTime) validateMessageTypeEnum(path, location string, value int64) error {
-	if err := validate.Enum(path, location, value, serviceDTOVersion2BusBusN1EstimateTimeTypeMessageTypePropEnum); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (m *ServiceDTOVersion2BusBusN1EstimateTime) validateMessageType(formats strfmt.Registry) error {
-
-	if swag.IsZero(m.MessageType) { // not required
-		return nil
-	}
-
-	// value enum
-	if err := m.validateMessageTypeEnum("MessageType", "body", m.MessageType); err != nil {
 		return err
 	}
 
@@ -260,40 +194,6 @@ func (m *ServiceDTOVersion2BusBusN1EstimateTime) validateStopName(formats strfmt
 			}
 			return err
 		}
-	}
-
-	return nil
-}
-
-var serviceDTOVersion2BusBusN1EstimateTimeTypeStopStatusPropEnum []interface{}
-
-func init() {
-	var res []int64
-	if err := json.Unmarshal([]byte(`[0,1,2,3,4]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		serviceDTOVersion2BusBusN1EstimateTimeTypeStopStatusPropEnum = append(serviceDTOVersion2BusBusN1EstimateTimeTypeStopStatusPropEnum, v)
-	}
-}
-
-// prop value enum
-func (m *ServiceDTOVersion2BusBusN1EstimateTime) validateStopStatusEnum(path, location string, value int64) error {
-	if err := validate.Enum(path, location, value, serviceDTOVersion2BusBusN1EstimateTimeTypeStopStatusPropEnum); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (m *ServiceDTOVersion2BusBusN1EstimateTime) validateStopStatus(formats strfmt.Registry) error {
-
-	if swag.IsZero(m.StopStatus) { // not required
-		return nil
-	}
-
-	// value enum
-	if err := m.validateStopStatusEnum("StopStatus", "body", m.StopStatus); err != nil {
-		return err
 	}
 
 	return nil

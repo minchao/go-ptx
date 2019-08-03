@@ -6,8 +6,6 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	"encoding/json"
-
 	strfmt "github.com/go-openapi/strfmt"
 
 	"github.com/go-openapi/errors"
@@ -44,9 +42,10 @@ type ServiceDTOVersion2RailMetroLineTransfer struct {
 	// Required: true
 	FromStationName *ServiceDTOVersion2BaseNameType `json:"FromStationName"`
 
-	// 是否為站內或站外轉乘
-	// Enum: [0 1]
-	IsOnSiteTransfer int64 `json:"IsOnSiteTransfer,omitempty"`
+	// integer
+	//
+	// 是否為站內或站外轉乘 : [0:'站外',1:'站內']
+	IsOnSiteTransfer int32 `json:"IsOnSiteTransfer,omitempty"`
 
 	// DateTime
 	//
@@ -114,10 +113,6 @@ func (m *ServiceDTOVersion2RailMetroLineTransfer) Validate(formats strfmt.Regist
 	}
 
 	if err := m.validateFromStationName(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateIsOnSiteTransfer(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -216,40 +211,6 @@ func (m *ServiceDTOVersion2RailMetroLineTransfer) validateFromStationName(format
 			}
 			return err
 		}
-	}
-
-	return nil
-}
-
-var serviceDTOVersion2RailMetroLineTransferTypeIsOnSiteTransferPropEnum []interface{}
-
-func init() {
-	var res []int64
-	if err := json.Unmarshal([]byte(`[0,1]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		serviceDTOVersion2RailMetroLineTransferTypeIsOnSiteTransferPropEnum = append(serviceDTOVersion2RailMetroLineTransferTypeIsOnSiteTransferPropEnum, v)
-	}
-}
-
-// prop value enum
-func (m *ServiceDTOVersion2RailMetroLineTransfer) validateIsOnSiteTransferEnum(path, location string, value int64) error {
-	if err := validate.Enum(path, location, value, serviceDTOVersion2RailMetroLineTransferTypeIsOnSiteTransferPropEnum); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (m *ServiceDTOVersion2RailMetroLineTransfer) validateIsOnSiteTransfer(formats strfmt.Registry) error {
-
-	if swag.IsZero(m.IsOnSiteTransfer) { // not required
-		return nil
-	}
-
-	// value enum
-	if err := m.validateIsOnSiteTransferEnum("IsOnSiteTransfer", "body", m.IsOnSiteTransfer); err != nil {
-		return err
 	}
 
 	return nil

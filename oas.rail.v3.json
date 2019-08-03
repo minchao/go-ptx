@@ -47,8 +47,8 @@
             "name": "$top",
             "in": "query",
             "description": "取前幾筆",
-            "type": "string",
-            "default": "30"
+            "type": "integer",
+            "default": 30
           },
           {
             "name": "$skip",
@@ -124,8 +124,8 @@
             "name": "$top",
             "in": "query",
             "description": "取前幾筆",
-            "type": "string",
-            "default": "30"
+            "type": "integer",
+            "default": 30
           },
           {
             "name": "$skip",
@@ -201,8 +201,8 @@
             "name": "$top",
             "in": "query",
             "description": "取前幾筆",
-            "type": "string",
-            "default": "30"
+            "type": "integer",
+            "default": 30
           },
           {
             "name": "$skip",
@@ -278,8 +278,8 @@
             "name": "$top",
             "in": "query",
             "description": "取前幾筆",
-            "type": "string",
-            "default": "30"
+            "type": "integer",
+            "default": 30
           },
           {
             "name": "$skip",
@@ -355,8 +355,8 @@
             "name": "$top",
             "in": "query",
             "description": "取前幾筆",
-            "type": "string",
-            "default": "30"
+            "type": "integer",
+            "default": 30
           },
           {
             "name": "$skip",
@@ -432,8 +432,8 @@
             "name": "$top",
             "in": "query",
             "description": "取前幾筆",
-            "type": "string",
-            "default": "30"
+            "type": "integer",
+            "default": 30
           },
           {
             "name": "$skip",
@@ -509,8 +509,8 @@
             "name": "$top",
             "in": "query",
             "description": "取前幾筆",
-            "type": "string",
-            "default": "30"
+            "type": "integer",
+            "default": 30
           },
           {
             "name": "$skip",
@@ -555,7 +555,7 @@
         "tags": [
           "TRA"
         ],
-        "summary": "取得票價資料(附件)",
+        "summary": "取得票價資料(檔案)",
         "description": "取得Gzip壓縮檔",
         "operationId": "ODFareApiControllerApiController_Get",
         "consumes": [],
@@ -624,8 +624,8 @@
             "name": "$top",
             "in": "query",
             "description": "取前幾筆",
-            "type": "string",
-            "default": "30"
+            "type": "integer",
+            "default": 30
           },
           {
             "name": "$skip",
@@ -701,8 +701,8 @@
             "name": "$top",
             "in": "query",
             "description": "取前幾筆",
-            "type": "string",
-            "default": "30"
+            "type": "integer",
+            "default": 30
           },
           {
             "name": "$skip",
@@ -785,8 +785,8 @@
             "name": "$top",
             "in": "query",
             "description": "取前幾筆",
-            "type": "string",
-            "default": "30"
+            "type": "integer",
+            "default": 30
           },
           {
             "name": "$skip",
@@ -862,8 +862,8 @@
             "name": "$top",
             "in": "query",
             "description": "取前幾筆",
-            "type": "string",
-            "default": "30"
+            "type": "integer",
+            "default": 30
           },
           {
             "name": "$skip",
@@ -946,8 +946,8 @@
             "name": "$top",
             "in": "query",
             "description": "取前幾筆",
-            "type": "string",
-            "default": "30"
+            "type": "integer",
+            "default": 30
           },
           {
             "name": "$skip",
@@ -1023,8 +1023,8 @@
             "name": "$top",
             "in": "query",
             "description": "取前幾筆",
-            "type": "string",
-            "default": "30"
+            "type": "integer",
+            "default": 30
           },
           {
             "name": "$skip",
@@ -1107,8 +1107,8 @@
             "name": "$top",
             "in": "query",
             "description": "取前幾筆",
-            "type": "string",
-            "default": "30"
+            "type": "integer",
+            "default": 30
           },
           {
             "name": "$skip",
@@ -1184,8 +1184,8 @@
             "name": "$top",
             "in": "query",
             "description": "取前幾筆",
-            "type": "string",
-            "default": "30"
+            "type": "integer",
+            "default": 30
           },
           {
             "name": "$skip",
@@ -1268,8 +1268,8 @@
             "name": "$top",
             "in": "query",
             "description": "取前幾筆",
-            "type": "string",
-            "default": "30"
+            "type": "integer",
+            "default": 30
           },
           {
             "name": "$skip",
@@ -1352,8 +1352,8 @@
             "name": "$top",
             "in": "query",
             "description": "取前幾筆",
-            "type": "string",
-            "default": "30"
+            "type": "integer",
+            "default": 30
           },
           {
             "name": "$skip",
@@ -1450,8 +1450,8 @@
             "name": "$top",
             "in": "query",
             "description": "取前幾筆",
-            "type": "string",
-            "default": "30"
+            "type": "integer",
+            "default": 30
           },
           {
             "name": "$skip",
@@ -1548,8 +1548,8 @@
             "name": "$top",
             "in": "query",
             "description": "取前幾筆",
-            "type": "string",
-            "default": "30"
+            "type": "integer",
+            "default": 30
           },
           {
             "name": "$skip",
@@ -1625,8 +1625,8 @@
             "name": "$top",
             "in": "query",
             "description": "取前幾筆",
-            "type": "string",
-            "default": "30"
+            "type": "integer",
+            "default": 30
           },
           {
             "name": "$skip",
@@ -1709,8 +1709,8 @@
             "name": "$top",
             "in": "query",
             "description": "取前幾筆",
-            "type": "string",
-            "default": "30"
+            "type": "integer",
+            "default": 30
           },
           {
             "name": "$skip",
@@ -1793,8 +1793,8 @@
             "name": "$top",
             "in": "query",
             "description": "取前幾筆",
-            "type": "string",
-            "default": "30"
+            "type": "integer",
+            "default": 30
           },
           {
             "name": "$skip",
@@ -1870,8 +1870,8 @@
             "name": "$top",
             "in": "query",
             "description": "取前幾筆",
-            "type": "string",
-            "default": "30"
+            "type": "integer",
+            "default": 30
           },
           {
             "name": "$skip",
@@ -1954,8 +1954,8 @@
             "name": "$top",
             "in": "query",
             "description": "取前幾筆",
-            "type": "string",
-            "default": "30"
+            "type": "integer",
+            "default": 30
           },
           {
             "name": "$skip",
@@ -2031,8 +2031,8 @@
             "name": "$top",
             "in": "query",
             "description": "取前幾筆",
-            "type": "string",
-            "default": "30"
+            "type": "integer",
+            "default": 30
           },
           {
             "name": "$skip",
@@ -2115,8 +2115,8 @@
             "name": "$top",
             "in": "query",
             "description": "取前幾筆",
-            "type": "string",
-            "default": "30"
+            "type": "integer",
+            "default": 30
           },
           {
             "name": "$skip",
@@ -2192,8 +2192,8 @@
             "name": "$top",
             "in": "query",
             "description": "取前幾筆",
-            "type": "string",
-            "default": "30"
+            "type": "integer",
+            "default": 30
           },
           {
             "name": "$skip",
@@ -2269,8 +2269,8 @@
             "name": "$top",
             "in": "query",
             "description": "取前幾筆",
-            "type": "string",
-            "default": "30"
+            "type": "integer",
+            "default": 30
           },
           {
             "name": "$skip",
@@ -2346,8 +2346,8 @@
             "name": "$top",
             "in": "query",
             "description": "取前幾筆",
-            "type": "string",
-            "default": "30"
+            "type": "integer",
+            "default": 30
           },
           {
             "name": "$skip",
@@ -2423,8 +2423,8 @@
             "name": "$top",
             "in": "query",
             "description": "取前幾筆",
-            "type": "string",
-            "default": "30"
+            "type": "integer",
+            "default": 30
           },
           {
             "name": "$skip",
@@ -2500,8 +2500,8 @@
             "name": "$top",
             "in": "query",
             "description": "取前幾筆",
-            "type": "string",
-            "default": "30"
+            "type": "integer",
+            "default": 30
           },
           {
             "name": "$skip",
@@ -2617,12 +2617,9 @@
           "type": "string"
         },
         "Status": {
-          "description": "營運狀況",
-          "enum": [
-            0,
-            1,
-            2
-          ],
+          "format": "int32",
+          "title": "integer",
+          "description": "營運狀況 : [0:'全線營運停止',1:'全線營運正常',2:'有異常狀況']",
           "type": "integer"
         },
         "Scope": {
@@ -2631,22 +2628,16 @@
           "description": "影響範圍"
         },
         "Direction": {
-          "description": "影響方向",
-          "enum": [
-            0,
-            1,
-            2
-          ],
+          "format": "int32",
+          "title": "integer",
+          "description": "影響方向 : [0:'南下',1:'北上',2:'雙向']",
           "type": "integer"
         },
         "Level": {
-          "description": "影響等級程度",
-          "enum": [
-            "1: 重度",
-            "2: 中度",
-            "3: 輕度"
-          ],
-          "type": "string"
+          "format": "int32",
+          "title": "integer",
+          "description": "影響等級程度 : [1:'重度',2:'中度',3:'輕度']",
+          "type": "integer"
         },
         "Effect": {
           "description": "影響說明",
@@ -2905,11 +2896,9 @@
           "description": "車站名稱"
         },
         "Direction": {
-          "description": "行駛方向",
-          "enum": [
-            0,
-            1
-          ],
+          "format": "int32",
+          "title": "integer",
+          "description": "行駛方向 : [0:'順行',1:'逆行']",
           "type": "integer"
         },
         "DestinationStationID": {
@@ -3086,11 +3075,9 @@
           "type": "string"
         },
         "Direction": {
-          "description": "行駛方向",
-          "enum": [
-            0,
-            1
-          ],
+          "format": "int32",
+          "title": "integer",
+          "description": "行駛方向 : [0:'順行',1:'逆行']",
           "type": "integer"
         },
         "TrainTypeID": {
@@ -3133,76 +3120,57 @@
           "type": "string"
         },
         "TripLine": {
-          "description": "山海線類型",
-          "enum": [
-            0,
-            1,
-            2
-          ],
+          "format": "int32",
+          "title": "integer",
+          "description": "山海線類型 : [0:'不經山海線',1:'山線',2:'海線']",
           "type": "integer"
         },
         "WheelChairFlag": {
-          "description": "是否設身障旅客專用座位車",
-          "enum": [
-            0,
-            1
-          ],
+          "format": "int32",
+          "title": "integer",
+          "description": "是否設身障旅客專用座位車 : [0:'否',1:'是']",
           "type": "integer"
         },
         "PackageServiceFlag": {
-          "description": "是否提供行李服務",
-          "enum": [
-            0,
-            1
-          ],
+          "format": "int32",
+          "title": "integer",
+          "description": "是否提供行李服務 : [0:'否',1:'是']",
           "type": "integer"
         },
         "DiningFlag": {
-          "description": "是否提供餐車服務",
-          "enum": [
-            0,
-            1
-          ],
+          "format": "int32",
+          "title": "integer",
+          "description": "是否提供餐車服務 : [0:'否',1:'是']",
           "type": "integer"
         },
         "BreastFeedFlag": {
-          "description": "是否設有哺(集)乳室車廂",
-          "enum": [
-            0,
-            1
-          ],
+          "format": "int32",
+          "title": "integer",
+          "description": "是否設有哺(集)乳室車廂 : [0:'否',1:'是']",
           "type": "integer"
         },
         "BikeFlag": {
-          "description": "是否人車同行班次(置於攜車袋之自行車各級列車均可乘車)",
-          "enum": [
-            0,
-            1
-          ],
+          "format": "int32",
+          "title": "integer",
+          "description": "是否人車同行班次(置於攜車袋之自行車各級列車均可乘車) : [0:'否',1:'是']",
           "type": "integer"
         },
         "CarFlag": {
-          "description": "是否提供小汽車上火車服務",
-          "enum": [
-            0,
-            1
-          ],
+          "format": "int32",
+          "title": "integer",
+          "description": "是否提供小汽車上火車服務 : [0:'否',1:'是']",
           "type": "integer"
         },
         "DailyFlag": {
-          "description": "是否提供小汽車上火車服務",
-          "enum": [
-            0,
-            1
-          ],
+          "format": "int32",
+          "title": "integer",
+          "description": "是否提供小汽車上火車服務 : [0:'否',1:'是']",
           "type": "integer"
         },
         "ExtraTrainFlag": {
-          "description": "是否為加班車",
-          "enum": [
-            0,
-            1
-          ],
+          "format": "int32",
+          "title": "integer",
+          "description": "是否為加班車 : [0:'否',1:'是']",
           "type": "integer"
         },
         "Note": {
@@ -3341,11 +3309,9 @@
           "description": "車站名稱"
         },
         "Direction": {
-          "description": "行駛方向",
-          "enum": [
-            0,
-            1
-          ],
+          "format": "int32",
+          "title": "integer",
+          "description": "行駛方向 : [0:'順行',1:'逆行']",
           "type": "integer"
         },
         "DestinationStationID": {
@@ -3599,11 +3565,9 @@
           "type": "string"
         },
         "Direction": {
-          "description": "行駛方向",
-          "enum": [
-            0,
-            1
-          ],
+          "format": "int32",
+          "title": "integer",
+          "description": "行駛方向 : [0:'順行',1:'逆行']",
           "type": "integer"
         },
         "TrainTypeID": {
@@ -3646,76 +3610,57 @@
           "type": "string"
         },
         "TripLine": {
-          "description": "山海線類型",
-          "enum": [
-            0,
-            1,
-            2
-          ],
+          "format": "int32",
+          "title": "integer",
+          "description": "山海線類型 : [0:'不經山海線',1:'山線',2:'海線']",
           "type": "integer"
         },
         "WheelChairFlag": {
-          "description": "是否設身障旅客專用座位車",
-          "enum": [
-            0,
-            1
-          ],
+          "format": "int32",
+          "title": "integer",
+          "description": "是否設身障旅客專用座位車 : [0:'否',1:'是']",
           "type": "integer"
         },
         "PackageServiceFlag": {
-          "description": "是否提供行李服務",
-          "enum": [
-            0,
-            1
-          ],
+          "format": "int32",
+          "title": "integer",
+          "description": "是否提供行李服務 : [0:'否',1:'是']",
           "type": "integer"
         },
         "DiningFlag": {
-          "description": "是否提供餐車服務",
-          "enum": [
-            0,
-            1
-          ],
+          "format": "int32",
+          "title": "integer",
+          "description": "是否提供餐車服務 : [0:'否',1:'是']",
           "type": "integer"
         },
         "BreastFeedFlag": {
-          "description": "是否設有哺(集)乳室車廂",
-          "enum": [
-            0,
-            1
-          ],
+          "format": "int32",
+          "title": "integer",
+          "description": "是否設有哺(集)乳室車廂 : [0:'否',1:'是']",
           "type": "integer"
         },
         "BikeFlag": {
-          "description": "是否人車同行班次(置於攜車袋之自行車各級列車均可乘車)",
-          "enum": [
-            0,
-            1
-          ],
+          "format": "int32",
+          "title": "integer",
+          "description": "是否人車同行班次(置於攜車袋之自行車各級列車均可乘車) : [0:'否',1:'是']",
           "type": "integer"
         },
         "CarFlag": {
-          "description": "是否提供小客車",
-          "enum": [
-            0,
-            1
-          ],
+          "format": "int32",
+          "title": "integer",
+          "description": "是否提供小客車 : [0:'否',1:'是']",
           "type": "integer"
         },
         "DailyFlag": {
-          "description": "是否為每日行駛",
-          "enum": [
-            0,
-            1
-          ],
+          "format": "int32",
+          "title": "integer",
+          "description": "是否為每日行駛 : [0:'否',1:'是']",
           "type": "integer"
         },
         "ExtraTrainFlag": {
-          "description": "是否為加班車",
-          "enum": [
-            0,
-            1
-          ],
+          "format": "int32",
+          "title": "integer",
+          "description": "是否為加班車 : [0:'否',1:'是']",
           "type": "integer"
         },
         "Note": {
@@ -3783,91 +3728,69 @@
           "type": "string"
         },
         "Monday": {
-          "description": "星期一是否營運",
-          "enum": [
-            0,
-            1
-          ],
+          "format": "int32",
+          "title": "integer",
+          "description": "星期一是否營運 : [0:'否',1:'是']",
           "type": "integer"
         },
         "Tuesday": {
-          "description": "星期二是否營運",
-          "enum": [
-            0,
-            1
-          ],
+          "format": "int32",
+          "title": "integer",
+          "description": "星期二是否營運 : [0:'否',1:'是']",
           "type": "integer"
         },
         "Wednesday": {
-          "description": "星期三是否營運",
-          "enum": [
-            0,
-            1
-          ],
+          "format": "int32",
+          "title": "integer",
+          "description": "星期三是否營運 : [0:'否',1:'是']",
           "type": "integer"
         },
         "Thursday": {
-          "description": "星期四是否營運",
-          "enum": [
-            0,
-            1
-          ],
+          "format": "int32",
+          "title": "integer",
+          "description": "星期四是否營運 : [0:'否',1:'是']",
           "type": "integer"
         },
         "Friday": {
-          "description": "星期五是否營運",
-          "enum": [
-            0,
-            1
-          ],
+          "format": "int32",
+          "title": "integer",
+          "description": "星期五是否營運 : [0:'否',1:'是']",
           "type": "integer"
         },
         "Saturday": {
-          "description": "星期六是否營運",
-          "enum": [
-            0,
-            1
-          ],
+          "format": "int32",
+          "title": "integer",
+          "description": "星期六是否營運 : [0:'否',1:'是']",
           "type": "integer"
         },
         "Sunday": {
-          "description": "星期日是否營運",
-          "enum": [
-            0,
-            1
-          ],
+          "format": "int32",
+          "title": "integer",
+          "description": "星期日是否營運 : [0:'否',1:'是']",
           "type": "integer"
         },
         "NationalHolidays": {
-          "description": "國定假日是否營運",
-          "enum": [
-            0,
-            1
-          ],
+          "format": "int32",
+          "title": "integer",
+          "description": "國定假日是否營運 : [0:'否',1:'是']",
           "type": "integer"
         },
         "DayBeforeHoliday": {
-          "description": "假日前一日是否營運",
-          "enum": [
-            0,
-            1
-          ],
+          "format": "int32",
+          "title": "integer",
+          "description": "假日前一日是否營運 : [0:'否',1:'是']",
           "type": "integer"
         },
         "DayAfterHoliday": {
-          "description": "假日後一日是否營運",
-          "enum": [
-            0,
-            1
-          ],
+          "format": "int32",
+          "title": "integer",
+          "description": "假日後一日是否營運 : [0:'否',1:'是']",
           "type": "integer"
         },
         "TyphoonDay": {
-          "description": "颱風停止上班上課期間營運營運",
-          "enum": [
-            0,
-            1
-          ],
+          "format": "int32",
+          "title": "integer",
+          "description": "颱風停止上班上課期間營運營運 : [0:'否',1:'是']",
           "type": "integer"
         }
       }
@@ -4280,16 +4203,10 @@
           "type": "string"
         },
         "Language": {
-          "description": "語系",
-          "enum": [
-            "1: Zh_tw",
-            "2: En_us",
-            "3: Zh_cn",
-            "4: Ja",
-            "5: Ko",
-            "99: Other"
-          ],
-          "type": "string"
+          "format": "int32",
+          "title": "integer",
+          "description": "語系 : [1:'Zh_tw',2:'En_us',3:'Zh_cn',4:'Ja',5:'Ko',99:'Other']",
+          "type": "integer"
         },
         "Department": {
           "description": "發布單位",
@@ -4300,20 +4217,10 @@
           "type": "string"
         },
         "NewsCategory": {
-          "description": "消息類別",
-          "enum": [
-            "1: 最新消息",
-            "2: 新聞稿",
-            "3: 營運資訊",
-            "4: 轉乘資訊",
-            "5: 活動訊息",
-            "6: 系統公告",
-            "7: 新服務上架",
-            "8: API修正",
-            "9: 來源異常",
-            "99: 其他"
-          ],
-          "type": "string"
+          "format": "int32",
+          "title": "integer",
+          "description": "消息類別 : [1:'最新消息',2:'新聞稿',3:'營運資訊',4:'轉乘資訊',5:'活動訊息',6:'系統公告',7:'新服務上架',8:'API修正',9:'來源異常',99:'其他']",
+          "type": "integer"
         },
         "Description": {
           "description": "內容描述",
@@ -4441,11 +4348,9 @@
           "description": "迄點車站名稱"
         },
         "Direction": {
-          "description": "方向",
-          "enum": [
-            0,
-            1
-          ],
+          "format": "int32",
+          "title": "integer",
+          "description": "方向 : [0:'順行',1:'逆行']",
           "type": "integer"
         },
         "TrainType": {
@@ -4705,12 +4610,9 @@
           "type": "string"
         },
         "ServiceStatus": {
-          "description": "營運服務狀態代碼",
-          "enum": [
-            0,
-            1,
-            2
-          ],
+          "format": "int32",
+          "title": "integer",
+          "description": "營運服務狀態代碼 : [0:'停止營運',1:'正常營運',2:'加班營運']",
           "type": "integer"
         },
         "Description": {
@@ -5215,11 +5117,9 @@
           "type": "string"
         },
         "Direction": {
-          "description": "行駛方向",
-          "enum": [
-            0,
-            1
-          ],
+          "format": "int32",
+          "title": "integer",
+          "description": "行駛方向 : [0:'順行',1:'逆行']",
           "type": "integer"
         },
         "TrainTypeID": {
@@ -5245,12 +5145,9 @@
           "description": "終點站名稱"
         },
         "TripLine": {
-          "description": "山海線類型",
-          "enum": [
-            0,
-            1,
-            2
-          ],
+          "format": "int32",
+          "title": "integer",
+          "description": "山海線類型 : [0:'不經山海線',1:'山線',2:'海線']",
           "type": "integer"
         },
         "Platform": {
@@ -5271,12 +5168,9 @@
           "type": "integer"
         },
         "RunningStatus": {
-          "description": "列車狀態",
-          "enum": [
-            0,
-            1,
-            2
-          ],
+          "format": "int32",
+          "title": "integer",
+          "description": "列車狀態 : [0:'準點',1:'誤點',2:'取消']",
           "type": "integer"
         },
         "UpdateTime": {
@@ -6042,12 +5936,9 @@
           "description": "車站名稱"
         },
         "TrainStationStatus": {
-          "description": "列車目前所在之車站狀態",
-          "enum": [
-            0,
-            1,
-            2
-          ],
+          "format": "int32",
+          "title": "integer",
+          "description": "列車目前所在之車站狀態 : [0:'進站中',1:'在站上',2:'已離站']",
           "type": "integer"
         },
         "DelayTime": {

@@ -6,8 +6,6 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	"encoding/json"
-
 	strfmt "github.com/go-openapi/strfmt"
 
 	"github.com/go-openapi/errors"
@@ -34,15 +32,17 @@ type ServiceDTOVersion3RailTRATRANewsListNews struct {
 	// 消息結束日期時間
 	EndTime string `json:"EndTime,omitempty"`
 
-	// 語系
+	// integer
+	//
+	// 語系 : [1:'Zh_tw',2:'En_us',3:'Zh_cn',4:'Ja',5:'Ko',99:'Other']
 	// Required: true
-	// Enum: [1: Zh_tw 2: En_us 3: Zh_cn 4: Ja 5: Ko 99: Other]
-	Language *string `json:"Language"`
+	Language *int32 `json:"Language"`
 
-	// 消息類別
+	// integer
+	//
+	// 消息類別 : [1:'最新消息',2:'新聞稿',3:'營運資訊',4:'轉乘資訊',5:'活動訊息',6:'系統公告',7:'新服務上架',8:'API修正',9:'來源異常',99:'其他']
 	// Required: true
-	// Enum: [1: 最新消息 2: 新聞稿 3: 營運資訊 4: 轉乘資訊 5: 活動訊息 6: 系統公告 7: 新服務上架 8: API修正 9: 來源異常 99: 其他]
-	NewsCategory *string `json:"NewsCategory"`
+	NewsCategory *int32 `json:"NewsCategory"`
 
 	// 消息代碼
 	// Required: true
@@ -120,122 +120,18 @@ func (m *ServiceDTOVersion3RailTRATRANewsListNews) validateDescription(formats s
 	return nil
 }
 
-var serviceDTOVersion3RailTRATRANewsListNewsTypeLanguagePropEnum []interface{}
-
-func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["1: Zh_tw","2: En_us","3: Zh_cn","4: Ja","5: Ko","99: Other"]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		serviceDTOVersion3RailTRATRANewsListNewsTypeLanguagePropEnum = append(serviceDTOVersion3RailTRATRANewsListNewsTypeLanguagePropEnum, v)
-	}
-}
-
-const (
-
-	// ServiceDTOVersion3RailTRATRANewsListNewsLanguageNr1ZhTw captures enum value "1: Zh_tw"
-	ServiceDTOVersion3RailTRATRANewsListNewsLanguageNr1ZhTw string = "1: Zh_tw"
-
-	// ServiceDTOVersion3RailTRATRANewsListNewsLanguageNr2EnUs captures enum value "2: En_us"
-	ServiceDTOVersion3RailTRATRANewsListNewsLanguageNr2EnUs string = "2: En_us"
-
-	// ServiceDTOVersion3RailTRATRANewsListNewsLanguageNr3ZhCn captures enum value "3: Zh_cn"
-	ServiceDTOVersion3RailTRATRANewsListNewsLanguageNr3ZhCn string = "3: Zh_cn"
-
-	// ServiceDTOVersion3RailTRATRANewsListNewsLanguageNr4Ja captures enum value "4: Ja"
-	ServiceDTOVersion3RailTRATRANewsListNewsLanguageNr4Ja string = "4: Ja"
-
-	// ServiceDTOVersion3RailTRATRANewsListNewsLanguageNr5Ko captures enum value "5: Ko"
-	ServiceDTOVersion3RailTRATRANewsListNewsLanguageNr5Ko string = "5: Ko"
-
-	// ServiceDTOVersion3RailTRATRANewsListNewsLanguageNr99Other captures enum value "99: Other"
-	ServiceDTOVersion3RailTRATRANewsListNewsLanguageNr99Other string = "99: Other"
-)
-
-// prop value enum
-func (m *ServiceDTOVersion3RailTRATRANewsListNews) validateLanguageEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, serviceDTOVersion3RailTRATRANewsListNewsTypeLanguagePropEnum); err != nil {
-		return err
-	}
-	return nil
-}
-
 func (m *ServiceDTOVersion3RailTRATRANewsListNews) validateLanguage(formats strfmt.Registry) error {
 
 	if err := validate.Required("Language", "body", m.Language); err != nil {
 		return err
 	}
 
-	// value enum
-	if err := m.validateLanguageEnum("Language", "body", *m.Language); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-var serviceDTOVersion3RailTRATRANewsListNewsTypeNewsCategoryPropEnum []interface{}
-
-func init() {
-	var res []string
-	if err := json.Unmarshal([]byte(`["1: 最新消息","2: 新聞稿","3: 營運資訊","4: 轉乘資訊","5: 活動訊息","6: 系統公告","7: 新服務上架","8: API修正","9: 來源異常","99: 其他"]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		serviceDTOVersion3RailTRATRANewsListNewsTypeNewsCategoryPropEnum = append(serviceDTOVersion3RailTRATRANewsListNewsTypeNewsCategoryPropEnum, v)
-	}
-}
-
-const (
-
-	// ServiceDTOVersion3RailTRATRANewsListNewsNewsCategoryNr1最新消息 captures enum value "1: 最新消息"
-	ServiceDTOVersion3RailTRATRANewsListNewsNewsCategoryNr1最新消息 string = "1: 最新消息"
-
-	// ServiceDTOVersion3RailTRATRANewsListNewsNewsCategoryNr2新聞稿 captures enum value "2: 新聞稿"
-	ServiceDTOVersion3RailTRATRANewsListNewsNewsCategoryNr2新聞稿 string = "2: 新聞稿"
-
-	// ServiceDTOVersion3RailTRATRANewsListNewsNewsCategoryNr3營運資訊 captures enum value "3: 營運資訊"
-	ServiceDTOVersion3RailTRATRANewsListNewsNewsCategoryNr3營運資訊 string = "3: 營運資訊"
-
-	// ServiceDTOVersion3RailTRATRANewsListNewsNewsCategoryNr4轉乘資訊 captures enum value "4: 轉乘資訊"
-	ServiceDTOVersion3RailTRATRANewsListNewsNewsCategoryNr4轉乘資訊 string = "4: 轉乘資訊"
-
-	// ServiceDTOVersion3RailTRATRANewsListNewsNewsCategoryNr5活動訊息 captures enum value "5: 活動訊息"
-	ServiceDTOVersion3RailTRATRANewsListNewsNewsCategoryNr5活動訊息 string = "5: 活動訊息"
-
-	// ServiceDTOVersion3RailTRATRANewsListNewsNewsCategoryNr6系統公告 captures enum value "6: 系統公告"
-	ServiceDTOVersion3RailTRATRANewsListNewsNewsCategoryNr6系統公告 string = "6: 系統公告"
-
-	// ServiceDTOVersion3RailTRATRANewsListNewsNewsCategoryNr7新服務上架 captures enum value "7: 新服務上架"
-	ServiceDTOVersion3RailTRATRANewsListNewsNewsCategoryNr7新服務上架 string = "7: 新服務上架"
-
-	// ServiceDTOVersion3RailTRATRANewsListNewsNewsCategoryNr8API修正 captures enum value "8: API修正"
-	ServiceDTOVersion3RailTRATRANewsListNewsNewsCategoryNr8API修正 string = "8: API修正"
-
-	// ServiceDTOVersion3RailTRATRANewsListNewsNewsCategoryNr9來源異常 captures enum value "9: 來源異常"
-	ServiceDTOVersion3RailTRATRANewsListNewsNewsCategoryNr9來源異常 string = "9: 來源異常"
-
-	// ServiceDTOVersion3RailTRATRANewsListNewsNewsCategoryNr99其他 captures enum value "99: 其他"
-	ServiceDTOVersion3RailTRATRANewsListNewsNewsCategoryNr99其他 string = "99: 其他"
-)
-
-// prop value enum
-func (m *ServiceDTOVersion3RailTRATRANewsListNews) validateNewsCategoryEnum(path, location string, value string) error {
-	if err := validate.Enum(path, location, value, serviceDTOVersion3RailTRATRANewsListNewsTypeNewsCategoryPropEnum); err != nil {
-		return err
-	}
 	return nil
 }
 
 func (m *ServiceDTOVersion3RailTRATRANewsListNews) validateNewsCategory(formats strfmt.Registry) error {
 
 	if err := validate.Required("NewsCategory", "body", m.NewsCategory); err != nil {
-		return err
-	}
-
-	// value enum
-	if err := m.validateNewsCategoryEnum("NewsCategory", "body", *m.NewsCategory); err != nil {
 		return err
 	}
 

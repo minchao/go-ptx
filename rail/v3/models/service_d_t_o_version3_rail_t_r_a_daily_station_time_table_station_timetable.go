@@ -6,7 +6,6 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	"encoding/json"
 	"strconv"
 
 	strfmt "github.com/go-openapi/strfmt"
@@ -28,9 +27,10 @@ type ServiceDTOVersion3RailTRADailyStationTimeTableStationTimetable struct {
 	// 目的站車站名稱
 	DestinationStationName *ServiceDTOVersion3BaseNameType `json:"DestinationStationName,omitempty"`
 
-	// 行駛方向
-	// Enum: [0 1]
-	Direction int64 `json:"Direction,omitempty"`
+	// integer
+	//
+	// 行駛方向 : [0:'順行',1:'逆行']
+	Direction int32 `json:"Direction,omitempty"`
 
 	// 營運路線代碼
 	RouteID string `json:"RouteID,omitempty"`
@@ -53,10 +53,6 @@ func (m *ServiceDTOVersion3RailTRADailyStationTimeTableStationTimetable) Validat
 	var res []error
 
 	if err := m.validateDestinationStationName(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateDirection(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -87,40 +83,6 @@ func (m *ServiceDTOVersion3RailTRADailyStationTimeTableStationTimetable) validat
 			}
 			return err
 		}
-	}
-
-	return nil
-}
-
-var serviceDTOVersion3RailTRADailyStationTimeTableStationTimetableTypeDirectionPropEnum []interface{}
-
-func init() {
-	var res []int64
-	if err := json.Unmarshal([]byte(`[0,1]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		serviceDTOVersion3RailTRADailyStationTimeTableStationTimetableTypeDirectionPropEnum = append(serviceDTOVersion3RailTRADailyStationTimeTableStationTimetableTypeDirectionPropEnum, v)
-	}
-}
-
-// prop value enum
-func (m *ServiceDTOVersion3RailTRADailyStationTimeTableStationTimetable) validateDirectionEnum(path, location string, value int64) error {
-	if err := validate.Enum(path, location, value, serviceDTOVersion3RailTRADailyStationTimeTableStationTimetableTypeDirectionPropEnum); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (m *ServiceDTOVersion3RailTRADailyStationTimeTableStationTimetable) validateDirection(formats strfmt.Registry) error {
-
-	if swag.IsZero(m.Direction) { // not required
-		return nil
-	}
-
-	// value enum
-	if err := m.validateDirectionEnum("Direction", "body", m.Direction); err != nil {
-		return err
 	}
 
 	return nil

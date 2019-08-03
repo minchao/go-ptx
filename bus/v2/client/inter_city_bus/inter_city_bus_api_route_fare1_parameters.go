@@ -13,6 +13,7 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
 	cr "github.com/go-openapi/runtime/client"
+	"github.com/go-openapi/swag"
 
 	strfmt "github.com/go-openapi/strfmt"
 )
@@ -21,7 +22,7 @@ import (
 // with the default values initialized.
 func NewInterCityBusAPIRouteFare1Params() *InterCityBusAPIRouteFare1Params {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &InterCityBusAPIRouteFare1Params{
 		DollarTop: &dollarTopDefault,
@@ -34,7 +35,7 @@ func NewInterCityBusAPIRouteFare1Params() *InterCityBusAPIRouteFare1Params {
 // with the default values initialized, and the ability to set a timeout on a request
 func NewInterCityBusAPIRouteFare1ParamsWithTimeout(timeout time.Duration) *InterCityBusAPIRouteFare1Params {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &InterCityBusAPIRouteFare1Params{
 		DollarTop: &dollarTopDefault,
@@ -47,7 +48,7 @@ func NewInterCityBusAPIRouteFare1ParamsWithTimeout(timeout time.Duration) *Inter
 // with the default values initialized, and the ability to set a context for a request
 func NewInterCityBusAPIRouteFare1ParamsWithContext(ctx context.Context) *InterCityBusAPIRouteFare1Params {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &InterCityBusAPIRouteFare1Params{
 		DollarTop: &dollarTopDefault,
@@ -60,7 +61,7 @@ func NewInterCityBusAPIRouteFare1ParamsWithContext(ctx context.Context) *InterCi
 // with the default values initialized, and the ability to set a custom HTTPClient for a request
 func NewInterCityBusAPIRouteFare1ParamsWithHTTPClient(client *http.Client) *InterCityBusAPIRouteFare1Params {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &InterCityBusAPIRouteFare1Params{
 		DollarTop:  &dollarTopDefault,
@@ -102,7 +103,7 @@ type InterCityBusAPIRouteFare1Params struct {
 	  取前幾筆
 
 	*/
-	DollarTop *string
+	DollarTop *int64
 	/*RouteName
 	  繁體中文路線名稱，如'9102'
 
@@ -203,13 +204,13 @@ func (o *InterCityBusAPIRouteFare1Params) SetDollarSkip(dollarSkip *string) {
 }
 
 // WithDollarTop adds the dollarTop to the inter city bus Api route fare 1 params
-func (o *InterCityBusAPIRouteFare1Params) WithDollarTop(dollarTop *string) *InterCityBusAPIRouteFare1Params {
+func (o *InterCityBusAPIRouteFare1Params) WithDollarTop(dollarTop *int64) *InterCityBusAPIRouteFare1Params {
 	o.SetDollarTop(dollarTop)
 	return o
 }
 
 // SetDollarTop adds the dollarTop to the inter city bus Api route fare 1 params
-func (o *InterCityBusAPIRouteFare1Params) SetDollarTop(dollarTop *string) {
+func (o *InterCityBusAPIRouteFare1Params) SetDollarTop(dollarTop *int64) {
 	o.DollarTop = dollarTop
 }
 
@@ -308,11 +309,11 @@ func (o *InterCityBusAPIRouteFare1Params) WriteToRequest(r runtime.ClientRequest
 	if o.DollarTop != nil {
 
 		// query param $top
-		var qrDollarTop string
+		var qrDollarTop int64
 		if o.DollarTop != nil {
 			qrDollarTop = *o.DollarTop
 		}
-		qDollarTop := qrDollarTop
+		qDollarTop := swag.FormatInt64(qrDollarTop)
 		if qDollarTop != "" {
 			if err := r.SetQueryParam("$top", qDollarTop); err != nil {
 				return err

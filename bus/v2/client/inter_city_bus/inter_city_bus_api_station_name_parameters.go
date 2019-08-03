@@ -13,6 +13,7 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
 	cr "github.com/go-openapi/runtime/client"
+	"github.com/go-openapi/swag"
 
 	strfmt "github.com/go-openapi/strfmt"
 )
@@ -21,7 +22,7 @@ import (
 // with the default values initialized.
 func NewInterCityBusAPIStationNameParams() *InterCityBusAPIStationNameParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &InterCityBusAPIStationNameParams{
 		DollarTop: &dollarTopDefault,
@@ -34,7 +35,7 @@ func NewInterCityBusAPIStationNameParams() *InterCityBusAPIStationNameParams {
 // with the default values initialized, and the ability to set a timeout on a request
 func NewInterCityBusAPIStationNameParamsWithTimeout(timeout time.Duration) *InterCityBusAPIStationNameParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &InterCityBusAPIStationNameParams{
 		DollarTop: &dollarTopDefault,
@@ -47,7 +48,7 @@ func NewInterCityBusAPIStationNameParamsWithTimeout(timeout time.Duration) *Inte
 // with the default values initialized, and the ability to set a context for a request
 func NewInterCityBusAPIStationNameParamsWithContext(ctx context.Context) *InterCityBusAPIStationNameParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &InterCityBusAPIStationNameParams{
 		DollarTop: &dollarTopDefault,
@@ -60,7 +61,7 @@ func NewInterCityBusAPIStationNameParamsWithContext(ctx context.Context) *InterC
 // with the default values initialized, and the ability to set a custom HTTPClient for a request
 func NewInterCityBusAPIStationNameParamsWithHTTPClient(client *http.Client) *InterCityBusAPIStationNameParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &InterCityBusAPIStationNameParams{
 		DollarTop:  &dollarTopDefault,
@@ -107,7 +108,7 @@ type InterCityBusAPIStationNameParams struct {
 	  取前幾筆
 
 	*/
-	DollarTop *string
+	DollarTop *int64
 
 	timeout    time.Duration
 	Context    context.Context
@@ -214,13 +215,13 @@ func (o *InterCityBusAPIStationNameParams) SetDollarSpatialFilter(dollarSpatialF
 }
 
 // WithDollarTop adds the dollarTop to the inter city bus Api station name params
-func (o *InterCityBusAPIStationNameParams) WithDollarTop(dollarTop *string) *InterCityBusAPIStationNameParams {
+func (o *InterCityBusAPIStationNameParams) WithDollarTop(dollarTop *int64) *InterCityBusAPIStationNameParams {
 	o.SetDollarTop(dollarTop)
 	return o
 }
 
 // SetDollarTop adds the dollarTop to the inter city bus Api station name params
-func (o *InterCityBusAPIStationNameParams) SetDollarTop(dollarTop *string) {
+func (o *InterCityBusAPIStationNameParams) SetDollarTop(dollarTop *int64) {
 	o.DollarTop = dollarTop
 }
 
@@ -324,11 +325,11 @@ func (o *InterCityBusAPIStationNameParams) WriteToRequest(r runtime.ClientReques
 	if o.DollarTop != nil {
 
 		// query param $top
-		var qrDollarTop string
+		var qrDollarTop int64
 		if o.DollarTop != nil {
 			qrDollarTop = *o.DollarTop
 		}
-		qDollarTop := qrDollarTop
+		qDollarTop := swag.FormatInt64(qrDollarTop)
 		if qDollarTop != "" {
 			if err := r.SetQueryParam("$top", qDollarTop); err != nil {
 				return err

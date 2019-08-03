@@ -6,8 +6,6 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	"encoding/json"
-
 	strfmt "github.com/go-openapi/strfmt"
 
 	"github.com/go-openapi/errors"
@@ -34,9 +32,10 @@ type ServiceDTOVersion2AviationFIDS struct {
 	// 實際出發時間(ISO8601格式:yyyy-MM-ddTHH:mm)
 	ActualDepartureTime string `json:"ActualDepartureTime,omitempty"`
 
-	// 航線種類
-	// Enum: [1 2 3 4 5 6 -2]
-	AirRouteType int64 `json:"AirRouteType,omitempty"`
+	// integer
+	//
+	// 航線種類 : [-2:'特殊',1:'國際',2:'國內',3:'兩岸',4:'國際包機',5:'國內包機',6:'兩岸包機']
+	AirRouteType int32 `json:"AirRouteType,omitempty"`
 
 	// 航空公司IATA國際代碼
 	// Required: true
@@ -139,10 +138,6 @@ type ServiceDTOVersion2AviationFIDS struct {
 func (m *ServiceDTOVersion2AviationFIDS) Validate(formats strfmt.Registry) error {
 	var res []error
 
-	if err := m.validateAirRouteType(formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.validateAirlineID(formats); err != nil {
 		res = append(res, err)
 	}
@@ -170,40 +165,6 @@ func (m *ServiceDTOVersion2AviationFIDS) Validate(formats strfmt.Registry) error
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
-	return nil
-}
-
-var serviceDTOVersion2AviationFIdSTypeAirRouteTypePropEnum []interface{}
-
-func init() {
-	var res []int64
-	if err := json.Unmarshal([]byte(`[1,2,3,4,5,6,-2]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		serviceDTOVersion2AviationFIdSTypeAirRouteTypePropEnum = append(serviceDTOVersion2AviationFIdSTypeAirRouteTypePropEnum, v)
-	}
-}
-
-// prop value enum
-func (m *ServiceDTOVersion2AviationFIDS) validateAirRouteTypeEnum(path, location string, value int64) error {
-	if err := validate.Enum(path, location, value, serviceDTOVersion2AviationFIdSTypeAirRouteTypePropEnum); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (m *ServiceDTOVersion2AviationFIDS) validateAirRouteType(formats strfmt.Registry) error {
-
-	if swag.IsZero(m.AirRouteType) { // not required
-		return nil
-	}
-
-	// value enum
-	if err := m.validateAirRouteTypeEnum("AirRouteType", "body", m.AirRouteType); err != nil {
-		return err
-	}
-
 	return nil
 }
 

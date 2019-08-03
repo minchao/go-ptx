@@ -13,6 +13,7 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
 	cr "github.com/go-openapi/runtime/client"
+	"github.com/go-openapi/swag"
 
 	strfmt "github.com/go-openapi/strfmt"
 )
@@ -21,7 +22,7 @@ import (
 // with the default values initialized.
 func NewMetroAPIODFareParams() *MetroAPIODFareParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &MetroAPIODFareParams{
 		DollarTop: &dollarTopDefault,
@@ -34,7 +35,7 @@ func NewMetroAPIODFareParams() *MetroAPIODFareParams {
 // with the default values initialized, and the ability to set a timeout on a request
 func NewMetroAPIODFareParamsWithTimeout(timeout time.Duration) *MetroAPIODFareParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &MetroAPIODFareParams{
 		DollarTop: &dollarTopDefault,
@@ -47,7 +48,7 @@ func NewMetroAPIODFareParamsWithTimeout(timeout time.Duration) *MetroAPIODFarePa
 // with the default values initialized, and the ability to set a context for a request
 func NewMetroAPIODFareParamsWithContext(ctx context.Context) *MetroAPIODFareParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &MetroAPIODFareParams{
 		DollarTop: &dollarTopDefault,
@@ -60,7 +61,7 @@ func NewMetroAPIODFareParamsWithContext(ctx context.Context) *MetroAPIODFarePara
 // with the default values initialized, and the ability to set a custom HTTPClient for a request
 func NewMetroAPIODFareParamsWithHTTPClient(client *http.Client) *MetroAPIODFareParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &MetroAPIODFareParams{
 		DollarTop:  &dollarTopDefault,
@@ -102,7 +103,7 @@ type MetroAPIODFareParams struct {
 	  取前幾筆
 
 	*/
-	DollarTop *string
+	DollarTop *int64
 	/*Operator
 	  欲查詢縣市
 
@@ -203,13 +204,13 @@ func (o *MetroAPIODFareParams) SetDollarSkip(dollarSkip *string) {
 }
 
 // WithDollarTop adds the dollarTop to the metro Api o d fare params
-func (o *MetroAPIODFareParams) WithDollarTop(dollarTop *string) *MetroAPIODFareParams {
+func (o *MetroAPIODFareParams) WithDollarTop(dollarTop *int64) *MetroAPIODFareParams {
 	o.SetDollarTop(dollarTop)
 	return o
 }
 
 // SetDollarTop adds the dollarTop to the metro Api o d fare params
-func (o *MetroAPIODFareParams) SetDollarTop(dollarTop *string) {
+func (o *MetroAPIODFareParams) SetDollarTop(dollarTop *int64) {
 	o.DollarTop = dollarTop
 }
 
@@ -308,11 +309,11 @@ func (o *MetroAPIODFareParams) WriteToRequest(r runtime.ClientRequest, reg strfm
 	if o.DollarTop != nil {
 
 		// query param $top
-		var qrDollarTop string
+		var qrDollarTop int64
 		if o.DollarTop != nil {
 			qrDollarTop = *o.DollarTop
 		}
-		qDollarTop := qrDollarTop
+		qDollarTop := swag.FormatInt64(qrDollarTop)
 		if qDollarTop != "" {
 			if err := r.SetQueryParam("$top", qDollarTop); err != nil {
 				return err

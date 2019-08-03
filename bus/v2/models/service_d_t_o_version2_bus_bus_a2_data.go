@@ -6,8 +6,6 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	"encoding/json"
-
 	strfmt "github.com/go-openapi/strfmt"
 
 	"github.com/go-openapi/errors"
@@ -21,22 +19,26 @@ import (
 // swagger:model Service.DTO.Version2.Bus.BusA2Data
 type ServiceDTOVersion2BusBusA2Data struct {
 
-	// 進站離站
-	// Enum: [0 1]
-	A2EventType int64 `json:"A2EventType,omitempty"`
+	// integer
+	//
+	// 進站離站 : [0:'離站',1:'進站']
+	A2EventType int32 `json:"A2EventType,omitempty"`
 
-	// 行車狀況
-	// Enum: [0 1 2 3 4 5 90 91 98 99 100 101 255]
-	BusStatus int64 `json:"BusStatus,omitempty"`
+	// integer
+	//
+	// 行車狀況 : [0:'正常',1:'車禍',2:'故障',3:'塞車',4:'緊急求援',5:'加油',90:'不明',91:'去回不明',98:'偏移路線',99:'非營運狀態',100:'客滿',101:'包車出租',255:'未知']
+	BusStatus int32 `json:"BusStatus,omitempty"`
 
-	// 去返程
+	// integer
+	//
+	// 去返程 : [0:'去程',1:'返程',2:'迴圈',255:'未知']
 	// Required: true
-	// Enum: [0 1 2 255]
-	Direction *int64 `json:"Direction"`
+	Direction *int32 `json:"Direction"`
 
-	// 勤務狀態
-	// Enum: [0 1 2]
-	DutyStatus int64 `json:"DutyStatus,omitempty"`
+	// integer
+	//
+	// 勤務狀態 : [0:'正常',1:'開始',2:'結束']
+	DutyStatus int32 `json:"DutyStatus,omitempty"`
 
 	// DateTime
 	//
@@ -44,9 +46,10 @@ type ServiceDTOVersion2BusBusA2Data struct {
 	// Required: true
 	GPSTime *string `json:"GPSTime"`
 
-	// 資料型態種類
-	// Enum: [0 1 2]
-	MessageType int64 `json:"MessageType,omitempty"`
+	// integer
+	//
+	// 資料型態種類 : [0:'未知',1:'定期',2:'非定期']
+	MessageType int32 `json:"MessageType,omitempty"`
 
 	// 營運業者代碼
 	OperatorID string `json:"OperatorID,omitempty"`
@@ -122,27 +125,11 @@ type ServiceDTOVersion2BusBusA2Data struct {
 func (m *ServiceDTOVersion2BusBusA2Data) Validate(formats strfmt.Registry) error {
 	var res []error
 
-	if err := m.validateA2EventType(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateBusStatus(formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.validateDirection(formats); err != nil {
 		res = append(res, err)
 	}
 
-	if err := m.validateDutyStatus(formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.validateGPSTime(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateMessageType(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -172,136 +159,9 @@ func (m *ServiceDTOVersion2BusBusA2Data) Validate(formats strfmt.Registry) error
 	return nil
 }
 
-var serviceDTOVersion2BusBusA2DataTypeA2EventTypePropEnum []interface{}
-
-func init() {
-	var res []int64
-	if err := json.Unmarshal([]byte(`[0,1]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		serviceDTOVersion2BusBusA2DataTypeA2EventTypePropEnum = append(serviceDTOVersion2BusBusA2DataTypeA2EventTypePropEnum, v)
-	}
-}
-
-// prop value enum
-func (m *ServiceDTOVersion2BusBusA2Data) validateA2EventTypeEnum(path, location string, value int64) error {
-	if err := validate.Enum(path, location, value, serviceDTOVersion2BusBusA2DataTypeA2EventTypePropEnum); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (m *ServiceDTOVersion2BusBusA2Data) validateA2EventType(formats strfmt.Registry) error {
-
-	if swag.IsZero(m.A2EventType) { // not required
-		return nil
-	}
-
-	// value enum
-	if err := m.validateA2EventTypeEnum("A2EventType", "body", m.A2EventType); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-var serviceDTOVersion2BusBusA2DataTypeBusStatusPropEnum []interface{}
-
-func init() {
-	var res []int64
-	if err := json.Unmarshal([]byte(`[0,1,2,3,4,5,90,91,98,99,100,101,255]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		serviceDTOVersion2BusBusA2DataTypeBusStatusPropEnum = append(serviceDTOVersion2BusBusA2DataTypeBusStatusPropEnum, v)
-	}
-}
-
-// prop value enum
-func (m *ServiceDTOVersion2BusBusA2Data) validateBusStatusEnum(path, location string, value int64) error {
-	if err := validate.Enum(path, location, value, serviceDTOVersion2BusBusA2DataTypeBusStatusPropEnum); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (m *ServiceDTOVersion2BusBusA2Data) validateBusStatus(formats strfmt.Registry) error {
-
-	if swag.IsZero(m.BusStatus) { // not required
-		return nil
-	}
-
-	// value enum
-	if err := m.validateBusStatusEnum("BusStatus", "body", m.BusStatus); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-var serviceDTOVersion2BusBusA2DataTypeDirectionPropEnum []interface{}
-
-func init() {
-	var res []int64
-	if err := json.Unmarshal([]byte(`[0,1,2,255]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		serviceDTOVersion2BusBusA2DataTypeDirectionPropEnum = append(serviceDTOVersion2BusBusA2DataTypeDirectionPropEnum, v)
-	}
-}
-
-// prop value enum
-func (m *ServiceDTOVersion2BusBusA2Data) validateDirectionEnum(path, location string, value int64) error {
-	if err := validate.Enum(path, location, value, serviceDTOVersion2BusBusA2DataTypeDirectionPropEnum); err != nil {
-		return err
-	}
-	return nil
-}
-
 func (m *ServiceDTOVersion2BusBusA2Data) validateDirection(formats strfmt.Registry) error {
 
 	if err := validate.Required("Direction", "body", m.Direction); err != nil {
-		return err
-	}
-
-	// value enum
-	if err := m.validateDirectionEnum("Direction", "body", *m.Direction); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-var serviceDTOVersion2BusBusA2DataTypeDutyStatusPropEnum []interface{}
-
-func init() {
-	var res []int64
-	if err := json.Unmarshal([]byte(`[0,1,2]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		serviceDTOVersion2BusBusA2DataTypeDutyStatusPropEnum = append(serviceDTOVersion2BusBusA2DataTypeDutyStatusPropEnum, v)
-	}
-}
-
-// prop value enum
-func (m *ServiceDTOVersion2BusBusA2Data) validateDutyStatusEnum(path, location string, value int64) error {
-	if err := validate.Enum(path, location, value, serviceDTOVersion2BusBusA2DataTypeDutyStatusPropEnum); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (m *ServiceDTOVersion2BusBusA2Data) validateDutyStatus(formats strfmt.Registry) error {
-
-	if swag.IsZero(m.DutyStatus) { // not required
-		return nil
-	}
-
-	// value enum
-	if err := m.validateDutyStatusEnum("DutyStatus", "body", m.DutyStatus); err != nil {
 		return err
 	}
 
@@ -311,40 +171,6 @@ func (m *ServiceDTOVersion2BusBusA2Data) validateDutyStatus(formats strfmt.Regis
 func (m *ServiceDTOVersion2BusBusA2Data) validateGPSTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("GPSTime", "body", m.GPSTime); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-var serviceDTOVersion2BusBusA2DataTypeMessageTypePropEnum []interface{}
-
-func init() {
-	var res []int64
-	if err := json.Unmarshal([]byte(`[0,1,2]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		serviceDTOVersion2BusBusA2DataTypeMessageTypePropEnum = append(serviceDTOVersion2BusBusA2DataTypeMessageTypePropEnum, v)
-	}
-}
-
-// prop value enum
-func (m *ServiceDTOVersion2BusBusA2Data) validateMessageTypeEnum(path, location string, value int64) error {
-	if err := validate.Enum(path, location, value, serviceDTOVersion2BusBusA2DataTypeMessageTypePropEnum); err != nil {
-		return err
-	}
-	return nil
-}
-
-func (m *ServiceDTOVersion2BusBusA2Data) validateMessageType(formats strfmt.Registry) error {
-
-	if swag.IsZero(m.MessageType) { // not required
-		return nil
-	}
-
-	// value enum
-	if err := m.validateMessageTypeEnum("MessageType", "body", m.MessageType); err != nil {
 		return err
 	}
 

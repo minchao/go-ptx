@@ -6,8 +6,6 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	"encoding/json"
-
 	strfmt "github.com/go-openapi/strfmt"
 
 	"github.com/go-openapi/errors"
@@ -21,40 +19,47 @@ import (
 // swagger:model Service.DTO.Version2.Rail.THSR.ServiceDay
 type ServiceDTOVersion2RailTHSRServiceDay struct {
 
-	// 星期五是否營運
+	// integer
+	//
+	// 星期五是否營運 : [0:'否',1:'是']
 	// Required: true
-	// Enum: [0 1]
-	Friday *int64 `json:"Friday"`
+	Friday *int32 `json:"Friday"`
 
-	// 星期一是否營運
+	// integer
+	//
+	// 星期一是否營運 : [0:'否',1:'是']
 	// Required: true
-	// Enum: [0 1]
-	Monday *int64 `json:"Monday"`
+	Monday *int32 `json:"Monday"`
 
-	// 星期六是否營運
+	// integer
+	//
+	// 星期六是否營運 : [0:'否',1:'是']
 	// Required: true
-	// Enum: [0 1]
-	Saturday *int64 `json:"Saturday"`
+	Saturday *int32 `json:"Saturday"`
 
-	// 星期日是否營運
+	// integer
+	//
+	// 星期日是否營運 : [0:'否',1:'是']
 	// Required: true
-	// Enum: [0 1]
-	Sunday *int64 `json:"Sunday"`
+	Sunday *int32 `json:"Sunday"`
 
-	// 星期四是否營運
+	// integer
+	//
+	// 星期四是否營運 : [0:'否',1:'是']
 	// Required: true
-	// Enum: [0 1]
-	Thursday *int64 `json:"Thursday"`
+	Thursday *int32 `json:"Thursday"`
 
-	// 星期二是否營運
+	// integer
+	//
+	// 星期二是否營運 : [0:'否',1:'是']
 	// Required: true
-	// Enum: [0 1]
-	Tuesday *int64 `json:"Tuesday"`
+	Tuesday *int32 `json:"Tuesday"`
 
-	// 星期三是否營運
+	// integer
+	//
+	// 星期三是否營運 : [0:'否',1:'是']
 	// Required: true
-	// Enum: [0 1]
-	Wednesday *int64 `json:"Wednesday"`
+	Wednesday *int32 `json:"Wednesday"`
 }
 
 // Validate validates this service d t o version2 rail t h s r service day
@@ -95,57 +100,12 @@ func (m *ServiceDTOVersion2RailTHSRServiceDay) Validate(formats strfmt.Registry)
 	return nil
 }
 
-var serviceDTOVersion2RailTHSRServiceDayTypeFridayPropEnum []interface{}
-
-func init() {
-	var res []int64
-	if err := json.Unmarshal([]byte(`[0,1]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		serviceDTOVersion2RailTHSRServiceDayTypeFridayPropEnum = append(serviceDTOVersion2RailTHSRServiceDayTypeFridayPropEnum, v)
-	}
-}
-
-// prop value enum
-func (m *ServiceDTOVersion2RailTHSRServiceDay) validateFridayEnum(path, location string, value int64) error {
-	if err := validate.Enum(path, location, value, serviceDTOVersion2RailTHSRServiceDayTypeFridayPropEnum); err != nil {
-		return err
-	}
-	return nil
-}
-
 func (m *ServiceDTOVersion2RailTHSRServiceDay) validateFriday(formats strfmt.Registry) error {
 
 	if err := validate.Required("Friday", "body", m.Friday); err != nil {
 		return err
 	}
 
-	// value enum
-	if err := m.validateFridayEnum("Friday", "body", *m.Friday); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-var serviceDTOVersion2RailTHSRServiceDayTypeMondayPropEnum []interface{}
-
-func init() {
-	var res []int64
-	if err := json.Unmarshal([]byte(`[0,1]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		serviceDTOVersion2RailTHSRServiceDayTypeMondayPropEnum = append(serviceDTOVersion2RailTHSRServiceDayTypeMondayPropEnum, v)
-	}
-}
-
-// prop value enum
-func (m *ServiceDTOVersion2RailTHSRServiceDay) validateMondayEnum(path, location string, value int64) error {
-	if err := validate.Enum(path, location, value, serviceDTOVersion2RailTHSRServiceDayTypeMondayPropEnum); err != nil {
-		return err
-	}
 	return nil
 }
 
@@ -155,31 +115,6 @@ func (m *ServiceDTOVersion2RailTHSRServiceDay) validateMonday(formats strfmt.Reg
 		return err
 	}
 
-	// value enum
-	if err := m.validateMondayEnum("Monday", "body", *m.Monday); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-var serviceDTOVersion2RailTHSRServiceDayTypeSaturdayPropEnum []interface{}
-
-func init() {
-	var res []int64
-	if err := json.Unmarshal([]byte(`[0,1]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		serviceDTOVersion2RailTHSRServiceDayTypeSaturdayPropEnum = append(serviceDTOVersion2RailTHSRServiceDayTypeSaturdayPropEnum, v)
-	}
-}
-
-// prop value enum
-func (m *ServiceDTOVersion2RailTHSRServiceDay) validateSaturdayEnum(path, location string, value int64) error {
-	if err := validate.Enum(path, location, value, serviceDTOVersion2RailTHSRServiceDayTypeSaturdayPropEnum); err != nil {
-		return err
-	}
 	return nil
 }
 
@@ -189,31 +124,6 @@ func (m *ServiceDTOVersion2RailTHSRServiceDay) validateSaturday(formats strfmt.R
 		return err
 	}
 
-	// value enum
-	if err := m.validateSaturdayEnum("Saturday", "body", *m.Saturday); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-var serviceDTOVersion2RailTHSRServiceDayTypeSundayPropEnum []interface{}
-
-func init() {
-	var res []int64
-	if err := json.Unmarshal([]byte(`[0,1]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		serviceDTOVersion2RailTHSRServiceDayTypeSundayPropEnum = append(serviceDTOVersion2RailTHSRServiceDayTypeSundayPropEnum, v)
-	}
-}
-
-// prop value enum
-func (m *ServiceDTOVersion2RailTHSRServiceDay) validateSundayEnum(path, location string, value int64) error {
-	if err := validate.Enum(path, location, value, serviceDTOVersion2RailTHSRServiceDayTypeSundayPropEnum); err != nil {
-		return err
-	}
 	return nil
 }
 
@@ -223,31 +133,6 @@ func (m *ServiceDTOVersion2RailTHSRServiceDay) validateSunday(formats strfmt.Reg
 		return err
 	}
 
-	// value enum
-	if err := m.validateSundayEnum("Sunday", "body", *m.Sunday); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-var serviceDTOVersion2RailTHSRServiceDayTypeThursdayPropEnum []interface{}
-
-func init() {
-	var res []int64
-	if err := json.Unmarshal([]byte(`[0,1]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		serviceDTOVersion2RailTHSRServiceDayTypeThursdayPropEnum = append(serviceDTOVersion2RailTHSRServiceDayTypeThursdayPropEnum, v)
-	}
-}
-
-// prop value enum
-func (m *ServiceDTOVersion2RailTHSRServiceDay) validateThursdayEnum(path, location string, value int64) error {
-	if err := validate.Enum(path, location, value, serviceDTOVersion2RailTHSRServiceDayTypeThursdayPropEnum); err != nil {
-		return err
-	}
 	return nil
 }
 
@@ -257,31 +142,6 @@ func (m *ServiceDTOVersion2RailTHSRServiceDay) validateThursday(formats strfmt.R
 		return err
 	}
 
-	// value enum
-	if err := m.validateThursdayEnum("Thursday", "body", *m.Thursday); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-var serviceDTOVersion2RailTHSRServiceDayTypeTuesdayPropEnum []interface{}
-
-func init() {
-	var res []int64
-	if err := json.Unmarshal([]byte(`[0,1]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		serviceDTOVersion2RailTHSRServiceDayTypeTuesdayPropEnum = append(serviceDTOVersion2RailTHSRServiceDayTypeTuesdayPropEnum, v)
-	}
-}
-
-// prop value enum
-func (m *ServiceDTOVersion2RailTHSRServiceDay) validateTuesdayEnum(path, location string, value int64) error {
-	if err := validate.Enum(path, location, value, serviceDTOVersion2RailTHSRServiceDayTypeTuesdayPropEnum); err != nil {
-		return err
-	}
 	return nil
 }
 
@@ -291,42 +151,12 @@ func (m *ServiceDTOVersion2RailTHSRServiceDay) validateTuesday(formats strfmt.Re
 		return err
 	}
 
-	// value enum
-	if err := m.validateTuesdayEnum("Tuesday", "body", *m.Tuesday); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-var serviceDTOVersion2RailTHSRServiceDayTypeWednesdayPropEnum []interface{}
-
-func init() {
-	var res []int64
-	if err := json.Unmarshal([]byte(`[0,1]`), &res); err != nil {
-		panic(err)
-	}
-	for _, v := range res {
-		serviceDTOVersion2RailTHSRServiceDayTypeWednesdayPropEnum = append(serviceDTOVersion2RailTHSRServiceDayTypeWednesdayPropEnum, v)
-	}
-}
-
-// prop value enum
-func (m *ServiceDTOVersion2RailTHSRServiceDay) validateWednesdayEnum(path, location string, value int64) error {
-	if err := validate.Enum(path, location, value, serviceDTOVersion2RailTHSRServiceDayTypeWednesdayPropEnum); err != nil {
-		return err
-	}
 	return nil
 }
 
 func (m *ServiceDTOVersion2RailTHSRServiceDay) validateWednesday(formats strfmt.Registry) error {
 
 	if err := validate.Required("Wednesday", "body", m.Wednesday); err != nil {
-		return err
-	}
-
-	// value enum
-	if err := m.validateWednesdayEnum("Wednesday", "body", *m.Wednesday); err != nil {
 		return err
 	}
 

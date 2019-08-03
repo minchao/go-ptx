@@ -220,7 +220,7 @@ func (a *Client) MetroAPINetwork(params *MetroAPINetworkParams) (*MetroAPINetwor
 	result, err := a.transport.Submit(&runtime.ClientOperation{
 		ID:                 "MetroApi_Network",
 		Method:             "GET",
-		PathPattern:        "/v2/Rail/Metro/Network",
+		PathPattern:        "/v2/Rail/Metro/Network/{Operator}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
 		ConsumesMediaTypes: []string{""},
 		Schemes:            []string{"https"},

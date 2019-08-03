@@ -13,6 +13,7 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
 	cr "github.com/go-openapi/runtime/client"
+	"github.com/go-openapi/swag"
 
 	strfmt "github.com/go-openapi/strfmt"
 )
@@ -21,7 +22,7 @@ import (
 // with the default values initialized.
 func NewGeneralStationTimetableAPIControllerGetParams() *GeneralStationTimetableAPIControllerGetParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &GeneralStationTimetableAPIControllerGetParams{
 		DollarTop: &dollarTopDefault,
@@ -34,7 +35,7 @@ func NewGeneralStationTimetableAPIControllerGetParams() *GeneralStationTimetable
 // with the default values initialized, and the ability to set a timeout on a request
 func NewGeneralStationTimetableAPIControllerGetParamsWithTimeout(timeout time.Duration) *GeneralStationTimetableAPIControllerGetParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &GeneralStationTimetableAPIControllerGetParams{
 		DollarTop: &dollarTopDefault,
@@ -47,7 +48,7 @@ func NewGeneralStationTimetableAPIControllerGetParamsWithTimeout(timeout time.Du
 // with the default values initialized, and the ability to set a context for a request
 func NewGeneralStationTimetableAPIControllerGetParamsWithContext(ctx context.Context) *GeneralStationTimetableAPIControllerGetParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &GeneralStationTimetableAPIControllerGetParams{
 		DollarTop: &dollarTopDefault,
@@ -60,7 +61,7 @@ func NewGeneralStationTimetableAPIControllerGetParamsWithContext(ctx context.Con
 // with the default values initialized, and the ability to set a custom HTTPClient for a request
 func NewGeneralStationTimetableAPIControllerGetParamsWithHTTPClient(client *http.Client) *GeneralStationTimetableAPIControllerGetParams {
 	var (
-		dollarTopDefault = string("30")
+		dollarTopDefault = int64(30)
 	)
 	return &GeneralStationTimetableAPIControllerGetParams{
 		DollarTop:  &dollarTopDefault,
@@ -107,7 +108,7 @@ type GeneralStationTimetableAPIControllerGetParams struct {
 	  取前幾筆
 
 	*/
-	DollarTop *string
+	DollarTop *int64
 
 	timeout    time.Duration
 	Context    context.Context
@@ -214,13 +215,13 @@ func (o *GeneralStationTimetableAPIControllerGetParams) SetDollarSkip(dollarSkip
 }
 
 // WithDollarTop adds the dollarTop to the general station timetable Api controller get params
-func (o *GeneralStationTimetableAPIControllerGetParams) WithDollarTop(dollarTop *string) *GeneralStationTimetableAPIControllerGetParams {
+func (o *GeneralStationTimetableAPIControllerGetParams) WithDollarTop(dollarTop *int64) *GeneralStationTimetableAPIControllerGetParams {
 	o.SetDollarTop(dollarTop)
 	return o
 }
 
 // SetDollarTop adds the dollarTop to the general station timetable Api controller get params
-func (o *GeneralStationTimetableAPIControllerGetParams) SetDollarTop(dollarTop *string) {
+func (o *GeneralStationTimetableAPIControllerGetParams) SetDollarTop(dollarTop *int64) {
 	o.DollarTop = dollarTop
 }
 
@@ -324,11 +325,11 @@ func (o *GeneralStationTimetableAPIControllerGetParams) WriteToRequest(r runtime
 	if o.DollarTop != nil {
 
 		// query param $top
-		var qrDollarTop string
+		var qrDollarTop int64
 		if o.DollarTop != nil {
 			qrDollarTop = *o.DollarTop
 		}
-		qDollarTop := qrDollarTop
+		qDollarTop := swag.FormatInt64(qrDollarTop)
 		if qDollarTop != "" {
 			if err := r.SetQueryParam("$top", qDollarTop); err != nil {
 				return err
