@@ -1,10 +1,10 @@
 # Changelog
-
-## [Unreleased]
 本專案所有的顯著修改都將記錄在此文件中。
 
 文件依照 [Keep a Changelog](https://keepachangelog.com/en/1.0.0/) 所描述的格式撰寫，
 版本號碼格式依照 [Semantic Versioning](https://semver.org/spec/v2.0.0.html)。
+
+## [Unreleased]
 
 ## [0.1.0] - 2019-08-04
 
