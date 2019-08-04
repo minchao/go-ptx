@@ -23,6 +23,10 @@ func main() {
 			URL:      "https://ptx.transportdata.tw/MOTC/v2/Bus/api-docs/oas",
 		},
 		{
+			Filename: "oas.bus.v3.json",
+			URL:      "https://ptx.transportdata.tw/MOTC/v3/Bus/api-docs/oas",
+		},
+		{
 			Filename: "oas.rail.v2.json",
 			URL:      "https://ptx.transportdata.tw/MOTC/v2/Rail/api-docs/oas",
 		},
