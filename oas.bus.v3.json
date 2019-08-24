@@ -106,7 +106,7 @@
           "CityBus"
         ],
         "summary": "取得指定[縣市]的市區公車站牌資料",
-        "operationId": "CityBusApi_Stop_1",
+        "operationId": "CityBusApi_Stop",
         "consumes": [],
         "produces": [
           "application/json",
@@ -195,7 +195,7 @@
           "CityBus"
         ],
         "summary": "取得指定[縣市]的市區公車站位資料",
-        "operationId": "CityBusApi_Station_1",
+        "operationId": "CityBusApi_Station",
         "consumes": [],
         "produces": [
           "application/json",
@@ -285,7 +285,7 @@
         ],
         "summary": "取得指定[縣市]的市區公車路線資料",
         "description": "市區公車之路線資料",
-        "operationId": "CityBusApi_Route_2",
+        "operationId": "CityBusApi_Route",
         "consumes": [],
         "produces": [
           "application/json",
@@ -643,7 +643,7 @@
         ],
         "summary": "取得指定[縣市]的市區公車路線站序資料",
         "description": "市區公車之路線站序資料",
-        "operationId": "CityBusApi_StopOfRoute_2",
+        "operationId": "CityBusApi_StopOfRoute",
         "consumes": [],
         "produces": [
           "application/json",
@@ -732,7 +732,7 @@
           "CityBus"
         ],
         "summary": "取得指定[縣市]的市區公車顯示用路線站序資料",
-        "operationId": "CityBusApi_DisplayStopOfRoute_2",
+        "operationId": "CityBusApi_DisplayStopOfRoute",
         "consumes": [],
         "produces": [
           "application/json",
@@ -821,7 +821,7 @@
           "CityBus"
         ],
         "summary": "取得指定[縣市]的市區公車路線票價資料",
-        "operationId": "CityBusApi_RouteFare_2",
+        "operationId": "CityBusApi_RouteFare",
         "consumes": [],
         "produces": [
           "application/json",
@@ -1000,7 +1000,7 @@
         ],
         "summary": "取得指定[縣市]的公車動態定時資料(A1)",
         "description": "市區公車之定時資料(A1)",
-        "operationId": "CityBusApi_RealTimeByFrequency_2",
+        "operationId": "CityBusApi_RealTimeByFrequency",
         "consumes": [],
         "produces": [
           "application/json",
@@ -1090,7 +1090,7 @@
         ],
         "summary": "取得指定[縣市],[路線名稱]的公車動態定時資料(A1)",
         "description": "市區公車之定時資料(A1)",
-        "operationId": "CityBusApi_RealTimeByFrequency_3",
+        "operationId": "CityBusApi_RealTimeByFrequency_1",
         "consumes": [],
         "produces": [
           "application/json",
@@ -1187,7 +1187,7 @@
         ],
         "summary": "取得指定[縣市]的公車動態定點資料(A2)",
         "description": "市區公車之定點資料(A2)",
-        "operationId": "CityBusApi_RealTimeNearStop_2",
+        "operationId": "CityBusApi_RealTimeNearStop",
         "consumes": [],
         "produces": [
           "application/json",
@@ -1277,7 +1277,7 @@
         ],
         "summary": "取得指定[縣市],[路線名稱]的公車動態定點資料(A2)",
         "description": "市區公車之定點資料(A2)",
-        "operationId": "CityBusApi_RealTimeNearStop_3",
+        "operationId": "CityBusApi_RealTimeNearStop_1",
         "consumes": [],
         "produces": [
           "application/json",
@@ -1374,7 +1374,7 @@
         ],
         "summary": "取得指定[縣市]的公車預估到站資料(N1)",
         "description": "[部分縣市] 當 StopStatus = 1(尚未發車) 且 EstimateTime &gt; 0 (有值) 的情形, 屬正常情形, 雖目前尚未發車, 但提供EstimateTime值為預計多久後開始發車之時間",
-        "operationId": "CityBusApi_EstimatedTimeOfArrival_2",
+        "operationId": "CityBusApi_EstimatedTimeOfArrival",
         "consumes": [],
         "produces": [
           "application/json",
@@ -1464,7 +1464,7 @@
         ],
         "summary": "取得指定[縣市],[路線名稱]的公車預估到站資料(N1)",
         "description": "[部分縣市] 當 StopStatus = 1(尚未發車) 且 EstimateTime &gt; 0 (有值) 的情形, 屬正常情形, 雖目前尚未發車, 但提供EstimateTime值為預計多久後開始發車之時間",
-        "operationId": "CityBusApi_EstimatedTimeOfArrival_3",
+        "operationId": "CityBusApi_EstimatedTimeOfArrival_1",
         "consumes": [],
         "produces": [
           "application/json",
@@ -1651,7 +1651,7 @@
         ],
         "summary": "取得指定[縣市]的公車最新消息",
         "description": "市區公車之最新消息",
-        "operationId": "CityBusApi_News_1",
+        "operationId": "CityBusApi_News",
         "consumes": [],
         "produces": [
           "application/json",
@@ -1740,7 +1740,7 @@
           "CityBus"
         ],
         "summary": "取得指定[縣市]的市區公車營運業者資料",
-        "operationId": "CityBusApi_Operator_1",
+        "operationId": "CityBusApi_Operator",
         "consumes": [],
         "produces": [
           "application/json",
@@ -1829,7 +1829,7 @@
           "CityBus"
         ],
         "summary": "取得指定[縣市]的市區公車車輛基本資料",
-        "operationId": "CityBusApi_Vehicle_1",
+        "operationId": "CityBusApi_Vehicle",
         "consumes": [],
         "produces": [
           "application/json",
@@ -2096,7 +2096,7 @@
           "CityBus"
         ],
         "summary": "取得指定[縣市]的市區公車空間線型資料",
-        "operationId": "CityBusApi_Shape_2",
+        "operationId": "CityBusApi_Shape",
         "consumes": [],
         "produces": [
           "application/json",
