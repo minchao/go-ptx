@@ -131,108 +131,108 @@ func (a *Client) CityBusAPIDepot(params *CityBusAPIDepotParams) (*CityBusAPIDepo
 }
 
 /*
-CityBusAPIDisplayStopOfRoute2 取得指定s 縣市 的市區公車顯示用路線站序資料
+CityBusAPIDisplayStopOfRoute 取得指定s 縣市 的市區公車顯示用路線站序資料
 */
-func (a *Client) CityBusAPIDisplayStopOfRoute2(params *CityBusAPIDisplayStopOfRoute2Params) (*CityBusAPIDisplayStopOfRoute2OK, error) {
+func (a *Client) CityBusAPIDisplayStopOfRoute(params *CityBusAPIDisplayStopOfRouteParams) (*CityBusAPIDisplayStopOfRouteOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewCityBusAPIDisplayStopOfRoute2Params()
+		params = NewCityBusAPIDisplayStopOfRouteParams()
 	}
 
 	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "CityBusApi_DisplayStopOfRoute_2",
+		ID:                 "CityBusApi_DisplayStopOfRoute",
 		Method:             "GET",
 		PathPattern:        "/v3/Bus/DisplayStopOfRoute/City/{City}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
 		ConsumesMediaTypes: []string{""},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &CityBusAPIDisplayStopOfRoute2Reader{formats: a.formats},
+		Reader:             &CityBusAPIDisplayStopOfRouteReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
 	if err != nil {
 		return nil, err
 	}
-	success, ok := result.(*CityBusAPIDisplayStopOfRoute2OK)
+	success, ok := result.(*CityBusAPIDisplayStopOfRouteOK)
 	if ok {
 		return success, nil
 	}
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for CityBusApi_DisplayStopOfRoute_2: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for CityBusApi_DisplayStopOfRoute: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
 /*
-CityBusAPIEstimatedTimeOfArrival2 取得指定s 縣市 的公車預估到站資料 n1
+CityBusAPIEstimatedTimeOfArrival 取得指定s 縣市 的公車預估到站資料 n1
 
 [部分縣市] 當 StopStatus = 1(尚未發車) 且 EstimateTime &gt; 0 (有值) 的情形, 屬正常情形, 雖目前尚未發車, 但提供EstimateTime值為預計多久後開始發車之時間
 */
-func (a *Client) CityBusAPIEstimatedTimeOfArrival2(params *CityBusAPIEstimatedTimeOfArrival2Params) (*CityBusAPIEstimatedTimeOfArrival2OK, error) {
+func (a *Client) CityBusAPIEstimatedTimeOfArrival(params *CityBusAPIEstimatedTimeOfArrivalParams) (*CityBusAPIEstimatedTimeOfArrivalOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewCityBusAPIEstimatedTimeOfArrival2Params()
+		params = NewCityBusAPIEstimatedTimeOfArrivalParams()
 	}
 
 	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "CityBusApi_EstimatedTimeOfArrival_2",
+		ID:                 "CityBusApi_EstimatedTimeOfArrival",
 		Method:             "GET",
 		PathPattern:        "/v3/Bus/EstimatedTimeOfArrival/City/{City}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
 		ConsumesMediaTypes: []string{""},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &CityBusAPIEstimatedTimeOfArrival2Reader{formats: a.formats},
+		Reader:             &CityBusAPIEstimatedTimeOfArrivalReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
 	if err != nil {
 		return nil, err
 	}
-	success, ok := result.(*CityBusAPIEstimatedTimeOfArrival2OK)
+	success, ok := result.(*CityBusAPIEstimatedTimeOfArrivalOK)
 	if ok {
 		return success, nil
 	}
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for CityBusApi_EstimatedTimeOfArrival_2: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for CityBusApi_EstimatedTimeOfArrival: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
 /*
-CityBusAPIEstimatedTimeOfArrival3 取得指定s 縣市 路線名稱 的公車預估到站資料 n1
+CityBusAPIEstimatedTimeOfArrival1 取得指定s 縣市 路線名稱 的公車預估到站資料 n1
 
 [部分縣市] 當 StopStatus = 1(尚未發車) 且 EstimateTime &gt; 0 (有值) 的情形, 屬正常情形, 雖目前尚未發車, 但提供EstimateTime值為預計多久後開始發車之時間
 */
-func (a *Client) CityBusAPIEstimatedTimeOfArrival3(params *CityBusAPIEstimatedTimeOfArrival3Params) (*CityBusAPIEstimatedTimeOfArrival3OK, error) {
+func (a *Client) CityBusAPIEstimatedTimeOfArrival1(params *CityBusAPIEstimatedTimeOfArrival1Params) (*CityBusAPIEstimatedTimeOfArrival1OK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewCityBusAPIEstimatedTimeOfArrival3Params()
+		params = NewCityBusAPIEstimatedTimeOfArrival1Params()
 	}
 
 	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "CityBusApi_EstimatedTimeOfArrival_3",
+		ID:                 "CityBusApi_EstimatedTimeOfArrival_1",
 		Method:             "GET",
 		PathPattern:        "/v3/Bus/EstimatedTimeOfArrival/City/{City}/{RouteName}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
 		ConsumesMediaTypes: []string{""},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &CityBusAPIEstimatedTimeOfArrival3Reader{formats: a.formats},
+		Reader:             &CityBusAPIEstimatedTimeOfArrival1Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
 	if err != nil {
 		return nil, err
 	}
-	success, ok := result.(*CityBusAPIEstimatedTimeOfArrival3OK)
+	success, ok := result.(*CityBusAPIEstimatedTimeOfArrival1OK)
 	if ok {
 		return success, nil
 	}
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for CityBusApi_EstimatedTimeOfArrival_3: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for CityBusApi_EstimatedTimeOfArrival_1: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -305,250 +305,286 @@ func (a *Client) CityBusAPINetwork(params *CityBusAPINetworkParams) (*CityBusAPI
 }
 
 /*
-CityBusAPINews1 取得指定s 縣市 的公車最新消息
+CityBusAPINews 取得指定s 縣市 的公車最新消息
 
 市區公車之最新消息
 */
-func (a *Client) CityBusAPINews1(params *CityBusAPINews1Params) (*CityBusAPINews1OK, error) {
+func (a *Client) CityBusAPINews(params *CityBusAPINewsParams) (*CityBusAPINewsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewCityBusAPINews1Params()
+		params = NewCityBusAPINewsParams()
 	}
 
 	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "CityBusApi_News_1",
+		ID:                 "CityBusApi_News",
 		Method:             "GET",
 		PathPattern:        "/v3/Bus/News/City/{City}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
 		ConsumesMediaTypes: []string{""},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &CityBusAPINews1Reader{formats: a.formats},
+		Reader:             &CityBusAPINewsReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
 	if err != nil {
 		return nil, err
 	}
-	success, ok := result.(*CityBusAPINews1OK)
+	success, ok := result.(*CityBusAPINewsOK)
 	if ok {
 		return success, nil
 	}
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for CityBusApi_News_1: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for CityBusApi_News: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
 /*
-CityBusAPIOperator1 取得指定s 縣市 的市區公車營運業者資料
+CityBusAPIOperator 取得指定s 縣市 的市區公車營運業者資料
 */
-func (a *Client) CityBusAPIOperator1(params *CityBusAPIOperator1Params) (*CityBusAPIOperator1OK, error) {
+func (a *Client) CityBusAPIOperator(params *CityBusAPIOperatorParams) (*CityBusAPIOperatorOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewCityBusAPIOperator1Params()
+		params = NewCityBusAPIOperatorParams()
 	}
 
 	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "CityBusApi_Operator_1",
+		ID:                 "CityBusApi_Operator",
 		Method:             "GET",
 		PathPattern:        "/v3/Bus/Operator/City/{City}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
 		ConsumesMediaTypes: []string{""},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &CityBusAPIOperator1Reader{formats: a.formats},
+		Reader:             &CityBusAPIOperatorReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
 	if err != nil {
 		return nil, err
 	}
-	success, ok := result.(*CityBusAPIOperator1OK)
+	success, ok := result.(*CityBusAPIOperatorOK)
 	if ok {
 		return success, nil
 	}
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for CityBusApi_Operator_1: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for CityBusApi_Operator: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
 /*
-CityBusAPIRealTimeByFrequency2 取得指定s 縣市 的公車動態定時資料 a1
+CityBusAPIRealTimeByFrequency 取得指定s 縣市 的公車動態定時資料 a1
 
 市區公車之定時資料(A1)
 */
-func (a *Client) CityBusAPIRealTimeByFrequency2(params *CityBusAPIRealTimeByFrequency2Params) (*CityBusAPIRealTimeByFrequency2OK, error) {
+func (a *Client) CityBusAPIRealTimeByFrequency(params *CityBusAPIRealTimeByFrequencyParams) (*CityBusAPIRealTimeByFrequencyOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewCityBusAPIRealTimeByFrequency2Params()
+		params = NewCityBusAPIRealTimeByFrequencyParams()
 	}
 
 	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "CityBusApi_RealTimeByFrequency_2",
+		ID:                 "CityBusApi_RealTimeByFrequency",
 		Method:             "GET",
 		PathPattern:        "/v3/Bus/RealTimeByFrequency/City/{City}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
 		ConsumesMediaTypes: []string{""},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &CityBusAPIRealTimeByFrequency2Reader{formats: a.formats},
+		Reader:             &CityBusAPIRealTimeByFrequencyReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
 	if err != nil {
 		return nil, err
 	}
-	success, ok := result.(*CityBusAPIRealTimeByFrequency2OK)
+	success, ok := result.(*CityBusAPIRealTimeByFrequencyOK)
 	if ok {
 		return success, nil
 	}
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for CityBusApi_RealTimeByFrequency_2: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for CityBusApi_RealTimeByFrequency: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
 /*
-CityBusAPIRealTimeByFrequency3 取得指定s 縣市 路線名稱 的公車動態定時資料 a1
+CityBusAPIRealTimeByFrequency1 取得指定s 縣市 路線名稱 的公車動態定時資料 a1
 
 市區公車之定時資料(A1)
 */
-func (a *Client) CityBusAPIRealTimeByFrequency3(params *CityBusAPIRealTimeByFrequency3Params) (*CityBusAPIRealTimeByFrequency3OK, error) {
+func (a *Client) CityBusAPIRealTimeByFrequency1(params *CityBusAPIRealTimeByFrequency1Params) (*CityBusAPIRealTimeByFrequency1OK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewCityBusAPIRealTimeByFrequency3Params()
+		params = NewCityBusAPIRealTimeByFrequency1Params()
 	}
 
 	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "CityBusApi_RealTimeByFrequency_3",
+		ID:                 "CityBusApi_RealTimeByFrequency_1",
 		Method:             "GET",
 		PathPattern:        "/v3/Bus/RealTimeByFrequency/City/{City}/{RouteName}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
 		ConsumesMediaTypes: []string{""},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &CityBusAPIRealTimeByFrequency3Reader{formats: a.formats},
+		Reader:             &CityBusAPIRealTimeByFrequency1Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
 	if err != nil {
 		return nil, err
 	}
-	success, ok := result.(*CityBusAPIRealTimeByFrequency3OK)
+	success, ok := result.(*CityBusAPIRealTimeByFrequency1OK)
 	if ok {
 		return success, nil
 	}
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for CityBusApi_RealTimeByFrequency_3: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for CityBusApi_RealTimeByFrequency_1: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
 /*
-CityBusAPIRealTimeNearStop2 取得指定s 縣市 的公車動態定點資料 a2
+CityBusAPIRealTimeNearStop 取得指定s 縣市 的公車動態定點資料 a2
 
 市區公車之定點資料(A2)
 */
-func (a *Client) CityBusAPIRealTimeNearStop2(params *CityBusAPIRealTimeNearStop2Params) (*CityBusAPIRealTimeNearStop2OK, error) {
+func (a *Client) CityBusAPIRealTimeNearStop(params *CityBusAPIRealTimeNearStopParams) (*CityBusAPIRealTimeNearStopOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewCityBusAPIRealTimeNearStop2Params()
+		params = NewCityBusAPIRealTimeNearStopParams()
 	}
 
 	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "CityBusApi_RealTimeNearStop_2",
+		ID:                 "CityBusApi_RealTimeNearStop",
 		Method:             "GET",
 		PathPattern:        "/v3/Bus/RealTimeNearStop/City/{City}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
 		ConsumesMediaTypes: []string{""},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &CityBusAPIRealTimeNearStop2Reader{formats: a.formats},
+		Reader:             &CityBusAPIRealTimeNearStopReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
 	if err != nil {
 		return nil, err
 	}
-	success, ok := result.(*CityBusAPIRealTimeNearStop2OK)
+	success, ok := result.(*CityBusAPIRealTimeNearStopOK)
 	if ok {
 		return success, nil
 	}
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for CityBusApi_RealTimeNearStop_2: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for CityBusApi_RealTimeNearStop: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
 /*
-CityBusAPIRealTimeNearStop3 取得指定s 縣市 路線名稱 的公車動態定點資料 a2
+CityBusAPIRealTimeNearStop1 取得指定s 縣市 路線名稱 的公車動態定點資料 a2
 
 市區公車之定點資料(A2)
 */
-func (a *Client) CityBusAPIRealTimeNearStop3(params *CityBusAPIRealTimeNearStop3Params) (*CityBusAPIRealTimeNearStop3OK, error) {
+func (a *Client) CityBusAPIRealTimeNearStop1(params *CityBusAPIRealTimeNearStop1Params) (*CityBusAPIRealTimeNearStop1OK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewCityBusAPIRealTimeNearStop3Params()
+		params = NewCityBusAPIRealTimeNearStop1Params()
 	}
 
 	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "CityBusApi_RealTimeNearStop_3",
+		ID:                 "CityBusApi_RealTimeNearStop_1",
 		Method:             "GET",
 		PathPattern:        "/v3/Bus/RealTimeNearStop/City/{City}/{RouteName}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
 		ConsumesMediaTypes: []string{""},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &CityBusAPIRealTimeNearStop3Reader{formats: a.formats},
+		Reader:             &CityBusAPIRealTimeNearStop1Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
 	if err != nil {
 		return nil, err
 	}
-	success, ok := result.(*CityBusAPIRealTimeNearStop3OK)
+	success, ok := result.(*CityBusAPIRealTimeNearStop1OK)
 	if ok {
 		return success, nil
 	}
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for CityBusApi_RealTimeNearStop_3: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for CityBusApi_RealTimeNearStop_1: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
 /*
-CityBusAPIRouteFare2 取得指定s 縣市 的市區公車路線票價資料
+CityBusAPIRoute 取得指定s 縣市 的市區公車路線資料
+
+市區公車之路線資料
 */
-func (a *Client) CityBusAPIRouteFare2(params *CityBusAPIRouteFare2Params) (*CityBusAPIRouteFare2OK, error) {
+func (a *Client) CityBusAPIRoute(params *CityBusAPIRouteParams) (*CityBusAPIRouteOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewCityBusAPIRouteFare2Params()
+		params = NewCityBusAPIRouteParams()
 	}
 
 	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "CityBusApi_RouteFare_2",
+		ID:                 "CityBusApi_Route",
+		Method:             "GET",
+		PathPattern:        "/v3/Bus/Route/City/{City}",
+		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ConsumesMediaTypes: []string{""},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &CityBusAPIRouteReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*CityBusAPIRouteOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for CityBusApi_Route: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+CityBusAPIRouteFare 取得指定s 縣市 的市區公車路線票價資料
+*/
+func (a *Client) CityBusAPIRouteFare(params *CityBusAPIRouteFareParams) (*CityBusAPIRouteFareOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewCityBusAPIRouteFareParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "CityBusApi_RouteFare",
 		Method:             "GET",
 		PathPattern:        "/v3/Bus/RouteFare/City/{City}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
 		ConsumesMediaTypes: []string{""},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &CityBusAPIRouteFare2Reader{formats: a.formats},
+		Reader:             &CityBusAPIRouteFareReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
 	if err != nil {
 		return nil, err
 	}
-	success, ok := result.(*CityBusAPIRouteFare2OK)
+	success, ok := result.(*CityBusAPIRouteFareOK)
 	if ok {
 		return success, nil
 	}
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for CityBusApi_RouteFare_2: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for CityBusApi_RouteFare: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -587,42 +623,6 @@ func (a *Client) CityBusAPIRouteNetwork(params *CityBusAPIRouteNetworkParams) (*
 }
 
 /*
-CityBusAPIRoute2 取得指定s 縣市 的市區公車路線資料
-
-市區公車之路線資料
-*/
-func (a *Client) CityBusAPIRoute2(params *CityBusAPIRoute2Params) (*CityBusAPIRoute2OK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewCityBusAPIRoute2Params()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "CityBusApi_Route_2",
-		Method:             "GET",
-		PathPattern:        "/v3/Bus/Route/City/{City}",
-		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &CityBusAPIRoute2Reader{formats: a.formats},
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*CityBusAPIRoute2OK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for CityBusApi_Route_2: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
 CityBusAPIS2STravelTime 取得指定s 縣市 的市區公車路線站間旅行時間基本資料
 */
 func (a *Client) CityBusAPIS2STravelTime(params *CityBusAPIS2STravelTimeParams) (*CityBusAPIS2STravelTimeOK, error) {
@@ -657,140 +657,140 @@ func (a *Client) CityBusAPIS2STravelTime(params *CityBusAPIS2STravelTimeParams) 
 }
 
 /*
-CityBusAPIShape2 取得指定s 縣市 的市區公車空間線型資料
+CityBusAPIShape 取得指定s 縣市 的市區公車空間線型資料
 */
-func (a *Client) CityBusAPIShape2(params *CityBusAPIShape2Params) (*CityBusAPIShape2OK, error) {
+func (a *Client) CityBusAPIShape(params *CityBusAPIShapeParams) (*CityBusAPIShapeOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewCityBusAPIShape2Params()
+		params = NewCityBusAPIShapeParams()
 	}
 
 	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "CityBusApi_Shape_2",
+		ID:                 "CityBusApi_Shape",
 		Method:             "GET",
 		PathPattern:        "/v3/Bus/Shape/City/{City}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
 		ConsumesMediaTypes: []string{""},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &CityBusAPIShape2Reader{formats: a.formats},
+		Reader:             &CityBusAPIShapeReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
 	if err != nil {
 		return nil, err
 	}
-	success, ok := result.(*CityBusAPIShape2OK)
+	success, ok := result.(*CityBusAPIShapeOK)
 	if ok {
 		return success, nil
 	}
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for CityBusApi_Shape_2: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for CityBusApi_Shape: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
 /*
-CityBusAPIStation1 取得指定s 縣市 的市區公車站位資料
+CityBusAPIStation 取得指定s 縣市 的市區公車站位資料
 */
-func (a *Client) CityBusAPIStation1(params *CityBusAPIStation1Params) (*CityBusAPIStation1OK, error) {
+func (a *Client) CityBusAPIStation(params *CityBusAPIStationParams) (*CityBusAPIStationOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewCityBusAPIStation1Params()
+		params = NewCityBusAPIStationParams()
 	}
 
 	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "CityBusApi_Station_1",
+		ID:                 "CityBusApi_Station",
 		Method:             "GET",
 		PathPattern:        "/v3/Bus/Station/City/{City}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
 		ConsumesMediaTypes: []string{""},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &CityBusAPIStation1Reader{formats: a.formats},
+		Reader:             &CityBusAPIStationReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
 	if err != nil {
 		return nil, err
 	}
-	success, ok := result.(*CityBusAPIStation1OK)
+	success, ok := result.(*CityBusAPIStationOK)
 	if ok {
 		return success, nil
 	}
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for CityBusApi_Station_1: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for CityBusApi_Station: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
 /*
-CityBusAPIStopOfRoute2 取得指定s 縣市 的市區公車路線站序資料
-
-市區公車之路線站序資料
+CityBusAPIStop 取得指定s 縣市 的市區公車站牌資料
 */
-func (a *Client) CityBusAPIStopOfRoute2(params *CityBusAPIStopOfRoute2Params) (*CityBusAPIStopOfRoute2OK, error) {
+func (a *Client) CityBusAPIStop(params *CityBusAPIStopParams) (*CityBusAPIStopOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewCityBusAPIStopOfRoute2Params()
+		params = NewCityBusAPIStopParams()
 	}
 
 	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "CityBusApi_StopOfRoute_2",
-		Method:             "GET",
-		PathPattern:        "/v3/Bus/StopOfRoute/City/{City}",
-		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &CityBusAPIStopOfRoute2Reader{formats: a.formats},
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*CityBusAPIStopOfRoute2OK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for CityBusApi_StopOfRoute_2: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-CityBusAPIStop1 取得指定s 縣市 的市區公車站牌資料
-*/
-func (a *Client) CityBusAPIStop1(params *CityBusAPIStop1Params) (*CityBusAPIStop1OK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewCityBusAPIStop1Params()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "CityBusApi_Stop_1",
+		ID:                 "CityBusApi_Stop",
 		Method:             "GET",
 		PathPattern:        "/v3/Bus/Stop/City/{City}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
 		ConsumesMediaTypes: []string{""},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &CityBusAPIStop1Reader{formats: a.formats},
+		Reader:             &CityBusAPIStopReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
 	if err != nil {
 		return nil, err
 	}
-	success, ok := result.(*CityBusAPIStop1OK)
+	success, ok := result.(*CityBusAPIStopOK)
 	if ok {
 		return success, nil
 	}
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for CityBusApi_Stop_1: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for CityBusApi_Stop: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+CityBusAPIStopOfRoute 取得指定s 縣市 的市區公車路線站序資料
+
+市區公車之路線站序資料
+*/
+func (a *Client) CityBusAPIStopOfRoute(params *CityBusAPIStopOfRouteParams) (*CityBusAPIStopOfRouteOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewCityBusAPIStopOfRouteParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "CityBusApi_StopOfRoute",
+		Method:             "GET",
+		PathPattern:        "/v3/Bus/StopOfRoute/City/{City}",
+		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ConsumesMediaTypes: []string{""},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &CityBusAPIStopOfRouteReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*CityBusAPIStopOfRouteOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for CityBusApi_StopOfRoute: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -827,6 +827,40 @@ func (a *Client) CityBusAPISubRoute(params *CityBusAPISubRouteParams) (*CityBusA
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
 	msg := fmt.Sprintf("unexpected success response for CityBusApi_SubRoute: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+CityBusAPIVehicle 取得指定s 縣市 的市區公車車輛基本資料
+*/
+func (a *Client) CityBusAPIVehicle(params *CityBusAPIVehicleParams) (*CityBusAPIVehicleOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewCityBusAPIVehicleParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "CityBusApi_Vehicle",
+		Method:             "GET",
+		PathPattern:        "/v3/Bus/Vehicle/City/{City}",
+		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ConsumesMediaTypes: []string{""},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &CityBusAPIVehicleReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*CityBusAPIVehicleOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for CityBusApi_Vehicle: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -895,40 +929,6 @@ func (a *Client) CityBusAPIVehicleRoute(params *CityBusAPIVehicleRouteParams) (*
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
 	msg := fmt.Sprintf("unexpected success response for CityBusApi_VehicleRoute: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-CityBusAPIVehicle1 取得指定s 縣市 的市區公車車輛基本資料
-*/
-func (a *Client) CityBusAPIVehicle1(params *CityBusAPIVehicle1Params) (*CityBusAPIVehicle1OK, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewCityBusAPIVehicle1Params()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "CityBusApi_Vehicle_1",
-		Method:             "GET",
-		PathPattern:        "/v3/Bus/Vehicle/City/{City}",
-		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &CityBusAPIVehicle1Reader{formats: a.formats},
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, err
-	}
-	success, ok := result.(*CityBusAPIVehicle1OK)
-	if ok {
-		return success, nil
-	}
-	// unexpected success response
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for CityBusApi_Vehicle_1: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
