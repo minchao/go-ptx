@@ -21,7 +21,8 @@ func init() {
 
 func TestRailV2_Metro_Network(t *testing.T) {
 	params := metro.NewMetroAPINetworkParams().
-		WithDollarFormat("JSON")
+		WithDollarFormat("JSON").
+		WithOperator("TRTC")
 	result, err := railV2Client.Metro.MetroAPINetwork(params)
 	require.NoError(t, err)
 	if len(result.Payload) == 0 {
