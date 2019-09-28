@@ -25,8 +25,12 @@ generate:
 
 .PHONY: lint
 lint:
-	golangci-lint run -E gofmt ./...
+	golangci-lint run ./...
 
 .PHONY: test
 test:
 	go test -v ./pkg/...
+
+.PHONY: integration
+integration:
+	go test -v ./test/integration/...

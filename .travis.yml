@@ -1,10 +1,10 @@
 language: go
-dist: xenial
+dist: bionic
 
 matrix:
   include:
-    - go: 1.11.x
     - go: 1.12.x
+    - go: 1.13.x
       env: DEPLOY=true
     - go: master
   allow_failures:
@@ -20,16 +20,12 @@ cache:
 
 install:
   - curl -sfL https://install.goreleaser.com/github.com/golangci/golangci-lint.sh | sh -s -- -b $(go env GOPATH)/bin latest
-  # install specific version of go-swagger
+  # install go-swagger
   - |
-    mkdir -p $GOPATH/src/github.com/go-swagger
-    cd $GOPATH/src/github.com/go-swagger
-    git clone https://github.com/go-swagger/go-swagger
-    cd go-swagger
-    git checkout 2f32a5a8
-    go install github.com/go-swagger/go-swagger/cmd/swagger
-    swagger version
-    cd $TRAVIS_BUILD_DIR
+    download_url=$(curl -s https://api.github.com/repos/go-swagger/go-swagger/releases/latest | \
+    jq -r '.assets[] | select(.name | contains("'"$(uname | tr '[:upper:]' '[:lower:]')"'_amd64")) | .browser_download_url')
+    curl -o /home/travis/bin/swagger -L'#' "$download_url"
+    chmod +x /home/travis/bin/swagger
   - go mod download
 
 script:
@@ -40,7 +36,7 @@ script:
   - make validate
   - make lint
   - make test
-  - go test -v ./test/integration/...
+  - make integration
 
 deploy:
   - provider: script
@@ -49,3 +45,7 @@ deploy:
     on:
       branch: check-oas-spec
       condition: $DEPLOY = true
+
+notifications:
+  email:
+    on_success: never

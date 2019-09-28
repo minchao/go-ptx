@@ -6,6 +6,18 @@
 
 ## [Unreleased]
 
+## [0.2.0] - 2019-09-28
+
+### Changed
+- 官方新增公車 V2 API 預估到站時間，目前僅桃園市、臺中市、高雄市提供。
+- 官方修改公車 V3 API operationId。
+- 修改 struct filed `AppId` 為 `AppID`，以符合 golint 規則。
+- 改進 CI 流程，預設使用 go1.13 測試。
+- 改用最新的 go-swagger static binary 來驗證定義檔。
+
+### Fixed
+- 修正 rail v2 測試。
+
 ## [0.1.0] - 2019-08-04
 
 ### Added
