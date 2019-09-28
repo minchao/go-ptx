@@ -5,7 +5,7 @@ import (
 )
 
 type Transport struct {
-	AppId  string
+	AppID  string
 	AppKey string
 
 	Transport http.RoundTripper
@@ -13,7 +13,7 @@ type Transport struct {
 
 func NewTransport(id, key string) *Transport {
 	return &Transport{
-		AppId:  id,
+		AppID:  id,
 		AppKey: key,
 	}
 }
@@ -28,7 +28,7 @@ func (t *Transport) RoundTrip(req *http.Request) (*http.Response, error) {
 
 	date := date()
 
-	req2.Header.Set("Authorization", authorization(t.AppId, signature(t.AppKey, date)))
+	req2.Header.Set("Authorization", authorization(t.AppID, signature(t.AppKey, date)))
 	req2.Header.Set("x-date", date)
 
 	return t.transport().RoundTrip(req2)

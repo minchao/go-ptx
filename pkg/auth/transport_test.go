@@ -13,7 +13,7 @@ import (
 )
 
 const (
-	appId  = "APP_ID"
+	appID  = "APP_ID"
 	appKey = "APP_KEY"
 )
 
@@ -29,7 +29,7 @@ func authHandlerFunc(t *testing.T) func(w http.ResponseWriter, r *http.Request) 
 		date := r.Header.Get("x-date")
 		require.NotEmpty(t, date)
 		auth := r.Header.Get("Authorization")
-		require.Equal(t, authorization(appId, signature(appKey, date)), auth)
+		require.Equal(t, authorization(appID, signature(appKey, date)), auth)
 	}
 }
 
@@ -53,7 +53,7 @@ func TestAuthTransport(t *testing.T) {
 	mux.HandleFunc("/", authHandlerFunc(t))
 
 	httpClient := http.DefaultClient
-	httpClient.Transport = NewTransport(appId, appKey)
+	httpClient.Transport = NewTransport(appID, appKey)
 	apiclient := client.NewWithClient(serverURL.Host, serverURL.Path, []string{"http"}, httpClient)
 	_, err := apiclient.Submit(newTestClientOperation())
 	require.NoError(t, err)

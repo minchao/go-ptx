@@ -14,7 +14,7 @@ func TestAuthentication_AuthenticateRequest(t *testing.T) {
 	mux.HandleFunc("/", authHandlerFunc(t))
 
 	apiclient := client.New(serverURL.Host, serverURL.Path, []string{"http"})
-	apiclient.DefaultAuthentication = NewAuthentication(appId, appKey)
+	apiclient.DefaultAuthentication = NewAuthentication(appID, appKey)
 	_, err := apiclient.Submit(newTestClientOperation())
 	require.NoError(t, err)
 }

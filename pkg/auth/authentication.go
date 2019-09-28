@@ -6,13 +6,13 @@ import (
 )
 
 type Authentication struct {
-	AppId  string
+	AppID  string
 	AppKey string
 }
 
 func NewAuthentication(id, key string) *Authentication {
 	return &Authentication{
-		AppId:  id,
+		AppID:  id,
 		AppKey: key,
 	}
 }
@@ -20,7 +20,7 @@ func NewAuthentication(id, key string) *Authentication {
 func (a Authentication) AuthenticateRequest(req runtime.ClientRequest, reg strfmt.Registry) error {
 	date := date()
 
-	_ = req.SetHeaderParam("Authorization", authorization(a.AppId, signature(a.AppKey, date)))
+	_ = req.SetHeaderParam("Authorization", authorization(a.AppID, signature(a.AppKey, date)))
 	_ = req.SetHeaderParam("x-date", date)
 	return nil
 }
