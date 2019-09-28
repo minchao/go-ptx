@@ -21,7 +21,7 @@ type ServiceDTOVersion2BusBusVersion struct {
 
 	// DateTime
 	//
-	// 資料最後檢核更新之日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
+	// 此資料版本最後檢查更新之日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Required: true
 	UpdateCheckTime *string `json:"UpdateCheckTime"`
 

@@ -6,6 +6,8 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"strconv"
+
 	strfmt "github.com/go-openapi/strfmt"
 
 	"github.com/go-openapi/errors"
@@ -36,6 +38,10 @@ type ServiceDTOVersion2BusBusN1EstimateTime struct {
 
 	// 到站時間預估(秒) [當StopStatus値為1~4或PlateNumb値為-1時，EstimateTime値為空値; 反之，EstimateTime有値]
 	EstimateTime int32 `json:"EstimateTime,omitempty"`
+
+	// 到站時間預估
+	// <span class="emphasis fas fa-pen" rel="目前僅桃園市、臺中市、高雄市提供"></span>
+	Estimates []*ServiceDTOVersion2BusN1Estimate `json:"Estimates"`
 
 	// 是否為末班車
 	IsLastBus bool `json:"IsLastBus,omitempty"`
@@ -132,6 +138,10 @@ func (m *ServiceDTOVersion2BusBusN1EstimateTime) Validate(formats strfmt.Registr
 		res = append(res, err)
 	}
 
+	if err := m.validateEstimates(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateRouteName(formats); err != nil {
 		res = append(res, err)
 	}
@@ -158,6 +168,31 @@ func (m *ServiceDTOVersion2BusBusN1EstimateTime) validateDirection(formats strfm
 
 	if err := validate.Required("Direction", "body", m.Direction); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+func (m *ServiceDTOVersion2BusBusN1EstimateTime) validateEstimates(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.Estimates) { // not required
+		return nil
+	}
+
+	for i := 0; i < len(m.Estimates); i++ {
+		if swag.IsZero(m.Estimates[i]) { // not required
+			continue
+		}
+
+		if m.Estimates[i] != nil {
+			if err := m.Estimates[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("Estimates" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
 	}
 
 	return nil
