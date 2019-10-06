@@ -30,6 +30,12 @@ func (o *CityBusAPIScheduleReader) ReadResponse(response runtime.ClientResponse,
 			return nil, err
 		}
 		return result, nil
+	case 299:
+		result := NewCityBusAPIScheduleStatus299()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return result, nil
 
 	default:
 		return nil, runtime.NewAPIError("unknown error", response, response.Code())
@@ -61,6 +67,39 @@ func (o *CityBusAPIScheduleOK) readResponse(response runtime.ClientResponse, con
 
 	// response payload
 	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewCityBusAPIScheduleStatus299 creates a CityBusAPIScheduleStatus299 with default headers values
+func NewCityBusAPIScheduleStatus299() *CityBusAPIScheduleStatus299 {
+	return &CityBusAPIScheduleStatus299{}
+}
+
+/*CityBusAPIScheduleStatus299 handles this case with default header values.
+
+加入參數'?health=true'即可查詢此API服務的健康狀態
+*/
+type CityBusAPIScheduleStatus299 struct {
+	Payload *models.ServiceDTOVersion3BaseHealth
+}
+
+func (o *CityBusAPIScheduleStatus299) Error() string {
+	return fmt.Sprintf("[GET /v2/Bus/Schedule/City/{City}][%d] cityBusApiScheduleStatus299  %+v", 299, o.Payload)
+}
+
+func (o *CityBusAPIScheduleStatus299) GetPayload() *models.ServiceDTOVersion3BaseHealth {
+	return o.Payload
+}
+
+func (o *CityBusAPIScheduleStatus299) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	o.Payload = new(models.ServiceDTOVersion3BaseHealth)
+
+	// response payload
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

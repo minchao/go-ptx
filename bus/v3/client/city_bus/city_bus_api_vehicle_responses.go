@@ -30,6 +30,12 @@ func (o *CityBusAPIVehicleReader) ReadResponse(response runtime.ClientResponse, 
 			return nil, err
 		}
 		return result, nil
+	case 299:
+		result := NewCityBusAPIVehicleStatus299()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return result, nil
 
 	default:
 		return nil, runtime.NewAPIError("unknown error", response, response.Code())
@@ -60,6 +66,39 @@ func (o *CityBusAPIVehicleOK) GetPayload() *models.MOTCAPIBusDALBusServiceDTOVer
 func (o *CityBusAPIVehicleOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	o.Payload = new(models.MOTCAPIBusDALBusServiceDTOVersion3BusVehicle)
+
+	// response payload
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewCityBusAPIVehicleStatus299 creates a CityBusAPIVehicleStatus299 with default headers values
+func NewCityBusAPIVehicleStatus299() *CityBusAPIVehicleStatus299 {
+	return &CityBusAPIVehicleStatus299{}
+}
+
+/*CityBusAPIVehicleStatus299 handles this case with default header values.
+
+加入參數'?health=true'即可查詢此API服務的健康狀態
+*/
+type CityBusAPIVehicleStatus299 struct {
+	Payload *models.ServiceDTOVersion3BaseHealth
+}
+
+func (o *CityBusAPIVehicleStatus299) Error() string {
+	return fmt.Sprintf("[GET /v3/Bus/Vehicle/City/{City}][%d] cityBusApiVehicleStatus299  %+v", 299, o.Payload)
+}
+
+func (o *CityBusAPIVehicleStatus299) GetPayload() *models.ServiceDTOVersion3BaseHealth {
+	return o.Payload
+}
+
+func (o *CityBusAPIVehicleStatus299) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	o.Payload = new(models.ServiceDTOVersion3BaseHealth)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

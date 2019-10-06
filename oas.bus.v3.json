@@ -88,6 +88,17 @@
               "JSON",
               "XML"
             ]
+          },
+          {
+            "name": "health",
+            "in": "query",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
           }
         ],
         "responses": {
@@ -95,6 +106,12 @@
             "description": "OK",
             "schema": {
               "$ref": "#/definitions/MOTC.API.Bus.DAL.Bus[Service.DTO.Version3.Bus.Network]"
+            }
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
             }
           }
         }
@@ -177,6 +194,17 @@
               "JSON",
               "XML"
             ]
+          },
+          {
+            "name": "health",
+            "in": "query",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
           }
         ],
         "responses": {
@@ -184,6 +212,12 @@
             "description": "OK",
             "schema": {
               "$ref": "#/definitions/MOTC.API.Bus.DAL.Bus[Service.DTO.Version3.Bus.Stop]"
+            }
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
             }
           }
         }
@@ -266,6 +300,17 @@
               "JSON",
               "XML"
             ]
+          },
+          {
+            "name": "health",
+            "in": "query",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
           }
         ],
         "responses": {
@@ -273,6 +318,12 @@
             "description": "OK",
             "schema": {
               "$ref": "#/definitions/MOTC.API.Bus.DAL.Bus[Service.DTO.Version3.Bus.Station]"
+            }
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
             }
           }
         }
@@ -356,6 +407,17 @@
               "JSON",
               "XML"
             ]
+          },
+          {
+            "name": "health",
+            "in": "query",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
           }
         ],
         "responses": {
@@ -363,6 +425,12 @@
             "description": "OK",
             "schema": {
               "$ref": "#/definitions/MOTC.API.Bus.DAL.Bus[Service.DTO.Version3.Bus.Route]"
+            }
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
             }
           }
         }
@@ -446,6 +514,17 @@
               "JSON",
               "XML"
             ]
+          },
+          {
+            "name": "health",
+            "in": "query",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
           }
         ],
         "responses": {
@@ -453,6 +532,12 @@
             "description": "OK",
             "schema": {
               "$ref": "#/definitions/MOTC.API.Bus.DAL.Bus[Service.DTO.Version3.Bus.SubRoute]"
+            }
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
             }
           }
         }
@@ -535,6 +620,17 @@
               "JSON",
               "XML"
             ]
+          },
+          {
+            "name": "health",
+            "in": "query",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
           }
         ],
         "responses": {
@@ -542,6 +638,12 @@
             "description": "OK",
             "schema": {
               "$ref": "#/definitions/MOTC.API.Bus.DAL.Bus[Service.DTO.Version3.Bus.FirstLastTripInfo]"
+            }
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
             }
           }
         }
@@ -624,6 +726,17 @@
               "JSON",
               "XML"
             ]
+          },
+          {
+            "name": "health",
+            "in": "query",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
           }
         ],
         "responses": {
@@ -631,6 +744,12 @@
             "description": "OK",
             "schema": {
               "$ref": "#/definitions/MOTC.API.Bus.DAL.Bus[Service.DTO.Version3.Bus.Depot]"
+            }
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
             }
           }
         }
@@ -714,6 +833,17 @@
               "JSON",
               "XML"
             ]
+          },
+          {
+            "name": "health",
+            "in": "query",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
           }
         ],
         "responses": {
@@ -721,6 +851,12 @@
             "description": "OK",
             "schema": {
               "$ref": "#/definitions/MOTC.API.Bus.DAL.Bus[Service.DTO.Version3.Bus.StopOfRoute]"
+            }
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
             }
           }
         }
@@ -803,6 +939,17 @@
               "JSON",
               "XML"
             ]
+          },
+          {
+            "name": "health",
+            "in": "query",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
           }
         ],
         "responses": {
@@ -810,6 +957,12 @@
             "description": "OK",
             "schema": {
               "$ref": "#/definitions/MOTC.API.Bus.DAL.Bus[Service.DTO.Version3.Bus.DisplayStopOfRoute]"
+            }
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
             }
           }
         }
@@ -892,6 +1045,17 @@
               "JSON",
               "XML"
             ]
+          },
+          {
+            "name": "health",
+            "in": "query",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
           }
         ],
         "responses": {
@@ -899,6 +1063,12 @@
             "description": "OK",
             "schema": {
               "$ref": "#/definitions/MOTC.API.Bus.DAL.Bus[Service.DTO.Version3.Bus.RouteFare]"
+            }
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
             }
           }
         }
@@ -981,6 +1151,17 @@
               "JSON",
               "XML"
             ]
+          },
+          {
+            "name": "health",
+            "in": "query",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
           }
         ],
         "responses": {
@@ -988,6 +1169,12 @@
             "description": "OK",
             "schema": {
               "$ref": "#/definitions/MOTC.API.Bus.DAL.Bus[Service.DTO.Version3.Bus.DailyTimeTable]"
+            }
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
             }
           }
         }
@@ -1071,6 +1258,17 @@
               "JSON",
               "XML"
             ]
+          },
+          {
+            "name": "health",
+            "in": "query",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
           }
         ],
         "responses": {
@@ -1078,6 +1276,12 @@
             "description": "OK",
             "schema": {
               "$ref": "#/definitions/MOTC.API.Bus.DAL.Bus[Service.DTO.Version3.Bus.A1Data]"
+            }
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
             }
           }
         }
@@ -1168,6 +1372,17 @@
               "JSON",
               "XML"
             ]
+          },
+          {
+            "name": "health",
+            "in": "query",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
           }
         ],
         "responses": {
@@ -1175,6 +1390,12 @@
             "description": "OK",
             "schema": {
               "$ref": "#/definitions/MOTC.API.Bus.DAL.Bus[Service.DTO.Version3.Bus.A1Data]"
+            }
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
             }
           }
         }
@@ -1258,6 +1479,17 @@
               "JSON",
               "XML"
             ]
+          },
+          {
+            "name": "health",
+            "in": "query",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
           }
         ],
         "responses": {
@@ -1265,6 +1497,12 @@
             "description": "OK",
             "schema": {
               "$ref": "#/definitions/MOTC.API.Bus.DAL.Bus[Service.DTO.Version3.Bus.A2Data]"
+            }
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
             }
           }
         }
@@ -1355,6 +1593,17 @@
               "JSON",
               "XML"
             ]
+          },
+          {
+            "name": "health",
+            "in": "query",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
           }
         ],
         "responses": {
@@ -1362,6 +1611,12 @@
             "description": "OK",
             "schema": {
               "$ref": "#/definitions/MOTC.API.Bus.DAL.Bus[Service.DTO.Version3.Bus.A2Data]"
+            }
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
             }
           }
         }
@@ -1445,6 +1700,17 @@
               "JSON",
               "XML"
             ]
+          },
+          {
+            "name": "health",
+            "in": "query",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
           }
         ],
         "responses": {
@@ -1452,6 +1718,12 @@
             "description": "OK",
             "schema": {
               "$ref": "#/definitions/MOTC.API.Bus.DAL.Bus[Service.DTO.Version3.Bus.N1Data]"
+            }
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
             }
           }
         }
@@ -1542,6 +1814,17 @@
               "JSON",
               "XML"
             ]
+          },
+          {
+            "name": "health",
+            "in": "query",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
           }
         ],
         "responses": {
@@ -1549,6 +1832,12 @@
             "description": "OK",
             "schema": {
               "$ref": "#/definitions/MOTC.API.Bus.DAL.Bus[Service.DTO.Version3.Bus.N1Data]"
+            }
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
             }
           }
         }
@@ -1632,6 +1921,17 @@
               "JSON",
               "XML"
             ]
+          },
+          {
+            "name": "health",
+            "in": "query",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
           }
         ],
         "responses": {
@@ -1639,6 +1939,12 @@
             "description": "OK",
             "schema": {
               "$ref": "#/definitions/MOTC.API.Bus.DAL.Bus[Service.DTO.Version3.Bus.Alert]"
+            }
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
             }
           }
         }
@@ -1722,6 +2028,17 @@
               "JSON",
               "XML"
             ]
+          },
+          {
+            "name": "health",
+            "in": "query",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
           }
         ],
         "responses": {
@@ -1729,6 +2046,12 @@
             "description": "OK",
             "schema": {
               "$ref": "#/definitions/MOTC.API.Bus.DAL.Bus[Service.DTO.Version3.Bus.News]"
+            }
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
             }
           }
         }
@@ -1811,6 +2134,17 @@
               "JSON",
               "XML"
             ]
+          },
+          {
+            "name": "health",
+            "in": "query",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
           }
         ],
         "responses": {
@@ -1818,6 +2152,12 @@
             "description": "OK",
             "schema": {
               "$ref": "#/definitions/MOTC.API.Bus.DAL.Bus[Service.DTO.Version3.Bus.Operator]"
+            }
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
             }
           }
         }
@@ -1900,6 +2240,17 @@
               "JSON",
               "XML"
             ]
+          },
+          {
+            "name": "health",
+            "in": "query",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
           }
         ],
         "responses": {
@@ -1907,6 +2258,12 @@
             "description": "OK",
             "schema": {
               "$ref": "#/definitions/MOTC.API.Bus.DAL.Bus[Service.DTO.Version3.Bus.Vehicle]"
+            }
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
             }
           }
         }
@@ -1989,6 +2346,17 @@
               "JSON",
               "XML"
             ]
+          },
+          {
+            "name": "health",
+            "in": "query",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
           }
         ],
         "responses": {
@@ -1996,6 +2364,12 @@
             "description": "OK",
             "schema": {
               "$ref": "#/definitions/MOTC.API.Bus.DAL.Bus[Service.DTO.Version3.Bus.VehicleDepot]"
+            }
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
             }
           }
         }
@@ -2078,6 +2452,17 @@
               "JSON",
               "XML"
             ]
+          },
+          {
+            "name": "health",
+            "in": "query",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
           }
         ],
         "responses": {
@@ -2085,6 +2470,12 @@
             "description": "OK",
             "schema": {
               "$ref": "#/definitions/MOTC.API.Bus.DAL.Bus[Service.DTO.Version3.Bus.VehicleRoute]"
+            }
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
             }
           }
         }
@@ -2167,6 +2558,17 @@
               "JSON",
               "XML"
             ]
+          },
+          {
+            "name": "health",
+            "in": "query",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
           }
         ],
         "responses": {
@@ -2174,6 +2576,12 @@
             "description": "OK",
             "schema": {
               "$ref": "#/definitions/MOTC.API.Bus.DAL.Bus[Service.DTO.Version3.Bus.Shape]"
+            }
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
             }
           }
         }
@@ -2256,6 +2664,17 @@
               "JSON",
               "XML"
             ]
+          },
+          {
+            "name": "health",
+            "in": "query",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
           }
         ],
         "responses": {
@@ -2263,6 +2682,12 @@
             "description": "OK",
             "schema": {
               "$ref": "#/definitions/MOTC.API.Bus.DAL.Bus[Service.DTO.Version3.Bus.RouteNetwork]"
+            }
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
             }
           }
         }
@@ -2345,6 +2770,17 @@
               "JSON",
               "XML"
             ]
+          },
+          {
+            "name": "health",
+            "in": "query",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
           }
         ],
         "responses": {
@@ -2353,12 +2789,99 @@
             "schema": {
               "$ref": "#/definitions/MOTC.API.Bus.DAL.Bus[Service.DTO.Version3.Bus.S2STravelTime]"
             }
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+            }
           }
         }
       }
     }
   },
   "definitions": {
+    "Service.DTO.Version3.Base.Health": {
+      "title": "Health",
+      "description": "API服務健康狀態",
+      "required": [
+        "ServiceID",
+        "ServiceName"
+      ],
+      "type": "object",
+      "properties": {
+        "ServiceID": {
+          "description": "API服務代碼",
+          "type": "string"
+        },
+        "ServiceName": {
+          "description": "API服務中文名稱",
+          "type": "string"
+        },
+        "Inbound": {
+          "$ref": "#/definitions/Service.DTO.Version3.Base.Inbound",
+          "title": "Inbound",
+          "description": "本平台資料來源轉入狀態"
+        },
+        "Outbound": {
+          "$ref": "#/definitions/Service.DTO.Version3.Base.Outbound",
+          "title": "Outbound",
+          "description": "本平台API狀態"
+        }
+      }
+    },
+    "Service.DTO.Version3.Base.Inbound": {
+      "title": "Inbound",
+      "description": "本平台資料來源轉入狀態",
+      "required": [
+        "CheckTime",
+        "Status"
+      ],
+      "type": "object",
+      "properties": {
+        "CheckTime": {
+          "title": "DateTime",
+          "description": "檢核時間",
+          "type": "string"
+        },
+        "Status": {
+          "format": "int32",
+          "title": "integer",
+          "description": "檢核結果狀態 : [0:'失敗',1:'成功']",
+          "type": "integer"
+        },
+        "Reason": {
+          "description": "檢核失敗原因",
+          "type": "string"
+        }
+      }
+    },
+    "Service.DTO.Version3.Base.Outbound": {
+      "title": "Outbound",
+      "description": "本平台API狀態",
+      "required": [
+        "CheckTime",
+        "Status"
+      ],
+      "type": "object",
+      "properties": {
+        "CheckTime": {
+          "title": "DateTime",
+          "description": "檢核時間",
+          "type": "string"
+        },
+        "Status": {
+          "format": "int32",
+          "title": "integer",
+          "description": "檢核結果狀態 : [0:'失敗',1:'成功']",
+          "type": "integer"
+        },
+        "Reason": {
+          "description": "檢核失敗原因",
+          "type": "string"
+        }
+      }
+    },
     "MOTC.API.Bus.DAL.Bus[Service.DTO.Version3.Bus.A1Data]": {
       "title": "BusA1DataList",
       "type": "object",

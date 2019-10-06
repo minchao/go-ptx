@@ -36,7 +36,7 @@ type ServiceDTOVersion2BusBusN1EstimateTime struct {
 	// Required: true
 	Direction *int32 `json:"Direction"`
 
-	// 到站時間預估(秒) [當StopStatus値為1~4或PlateNumb値為-1時，EstimateTime値為空値; 反之，EstimateTime有値]
+	// 到站時間預估(秒) [當StopStatus値為2~4或PlateNumb値為-1時，EstimateTime値為null; 當StopStatus値為1時， EstimateTime値多數為null，僅部分路線因有固定發車時間，故EstimateTime有値; 當StopStatus値為0時，EstimateTime有値。]
 	EstimateTime int32 `json:"EstimateTime,omitempty"`
 
 	// 到站時間預估
@@ -77,12 +77,12 @@ type ServiceDTOVersion2BusBusN1EstimateTime struct {
 
 	// DateTime
 	//
-	// 來源端平台資料傳出時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)[公總使用TCP動態即時推播故有提供此欄位, 而非公總系統因使用整包資料更新, 故沒有提供此欄位]
+	// 來源端平台資料傳出時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)[公總使用動態即時推播故有提供此欄位, 而非公總系統因使用整包資料更新, 故沒有提供此欄位]
 	SrcTransTime string `json:"SrcTransTime,omitempty"`
 
 	// DateTime
 	//
-	// 來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)[公總使用TCP動態即時推播故沒有提供此欄位, 而非公總系統因提供整包資料更新, 故有提供此欄]
+	// 來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)[公總使用動態即時推播故沒有提供此欄位, 而非公總系統因提供整包資料更新, 故有提供此欄]
 	SrcUpdateTime string `json:"SrcUpdateTime,omitempty"`
 
 	// 車輛距離本站站數

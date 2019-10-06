@@ -30,6 +30,12 @@ func (o *InterCityBusAPINewsReader) ReadResponse(response runtime.ClientResponse
 			return nil, err
 		}
 		return result, nil
+	case 299:
+		result := NewInterCityBusAPINewsStatus299()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return result, nil
 
 	default:
 		return nil, runtime.NewAPIError("unknown error", response, response.Code())
@@ -61,6 +67,39 @@ func (o *InterCityBusAPINewsOK) readResponse(response runtime.ClientResponse, co
 
 	// response payload
 	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewInterCityBusAPINewsStatus299 creates a InterCityBusAPINewsStatus299 with default headers values
+func NewInterCityBusAPINewsStatus299() *InterCityBusAPINewsStatus299 {
+	return &InterCityBusAPINewsStatus299{}
+}
+
+/*InterCityBusAPINewsStatus299 handles this case with default header values.
+
+加入參數'?health=true'即可查詢此API服務的健康狀態
+*/
+type InterCityBusAPINewsStatus299 struct {
+	Payload *models.ServiceDTOVersion3BaseHealth
+}
+
+func (o *InterCityBusAPINewsStatus299) Error() string {
+	return fmt.Sprintf("[GET /v2/Bus/News/InterCity][%d] interCityBusApiNewsStatus299  %+v", 299, o.Payload)
+}
+
+func (o *InterCityBusAPINewsStatus299) GetPayload() *models.ServiceDTOVersion3BaseHealth {
+	return o.Payload
+}
+
+func (o *InterCityBusAPINewsStatus299) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	o.Payload = new(models.ServiceDTOVersion3BaseHealth)
+
+	// response payload
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

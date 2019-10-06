@@ -30,6 +30,12 @@ func (o *InterCityBusAPIVehicleReader) ReadResponse(response runtime.ClientRespo
 			return nil, err
 		}
 		return result, nil
+	case 299:
+		result := NewInterCityBusAPIVehicleStatus299()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return result, nil
 
 	default:
 		return nil, runtime.NewAPIError("unknown error", response, response.Code())
@@ -61,6 +67,39 @@ func (o *InterCityBusAPIVehicleOK) readResponse(response runtime.ClientResponse,
 
 	// response payload
 	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewInterCityBusAPIVehicleStatus299 creates a InterCityBusAPIVehicleStatus299 with default headers values
+func NewInterCityBusAPIVehicleStatus299() *InterCityBusAPIVehicleStatus299 {
+	return &InterCityBusAPIVehicleStatus299{}
+}
+
+/*InterCityBusAPIVehicleStatus299 handles this case with default header values.
+
+加入參數'?health=true'即可查詢此API服務的健康狀態
+*/
+type InterCityBusAPIVehicleStatus299 struct {
+	Payload *models.ServiceDTOVersion3BaseHealth
+}
+
+func (o *InterCityBusAPIVehicleStatus299) Error() string {
+	return fmt.Sprintf("[GET /v2/Bus/Vehicle/InterCity][%d] interCityBusApiVehicleStatus299  %+v", 299, o.Payload)
+}
+
+func (o *InterCityBusAPIVehicleStatus299) GetPayload() *models.ServiceDTOVersion3BaseHealth {
+	return o.Payload
+}
+
+func (o *InterCityBusAPIVehicleStatus299) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	o.Payload = new(models.ServiceDTOVersion3BaseHealth)
+
+	// response payload
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

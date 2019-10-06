@@ -30,6 +30,12 @@ func (o *InterCityBusAPIRealTimeByFrequency1Reader) ReadResponse(response runtim
 			return nil, err
 		}
 		return result, nil
+	case 299:
+		result := NewInterCityBusAPIRealTimeByFrequency1Status299()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return result, nil
 
 	default:
 		return nil, runtime.NewAPIError("unknown error", response, response.Code())
@@ -61,6 +67,39 @@ func (o *InterCityBusAPIRealTimeByFrequency1OK) readResponse(response runtime.Cl
 
 	// response payload
 	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewInterCityBusAPIRealTimeByFrequency1Status299 creates a InterCityBusAPIRealTimeByFrequency1Status299 with default headers values
+func NewInterCityBusAPIRealTimeByFrequency1Status299() *InterCityBusAPIRealTimeByFrequency1Status299 {
+	return &InterCityBusAPIRealTimeByFrequency1Status299{}
+}
+
+/*InterCityBusAPIRealTimeByFrequency1Status299 handles this case with default header values.
+
+加入參數'?health=true'即可查詢此API服務的健康狀態
+*/
+type InterCityBusAPIRealTimeByFrequency1Status299 struct {
+	Payload *models.ServiceDTOVersion3BaseHealth
+}
+
+func (o *InterCityBusAPIRealTimeByFrequency1Status299) Error() string {
+	return fmt.Sprintf("[GET /v2/Bus/RealTimeByFrequency/InterCity/{RouteName}][%d] interCityBusApiRealTimeByFrequency1Status299  %+v", 299, o.Payload)
+}
+
+func (o *InterCityBusAPIRealTimeByFrequency1Status299) GetPayload() *models.ServiceDTOVersion3BaseHealth {
+	return o.Payload
+}
+
+func (o *InterCityBusAPIRealTimeByFrequency1Status299) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	o.Payload = new(models.ServiceDTOVersion3BaseHealth)
+
+	// response payload
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

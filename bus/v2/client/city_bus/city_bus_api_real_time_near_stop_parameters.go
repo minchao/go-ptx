@@ -104,11 +104,13 @@ type CityBusAPIRealTimeNearStopParams struct {
 
 	*/
 	DollarTop *int64
-	/*City
-	  欲查詢縣市
+	/*City*/
+	City string
+	/*Health
+	  加入參數'?health=true'即可查詢此API服務的健康狀態
 
 	*/
-	City string
+	Health *string
 
 	timeout    time.Duration
 	Context    context.Context
@@ -225,6 +227,17 @@ func (o *CityBusAPIRealTimeNearStopParams) SetCity(city string) {
 	o.City = city
 }
 
+// WithHealth adds the health to the city bus Api real time near stop params
+func (o *CityBusAPIRealTimeNearStopParams) WithHealth(health *string) *CityBusAPIRealTimeNearStopParams {
+	o.SetHealth(health)
+	return o
+}
+
+// SetHealth adds the health to the city bus Api real time near stop params
+func (o *CityBusAPIRealTimeNearStopParams) SetHealth(health *string) {
+	o.Health = health
+}
+
 // WriteToRequest writes these params to a swagger request
 func (o *CityBusAPIRealTimeNearStopParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
 
@@ -325,6 +338,22 @@ func (o *CityBusAPIRealTimeNearStopParams) WriteToRequest(r runtime.ClientReques
 	// path param City
 	if err := r.SetPathParam("City", o.City); err != nil {
 		return err
+	}
+
+	if o.Health != nil {
+
+		// query param health
+		var qrHealth string
+		if o.Health != nil {
+			qrHealth = *o.Health
+		}
+		qHealth := qrHealth
+		if qHealth != "" {
+			if err := r.SetQueryParam("health", qHealth); err != nil {
+				return err
+			}
+		}
+
 	}
 
 	if len(res) > 0 {

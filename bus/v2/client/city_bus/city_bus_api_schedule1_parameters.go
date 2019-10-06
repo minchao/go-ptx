@@ -114,6 +114,11 @@ type CityBusAPISchedule1Params struct {
 
 	*/
 	RouteName string
+	/*Health
+	  加入參數'?health=true'即可查詢此API服務的健康狀態
+
+	*/
+	Health *string
 
 	timeout    time.Duration
 	Context    context.Context
@@ -241,6 +246,17 @@ func (o *CityBusAPISchedule1Params) SetRouteName(routeName string) {
 	o.RouteName = routeName
 }
 
+// WithHealth adds the health to the city bus Api schedule 1 params
+func (o *CityBusAPISchedule1Params) WithHealth(health *string) *CityBusAPISchedule1Params {
+	o.SetHealth(health)
+	return o
+}
+
+// SetHealth adds the health to the city bus Api schedule 1 params
+func (o *CityBusAPISchedule1Params) SetHealth(health *string) {
+	o.Health = health
+}
+
 // WriteToRequest writes these params to a swagger request
 func (o *CityBusAPISchedule1Params) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
 
@@ -346,6 +362,22 @@ func (o *CityBusAPISchedule1Params) WriteToRequest(r runtime.ClientRequest, reg 
 	// path param RouteName
 	if err := r.SetPathParam("RouteName", o.RouteName); err != nil {
 		return err
+	}
+
+	if o.Health != nil {
+
+		// query param health
+		var qrHealth string
+		if o.Health != nil {
+			qrHealth = *o.Health
+		}
+		qHealth := qrHealth
+		if qHealth != "" {
+			if err := r.SetQueryParam("health", qHealth); err != nil {
+				return err
+			}
+		}
+
 	}
 
 	if len(res) > 0 {

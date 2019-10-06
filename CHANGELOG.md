@@ -6,6 +6,9 @@
 
 ## [Unreleased]
 
+## Changed
+- 官方新增 health 參數，查詢 API 服務健康狀態。
+
 ## [0.2.0] - 2019-09-28
 
 ### Changed

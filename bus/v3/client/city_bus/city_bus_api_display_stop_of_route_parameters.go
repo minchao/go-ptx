@@ -114,6 +114,11 @@ type CityBusAPIDisplayStopOfRouteParams struct {
 
 	*/
 	City string
+	/*Health
+	  加入參數'?health=true'即可查詢此API服務的健康狀態
+
+	*/
+	Health *string
 
 	timeout    time.Duration
 	Context    context.Context
@@ -241,6 +246,17 @@ func (o *CityBusAPIDisplayStopOfRouteParams) SetCity(city string) {
 	o.City = city
 }
 
+// WithHealth adds the health to the city bus Api display stop of route params
+func (o *CityBusAPIDisplayStopOfRouteParams) WithHealth(health *string) *CityBusAPIDisplayStopOfRouteParams {
+	o.SetHealth(health)
+	return o
+}
+
+// SetHealth adds the health to the city bus Api display stop of route params
+func (o *CityBusAPIDisplayStopOfRouteParams) SetHealth(health *string) {
+	o.Health = health
+}
+
 // WriteToRequest writes these params to a swagger request
 func (o *CityBusAPIDisplayStopOfRouteParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
 
@@ -357,6 +373,22 @@ func (o *CityBusAPIDisplayStopOfRouteParams) WriteToRequest(r runtime.ClientRequ
 	// path param City
 	if err := r.SetPathParam("City", o.City); err != nil {
 		return err
+	}
+
+	if o.Health != nil {
+
+		// query param health
+		var qrHealth string
+		if o.Health != nil {
+			qrHealth = *o.Health
+		}
+		qHealth := qrHealth
+		if qHealth != "" {
+			if err := r.SetQueryParam("health", qHealth); err != nil {
+				return err
+			}
+		}
+
 	}
 
 	if len(res) > 0 {

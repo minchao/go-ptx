@@ -30,6 +30,12 @@ func (o *CityBusAPIRealTimeNearStopReader) ReadResponse(response runtime.ClientR
 			return nil, err
 		}
 		return result, nil
+	case 299:
+		result := NewCityBusAPIRealTimeNearStopStatus299()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return result, nil
 
 	default:
 		return nil, runtime.NewAPIError("unknown error", response, response.Code())
@@ -60,6 +66,39 @@ func (o *CityBusAPIRealTimeNearStopOK) GetPayload() *models.MOTCAPIBusDALBusServ
 func (o *CityBusAPIRealTimeNearStopOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	o.Payload = new(models.MOTCAPIBusDALBusServiceDTOVersion3BusA2Data)
+
+	// response payload
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewCityBusAPIRealTimeNearStopStatus299 creates a CityBusAPIRealTimeNearStopStatus299 with default headers values
+func NewCityBusAPIRealTimeNearStopStatus299() *CityBusAPIRealTimeNearStopStatus299 {
+	return &CityBusAPIRealTimeNearStopStatus299{}
+}
+
+/*CityBusAPIRealTimeNearStopStatus299 handles this case with default header values.
+
+加入參數'?health=true'即可查詢此API服務的健康狀態
+*/
+type CityBusAPIRealTimeNearStopStatus299 struct {
+	Payload *models.ServiceDTOVersion3BaseHealth
+}
+
+func (o *CityBusAPIRealTimeNearStopStatus299) Error() string {
+	return fmt.Sprintf("[GET /v3/Bus/RealTimeNearStop/City/{City}][%d] cityBusApiRealTimeNearStopStatus299  %+v", 299, o.Payload)
+}
+
+func (o *CityBusAPIRealTimeNearStopStatus299) GetPayload() *models.ServiceDTOVersion3BaseHealth {
+	return o.Payload
+}
+
+func (o *CityBusAPIRealTimeNearStopStatus299) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	o.Payload = new(models.ServiceDTOVersion3BaseHealth)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

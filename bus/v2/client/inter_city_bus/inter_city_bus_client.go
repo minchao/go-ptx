@@ -27,11 +27,11 @@ type Client struct {
 }
 
 /*
-InterCityBusAPIDataVersion 取得公路客運的動態定時資料s a1
+InterCityBusAPIDataVersion 取得公路客運目前資料的最新版本資訊s
 
-公路客運之定時資料(A1)
+版本詳細資訊
 */
-func (a *Client) InterCityBusAPIDataVersion(params *InterCityBusAPIDataVersionParams) (*InterCityBusAPIDataVersionOK, error) {
+func (a *Client) InterCityBusAPIDataVersion(params *InterCityBusAPIDataVersionParams) (*InterCityBusAPIDataVersionOK, *InterCityBusAPIDataVersionStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewInterCityBusAPIDataVersionParams()
@@ -50,24 +50,26 @@ func (a *Client) InterCityBusAPIDataVersion(params *InterCityBusAPIDataVersionPa
 		Client:             params.HTTPClient,
 	})
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*InterCityBusAPIDataVersionOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *InterCityBusAPIDataVersionOK:
+		return value, nil, nil
+	case *InterCityBusAPIDataVersionStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for InterCityBusApi_DataVersion: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for inter_city_bus: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
 /*
-InterCityBusAPIEstimatedTimeOfArrival 取得公路客運的預估到站資料s n1
+InterCityBusAPIEstimatedTimeOfArrival 取得公路客運的預估到站資料s n1 批次更新
 
-公路客運之預估到站資料(N1)(不保留[現在時間]超過[本平台資料更新時間]兩分鐘的資料)
+###公路客運之預估到站資料(N1)###
+不保留[現在時間]超過[本平台資料更新時間]兩分鐘的資料
 */
-func (a *Client) InterCityBusAPIEstimatedTimeOfArrival(params *InterCityBusAPIEstimatedTimeOfArrivalParams) (*InterCityBusAPIEstimatedTimeOfArrivalOK, error) {
+func (a *Client) InterCityBusAPIEstimatedTimeOfArrival(params *InterCityBusAPIEstimatedTimeOfArrivalParams) (*InterCityBusAPIEstimatedTimeOfArrivalOK, *InterCityBusAPIEstimatedTimeOfArrivalStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewInterCityBusAPIEstimatedTimeOfArrivalParams()
@@ -86,24 +88,26 @@ func (a *Client) InterCityBusAPIEstimatedTimeOfArrival(params *InterCityBusAPIEs
 		Client:             params.HTTPClient,
 	})
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*InterCityBusAPIEstimatedTimeOfArrivalOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *InterCityBusAPIEstimatedTimeOfArrivalOK:
+		return value, nil, nil
+	case *InterCityBusAPIEstimatedTimeOfArrivalStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for InterCityBusApi_EstimatedTimeOfArrival: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for inter_city_bus: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
 /*
-InterCityBusAPIEstimatedTimeOfArrival1 取得指定s 路線名稱 的公路客運預估到站資料 n1
+InterCityBusAPIEstimatedTimeOfArrival1 取得指定s 路線名稱 的公路客運預估到站資料 n1 批次更新
 
-公路客運之預估到站資料(N1)(不保留[現在時間]超過[本平台資料更新時間]兩分鐘的資料)
+### 公路客運之預估到站資料(N1) ###
+不保留[現在時間]超過[本平台資料更新時間]兩分鐘的資料
 */
-func (a *Client) InterCityBusAPIEstimatedTimeOfArrival1(params *InterCityBusAPIEstimatedTimeOfArrival1Params) (*InterCityBusAPIEstimatedTimeOfArrival1OK, error) {
+func (a *Client) InterCityBusAPIEstimatedTimeOfArrival1(params *InterCityBusAPIEstimatedTimeOfArrival1Params) (*InterCityBusAPIEstimatedTimeOfArrival1OK, *InterCityBusAPIEstimatedTimeOfArrival1Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewInterCityBusAPIEstimatedTimeOfArrival1Params()
@@ -122,15 +126,16 @@ func (a *Client) InterCityBusAPIEstimatedTimeOfArrival1(params *InterCityBusAPIE
 		Client:             params.HTTPClient,
 	})
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*InterCityBusAPIEstimatedTimeOfArrival1OK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *InterCityBusAPIEstimatedTimeOfArrival1OK:
+		return value, nil, nil
+	case *InterCityBusAPIEstimatedTimeOfArrival1Status299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for InterCityBusApi_EstimatedTimeOfArrival_1: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for inter_city_bus: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -139,7 +144,7 @@ InterCityBusAPINews 取得公路客運之最新消息s
 
 公路客運之最新消息
 */
-func (a *Client) InterCityBusAPINews(params *InterCityBusAPINewsParams) (*InterCityBusAPINewsOK, error) {
+func (a *Client) InterCityBusAPINews(params *InterCityBusAPINewsParams) (*InterCityBusAPINewsOK, *InterCityBusAPINewsStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewInterCityBusAPINewsParams()
@@ -158,15 +163,16 @@ func (a *Client) InterCityBusAPINews(params *InterCityBusAPINewsParams) (*InterC
 		Client:             params.HTTPClient,
 	})
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*InterCityBusAPINewsOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *InterCityBusAPINewsOK:
+		return value, nil, nil
+	case *InterCityBusAPINewsStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for InterCityBusApi_News: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for inter_city_bus: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -175,7 +181,7 @@ InterCityBusAPIOperator 取得公路客運的營運業者資料s
 
 公路客運之營運業者資料
 */
-func (a *Client) InterCityBusAPIOperator(params *InterCityBusAPIOperatorParams) (*InterCityBusAPIOperatorOK, error) {
+func (a *Client) InterCityBusAPIOperator(params *InterCityBusAPIOperatorParams) (*InterCityBusAPIOperatorOK, *InterCityBusAPIOperatorStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewInterCityBusAPIOperatorParams()
@@ -194,24 +200,25 @@ func (a *Client) InterCityBusAPIOperator(params *InterCityBusAPIOperatorParams) 
 		Client:             params.HTTPClient,
 	})
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*InterCityBusAPIOperatorOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *InterCityBusAPIOperatorOK:
+		return value, nil, nil
+	case *InterCityBusAPIOperatorStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for InterCityBusApi_Operator: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for inter_city_bus: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
 /*
-InterCityBusAPIRealTimeByFrequency 取得公路客運的動態定時資料s a1
+InterCityBusAPIRealTimeByFrequency 取得公路客運的動態定時資料s a1 批次更新
 
-公路客運之定時資料(A1)
+### 公路客運之定時資料(A1) ###
 */
-func (a *Client) InterCityBusAPIRealTimeByFrequency(params *InterCityBusAPIRealTimeByFrequencyParams) (*InterCityBusAPIRealTimeByFrequencyOK, error) {
+func (a *Client) InterCityBusAPIRealTimeByFrequency(params *InterCityBusAPIRealTimeByFrequencyParams) (*InterCityBusAPIRealTimeByFrequencyOK, *InterCityBusAPIRealTimeByFrequencyStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewInterCityBusAPIRealTimeByFrequencyParams()
@@ -230,24 +237,25 @@ func (a *Client) InterCityBusAPIRealTimeByFrequency(params *InterCityBusAPIRealT
 		Client:             params.HTTPClient,
 	})
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*InterCityBusAPIRealTimeByFrequencyOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *InterCityBusAPIRealTimeByFrequencyOK:
+		return value, nil, nil
+	case *InterCityBusAPIRealTimeByFrequencyStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for InterCityBusApi_RealTimeByFrequency: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for inter_city_bus: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
 /*
-InterCityBusAPIRealTimeByFrequency1 取得指定s 路線名稱 的公路客運動態定時資料 a1
+InterCityBusAPIRealTimeByFrequency1 取得指定s 路線名稱 的公路客運動態定時資料 a1 批次更新
 
-公路客運之定時資料(A1)
+### 公路客運之定時資料(A1) ###
 */
-func (a *Client) InterCityBusAPIRealTimeByFrequency1(params *InterCityBusAPIRealTimeByFrequency1Params) (*InterCityBusAPIRealTimeByFrequency1OK, error) {
+func (a *Client) InterCityBusAPIRealTimeByFrequency1(params *InterCityBusAPIRealTimeByFrequency1Params) (*InterCityBusAPIRealTimeByFrequency1OK, *InterCityBusAPIRealTimeByFrequency1Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewInterCityBusAPIRealTimeByFrequency1Params()
@@ -266,24 +274,27 @@ func (a *Client) InterCityBusAPIRealTimeByFrequency1(params *InterCityBusAPIReal
 		Client:             params.HTTPClient,
 	})
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*InterCityBusAPIRealTimeByFrequency1OK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *InterCityBusAPIRealTimeByFrequency1OK:
+		return value, nil, nil
+	case *InterCityBusAPIRealTimeByFrequency1Status299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for InterCityBusApi_RealTimeByFrequency_1: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for inter_city_bus: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
 /*
-InterCityBusAPIRealTimeNearStop 取得公路客運的動態定點資料s a2
+InterCityBusAPIRealTimeNearStop 取得公路客運的動態定點資料s a2 批次更新
 
-公路客運之定點資料(A2)
+### 公路客運之定點資料(A2) ###
+<returns>公路客運動態定點資料(A2)</returns>
+- [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/bus.html))
 */
-func (a *Client) InterCityBusAPIRealTimeNearStop(params *InterCityBusAPIRealTimeNearStopParams) (*InterCityBusAPIRealTimeNearStopOK, error) {
+func (a *Client) InterCityBusAPIRealTimeNearStop(params *InterCityBusAPIRealTimeNearStopParams) (*InterCityBusAPIRealTimeNearStopOK, *InterCityBusAPIRealTimeNearStopStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewInterCityBusAPIRealTimeNearStopParams()
@@ -302,24 +313,25 @@ func (a *Client) InterCityBusAPIRealTimeNearStop(params *InterCityBusAPIRealTime
 		Client:             params.HTTPClient,
 	})
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*InterCityBusAPIRealTimeNearStopOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *InterCityBusAPIRealTimeNearStopOK:
+		return value, nil, nil
+	case *InterCityBusAPIRealTimeNearStopStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for InterCityBusApi_RealTimeNearStop: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for inter_city_bus: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
 /*
-InterCityBusAPIRealTimeNearStop1 取得指定s 路線名稱 的公路客運動態定點資料 a2
+InterCityBusAPIRealTimeNearStop1 取得指定s 路線名稱 的公路客運動態定點資料 a2 批次更新
 
-公路客運之定點資料(A2)
+### 公路客運之定點資料(A2) ###
 */
-func (a *Client) InterCityBusAPIRealTimeNearStop1(params *InterCityBusAPIRealTimeNearStop1Params) (*InterCityBusAPIRealTimeNearStop1OK, error) {
+func (a *Client) InterCityBusAPIRealTimeNearStop1(params *InterCityBusAPIRealTimeNearStop1Params) (*InterCityBusAPIRealTimeNearStop1OK, *InterCityBusAPIRealTimeNearStop1Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewInterCityBusAPIRealTimeNearStop1Params()
@@ -338,15 +350,16 @@ func (a *Client) InterCityBusAPIRealTimeNearStop1(params *InterCityBusAPIRealTim
 		Client:             params.HTTPClient,
 	})
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*InterCityBusAPIRealTimeNearStop1OK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *InterCityBusAPIRealTimeNearStop1OK:
+		return value, nil, nil
+	case *InterCityBusAPIRealTimeNearStop1Status299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for InterCityBusApi_RealTimeNearStop_1: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for inter_city_bus: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -355,7 +368,7 @@ InterCityBusAPIRoute 取得公路客運路線資料s
 
 公路客運之路線資料
 */
-func (a *Client) InterCityBusAPIRoute(params *InterCityBusAPIRouteParams) (*InterCityBusAPIRouteOK, error) {
+func (a *Client) InterCityBusAPIRoute(params *InterCityBusAPIRouteParams) (*InterCityBusAPIRouteOK, *InterCityBusAPIRouteStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewInterCityBusAPIRouteParams()
@@ -374,15 +387,16 @@ func (a *Client) InterCityBusAPIRoute(params *InterCityBusAPIRouteParams) (*Inte
 		Client:             params.HTTPClient,
 	})
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*InterCityBusAPIRouteOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *InterCityBusAPIRouteOK:
+		return value, nil, nil
+	case *InterCityBusAPIRouteStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for InterCityBusApi_Route: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for inter_city_bus: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -391,7 +405,7 @@ InterCityBusAPIRouteFare 取得公路客運之路線票價資料s
 
 公路客運之路線票價資料
 */
-func (a *Client) InterCityBusAPIRouteFare(params *InterCityBusAPIRouteFareParams) (*InterCityBusAPIRouteFareOK, error) {
+func (a *Client) InterCityBusAPIRouteFare(params *InterCityBusAPIRouteFareParams) (*InterCityBusAPIRouteFareOK, *InterCityBusAPIRouteFareStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewInterCityBusAPIRouteFareParams()
@@ -410,15 +424,16 @@ func (a *Client) InterCityBusAPIRouteFare(params *InterCityBusAPIRouteFareParams
 		Client:             params.HTTPClient,
 	})
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*InterCityBusAPIRouteFareOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *InterCityBusAPIRouteFareOK:
+		return value, nil, nil
+	case *InterCityBusAPIRouteFareStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for InterCityBusApi_RouteFare: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for inter_city_bus: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -427,7 +442,7 @@ InterCityBusAPIRouteFare1 取得指定s 路線名稱 的公路客運路線資料
 
 公路客運之路線資料
 */
-func (a *Client) InterCityBusAPIRouteFare1(params *InterCityBusAPIRouteFare1Params) (*InterCityBusAPIRouteFare1OK, error) {
+func (a *Client) InterCityBusAPIRouteFare1(params *InterCityBusAPIRouteFare1Params) (*InterCityBusAPIRouteFare1OK, *InterCityBusAPIRouteFare1Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewInterCityBusAPIRouteFare1Params()
@@ -446,15 +461,16 @@ func (a *Client) InterCityBusAPIRouteFare1(params *InterCityBusAPIRouteFare1Para
 		Client:             params.HTTPClient,
 	})
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*InterCityBusAPIRouteFare1OK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *InterCityBusAPIRouteFare1OK:
+		return value, nil, nil
+	case *InterCityBusAPIRouteFare1Status299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for InterCityBusApi_RouteFare_1: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for inter_city_bus: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -463,7 +479,7 @@ InterCityBusAPIRoute1 取得指定s 路線名稱 的公路客運路線資料
 
 公路客運之路線資料
 */
-func (a *Client) InterCityBusAPIRoute1(params *InterCityBusAPIRoute1Params) (*InterCityBusAPIRoute1OK, error) {
+func (a *Client) InterCityBusAPIRoute1(params *InterCityBusAPIRoute1Params) (*InterCityBusAPIRoute1OK, *InterCityBusAPIRoute1Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewInterCityBusAPIRoute1Params()
@@ -482,15 +498,16 @@ func (a *Client) InterCityBusAPIRoute1(params *InterCityBusAPIRoute1Params) (*In
 		Client:             params.HTTPClient,
 	})
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*InterCityBusAPIRoute1OK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *InterCityBusAPIRoute1OK:
+		return value, nil, nil
+	case *InterCityBusAPIRoute1Status299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for InterCityBusApi_Route_1: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for inter_city_bus: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -499,7 +516,7 @@ InterCityBusAPISchedule 取得公路客運路線班表資料s
 
 公路客運之預定班表及班距資料。公路及國道客運多採用【班表】式時刻表
 */
-func (a *Client) InterCityBusAPISchedule(params *InterCityBusAPIScheduleParams) (*InterCityBusAPIScheduleOK, error) {
+func (a *Client) InterCityBusAPISchedule(params *InterCityBusAPIScheduleParams) (*InterCityBusAPIScheduleOK, *InterCityBusAPIScheduleStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewInterCityBusAPIScheduleParams()
@@ -518,15 +535,16 @@ func (a *Client) InterCityBusAPISchedule(params *InterCityBusAPIScheduleParams) 
 		Client:             params.HTTPClient,
 	})
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*InterCityBusAPIScheduleOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *InterCityBusAPIScheduleOK:
+		return value, nil, nil
+	case *InterCityBusAPIScheduleStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for InterCityBusApi_Schedule: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for inter_city_bus: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -535,7 +553,7 @@ InterCityBusAPISchedule1 取得指定s 路線名稱 的公路客運路線班表�
 
 公路客運之預定班表及班距資料。公路及國道客運多採用【班表】式時刻表
 */
-func (a *Client) InterCityBusAPISchedule1(params *InterCityBusAPISchedule1Params) (*InterCityBusAPISchedule1OK, error) {
+func (a *Client) InterCityBusAPISchedule1(params *InterCityBusAPISchedule1Params) (*InterCityBusAPISchedule1OK, *InterCityBusAPISchedule1Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewInterCityBusAPISchedule1Params()
@@ -554,15 +572,16 @@ func (a *Client) InterCityBusAPISchedule1(params *InterCityBusAPISchedule1Params
 		Client:             params.HTTPClient,
 	})
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*InterCityBusAPISchedule1OK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *InterCityBusAPISchedule1OK:
+		return value, nil, nil
+	case *InterCityBusAPISchedule1Status299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for InterCityBusApi_Schedule_1: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for inter_city_bus: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -571,7 +590,7 @@ InterCityBusAPIStation 取得公路客運站位資料s
 
 公路客運之各站牌所屬的站位資料
 */
-func (a *Client) InterCityBusAPIStation(params *InterCityBusAPIStationParams) (*InterCityBusAPIStationOK, error) {
+func (a *Client) InterCityBusAPIStation(params *InterCityBusAPIStationParams) (*InterCityBusAPIStationOK, *InterCityBusAPIStationStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewInterCityBusAPIStationParams()
@@ -590,15 +609,16 @@ func (a *Client) InterCityBusAPIStation(params *InterCityBusAPIStationParams) (*
 		Client:             params.HTTPClient,
 	})
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*InterCityBusAPIStationOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *InterCityBusAPIStationOK:
+		return value, nil, nil
+	case *InterCityBusAPIStationStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for InterCityBusApi_Station: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for inter_city_bus: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -607,7 +627,7 @@ InterCityBusAPIStationName 取得公路客運站名碼資料s
 
 公路客運之各站牌所屬的站名碼資料
 */
-func (a *Client) InterCityBusAPIStationName(params *InterCityBusAPIStationNameParams) (*InterCityBusAPIStationNameOK, error) {
+func (a *Client) InterCityBusAPIStationName(params *InterCityBusAPIStationNameParams) (*InterCityBusAPIStationNameOK, *InterCityBusAPIStationNameStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewInterCityBusAPIStationNameParams()
@@ -626,15 +646,16 @@ func (a *Client) InterCityBusAPIStationName(params *InterCityBusAPIStationNamePa
 		Client:             params.HTTPClient,
 	})
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*InterCityBusAPIStationNameOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *InterCityBusAPIStationNameOK:
+		return value, nil, nil
+	case *InterCityBusAPIStationNameStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for InterCityBusApi_StationName: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for inter_city_bus: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -643,7 +664,7 @@ InterCityBusAPIStop 取得公路客運站牌資料s
 
 公路客運之站牌資料
 */
-func (a *Client) InterCityBusAPIStop(params *InterCityBusAPIStopParams) (*InterCityBusAPIStopOK, error) {
+func (a *Client) InterCityBusAPIStop(params *InterCityBusAPIStopParams) (*InterCityBusAPIStopOK, *InterCityBusAPIStopStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewInterCityBusAPIStopParams()
@@ -662,15 +683,16 @@ func (a *Client) InterCityBusAPIStop(params *InterCityBusAPIStopParams) (*InterC
 		Client:             params.HTTPClient,
 	})
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*InterCityBusAPIStopOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *InterCityBusAPIStopOK:
+		return value, nil, nil
+	case *InterCityBusAPIStopStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for InterCityBusApi_Stop: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for inter_city_bus: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -679,7 +701,7 @@ InterCityBusAPIStopOfRoute 取得公路客運路線與站牌資料s
 
 公路客運之路線與站牌資料
 */
-func (a *Client) InterCityBusAPIStopOfRoute(params *InterCityBusAPIStopOfRouteParams) (*InterCityBusAPIStopOfRouteOK, error) {
+func (a *Client) InterCityBusAPIStopOfRoute(params *InterCityBusAPIStopOfRouteParams) (*InterCityBusAPIStopOfRouteOK, *InterCityBusAPIStopOfRouteStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewInterCityBusAPIStopOfRouteParams()
@@ -698,15 +720,16 @@ func (a *Client) InterCityBusAPIStopOfRoute(params *InterCityBusAPIStopOfRoutePa
 		Client:             params.HTTPClient,
 	})
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*InterCityBusAPIStopOfRouteOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *InterCityBusAPIStopOfRouteOK:
+		return value, nil, nil
+	case *InterCityBusAPIStopOfRouteStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for InterCityBusApi_StopOfRoute: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for inter_city_bus: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -715,7 +738,7 @@ InterCityBusAPIStopOfRoute1 取得指定s 路線名稱 的公路客運路線與�
 
 公路客運之路線與站牌資料
 */
-func (a *Client) InterCityBusAPIStopOfRoute1(params *InterCityBusAPIStopOfRoute1Params) (*InterCityBusAPIStopOfRoute1OK, error) {
+func (a *Client) InterCityBusAPIStopOfRoute1(params *InterCityBusAPIStopOfRoute1Params) (*InterCityBusAPIStopOfRoute1OK, *InterCityBusAPIStopOfRoute1Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewInterCityBusAPIStopOfRoute1Params()
@@ -734,15 +757,16 @@ func (a *Client) InterCityBusAPIStopOfRoute1(params *InterCityBusAPIStopOfRoute1
 		Client:             params.HTTPClient,
 	})
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*InterCityBusAPIStopOfRoute1OK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *InterCityBusAPIStopOfRoute1OK:
+		return value, nil, nil
+	case *InterCityBusAPIStopOfRoute1Status299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for InterCityBusApi_StopOfRoute_1: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for inter_city_bus: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -751,7 +775,7 @@ InterCityBusAPIVehicle 取得公路客運之車輛資料s
 
 公路客運之車輛資料
 */
-func (a *Client) InterCityBusAPIVehicle(params *InterCityBusAPIVehicleParams) (*InterCityBusAPIVehicleOK, error) {
+func (a *Client) InterCityBusAPIVehicle(params *InterCityBusAPIVehicleParams) (*InterCityBusAPIVehicleOK, *InterCityBusAPIVehicleStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewInterCityBusAPIVehicleParams()
@@ -770,15 +794,16 @@ func (a *Client) InterCityBusAPIVehicle(params *InterCityBusAPIVehicleParams) (*
 		Client:             params.HTTPClient,
 	})
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*InterCityBusAPIVehicleOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *InterCityBusAPIVehicleOK:
+		return value, nil, nil
+	case *InterCityBusAPIVehicleStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for InterCityBusApi_Vehicle: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for inter_city_bus: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
