@@ -28,7 +28,7 @@ function check_oas_spec() {
     export target_folders
 
     local output
-    output=$(git diff origin/master -- ${target_folders})
+    output=$(git diff origin/master -- "${target_folders}")
     if [[ -n "${output}" ]]; then
         isSpecChanged=true
     fi
@@ -43,7 +43,7 @@ function git_push() {
     message="OAS spec changes on the ${version}"
     export message
 
-    git add ${target_folders} oas.*.*.json
+    git add "${target_folders}" oas.*.*.json
     git checkout -b "${new_branch}"
     git commit -m "${message}"
     git push --quiet origin "${new_branch}"
