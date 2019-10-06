@@ -31,6 +31,6 @@ lint:
 test:
 	go test -v ./pkg/...
 
-.PHONY: integration
-integration:
+.PHONY: test-integration
+test-integration:
 	go test -v ./test/integration/...

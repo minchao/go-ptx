@@ -20,14 +20,14 @@ go-ptx 使用 [go-swagger](https://github.com/go-swagger/go-swagger) 自動從 P
 
 ### 必要條件
 
-- Go >= 1.11
+- Go >= 1.12
 - GNU Make
 - golangci-lint
 - go-swagger
 
 安裝依賴工具：
 
-```bash
+```console
 # Linter
 $ curl -sfL https://install.goreleaser.com/github.com/golangci/golangci-lint.sh | sh -s -- -b $(go env GOPATH)/bin latest
 
@@ -37,13 +37,13 @@ $ go get -u github.com/go-swagger/go-swagger/cmd/swagger
 
 下載依賴套件：
 
-```bash
+```console
 $ go mod download
 ```
 
 ### 產生客戶端庫
 
-```bash
+```console
 # 1. 下載 PTX 的 OAS 2.0 定義檔，並對已知問題進行修正。
 $ make spec
 
@@ -57,7 +57,7 @@ $ make generate
 $ make lint
 
 # 5. 執行整合測試
-$ go test -v ./test/integration/...
+$ make test-integration
 ```
 
 ### 整合測試
@@ -67,8 +67,8 @@ $ go test -v ./test/integration/...
 
 手動執行以下指令，並將 `APP_ID` 與 `APP_KEY` 替換成您申請的憑證：
 
-```bash
-$ APP_ID=YOUR_APP_ID APP_KEY=YOUR_APP_KEY go test -v ./test/integration/...
+```console
+$ APP_ID=YOUR_APP_ID APP_KEY=YOUR_APP_KEY make test-integration
 ```
 
 ### 更新客戶端庫
@@ -93,7 +93,7 @@ import (
 
 func main() {
 	tp := transport.New()
-	tp.DefaultAuthentication = auth.NewAuthentication("YOUR_APP_ID", "YOUR_APP_KEY")
+	tp.DefaultAuthentication = auth.NewAuthentication(os.Getenv("APP_ID"), os.Getenv("APP_KEY"))
 	client := apiclient.New(tp, nil)
 }
 ```
@@ -103,7 +103,7 @@ func main() {
 ```go
 func main() {
 	httpClient := http.DefaultClient
-	httpClient.Transport = auth.NewTransport("YOUR_APP_ID", "YOUR_APP_KEY")
+	httpClient.Transport = auth.NewTransport(os.Getenv(APP_ID"), os.Getenv("APP_KEY"))
 	tp := transport.NewWithClient(httpClient)
 	client := apiclient.New(tp, nil)
 }
