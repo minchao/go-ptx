@@ -5,7 +5,6 @@ matrix:
   include:
     - go: 1.12.x
     - go: 1.13.x
-      env: DEPLOY=true
     - go: master
   allow_failures:
     - go: master
@@ -44,7 +43,7 @@ deploy:
     script: bash ${TRAVIS_BUILD_DIR}/scripts/check-oas-spec.sh
     on:
       branch: check-oas-spec
-      condition: $DEPLOY = true
+      condition: $TRAVIS_GO_VERSION =~ ^1\.13
 
 notifications:
   email:
