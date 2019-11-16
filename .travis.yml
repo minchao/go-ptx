@@ -1,7 +1,8 @@
 language: go
+os: linux
 dist: bionic
 
-matrix:
+jobs:
   include:
     - go: 1.12.x
     - go: 1.13.x
