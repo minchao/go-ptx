@@ -36,7 +36,7 @@ type ServiceDTOVersion3RailTRADailyTrainTimeTableTrainInfo struct {
 
 	// integer
 	//
-	// 是否提供小汽車上火車服務 : [0:'否',1:'是']
+	// 是否每日行駛 : [0:'否',1:'是']
 	// Required: true
 	DailyFlag *int32 `json:"DailyFlag"`
 

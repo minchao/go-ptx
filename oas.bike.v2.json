@@ -44,16 +44,16 @@
               "Tainan"
             ],
             "x-enum": {
-              "PingtungCounty": "屏東縣",
-              "Taichung": "臺中市",
+              "Taipei": "臺北市",
+              "ChanghuaCounty": "彰化縣",
+              "NewTaipei": "新北市",
               "MiaoliCounty": "苗栗縣",
               "Hsinchu": "新竹市",
+              "PingtungCounty": "屏東縣",
               "Taoyuan": "桃園市",
+              "Taichung": "臺中市",
               "Kaohsiung": "高雄市",
-              "Tainan": "臺南市",
-              "NewTaipei": "新北市",
-              "Taipei": "臺北市",
-              "ChanghuaCounty": "彰化縣"
+              "Tainan": "臺南市"
             }
           },
           {
@@ -151,16 +151,16 @@
               "Tainan"
             ],
             "x-enum": {
-              "Taipei": "臺北市",
-              "PingtungCounty": "屏東縣",
+              "Taoyuan": "桃園市",
+              "Hsinchu": "新竹市",
+              "Tainan": "臺南市",
+              "Taichung": "臺中市",
+              "MiaoliCounty": "苗栗縣",
               "NewTaipei": "新北市",
               "Kaohsiung": "高雄市",
-              "Tainan": "臺南市",
-              "MiaoliCounty": "苗栗縣",
-              "Taichung": "臺中市",
-              "Taoyuan": "桃園市",
               "ChanghuaCounty": "彰化縣",
-              "Hsinchu": "新竹市"
+              "Taipei": "臺北市",
+              "PingtungCounty": "屏東縣"
             }
           },
           {
@@ -264,27 +264,27 @@
             ],
             "x-enum": {
               "PenghuCounty": "澎湖縣",
-              "Taichung": "臺中市",
-              "Taipei": "臺北市",
-              "HualienCounty": "花蓮縣",
-              "Hsinchu": "新竹市",
-              "Tainan": "臺南市",
-              "ChiayiCounty": "嘉義縣",
-              "HsinchuCounty": "新竹縣",
               "Kaohsiung": "高雄市",
-              "KinmenCounty": "金門縣",
               "NewTaipei": "新北市",
-              "TaitungCounty": "臺東縣",
-              "Taoyuan": "桃園市",
-              "YilanCounty": "宜蘭縣",
-              "ChanghuaCounty": "彰化縣",
-              "Chiayi": "嘉義市",
-              "Keelung": "基隆市",
-              "LienchiangCounty": "連江縣",
               "NantouCounty": "南投縣",
+              "Taipei": "臺北市",
+              "Tainan": "臺南市",
+              "Taoyuan": "桃園市",
+              "Chiayi": "嘉義市",
               "PingtungCounty": "屏東縣",
+              "HsinchuCounty": "新竹縣",
+              "LienchiangCounty": "連江縣",
+              "YilanCounty": "宜蘭縣",
+              "TaitungCounty": "臺東縣",
+              "YunlinCounty": "雲林縣",
+              "Taichung": "臺中市",
+              "ChanghuaCounty": "彰化縣",
+              "ChiayiCounty": "嘉義縣",
+              "HualienCounty": "花蓮縣",
               "MiaoliCounty": "苗栗縣",
-              "YunlinCounty": "雲林縣"
+              "Keelung": "基隆市",
+              "KinmenCounty": "金門縣",
+              "Hsinchu": "新竹市"
             }
           },
           {
@@ -362,7 +362,7 @@
           "description": "站點代碼",
           "type": "string"
         },
-        "ServieAvailable": {
+        "ServiceAvailable": {
           "format": "int32",
           "title": "integer",
           "description": "服務狀態 : [0:'停止營運',1:'正常營運']",
@@ -394,6 +394,8 @@
       "title": "BikeShape",
       "required": [
         "RouteName",
+        "CityCode",
+        "City",
         "Geometry",
         "UpdateTime"
       ],
@@ -403,8 +405,49 @@
           "description": "路線名稱",
           "type": "string"
         },
+        "AuthorityName": {
+          "description": "業管機關名稱",
+          "type": "string"
+        },
+        "CityCode": {
+          "description": "路線權管所屬縣市之代碼",
+          "type": "string"
+        },
+        "City": {
+          "description": "路線權管所屬縣市",
+          "type": "string"
+        },
+        "Town": {
+          "description": "鄉鎮名稱",
+          "type": "string"
+        },
+        "RoadSectionStart": {
+          "description": "路線名稱",
+          "type": "string"
+        },
+        "RoadSectionEnd": {
+          "description": "路線名稱",
+          "type": "string"
+        },
         "Geometry": {
           "description": "well-known text，為路線軌跡資料",
+          "type": "string"
+        },
+        "Direction": {
+          "description": "車行方向",
+          "type": "string"
+        },
+        "CyclingType": {
+          "description": "自行車道類型",
+          "type": "string"
+        },
+        "CyclingLength": {
+          "format": "double",
+          "description": "自行車道長度",
+          "type": "number"
+        },
+        "FinishedTime": {
+          "description": "自行車道完工日期時間",
           "type": "string"
         },
         "UpdateTime": {

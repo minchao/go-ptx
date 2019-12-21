@@ -531,6 +531,42 @@ func (a *Client) LineAPIControllerGet(params *LineAPIControllerGetParams) (*Line
 }
 
 /*
+LineNetworkAPIControllerGet 取得路線網路拓撲基本資料s
+
+取得路線網路拓撲基本資料
+*/
+func (a *Client) LineNetworkAPIControllerGet(params *LineNetworkAPIControllerGetParams) (*LineNetworkAPIControllerGetOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewLineNetworkAPIControllerGetParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "LineNetworkApiController_Get",
+		Method:             "GET",
+		PathPattern:        "/v3/Rail/TRA/LineNetwork",
+		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ConsumesMediaTypes: []string{""},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &LineNetworkAPIControllerGetReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*LineNetworkAPIControllerGetOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for LineNetworkApiController_Get: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
 LineTransferAPIControllerGet 取得內部路線轉乘資料s
 
 取得內部路線轉乘資料
@@ -707,6 +743,42 @@ func (a *Client) ODFareAPIControllerAPIControllerGet1(params *ODFareAPIControlle
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
 	msg := fmt.Sprintf("unexpected success response for ODFareApiControllerApiController_Get_1: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+OperatorAPIControllerGet 取得台鐵營運業者基本資料s
+
+取得台鐵營運業者基本資料
+*/
+func (a *Client) OperatorAPIControllerGet(params *OperatorAPIControllerGetParams) (*OperatorAPIControllerGetOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewOperatorAPIControllerGetParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "OperatorApiController_Get",
+		Method:             "GET",
+		PathPattern:        "/v3/Rail/TRA/Operator",
+		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ConsumesMediaTypes: []string{""},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &OperatorAPIControllerGetReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*OperatorAPIControllerGetOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for OperatorApiController_Get: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 

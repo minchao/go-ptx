@@ -11,6 +11,83 @@
     "https"
   ],
   "paths": {
+    "/v3/Rail/TRA/Operator": {
+      "get": {
+        "tags": [
+          "TRA"
+        ],
+        "summary": "取得台鐵營運業者基本資料",
+        "description": "取得台鐵營運業者基本資料",
+        "operationId": "OperatorApiController_Get",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$count",
+            "in": "query",
+            "description": "查詢數量",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/MOTC.API.Rail.Models.TRABaseWrapper[Service.DTO.Version3.Rail.TRA.Operator]"
+            }
+          }
+        }
+      }
+    },
     "/v3/Rail/TRA/Network": {
       "get": {
         "tags": [
@@ -391,6 +468,83 @@
             "description": "OK",
             "schema": {
               "$ref": "#/definitions/MOTC.API.Rail.Models.TRABaseWrapper[Service.DTO.Version3.Rail.TRA.Line]"
+            }
+          }
+        }
+      }
+    },
+    "/v3/Rail/TRA/LineNetwork": {
+      "get": {
+        "tags": [
+          "TRA"
+        ],
+        "summary": "取得路線網路拓撲基本資料",
+        "description": "取得路線網路拓撲基本資料",
+        "operationId": "LineNetworkApiController_Get",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$count",
+            "in": "query",
+            "description": "查詢數量",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/MOTC.API.Rail.Models.TRABaseWrapper[Service.DTO.Version3.Rail.TRA.LineNetwork.LineNetwork]"
             }
           }
         }
@@ -3164,7 +3318,7 @@
         "DailyFlag": {
           "format": "int32",
           "title": "integer",
-          "description": "是否提供小汽車上火車服務 : [0:'否',1:'是']",
+          "description": "是否每日行駛 : [0:'否',1:'是']",
           "type": "integer"
         },
         "ExtraTrainFlag": {
@@ -3892,6 +4046,123 @@
         }
       }
     },
+    "MOTC.API.Rail.Models.TRABaseWrapper[Service.DTO.Version3.Rail.TRA.LineNetwork.LineNetwork]": {
+      "title": "TRALineNetworkList",
+      "required": [
+        "UpdateInterval",
+        "SrcUpdateTime",
+        "SrcUpdateInterval",
+        "AuthorityCode",
+        "LineNetworks"
+      ],
+      "type": "object",
+      "properties": {
+        "UpdateTime": {
+          "title": "DateTime",
+          "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "UpdateInterval": {
+          "format": "int32",
+          "description": "本平台資料更新週期(秒)",
+          "type": "integer"
+        },
+        "SrcUpdateTime": {
+          "title": "DateTime",
+          "description": "來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "SrcUpdateInterval": {
+          "format": "int32",
+          "description": "來源端平台資料更新週期(秒)",
+          "type": "integer"
+        },
+        "AuthorityCode": {
+          "description": "業管機關簡碼",
+          "type": "string"
+        },
+        "LineNetworks": {
+          "description": "資料(陣列)",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version3.Rail.TRA.LineNetwork.LineNetwork"
+          }
+        },
+        "Count": {
+          "format": "int64",
+          "description": "資料總筆數",
+          "type": "integer"
+        }
+      }
+    },
+    "Service.DTO.Version3.Rail.TRA.LineNetwork.LineNetwork": {
+      "title": "LineNetwork",
+      "description": "路線網路拓撲基本資料",
+      "required": [
+        "LineID",
+        "LineName"
+      ],
+      "type": "object",
+      "properties": {
+        "LineID": {
+          "description": "路線編號",
+          "type": "string"
+        },
+        "LineName": {
+          "$ref": "#/definitions/Service.DTO.Version3.Base.NameType",
+          "title": "NameType",
+          "description": "路線名稱"
+        },
+        "LineSegments": {
+          "description": "路線站點間線段資訊",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version3.Rail.TRA.LineNetwork.LineSegment"
+          }
+        }
+      }
+    },
+    "Service.DTO.Version3.Rail.TRA.LineNetwork.LineSegment": {
+      "title": "LineSegment",
+      "description": "路線站點間線段資料",
+      "required": [
+        "LineSegmentID",
+        "LineSegmentName",
+        "FromStationID",
+        "ToStationID",
+        "SegmentType",
+        "Distance"
+      ],
+      "type": "object",
+      "properties": {
+        "LineSegmentID": {
+          "description": "線段代碼",
+          "type": "string"
+        },
+        "LineSegmentName": {
+          "$ref": "#/definitions/Service.DTO.Version3.Base.NameType",
+          "title": "NameType",
+          "description": "路段名稱"
+        },
+        "FromStationID": {
+          "description": "線段起點站代碼",
+          "type": "string"
+        },
+        "ToStationID": {
+          "description": "線段迄點站代碼",
+          "type": "string"
+        },
+        "SegmentType": {
+          "description": "線段種類 = ['M: 主路線', 'B: 分支路線']",
+          "type": "string"
+        },
+        "Distance": {
+          "format": "float",
+          "description": "站間距離",
+          "type": "number"
+        }
+      }
+    },
     "MOTC.API.Rail.Models.TRABaseWrapper[Service.DTO.Version3.Rail.TRA.LineTransfer]": {
       "title": "TRALineTransferList",
       "required": [
@@ -4401,6 +4672,103 @@
           "format": "int32",
           "description": "計費價格(新台幣)",
           "type": "integer"
+        }
+      }
+    },
+    "MOTC.API.Rail.Models.TRABaseWrapper[Service.DTO.Version3.Rail.TRA.Operator]": {
+      "title": "TRAOperatorList",
+      "required": [
+        "UpdateInterval",
+        "SrcUpdateTime",
+        "SrcUpdateInterval",
+        "AuthorityCode",
+        "Operators"
+      ],
+      "type": "object",
+      "properties": {
+        "UpdateTime": {
+          "title": "DateTime",
+          "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "UpdateInterval": {
+          "format": "int32",
+          "description": "本平台資料更新週期(秒)",
+          "type": "integer"
+        },
+        "SrcUpdateTime": {
+          "title": "DateTime",
+          "description": "來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "SrcUpdateInterval": {
+          "format": "int32",
+          "description": "來源端平台資料更新週期(秒)",
+          "type": "integer"
+        },
+        "AuthorityCode": {
+          "description": "業管機關簡碼",
+          "type": "string"
+        },
+        "Operators": {
+          "description": "資料(陣列)",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version3.Rail.TRA.Operator"
+          }
+        },
+        "Count": {
+          "format": "int64",
+          "description": "資料總筆數",
+          "type": "integer"
+        }
+      }
+    },
+    "Service.DTO.Version3.Rail.TRA.Operator": {
+      "title": "Operator",
+      "description": "台鐵者營運業者基本資料",
+      "required": [
+        "OperatorCode",
+        "OperatorName"
+      ],
+      "type": "object",
+      "properties": {
+        "OperatorCode": {
+          "description": "營運業者簡碼",
+          "type": "string"
+        },
+        "OperatorName": {
+          "$ref": "#/definitions/Service.DTO.Version3.Base.NameType",
+          "title": "NameType",
+          "description": "營運業者名稱"
+        },
+        "OperatorPhone": {
+          "description": "營運業者連絡電話",
+          "type": "string"
+        },
+        "OperatorEmail": {
+          "description": "營運業者電子信箱",
+          "type": "string"
+        },
+        "OperatorURL": {
+          "description": "營運業者網址連結",
+          "type": "string"
+        },
+        "FareURL": {
+          "description": "營運業者票價查詢網站連結",
+          "type": "string"
+        },
+        "ReservationURL": {
+          "description": "營運業者訂票網站",
+          "type": "string"
+        },
+        "ReservationPhone": {
+          "description": "營運業者訂票電話",
+          "type": "string"
+        },
+        "OperatorLogoURL": {
+          "description": "營運業者Logo網址",
+          "type": "string"
         }
       }
     },
