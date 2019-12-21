@@ -50,7 +50,8 @@
 ### Added
 - 首次發行，提供基本、航空、公車、軌道、自行車與觀光等 PTX API 用戶端程式庫。
 
-[Unreleased]: https://github.com/minchao/go-ptx/compare/v0.2.0...HEAD
+[Unreleased]: https://github.com/minchao/go-ptx/compare/v0.3.0...HEAD
+[0.3.0]: https://github.com/minchao/go-ptx/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/minchao/go-ptx/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/minchao/go-ptx/compare/v0.0.1...v0.1.0
 [0.0.1]: https://github.com/minchao/go-ptx/commits/v0.0.1
