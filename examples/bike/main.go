@@ -14,7 +14,7 @@ import (
 func main() {
 	httpClient := http.DefaultClient
 	httpClient.Transport = &auth.Transport{
-		AppId:  os.Getenv("APP_ID"),
+		AppID:  os.Getenv("APP_ID"),
 		AppKey: os.Getenv("APP_KEY"),
 	}
 

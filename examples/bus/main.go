@@ -20,7 +20,7 @@ func main() {
 	params := city_bus.NewCityBusAPIDataVersionParams().
 		WithDollarFormat("JSON").
 		WithCity("Taipei")
-	result, err := client.CityBus.CityBusAPIDataVersion(params)
+	result, _, err := client.CityBus.CityBusAPIDataVersion(params)
 	if err != nil {
 		panic(err)
 	}
