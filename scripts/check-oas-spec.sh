@@ -29,6 +29,9 @@ function check_oas_spec() {
 
     local diff_cmd
     diff_cmd="git diff origin/master -- ${target_folders}"
+
+    echo "${diff_cmd}"
+
     local output
     output=$(eval "${diff_cmd}")
     if [[ -n "${output}" ]]; then
