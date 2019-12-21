@@ -27,13 +27,11 @@ function check_oas_spec() {
     target_folders=$(echo -e "${target_folders}" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')
     export target_folders
 
-    local diff_cmd
-    diff_cmd="git diff origin/master -- ${target_folders}"
-
-    echo "${diff_cmd}"
-
+    local git_diff_cmd
+    git_diff_cmd="git diff origin/master -- ${target_folders}"
     local output
-    output=$(eval "${diff_cmd}")
+    output=$(eval "${git_diff_cmd}")
+
     if [[ -n "${output}" ]]; then
         isSpecChanged=true
     fi
@@ -48,7 +46,10 @@ function git_push() {
     message="OAS spec changes on the ${version}"
     export message
 
-    git add "${target_folders}" oas.*.*.json
+    local git_add_cmd
+    git_add_cmd="git add ${target_folders} oas.*.*.json"
+    eval "${git_add_cmd}"
+
     git checkout -b "${new_branch}"
     git commit -m "${message}"
     git push --quiet origin "${new_branch}"
