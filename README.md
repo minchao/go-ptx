@@ -82,7 +82,7 @@ go-ptx 透過 Travis CI 的 Cron Jobs 機制，定期檢查 OAS 定義檔的更�
 
 ### 認證
 
-客戶端庫本身不會處理認證，所以我們在建立客戶端時，需要透過處理認證的 `Authentication`，為每個請求產生 HMAC 簽章：
+PTX 要求每個請求都必須帶上 [HMAC 認證參數](https://gist.github.com/ptxmotc/383118204ecf7192bdf96bc0197bb981#api-%E8%AA%8D%E8%AD%89%E6%8E%88%E6%AC%8A%E6%A9%9F%E5%88%B6)，您可以在 transport 使用 `auth.NewAuthentication()`，它會自動為每個請求產生 HMAC 認證參數：
 
 ```go
 import (
@@ -98,7 +98,7 @@ func main() {
 }
 ```
 
-此外，也可以使用自訂的 `http.Client`：
+另外，使用自訂 `http.Client` 時的認證處理方式如下：
 
 ```go
 func main() {
