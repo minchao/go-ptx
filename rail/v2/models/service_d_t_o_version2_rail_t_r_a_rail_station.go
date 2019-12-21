@@ -30,11 +30,8 @@ type ServiceDTOVersion2RailTRARailStation struct {
 	// Required: true
 	StationAddress *string `json:"StationAddress"`
 
-	// integer
-	//
-	// 車站級別 : [0:'特等站',1:'一等站',2:'二等站',3:'三等站',4:'簡易站',5:'招呼站',6:'未知']
-	// Required: true
-	StationClass *int32 `json:"StationClass"`
+	// 車站級別
+	StationClass string `json:"StationClass,omitempty"`
 
 	// 車站代碼
 	// Required: true
@@ -82,10 +79,6 @@ func (m *ServiceDTOVersion2RailTRARailStation) Validate(formats strfmt.Registry)
 		res = append(res, err)
 	}
 
-	if err := m.validateStationClass(formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.validateStationID(formats); err != nil {
 		res = append(res, err)
 	}
@@ -128,15 +121,6 @@ func (m *ServiceDTOVersion2RailTRARailStation) validateOperatorID(formats strfmt
 func (m *ServiceDTOVersion2RailTRARailStation) validateStationAddress(formats strfmt.Registry) error {
 
 	if err := validate.Required("StationAddress", "body", m.StationAddress); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func (m *ServiceDTOVersion2RailTRARailStation) validateStationClass(formats strfmt.Registry) error {
-
-	if err := validate.Required("StationClass", "body", m.StationClass); err != nil {
 		return err
 	}
 

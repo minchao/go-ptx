@@ -17,13 +17,45 @@ import (
 // swagger:model Service.DTO.Version2.Bike.BikeShape
 type ServiceDTOVersion2BikeBikeShape struct {
 
+	// 業管機關名稱
+	AuthorityName string `json:"AuthorityName,omitempty"`
+
+	// 路線權管所屬縣市
+	// Required: true
+	City *string `json:"City"`
+
+	// 路線權管所屬縣市之代碼
+	// Required: true
+	CityCode *string `json:"CityCode"`
+
+	// 自行車道長度
+	CyclingLength float64 `json:"CyclingLength,omitempty"`
+
+	// 自行車道類型
+	CyclingType string `json:"CyclingType,omitempty"`
+
+	// 車行方向
+	Direction string `json:"Direction,omitempty"`
+
+	// 自行車道完工日期時間
+	FinishedTime string `json:"FinishedTime,omitempty"`
+
 	// well-known text，為路線軌跡資料
 	// Required: true
 	Geometry *string `json:"Geometry"`
 
 	// 路線名稱
+	RoadSectionEnd string `json:"RoadSectionEnd,omitempty"`
+
+	// 路線名稱
+	RoadSectionStart string `json:"RoadSectionStart,omitempty"`
+
+	// 路線名稱
 	// Required: true
 	RouteName *string `json:"RouteName"`
+
+	// 鄉鎮名稱
+	Town string `json:"Town,omitempty"`
 
 	// DateTime
 	//
@@ -35,6 +67,14 @@ type ServiceDTOVersion2BikeBikeShape struct {
 // Validate validates this service d t o version2 bike bike shape
 func (m *ServiceDTOVersion2BikeBikeShape) Validate(formats strfmt.Registry) error {
 	var res []error
+
+	if err := m.validateCity(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateCityCode(formats); err != nil {
+		res = append(res, err)
+	}
 
 	if err := m.validateGeometry(formats); err != nil {
 		res = append(res, err)
@@ -51,6 +91,24 @@ func (m *ServiceDTOVersion2BikeBikeShape) Validate(formats strfmt.Registry) erro
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *ServiceDTOVersion2BikeBikeShape) validateCity(formats strfmt.Registry) error {
+
+	if err := validate.Required("City", "body", m.City); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *ServiceDTOVersion2BikeBikeShape) validateCityCode(formats strfmt.Registry) error {
+
+	if err := validate.Required("CityCode", "body", m.CityCode); err != nil {
+		return err
+	}
+
 	return nil
 }
 

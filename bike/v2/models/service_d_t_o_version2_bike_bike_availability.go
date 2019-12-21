@@ -28,7 +28,7 @@ type ServiceDTOVersion2BikeBikeAvailability struct {
 	// integer
 	//
 	// 服務狀態 : [0:'停止營運',1:'正常營運']
-	ServieAvailable int32 `json:"ServieAvailable,omitempty"`
+	ServiceAvailable int32 `json:"ServiceAvailable,omitempty"`
 
 	// DateTime
 	//

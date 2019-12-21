@@ -1074,6 +1074,112 @@
         }
       }
     },
+    "/v3/Bus/Schedule/City/{City}": {
+      "get": {
+        "tags": [
+          "CityBus"
+        ],
+        "summary": "取得指定[縣市]的市區公車定期營運班表",
+        "operationId": "CityBusApi_Schedule",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "City",
+            "in": "path",
+            "description": "縣市",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "Tainan"
+            ],
+            "x-enum": {
+              "Tainan": "臺南市"
+            }
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$count",
+            "in": "query",
+            "description": "查詢數量",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          },
+          {
+            "name": "health",
+            "in": "query",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/MOTC.API.Bus.DAL.Bus[Service.DTO.Version3.Bus.Schedule]"
+            }
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+            }
+          }
+        }
+      }
+    },
     "/v3/Bus/DailyTimeTable/City/{City}": {
       "get": {
         "tags": [
@@ -5594,6 +5700,313 @@
           "format": "int32",
           "description": "起站停靠時間",
           "type": "integer"
+        }
+      }
+    },
+    "MOTC.API.Bus.DAL.Bus[Service.DTO.Version3.Bus.Schedule]": {
+      "title": "BusScheduleList",
+      "type": "object",
+      "properties": {
+        "UpdateTime": {
+          "title": "DateTime",
+          "description": "[平臺]資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "UpdateInterval": {
+          "format": "int32",
+          "description": "[平臺]資料更新週期(秒)",
+          "type": "integer"
+        },
+        "SrcUpdateTime": {
+          "title": "DateTime",
+          "description": "[來源端平臺]資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "SrcUpdateInterval": {
+          "format": "int32",
+          "description": "[來源端平臺]資料更新週期",
+          "type": "integer"
+        },
+        "AuthorityCode": {
+          "description": "業管機關簡碼",
+          "type": "string"
+        },
+        "VersionID": {
+          "format": "int32",
+          "description": "資料版本編號",
+          "type": "integer"
+        },
+        "Count": {
+          "format": "int64",
+          "description": "資料總筆數",
+          "type": "integer"
+        },
+        "Schedules": {
+          "description": "資料(陣列)",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version3.Bus.Schedule"
+          }
+        }
+      }
+    },
+    "Service.DTO.Version3.Bus.Schedule": {
+      "title": "Schedule",
+      "description": "營運班表資料",
+      "required": [
+        "RouteUID",
+        "RouteID",
+        "RouteName",
+        "OperatorID",
+        "OperatorCode",
+        "SubRouteID",
+        "Direction"
+      ],
+      "type": "object",
+      "properties": {
+        "RouteUID": {
+          "description": "路線唯一識別代碼，規則為 {業管機關簡碼} + {RouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
+          "type": "string"
+        },
+        "RouteID": {
+          "description": "地區既用中之路線代碼(為原資料內碼)",
+          "type": "string"
+        },
+        "RouteName": {
+          "$ref": "#/definitions/Service.DTO.Version3.Base.NameType",
+          "title": "NameType",
+          "description": "路線名稱"
+        },
+        "OperatorID": {
+          "description": "營運業者代碼",
+          "type": "string"
+        },
+        "OperatorCode": {
+          "description": "營運業者簡碼",
+          "type": "string"
+        },
+        "SubRouteUID": {
+          "description": "附屬路線唯一識別代碼，規則為 {業管機關簡碼} + {SubRouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
+          "type": "string"
+        },
+        "SubRouteID": {
+          "description": "地區既用中之附屬路線代碼(為原資料內碼)",
+          "type": "string"
+        },
+        "SubRouteName": {
+          "$ref": "#/definitions/Service.DTO.Version3.Base.NameType",
+          "title": "NameType",
+          "description": "附屬路線名稱"
+        },
+        "Direction": {
+          "format": "int32",
+          "title": "integer",
+          "description": "去返程 : [0:'去程',1:'返程',2:'迴圈',255:'未知']",
+          "type": "integer"
+        },
+        "ScheduleURL": {
+          "description": "營運班表說明網址",
+          "type": "string"
+        },
+        "Timetables": {
+          "description": "預定時刻表",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version3.Bus.Schedule.TimeTable"
+          }
+        }
+      }
+    },
+    "Service.DTO.Version3.Bus.Schedule.TimeTable": {
+      "title": "TimeTable",
+      "required": [
+        "StopTimes",
+        "ServiceDay",
+        "SpecialDays"
+      ],
+      "type": "object",
+      "properties": {
+        "TripID": {
+          "description": "班次代碼，為無意義之編碼",
+          "type": "string"
+        },
+        "IsLowFloor": {
+          "description": "該路線班次是否使用低地板公車車輛",
+          "type": "string"
+        },
+        "StopTimes": {
+          "description": "公車停靠時間資料",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version3.Bus.Schedule.StopTime"
+          }
+        },
+        "ServiceDay": {
+          "$ref": "#/definitions/Service.DTO.Version3.Bus.Schedule.ServiceDay",
+          "title": "ServiceDay",
+          "description": "服務日型態"
+        },
+        "SpecialDays": {
+          "description": "例外營運日",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version3.Bus.Schedule.SpecialDay"
+          }
+        }
+      }
+    },
+    "Service.DTO.Version3.Bus.Schedule.StopTime": {
+      "title": "StopTime",
+      "required": [
+        "StopSequence",
+        "StopUID",
+        "StopID",
+        "ArrivalTime",
+        "DepartureTime"
+      ],
+      "type": "object",
+      "properties": {
+        "StopSequence": {
+          "format": "int32",
+          "description": "路線經過站牌之順序(由1開始)",
+          "type": "integer"
+        },
+        "StopUID": {
+          "description": "站牌唯一識別代碼，規則為 {業管機關代碼} + {StopID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢",
+          "type": "string"
+        },
+        "StopID": {
+          "description": "地區既用中之站牌代碼(為原資料內碼)",
+          "type": "string"
+        },
+        "StopName": {
+          "$ref": "#/definitions/Service.DTO.Version3.Base.NameType",
+          "title": "NameType",
+          "description": "站牌名稱"
+        },
+        "ArrivalTime": {
+          "description": "到站時間，格式為:HH:mm",
+          "type": "string"
+        },
+        "DepartureTime": {
+          "description": "離站時間，格式為:HH:mm",
+          "type": "string"
+        }
+      }
+    },
+    "Service.DTO.Version3.Bus.Schedule.ServiceDay": {
+      "title": "ServiceDay",
+      "type": "object",
+      "properties": {
+        "ServiceTag": {
+          "description": "服務日標籤",
+          "type": "string"
+        },
+        "Monday": {
+          "description": "星期一營運與否",
+          "type": "boolean"
+        },
+        "Tuesday": {
+          "description": "星期二營運與否",
+          "type": "boolean"
+        },
+        "Wednesday": {
+          "description": "星期三營運與否",
+          "type": "boolean"
+        },
+        "Thursday": {
+          "description": "星期四營運與否",
+          "type": "boolean"
+        },
+        "Friday": {
+          "description": "星期五營運與否",
+          "type": "boolean"
+        },
+        "Saturday": {
+          "description": "星期六營運與否",
+          "type": "boolean"
+        },
+        "Sunday": {
+          "description": "星期日營運與否",
+          "type": "boolean"
+        },
+        "NationalHolidays": {
+          "description": "國定假日營運與否",
+          "type": "boolean"
+        },
+        "DayBeforeHoliday": {
+          "description": "國定假日前一日營運與否",
+          "type": "boolean"
+        },
+        "DayAfterHoliday": {
+          "description": "國定假日後一日營運與否",
+          "type": "boolean"
+        },
+        "TyphoonDay": {
+          "description": "颱風停止上班上課期間營運與否",
+          "type": "boolean"
+        }
+      }
+    },
+    "Service.DTO.Version3.Bus.Schedule.SpecialDay": {
+      "title": "SpecialDay",
+      "required": [
+        "Dates",
+        "DatePeriod",
+        "ServiceStatus",
+        "Description"
+      ],
+      "type": "object",
+      "properties": {
+        "Dates": {
+          "$ref": "#/definitions/Service.DTO.Version3.Bus.Schedule.Dates",
+          "title": "Dates",
+          "description": "不連續特殊日期"
+        },
+        "DatePeriod": {
+          "$ref": "#/definitions/Service.DTO.Version3.Bus.Schedule.DatePeriod",
+          "title": "DatePeriod",
+          "description": "連續特殊日期"
+        },
+        "ServiceStatus": {
+          "format": "int32",
+          "description": "營運服務狀態代碼0=停止營運, 1=正常營運 , 2=加班營運",
+          "type": "integer"
+        },
+        "Description": {
+          "description": "特殊營運描述",
+          "type": "string"
+        }
+      }
+    },
+    "Service.DTO.Version3.Bus.Schedule.Dates": {
+      "title": "Dates",
+      "required": [
+        "Date"
+      ],
+      "type": "object",
+      "properties": {
+        "Date": {
+          "description": "特殊日期",
+          "type": "string"
+        }
+      }
+    },
+    "Service.DTO.Version3.Bus.Schedule.DatePeriod": {
+      "title": "DatePeriod",
+      "required": [
+        "StartDate",
+        "EndDate"
+      ],
+      "type": "object",
+      "properties": {
+        "StartDate": {
+          "description": "開始日期",
+          "type": "string"
+        },
+        "EndDate": {
+          "description": "結束日期",
+          "type": "string"
         }
       }
     },
