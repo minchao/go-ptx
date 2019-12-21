@@ -24,11 +24,14 @@ function check_oas_spec() {
         IFS='.' read -r -a substrings <<< "${spec}"
         target_folders="${target_folders} ${substrings[2]}"
     done
-    target_folders="$(echo -e "${target_folders}" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')"
+    target_folders=$(echo -e "${target_folders}" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')
     export target_folders
 
+    local git_diff_cmd
+    git_diff_cmd="git diff origin/master -- ${target_folders}"
     local output
-    output=$(git diff origin/master -- "${target_folders}")
+    output=$(eval "${git_diff_cmd}")
+
     if [[ -n "${output}" ]]; then
         isSpecChanged=true
     fi
@@ -43,7 +46,10 @@ function git_push() {
     message="OAS spec changes on the ${version}"
     export message
 
-    git add "${target_folders}" oas.*.*.json
+    local git_add_cmd
+    git_add_cmd="git add ${target_folders} oas.*.*.json"
+    eval "${git_add_cmd}"
+
     git checkout -b "${new_branch}"
     git commit -m "${message}"
     git push --quiet origin "${new_branch}"
