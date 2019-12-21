@@ -6,8 +6,19 @@
 
 ## [Unreleased]
 
+## [0.3.0] - 2019-12-21
+
+### Added
+- 官方新增公車 V3 API `/v3/Bus/Schedule/City/{City}`。
+- 官方新增軌道 V3 API `/v3/Rail/TRA/Operator`、`/v3/Rail/TRA/LineNetwork`。
+
 ### Changed
 - 官方新增 health 參數，查詢 API 服務健康狀態。
+- 改進 CI 流程。
+- 改進文件。
+
+### Fixed
+- 修正 check-oas-spec.sh 檢查 SDK 更新的錯誤。
 
 ## [0.2.0] - 2019-09-28
 

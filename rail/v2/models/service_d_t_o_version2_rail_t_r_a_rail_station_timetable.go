@@ -68,18 +68,15 @@ type ServiceDTOVersion2RailTRARailStationTimetable struct {
 	TrainNo *string `json:"TrainNo"`
 
 	// 列車車種簡碼
-	// Required: true
-	TrainTypeCode *string `json:"TrainTypeCode"`
+	TrainTypeCode string `json:"TrainTypeCode,omitempty"`
 
 	// 列車車種代碼
-	// Required: true
-	TrainTypeID *string `json:"TrainTypeID"`
+	TrainTypeID string `json:"TrainTypeID,omitempty"`
 
 	// NameType
 	//
 	// 列車車種名稱
-	// Required: true
-	TrainTypeName *ServiceDTOVersion2BaseNameType `json:"TrainTypeName"`
+	TrainTypeName *ServiceDTOVersion2BaseNameType `json:"TrainTypeName,omitempty"`
 
 	// integer
 	//
@@ -142,14 +139,6 @@ func (m *ServiceDTOVersion2RailTRARailStationTimetable) Validate(formats strfmt.
 	}
 
 	if err := m.validateTrainNo(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateTrainTypeCode(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateTrainTypeID(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -279,28 +268,10 @@ func (m *ServiceDTOVersion2RailTRARailStationTimetable) validateTrainNo(formats 
 	return nil
 }
 
-func (m *ServiceDTOVersion2RailTRARailStationTimetable) validateTrainTypeCode(formats strfmt.Registry) error {
-
-	if err := validate.Required("TrainTypeCode", "body", m.TrainTypeCode); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func (m *ServiceDTOVersion2RailTRARailStationTimetable) validateTrainTypeID(formats strfmt.Registry) error {
-
-	if err := validate.Required("TrainTypeID", "body", m.TrainTypeID); err != nil {
-		return err
-	}
-
-	return nil
-}
-
 func (m *ServiceDTOVersion2RailTRARailStationTimetable) validateTrainTypeName(formats strfmt.Registry) error {
 
-	if err := validate.Required("TrainTypeName", "body", m.TrainTypeName); err != nil {
-		return err
+	if swag.IsZero(m.TrainTypeName) { // not required
+		return nil
 	}
 
 	if m.TrainTypeName != nil {
