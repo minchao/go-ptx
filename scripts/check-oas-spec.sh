@@ -24,11 +24,13 @@ function check_oas_spec() {
         IFS='.' read -r -a substrings <<< "${spec}"
         target_folders="${target_folders} ${substrings[2]}"
     done
-    target_folders="$(echo -e "${target_folders}" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')"
+    target_folders=$(echo -e "${target_folders}" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')
     export target_folders
 
+    local diff_cmd
+    diff_cmd="git diff origin/master -- ${target_folders}"
     local output
-    output=$(git diff origin/master -- "${target_folders}")
+    output=$(eval "${diff_cmd}")
     if [[ -n "${output}" ]]; then
         isSpecChanged=true
     fi
