@@ -42,6 +42,10 @@ func main() {
 			Filename: "oas.tourism.v2.json",
 			URL:      "https://ptx.transportdata.tw/MOTC/v2/Tourism/api-docs/oas",
 		},
+		{
+			Filename: "oas.ship.v3.json",
+			URL:      "https://ptx.transportdata.tw/MOTC/v3/Ship/api-docs/oas",
+		},
 	} {
 		fmt.Printf("Generate %s\n", oas.Filename)
 		data, err := fetchOAS(oas.URL)
