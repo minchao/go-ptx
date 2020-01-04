@@ -288,48 +288,11 @@ func (a *Client) InterCityBusAPIRealTimeByFrequency1(params *InterCityBusAPIReal
 }
 
 /*
-InterCityBusAPIRealTimeNearStop 取得公路客運的動態定點資料s a2 批次更新
+InterCityBusAPIRealTimeNearStop1 取得公路客運的動態定點資料s a2 批次更新
 
 ### 公路客運之定點資料(A2) ###
 <returns>公路客運動態定點資料(A2)</returns>
 - [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/bus.html))
-*/
-func (a *Client) InterCityBusAPIRealTimeNearStop(params *InterCityBusAPIRealTimeNearStopParams) (*InterCityBusAPIRealTimeNearStopOK, *InterCityBusAPIRealTimeNearStopStatus299, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewInterCityBusAPIRealTimeNearStopParams()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "InterCityBusApi_RealTimeNearStop",
-		Method:             "GET",
-		PathPattern:        "/v2/Bus/RealTimeNearStop/InterCity",
-		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &InterCityBusAPIRealTimeNearStopReader{formats: a.formats},
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, nil, err
-	}
-	switch value := result.(type) {
-	case *InterCityBusAPIRealTimeNearStopOK:
-		return value, nil, nil
-	case *InterCityBusAPIRealTimeNearStopStatus299:
-		return nil, value, nil
-	}
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for inter_city_bus: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-InterCityBusAPIRealTimeNearStop1 取得指定s 路線名稱 的公路客運動態定點資料 a2 批次更新
-
-### 公路客運之定點資料(A2) ###
 */
 func (a *Client) InterCityBusAPIRealTimeNearStop1(params *InterCityBusAPIRealTimeNearStop1Params) (*InterCityBusAPIRealTimeNearStop1OK, *InterCityBusAPIRealTimeNearStop1Status299, error) {
 	// TODO: Validate the params before sending
@@ -340,7 +303,7 @@ func (a *Client) InterCityBusAPIRealTimeNearStop1(params *InterCityBusAPIRealTim
 	result, err := a.transport.Submit(&runtime.ClientOperation{
 		ID:                 "InterCityBusApi_RealTimeNearStop_1",
 		Method:             "GET",
-		PathPattern:        "/v2/Bus/RealTimeNearStop/InterCity/{RouteName}",
+		PathPattern:        "/v2/Bus/RealTimeNearStop/InterCity",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
 		ConsumesMediaTypes: []string{""},
 		Schemes:            []string{"https"},
@@ -356,6 +319,43 @@ func (a *Client) InterCityBusAPIRealTimeNearStop1(params *InterCityBusAPIRealTim
 	case *InterCityBusAPIRealTimeNearStop1OK:
 		return value, nil, nil
 	case *InterCityBusAPIRealTimeNearStop1Status299:
+		return nil, value, nil
+	}
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for inter_city_bus: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+InterCityBusAPIRealTimeNearStop2 取得指定s 路線名稱 的公路客運動態定點資料 a2 批次更新
+
+### 公路客運之定點資料(A2) ###
+*/
+func (a *Client) InterCityBusAPIRealTimeNearStop2(params *InterCityBusAPIRealTimeNearStop2Params) (*InterCityBusAPIRealTimeNearStop2OK, *InterCityBusAPIRealTimeNearStop2Status299, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewInterCityBusAPIRealTimeNearStop2Params()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "InterCityBusApi_RealTimeNearStop_2",
+		Method:             "GET",
+		PathPattern:        "/v2/Bus/RealTimeNearStop/InterCity/{RouteName}",
+		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ConsumesMediaTypes: []string{""},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &InterCityBusAPIRealTimeNearStop2Reader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, nil, err
+	}
+	switch value := result.(type) {
+	case *InterCityBusAPIRealTimeNearStop2OK:
+		return value, nil, nil
+	case *InterCityBusAPIRealTimeNearStop2Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
