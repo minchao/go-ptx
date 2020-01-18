@@ -67,7 +67,8 @@ func (a *Client) InterCityBusAPIDataVersion(params *InterCityBusAPIDataVersionPa
 InterCityBusAPIEstimatedTimeOfArrival 取得公路客運的預估到站資料s n1 批次更新
 
 ###公路客運之預估到站資料(N1)###
-不保留[現在時間]超過[本平台資料更新時間]兩分鐘的資料
+- 不保留[現在時間]超過[本平台資料更新時間]兩分鐘的資料
+- [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))
 */
 func (a *Client) InterCityBusAPIEstimatedTimeOfArrival(params *InterCityBusAPIEstimatedTimeOfArrivalParams) (*InterCityBusAPIEstimatedTimeOfArrivalOK, *InterCityBusAPIEstimatedTimeOfArrivalStatus299, error) {
 	// TODO: Validate the params before sending
@@ -105,7 +106,8 @@ func (a *Client) InterCityBusAPIEstimatedTimeOfArrival(params *InterCityBusAPIEs
 InterCityBusAPIEstimatedTimeOfArrival1 取得指定s 路線名稱 的公路客運預估到站資料 n1 批次更新
 
 ### 公路客運之預估到站資料(N1) ###
-不保留[現在時間]超過[本平台資料更新時間]兩分鐘的資料
+- 不保留[現在時間]超過[本平台資料更新時間]兩分鐘的資料
+- [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))
 */
 func (a *Client) InterCityBusAPIEstimatedTimeOfArrival1(params *InterCityBusAPIEstimatedTimeOfArrival1Params) (*InterCityBusAPIEstimatedTimeOfArrival1OK, *InterCityBusAPIEstimatedTimeOfArrival1Status299, error) {
 	// TODO: Validate the params before sending
@@ -132,6 +134,86 @@ func (a *Client) InterCityBusAPIEstimatedTimeOfArrival1(params *InterCityBusAPIE
 	case *InterCityBusAPIEstimatedTimeOfArrival1OK:
 		return value, nil, nil
 	case *InterCityBusAPIEstimatedTimeOfArrival1Status299:
+		return nil, value, nil
+	}
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for inter_city_bus: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+InterCityBusAPIEstimatedTimeOfArrivalUDP 取得公路客運的預估到站資料s n1 逐筆更新
+
+### 公路客運之預估到站資料(N1) ###
+- 不保留[現在時間]超過[本平台資料更新時間]兩分鐘的資料
+- [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))
+- N1僅於該路線上有任一車輛離站時，來源端才會重新計算並發佈，因此使用者需自行處理時間遞減機制，或以EstimateTime-(收到資料時間-SrcTrasTime)(秒)作為實際預估抵達時間。
+*/
+func (a *Client) InterCityBusAPIEstimatedTimeOfArrivalUDP(params *InterCityBusAPIEstimatedTimeOfArrivalUDPParams) (*InterCityBusAPIEstimatedTimeOfArrivalUDPOK, *InterCityBusAPIEstimatedTimeOfArrivalUDPStatus299, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewInterCityBusAPIEstimatedTimeOfArrivalUDPParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "InterCityBusApi_EstimatedTimeOfArrival_UDP",
+		Method:             "GET",
+		PathPattern:        "/v2/Bus/EstimatedTimeOfArrival/Streaming/InterCity",
+		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ConsumesMediaTypes: []string{""},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &InterCityBusAPIEstimatedTimeOfArrivalUDPReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, nil, err
+	}
+	switch value := result.(type) {
+	case *InterCityBusAPIEstimatedTimeOfArrivalUDPOK:
+		return value, nil, nil
+	case *InterCityBusAPIEstimatedTimeOfArrivalUDPStatus299:
+		return nil, value, nil
+	}
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for inter_city_bus: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+InterCityBusAPIEstimatedTimeOfArrivalUDP1 取得指定s 路線名稱 的公路客運預估到站資料 n1 逐筆更新
+
+### 公路客運之預估到站資料(N1) ###
+- 不保留[現在時間]超過[本平台資料更新時間]兩分鐘的資料
+- [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))
+- N1僅於該路線上有任一車輛離站時，來源端才會重新計算並發佈，因此使用者需自行處理時間遞減機制，或以EstimateTime-(收到資料時間-SrcTrasTime)(秒)作為實際預估抵達時間。
+*/
+func (a *Client) InterCityBusAPIEstimatedTimeOfArrivalUDP1(params *InterCityBusAPIEstimatedTimeOfArrivalUDP1Params) (*InterCityBusAPIEstimatedTimeOfArrivalUdp1OK, *InterCityBusAPIEstimatedTimeOfArrivalUdp1Status299, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewInterCityBusAPIEstimatedTimeOfArrivalUDP1Params()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "InterCityBusApi_EstimatedTimeOfArrival_UDP_1",
+		Method:             "GET",
+		PathPattern:        "/v2/Bus/EstimatedTimeOfArrival/Streaming/InterCity/{RouteName}",
+		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ConsumesMediaTypes: []string{""},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &InterCityBusAPIEstimatedTimeOfArrivalUDP1Reader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, nil, err
+	}
+	switch value := result.(type) {
+	case *InterCityBusAPIEstimatedTimeOfArrivalUdp1OK:
+		return value, nil, nil
+	case *InterCityBusAPIEstimatedTimeOfArrivalUdp1Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -217,6 +299,7 @@ func (a *Client) InterCityBusAPIOperator(params *InterCityBusAPIOperatorParams) 
 InterCityBusAPIRealTimeByFrequency 取得公路客運的動態定時資料s a1 批次更新
 
 ### 公路客運之定時資料(A1) ###
+- [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))
 */
 func (a *Client) InterCityBusAPIRealTimeByFrequency(params *InterCityBusAPIRealTimeByFrequencyParams) (*InterCityBusAPIRealTimeByFrequencyOK, *InterCityBusAPIRealTimeByFrequencyStatus299, error) {
 	// TODO: Validate the params before sending
@@ -254,6 +337,7 @@ func (a *Client) InterCityBusAPIRealTimeByFrequency(params *InterCityBusAPIRealT
 InterCityBusAPIRealTimeByFrequency1 取得指定s 路線名稱 的公路客運動態定時資料 a1 批次更新
 
 ### 公路客運之定時資料(A1) ###
+- [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))
 */
 func (a *Client) InterCityBusAPIRealTimeByFrequency1(params *InterCityBusAPIRealTimeByFrequency1Params) (*InterCityBusAPIRealTimeByFrequency1OK, *InterCityBusAPIRealTimeByFrequency1Status299, error) {
 	// TODO: Validate the params before sending
@@ -288,11 +372,86 @@ func (a *Client) InterCityBusAPIRealTimeByFrequency1(params *InterCityBusAPIReal
 }
 
 /*
+InterCityBusAPIRealTimeByFrequencyUDP 取得公路客運的動態定時資料s a1 逐筆更新
+
+### 公路客運之定時資料(A1) ###
+- [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))
+*/
+func (a *Client) InterCityBusAPIRealTimeByFrequencyUDP(params *InterCityBusAPIRealTimeByFrequencyUDPParams) (*InterCityBusAPIRealTimeByFrequencyUDPOK, *InterCityBusAPIRealTimeByFrequencyUDPStatus299, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewInterCityBusAPIRealTimeByFrequencyUDPParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "InterCityBusApi_RealTimeByFrequency_UDP",
+		Method:             "GET",
+		PathPattern:        "/v2/Bus/RealTimeByFrequency/Streaming/InterCity",
+		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ConsumesMediaTypes: []string{""},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &InterCityBusAPIRealTimeByFrequencyUDPReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, nil, err
+	}
+	switch value := result.(type) {
+	case *InterCityBusAPIRealTimeByFrequencyUDPOK:
+		return value, nil, nil
+	case *InterCityBusAPIRealTimeByFrequencyUDPStatus299:
+		return nil, value, nil
+	}
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for inter_city_bus: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+InterCityBusAPIRealTimeByFrequencyUDP1 取得指定s 路線名稱 的公路客運動態定時資料 a1 逐筆更新
+
+### 公路客運之定時資料(A1) ###
+- [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))
+*/
+func (a *Client) InterCityBusAPIRealTimeByFrequencyUDP1(params *InterCityBusAPIRealTimeByFrequencyUDP1Params) (*InterCityBusAPIRealTimeByFrequencyUdp1OK, *InterCityBusAPIRealTimeByFrequencyUdp1Status299, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewInterCityBusAPIRealTimeByFrequencyUDP1Params()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "InterCityBusApi_RealTimeByFrequency_UDP_1",
+		Method:             "GET",
+		PathPattern:        "/v2/Bus/RealTimeByFrequency/Streaming/InterCity/{RouteName}",
+		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ConsumesMediaTypes: []string{""},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &InterCityBusAPIRealTimeByFrequencyUDP1Reader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, nil, err
+	}
+	switch value := result.(type) {
+	case *InterCityBusAPIRealTimeByFrequencyUdp1OK:
+		return value, nil, nil
+	case *InterCityBusAPIRealTimeByFrequencyUdp1Status299:
+		return nil, value, nil
+	}
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for inter_city_bus: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
 InterCityBusAPIRealTimeNearStop 取得公路客運的動態定點資料s a2 批次更新
 
 ### 公路客運之定點資料(A2) ###
-<returns>公路客運動態定點資料(A2)</returns>
-- [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/bus.html))
+- [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))
 */
 func (a *Client) InterCityBusAPIRealTimeNearStop(params *InterCityBusAPIRealTimeNearStopParams) (*InterCityBusAPIRealTimeNearStopOK, *InterCityBusAPIRealTimeNearStopStatus299, error) {
 	// TODO: Validate the params before sending
@@ -330,6 +489,7 @@ func (a *Client) InterCityBusAPIRealTimeNearStop(params *InterCityBusAPIRealTime
 InterCityBusAPIRealTimeNearStop1 取得指定s 路線名稱 的公路客運動態定點資料 a2 批次更新
 
 ### 公路客運之定點資料(A2) ###
+- [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))
 */
 func (a *Client) InterCityBusAPIRealTimeNearStop1(params *InterCityBusAPIRealTimeNearStop1Params) (*InterCityBusAPIRealTimeNearStop1OK, *InterCityBusAPIRealTimeNearStop1Status299, error) {
 	// TODO: Validate the params before sending
@@ -356,6 +516,82 @@ func (a *Client) InterCityBusAPIRealTimeNearStop1(params *InterCityBusAPIRealTim
 	case *InterCityBusAPIRealTimeNearStop1OK:
 		return value, nil, nil
 	case *InterCityBusAPIRealTimeNearStop1Status299:
+		return nil, value, nil
+	}
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for inter_city_bus: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+InterCityBusAPIRealTimeNearStopUDP 取得公路客運的動態定點資料s a2 逐筆更新
+
+### 公路客運之定點資料(A2) ###
+- [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))
+*/
+func (a *Client) InterCityBusAPIRealTimeNearStopUDP(params *InterCityBusAPIRealTimeNearStopUDPParams) (*InterCityBusAPIRealTimeNearStopUDPOK, *InterCityBusAPIRealTimeNearStopUDPStatus299, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewInterCityBusAPIRealTimeNearStopUDPParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "InterCityBusApi_RealTimeNearStop_UDP",
+		Method:             "GET",
+		PathPattern:        "/v2/Bus/RealTimeNearStop/Streaming/InterCity",
+		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ConsumesMediaTypes: []string{""},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &InterCityBusAPIRealTimeNearStopUDPReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, nil, err
+	}
+	switch value := result.(type) {
+	case *InterCityBusAPIRealTimeNearStopUDPOK:
+		return value, nil, nil
+	case *InterCityBusAPIRealTimeNearStopUDPStatus299:
+		return nil, value, nil
+	}
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for inter_city_bus: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+InterCityBusAPIRealTimeNearStopUDP1 取得指定s 路線名稱 的公路客運動態定點資料 a2 逐筆更新
+
+### 公路客運之定點資料(A2) ###
+- [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))
+*/
+func (a *Client) InterCityBusAPIRealTimeNearStopUDP1(params *InterCityBusAPIRealTimeNearStopUDP1Params) (*InterCityBusAPIRealTimeNearStopUdp1OK, *InterCityBusAPIRealTimeNearStopUdp1Status299, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewInterCityBusAPIRealTimeNearStopUDP1Params()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "InterCityBusApi_RealTimeNearStop_UDP_1",
+		Method:             "GET",
+		PathPattern:        "/v2/Bus/RealTimeNearStop/Streaming/InterCity/{RouteName}",
+		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ConsumesMediaTypes: []string{""},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &InterCityBusAPIRealTimeNearStopUDP1Reader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, nil, err
+	}
+	switch value := result.(type) {
+	case *InterCityBusAPIRealTimeNearStopUdp1OK:
+		return value, nil, nil
+	case *InterCityBusAPIRealTimeNearStopUdp1Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -615,6 +851,43 @@ func (a *Client) InterCityBusAPIStation(params *InterCityBusAPIStationParams) (*
 	case *InterCityBusAPIStationOK:
 		return value, nil, nil
 	case *InterCityBusAPIStationStatus299:
+		return nil, value, nil
+	}
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for inter_city_bus: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+InterCityBusAPIStationGroup 取得公路客運組站位資料s
+
+公路客運之各站牌所屬的組站位資料
+*/
+func (a *Client) InterCityBusAPIStationGroup(params *InterCityBusAPIStationGroupParams) (*InterCityBusAPIStationGroupOK, *InterCityBusAPIStationGroupStatus299, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewInterCityBusAPIStationGroupParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "InterCityBusApi_StationGroup",
+		Method:             "GET",
+		PathPattern:        "/v2/Bus/StationGroup/InterCity",
+		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ConsumesMediaTypes: []string{""},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &InterCityBusAPIStationGroupReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, nil, err
+	}
+	switch value := result.(type) {
+	case *InterCityBusAPIStationGroupOK:
+		return value, nil, nil
+	case *InterCityBusAPIStationGroupStatus299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue

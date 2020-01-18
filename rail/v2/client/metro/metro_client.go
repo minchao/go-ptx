@@ -570,6 +570,9 @@ func (a *Client) MetroAPIStationOfRoute(params *MetroAPIStationOfRouteParams) (*
 MetroAPIStationTimeTable 取得捷運站別時刻表資料s
 
 取得捷運站別時刻表資料
+
+## 使用注意事項
+臺北捷運目前無提供文湖線站別時刻表，建議您可使用［取得捷運路線發車班距頻率資料］取得文湖線列車相關資訊。
 */
 func (a *Client) MetroAPIStationTimeTable(params *MetroAPIStationTimeTableParams) (*MetroAPIStationTimeTableOK, error) {
 	// TODO: Validate the params before sending

@@ -24,6 +24,10 @@ type ServiceDTOVersion2BusBusStation struct {
 	// 站位地址
 	StationAddress string `json:"StationAddress,omitempty"`
 
+	// 站牌所屬的組站位ID
+	// Required: true
+	StationGroupID *string `json:"StationGroupID"`
+
 	// 站位代碼
 	// Required: true
 	StationID *string `json:"StationID"`
@@ -66,6 +70,10 @@ type ServiceDTOVersion2BusBusStation struct {
 func (m *ServiceDTOVersion2BusBusStation) Validate(formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.validateStationGroupID(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateStationID(formats); err != nil {
 		res = append(res, err)
 	}
@@ -101,6 +109,15 @@ func (m *ServiceDTOVersion2BusBusStation) Validate(formats strfmt.Registry) erro
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *ServiceDTOVersion2BusBusStation) validateStationGroupID(formats strfmt.Registry) error {
+
+	if err := validate.Required("StationGroupID", "body", m.StationGroupID); err != nil {
+		return err
+	}
+
 	return nil
 }
 

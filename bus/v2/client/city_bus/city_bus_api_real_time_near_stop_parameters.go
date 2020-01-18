@@ -104,7 +104,10 @@ type CityBusAPIRealTimeNearStopParams struct {
 
 	*/
 	DollarTop *int64
-	/*City*/
+	/*City
+	  欲查詢縣市
+
+	*/
 	City string
 	/*Health
 	  加入參數'?health=true'即可查詢此API服務的健康狀態
