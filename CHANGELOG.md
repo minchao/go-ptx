@@ -6,6 +6,17 @@
 
 ## [Unreleased]
 
+## [0.4.0] - 2020-01-23
+
+### Added
+- 公車 V2 新增逐筆更新資料。
+- 軌道 V2 新增桃園捷運營運最新消息資料。
+- 軌道 V2 新增桃園捷運營運通阻資料。
+
+### Changed
+- 公車 V2 改版。
+- 軌道 V2 台鐵車站資料新增必填欄位 `StationUID`。
+
 ## [0.3.0] - 2019-12-21
 
 ### Added
@@ -50,7 +61,8 @@
 ### Added
 - 首次發行，提供基本、航空、公車、軌道、自行車與觀光等 PTX API 用戶端程式庫。
 
-[Unreleased]: https://github.com/minchao/go-ptx/compare/v0.3.0...HEAD
+[Unreleased]: https://github.com/minchao/go-ptx/compare/v0.4.0...HEAD
+[0.4.0]: https://github.com/minchao/go-ptx/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/minchao/go-ptx/compare/v0.2.0...v0.3.0
 [0.2.0]: https://github.com/minchao/go-ptx/compare/v0.1.0...v0.2.0
 [0.1.0]: https://github.com/minchao/go-ptx/compare/v0.0.1...v0.1.0

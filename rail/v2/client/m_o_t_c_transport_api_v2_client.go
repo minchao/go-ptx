@@ -12,6 +12,7 @@ import (
 	strfmt "github.com/go-openapi/strfmt"
 
 	"github.com/minchao/go-ptx/rail/v2/client/metro"
+	"github.com/minchao/go-ptx/rail/v2/client/rail_basic"
 	"github.com/minchao/go-ptx/rail/v2/client/t_h_s_r"
 	"github.com/minchao/go-ptx/rail/v2/client/t_r_a"
 )
@@ -60,6 +61,8 @@ func New(transport runtime.ClientTransport, formats strfmt.Registry) *MOTCTransp
 	cli.Transport = transport
 
 	cli.Metro = metro.New(transport, formats)
+
+	cli.RailBasic = rail_basic.New(transport, formats)
 
 	cli.Thsr = t_h_s_r.New(transport, formats)
 
@@ -111,6 +114,8 @@ func (cfg *TransportConfig) WithSchemes(schemes []string) *TransportConfig {
 type MOTCTransportAPIV2 struct {
 	Metro *metro.Client
 
+	RailBasic *rail_basic.Client
+
 	Thsr *t_h_s_r.Client
 
 	Tra *t_r_a.Client
@@ -123,6 +128,8 @@ func (c *MOTCTransportAPIV2) SetTransport(transport runtime.ClientTransport) {
 	c.Transport = transport
 
 	c.Metro.SetTransport(transport)
+
+	c.RailBasic.SetTransport(transport)
 
 	c.Thsr.SetTransport(transport)
 

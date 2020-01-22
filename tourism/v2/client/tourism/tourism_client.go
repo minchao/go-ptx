@@ -171,38 +171,38 @@ func (a *Client) TaiwanTripBusAPIRealTimeByFrequency(params *TaiwanTripBusAPIRea
 }
 
 /*
-TaiwanTripBusAPIRealTimeByFrequency2 取得指定s 路線名稱 的台灣好行公車的動態定時資料 a1
+TaiwanTripBusAPIRealTimeByFrequency1 取得指定s 路線名稱 的台灣好行公車的動態定時資料 a1
 
 取得指定[路線名稱]的台灣好行公車的動態定時資料(A1)
 */
-func (a *Client) TaiwanTripBusAPIRealTimeByFrequency2(params *TaiwanTripBusAPIRealTimeByFrequency2Params) (*TaiwanTripBusAPIRealTimeByFrequency2OK, error) {
+func (a *Client) TaiwanTripBusAPIRealTimeByFrequency1(params *TaiwanTripBusAPIRealTimeByFrequency1Params) (*TaiwanTripBusAPIRealTimeByFrequency1OK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewTaiwanTripBusAPIRealTimeByFrequency2Params()
+		params = NewTaiwanTripBusAPIRealTimeByFrequency1Params()
 	}
 
 	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "TaiwanTripBusApi_RealTimeByFrequency_2",
+		ID:                 "TaiwanTripBusApi_RealTimeByFrequency_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Tourism/Bus/RealTimeByFrequency/TaiwanTrip/{TaiwanTripName}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
 		ConsumesMediaTypes: []string{""},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &TaiwanTripBusAPIRealTimeByFrequency2Reader{formats: a.formats},
+		Reader:             &TaiwanTripBusAPIRealTimeByFrequency1Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
 	if err != nil {
 		return nil, err
 	}
-	success, ok := result.(*TaiwanTripBusAPIRealTimeByFrequency2OK)
+	success, ok := result.(*TaiwanTripBusAPIRealTimeByFrequency1OK)
 	if ok {
 		return success, nil
 	}
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for TaiwanTripBusApi_RealTimeByFrequency_2: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for TaiwanTripBusApi_RealTimeByFrequency_1: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -243,38 +243,38 @@ func (a *Client) TaiwanTripBusAPIRealTimeNearStop(params *TaiwanTripBusAPIRealTi
 }
 
 /*
-TaiwanTripBusAPIRealTimeNearStop2 取得指定s 路線名稱 的台灣好行公車的動態定點資料 a2
+TaiwanTripBusAPIRealTimeNearStop1 取得指定s 路線名稱 的台灣好行公車的動態定點資料 a2
 
 取得指定[路線名稱]的台灣好行公車的動態定點資料(A2)
 */
-func (a *Client) TaiwanTripBusAPIRealTimeNearStop2(params *TaiwanTripBusAPIRealTimeNearStop2Params) (*TaiwanTripBusAPIRealTimeNearStop2OK, error) {
+func (a *Client) TaiwanTripBusAPIRealTimeNearStop1(params *TaiwanTripBusAPIRealTimeNearStop1Params) (*TaiwanTripBusAPIRealTimeNearStop1OK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewTaiwanTripBusAPIRealTimeNearStop2Params()
+		params = NewTaiwanTripBusAPIRealTimeNearStop1Params()
 	}
 
 	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "TaiwanTripBusApi_RealTimeNearStop_2",
+		ID:                 "TaiwanTripBusApi_RealTimeNearStop_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Tourism/Bus/RealTimeNearStop/TaiwanTrip/{TaiwanTripName}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
 		ConsumesMediaTypes: []string{""},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &TaiwanTripBusAPIRealTimeNearStop2Reader{formats: a.formats},
+		Reader:             &TaiwanTripBusAPIRealTimeNearStop1Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
 	if err != nil {
 		return nil, err
 	}
-	success, ok := result.(*TaiwanTripBusAPIRealTimeNearStop2OK)
+	success, ok := result.(*TaiwanTripBusAPIRealTimeNearStop1OK)
 	if ok {
 		return success, nil
 	}
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for TaiwanTripBusApi_RealTimeNearStop_2: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for TaiwanTripBusApi_RealTimeNearStop_1: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 

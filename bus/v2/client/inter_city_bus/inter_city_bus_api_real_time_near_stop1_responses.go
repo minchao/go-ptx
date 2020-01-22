@@ -56,7 +56,7 @@ type InterCityBusAPIRealTimeNearStop1OK struct {
 }
 
 func (o *InterCityBusAPIRealTimeNearStop1OK) Error() string {
-	return fmt.Sprintf("[GET /v2/Bus/RealTimeNearStop/InterCity][%d] interCityBusApiRealTimeNearStop1OK  %+v", 200, o.Payload)
+	return fmt.Sprintf("[GET /v2/Bus/RealTimeNearStop/InterCity/{RouteName}][%d] interCityBusApiRealTimeNearStop1OK  %+v", 200, o.Payload)
 }
 
 func (o *InterCityBusAPIRealTimeNearStop1OK) GetPayload() []*models.ServiceDTOVersion2BusBusA2Data {
@@ -87,7 +87,7 @@ type InterCityBusAPIRealTimeNearStop1Status299 struct {
 }
 
 func (o *InterCityBusAPIRealTimeNearStop1Status299) Error() string {
-	return fmt.Sprintf("[GET /v2/Bus/RealTimeNearStop/InterCity][%d] interCityBusApiRealTimeNearStop1Status299  %+v", 299, o.Payload)
+	return fmt.Sprintf("[GET /v2/Bus/RealTimeNearStop/InterCity/{RouteName}][%d] interCityBusApiRealTimeNearStop1Status299  %+v", 299, o.Payload)
 }
 
 func (o *InterCityBusAPIRealTimeNearStop1Status299) GetPayload() *models.ServiceDTOVersion3BaseHealth {

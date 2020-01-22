@@ -3,7 +3,7 @@
   "info": {
     "version": "v2",
     "title": "MOTC Transport API V2",
-    "description": "本平臺提供涵蓋全國尺度之公車、臺鐵、高鐵、捷運、航空、自行車等公共運輸旅運資料服務API，歡迎各產政學單位介接使用。\r\n                <br><span class=swagger-description-indicatation>利用本平臺開放資料進行各項應用服務開發時，請考量不同特性使用者(如:性別/身心障礙/老幼等)的需求，並歡迎回饋寶貴意見。</span>\r\n                <br><br>資料使用葵花寶典:[請點我](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/)\r\n                <br>資料服務開發實作參考手冊:[請點我](https://docs.google.com/viewer?url=https://github.com/ptxmotc/PTX_Web/blob/master/Swagger%E6%9C%8D%E5%8B%99%E8%AA%AA%E6%98%8E%E4%B8%8A%E5%82%B3%E5%8F%83%E8%80%83%E6%AA%94%E6%A1%88/%E5%85%AC%E5%85%B1%E9%81%8B%E8%BC%B8%E6%95%B4%E5%90%88%E8%B3%87%E8%A8%8A%E5%B9%B3%E5%8F%B0%E8%B3%87%E6%96%99%E6%9C%8D%E5%8B%99%E9%96%8B%E7%99%BC%E5%AF%A6%E4%BD%9C.pdf?raw=true)\r\n                <br>API URI Convention文件說明:[請點我](https://docs.google.com/viewer?url=https://github.com/ptxmotc/PTX_Web/blob/master/Swagger%E6%9C%8D%E5%8B%99%E8%AA%AA%E6%98%8E%E4%B8%8A%E5%82%B3%E5%8F%83%E8%80%83%E6%AA%94%E6%A1%88/API_URI_Convention%E6%96%87%E4%BB%B6_v1.pdf?raw=true)<br>資料文本OAS描述:[請點我](http://ptx.transportdata.tw/MOTC/v2/Bus/api-docs/oas)"
+    "description": "本平臺提供涵蓋全國尺度之公車、臺鐵、高鐵、捷運、航空、自行車等公共運輸旅運資料服務API，歡迎各產政學單位介接使用。\r\n                <br><span class=swagger-description-indicatation>利用本平臺開放資料進行各項應用服務開發時，請考量不同特性使用者(如:性別/身心障礙/老幼等)的需求，並歡迎回饋寶貴意見。</span>\r\n                <br><br>資料使用葵花寶典:[請點我](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/)\r\n                <br>資料服務開發實作參考手冊:[請點我](https://docs.google.com/viewer?url=https://github.com/ptxmotc/PTX_Web/blob/master/Swagger%E6%9C%8D%E5%8B%99%E8%AA%AA%E6%98%8E%E4%B8%8A%E5%82%B3%E5%8F%83%E8%80%83%E6%AA%94%E6%A1%88/%E5%85%AC%E5%85%B1%E9%81%8B%E8%BC%B8%E6%95%B4%E5%90%88%E8%B3%87%E8%A8%8A%E5%B9%B3%E5%8F%B0%E8%B3%87%E6%96%99%E6%9C%8D%E5%8B%99%E9%96%8B%E7%99%BC%E5%AF%A6%E4%BD%9C.pdf?raw=true)\r\n                <br>API URI Convention文件說明:[請點我](https://docs.google.com/viewer?url=https://github.com/ptxmotc/PTX_Web/blob/master/Swagger%E6%9C%8D%E5%8B%99%E8%AA%AA%E6%98%8E%E4%B8%8A%E5%82%B3%E5%8F%83%E8%80%83%E6%AA%94%E6%A1%88/API_URI_Convention%E6%96%87%E4%BB%B6_v1.pdf?raw=true)<br>資料文本OAS描述:[請點我](https://ptx.transportdata.tw/MOTC/v2/Bus/api-docs/oas)"
   },
   "host": "ptx.transportdata.tw",
   "basePath": "/MOTC/",
@@ -11,13 +11,790 @@
     "https"
   ],
   "paths": {
+    "/v2/Bus/RealTimeByFrequency/Streaming/City/{City}": {
+      "get": {
+        "tags": [
+          "CityBus"
+        ],
+        "summary": "取得指定[縣市]的公車動態定時資料(A1)[逐筆更新]",
+        "description": "### 市區公車之定時資料(A1) ###\r\n- [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))",
+        "operationId": "CityBusApi_RealTimeByFrequency_UDP",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "City",
+            "in": "path",
+            "description": "欲查詢縣市",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "Hsinchu",
+              "HsinchuCounty",
+              "MiaoliCounty",
+              "ChanghuaCounty",
+              "NantouCounty",
+              "YunlinCounty",
+              "ChiayiCounty",
+              "Chiayi",
+              "PingtungCounty",
+              "YilanCounty",
+              "HualienCounty",
+              "TaitungCounty",
+              "PenghuCounty"
+            ],
+            "x-enum": {
+              "ChiayiCounty": "嘉義縣",
+              "YilanCounty": "宜蘭縣",
+              "HualienCounty": "花蓮縣",
+              "NantouCounty": "南投縣",
+              "MiaoliCounty": "苗栗縣",
+              "TaitungCounty": "臺東縣",
+              "ChanghuaCounty": "彰化縣",
+              "YunlinCounty": "雲林縣",
+              "PingtungCounty": "屏東縣",
+              "Chiayi": "嘉義市",
+              "PenghuCounty": "澎湖縣",
+              "Hsinchu": "新竹市",
+              "HsinchuCounty": "新竹縣"
+            }
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$spatialFilter",
+            "in": "query",
+            "description": "空間過濾",
+            "type": "string"
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          },
+          {
+            "name": "health",
+            "in": "query",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Service.DTO.Version2.Bus.BusA1Data"
+              }
+            }
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Bus/RealTimeByFrequency/Streaming/City/{City}/{RouteName}": {
+      "get": {
+        "tags": [
+          "CityBus"
+        ],
+        "summary": "取得指定[縣市],[路線名稱]的公車動態定時資料(A1)[逐筆更新]",
+        "description": "### 市區公車之定時資料(A1) ###\r\n- [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))",
+        "operationId": "CityBusApi_RealTimeByFrequency_UDP_1",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "City",
+            "in": "path",
+            "description": "欲查詢縣市",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "Hsinchu",
+              "HsinchuCounty",
+              "MiaoliCounty",
+              "ChanghuaCounty",
+              "NantouCounty",
+              "YunlinCounty",
+              "ChiayiCounty",
+              "Chiayi",
+              "PingtungCounty",
+              "YilanCounty",
+              "HualienCounty",
+              "TaitungCounty",
+              "PenghuCounty"
+            ],
+            "x-enum": {
+              "ChiayiCounty": "嘉義縣",
+              "YilanCounty": "宜蘭縣",
+              "HualienCounty": "花蓮縣",
+              "NantouCounty": "南投縣",
+              "MiaoliCounty": "苗栗縣",
+              "TaitungCounty": "臺東縣",
+              "ChanghuaCounty": "彰化縣",
+              "YunlinCounty": "雲林縣",
+              "PingtungCounty": "屏東縣",
+              "Chiayi": "嘉義市",
+              "PenghuCounty": "澎湖縣",
+              "Hsinchu": "新竹市",
+              "HsinchuCounty": "新竹縣"
+            }
+          },
+          {
+            "name": "RouteName",
+            "in": "path",
+            "description": "繁體中文路線名稱，如'307'",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$spatialFilter",
+            "in": "query",
+            "description": "空間過濾",
+            "type": "string"
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          },
+          {
+            "name": "health",
+            "in": "query",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Service.DTO.Version2.Bus.BusA1Data"
+              }
+            }
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Bus/RealTimeNearStop/Streaming/City/{City}": {
+      "get": {
+        "tags": [
+          "CityBus"
+        ],
+        "summary": "取得指定[縣市]的公車動態定點資料(A2)[逐筆更新]",
+        "description": "### 市區公車之定點資料(A2) ###\r\n- [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))",
+        "operationId": "CityBusApi_RealTimeNearStop_UDP",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "City",
+            "in": "path",
+            "description": "欲查詢縣市",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "Hsinchu",
+              "HsinchuCounty",
+              "MiaoliCounty",
+              "ChanghuaCounty",
+              "NantouCounty",
+              "YunlinCounty",
+              "ChiayiCounty",
+              "Chiayi",
+              "PingtungCounty",
+              "YilanCounty",
+              "HualienCounty",
+              "TaitungCounty",
+              "PenghuCounty"
+            ],
+            "x-enum": {
+              "Hsinchu": "新竹市",
+              "HualienCounty": "花蓮縣",
+              "NantouCounty": "南投縣",
+              "MiaoliCounty": "苗栗縣",
+              "Chiayi": "嘉義市",
+              "YilanCounty": "宜蘭縣",
+              "PenghuCounty": "澎湖縣",
+              "HsinchuCounty": "新竹縣",
+              "PingtungCounty": "屏東縣",
+              "TaitungCounty": "臺東縣",
+              "ChanghuaCounty": "彰化縣",
+              "YunlinCounty": "雲林縣",
+              "ChiayiCounty": "嘉義縣"
+            }
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          },
+          {
+            "name": "health",
+            "in": "query",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Service.DTO.Version2.Bus.BusA2Data"
+              }
+            }
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Bus/RealTimeNearStop/Streaming/City/{City}/{RouteName}": {
+      "get": {
+        "tags": [
+          "CityBus"
+        ],
+        "summary": "取得指定[縣市],[路線名稱]的公車動態定點資料(A2)[逐筆更新]",
+        "description": "### 市區公車之定點資料(A2) ###\r\n- [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))",
+        "operationId": "CityBusApi_RealTimeNearStop_UDP_1",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "City",
+            "in": "path",
+            "description": "欲查詢縣市",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "Hsinchu",
+              "HsinchuCounty",
+              "MiaoliCounty",
+              "ChanghuaCounty",
+              "NantouCounty",
+              "YunlinCounty",
+              "ChiayiCounty",
+              "Chiayi",
+              "PingtungCounty",
+              "YilanCounty",
+              "HualienCounty",
+              "TaitungCounty",
+              "PenghuCounty"
+            ],
+            "x-enum": {
+              "Hsinchu": "新竹市",
+              "HualienCounty": "花蓮縣",
+              "NantouCounty": "南投縣",
+              "MiaoliCounty": "苗栗縣",
+              "Chiayi": "嘉義市",
+              "YilanCounty": "宜蘭縣",
+              "PenghuCounty": "澎湖縣",
+              "HsinchuCounty": "新竹縣",
+              "PingtungCounty": "屏東縣",
+              "TaitungCounty": "臺東縣",
+              "ChanghuaCounty": "彰化縣",
+              "YunlinCounty": "雲林縣",
+              "ChiayiCounty": "嘉義縣"
+            }
+          },
+          {
+            "name": "RouteName",
+            "in": "path",
+            "description": "繁體中文路線名稱，如'307'",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          },
+          {
+            "name": "health",
+            "in": "query",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Service.DTO.Version2.Bus.BusA2Data"
+              }
+            }
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Bus/EstimatedTimeOfArrival/Streaming/City/{City}": {
+      "get": {
+        "tags": [
+          "CityBus"
+        ],
+        "summary": "取得指定[縣市]的公車預估到站資料(N1)[逐筆更新]",
+        "description": "### 市區公車之預估到站資料(N1) ###\r\n- [部分縣市] 當 StopStatus = 1(尚未發車) 且 EstimateTime &gt; 0 (有值) 的情形, 屬正常情形, 雖目前尚未發車, 但提供EstimateTime值為預計多久後開始發車之時間。\r\n- [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))\r\n- N1僅於該路線上有任一車輛離站時，來源端才會重新計算並發佈，因此使用者需自行處理時間遞減機制，或以EstimateTime-(收到資料時間-SrcTrasTime)(秒)作為實際預估抵達時間。",
+        "operationId": "CityBusApi_EstimatedTimeOfArrival_UDP",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "City",
+            "in": "path",
+            "description": "欲查詢縣市",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "Hsinchu",
+              "HsinchuCounty",
+              "MiaoliCounty",
+              "ChanghuaCounty",
+              "NantouCounty",
+              "YunlinCounty",
+              "ChiayiCounty",
+              "Chiayi",
+              "PingtungCounty",
+              "YilanCounty",
+              "HualienCounty",
+              "TaitungCounty",
+              "PenghuCounty"
+            ],
+            "x-enum": {
+              "MiaoliCounty": "苗栗縣",
+              "Chiayi": "嘉義市",
+              "YunlinCounty": "雲林縣",
+              "HsinchuCounty": "新竹縣",
+              "YilanCounty": "宜蘭縣",
+              "PingtungCounty": "屏東縣",
+              "PenghuCounty": "澎湖縣",
+              "ChanghuaCounty": "彰化縣",
+              "HualienCounty": "花蓮縣",
+              "ChiayiCounty": "嘉義縣",
+              "NantouCounty": "南投縣",
+              "Hsinchu": "新竹市",
+              "TaitungCounty": "臺東縣"
+            }
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          },
+          {
+            "name": "health",
+            "in": "query",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Service.DTO.Version2.Bus.BusN1EstimateTime"
+              }
+            }
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Bus/EstimatedTimeOfArrival/Streaming/City/{City}/{RouteName}": {
+      "get": {
+        "tags": [
+          "CityBus"
+        ],
+        "summary": "取得指定[縣市],[路線名稱]的公車預估到站資料(N1)[逐筆更新]",
+        "description": "### 市區公車之預估到站資料(N1) ###\r\n- [部分縣市] 當 StopStatus = 1(尚未發車) 且 EstimateTime &gt; 0 (有值) 的情形, 屬正常情形, 雖目前尚未發車, 但提供EstimateTime值為預計多久後開始發車之時間。\r\n- [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))\r\n- N1僅於該路線上有任一車輛離站時，來源端才會重新計算並發佈，因此使用者需自行處理時間遞減機制，或以EstimateTime-(收到資料時間-SrcTrasTime)(秒)作為實際預估抵達時間。",
+        "operationId": "CityBusApi_EstimatedTimeOfArrival_UDP_1",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "City",
+            "in": "path",
+            "description": "欲查詢縣市",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "Hsinchu",
+              "HsinchuCounty",
+              "MiaoliCounty",
+              "ChanghuaCounty",
+              "NantouCounty",
+              "YunlinCounty",
+              "ChiayiCounty",
+              "Chiayi",
+              "PingtungCounty",
+              "YilanCounty",
+              "HualienCounty",
+              "TaitungCounty",
+              "PenghuCounty"
+            ],
+            "x-enum": {
+              "MiaoliCounty": "苗栗縣",
+              "Chiayi": "嘉義市",
+              "YunlinCounty": "雲林縣",
+              "HsinchuCounty": "新竹縣",
+              "YilanCounty": "宜蘭縣",
+              "PingtungCounty": "屏東縣",
+              "PenghuCounty": "澎湖縣",
+              "ChanghuaCounty": "彰化縣",
+              "HualienCounty": "花蓮縣",
+              "ChiayiCounty": "嘉義縣",
+              "NantouCounty": "南投縣",
+              "Hsinchu": "新竹市",
+              "TaitungCounty": "臺東縣"
+            }
+          },
+          {
+            "name": "RouteName",
+            "in": "path",
+            "description": "繁體中文路線名稱，如'307'",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          },
+          {
+            "name": "health",
+            "in": "query",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Service.DTO.Version2.Bus.BusN1EstimateTime"
+              }
+            }
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+            }
+          }
+        }
+      }
+    },
     "/v2/Bus/RealTimeByFrequency/City/{City}": {
       "get": {
         "tags": [
           "CityBus"
         ],
         "summary": "取得指定[縣市]的公車動態定時資料(A1)[批次更新]",
-        "description": "### 市區公車之定時資料(A1) ###",
+        "description": "### 市區公車之定時資料(A1) ###\r\n- [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))",
         "operationId": "CityBusApi_RealTimeByFrequency",
         "consumes": [],
         "produces": [
@@ -56,27 +833,27 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "Hsinchu": "新竹市",
+              "YunlinCounty": "雲林縣",
               "TaitungCounty": "臺東縣",
-              "NewTaipei": "新北市",
-              "ChanghuaCounty": "彰化縣",
-              "Taoyuan": "桃園市",
               "Kaohsiung": "高雄市",
+              "MiaoliCounty": "苗栗縣",
+              "Hsinchu": "新竹市",
               "PenghuCounty": "澎湖縣",
-              "Taipei": "臺北市",
+              "ChiayiCounty": "嘉義縣",
               "HualienCounty": "花蓮縣",
-              "Tainan": "臺南市",
+              "KinmenCounty": "金門縣",
               "NantouCounty": "南投縣",
               "Taichung": "臺中市",
               "PingtungCounty": "屏東縣",
-              "LienchiangCounty": "連江縣",
-              "HsinchuCounty": "新竹縣",
+              "Tainan": "臺南市",
+              "NewTaipei": "新北市",
+              "Taoyuan": "桃園市",
               "Chiayi": "嘉義市",
-              "YunlinCounty": "雲林縣",
-              "ChiayiCounty": "嘉義縣",
+              "LienchiangCounty": "連江縣",
+              "Taipei": "臺北市",
+              "HsinchuCounty": "新竹縣",
+              "ChanghuaCounty": "彰化縣",
               "YilanCounty": "宜蘭縣",
-              "MiaoliCounty": "苗栗縣",
-              "KinmenCounty": "金門縣",
               "Keelung": "基隆市"
             }
           },
@@ -165,7 +942,7 @@
           "CityBus"
         ],
         "summary": "取得指定[縣市],[路線名稱]的公車動態定時資料(A1)[批次更新]",
-        "description": "### 市區公車之定時資料(A1) ###",
+        "description": "### 市區公車之定時資料(A1) ###\r\n- [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))",
         "operationId": "CityBusApi_RealTimeByFrequency_1",
         "consumes": [],
         "produces": [
@@ -204,27 +981,27 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "Hsinchu": "新竹市",
+              "YunlinCounty": "雲林縣",
               "TaitungCounty": "臺東縣",
-              "NewTaipei": "新北市",
-              "ChanghuaCounty": "彰化縣",
-              "Taoyuan": "桃園市",
               "Kaohsiung": "高雄市",
+              "MiaoliCounty": "苗栗縣",
+              "Hsinchu": "新竹市",
               "PenghuCounty": "澎湖縣",
-              "Taipei": "臺北市",
+              "ChiayiCounty": "嘉義縣",
               "HualienCounty": "花蓮縣",
-              "Tainan": "臺南市",
+              "KinmenCounty": "金門縣",
               "NantouCounty": "南投縣",
               "Taichung": "臺中市",
               "PingtungCounty": "屏東縣",
-              "LienchiangCounty": "連江縣",
-              "HsinchuCounty": "新竹縣",
+              "Tainan": "臺南市",
+              "NewTaipei": "新北市",
+              "Taoyuan": "桃園市",
               "Chiayi": "嘉義市",
-              "YunlinCounty": "雲林縣",
-              "ChiayiCounty": "嘉義縣",
+              "LienchiangCounty": "連江縣",
+              "Taipei": "臺北市",
+              "HsinchuCounty": "新竹縣",
+              "ChanghuaCounty": "彰化縣",
               "YilanCounty": "宜蘭縣",
-              "MiaoliCounty": "苗栗縣",
-              "KinmenCounty": "金門縣",
               "Keelung": "基隆市"
             }
           },
@@ -320,7 +1097,7 @@
           "CityBus"
         ],
         "summary": "取得指定[縣市]的公車動態定點資料(A2)[批次更新]",
-        "description": "### 市區公車之定點資料(A2) ###\r\n<param name=\"City\">欲查詢縣市</param><returns>公車動態定點資料(A2)</returns>\r\n- [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/bus.html))",
+        "description": "### 市區公車之定點資料(A2) ###\r\n- [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))",
         "operationId": "CityBusApi_RealTimeNearStop",
         "consumes": [],
         "produces": [
@@ -331,6 +1108,7 @@
           {
             "name": "City",
             "in": "path",
+            "description": "欲查詢縣市",
             "required": true,
             "type": "string",
             "enum": [
@@ -358,28 +1136,28 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "KinmenCounty": "金門縣",
               "Taichung": "臺中市",
-              "TaitungCounty": "臺東縣",
-              "ChiayiCounty": "嘉義縣",
-              "Taoyuan": "桃園市",
               "Chiayi": "嘉義市",
-              "PingtungCounty": "屏東縣",
+              "HualienCounty": "花蓮縣",
+              "NantouCounty": "南投縣",
+              "ChanghuaCounty": "彰化縣",
               "Hsinchu": "新竹市",
-              "Tainan": "臺南市",
-              "Kaohsiung": "高雄市",
-              "NewTaipei": "新北市",
-              "Keelung": "基隆市",
               "PenghuCounty": "澎湖縣",
               "MiaoliCounty": "苗栗縣",
               "Taipei": "臺北市",
-              "YunlinCounty": "雲林縣",
-              "ChanghuaCounty": "彰化縣",
-              "YilanCounty": "宜蘭縣",
-              "HsinchuCounty": "新竹縣",
-              "HualienCounty": "花蓮縣",
               "LienchiangCounty": "連江縣",
-              "NantouCounty": "南投縣"
+              "Taoyuan": "桃園市",
+              "HsinchuCounty": "新竹縣",
+              "NewTaipei": "新北市",
+              "Keelung": "基隆市",
+              "PingtungCounty": "屏東縣",
+              "ChiayiCounty": "嘉義縣",
+              "Kaohsiung": "高雄市",
+              "YilanCounty": "宜蘭縣",
+              "KinmenCounty": "金門縣",
+              "YunlinCounty": "雲林縣",
+              "TaitungCounty": "臺東縣",
+              "Tainan": "臺南市"
             }
           },
           {
@@ -461,7 +1239,7 @@
           "CityBus"
         ],
         "summary": "取得指定[縣市],[路線名稱]的公車動態定點資料(A2)[批次更新]",
-        "description": "### 市區公車之定點資料(A2) ###",
+        "description": "### 市區公車之定點資料(A2) ###\r\n- [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))",
         "operationId": "CityBusApi_RealTimeNearStop_1",
         "consumes": [],
         "produces": [
@@ -500,28 +1278,28 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "KinmenCounty": "金門縣",
               "Taichung": "臺中市",
-              "TaitungCounty": "臺東縣",
-              "ChiayiCounty": "嘉義縣",
-              "Taoyuan": "桃園市",
               "Chiayi": "嘉義市",
-              "PingtungCounty": "屏東縣",
+              "HualienCounty": "花蓮縣",
+              "NantouCounty": "南投縣",
+              "ChanghuaCounty": "彰化縣",
               "Hsinchu": "新竹市",
-              "Tainan": "臺南市",
-              "Kaohsiung": "高雄市",
-              "NewTaipei": "新北市",
-              "Keelung": "基隆市",
               "PenghuCounty": "澎湖縣",
               "MiaoliCounty": "苗栗縣",
               "Taipei": "臺北市",
-              "YunlinCounty": "雲林縣",
-              "ChanghuaCounty": "彰化縣",
-              "YilanCounty": "宜蘭縣",
-              "HsinchuCounty": "新竹縣",
-              "HualienCounty": "花蓮縣",
               "LienchiangCounty": "連江縣",
-              "NantouCounty": "南投縣"
+              "Taoyuan": "桃園市",
+              "HsinchuCounty": "新竹縣",
+              "NewTaipei": "新北市",
+              "Keelung": "基隆市",
+              "PingtungCounty": "屏東縣",
+              "ChiayiCounty": "嘉義縣",
+              "Kaohsiung": "高雄市",
+              "YilanCounty": "宜蘭縣",
+              "KinmenCounty": "金門縣",
+              "YunlinCounty": "雲林縣",
+              "TaitungCounty": "臺東縣",
+              "Tainan": "臺南市"
             }
           },
           {
@@ -610,7 +1388,7 @@
           "CityBus"
         ],
         "summary": "取得指定[縣市]的公車預估到站資料(N1)[批次更新]",
-        "description": " ### 市區公車之預估到站資料(N1) ###\r\n[部分縣市] 當 StopStatus = 1(尚未發車) 且 EstimateTime &gt; 0 (有值) 的情形, 屬正常情形, 雖目前尚未發車, 但提供EstimateTime值為預計多久後開始發車之時間。",
+        "description": " ### 市區公車之預估到站資料(N1) ###\r\n- [部分縣市] 當 StopStatus = 1(尚未發車) 且 EstimateTime &gt; 0 (有值) 的情形, 屬正常情形, 雖目前尚未發車, 但提供EstimateTime值為預計多久後開始發車之時間。\r\n- [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))",
         "operationId": "CityBusApi_EstimatedTimeOfArrival",
         "consumes": [],
         "produces": [
@@ -649,28 +1427,28 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "Keelung": "基隆市",
-              "HualienCounty": "花蓮縣",
-              "Kaohsiung": "高雄市",
-              "NantouCounty": "南投縣",
-              "KinmenCounty": "金門縣",
               "ChiayiCounty": "嘉義縣",
-              "ChanghuaCounty": "彰化縣",
               "Taichung": "臺中市",
-              "Chiayi": "嘉義市",
-              "PingtungCounty": "屏東縣",
-              "Tainan": "臺南市",
-              "YunlinCounty": "雲林縣",
-              "NewTaipei": "新北市",
-              "Taoyuan": "桃園市",
-              "Taipei": "臺北市",
-              "Hsinchu": "新竹市",
-              "LienchiangCounty": "連江縣",
               "HsinchuCounty": "新竹縣",
+              "KinmenCounty": "金門縣",
+              "Chiayi": "嘉義市",
+              "NantouCounty": "南投縣",
+              "Kaohsiung": "高雄市",
+              "Taoyuan": "桃園市",
+              "LienchiangCounty": "連江縣",
+              "Hsinchu": "新竹市",
               "MiaoliCounty": "苗栗縣",
-              "PenghuCounty": "澎湖縣",
+              "Keelung": "基隆市",
+              "ChanghuaCounty": "彰化縣",
+              "HualienCounty": "花蓮縣",
               "TaitungCounty": "臺東縣",
-              "YilanCounty": "宜蘭縣"
+              "YilanCounty": "宜蘭縣",
+              "Taipei": "臺北市",
+              "NewTaipei": "新北市",
+              "PingtungCounty": "屏東縣",
+              "PenghuCounty": "澎湖縣",
+              "YunlinCounty": "雲林縣",
+              "Tainan": "臺南市"
             }
           },
           {
@@ -752,7 +1530,7 @@
           "CityBus"
         ],
         "summary": "取得指定[縣市],[路線名稱]的公車預估到站資料(N1)[批次更新]",
-        "description": " ### 市區公車之預估到站資料(N1) ###\r\n[部分縣市] 當 StopStatus = 1(尚未發車) 且 EstimateTime &gt; 0 (有值) 的情形, 屬正常情形, 雖目前尚未發車, 但提供EstimateTime值為預計多久後開始發車之時間。",
+        "description": " ### 市區公車之預估到站資料(N1) ###\r\n- [部分縣市] 當 StopStatus = 1(尚未發車) 且 EstimateTime &gt; 0 (有值) 的情形, 屬正常情形, 雖目前尚未發車, 但提供EstimateTime值為預計多久後開始發車之時間。\r\n- [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))",
         "operationId": "CityBusApi_EstimatedTimeOfArrival_1",
         "consumes": [],
         "produces": [
@@ -791,28 +1569,28 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "Keelung": "基隆市",
-              "HualienCounty": "花蓮縣",
-              "Kaohsiung": "高雄市",
-              "NantouCounty": "南投縣",
-              "KinmenCounty": "金門縣",
               "ChiayiCounty": "嘉義縣",
-              "ChanghuaCounty": "彰化縣",
               "Taichung": "臺中市",
-              "Chiayi": "嘉義市",
-              "PingtungCounty": "屏東縣",
-              "Tainan": "臺南市",
-              "YunlinCounty": "雲林縣",
-              "NewTaipei": "新北市",
-              "Taoyuan": "桃園市",
-              "Taipei": "臺北市",
-              "Hsinchu": "新竹市",
-              "LienchiangCounty": "連江縣",
               "HsinchuCounty": "新竹縣",
+              "KinmenCounty": "金門縣",
+              "Chiayi": "嘉義市",
+              "NantouCounty": "南投縣",
+              "Kaohsiung": "高雄市",
+              "Taoyuan": "桃園市",
+              "LienchiangCounty": "連江縣",
+              "Hsinchu": "新竹市",
               "MiaoliCounty": "苗栗縣",
-              "PenghuCounty": "澎湖縣",
+              "Keelung": "基隆市",
+              "ChanghuaCounty": "彰化縣",
+              "HualienCounty": "花蓮縣",
               "TaitungCounty": "臺東縣",
-              "YilanCounty": "宜蘭縣"
+              "YilanCounty": "宜蘭縣",
+              "Taipei": "臺北市",
+              "NewTaipei": "新北市",
+              "PingtungCounty": "屏東縣",
+              "PenghuCounty": "澎湖縣",
+              "YunlinCounty": "雲林縣",
+              "Tainan": "臺南市"
             }
           },
           {
@@ -943,27 +1721,27 @@
             ],
             "x-enum": {
               "Chiayi": "嘉義市",
-              "NantouCounty": "南投縣",
               "MiaoliCounty": "苗栗縣",
-              "YunlinCounty": "雲林縣",
-              "ChiayiCounty": "嘉義縣",
-              "PingtungCounty": "屏東縣",
               "TaitungCounty": "臺東縣",
               "PenghuCounty": "澎湖縣",
-              "Taoyuan": "桃園市",
-              "HsinchuCounty": "新竹縣",
               "Keelung": "基隆市",
-              "Tainan": "臺南市",
+              "YilanCounty": "宜蘭縣",
               "Kaohsiung": "高雄市",
-              "Hsinchu": "新竹市",
+              "ChiayiCounty": "嘉義縣",
+              "LienchiangCounty": "連江縣",
+              "NewTaipei": "新北市",
+              "YunlinCounty": "雲林縣",
+              "Tainan": "臺南市",
+              "NantouCounty": "南投縣",
+              "Taichung": "臺中市",
+              "PingtungCounty": "屏東縣",
+              "Taoyuan": "桃園市",
+              "ChanghuaCounty": "彰化縣",
+              "HualienCounty": "花蓮縣",
               "KinmenCounty": "金門縣",
               "Taipei": "臺北市",
-              "HualienCounty": "花蓮縣",
-              "NewTaipei": "新北市",
-              "YilanCounty": "宜蘭縣",
-              "LienchiangCounty": "連江縣",
-              "Taichung": "臺中市",
-              "ChanghuaCounty": "彰化縣"
+              "Hsinchu": "新竹市",
+              "HsinchuCounty": "新竹縣"
             }
           },
           {
@@ -1050,28 +1828,28 @@
               "LienchiangCounty"
             ],
             "x-enum": {
+              "KinmenCounty": "金門縣",
+              "HsinchuCounty": "新竹縣",
+              "ChiayiCounty": "嘉義縣",
+              "Kaohsiung": "高雄市",
               "ChanghuaCounty": "彰化縣",
-              "PingtungCounty": "屏東縣",
               "Hsinchu": "新竹市",
+              "LienchiangCounty": "連江縣",
+              "Taichung": "臺中市",
+              "Taoyuan": "桃園市",
+              "Chiayi": "嘉義市",
+              "Tainan": "臺南市",
+              "NewTaipei": "新北市",
+              "PingtungCounty": "屏東縣",
+              "TaitungCounty": "臺東縣",
               "YilanCounty": "宜蘭縣",
               "PenghuCounty": "澎湖縣",
-              "NewTaipei": "新北市",
-              "LienchiangCounty": "連江縣",
-              "Tainan": "臺南市",
               "NantouCounty": "南投縣",
-              "TaitungCounty": "臺東縣",
-              "MiaoliCounty": "苗栗縣",
-              "Taichung": "臺中市",
-              "HualienCounty": "花蓮縣",
-              "KinmenCounty": "金門縣",
-              "Kaohsiung": "高雄市",
-              "Taoyuan": "桃園市",
-              "HsinchuCounty": "新竹縣",
-              "Taipei": "臺北市",
               "YunlinCounty": "雲林縣",
-              "ChiayiCounty": "嘉義縣",
+              "Taipei": "臺北市",
               "Keelung": "基隆市",
-              "Chiayi": "嘉義市"
+              "HualienCounty": "花蓮縣",
+              "MiaoliCounty": "苗栗縣"
             }
           },
           {
@@ -1192,28 +1970,28 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "ChanghuaCounty": "彰化縣",
-              "KinmenCounty": "金門縣",
-              "TaitungCounty": "臺東縣",
-              "LienchiangCounty": "連江縣",
-              "MiaoliCounty": "苗栗縣",
-              "HsinchuCounty": "新竹縣",
-              "PingtungCounty": "屏東縣",
-              "Chiayi": "嘉義市",
-              "HualienCounty": "花蓮縣",
-              "Taoyuan": "桃園市",
-              "ChiayiCounty": "嘉義縣",
-              "NantouCounty": "南投縣",
-              "Kaohsiung": "高雄市",
-              "Hsinchu": "新竹市",
               "Taipei": "臺北市",
+              "ChiayiCounty": "嘉義縣",
               "YunlinCounty": "雲林縣",
               "NewTaipei": "新北市",
               "YilanCounty": "宜蘭縣",
+              "KinmenCounty": "金門縣",
+              "NantouCounty": "南投縣",
               "PenghuCounty": "澎湖縣",
+              "Chiayi": "嘉義市",
+              "MiaoliCounty": "苗栗縣",
+              "Taoyuan": "桃園市",
+              "PingtungCounty": "屏東縣",
+              "Taichung": "臺中市",
+              "TaitungCounty": "臺東縣",
+              "HualienCounty": "花蓮縣",
               "Keelung": "基隆市",
-              "Tainan": "臺南市",
-              "Taichung": "臺中市"
+              "Hsinchu": "新竹市",
+              "Kaohsiung": "高雄市",
+              "HsinchuCounty": "新竹縣",
+              "LienchiangCounty": "連江縣",
+              "ChanghuaCounty": "彰化縣",
+              "Tainan": "臺南市"
             }
           },
           {
@@ -1334,28 +2112,28 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "ChanghuaCounty": "彰化縣",
-              "KinmenCounty": "金門縣",
-              "TaitungCounty": "臺東縣",
-              "LienchiangCounty": "連江縣",
-              "MiaoliCounty": "苗栗縣",
-              "HsinchuCounty": "新竹縣",
-              "PingtungCounty": "屏東縣",
-              "Chiayi": "嘉義市",
-              "HualienCounty": "花蓮縣",
-              "Taoyuan": "桃園市",
-              "ChiayiCounty": "嘉義縣",
-              "NantouCounty": "南投縣",
-              "Kaohsiung": "高雄市",
-              "Hsinchu": "新竹市",
               "Taipei": "臺北市",
+              "ChiayiCounty": "嘉義縣",
               "YunlinCounty": "雲林縣",
               "NewTaipei": "新北市",
               "YilanCounty": "宜蘭縣",
+              "KinmenCounty": "金門縣",
+              "NantouCounty": "南投縣",
               "PenghuCounty": "澎湖縣",
+              "Chiayi": "嘉義市",
+              "MiaoliCounty": "苗栗縣",
+              "Taoyuan": "桃園市",
+              "PingtungCounty": "屏東縣",
+              "Taichung": "臺中市",
+              "TaitungCounty": "臺東縣",
+              "HualienCounty": "花蓮縣",
               "Keelung": "基隆市",
-              "Tainan": "臺南市",
-              "Taichung": "臺中市"
+              "Hsinchu": "新竹市",
+              "Kaohsiung": "高雄市",
+              "HsinchuCounty": "新竹縣",
+              "LienchiangCounty": "連江縣",
+              "ChanghuaCounty": "彰化縣",
+              "Tainan": "臺南市"
             }
           },
           {
@@ -1483,28 +2261,28 @@
               "Taipei"
             ],
             "x-enum": {
-              "Hsinchu": "新竹市",
-              "HsinchuCounty": "新竹縣",
-              "Keelung": "基隆市",
-              "NewTaipei": "新北市",
-              "MiaoliCounty": "苗栗縣",
-              "YunlinCounty": "雲林縣",
-              "Taichung": "臺中市",
-              "YilanCounty": "宜蘭縣",
-              "LienchiangCounty": "連江縣",
-              "PenghuCounty": "澎湖縣",
-              "PingtungCounty": "屏東縣",
-              "KinmenCounty": "金門縣",
               "Chiayi": "嘉義市",
+              "NewTaipei": "新北市",
+              "PenghuCounty": "澎湖縣",
               "NantouCounty": "南投縣",
-              "HualienCounty": "花蓮縣",
+              "LienchiangCounty": "連江縣",
               "Tainan": "臺南市",
-              "TaitungCounty": "臺東縣",
-              "ChiayiCounty": "嘉義縣",
-              "Taoyuan": "桃園市",
-              "Taipei": "臺北市",
               "Kaohsiung": "高雄市",
-              "ChanghuaCounty": "彰化縣"
+              "KinmenCounty": "金門縣",
+              "PingtungCounty": "屏東縣",
+              "HualienCounty": "花蓮縣",
+              "Keelung": "基隆市",
+              "YilanCounty": "宜蘭縣",
+              "HsinchuCounty": "新竹縣",
+              "Taoyuan": "桃園市",
+              "YunlinCounty": "雲林縣",
+              "ChiayiCounty": "嘉義縣",
+              "Hsinchu": "新竹市",
+              "Taipei": "臺北市",
+              "MiaoliCounty": "苗栗縣",
+              "Taichung": "臺中市",
+              "ChanghuaCounty": "彰化縣",
+              "TaitungCounty": "臺東縣"
             }
           },
           {
@@ -1623,26 +2401,28 @@
               "HualienCounty",
               "TaitungCounty",
               "PenghuCounty",
-              "Tainan"
+              "Tainan",
+              "KinmenCounty"
             ],
             "x-enum": {
-              "Chiayi": "嘉義市",
-              "HsinchuCounty": "新竹縣",
-              "Kaohsiung": "高雄市",
+              "YilanCounty": "宜蘭縣",
               "PingtungCounty": "屏東縣",
               "TaitungCounty": "臺東縣",
-              "HualienCounty": "花蓮縣",
-              "NantouCounty": "南投縣",
+              "Taipei": "臺北市",
               "MiaoliCounty": "苗栗縣",
               "YunlinCounty": "雲林縣",
-              "PenghuCounty": "澎湖縣",
-              "YilanCounty": "宜蘭縣",
-              "ChanghuaCounty": "彰化縣",
-              "Taipei": "臺北市",
-              "NewTaipei": "新北市",
               "Tainan": "臺南市",
+              "HsinchuCounty": "新竹縣",
+              "NantouCounty": "南投縣",
               "Hsinchu": "新竹市",
-              "ChiayiCounty": "嘉義縣"
+              "PenghuCounty": "澎湖縣",
+              "Chiayi": "嘉義市",
+              "KinmenCounty": "金門縣",
+              "Kaohsiung": "高雄市",
+              "ChiayiCounty": "嘉義縣",
+              "NewTaipei": "新北市",
+              "ChanghuaCounty": "彰化縣",
+              "HualienCounty": "花蓮縣"
             }
           },
           {
@@ -1760,19 +2540,19 @@
               "PenghuCounty"
             ],
             "x-enum": {
-              "NantouCounty": "南投縣",
               "HsinchuCounty": "新竹縣",
-              "PenghuCounty": "澎湖縣",
-              "Chiayi": "嘉義市",
-              "ChanghuaCounty": "彰化縣",
               "YilanCounty": "宜蘭縣",
-              "HualienCounty": "花蓮縣",
               "ChiayiCounty": "嘉義縣",
-              "MiaoliCounty": "苗栗縣",
-              "Hsinchu": "新竹市",
+              "NantouCounty": "南投縣",
               "TaitungCounty": "臺東縣",
               "YunlinCounty": "雲林縣",
-              "PingtungCounty": "屏東縣"
+              "PenghuCounty": "澎湖縣",
+              "MiaoliCounty": "苗栗縣",
+              "ChanghuaCounty": "彰化縣",
+              "Hsinchu": "新竹市",
+              "HualienCounty": "花蓮縣",
+              "PingtungCounty": "屏東縣",
+              "Chiayi": "嘉義市"
             }
           },
           {
@@ -1880,9 +2660,9 @@
               "NewTaipei"
             ],
             "x-enum": {
-              "NewTaipei": "新北市",
               "Taipei": "臺北市",
-              "Tainan": "臺南市"
+              "Tainan": "臺南市",
+              "NewTaipei": "新北市"
             }
           },
           {
@@ -1984,9 +2764,9 @@
               "NewTaipei"
             ],
             "x-enum": {
-              "NewTaipei": "新北市",
               "Taipei": "臺北市",
-              "Tainan": "臺南市"
+              "Tainan": "臺南市",
+              "NewTaipei": "新北市"
             }
           },
           {
@@ -2114,28 +2894,28 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "PingtungCounty": "屏東縣",
-              "Tainan": "臺南市",
-              "Keelung": "基隆市",
-              "Chiayi": "嘉義市",
-              "ChiayiCounty": "嘉義縣",
-              "LienchiangCounty": "連江縣",
-              "Taipei": "臺北市",
-              "TaitungCounty": "臺東縣",
-              "YilanCounty": "宜蘭縣",
-              "ChanghuaCounty": "彰化縣",
-              "PenghuCounty": "澎湖縣",
-              "Taoyuan": "桃園市",
-              "YunlinCounty": "雲林縣",
-              "Kaohsiung": "高雄市",
-              "MiaoliCounty": "苗栗縣",
-              "HualienCounty": "花蓮縣",
-              "Hsinchu": "新竹市",
+              "Taichung": "臺中市",
               "KinmenCounty": "金門縣",
-              "NantouCounty": "南投縣",
+              "MiaoliCounty": "苗栗縣",
+              "ChiayiCounty": "嘉義縣",
               "HsinchuCounty": "新竹縣",
               "NewTaipei": "新北市",
-              "Taichung": "臺中市"
+              "Chiayi": "嘉義市",
+              "Hsinchu": "新竹市",
+              "PingtungCounty": "屏東縣",
+              "Taoyuan": "桃園市",
+              "TaitungCounty": "臺東縣",
+              "YilanCounty": "宜蘭縣",
+              "YunlinCounty": "雲林縣",
+              "HualienCounty": "花蓮縣",
+              "Keelung": "基隆市",
+              "LienchiangCounty": "連江縣",
+              "ChanghuaCounty": "彰化縣",
+              "Kaohsiung": "高雄市",
+              "Taipei": "臺北市",
+              "NantouCounty": "南投縣",
+              "PenghuCounty": "澎湖縣",
+              "Tainan": "臺南市"
             }
           },
           {
@@ -2256,28 +3036,28 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "PingtungCounty": "屏東縣",
-              "Tainan": "臺南市",
-              "Keelung": "基隆市",
-              "Chiayi": "嘉義市",
-              "ChiayiCounty": "嘉義縣",
-              "LienchiangCounty": "連江縣",
-              "Taipei": "臺北市",
-              "TaitungCounty": "臺東縣",
-              "YilanCounty": "宜蘭縣",
-              "ChanghuaCounty": "彰化縣",
-              "PenghuCounty": "澎湖縣",
-              "Taoyuan": "桃園市",
-              "YunlinCounty": "雲林縣",
-              "Kaohsiung": "高雄市",
-              "MiaoliCounty": "苗栗縣",
-              "HualienCounty": "花蓮縣",
-              "Hsinchu": "新竹市",
+              "Taichung": "臺中市",
               "KinmenCounty": "金門縣",
-              "NantouCounty": "南投縣",
+              "MiaoliCounty": "苗栗縣",
+              "ChiayiCounty": "嘉義縣",
               "HsinchuCounty": "新竹縣",
               "NewTaipei": "新北市",
-              "Taichung": "臺中市"
+              "Chiayi": "嘉義市",
+              "Hsinchu": "新竹市",
+              "PingtungCounty": "屏東縣",
+              "Taoyuan": "桃園市",
+              "TaitungCounty": "臺東縣",
+              "YilanCounty": "宜蘭縣",
+              "YunlinCounty": "雲林縣",
+              "HualienCounty": "花蓮縣",
+              "Keelung": "基隆市",
+              "LienchiangCounty": "連江縣",
+              "ChanghuaCounty": "彰化縣",
+              "Kaohsiung": "高雄市",
+              "Taipei": "臺北市",
+              "NantouCounty": "南投縣",
+              "PenghuCounty": "澎湖縣",
+              "Tainan": "臺南市"
             }
           },
           {
@@ -2401,24 +3181,24 @@
               "PenghuCounty"
             ],
             "x-enum": {
+              "KinmenCounty": "金門縣",
+              "MiaoliCounty": "苗栗縣",
+              "HsinchuCounty": "新竹縣",
+              "YunlinCounty": "雲林縣",
+              "ChanghuaCounty": "彰化縣",
+              "HualienCounty": "花蓮縣",
+              "Taipei": "臺北市",
+              "Hsinchu": "新竹市",
+              "ChiayiCounty": "嘉義縣",
+              "TaitungCounty": "臺東縣",
               "NantouCounty": "南投縣",
               "YilanCounty": "宜蘭縣",
-              "Chiayi": "嘉義市",
-              "HsinchuCounty": "新竹縣",
-              "ChanghuaCounty": "彰化縣",
               "NewTaipei": "新北市",
-              "KinmenCounty": "金門縣",
-              "TaitungCounty": "臺東縣",
-              "HualienCounty": "花蓮縣",
-              "Tainan": "臺南市",
-              "Taipei": "臺北市",
+              "Chiayi": "嘉義市",
               "Keelung": "基隆市",
-              "MiaoliCounty": "苗栗縣",
+              "Tainan": "臺南市",
               "PingtungCounty": "屏東縣",
-              "Hsinchu": "新竹市",
-              "PenghuCounty": "澎湖縣",
-              "YunlinCounty": "雲林縣",
-              "ChiayiCounty": "嘉義縣"
+              "PenghuCounty": "澎湖縣"
             }
           },
           {
@@ -2535,24 +3315,24 @@
               "PenghuCounty"
             ],
             "x-enum": {
+              "KinmenCounty": "金門縣",
+              "MiaoliCounty": "苗栗縣",
+              "HsinchuCounty": "新竹縣",
+              "YunlinCounty": "雲林縣",
+              "ChanghuaCounty": "彰化縣",
+              "HualienCounty": "花蓮縣",
+              "Taipei": "臺北市",
+              "Hsinchu": "新竹市",
+              "ChiayiCounty": "嘉義縣",
+              "TaitungCounty": "臺東縣",
               "NantouCounty": "南投縣",
               "YilanCounty": "宜蘭縣",
-              "Chiayi": "嘉義市",
-              "HsinchuCounty": "新竹縣",
-              "ChanghuaCounty": "彰化縣",
               "NewTaipei": "新北市",
-              "KinmenCounty": "金門縣",
-              "TaitungCounty": "臺東縣",
-              "HualienCounty": "花蓮縣",
-              "Tainan": "臺南市",
-              "Taipei": "臺北市",
+              "Chiayi": "嘉義市",
               "Keelung": "基隆市",
-              "MiaoliCounty": "苗栗縣",
+              "Tainan": "臺南市",
               "PingtungCounty": "屏東縣",
-              "Hsinchu": "新竹市",
-              "PenghuCounty": "澎湖縣",
-              "YunlinCounty": "雲林縣",
-              "ChiayiCounty": "嘉義縣"
+              "PenghuCounty": "澎湖縣"
             }
           },
           {
@@ -2679,28 +3459,28 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "Chiayi": "嘉義市",
+              "Hsinchu": "新竹市",
+              "MiaoliCounty": "苗栗縣",
+              "HualienCounty": "花蓮縣",
               "Taipei": "臺北市",
               "ChiayiCounty": "嘉義縣",
-              "Tainan": "臺南市",
-              "Kaohsiung": "高雄市",
-              "LienchiangCounty": "連江縣",
-              "Taichung": "臺中市",
+              "Taoyuan": "桃園市",
               "HsinchuCounty": "新竹縣",
-              "Keelung": "基隆市",
-              "Hsinchu": "新竹市",
+              "Tainan": "臺南市",
+              "TaitungCounty": "臺東縣",
               "NantouCounty": "南投縣",
-              "PenghuCounty": "澎湖縣",
+              "PingtungCounty": "屏東縣",
+              "Keelung": "基隆市",
+              "ChanghuaCounty": "彰化縣",
               "NewTaipei": "新北市",
               "KinmenCounty": "金門縣",
-              "Taoyuan": "桃園市",
-              "YilanCounty": "宜蘭縣",
-              "HualienCounty": "花蓮縣",
+              "Kaohsiung": "高雄市",
               "YunlinCounty": "雲林縣",
-              "MiaoliCounty": "苗栗縣",
-              "TaitungCounty": "臺東縣",
-              "PingtungCounty": "屏東縣",
-              "ChanghuaCounty": "彰化縣"
+              "LienchiangCounty": "連江縣",
+              "YilanCounty": "宜蘭縣",
+              "Chiayi": "嘉義市",
+              "PenghuCounty": "澎湖縣",
+              "Taichung": "臺中市"
             }
           },
           {
@@ -2807,14 +3587,14 @@
               "KinmenCounty"
             ],
             "x-enum": {
-              "Kaohsiung": "高雄市",
+              "Taoyuan": "桃園市",
               "NewTaipei": "新北市",
               "Taichung": "臺中市",
-              "Taoyuan": "桃園市",
-              "Taipei": "臺北市",
-              "Keelung": "基隆市",
+              "Tainan": "臺南市",
               "KinmenCounty": "金門縣",
-              "Tainan": "臺南市"
+              "Keelung": "基隆市",
+              "Kaohsiung": "高雄市",
+              "Taipei": "臺北市"
             }
           },
           {
@@ -2921,14 +3701,14 @@
               "KinmenCounty"
             ],
             "x-enum": {
-              "Kaohsiung": "高雄市",
+              "Taoyuan": "桃園市",
               "NewTaipei": "新北市",
               "Taichung": "臺中市",
-              "Taoyuan": "桃園市",
-              "Taipei": "臺北市",
-              "Keelung": "基隆市",
+              "Tainan": "臺南市",
               "KinmenCounty": "金門縣",
-              "Tainan": "臺南市"
+              "Keelung": "基隆市",
+              "Kaohsiung": "高雄市",
+              "Taipei": "臺北市"
             }
           },
           {
@@ -3046,28 +3826,28 @@
               "TaitungCounty"
             ],
             "x-enum": {
-              "PingtungCounty": "屏東縣",
-              "Tainan": "臺南市",
-              "NantouCounty": "南投縣",
-              "PenghuCounty": "澎湖縣",
-              "ChiayiCounty": "嘉義縣",
-              "YunlinCounty": "雲林縣",
-              "Chiayi": "嘉義市",
-              "Taipei": "臺北市",
-              "NewTaipei": "新北市",
+              "MiaoliCounty": "苗栗縣",
               "KinmenCounty": "金門縣",
-              "TaitungCounty": "臺東縣",
-              "LienchiangCounty": "連江縣",
-              "HualienCounty": "花蓮縣",
-              "YilanCounty": "宜蘭縣",
               "HsinchuCounty": "新竹縣",
-              "Taichung": "臺中市",
-              "ChanghuaCounty": "彰化縣",
-              "Hsinchu": "新竹市",
-              "Kaohsiung": "高雄市",
-              "Keelung": "基隆市",
               "Taoyuan": "桃園市",
-              "MiaoliCounty": "苗栗縣"
+              "Kaohsiung": "高雄市",
+              "NewTaipei": "新北市",
+              "PenghuCounty": "澎湖縣",
+              "PingtungCounty": "屏東縣",
+              "ChanghuaCounty": "彰化縣",
+              "ChiayiCounty": "嘉義縣",
+              "Taichung": "臺中市",
+              "Taipei": "臺北市",
+              "YunlinCounty": "雲林縣",
+              "YilanCounty": "宜蘭縣",
+              "LienchiangCounty": "連江縣",
+              "Tainan": "臺南市",
+              "Keelung": "基隆市",
+              "TaitungCounty": "臺東縣",
+              "Chiayi": "嘉義市",
+              "HualienCounty": "花蓮縣",
+              "NantouCounty": "南投縣",
+              "Hsinchu": "新竹市"
             }
           },
           {
@@ -3178,28 +3958,28 @@
               "TaitungCounty"
             ],
             "x-enum": {
-              "PingtungCounty": "屏東縣",
-              "Tainan": "臺南市",
-              "NantouCounty": "南投縣",
-              "PenghuCounty": "澎湖縣",
-              "ChiayiCounty": "嘉義縣",
-              "YunlinCounty": "雲林縣",
-              "Chiayi": "嘉義市",
-              "Taipei": "臺北市",
-              "NewTaipei": "新北市",
+              "MiaoliCounty": "苗栗縣",
               "KinmenCounty": "金門縣",
-              "TaitungCounty": "臺東縣",
-              "LienchiangCounty": "連江縣",
-              "HualienCounty": "花蓮縣",
-              "YilanCounty": "宜蘭縣",
               "HsinchuCounty": "新竹縣",
-              "Taichung": "臺中市",
-              "ChanghuaCounty": "彰化縣",
-              "Hsinchu": "新竹市",
-              "Kaohsiung": "高雄市",
-              "Keelung": "基隆市",
               "Taoyuan": "桃園市",
-              "MiaoliCounty": "苗栗縣"
+              "Kaohsiung": "高雄市",
+              "NewTaipei": "新北市",
+              "PenghuCounty": "澎湖縣",
+              "PingtungCounty": "屏東縣",
+              "ChanghuaCounty": "彰化縣",
+              "ChiayiCounty": "嘉義縣",
+              "Taichung": "臺中市",
+              "Taipei": "臺北市",
+              "YunlinCounty": "雲林縣",
+              "YilanCounty": "宜蘭縣",
+              "LienchiangCounty": "連江縣",
+              "Tainan": "臺南市",
+              "Keelung": "基隆市",
+              "TaitungCounty": "臺東縣",
+              "Chiayi": "嘉義市",
+              "HualienCounty": "花蓮縣",
+              "NantouCounty": "南投縣",
+              "Hsinchu": "新竹市"
             }
           },
           {
@@ -3304,11 +4084,13 @@
             "type": "string",
             "enum": [
               "Keelung",
-              "Tainan"
+              "Tainan",
+              "KinmenCounty"
             ],
             "x-enum": {
-              "Keelung": "基隆市",
-              "Tainan": "臺南市"
+              "Tainan": "臺南市",
+              "KinmenCounty": "金門縣",
+              "Keelung": "基隆市"
             }
           },
           {
@@ -3384,13 +4166,698 @@
         }
       }
     },
+    "/v2/Bus/StationGroup/City/{City}": {
+      "get": {
+        "tags": [
+          "CityBus"
+        ],
+        "summary": "取得指定[縣市]的市區公車組站位資料",
+        "description": "市區公車之各站牌所屬的組站位資料",
+        "operationId": "CityBusApi_StationGroup",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "City",
+            "in": "path",
+            "description": "欲查詢縣市",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "Hsinchu",
+              "HsinchuCounty",
+              "MiaoliCounty",
+              "ChanghuaCounty",
+              "NantouCounty",
+              "YunlinCounty",
+              "ChiayiCounty",
+              "Chiayi",
+              "PingtungCounty",
+              "YilanCounty",
+              "HualienCounty",
+              "TaitungCounty",
+              "PenghuCounty"
+            ],
+            "x-enum": {
+              "PenghuCounty": "澎湖縣",
+              "TaitungCounty": "臺東縣",
+              "NantouCounty": "南投縣",
+              "PingtungCounty": "屏東縣",
+              "MiaoliCounty": "苗栗縣",
+              "HualienCounty": "花蓮縣",
+              "YunlinCounty": "雲林縣",
+              "HsinchuCounty": "新竹縣",
+              "Hsinchu": "新竹市",
+              "YilanCounty": "宜蘭縣",
+              "Chiayi": "嘉義市",
+              "ChanghuaCounty": "彰化縣",
+              "ChiayiCounty": "嘉義縣"
+            }
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$spatialFilter",
+            "in": "query",
+            "description": "空間過濾",
+            "type": "string"
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          },
+          {
+            "name": "health",
+            "in": "query",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Service.DTO.Version2.Bus.BusStationGroup"
+              }
+            }
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Bus/RealTimeByFrequency/Streaming/InterCity": {
+      "get": {
+        "tags": [
+          "InterCityBus"
+        ],
+        "summary": "取得公路客運的動態定時資料(A1)[逐筆更新]",
+        "description": "### 公路客運之定時資料(A1) ###\r\n- [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))",
+        "operationId": "InterCityBusApi_RealTimeByFrequency_UDP",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$spatialFilter",
+            "in": "query",
+            "description": "空間過濾",
+            "type": "string"
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          },
+          {
+            "name": "health",
+            "in": "query",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Service.DTO.Version2.Bus.BusA1Data"
+              }
+            }
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Bus/RealTimeByFrequency/Streaming/InterCity/{RouteName}": {
+      "get": {
+        "tags": [
+          "InterCityBus"
+        ],
+        "summary": "取得指定[路線名稱]的公路客運動態定時資料(A1)[逐筆更新]",
+        "description": "### 公路客運之定時資料(A1) ###\r\n- [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))",
+        "operationId": "InterCityBusApi_RealTimeByFrequency_UDP_1",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "RouteName",
+            "in": "path",
+            "description": "繁體中文路線名稱，如'9102'",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$spatialFilter",
+            "in": "query",
+            "description": "空間過濾",
+            "type": "string"
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          },
+          {
+            "name": "health",
+            "in": "query",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Service.DTO.Version2.Bus.BusA1Data"
+              }
+            }
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Bus/RealTimeNearStop/Streaming/InterCity": {
+      "get": {
+        "tags": [
+          "InterCityBus"
+        ],
+        "summary": "取得公路客運的動態定點資料(A2)[逐筆更新]",
+        "description": "### 公路客運之定點資料(A2) ###\r\n- [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))",
+        "operationId": "InterCityBusApi_RealTimeNearStop_UDP",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          },
+          {
+            "name": "health",
+            "in": "query",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Service.DTO.Version2.Bus.BusA2Data"
+              }
+            }
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Bus/RealTimeNearStop/Streaming/InterCity/{RouteName}": {
+      "get": {
+        "tags": [
+          "InterCityBus"
+        ],
+        "summary": "取得指定[路線名稱]的公路客運動態定點資料(A2)[逐筆更新]",
+        "description": "### 公路客運之定點資料(A2) ###\r\n- [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))",
+        "operationId": "InterCityBusApi_RealTimeNearStop_UDP_1",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "RouteName",
+            "in": "path",
+            "description": "繁體中文路線名稱，如'9102'",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          },
+          {
+            "name": "health",
+            "in": "query",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Service.DTO.Version2.Bus.BusA2Data"
+              }
+            }
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Bus/EstimatedTimeOfArrival/Streaming/InterCity": {
+      "get": {
+        "tags": [
+          "InterCityBus"
+        ],
+        "summary": "取得公路客運的預估到站資料(N1)[逐筆更新]",
+        "description": "### 公路客運之預估到站資料(N1) ###\r\n- 不保留[現在時間]超過[本平台資料更新時間]兩分鐘的資料\r\n- [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))\r\n- N1僅於該路線上有任一車輛離站時，來源端才會重新計算並發佈，因此使用者需自行處理時間遞減機制，或以EstimateTime-(收到資料時間-SrcTrasTime)(秒)作為實際預估抵達時間。",
+        "operationId": "InterCityBusApi_EstimatedTimeOfArrival_UDP",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          },
+          {
+            "name": "health",
+            "in": "query",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Service.DTO.Version2.Bus.BusN1EstimateTime"
+              }
+            }
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Bus/EstimatedTimeOfArrival/Streaming/InterCity/{RouteName}": {
+      "get": {
+        "tags": [
+          "InterCityBus"
+        ],
+        "summary": "取得指定[路線名稱]的公路客運預估到站資料(N1)[逐筆更新]",
+        "description": "### 公路客運之預估到站資料(N1) ###\r\n- 不保留[現在時間]超過[本平台資料更新時間]兩分鐘的資料\r\n- [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))\r\n- N1僅於該路線上有任一車輛離站時，來源端才會重新計算並發佈，因此使用者需自行處理時間遞減機制，或以EstimateTime-(收到資料時間-SrcTrasTime)(秒)作為實際預估抵達時間。",
+        "operationId": "InterCityBusApi_EstimatedTimeOfArrival_UDP_1",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "RouteName",
+            "in": "path",
+            "description": "繁體中文路線名稱，如'9102'",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          },
+          {
+            "name": "health",
+            "in": "query",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Service.DTO.Version2.Bus.BusN1EstimateTime"
+              }
+            }
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+            }
+          }
+        }
+      }
+    },
     "/v2/Bus/RealTimeByFrequency/InterCity": {
       "get": {
         "tags": [
           "InterCityBus"
         ],
         "summary": "取得公路客運的動態定時資料(A1)[批次更新]",
-        "description": "### 公路客運之定時資料(A1) ###",
+        "description": "### 公路客運之定時資料(A1) ###\r\n- [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))",
         "operationId": "InterCityBusApi_RealTimeByFrequency",
         "consumes": [],
         "produces": [
@@ -3483,7 +4950,7 @@
           "InterCityBus"
         ],
         "summary": "取得指定[路線名稱]的公路客運動態定時資料(A1)[批次更新]",
-        "description": "### 公路客運之定時資料(A1) ###",
+        "description": "### 公路客運之定時資料(A1) ###\r\n- [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))",
         "operationId": "InterCityBusApi_RealTimeByFrequency_1",
         "consumes": [],
         "produces": [
@@ -3583,8 +5050,8 @@
           "InterCityBus"
         ],
         "summary": "取得公路客運的動態定點資料(A2)[批次更新]",
-        "description": "### 公路客運之定點資料(A2) ###\r\n<returns>公路客運動態定點資料(A2)</returns>\r\n- [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/bus.html))",
-        "operationId": "InterCityBusApi_RealTimeNearStop_1",
+        "description": "### 公路客運之定點資料(A2) ###\r\n- [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))",
+        "operationId": "InterCityBusApi_RealTimeNearStop",
         "consumes": [],
         "produces": [
           "application/json",
@@ -3670,8 +5137,8 @@
           "InterCityBus"
         ],
         "summary": "取得指定[路線名稱]的公路客運動態定點資料(A2)[批次更新]",
-        "description": "### 公路客運之定點資料(A2) ###",
-        "operationId": "InterCityBusApi_RealTimeNearStop_2",
+        "description": "### 公路客運之定點資料(A2) ###\r\n- [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))",
+        "operationId": "InterCityBusApi_RealTimeNearStop_1",
         "consumes": [],
         "produces": [
           "application/json",
@@ -3764,7 +5231,7 @@
           "InterCityBus"
         ],
         "summary": "取得公路客運的預估到站資料(N1)[批次更新]",
-        "description": "###公路客運之預估到站資料(N1)###\r\n不保留[現在時間]超過[本平台資料更新時間]兩分鐘的資料",
+        "description": "###公路客運之預估到站資料(N1)###\r\n- 不保留[現在時間]超過[本平台資料更新時間]兩分鐘的資料\r\n- [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))",
         "operationId": "InterCityBusApi_EstimatedTimeOfArrival",
         "consumes": [],
         "produces": [
@@ -3851,7 +5318,7 @@
           "InterCityBus"
         ],
         "summary": "取得指定[路線名稱]的公路客運預估到站資料(N1)[批次更新]",
-        "description": "### 公路客運之預估到站資料(N1) ###\r\n不保留[現在時間]超過[本平台資料更新時間]兩分鐘的資料",
+        "description": "### 公路客運之預估到站資料(N1) ###\r\n- 不保留[現在時間]超過[本平台資料更新時間]兩分鐘的資料\r\n- [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))",
         "operationId": "InterCityBusApi_EstimatedTimeOfArrival_1",
         "consumes": [],
         "produces": [
@@ -5257,6 +6724,99 @@
           }
         }
       }
+    },
+    "/v2/Bus/StationGroup/InterCity": {
+      "get": {
+        "tags": [
+          "InterCityBus"
+        ],
+        "summary": "取得公路客運組站位資料",
+        "description": "公路客運之各站牌所屬的組站位資料",
+        "operationId": "InterCityBusApi_StationGroup",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$spatialFilter",
+            "in": "query",
+            "description": "空間過濾",
+            "type": "string"
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          },
+          {
+            "name": "health",
+            "in": "query",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "required": false,
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Service.DTO.Version2.Bus.BusStationGroup"
+              }
+            }
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+            }
+          }
+        }
+      }
     }
   },
   "definitions": {
@@ -5673,7 +7233,8 @@
         "StopName",
         "StopSequence",
         "StopPosition",
-        "StationNameID"
+        "StationNameID",
+        "StationGroupID"
       ],
       "type": "object",
       "properties": {
@@ -5712,6 +7273,10 @@
         },
         "StationNameID": {
           "description": "站牌所屬的站名碼ID",
+          "type": "string"
+        },
+        "StationGroupID": {
+          "description": "站牌所屬的組站位ID",
           "type": "string"
         },
         "LocationCityCode": {
@@ -6773,6 +8338,7 @@
         "StationName",
         "StationPosition",
         "StationNameID",
+        "StationGroupID",
         "UpdateTime",
         "VersionID"
       ],
@@ -6802,6 +8368,10 @@
         },
         "StationNameID": {
           "description": "站牌所屬的站名碼ID",
+          "type": "string"
+        },
+        "StationGroupID": {
+          "description": "站牌所屬的組站位ID",
           "type": "string"
         },
         "Stops": {
@@ -6860,6 +8430,49 @@
         }
       }
     },
+    "Service.DTO.Version2.Bus.BusStationGroup": {
+      "title": "BusStationGroup",
+      "description": "組站位資料型別",
+      "required": [
+        "StationGroupUID",
+        "StationGroupID",
+        "StationGroupName",
+        "StationGroupPosition",
+        "UpdateTime",
+        "VersionID"
+      ],
+      "type": "object",
+      "properties": {
+        "StationGroupUID": {
+          "description": "組站位唯一識別代碼，規則為 {業管機關簡碼} + {StationGroupID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
+          "type": "string"
+        },
+        "StationGroupID": {
+          "description": "組站位代碼",
+          "type": "string"
+        },
+        "StationGroupName": {
+          "$ref": "#/definitions/Service.DTO.Version2.Base.NameType",
+          "title": "NameType",
+          "description": "組站位名稱"
+        },
+        "StationGroupPosition": {
+          "$ref": "#/definitions/Service.DTO.Version2.Base.PointType",
+          "title": "PointType",
+          "description": "組站位位置"
+        },
+        "UpdateTime": {
+          "title": "DateTime",
+          "description": "資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "VersionID": {
+          "format": "int32",
+          "description": "資料版本編號",
+          "type": "integer"
+        }
+      }
+    },
     "Service.DTO.Version2.Bus.BusStationName": {
       "title": "BusStationName",
       "description": "站名碼資料型別",
@@ -6913,6 +8526,7 @@
         "StopName",
         "StopPosition",
         "StationNameID",
+        "StationGroupID",
         "UpdateTime",
         "VersionID"
       ],
@@ -6954,6 +8568,10 @@
         },
         "StationNameID": {
           "description": "站牌所屬的站名碼ID",
+          "type": "string"
+        },
+        "StationGroupID": {
+          "description": "站牌所屬的組站位ID",
           "type": "string"
         },
         "StopDescription": {

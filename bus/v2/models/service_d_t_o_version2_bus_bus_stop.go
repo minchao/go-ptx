@@ -35,6 +35,10 @@ type ServiceDTOVersion2BusBusStop struct {
 	// 站牌位置縣市之代碼(國際ISO 3166-2 三碼城市代碼)[若為公路/國道客運路線則為空值]
 	LocationCityCode string `json:"LocationCityCode,omitempty"`
 
+	// 站牌所屬的組站位ID
+	// Required: true
+	StationGroupID *string `json:"StationGroupID"`
+
 	// 站牌所屬的站位ID
 	StationID string `json:"StationID,omitempty"`
 
@@ -87,6 +91,10 @@ func (m *ServiceDTOVersion2BusBusStop) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
+	if err := m.validateStationGroupID(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateStationNameID(formats); err != nil {
 		res = append(res, err)
 	}
@@ -124,6 +132,15 @@ func (m *ServiceDTOVersion2BusBusStop) Validate(formats strfmt.Registry) error {
 func (m *ServiceDTOVersion2BusBusStop) validateAuthorityID(formats strfmt.Registry) error {
 
 	if err := validate.Required("AuthorityID", "body", m.AuthorityID); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *ServiceDTOVersion2BusBusStop) validateStationGroupID(formats strfmt.Registry) error {
+
+	if err := validate.Required("StationGroupID", "body", m.StationGroupID); err != nil {
 		return err
 	}
 

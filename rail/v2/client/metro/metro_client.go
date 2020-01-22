@@ -27,6 +27,42 @@ type Client struct {
 }
 
 /*
+MetroAPIAlert 取得營運通阻資料s
+
+取得營運通阻資料
+*/
+func (a *Client) MetroAPIAlert(params *MetroAPIAlertParams) (*MetroAPIAlertOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewMetroAPIAlertParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "MetroApi_Alert",
+		Method:             "GET",
+		PathPattern:        "/v2/Rail/Metro/Alert/{Operator}",
+		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ConsumesMediaTypes: []string{""},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &MetroAPIAlertReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*MetroAPIAlertOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for MetroApi_Alert: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
 MetroAPIFirstLastTimetable 取得捷運首末班車時刻表資料s
 
 取得捷運首末班車時刻表資料
@@ -239,6 +275,42 @@ func (a *Client) MetroAPINetwork(params *MetroAPINetworkParams) (*MetroAPINetwor
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
 	msg := fmt.Sprintf("unexpected success response for MetroApi_Network: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+MetroAPINews 取得最新消息s
+
+取得最新消息
+*/
+func (a *Client) MetroAPINews(params *MetroAPINewsParams) (*MetroAPINewsOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewMetroAPINewsParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "MetroApi_News",
+		Method:             "GET",
+		PathPattern:        "/v2/Rail/Metro/News/{Operator}",
+		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ConsumesMediaTypes: []string{""},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &MetroAPINewsReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*MetroAPINewsOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for MetroApi_News: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -570,6 +642,9 @@ func (a *Client) MetroAPIStationOfRoute(params *MetroAPIStationOfRouteParams) (*
 MetroAPIStationTimeTable 取得捷運站別時刻表資料s
 
 取得捷運站別時刻表資料
+
+## 使用注意事項
+臺北捷運目前無提供文湖線站別時刻表，建議您可使用［取得捷運路線發車班距頻率資料］取得文湖線列車相關資訊。
 */
 func (a *Client) MetroAPIStationTimeTable(params *MetroAPIStationTimeTableParams) (*MetroAPIStationTimeTableOK, error) {
 	// TODO: Validate the params before sending

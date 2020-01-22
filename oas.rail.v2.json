@@ -3,7 +3,7 @@
   "info": {
     "version": "v2",
     "title": "MOTC Transport API V2",
-    "description": "本平臺提供涵蓋全國尺度之公車、臺鐵、高鐵、捷運、航空、自行車等公共運輸旅運資料服務API，歡迎各產政學單位介接使用。\r\n                <br><span class=swagger-description-indicatation>利用本平臺開放資料進行各項應用服務開發時，請考量不同特性使用者(如:性別/身心障礙/老幼等)的需求，並歡迎回饋寶貴意見。</span>\r\n                <br><br>資料使用葵花寶典:[請點我](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/)\r\n                <br>資料服務開發實作參考手冊:[請點我](https://docs.google.com/viewer?url=https://github.com/ptxmotc/PTX_Web/blob/master/Swagger%E6%9C%8D%E5%8B%99%E8%AA%AA%E6%98%8E%E4%B8%8A%E5%82%B3%E5%8F%83%E8%80%83%E6%AA%94%E6%A1%88/%E5%85%AC%E5%85%B1%E9%81%8B%E8%BC%B8%E6%95%B4%E5%90%88%E8%B3%87%E8%A8%8A%E5%B9%B3%E5%8F%B0%E8%B3%87%E6%96%99%E6%9C%8D%E5%8B%99%E9%96%8B%E7%99%BC%E5%AF%A6%E4%BD%9C.pdf?raw=true)\r\n                <br>API URI Convention文件說明:[請點我](https://docs.google.com/viewer?url=https://github.com/ptxmotc/PTX_Web/blob/master/Swagger%E6%9C%8D%E5%8B%99%E8%AA%AA%E6%98%8E%E4%B8%8A%E5%82%B3%E5%8F%83%E8%80%83%E6%AA%94%E6%A1%88/API_URI_Convention%E6%96%87%E4%BB%B6_v1.pdf?raw=true)<br>資料文本OAS描述:[請點我](http://ptx.transportdata.tw/MOTC/v2/Rail/api-docs/oas)"
+    "description": "本平臺提供涵蓋全國尺度之公車、臺鐵、高鐵、捷運、航空、自行車等公共運輸旅運資料服務API，歡迎各產政學單位介接使用。\r\n                <br><span class=swagger-description-indicatation>利用本平臺開放資料進行各項應用服務開發時，請考量不同特性使用者(如:性別/身心障礙/老幼等)的需求，並歡迎回饋寶貴意見。</span>\r\n                <br><br>資料使用葵花寶典:[請點我](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/)\r\n                <br>資料服務開發實作參考手冊:[請點我](https://docs.google.com/viewer?url=https://github.com/ptxmotc/PTX_Web/blob/master/Swagger%E6%9C%8D%E5%8B%99%E8%AA%AA%E6%98%8E%E4%B8%8A%E5%82%B3%E5%8F%83%E8%80%83%E6%AA%94%E6%A1%88/%E5%85%AC%E5%85%B1%E9%81%8B%E8%BC%B8%E6%95%B4%E5%90%88%E8%B3%87%E8%A8%8A%E5%B9%B3%E5%8F%B0%E8%B3%87%E6%96%99%E6%9C%8D%E5%8B%99%E9%96%8B%E7%99%BC%E5%AF%A6%E4%BD%9C.pdf?raw=true)\r\n                <br>API URI Convention文件說明:[請點我](https://docs.google.com/viewer?url=https://github.com/ptxmotc/PTX_Web/blob/master/Swagger%E6%9C%8D%E5%8B%99%E8%AA%AA%E6%98%8E%E4%B8%8A%E5%82%B3%E5%8F%83%E8%80%83%E6%AA%94%E6%A1%88/API_URI_Convention%E6%96%87%E4%BB%B6_v1.pdf?raw=true)<br>資料文本OAS描述:[請點我](https://ptx.transportdata.tw/MOTC/v2/Rail/api-docs/oas)"
   },
   "host": "ptx.transportdata.tw",
   "basePath": "/MOTC/",
@@ -37,9 +37,9 @@
               "TYMC"
             ],
             "x-enum": {
-              "KRTC": "高雄捷運",
               "TRTC": "臺北捷運",
-              "TYMC": "桃園捷運"
+              "TYMC": "桃園捷運",
+              "KRTC": "高雄捷運"
             }
           },
           {
@@ -125,10 +125,10 @@
               "KLRT"
             ],
             "x-enum": {
-              "TRTC": "臺北捷運",
               "KRTC": "高雄捷運",
               "KLRT": "高雄輕軌",
-              "TYMC": "桃園捷運"
+              "TYMC": "桃園捷運",
+              "TRTC": "臺北捷運"
             }
           },
           {
@@ -215,9 +215,9 @@
             ],
             "x-enum": {
               "KLRT": "高雄輕軌",
-              "KRTC": "高雄捷運",
               "TRTC": "臺北捷運",
-              "TYMC": "桃園捷運"
+              "TYMC": "桃園捷運",
+              "KRTC": "高雄捷運"
             }
           },
           {
@@ -310,9 +310,9 @@
             ],
             "x-enum": {
               "TYMC": "桃園捷運",
-              "KRTC": "高雄捷運",
+              "TRTC": "臺北捷運",
               "KLRT": "高雄輕軌",
-              "TRTC": "臺北捷運"
+              "KRTC": "高雄捷運"
             }
           },
           {
@@ -397,8 +397,8 @@
             ],
             "x-enum": {
               "TYMC": "桃園捷運",
-              "KRTC": "高雄捷運",
-              "TRTC": "臺北捷運"
+              "TRTC": "臺北捷運",
+              "KRTC": "高雄捷運"
             }
           },
           {
@@ -568,10 +568,10 @@
               "TYMC"
             ],
             "x-enum": {
-              "TRTC": "臺北捷運",
-              "KRTC": "高雄捷運",
+              "KLRT": "高雄輕軌",
               "TYMC": "桃園捷運",
-              "KLRT": "高雄輕軌"
+              "TRTC": "臺北捷運",
+              "KRTC": "高雄捷運"
             }
           },
           {
@@ -662,9 +662,9 @@
               "TYMC"
             ],
             "x-enum": {
-              "KRTC": "高雄捷運",
+              "TYMC": "桃園捷運",
               "TRTC": "臺北捷運",
-              "TYMC": "桃園捷運"
+              "KRTC": "高雄捷運"
             }
           },
           {
@@ -837,10 +837,10 @@
               "KLRT"
             ],
             "x-enum": {
-              "KRTC": "高雄捷運",
               "TYMC": "桃園捷運",
               "TRTC": "臺北捷運",
-              "KLRT": "高雄輕軌"
+              "KLRT": "高雄輕軌",
+              "KRTC": "高雄捷運"
             }
           },
           {
@@ -924,9 +924,9 @@
               "TYMC"
             ],
             "x-enum": {
-              "KRTC": "高雄捷運",
               "TRTC": "臺北捷運",
-              "TYMC": "桃園捷運"
+              "TYMC": "桃園捷運",
+              "KRTC": "高雄捷運"
             }
           },
           {
@@ -1012,8 +1012,8 @@
             ],
             "x-enum": {
               "TRTC": "臺北捷運",
-              "TYMC": "桃園捷運",
-              "KRTC": "高雄捷運"
+              "KRTC": "高雄捷運",
+              "TYMC": "桃園捷運"
             }
           },
           {
@@ -1100,9 +1100,9 @@
             ],
             "x-enum": {
               "KRTC": "高雄捷運",
+              "KLRT": "高雄輕軌",
               "TRTC": "臺北捷運",
-              "TYMC": "桃園捷運",
-              "KLRT": "高雄輕軌"
+              "TYMC": "桃園捷運"
             }
           },
           {
@@ -1185,9 +1185,9 @@
               "KRTC"
             ],
             "x-enum": {
+              "TYMC": "桃園捷運",
               "KRTC": "高雄捷運",
-              "TRTC": "臺北捷運",
-              "TYMC": "桃園捷運"
+              "TRTC": "臺北捷運"
             }
           },
           {
@@ -1252,7 +1252,7 @@
           "Metro"
         ],
         "summary": "取得捷運站別時刻表資料",
-        "description": "取得捷運站別時刻表資料",
+        "description": "取得捷運站別時刻表資料\r\n\r\n## 使用注意事項\r\n臺北捷運目前無提供文湖線站別時刻表，建議您可使用［取得捷運路線發車班距頻率資料］取得文湖線列車相關資訊。",
         "operationId": "MetroApi_StationTimeTable",
         "consumes": [],
         "produces": [
@@ -1273,8 +1273,8 @@
             ],
             "x-enum": {
               "TRTC": "臺北捷運",
-              "TYMC": "桃園捷運",
-              "KRTC": "高雄捷運"
+              "KRTC": "高雄捷運",
+              "TYMC": "桃園捷運"
             }
           },
           {
@@ -1358,9 +1358,9 @@
               "TYMC"
             ],
             "x-enum": {
+              "KRTC": "高雄捷運",
               "TRTC": "臺北捷運",
-              "TYMC": "桃園捷運",
-              "KRTC": "高雄捷運"
+              "TYMC": "桃園捷運"
             }
           },
           {
@@ -1414,6 +1414,184 @@
               "items": {
                 "$ref": "#/definitions/Service.DTO.Version2.Rail.Metro.MetroShape"
               }
+            }
+          }
+        }
+      }
+    },
+    "/v2/Rail/Metro/News/{Operator}": {
+      "get": {
+        "tags": [
+          "Metro"
+        ],
+        "summary": "取得最新消息",
+        "description": "取得最新消息",
+        "operationId": "MetroApi_News",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "Operator",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "TYMC"
+            ],
+            "x-enum": {
+              "TYMC": "桃園捷運"
+            }
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$count",
+            "in": "query",
+            "description": "查詢數量",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/MOTC.API.Rail.Models.MRTRealTimeWrapper[Service.DTO.Version2.Rail.Metro.MRTNewsList.News]"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Rail/Metro/Alert/{Operator}": {
+      "get": {
+        "tags": [
+          "Metro"
+        ],
+        "summary": "取得營運通阻資料",
+        "description": "取得營運通阻資料",
+        "operationId": "MetroApi_Alert",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "Operator",
+            "in": "path",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "TYMC"
+            ],
+            "x-enum": {
+              "TYMC": "桃園捷運"
+            }
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$count",
+            "in": "query",
+            "description": "查詢數量",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/MOTC.API.Rail.Models.MRTRealTimeWrapper[Service.DTO.Version2.Rail.Metro.MRTAlertList.Alert]"
             }
           }
         }
@@ -4829,9 +5007,352 @@
           }
         }
       }
+    },
+    "/v2/Rail/Operator": {
+      "get": {
+        "tags": [
+          "RailBasic"
+        ],
+        "operationId": "RailApi_Operator",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/Service.DTO.Version2.Base.Operator"
+              }
+            }
+          }
+        }
+      }
     }
   },
   "definitions": {
+    "MOTC.API.Rail.Models.MRTRealTimeWrapper[Service.DTO.Version2.Rail.Metro.MRTAlertList.Alert]": {
+      "title": "MRTAlertList",
+      "required": [
+        "UpdateInterval",
+        "SrcUpdateTime",
+        "SrcUpdateInterval",
+        "AuthorityCode",
+        "Alerts"
+      ],
+      "type": "object",
+      "properties": {
+        "UpdateTime": {
+          "title": "DateTime",
+          "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "UpdateInterval": {
+          "format": "int32",
+          "description": "本平台資料更新週期(秒)",
+          "type": "integer"
+        },
+        "SrcUpdateTime": {
+          "title": "DateTime",
+          "description": "來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "SrcUpdateInterval": {
+          "format": "int32",
+          "description": "來源端平台資料更新週期(秒)",
+          "type": "integer"
+        },
+        "AuthorityCode": {
+          "description": "業管機關簡碼",
+          "type": "string"
+        },
+        "Alerts": {
+          "description": "資料(陣列)",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version2.Rail.Metro.MRTAlertList.Alert"
+          }
+        },
+        "Count": {
+          "format": "int64",
+          "description": "資料總筆數",
+          "type": "integer"
+        }
+      }
+    },
+    "Service.DTO.Version2.Rail.Metro.MRTAlertList.Alert": {
+      "title": "Alert",
+      "required": [
+        "AlertID",
+        "Title",
+        "Description",
+        "Status",
+        "Scope",
+        "UpdateTime"
+      ],
+      "type": "object",
+      "properties": {
+        "AlertID": {
+          "description": "通阻訊息代碼",
+          "type": "string"
+        },
+        "Title": {
+          "description": "通阻訊息標題",
+          "type": "string"
+        },
+        "Description": {
+          "description": "通阻訊息說明",
+          "type": "string"
+        },
+        "Status": {
+          "format": "int32",
+          "title": "integer",
+          "description": "營運狀況 : [0:'全線營運停止',1:'全線營運正常',2:'有異常狀況']",
+          "type": "integer"
+        },
+        "Scope": {
+          "$ref": "#/definitions/Service.DTO.Version2.Rail.Metro.MRTAlertList.AlertScope",
+          "title": "AlertScope",
+          "description": "影響範圍"
+        },
+        "Direction": {
+          "format": "int32",
+          "title": "integer",
+          "description": "影響方向 : [0:'去程',1:'返程']",
+          "type": "integer"
+        },
+        "Level": {
+          "format": "int32",
+          "title": "integer",
+          "description": "影響等級程度 : [1:'重度',2:'中度',3:'輕度']",
+          "type": "integer"
+        },
+        "Effect": {
+          "description": "影響說明",
+          "type": "string"
+        },
+        "Reason": {
+          "description": "影響原因",
+          "type": "string"
+        },
+        "AlertURL": {
+          "description": "通阻訊息網址連結",
+          "type": "string"
+        },
+        "StartTime": {
+          "title": "DateTime",
+          "description": "訊息起始日期時間",
+          "type": "string"
+        },
+        "EndTime": {
+          "title": "DateTime",
+          "description": "訊息結束日期時間",
+          "type": "string"
+        },
+        "PublishTime": {
+          "title": "DateTime",
+          "description": "消息發佈日期時間",
+          "type": "string"
+        },
+        "UpdateTime": {
+          "title": "DateTime",
+          "description": "消息更新日期時間",
+          "type": "string"
+        }
+      }
+    },
+    "Service.DTO.Version2.Rail.Metro.MRTAlertList.AlertScope": {
+      "title": "AlertScope",
+      "required": [
+        "Stations",
+        "Lines",
+        "Routes",
+        "Trains",
+        "LineSections"
+      ],
+      "type": "object",
+      "properties": {
+        "Network": {
+          "$ref": "#/definitions/Service.DTO.Version2.Rail.Metro.MRTAlertList.AlertScopeNetwork",
+          "title": "AlertScopeNetwork",
+          "description": "受影響的路網"
+        },
+        "Stations": {
+          "description": "受影響的車站",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version2.Rail.Metro.MRTAlertList.AlertScopeStation"
+          }
+        },
+        "Lines": {
+          "description": "受影響的實體路線",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version2.Rail.Metro.MRTAlertList.AlertScopeLine"
+          }
+        },
+        "Routes": {
+          "description": "受影響的營運路線",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version2.Rail.Metro.MRTAlertList.AlertScopeRoute"
+          }
+        },
+        "Trains": {
+          "description": "受影響的車次",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version2.Rail.Metro.MRTAlertList.AlertScopeTrain"
+          }
+        },
+        "LineSections": {
+          "description": "受影響的路線區間",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version2.Rail.Metro.MRTAlertList.AlertScopeLineSection"
+          }
+        }
+      }
+    },
+    "Service.DTO.Version2.Rail.Metro.MRTAlertList.AlertScopeNetwork": {
+      "title": "AlertScopeNetwork",
+      "type": "object",
+      "properties": {
+        "NetworkID": {
+          "description": "路網代碼",
+          "type": "string"
+        }
+      }
+    },
+    "Service.DTO.Version2.Rail.Metro.MRTAlertList.AlertScopeStation": {
+      "title": "AlertScopeStation",
+      "type": "object",
+      "properties": {
+        "StationID": {
+          "description": "車站代碼",
+          "type": "string"
+        },
+        "StationName": {
+          "description": "車站名稱",
+          "type": "string"
+        }
+      }
+    },
+    "Service.DTO.Version2.Rail.Metro.MRTAlertList.AlertScopeLine": {
+      "title": "AlertScopeLine",
+      "type": "object",
+      "properties": {
+        "LineID": {
+          "description": "實體路線代碼",
+          "type": "string"
+        },
+        "LineName": {
+          "description": "實體路線名稱",
+          "type": "string"
+        }
+      }
+    },
+    "Service.DTO.Version2.Rail.Metro.MRTAlertList.AlertScopeRoute": {
+      "title": "AlertScopeRoute",
+      "type": "object",
+      "properties": {
+        "RouteID": {
+          "description": "營運路線代碼",
+          "type": "string"
+        },
+        "RouteName": {
+          "description": "營運路線名稱",
+          "type": "string"
+        }
+      }
+    },
+    "Service.DTO.Version2.Rail.Metro.MRTAlertList.AlertScopeTrain": {
+      "title": "AlertScopeTrain",
+      "type": "object",
+      "properties": {
+        "TrainNo": {
+          "description": "受影響的車次",
+          "type": "string"
+        }
+      }
+    },
+    "Service.DTO.Version2.Rail.Metro.MRTAlertList.AlertScopeLineSection": {
+      "title": "AlertScopeLineSection",
+      "type": "object",
+      "properties": {
+        "LineID": {
+          "description": "路線區間所在路線代碼",
+          "type": "string"
+        },
+        "StartingStationID": {
+          "description": "區間起站車站代碼",
+          "type": "string"
+        },
+        "StartingStationName": {
+          "description": "區間起站車站名稱",
+          "type": "string"
+        },
+        "EndingStationID": {
+          "description": "區間迄站車站代碼",
+          "type": "string"
+        },
+        "EndingStationName": {
+          "description": "區間迄站車站名稱",
+          "type": "string"
+        },
+        "Description": {
+          "description": "影響區間輔助描述",
+          "type": "string"
+        }
+      }
+    },
     "Service.DTO.Version2.Rail.THSR.AlertInfo": {
       "title": "AlertInfo",
       "description": "高鐵即時通阻事件資料",
@@ -6953,6 +7474,125 @@
         }
       }
     },
+    "MOTC.API.Rail.Models.MRTRealTimeWrapper[Service.DTO.Version2.Rail.Metro.MRTNewsList.News]": {
+      "title": "MRTNewsList",
+      "required": [
+        "UpdateInterval",
+        "SrcUpdateTime",
+        "SrcUpdateInterval",
+        "AuthorityCode",
+        "Newses"
+      ],
+      "type": "object",
+      "properties": {
+        "UpdateTime": {
+          "title": "DateTime",
+          "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "UpdateInterval": {
+          "format": "int32",
+          "description": "本平台資料更新週期(秒)",
+          "type": "integer"
+        },
+        "SrcUpdateTime": {
+          "title": "DateTime",
+          "description": "來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "SrcUpdateInterval": {
+          "format": "int32",
+          "description": "來源端平台資料更新週期(秒)",
+          "type": "integer"
+        },
+        "AuthorityCode": {
+          "description": "業管機關簡碼",
+          "type": "string"
+        },
+        "Newses": {
+          "description": "資料(陣列)",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version2.Rail.Metro.MRTNewsList.News"
+          }
+        },
+        "Count": {
+          "format": "int64",
+          "description": "資料總筆數",
+          "type": "integer"
+        }
+      }
+    },
+    "Service.DTO.Version2.Rail.Metro.MRTNewsList.News": {
+      "title": "News",
+      "required": [
+        "NewsID",
+        "Title",
+        "NewsCategory",
+        "Description",
+        "PublishTime",
+        "UpdateTime"
+      ],
+      "type": "object",
+      "properties": {
+        "NewsID": {
+          "description": "消息代碼",
+          "type": "string"
+        },
+        "Language": {
+          "format": "int32",
+          "title": "integer",
+          "description": "語系 : [1:'Zh_tw',2:'En_us',3:'Zh_cn',4:'Ja',5:'Ko',99:'Other']",
+          "type": "integer"
+        },
+        "Department": {
+          "description": "發布單位",
+          "type": "string"
+        },
+        "Title": {
+          "description": "消息標題",
+          "type": "string"
+        },
+        "NewsCategory": {
+          "format": "int32",
+          "title": "integer",
+          "description": "消息類別 : [1:'最新消息',2:'新聞稿',3:'營運資訊',4:'轉乘資訊',5:'活動訊息',6:'系統公告',7:'新服務上架',8:'API修正',9:'來源異常',99:'其他']",
+          "type": "integer"
+        },
+        "Description": {
+          "description": "內容描述",
+          "type": "string"
+        },
+        "NewsURL": {
+          "description": "消息網址連結",
+          "type": "string"
+        },
+        "AttachmentURL": {
+          "description": "附件網址連結",
+          "type": "string"
+        },
+        "StartTime": {
+          "title": "DateTime",
+          "description": "消息起始日期時間",
+          "type": "string"
+        },
+        "EndTime": {
+          "title": "DateTime",
+          "description": "消息結束日期時間",
+          "type": "string"
+        },
+        "PublishTime": {
+          "title": "DateTime",
+          "description": "消息發佈日期時間",
+          "type": "string"
+        },
+        "UpdateTime": {
+          "title": "DateTime",
+          "description": "本筆資料之更新日期時間",
+          "type": "string"
+        }
+      }
+    },
     "Service.DTO.Version2.Rail.TRA.RailODDailyTimetable": {
       "title": "RailODDailyTimetable",
       "description": "台鐵起訖站間到離站時刻資料型別",
@@ -7275,6 +7915,76 @@
           "format": "int32",
           "description": "票價",
           "type": "integer"
+        }
+      }
+    },
+    "Service.DTO.Version2.Base.Operator": {
+      "title": "Operator",
+      "description": "營運業者資料型別",
+      "required": [
+        "ProviderID",
+        "OperatorID",
+        "OperatorName",
+        "OperatorCode",
+        "AuthorityCode",
+        "OperatorNo",
+        "UpdateTime"
+      ],
+      "type": "object",
+      "properties": {
+        "ProviderID": {
+          "description": "資料提供平台代碼",
+          "type": "string"
+        },
+        "OperatorID": {
+          "description": "營運業者代碼",
+          "type": "string"
+        },
+        "OperatorName": {
+          "$ref": "#/definitions/Service.DTO.Version2.Base.NameType",
+          "title": "NameType",
+          "description": "營運業者名稱"
+        },
+        "OperatorPhone": {
+          "description": "營運業者連絡電話",
+          "type": "string"
+        },
+        "OperatorEmail": {
+          "description": "營運業者電子信箱",
+          "type": "string"
+        },
+        "OperatorUrl": {
+          "description": "營運業者網址鏈結",
+          "type": "string"
+        },
+        "ReservationUrl": {
+          "description": "訂票網址鏈結",
+          "type": "string"
+        },
+        "ReservationPhone": {
+          "description": "訂票連絡電話",
+          "type": "string"
+        },
+        "OperatorCode": {
+          "description": "營運業者簡碼",
+          "type": "string"
+        },
+        "AuthorityCode": {
+          "description": "營運業者業管機關簡碼(對於於公路客運/國道客運而言為THB)",
+          "type": "string"
+        },
+        "SubAuthorityCode": {
+          "description": "營運業者所屬業管子機關簡碼(對於公路客運/國道客運路線而言為區監理所如THB-VO10-1..等)",
+          "type": "string"
+        },
+        "OperatorNo": {
+          "description": "營運業者編號[交通部票證資料系統定義]",
+          "type": "string"
+        },
+        "UpdateTime": {
+          "title": "DateTime",
+          "description": "資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
         }
       }
     },
@@ -8624,6 +9334,9 @@
     }
   },
   "tags": [
+    {
+      "name": "RailBasic"
+    },
     {
       "name": "TRA"
     },

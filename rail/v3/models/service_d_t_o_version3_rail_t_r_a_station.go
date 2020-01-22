@@ -47,6 +47,10 @@ type ServiceDTOVersion3RailTRAStation struct {
 	// Required: true
 	StationPosition *ServiceDTOVersion3BasePointType `json:"StationPosition"`
 
+	// 臺鐵車站唯一識別代碼
+	// Required: true
+	StationUID *string `json:"StationUID"`
+
 	// 車站資訊說明網址
 	StationURL string `json:"StationURL,omitempty"`
 }
@@ -64,6 +68,10 @@ func (m *ServiceDTOVersion3RailTRAStation) Validate(formats strfmt.Registry) err
 	}
 
 	if err := m.validateStationPosition(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateStationUID(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -113,6 +121,15 @@ func (m *ServiceDTOVersion3RailTRAStation) validateStationPosition(formats strfm
 			}
 			return err
 		}
+	}
+
+	return nil
+}
+
+func (m *ServiceDTOVersion3RailTRAStation) validateStationUID(formats strfmt.Registry) error {
+
+	if err := validate.Required("StationUID", "body", m.StationUID); err != nil {
+		return err
 	}
 
 	return nil

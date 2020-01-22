@@ -104,6 +104,11 @@ type InterCityBusAPIRealTimeNearStop1Params struct {
 
 	*/
 	DollarTop *int64
+	/*RouteName
+	  繁體中文路線名稱，如'9102'
+
+	*/
+	RouteName string
 	/*Health
 	  加入參數'?health=true'即可查詢此API服務的健康狀態
 
@@ -214,6 +219,17 @@ func (o *InterCityBusAPIRealTimeNearStop1Params) SetDollarTop(dollarTop *int64) 
 	o.DollarTop = dollarTop
 }
 
+// WithRouteName adds the routeName to the inter city bus Api real time near stop 1 params
+func (o *InterCityBusAPIRealTimeNearStop1Params) WithRouteName(routeName string) *InterCityBusAPIRealTimeNearStop1Params {
+	o.SetRouteName(routeName)
+	return o
+}
+
+// SetRouteName adds the routeName to the inter city bus Api real time near stop 1 params
+func (o *InterCityBusAPIRealTimeNearStop1Params) SetRouteName(routeName string) {
+	o.RouteName = routeName
+}
+
 // WithHealth adds the health to the inter city bus Api real time near stop 1 params
 func (o *InterCityBusAPIRealTimeNearStop1Params) WithHealth(health *string) *InterCityBusAPIRealTimeNearStop1Params {
 	o.SetHealth(health)
@@ -320,6 +336,11 @@ func (o *InterCityBusAPIRealTimeNearStop1Params) WriteToRequest(r runtime.Client
 			}
 		}
 
+	}
+
+	// path param RouteName
+	if err := r.SetPathParam("RouteName", o.RouteName); err != nil {
+		return err
 	}
 
 	if o.Health != nil {
