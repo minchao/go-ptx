@@ -8,14 +8,14 @@ package models
 import (
 	"strconv"
 
-	strfmt "github.com/go-openapi/strfmt"
-
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 )
 
 // PTXAPIShipModelShipWrapperPTXServiceDTOShipSpecificationV3Route ShipRouteList
+//
 // swagger:model PTX.API.Ship.Model.ShipWrapper[PTX.Service.DTO.Ship.Specification.V3.Route]
 type PTXAPIShipModelShipWrapperPTXServiceDTOShipSpecificationV3Route struct {
 
@@ -30,7 +30,7 @@ type PTXAPIShipModelShipWrapperPTXServiceDTOShipSpecificationV3Route struct {
 	// Array
 	//
 	// 資料(陣列)
-	Routes []*PTXServiceDTOShipSpecificationV3Route `json:"Routes"`
+	Ports []*PTXServiceDTOShipSpecificationV3Route `json:"Ports"`
 
 	// Int32
 	//
@@ -54,7 +54,7 @@ type PTXAPIShipModelShipWrapperPTXServiceDTOShipSpecificationV3Route struct {
 func (m *PTXAPIShipModelShipWrapperPTXServiceDTOShipSpecificationV3Route) Validate(formats strfmt.Registry) error {
 	var res []error
 
-	if err := m.validateRoutes(formats); err != nil {
+	if err := m.validatePorts(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -72,21 +72,21 @@ func (m *PTXAPIShipModelShipWrapperPTXServiceDTOShipSpecificationV3Route) Valida
 	return nil
 }
 
-func (m *PTXAPIShipModelShipWrapperPTXServiceDTOShipSpecificationV3Route) validateRoutes(formats strfmt.Registry) error {
+func (m *PTXAPIShipModelShipWrapperPTXServiceDTOShipSpecificationV3Route) validatePorts(formats strfmt.Registry) error {
 
-	if swag.IsZero(m.Routes) { // not required
+	if swag.IsZero(m.Ports) { // not required
 		return nil
 	}
 
-	for i := 0; i < len(m.Routes); i++ {
-		if swag.IsZero(m.Routes[i]) { // not required
+	for i := 0; i < len(m.Ports); i++ {
+		if swag.IsZero(m.Ports[i]) { // not required
 			continue
 		}
 
-		if m.Routes[i] != nil {
-			if err := m.Routes[i].Validate(formats); err != nil {
+		if m.Ports[i] != nil {
+			if err := m.Ports[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
-					return ve.ValidateName("Routes" + "." + strconv.Itoa(i))
+					return ve.ValidateName("Ports" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

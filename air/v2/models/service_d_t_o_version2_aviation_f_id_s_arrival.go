@@ -6,9 +6,8 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	strfmt "github.com/go-openapi/strfmt"
-
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 )
@@ -16,6 +15,7 @@ import (
 // ServiceDTOVersion2AviationFIDSArrival FIDSArrival
 //
 // 抵達航班顯示資料
+//
 // swagger:model Service.DTO.Version2.Aviation.FIDSArrival
 type ServiceDTOVersion2AviationFIDSArrival struct {
 
@@ -36,6 +36,9 @@ type ServiceDTOVersion2AviationFIDSArrival struct {
 	// Required: true
 	AirlineID *string `json:"AirlineID"`
 
+	// 停機坪(僅貨機提供)
+	Apron string `json:"Apron,omitempty"`
+
 	// 目的地機場IATA國際代碼
 	// Required: true
 	ArrivalAirportID *string `json:"ArrivalAirportID"`
@@ -46,10 +49,10 @@ type ServiceDTOVersion2AviationFIDSArrival struct {
 	// 航班屬性狀態(英文)
 	ArrivalRemarkEn string `json:"ArrivalRemarkEn,omitempty"`
 
-	// 行李轉盤(到站FIDS可能有「行李轉盤」資訊, 離站FIDS不會有)
+	// 行李轉盤(到站FIDS可能有「行李轉盤」資訊, 離站FIDS不會有, 貨機則無此資訊)
 	BaggageClaim string `json:"BaggageClaim,omitempty"`
 
-	// 報到櫃檯(到站FIDS不會有「報到櫃台」資訊, 離站FIDS才可能有)
+	// 報到櫃檯(離站FIDS可能有「報到櫃台」資訊, 到站FIDS不會有, 貨機則無此資訊)
 	CheckCounter string `json:"CheckCounter,omitempty"`
 
 	// 航班共用班號
@@ -70,11 +73,11 @@ type ServiceDTOVersion2AviationFIDSArrival struct {
 	// Required: true
 	FlightDate *string `json:"FlightDate"`
 
-	// 航機班號
+	// 航機班號(不包含航空公司的AirlineID，僅有班號數字)
 	// Required: true
 	FlightNumber *string `json:"FlightNumber"`
 
-	// 登機門
+	// 登機門(僅客機提供)
 	Gate string `json:"Gate,omitempty"`
 
 	// 是否為貨機

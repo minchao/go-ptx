@@ -8,8 +8,7 @@ package client
 import (
 	"github.com/go-openapi/runtime"
 	httptransport "github.com/go-openapi/runtime/client"
-
-	strfmt "github.com/go-openapi/strfmt"
+	"github.com/go-openapi/strfmt"
 
 	"github.com/minchao/go-ptx/basic/v2/client/basic"
 )
@@ -56,9 +55,7 @@ func New(transport runtime.ClientTransport, formats strfmt.Registry) *MOTCTransp
 
 	cli := new(MOTCTransportAPIV2)
 	cli.Transport = transport
-
 	cli.Basic = basic.New(transport, formats)
-
 	return cli
 }
 
@@ -103,7 +100,7 @@ func (cfg *TransportConfig) WithSchemes(schemes []string) *TransportConfig {
 
 // MOTCTransportAPIV2 is a client for m o t c transport API v2
 type MOTCTransportAPIV2 struct {
-	Basic *basic.Client
+	Basic basic.ClientService
 
 	Transport runtime.ClientTransport
 }
@@ -111,7 +108,5 @@ type MOTCTransportAPIV2 struct {
 // SetTransport changes the transport on the client and all its subresources
 func (c *MOTCTransportAPIV2) SetTransport(transport runtime.ClientTransport) {
 	c.Transport = transport
-
 	c.Basic.SetTransport(transport)
-
 }

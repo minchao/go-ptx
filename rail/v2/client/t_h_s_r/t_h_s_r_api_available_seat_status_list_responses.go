@@ -10,10 +10,9 @@ import (
 	"io"
 
 	"github.com/go-openapi/runtime"
+	"github.com/go-openapi/strfmt"
 
-	strfmt "github.com/go-openapi/strfmt"
-
-	models "github.com/minchao/go-ptx/rail/v2/models"
+	"github.com/minchao/go-ptx/rail/v2/models"
 )
 
 // THSRAPIAvailableSeatStatusListReader is a Reader for the THSRAPIAvailableSeatStatusList structure.
@@ -46,21 +45,23 @@ func NewTHSRAPIAvailableSeatStatusListOK() *THSRAPIAvailableSeatStatusListOK {
 OK
 */
 type THSRAPIAvailableSeatStatusListOK struct {
-	Payload []*models.ServiceDTOVersion2RailTHSRAvailableSeatStatusList
+	Payload *models.MOTCAPIRailModelsV2THSRAvaliableSeatStatusWrapperServiceDTOVersion2RailTHSRAvailableSeat
 }
 
 func (o *THSRAPIAvailableSeatStatusListOK) Error() string {
-	return fmt.Sprintf("[GET /v2/Rail/THSR/AvailableSeatStatusList/{StationID}][%d] tHSRApiAvailableSeatStatusListOK  %+v", 200, o.Payload)
+	return fmt.Sprintf("[GET /v2/Rail/THSR/AvailableSeatStatusList][%d] tHSRApiAvailableSeatStatusListOK  %+v", 200, o.Payload)
 }
 
-func (o *THSRAPIAvailableSeatStatusListOK) GetPayload() []*models.ServiceDTOVersion2RailTHSRAvailableSeatStatusList {
+func (o *THSRAPIAvailableSeatStatusListOK) GetPayload() *models.MOTCAPIRailModelsV2THSRAvaliableSeatStatusWrapperServiceDTOVersion2RailTHSRAvailableSeat {
 	return o.Payload
 }
 
 func (o *THSRAPIAvailableSeatStatusListOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
+	o.Payload = new(models.MOTCAPIRailModelsV2THSRAvaliableSeatStatusWrapperServiceDTOVersion2RailTHSRAvailableSeat)
+
 	// response payload
-	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

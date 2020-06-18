@@ -6,13 +6,13 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	strfmt "github.com/go-openapi/strfmt"
-
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 )
 
 // PTXServiceDTOShipSpecificationV3Stoptime Stoptime
+//
 // swagger:model PTX.Service.DTO.Ship.Specification.V3.Stoptime
 type PTXServiceDTOShipSpecificationV3Stoptime struct {
 
@@ -34,7 +34,9 @@ type PTXServiceDTOShipSpecificationV3Stoptime struct {
 	// NameType
 	//
 	// 港口名稱
-	PortName *PTXServiceDTOSharedSpecificationV3BaseNameType `json:"PortName,omitempty"`
+	PortName struct {
+		PTXServiceDTOSharedSpecificationV3BaseNameType
+	} `json:"PortName,omitempty"`
 
 	// Int32
 	//
@@ -65,15 +67,6 @@ func (m *PTXServiceDTOShipSpecificationV3Stoptime) validatePortName(formats strf
 
 	if swag.IsZero(m.PortName) { // not required
 		return nil
-	}
-
-	if m.PortName != nil {
-		if err := m.PortName.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("PortName")
-			}
-			return err
-		}
 	}
 
 	return nil

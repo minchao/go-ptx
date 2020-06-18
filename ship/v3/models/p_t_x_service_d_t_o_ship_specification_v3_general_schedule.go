@@ -8,19 +8,19 @@ package models
 import (
 	"strconv"
 
-	strfmt "github.com/go-openapi/strfmt"
-
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 )
 
 // PTXServiceDTOShipSpecificationV3GeneralSchedule GeneralSchedule
+//
 // swagger:model PTX.Service.DTO.Ship.Specification.V3.GeneralSchedule
 type PTXServiceDTOShipSpecificationV3GeneralSchedule struct {
 
-	// Int32
+	// integer
 	//
-	// 方向性描述(0=去程, 1=返程,2=迴圈)
+	// 方向性描述 : [0:'去程',1:'返程',2:'迴圈']
 	Direction int32 `json:"Direction,omitempty"`
 
 	// String
@@ -36,7 +36,9 @@ type PTXServiceDTOShipSpecificationV3GeneralSchedule struct {
 	// NameType
 	//
 	// 航線名稱
-	RouteName *PTXServiceDTOSharedSpecificationV3BaseNameType `json:"RouteName,omitempty"`
+	RouteName struct {
+		PTXServiceDTOSharedSpecificationV3BaseNameType
+	} `json:"RouteName,omitempty"`
 
 	// Array
 	Timetables []*PTXServiceDTOShipSpecificationV3Timetable `json:"Timetables"`
@@ -73,15 +75,6 @@ func (m *PTXServiceDTOShipSpecificationV3GeneralSchedule) validateRouteName(form
 
 	if swag.IsZero(m.RouteName) { // not required
 		return nil
-	}
-
-	if m.RouteName != nil {
-		if err := m.RouteName.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("RouteName")
-			}
-			return err
-		}
 	}
 
 	return nil

@@ -8,9 +8,8 @@ package models
 import (
 	"strconv"
 
-	strfmt "github.com/go-openapi/strfmt"
-
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 )
@@ -18,6 +17,7 @@ import (
 // ServiceDTOVersion2BusBusFare BusFare
 //
 // 票票價種類及費率說明
+//
 // swagger:model Service.DTO.Version2.Bus.BusFare
 type ServiceDTOVersion2BusBusFare struct {
 

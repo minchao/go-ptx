@@ -6,9 +6,8 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	strfmt "github.com/go-openapi/strfmt"
-
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 )
@@ -16,6 +15,7 @@ import (
 // ServiceDTOVersion2RailTRATimeInfoRailGeneralTrainInfo RailGeneralTrainInfo
 //
 // 臺鐵車次定期資料型別(時刻表用)
+//
 // swagger:model Service.DTO.Version2.Rail.TRA.TimeInfo.RailGeneralTrainInfo
 type ServiceDTOVersion2RailTRATimeInfoRailGeneralTrainInfo struct {
 
@@ -39,7 +39,7 @@ type ServiceDTOVersion2RailTRATimeInfoRailGeneralTrainInfo struct {
 
 	// integer
 	//
-	// 是否提供餐車服務 : [0:'否',1:'是']
+	// 是否提供訂便當服務 : [0:'否',1:'是']
 	// Required: true
 	DiningFlag *int32 `json:"DiningFlag"`
 

@@ -6,25 +6,25 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	strfmt "github.com/go-openapi/strfmt"
-
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 )
 
 // ServiceDTOVersion2BikeBikeShape BikeShape
+//
 // swagger:model Service.DTO.Version2.Bike.BikeShape
 type ServiceDTOVersion2BikeBikeShape struct {
 
-	// 業管機關名稱
+	// 業管機關名稱（可能包含多個業管機關）
 	AuthorityName string `json:"AuthorityName,omitempty"`
 
-	// 路線權管所屬縣市
+	// 路線所在縣市名稱
 	// Required: true
 	City *string `json:"City"`
 
-	// 路線權管所屬縣市之代碼
+	// 路線所在縣市代碼
 	// Required: true
 	CityCode *string `json:"CityCode"`
 
@@ -34,27 +34,27 @@ type ServiceDTOVersion2BikeBikeShape struct {
 	// 自行車道類型
 	CyclingType string `json:"CyclingType,omitempty"`
 
-	// 車行方向
+	// 自行車道車行方向
 	Direction string `json:"Direction,omitempty"`
 
 	// 自行車道完工日期時間
 	FinishedTime string `json:"FinishedTime,omitempty"`
 
-	// well-known text，為路線軌跡資料
+	// 路線軌跡資料
 	// Required: true
 	Geometry *string `json:"Geometry"`
 
-	// 路線名稱
+	// 路線迄點描述
 	RoadSectionEnd string `json:"RoadSectionEnd,omitempty"`
 
-	// 路線名稱
+	// 路線起點描述
 	RoadSectionStart string `json:"RoadSectionStart,omitempty"`
 
 	// 路線名稱
 	// Required: true
 	RouteName *string `json:"RouteName"`
 
-	// 鄉鎮名稱
+	// 路線所在鄉鎮名稱（可能包含多個鄉鎮）
 	Town string `json:"Town,omitempty"`
 
 	// DateTime

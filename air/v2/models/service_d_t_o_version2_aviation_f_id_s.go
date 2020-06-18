@@ -6,9 +6,8 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	strfmt "github.com/go-openapi/strfmt"
-
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 )
@@ -16,6 +15,7 @@ import (
 // ServiceDTOVersion2AviationFIDS FIDS
 //
 // 航班顯示資料
+//
 // swagger:model Service.DTO.Version2.Aviation.FIDS
 type ServiceDTOVersion2AviationFIDS struct {
 
@@ -45,7 +45,10 @@ type ServiceDTOVersion2AviationFIDS struct {
 	// Required: true
 	ArrivalAirportID *string `json:"ArrivalAirportID"`
 
-	// 抵達登機門
+	// 抵達停機坪(僅貨機提供)
+	ArrivalApron string `json:"ArrivalApron,omitempty"`
+
+	// 抵達登機門(僅客機提供)
 	ArrivalGate string `json:"ArrivalGate,omitempty"`
 
 	// 航班屬性狀態,為該機場觀點的狀態
@@ -70,7 +73,10 @@ type ServiceDTOVersion2AviationFIDS struct {
 	// Required: true
 	DepartureAirportID *string `json:"DepartureAirportID"`
 
-	// 出發登機門
+	// 出發停機坪(僅貨機提供)
+	DepartureApron string `json:"DepartureApron,omitempty"`
+
+	// 出發登機門(僅客機提供)
 	DepartureGate string `json:"DepartureGate,omitempty"`
 
 	// 航班屬性狀態,為第三方觀點的狀態(資料來源:民航局)
@@ -98,7 +104,7 @@ type ServiceDTOVersion2AviationFIDS struct {
 	// Required: true
 	FlightDate *string `json:"FlightDate"`
 
-	// 航機班號
+	// 航機班號(不包含航空公司的AirlineID，僅有班號數字)
 	// Required: true
 	FlightNumber *string `json:"FlightNumber"`
 

@@ -9,12 +9,11 @@ import (
 	"fmt"
 
 	"github.com/go-openapi/runtime"
-
-	strfmt "github.com/go-openapi/strfmt"
+	"github.com/go-openapi/strfmt"
 )
 
 // New creates a new air API client.
-func New(transport runtime.ClientTransport, formats strfmt.Registry) *Client {
+func New(transport runtime.ClientTransport, formats strfmt.Registry) ClientService {
 	return &Client{transport: transport, formats: formats}
 }
 
@@ -26,10 +25,47 @@ type Client struct {
 	formats   strfmt.Registry
 }
 
-/*
-AirAPIAirline 取得指定s 航空公司 資料
+// ClientService is the interface for Client methods
+type ClientService interface {
+	AirAPIAirline(params *AirAPIAirlineParams) (*AirAPIAirlineOK, error)
 
-取得指定[航空公司]資料
+	AirAPIAirline1(params *AirAPIAirline1Params) (*AirAPIAirline1OK, error)
+
+	AirAPIAirport(params *AirAPIAirportParams) (*AirAPIAirportOK, error)
+
+	AirAPIAirport1(params *AirAPIAirport1Params) (*AirAPIAirport1OK, error)
+
+	AirAPIArrival(params *AirAPIArrivalParams) (*AirAPIArrivalOK, error)
+
+	AirAPIArrival1(params *AirAPIArrival1Params) (*AirAPIArrival1OK, error)
+
+	AirAPIDeparture(params *AirAPIDepartureParams) (*AirAPIDepartureOK, error)
+
+	AirAPIDeparture1(params *AirAPIDeparture1Params) (*AirAPIDeparture1OK, error)
+
+	AirAPIDomestic(params *AirAPIDomesticParams) (*AirAPIDomesticOK, error)
+
+	AirAPIFIDS(params *AirAPIFIDSParams) (*AirAPIFIDSOK, error)
+
+	AirAPIFIDS1(params *AirAPIFIDS1Params) (*AirAPIFIDS1OK, error)
+
+	AirAPIFlight(params *AirAPIFlightParams) (*AirAPIFlightOK, error)
+
+	AirAPIFlight1(params *AirAPIFlight1Params) (*AirAPIFlight1OK, error)
+
+	AirAPIInternational(params *AirAPIInternationalParams) (*AirAPIInternationalOK, error)
+
+	AirAPIMETAR(params *AirAPIMETARParams) (*AirAPIMETAROK, error)
+
+	AirAPIMETAR1(params *AirAPIMETAR1Params) (*AirAPIMETAR1OK, error)
+
+	SetTransport(transport runtime.ClientTransport)
+}
+
+/*
+  AirAPIAirline 取得指定s 航空公司 資料
+
+  取得指定[航空公司]資料
 */
 func (a *Client) AirAPIAirline(params *AirAPIAirlineParams) (*AirAPIAirlineOK, error) {
 	// TODO: Validate the params before sending
@@ -42,7 +78,7 @@ func (a *Client) AirAPIAirline(params *AirAPIAirlineParams) (*AirAPIAirlineOK, e
 		Method:             "GET",
 		PathPattern:        "/v2/Air/Airline/{IATA}",
 		ProducesMediaTypes: []string{"application/json", "application/xml", "text/json", "text/xml"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &AirAPIAirlineReader{formats: a.formats},
@@ -63,9 +99,9 @@ func (a *Client) AirAPIAirline(params *AirAPIAirlineParams) (*AirAPIAirlineOK, e
 }
 
 /*
-AirAPIAirline1 取得航空公司資料s
+  AirAPIAirline1 取得航空公司資料s
 
-取得所有航空公司資料
+  取得所有航空公司資料
 */
 func (a *Client) AirAPIAirline1(params *AirAPIAirline1Params) (*AirAPIAirline1OK, error) {
 	// TODO: Validate the params before sending
@@ -78,7 +114,7 @@ func (a *Client) AirAPIAirline1(params *AirAPIAirline1Params) (*AirAPIAirline1OK
 		Method:             "GET",
 		PathPattern:        "/v2/Air/Airline",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &AirAPIAirline1Reader{formats: a.formats},
@@ -99,9 +135,9 @@ func (a *Client) AirAPIAirline1(params *AirAPIAirline1Params) (*AirAPIAirline1OK
 }
 
 /*
-AirAPIAirport 取得機場資料s
+  AirAPIAirport 取得機場資料s
 
-取得所有機場資料
+  取得所有機場資料
 */
 func (a *Client) AirAPIAirport(params *AirAPIAirportParams) (*AirAPIAirportOK, error) {
 	// TODO: Validate the params before sending
@@ -114,7 +150,7 @@ func (a *Client) AirAPIAirport(params *AirAPIAirportParams) (*AirAPIAirportOK, e
 		Method:             "GET",
 		PathPattern:        "/v2/Air/Airport",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &AirAPIAirportReader{formats: a.formats},
@@ -135,9 +171,9 @@ func (a *Client) AirAPIAirport(params *AirAPIAirportParams) (*AirAPIAirportOK, e
 }
 
 /*
-AirAPIAirport1 取得指定s 機場 資料
+  AirAPIAirport1 取得指定s 機場 資料
 
-取得指定[機場]資料
+  取得指定[機場]資料
 */
 func (a *Client) AirAPIAirport1(params *AirAPIAirport1Params) (*AirAPIAirport1OK, error) {
 	// TODO: Validate the params before sending
@@ -150,7 +186,7 @@ func (a *Client) AirAPIAirport1(params *AirAPIAirport1Params) (*AirAPIAirport1OK
 		Method:             "GET",
 		PathPattern:        "/v2/Air/Airport/{IATA}",
 		ProducesMediaTypes: []string{"application/json", "application/xml", "text/json", "text/xml"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &AirAPIAirport1Reader{formats: a.formats},
@@ -171,9 +207,9 @@ func (a *Client) AirAPIAirport1(params *AirAPIAirport1Params) (*AirAPIAirport1OK
 }
 
 /*
-AirAPIArrival 取得機場的即時入境航班s
+  AirAPIArrival 取得機場的即時入境航班s
 
-取得機場的即時入境航班
+  取得機場的即時入境航班
 */
 func (a *Client) AirAPIArrival(params *AirAPIArrivalParams) (*AirAPIArrivalOK, error) {
 	// TODO: Validate the params before sending
@@ -186,7 +222,7 @@ func (a *Client) AirAPIArrival(params *AirAPIArrivalParams) (*AirAPIArrivalOK, e
 		Method:             "GET",
 		PathPattern:        "/v2/Air/FIDS/Airport/Arrival",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &AirAPIArrivalReader{formats: a.formats},
@@ -207,9 +243,9 @@ func (a *Client) AirAPIArrival(params *AirAPIArrivalParams) (*AirAPIArrivalOK, e
 }
 
 /*
-AirAPIArrival1 取得指定s 機場的即時入境航班
+  AirAPIArrival1 取得指定s 機場的即時入境航班
 
-取得[指定機場]的即時入境航班
+  取得[指定機場]的即時入境航班
 */
 func (a *Client) AirAPIArrival1(params *AirAPIArrival1Params) (*AirAPIArrival1OK, error) {
 	// TODO: Validate the params before sending
@@ -222,7 +258,7 @@ func (a *Client) AirAPIArrival1(params *AirAPIArrival1Params) (*AirAPIArrival1OK
 		Method:             "GET",
 		PathPattern:        "/v2/Air/FIDS/Airport/Arrival/{IATA}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &AirAPIArrival1Reader{formats: a.formats},
@@ -243,9 +279,9 @@ func (a *Client) AirAPIArrival1(params *AirAPIArrival1Params) (*AirAPIArrival1OK
 }
 
 /*
-AirAPIDeparture 取得機場的即時出境航班s
+  AirAPIDeparture 取得機場的即時出境航班s
 
-取得機場的即時出境航班
+  取得機場的即時出境航班
 */
 func (a *Client) AirAPIDeparture(params *AirAPIDepartureParams) (*AirAPIDepartureOK, error) {
 	// TODO: Validate the params before sending
@@ -258,7 +294,7 @@ func (a *Client) AirAPIDeparture(params *AirAPIDepartureParams) (*AirAPIDepartur
 		Method:             "GET",
 		PathPattern:        "/v2/Air/FIDS/Airport/Departure",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &AirAPIDepartureReader{formats: a.formats},
@@ -279,9 +315,9 @@ func (a *Client) AirAPIDeparture(params *AirAPIDepartureParams) (*AirAPIDepartur
 }
 
 /*
-AirAPIDeparture1 取得指定s 機場的即時出境航班
+  AirAPIDeparture1 取得指定s 機場的即時出境航班
 
-取得指定的[機場即時出境航班]
+  取得指定的[機場即時出境航班]
 */
 func (a *Client) AirAPIDeparture1(params *AirAPIDeparture1Params) (*AirAPIDeparture1OK, error) {
 	// TODO: Validate the params before sending
@@ -294,7 +330,7 @@ func (a *Client) AirAPIDeparture1(params *AirAPIDeparture1Params) (*AirAPIDepart
 		Method:             "GET",
 		PathPattern:        "/v2/Air/FIDS/Airport/Departure/{IATA}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &AirAPIDeparture1Reader{formats: a.formats},
@@ -315,7 +351,7 @@ func (a *Client) AirAPIDeparture1(params *AirAPIDeparture1Params) (*AirAPIDepart
 }
 
 /*
-AirAPIDomestic 取得國內航空定期時刻表s
+  AirAPIDomestic 取得國內航空定期時刻表s
 */
 func (a *Client) AirAPIDomestic(params *AirAPIDomesticParams) (*AirAPIDomesticOK, error) {
 	// TODO: Validate the params before sending
@@ -328,7 +364,7 @@ func (a *Client) AirAPIDomestic(params *AirAPIDomesticParams) (*AirAPIDomesticOK
 		Method:             "GET",
 		PathPattern:        "/v2/Air/GeneralSchedule/Domestic",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &AirAPIDomesticReader{formats: a.formats},
@@ -349,9 +385,9 @@ func (a *Client) AirAPIDomestic(params *AirAPIDomesticParams) (*AirAPIDomesticOK
 }
 
 /*
-AirAPIFIDS 取得機場的即時航班資料s
+  AirAPIFIDS 取得機場的即時航班資料s
 
-取得即時航班資料
+  取得即時航班資料
 */
 func (a *Client) AirAPIFIDS(params *AirAPIFIDSParams) (*AirAPIFIDSOK, error) {
 	// TODO: Validate the params before sending
@@ -364,7 +400,7 @@ func (a *Client) AirAPIFIDS(params *AirAPIFIDSParams) (*AirAPIFIDSOK, error) {
 		Method:             "GET",
 		PathPattern:        "/v2/Air/FIDS/Airport",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &AirAPIFIDSReader{formats: a.formats},
@@ -385,9 +421,9 @@ func (a *Client) AirAPIFIDS(params *AirAPIFIDSParams) (*AirAPIFIDSOK, error) {
 }
 
 /*
-AirAPIFIDS1 取得指定s 機場的即時航班 資料
+  AirAPIFIDS1 取得指定s 機場的即時航班 資料
 
-取得指定[機場的即時航班]資料
+  取得指定[機場的即時航班]資料
 */
 func (a *Client) AirAPIFIDS1(params *AirAPIFIDS1Params) (*AirAPIFIDS1OK, error) {
 	// TODO: Validate the params before sending
@@ -400,7 +436,7 @@ func (a *Client) AirAPIFIDS1(params *AirAPIFIDS1Params) (*AirAPIFIDS1OK, error) 
 		Method:             "GET",
 		PathPattern:        "/v2/Air/FIDS/Airport/{IATA}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &AirAPIFIDS1Reader{formats: a.formats},
@@ -421,9 +457,9 @@ func (a *Client) AirAPIFIDS1(params *AirAPIFIDS1Params) (*AirAPIFIDS1OK, error) 
 }
 
 /*
-AirAPIFlight 取得即時航班資料s
+  AirAPIFlight 取得即時航班資料s
 
-取得即時航班資料
+  取得即時航班資料
 */
 func (a *Client) AirAPIFlight(params *AirAPIFlightParams) (*AirAPIFlightOK, error) {
 	// TODO: Validate the params before sending
@@ -436,7 +472,7 @@ func (a *Client) AirAPIFlight(params *AirAPIFlightParams) (*AirAPIFlightOK, erro
 		Method:             "GET",
 		PathPattern:        "/v2/Air/FIDS/Flight",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &AirAPIFlightReader{formats: a.formats},
@@ -457,7 +493,7 @@ func (a *Client) AirAPIFlight(params *AirAPIFlightParams) (*AirAPIFlightOK, erro
 }
 
 /*
-AirAPIFlight1 取得指定s 即時航班 資料
+  AirAPIFlight1 取得指定s 即時航班 資料
 */
 func (a *Client) AirAPIFlight1(params *AirAPIFlight1Params) (*AirAPIFlight1OK, error) {
 	// TODO: Validate the params before sending
@@ -470,7 +506,7 @@ func (a *Client) AirAPIFlight1(params *AirAPIFlight1Params) (*AirAPIFlight1OK, e
 		Method:             "GET",
 		PathPattern:        "/v2/Air/FIDS/Flight/{FlightNo}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &AirAPIFlight1Reader{formats: a.formats},
@@ -491,7 +527,7 @@ func (a *Client) AirAPIFlight1(params *AirAPIFlight1Params) (*AirAPIFlight1OK, e
 }
 
 /*
-AirAPIInternational 取得國際航空定期時刻表s
+  AirAPIInternational 取得國際航空定期時刻表s
 */
 func (a *Client) AirAPIInternational(params *AirAPIInternationalParams) (*AirAPIInternationalOK, error) {
 	// TODO: Validate the params before sending
@@ -504,7 +540,7 @@ func (a *Client) AirAPIInternational(params *AirAPIInternationalParams) (*AirAPI
 		Method:             "GET",
 		PathPattern:        "/v2/Air/GeneralSchedule/International",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &AirAPIInternationalReader{formats: a.formats},
@@ -525,9 +561,9 @@ func (a *Client) AirAPIInternational(params *AirAPIInternationalParams) (*AirAPI
 }
 
 /*
-AirAPIMETAR 取得s 國內機場 氣象資訊觀測資料
+  AirAPIMETAR 取得s 國內機場 氣象資訊觀測資料
 
-取得[國內機場]氣象資訊觀測資料
+  取得[國內機場]氣象資訊觀測資料
 <br />目前提供之機場氣象觀測站代碼清單
 <br />RCSS:松山機場    RCKH:高雄機場
 <br />RCTP:桃園機場    RCMT:北竿機場
@@ -548,7 +584,7 @@ func (a *Client) AirAPIMETAR(params *AirAPIMETARParams) (*AirAPIMETAROK, error) 
 		Method:             "GET",
 		PathPattern:        "/v2/Air/METAR/Airport",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &AirAPIMETARReader{formats: a.formats},
@@ -569,9 +605,9 @@ func (a *Client) AirAPIMETAR(params *AirAPIMETARParams) (*AirAPIMETAROK, error) 
 }
 
 /*
-AirAPIMETAR1 取得指定s 國內機場 氣象資訊觀測資料
+  AirAPIMETAR1 取得指定s 國內機場 氣象資訊觀測資料
 
-取得指定[國內機場]氣象資訊觀測資料
+  取得指定[國內機場]氣象資訊觀測資料
 */
 func (a *Client) AirAPIMETAR1(params *AirAPIMETAR1Params) (*AirAPIMETAR1OK, error) {
 	// TODO: Validate the params before sending
@@ -584,7 +620,7 @@ func (a *Client) AirAPIMETAR1(params *AirAPIMETAR1Params) (*AirAPIMETAR1OK, erro
 		Method:             "GET",
 		PathPattern:        "/v2/Air/METAR/Airport/{IATA}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &AirAPIMETAR1Reader{formats: a.formats},

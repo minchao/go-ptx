@@ -6,9 +6,8 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	strfmt "github.com/go-openapi/strfmt"
-
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 )
@@ -16,6 +15,7 @@ import (
 // ServiceDTOVersion2RailTHSRStationExit StationExit
 //
 // 高鐵車站出入口資料
+//
 // swagger:model Service.DTO.Version2.Rail.THSR.StationExit
 type ServiceDTOVersion2RailTHSRStationExit struct {
 

@@ -10,10 +10,9 @@ import (
 	"io"
 
 	"github.com/go-openapi/runtime"
+	"github.com/go-openapi/strfmt"
 
-	strfmt "github.com/go-openapi/strfmt"
-
-	models "github.com/minchao/go-ptx/tourism/v2/models"
+	"github.com/minchao/go-ptx/tourism/v2/models"
 )
 
 // TourismAPIActivity0Reader is a Reader for the TourismAPIActivity0 structure.

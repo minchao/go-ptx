@@ -8,8 +8,7 @@ package client
 import (
 	"github.com/go-openapi/runtime"
 	httptransport "github.com/go-openapi/runtime/client"
-
-	strfmt "github.com/go-openapi/strfmt"
+	"github.com/go-openapi/strfmt"
 
 	"github.com/minchao/go-ptx/bus/v3/client/city_bus"
 )
@@ -56,9 +55,7 @@ func New(transport runtime.ClientTransport, formats strfmt.Registry) *MOTCTransp
 
 	cli := new(MOTCTransportAPIV3)
 	cli.Transport = transport
-
 	cli.CityBus = city_bus.New(transport, formats)
-
 	return cli
 }
 
@@ -103,7 +100,7 @@ func (cfg *TransportConfig) WithSchemes(schemes []string) *TransportConfig {
 
 // MOTCTransportAPIV3 is a client for m o t c transport API v3
 type MOTCTransportAPIV3 struct {
-	CityBus *city_bus.Client
+	CityBus city_bus.ClientService
 
 	Transport runtime.ClientTransport
 }
@@ -111,7 +108,5 @@ type MOTCTransportAPIV3 struct {
 // SetTransport changes the transport on the client and all its subresources
 func (c *MOTCTransportAPIV3) SetTransport(transport runtime.ClientTransport) {
 	c.Transport = transport
-
 	c.CityBus.SetTransport(transport)
-
 }

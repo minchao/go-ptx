@@ -9,12 +9,11 @@ import (
 	"fmt"
 
 	"github.com/go-openapi/runtime"
-
-	strfmt "github.com/go-openapi/strfmt"
+	"github.com/go-openapi/strfmt"
 )
 
 // New creates a new inter city bus API client.
-func New(transport runtime.ClientTransport, formats strfmt.Registry) *Client {
+func New(transport runtime.ClientTransport, formats strfmt.Registry) ClientService {
 	return &Client{transport: transport, formats: formats}
 }
 
@@ -26,10 +25,71 @@ type Client struct {
 	formats   strfmt.Registry
 }
 
-/*
-InterCityBusAPIDataVersion 取得公路客運目前資料的最新版本資訊s
+// ClientService is the interface for Client methods
+type ClientService interface {
+	InterCityBusAPIDataVersion(params *InterCityBusAPIDataVersionParams) (*InterCityBusAPIDataVersionOK, *InterCityBusAPIDataVersionStatus299, error)
 
-版本詳細資訊
+	InterCityBusAPIEstimatedTimeOfArrival(params *InterCityBusAPIEstimatedTimeOfArrivalParams) (*InterCityBusAPIEstimatedTimeOfArrivalOK, *InterCityBusAPIEstimatedTimeOfArrivalStatus299, error)
+
+	InterCityBusAPIEstimatedTimeOfArrival1(params *InterCityBusAPIEstimatedTimeOfArrival1Params) (*InterCityBusAPIEstimatedTimeOfArrival1OK, *InterCityBusAPIEstimatedTimeOfArrival1Status299, error)
+
+	InterCityBusAPIEstimatedTimeOfArrivalUDP(params *InterCityBusAPIEstimatedTimeOfArrivalUDPParams) (*InterCityBusAPIEstimatedTimeOfArrivalUDPOK, *InterCityBusAPIEstimatedTimeOfArrivalUDPStatus299, error)
+
+	InterCityBusAPIEstimatedTimeOfArrivalUDP1(params *InterCityBusAPIEstimatedTimeOfArrivalUDP1Params) (*InterCityBusAPIEstimatedTimeOfArrivalUdp1OK, *InterCityBusAPIEstimatedTimeOfArrivalUdp1Status299, error)
+
+	InterCityBusAPINews(params *InterCityBusAPINewsParams) (*InterCityBusAPINewsOK, *InterCityBusAPINewsStatus299, error)
+
+	InterCityBusAPIOperator(params *InterCityBusAPIOperatorParams) (*InterCityBusAPIOperatorOK, *InterCityBusAPIOperatorStatus299, error)
+
+	InterCityBusAPIRealTimeByFrequency(params *InterCityBusAPIRealTimeByFrequencyParams) (*InterCityBusAPIRealTimeByFrequencyOK, *InterCityBusAPIRealTimeByFrequencyStatus299, error)
+
+	InterCityBusAPIRealTimeByFrequency2(params *InterCityBusAPIRealTimeByFrequency2Params) (*InterCityBusAPIRealTimeByFrequency2OK, *InterCityBusAPIRealTimeByFrequency2Status299, error)
+
+	InterCityBusAPIRealTimeByFrequencyUDP(params *InterCityBusAPIRealTimeByFrequencyUDPParams) (*InterCityBusAPIRealTimeByFrequencyUDPOK, *InterCityBusAPIRealTimeByFrequencyUDPStatus299, error)
+
+	InterCityBusAPIRealTimeByFrequencyUDP1(params *InterCityBusAPIRealTimeByFrequencyUDP1Params) (*InterCityBusAPIRealTimeByFrequencyUdp1OK, *InterCityBusAPIRealTimeByFrequencyUdp1Status299, error)
+
+	InterCityBusAPIRealTimeNearStop(params *InterCityBusAPIRealTimeNearStopParams) (*InterCityBusAPIRealTimeNearStopOK, *InterCityBusAPIRealTimeNearStopStatus299, error)
+
+	InterCityBusAPIRealTimeNearStop1(params *InterCityBusAPIRealTimeNearStop1Params) (*InterCityBusAPIRealTimeNearStop1OK, *InterCityBusAPIRealTimeNearStop1Status299, error)
+
+	InterCityBusAPIRealTimeNearStopUDP(params *InterCityBusAPIRealTimeNearStopUDPParams) (*InterCityBusAPIRealTimeNearStopUDPOK, *InterCityBusAPIRealTimeNearStopUDPStatus299, error)
+
+	InterCityBusAPIRealTimeNearStopUDP1(params *InterCityBusAPIRealTimeNearStopUDP1Params) (*InterCityBusAPIRealTimeNearStopUdp1OK, *InterCityBusAPIRealTimeNearStopUdp1Status299, error)
+
+	InterCityBusAPIRoute(params *InterCityBusAPIRouteParams) (*InterCityBusAPIRouteOK, *InterCityBusAPIRouteStatus299, error)
+
+	InterCityBusAPIRouteFare(params *InterCityBusAPIRouteFareParams) (*InterCityBusAPIRouteFareOK, *InterCityBusAPIRouteFareStatus299, error)
+
+	InterCityBusAPIRouteFare1(params *InterCityBusAPIRouteFare1Params) (*InterCityBusAPIRouteFare1OK, *InterCityBusAPIRouteFare1Status299, error)
+
+	InterCityBusAPIRoute1(params *InterCityBusAPIRoute1Params) (*InterCityBusAPIRoute1OK, *InterCityBusAPIRoute1Status299, error)
+
+	InterCityBusAPISchedule(params *InterCityBusAPIScheduleParams) (*InterCityBusAPIScheduleOK, *InterCityBusAPIScheduleStatus299, error)
+
+	InterCityBusAPISchedule1(params *InterCityBusAPISchedule1Params) (*InterCityBusAPISchedule1OK, *InterCityBusAPISchedule1Status299, error)
+
+	InterCityBusAPIStation(params *InterCityBusAPIStationParams) (*InterCityBusAPIStationOK, *InterCityBusAPIStationStatus299, error)
+
+	InterCityBusAPIStationGroup(params *InterCityBusAPIStationGroupParams) (*InterCityBusAPIStationGroupOK, *InterCityBusAPIStationGroupStatus299, error)
+
+	InterCityBusAPIStationName(params *InterCityBusAPIStationNameParams) (*InterCityBusAPIStationNameOK, *InterCityBusAPIStationNameStatus299, error)
+
+	InterCityBusAPIStop(params *InterCityBusAPIStopParams) (*InterCityBusAPIStopOK, *InterCityBusAPIStopStatus299, error)
+
+	InterCityBusAPIStopOfRoute(params *InterCityBusAPIStopOfRouteParams) (*InterCityBusAPIStopOfRouteOK, *InterCityBusAPIStopOfRouteStatus299, error)
+
+	InterCityBusAPIStopOfRoute1(params *InterCityBusAPIStopOfRoute1Params) (*InterCityBusAPIStopOfRoute1OK, *InterCityBusAPIStopOfRoute1Status299, error)
+
+	InterCityBusAPIVehicle(params *InterCityBusAPIVehicleParams) (*InterCityBusAPIVehicleOK, *InterCityBusAPIVehicleStatus299, error)
+
+	SetTransport(transport runtime.ClientTransport)
+}
+
+/*
+  InterCityBusAPIDataVersion 取得公路客運目前資料的最新版本資訊s
+
+  版本詳細資訊
 */
 func (a *Client) InterCityBusAPIDataVersion(params *InterCityBusAPIDataVersionParams) (*InterCityBusAPIDataVersionOK, *InterCityBusAPIDataVersionStatus299, error) {
 	// TODO: Validate the params before sending
@@ -42,7 +102,7 @@ func (a *Client) InterCityBusAPIDataVersion(params *InterCityBusAPIDataVersionPa
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/DataVersion/InterCity",
 		ProducesMediaTypes: []string{"application/json", "application/xml", "text/json", "text/xml"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &InterCityBusAPIDataVersionReader{formats: a.formats},
@@ -64,9 +124,9 @@ func (a *Client) InterCityBusAPIDataVersion(params *InterCityBusAPIDataVersionPa
 }
 
 /*
-InterCityBusAPIEstimatedTimeOfArrival 取得公路客運的預估到站資料s n1 批次更新
+  InterCityBusAPIEstimatedTimeOfArrival 取得公路客運的預估到站資料s n1 批次更新
 
-###公路客運之預估到站資料(N1)###
+  ###公路客運之預估到站資料(N1)###
 - 不保留[現在時間]超過[本平台資料更新時間]兩分鐘的資料
 - [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))
 */
@@ -81,7 +141,7 @@ func (a *Client) InterCityBusAPIEstimatedTimeOfArrival(params *InterCityBusAPIEs
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/EstimatedTimeOfArrival/InterCity",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &InterCityBusAPIEstimatedTimeOfArrivalReader{formats: a.formats},
@@ -103,9 +163,9 @@ func (a *Client) InterCityBusAPIEstimatedTimeOfArrival(params *InterCityBusAPIEs
 }
 
 /*
-InterCityBusAPIEstimatedTimeOfArrival1 取得指定s 路線名稱 的公路客運預估到站資料 n1 批次更新
+  InterCityBusAPIEstimatedTimeOfArrival1 取得指定s 路線名稱 的公路客運預估到站資料 n1 批次更新
 
-### 公路客運之預估到站資料(N1) ###
+  ### 公路客運之預估到站資料(N1) ###
 - 不保留[現在時間]超過[本平台資料更新時間]兩分鐘的資料
 - [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))
 */
@@ -120,7 +180,7 @@ func (a *Client) InterCityBusAPIEstimatedTimeOfArrival1(params *InterCityBusAPIE
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/EstimatedTimeOfArrival/InterCity/{RouteName}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &InterCityBusAPIEstimatedTimeOfArrival1Reader{formats: a.formats},
@@ -142,9 +202,9 @@ func (a *Client) InterCityBusAPIEstimatedTimeOfArrival1(params *InterCityBusAPIE
 }
 
 /*
-InterCityBusAPIEstimatedTimeOfArrivalUDP 取得公路客運的預估到站資料s n1 逐筆更新
+  InterCityBusAPIEstimatedTimeOfArrivalUDP 取得公路客運的預估到站資料s n1 逐筆更新
 
-### 公路客運之預估到站資料(N1) ###
+  ### 公路客運之預估到站資料(N1) ###
 - 不保留[現在時間]超過[本平台資料更新時間]兩分鐘的資料
 - [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))
 - N1僅於該路線上有任一車輛離站時，來源端才會重新計算並發佈，因此使用者需自行處理時間遞減機制，或以EstimateTime-(收到資料時間-SrcTrasTime)(秒)作為實際預估抵達時間。
@@ -160,7 +220,7 @@ func (a *Client) InterCityBusAPIEstimatedTimeOfArrivalUDP(params *InterCityBusAP
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/EstimatedTimeOfArrival/Streaming/InterCity",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &InterCityBusAPIEstimatedTimeOfArrivalUDPReader{formats: a.formats},
@@ -182,9 +242,9 @@ func (a *Client) InterCityBusAPIEstimatedTimeOfArrivalUDP(params *InterCityBusAP
 }
 
 /*
-InterCityBusAPIEstimatedTimeOfArrivalUDP1 取得指定s 路線名稱 的公路客運預估到站資料 n1 逐筆更新
+  InterCityBusAPIEstimatedTimeOfArrivalUDP1 取得指定s 路線名稱 的公路客運預估到站資料 n1 逐筆更新
 
-### 公路客運之預估到站資料(N1) ###
+  ### 公路客運之預估到站資料(N1) ###
 - 不保留[現在時間]超過[本平台資料更新時間]兩分鐘的資料
 - [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))
 - N1僅於該路線上有任一車輛離站時，來源端才會重新計算並發佈，因此使用者需自行處理時間遞減機制，或以EstimateTime-(收到資料時間-SrcTrasTime)(秒)作為實際預估抵達時間。
@@ -200,7 +260,7 @@ func (a *Client) InterCityBusAPIEstimatedTimeOfArrivalUDP1(params *InterCityBusA
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/EstimatedTimeOfArrival/Streaming/InterCity/{RouteName}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &InterCityBusAPIEstimatedTimeOfArrivalUDP1Reader{formats: a.formats},
@@ -222,9 +282,9 @@ func (a *Client) InterCityBusAPIEstimatedTimeOfArrivalUDP1(params *InterCityBusA
 }
 
 /*
-InterCityBusAPINews 取得公路客運之最新消息s
+  InterCityBusAPINews 取得公路客運之最新消息s
 
-公路客運之最新消息
+  公路客運之最新消息
 */
 func (a *Client) InterCityBusAPINews(params *InterCityBusAPINewsParams) (*InterCityBusAPINewsOK, *InterCityBusAPINewsStatus299, error) {
 	// TODO: Validate the params before sending
@@ -237,7 +297,7 @@ func (a *Client) InterCityBusAPINews(params *InterCityBusAPINewsParams) (*InterC
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/News/InterCity",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &InterCityBusAPINewsReader{formats: a.formats},
@@ -259,9 +319,9 @@ func (a *Client) InterCityBusAPINews(params *InterCityBusAPINewsParams) (*InterC
 }
 
 /*
-InterCityBusAPIOperator 取得公路客運的營運業者資料s
+  InterCityBusAPIOperator 取得公路客運的營運業者資料s
 
-公路客運之營運業者資料
+  公路客運之營運業者資料
 */
 func (a *Client) InterCityBusAPIOperator(params *InterCityBusAPIOperatorParams) (*InterCityBusAPIOperatorOK, *InterCityBusAPIOperatorStatus299, error) {
 	// TODO: Validate the params before sending
@@ -274,7 +334,7 @@ func (a *Client) InterCityBusAPIOperator(params *InterCityBusAPIOperatorParams) 
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/Operator/InterCity",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &InterCityBusAPIOperatorReader{formats: a.formats},
@@ -296,9 +356,9 @@ func (a *Client) InterCityBusAPIOperator(params *InterCityBusAPIOperatorParams) 
 }
 
 /*
-InterCityBusAPIRealTimeByFrequency 取得公路客運的動態定時資料s a1 批次更新
+  InterCityBusAPIRealTimeByFrequency 取得公路客運的動態定時資料s a1 批次更新
 
-### 公路客運之定時資料(A1) ###
+  ### 公路客運之定時資料(A1) ###
 - [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))
 */
 func (a *Client) InterCityBusAPIRealTimeByFrequency(params *InterCityBusAPIRealTimeByFrequencyParams) (*InterCityBusAPIRealTimeByFrequencyOK, *InterCityBusAPIRealTimeByFrequencyStatus299, error) {
@@ -312,7 +372,7 @@ func (a *Client) InterCityBusAPIRealTimeByFrequency(params *InterCityBusAPIRealT
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/RealTimeByFrequency/InterCity",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &InterCityBusAPIRealTimeByFrequencyReader{formats: a.formats},
@@ -334,26 +394,26 @@ func (a *Client) InterCityBusAPIRealTimeByFrequency(params *InterCityBusAPIRealT
 }
 
 /*
-InterCityBusAPIRealTimeByFrequency1 取得指定s 路線名稱 的公路客運動態定時資料 a1 批次更新
+  InterCityBusAPIRealTimeByFrequency2 取得指定s 路線名稱 的公路客運動態定時資料 a1 批次更新
 
-### 公路客運之定時資料(A1) ###
+  ### 公路客運之定時資料(A1) ###
 - [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))
 */
-func (a *Client) InterCityBusAPIRealTimeByFrequency1(params *InterCityBusAPIRealTimeByFrequency1Params) (*InterCityBusAPIRealTimeByFrequency1OK, *InterCityBusAPIRealTimeByFrequency1Status299, error) {
+func (a *Client) InterCityBusAPIRealTimeByFrequency2(params *InterCityBusAPIRealTimeByFrequency2Params) (*InterCityBusAPIRealTimeByFrequency2OK, *InterCityBusAPIRealTimeByFrequency2Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewInterCityBusAPIRealTimeByFrequency1Params()
+		params = NewInterCityBusAPIRealTimeByFrequency2Params()
 	}
 
 	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "InterCityBusApi_RealTimeByFrequency_1",
+		ID:                 "InterCityBusApi_RealTimeByFrequency_2",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/RealTimeByFrequency/InterCity/{RouteName}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &InterCityBusAPIRealTimeByFrequency1Reader{formats: a.formats},
+		Reader:             &InterCityBusAPIRealTimeByFrequency2Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -361,9 +421,9 @@ func (a *Client) InterCityBusAPIRealTimeByFrequency1(params *InterCityBusAPIReal
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *InterCityBusAPIRealTimeByFrequency1OK:
+	case *InterCityBusAPIRealTimeByFrequency2OK:
 		return value, nil, nil
-	case *InterCityBusAPIRealTimeByFrequency1Status299:
+	case *InterCityBusAPIRealTimeByFrequency2Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -372,9 +432,9 @@ func (a *Client) InterCityBusAPIRealTimeByFrequency1(params *InterCityBusAPIReal
 }
 
 /*
-InterCityBusAPIRealTimeByFrequencyUDP 取得公路客運的動態定時資料s a1 逐筆更新
+  InterCityBusAPIRealTimeByFrequencyUDP 取得公路客運的動態定時資料s a1 逐筆更新
 
-### 公路客運之定時資料(A1) ###
+  ### 公路客運之定時資料(A1) ###
 - [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))
 */
 func (a *Client) InterCityBusAPIRealTimeByFrequencyUDP(params *InterCityBusAPIRealTimeByFrequencyUDPParams) (*InterCityBusAPIRealTimeByFrequencyUDPOK, *InterCityBusAPIRealTimeByFrequencyUDPStatus299, error) {
@@ -388,7 +448,7 @@ func (a *Client) InterCityBusAPIRealTimeByFrequencyUDP(params *InterCityBusAPIRe
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/RealTimeByFrequency/Streaming/InterCity",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &InterCityBusAPIRealTimeByFrequencyUDPReader{formats: a.formats},
@@ -410,9 +470,9 @@ func (a *Client) InterCityBusAPIRealTimeByFrequencyUDP(params *InterCityBusAPIRe
 }
 
 /*
-InterCityBusAPIRealTimeByFrequencyUDP1 取得指定s 路線名稱 的公路客運動態定時資料 a1 逐筆更新
+  InterCityBusAPIRealTimeByFrequencyUDP1 取得指定s 路線名稱 的公路客運動態定時資料 a1 逐筆更新
 
-### 公路客運之定時資料(A1) ###
+  ### 公路客運之定時資料(A1) ###
 - [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))
 */
 func (a *Client) InterCityBusAPIRealTimeByFrequencyUDP1(params *InterCityBusAPIRealTimeByFrequencyUDP1Params) (*InterCityBusAPIRealTimeByFrequencyUdp1OK, *InterCityBusAPIRealTimeByFrequencyUdp1Status299, error) {
@@ -426,7 +486,7 @@ func (a *Client) InterCityBusAPIRealTimeByFrequencyUDP1(params *InterCityBusAPIR
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/RealTimeByFrequency/Streaming/InterCity/{RouteName}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &InterCityBusAPIRealTimeByFrequencyUDP1Reader{formats: a.formats},
@@ -448,9 +508,9 @@ func (a *Client) InterCityBusAPIRealTimeByFrequencyUDP1(params *InterCityBusAPIR
 }
 
 /*
-InterCityBusAPIRealTimeNearStop 取得公路客運的動態定點資料s a2 批次更新
+  InterCityBusAPIRealTimeNearStop 取得公路客運的動態定點資料s a2 批次更新
 
-### 公路客運之定點資料(A2) ###
+  ### 公路客運之定點資料(A2) ###
 - [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))
 */
 func (a *Client) InterCityBusAPIRealTimeNearStop(params *InterCityBusAPIRealTimeNearStopParams) (*InterCityBusAPIRealTimeNearStopOK, *InterCityBusAPIRealTimeNearStopStatus299, error) {
@@ -464,7 +524,7 @@ func (a *Client) InterCityBusAPIRealTimeNearStop(params *InterCityBusAPIRealTime
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/RealTimeNearStop/InterCity",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &InterCityBusAPIRealTimeNearStopReader{formats: a.formats},
@@ -486,9 +546,9 @@ func (a *Client) InterCityBusAPIRealTimeNearStop(params *InterCityBusAPIRealTime
 }
 
 /*
-InterCityBusAPIRealTimeNearStop1 取得指定s 路線名稱 的公路客運動態定點資料 a2 批次更新
+  InterCityBusAPIRealTimeNearStop1 取得指定s 路線名稱 的公路客運動態定點資料 a2 批次更新
 
-### 公路客運之定點資料(A2) ###
+  ### 公路客運之定點資料(A2) ###
 - [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))
 */
 func (a *Client) InterCityBusAPIRealTimeNearStop1(params *InterCityBusAPIRealTimeNearStop1Params) (*InterCityBusAPIRealTimeNearStop1OK, *InterCityBusAPIRealTimeNearStop1Status299, error) {
@@ -502,7 +562,7 @@ func (a *Client) InterCityBusAPIRealTimeNearStop1(params *InterCityBusAPIRealTim
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/RealTimeNearStop/InterCity/{RouteName}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &InterCityBusAPIRealTimeNearStop1Reader{formats: a.formats},
@@ -524,9 +584,9 @@ func (a *Client) InterCityBusAPIRealTimeNearStop1(params *InterCityBusAPIRealTim
 }
 
 /*
-InterCityBusAPIRealTimeNearStopUDP 取得公路客運的動態定點資料s a2 逐筆更新
+  InterCityBusAPIRealTimeNearStopUDP 取得公路客運的動態定點資料s a2 逐筆更新
 
-### 公路客運之定點資料(A2) ###
+  ### 公路客運之定點資料(A2) ###
 - [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))
 */
 func (a *Client) InterCityBusAPIRealTimeNearStopUDP(params *InterCityBusAPIRealTimeNearStopUDPParams) (*InterCityBusAPIRealTimeNearStopUDPOK, *InterCityBusAPIRealTimeNearStopUDPStatus299, error) {
@@ -540,7 +600,7 @@ func (a *Client) InterCityBusAPIRealTimeNearStopUDP(params *InterCityBusAPIRealT
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/RealTimeNearStop/Streaming/InterCity",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &InterCityBusAPIRealTimeNearStopUDPReader{formats: a.formats},
@@ -562,9 +622,9 @@ func (a *Client) InterCityBusAPIRealTimeNearStopUDP(params *InterCityBusAPIRealT
 }
 
 /*
-InterCityBusAPIRealTimeNearStopUDP1 取得指定s 路線名稱 的公路客運動態定點資料 a2 逐筆更新
+  InterCityBusAPIRealTimeNearStopUDP1 取得指定s 路線名稱 的公路客運動態定點資料 a2 逐筆更新
 
-### 公路客運之定點資料(A2) ###
+  ### 公路客運之定點資料(A2) ###
 - [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))
 */
 func (a *Client) InterCityBusAPIRealTimeNearStopUDP1(params *InterCityBusAPIRealTimeNearStopUDP1Params) (*InterCityBusAPIRealTimeNearStopUdp1OK, *InterCityBusAPIRealTimeNearStopUdp1Status299, error) {
@@ -578,7 +638,7 @@ func (a *Client) InterCityBusAPIRealTimeNearStopUDP1(params *InterCityBusAPIReal
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/RealTimeNearStop/Streaming/InterCity/{RouteName}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &InterCityBusAPIRealTimeNearStopUDP1Reader{formats: a.formats},
@@ -600,9 +660,9 @@ func (a *Client) InterCityBusAPIRealTimeNearStopUDP1(params *InterCityBusAPIReal
 }
 
 /*
-InterCityBusAPIRoute 取得公路客運路線資料s
+  InterCityBusAPIRoute 取得公路客運路線資料s
 
-公路客運之路線資料
+  公路客運之路線資料
 */
 func (a *Client) InterCityBusAPIRoute(params *InterCityBusAPIRouteParams) (*InterCityBusAPIRouteOK, *InterCityBusAPIRouteStatus299, error) {
 	// TODO: Validate the params before sending
@@ -615,7 +675,7 @@ func (a *Client) InterCityBusAPIRoute(params *InterCityBusAPIRouteParams) (*Inte
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/Route/InterCity",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &InterCityBusAPIRouteReader{formats: a.formats},
@@ -637,9 +697,9 @@ func (a *Client) InterCityBusAPIRoute(params *InterCityBusAPIRouteParams) (*Inte
 }
 
 /*
-InterCityBusAPIRouteFare 取得公路客運之路線票價資料s
+  InterCityBusAPIRouteFare 取得公路客運之路線票價資料s
 
-公路客運之路線票價資料
+  公路客運之路線票價資料
 */
 func (a *Client) InterCityBusAPIRouteFare(params *InterCityBusAPIRouteFareParams) (*InterCityBusAPIRouteFareOK, *InterCityBusAPIRouteFareStatus299, error) {
 	// TODO: Validate the params before sending
@@ -652,7 +712,7 @@ func (a *Client) InterCityBusAPIRouteFare(params *InterCityBusAPIRouteFareParams
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/RouteFare/InterCity",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &InterCityBusAPIRouteFareReader{formats: a.formats},
@@ -674,9 +734,9 @@ func (a *Client) InterCityBusAPIRouteFare(params *InterCityBusAPIRouteFareParams
 }
 
 /*
-InterCityBusAPIRouteFare1 取得指定s 路線名稱 的公路客運路線資料
+  InterCityBusAPIRouteFare1 取得指定s 路線名稱 的公路客運路線資料
 
-公路客運之路線資料
+  公路客運之路線資料
 */
 func (a *Client) InterCityBusAPIRouteFare1(params *InterCityBusAPIRouteFare1Params) (*InterCityBusAPIRouteFare1OK, *InterCityBusAPIRouteFare1Status299, error) {
 	// TODO: Validate the params before sending
@@ -689,7 +749,7 @@ func (a *Client) InterCityBusAPIRouteFare1(params *InterCityBusAPIRouteFare1Para
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/RouteFare/InterCity/{RouteName}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &InterCityBusAPIRouteFare1Reader{formats: a.formats},
@@ -711,9 +771,9 @@ func (a *Client) InterCityBusAPIRouteFare1(params *InterCityBusAPIRouteFare1Para
 }
 
 /*
-InterCityBusAPIRoute1 取得指定s 路線名稱 的公路客運路線資料
+  InterCityBusAPIRoute1 取得指定s 路線名稱 的公路客運路線資料
 
-公路客運之路線資料
+  公路客運之路線資料
 */
 func (a *Client) InterCityBusAPIRoute1(params *InterCityBusAPIRoute1Params) (*InterCityBusAPIRoute1OK, *InterCityBusAPIRoute1Status299, error) {
 	// TODO: Validate the params before sending
@@ -726,7 +786,7 @@ func (a *Client) InterCityBusAPIRoute1(params *InterCityBusAPIRoute1Params) (*In
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/Route/InterCity/{RouteName}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &InterCityBusAPIRoute1Reader{formats: a.formats},
@@ -748,9 +808,9 @@ func (a *Client) InterCityBusAPIRoute1(params *InterCityBusAPIRoute1Params) (*In
 }
 
 /*
-InterCityBusAPISchedule 取得公路客運路線班表資料s
+  InterCityBusAPISchedule 取得公路客運路線班表資料s
 
-公路客運之預定班表及班距資料。公路及國道客運多採用【班表】式時刻表
+  公路客運之預定班表及班距資料。公路及國道客運多採用【班表】式時刻表
 */
 func (a *Client) InterCityBusAPISchedule(params *InterCityBusAPIScheduleParams) (*InterCityBusAPIScheduleOK, *InterCityBusAPIScheduleStatus299, error) {
 	// TODO: Validate the params before sending
@@ -763,7 +823,7 @@ func (a *Client) InterCityBusAPISchedule(params *InterCityBusAPIScheduleParams) 
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/Schedule/InterCity",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &InterCityBusAPIScheduleReader{formats: a.formats},
@@ -785,9 +845,9 @@ func (a *Client) InterCityBusAPISchedule(params *InterCityBusAPIScheduleParams) 
 }
 
 /*
-InterCityBusAPISchedule1 取得指定s 路線名稱 的公路客運路線班表資料
+  InterCityBusAPISchedule1 取得指定s 路線名稱 的公路客運路線班表資料
 
-公路客運之預定班表及班距資料。公路及國道客運多採用【班表】式時刻表
+  公路客運之預定班表及班距資料。公路及國道客運多採用【班表】式時刻表
 */
 func (a *Client) InterCityBusAPISchedule1(params *InterCityBusAPISchedule1Params) (*InterCityBusAPISchedule1OK, *InterCityBusAPISchedule1Status299, error) {
 	// TODO: Validate the params before sending
@@ -800,7 +860,7 @@ func (a *Client) InterCityBusAPISchedule1(params *InterCityBusAPISchedule1Params
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/Schedule/InterCity/{RouteName}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &InterCityBusAPISchedule1Reader{formats: a.formats},
@@ -822,9 +882,9 @@ func (a *Client) InterCityBusAPISchedule1(params *InterCityBusAPISchedule1Params
 }
 
 /*
-InterCityBusAPIStation 取得公路客運站位資料s
+  InterCityBusAPIStation 取得公路客運站位資料s
 
-公路客運之各站牌所屬的站位資料
+  公路客運之各站牌所屬的站位資料
 */
 func (a *Client) InterCityBusAPIStation(params *InterCityBusAPIStationParams) (*InterCityBusAPIStationOK, *InterCityBusAPIStationStatus299, error) {
 	// TODO: Validate the params before sending
@@ -837,7 +897,7 @@ func (a *Client) InterCityBusAPIStation(params *InterCityBusAPIStationParams) (*
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/Station/InterCity",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &InterCityBusAPIStationReader{formats: a.formats},
@@ -859,9 +919,9 @@ func (a *Client) InterCityBusAPIStation(params *InterCityBusAPIStationParams) (*
 }
 
 /*
-InterCityBusAPIStationGroup 取得公路客運組站位資料s
+  InterCityBusAPIStationGroup 取得公路客運組站位資料s
 
-公路客運之各站牌所屬的組站位資料
+  公路客運之各站牌所屬的組站位資料
 */
 func (a *Client) InterCityBusAPIStationGroup(params *InterCityBusAPIStationGroupParams) (*InterCityBusAPIStationGroupOK, *InterCityBusAPIStationGroupStatus299, error) {
 	// TODO: Validate the params before sending
@@ -874,7 +934,7 @@ func (a *Client) InterCityBusAPIStationGroup(params *InterCityBusAPIStationGroup
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/StationGroup/InterCity",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &InterCityBusAPIStationGroupReader{formats: a.formats},
@@ -896,9 +956,9 @@ func (a *Client) InterCityBusAPIStationGroup(params *InterCityBusAPIStationGroup
 }
 
 /*
-InterCityBusAPIStationName 取得公路客運站名碼資料s
+  InterCityBusAPIStationName 取得公路客運站名碼資料s
 
-公路客運之各站牌所屬的站名碼資料
+  公路客運之各站牌所屬的站名碼資料
 */
 func (a *Client) InterCityBusAPIStationName(params *InterCityBusAPIStationNameParams) (*InterCityBusAPIStationNameOK, *InterCityBusAPIStationNameStatus299, error) {
 	// TODO: Validate the params before sending
@@ -911,7 +971,7 @@ func (a *Client) InterCityBusAPIStationName(params *InterCityBusAPIStationNamePa
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/StationName/InterCity",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &InterCityBusAPIStationNameReader{formats: a.formats},
@@ -933,9 +993,9 @@ func (a *Client) InterCityBusAPIStationName(params *InterCityBusAPIStationNamePa
 }
 
 /*
-InterCityBusAPIStop 取得公路客運站牌資料s
+  InterCityBusAPIStop 取得公路客運站牌資料s
 
-公路客運之站牌資料
+  公路客運之站牌資料
 */
 func (a *Client) InterCityBusAPIStop(params *InterCityBusAPIStopParams) (*InterCityBusAPIStopOK, *InterCityBusAPIStopStatus299, error) {
 	// TODO: Validate the params before sending
@@ -948,7 +1008,7 @@ func (a *Client) InterCityBusAPIStop(params *InterCityBusAPIStopParams) (*InterC
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/Stop/InterCity",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &InterCityBusAPIStopReader{formats: a.formats},
@@ -970,9 +1030,9 @@ func (a *Client) InterCityBusAPIStop(params *InterCityBusAPIStopParams) (*InterC
 }
 
 /*
-InterCityBusAPIStopOfRoute 取得公路客運路線與站牌資料s
+  InterCityBusAPIStopOfRoute 取得公路客運路線與站牌資料s
 
-公路客運之路線與站牌資料
+  公路客運之路線與站牌資料
 */
 func (a *Client) InterCityBusAPIStopOfRoute(params *InterCityBusAPIStopOfRouteParams) (*InterCityBusAPIStopOfRouteOK, *InterCityBusAPIStopOfRouteStatus299, error) {
 	// TODO: Validate the params before sending
@@ -985,7 +1045,7 @@ func (a *Client) InterCityBusAPIStopOfRoute(params *InterCityBusAPIStopOfRoutePa
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/StopOfRoute/InterCity",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &InterCityBusAPIStopOfRouteReader{formats: a.formats},
@@ -1007,9 +1067,9 @@ func (a *Client) InterCityBusAPIStopOfRoute(params *InterCityBusAPIStopOfRoutePa
 }
 
 /*
-InterCityBusAPIStopOfRoute1 取得指定s 路線名稱 的公路客運路線與站牌資料
+  InterCityBusAPIStopOfRoute1 取得指定s 路線名稱 的公路客運路線與站牌資料
 
-公路客運之路線與站牌資料
+  公路客運之路線與站牌資料
 */
 func (a *Client) InterCityBusAPIStopOfRoute1(params *InterCityBusAPIStopOfRoute1Params) (*InterCityBusAPIStopOfRoute1OK, *InterCityBusAPIStopOfRoute1Status299, error) {
 	// TODO: Validate the params before sending
@@ -1022,7 +1082,7 @@ func (a *Client) InterCityBusAPIStopOfRoute1(params *InterCityBusAPIStopOfRoute1
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/StopOfRoute/InterCity/{RouteName}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &InterCityBusAPIStopOfRoute1Reader{formats: a.formats},
@@ -1044,9 +1104,9 @@ func (a *Client) InterCityBusAPIStopOfRoute1(params *InterCityBusAPIStopOfRoute1
 }
 
 /*
-InterCityBusAPIVehicle 取得公路客運之車輛資料s
+  InterCityBusAPIVehicle 取得公路客運之車輛資料s
 
-公路客運之車輛資料
+  公路客運之車輛資料
 */
 func (a *Client) InterCityBusAPIVehicle(params *InterCityBusAPIVehicleParams) (*InterCityBusAPIVehicleOK, *InterCityBusAPIVehicleStatus299, error) {
 	// TODO: Validate the params before sending
@@ -1059,7 +1119,7 @@ func (a *Client) InterCityBusAPIVehicle(params *InterCityBusAPIVehicleParams) (*
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/Vehicle/InterCity",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &InterCityBusAPIVehicleReader{formats: a.formats},

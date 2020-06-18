@@ -6,9 +6,8 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	strfmt "github.com/go-openapi/strfmt"
-
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 )
@@ -16,6 +15,7 @@ import (
 // ServiceDTOVersion2RailMetroLiveBoard LiveBoard
 //
 // 捷運列車到離站動態資料
+//
 // swagger:model Service.DTO.Version2.Rail.Metro.LiveBoard
 type ServiceDTOVersion2RailMetroLiveBoard struct {
 
@@ -23,13 +23,17 @@ type ServiceDTOVersion2RailMetroLiveBoard struct {
 	// Required: true
 	DestinationStaionID *string `json:"DestinationStaionID"`
 
+	// 目的地車站代號
+	// Required: true
+	DestinationStationID *string `json:"DestinationStationID"`
+
 	// NameType
 	//
 	// 目的地車站名稱
 	// Required: true
 	DestinationStationName *ServiceDTOVersion2BaseNameType `json:"DestinationStationName"`
 
-	// 下班車次抵達時間預估(秒)
+	// 下班車次抵達時間預估(分)
 	// Required: true
 	EstimateTime *int32 `json:"EstimateTime"`
 
@@ -81,6 +85,10 @@ func (m *ServiceDTOVersion2RailMetroLiveBoard) Validate(formats strfmt.Registry)
 		res = append(res, err)
 	}
 
+	if err := m.validateDestinationStationID(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateDestinationStationName(formats); err != nil {
 		res = append(res, err)
 	}
@@ -126,6 +134,15 @@ func (m *ServiceDTOVersion2RailMetroLiveBoard) Validate(formats strfmt.Registry)
 func (m *ServiceDTOVersion2RailMetroLiveBoard) validateDestinationStaionID(formats strfmt.Registry) error {
 
 	if err := validate.Required("DestinationStaionID", "body", m.DestinationStaionID); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *ServiceDTOVersion2RailMetroLiveBoard) validateDestinationStationID(formats strfmt.Registry) error {
+
+	if err := validate.Required("DestinationStationID", "body", m.DestinationStationID); err != nil {
 		return err
 	}
 

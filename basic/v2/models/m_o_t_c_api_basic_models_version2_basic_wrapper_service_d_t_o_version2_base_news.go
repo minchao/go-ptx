@@ -8,13 +8,14 @@ package models
 import (
 	"strconv"
 
-	strfmt "github.com/go-openapi/strfmt"
-
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
+	"github.com/go-openapi/validate"
 )
 
 // MOTCAPIBasicModelsVersion2BasicWrapperServiceDTOVersion2BaseNews NewsList
+//
 // swagger:model MOTC.API.Basic.Models.Version2.BasicWrapper[Service.DTO.Version2.Base.News]
 type MOTCAPIBasicModelsVersion2BasicWrapperServiceDTOVersion2BaseNews struct {
 
@@ -22,15 +23,18 @@ type MOTCAPIBasicModelsVersion2BasicWrapperServiceDTOVersion2BaseNews struct {
 	Count int64 `json:"Count,omitempty"`
 
 	// 資料(陣列)
+	// Required: true
 	Newses []*ServiceDTOVersion2BaseNews `json:"Newses"`
 
 	// 資料更新週期(秒)
-	UpdateInterval int32 `json:"UpdateInterval,omitempty"`
+	// Required: true
+	UpdateInterval *int32 `json:"UpdateInterval"`
 
 	// DateTime
 	//
 	// 更新日期時間
-	UpdateTime string `json:"UpdateTime,omitempty"`
+	// Required: true
+	UpdateTime *string `json:"UpdateTime"`
 }
 
 // Validate validates this m o t c API basic models version2 basic wrapper service d t o version2 base news
@@ -38,6 +42,14 @@ func (m *MOTCAPIBasicModelsVersion2BasicWrapperServiceDTOVersion2BaseNews) Valid
 	var res []error
 
 	if err := m.validateNewses(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateUpdateInterval(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateUpdateTime(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -49,8 +61,8 @@ func (m *MOTCAPIBasicModelsVersion2BasicWrapperServiceDTOVersion2BaseNews) Valid
 
 func (m *MOTCAPIBasicModelsVersion2BasicWrapperServiceDTOVersion2BaseNews) validateNewses(formats strfmt.Registry) error {
 
-	if swag.IsZero(m.Newses) { // not required
-		return nil
+	if err := validate.Required("Newses", "body", m.Newses); err != nil {
+		return err
 	}
 
 	for i := 0; i < len(m.Newses); i++ {
@@ -67,6 +79,24 @@ func (m *MOTCAPIBasicModelsVersion2BasicWrapperServiceDTOVersion2BaseNews) valid
 			}
 		}
 
+	}
+
+	return nil
+}
+
+func (m *MOTCAPIBasicModelsVersion2BasicWrapperServiceDTOVersion2BaseNews) validateUpdateInterval(formats strfmt.Registry) error {
+
+	if err := validate.Required("UpdateInterval", "body", m.UpdateInterval); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *MOTCAPIBasicModelsVersion2BasicWrapperServiceDTOVersion2BaseNews) validateUpdateTime(formats strfmt.Registry) error {
+
+	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
+		return err
 	}
 
 	return nil

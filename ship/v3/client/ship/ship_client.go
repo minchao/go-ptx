@@ -9,12 +9,11 @@ import (
 	"fmt"
 
 	"github.com/go-openapi/runtime"
-
-	strfmt "github.com/go-openapi/strfmt"
+	"github.com/go-openapi/strfmt"
 )
 
 // New creates a new ship API client.
-func New(transport runtime.ClientTransport, formats strfmt.Registry) *Client {
+func New(transport runtime.ClientTransport, formats strfmt.Registry) ClientService {
 	return &Client{transport: transport, formats: formats}
 }
 
@@ -26,8 +25,31 @@ type Client struct {
 	formats   strfmt.Registry
 }
 
+// ClientService is the interface for Client methods
+type ClientService interface {
+	ShipAPIAuthority(params *ShipAPIAuthorityParams) (*ShipAPIAuthorityOK, error)
+
+	ShipAPIGeneralSchedule(params *ShipAPIGeneralScheduleParams) (*ShipAPIGeneralScheduleOK, error)
+
+	ShipAPIGeneralSchedule1(params *ShipAPIGeneralSchedule1Params) (*ShipAPIGeneralSchedule1OK, error)
+
+	ShipAPIOperator(params *ShipAPIOperatorParams) (*ShipAPIOperatorOK, error)
+
+	ShipAPIPort(params *ShipAPIPortParams) (*ShipAPIPortOK, error)
+
+	ShipAPIRoute(params *ShipAPIRouteParams) (*ShipAPIRouteOK, error)
+
+	ShipAPIRouteFare(params *ShipAPIRouteFareParams) (*ShipAPIRouteFareOK, error)
+
+	ShipAPIRouteFare1(params *ShipAPIRouteFare1Params) (*ShipAPIRouteFare1OK, error)
+
+	ShipAPIRoute1(params *ShipAPIRoute1Params) (*ShipAPIRoute1OK, error)
+
+	SetTransport(transport runtime.ClientTransport)
+}
+
 /*
-ShipAPIAuthority 取得業管機關資料s
+  ShipAPIAuthority 取得業管機關資料s
 */
 func (a *Client) ShipAPIAuthority(params *ShipAPIAuthorityParams) (*ShipAPIAuthorityOK, error) {
 	// TODO: Validate the params before sending
@@ -40,7 +62,7 @@ func (a *Client) ShipAPIAuthority(params *ShipAPIAuthorityParams) (*ShipAPIAutho
 		Method:             "GET",
 		PathPattern:        "/v3/Ship/Authority",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &ShipAPIAuthorityReader{formats: a.formats},
@@ -61,7 +83,7 @@ func (a *Client) ShipAPIAuthority(params *ShipAPIAuthorityParams) (*ShipAPIAutho
 }
 
 /*
-ShipAPIGeneralSchedule 取得定期班表資料s
+  ShipAPIGeneralSchedule 取得定期班表資料s
 */
 func (a *Client) ShipAPIGeneralSchedule(params *ShipAPIGeneralScheduleParams) (*ShipAPIGeneralScheduleOK, error) {
 	// TODO: Validate the params before sending
@@ -74,7 +96,7 @@ func (a *Client) ShipAPIGeneralSchedule(params *ShipAPIGeneralScheduleParams) (*
 		Method:             "GET",
 		PathPattern:        "/v3/Ship/GeneralSchedule",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &ShipAPIGeneralScheduleReader{formats: a.formats},
@@ -95,7 +117,7 @@ func (a *Client) ShipAPIGeneralSchedule(params *ShipAPIGeneralScheduleParams) (*
 }
 
 /*
-ShipAPIGeneralSchedule1 取得s 指定航線 定期班表資料
+  ShipAPIGeneralSchedule1 取得s 指定航線 定期班表資料
 */
 func (a *Client) ShipAPIGeneralSchedule1(params *ShipAPIGeneralSchedule1Params) (*ShipAPIGeneralSchedule1OK, error) {
 	// TODO: Validate the params before sending
@@ -108,7 +130,7 @@ func (a *Client) ShipAPIGeneralSchedule1(params *ShipAPIGeneralSchedule1Params) 
 		Method:             "GET",
 		PathPattern:        "/v3/Ship/GeneralSchedule/{RouteID}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &ShipAPIGeneralSchedule1Reader{formats: a.formats},
@@ -129,7 +151,7 @@ func (a *Client) ShipAPIGeneralSchedule1(params *ShipAPIGeneralSchedule1Params) 
 }
 
 /*
-ShipAPIOperator 取得營運業者資料s
+  ShipAPIOperator 取得營運業者資料s
 */
 func (a *Client) ShipAPIOperator(params *ShipAPIOperatorParams) (*ShipAPIOperatorOK, error) {
 	// TODO: Validate the params before sending
@@ -142,7 +164,7 @@ func (a *Client) ShipAPIOperator(params *ShipAPIOperatorParams) (*ShipAPIOperato
 		Method:             "GET",
 		PathPattern:        "/v3/Ship/Operator",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &ShipAPIOperatorReader{formats: a.formats},
@@ -163,7 +185,7 @@ func (a *Client) ShipAPIOperator(params *ShipAPIOperatorParams) (*ShipAPIOperato
 }
 
 /*
-ShipAPIPort 取得港口資料s
+  ShipAPIPort 取得港口資料s
 */
 func (a *Client) ShipAPIPort(params *ShipAPIPortParams) (*ShipAPIPortOK, error) {
 	// TODO: Validate the params before sending
@@ -176,7 +198,7 @@ func (a *Client) ShipAPIPort(params *ShipAPIPortParams) (*ShipAPIPortOK, error) 
 		Method:             "GET",
 		PathPattern:        "/v3/Ship/Port",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &ShipAPIPortReader{formats: a.formats},
@@ -197,7 +219,7 @@ func (a *Client) ShipAPIPort(params *ShipAPIPortParams) (*ShipAPIPortOK, error) 
 }
 
 /*
-ShipAPIRoute 取得航運路線資料s
+  ShipAPIRoute 取得航運路線資料s
 */
 func (a *Client) ShipAPIRoute(params *ShipAPIRouteParams) (*ShipAPIRouteOK, error) {
 	// TODO: Validate the params before sending
@@ -210,7 +232,7 @@ func (a *Client) ShipAPIRoute(params *ShipAPIRouteParams) (*ShipAPIRouteOK, erro
 		Method:             "GET",
 		PathPattern:        "/v3/Ship/Route",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &ShipAPIRouteReader{formats: a.formats},
@@ -231,7 +253,7 @@ func (a *Client) ShipAPIRoute(params *ShipAPIRouteParams) (*ShipAPIRouteOK, erro
 }
 
 /*
-ShipAPIRouteFare 取得航線票價資料s
+  ShipAPIRouteFare 取得航線票價資料s
 */
 func (a *Client) ShipAPIRouteFare(params *ShipAPIRouteFareParams) (*ShipAPIRouteFareOK, error) {
 	// TODO: Validate the params before sending
@@ -244,7 +266,7 @@ func (a *Client) ShipAPIRouteFare(params *ShipAPIRouteFareParams) (*ShipAPIRoute
 		Method:             "GET",
 		PathPattern:        "/v3/Ship/RouteFare",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &ShipAPIRouteFareReader{formats: a.formats},
@@ -265,7 +287,7 @@ func (a *Client) ShipAPIRouteFare(params *ShipAPIRouteFareParams) (*ShipAPIRoute
 }
 
 /*
-ShipAPIRouteFare1 取得s 指定航線 票價資料
+  ShipAPIRouteFare1 取得s 指定航線 票價資料
 */
 func (a *Client) ShipAPIRouteFare1(params *ShipAPIRouteFare1Params) (*ShipAPIRouteFare1OK, error) {
 	// TODO: Validate the params before sending
@@ -278,7 +300,7 @@ func (a *Client) ShipAPIRouteFare1(params *ShipAPIRouteFare1Params) (*ShipAPIRou
 		Method:             "GET",
 		PathPattern:        "/v3/Ship/RouteFare/{RouteID}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &ShipAPIRouteFare1Reader{formats: a.formats},
@@ -299,7 +321,7 @@ func (a *Client) ShipAPIRouteFare1(params *ShipAPIRouteFare1Params) (*ShipAPIRou
 }
 
 /*
-ShipAPIRoute1 取得s 指定航線 資料
+  ShipAPIRoute1 取得s 指定航線 資料
 */
 func (a *Client) ShipAPIRoute1(params *ShipAPIRoute1Params) (*ShipAPIRoute1OK, error) {
 	// TODO: Validate the params before sending
@@ -312,7 +334,7 @@ func (a *Client) ShipAPIRoute1(params *ShipAPIRoute1Params) (*ShipAPIRoute1OK, e
 		Method:             "GET",
 		PathPattern:        "/v3/Ship/Route/{RouteID}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &ShipAPIRoute1Reader{formats: a.formats},

@@ -6,14 +6,16 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	strfmt "github.com/go-openapi/strfmt"
+	"strconv"
 
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 )
 
 // ServiceDTOVersion3RailTRADailyTrainTimeTableTrainInfo TrainInfo
+//
 // swagger:model Service.DTO.Version3.Rail.TRA.DailyTrainTimeTable.TrainInfo
 type ServiceDTOVersion3RailTRADailyTrainTimeTableTrainInfo struct {
 
@@ -42,9 +44,12 @@ type ServiceDTOVersion3RailTRADailyTrainTimeTableTrainInfo struct {
 
 	// integer
 	//
-	// 是否提供餐車服務 : [0:'否',1:'是']
+	// 是否提供訂便當服務 : [0:'否',1:'是']
 	// Required: true
 	DiningFlag *int32 `json:"DiningFlag"`
+
+	// 提供訂便當服務之車站區間
+	DiningFlagSections []*ServiceDTOVersion3RailTRADailyTrainTimeTableDiningFlagSection `json:"DiningFlagSections"`
 
 	// integer
 	//
@@ -143,6 +148,10 @@ func (m *ServiceDTOVersion3RailTRADailyTrainTimeTableTrainInfo) Validate(formats
 		res = append(res, err)
 	}
 
+	if err := m.validateDiningFlagSections(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateDirection(formats); err != nil {
 		res = append(res, err)
 	}
@@ -216,6 +225,31 @@ func (m *ServiceDTOVersion3RailTRADailyTrainTimeTableTrainInfo) validateDiningFl
 
 	if err := validate.Required("DiningFlag", "body", m.DiningFlag); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+func (m *ServiceDTOVersion3RailTRADailyTrainTimeTableTrainInfo) validateDiningFlagSections(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.DiningFlagSections) { // not required
+		return nil
+	}
+
+	for i := 0; i < len(m.DiningFlagSections); i++ {
+		if swag.IsZero(m.DiningFlagSections[i]) { // not required
+			continue
+		}
+
+		if m.DiningFlagSections[i] != nil {
+			if err := m.DiningFlagSections[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("DiningFlagSections" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
 	}
 
 	return nil

@@ -9,12 +9,11 @@ import (
 	"fmt"
 
 	"github.com/go-openapi/runtime"
-
-	strfmt "github.com/go-openapi/strfmt"
+	"github.com/go-openapi/strfmt"
 )
 
 // New creates a new tourism API client.
-func New(transport runtime.ClientTransport, formats strfmt.Registry) *Client {
+func New(transport runtime.ClientTransport, formats strfmt.Registry) ClientService {
 	return &Client{transport: transport, formats: formats}
 }
 
@@ -26,10 +25,63 @@ type Client struct {
 	formats   strfmt.Registry
 }
 
-/*
-TaiwanTripBusAPIEstimatedTimeOfArrival 取得台灣好行公車的預估到站資料s n1
+// ClientService is the interface for Client methods
+type ClientService interface {
+	TaiwanTripBusAPIEstimatedTimeOfArrival(params *TaiwanTripBusAPIEstimatedTimeOfArrivalParams) (*TaiwanTripBusAPIEstimatedTimeOfArrivalOK, error)
 
-取得台灣好行公車的預估到站資料(N1)
+	TaiwanTripBusAPIEstimatedTimeOfArrival1(params *TaiwanTripBusAPIEstimatedTimeOfArrival1Params) (*TaiwanTripBusAPIEstimatedTimeOfArrival1OK, error)
+
+	TaiwanTripBusAPINews(params *TaiwanTripBusAPINewsParams) (*TaiwanTripBusAPINewsOK, error)
+
+	TaiwanTripBusAPIRealTimeByFrequency(params *TaiwanTripBusAPIRealTimeByFrequencyParams) (*TaiwanTripBusAPIRealTimeByFrequencyOK, error)
+
+	TaiwanTripBusAPIRealTimeByFrequency1(params *TaiwanTripBusAPIRealTimeByFrequency1Params) (*TaiwanTripBusAPIRealTimeByFrequency1OK, error)
+
+	TaiwanTripBusAPIRealTimeNearStop(params *TaiwanTripBusAPIRealTimeNearStopParams) (*TaiwanTripBusAPIRealTimeNearStopOK, error)
+
+	TaiwanTripBusAPIRealTimeNearStop1(params *TaiwanTripBusAPIRealTimeNearStop1Params) (*TaiwanTripBusAPIRealTimeNearStop1OK, error)
+
+	TaiwanTripBusAPIRoute(params *TaiwanTripBusAPIRouteParams) (*TaiwanTripBusAPIRouteOK, error)
+
+	TaiwanTripBusAPIRoute1(params *TaiwanTripBusAPIRoute1Params) (*TaiwanTripBusAPIRoute1OK, error)
+
+	TaiwanTripBusAPIS2TravelTime(params *TaiwanTripBusAPIS2TravelTimeParams) (*TaiwanTripBusAPIS2TravelTimeOK, error)
+
+	TaiwanTripBusAPISchedule(params *TaiwanTripBusAPIScheduleParams) (*TaiwanTripBusAPIScheduleOK, error)
+
+	TaiwanTripBusAPISchedule1(params *TaiwanTripBusAPISchedule1Params) (*TaiwanTripBusAPISchedule1OK, error)
+
+	TaiwanTripBusAPIShape(params *TaiwanTripBusAPIShapeParams) (*TaiwanTripBusAPIShapeOK, error)
+
+	TaiwanTripBusAPIShape1(params *TaiwanTripBusAPIShape1Params) (*TaiwanTripBusAPIShape1OK, error)
+
+	TaiwanTripBusAPIStopOfRoute(params *TaiwanTripBusAPIStopOfRouteParams) (*TaiwanTripBusAPIStopOfRouteOK, error)
+
+	TaiwanTripBusAPIStopOfRoute1(params *TaiwanTripBusAPIStopOfRoute1Params) (*TaiwanTripBusAPIStopOfRoute1OK, error)
+
+	TourismAPIActivity(params *TourismAPIActivityParams) (*TourismAPIActivityOK, error)
+
+	TourismAPIActivity0(params *TourismAPIActivity0Params) (*TourismAPIActivity0OK, error)
+
+	TourismAPIHotel(params *TourismAPIHotelParams) (*TourismAPIHotelOK, error)
+
+	TourismAPIHotel0(params *TourismAPIHotel0Params) (*TourismAPIHotel0OK, error)
+
+	TourismAPIRestaurant(params *TourismAPIRestaurantParams) (*TourismAPIRestaurantOK, error)
+
+	TourismAPIRestaurant0(params *TourismAPIRestaurant0Params) (*TourismAPIRestaurant0OK, error)
+
+	TourismAPIScenicSpot(params *TourismAPIScenicSpotParams) (*TourismAPIScenicSpotOK, error)
+
+	TourismAPIScenicSpot0(params *TourismAPIScenicSpot0Params) (*TourismAPIScenicSpot0OK, error)
+
+	SetTransport(transport runtime.ClientTransport)
+}
+
+/*
+  TaiwanTripBusAPIEstimatedTimeOfArrival 取得台灣好行公車的預估到站資料s n1
+
+  取得台灣好行公車的預估到站資料(N1)
 */
 func (a *Client) TaiwanTripBusAPIEstimatedTimeOfArrival(params *TaiwanTripBusAPIEstimatedTimeOfArrivalParams) (*TaiwanTripBusAPIEstimatedTimeOfArrivalOK, error) {
 	// TODO: Validate the params before sending
@@ -42,7 +94,7 @@ func (a *Client) TaiwanTripBusAPIEstimatedTimeOfArrival(params *TaiwanTripBusAPI
 		Method:             "GET",
 		PathPattern:        "/v2/Tourism/Bus/EstimatedTimeOfArrival/TaiwanTrip",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &TaiwanTripBusAPIEstimatedTimeOfArrivalReader{formats: a.formats},
@@ -63,9 +115,9 @@ func (a *Client) TaiwanTripBusAPIEstimatedTimeOfArrival(params *TaiwanTripBusAPI
 }
 
 /*
-TaiwanTripBusAPIEstimatedTimeOfArrival1 取得指定s 路線名稱 的台灣好行公車的預估到站資料 n1
+  TaiwanTripBusAPIEstimatedTimeOfArrival1 取得指定s 路線名稱 的台灣好行公車的預估到站資料 n1
 
-取得指定[路線名稱]的台灣好行公車的預估到站資料(N1)
+  取得指定[路線名稱]的台灣好行公車的預估到站資料(N1)
 */
 func (a *Client) TaiwanTripBusAPIEstimatedTimeOfArrival1(params *TaiwanTripBusAPIEstimatedTimeOfArrival1Params) (*TaiwanTripBusAPIEstimatedTimeOfArrival1OK, error) {
 	// TODO: Validate the params before sending
@@ -78,7 +130,7 @@ func (a *Client) TaiwanTripBusAPIEstimatedTimeOfArrival1(params *TaiwanTripBusAP
 		Method:             "GET",
 		PathPattern:        "/v2/Tourism/Bus/EstimatedTimeOfArrival/TaiwanTrip/{TaiwanTripName}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &TaiwanTripBusAPIEstimatedTimeOfArrival1Reader{formats: a.formats},
@@ -99,9 +151,9 @@ func (a *Client) TaiwanTripBusAPIEstimatedTimeOfArrival1(params *TaiwanTripBusAP
 }
 
 /*
-TaiwanTripBusAPINews 取得台灣好行公車之最新消息s
+  TaiwanTripBusAPINews 取得台灣好行公車之最新消息s
 
-取得台灣好行公車之最新消息
+  取得台灣好行公車之最新消息
 */
 func (a *Client) TaiwanTripBusAPINews(params *TaiwanTripBusAPINewsParams) (*TaiwanTripBusAPINewsOK, error) {
 	// TODO: Validate the params before sending
@@ -114,7 +166,7 @@ func (a *Client) TaiwanTripBusAPINews(params *TaiwanTripBusAPINewsParams) (*Taiw
 		Method:             "GET",
 		PathPattern:        "/v2/Tourism/Bus/News/TaiwanTrip",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &TaiwanTripBusAPINewsReader{formats: a.formats},
@@ -135,9 +187,9 @@ func (a *Client) TaiwanTripBusAPINews(params *TaiwanTripBusAPINewsParams) (*Taiw
 }
 
 /*
-TaiwanTripBusAPIRealTimeByFrequency 取得台灣好行公車的動態定時資料s a1
+  TaiwanTripBusAPIRealTimeByFrequency 取得台灣好行公車的動態定時資料s a1
 
-取得台灣好行公車的動態定時資料(A1)
+  取得台灣好行公車的動態定時資料(A1)
 */
 func (a *Client) TaiwanTripBusAPIRealTimeByFrequency(params *TaiwanTripBusAPIRealTimeByFrequencyParams) (*TaiwanTripBusAPIRealTimeByFrequencyOK, error) {
 	// TODO: Validate the params before sending
@@ -150,7 +202,7 @@ func (a *Client) TaiwanTripBusAPIRealTimeByFrequency(params *TaiwanTripBusAPIRea
 		Method:             "GET",
 		PathPattern:        "/v2/Tourism/Bus/RealTimeByFrequency/TaiwanTrip",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &TaiwanTripBusAPIRealTimeByFrequencyReader{formats: a.formats},
@@ -171,9 +223,9 @@ func (a *Client) TaiwanTripBusAPIRealTimeByFrequency(params *TaiwanTripBusAPIRea
 }
 
 /*
-TaiwanTripBusAPIRealTimeByFrequency1 取得指定s 路線名稱 的台灣好行公車的動態定時資料 a1
+  TaiwanTripBusAPIRealTimeByFrequency1 取得指定s 路線名稱 的台灣好行公車的動態定時資料 a1
 
-取得指定[路線名稱]的台灣好行公車的動態定時資料(A1)
+  取得指定[路線名稱]的台灣好行公車的動態定時資料(A1)
 */
 func (a *Client) TaiwanTripBusAPIRealTimeByFrequency1(params *TaiwanTripBusAPIRealTimeByFrequency1Params) (*TaiwanTripBusAPIRealTimeByFrequency1OK, error) {
 	// TODO: Validate the params before sending
@@ -186,7 +238,7 @@ func (a *Client) TaiwanTripBusAPIRealTimeByFrequency1(params *TaiwanTripBusAPIRe
 		Method:             "GET",
 		PathPattern:        "/v2/Tourism/Bus/RealTimeByFrequency/TaiwanTrip/{TaiwanTripName}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &TaiwanTripBusAPIRealTimeByFrequency1Reader{formats: a.formats},
@@ -207,9 +259,9 @@ func (a *Client) TaiwanTripBusAPIRealTimeByFrequency1(params *TaiwanTripBusAPIRe
 }
 
 /*
-TaiwanTripBusAPIRealTimeNearStop 取得台灣好行公車的動態定點資料s a2
+  TaiwanTripBusAPIRealTimeNearStop 取得台灣好行公車的動態定點資料s a2
 
-取得台灣好行公車的動態定點資料(A2)
+  取得台灣好行公車的動態定點資料(A2)
 */
 func (a *Client) TaiwanTripBusAPIRealTimeNearStop(params *TaiwanTripBusAPIRealTimeNearStopParams) (*TaiwanTripBusAPIRealTimeNearStopOK, error) {
 	// TODO: Validate the params before sending
@@ -222,7 +274,7 @@ func (a *Client) TaiwanTripBusAPIRealTimeNearStop(params *TaiwanTripBusAPIRealTi
 		Method:             "GET",
 		PathPattern:        "/v2/Tourism/Bus/RealTimeNearStop/TaiwanTrip",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &TaiwanTripBusAPIRealTimeNearStopReader{formats: a.formats},
@@ -243,9 +295,9 @@ func (a *Client) TaiwanTripBusAPIRealTimeNearStop(params *TaiwanTripBusAPIRealTi
 }
 
 /*
-TaiwanTripBusAPIRealTimeNearStop1 取得指定s 路線名稱 的台灣好行公車的動態定點資料 a2
+  TaiwanTripBusAPIRealTimeNearStop1 取得指定s 路線名稱 的台灣好行公車的動態定點資料 a2
 
-取得指定[路線名稱]的台灣好行公車的動態定點資料(A2)
+  取得指定[路線名稱]的台灣好行公車的動態定點資料(A2)
 */
 func (a *Client) TaiwanTripBusAPIRealTimeNearStop1(params *TaiwanTripBusAPIRealTimeNearStop1Params) (*TaiwanTripBusAPIRealTimeNearStop1OK, error) {
 	// TODO: Validate the params before sending
@@ -258,7 +310,7 @@ func (a *Client) TaiwanTripBusAPIRealTimeNearStop1(params *TaiwanTripBusAPIRealT
 		Method:             "GET",
 		PathPattern:        "/v2/Tourism/Bus/RealTimeNearStop/TaiwanTrip/{TaiwanTripName}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &TaiwanTripBusAPIRealTimeNearStop1Reader{formats: a.formats},
@@ -279,9 +331,9 @@ func (a *Client) TaiwanTripBusAPIRealTimeNearStop1(params *TaiwanTripBusAPIRealT
 }
 
 /*
-TaiwanTripBusAPIRoute 取得台灣好行公車路線資料s
+  TaiwanTripBusAPIRoute 取得台灣好行公車路線資料s
 
-取得台灣好行公車路線資料
+  取得台灣好行公車路線資料
 */
 func (a *Client) TaiwanTripBusAPIRoute(params *TaiwanTripBusAPIRouteParams) (*TaiwanTripBusAPIRouteOK, error) {
 	// TODO: Validate the params before sending
@@ -294,7 +346,7 @@ func (a *Client) TaiwanTripBusAPIRoute(params *TaiwanTripBusAPIRouteParams) (*Ta
 		Method:             "GET",
 		PathPattern:        "/v2/Tourism/Bus/Route/TaiwanTrip",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &TaiwanTripBusAPIRouteReader{formats: a.formats},
@@ -315,9 +367,9 @@ func (a *Client) TaiwanTripBusAPIRoute(params *TaiwanTripBusAPIRouteParams) (*Ta
 }
 
 /*
-TaiwanTripBusAPIRoute1 取得指定s 路線名稱 的台灣好行公車路線資料
+  TaiwanTripBusAPIRoute1 取得指定s 路線名稱 的台灣好行公車路線資料
 
-取得指定[路線名稱]的台灣好行公車路線資料
+  取得指定[路線名稱]的台灣好行公車路線資料
 */
 func (a *Client) TaiwanTripBusAPIRoute1(params *TaiwanTripBusAPIRoute1Params) (*TaiwanTripBusAPIRoute1OK, error) {
 	// TODO: Validate the params before sending
@@ -330,7 +382,7 @@ func (a *Client) TaiwanTripBusAPIRoute1(params *TaiwanTripBusAPIRoute1Params) (*
 		Method:             "GET",
 		PathPattern:        "/v2/Tourism/Bus/Route/TaiwanTrip/{TaiwanTripName}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &TaiwanTripBusAPIRoute1Reader{formats: a.formats},
@@ -351,9 +403,9 @@ func (a *Client) TaiwanTripBusAPIRoute1(params *TaiwanTripBusAPIRoute1Params) (*
 }
 
 /*
-TaiwanTripBusAPIS2TravelTime 取得台灣好行公車路線站間旅行時間基本資料s
+  TaiwanTripBusAPIS2TravelTime 取得台灣好行公車路線站間旅行時間基本資料s
 
-取得台灣好行公車路線站間旅行時間基本資料
+  取得台灣好行公車路線站間旅行時間基本資料
 */
 func (a *Client) TaiwanTripBusAPIS2TravelTime(params *TaiwanTripBusAPIS2TravelTimeParams) (*TaiwanTripBusAPIS2TravelTimeOK, error) {
 	// TODO: Validate the params before sending
@@ -366,7 +418,7 @@ func (a *Client) TaiwanTripBusAPIS2TravelTime(params *TaiwanTripBusAPIS2TravelTi
 		Method:             "GET",
 		PathPattern:        "/v2/Tourism/Bus/S2TravelTime/TaiwanTrip",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &TaiwanTripBusAPIS2TravelTimeReader{formats: a.formats},
@@ -387,9 +439,9 @@ func (a *Client) TaiwanTripBusAPIS2TravelTime(params *TaiwanTripBusAPIS2TravelTi
 }
 
 /*
-TaiwanTripBusAPISchedule 取得台灣好行公車路線班表資料s
+  TaiwanTripBusAPISchedule 取得台灣好行公車路線班表資料s
 
-取得台灣好行公車路線班表資料
+  取得台灣好行公車路線班表資料
 */
 func (a *Client) TaiwanTripBusAPISchedule(params *TaiwanTripBusAPIScheduleParams) (*TaiwanTripBusAPIScheduleOK, error) {
 	// TODO: Validate the params before sending
@@ -402,7 +454,7 @@ func (a *Client) TaiwanTripBusAPISchedule(params *TaiwanTripBusAPIScheduleParams
 		Method:             "GET",
 		PathPattern:        "/v2/Tourism/Bus/Schedule/TaiwanTrip",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &TaiwanTripBusAPIScheduleReader{formats: a.formats},
@@ -423,9 +475,9 @@ func (a *Client) TaiwanTripBusAPISchedule(params *TaiwanTripBusAPIScheduleParams
 }
 
 /*
-TaiwanTripBusAPISchedule1 取得指定s 路線名稱 的台灣好行公車路線班表資料
+  TaiwanTripBusAPISchedule1 取得指定s 路線名稱 的台灣好行公車路線班表資料
 
-取得指定[路線名稱]的台灣好行公車路線班表資料
+  取得指定[路線名稱]的台灣好行公車路線班表資料
 */
 func (a *Client) TaiwanTripBusAPISchedule1(params *TaiwanTripBusAPISchedule1Params) (*TaiwanTripBusAPISchedule1OK, error) {
 	// TODO: Validate the params before sending
@@ -438,7 +490,7 @@ func (a *Client) TaiwanTripBusAPISchedule1(params *TaiwanTripBusAPISchedule1Para
 		Method:             "GET",
 		PathPattern:        "/v2/Tourism/Bus/Schedule/TaiwanTrip/{TaiwanTripName}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &TaiwanTripBusAPISchedule1Reader{formats: a.formats},
@@ -459,9 +511,9 @@ func (a *Client) TaiwanTripBusAPISchedule1(params *TaiwanTripBusAPISchedule1Para
 }
 
 /*
-TaiwanTripBusAPIShape 取得台灣好行公車線型資料s
+  TaiwanTripBusAPIShape 取得台灣好行公車線型資料s
 
-取得台灣好行公車線型資料
+  取得台灣好行公車線型資料
 */
 func (a *Client) TaiwanTripBusAPIShape(params *TaiwanTripBusAPIShapeParams) (*TaiwanTripBusAPIShapeOK, error) {
 	// TODO: Validate the params before sending
@@ -474,7 +526,7 @@ func (a *Client) TaiwanTripBusAPIShape(params *TaiwanTripBusAPIShapeParams) (*Ta
 		Method:             "GET",
 		PathPattern:        "/v2/Tourism/Bus/Shape/TaiwanTrip",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &TaiwanTripBusAPIShapeReader{formats: a.formats},
@@ -495,9 +547,9 @@ func (a *Client) TaiwanTripBusAPIShape(params *TaiwanTripBusAPIShapeParams) (*Ta
 }
 
 /*
-TaiwanTripBusAPIShape1 取得指定s 路線名稱 的台灣好行公車線型資料
+  TaiwanTripBusAPIShape1 取得指定s 路線名稱 的台灣好行公車線型資料
 
-取得指定[路線名稱]的台灣好行公車線型資料
+  取得指定[路線名稱]的台灣好行公車線型資料
 */
 func (a *Client) TaiwanTripBusAPIShape1(params *TaiwanTripBusAPIShape1Params) (*TaiwanTripBusAPIShape1OK, error) {
 	// TODO: Validate the params before sending
@@ -510,7 +562,7 @@ func (a *Client) TaiwanTripBusAPIShape1(params *TaiwanTripBusAPIShape1Params) (*
 		Method:             "GET",
 		PathPattern:        "/v2/Tourism/Bus/Shape/TaiwanTrip/{TaiwanTripName}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &TaiwanTripBusAPIShape1Reader{formats: a.formats},
@@ -531,9 +583,9 @@ func (a *Client) TaiwanTripBusAPIShape1(params *TaiwanTripBusAPIShape1Params) (*
 }
 
 /*
-TaiwanTripBusAPIStopOfRoute 取得台灣好行公車路線與站牌資料s
+  TaiwanTripBusAPIStopOfRoute 取得台灣好行公車路線與站牌資料s
 
-取得台灣好行公車路線與站牌資料
+  取得台灣好行公車路線與站牌資料
 */
 func (a *Client) TaiwanTripBusAPIStopOfRoute(params *TaiwanTripBusAPIStopOfRouteParams) (*TaiwanTripBusAPIStopOfRouteOK, error) {
 	// TODO: Validate the params before sending
@@ -546,7 +598,7 @@ func (a *Client) TaiwanTripBusAPIStopOfRoute(params *TaiwanTripBusAPIStopOfRoute
 		Method:             "GET",
 		PathPattern:        "/v2/Tourism/Bus/StopOfRoute/TaiwanTrip",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &TaiwanTripBusAPIStopOfRouteReader{formats: a.formats},
@@ -567,9 +619,9 @@ func (a *Client) TaiwanTripBusAPIStopOfRoute(params *TaiwanTripBusAPIStopOfRoute
 }
 
 /*
-TaiwanTripBusAPIStopOfRoute1 取得指定s 路線名稱 的台灣好行公車路線與站牌資料
+  TaiwanTripBusAPIStopOfRoute1 取得指定s 路線名稱 的台灣好行公車路線與站牌資料
 
-取得指定[路線名稱]的台灣好行公車路線與站牌資料
+  取得指定[路線名稱]的台灣好行公車路線與站牌資料
 */
 func (a *Client) TaiwanTripBusAPIStopOfRoute1(params *TaiwanTripBusAPIStopOfRoute1Params) (*TaiwanTripBusAPIStopOfRoute1OK, error) {
 	// TODO: Validate the params before sending
@@ -582,7 +634,7 @@ func (a *Client) TaiwanTripBusAPIStopOfRoute1(params *TaiwanTripBusAPIStopOfRout
 		Method:             "GET",
 		PathPattern:        "/v2/Tourism/Bus/StopOfRoute/TaiwanTrip/{TaiwanTripName}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &TaiwanTripBusAPIStopOfRoute1Reader{formats: a.formats},
@@ -603,9 +655,9 @@ func (a *Client) TaiwanTripBusAPIStopOfRoute1(params *TaiwanTripBusAPIStopOfRout
 }
 
 /*
-TourismAPIActivity 取得所有觀光活動資料s
+  TourismAPIActivity 取得所有觀光活動資料s
 
-取得所有觀光活動資料
+  取得所有觀光活動資料
 */
 func (a *Client) TourismAPIActivity(params *TourismAPIActivityParams) (*TourismAPIActivityOK, error) {
 	// TODO: Validate the params before sending
@@ -618,7 +670,7 @@ func (a *Client) TourismAPIActivity(params *TourismAPIActivityParams) (*TourismA
 		Method:             "GET",
 		PathPattern:        "/v2/Tourism/Activity",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &TourismAPIActivityReader{formats: a.formats},
@@ -639,9 +691,9 @@ func (a *Client) TourismAPIActivity(params *TourismAPIActivityParams) (*TourismA
 }
 
 /*
-TourismAPIActivity0 取得指定s 縣市 觀光活動資料
+  TourismAPIActivity0 取得指定s 縣市 觀光活動資料
 
-取得指定[縣市]觀光活動資料
+  取得指定[縣市]觀光活動資料
 */
 func (a *Client) TourismAPIActivity0(params *TourismAPIActivity0Params) (*TourismAPIActivity0OK, error) {
 	// TODO: Validate the params before sending
@@ -654,7 +706,7 @@ func (a *Client) TourismAPIActivity0(params *TourismAPIActivity0Params) (*Touris
 		Method:             "GET",
 		PathPattern:        "/v2/Tourism/Activity/{City}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &TourismAPIActivity0Reader{formats: a.formats},
@@ -675,9 +727,9 @@ func (a *Client) TourismAPIActivity0(params *TourismAPIActivity0Params) (*Touris
 }
 
 /*
-TourismAPIHotel 取得所有觀光旅宿資料s
+  TourismAPIHotel 取得所有觀光旅宿資料s
 
-取得所有觀光旅宿資料
+  取得所有觀光旅宿資料
 */
 func (a *Client) TourismAPIHotel(params *TourismAPIHotelParams) (*TourismAPIHotelOK, error) {
 	// TODO: Validate the params before sending
@@ -690,7 +742,7 @@ func (a *Client) TourismAPIHotel(params *TourismAPIHotelParams) (*TourismAPIHote
 		Method:             "GET",
 		PathPattern:        "/v2/Tourism/Hotel",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &TourismAPIHotelReader{formats: a.formats},
@@ -711,9 +763,9 @@ func (a *Client) TourismAPIHotel(params *TourismAPIHotelParams) (*TourismAPIHote
 }
 
 /*
-TourismAPIHotel0 取得指定s 縣市 觀光旅宿資料
+  TourismAPIHotel0 取得指定s 縣市 觀光旅宿資料
 
-取得指定[縣市]觀光旅宿資料
+  取得指定[縣市]觀光旅宿資料
 */
 func (a *Client) TourismAPIHotel0(params *TourismAPIHotel0Params) (*TourismAPIHotel0OK, error) {
 	// TODO: Validate the params before sending
@@ -726,7 +778,7 @@ func (a *Client) TourismAPIHotel0(params *TourismAPIHotel0Params) (*TourismAPIHo
 		Method:             "GET",
 		PathPattern:        "/v2/Tourism/Hotel/{City}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &TourismAPIHotel0Reader{formats: a.formats},
@@ -747,9 +799,9 @@ func (a *Client) TourismAPIHotel0(params *TourismAPIHotel0Params) (*TourismAPIHo
 }
 
 /*
-TourismAPIRestaurant 取得所有觀光餐飲資料s
+  TourismAPIRestaurant 取得所有觀光餐飲資料s
 
-取得所有觀光餐飲資料
+  取得所有觀光餐飲資料
 */
 func (a *Client) TourismAPIRestaurant(params *TourismAPIRestaurantParams) (*TourismAPIRestaurantOK, error) {
 	// TODO: Validate the params before sending
@@ -762,7 +814,7 @@ func (a *Client) TourismAPIRestaurant(params *TourismAPIRestaurantParams) (*Tour
 		Method:             "GET",
 		PathPattern:        "/v2/Tourism/Restaurant",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &TourismAPIRestaurantReader{formats: a.formats},
@@ -783,9 +835,9 @@ func (a *Client) TourismAPIRestaurant(params *TourismAPIRestaurantParams) (*Tour
 }
 
 /*
-TourismAPIRestaurant0 取得指定s 縣市 觀光餐飲資料
+  TourismAPIRestaurant0 取得指定s 縣市 觀光餐飲資料
 
-取得指定[縣市]觀光餐飲資料
+  取得指定[縣市]觀光餐飲資料
 */
 func (a *Client) TourismAPIRestaurant0(params *TourismAPIRestaurant0Params) (*TourismAPIRestaurant0OK, error) {
 	// TODO: Validate the params before sending
@@ -798,7 +850,7 @@ func (a *Client) TourismAPIRestaurant0(params *TourismAPIRestaurant0Params) (*To
 		Method:             "GET",
 		PathPattern:        "/v2/Tourism/Restaurant/{City}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &TourismAPIRestaurant0Reader{formats: a.formats},
@@ -819,9 +871,9 @@ func (a *Client) TourismAPIRestaurant0(params *TourismAPIRestaurant0Params) (*To
 }
 
 /*
-TourismAPIScenicSpot 取得所有觀光景點資料s
+  TourismAPIScenicSpot 取得所有觀光景點資料s
 
-取得所有觀光景點資料
+  取得所有觀光景點資料
 */
 func (a *Client) TourismAPIScenicSpot(params *TourismAPIScenicSpotParams) (*TourismAPIScenicSpotOK, error) {
 	// TODO: Validate the params before sending
@@ -834,7 +886,7 @@ func (a *Client) TourismAPIScenicSpot(params *TourismAPIScenicSpotParams) (*Tour
 		Method:             "GET",
 		PathPattern:        "/v2/Tourism/ScenicSpot",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &TourismAPIScenicSpotReader{formats: a.formats},
@@ -855,9 +907,9 @@ func (a *Client) TourismAPIScenicSpot(params *TourismAPIScenicSpotParams) (*Tour
 }
 
 /*
-TourismAPIScenicSpot0 取得指定s 縣市 觀光景點資料
+  TourismAPIScenicSpot0 取得指定s 縣市 觀光景點資料
 
-取得指定[縣市]觀光景點資料
+  取得指定[縣市]觀光景點資料
 */
 func (a *Client) TourismAPIScenicSpot0(params *TourismAPIScenicSpot0Params) (*TourismAPIScenicSpot0OK, error) {
 	// TODO: Validate the params before sending
@@ -870,7 +922,7 @@ func (a *Client) TourismAPIScenicSpot0(params *TourismAPIScenicSpot0Params) (*To
 		Method:             "GET",
 		PathPattern:        "/v2/Tourism/ScenicSpot/{City}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &TourismAPIScenicSpot0Reader{formats: a.formats},

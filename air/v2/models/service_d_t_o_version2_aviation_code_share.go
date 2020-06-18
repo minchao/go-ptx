@@ -6,9 +6,8 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	strfmt "github.com/go-openapi/strfmt"
-
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 )
@@ -16,6 +15,7 @@ import (
 // ServiceDTOVersion2AviationCodeShare CodeShare
 //
 // 共用班號
+//
 // swagger:model Service.DTO.Version2.Aviation.CodeShare
 type ServiceDTOVersion2AviationCodeShare struct {
 
@@ -23,7 +23,7 @@ type ServiceDTOVersion2AviationCodeShare struct {
 	// Required: true
 	AirlineID *string `json:"AirlineID"`
 
-	// 班機號碼
+	// 航機班號(不包含航空公司的AirlineID，僅有班號數字)
 	// Required: true
 	FlightNumber *string `json:"FlightNumber"`
 }

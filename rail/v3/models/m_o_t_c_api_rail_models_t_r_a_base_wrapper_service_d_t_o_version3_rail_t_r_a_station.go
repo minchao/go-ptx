@@ -8,14 +8,14 @@ package models
 import (
 	"strconv"
 
-	strfmt "github.com/go-openapi/strfmt"
-
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 )
 
 // MOTCAPIRailModelsTRABaseWrapperServiceDTOVersion3RailTRAStation TRAStationList
+//
 // swagger:model MOTC.API.Rail.Models.TRABaseWrapper[Service.DTO.Version3.Rail.TRA.Station]
 type MOTCAPIRailModelsTRABaseWrapperServiceDTOVersion3RailTRAStation struct {
 
@@ -26,7 +26,7 @@ type MOTCAPIRailModelsTRABaseWrapperServiceDTOVersion3RailTRAStation struct {
 	// 資料總筆數
 	Count int64 `json:"Count,omitempty"`
 
-	// 來源端平台資料更新週期(秒)
+	// 來源端平台資料更新週期(秒)['-1: 不定期更新']
 	// Required: true
 	SrcUpdateInterval *int32 `json:"SrcUpdateInterval"`
 
@@ -47,7 +47,8 @@ type MOTCAPIRailModelsTRABaseWrapperServiceDTOVersion3RailTRAStation struct {
 	// DateTime
 	//
 	// 本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
-	UpdateTime string `json:"UpdateTime,omitempty"`
+	// Required: true
+	UpdateTime *string `json:"UpdateTime"`
 }
 
 // Validate validates this m o t c API rail models t r a base wrapper service d t o version3 rail t r a station
@@ -71,6 +72,10 @@ func (m *MOTCAPIRailModelsTRABaseWrapperServiceDTOVersion3RailTRAStation) Valida
 	}
 
 	if err := m.validateUpdateInterval(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateUpdateTime(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -135,6 +140,15 @@ func (m *MOTCAPIRailModelsTRABaseWrapperServiceDTOVersion3RailTRAStation) valida
 func (m *MOTCAPIRailModelsTRABaseWrapperServiceDTOVersion3RailTRAStation) validateUpdateInterval(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateInterval", "body", m.UpdateInterval); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *MOTCAPIRailModelsTRABaseWrapperServiceDTOVersion3RailTRAStation) validateUpdateTime(formats strfmt.Registry) error {
+
+	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
 		return err
 	}
 

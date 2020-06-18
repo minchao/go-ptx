@@ -13,9 +13,8 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
 	cr "github.com/go-openapi/runtime/client"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
-
-	strfmt "github.com/go-openapi/strfmt"
 )
 
 // NewShipAPIRoute1Params creates a new ShipAPIRoute1Params object
@@ -78,7 +77,7 @@ type ShipAPIRoute1Params struct {
 	  查詢數量
 
 	*/
-	DollarCount *string
+	DollarCount *bool
 	/*DollarFilter
 	  過濾
 
@@ -154,13 +153,13 @@ func (o *ShipAPIRoute1Params) SetHTTPClient(client *http.Client) {
 }
 
 // WithDollarCount adds the dollarCount to the ship Api route 1 params
-func (o *ShipAPIRoute1Params) WithDollarCount(dollarCount *string) *ShipAPIRoute1Params {
+func (o *ShipAPIRoute1Params) WithDollarCount(dollarCount *bool) *ShipAPIRoute1Params {
 	o.SetDollarCount(dollarCount)
 	return o
 }
 
 // SetDollarCount adds the dollarCount to the ship Api route 1 params
-func (o *ShipAPIRoute1Params) SetDollarCount(dollarCount *string) {
+func (o *ShipAPIRoute1Params) SetDollarCount(dollarCount *bool) {
 	o.DollarCount = dollarCount
 }
 
@@ -252,11 +251,11 @@ func (o *ShipAPIRoute1Params) WriteToRequest(r runtime.ClientRequest, reg strfmt
 	if o.DollarCount != nil {
 
 		// query param $count
-		var qrDollarCount string
+		var qrDollarCount bool
 		if o.DollarCount != nil {
 			qrDollarCount = *o.DollarCount
 		}
-		qDollarCount := qrDollarCount
+		qDollarCount := swag.FormatBool(qrDollarCount)
 		if qDollarCount != "" {
 			if err := r.SetQueryParam("$count", qDollarCount); err != nil {
 				return err

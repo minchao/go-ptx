@@ -8,20 +8,24 @@ package models
 import (
 	"strconv"
 
-	strfmt "github.com/go-openapi/strfmt"
-
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 )
 
 // ServiceDTOVersion3BusSectionFare SectionFare
+//
 // swagger:model Service.DTO.Version3.Bus.SectionFare
 type ServiceDTOVersion3BusSectionFare struct {
 
 	// 緩衝區資訊
 	// Required: true
 	BufferZones []*ServiceDTOVersion3BusSectionFareBufferZone `json:"BufferZones"`
+
+	// 每段收費資訊
+	// Required: true
+	Fares []*ServiceDTOVersion3BusSectionFareFare `json:"Fares"`
 }
 
 // Validate validates this service d t o version3 bus section fare
@@ -29,6 +33,10 @@ func (m *ServiceDTOVersion3BusSectionFare) Validate(formats strfmt.Registry) err
 	var res []error
 
 	if err := m.validateBufferZones(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateFares(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -53,6 +61,31 @@ func (m *ServiceDTOVersion3BusSectionFare) validateBufferZones(formats strfmt.Re
 			if err := m.BufferZones[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("BufferZones" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *ServiceDTOVersion3BusSectionFare) validateFares(formats strfmt.Registry) error {
+
+	if err := validate.Required("Fares", "body", m.Fares); err != nil {
+		return err
+	}
+
+	for i := 0; i < len(m.Fares); i++ {
+		if swag.IsZero(m.Fares[i]) { // not required
+			continue
+		}
+
+		if m.Fares[i] != nil {
+			if err := m.Fares[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("Fares" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

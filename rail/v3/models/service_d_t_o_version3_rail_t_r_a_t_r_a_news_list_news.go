@@ -6,14 +6,14 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	strfmt "github.com/go-openapi/strfmt"
-
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 )
 
 // ServiceDTOVersion3RailTRATRANewsListNews News
+//
 // swagger:model Service.DTO.Version3.Rail.TRA.TRANewsList.News
 type ServiceDTOVersion3RailTRATRANewsListNews struct {
 

@@ -8,8 +8,7 @@ package client
 import (
 	"github.com/go-openapi/runtime"
 	httptransport "github.com/go-openapi/runtime/client"
-
-	strfmt "github.com/go-openapi/strfmt"
+	"github.com/go-openapi/strfmt"
 
 	"github.com/minchao/go-ptx/tourism/v2/client/tourism"
 )
@@ -56,9 +55,7 @@ func New(transport runtime.ClientTransport, formats strfmt.Registry) *MOTCTransp
 
 	cli := new(MOTCTransportAPIV2)
 	cli.Transport = transport
-
 	cli.Tourism = tourism.New(transport, formats)
-
 	return cli
 }
 
@@ -103,7 +100,7 @@ func (cfg *TransportConfig) WithSchemes(schemes []string) *TransportConfig {
 
 // MOTCTransportAPIV2 is a client for m o t c transport API v2
 type MOTCTransportAPIV2 struct {
-	Tourism *tourism.Client
+	Tourism tourism.ClientService
 
 	Transport runtime.ClientTransport
 }
@@ -111,7 +108,5 @@ type MOTCTransportAPIV2 struct {
 // SetTransport changes the transport on the client and all its subresources
 func (c *MOTCTransportAPIV2) SetTransport(transport runtime.ClientTransport) {
 	c.Transport = transport
-
 	c.Tourism.SetTransport(transport)
-
 }

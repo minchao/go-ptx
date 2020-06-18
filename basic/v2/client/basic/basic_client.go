@@ -9,12 +9,11 @@ import (
 	"fmt"
 
 	"github.com/go-openapi/runtime"
-
-	strfmt "github.com/go-openapi/strfmt"
+	"github.com/go-openapi/strfmt"
 )
 
 // New creates a new basic API client.
-func New(transport runtime.ClientTransport, formats strfmt.Registry) *Client {
+func New(transport runtime.ClientTransport, formats strfmt.Registry) ClientService {
 	return &Client{transport: transport, formats: formats}
 }
 
@@ -26,8 +25,21 @@ type Client struct {
 	formats   strfmt.Registry
 }
 
+// ClientService is the interface for Client methods
+type ClientService interface {
+	BasicAPIAuthority(params *BasicAPIAuthorityParams) (*BasicAPIAuthorityOK, error)
+
+	BasicAPIOperator(params *BasicAPIOperatorParams) (*BasicAPIOperatorOK, error)
+
+	BasicAPIProvider(params *BasicAPIProviderParams) (*BasicAPIProviderOK, error)
+
+	WebSiteAPINews(params *WebSiteAPINewsParams) (*WebSiteAPINewsOK, error)
+
+	SetTransport(transport runtime.ClientTransport)
+}
+
 /*
-BasicAPIAuthority basic Api authority API
+  BasicAPIAuthority basic Api authority API
 */
 func (a *Client) BasicAPIAuthority(params *BasicAPIAuthorityParams) (*BasicAPIAuthorityOK, error) {
 	// TODO: Validate the params before sending
@@ -40,7 +52,7 @@ func (a *Client) BasicAPIAuthority(params *BasicAPIAuthorityParams) (*BasicAPIAu
 		Method:             "GET",
 		PathPattern:        "/v2/Basic/Authority",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &BasicAPIAuthorityReader{formats: a.formats},
@@ -61,7 +73,7 @@ func (a *Client) BasicAPIAuthority(params *BasicAPIAuthorityParams) (*BasicAPIAu
 }
 
 /*
-BasicAPIOperator basic Api operator API
+  BasicAPIOperator basic Api operator API
 */
 func (a *Client) BasicAPIOperator(params *BasicAPIOperatorParams) (*BasicAPIOperatorOK, error) {
 	// TODO: Validate the params before sending
@@ -74,7 +86,7 @@ func (a *Client) BasicAPIOperator(params *BasicAPIOperatorParams) (*BasicAPIOper
 		Method:             "GET",
 		PathPattern:        "/v2/Basic/Operator",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &BasicAPIOperatorReader{formats: a.formats},
@@ -95,7 +107,7 @@ func (a *Client) BasicAPIOperator(params *BasicAPIOperatorParams) (*BasicAPIOper
 }
 
 /*
-BasicAPIProvider basic Api provider API
+  BasicAPIProvider basic Api provider API
 */
 func (a *Client) BasicAPIProvider(params *BasicAPIProviderParams) (*BasicAPIProviderOK, error) {
 	// TODO: Validate the params before sending
@@ -108,7 +120,7 @@ func (a *Client) BasicAPIProvider(params *BasicAPIProviderParams) (*BasicAPIProv
 		Method:             "GET",
 		PathPattern:        "/v2/Basic/Provider",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &BasicAPIProviderReader{formats: a.formats},
@@ -129,7 +141,7 @@ func (a *Client) BasicAPIProvider(params *BasicAPIProviderParams) (*BasicAPIProv
 }
 
 /*
-WebSiteAPINews web site Api news API
+  WebSiteAPINews web site Api news API
 */
 func (a *Client) WebSiteAPINews(params *WebSiteAPINewsParams) (*WebSiteAPINewsOK, error) {
 	// TODO: Validate the params before sending
@@ -142,7 +154,7 @@ func (a *Client) WebSiteAPINews(params *WebSiteAPINewsParams) (*WebSiteAPINewsOK
 		Method:             "GET",
 		PathPattern:        "/v2/PTX/Web/News",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &WebSiteAPINewsReader{formats: a.formats},

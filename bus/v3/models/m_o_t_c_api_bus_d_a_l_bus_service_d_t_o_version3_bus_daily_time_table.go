@@ -8,40 +8,47 @@ package models
 import (
 	"strconv"
 
-	strfmt "github.com/go-openapi/strfmt"
-
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
+	"github.com/go-openapi/validate"
 )
 
 // MOTCAPIBusDALBusServiceDTOVersion3BusDailyTimeTable BusDailyTimeTableList
+//
 // swagger:model MOTC.API.Bus.DAL.Bus[Service.DTO.Version3.Bus.DailyTimeTable]
 type MOTCAPIBusDALBusServiceDTOVersion3BusDailyTimeTable struct {
 
 	// 業管機關簡碼
-	AuthorityCode string `json:"AuthorityCode,omitempty"`
+	// Required: true
+	AuthorityCode *string `json:"AuthorityCode"`
 
 	// 資料總筆數
 	Count int64 `json:"Count,omitempty"`
 
 	// 資料(陣列)
+	// Required: true
 	DailyTimeTables []*ServiceDTOVersion3BusDailyTimeTable `json:"DailyTimeTables"`
 
-	// [來源端平臺]資料更新週期
-	SrcUpdateInterval int32 `json:"SrcUpdateInterval,omitempty"`
+	// 來源端平台資料更新週期(秒)['-1: 不定期更新']
+	// Required: true
+	SrcUpdateInterval *int32 `json:"SrcUpdateInterval"`
 
 	// DateTime
 	//
 	// [來源端平臺]資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
-	SrcUpdateTime string `json:"SrcUpdateTime,omitempty"`
+	// Required: true
+	SrcUpdateTime *string `json:"SrcUpdateTime"`
 
 	// [平臺]資料更新週期(秒)
-	UpdateInterval int32 `json:"UpdateInterval,omitempty"`
+	// Required: true
+	UpdateInterval *int32 `json:"UpdateInterval"`
 
 	// DateTime
 	//
 	// [平臺]資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
-	UpdateTime string `json:"UpdateTime,omitempty"`
+	// Required: true
+	UpdateTime *string `json:"UpdateTime"`
 
 	// 資料版本編號
 	VersionID int32 `json:"VersionID,omitempty"`
@@ -51,7 +58,27 @@ type MOTCAPIBusDALBusServiceDTOVersion3BusDailyTimeTable struct {
 func (m *MOTCAPIBusDALBusServiceDTOVersion3BusDailyTimeTable) Validate(formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.validateAuthorityCode(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateDailyTimeTables(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateSrcUpdateInterval(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateSrcUpdateTime(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateUpdateInterval(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateUpdateTime(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -61,10 +88,19 @@ func (m *MOTCAPIBusDALBusServiceDTOVersion3BusDailyTimeTable) Validate(formats s
 	return nil
 }
 
+func (m *MOTCAPIBusDALBusServiceDTOVersion3BusDailyTimeTable) validateAuthorityCode(formats strfmt.Registry) error {
+
+	if err := validate.Required("AuthorityCode", "body", m.AuthorityCode); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *MOTCAPIBusDALBusServiceDTOVersion3BusDailyTimeTable) validateDailyTimeTables(formats strfmt.Registry) error {
 
-	if swag.IsZero(m.DailyTimeTables) { // not required
-		return nil
+	if err := validate.Required("DailyTimeTables", "body", m.DailyTimeTables); err != nil {
+		return err
 	}
 
 	for i := 0; i < len(m.DailyTimeTables); i++ {
@@ -81,6 +117,42 @@ func (m *MOTCAPIBusDALBusServiceDTOVersion3BusDailyTimeTable) validateDailyTimeT
 			}
 		}
 
+	}
+
+	return nil
+}
+
+func (m *MOTCAPIBusDALBusServiceDTOVersion3BusDailyTimeTable) validateSrcUpdateInterval(formats strfmt.Registry) error {
+
+	if err := validate.Required("SrcUpdateInterval", "body", m.SrcUpdateInterval); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *MOTCAPIBusDALBusServiceDTOVersion3BusDailyTimeTable) validateSrcUpdateTime(formats strfmt.Registry) error {
+
+	if err := validate.Required("SrcUpdateTime", "body", m.SrcUpdateTime); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *MOTCAPIBusDALBusServiceDTOVersion3BusDailyTimeTable) validateUpdateInterval(formats strfmt.Registry) error {
+
+	if err := validate.Required("UpdateInterval", "body", m.UpdateInterval); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *MOTCAPIBusDALBusServiceDTOVersion3BusDailyTimeTable) validateUpdateTime(formats strfmt.Registry) error {
+
+	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
+		return err
 	}
 
 	return nil

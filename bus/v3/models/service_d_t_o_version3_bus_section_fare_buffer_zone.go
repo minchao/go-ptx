@@ -6,16 +6,14 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	"strconv"
-
-	strfmt "github.com/go-openapi/strfmt"
-
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 )
 
 // ServiceDTOVersion3BusSectionFareBufferZone BufferZone
+//
 // swagger:model Service.DTO.Version3.Bus.SectionFare.BufferZone
 type ServiceDTOVersion3BusSectionFareBufferZone struct {
 
@@ -32,17 +30,13 @@ type ServiceDTOVersion3BusSectionFareBufferZone struct {
 	//
 	// 緩衝區訖點
 	// Required: true
-	FareBufferZoneDestinations *ServiceDTOVersion3BusSectionFareFareBufferZone `json:"FareBufferZoneDestinations"`
+	FareBufferZoneDestination *ServiceDTOVersion3BusSectionFareFareBufferZone `json:"FareBufferZoneDestination"`
 
 	// FareBufferZone
 	//
 	// 緩衝區起點
 	// Required: true
-	FareBufferZoneOrigins *ServiceDTOVersion3BusSectionFareFareBufferZone `json:"FareBufferZoneOrigins"`
-
-	// 每段收費資訊
-	// Required: true
-	Fares []*ServiceDTOVersion3BusSectionFareFare `json:"Fares"`
+	FareBufferZoneOrigin *ServiceDTOVersion3BusSectionFareFareBufferZone `json:"FareBufferZoneOrigin"`
 
 	// 緩衝區順序
 	// Required: true
@@ -60,15 +54,11 @@ func (m *ServiceDTOVersion3BusSectionFareBufferZone) Validate(formats strfmt.Reg
 		res = append(res, err)
 	}
 
-	if err := m.validateFareBufferZoneDestinations(formats); err != nil {
+	if err := m.validateFareBufferZoneDestination(formats); err != nil {
 		res = append(res, err)
 	}
 
-	if err := m.validateFareBufferZoneOrigins(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateFares(formats); err != nil {
+	if err := m.validateFareBufferZoneOrigin(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -91,16 +81,16 @@ func (m *ServiceDTOVersion3BusSectionFareBufferZone) validateDirection(formats s
 	return nil
 }
 
-func (m *ServiceDTOVersion3BusSectionFareBufferZone) validateFareBufferZoneDestinations(formats strfmt.Registry) error {
+func (m *ServiceDTOVersion3BusSectionFareBufferZone) validateFareBufferZoneDestination(formats strfmt.Registry) error {
 
-	if err := validate.Required("FareBufferZoneDestinations", "body", m.FareBufferZoneDestinations); err != nil {
+	if err := validate.Required("FareBufferZoneDestination", "body", m.FareBufferZoneDestination); err != nil {
 		return err
 	}
 
-	if m.FareBufferZoneDestinations != nil {
-		if err := m.FareBufferZoneDestinations.Validate(formats); err != nil {
+	if m.FareBufferZoneDestination != nil {
+		if err := m.FareBufferZoneDestination.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("FareBufferZoneDestinations")
+				return ve.ValidateName("FareBufferZoneDestination")
 			}
 			return err
 		}
@@ -109,44 +99,19 @@ func (m *ServiceDTOVersion3BusSectionFareBufferZone) validateFareBufferZoneDesti
 	return nil
 }
 
-func (m *ServiceDTOVersion3BusSectionFareBufferZone) validateFareBufferZoneOrigins(formats strfmt.Registry) error {
+func (m *ServiceDTOVersion3BusSectionFareBufferZone) validateFareBufferZoneOrigin(formats strfmt.Registry) error {
 
-	if err := validate.Required("FareBufferZoneOrigins", "body", m.FareBufferZoneOrigins); err != nil {
+	if err := validate.Required("FareBufferZoneOrigin", "body", m.FareBufferZoneOrigin); err != nil {
 		return err
 	}
 
-	if m.FareBufferZoneOrigins != nil {
-		if err := m.FareBufferZoneOrigins.Validate(formats); err != nil {
+	if m.FareBufferZoneOrigin != nil {
+		if err := m.FareBufferZoneOrigin.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("FareBufferZoneOrigins")
+				return ve.ValidateName("FareBufferZoneOrigin")
 			}
 			return err
 		}
-	}
-
-	return nil
-}
-
-func (m *ServiceDTOVersion3BusSectionFareBufferZone) validateFares(formats strfmt.Registry) error {
-
-	if err := validate.Required("Fares", "body", m.Fares); err != nil {
-		return err
-	}
-
-	for i := 0; i < len(m.Fares); i++ {
-		if swag.IsZero(m.Fares[i]) { // not required
-			continue
-		}
-
-		if m.Fares[i] != nil {
-			if err := m.Fares[i].Validate(formats); err != nil {
-				if ve, ok := err.(*errors.Validation); ok {
-					return ve.ValidateName("Fares" + "." + strconv.Itoa(i))
-				}
-				return err
-			}
-		}
-
 	}
 
 	return nil

@@ -6,9 +6,8 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	strfmt "github.com/go-openapi/strfmt"
-
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 )
@@ -16,13 +15,14 @@ import (
 // ServiceDTOVersion2BusStop Stop
 //
 // 站牌代碼資料
+//
 // swagger:model Service.DTO.Version2.Bus.Stop
 type ServiceDTOVersion2BusStop struct {
 
 	// 站牌位置縣市之代碼(國際ISO 3166-2 三碼城市代碼)[若為公路/國道客運路線則為空值]
 	LocationCityCode string `json:"LocationCityCode,omitempty"`
 
-	// station group ID
+	// 站牌所屬的組站位ID
 	// Required: true
 	StationGroupID *string `json:"StationGroupID"`
 

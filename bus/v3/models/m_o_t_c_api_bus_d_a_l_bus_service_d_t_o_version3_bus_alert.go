@@ -8,40 +8,47 @@ package models
 import (
 	"strconv"
 
-	strfmt "github.com/go-openapi/strfmt"
-
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
+	"github.com/go-openapi/validate"
 )
 
 // MOTCAPIBusDALBusServiceDTOVersion3BusAlert BusAlertList
+//
 // swagger:model MOTC.API.Bus.DAL.Bus[Service.DTO.Version3.Bus.Alert]
 type MOTCAPIBusDALBusServiceDTOVersion3BusAlert struct {
 
 	// 資料(陣列)
+	// Required: true
 	Alerts []*ServiceDTOVersion3BusAlert `json:"Alerts"`
 
 	// 業管機關簡碼
-	AuthorityCode string `json:"AuthorityCode,omitempty"`
+	// Required: true
+	AuthorityCode *string `json:"AuthorityCode"`
 
 	// 資料總筆數
 	Count int64 `json:"Count,omitempty"`
 
-	// [來源端平臺]資料更新週期
-	SrcUpdateInterval int32 `json:"SrcUpdateInterval,omitempty"`
+	// 來源端平台資料更新週期(秒)['-1: 不定期更新']
+	// Required: true
+	SrcUpdateInterval *int32 `json:"SrcUpdateInterval"`
 
 	// DateTime
 	//
 	// [來源端平臺]資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
-	SrcUpdateTime string `json:"SrcUpdateTime,omitempty"`
+	// Required: true
+	SrcUpdateTime *string `json:"SrcUpdateTime"`
 
 	// [平臺]資料更新週期(秒)
-	UpdateInterval int32 `json:"UpdateInterval,omitempty"`
+	// Required: true
+	UpdateInterval *int32 `json:"UpdateInterval"`
 
 	// DateTime
 	//
 	// [平臺]資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
-	UpdateTime string `json:"UpdateTime,omitempty"`
+	// Required: true
+	UpdateTime *string `json:"UpdateTime"`
 
 	// 資料版本編號
 	VersionID int32 `json:"VersionID,omitempty"`
@@ -55,6 +62,26 @@ func (m *MOTCAPIBusDALBusServiceDTOVersion3BusAlert) Validate(formats strfmt.Reg
 		res = append(res, err)
 	}
 
+	if err := m.validateAuthorityCode(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateSrcUpdateInterval(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateSrcUpdateTime(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateUpdateInterval(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateUpdateTime(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
@@ -63,8 +90,8 @@ func (m *MOTCAPIBusDALBusServiceDTOVersion3BusAlert) Validate(formats strfmt.Reg
 
 func (m *MOTCAPIBusDALBusServiceDTOVersion3BusAlert) validateAlerts(formats strfmt.Registry) error {
 
-	if swag.IsZero(m.Alerts) { // not required
-		return nil
+	if err := validate.Required("Alerts", "body", m.Alerts); err != nil {
+		return err
 	}
 
 	for i := 0; i < len(m.Alerts); i++ {
@@ -81,6 +108,51 @@ func (m *MOTCAPIBusDALBusServiceDTOVersion3BusAlert) validateAlerts(formats strf
 			}
 		}
 
+	}
+
+	return nil
+}
+
+func (m *MOTCAPIBusDALBusServiceDTOVersion3BusAlert) validateAuthorityCode(formats strfmt.Registry) error {
+
+	if err := validate.Required("AuthorityCode", "body", m.AuthorityCode); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *MOTCAPIBusDALBusServiceDTOVersion3BusAlert) validateSrcUpdateInterval(formats strfmt.Registry) error {
+
+	if err := validate.Required("SrcUpdateInterval", "body", m.SrcUpdateInterval); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *MOTCAPIBusDALBusServiceDTOVersion3BusAlert) validateSrcUpdateTime(formats strfmt.Registry) error {
+
+	if err := validate.Required("SrcUpdateTime", "body", m.SrcUpdateTime); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *MOTCAPIBusDALBusServiceDTOVersion3BusAlert) validateUpdateInterval(formats strfmt.Registry) error {
+
+	if err := validate.Required("UpdateInterval", "body", m.UpdateInterval); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *MOTCAPIBusDALBusServiceDTOVersion3BusAlert) validateUpdateTime(formats strfmt.Registry) error {
+
+	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
+		return err
 	}
 
 	return nil

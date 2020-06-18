@@ -9,12 +9,11 @@ import (
 	"fmt"
 
 	"github.com/go-openapi/runtime"
-
-	strfmt "github.com/go-openapi/strfmt"
+	"github.com/go-openapi/strfmt"
 )
 
 // New creates a new t r a API client.
-func New(transport runtime.ClientTransport, formats strfmt.Registry) *Client {
+func New(transport runtime.ClientTransport, formats strfmt.Registry) ClientService {
 	return &Client{transport: transport, formats: formats}
 }
 
@@ -26,10 +25,83 @@ type Client struct {
 	formats   strfmt.Registry
 }
 
-/*
-AlertAPIControllerGet 取得營運通阻資料s
+// ClientService is the interface for Client methods
+type ClientService interface {
+	AlertAPIControllerGet(params *AlertAPIControllerGetParams) (*AlertAPIControllerGetOK, error)
 
-取得營運通阻資料
+	DailyStationTimeTableAPIControllerGet(params *DailyStationTimeTableAPIControllerGetParams) (*DailyStationTimeTableAPIControllerGetOK, error)
+
+	DailyStationTimeTableAPIControllerGet1(params *DailyStationTimeTableAPIControllerGet1Params) (*DailyStationTimeTableAPIControllerGet1OK, error)
+
+	DailyStationTimeTableAPIControllerGet2(params *DailyStationTimeTableAPIControllerGet2Params) (*DailyStationTimeTableAPIControllerGet2OK, error)
+
+	DailyTrainTimeTableAPIControllerGet(params *DailyTrainTimeTableAPIControllerGetParams) (*DailyTrainTimeTableAPIControllerGetOK, error)
+
+	DailyTrainTimeTableAPIControllerGet1(params *DailyTrainTimeTableAPIControllerGet1Params) (*DailyTrainTimeTableAPIControllerGet1OK, error)
+
+	DailyTrainTimeTableAPIControllerGet2(params *DailyTrainTimeTableAPIControllerGet2Params) (*DailyTrainTimeTableAPIControllerGet2OK, error)
+
+	DailyTrainTimeTableAPIControllerGet3(params *DailyTrainTimeTableAPIControllerGet3Params) (*DailyTrainTimeTableAPIControllerGet3OK, error)
+
+	DailyTrainTimeTableAPIControllerGet4(params *DailyTrainTimeTableAPIControllerGet4Params) (*DailyTrainTimeTableAPIControllerGet4OK, error)
+
+	GeneralStationTimetableAPIControllerGet(params *GeneralStationTimetableAPIControllerGetParams) (*GeneralStationTimetableAPIControllerGetOK, error)
+
+	GeneralStationTimetableAPIControllerGet1(params *GeneralStationTimetableAPIControllerGet1Params) (*GeneralStationTimetableAPIControllerGet1OK, error)
+
+	GeneralTrainTimetableAPIControllerGet(params *GeneralTrainTimetableAPIControllerGetParams) (*GeneralTrainTimetableAPIControllerGetOK, error)
+
+	GeneralTrainTimetableAPIControllerGet1(params *GeneralTrainTimetableAPIControllerGet1Params) (*GeneralTrainTimetableAPIControllerGet1OK, error)
+
+	LineAPIControllerGet(params *LineAPIControllerGetParams) (*LineAPIControllerGetOK, error)
+
+	LineNetworkAPIControllerGet(params *LineNetworkAPIControllerGetParams) (*LineNetworkAPIControllerGetOK, error)
+
+	LineTransferAPIControllerGet(params *LineTransferAPIControllerGetParams) (*LineTransferAPIControllerGetOK, error)
+
+	NetworkAPIControllerGet(params *NetworkAPIControllerGetParams) (*NetworkAPIControllerGetOK, error)
+
+	NewsAPIControllerGet(params *NewsAPIControllerGetParams) (*NewsAPIControllerGetOK, error)
+
+	ODFareAPIControllerAPIControllerGet(params *ODFareAPIControllerAPIControllerGetParams) (*ODFareAPIControllerAPIControllerGetOK, error)
+
+	ODFareAPIControllerAPIControllerGet1(params *ODFareAPIControllerAPIControllerGet1Params) (*ODFareAPIControllerAPIControllerGet1OK, error)
+
+	OperatorAPIControllerGet(params *OperatorAPIControllerGetParams) (*OperatorAPIControllerGetOK, error)
+
+	ShapeAPIControllerGet(params *ShapeAPIControllerGetParams) (*ShapeAPIControllerGetOK, error)
+
+	SpecificTrainTimetableAPIControllerGet(params *SpecificTrainTimetableAPIControllerGetParams) (*SpecificTrainTimetableAPIControllerGetOK, error)
+
+	SpecificTrainTimetableAPIControllerGet1(params *SpecificTrainTimetableAPIControllerGet1Params) (*SpecificTrainTimetableAPIControllerGet1OK, error)
+
+	StationAPIControllerGet(params *StationAPIControllerGetParams) (*StationAPIControllerGetOK, error)
+
+	StationExitAPIControllerGet(params *StationExitAPIControllerGetParams) (*StationExitAPIControllerGetOK, error)
+
+	StationFacilityAPIControllerGet(params *StationFacilityAPIControllerGetParams) (*StationFacilityAPIControllerGetOK, error)
+
+	StationLiveBoardAPIControllerGet(params *StationLiveBoardAPIControllerGetParams) (*StationLiveBoardAPIControllerGetOK, error)
+
+	StationLiveBoardAPIControllerGet1(params *StationLiveBoardAPIControllerGet1Params) (*StationLiveBoardAPIControllerGet1OK, error)
+
+	StationOfLineAPIControllerGet(params *StationOfLineAPIControllerGetParams) (*StationOfLineAPIControllerGetOK, error)
+
+	StationTransferAPIControllerGet(params *StationTransferAPIControllerGetParams) (*StationTransferAPIControllerGetOK, error)
+
+	TrainLiveBoardAPIControllerGet(params *TrainLiveBoardAPIControllerGetParams) (*TrainLiveBoardAPIControllerGetOK, error)
+
+	TrainLiveBoardAPIControllerGet1(params *TrainLiveBoardAPIControllerGet1Params) (*TrainLiveBoardAPIControllerGet1OK, error)
+
+	TrainTypeAPIControllerGet(params *TrainTypeAPIControllerGetParams) (*TrainTypeAPIControllerGetOK, error)
+
+	SetTransport(transport runtime.ClientTransport)
+}
+
+/*
+  AlertAPIControllerGet 取得營運通阻資料s
+
+  取得營運通阻資料
 */
 func (a *Client) AlertAPIControllerGet(params *AlertAPIControllerGetParams) (*AlertAPIControllerGetOK, error) {
 	// TODO: Validate the params before sending
@@ -42,7 +114,7 @@ func (a *Client) AlertAPIControllerGet(params *AlertAPIControllerGetParams) (*Al
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/Alert",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &AlertAPIControllerGetReader{formats: a.formats},
@@ -63,9 +135,9 @@ func (a *Client) AlertAPIControllerGet(params *AlertAPIControllerGetParams) (*Al
 }
 
 /*
-DailyStationTimeTableAPIControllerGet 取得當天各站站別時刻表資料s
+  DailyStationTimeTableAPIControllerGet 取得當天各站站別時刻表資料s
 
-取得當天各站站別時刻表資料
+  取得當天各站站別時刻表資料
 */
 func (a *Client) DailyStationTimeTableAPIControllerGet(params *DailyStationTimeTableAPIControllerGetParams) (*DailyStationTimeTableAPIControllerGetOK, error) {
 	// TODO: Validate the params before sending
@@ -78,7 +150,7 @@ func (a *Client) DailyStationTimeTableAPIControllerGet(params *DailyStationTimeT
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/DailyStationTimetable/Today",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &DailyStationTimeTableAPIControllerGetReader{formats: a.formats},
@@ -99,9 +171,9 @@ func (a *Client) DailyStationTimeTableAPIControllerGet(params *DailyStationTimeT
 }
 
 /*
-DailyStationTimeTableAPIControllerGet1 取得當天指定s 車站 的時刻表資料
+  DailyStationTimeTableAPIControllerGet1 取得當天指定s 車站 的時刻表資料
 
-取得當天指定[車站]的時刻表資料
+  取得當天指定[車站]的時刻表資料
 */
 func (a *Client) DailyStationTimeTableAPIControllerGet1(params *DailyStationTimeTableAPIControllerGet1Params) (*DailyStationTimeTableAPIControllerGet1OK, error) {
 	// TODO: Validate the params before sending
@@ -114,7 +186,7 @@ func (a *Client) DailyStationTimeTableAPIControllerGet1(params *DailyStationTime
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/DailyStationTimetable/Today/Station/{StationID}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &DailyStationTimeTableAPIControllerGet1Reader{formats: a.formats},
@@ -135,9 +207,9 @@ func (a *Client) DailyStationTimeTableAPIControllerGet1(params *DailyStationTime
 }
 
 /*
-DailyStationTimeTableAPIControllerGet2 取得各站每日站別時刻表資料s
+  DailyStationTimeTableAPIControllerGet2 取得各站每日站別時刻表資料s
 
-取得各站每日站別時刻表資料
+  取得各站每日站別時刻表資料
 */
 func (a *Client) DailyStationTimeTableAPIControllerGet2(params *DailyStationTimeTableAPIControllerGet2Params) (*DailyStationTimeTableAPIControllerGet2OK, error) {
 	// TODO: Validate the params before sending
@@ -150,7 +222,7 @@ func (a *Client) DailyStationTimeTableAPIControllerGet2(params *DailyStationTime
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/DailyStationTimetable/TrainDate/{TrainDate}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &DailyStationTimeTableAPIControllerGet2Reader{formats: a.formats},
@@ -171,9 +243,9 @@ func (a *Client) DailyStationTimeTableAPIControllerGet2(params *DailyStationTime
 }
 
 /*
-DailyTrainTimeTableAPIControllerGet 取得當天車次時刻表資料s
+  DailyTrainTimeTableAPIControllerGet 取得當天車次時刻表資料s
 
-取得當天車次時刻表資料
+  取得當天車次時刻表資料
 */
 func (a *Client) DailyTrainTimeTableAPIControllerGet(params *DailyTrainTimeTableAPIControllerGetParams) (*DailyTrainTimeTableAPIControllerGetOK, error) {
 	// TODO: Validate the params before sending
@@ -186,7 +258,7 @@ func (a *Client) DailyTrainTimeTableAPIControllerGet(params *DailyTrainTimeTable
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/DailyTrainTimetable/Today",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &DailyTrainTimeTableAPIControllerGetReader{formats: a.formats},
@@ -207,9 +279,9 @@ func (a *Client) DailyTrainTimeTableAPIControllerGet(params *DailyTrainTimeTable
 }
 
 /*
-DailyTrainTimeTableAPIControllerGet1 取得當天指定s 車次 的時刻表資料
+  DailyTrainTimeTableAPIControllerGet1 取得當天指定s 車次 的時刻表資料
 
-取得當天指定[車次]的時刻表資料
+  取得當天指定[車次]的時刻表資料
 */
 func (a *Client) DailyTrainTimeTableAPIControllerGet1(params *DailyTrainTimeTableAPIControllerGet1Params) (*DailyTrainTimeTableAPIControllerGet1OK, error) {
 	// TODO: Validate the params before sending
@@ -222,7 +294,7 @@ func (a *Client) DailyTrainTimeTableAPIControllerGet1(params *DailyTrainTimeTabl
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/DailyTrainTimetable/Today/TrainNo/{TrainNo}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &DailyTrainTimeTableAPIControllerGet1Reader{formats: a.formats},
@@ -243,9 +315,9 @@ func (a *Client) DailyTrainTimeTableAPIControllerGet1(params *DailyTrainTimeTabl
 }
 
 /*
-DailyTrainTimeTableAPIControllerGet2 取得指定s 日期 所有車次的時刻表資料
+  DailyTrainTimeTableAPIControllerGet2 取得指定s 日期 所有車次的時刻表資料
 
-取得指定[日期]所有車次的時刻表資料(台鐵提供近60天每日時刻表)
+  取得指定[日期]所有車次的時刻表資料(台鐵提供近60天每日時刻表)
 */
 func (a *Client) DailyTrainTimeTableAPIControllerGet2(params *DailyTrainTimeTableAPIControllerGet2Params) (*DailyTrainTimeTableAPIControllerGet2OK, error) {
 	// TODO: Validate the params before sending
@@ -258,7 +330,7 @@ func (a *Client) DailyTrainTimeTableAPIControllerGet2(params *DailyTrainTimeTabl
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/DailyTrainTimetable/TrainDate/{TrainDate}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &DailyTrainTimeTableAPIControllerGet2Reader{formats: a.formats},
@@ -279,9 +351,9 @@ func (a *Client) DailyTrainTimeTableAPIControllerGet2(params *DailyTrainTimeTabl
 }
 
 /*
-DailyTrainTimeTableAPIControllerGet3 取得指定s 日期 起迄站間 之站間時刻表資料 僅列出查詢的停靠站
+  DailyTrainTimeTableAPIControllerGet3 取得指定s 日期 起迄站間 之站間時刻表資料 僅列出查詢的停靠站
 
-取得指定[日期],[起迄站間]之站間時刻表資料(僅列出查詢的停靠站)
+  取得指定[日期],[起迄站間]之站間時刻表資料(僅列出查詢的停靠站)
 */
 func (a *Client) DailyTrainTimeTableAPIControllerGet3(params *DailyTrainTimeTableAPIControllerGet3Params) (*DailyTrainTimeTableAPIControllerGet3OK, error) {
 	// TODO: Validate the params before sending
@@ -294,7 +366,7 @@ func (a *Client) DailyTrainTimeTableAPIControllerGet3(params *DailyTrainTimeTabl
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/DailyTrainTimetable/OD/{OriginStationID}/to/{DestinationStationID}/{TrainDate}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &DailyTrainTimeTableAPIControllerGet3Reader{formats: a.formats},
@@ -315,9 +387,9 @@ func (a *Client) DailyTrainTimeTableAPIControllerGet3(params *DailyTrainTimeTabl
 }
 
 /*
-DailyTrainTimeTableAPIControllerGet4 取得指定s 日期 起迄站間 之站間時刻表資料
+  DailyTrainTimeTableAPIControllerGet4 取得指定s 日期 起迄站間 之站間時刻表資料
 
-取得指定[日期],[起迄站間]之站間時刻表資料
+  取得指定[日期],[起迄站間]之站間時刻表資料
 */
 func (a *Client) DailyTrainTimeTableAPIControllerGet4(params *DailyTrainTimeTableAPIControllerGet4Params) (*DailyTrainTimeTableAPIControllerGet4OK, error) {
 	// TODO: Validate the params before sending
@@ -330,7 +402,7 @@ func (a *Client) DailyTrainTimeTableAPIControllerGet4(params *DailyTrainTimeTabl
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/DailyTrainTimetable/OD/Inclusive/{OriginStationID}/to/{DestinationStationID}/{TrainDate}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &DailyTrainTimeTableAPIControllerGet4Reader{formats: a.formats},
@@ -351,9 +423,9 @@ func (a *Client) DailyTrainTimeTableAPIControllerGet4(params *DailyTrainTimeTabl
 }
 
 /*
-GeneralStationTimetableAPIControllerGet 取得各站的定期站別時刻表資料s
+  GeneralStationTimetableAPIControllerGet 取得各站的定期站別時刻表資料s
 
-取得各站的定期站別時刻表資料
+  取得各站的定期站別時刻表資料
 */
 func (a *Client) GeneralStationTimetableAPIControllerGet(params *GeneralStationTimetableAPIControllerGetParams) (*GeneralStationTimetableAPIControllerGetOK, error) {
 	// TODO: Validate the params before sending
@@ -366,7 +438,7 @@ func (a *Client) GeneralStationTimetableAPIControllerGet(params *GeneralStationT
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/GeneralStationTimetable",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &GeneralStationTimetableAPIControllerGetReader{formats: a.formats},
@@ -387,9 +459,9 @@ func (a *Client) GeneralStationTimetableAPIControllerGet(params *GeneralStationT
 }
 
 /*
-GeneralStationTimetableAPIControllerGet1 取得指定s 車站 的定期站別時刻表資料
+  GeneralStationTimetableAPIControllerGet1 取得指定s 車站 的定期站別時刻表資料
 
-取得指定[車站]的定期站別時刻表資料
+  取得指定[車站]的定期站別時刻表資料
 */
 func (a *Client) GeneralStationTimetableAPIControllerGet1(params *GeneralStationTimetableAPIControllerGet1Params) (*GeneralStationTimetableAPIControllerGet1OK, error) {
 	// TODO: Validate the params before sending
@@ -402,7 +474,7 @@ func (a *Client) GeneralStationTimetableAPIControllerGet1(params *GeneralStation
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/GeneralStationTimetable/Station/{StationID}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &GeneralStationTimetableAPIControllerGet1Reader{formats: a.formats},
@@ -423,9 +495,9 @@ func (a *Client) GeneralStationTimetableAPIControllerGet1(params *GeneralStation
 }
 
 /*
-GeneralTrainTimetableAPIControllerGet 取得所有車次的定期時刻表資料s
+  GeneralTrainTimetableAPIControllerGet 取得所有車次的定期時刻表資料s
 
-取得所有車次的定期時刻表資料
+  取得所有車次的定期時刻表資料
 */
 func (a *Client) GeneralTrainTimetableAPIControllerGet(params *GeneralTrainTimetableAPIControllerGetParams) (*GeneralTrainTimetableAPIControllerGetOK, error) {
 	// TODO: Validate the params before sending
@@ -438,7 +510,7 @@ func (a *Client) GeneralTrainTimetableAPIControllerGet(params *GeneralTrainTimet
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/GeneralTrainTimetable",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &GeneralTrainTimetableAPIControllerGetReader{formats: a.formats},
@@ -459,9 +531,9 @@ func (a *Client) GeneralTrainTimetableAPIControllerGet(params *GeneralTrainTimet
 }
 
 /*
-GeneralTrainTimetableAPIControllerGet1 取得指定s 車次 的定期時刻表資料
+  GeneralTrainTimetableAPIControllerGet1 取得指定s 車次 的定期時刻表資料
 
-取得指定[車次]的定期時刻表資料
+  取得指定[車次]的定期時刻表資料
 */
 func (a *Client) GeneralTrainTimetableAPIControllerGet1(params *GeneralTrainTimetableAPIControllerGet1Params) (*GeneralTrainTimetableAPIControllerGet1OK, error) {
 	// TODO: Validate the params before sending
@@ -474,7 +546,7 @@ func (a *Client) GeneralTrainTimetableAPIControllerGet1(params *GeneralTrainTime
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/GeneralTrainTimetable/TrainNo/{TrainNo}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &GeneralTrainTimetableAPIControllerGet1Reader{formats: a.formats},
@@ -495,9 +567,9 @@ func (a *Client) GeneralTrainTimetableAPIControllerGet1(params *GeneralTrainTime
 }
 
 /*
-LineAPIControllerGet 取得路線基本資料s
+  LineAPIControllerGet 取得路線基本資料s
 
-取得路線基本資料
+  取得路線基本資料
 */
 func (a *Client) LineAPIControllerGet(params *LineAPIControllerGetParams) (*LineAPIControllerGetOK, error) {
 	// TODO: Validate the params before sending
@@ -510,7 +582,7 @@ func (a *Client) LineAPIControllerGet(params *LineAPIControllerGetParams) (*Line
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/Line",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &LineAPIControllerGetReader{formats: a.formats},
@@ -531,9 +603,9 @@ func (a *Client) LineAPIControllerGet(params *LineAPIControllerGetParams) (*Line
 }
 
 /*
-LineNetworkAPIControllerGet 取得路線網路拓撲基本資料s
+  LineNetworkAPIControllerGet 取得路線網路拓撲基本資料s
 
-取得路線網路拓撲基本資料
+  取得路線網路拓撲基本資料
 */
 func (a *Client) LineNetworkAPIControllerGet(params *LineNetworkAPIControllerGetParams) (*LineNetworkAPIControllerGetOK, error) {
 	// TODO: Validate the params before sending
@@ -546,7 +618,7 @@ func (a *Client) LineNetworkAPIControllerGet(params *LineNetworkAPIControllerGet
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/LineNetwork",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &LineNetworkAPIControllerGetReader{formats: a.formats},
@@ -567,9 +639,9 @@ func (a *Client) LineNetworkAPIControllerGet(params *LineNetworkAPIControllerGet
 }
 
 /*
-LineTransferAPIControllerGet 取得內部路線轉乘資料s
+  LineTransferAPIControllerGet 取得內部路線轉乘資料s
 
-取得內部路線轉乘資料
+  取得內部路線轉乘資料
 */
 func (a *Client) LineTransferAPIControllerGet(params *LineTransferAPIControllerGetParams) (*LineTransferAPIControllerGetOK, error) {
 	// TODO: Validate the params before sending
@@ -582,7 +654,7 @@ func (a *Client) LineTransferAPIControllerGet(params *LineTransferAPIControllerG
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/LineTransfer",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &LineTransferAPIControllerGetReader{formats: a.formats},
@@ -603,9 +675,9 @@ func (a *Client) LineTransferAPIControllerGet(params *LineTransferAPIControllerG
 }
 
 /*
-NetworkAPIControllerGet 取得臺鐵路網資料s
+  NetworkAPIControllerGet 取得臺鐵路網資料s
 
-取得臺鐵路網資料
+  取得臺鐵路網資料
 */
 func (a *Client) NetworkAPIControllerGet(params *NetworkAPIControllerGetParams) (*NetworkAPIControllerGetOK, error) {
 	// TODO: Validate the params before sending
@@ -618,7 +690,7 @@ func (a *Client) NetworkAPIControllerGet(params *NetworkAPIControllerGetParams) 
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/Network",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &NetworkAPIControllerGetReader{formats: a.formats},
@@ -639,9 +711,9 @@ func (a *Client) NetworkAPIControllerGet(params *NetworkAPIControllerGetParams) 
 }
 
 /*
-NewsAPIControllerGet 取得最新消息s
+  NewsAPIControllerGet 取得最新消息s
 
-取得最新消息
+  取得最新消息
 */
 func (a *Client) NewsAPIControllerGet(params *NewsAPIControllerGetParams) (*NewsAPIControllerGetOK, error) {
 	// TODO: Validate the params before sending
@@ -654,7 +726,7 @@ func (a *Client) NewsAPIControllerGet(params *NewsAPIControllerGetParams) (*News
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/News",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &NewsAPIControllerGetReader{formats: a.formats},
@@ -675,9 +747,9 @@ func (a *Client) NewsAPIControllerGet(params *NewsAPIControllerGetParams) (*News
 }
 
 /*
-ODFareAPIControllerAPIControllerGet 取得票價資料s 檔案
+  ODFareAPIControllerAPIControllerGet 取得票價資料s 檔案
 
-取得Gzip壓縮檔
+  取得Gzip壓縮檔
 */
 func (a *Client) ODFareAPIControllerAPIControllerGet(params *ODFareAPIControllerAPIControllerGetParams) (*ODFareAPIControllerAPIControllerGetOK, error) {
 	// TODO: Validate the params before sending
@@ -690,7 +762,7 @@ func (a *Client) ODFareAPIControllerAPIControllerGet(params *ODFareAPIController
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/ODFare",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &ODFareAPIControllerAPIControllerGetReader{formats: a.formats},
@@ -711,9 +783,9 @@ func (a *Client) ODFareAPIControllerAPIControllerGet(params *ODFareAPIController
 }
 
 /*
-ODFareAPIControllerAPIControllerGet1 取得指定起迄站間票價資料s
+  ODFareAPIControllerAPIControllerGet1 取得指定起迄站間票價資料s
 
-取得指定起迄站間票價資料
+  取得指定起迄站間票價資料
 */
 func (a *Client) ODFareAPIControllerAPIControllerGet1(params *ODFareAPIControllerAPIControllerGet1Params) (*ODFareAPIControllerAPIControllerGet1OK, error) {
 	// TODO: Validate the params before sending
@@ -726,7 +798,7 @@ func (a *Client) ODFareAPIControllerAPIControllerGet1(params *ODFareAPIControlle
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/ODFare/{OriginStationID}/to/{DestinationStationID}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &ODFareAPIControllerAPIControllerGet1Reader{formats: a.formats},
@@ -747,9 +819,9 @@ func (a *Client) ODFareAPIControllerAPIControllerGet1(params *ODFareAPIControlle
 }
 
 /*
-OperatorAPIControllerGet 取得台鐵營運業者基本資料s
+  OperatorAPIControllerGet 取得台鐵營運業者基本資料s
 
-取得台鐵營運業者基本資料
+  取得台鐵營運業者基本資料
 */
 func (a *Client) OperatorAPIControllerGet(params *OperatorAPIControllerGetParams) (*OperatorAPIControllerGetOK, error) {
 	// TODO: Validate the params before sending
@@ -762,7 +834,7 @@ func (a *Client) OperatorAPIControllerGet(params *OperatorAPIControllerGetParams
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/Operator",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &OperatorAPIControllerGetReader{formats: a.formats},
@@ -783,9 +855,9 @@ func (a *Client) OperatorAPIControllerGet(params *OperatorAPIControllerGetParams
 }
 
 /*
-ShapeAPIControllerGet 取得線型基本資料s
+  ShapeAPIControllerGet 取得線型基本資料s
 
-取得線型基本資料
+  取得線型基本資料
 */
 func (a *Client) ShapeAPIControllerGet(params *ShapeAPIControllerGetParams) (*ShapeAPIControllerGetOK, error) {
 	// TODO: Validate the params before sending
@@ -798,7 +870,7 @@ func (a *Client) ShapeAPIControllerGet(params *ShapeAPIControllerGetParams) (*Sh
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/Shape",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &ShapeAPIControllerGetReader{formats: a.formats},
@@ -819,9 +891,9 @@ func (a *Client) ShapeAPIControllerGet(params *ShapeAPIControllerGetParams) (*Sh
 }
 
 /*
-SpecificTrainTimetableAPIControllerGet 取得所有特殊車次時刻表資料s
+  SpecificTrainTimetableAPIControllerGet 取得所有特殊車次時刻表資料s
 
-取得所有特殊車次時刻表資料
+  取得所有特殊車次時刻表資料
 */
 func (a *Client) SpecificTrainTimetableAPIControllerGet(params *SpecificTrainTimetableAPIControllerGetParams) (*SpecificTrainTimetableAPIControllerGetOK, error) {
 	// TODO: Validate the params before sending
@@ -834,7 +906,7 @@ func (a *Client) SpecificTrainTimetableAPIControllerGet(params *SpecificTrainTim
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/SpecificTrainTimetable",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &SpecificTrainTimetableAPIControllerGetReader{formats: a.formats},
@@ -855,9 +927,9 @@ func (a *Client) SpecificTrainTimetableAPIControllerGet(params *SpecificTrainTim
 }
 
 /*
-SpecificTrainTimetableAPIControllerGet1 取得指定s 車次 的特殊車次時刻表資料
+  SpecificTrainTimetableAPIControllerGet1 取得指定s 車次 的特殊車次時刻表資料
 
-取得指定[車次]的特殊車次時刻表資料
+  取得指定[車次]的特殊車次時刻表資料
 */
 func (a *Client) SpecificTrainTimetableAPIControllerGet1(params *SpecificTrainTimetableAPIControllerGet1Params) (*SpecificTrainTimetableAPIControllerGet1OK, error) {
 	// TODO: Validate the params before sending
@@ -870,7 +942,7 @@ func (a *Client) SpecificTrainTimetableAPIControllerGet1(params *SpecificTrainTi
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/SpecificTrainTimetable/TrainNo/{TrainNo}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &SpecificTrainTimetableAPIControllerGet1Reader{formats: a.formats},
@@ -891,9 +963,9 @@ func (a *Client) SpecificTrainTimetableAPIControllerGet1(params *SpecificTrainTi
 }
 
 /*
-StationAPIControllerGet 取得車站基本資料s
+  StationAPIControllerGet 取得車站基本資料s
 
-取得車站基本資料
+  取得車站基本資料
 */
 func (a *Client) StationAPIControllerGet(params *StationAPIControllerGetParams) (*StationAPIControllerGetOK, error) {
 	// TODO: Validate the params before sending
@@ -906,7 +978,7 @@ func (a *Client) StationAPIControllerGet(params *StationAPIControllerGetParams) 
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/Station",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &StationAPIControllerGetReader{formats: a.formats},
@@ -927,9 +999,9 @@ func (a *Client) StationAPIControllerGet(params *StationAPIControllerGetParams) 
 }
 
 /*
-StationExitAPIControllerGet 取得車站出入口基本資料s
+  StationExitAPIControllerGet 取得車站出入口基本資料s
 
-取得車站出入口基本資料
+  取得車站出入口基本資料
 */
 func (a *Client) StationExitAPIControllerGet(params *StationExitAPIControllerGetParams) (*StationExitAPIControllerGetOK, error) {
 	// TODO: Validate the params before sending
@@ -942,7 +1014,7 @@ func (a *Client) StationExitAPIControllerGet(params *StationExitAPIControllerGet
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/StationExit",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &StationExitAPIControllerGetReader{formats: a.formats},
@@ -963,9 +1035,9 @@ func (a *Client) StationExitAPIControllerGet(params *StationExitAPIControllerGet
 }
 
 /*
-StationFacilityAPIControllerGet 取得車站設施資料s
+  StationFacilityAPIControllerGet 取得車站設施資料s
 
-取得車站設施資料
+  取得車站設施資料
 */
 func (a *Client) StationFacilityAPIControllerGet(params *StationFacilityAPIControllerGetParams) (*StationFacilityAPIControllerGetOK, error) {
 	// TODO: Validate the params before sending
@@ -978,7 +1050,7 @@ func (a *Client) StationFacilityAPIControllerGet(params *StationFacilityAPIContr
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/StationFacility",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &StationFacilityAPIControllerGetReader{formats: a.formats},
@@ -999,9 +1071,9 @@ func (a *Client) StationFacilityAPIControllerGet(params *StationFacilityAPIContr
 }
 
 /*
-StationLiveBoardAPIControllerGet 取得列車即時到離站資料s
+  StationLiveBoardAPIControllerGet 取得列車即時到離站資料s
 
-取得列車即時到離站資料
+  取得列車即時到離站資料
 */
 func (a *Client) StationLiveBoardAPIControllerGet(params *StationLiveBoardAPIControllerGetParams) (*StationLiveBoardAPIControllerGetOK, error) {
 	// TODO: Validate the params before sending
@@ -1014,7 +1086,7 @@ func (a *Client) StationLiveBoardAPIControllerGet(params *StationLiveBoardAPICon
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/StationLiveBoard",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &StationLiveBoardAPIControllerGetReader{formats: a.formats},
@@ -1035,9 +1107,9 @@ func (a *Client) StationLiveBoardAPIControllerGet(params *StationLiveBoardAPICon
 }
 
 /*
-StationLiveBoardAPIControllerGet1 取得指定s 車站 的列車即時到離站資料
+  StationLiveBoardAPIControllerGet1 取得指定s 車站 的列車即時到離站資料
 
-取得指定[車站]的列車即時到離站資料
+  取得指定[車站]的列車即時到離站資料
 */
 func (a *Client) StationLiveBoardAPIControllerGet1(params *StationLiveBoardAPIControllerGet1Params) (*StationLiveBoardAPIControllerGet1OK, error) {
 	// TODO: Validate the params before sending
@@ -1050,7 +1122,7 @@ func (a *Client) StationLiveBoardAPIControllerGet1(params *StationLiveBoardAPICo
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/StationLiveBoard/Station/{StationID}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &StationLiveBoardAPIControllerGet1Reader{formats: a.formats},
@@ -1071,9 +1143,9 @@ func (a *Client) StationLiveBoardAPIControllerGet1(params *StationLiveBoardAPICo
 }
 
 /*
-StationOfLineAPIControllerGet 取得路線車站基本資料s
+  StationOfLineAPIControllerGet 取得路線車站基本資料s
 
-取得路線車站基本資料
+  取得路線車站基本資料
 */
 func (a *Client) StationOfLineAPIControllerGet(params *StationOfLineAPIControllerGetParams) (*StationOfLineAPIControllerGetOK, error) {
 	// TODO: Validate the params before sending
@@ -1086,7 +1158,7 @@ func (a *Client) StationOfLineAPIControllerGet(params *StationOfLineAPIControlle
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/StationOfLine",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &StationOfLineAPIControllerGetReader{formats: a.formats},
@@ -1107,9 +1179,9 @@ func (a *Client) StationOfLineAPIControllerGet(params *StationOfLineAPIControlle
 }
 
 /*
-StationTransferAPIControllerGet 取得車站跨運具轉乘資訊s
+  StationTransferAPIControllerGet 取得車站跨運具轉乘資訊s
 
-取得車站跨運具轉乘資訊
+  取得車站跨運具轉乘資訊
 */
 func (a *Client) StationTransferAPIControllerGet(params *StationTransferAPIControllerGetParams) (*StationTransferAPIControllerGetOK, error) {
 	// TODO: Validate the params before sending
@@ -1122,7 +1194,7 @@ func (a *Client) StationTransferAPIControllerGet(params *StationTransferAPIContr
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/StationTransfer",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &StationTransferAPIControllerGetReader{formats: a.formats},
@@ -1143,9 +1215,9 @@ func (a *Client) StationTransferAPIControllerGet(params *StationTransferAPIContr
 }
 
 /*
-TrainLiveBoardAPIControllerGet 取得列車即時位置動態資料s
+  TrainLiveBoardAPIControllerGet 取得列車即時位置動態資料s
 
-取得列車即時位置動態資料
+  取得列車即時位置動態資料
 
 ## 使用注意事項
 1.  本項資料為「列車目前所在之車站」資料，而更新資料的時機點為「列車離站時」(由 CTC 提供)，其內容之車站資料可能為經過站，也可能為停靠站。
@@ -1164,7 +1236,7 @@ func (a *Client) TrainLiveBoardAPIControllerGet(params *TrainLiveBoardAPIControl
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/TrainLiveBoard",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &TrainLiveBoardAPIControllerGetReader{formats: a.formats},
@@ -1185,9 +1257,9 @@ func (a *Client) TrainLiveBoardAPIControllerGet(params *TrainLiveBoardAPIControl
 }
 
 /*
-TrainLiveBoardAPIControllerGet1 取得指定s 車次 的列車即時位置動態資料
+  TrainLiveBoardAPIControllerGet1 取得指定s 車次 的列車即時位置動態資料
 
-取得指定[車次]的列車即時位置動態資料
+  取得指定[車次]的列車即時位置動態資料
 
 ## 使用注意事項
 1.  本項資料為「列車目前所在之車站」資料，而更新資料的時機點為「列車離站時」(由 CTC 提供)，其內容之車站資料可能為經過站，也可能為停靠站。
@@ -1206,7 +1278,7 @@ func (a *Client) TrainLiveBoardAPIControllerGet1(params *TrainLiveBoardAPIContro
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/TrainLiveBoard/TrainNo/{TrainNo}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &TrainLiveBoardAPIControllerGet1Reader{formats: a.formats},
@@ -1227,9 +1299,9 @@ func (a *Client) TrainLiveBoardAPIControllerGet1(params *TrainLiveBoardAPIContro
 }
 
 /*
-TrainTypeAPIControllerGet 取得所有列車車種資料s
+  TrainTypeAPIControllerGet 取得所有列車車種資料s
 
-取得所有列車車種資料
+  取得所有列車車種資料
 */
 func (a *Client) TrainTypeAPIControllerGet(params *TrainTypeAPIControllerGetParams) (*TrainTypeAPIControllerGetOK, error) {
 	// TODO: Validate the params before sending
@@ -1242,7 +1314,7 @@ func (a *Client) TrainTypeAPIControllerGet(params *TrainTypeAPIControllerGetPara
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/TrainType",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &TrainTypeAPIControllerGetReader{formats: a.formats},

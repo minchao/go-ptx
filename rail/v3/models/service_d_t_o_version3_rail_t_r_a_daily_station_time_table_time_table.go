@@ -6,14 +6,14 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	strfmt "github.com/go-openapi/strfmt"
-
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 )
 
 // ServiceDTOVersion3RailTRADailyStationTimeTableTimeTable TimeTable
+//
 // swagger:model Service.DTO.Version3.Rail.TRA.DailyStationTimeTable.TimeTable
 type ServiceDTOVersion3RailTRADailyStationTimeTableTimeTable struct {
 
@@ -22,6 +22,14 @@ type ServiceDTOVersion3RailTRADailyStationTimeTableTimeTable struct {
 
 	// 發車時刻
 	DepartureTime string `json:"DepartureTime,omitempty"`
+
+	// 目的站車站代號
+	DestinationStationID string `json:"DestinationStationID,omitempty"`
+
+	// NameType
+	//
+	// 目的站車站名稱
+	DestinationStationName *ServiceDTOVersion3BaseNameType `json:"DestinationStationName,omitempty"`
 
 	// 發車順序
 	// Required: true
@@ -46,6 +54,10 @@ type ServiceDTOVersion3RailTRADailyStationTimeTableTimeTable struct {
 func (m *ServiceDTOVersion3RailTRADailyStationTimeTableTimeTable) Validate(formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.validateDestinationStationName(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateSequence(formats); err != nil {
 		res = append(res, err)
 	}
@@ -57,6 +69,24 @@ func (m *ServiceDTOVersion3RailTRADailyStationTimeTableTimeTable) Validate(forma
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *ServiceDTOVersion3RailTRADailyStationTimeTableTimeTable) validateDestinationStationName(formats strfmt.Registry) error {
+
+	if swag.IsZero(m.DestinationStationName) { // not required
+		return nil
+	}
+
+	if m.DestinationStationName != nil {
+		if err := m.DestinationStationName.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("DestinationStationName")
+			}
+			return err
+		}
+	}
+
 	return nil
 }
 

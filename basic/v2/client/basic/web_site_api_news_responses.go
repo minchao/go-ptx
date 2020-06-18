@@ -10,10 +10,9 @@ import (
 	"io"
 
 	"github.com/go-openapi/runtime"
+	"github.com/go-openapi/strfmt"
 
-	strfmt "github.com/go-openapi/strfmt"
-
-	models "github.com/minchao/go-ptx/basic/v2/models"
+	"github.com/minchao/go-ptx/basic/v2/models"
 )
 
 // WebSiteAPINewsReader is a Reader for the WebSiteAPINews structure.

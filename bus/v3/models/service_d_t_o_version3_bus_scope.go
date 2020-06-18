@@ -8,15 +8,15 @@ package models
 import (
 	"strconv"
 
-	strfmt "github.com/go-openapi/strfmt"
-
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 )
 
 // ServiceDTOVersion3BusScope Scope
 //
 // 通阻影響範圍
+//
 // swagger:model Service.DTO.Version3.Bus.Scope
 type ServiceDTOVersion3BusScope struct {
 

@@ -8,20 +8,22 @@ package models
 import (
 	"strconv"
 
-	strfmt "github.com/go-openapi/strfmt"
-
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 )
 
 // PTXServiceDTOShipSpecificationV3RouteFare RouteFare
+//
 // swagger:model PTX.Service.DTO.Ship.Specification.V3.RouteFare
 type PTXServiceDTOShipSpecificationV3RouteFare struct {
 
 	// PortInfomation
 	//
 	// 迄點港口資訊
-	DestinationPort *PTXServiceDTOShipSpecificationV3PortInfomation `json:"DestinationPort,omitempty"`
+	DestinationPort struct {
+		PTXServiceDTOShipSpecificationV3PortInfomation
+	} `json:"DestinationPort,omitempty"`
 
 	// String
 	//
@@ -36,7 +38,9 @@ type PTXServiceDTOShipSpecificationV3RouteFare struct {
 	// PortInfomation
 	//
 	// 起始港口資訊
-	OriginPort *PTXServiceDTOShipSpecificationV3PortInfomation `json:"OriginPort,omitempty"`
+	OriginPort struct {
+		PTXServiceDTOShipSpecificationV3PortInfomation
+	} `json:"OriginPort,omitempty"`
 
 	// String
 	//
@@ -46,7 +50,9 @@ type PTXServiceDTOShipSpecificationV3RouteFare struct {
 	// NameType
 	//
 	// 航線名稱
-	RouteName *PTXServiceDTOSharedSpecificationV3BaseNameType `json:"RouteName,omitempty"`
+	RouteName struct {
+		PTXServiceDTOSharedSpecificationV3BaseNameType
+	} `json:"RouteName,omitempty"`
 }
 
 // Validate validates this p t x service d t o ship specification v3 route fare
@@ -79,15 +85,6 @@ func (m *PTXServiceDTOShipSpecificationV3RouteFare) validateDestinationPort(form
 
 	if swag.IsZero(m.DestinationPort) { // not required
 		return nil
-	}
-
-	if m.DestinationPort != nil {
-		if err := m.DestinationPort.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("DestinationPort")
-			}
-			return err
-		}
 	}
 
 	return nil
@@ -124,15 +121,6 @@ func (m *PTXServiceDTOShipSpecificationV3RouteFare) validateOriginPort(formats s
 		return nil
 	}
 
-	if m.OriginPort != nil {
-		if err := m.OriginPort.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("OriginPort")
-			}
-			return err
-		}
-	}
-
 	return nil
 }
 
@@ -140,15 +128,6 @@ func (m *PTXServiceDTOShipSpecificationV3RouteFare) validateRouteName(formats st
 
 	if swag.IsZero(m.RouteName) { // not required
 		return nil
-	}
-
-	if m.RouteName != nil {
-		if err := m.RouteName.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("RouteName")
-			}
-			return err
-		}
 	}
 
 	return nil

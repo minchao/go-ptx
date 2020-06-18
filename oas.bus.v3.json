@@ -111,7 +111,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -217,7 +217,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -323,7 +323,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -430,7 +430,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -537,7 +537,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -643,7 +643,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -749,7 +749,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -856,7 +856,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -962,7 +962,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -1068,7 +1068,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -1174,7 +1174,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -1280,7 +1280,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -1387,7 +1387,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -1501,7 +1501,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -1608,7 +1608,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -1722,7 +1722,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -1829,7 +1829,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -1943,7 +1943,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -2050,7 +2050,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -2157,7 +2157,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -2263,7 +2263,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -2369,7 +2369,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -2475,7 +2475,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -2581,7 +2581,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -2687,7 +2687,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -2793,7 +2793,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -2899,7 +2899,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -2907,8 +2907,8 @@
     }
   },
   "definitions": {
-    "Service.DTO.Version3.Base.Health": {
-      "title": "Health",
+    "Service.DTO.Version3.Base.DisplayHealth": {
+      "title": "DisplayHealth",
       "description": "API服務健康狀態",
       "required": [
         "ServiceID",
@@ -2990,6 +2990,14 @@
     },
     "MOTC.API.Bus.DAL.Bus[Service.DTO.Version3.Bus.A1Data]": {
       "title": "BusA1DataList",
+      "required": [
+        "UpdateTime",
+        "UpdateInterval",
+        "SrcUpdateTime",
+        "SrcUpdateInterval",
+        "AuthorityCode",
+        "A1Datas"
+      ],
       "type": "object",
       "properties": {
         "UpdateTime": {
@@ -3009,7 +3017,7 @@
         },
         "SrcUpdateInterval": {
           "format": "int32",
-          "description": "[來源端平臺]資料更新週期",
+          "description": "來源端平台資料更新週期(秒)['-1: 不定期更新']",
           "type": "integer"
         },
         "AuthorityCode": {
@@ -3201,6 +3209,14 @@
     },
     "MOTC.API.Bus.DAL.Bus[Service.DTO.Version3.Bus.A2Data]": {
       "title": "BusA2DataList",
+      "required": [
+        "UpdateTime",
+        "UpdateInterval",
+        "SrcUpdateTime",
+        "SrcUpdateInterval",
+        "AuthorityCode",
+        "A2Datas"
+      ],
       "type": "object",
       "properties": {
         "UpdateTime": {
@@ -3220,7 +3236,7 @@
         },
         "SrcUpdateInterval": {
           "format": "int32",
-          "description": "[來源端平臺]資料更新週期",
+          "description": "來源端平台資料更新週期(秒)['-1: 不定期更新']",
           "type": "integer"
         },
         "AuthorityCode": {
@@ -3381,6 +3397,14 @@
     },
     "MOTC.API.Bus.DAL.Bus[Service.DTO.Version3.Bus.Alert]": {
       "title": "BusAlertList",
+      "required": [
+        "UpdateTime",
+        "UpdateInterval",
+        "SrcUpdateTime",
+        "SrcUpdateInterval",
+        "AuthorityCode",
+        "Alerts"
+      ],
       "type": "object",
       "properties": {
         "UpdateTime": {
@@ -3400,7 +3424,7 @@
         },
         "SrcUpdateInterval": {
           "format": "int32",
-          "description": "[來源端平臺]資料更新週期",
+          "description": "來源端平台資料更新週期(秒)['-1: 不定期更新']",
           "type": "integer"
         },
         "AuthorityCode": {
@@ -3577,6 +3601,14 @@
     },
     "MOTC.API.Bus.DAL.Bus[Service.DTO.Version3.Bus.DailyTimeTable]": {
       "title": "BusDailyTimeTableList",
+      "required": [
+        "UpdateTime",
+        "UpdateInterval",
+        "SrcUpdateTime",
+        "SrcUpdateInterval",
+        "AuthorityCode",
+        "DailyTimeTables"
+      ],
       "type": "object",
       "properties": {
         "UpdateTime": {
@@ -3596,7 +3628,7 @@
         },
         "SrcUpdateInterval": {
           "format": "int32",
-          "description": "[來源端平臺]資料更新週期",
+          "description": "來源端平台資料更新週期(秒)['-1: 不定期更新']",
           "type": "integer"
         },
         "AuthorityCode": {
@@ -3752,6 +3784,14 @@
     },
     "MOTC.API.Bus.DAL.Bus[Service.DTO.Version3.Bus.Depot]": {
       "title": "BusDepotList",
+      "required": [
+        "UpdateTime",
+        "UpdateInterval",
+        "SrcUpdateTime",
+        "SrcUpdateInterval",
+        "AuthorityCode",
+        "Depots"
+      ],
       "type": "object",
       "properties": {
         "UpdateTime": {
@@ -3771,7 +3811,7 @@
         },
         "SrcUpdateInterval": {
           "format": "int32",
-          "description": "[來源端平臺]資料更新週期",
+          "description": "來源端平台資料更新週期(秒)['-1: 不定期更新']",
           "type": "integer"
         },
         "AuthorityCode": {
@@ -3839,6 +3879,14 @@
     },
     "MOTC.API.Bus.DAL.Bus[Service.DTO.Version3.Bus.DisplayStopOfRoute]": {
       "title": "BusDisplayStopOfRouteList",
+      "required": [
+        "UpdateTime",
+        "UpdateInterval",
+        "SrcUpdateTime",
+        "SrcUpdateInterval",
+        "AuthorityCode",
+        "DisplayStopOfRoutes"
+      ],
       "type": "object",
       "properties": {
         "UpdateTime": {
@@ -3858,7 +3906,7 @@
         },
         "SrcUpdateInterval": {
           "format": "int32",
-          "description": "[來源端平臺]資料更新週期",
+          "description": "來源端平台資料更新週期(秒)['-1: 不定期更新']",
           "type": "integer"
         },
         "AuthorityCode": {
@@ -3962,6 +4010,14 @@
     },
     "MOTC.API.Bus.DAL.Bus[Service.DTO.Version3.Bus.FirstLastTripInfo]": {
       "title": "BusFirstLastTripInfoList",
+      "required": [
+        "UpdateTime",
+        "UpdateInterval",
+        "SrcUpdateTime",
+        "SrcUpdateInterval",
+        "AuthorityCode",
+        "FirstLastTripInfos"
+      ],
       "type": "object",
       "properties": {
         "UpdateTime": {
@@ -3981,7 +4037,7 @@
         },
         "SrcUpdateInterval": {
           "format": "int32",
-          "description": "[來源端平臺]資料更新週期",
+          "description": "來源端平台資料更新週期(秒)['-1: 不定期更新']",
           "type": "integer"
         },
         "AuthorityCode": {
@@ -4142,6 +4198,14 @@
     },
     "MOTC.API.Bus.DAL.Bus[Service.DTO.Version3.Bus.N1Data]": {
       "title": "BusN1DataList",
+      "required": [
+        "UpdateTime",
+        "UpdateInterval",
+        "SrcUpdateTime",
+        "SrcUpdateInterval",
+        "AuthorityCode",
+        "N1Datas"
+      ],
       "type": "object",
       "properties": {
         "UpdateTime": {
@@ -4161,7 +4225,7 @@
         },
         "SrcUpdateInterval": {
           "format": "int32",
-          "description": "[來源端平臺]資料更新週期",
+          "description": "來源端平台資料更新週期(秒)['-1: 不定期更新']",
           "type": "integer"
         },
         "AuthorityCode": {
@@ -4303,6 +4367,14 @@
     },
     "MOTC.API.Bus.DAL.Bus[Service.DTO.Version3.Bus.Network]": {
       "title": "BusNetworkList",
+      "required": [
+        "UpdateTime",
+        "UpdateInterval",
+        "SrcUpdateTime",
+        "SrcUpdateInterval",
+        "AuthorityCode",
+        "Networks"
+      ],
       "type": "object",
       "properties": {
         "UpdateTime": {
@@ -4322,7 +4394,7 @@
         },
         "SrcUpdateInterval": {
           "format": "int32",
-          "description": "[來源端平臺]資料更新週期",
+          "description": "來源端平台資料更新週期(秒)['-1: 不定期更新']",
           "type": "integer"
         },
         "AuthorityCode": {
@@ -4424,6 +4496,14 @@
     },
     "MOTC.API.Bus.DAL.Bus[Service.DTO.Version3.Bus.News]": {
       "title": "BusNewsList",
+      "required": [
+        "UpdateTime",
+        "UpdateInterval",
+        "SrcUpdateTime",
+        "SrcUpdateInterval",
+        "AuthorityCode",
+        "Newses"
+      ],
       "type": "object",
       "properties": {
         "UpdateTime": {
@@ -4443,7 +4523,7 @@
         },
         "SrcUpdateInterval": {
           "format": "int32",
-          "description": "[來源端平臺]資料更新週期",
+          "description": "來源端平台資料更新週期(秒)['-1: 不定期更新']",
           "type": "integer"
         },
         "AuthorityCode": {
@@ -4537,6 +4617,14 @@
     },
     "MOTC.API.Bus.DAL.Bus[Service.DTO.Version3.Bus.Operator]": {
       "title": "BusOperatorList",
+      "required": [
+        "UpdateTime",
+        "UpdateInterval",
+        "SrcUpdateTime",
+        "SrcUpdateInterval",
+        "AuthorityCode",
+        "Operators"
+      ],
       "type": "object",
       "properties": {
         "UpdateTime": {
@@ -4556,7 +4644,7 @@
         },
         "SrcUpdateInterval": {
           "format": "int32",
-          "description": "[來源端平臺]資料更新週期",
+          "description": "來源端平台資料更新週期(秒)['-1: 不定期更新']",
           "type": "integer"
         },
         "AuthorityCode": {
@@ -4647,6 +4735,14 @@
     },
     "MOTC.API.Bus.DAL.Bus[Service.DTO.Version3.Bus.Route]": {
       "title": "BusRouteList",
+      "required": [
+        "UpdateTime",
+        "UpdateInterval",
+        "SrcUpdateTime",
+        "SrcUpdateInterval",
+        "AuthorityCode",
+        "Routes"
+      ],
       "type": "object",
       "properties": {
         "UpdateTime": {
@@ -4666,7 +4762,7 @@
         },
         "SrcUpdateInterval": {
           "format": "int32",
-          "description": "[來源端平臺]資料更新週期",
+          "description": "來源端平台資料更新週期(秒)['-1: 不定期更新']",
           "type": "integer"
         },
         "AuthorityCode": {
@@ -4937,6 +5033,14 @@
     },
     "MOTC.API.Bus.DAL.Bus[Service.DTO.Version3.Bus.RouteFare]": {
       "title": "BusRouteFareList",
+      "required": [
+        "UpdateTime",
+        "UpdateInterval",
+        "SrcUpdateTime",
+        "SrcUpdateInterval",
+        "AuthorityCode",
+        "RouteFares"
+      ],
       "type": "object",
       "properties": {
         "UpdateTime": {
@@ -4956,7 +5060,7 @@
         },
         "SrcUpdateInterval": {
           "format": "int32",
-          "description": "[來源端平臺]資料更新週期",
+          "description": "來源端平台資料更新週期(秒)['-1: 不定期更新']",
           "type": "integer"
         },
         "AuthorityCode": {
@@ -5067,7 +5171,8 @@
     "Service.DTO.Version3.Bus.SectionFare": {
       "title": "SectionFare",
       "required": [
-        "BufferZones"
+        "BufferZones",
+        "Fares"
       ],
       "type": "object",
       "properties": {
@@ -5076,6 +5181,13 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/Service.DTO.Version3.Bus.SectionFare.BufferZone"
+          }
+        },
+        "Fares": {
+          "description": "每段收費資訊",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version3.Bus.SectionFare.Fare"
           }
         }
       }
@@ -5155,9 +5267,8 @@
       "required": [
         "SectionSequence",
         "Direction",
-        "FareBufferZoneOrigins",
-        "FareBufferZoneDestinations",
-        "Fares"
+        "FareBufferZoneOrigin",
+        "FareBufferZoneDestination"
       ],
       "type": "object",
       "properties": {
@@ -5175,12 +5286,12 @@
           "description": "方向性描述 : [0:'去程',1:'返程',2:'迴圈',255:'未知']",
           "type": "integer"
         },
-        "FareBufferZoneOrigins": {
+        "FareBufferZoneOrigin": {
           "$ref": "#/definitions/Service.DTO.Version3.Bus.SectionFare.FareBufferZone",
           "title": "FareBufferZone",
           "description": "緩衝區起點"
         },
-        "FareBufferZoneDestinations": {
+        "FareBufferZoneDestination": {
           "$ref": "#/definitions/Service.DTO.Version3.Bus.SectionFare.FareBufferZone",
           "title": "FareBufferZone",
           "description": "緩衝區訖點"
@@ -5188,13 +5299,33 @@
         "BufferZoneDescription": {
           "description": "收費緩衝區描述",
           "type": "string"
+        }
+      }
+    },
+    "Service.DTO.Version3.Bus.SectionFare.Fare": {
+      "title": "Fare",
+      "required": [
+        "TicketType",
+        "FareClass",
+        "Price"
+      ],
+      "type": "object",
+      "properties": {
+        "TicketType": {
+          "format": "int32",
+          "title": "integer",
+          "description": "票種類型 : [1:'一般票',2:'來回票',3:'電子票證',4:'回數票',5:'定期票30天期',6:'定期票60天期',7:'早鳥票',8:'定期票90天期']",
+          "type": "integer"
         },
-        "Fares": {
-          "description": "每段收費資訊",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/Service.DTO.Version3.Bus.SectionFare.Fare"
-          }
+        "FareClass": {
+          "format": "int32",
+          "title": "integer",
+          "description": "費率等級 : [1:'成人',2:'學生',3:'孩童',4:'敬老',5:'愛心',6:'愛心孩童',7:'愛心優待或愛心陪伴',8:'團體',9:'軍警',10:'由各運業者自行定義的半票']",
+          "type": "integer"
+        },
+        "Price": {
+          "description": "計費價格",
+          "type": "string"
         }
       }
     },
@@ -5332,33 +5463,6 @@
         }
       }
     },
-    "Service.DTO.Version3.Bus.SectionFare.Fare": {
-      "title": "Fare",
-      "required": [
-        "TicketType",
-        "FareClass",
-        "Price"
-      ],
-      "type": "object",
-      "properties": {
-        "TicketType": {
-          "format": "int32",
-          "title": "integer",
-          "description": "票種類型 : [1:'一般票',2:'來回票',3:'電子票證',4:'回數票',5:'定期票30天期',6:'定期票60天期',7:'早鳥票',8:'定期票90天期']",
-          "type": "integer"
-        },
-        "FareClass": {
-          "format": "int32",
-          "title": "integer",
-          "description": "費率等級 : [1:'成人',2:'學生',3:'孩童',4:'敬老',5:'愛心',6:'愛心孩童',7:'愛心優待或愛心陪伴',8:'團體',9:'軍警',10:'由各運業者自行定義的半票']",
-          "type": "integer"
-        },
-        "Price": {
-          "description": "計費價格",
-          "type": "string"
-        }
-      }
-    },
     "Service.DTO.Version3.Bus.StageFare.DiscountPeriod": {
       "title": "DiscountPeriod",
       "description": "優惠時段",
@@ -5473,6 +5577,14 @@
     },
     "MOTC.API.Bus.DAL.Bus[Service.DTO.Version3.Bus.RouteNetwork]": {
       "title": "BusRouteNetworkList",
+      "required": [
+        "UpdateTime",
+        "UpdateInterval",
+        "SrcUpdateTime",
+        "SrcUpdateInterval",
+        "AuthorityCode",
+        "RouteNetworks"
+      ],
       "type": "object",
       "properties": {
         "UpdateTime": {
@@ -5492,7 +5604,7 @@
         },
         "SrcUpdateInterval": {
           "format": "int32",
-          "description": "[來源端平臺]資料更新週期",
+          "description": "來源端平台資料更新週期(秒)['-1: 不定期更新']",
           "type": "integer"
         },
         "AuthorityCode": {
@@ -5582,6 +5694,14 @@
     },
     "MOTC.API.Bus.DAL.Bus[Service.DTO.Version3.Bus.S2STravelTime]": {
       "title": "BusS2STravelTimeList",
+      "required": [
+        "UpdateTime",
+        "UpdateInterval",
+        "SrcUpdateTime",
+        "SrcUpdateInterval",
+        "AuthorityCode",
+        "S2STravelTimes"
+      ],
       "type": "object",
       "properties": {
         "UpdateTime": {
@@ -5601,7 +5721,7 @@
         },
         "SrcUpdateInterval": {
           "format": "int32",
-          "description": "[來源端平臺]資料更新週期",
+          "description": "來源端平台資料更新週期(秒)['-1: 不定期更新']",
           "type": "integer"
         },
         "AuthorityCode": {
@@ -5705,6 +5825,14 @@
     },
     "MOTC.API.Bus.DAL.Bus[Service.DTO.Version3.Bus.Schedule]": {
       "title": "BusScheduleList",
+      "required": [
+        "UpdateTime",
+        "UpdateInterval",
+        "SrcUpdateTime",
+        "SrcUpdateInterval",
+        "AuthorityCode",
+        "Schedules"
+      ],
       "type": "object",
       "properties": {
         "UpdateTime": {
@@ -5724,7 +5852,7 @@
         },
         "SrcUpdateInterval": {
           "format": "int32",
-          "description": "[來源端平臺]資料更新週期",
+          "description": "來源端平台資料更新週期(秒)['-1: 不定期更新']",
           "type": "integer"
         },
         "AuthorityCode": {
@@ -6012,6 +6140,14 @@
     },
     "MOTC.API.Bus.DAL.Bus[Service.DTO.Version3.Bus.Shape]": {
       "title": "BusShapeList",
+      "required": [
+        "UpdateTime",
+        "UpdateInterval",
+        "SrcUpdateTime",
+        "SrcUpdateInterval",
+        "AuthorityCode",
+        "Shapes"
+      ],
       "type": "object",
       "properties": {
         "UpdateTime": {
@@ -6031,7 +6167,7 @@
         },
         "SrcUpdateInterval": {
           "format": "int32",
-          "description": "[來源端平臺]資料更新週期",
+          "description": "來源端平台資料更新週期(秒)['-1: 不定期更新']",
           "type": "integer"
         },
         "AuthorityCode": {
@@ -6111,6 +6247,14 @@
     },
     "MOTC.API.Bus.DAL.Bus[Service.DTO.Version3.Bus.Station]": {
       "title": "BusStationList",
+      "required": [
+        "UpdateTime",
+        "UpdateInterval",
+        "SrcUpdateTime",
+        "SrcUpdateInterval",
+        "AuthorityCode",
+        "Stations"
+      ],
       "type": "object",
       "properties": {
         "UpdateTime": {
@@ -6130,7 +6274,7 @@
         },
         "SrcUpdateInterval": {
           "format": "int32",
-          "description": "[來源端平臺]資料更新週期",
+          "description": "來源端平台資料更新週期(秒)['-1: 不定期更新']",
           "type": "integer"
         },
         "AuthorityCode": {
@@ -6204,6 +6348,14 @@
     },
     "MOTC.API.Bus.DAL.Bus[Service.DTO.Version3.Bus.Stop]": {
       "title": "BusStopList",
+      "required": [
+        "UpdateTime",
+        "UpdateInterval",
+        "SrcUpdateTime",
+        "SrcUpdateInterval",
+        "AuthorityCode",
+        "Stops"
+      ],
       "type": "object",
       "properties": {
         "UpdateTime": {
@@ -6223,7 +6375,7 @@
         },
         "SrcUpdateInterval": {
           "format": "int32",
-          "description": "[來源端平臺]資料更新週期",
+          "description": "來源端平台資料更新週期(秒)['-1: 不定期更新']",
           "type": "integer"
         },
         "AuthorityCode": {
@@ -6317,6 +6469,14 @@
     },
     "MOTC.API.Bus.DAL.Bus[Service.DTO.Version3.Bus.StopOfRoute]": {
       "title": "BusStopOfRouteList",
+      "required": [
+        "UpdateTime",
+        "UpdateInterval",
+        "SrcUpdateTime",
+        "SrcUpdateInterval",
+        "AuthorityCode",
+        "StopOfRoutes"
+      ],
       "type": "object",
       "properties": {
         "UpdateTime": {
@@ -6336,7 +6496,7 @@
         },
         "SrcUpdateInterval": {
           "format": "int32",
-          "description": "[來源端平臺]資料更新週期",
+          "description": "來源端平台資料更新週期(秒)['-1: 不定期更新']",
           "type": "integer"
         },
         "AuthorityCode": {
@@ -6499,6 +6659,14 @@
     },
     "MOTC.API.Bus.DAL.Bus[Service.DTO.Version3.Bus.SubRoute]": {
       "title": "BusSubRouteList",
+      "required": [
+        "UpdateTime",
+        "UpdateInterval",
+        "SrcUpdateTime",
+        "SrcUpdateInterval",
+        "AuthorityCode",
+        "SubRoutes"
+      ],
       "type": "object",
       "properties": {
         "UpdateTime": {
@@ -6518,7 +6686,7 @@
         },
         "SrcUpdateInterval": {
           "format": "int32",
-          "description": "[來源端平臺]資料更新週期",
+          "description": "來源端平台資料更新週期(秒)['-1: 不定期更新']",
           "type": "integer"
         },
         "AuthorityCode": {
@@ -6678,6 +6846,14 @@
     },
     "MOTC.API.Bus.DAL.Bus[Service.DTO.Version3.Bus.Vehicle]": {
       "title": "BusVehicleList",
+      "required": [
+        "UpdateTime",
+        "UpdateInterval",
+        "SrcUpdateTime",
+        "SrcUpdateInterval",
+        "AuthorityCode",
+        "Vehicles"
+      ],
       "type": "object",
       "properties": {
         "UpdateTime": {
@@ -6697,7 +6873,7 @@
         },
         "SrcUpdateInterval": {
           "format": "int32",
-          "description": "[來源端平臺]資料更新週期",
+          "description": "來源端平台資料更新週期(秒)['-1: 不定期更新']",
           "type": "integer"
         },
         "AuthorityCode": {
@@ -6802,6 +6978,14 @@
     },
     "MOTC.API.Bus.DAL.Bus[Service.DTO.Version3.Bus.VehicleDepot]": {
       "title": "BusVehicleDepotList",
+      "required": [
+        "UpdateTime",
+        "UpdateInterval",
+        "SrcUpdateTime",
+        "SrcUpdateInterval",
+        "AuthorityCode",
+        "VehicleDepots"
+      ],
       "type": "object",
       "properties": {
         "UpdateTime": {
@@ -6821,7 +7005,7 @@
         },
         "SrcUpdateInterval": {
           "format": "int32",
-          "description": "[來源端平臺]資料更新週期",
+          "description": "來源端平台資料更新週期(秒)['-1: 不定期更新']",
           "type": "integer"
         },
         "AuthorityCode": {
@@ -6886,6 +7070,14 @@
     },
     "MOTC.API.Bus.DAL.Bus[Service.DTO.Version3.Bus.VehicleRoute]": {
       "title": "BusVehicleRouteList",
+      "required": [
+        "UpdateTime",
+        "UpdateInterval",
+        "SrcUpdateTime",
+        "SrcUpdateInterval",
+        "AuthorityCode",
+        "VehicleRoutes"
+      ],
       "type": "object",
       "properties": {
         "UpdateTime": {
@@ -6905,7 +7097,7 @@
         },
         "SrcUpdateInterval": {
           "format": "int32",
-          "description": "[來源端平臺]資料更新週期",
+          "description": "來源端平台資料更新週期(秒)['-1: 不定期更新']",
           "type": "integer"
         },
         "AuthorityCode": {

@@ -6,13 +6,13 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	strfmt "github.com/go-openapi/strfmt"
-
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 )
 
 // PTXServiceDTOShipSpecificationV3Operator Operator
+//
 // swagger:model PTX.Service.DTO.Ship.Specification.V3.Operator
 type PTXServiceDTOShipSpecificationV3Operator struct {
 
@@ -49,7 +49,9 @@ type PTXServiceDTOShipSpecificationV3Operator struct {
 	// NameType
 	//
 	// 營運業者名稱
-	OperatorName *PTXServiceDTOSharedSpecificationV3BaseNameType `json:"OperatorName,omitempty"`
+	OperatorName struct {
+		PTXServiceDTOSharedSpecificationV3BaseNameType
+	} `json:"OperatorName,omitempty"`
 
 	// String
 	//
@@ -90,15 +92,6 @@ func (m *PTXServiceDTOShipSpecificationV3Operator) validateOperatorName(formats 
 
 	if swag.IsZero(m.OperatorName) { // not required
 		return nil
-	}
-
-	if m.OperatorName != nil {
-		if err := m.OperatorName.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("OperatorName")
-			}
-			return err
-		}
 	}
 
 	return nil

@@ -38,8 +38,8 @@
             ],
             "x-enum": {
               "TRTC": "臺北捷運",
-              "TYMC": "桃園捷運",
-              "KRTC": "高雄捷運"
+              "KRTC": "高雄捷運",
+              "TYMC": "桃園捷運"
             }
           },
           {
@@ -122,13 +122,15 @@
               "TRTC",
               "KRTC",
               "TYMC",
-              "KLRT"
+              "KLRT",
+              "NTDLRT"
             ],
             "x-enum": {
-              "KRTC": "高雄捷運",
-              "KLRT": "高雄輕軌",
               "TYMC": "桃園捷運",
-              "TRTC": "臺北捷運"
+              "KLRT": "高雄輕軌",
+              "TRTC": "臺北捷運",
+              "NTDLRT": "淡海輕軌",
+              "KRTC": "高雄捷運"
             }
           },
           {
@@ -211,13 +213,15 @@
               "TRTC",
               "KRTC",
               "TYMC",
-              "KLRT"
+              "KLRT",
+              "NTDLRT"
             ],
             "x-enum": {
               "KLRT": "高雄輕軌",
+              "KRTC": "高雄捷運",
               "TRTC": "臺北捷運",
-              "TYMC": "桃園捷運",
-              "KRTC": "高雄捷運"
+              "NTDLRT": "淡海輕軌",
+              "TYMC": "桃園捷運"
             }
           },
           {
@@ -306,13 +310,15 @@
               "TRTC",
               "KRTC",
               "TYMC",
-              "KLRT"
+              "KLRT",
+              "NTDLRT"
             ],
             "x-enum": {
-              "TYMC": "桃園捷運",
-              "TRTC": "臺北捷運",
               "KLRT": "高雄輕軌",
-              "KRTC": "高雄捷運"
+              "TRTC": "臺北捷運",
+              "KRTC": "高雄捷運",
+              "TYMC": "桃園捷運",
+              "NTDLRT": "淡海輕軌"
             }
           },
           {
@@ -397,8 +403,8 @@
             ],
             "x-enum": {
               "TYMC": "桃園捷運",
-              "TRTC": "臺北捷運",
-              "KRTC": "高雄捷運"
+              "KRTC": "高雄捷運",
+              "TRTC": "臺北捷運"
             }
           },
           {
@@ -568,9 +574,9 @@
               "TYMC"
             ],
             "x-enum": {
+              "TRTC": "臺北捷運",
               "KLRT": "高雄輕軌",
               "TYMC": "桃園捷運",
-              "TRTC": "臺北捷運",
               "KRTC": "高雄捷運"
             }
           },
@@ -659,12 +665,14 @@
             "enum": [
               "TRTC",
               "KRTC",
-              "TYMC"
+              "TYMC",
+              "NTDLRT"
             ],
             "x-enum": {
-              "TYMC": "桃園捷運",
+              "KRTC": "高雄捷運",
+              "NTDLRT": "淡海輕軌",
               "TRTC": "臺北捷運",
-              "KRTC": "高雄捷運"
+              "TYMC": "桃園捷運"
             }
           },
           {
@@ -746,12 +754,14 @@
             "enum": [
               "TRTC",
               "KRTC",
-              "TYMC"
+              "TYMC",
+              "NTDLRT"
             ],
             "x-enum": {
-              "TYMC": "桃園捷運",
+              "TRTC": "臺北捷運",
+              "NTDLRT": "淡海輕軌",
               "KRTC": "高雄捷運",
-              "TRTC": "臺北捷運"
+              "TYMC": "桃園捷運"
             }
           },
           {
@@ -837,10 +847,10 @@
               "KLRT"
             ],
             "x-enum": {
-              "TYMC": "桃園捷運",
-              "TRTC": "臺北捷運",
+              "KRTC": "高雄捷運",
               "KLRT": "高雄輕軌",
-              "KRTC": "高雄捷運"
+              "TYMC": "桃園捷運",
+              "TRTC": "臺北捷運"
             }
           },
           {
@@ -924,9 +934,9 @@
               "TYMC"
             ],
             "x-enum": {
-              "TRTC": "臺北捷運",
               "TYMC": "桃園捷運",
-              "KRTC": "高雄捷運"
+              "KRTC": "高雄捷運",
+              "TRTC": "臺北捷運"
             }
           },
           {
@@ -1011,9 +1021,9 @@
               "TYMC"
             ],
             "x-enum": {
-              "TRTC": "臺北捷運",
               "KRTC": "高雄捷運",
-              "TYMC": "桃園捷運"
+              "TYMC": "桃園捷運",
+              "TRTC": "臺北捷運"
             }
           },
           {
@@ -1096,13 +1106,15 @@
               "TRTC",
               "KRTC",
               "TYMC",
-              "KLRT"
+              "KLRT",
+              "NTDLRT"
             ],
             "x-enum": {
-              "KRTC": "高雄捷運",
+              "TYMC": "桃園捷運",
               "KLRT": "高雄輕軌",
+              "KRTC": "高雄捷運",
               "TRTC": "臺北捷運",
-              "TYMC": "桃園捷運"
+              "NTDLRT": "淡海輕軌"
             }
           },
           {
@@ -1185,9 +1197,9 @@
               "KRTC"
             ],
             "x-enum": {
-              "TYMC": "桃園捷運",
               "KRTC": "高雄捷運",
-              "TRTC": "臺北捷運"
+              "TRTC": "臺北捷運",
+              "TYMC": "桃園捷運"
             }
           },
           {
@@ -1272,9 +1284,9 @@
               "TYMC"
             ],
             "x-enum": {
+              "TYMC": "桃園捷運",
               "TRTC": "臺北捷運",
-              "KRTC": "高雄捷運",
-              "TYMC": "桃園捷運"
+              "KRTC": "高雄捷運"
             }
           },
           {
@@ -1354,6 +1366,7 @@
             "required": true,
             "type": "string",
             "enum": [
+              "TRTC",
               "KRTC",
               "TYMC"
             ],
@@ -1439,10 +1452,14 @@
             "required": true,
             "type": "string",
             "enum": [
-              "TYMC"
+              "TYMC",
+              "KRTC",
+              "KLRT"
             ],
             "x-enum": {
-              "TYMC": "桃園捷運"
+              "TYMC": "桃園捷運",
+              "KLRT": "高雄輕軌",
+              "KRTC": "高雄捷運"
             }
           },
           {
@@ -1528,10 +1545,14 @@
             "required": true,
             "type": "string",
             "enum": [
-              "TYMC"
+              "TYMC",
+              "KRTC",
+              "KLRT"
             ],
             "x-enum": {
-              "TYMC": "桃園捷運"
+              "TYMC": "桃園捷運",
+              "KLRT": "高雄輕軌",
+              "KRTC": "高雄捷運"
             }
           },
           {
@@ -2973,6 +2994,83 @@
         }
       }
     },
+    "/v2/Rail/THSR/AvailableSeatStatusList": {
+      "get": {
+        "tags": [
+          "THSR"
+        ],
+        "summary": "取得動態對號座剩餘座位資訊看板資料",
+        "description": "取得動態對號座剩餘座位資訊看板資料",
+        "operationId": "THSRApi_AvailableSeatStatusList",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$count",
+            "in": "query",
+            "description": "查詢數量",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/MOTC.API.Rail.Models.V2THSRAvaliableSeatStatusWrapper[Service.DTO.Version2.Rail.THSR.AvailableSeat]"
+            }
+          }
+        }
+      }
+    },
     "/v2/Rail/THSR/AvailableSeatStatusList/{StationID}": {
       "get": {
         "tags": [
@@ -2980,7 +3078,7 @@
         ],
         "summary": "取得動態指定[車站]的對號座剩餘座位資訊看板資料",
         "description": "取得動態指定[車站]的對號座剩餘座位資訊看板資料",
-        "operationId": "THSRApi_AvailableSeatStatusList",
+        "operationId": "THSRApi_AvailableSeatStatusList_1",
         "consumes": [],
         "produces": [
           "application/json",
@@ -3026,6 +3124,16 @@
             "type": "string"
           },
           {
+            "name": "$count",
+            "in": "query",
+            "description": "查詢數量",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
             "name": "$format",
             "in": "query",
             "description": "指定來源格式",
@@ -3041,10 +3149,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/Service.DTO.Version2.Rail.THSR.AvailableSeatStatusList"
-              }
+              "$ref": "#/definitions/MOTC.API.Rail.Models.V2THSRAvaliableSeatStatusWrapper[Service.DTO.Version2.Rail.THSR.AvailableSeat]"
             }
           }
         }
@@ -5081,6 +5186,7 @@
     "MOTC.API.Rail.Models.MRTRealTimeWrapper[Service.DTO.Version2.Rail.Metro.MRTAlertList.Alert]": {
       "title": "MRTAlertList",
       "required": [
+        "UpdateTime",
         "UpdateInterval",
         "SrcUpdateTime",
         "SrcUpdateInterval",
@@ -5106,7 +5212,7 @@
         },
         "SrcUpdateInterval": {
           "format": "int32",
-          "description": "來源端平台資料更新週期(秒)",
+          "description": "來源端平台資料更新週期(秒)['-1: 不定期更新']",
           "type": "integer"
         },
         "AuthorityCode": {
@@ -5421,11 +5527,9 @@
         }
       }
     },
-    "Service.DTO.Version2.Rail.THSR.AvailableSeatStatusList": {
-      "title": "AvailableSeatStatusList",
-      "description": "高鐵對號座位狀態看板資料",
+    "MOTC.API.Rail.Models.V2THSRAvaliableSeatStatusWrapper[Service.DTO.Version2.Rail.THSR.AvailableSeat]": {
+      "title": "V2THSRAvaliableSeatStatusWrapper[AvailableSeat]",
       "required": [
-        "UpdateTime",
         "AvailableSeats"
       ],
       "type": "object",
@@ -5441,6 +5545,11 @@
           "items": {
             "$ref": "#/definitions/Service.DTO.Version2.Rail.THSR.AvailableSeat"
           }
+        },
+        "Count": {
+          "format": "int64",
+          "description": "資料總筆數",
+          "type": "integer"
         }
       }
     },
@@ -5683,7 +5792,7 @@
         "DiningFlag": {
           "format": "int32",
           "title": "integer",
-          "description": "是否提供餐車服務 : [0:'否',1:'是']",
+          "description": "是否提供訂便當服務 : [0:'否',1:'是']",
           "type": "integer"
         },
         "BikeFlag": {
@@ -5961,7 +6070,7 @@
         "DiningFlag": {
           "format": "int32",
           "title": "integer",
-          "description": "是否提供餐車服務 : [0:'否',1:'是']",
+          "description": "是否提供訂便當服務 : [0:'否',1:'是']",
           "type": "integer"
         },
         "BikeFlag": {
@@ -6459,7 +6568,7 @@
         "DiningFlag": {
           "format": "int32",
           "title": "integer",
-          "description": "是否提供餐車服務 : [0:'否',1:'是']",
+          "description": "是否提供訂便當服務 : [0:'否',1:'是']",
           "type": "integer"
         },
         "BikeFlag": {
@@ -6801,7 +6910,7 @@
         "DiningFlag": {
           "format": "int32",
           "title": "integer",
-          "description": "是否提供餐車服務 : [0:'否',1:'是']",
+          "description": "是否提供訂便當服務 : [0:'否',1:'是']",
           "type": "integer"
         },
         "BikeFlag": {
@@ -7148,6 +7257,7 @@
         "StationName",
         "TripHeadSign",
         "DestinationStaionID",
+        "DestinationStationID",
         "DestinationStationName",
         "EstimateTime",
         "SrcUpdateTime",
@@ -7185,6 +7295,10 @@
           "description": "目的地車站代號",
           "type": "string"
         },
+        "DestinationStationID": {
+          "description": "目的地車站代號",
+          "type": "string"
+        },
         "DestinationStationName": {
           "$ref": "#/definitions/Service.DTO.Version2.Base.NameType",
           "title": "NameType",
@@ -7192,7 +7306,7 @@
         },
         "EstimateTime": {
           "format": "int32",
-          "description": "下班車次抵達時間預估(秒)",
+          "description": "下班車次抵達時間預估(分)",
           "type": "integer"
         },
         "SrcUpdateTime": {
@@ -7477,6 +7591,7 @@
     "MOTC.API.Rail.Models.MRTRealTimeWrapper[Service.DTO.Version2.Rail.Metro.MRTNewsList.News]": {
       "title": "MRTNewsList",
       "required": [
+        "UpdateTime",
         "UpdateInterval",
         "SrcUpdateTime",
         "SrcUpdateInterval",
@@ -7502,7 +7617,7 @@
         },
         "SrcUpdateInterval": {
           "format": "int32",
-          "description": "來源端平台資料更新週期(秒)",
+          "description": "來源端平台資料更新週期(秒)['-1: 不定期更新']",
           "type": "integer"
         },
         "AuthorityCode": {
@@ -7911,6 +8026,14 @@
           "description": "費率等級(1:成人(Adult), 2:學生(Student), 3:孩童(Child), 4:敬老(Senior), 5:愛心(Disabled), 6:愛心孩童(Disabled Child), 7:愛心優待/愛心陪伴, 8:團體(Group))",
           "type": "integer"
         },
+        "SaleType": {
+          "description": "販售方式 (1: 現場櫃台販售, 2: 現場機器販售, 3: 線上販售, 99: 其他)",
+          "type": "string"
+        },
+        "CitizenCode": {
+          "description": "市民所屬縣市代碼 (TPE: 臺北市, NWT: 新北市, OTHERS: 其他)",
+          "type": "string"
+        },
         "Price": {
           "format": "int32",
           "description": "票價",
@@ -7970,7 +8093,7 @@
           "type": "string"
         },
         "AuthorityCode": {
-          "description": "營運業者業管機關簡碼(對於於公路客運/國道客運而言為THB)",
+          "description": "營運業者業管機關簡碼(對於公路客運/國道客運而言為THB)",
           "type": "string"
         },
         "SubAuthorityCode": {

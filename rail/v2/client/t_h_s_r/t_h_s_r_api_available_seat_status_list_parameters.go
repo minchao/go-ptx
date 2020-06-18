@@ -13,9 +13,8 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
 	cr "github.com/go-openapi/runtime/client"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
-
-	strfmt "github.com/go-openapi/strfmt"
 )
 
 // NewTHSRAPIAvailableSeatStatusListParams creates a new THSRAPIAvailableSeatStatusListParams object
@@ -74,6 +73,11 @@ for the t h s r Api available seat status list operation typically these are wri
 */
 type THSRAPIAvailableSeatStatusListParams struct {
 
+	/*DollarCount
+	  查詢數量
+
+	*/
+	DollarCount *string
 	/*DollarFilter
 	  過濾
 
@@ -104,11 +108,6 @@ type THSRAPIAvailableSeatStatusListParams struct {
 
 	*/
 	DollarTop *int64
-	/*StationID
-	  起點車站代碼
-
-	*/
-	StationID string
 
 	timeout    time.Duration
 	Context    context.Context
@@ -146,6 +145,17 @@ func (o *THSRAPIAvailableSeatStatusListParams) WithHTTPClient(client *http.Clien
 // SetHTTPClient adds the HTTPClient to the t h s r Api available seat status list params
 func (o *THSRAPIAvailableSeatStatusListParams) SetHTTPClient(client *http.Client) {
 	o.HTTPClient = client
+}
+
+// WithDollarCount adds the dollarCount to the t h s r Api available seat status list params
+func (o *THSRAPIAvailableSeatStatusListParams) WithDollarCount(dollarCount *string) *THSRAPIAvailableSeatStatusListParams {
+	o.SetDollarCount(dollarCount)
+	return o
+}
+
+// SetDollarCount adds the dollarCount to the t h s r Api available seat status list params
+func (o *THSRAPIAvailableSeatStatusListParams) SetDollarCount(dollarCount *string) {
+	o.DollarCount = dollarCount
 }
 
 // WithDollarFilter adds the dollarFilter to the t h s r Api available seat status list params
@@ -214,17 +224,6 @@ func (o *THSRAPIAvailableSeatStatusListParams) SetDollarTop(dollarTop *int64) {
 	o.DollarTop = dollarTop
 }
 
-// WithStationID adds the stationID to the t h s r Api available seat status list params
-func (o *THSRAPIAvailableSeatStatusListParams) WithStationID(stationID string) *THSRAPIAvailableSeatStatusListParams {
-	o.SetStationID(stationID)
-	return o
-}
-
-// SetStationID adds the stationId to the t h s r Api available seat status list params
-func (o *THSRAPIAvailableSeatStatusListParams) SetStationID(stationID string) {
-	o.StationID = stationID
-}
-
 // WriteToRequest writes these params to a swagger request
 func (o *THSRAPIAvailableSeatStatusListParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
 
@@ -232,6 +231,22 @@ func (o *THSRAPIAvailableSeatStatusListParams) WriteToRequest(r runtime.ClientRe
 		return err
 	}
 	var res []error
+
+	if o.DollarCount != nil {
+
+		// query param $count
+		var qrDollarCount string
+		if o.DollarCount != nil {
+			qrDollarCount = *o.DollarCount
+		}
+		qDollarCount := qrDollarCount
+		if qDollarCount != "" {
+			if err := r.SetQueryParam("$count", qDollarCount); err != nil {
+				return err
+			}
+		}
+
+	}
 
 	if o.DollarFilter != nil {
 
@@ -320,11 +335,6 @@ func (o *THSRAPIAvailableSeatStatusListParams) WriteToRequest(r runtime.ClientRe
 			}
 		}
 
-	}
-
-	// path param StationID
-	if err := r.SetPathParam("StationID", o.StationID); err != nil {
-		return err
 	}
 
 	if len(res) > 0 {

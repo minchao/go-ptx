@@ -6,9 +6,8 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	strfmt "github.com/go-openapi/strfmt"
-
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 )
@@ -16,8 +15,12 @@ import (
 // ServiceDTOVersion2RailMetroSubClassFare Fare
 //
 // 票價資訊
+//
 // swagger:model Service.DTO.Version2.Rail.Metro.SubClass.Fare
 type ServiceDTOVersion2RailMetroSubClassFare struct {
+
+	// 市民所屬縣市代碼 (TPE: 臺北市, NWT: 新北市, OTHERS: 其他)
+	CitizenCode string `json:"CitizenCode,omitempty"`
 
 	// 費率等級(1:成人(Adult), 2:學生(Student), 3:孩童(Child), 4:敬老(Senior), 5:愛心(Disabled), 6:愛心孩童(Disabled Child), 7:愛心優待/愛心陪伴, 8:團體(Group))
 	// Required: true
@@ -26,6 +29,9 @@ type ServiceDTOVersion2RailMetroSubClassFare struct {
 	// 票價
 	// Required: true
 	Price *int32 `json:"Price"`
+
+	// 販售方式 (1: 現場櫃台販售, 2: 現場機器販售, 3: 線上販售, 99: 其他)
+	SaleType string `json:"SaleType,omitempty"`
 
 	// 票種(1:一般票(單程票), 2:來回票(悠遊卡/一卡通), 3:電子票証, 4:回數票, 5:定期票(30天期), 6：定期票(60天期))
 	// Required: true

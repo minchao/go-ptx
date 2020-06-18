@@ -8,24 +8,16 @@ package models
 import (
 	"strconv"
 
-	strfmt "github.com/go-openapi/strfmt"
-
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 )
 
 // ServiceDTOVersion3RailTRADailyStationTimeTableStationTimetable StationTimetable
+//
 // swagger:model Service.DTO.Version3.Rail.TRA.DailyStationTimeTable.StationTimetable
 type ServiceDTOVersion3RailTRADailyStationTimeTableStationTimetable struct {
-
-	// 目的站車站代號
-	DestinationStationID string `json:"DestinationStationID,omitempty"`
-
-	// NameType
-	//
-	// 目的站車站名稱
-	DestinationStationName *ServiceDTOVersion3BaseNameType `json:"DestinationStationName,omitempty"`
 
 	// integer
 	//
@@ -52,10 +44,6 @@ type ServiceDTOVersion3RailTRADailyStationTimeTableStationTimetable struct {
 func (m *ServiceDTOVersion3RailTRADailyStationTimeTableStationTimetable) Validate(formats strfmt.Registry) error {
 	var res []error
 
-	if err := m.validateDestinationStationName(formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.validateStationName(formats); err != nil {
 		res = append(res, err)
 	}
@@ -67,24 +55,6 @@ func (m *ServiceDTOVersion3RailTRADailyStationTimeTableStationTimetable) Validat
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
-	return nil
-}
-
-func (m *ServiceDTOVersion3RailTRADailyStationTimeTableStationTimetable) validateDestinationStationName(formats strfmt.Registry) error {
-
-	if swag.IsZero(m.DestinationStationName) { // not required
-		return nil
-	}
-
-	if m.DestinationStationName != nil {
-		if err := m.DestinationStationName.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("DestinationStationName")
-			}
-			return err
-		}
-	}
-
 	return nil
 }
 
