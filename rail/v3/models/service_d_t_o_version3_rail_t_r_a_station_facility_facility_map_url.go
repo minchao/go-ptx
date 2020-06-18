@@ -6,9 +6,8 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	strfmt "github.com/go-openapi/strfmt"
-
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 )
@@ -16,6 +15,7 @@ import (
 // ServiceDTOVersion3RailTRAStationFacilityFacilityMapURL FacilityMapURL
 //
 // 車站設施簡圖網址連結資訊
+//
 // swagger:model Service.DTO.Version3.Rail.TRA.StationFacility.FacilityMapURL
 type ServiceDTOVersion3RailTRAStationFacilityFacilityMapURL struct {
 

@@ -6,18 +6,18 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	strfmt "github.com/go-openapi/strfmt"
-
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 )
 
-// ServiceDTOVersion3BaseHealth Health
+// ServiceDTOVersion3BaseDisplayHealth DisplayHealth
 //
 // API服務健康狀態
-// swagger:model Service.DTO.Version3.Base.Health
-type ServiceDTOVersion3BaseHealth struct {
+//
+// swagger:model Service.DTO.Version3.Base.DisplayHealth
+type ServiceDTOVersion3BaseDisplayHealth struct {
 
 	// Inbound
 	//
@@ -38,8 +38,8 @@ type ServiceDTOVersion3BaseHealth struct {
 	ServiceName *string `json:"ServiceName"`
 }
 
-// Validate validates this service d t o version3 base health
-func (m *ServiceDTOVersion3BaseHealth) Validate(formats strfmt.Registry) error {
+// Validate validates this service d t o version3 base display health
+func (m *ServiceDTOVersion3BaseDisplayHealth) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateInbound(formats); err != nil {
@@ -64,7 +64,7 @@ func (m *ServiceDTOVersion3BaseHealth) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
-func (m *ServiceDTOVersion3BaseHealth) validateInbound(formats strfmt.Registry) error {
+func (m *ServiceDTOVersion3BaseDisplayHealth) validateInbound(formats strfmt.Registry) error {
 
 	if swag.IsZero(m.Inbound) { // not required
 		return nil
@@ -82,7 +82,7 @@ func (m *ServiceDTOVersion3BaseHealth) validateInbound(formats strfmt.Registry) 
 	return nil
 }
 
-func (m *ServiceDTOVersion3BaseHealth) validateOutbound(formats strfmt.Registry) error {
+func (m *ServiceDTOVersion3BaseDisplayHealth) validateOutbound(formats strfmt.Registry) error {
 
 	if swag.IsZero(m.Outbound) { // not required
 		return nil
@@ -100,7 +100,7 @@ func (m *ServiceDTOVersion3BaseHealth) validateOutbound(formats strfmt.Registry)
 	return nil
 }
 
-func (m *ServiceDTOVersion3BaseHealth) validateServiceID(formats strfmt.Registry) error {
+func (m *ServiceDTOVersion3BaseDisplayHealth) validateServiceID(formats strfmt.Registry) error {
 
 	if err := validate.Required("ServiceID", "body", m.ServiceID); err != nil {
 		return err
@@ -109,7 +109,7 @@ func (m *ServiceDTOVersion3BaseHealth) validateServiceID(formats strfmt.Registry
 	return nil
 }
 
-func (m *ServiceDTOVersion3BaseHealth) validateServiceName(formats strfmt.Registry) error {
+func (m *ServiceDTOVersion3BaseDisplayHealth) validateServiceName(formats strfmt.Registry) error {
 
 	if err := validate.Required("ServiceName", "body", m.ServiceName); err != nil {
 		return err
@@ -119,7 +119,7 @@ func (m *ServiceDTOVersion3BaseHealth) validateServiceName(formats strfmt.Regist
 }
 
 // MarshalBinary interface implementation
-func (m *ServiceDTOVersion3BaseHealth) MarshalBinary() ([]byte, error) {
+func (m *ServiceDTOVersion3BaseDisplayHealth) MarshalBinary() ([]byte, error) {
 	if m == nil {
 		return nil, nil
 	}
@@ -127,8 +127,8 @@ func (m *ServiceDTOVersion3BaseHealth) MarshalBinary() ([]byte, error) {
 }
 
 // UnmarshalBinary interface implementation
-func (m *ServiceDTOVersion3BaseHealth) UnmarshalBinary(b []byte) error {
-	var res ServiceDTOVersion3BaseHealth
+func (m *ServiceDTOVersion3BaseDisplayHealth) UnmarshalBinary(b []byte) error {
+	var res ServiceDTOVersion3BaseDisplayHealth
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

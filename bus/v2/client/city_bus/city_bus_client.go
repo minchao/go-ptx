@@ -9,12 +9,11 @@ import (
 	"fmt"
 
 	"github.com/go-openapi/runtime"
-
-	strfmt "github.com/go-openapi/strfmt"
+	"github.com/go-openapi/strfmt"
 )
 
 // New creates a new city bus API client.
-func New(transport runtime.ClientTransport, formats strfmt.Registry) *Client {
+func New(transport runtime.ClientTransport, formats strfmt.Registry) ClientService {
 	return &Client{transport: transport, formats: formats}
 }
 
@@ -26,10 +25,79 @@ type Client struct {
 	formats   strfmt.Registry
 }
 
-/*
-CityBusAPIDataVersion 取得指定s 縣市 目前資料的最新版本資訊
+// ClientService is the interface for Client methods
+type ClientService interface {
+	CityBusAPIDataVersion(params *CityBusAPIDataVersionParams) (*CityBusAPIDataVersionOK, *CityBusAPIDataVersionStatus299, error)
 
-版本詳細資訊
+	CityBusAPIDisplayStopOfRoute(params *CityBusAPIDisplayStopOfRouteParams) (*CityBusAPIDisplayStopOfRouteOK, *CityBusAPIDisplayStopOfRouteStatus299, error)
+
+	CityBusAPIDisplayStopOfRoute1(params *CityBusAPIDisplayStopOfRoute1Params) (*CityBusAPIDisplayStopOfRoute1OK, *CityBusAPIDisplayStopOfRoute1Status299, error)
+
+	CityBusAPIEstimatedTimeOfArrival(params *CityBusAPIEstimatedTimeOfArrivalParams) (*CityBusAPIEstimatedTimeOfArrivalOK, *CityBusAPIEstimatedTimeOfArrivalStatus299, error)
+
+	CityBusAPIEstimatedTimeOfArrival1(params *CityBusAPIEstimatedTimeOfArrival1Params) (*CityBusAPIEstimatedTimeOfArrival1OK, *CityBusAPIEstimatedTimeOfArrival1Status299, error)
+
+	CityBusAPIEstimatedTimeOfArrivalUDP(params *CityBusAPIEstimatedTimeOfArrivalUDPParams) (*CityBusAPIEstimatedTimeOfArrivalUDPOK, *CityBusAPIEstimatedTimeOfArrivalUDPStatus299, error)
+
+	CityBusAPIEstimatedTimeOfArrivalUDP1(params *CityBusAPIEstimatedTimeOfArrivalUDP1Params) (*CityBusAPIEstimatedTimeOfArrivalUdp1OK, *CityBusAPIEstimatedTimeOfArrivalUdp1Status299, error)
+
+	CityBusAPINews(params *CityBusAPINewsParams) (*CityBusAPINewsOK, *CityBusAPINewsStatus299, error)
+
+	CityBusAPIOperator(params *CityBusAPIOperatorParams) (*CityBusAPIOperatorOK, *CityBusAPIOperatorStatus299, error)
+
+	CityBusAPIRealTimeByFrequency(params *CityBusAPIRealTimeByFrequencyParams) (*CityBusAPIRealTimeByFrequencyOK, *CityBusAPIRealTimeByFrequencyStatus299, error)
+
+	CityBusAPIRealTimeByFrequency1(params *CityBusAPIRealTimeByFrequency1Params) (*CityBusAPIRealTimeByFrequency1OK, *CityBusAPIRealTimeByFrequency1Status299, error)
+
+	CityBusAPIRealTimeByFrequencyUDP(params *CityBusAPIRealTimeByFrequencyUDPParams) (*CityBusAPIRealTimeByFrequencyUDPOK, *CityBusAPIRealTimeByFrequencyUDPStatus299, error)
+
+	CityBusAPIRealTimeByFrequencyUDP1(params *CityBusAPIRealTimeByFrequencyUDP1Params) (*CityBusAPIRealTimeByFrequencyUdp1OK, *CityBusAPIRealTimeByFrequencyUdp1Status299, error)
+
+	CityBusAPIRealTimeNearStop(params *CityBusAPIRealTimeNearStopParams) (*CityBusAPIRealTimeNearStopOK, *CityBusAPIRealTimeNearStopStatus299, error)
+
+	CityBusAPIRealTimeNearStop1(params *CityBusAPIRealTimeNearStop1Params) (*CityBusAPIRealTimeNearStop1OK, *CityBusAPIRealTimeNearStop1Status299, error)
+
+	CityBusAPIRealTimeNearStopUDP(params *CityBusAPIRealTimeNearStopUDPParams) (*CityBusAPIRealTimeNearStopUDPOK, *CityBusAPIRealTimeNearStopUDPStatus299, error)
+
+	CityBusAPIRealTimeNearStopUDP1(params *CityBusAPIRealTimeNearStopUDP1Params) (*CityBusAPIRealTimeNearStopUdp1OK, *CityBusAPIRealTimeNearStopUdp1Status299, error)
+
+	CityBusAPIRoute(params *CityBusAPIRouteParams) (*CityBusAPIRouteOK, *CityBusAPIRouteStatus299, error)
+
+	CityBusAPIRouteFare(params *CityBusAPIRouteFareParams) (*CityBusAPIRouteFareOK, *CityBusAPIRouteFareStatus299, error)
+
+	CityBusAPIRouteFare1(params *CityBusAPIRouteFare1Params) (*CityBusAPIRouteFare1OK, *CityBusAPIRouteFare1Status299, error)
+
+	CityBusAPIRoute1(params *CityBusAPIRoute1Params) (*CityBusAPIRoute1OK, *CityBusAPIRoute1Status299, error)
+
+	CityBusAPISchedule(params *CityBusAPIScheduleParams) (*CityBusAPIScheduleOK, *CityBusAPIScheduleStatus299, error)
+
+	CityBusAPISchedule1(params *CityBusAPISchedule1Params) (*CityBusAPISchedule1OK, *CityBusAPISchedule1Status299, error)
+
+	CityBusAPIShape(params *CityBusAPIShapeParams) (*CityBusAPIShapeOK, *CityBusAPIShapeStatus299, error)
+
+	CityBusAPIShape1(params *CityBusAPIShape1Params) (*CityBusAPIShape1OK, *CityBusAPIShape1Status299, error)
+
+	CityBusAPIStation(params *CityBusAPIStationParams) (*CityBusAPIStationOK, *CityBusAPIStationStatus299, error)
+
+	CityBusAPIStationGroup(params *CityBusAPIStationGroupParams) (*CityBusAPIStationGroupOK, *CityBusAPIStationGroupStatus299, error)
+
+	CityBusAPIStationName(params *CityBusAPIStationNameParams) (*CityBusAPIStationNameOK, *CityBusAPIStationNameStatus299, error)
+
+	CityBusAPIStop(params *CityBusAPIStopParams) (*CityBusAPIStopOK, *CityBusAPIStopStatus299, error)
+
+	CityBusAPIStopOfRoute(params *CityBusAPIStopOfRouteParams) (*CityBusAPIStopOfRouteOK, *CityBusAPIStopOfRouteStatus299, error)
+
+	CityBusAPIStopOfRoute1(params *CityBusAPIStopOfRoute1Params) (*CityBusAPIStopOfRoute1OK, *CityBusAPIStopOfRoute1Status299, error)
+
+	CityBusAPIVehicle(params *CityBusAPIVehicleParams) (*CityBusAPIVehicleOK, *CityBusAPIVehicleStatus299, error)
+
+	SetTransport(transport runtime.ClientTransport)
+}
+
+/*
+  CityBusAPIDataVersion 取得指定s 縣市 目前資料的最新版本資訊
+
+  版本詳細資訊
 */
 func (a *Client) CityBusAPIDataVersion(params *CityBusAPIDataVersionParams) (*CityBusAPIDataVersionOK, *CityBusAPIDataVersionStatus299, error) {
 	// TODO: Validate the params before sending
@@ -42,7 +110,7 @@ func (a *Client) CityBusAPIDataVersion(params *CityBusAPIDataVersionParams) (*Ci
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/DataVersion/City/{City}",
 		ProducesMediaTypes: []string{"application/json", "application/xml", "text/json", "text/xml"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &CityBusAPIDataVersionReader{formats: a.formats},
@@ -64,9 +132,9 @@ func (a *Client) CityBusAPIDataVersion(params *CityBusAPIDataVersionParams) (*Ci
 }
 
 /*
-CityBusAPIDisplayStopOfRoute 取得指定s 縣市 的市區公車顯示用路線站序資料
+  CityBusAPIDisplayStopOfRoute 取得指定s 縣市 的市區公車顯示用路線站序資料
 
-市區公車之顯示用路線站序資料，僅台北市與新北市可查詢
+  市區公車之顯示用路線站序資料，僅台北市與新北市可查詢
 */
 func (a *Client) CityBusAPIDisplayStopOfRoute(params *CityBusAPIDisplayStopOfRouteParams) (*CityBusAPIDisplayStopOfRouteOK, *CityBusAPIDisplayStopOfRouteStatus299, error) {
 	// TODO: Validate the params before sending
@@ -79,7 +147,7 @@ func (a *Client) CityBusAPIDisplayStopOfRoute(params *CityBusAPIDisplayStopOfRou
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/DisplayStopOfRoute/City/{City}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &CityBusAPIDisplayStopOfRouteReader{formats: a.formats},
@@ -101,9 +169,9 @@ func (a *Client) CityBusAPIDisplayStopOfRoute(params *CityBusAPIDisplayStopOfRou
 }
 
 /*
-CityBusAPIDisplayStopOfRoute1 取得指定s 縣市 路線名稱 的市區公車顯示用路線站序資料
+  CityBusAPIDisplayStopOfRoute1 取得指定s 縣市 路線名稱 的市區公車顯示用路線站序資料
 
-市區公車之顯示用路線站序資料，僅台北市與新北市可查詢
+  市區公車之顯示用路線站序資料，僅台北市與新北市可查詢
 */
 func (a *Client) CityBusAPIDisplayStopOfRoute1(params *CityBusAPIDisplayStopOfRoute1Params) (*CityBusAPIDisplayStopOfRoute1OK, *CityBusAPIDisplayStopOfRoute1Status299, error) {
 	// TODO: Validate the params before sending
@@ -116,7 +184,7 @@ func (a *Client) CityBusAPIDisplayStopOfRoute1(params *CityBusAPIDisplayStopOfRo
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/DisplayStopOfRoute/City/{City}/{RouteName}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &CityBusAPIDisplayStopOfRoute1Reader{formats: a.formats},
@@ -138,9 +206,9 @@ func (a *Client) CityBusAPIDisplayStopOfRoute1(params *CityBusAPIDisplayStopOfRo
 }
 
 /*
-CityBusAPIEstimatedTimeOfArrival 取得指定s 縣市 的公車預估到站資料 n1 批次更新
+  CityBusAPIEstimatedTimeOfArrival 取得指定s 縣市 的公車預估到站資料 n1 批次更新
 
- ### 市區公車之預估到站資料(N1) ###
+   ### 市區公車之預估到站資料(N1) ###
 - [部分縣市] 當 StopStatus = 1(尚未發車) 且 EstimateTime &gt; 0 (有值) 的情形, 屬正常情形, 雖目前尚未發車, 但提供EstimateTime值為預計多久後開始發車之時間。
 - [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))
 */
@@ -155,7 +223,7 @@ func (a *Client) CityBusAPIEstimatedTimeOfArrival(params *CityBusAPIEstimatedTim
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/EstimatedTimeOfArrival/City/{City}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &CityBusAPIEstimatedTimeOfArrivalReader{formats: a.formats},
@@ -177,9 +245,9 @@ func (a *Client) CityBusAPIEstimatedTimeOfArrival(params *CityBusAPIEstimatedTim
 }
 
 /*
-CityBusAPIEstimatedTimeOfArrival1 取得指定s 縣市 路線名稱 的公車預估到站資料 n1 批次更新
+  CityBusAPIEstimatedTimeOfArrival1 取得指定s 縣市 路線名稱 的公車預估到站資料 n1 批次更新
 
- ### 市區公車之預估到站資料(N1) ###
+   ### 市區公車之預估到站資料(N1) ###
 - [部分縣市] 當 StopStatus = 1(尚未發車) 且 EstimateTime &gt; 0 (有值) 的情形, 屬正常情形, 雖目前尚未發車, 但提供EstimateTime值為預計多久後開始發車之時間。
 - [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))
 */
@@ -194,7 +262,7 @@ func (a *Client) CityBusAPIEstimatedTimeOfArrival1(params *CityBusAPIEstimatedTi
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/EstimatedTimeOfArrival/City/{City}/{RouteName}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &CityBusAPIEstimatedTimeOfArrival1Reader{formats: a.formats},
@@ -216,9 +284,9 @@ func (a *Client) CityBusAPIEstimatedTimeOfArrival1(params *CityBusAPIEstimatedTi
 }
 
 /*
-CityBusAPIEstimatedTimeOfArrivalUDP 取得指定s 縣市 的公車預估到站資料 n1 逐筆更新
+  CityBusAPIEstimatedTimeOfArrivalUDP 取得指定s 縣市 的公車預估到站資料 n1 逐筆更新
 
-### 市區公車之預估到站資料(N1) ###
+  ### 市區公車之預估到站資料(N1) ###
 - [部分縣市] 當 StopStatus = 1(尚未發車) 且 EstimateTime &gt; 0 (有值) 的情形, 屬正常情形, 雖目前尚未發車, 但提供EstimateTime值為預計多久後開始發車之時間。
 - [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))
 - N1僅於該路線上有任一車輛離站時，來源端才會重新計算並發佈，因此使用者需自行處理時間遞減機制，或以EstimateTime-(收到資料時間-SrcTrasTime)(秒)作為實際預估抵達時間。
@@ -234,7 +302,7 @@ func (a *Client) CityBusAPIEstimatedTimeOfArrivalUDP(params *CityBusAPIEstimated
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/EstimatedTimeOfArrival/Streaming/City/{City}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &CityBusAPIEstimatedTimeOfArrivalUDPReader{formats: a.formats},
@@ -256,9 +324,9 @@ func (a *Client) CityBusAPIEstimatedTimeOfArrivalUDP(params *CityBusAPIEstimated
 }
 
 /*
-CityBusAPIEstimatedTimeOfArrivalUDP1 取得指定s 縣市 路線名稱 的公車預估到站資料 n1 逐筆更新
+  CityBusAPIEstimatedTimeOfArrivalUDP1 取得指定s 縣市 路線名稱 的公車預估到站資料 n1 逐筆更新
 
-### 市區公車之預估到站資料(N1) ###
+  ### 市區公車之預估到站資料(N1) ###
 - [部分縣市] 當 StopStatus = 1(尚未發車) 且 EstimateTime &gt; 0 (有值) 的情形, 屬正常情形, 雖目前尚未發車, 但提供EstimateTime值為預計多久後開始發車之時間。
 - [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))
 - N1僅於該路線上有任一車輛離站時，來源端才會重新計算並發佈，因此使用者需自行處理時間遞減機制，或以EstimateTime-(收到資料時間-SrcTrasTime)(秒)作為實際預估抵達時間。
@@ -274,7 +342,7 @@ func (a *Client) CityBusAPIEstimatedTimeOfArrivalUDP1(params *CityBusAPIEstimate
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/EstimatedTimeOfArrival/Streaming/City/{City}/{RouteName}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &CityBusAPIEstimatedTimeOfArrivalUDP1Reader{formats: a.formats},
@@ -296,9 +364,9 @@ func (a *Client) CityBusAPIEstimatedTimeOfArrivalUDP1(params *CityBusAPIEstimate
 }
 
 /*
-CityBusAPINews 取得指定s 縣市 的市區公車最新消息資料
+  CityBusAPINews 取得指定s 縣市 的市區公車最新消息資料
 
-市區公車最新消息資料
+  市區公車最新消息資料
 */
 func (a *Client) CityBusAPINews(params *CityBusAPINewsParams) (*CityBusAPINewsOK, *CityBusAPINewsStatus299, error) {
 	// TODO: Validate the params before sending
@@ -311,7 +379,7 @@ func (a *Client) CityBusAPINews(params *CityBusAPINewsParams) (*CityBusAPINewsOK
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/News/City/{City}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &CityBusAPINewsReader{formats: a.formats},
@@ -333,9 +401,9 @@ func (a *Client) CityBusAPINews(params *CityBusAPINewsParams) (*CityBusAPINewsOK
 }
 
 /*
-CityBusAPIOperator 取得指定s 縣市 的市區公車營運業者資料
+  CityBusAPIOperator 取得指定s 縣市 的市區公車營運業者資料
 
-市區公車之營運業者資料
+  市區公車之營運業者資料
 */
 func (a *Client) CityBusAPIOperator(params *CityBusAPIOperatorParams) (*CityBusAPIOperatorOK, *CityBusAPIOperatorStatus299, error) {
 	// TODO: Validate the params before sending
@@ -348,7 +416,7 @@ func (a *Client) CityBusAPIOperator(params *CityBusAPIOperatorParams) (*CityBusA
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/Operator/City/{City}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &CityBusAPIOperatorReader{formats: a.formats},
@@ -370,9 +438,9 @@ func (a *Client) CityBusAPIOperator(params *CityBusAPIOperatorParams) (*CityBusA
 }
 
 /*
-CityBusAPIRealTimeByFrequency 取得指定s 縣市 的公車動態定時資料 a1 批次更新
+  CityBusAPIRealTimeByFrequency 取得指定s 縣市 的公車動態定時資料 a1 批次更新
 
-### 市區公車之定時資料(A1) ###
+  ### 市區公車之定時資料(A1) ###
 - [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))
 */
 func (a *Client) CityBusAPIRealTimeByFrequency(params *CityBusAPIRealTimeByFrequencyParams) (*CityBusAPIRealTimeByFrequencyOK, *CityBusAPIRealTimeByFrequencyStatus299, error) {
@@ -386,7 +454,7 @@ func (a *Client) CityBusAPIRealTimeByFrequency(params *CityBusAPIRealTimeByFrequ
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/RealTimeByFrequency/City/{City}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &CityBusAPIRealTimeByFrequencyReader{formats: a.formats},
@@ -408,9 +476,9 @@ func (a *Client) CityBusAPIRealTimeByFrequency(params *CityBusAPIRealTimeByFrequ
 }
 
 /*
-CityBusAPIRealTimeByFrequency1 取得指定s 縣市 路線名稱 的公車動態定時資料 a1 批次更新
+  CityBusAPIRealTimeByFrequency1 取得指定s 縣市 路線名稱 的公車動態定時資料 a1 批次更新
 
-### 市區公車之定時資料(A1) ###
+  ### 市區公車之定時資料(A1) ###
 - [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))
 */
 func (a *Client) CityBusAPIRealTimeByFrequency1(params *CityBusAPIRealTimeByFrequency1Params) (*CityBusAPIRealTimeByFrequency1OK, *CityBusAPIRealTimeByFrequency1Status299, error) {
@@ -424,7 +492,7 @@ func (a *Client) CityBusAPIRealTimeByFrequency1(params *CityBusAPIRealTimeByFreq
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/RealTimeByFrequency/City/{City}/{RouteName}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &CityBusAPIRealTimeByFrequency1Reader{formats: a.formats},
@@ -446,9 +514,9 @@ func (a *Client) CityBusAPIRealTimeByFrequency1(params *CityBusAPIRealTimeByFreq
 }
 
 /*
-CityBusAPIRealTimeByFrequencyUDP 取得指定s 縣市 的公車動態定時資料 a1 逐筆更新
+  CityBusAPIRealTimeByFrequencyUDP 取得指定s 縣市 的公車動態定時資料 a1 逐筆更新
 
-### 市區公車之定時資料(A1) ###
+  ### 市區公車之定時資料(A1) ###
 - [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))
 */
 func (a *Client) CityBusAPIRealTimeByFrequencyUDP(params *CityBusAPIRealTimeByFrequencyUDPParams) (*CityBusAPIRealTimeByFrequencyUDPOK, *CityBusAPIRealTimeByFrequencyUDPStatus299, error) {
@@ -462,7 +530,7 @@ func (a *Client) CityBusAPIRealTimeByFrequencyUDP(params *CityBusAPIRealTimeByFr
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/RealTimeByFrequency/Streaming/City/{City}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &CityBusAPIRealTimeByFrequencyUDPReader{formats: a.formats},
@@ -484,9 +552,9 @@ func (a *Client) CityBusAPIRealTimeByFrequencyUDP(params *CityBusAPIRealTimeByFr
 }
 
 /*
-CityBusAPIRealTimeByFrequencyUDP1 取得指定s 縣市 路線名稱 的公車動態定時資料 a1 逐筆更新
+  CityBusAPIRealTimeByFrequencyUDP1 取得指定s 縣市 路線名稱 的公車動態定時資料 a1 逐筆更新
 
-### 市區公車之定時資料(A1) ###
+  ### 市區公車之定時資料(A1) ###
 - [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))
 */
 func (a *Client) CityBusAPIRealTimeByFrequencyUDP1(params *CityBusAPIRealTimeByFrequencyUDP1Params) (*CityBusAPIRealTimeByFrequencyUdp1OK, *CityBusAPIRealTimeByFrequencyUdp1Status299, error) {
@@ -500,7 +568,7 @@ func (a *Client) CityBusAPIRealTimeByFrequencyUDP1(params *CityBusAPIRealTimeByF
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/RealTimeByFrequency/Streaming/City/{City}/{RouteName}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &CityBusAPIRealTimeByFrequencyUDP1Reader{formats: a.formats},
@@ -522,9 +590,9 @@ func (a *Client) CityBusAPIRealTimeByFrequencyUDP1(params *CityBusAPIRealTimeByF
 }
 
 /*
-CityBusAPIRealTimeNearStop 取得指定s 縣市 的公車動態定點資料 a2 批次更新
+  CityBusAPIRealTimeNearStop 取得指定s 縣市 的公車動態定點資料 a2 批次更新
 
-### 市區公車之定點資料(A2) ###
+  ### 市區公車之定點資料(A2) ###
 - [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))
 */
 func (a *Client) CityBusAPIRealTimeNearStop(params *CityBusAPIRealTimeNearStopParams) (*CityBusAPIRealTimeNearStopOK, *CityBusAPIRealTimeNearStopStatus299, error) {
@@ -538,7 +606,7 @@ func (a *Client) CityBusAPIRealTimeNearStop(params *CityBusAPIRealTimeNearStopPa
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/RealTimeNearStop/City/{City}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &CityBusAPIRealTimeNearStopReader{formats: a.formats},
@@ -560,9 +628,9 @@ func (a *Client) CityBusAPIRealTimeNearStop(params *CityBusAPIRealTimeNearStopPa
 }
 
 /*
-CityBusAPIRealTimeNearStop1 取得指定s 縣市 路線名稱 的公車動態定點資料 a2 批次更新
+  CityBusAPIRealTimeNearStop1 取得指定s 縣市 路線名稱 的公車動態定點資料 a2 批次更新
 
-### 市區公車之定點資料(A2) ###
+  ### 市區公車之定點資料(A2) ###
 - [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))
 */
 func (a *Client) CityBusAPIRealTimeNearStop1(params *CityBusAPIRealTimeNearStop1Params) (*CityBusAPIRealTimeNearStop1OK, *CityBusAPIRealTimeNearStop1Status299, error) {
@@ -576,7 +644,7 @@ func (a *Client) CityBusAPIRealTimeNearStop1(params *CityBusAPIRealTimeNearStop1
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/RealTimeNearStop/City/{City}/{RouteName}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &CityBusAPIRealTimeNearStop1Reader{formats: a.formats},
@@ -598,9 +666,9 @@ func (a *Client) CityBusAPIRealTimeNearStop1(params *CityBusAPIRealTimeNearStop1
 }
 
 /*
-CityBusAPIRealTimeNearStopUDP 取得指定s 縣市 的公車動態定點資料 a2 逐筆更新
+  CityBusAPIRealTimeNearStopUDP 取得指定s 縣市 的公車動態定點資料 a2 逐筆更新
 
-### 市區公車之定點資料(A2) ###
+  ### 市區公車之定點資料(A2) ###
 - [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))
 */
 func (a *Client) CityBusAPIRealTimeNearStopUDP(params *CityBusAPIRealTimeNearStopUDPParams) (*CityBusAPIRealTimeNearStopUDPOK, *CityBusAPIRealTimeNearStopUDPStatus299, error) {
@@ -614,7 +682,7 @@ func (a *Client) CityBusAPIRealTimeNearStopUDP(params *CityBusAPIRealTimeNearSto
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/RealTimeNearStop/Streaming/City/{City}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &CityBusAPIRealTimeNearStopUDPReader{formats: a.formats},
@@ -636,9 +704,9 @@ func (a *Client) CityBusAPIRealTimeNearStopUDP(params *CityBusAPIRealTimeNearSto
 }
 
 /*
-CityBusAPIRealTimeNearStopUDP1 取得指定s 縣市 路線名稱 的公車動態定點資料 a2 逐筆更新
+  CityBusAPIRealTimeNearStopUDP1 取得指定s 縣市 路線名稱 的公車動態定點資料 a2 逐筆更新
 
-### 市區公車之定點資料(A2) ###
+  ### 市區公車之定點資料(A2) ###
 - [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))
 */
 func (a *Client) CityBusAPIRealTimeNearStopUDP1(params *CityBusAPIRealTimeNearStopUDP1Params) (*CityBusAPIRealTimeNearStopUdp1OK, *CityBusAPIRealTimeNearStopUdp1Status299, error) {
@@ -652,7 +720,7 @@ func (a *Client) CityBusAPIRealTimeNearStopUDP1(params *CityBusAPIRealTimeNearSt
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/RealTimeNearStop/Streaming/City/{City}/{RouteName}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &CityBusAPIRealTimeNearStopUDP1Reader{formats: a.formats},
@@ -674,9 +742,9 @@ func (a *Client) CityBusAPIRealTimeNearStopUDP1(params *CityBusAPIRealTimeNearSt
 }
 
 /*
-CityBusAPIRoute 取得指定s 縣市 的市區公車路線資料
+  CityBusAPIRoute 取得指定s 縣市 的市區公車路線資料
 
-市區公車之路線資料
+  市區公車之路線資料
 */
 func (a *Client) CityBusAPIRoute(params *CityBusAPIRouteParams) (*CityBusAPIRouteOK, *CityBusAPIRouteStatus299, error) {
 	// TODO: Validate the params before sending
@@ -689,7 +757,7 @@ func (a *Client) CityBusAPIRoute(params *CityBusAPIRouteParams) (*CityBusAPIRout
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/Route/City/{City}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &CityBusAPIRouteReader{formats: a.formats},
@@ -711,9 +779,9 @@ func (a *Client) CityBusAPIRoute(params *CityBusAPIRouteParams) (*CityBusAPIRout
 }
 
 /*
-CityBusAPIRouteFare 取得指定s 縣市 的市區公車路線票價資料
+  CityBusAPIRouteFare 取得指定s 縣市 的市區公車路線票價資料
 
-市區公車路線票價資料
+  市區公車路線票價資料
 */
 func (a *Client) CityBusAPIRouteFare(params *CityBusAPIRouteFareParams) (*CityBusAPIRouteFareOK, *CityBusAPIRouteFareStatus299, error) {
 	// TODO: Validate the params before sending
@@ -726,7 +794,7 @@ func (a *Client) CityBusAPIRouteFare(params *CityBusAPIRouteFareParams) (*CityBu
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/RouteFare/City/{City}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &CityBusAPIRouteFareReader{formats: a.formats},
@@ -748,9 +816,9 @@ func (a *Client) CityBusAPIRouteFare(params *CityBusAPIRouteFareParams) (*CityBu
 }
 
 /*
-CityBusAPIRouteFare1 取得指定s 縣市 路線名稱 的的市區公車路線票價資料
+  CityBusAPIRouteFare1 取得指定s 縣市 路線名稱 的的市區公車路線票價資料
 
-市區公車路線票價資料
+  市區公車路線票價資料
 */
 func (a *Client) CityBusAPIRouteFare1(params *CityBusAPIRouteFare1Params) (*CityBusAPIRouteFare1OK, *CityBusAPIRouteFare1Status299, error) {
 	// TODO: Validate the params before sending
@@ -763,7 +831,7 @@ func (a *Client) CityBusAPIRouteFare1(params *CityBusAPIRouteFare1Params) (*City
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/RouteFare/City/{City}/{RouteName}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &CityBusAPIRouteFare1Reader{formats: a.formats},
@@ -785,9 +853,9 @@ func (a *Client) CityBusAPIRouteFare1(params *CityBusAPIRouteFare1Params) (*City
 }
 
 /*
-CityBusAPIRoute1 取得指定s 縣市 路線名稱 的路線資料
+  CityBusAPIRoute1 取得指定s 縣市 路線名稱 的路線資料
 
-市區公車之路線資料
+  市區公車之路線資料
 */
 func (a *Client) CityBusAPIRoute1(params *CityBusAPIRoute1Params) (*CityBusAPIRoute1OK, *CityBusAPIRoute1Status299, error) {
 	// TODO: Validate the params before sending
@@ -800,7 +868,7 @@ func (a *Client) CityBusAPIRoute1(params *CityBusAPIRoute1Params) (*CityBusAPIRo
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/Route/City/{City}/{RouteName}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &CityBusAPIRoute1Reader{formats: a.formats},
@@ -822,9 +890,9 @@ func (a *Client) CityBusAPIRoute1(params *CityBusAPIRoute1Params) (*CityBusAPIRo
 }
 
 /*
-CityBusAPISchedule 取得指定s 縣市 的市區公車路線班表資料
+  CityBusAPISchedule 取得指定s 縣市 的市區公車路線班表資料
 
-市區公車之班表及班距資料。一般市區公車班次較多時會採用【班距】式時刻表；班次較少時會採用【班表】式時刻表
+  市區公車之班表及班距資料。一般市區公車班次較多時會採用【班距】式時刻表；班次較少時會採用【班表】式時刻表
 */
 func (a *Client) CityBusAPISchedule(params *CityBusAPIScheduleParams) (*CityBusAPIScheduleOK, *CityBusAPIScheduleStatus299, error) {
 	// TODO: Validate the params before sending
@@ -837,7 +905,7 @@ func (a *Client) CityBusAPISchedule(params *CityBusAPIScheduleParams) (*CityBusA
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/Schedule/City/{City}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &CityBusAPIScheduleReader{formats: a.formats},
@@ -859,9 +927,9 @@ func (a *Client) CityBusAPISchedule(params *CityBusAPIScheduleParams) (*CityBusA
 }
 
 /*
-CityBusAPISchedule1 取得指定s 縣市 路線名稱 的市區公車路線班表資料
+  CityBusAPISchedule1 取得指定s 縣市 路線名稱 的市區公車路線班表資料
 
-市區公車之預定班表及班距資料。一般市區公車班次較多時會採用【班距】式時刻表；班次較少時會採用【班表】式時刻表
+  市區公車之預定班表及班距資料。一般市區公車班次較多時會採用【班距】式時刻表；班次較少時會採用【班表】式時刻表
 */
 func (a *Client) CityBusAPISchedule1(params *CityBusAPISchedule1Params) (*CityBusAPISchedule1OK, *CityBusAPISchedule1Status299, error) {
 	// TODO: Validate the params before sending
@@ -874,7 +942,7 @@ func (a *Client) CityBusAPISchedule1(params *CityBusAPISchedule1Params) (*CityBu
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/Schedule/City/{City}/{RouteName}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &CityBusAPISchedule1Reader{formats: a.formats},
@@ -896,9 +964,9 @@ func (a *Client) CityBusAPISchedule1(params *CityBusAPISchedule1Params) (*CityBu
 }
 
 /*
-CityBusAPIShape 取得指定s 縣市 的市區公車線型資料
+  CityBusAPIShape 取得指定s 縣市 的市區公車線型資料
 
-市區公車之線型資料
+  市區公車之線型資料
 */
 func (a *Client) CityBusAPIShape(params *CityBusAPIShapeParams) (*CityBusAPIShapeOK, *CityBusAPIShapeStatus299, error) {
 	// TODO: Validate the params before sending
@@ -911,7 +979,7 @@ func (a *Client) CityBusAPIShape(params *CityBusAPIShapeParams) (*CityBusAPIShap
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/Shape/City/{City}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &CityBusAPIShapeReader{formats: a.formats},
@@ -933,9 +1001,9 @@ func (a *Client) CityBusAPIShape(params *CityBusAPIShapeParams) (*CityBusAPIShap
 }
 
 /*
-CityBusAPIShape1 取得指定s 縣市 路線名稱 的市區公車線型資料
+  CityBusAPIShape1 取得指定s 縣市 路線名稱 的市區公車線型資料
 
-市區公車之線型資料
+  市區公車之線型資料
 */
 func (a *Client) CityBusAPIShape1(params *CityBusAPIShape1Params) (*CityBusAPIShape1OK, *CityBusAPIShape1Status299, error) {
 	// TODO: Validate the params before sending
@@ -948,7 +1016,7 @@ func (a *Client) CityBusAPIShape1(params *CityBusAPIShape1Params) (*CityBusAPISh
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/Shape/City/{City}/{RouteName}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &CityBusAPIShape1Reader{formats: a.formats},
@@ -970,9 +1038,9 @@ func (a *Client) CityBusAPIShape1(params *CityBusAPIShape1Params) (*CityBusAPISh
 }
 
 /*
-CityBusAPIStation 取得指定s 縣市 的市區公車站位資料
+  CityBusAPIStation 取得指定s 縣市 的市區公車站位資料
 
-市區公車之各站牌所屬的站位資料
+  市區公車之各站牌所屬的站位資料
 */
 func (a *Client) CityBusAPIStation(params *CityBusAPIStationParams) (*CityBusAPIStationOK, *CityBusAPIStationStatus299, error) {
 	// TODO: Validate the params before sending
@@ -985,7 +1053,7 @@ func (a *Client) CityBusAPIStation(params *CityBusAPIStationParams) (*CityBusAPI
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/Station/City/{City}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &CityBusAPIStationReader{formats: a.formats},
@@ -1007,9 +1075,9 @@ func (a *Client) CityBusAPIStation(params *CityBusAPIStationParams) (*CityBusAPI
 }
 
 /*
-CityBusAPIStationGroup 取得指定s 縣市 的市區公車組站位資料
+  CityBusAPIStationGroup 取得指定s 縣市 的市區公車組站位資料
 
-市區公車之各站牌所屬的組站位資料
+  市區公車之各站牌所屬的組站位資料
 */
 func (a *Client) CityBusAPIStationGroup(params *CityBusAPIStationGroupParams) (*CityBusAPIStationGroupOK, *CityBusAPIStationGroupStatus299, error) {
 	// TODO: Validate the params before sending
@@ -1022,7 +1090,7 @@ func (a *Client) CityBusAPIStationGroup(params *CityBusAPIStationGroupParams) (*
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/StationGroup/City/{City}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &CityBusAPIStationGroupReader{formats: a.formats},
@@ -1044,9 +1112,9 @@ func (a *Client) CityBusAPIStationGroup(params *CityBusAPIStationGroupParams) (*
 }
 
 /*
-CityBusAPIStationName 取得指定s 縣市 的市區公車站名碼資料
+  CityBusAPIStationName 取得指定s 縣市 的市區公車站名碼資料
 
-市區公車之各站牌所屬的站名碼資料
+  市區公車之各站牌所屬的站名碼資料
 */
 func (a *Client) CityBusAPIStationName(params *CityBusAPIStationNameParams) (*CityBusAPIStationNameOK, *CityBusAPIStationNameStatus299, error) {
 	// TODO: Validate the params before sending
@@ -1059,7 +1127,7 @@ func (a *Client) CityBusAPIStationName(params *CityBusAPIStationNameParams) (*Ci
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/StationName/City/{City}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &CityBusAPIStationNameReader{formats: a.formats},
@@ -1081,9 +1149,9 @@ func (a *Client) CityBusAPIStationName(params *CityBusAPIStationNameParams) (*Ci
 }
 
 /*
-CityBusAPIStop 取得指定s 縣市 的市區公車站牌資料
+  CityBusAPIStop 取得指定s 縣市 的市區公車站牌資料
 
-市區公車之站牌資料
+  市區公車之站牌資料
 */
 func (a *Client) CityBusAPIStop(params *CityBusAPIStopParams) (*CityBusAPIStopOK, *CityBusAPIStopStatus299, error) {
 	// TODO: Validate the params before sending
@@ -1096,7 +1164,7 @@ func (a *Client) CityBusAPIStop(params *CityBusAPIStopParams) (*CityBusAPIStopOK
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/Stop/City/{City}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &CityBusAPIStopReader{formats: a.formats},
@@ -1118,9 +1186,9 @@ func (a *Client) CityBusAPIStop(params *CityBusAPIStopParams) (*CityBusAPIStopOK
 }
 
 /*
-CityBusAPIStopOfRoute 取得指定s 縣市 的市區公車路線站序資料
+  CityBusAPIStopOfRoute 取得指定s 縣市 的市區公車路線站序資料
 
-市區公車之路線站序資料
+  市區公車之路線站序資料
 */
 func (a *Client) CityBusAPIStopOfRoute(params *CityBusAPIStopOfRouteParams) (*CityBusAPIStopOfRouteOK, *CityBusAPIStopOfRouteStatus299, error) {
 	// TODO: Validate the params before sending
@@ -1133,7 +1201,7 @@ func (a *Client) CityBusAPIStopOfRoute(params *CityBusAPIStopOfRouteParams) (*Ci
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/StopOfRoute/City/{City}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &CityBusAPIStopOfRouteReader{formats: a.formats},
@@ -1155,9 +1223,9 @@ func (a *Client) CityBusAPIStopOfRoute(params *CityBusAPIStopOfRouteParams) (*Ci
 }
 
 /*
-CityBusAPIStopOfRoute1 取得指定s 縣市 路線名稱 的市區公車路線站序資料
+  CityBusAPIStopOfRoute1 取得指定s 縣市 路線名稱 的市區公車路線站序資料
 
-市區公車之路線站序資料
+  市區公車之路線站序資料
 */
 func (a *Client) CityBusAPIStopOfRoute1(params *CityBusAPIStopOfRoute1Params) (*CityBusAPIStopOfRoute1OK, *CityBusAPIStopOfRoute1Status299, error) {
 	// TODO: Validate the params before sending
@@ -1170,7 +1238,7 @@ func (a *Client) CityBusAPIStopOfRoute1(params *CityBusAPIStopOfRoute1Params) (*
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/StopOfRoute/City/{City}/{RouteName}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &CityBusAPIStopOfRoute1Reader{formats: a.formats},
@@ -1192,9 +1260,9 @@ func (a *Client) CityBusAPIStopOfRoute1(params *CityBusAPIStopOfRoute1Params) (*
 }
 
 /*
-CityBusAPIVehicle 取得指定s 縣市 的市區公車車輛資料
+  CityBusAPIVehicle 取得指定s 縣市 的市區公車車輛資料
 
-市區公車之車輛資料
+  市區公車之車輛資料
 */
 func (a *Client) CityBusAPIVehicle(params *CityBusAPIVehicleParams) (*CityBusAPIVehicleOK, *CityBusAPIVehicleStatus299, error) {
 	// TODO: Validate the params before sending
@@ -1207,7 +1275,7 @@ func (a *Client) CityBusAPIVehicle(params *CityBusAPIVehicleParams) (*CityBusAPI
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/Vehicle/City/{City}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &CityBusAPIVehicleReader{formats: a.formats},

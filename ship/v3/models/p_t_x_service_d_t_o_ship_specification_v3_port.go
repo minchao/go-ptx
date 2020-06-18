@@ -6,13 +6,13 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	strfmt "github.com/go-openapi/strfmt"
-
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 )
 
 // PTXServiceDTOShipSpecificationV3Port Port
+//
 // swagger:model PTX.Service.DTO.Ship.Specification.V3.Port
 type PTXServiceDTOShipSpecificationV3Port struct {
 
@@ -54,7 +54,9 @@ type PTXServiceDTOShipSpecificationV3Port struct {
 	// NameType
 	//
 	// 港口名稱
-	PortName *PTXServiceDTOSharedSpecificationV3BaseNameType `json:"PortName,omitempty"`
+	PortName struct {
+		PTXServiceDTOSharedSpecificationV3BaseNameType
+	} `json:"PortName,omitempty"`
 
 	// String
 	//
@@ -64,7 +66,9 @@ type PTXServiceDTOShipSpecificationV3Port struct {
 	// PointType
 	//
 	// 港口位置座標
-	PortPosition *PTXServiceDTOShipSpecificationV3PointType `json:"PortPosition,omitempty"`
+	PortPosition struct {
+		PTXServiceDTOShipSpecificationV3PointType
+	} `json:"PortPosition,omitempty"`
 
 	// String
 	//
@@ -96,15 +100,6 @@ func (m *PTXServiceDTOShipSpecificationV3Port) validatePortName(formats strfmt.R
 		return nil
 	}
 
-	if m.PortName != nil {
-		if err := m.PortName.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("PortName")
-			}
-			return err
-		}
-	}
-
 	return nil
 }
 
@@ -112,15 +107,6 @@ func (m *PTXServiceDTOShipSpecificationV3Port) validatePortPosition(formats strf
 
 	if swag.IsZero(m.PortPosition) { // not required
 		return nil
-	}
-
-	if m.PortPosition != nil {
-		if err := m.PortPosition.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("PortPosition")
-			}
-			return err
-		}
 	}
 
 	return nil

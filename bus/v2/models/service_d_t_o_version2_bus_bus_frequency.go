@@ -8,14 +8,14 @@ package models
 import (
 	"strconv"
 
-	strfmt "github.com/go-openapi/strfmt"
-
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 )
 
 // ServiceDTOVersion2BusBusFrequency BusFrequency
+//
 // swagger:model Service.DTO.Version2.Bus.BusFrequency
 type ServiceDTOVersion2BusBusFrequency struct {
 

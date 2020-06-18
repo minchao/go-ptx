@@ -9,12 +9,11 @@ import (
 	"fmt"
 
 	"github.com/go-openapi/runtime"
-
-	strfmt "github.com/go-openapi/strfmt"
+	"github.com/go-openapi/strfmt"
 )
 
 // New creates a new t r a API client.
-func New(transport runtime.ClientTransport, formats strfmt.Registry) *Client {
+func New(transport runtime.ClientTransport, formats strfmt.Registry) ClientService {
 	return &Client{transport: transport, formats: formats}
 }
 
@@ -26,10 +25,65 @@ type Client struct {
 	formats   strfmt.Registry
 }
 
-/*
-TRAAPIDailyTimetable 取得當天所有車次的時刻表資料s
+// ClientService is the interface for Client methods
+type ClientService interface {
+	TRAAPIDailyTimetable(params *TRAAPIDailyTimetableParams) (*TRAAPIDailyTimetableOK, error)
 
-取得當天所有車次的時刻表資料
+	TRAAPIDailyTimetable1(params *TRAAPIDailyTimetable1Params) (*TRAAPIDailyTimetable1OK, error)
+
+	TRAAPIDailyTimetable2(params *TRAAPIDailyTimetable2Params) (*TRAAPIDailyTimetable2OK, error)
+
+	TRAAPIDailyTimetable3(params *TRAAPIDailyTimetable3Params) (*TRAAPIDailyTimetable3OK, error)
+
+	TRAAPIDailyTrainInfo(params *TRAAPIDailyTrainInfoParams) (*TRAAPIDailyTrainInfoOK, error)
+
+	TRAAPIDailyTrainInfo1(params *TRAAPIDailyTrainInfo1Params) (*TRAAPIDailyTrainInfo1OK, error)
+
+	TRAAPIDailyTrainInfo2(params *TRAAPIDailyTrainInfo2Params) (*TRAAPIDailyTrainInfo2OK, error)
+
+	TRAAPIDailyTrainInfo3(params *TRAAPIDailyTrainInfo3Params) (*TRAAPIDailyTrainInfo3OK, error)
+
+	TRAAPIGeneralTimetable(params *TRAAPIGeneralTimetableParams) (*TRAAPIGeneralTimetableOK, error)
+
+	TRAAPIGeneralTimetable1(params *TRAAPIGeneralTimetable1Params) (*TRAAPIGeneralTimetable1OK, error)
+
+	TRAAPIGeneralTrainInfo(params *TRAAPIGeneralTrainInfoParams) (*TRAAPIGeneralTrainInfoOK, error)
+
+	TRAAPIGeneralTrainInfo1(params *TRAAPIGeneralTrainInfo1Params) (*TRAAPIGeneralTrainInfo1OK, error)
+
+	TRAAPILine(params *TRAAPILineParams) (*TRAAPILineOK, error)
+
+	TRAAPILiveBoard(params *TRAAPILiveBoardParams) (*TRAAPILiveBoardOK, error)
+
+	TRAAPILiveBoard1(params *TRAAPILiveBoard1Params) (*TRAAPILiveBoard1OK, error)
+
+	TRAAPILiveTrainDelay(params *TRAAPILiveTrainDelayParams) (*TRAAPILiveTrainDelayOK, error)
+
+	TRAAPINetwork(params *TRAAPINetworkParams) (*TRAAPINetworkOK, error)
+
+	TRAAPIODDailyTimetable(params *TRAAPIODDailyTimetableParams) (*TRAAPIODDailyTimetableOK, error)
+
+	TRAAPIODFareStation(params *TRAAPIODFareStationParams) (*TRAAPIODFareStationOK, error)
+
+	TRAAPIODFareStation1(params *TRAAPIODFareStation1Params) (*TRAAPIODFareStation1OK, error)
+
+	TRAAPIShape(params *TRAAPIShapeParams) (*TRAAPIShapeOK, error)
+
+	TRAAPIStation(params *TRAAPIStationParams) (*TRAAPIStationOK, error)
+
+	TRAAPIStationOfLine(params *TRAAPIStationOfLineParams) (*TRAAPIStationOfLineOK, error)
+
+	TRAAPIStationTimetable(params *TRAAPIStationTimetableParams) (*TRAAPIStationTimetableOK, error)
+
+	TRAAPITrainType(params *TRAAPITrainTypeParams) (*TRAAPITrainTypeOK, error)
+
+	SetTransport(transport runtime.ClientTransport)
+}
+
+/*
+  TRAAPIDailyTimetable 取得當天所有車次的時刻表資料s
+
+  取得當天所有車次的時刻表資料
 */
 func (a *Client) TRAAPIDailyTimetable(params *TRAAPIDailyTimetableParams) (*TRAAPIDailyTimetableOK, error) {
 	// TODO: Validate the params before sending
@@ -42,7 +96,7 @@ func (a *Client) TRAAPIDailyTimetable(params *TRAAPIDailyTimetableParams) (*TRAA
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/DailyTimetable/Today",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &TRAAPIDailyTimetableReader{formats: a.formats},
@@ -63,9 +117,9 @@ func (a *Client) TRAAPIDailyTimetable(params *TRAAPIDailyTimetableParams) (*TRAA
 }
 
 /*
-TRAAPIDailyTimetable1 取得當天指定s 車次 的時刻表資料
+  TRAAPIDailyTimetable1 取得當天指定s 車次 的時刻表資料
 
-取得當天指定[車次]的時刻表資料
+  取得當天指定[車次]的時刻表資料
 */
 func (a *Client) TRAAPIDailyTimetable1(params *TRAAPIDailyTimetable1Params) (*TRAAPIDailyTimetable1OK, error) {
 	// TODO: Validate the params before sending
@@ -78,7 +132,7 @@ func (a *Client) TRAAPIDailyTimetable1(params *TRAAPIDailyTimetable1Params) (*TR
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/DailyTimetable/Today/TrainNo/{TrainNo}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &TRAAPIDailyTimetable1Reader{formats: a.formats},
@@ -99,9 +153,9 @@ func (a *Client) TRAAPIDailyTimetable1(params *TRAAPIDailyTimetable1Params) (*TR
 }
 
 /*
-TRAAPIDailyTimetable2 取得指定s 日期 所有車次的時刻表資料
+  TRAAPIDailyTimetable2 取得指定s 日期 所有車次的時刻表資料
 
-取得指定[日期]所有車次的時刻表資料(台鐵提供近60天每日時刻表)
+  取得指定[日期]所有車次的時刻表資料(台鐵提供近60天每日時刻表)
 */
 func (a *Client) TRAAPIDailyTimetable2(params *TRAAPIDailyTimetable2Params) (*TRAAPIDailyTimetable2OK, error) {
 	// TODO: Validate the params before sending
@@ -114,7 +168,7 @@ func (a *Client) TRAAPIDailyTimetable2(params *TRAAPIDailyTimetable2Params) (*TR
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/DailyTimetable/TrainDate/{TrainDate}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &TRAAPIDailyTimetable2Reader{formats: a.formats},
@@ -135,9 +189,9 @@ func (a *Client) TRAAPIDailyTimetable2(params *TRAAPIDailyTimetable2Params) (*TR
 }
 
 /*
-TRAAPIDailyTimetable3 取得指定s 日期 車次 的時刻表資料
+  TRAAPIDailyTimetable3 取得指定s 日期 車次 的時刻表資料
 
-取得指定[日期],[車次]的時刻表資料(台鐵提供近60天每日時刻表)
+  取得指定[日期],[車次]的時刻表資料(台鐵提供近60天每日時刻表)
 */
 func (a *Client) TRAAPIDailyTimetable3(params *TRAAPIDailyTimetable3Params) (*TRAAPIDailyTimetable3OK, error) {
 	// TODO: Validate the params before sending
@@ -150,7 +204,7 @@ func (a *Client) TRAAPIDailyTimetable3(params *TRAAPIDailyTimetable3Params) (*TR
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/DailyTimetable/TrainNo/{TrainNo}/TrainDate/{TrainDate}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &TRAAPIDailyTimetable3Reader{formats: a.formats},
@@ -171,9 +225,9 @@ func (a *Client) TRAAPIDailyTimetable3(params *TRAAPIDailyTimetable3Params) (*TR
 }
 
 /*
-TRAAPIDailyTrainInfo 取得當天所有車次的車次資料s
+  TRAAPIDailyTrainInfo 取得當天所有車次的車次資料s
 
-取得當天所有車次的車次資料
+  取得當天所有車次的車次資料
 */
 func (a *Client) TRAAPIDailyTrainInfo(params *TRAAPIDailyTrainInfoParams) (*TRAAPIDailyTrainInfoOK, error) {
 	// TODO: Validate the params before sending
@@ -186,7 +240,7 @@ func (a *Client) TRAAPIDailyTrainInfo(params *TRAAPIDailyTrainInfoParams) (*TRAA
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/DailyTrainInfo/Today",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &TRAAPIDailyTrainInfoReader{formats: a.formats},
@@ -207,9 +261,9 @@ func (a *Client) TRAAPIDailyTrainInfo(params *TRAAPIDailyTrainInfoParams) (*TRAA
 }
 
 /*
-TRAAPIDailyTrainInfo1 取得當天指定s 車次 的車次資料
+  TRAAPIDailyTrainInfo1 取得當天指定s 車次 的車次資料
 
-取得當天指定[車次]的車次資料
+  取得當天指定[車次]的車次資料
 */
 func (a *Client) TRAAPIDailyTrainInfo1(params *TRAAPIDailyTrainInfo1Params) (*TRAAPIDailyTrainInfo1OK, error) {
 	// TODO: Validate the params before sending
@@ -222,7 +276,7 @@ func (a *Client) TRAAPIDailyTrainInfo1(params *TRAAPIDailyTrainInfo1Params) (*TR
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/DailyTrainInfo/Today/TrainNo/{TrainNo}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &TRAAPIDailyTrainInfo1Reader{formats: a.formats},
@@ -243,9 +297,9 @@ func (a *Client) TRAAPIDailyTrainInfo1(params *TRAAPIDailyTrainInfo1Params) (*TR
 }
 
 /*
-TRAAPIDailyTrainInfo2 取得指定s 日期 所有車次的車次資料
+  TRAAPIDailyTrainInfo2 取得指定s 日期 所有車次的車次資料
 
-取得指定[日期]所有車次的車次資料(台鐵提供近60天每日時刻表)
+  取得指定[日期]所有車次的車次資料(台鐵提供近60天每日時刻表)
 */
 func (a *Client) TRAAPIDailyTrainInfo2(params *TRAAPIDailyTrainInfo2Params) (*TRAAPIDailyTrainInfo2OK, error) {
 	// TODO: Validate the params before sending
@@ -258,7 +312,7 @@ func (a *Client) TRAAPIDailyTrainInfo2(params *TRAAPIDailyTrainInfo2Params) (*TR
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/DailyTrainInfo/TrainDate/{TrainDate}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &TRAAPIDailyTrainInfo2Reader{formats: a.formats},
@@ -279,9 +333,9 @@ func (a *Client) TRAAPIDailyTrainInfo2(params *TRAAPIDailyTrainInfo2Params) (*TR
 }
 
 /*
-TRAAPIDailyTrainInfo3 取得指定s 日期 與 車次 的車次資料
+  TRAAPIDailyTrainInfo3 取得指定s 日期 與 車次 的車次資料
 
-取得指定[日期]與[車次]的車次資料(台鐵提供近60天每日時刻表)
+  取得指定[日期]與[車次]的車次資料(台鐵提供近60天每日時刻表)
 */
 func (a *Client) TRAAPIDailyTrainInfo3(params *TRAAPIDailyTrainInfo3Params) (*TRAAPIDailyTrainInfo3OK, error) {
 	// TODO: Validate the params before sending
@@ -294,7 +348,7 @@ func (a *Client) TRAAPIDailyTrainInfo3(params *TRAAPIDailyTrainInfo3Params) (*TR
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/DailyTrainInfo/TrainNo/{TrainNo}/TrainDate/{TrainDate}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &TRAAPIDailyTrainInfo3Reader{formats: a.formats},
@@ -315,9 +369,9 @@ func (a *Client) TRAAPIDailyTrainInfo3(params *TRAAPIDailyTrainInfo3Params) (*TR
 }
 
 /*
-TRAAPIGeneralTimetable 取得所有車次的定期時刻表資料s
+  TRAAPIGeneralTimetable 取得所有車次的定期時刻表資料s
 
-取得所有車次的定期時刻表資料
+  取得所有車次的定期時刻表資料
 */
 func (a *Client) TRAAPIGeneralTimetable(params *TRAAPIGeneralTimetableParams) (*TRAAPIGeneralTimetableOK, error) {
 	// TODO: Validate the params before sending
@@ -330,7 +384,7 @@ func (a *Client) TRAAPIGeneralTimetable(params *TRAAPIGeneralTimetableParams) (*
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/GeneralTimetable",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &TRAAPIGeneralTimetableReader{formats: a.formats},
@@ -351,9 +405,9 @@ func (a *Client) TRAAPIGeneralTimetable(params *TRAAPIGeneralTimetableParams) (*
 }
 
 /*
-TRAAPIGeneralTimetable1 取得指定s 車次 的定期時刻表資料
+  TRAAPIGeneralTimetable1 取得指定s 車次 的定期時刻表資料
 
-取得指定[車次]的定期時刻表資料
+  取得指定[車次]的定期時刻表資料
 */
 func (a *Client) TRAAPIGeneralTimetable1(params *TRAAPIGeneralTimetable1Params) (*TRAAPIGeneralTimetable1OK, error) {
 	// TODO: Validate the params before sending
@@ -366,7 +420,7 @@ func (a *Client) TRAAPIGeneralTimetable1(params *TRAAPIGeneralTimetable1Params) 
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/GeneralTimetable/TrainNo/{TrainNo}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &TRAAPIGeneralTimetable1Reader{formats: a.formats},
@@ -387,9 +441,9 @@ func (a *Client) TRAAPIGeneralTimetable1(params *TRAAPIGeneralTimetable1Params) 
 }
 
 /*
-TRAAPIGeneralTrainInfo 取得所有車次的定期車次資料s
+  TRAAPIGeneralTrainInfo 取得所有車次的定期車次資料s
 
-取得所有車次的定期車次資料
+  取得所有車次的定期車次資料
 */
 func (a *Client) TRAAPIGeneralTrainInfo(params *TRAAPIGeneralTrainInfoParams) (*TRAAPIGeneralTrainInfoOK, error) {
 	// TODO: Validate the params before sending
@@ -402,7 +456,7 @@ func (a *Client) TRAAPIGeneralTrainInfo(params *TRAAPIGeneralTrainInfoParams) (*
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/GeneralTrainInfo",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &TRAAPIGeneralTrainInfoReader{formats: a.formats},
@@ -423,9 +477,9 @@ func (a *Client) TRAAPIGeneralTrainInfo(params *TRAAPIGeneralTrainInfoParams) (*
 }
 
 /*
-TRAAPIGeneralTrainInfo1 取得指定s 車次 的定期車次資料
+  TRAAPIGeneralTrainInfo1 取得指定s 車次 的定期車次資料
 
-取得指定[車次]的定期車次資料
+  取得指定[車次]的定期車次資料
 */
 func (a *Client) TRAAPIGeneralTrainInfo1(params *TRAAPIGeneralTrainInfo1Params) (*TRAAPIGeneralTrainInfo1OK, error) {
 	// TODO: Validate the params before sending
@@ -438,7 +492,7 @@ func (a *Client) TRAAPIGeneralTrainInfo1(params *TRAAPIGeneralTrainInfo1Params) 
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/GeneralTrainInfo/TrainNo/{TrainNo}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &TRAAPIGeneralTrainInfo1Reader{formats: a.formats},
@@ -459,9 +513,9 @@ func (a *Client) TRAAPIGeneralTrainInfo1(params *TRAAPIGeneralTrainInfo1Params) 
 }
 
 /*
-TRAAPILine 取得路線基本資料s
+  TRAAPILine 取得路線基本資料s
 
-取得路線基本資料
+  取得路線基本資料
 */
 func (a *Client) TRAAPILine(params *TRAAPILineParams) (*TRAAPILineOK, error) {
 	// TODO: Validate the params before sending
@@ -474,7 +528,7 @@ func (a *Client) TRAAPILine(params *TRAAPILineParams) (*TRAAPILineOK, error) {
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/Line",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &TRAAPILineReader{formats: a.formats},
@@ -495,9 +549,9 @@ func (a *Client) TRAAPILine(params *TRAAPILineParams) (*TRAAPILineOK, error) {
 }
 
 /*
-TRAAPILiveBoard 取得車站別列車即時到離站電子看板s 動態前後30分鐘的車次
+  TRAAPILiveBoard 取得車站別列車即時到離站電子看板s 動態前後30分鐘的車次
 
-取得車站別列車即時到離站電子看板(動態前後30分鐘的車次)。更新頻率：2分鐘。此資料已過濾離站車次資訊
+  取得車站別列車即時到離站電子看板(動態前後30分鐘的車次)。更新頻率：2分鐘。此資料已過濾離站車次資訊
 */
 func (a *Client) TRAAPILiveBoard(params *TRAAPILiveBoardParams) (*TRAAPILiveBoardOK, error) {
 	// TODO: Validate the params before sending
@@ -510,7 +564,7 @@ func (a *Client) TRAAPILiveBoard(params *TRAAPILiveBoardParams) (*TRAAPILiveBoar
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/LiveBoard",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &TRAAPILiveBoardReader{formats: a.formats},
@@ -531,9 +585,9 @@ func (a *Client) TRAAPILiveBoard(params *TRAAPILiveBoardParams) (*TRAAPILiveBoar
 }
 
 /*
-TRAAPILiveBoard1 取得指定s 車站 列車即時到離站電子看板 動態前後30分鐘的車次
+  TRAAPILiveBoard1 取得指定s 車站 列車即時到離站電子看板 動態前後30分鐘的車次
 
-取得指定[車站]列車即時到離站電子看板(動態前後30分鐘的車次)。更新頻率：2分鐘。此資料已過濾離站車次資訊
+  取得指定[車站]列車即時到離站電子看板(動態前後30分鐘的車次)。更新頻率：2分鐘。此資料已過濾離站車次資訊
 */
 func (a *Client) TRAAPILiveBoard1(params *TRAAPILiveBoard1Params) (*TRAAPILiveBoard1OK, error) {
 	// TODO: Validate the params before sending
@@ -546,7 +600,7 @@ func (a *Client) TRAAPILiveBoard1(params *TRAAPILiveBoard1Params) (*TRAAPILiveBo
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/LiveBoard/Station/{StationID}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &TRAAPILiveBoard1Reader{formats: a.formats},
@@ -567,9 +621,9 @@ func (a *Client) TRAAPILiveBoard1(params *TRAAPILiveBoard1Params) (*TRAAPILiveBo
 }
 
 /*
-TRAAPILiveTrainDelay 取得列車即時準點s 延誤時間資料
+  TRAAPILiveTrainDelay 取得列車即時準點s 延誤時間資料
 
-取得列車即時準點/延誤時間資料。更新頻率：2分鐘
+  取得列車即時準點/延誤時間資料。更新頻率：2分鐘
 */
 func (a *Client) TRAAPILiveTrainDelay(params *TRAAPILiveTrainDelayParams) (*TRAAPILiveTrainDelayOK, error) {
 	// TODO: Validate the params before sending
@@ -582,7 +636,7 @@ func (a *Client) TRAAPILiveTrainDelay(params *TRAAPILiveTrainDelayParams) (*TRAA
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/LiveTrainDelay",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &TRAAPILiveTrainDelayReader{formats: a.formats},
@@ -603,9 +657,9 @@ func (a *Client) TRAAPILiveTrainDelay(params *TRAAPILiveTrainDelayParams) (*TRAA
 }
 
 /*
-TRAAPINetwork 取得臺鐵路網資料s
+  TRAAPINetwork 取得臺鐵路網資料s
 
-取得臺鐵路網資料
+  取得臺鐵路網資料
 */
 func (a *Client) TRAAPINetwork(params *TRAAPINetworkParams) (*TRAAPINetworkOK, error) {
 	// TODO: Validate the params before sending
@@ -618,7 +672,7 @@ func (a *Client) TRAAPINetwork(params *TRAAPINetworkParams) (*TRAAPINetworkOK, e
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/Network",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &TRAAPINetworkReader{formats: a.formats},
@@ -639,9 +693,9 @@ func (a *Client) TRAAPINetwork(params *TRAAPINetworkParams) (*TRAAPINetworkOK, e
 }
 
 /*
-TRAAPIODDailyTimetable 取得指定s 日期 起迄站間 之站間時刻表資料
+  TRAAPIODDailyTimetable 取得指定s 日期 起迄站間 之站間時刻表資料
 
-取得指定[日期],[起迄站間]之站間時刻表資料
+  取得指定[日期],[起迄站間]之站間時刻表資料
 */
 func (a *Client) TRAAPIODDailyTimetable(params *TRAAPIODDailyTimetableParams) (*TRAAPIODDailyTimetableOK, error) {
 	// TODO: Validate the params before sending
@@ -654,7 +708,7 @@ func (a *Client) TRAAPIODDailyTimetable(params *TRAAPIODDailyTimetableParams) (*
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/DailyTimetable/OD/{OriginStationID}/to/{DestinationStationID}/{TrainDate}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &TRAAPIODDailyTimetableReader{formats: a.formats},
@@ -675,9 +729,9 @@ func (a *Client) TRAAPIODDailyTimetable(params *TRAAPIODDailyTimetableParams) (*
 }
 
 /*
-TRAAPIODFareStation 取得指定s 起訖站間 之票價資料
+  TRAAPIODFareStation 取得指定s 起訖站間 之票價資料
 
-取得指定[起訖站間]之票價資料
+  取得指定[起訖站間]之票價資料
 */
 func (a *Client) TRAAPIODFareStation(params *TRAAPIODFareStationParams) (*TRAAPIODFareStationOK, error) {
 	// TODO: Validate the params before sending
@@ -690,7 +744,7 @@ func (a *Client) TRAAPIODFareStation(params *TRAAPIODFareStationParams) (*TRAAPI
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/ODFare/{OriginStationID}/to/{DestinationStationID}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &TRAAPIODFareStationReader{formats: a.formats},
@@ -711,9 +765,9 @@ func (a *Client) TRAAPIODFareStation(params *TRAAPIODFareStationParams) (*TRAAPI
 }
 
 /*
-TRAAPIODFareStation1 取得票價資料s
+  TRAAPIODFareStation1 取得票價資料s
 
-取得票價資料
+  取得票價資料
 */
 func (a *Client) TRAAPIODFareStation1(params *TRAAPIODFareStation1Params) (*TRAAPIODFareStation1OK, error) {
 	// TODO: Validate the params before sending
@@ -726,7 +780,7 @@ func (a *Client) TRAAPIODFareStation1(params *TRAAPIODFareStation1Params) (*TRAA
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/ODFare",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &TRAAPIODFareStation1Reader{formats: a.formats},
@@ -747,9 +801,9 @@ func (a *Client) TRAAPIODFareStation1(params *TRAAPIODFareStation1Params) (*TRAA
 }
 
 /*
-TRAAPIShape 取得軌道路網實體路線圖資資料s
+  TRAAPIShape 取得軌道路網實體路線圖資資料s
 
-取得軌道路網實體路線圖資資料
+  取得軌道路網實體路線圖資資料
 */
 func (a *Client) TRAAPIShape(params *TRAAPIShapeParams) (*TRAAPIShapeOK, error) {
 	// TODO: Validate the params before sending
@@ -762,7 +816,7 @@ func (a *Client) TRAAPIShape(params *TRAAPIShapeParams) (*TRAAPIShapeOK, error) 
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/Shape",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &TRAAPIShapeReader{formats: a.formats},
@@ -783,9 +837,9 @@ func (a *Client) TRAAPIShape(params *TRAAPIShapeParams) (*TRAAPIShapeOK, error) 
 }
 
 /*
-TRAAPIStation 取得車站基本資料s
+  TRAAPIStation 取得車站基本資料s
 
-取得車站基本資料
+  取得車站基本資料
 */
 func (a *Client) TRAAPIStation(params *TRAAPIStationParams) (*TRAAPIStationOK, error) {
 	// TODO: Validate the params before sending
@@ -798,7 +852,7 @@ func (a *Client) TRAAPIStation(params *TRAAPIStationParams) (*TRAAPIStationOK, e
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/Station",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &TRAAPIStationReader{formats: a.formats},
@@ -819,9 +873,9 @@ func (a *Client) TRAAPIStation(params *TRAAPIStationParams) (*TRAAPIStationOK, e
 }
 
 /*
-TRAAPIStationOfLine 取得路線車站基本資料s
+  TRAAPIStationOfLine 取得路線車站基本資料s
 
-取得路線車站基本資料
+  取得路線車站基本資料
 */
 func (a *Client) TRAAPIStationOfLine(params *TRAAPIStationOfLineParams) (*TRAAPIStationOfLineOK, error) {
 	// TODO: Validate the params before sending
@@ -834,7 +888,7 @@ func (a *Client) TRAAPIStationOfLine(params *TRAAPIStationOfLineParams) (*TRAAPI
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/StationOfLine",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &TRAAPIStationOfLineReader{formats: a.formats},
@@ -855,9 +909,9 @@ func (a *Client) TRAAPIStationOfLine(params *TRAAPIStationOfLineParams) (*TRAAPI
 }
 
 /*
-TRAAPIStationTimetable 取得指定s 日期 車站 的站別時刻表資料
+  TRAAPIStationTimetable 取得指定s 日期 車站 的站別時刻表資料
 
-取得指定[日期],[車站]的站別時刻表資料
+  取得指定[日期],[車站]的站別時刻表資料
 */
 func (a *Client) TRAAPIStationTimetable(params *TRAAPIStationTimetableParams) (*TRAAPIStationTimetableOK, error) {
 	// TODO: Validate the params before sending
@@ -870,7 +924,7 @@ func (a *Client) TRAAPIStationTimetable(params *TRAAPIStationTimetableParams) (*
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/DailyTimetable/Station/{StationID}/{TrainDate}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &TRAAPIStationTimetableReader{formats: a.formats},
@@ -891,9 +945,9 @@ func (a *Client) TRAAPIStationTimetable(params *TRAAPIStationTimetableParams) (*
 }
 
 /*
-TRAAPITrainType 取得所有列車車種資料s
+  TRAAPITrainType 取得所有列車車種資料s
 
-取得所有列車車種資料
+  取得所有列車車種資料
 */
 func (a *Client) TRAAPITrainType(params *TRAAPITrainTypeParams) (*TRAAPITrainTypeOK, error) {
 	// TODO: Validate the params before sending
@@ -906,7 +960,7 @@ func (a *Client) TRAAPITrainType(params *TRAAPITrainTypeParams) (*TRAAPITrainTyp
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/TrainType",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &TRAAPITrainTypeReader{formats: a.formats},

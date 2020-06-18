@@ -8,13 +8,13 @@ package models
 import (
 	"strconv"
 
-	strfmt "github.com/go-openapi/strfmt"
-
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 )
 
 // PTXServiceDTOShipSpecificationV3Route Route
+//
 // swagger:model PTX.Service.DTO.Ship.Specification.V3.Route
 type PTXServiceDTOShipSpecificationV3Route struct {
 
@@ -56,11 +56,13 @@ type PTXServiceDTOShipSpecificationV3Route struct {
 	// NameType
 	//
 	// 航線名稱
-	RouteName *PTXServiceDTOSharedSpecificationV3BaseNameType `json:"RouteName,omitempty"`
+	RouteName struct {
+		PTXServiceDTOSharedSpecificationV3BaseNameType
+	} `json:"RouteName,omitempty"`
 
-	// Int32
+	// integer
 	//
-	// 航線種類(1:國內航線(渡輪、藍色公路); 2:離島航線; 3:兩岸航線;4:其他)
+	// 航線種類 : [1:'國內航線',2:'離島航線',3:'兩岸航線',4:'其他']
 	RouteType int32 `json:"RouteType,omitempty"`
 
 	// String
@@ -76,7 +78,9 @@ type PTXServiceDTOShipSpecificationV3Route struct {
 	// NameType
 	//
 	// 票價描述
-	TicketPriceDescription *PTXServiceDTOSharedSpecificationV3BaseNameType `json:"TicketPriceDescription,omitempty"`
+	TicketPriceDescription struct {
+		PTXServiceDTOSharedSpecificationV3BaseNameType
+	} `json:"TicketPriceDescription,omitempty"`
 
 	// String
 	//
@@ -137,15 +141,6 @@ func (m *PTXServiceDTOShipSpecificationV3Route) validateRouteName(formats strfmt
 		return nil
 	}
 
-	if m.RouteName != nil {
-		if err := m.RouteName.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("RouteName")
-			}
-			return err
-		}
-	}
-
 	return nil
 }
 
@@ -153,15 +148,6 @@ func (m *PTXServiceDTOShipSpecificationV3Route) validateTicketPriceDescription(f
 
 	if swag.IsZero(m.TicketPriceDescription) { // not required
 		return nil
-	}
-
-	if m.TicketPriceDescription != nil {
-		if err := m.TicketPriceDescription.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("TicketPriceDescription")
-			}
-			return err
-		}
 	}
 
 	return nil

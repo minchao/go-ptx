@@ -9,12 +9,11 @@ import (
 	"fmt"
 
 	"github.com/go-openapi/runtime"
-
-	strfmt "github.com/go-openapi/strfmt"
+	"github.com/go-openapi/strfmt"
 )
 
 // New creates a new bike API client.
-func New(transport runtime.ClientTransport, formats strfmt.Registry) *Client {
+func New(transport runtime.ClientTransport, formats strfmt.Registry) ClientService {
 	return &Client{transport: transport, formats: formats}
 }
 
@@ -26,10 +25,21 @@ type Client struct {
 	formats   strfmt.Registry
 }
 
-/*
-BikeAPIAvailability 取得動態指定s 縣市 的公共自行車即時車位資料
+// ClientService is the interface for Client methods
+type ClientService interface {
+	BikeAPIAvailability(params *BikeAPIAvailabilityParams) (*BikeAPIAvailabilityOK, error)
 
-取得動態指定[縣市]的公共自行車即時車位資料<br />[更新頻率]2分鐘更新一次
+	BikeAPIStation(params *BikeAPIStationParams) (*BikeAPIStationOK, error)
+
+	CyclingAPIShape(params *CyclingAPIShapeParams) (*CyclingAPIShapeOK, error)
+
+	SetTransport(transport runtime.ClientTransport)
+}
+
+/*
+  BikeAPIAvailability 取得動態指定s 縣市 的公共自行車即時車位資料
+
+  取得動態指定[縣市]的公共自行車即時車位資料<br />[更新頻率]2分鐘更新一次
 */
 func (a *Client) BikeAPIAvailability(params *BikeAPIAvailabilityParams) (*BikeAPIAvailabilityOK, error) {
 	// TODO: Validate the params before sending
@@ -42,7 +52,7 @@ func (a *Client) BikeAPIAvailability(params *BikeAPIAvailabilityParams) (*BikeAP
 		Method:             "GET",
 		PathPattern:        "/v2/Bike/Availability/{City}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &BikeAPIAvailabilityReader{formats: a.formats},
@@ -63,9 +73,9 @@ func (a *Client) BikeAPIAvailability(params *BikeAPIAvailabilityParams) (*BikeAP
 }
 
 /*
-BikeAPIStation 取得指定s 縣市 的公共自行車租借站位資料
+  BikeAPIStation 取得指定s 縣市 的公共自行車租借站位資料
 
-取得指定[縣市]的公共自行車租借站位資料<br />[更新頻率]2分鐘更新一次
+  取得指定[縣市]的公共自行車租借站位資料<br />[更新頻率]2分鐘更新一次
 */
 func (a *Client) BikeAPIStation(params *BikeAPIStationParams) (*BikeAPIStationOK, error) {
 	// TODO: Validate the params before sending
@@ -78,7 +88,7 @@ func (a *Client) BikeAPIStation(params *BikeAPIStationParams) (*BikeAPIStationOK
 		Method:             "GET",
 		PathPattern:        "/v2/Bike/Station/{City}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &BikeAPIStationReader{formats: a.formats},
@@ -99,9 +109,9 @@ func (a *Client) BikeAPIStation(params *BikeAPIStationParams) (*BikeAPIStationOK
 }
 
 /*
-CyclingAPIShape 取得指定縣市之自行車道路網圖資s
+  CyclingAPIShape 取得指定縣市之自行車道路網圖資s
 
-取得指定縣市之自行車道路網圖資
+  取得指定縣市之自行車道路網圖資
 */
 func (a *Client) CyclingAPIShape(params *CyclingAPIShapeParams) (*CyclingAPIShapeOK, error) {
 	// TODO: Validate the params before sending
@@ -114,7 +124,7 @@ func (a *Client) CyclingAPIShape(params *CyclingAPIShapeParams) (*CyclingAPIShap
 		Method:             "GET",
 		PathPattern:        "/v2/Cycling/Shape/{City}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &CyclingAPIShapeReader{formats: a.formats},

@@ -2700,6 +2700,7 @@
     "MOTC.API.Rail.Models.TRARealTimeWrapper[Service.DTO.Version3.Rail.TRA.TRAAlertList.Alert]": {
       "title": "TRAAlertList",
       "required": [
+        "UpdateTime",
         "UpdateInterval",
         "SrcUpdateTime",
         "SrcUpdateInterval",
@@ -2725,7 +2726,7 @@
         },
         "SrcUpdateInterval": {
           "format": "int32",
-          "description": "來源端平台資料更新週期(秒)",
+          "description": "來源端平台資料更新週期(秒)['-1: 不定期更新']",
           "type": "integer"
         },
         "AuthorityCode": {
@@ -2979,10 +2980,12 @@
     "MOTC.API.Rail.Models.TraDailyStationWrapper[Service.DTO.Version3.Rail.TRA.DailyStationTimeTable.StationTimetable]": {
       "title": "TRADailyStationTimeTableList",
       "required": [
+        "UpdateTime",
         "UpdateInterval",
         "SrcUpdateTime",
         "SrcUpdateInterval",
         "AuthorityCode",
+        "TrainDate",
         "StationTimetables"
       ],
       "type": "object",
@@ -3004,7 +3007,7 @@
         },
         "SrcUpdateInterval": {
           "format": "int32",
-          "description": "來源端平台資料更新週期(秒)",
+          "description": "來源端平台資料更新週期(秒)['-1: 不定期更新']",
           "type": "integer"
         },
         "AuthorityCode": {
@@ -3055,15 +3058,6 @@
           "description": "行駛方向 : [0:'順行',1:'逆行']",
           "type": "integer"
         },
-        "DestinationStationID": {
-          "description": "目的站車站代號",
-          "type": "string"
-        },
-        "DestinationStationName": {
-          "$ref": "#/definitions/Service.DTO.Version3.Base.NameType",
-          "title": "NameType",
-          "description": "目的站車站名稱"
-        },
         "TimeTables": {
           "description": "目的站車站名稱",
           "type": "array",
@@ -3104,6 +3098,15 @@
           "description": "車次代碼",
           "type": "string"
         },
+        "DestinationStationID": {
+          "description": "目的站車站代號",
+          "type": "string"
+        },
+        "DestinationStationName": {
+          "$ref": "#/definitions/Service.DTO.Version3.Base.NameType",
+          "title": "NameType",
+          "description": "目的站車站名稱"
+        },
         "TrainTypeID": {
           "description": "車種代嗎",
           "type": "string"
@@ -3130,10 +3133,13 @@
     "MOTC.API.Rail.Models.TraDailyTrainWrapper[Service.DTO.Version3.Rail.TRA.DailyTrainTimeTable.TrainTimetable]": {
       "title": "TRADailyTrainTimeTableList",
       "required": [
+        "UpdateTime",
         "UpdateInterval",
         "SrcUpdateTime",
         "SrcUpdateInterval",
-        "AuthorityCode"
+        "AuthorityCode",
+        "TrainDate",
+        "TrainTimetables"
       ],
       "type": "object",
       "properties": {
@@ -3154,7 +3160,7 @@
         },
         "SrcUpdateInterval": {
           "format": "int32",
-          "description": "來源端平台資料更新週期(秒)",
+          "description": "來源端平台資料更新週期(秒)['-1: 不定期更新']",
           "type": "integer"
         },
         "AuthorityCode": {
@@ -3294,8 +3300,15 @@
         "DiningFlag": {
           "format": "int32",
           "title": "integer",
-          "description": "是否提供餐車服務 : [0:'否',1:'是']",
+          "description": "是否提供訂便當服務 : [0:'否',1:'是']",
           "type": "integer"
+        },
+        "DiningFlagSections": {
+          "description": "提供訂便當服務之車站區間",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version3.Rail.TRA.DailyTrainTimeTable.DiningFlagSection"
+          }
         },
         "BreastFeedFlag": {
           "format": "int32",
@@ -3366,9 +3379,48 @@
         }
       }
     },
+    "Service.DTO.Version3.Rail.TRA.DailyTrainTimeTable.DiningFlagSection": {
+      "title": "DiningFlagSection",
+      "required": [
+        "StartSection",
+        "EndSection"
+      ],
+      "type": "object",
+      "properties": {
+        "StartSection": {
+          "$ref": "#/definitions/Service.DTO.Version3.Rail.TRA.DailyTrainTimeTable.SectionAmong",
+          "title": "SectionAmong",
+          "description": "乘客出發站所屬區間"
+        },
+        "EndSection": {
+          "$ref": "#/definitions/Service.DTO.Version3.Rail.TRA.DailyTrainTimeTable.SectionAmong",
+          "title": "SectionAmong",
+          "description": "乘客目的站所屬區間"
+        }
+      }
+    },
+    "Service.DTO.Version3.Rail.TRA.DailyTrainTimeTable.SectionAmong": {
+      "title": "SectionAmong",
+      "required": [
+        "StartStationID",
+        "EndStationID"
+      ],
+      "type": "object",
+      "properties": {
+        "StartStationID": {
+          "description": "起站車站代碼",
+          "type": "string"
+        },
+        "EndStationID": {
+          "description": "迄站車站代碼",
+          "type": "string"
+        }
+      }
+    },
     "MOTC.API.Rail.Models.TRAGeneralStationWrapper[Service.DTO.Version3.Rail.TRA.GeneralStationTimetable.GeneralStationTimetable]": {
       "title": "TRAGeneralStationTimetableList",
       "required": [
+        "UpdateTime",
         "UpdateInterval",
         "SrcUpdateTime",
         "SrcUpdateInterval",
@@ -3395,7 +3447,7 @@
         },
         "SrcUpdateInterval": {
           "format": "int32",
-          "description": "來源端平台資料更新週期(秒)",
+          "description": "來源端平台資料更新週期(秒)['-1: 不定期更新']",
           "type": "integer"
         },
         "AuthorityCode": {
@@ -3468,15 +3520,6 @@
           "description": "行駛方向 : [0:'順行',1:'逆行']",
           "type": "integer"
         },
-        "DestinationStationID": {
-          "description": "目的站車站代號",
-          "type": "string"
-        },
-        "DestinationStationName": {
-          "$ref": "#/definitions/Service.DTO.Version3.Base.NameType",
-          "title": "NameType",
-          "description": "目的站車站"
-        },
         "Timetables": {
           "description": "車次停靠站資料",
           "type": "array",
@@ -3504,6 +3547,15 @@
         "TrainNo": {
           "description": "車次代碼",
           "type": "string"
+        },
+        "DestinationStationID": {
+          "description": "目的站車站代號",
+          "type": "string"
+        },
+        "DestinationStationName": {
+          "$ref": "#/definitions/Service.DTO.Version3.Base.NameType",
+          "title": "NameType",
+          "description": "目的站車站"
         },
         "TrainTypeID": {
           "description": "車種代嗎",
@@ -3595,6 +3647,7 @@
     "MOTC.API.Rail.Models.TRAGeneralTrainWrapper[Service.DTO.Version3.Rail.TRA.GeneralTrainTimetable]": {
       "title": "TRAGeneralTrainTimetableList",
       "required": [
+        "UpdateTime",
         "UpdateInterval",
         "SrcUpdateTime",
         "SrcUpdateInterval",
@@ -3621,7 +3674,7 @@
         },
         "SrcUpdateInterval": {
           "format": "int32",
-          "description": "來源端平台資料更新週期(秒)",
+          "description": "來源端平台資料更新週期(秒)['-1: 不定期更新']",
           "type": "integer"
         },
         "AuthorityCode": {
@@ -3784,7 +3837,7 @@
         "DiningFlag": {
           "format": "int32",
           "title": "integer",
-          "description": "是否提供餐車服務 : [0:'否',1:'是']",
+          "description": "是否提供訂便當服務 : [0:'否',1:'是']",
           "type": "integer"
         },
         "BreastFeedFlag": {
@@ -3952,6 +4005,7 @@
     "MOTC.API.Rail.Models.TRABaseWrapper[Service.DTO.Version3.Rail.TRA.Line]": {
       "title": "TRALineList",
       "required": [
+        "UpdateTime",
         "UpdateInterval",
         "SrcUpdateTime",
         "SrcUpdateInterval",
@@ -3977,7 +4031,7 @@
         },
         "SrcUpdateInterval": {
           "format": "int32",
-          "description": "來源端平台資料更新週期(秒)",
+          "description": "來源端平台資料更新週期(秒)['-1: 不定期更新']",
           "type": "integer"
         },
         "AuthorityCode": {
@@ -4049,6 +4103,7 @@
     "MOTC.API.Rail.Models.TRABaseWrapper[Service.DTO.Version3.Rail.TRA.LineNetwork.LineNetwork]": {
       "title": "TRALineNetworkList",
       "required": [
+        "UpdateTime",
         "UpdateInterval",
         "SrcUpdateTime",
         "SrcUpdateInterval",
@@ -4074,7 +4129,7 @@
         },
         "SrcUpdateInterval": {
           "format": "int32",
-          "description": "來源端平台資料更新週期(秒)",
+          "description": "來源端平台資料更新週期(秒)['-1: 不定期更新']",
           "type": "integer"
         },
         "AuthorityCode": {
@@ -4166,6 +4221,7 @@
     "MOTC.API.Rail.Models.TRABaseWrapper[Service.DTO.Version3.Rail.TRA.LineTransfer]": {
       "title": "TRALineTransferList",
       "required": [
+        "UpdateTime",
         "UpdateInterval",
         "SrcUpdateTime",
         "SrcUpdateInterval",
@@ -4191,7 +4247,7 @@
         },
         "SrcUpdateInterval": {
           "format": "int32",
-          "description": "來源端平台資料更新週期(秒)",
+          "description": "來源端平台資料更新週期(秒)['-1: 不定期更新']",
           "type": "integer"
         },
         "AuthorityCode": {
@@ -4279,6 +4335,7 @@
     "MOTC.API.Rail.Models.TRABaseWrapper[Service.DTO.Version3.Rail.TRA.Network.Network]": {
       "title": "TRANetworkList",
       "required": [
+        "UpdateTime",
         "UpdateInterval",
         "SrcUpdateTime",
         "SrcUpdateInterval",
@@ -4304,7 +4361,7 @@
         },
         "SrcUpdateInterval": {
           "format": "int32",
-          "description": "來源端平台資料更新週期(秒)",
+          "description": "來源端平台資料更新週期(秒)['-1: 不定期更新']",
           "type": "integer"
         },
         "AuthorityCode": {
@@ -4410,6 +4467,7 @@
     "MOTC.API.Rail.Models.TRARealTimeWrapper[Service.DTO.Version3.Rail.TRA.TRANewsList.News]": {
       "title": "TRANewsList",
       "required": [
+        "UpdateTime",
         "UpdateInterval",
         "SrcUpdateTime",
         "SrcUpdateInterval",
@@ -4435,7 +4493,7 @@
         },
         "SrcUpdateInterval": {
           "format": "int32",
-          "description": "來源端平台資料更新週期(秒)",
+          "description": "來源端平台資料更新週期(秒)['-1: 不定期更新']",
           "type": "integer"
         },
         "AuthorityCode": {
@@ -4530,6 +4588,7 @@
     "MOTC.API.Rail.Models.TRAODFareWrapper[Service.DTO.Version3.Rail.TRA.ODFare.ODFare]": {
       "title": "TRAODFareList",
       "required": [
+        "UpdateTime",
         "UpdateInterval",
         "SrcUpdateTime",
         "SrcUpdateInterval",
@@ -4555,7 +4614,7 @@
         },
         "SrcUpdateInterval": {
           "format": "int32",
-          "description": "來源端平台資料更新週期(秒)",
+          "description": "來源端平台資料更新週期(秒)['-1: 不定期更新']",
           "type": "integer"
         },
         "AuthorityCode": {
@@ -4678,6 +4737,7 @@
     "MOTC.API.Rail.Models.TRABaseWrapper[Service.DTO.Version3.Rail.TRA.Operator]": {
       "title": "TRAOperatorList",
       "required": [
+        "UpdateTime",
         "UpdateInterval",
         "SrcUpdateTime",
         "SrcUpdateInterval",
@@ -4703,7 +4763,7 @@
         },
         "SrcUpdateInterval": {
           "format": "int32",
-          "description": "來源端平台資料更新週期(秒)",
+          "description": "來源端平台資料更新週期(秒)['-1: 不定期更新']",
           "type": "integer"
         },
         "AuthorityCode": {
@@ -4775,6 +4835,7 @@
     "MOTC.API.Rail.Models.TRABaseWrapper[Service.DTO.Version3.Rail.TRA.Shape]": {
       "title": "TRAShapeList",
       "required": [
+        "UpdateTime",
         "UpdateInterval",
         "SrcUpdateTime",
         "SrcUpdateInterval",
@@ -4800,7 +4861,7 @@
         },
         "SrcUpdateInterval": {
           "format": "int32",
-          "description": "來源端平台資料更新週期(秒)",
+          "description": "來源端平台資料更新週期(秒)['-1: 不定期更新']",
           "type": "integer"
         },
         "AuthorityCode": {
@@ -4860,6 +4921,7 @@
     "MOTC.API.Rail.Models.TRASpecificWrapper[Service.DTO.Version3.Rail.TRA.SpecificTrainTimetable]": {
       "title": "TRASpecificTrainTimetableList",
       "required": [
+        "UpdateTime",
         "UpdateInterval",
         "SrcUpdateTime",
         "SrcUpdateInterval",
@@ -4886,7 +4948,7 @@
         },
         "SrcUpdateInterval": {
           "format": "int32",
-          "description": "來源端平台資料更新週期(秒)",
+          "description": "來源端平台資料更新週期(秒)['-1: 不定期更新']",
           "type": "integer"
         },
         "AuthorityCode": {
@@ -4992,6 +5054,7 @@
     "MOTC.API.Rail.Models.TRABaseWrapper[Service.DTO.Version3.Rail.TRA.Station]": {
       "title": "TRAStationList",
       "required": [
+        "UpdateTime",
         "UpdateInterval",
         "SrcUpdateTime",
         "SrcUpdateInterval",
@@ -5017,7 +5080,7 @@
         },
         "SrcUpdateInterval": {
           "format": "int32",
-          "description": "來源端平台資料更新週期(秒)",
+          "description": "來源端平台資料更新週期(秒)['-1: 不定期更新']",
           "type": "integer"
         },
         "AuthorityCode": {
@@ -5109,6 +5172,7 @@
     "MOTC.API.Rail.Models.TRABaseWrapper[Service.DTO.Version3.Rail.TRA.StationExit.StationExit]": {
       "title": "TRAStationExitList",
       "required": [
+        "UpdateTime",
         "UpdateInterval",
         "SrcUpdateTime",
         "SrcUpdateInterval",
@@ -5134,7 +5198,7 @@
         },
         "SrcUpdateInterval": {
           "format": "int32",
-          "description": "來源端平台資料更新週期(秒)",
+          "description": "來源端平台資料更新週期(秒)['-1: 不定期更新']",
           "type": "integer"
         },
         "AuthorityCode": {
@@ -5267,6 +5331,7 @@
     "MOTC.API.Rail.Models.TRABaseWrapper[Service.DTO.Version3.Rail.TRA.StationFacility.StationFacility]": {
       "title": "TRAStationFacilityList",
       "required": [
+        "UpdateTime",
         "UpdateInterval",
         "SrcUpdateTime",
         "SrcUpdateInterval",
@@ -5292,7 +5357,7 @@
         },
         "SrcUpdateInterval": {
           "format": "int32",
-          "description": "來源端平台資料更新週期(秒)",
+          "description": "來源端平台資料更新週期(秒)['-1: 不定期更新']",
           "type": "integer"
         },
         "AuthorityCode": {
@@ -5417,6 +5482,7 @@
     "MOTC.API.Rail.Models.TRARealTimeWrapper[Service.DTO.Version3.Rail.TRA.TRAStationLiveBoardList.StationLiveBoard]": {
       "title": "TRAStationLiveBoardList",
       "required": [
+        "UpdateTime",
         "UpdateInterval",
         "SrcUpdateTime",
         "SrcUpdateInterval",
@@ -5442,7 +5508,7 @@
         },
         "SrcUpdateInterval": {
           "format": "int32",
-          "description": "來源端平台資料更新週期(秒)",
+          "description": "來源端平台資料更新週期(秒)['-1: 不定期更新']",
           "type": "integer"
         },
         "AuthorityCode": {
@@ -5556,6 +5622,7 @@
     "MOTC.API.Rail.Models.TRABaseWrapper[Service.DTO.Version3.Rail.TRA.StationOfLine.StationOfLine]": {
       "title": "TRAStationOfLineList",
       "required": [
+        "UpdateTime",
         "UpdateInterval",
         "SrcUpdateTime",
         "SrcUpdateInterval",
@@ -5581,7 +5648,7 @@
         },
         "SrcUpdateInterval": {
           "format": "int32",
-          "description": "來源端平台資料更新週期(秒)",
+          "description": "來源端平台資料更新週期(秒)['-1: 不定期更新']",
           "type": "integer"
         },
         "AuthorityCode": {
@@ -5664,6 +5731,7 @@
     "MOTC.API.Rail.Models.TRABaseWrapper[Service.DTO.Version3.Rail.TRA.StationTransfer.StationTransfer]": {
       "title": "TRAStationTransferList",
       "required": [
+        "UpdateTime",
         "UpdateInterval",
         "SrcUpdateTime",
         "SrcUpdateInterval",
@@ -5689,7 +5757,7 @@
         },
         "SrcUpdateInterval": {
           "format": "int32",
-          "description": "來源端平台資料更新週期(秒)",
+          "description": "來源端平台資料更新週期(秒)['-1: 不定期更新']",
           "type": "integer"
         },
         "AuthorityCode": {
@@ -6226,6 +6294,7 @@
     "MOTC.API.Rail.Models.TRARealTimeWrapper[Service.DTO.Version3.Rail.TRA.TRATrainLiveBoardList.TrainLiveBoard]": {
       "title": "TRATrainLiveBoardList",
       "required": [
+        "UpdateTime",
         "UpdateInterval",
         "SrcUpdateTime",
         "SrcUpdateInterval",
@@ -6251,7 +6320,7 @@
         },
         "SrcUpdateInterval": {
           "format": "int32",
-          "description": "來源端平台資料更新週期(秒)",
+          "description": "來源端平台資料更新週期(秒)['-1: 不定期更新']",
           "type": "integer"
         },
         "AuthorityCode": {
@@ -6329,6 +6398,7 @@
     "MOTC.API.Rail.Models.TRABaseWrapper[Service.DTO.Version3.Rail.TRA.TrainType]": {
       "title": "TRATrainTypeList",
       "required": [
+        "UpdateTime",
         "UpdateInterval",
         "SrcUpdateTime",
         "SrcUpdateInterval",
@@ -6354,7 +6424,7 @@
         },
         "SrcUpdateInterval": {
           "format": "int32",
-          "description": "來源端平台資料更新週期(秒)",
+          "description": "來源端平台資料更新週期(秒)['-1: 不定期更新']",
           "type": "integer"
         },
         "AuthorityCode": {

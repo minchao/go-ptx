@@ -6,9 +6,8 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	strfmt "github.com/go-openapi/strfmt"
-
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 )
@@ -16,6 +15,7 @@ import (
 // ServiceDTOVersion2RailTRARailODDailyTimetable RailODDailyTimetable
 //
 // 台鐵起訖站間到離站時刻資料型別
+//
 // swagger:model Service.DTO.Version2.Rail.TRA.RailODDailyTimetable
 type ServiceDTOVersion2RailTRARailODDailyTimetable struct {
 

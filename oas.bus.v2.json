@@ -47,19 +47,19 @@
               "PenghuCounty"
             ],
             "x-enum": {
-              "ChiayiCounty": "嘉義縣",
               "YilanCounty": "宜蘭縣",
-              "HualienCounty": "花蓮縣",
               "NantouCounty": "南投縣",
-              "MiaoliCounty": "苗栗縣",
-              "TaitungCounty": "臺東縣",
-              "ChanghuaCounty": "彰化縣",
-              "YunlinCounty": "雲林縣",
-              "PingtungCounty": "屏東縣",
-              "Chiayi": "嘉義市",
               "PenghuCounty": "澎湖縣",
+              "ChiayiCounty": "嘉義縣",
+              "HsinchuCounty": "新竹縣",
+              "ChanghuaCounty": "彰化縣",
+              "MiaoliCounty": "苗栗縣",
+              "HualienCounty": "花蓮縣",
+              "Chiayi": "嘉義市",
+              "YunlinCounty": "雲林縣",
               "Hsinchu": "新竹市",
-              "HsinchuCounty": "新竹縣"
+              "TaitungCounty": "臺東縣",
+              "PingtungCounty": "屏東縣"
             }
           },
           {
@@ -135,7 +135,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -177,19 +177,19 @@
               "PenghuCounty"
             ],
             "x-enum": {
-              "ChiayiCounty": "嘉義縣",
               "YilanCounty": "宜蘭縣",
-              "HualienCounty": "花蓮縣",
               "NantouCounty": "南投縣",
-              "MiaoliCounty": "苗栗縣",
-              "TaitungCounty": "臺東縣",
-              "ChanghuaCounty": "彰化縣",
-              "YunlinCounty": "雲林縣",
-              "PingtungCounty": "屏東縣",
-              "Chiayi": "嘉義市",
               "PenghuCounty": "澎湖縣",
+              "ChiayiCounty": "嘉義縣",
+              "HsinchuCounty": "新竹縣",
+              "ChanghuaCounty": "彰化縣",
+              "MiaoliCounty": "苗栗縣",
+              "HualienCounty": "花蓮縣",
+              "Chiayi": "嘉義市",
+              "YunlinCounty": "雲林縣",
               "Hsinchu": "新竹市",
-              "HsinchuCounty": "新竹縣"
+              "TaitungCounty": "臺東縣",
+              "PingtungCounty": "屏東縣"
             }
           },
           {
@@ -272,7 +272,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -314,19 +314,19 @@
               "PenghuCounty"
             ],
             "x-enum": {
-              "Hsinchu": "新竹市",
-              "HualienCounty": "花蓮縣",
-              "NantouCounty": "南投縣",
-              "MiaoliCounty": "苗栗縣",
+              "ChanghuaCounty": "彰化縣",
+              "PingtungCounty": "屏東縣",
               "Chiayi": "嘉義市",
               "YilanCounty": "宜蘭縣",
-              "PenghuCounty": "澎湖縣",
-              "HsinchuCounty": "新竹縣",
-              "PingtungCounty": "屏東縣",
               "TaitungCounty": "臺東縣",
-              "ChanghuaCounty": "彰化縣",
+              "ChiayiCounty": "嘉義縣",
+              "PenghuCounty": "澎湖縣",
+              "HualienCounty": "花蓮縣",
               "YunlinCounty": "雲林縣",
-              "ChiayiCounty": "嘉義縣"
+              "Hsinchu": "新竹市",
+              "MiaoliCounty": "苗栗縣",
+              "NantouCounty": "南投縣",
+              "HsinchuCounty": "新竹縣"
             }
           },
           {
@@ -396,7 +396,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -438,19 +438,19 @@
               "PenghuCounty"
             ],
             "x-enum": {
-              "Hsinchu": "新竹市",
-              "HualienCounty": "花蓮縣",
-              "NantouCounty": "南投縣",
-              "MiaoliCounty": "苗栗縣",
+              "ChanghuaCounty": "彰化縣",
+              "PingtungCounty": "屏東縣",
               "Chiayi": "嘉義市",
               "YilanCounty": "宜蘭縣",
-              "PenghuCounty": "澎湖縣",
-              "HsinchuCounty": "新竹縣",
-              "PingtungCounty": "屏東縣",
               "TaitungCounty": "臺東縣",
-              "ChanghuaCounty": "彰化縣",
+              "ChiayiCounty": "嘉義縣",
+              "PenghuCounty": "澎湖縣",
+              "HualienCounty": "花蓮縣",
               "YunlinCounty": "雲林縣",
-              "ChiayiCounty": "嘉義縣"
+              "Hsinchu": "新竹市",
+              "MiaoliCounty": "苗栗縣",
+              "NantouCounty": "南投縣",
+              "HsinchuCounty": "新竹縣"
             }
           },
           {
@@ -527,7 +527,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -569,19 +569,19 @@
               "PenghuCounty"
             ],
             "x-enum": {
-              "MiaoliCounty": "苗栗縣",
-              "Chiayi": "嘉義市",
-              "YunlinCounty": "雲林縣",
               "HsinchuCounty": "新竹縣",
-              "YilanCounty": "宜蘭縣",
-              "PingtungCounty": "屏東縣",
-              "PenghuCounty": "澎湖縣",
               "ChanghuaCounty": "彰化縣",
-              "HualienCounty": "花蓮縣",
+              "TaitungCounty": "臺東縣",
               "ChiayiCounty": "嘉義縣",
+              "MiaoliCounty": "苗栗縣",
               "NantouCounty": "南投縣",
+              "YunlinCounty": "雲林縣",
+              "Chiayi": "嘉義市",
+              "PingtungCounty": "屏東縣",
+              "HualienCounty": "花蓮縣",
+              "PenghuCounty": "澎湖縣",
               "Hsinchu": "新竹市",
-              "TaitungCounty": "臺東縣"
+              "YilanCounty": "宜蘭縣"
             }
           },
           {
@@ -651,7 +651,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -693,19 +693,19 @@
               "PenghuCounty"
             ],
             "x-enum": {
-              "MiaoliCounty": "苗栗縣",
-              "Chiayi": "嘉義市",
-              "YunlinCounty": "雲林縣",
               "HsinchuCounty": "新竹縣",
-              "YilanCounty": "宜蘭縣",
-              "PingtungCounty": "屏東縣",
-              "PenghuCounty": "澎湖縣",
               "ChanghuaCounty": "彰化縣",
-              "HualienCounty": "花蓮縣",
+              "TaitungCounty": "臺東縣",
               "ChiayiCounty": "嘉義縣",
+              "MiaoliCounty": "苗栗縣",
               "NantouCounty": "南投縣",
+              "YunlinCounty": "雲林縣",
+              "Chiayi": "嘉義市",
+              "PingtungCounty": "屏東縣",
+              "HualienCounty": "花蓮縣",
+              "PenghuCounty": "澎湖縣",
               "Hsinchu": "新竹市",
-              "TaitungCounty": "臺東縣"
+              "YilanCounty": "宜蘭縣"
             }
           },
           {
@@ -782,7 +782,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -833,28 +833,28 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "YunlinCounty": "雲林縣",
-              "TaitungCounty": "臺東縣",
-              "Kaohsiung": "高雄市",
-              "MiaoliCounty": "苗栗縣",
-              "Hsinchu": "新竹市",
+              "NantouCounty": "南投縣",
               "PenghuCounty": "澎湖縣",
-              "ChiayiCounty": "嘉義縣",
+              "YunlinCounty": "雲林縣",
+              "ChanghuaCounty": "彰化縣",
+              "Chiayi": "嘉義市",
+              "Kaohsiung": "高雄市",
+              "Keelung": "基隆市",
+              "Taipei": "臺北市",
+              "Taoyuan": "桃園市",
+              "YilanCounty": "宜蘭縣",
               "HualienCounty": "花蓮縣",
               "KinmenCounty": "金門縣",
-              "NantouCounty": "南投縣",
               "Taichung": "臺中市",
-              "PingtungCounty": "屏東縣",
-              "Tainan": "臺南市",
-              "NewTaipei": "新北市",
-              "Taoyuan": "桃園市",
-              "Chiayi": "嘉義市",
-              "LienchiangCounty": "連江縣",
-              "Taipei": "臺北市",
+              "TaitungCounty": "臺東縣",
               "HsinchuCounty": "新竹縣",
-              "ChanghuaCounty": "彰化縣",
-              "YilanCounty": "宜蘭縣",
-              "Keelung": "基隆市"
+              "PingtungCounty": "屏東縣",
+              "Hsinchu": "新竹市",
+              "ChiayiCounty": "嘉義縣",
+              "MiaoliCounty": "苗栗縣",
+              "NewTaipei": "新北市",
+              "LienchiangCounty": "連江縣",
+              "Tainan": "臺南市"
             }
           },
           {
@@ -930,7 +930,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -981,28 +981,28 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "YunlinCounty": "雲林縣",
-              "TaitungCounty": "臺東縣",
-              "Kaohsiung": "高雄市",
-              "MiaoliCounty": "苗栗縣",
-              "Hsinchu": "新竹市",
+              "NantouCounty": "南投縣",
               "PenghuCounty": "澎湖縣",
-              "ChiayiCounty": "嘉義縣",
+              "YunlinCounty": "雲林縣",
+              "ChanghuaCounty": "彰化縣",
+              "Chiayi": "嘉義市",
+              "Kaohsiung": "高雄市",
+              "Keelung": "基隆市",
+              "Taipei": "臺北市",
+              "Taoyuan": "桃園市",
+              "YilanCounty": "宜蘭縣",
               "HualienCounty": "花蓮縣",
               "KinmenCounty": "金門縣",
-              "NantouCounty": "南投縣",
               "Taichung": "臺中市",
-              "PingtungCounty": "屏東縣",
-              "Tainan": "臺南市",
-              "NewTaipei": "新北市",
-              "Taoyuan": "桃園市",
-              "Chiayi": "嘉義市",
-              "LienchiangCounty": "連江縣",
-              "Taipei": "臺北市",
+              "TaitungCounty": "臺東縣",
               "HsinchuCounty": "新竹縣",
-              "ChanghuaCounty": "彰化縣",
-              "YilanCounty": "宜蘭縣",
-              "Keelung": "基隆市"
+              "PingtungCounty": "屏東縣",
+              "Hsinchu": "新竹市",
+              "ChiayiCounty": "嘉義縣",
+              "MiaoliCounty": "苗栗縣",
+              "NewTaipei": "新北市",
+              "LienchiangCounty": "連江縣",
+              "Tainan": "臺南市"
             }
           },
           {
@@ -1085,7 +1085,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -1136,28 +1136,28 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "Taichung": "臺中市",
-              "Chiayi": "嘉義市",
-              "HualienCounty": "花蓮縣",
-              "NantouCounty": "南投縣",
-              "ChanghuaCounty": "彰化縣",
-              "Hsinchu": "新竹市",
-              "PenghuCounty": "澎湖縣",
-              "MiaoliCounty": "苗栗縣",
-              "Taipei": "臺北市",
-              "LienchiangCounty": "連江縣",
-              "Taoyuan": "桃園市",
               "HsinchuCounty": "新竹縣",
-              "NewTaipei": "新北市",
+              "ChiayiCounty": "嘉義縣",
+              "TaitungCounty": "臺東縣",
+              "Taoyuan": "桃園市",
+              "Kaohsiung": "高雄市",
+              "Hsinchu": "新竹市",
+              "Tainan": "臺南市",
               "Keelung": "基隆市",
               "PingtungCounty": "屏東縣",
-              "ChiayiCounty": "嘉義縣",
-              "Kaohsiung": "高雄市",
               "YilanCounty": "宜蘭縣",
+              "Taipei": "臺北市",
+              "ChanghuaCounty": "彰化縣",
+              "NantouCounty": "南投縣",
+              "PenghuCounty": "澎湖縣",
+              "NewTaipei": "新北市",
+              "HualienCounty": "花蓮縣",
+              "LienchiangCounty": "連江縣",
+              "Chiayi": "嘉義市",
+              "MiaoliCounty": "苗栗縣",
+              "Taichung": "臺中市",
               "KinmenCounty": "金門縣",
-              "YunlinCounty": "雲林縣",
-              "TaitungCounty": "臺東縣",
-              "Tainan": "臺南市"
+              "YunlinCounty": "雲林縣"
             }
           },
           {
@@ -1227,7 +1227,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -1278,28 +1278,28 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "Taichung": "臺中市",
-              "Chiayi": "嘉義市",
-              "HualienCounty": "花蓮縣",
-              "NantouCounty": "南投縣",
-              "ChanghuaCounty": "彰化縣",
-              "Hsinchu": "新竹市",
-              "PenghuCounty": "澎湖縣",
-              "MiaoliCounty": "苗栗縣",
-              "Taipei": "臺北市",
-              "LienchiangCounty": "連江縣",
-              "Taoyuan": "桃園市",
               "HsinchuCounty": "新竹縣",
-              "NewTaipei": "新北市",
+              "ChiayiCounty": "嘉義縣",
+              "TaitungCounty": "臺東縣",
+              "Taoyuan": "桃園市",
+              "Kaohsiung": "高雄市",
+              "Hsinchu": "新竹市",
+              "Tainan": "臺南市",
               "Keelung": "基隆市",
               "PingtungCounty": "屏東縣",
-              "ChiayiCounty": "嘉義縣",
-              "Kaohsiung": "高雄市",
               "YilanCounty": "宜蘭縣",
+              "Taipei": "臺北市",
+              "ChanghuaCounty": "彰化縣",
+              "NantouCounty": "南投縣",
+              "PenghuCounty": "澎湖縣",
+              "NewTaipei": "新北市",
+              "HualienCounty": "花蓮縣",
+              "LienchiangCounty": "連江縣",
+              "Chiayi": "嘉義市",
+              "MiaoliCounty": "苗栗縣",
+              "Taichung": "臺中市",
               "KinmenCounty": "金門縣",
-              "YunlinCounty": "雲林縣",
-              "TaitungCounty": "臺東縣",
-              "Tainan": "臺南市"
+              "YunlinCounty": "雲林縣"
             }
           },
           {
@@ -1376,7 +1376,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -1427,28 +1427,28 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "ChiayiCounty": "嘉義縣",
-              "Taichung": "臺中市",
-              "HsinchuCounty": "新竹縣",
               "KinmenCounty": "金門縣",
+              "PingtungCounty": "屏東縣",
+              "Taichung": "臺中市",
+              "TaitungCounty": "臺東縣",
+              "HualienCounty": "花蓮縣",
+              "MiaoliCounty": "苗栗縣",
               "Chiayi": "嘉義市",
-              "NantouCounty": "南投縣",
+              "Keelung": "基隆市",
+              "PenghuCounty": "澎湖縣",
+              "Taipei": "臺北市",
+              "YunlinCounty": "雲林縣",
+              "ChiayiCounty": "嘉義縣",
               "Kaohsiung": "高雄市",
+              "NantouCounty": "南投縣",
+              "Tainan": "臺南市",
+              "ChanghuaCounty": "彰化縣",
               "Taoyuan": "桃園市",
+              "NewTaipei": "新北市",
+              "YilanCounty": "宜蘭縣",
               "LienchiangCounty": "連江縣",
               "Hsinchu": "新竹市",
-              "MiaoliCounty": "苗栗縣",
-              "Keelung": "基隆市",
-              "ChanghuaCounty": "彰化縣",
-              "HualienCounty": "花蓮縣",
-              "TaitungCounty": "臺東縣",
-              "YilanCounty": "宜蘭縣",
-              "Taipei": "臺北市",
-              "NewTaipei": "新北市",
-              "PingtungCounty": "屏東縣",
-              "PenghuCounty": "澎湖縣",
-              "YunlinCounty": "雲林縣",
-              "Tainan": "臺南市"
+              "HsinchuCounty": "新竹縣"
             }
           },
           {
@@ -1518,7 +1518,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -1569,28 +1569,28 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "ChiayiCounty": "嘉義縣",
-              "Taichung": "臺中市",
-              "HsinchuCounty": "新竹縣",
               "KinmenCounty": "金門縣",
+              "PingtungCounty": "屏東縣",
+              "Taichung": "臺中市",
+              "TaitungCounty": "臺東縣",
+              "HualienCounty": "花蓮縣",
+              "MiaoliCounty": "苗栗縣",
               "Chiayi": "嘉義市",
-              "NantouCounty": "南投縣",
+              "Keelung": "基隆市",
+              "PenghuCounty": "澎湖縣",
+              "Taipei": "臺北市",
+              "YunlinCounty": "雲林縣",
+              "ChiayiCounty": "嘉義縣",
               "Kaohsiung": "高雄市",
+              "NantouCounty": "南投縣",
+              "Tainan": "臺南市",
+              "ChanghuaCounty": "彰化縣",
               "Taoyuan": "桃園市",
+              "NewTaipei": "新北市",
+              "YilanCounty": "宜蘭縣",
               "LienchiangCounty": "連江縣",
               "Hsinchu": "新竹市",
-              "MiaoliCounty": "苗栗縣",
-              "Keelung": "基隆市",
-              "ChanghuaCounty": "彰化縣",
-              "HualienCounty": "花蓮縣",
-              "TaitungCounty": "臺東縣",
-              "YilanCounty": "宜蘭縣",
-              "Taipei": "臺北市",
-              "NewTaipei": "新北市",
-              "PingtungCounty": "屏東縣",
-              "PenghuCounty": "澎湖縣",
-              "YunlinCounty": "雲林縣",
-              "Tainan": "臺南市"
+              "HsinchuCounty": "新竹縣"
             }
           },
           {
@@ -1667,7 +1667,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -1720,27 +1720,27 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "Chiayi": "嘉義市",
-              "MiaoliCounty": "苗栗縣",
-              "TaitungCounty": "臺東縣",
-              "PenghuCounty": "澎湖縣",
-              "Keelung": "基隆市",
-              "YilanCounty": "宜蘭縣",
-              "Kaohsiung": "高雄市",
-              "ChiayiCounty": "嘉義縣",
-              "LienchiangCounty": "連江縣",
-              "NewTaipei": "新北市",
-              "YunlinCounty": "雲林縣",
-              "Tainan": "臺南市",
-              "NantouCounty": "南投縣",
               "Taichung": "臺中市",
-              "PingtungCounty": "屏東縣",
-              "Taoyuan": "桃園市",
-              "ChanghuaCounty": "彰化縣",
-              "HualienCounty": "花蓮縣",
-              "KinmenCounty": "金門縣",
+              "PenghuCounty": "澎湖縣",
+              "LienchiangCounty": "連江縣",
               "Taipei": "臺北市",
               "Hsinchu": "新竹市",
+              "Tainan": "臺南市",
+              "NewTaipei": "新北市",
+              "MiaoliCounty": "苗栗縣",
+              "Kaohsiung": "高雄市",
+              "ChiayiCounty": "嘉義縣",
+              "Keelung": "基隆市",
+              "TaitungCounty": "臺東縣",
+              "YilanCounty": "宜蘭縣",
+              "ChanghuaCounty": "彰化縣",
+              "KinmenCounty": "金門縣",
+              "HualienCounty": "花蓮縣",
+              "PingtungCounty": "屏東縣",
+              "YunlinCounty": "雲林縣",
+              "Taoyuan": "桃園市",
+              "Chiayi": "嘉義市",
+              "NantouCounty": "南投縣",
               "HsinchuCounty": "新竹縣"
             }
           },
@@ -1777,7 +1777,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -1828,28 +1828,28 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "KinmenCounty": "金門縣",
-              "HsinchuCounty": "新竹縣",
-              "ChiayiCounty": "嘉義縣",
-              "Kaohsiung": "高雄市",
               "ChanghuaCounty": "彰化縣",
-              "Hsinchu": "新竹市",
               "LienchiangCounty": "連江縣",
-              "Taichung": "臺中市",
+              "HualienCounty": "花蓮縣",
               "Taoyuan": "桃園市",
               "Chiayi": "嘉義市",
+              "MiaoliCounty": "苗栗縣",
+              "PingtungCounty": "屏東縣",
+              "KinmenCounty": "金門縣",
+              "PenghuCounty": "澎湖縣",
+              "Keelung": "基隆市",
+              "YunlinCounty": "雲林縣",
+              "ChiayiCounty": "嘉義縣",
+              "HsinchuCounty": "新竹縣",
+              "Hsinchu": "新竹市",
+              "TaitungCounty": "臺東縣",
+              "NantouCounty": "南投縣",
+              "YilanCounty": "宜蘭縣",
+              "Taipei": "臺北市",
               "Tainan": "臺南市",
               "NewTaipei": "新北市",
-              "PingtungCounty": "屏東縣",
-              "TaitungCounty": "臺東縣",
-              "YilanCounty": "宜蘭縣",
-              "PenghuCounty": "澎湖縣",
-              "NantouCounty": "南投縣",
-              "YunlinCounty": "雲林縣",
-              "Taipei": "臺北市",
-              "Keelung": "基隆市",
-              "HualienCounty": "花蓮縣",
-              "MiaoliCounty": "苗栗縣"
+              "Taichung": "臺中市",
+              "Kaohsiung": "高雄市"
             }
           },
           {
@@ -1919,7 +1919,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -1970,28 +1970,28 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "Taipei": "臺北市",
-              "ChiayiCounty": "嘉義縣",
-              "YunlinCounty": "雲林縣",
-              "NewTaipei": "新北市",
-              "YilanCounty": "宜蘭縣",
-              "KinmenCounty": "金門縣",
-              "NantouCounty": "南投縣",
-              "PenghuCounty": "澎湖縣",
-              "Chiayi": "嘉義市",
-              "MiaoliCounty": "苗栗縣",
-              "Taoyuan": "桃園市",
-              "PingtungCounty": "屏東縣",
-              "Taichung": "臺中市",
-              "TaitungCounty": "臺東縣",
-              "HualienCounty": "花蓮縣",
-              "Keelung": "基隆市",
-              "Hsinchu": "新竹市",
               "Kaohsiung": "高雄市",
               "HsinchuCounty": "新竹縣",
               "LienchiangCounty": "連江縣",
+              "PenghuCounty": "澎湖縣",
+              "Taoyuan": "桃園市",
+              "ChiayiCounty": "嘉義縣",
+              "MiaoliCounty": "苗栗縣",
+              "PingtungCounty": "屏東縣",
+              "YilanCounty": "宜蘭縣",
+              "NantouCounty": "南投縣",
+              "Taipei": "臺北市",
+              "Tainan": "臺南市",
+              "NewTaipei": "新北市",
               "ChanghuaCounty": "彰化縣",
-              "Tainan": "臺南市"
+              "HualienCounty": "花蓮縣",
+              "Chiayi": "嘉義市",
+              "YunlinCounty": "雲林縣",
+              "KinmenCounty": "金門縣",
+              "TaitungCounty": "臺東縣",
+              "Hsinchu": "新竹市",
+              "Taichung": "臺中市",
+              "Keelung": "基隆市"
             }
           },
           {
@@ -2061,7 +2061,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -2112,28 +2112,28 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "Taipei": "臺北市",
-              "ChiayiCounty": "嘉義縣",
-              "YunlinCounty": "雲林縣",
-              "NewTaipei": "新北市",
-              "YilanCounty": "宜蘭縣",
-              "KinmenCounty": "金門縣",
-              "NantouCounty": "南投縣",
-              "PenghuCounty": "澎湖縣",
-              "Chiayi": "嘉義市",
-              "MiaoliCounty": "苗栗縣",
-              "Taoyuan": "桃園市",
-              "PingtungCounty": "屏東縣",
-              "Taichung": "臺中市",
-              "TaitungCounty": "臺東縣",
-              "HualienCounty": "花蓮縣",
-              "Keelung": "基隆市",
-              "Hsinchu": "新竹市",
               "Kaohsiung": "高雄市",
               "HsinchuCounty": "新竹縣",
               "LienchiangCounty": "連江縣",
+              "PenghuCounty": "澎湖縣",
+              "Taoyuan": "桃園市",
+              "ChiayiCounty": "嘉義縣",
+              "MiaoliCounty": "苗栗縣",
+              "PingtungCounty": "屏東縣",
+              "YilanCounty": "宜蘭縣",
+              "NantouCounty": "南投縣",
+              "Taipei": "臺北市",
+              "Tainan": "臺南市",
+              "NewTaipei": "新北市",
               "ChanghuaCounty": "彰化縣",
-              "Tainan": "臺南市"
+              "HualienCounty": "花蓮縣",
+              "Chiayi": "嘉義市",
+              "YunlinCounty": "雲林縣",
+              "KinmenCounty": "金門縣",
+              "TaitungCounty": "臺東縣",
+              "Hsinchu": "新竹市",
+              "Taichung": "臺中市",
+              "Keelung": "基隆市"
             }
           },
           {
@@ -2210,7 +2210,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -2261,28 +2261,28 @@
               "Taipei"
             ],
             "x-enum": {
-              "Chiayi": "嘉義市",
-              "NewTaipei": "新北市",
-              "PenghuCounty": "澎湖縣",
-              "NantouCounty": "南投縣",
-              "LienchiangCounty": "連江縣",
-              "Tainan": "臺南市",
-              "Kaohsiung": "高雄市",
-              "KinmenCounty": "金門縣",
-              "PingtungCounty": "屏東縣",
-              "HualienCounty": "花蓮縣",
-              "Keelung": "基隆市",
-              "YilanCounty": "宜蘭縣",
-              "HsinchuCounty": "新竹縣",
-              "Taoyuan": "桃園市",
-              "YunlinCounty": "雲林縣",
-              "ChiayiCounty": "嘉義縣",
-              "Hsinchu": "新竹市",
-              "Taipei": "臺北市",
-              "MiaoliCounty": "苗栗縣",
               "Taichung": "臺中市",
+              "Taoyuan": "桃園市",
+              "TaitungCounty": "臺東縣",
+              "LienchiangCounty": "連江縣",
+              "MiaoliCounty": "苗栗縣",
+              "Kaohsiung": "高雄市",
+              "Taipei": "臺北市",
+              "PenghuCounty": "澎湖縣",
+              "YilanCounty": "宜蘭縣",
+              "NantouCounty": "南投縣",
+              "YunlinCounty": "雲林縣",
+              "PingtungCounty": "屏東縣",
+              "KinmenCounty": "金門縣",
+              "Hsinchu": "新竹市",
+              "Keelung": "基隆市",
               "ChanghuaCounty": "彰化縣",
-              "TaitungCounty": "臺東縣"
+              "HsinchuCounty": "新竹縣",
+              "NewTaipei": "新北市",
+              "HualienCounty": "花蓮縣",
+              "ChiayiCounty": "嘉義縣",
+              "Chiayi": "嘉義市",
+              "Tainan": "臺南市"
             }
           },
           {
@@ -2358,7 +2358,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -2405,24 +2405,24 @@
               "KinmenCounty"
             ],
             "x-enum": {
-              "YilanCounty": "宜蘭縣",
-              "PingtungCounty": "屏東縣",
-              "TaitungCounty": "臺東縣",
-              "Taipei": "臺北市",
-              "MiaoliCounty": "苗栗縣",
               "YunlinCounty": "雲林縣",
-              "Tainan": "臺南市",
               "HsinchuCounty": "新竹縣",
-              "NantouCounty": "南投縣",
-              "Hsinchu": "新竹市",
-              "PenghuCounty": "澎湖縣",
-              "Chiayi": "嘉義市",
-              "KinmenCounty": "金門縣",
+              "HualienCounty": "花蓮縣",
               "Kaohsiung": "高雄市",
-              "ChiayiCounty": "嘉義縣",
+              "Hsinchu": "新竹市",
+              "MiaoliCounty": "苗栗縣",
+              "YilanCounty": "宜蘭縣",
               "NewTaipei": "新北市",
+              "Chiayi": "嘉義市",
+              "TaitungCounty": "臺東縣",
+              "NantouCounty": "南投縣",
               "ChanghuaCounty": "彰化縣",
-              "HualienCounty": "花蓮縣"
+              "Taipei": "臺北市",
+              "ChiayiCounty": "嘉義縣",
+              "PenghuCounty": "澎湖縣",
+              "PingtungCounty": "屏東縣",
+              "KinmenCounty": "金門縣",
+              "Tainan": "臺南市"
             }
           },
           {
@@ -2498,7 +2498,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -2540,19 +2540,19 @@
               "PenghuCounty"
             ],
             "x-enum": {
-              "HsinchuCounty": "新竹縣",
-              "YilanCounty": "宜蘭縣",
-              "ChiayiCounty": "嘉義縣",
-              "NantouCounty": "南投縣",
-              "TaitungCounty": "臺東縣",
               "YunlinCounty": "雲林縣",
-              "PenghuCounty": "澎湖縣",
-              "MiaoliCounty": "苗栗縣",
-              "ChanghuaCounty": "彰化縣",
-              "Hsinchu": "新竹市",
               "HualienCounty": "花蓮縣",
+              "MiaoliCounty": "苗栗縣",
+              "Hsinchu": "新竹市",
+              "ChiayiCounty": "嘉義縣",
+              "PenghuCounty": "澎湖縣",
+              "TaitungCounty": "臺東縣",
+              "HsinchuCounty": "新竹縣",
+              "Chiayi": "嘉義市",
+              "YilanCounty": "宜蘭縣",
               "PingtungCounty": "屏東縣",
-              "Chiayi": "嘉義市"
+              "NantouCounty": "南投縣",
+              "ChanghuaCounty": "彰化縣"
             }
           },
           {
@@ -2628,7 +2628,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -2732,7 +2732,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -2843,7 +2843,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -2894,28 +2894,28 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "Taichung": "臺中市",
-              "KinmenCounty": "金門縣",
-              "MiaoliCounty": "苗栗縣",
-              "ChiayiCounty": "嘉義縣",
               "HsinchuCounty": "新竹縣",
-              "NewTaipei": "新北市",
-              "Chiayi": "嘉義市",
-              "Hsinchu": "新竹市",
-              "PingtungCounty": "屏東縣",
-              "Taoyuan": "桃園市",
-              "TaitungCounty": "臺東縣",
-              "YilanCounty": "宜蘭縣",
-              "YunlinCounty": "雲林縣",
               "HualienCounty": "花蓮縣",
-              "Keelung": "基隆市",
+              "Taoyuan": "桃園市",
+              "YilanCounty": "宜蘭縣",
+              "KinmenCounty": "金門縣",
+              "ChiayiCounty": "嘉義縣",
               "LienchiangCounty": "連江縣",
-              "ChanghuaCounty": "彰化縣",
+              "PingtungCounty": "屏東縣",
+              "YunlinCounty": "雲林縣",
+              "NewTaipei": "新北市",
+              "Keelung": "基隆市",
+              "Hsinchu": "新竹市",
+              "Chiayi": "嘉義市",
               "Kaohsiung": "高雄市",
-              "Taipei": "臺北市",
               "NantouCounty": "南投縣",
-              "PenghuCounty": "澎湖縣",
-              "Tainan": "臺南市"
+              "Tainan": "臺南市",
+              "ChanghuaCounty": "彰化縣",
+              "Taipei": "臺北市",
+              "TaitungCounty": "臺東縣",
+              "MiaoliCounty": "苗栗縣",
+              "Taichung": "臺中市",
+              "PenghuCounty": "澎湖縣"
             }
           },
           {
@@ -2985,7 +2985,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -3036,28 +3036,28 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "Taichung": "臺中市",
-              "KinmenCounty": "金門縣",
-              "MiaoliCounty": "苗栗縣",
-              "ChiayiCounty": "嘉義縣",
               "HsinchuCounty": "新竹縣",
-              "NewTaipei": "新北市",
-              "Chiayi": "嘉義市",
-              "Hsinchu": "新竹市",
-              "PingtungCounty": "屏東縣",
-              "Taoyuan": "桃園市",
-              "TaitungCounty": "臺東縣",
-              "YilanCounty": "宜蘭縣",
-              "YunlinCounty": "雲林縣",
               "HualienCounty": "花蓮縣",
-              "Keelung": "基隆市",
+              "Taoyuan": "桃園市",
+              "YilanCounty": "宜蘭縣",
+              "KinmenCounty": "金門縣",
+              "ChiayiCounty": "嘉義縣",
               "LienchiangCounty": "連江縣",
-              "ChanghuaCounty": "彰化縣",
+              "PingtungCounty": "屏東縣",
+              "YunlinCounty": "雲林縣",
+              "NewTaipei": "新北市",
+              "Keelung": "基隆市",
+              "Hsinchu": "新竹市",
+              "Chiayi": "嘉義市",
               "Kaohsiung": "高雄市",
-              "Taipei": "臺北市",
               "NantouCounty": "南投縣",
-              "PenghuCounty": "澎湖縣",
-              "Tainan": "臺南市"
+              "Tainan": "臺南市",
+              "ChanghuaCounty": "彰化縣",
+              "Taipei": "臺北市",
+              "TaitungCounty": "臺東縣",
+              "MiaoliCounty": "苗栗縣",
+              "Taichung": "臺中市",
+              "PenghuCounty": "澎湖縣"
             }
           },
           {
@@ -3134,7 +3134,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -3181,23 +3181,23 @@
               "PenghuCounty"
             ],
             "x-enum": {
-              "KinmenCounty": "金門縣",
-              "MiaoliCounty": "苗栗縣",
-              "HsinchuCounty": "新竹縣",
-              "YunlinCounty": "雲林縣",
-              "ChanghuaCounty": "彰化縣",
-              "HualienCounty": "花蓮縣",
-              "Taipei": "臺北市",
-              "Hsinchu": "新竹市",
-              "ChiayiCounty": "嘉義縣",
-              "TaitungCounty": "臺東縣",
               "NantouCounty": "南投縣",
-              "YilanCounty": "宜蘭縣",
-              "NewTaipei": "新北市",
-              "Chiayi": "嘉義市",
-              "Keelung": "基隆市",
-              "Tainan": "臺南市",
               "PingtungCounty": "屏東縣",
+              "HsinchuCounty": "新竹縣",
+              "TaitungCounty": "臺東縣",
+              "ChiayiCounty": "嘉義縣",
+              "ChanghuaCounty": "彰化縣",
+              "YunlinCounty": "雲林縣",
+              "Tainan": "臺南市",
+              "Taipei": "臺北市",
+              "NewTaipei": "新北市",
+              "KinmenCounty": "金門縣",
+              "Chiayi": "嘉義市",
+              "MiaoliCounty": "苗栗縣",
+              "HualienCounty": "花蓮縣",
+              "Hsinchu": "新竹市",
+              "YilanCounty": "宜蘭縣",
+              "Keelung": "基隆市",
               "PenghuCounty": "澎湖縣"
             }
           },
@@ -3268,7 +3268,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -3315,23 +3315,23 @@
               "PenghuCounty"
             ],
             "x-enum": {
-              "KinmenCounty": "金門縣",
-              "MiaoliCounty": "苗栗縣",
-              "HsinchuCounty": "新竹縣",
-              "YunlinCounty": "雲林縣",
-              "ChanghuaCounty": "彰化縣",
-              "HualienCounty": "花蓮縣",
-              "Taipei": "臺北市",
-              "Hsinchu": "新竹市",
-              "ChiayiCounty": "嘉義縣",
-              "TaitungCounty": "臺東縣",
               "NantouCounty": "南投縣",
-              "YilanCounty": "宜蘭縣",
-              "NewTaipei": "新北市",
-              "Chiayi": "嘉義市",
-              "Keelung": "基隆市",
-              "Tainan": "臺南市",
               "PingtungCounty": "屏東縣",
+              "HsinchuCounty": "新竹縣",
+              "TaitungCounty": "臺東縣",
+              "ChiayiCounty": "嘉義縣",
+              "ChanghuaCounty": "彰化縣",
+              "YunlinCounty": "雲林縣",
+              "Tainan": "臺南市",
+              "Taipei": "臺北市",
+              "NewTaipei": "新北市",
+              "KinmenCounty": "金門縣",
+              "Chiayi": "嘉義市",
+              "MiaoliCounty": "苗栗縣",
+              "HualienCounty": "花蓮縣",
+              "Hsinchu": "新竹市",
+              "YilanCounty": "宜蘭縣",
+              "Keelung": "基隆市",
               "PenghuCounty": "澎湖縣"
             }
           },
@@ -3409,7 +3409,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -3459,28 +3459,28 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "Hsinchu": "新竹市",
-              "MiaoliCounty": "苗栗縣",
-              "HualienCounty": "花蓮縣",
-              "Taipei": "臺北市",
-              "ChiayiCounty": "嘉義縣",
-              "Taoyuan": "桃園市",
-              "HsinchuCounty": "新竹縣",
-              "Tainan": "臺南市",
-              "TaitungCounty": "臺東縣",
-              "NantouCounty": "南投縣",
-              "PingtungCounty": "屏東縣",
-              "Keelung": "基隆市",
-              "ChanghuaCounty": "彰化縣",
-              "NewTaipei": "新北市",
-              "KinmenCounty": "金門縣",
               "Kaohsiung": "高雄市",
-              "YunlinCounty": "雲林縣",
+              "Taipei": "臺北市",
+              "Hsinchu": "新竹市",
+              "KinmenCounty": "金門縣",
+              "Tainan": "臺南市",
               "LienchiangCounty": "連江縣",
-              "YilanCounty": "宜蘭縣",
+              "Taichung": "臺中市",
               "Chiayi": "嘉義市",
+              "NewTaipei": "新北市",
+              "ChiayiCounty": "嘉義縣",
+              "ChanghuaCounty": "彰化縣",
+              "NantouCounty": "南投縣",
               "PenghuCounty": "澎湖縣",
-              "Taichung": "臺中市"
+              "HsinchuCounty": "新竹縣",
+              "HualienCounty": "花蓮縣",
+              "MiaoliCounty": "苗栗縣",
+              "YunlinCounty": "雲林縣",
+              "TaitungCounty": "臺東縣",
+              "PingtungCounty": "屏東縣",
+              "YilanCounty": "宜蘭縣",
+              "Keelung": "基隆市",
+              "Taoyuan": "桃園市"
             }
           },
           {
@@ -3550,7 +3550,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -3587,14 +3587,14 @@
               "KinmenCounty"
             ],
             "x-enum": {
-              "Taoyuan": "桃園市",
-              "NewTaipei": "新北市",
               "Taichung": "臺中市",
-              "Tainan": "臺南市",
               "KinmenCounty": "金門縣",
-              "Keelung": "基隆市",
+              "Tainan": "臺南市",
+              "NewTaipei": "新北市",
+              "Taoyuan": "桃園市",
+              "Taipei": "臺北市",
               "Kaohsiung": "高雄市",
-              "Taipei": "臺北市"
+              "Keelung": "基隆市"
             }
           },
           {
@@ -3664,7 +3664,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -3701,14 +3701,14 @@
               "KinmenCounty"
             ],
             "x-enum": {
-              "Taoyuan": "桃園市",
-              "NewTaipei": "新北市",
               "Taichung": "臺中市",
-              "Tainan": "臺南市",
               "KinmenCounty": "金門縣",
-              "Keelung": "基隆市",
+              "Tainan": "臺南市",
+              "NewTaipei": "新北市",
+              "Taoyuan": "桃園市",
+              "Taipei": "臺北市",
               "Kaohsiung": "高雄市",
-              "Taipei": "臺北市"
+              "Keelung": "基隆市"
             }
           },
           {
@@ -3785,7 +3785,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -3823,31 +3823,32 @@
               "PingtungCounty",
               "YilanCounty",
               "HualienCounty",
-              "TaitungCounty"
+              "TaitungCounty",
+              "KinmenCounty"
             ],
             "x-enum": {
-              "MiaoliCounty": "苗栗縣",
-              "KinmenCounty": "金門縣",
-              "HsinchuCounty": "新竹縣",
-              "Taoyuan": "桃園市",
               "Kaohsiung": "高雄市",
-              "NewTaipei": "新北市",
-              "PenghuCounty": "澎湖縣",
-              "PingtungCounty": "屏東縣",
-              "ChanghuaCounty": "彰化縣",
-              "ChiayiCounty": "嘉義縣",
-              "Taichung": "臺中市",
-              "Taipei": "臺北市",
               "YunlinCounty": "雲林縣",
+              "TaitungCounty": "臺東縣",
+              "PenghuCounty": "澎湖縣",
+              "Taipei": "臺北市",
+              "Chiayi": "嘉義市",
+              "MiaoliCounty": "苗栗縣",
               "YilanCounty": "宜蘭縣",
+              "Keelung": "基隆市",
+              "NewTaipei": "新北市",
+              "NantouCounty": "南投縣",
+              "Taichung": "臺中市",
+              "KinmenCounty": "金門縣",
               "LienchiangCounty": "連江縣",
               "Tainan": "臺南市",
-              "Keelung": "基隆市",
-              "TaitungCounty": "臺東縣",
-              "Chiayi": "嘉義市",
               "HualienCounty": "花蓮縣",
-              "NantouCounty": "南投縣",
-              "Hsinchu": "新竹市"
+              "HsinchuCounty": "新竹縣",
+              "Taoyuan": "桃園市",
+              "ChiayiCounty": "嘉義縣",
+              "PingtungCounty": "屏東縣",
+              "Hsinchu": "新竹市",
+              "ChanghuaCounty": "彰化縣"
             }
           },
           {
@@ -3917,7 +3918,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -3955,31 +3956,32 @@
               "PingtungCounty",
               "YilanCounty",
               "HualienCounty",
-              "TaitungCounty"
+              "TaitungCounty",
+              "KinmenCounty"
             ],
             "x-enum": {
-              "MiaoliCounty": "苗栗縣",
-              "KinmenCounty": "金門縣",
-              "HsinchuCounty": "新竹縣",
-              "Taoyuan": "桃園市",
               "Kaohsiung": "高雄市",
-              "NewTaipei": "新北市",
-              "PenghuCounty": "澎湖縣",
-              "PingtungCounty": "屏東縣",
-              "ChanghuaCounty": "彰化縣",
-              "ChiayiCounty": "嘉義縣",
-              "Taichung": "臺中市",
-              "Taipei": "臺北市",
               "YunlinCounty": "雲林縣",
+              "TaitungCounty": "臺東縣",
+              "PenghuCounty": "澎湖縣",
+              "Taipei": "臺北市",
+              "Chiayi": "嘉義市",
+              "MiaoliCounty": "苗栗縣",
               "YilanCounty": "宜蘭縣",
+              "Keelung": "基隆市",
+              "NewTaipei": "新北市",
+              "NantouCounty": "南投縣",
+              "Taichung": "臺中市",
+              "KinmenCounty": "金門縣",
               "LienchiangCounty": "連江縣",
               "Tainan": "臺南市",
-              "Keelung": "基隆市",
-              "TaitungCounty": "臺東縣",
-              "Chiayi": "嘉義市",
               "HualienCounty": "花蓮縣",
-              "NantouCounty": "南投縣",
-              "Hsinchu": "新竹市"
+              "HsinchuCounty": "新竹縣",
+              "Taoyuan": "桃園市",
+              "ChiayiCounty": "嘉義縣",
+              "PingtungCounty": "屏東縣",
+              "Hsinchu": "新竹市",
+              "ChanghuaCounty": "彰化縣"
             }
           },
           {
@@ -4056,7 +4058,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -4089,8 +4091,8 @@
             ],
             "x-enum": {
               "Tainan": "臺南市",
-              "KinmenCounty": "金門縣",
-              "Keelung": "基隆市"
+              "Keelung": "基隆市",
+              "KinmenCounty": "金門縣"
             }
           },
           {
@@ -4160,7 +4162,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -4202,19 +4204,19 @@
               "PenghuCounty"
             ],
             "x-enum": {
-              "PenghuCounty": "澎湖縣",
-              "TaitungCounty": "臺東縣",
-              "NantouCounty": "南投縣",
-              "PingtungCounty": "屏東縣",
-              "MiaoliCounty": "苗栗縣",
-              "HualienCounty": "花蓮縣",
-              "YunlinCounty": "雲林縣",
-              "HsinchuCounty": "新竹縣",
-              "Hsinchu": "新竹市",
-              "YilanCounty": "宜蘭縣",
               "Chiayi": "嘉義市",
+              "MiaoliCounty": "苗栗縣",
+              "PenghuCounty": "澎湖縣",
+              "YilanCounty": "宜蘭縣",
+              "TaitungCounty": "臺東縣",
+              "HualienCounty": "花蓮縣",
+              "Hsinchu": "新竹市",
+              "YunlinCounty": "雲林縣",
+              "NantouCounty": "南投縣",
               "ChanghuaCounty": "彰化縣",
-              "ChiayiCounty": "嘉義縣"
+              "HsinchuCounty": "新竹縣",
+              "ChiayiCounty": "嘉義縣",
+              "PingtungCounty": "屏東縣"
             }
           },
           {
@@ -4290,7 +4292,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -4383,7 +4385,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -4483,7 +4485,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -4570,7 +4572,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -4664,7 +4666,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -4751,7 +4753,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -4845,7 +4847,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -4938,7 +4940,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -4951,7 +4953,7 @@
         ],
         "summary": "取得指定[路線名稱]的公路客運動態定時資料(A1)[批次更新]",
         "description": "### 公路客運之定時資料(A1) ###\r\n- [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))",
-        "operationId": "InterCityBusApi_RealTimeByFrequency_1",
+        "operationId": "InterCityBusApi_RealTimeByFrequency_2",
         "consumes": [],
         "produces": [
           "application/json",
@@ -5038,7 +5040,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -5125,7 +5127,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -5219,7 +5221,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -5306,7 +5308,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -5400,7 +5402,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -5455,7 +5457,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -5542,7 +5544,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -5629,7 +5631,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -5723,7 +5725,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -5816,7 +5818,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -5909,7 +5911,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -6002,7 +6004,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -6089,7 +6091,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -6183,7 +6185,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -6270,7 +6272,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -6364,7 +6366,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -6451,7 +6453,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -6538,7 +6540,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -6625,7 +6627,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -6719,7 +6721,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -6812,7 +6814,7 @@
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "$ref": "#/definitions/Service.DTO.Version3.Base.Health"
+              "$ref": "#/definitions/Service.DTO.Version3.Base.DisplayHealth"
             }
           }
         }
@@ -6820,8 +6822,8 @@
     }
   },
   "definitions": {
-    "Service.DTO.Version3.Base.Health": {
-      "title": "Health",
+    "Service.DTO.Version3.Base.DisplayHealth": {
+      "title": "DisplayHealth",
       "description": "API服務健康狀態",
       "required": [
         "ServiceID",
@@ -7565,7 +7567,7 @@
           "type": "string"
         },
         "AuthorityCode": {
-          "description": "營運業者業管機關簡碼(對於於公路客運/國道客運而言為THB)",
+          "description": "營運業者業管機關簡碼(對於公路客運/國道客運而言為THB)",
           "type": "string"
         },
         "SubAuthorityCode": {
@@ -7846,6 +7848,13 @@
           "description": "該收費方式是否應用到所有附屬路線 : [0:'否',1:'是']",
           "type": "integer"
         },
+        "SectionFares": {
+          "description": "段次計費",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version2.Bus.SectionFare"
+          }
+        },
         "StageFares": {
           "description": "計費站區間計費",
           "type": "array",
@@ -7857,6 +7866,31 @@
           "title": "DateTime",
           "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
+        }
+      }
+    },
+    "Service.DTO.Version2.Bus.SectionFare": {
+      "title": "SectionFare",
+      "description": "段次計費",
+      "required": [
+        "BufferZones",
+        "Fares"
+      ],
+      "type": "object",
+      "properties": {
+        "BufferZones": {
+          "description": "緩衝區資訊",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version2.Bus.SectionFare.BufferZone"
+          }
+        },
+        "Fares": {
+          "description": "每段收費資訊",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version2.Bus.SectionFare.Fare"
+          }
         }
       }
     },
@@ -7893,6 +7927,75 @@
           "items": {
             "$ref": "#/definitions/Service.DTO.Version2.Bus.BusFare"
           }
+        }
+      }
+    },
+    "Service.DTO.Version2.Bus.SectionFare.BufferZone": {
+      "title": "BufferZone",
+      "required": [
+        "SectionSequence",
+        "Direction",
+        "FareBufferZoneOrigin",
+        "FareBufferZoneDestination"
+      ],
+      "type": "object",
+      "properties": {
+        "ZoneID": {
+          "description": "緩衝區代號",
+          "type": "string"
+        },
+        "SectionSequence": {
+          "format": "int32",
+          "description": "緩衝區順序",
+          "type": "integer"
+        },
+        "Direction": {
+          "format": "int32",
+          "title": "integer",
+          "description": "方向性描述 : [0:'去程',1:'返程',2:'迴圈',255:'未知']",
+          "type": "integer"
+        },
+        "FareBufferZoneOrigin": {
+          "$ref": "#/definitions/Service.DTO.Version2.Bus.SectionFare.Stop",
+          "title": "Stop",
+          "description": "緩衝區起點"
+        },
+        "FareBufferZoneDestination": {
+          "$ref": "#/definitions/Service.DTO.Version2.Bus.SectionFare.Stop",
+          "title": "Stop",
+          "description": "緩衝區訖點"
+        },
+        "BufferZoneDescription": {
+          "description": "收費緩衝區描述",
+          "type": "string"
+        }
+      }
+    },
+    "Service.DTO.Version2.Bus.SectionFare.Fare": {
+      "title": "Fare",
+      "required": [
+        "TicketType",
+        "FareClass",
+        "Price"
+      ],
+      "type": "object",
+      "properties": {
+        "TicketType": {
+          "format": "int32",
+          "title": "integer",
+          "description": "票種類型 : [1:'一般票',2:'來回票',3:'電子票證',4:'回數票',5:'定期票30天期',6:'定期票60天期',7:'早鳥票',8:'定期票90天期']",
+          "type": "integer"
+        },
+        "FareClass": {
+          "format": "int32",
+          "title": "integer",
+          "description": "費率等級 : [1:'成人',2:'學生',3:'孩童',4:'敬老',5:'愛心',6:'愛心孩童',7:'愛心優待或愛心陪伴',8:'團體',9:'軍警',10:'由各運業者自行定義的半票']",
+          "type": "integer"
+        },
+        "Price": {
+          "format": "int32",
+          "description": "計費價格",
+          "type": "integer"
         }
       }
     },
@@ -7951,6 +8054,23 @@
           "items": {
             "$ref": "#/definitions/Service.DTO.Version2.Bus.BusDiscountPeriods"
           }
+        }
+      }
+    },
+    "Service.DTO.Version2.Bus.SectionFare.Stop": {
+      "title": "Stop",
+      "required": [
+        "StopID"
+      ],
+      "type": "object",
+      "properties": {
+        "StopID": {
+          "description": "緩衝區站牌代碼",
+          "type": "string"
+        },
+        "StopName": {
+          "description": "站牌名稱",
+          "type": "string"
         }
       }
     },

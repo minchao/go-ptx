@@ -13,9 +13,8 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
 	cr "github.com/go-openapi/runtime/client"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
-
-	strfmt "github.com/go-openapi/strfmt"
 )
 
 // NewAirAPIArrival1Params creates a new AirAPIArrival1Params object
@@ -109,6 +108,11 @@ type AirAPIArrival1Params struct {
 
 	*/
 	IATA string
+	/*IsCargo
+	  是否為貨機
+
+	*/
+	IsCargo *bool
 
 	timeout    time.Duration
 	Context    context.Context
@@ -225,6 +229,17 @@ func (o *AirAPIArrival1Params) SetIATA(iATA string) {
 	o.IATA = iATA
 }
 
+// WithIsCargo adds the isCargo to the air Api arrival 1 params
+func (o *AirAPIArrival1Params) WithIsCargo(isCargo *bool) *AirAPIArrival1Params {
+	o.SetIsCargo(isCargo)
+	return o
+}
+
+// SetIsCargo adds the isCargo to the air Api arrival 1 params
+func (o *AirAPIArrival1Params) SetIsCargo(isCargo *bool) {
+	o.IsCargo = isCargo
+}
+
 // WriteToRequest writes these params to a swagger request
 func (o *AirAPIArrival1Params) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
 
@@ -325,6 +340,22 @@ func (o *AirAPIArrival1Params) WriteToRequest(r runtime.ClientRequest, reg strfm
 	// path param IATA
 	if err := r.SetPathParam("IATA", o.IATA); err != nil {
 		return err
+	}
+
+	if o.IsCargo != nil {
+
+		// query param IsCargo
+		var qrIsCargo bool
+		if o.IsCargo != nil {
+			qrIsCargo = *o.IsCargo
+		}
+		qIsCargo := swag.FormatBool(qrIsCargo)
+		if qIsCargo != "" {
+			if err := r.SetQueryParam("IsCargo", qIsCargo); err != nil {
+				return err
+			}
+		}
+
 	}
 
 	if len(res) > 0 {

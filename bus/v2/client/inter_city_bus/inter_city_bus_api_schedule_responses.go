@@ -10,10 +10,9 @@ import (
 	"io"
 
 	"github.com/go-openapi/runtime"
+	"github.com/go-openapi/strfmt"
 
-	strfmt "github.com/go-openapi/strfmt"
-
-	models "github.com/minchao/go-ptx/bus/v2/models"
+	"github.com/minchao/go-ptx/bus/v2/models"
 )
 
 // InterCityBusAPIScheduleReader is a Reader for the InterCityBusAPISchedule structure.
@@ -83,20 +82,20 @@ func NewInterCityBusAPIScheduleStatus299() *InterCityBusAPIScheduleStatus299 {
 加入參數'?health=true'即可查詢此API服務的健康狀態
 */
 type InterCityBusAPIScheduleStatus299 struct {
-	Payload *models.ServiceDTOVersion3BaseHealth
+	Payload *models.ServiceDTOVersion3BaseDisplayHealth
 }
 
 func (o *InterCityBusAPIScheduleStatus299) Error() string {
 	return fmt.Sprintf("[GET /v2/Bus/Schedule/InterCity][%d] interCityBusApiScheduleStatus299  %+v", 299, o.Payload)
 }
 
-func (o *InterCityBusAPIScheduleStatus299) GetPayload() *models.ServiceDTOVersion3BaseHealth {
+func (o *InterCityBusAPIScheduleStatus299) GetPayload() *models.ServiceDTOVersion3BaseDisplayHealth {
 	return o.Payload
 }
 
 func (o *InterCityBusAPIScheduleStatus299) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.ServiceDTOVersion3BaseHealth)
+	o.Payload = new(models.ServiceDTOVersion3BaseDisplayHealth)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

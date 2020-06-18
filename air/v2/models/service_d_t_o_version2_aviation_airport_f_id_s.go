@@ -8,9 +8,8 @@ package models
 import (
 	"strconv"
 
-	strfmt "github.com/go-openapi/strfmt"
-
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 )
@@ -18,6 +17,7 @@ import (
 // ServiceDTOVersion2AviationAirportFIDS Airport_FIDS
 //
 // 航班顯示資料(以機場角度)
+//
 // swagger:model Service.DTO.Version2.Aviation.Airport_FIDS
 type ServiceDTOVersion2AviationAirportFIDS struct {
 

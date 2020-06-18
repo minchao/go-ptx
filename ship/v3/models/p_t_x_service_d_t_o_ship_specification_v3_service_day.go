@@ -6,33 +6,33 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	strfmt "github.com/go-openapi/strfmt"
-
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 )
 
 // PTXServiceDTOShipSpecificationV3ServiceDay ServiceDay
+//
 // swagger:model PTX.Service.DTO.Ship.Specification.V3.ServiceDay
 type PTXServiceDTOShipSpecificationV3ServiceDay struct {
 
-	// Int32
+	// integer
 	//
-	// 星期五是否營運 = ['0: 否', '1: 是']
+	// 星期五是否營運 : [0:'否',1:'是']
 	Friday int32 `json:"Friday,omitempty"`
 
-	// Int32
+	// integer
 	//
-	// 星期一是否營運 = ['0: 否', '1: 是']
+	// 星期一是否營運 : [0:'否',1:'是']
 	Monday int32 `json:"Monday,omitempty"`
 
-	// Int32
+	// integer
 	//
-	// 國定假日是否營運 = ['0: 否', '1: 是']
+	// 國定假日是否營運 : [0:'否',1:'是']
 	NationalHolidays int32 `json:"NationalHolidays,omitempty"`
 
-	// Int32
+	// integer
 	//
-	// 星期六是否營運 = ['0: 否', '1: 是']
+	// 星期六是否營運 : [0:'否',1:'是']
 	Saturday int32 `json:"Saturday,omitempty"`
 
 	// String
@@ -40,24 +40,24 @@ type PTXServiceDTOShipSpecificationV3ServiceDay struct {
 	// 服務日標籤
 	ServiceTag string `json:"ServiceTag,omitempty"`
 
-	// Int32
+	// integer
 	//
-	// 星期日是否營運 = ['0: 否', '1: 是']
+	// 星期日是否營運 : [0:'否',1:'是']
 	Sunday int32 `json:"Sunday,omitempty"`
 
-	// Int32
+	// integer
 	//
-	// 星期四是否營運 = ['0: 否', '1: 是']
+	// 星期四是否營運 : [0:'否',1:'是']
 	Thursday int32 `json:"Thursday,omitempty"`
 
-	// Int32
+	// integer
 	//
-	// 星期二是否營運 = ['0: 否', '1: 是']
+	// 星期二是否營運 : [0:'否',1:'是']
 	Tuesday int32 `json:"Tuesday,omitempty"`
 
-	// Int32
+	// integer
 	//
-	// 星期三是否營運 = ['0: 否', '1: 是']
+	// 星期三是否營運 : [0:'否',1:'是']
 	Wednesday int32 `json:"Wednesday,omitempty"`
 }
 

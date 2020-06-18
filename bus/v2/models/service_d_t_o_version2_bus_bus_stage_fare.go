@@ -8,9 +8,8 @@ package models
 import (
 	"strconv"
 
-	strfmt "github.com/go-openapi/strfmt"
-
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 )
@@ -18,6 +17,7 @@ import (
 // ServiceDTOVersion2BusBusStageFare BusStageFare
 //
 // 此計費方式以一路線內所有站牌分區收費。(公總稱之為計費站收費, Stage=計費站)
+//
 // swagger:model Service.DTO.Version2.Bus.BusStageFare
 type ServiceDTOVersion2BusBusStageFare struct {
 

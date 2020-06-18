@@ -8,14 +8,14 @@ package models
 import (
 	"strconv"
 
-	strfmt "github.com/go-openapi/strfmt"
-
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 )
 
 // MOTCAPIRailModelsMRTRealTimeWrapperServiceDTOVersion2RailMetroMRTNewsListNews MRTNewsList
+//
 // swagger:model MOTC.API.Rail.Models.MRTRealTimeWrapper[Service.DTO.Version2.Rail.Metro.MRTNewsList.News]
 type MOTCAPIRailModelsMRTRealTimeWrapperServiceDTOVersion2RailMetroMRTNewsListNews struct {
 
@@ -30,7 +30,7 @@ type MOTCAPIRailModelsMRTRealTimeWrapperServiceDTOVersion2RailMetroMRTNewsListNe
 	// Required: true
 	Newses []*ServiceDTOVersion2RailMetroMRTNewsListNews `json:"Newses"`
 
-	// 來源端平台資料更新週期(秒)
+	// 來源端平台資料更新週期(秒)['-1: 不定期更新']
 	// Required: true
 	SrcUpdateInterval *int32 `json:"SrcUpdateInterval"`
 
@@ -47,7 +47,8 @@ type MOTCAPIRailModelsMRTRealTimeWrapperServiceDTOVersion2RailMetroMRTNewsListNe
 	// DateTime
 	//
 	// 本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
-	UpdateTime string `json:"UpdateTime,omitempty"`
+	// Required: true
+	UpdateTime *string `json:"UpdateTime"`
 }
 
 // Validate validates this m o t c API rail models m r t real time wrapper service d t o version2 rail metro m r t news list news
@@ -71,6 +72,10 @@ func (m *MOTCAPIRailModelsMRTRealTimeWrapperServiceDTOVersion2RailMetroMRTNewsLi
 	}
 
 	if err := m.validateUpdateInterval(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateUpdateTime(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -135,6 +140,15 @@ func (m *MOTCAPIRailModelsMRTRealTimeWrapperServiceDTOVersion2RailMetroMRTNewsLi
 func (m *MOTCAPIRailModelsMRTRealTimeWrapperServiceDTOVersion2RailMetroMRTNewsListNews) validateUpdateInterval(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateInterval", "body", m.UpdateInterval); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *MOTCAPIRailModelsMRTRealTimeWrapperServiceDTOVersion2RailMetroMRTNewsListNews) validateUpdateTime(formats strfmt.Registry) error {
+
+	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
 		return err
 	}
 

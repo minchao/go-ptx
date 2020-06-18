@@ -9,12 +9,11 @@ import (
 	"fmt"
 
 	"github.com/go-openapi/runtime"
-
-	strfmt "github.com/go-openapi/strfmt"
+	"github.com/go-openapi/strfmt"
 )
 
 // New creates a new rail basic API client.
-func New(transport runtime.ClientTransport, formats strfmt.Registry) *Client {
+func New(transport runtime.ClientTransport, formats strfmt.Registry) ClientService {
 	return &Client{transport: transport, formats: formats}
 }
 
@@ -26,8 +25,15 @@ type Client struct {
 	formats   strfmt.Registry
 }
 
+// ClientService is the interface for Client methods
+type ClientService interface {
+	RailAPIOperator(params *RailAPIOperatorParams) (*RailAPIOperatorOK, error)
+
+	SetTransport(transport runtime.ClientTransport)
+}
+
 /*
-RailAPIOperator rail Api operator API
+  RailAPIOperator rail Api operator API
 */
 func (a *Client) RailAPIOperator(params *RailAPIOperatorParams) (*RailAPIOperatorOK, error) {
 	// TODO: Validate the params before sending
@@ -40,7 +46,7 @@ func (a *Client) RailAPIOperator(params *RailAPIOperatorParams) (*RailAPIOperato
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/Operator",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &RailAPIOperatorReader{formats: a.formats},

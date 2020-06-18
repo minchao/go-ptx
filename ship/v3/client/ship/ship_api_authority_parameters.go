@@ -13,9 +13,8 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/runtime"
 	cr "github.com/go-openapi/runtime/client"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
-
-	strfmt "github.com/go-openapi/strfmt"
 )
 
 // NewShipAPIAuthorityParams creates a new ShipAPIAuthorityParams object
@@ -78,7 +77,7 @@ type ShipAPIAuthorityParams struct {
 	  查詢數量
 
 	*/
-	DollarCount *string
+	DollarCount *bool
 	/*DollarFilter
 	  過濾
 
@@ -149,13 +148,13 @@ func (o *ShipAPIAuthorityParams) SetHTTPClient(client *http.Client) {
 }
 
 // WithDollarCount adds the dollarCount to the ship Api authority params
-func (o *ShipAPIAuthorityParams) WithDollarCount(dollarCount *string) *ShipAPIAuthorityParams {
+func (o *ShipAPIAuthorityParams) WithDollarCount(dollarCount *bool) *ShipAPIAuthorityParams {
 	o.SetDollarCount(dollarCount)
 	return o
 }
 
 // SetDollarCount adds the dollarCount to the ship Api authority params
-func (o *ShipAPIAuthorityParams) SetDollarCount(dollarCount *string) {
+func (o *ShipAPIAuthorityParams) SetDollarCount(dollarCount *bool) {
 	o.DollarCount = dollarCount
 }
 
@@ -236,11 +235,11 @@ func (o *ShipAPIAuthorityParams) WriteToRequest(r runtime.ClientRequest, reg str
 	if o.DollarCount != nil {
 
 		// query param $count
-		var qrDollarCount string
+		var qrDollarCount bool
 		if o.DollarCount != nil {
 			qrDollarCount = *o.DollarCount
 		}
-		qDollarCount := qrDollarCount
+		qDollarCount := swag.FormatBool(qrDollarCount)
 		if qDollarCount != "" {
 			if err := r.SetQueryParam("$count", qDollarCount); err != nil {
 				return err

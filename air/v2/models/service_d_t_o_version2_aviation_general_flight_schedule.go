@@ -8,9 +8,8 @@ package models
 import (
 	"strconv"
 
-	strfmt "github.com/go-openapi/strfmt"
-
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 )
@@ -18,6 +17,7 @@ import (
 // ServiceDTOVersion2AviationGeneralFlightSchedule GeneralFlightSchedule
 //
 // 航空定期時刻表資料
+//
 // swagger:model Service.DTO.Version2.Aviation.GeneralFlightSchedule
 type ServiceDTOVersion2AviationGeneralFlightSchedule struct {
 
@@ -44,7 +44,7 @@ type ServiceDTOVersion2AviationGeneralFlightSchedule struct {
 	// Required: true
 	DepartureTime *string `json:"DepartureTime"`
 
-	// 班機號碼
+	// 班機號碼(包含航空公司的AirlineID，結構為AirlineID加上3~4碼航機班號數字；若班號僅有兩碼，其結構會加上0補足三碼，"AirlineID + 0 + 兩碼班號")
 	// Required: true
 	FlightNumber *string `json:"FlightNumber"`
 

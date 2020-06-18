@@ -6,12 +6,12 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	strfmt "github.com/go-openapi/strfmt"
-
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 )
 
 // PTXServiceDTOShipSpecificationV3Fare Fare
+//
 // swagger:model PTX.Service.DTO.Ship.Specification.V3.Fare
 type PTXServiceDTOShipSpecificationV3Fare struct {
 
@@ -20,9 +20,9 @@ type PTXServiceDTOShipSpecificationV3Fare struct {
 	// 艙等
 	CabinClass string `json:"CabinClass,omitempty"`
 
-	// Int32
+	// integer
 	//
-	// 費率等級 = ['1: 成人', '2: 學生', '3: 孩童', '4: 敬老', '5: 愛心', '6: 愛心孩童', '7: 愛心優待或愛心陪伴', '8: 團體', '9: 軍警', '10: 由各運業者自行定義的半票']
+	// 費率等級 : [1:'成人',2:'學生',3:'孩童',4:'敬老',5:'愛心',6:'愛心孩童',7:'愛心優待或愛心陪伴',8:'團體',9:'軍警',10:'由各運業者自行定義的半票']
 	FareClass int32 `json:"FareClass,omitempty"`
 
 	// String
@@ -35,9 +35,9 @@ type PTXServiceDTOShipSpecificationV3Fare struct {
 	// 計費價格
 	Price int32 `json:"Price,omitempty"`
 
-	// Int32
+	// integer
 	//
-	// 票種類型 = ['1: 一般票', '2: 來回票', '3: 電子票證', '4: 回數票', '5: 定期票30天期', '6: 定期票60天期', '7: 早鳥票', '8: 定期票90天期']
+	// 票種類型 : [1:'一般票',2:'來回票',3:'電子票證',4:'回數票',5:'定期票30天期',6:'定期票60天期',7:'早鳥票',8:'定期票90天期']
 	TicketType int32 `json:"TicketType,omitempty"`
 }
 

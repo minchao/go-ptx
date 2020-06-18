@@ -8,9 +8,8 @@ package models
 import (
 	"strconv"
 
-	strfmt "github.com/go-openapi/strfmt"
-
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 )
@@ -18,6 +17,7 @@ import (
 // ServiceDTOVersion2TaiwanTripBusBusRoute BusRoute
 //
 // 路線資料型別
+//
 // swagger:model Service.DTO.Version2.TaiwanTripBus.BusRoute
 type ServiceDTOVersion2TaiwanTripBusBusRoute struct {
 

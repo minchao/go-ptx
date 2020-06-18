@@ -8,9 +8,8 @@ package models
 import (
 	"strconv"
 
-	strfmt "github.com/go-openapi/strfmt"
-
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 )
@@ -18,6 +17,7 @@ import (
 // ServiceDTOVersion2RailTRARailDailyTimetable RailDailyTimetable
 //
 // 台鐵到離站時刻資料型別
+//
 // swagger:model Service.DTO.Version2.Rail.TRA.RailDailyTimetable
 type ServiceDTOVersion2RailTRARailDailyTimetable struct {
 

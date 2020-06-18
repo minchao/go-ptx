@@ -45,6 +45,9 @@ func main() {
 		{
 			Filename: "oas.ship.v3.json",
 			URL:      "https://ptx.transportdata.tw/MOTC/v3/Ship/api-docs/oas",
+			Pipeline: []Step{
+				fixProperty,
+			},
 		},
 	} {
 		fmt.Printf("Generate %s\n", oas.Filename)
@@ -87,4 +90,14 @@ func writeFile(filename string, data []byte) {
 	enc.SetIndent("", "  ")
 	_ = enc.Encode(v)
 	_ = ioutil.WriteFile(filename, bf.Bytes(), 0644)
+}
+
+func fixProperty(data []byte) []byte {
+	return bytes.Replace(data, []byte(`"description": "資料版本編號<span class=\"emphasis fas fa-pen\" rel=\"與來源Inbound XML不同，為提供資料的版本編號[該欄位由本平台自動產製]\"></span>",
+          "type": "integer"
+        },
+        "Items": {`), []byte(`"description": "資料版本編號<span class=\"emphasis fas fa-pen\" rel=\"與來源Inbound XML不同，為提供資料的版本編號[該欄位由本平台自動產製]\"></span>",
+          "type": "integer"
+        },
+        "Ports": {`), -1)
 }

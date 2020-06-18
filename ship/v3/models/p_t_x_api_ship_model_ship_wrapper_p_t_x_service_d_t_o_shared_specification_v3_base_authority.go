@@ -8,21 +8,16 @@ package models
 import (
 	"strconv"
 
-	strfmt "github.com/go-openapi/strfmt"
-
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 )
 
 // PTXAPIShipModelShipWrapperPTXServiceDTOSharedSpecificationV3BaseAuthority ShipAuthorityList
+//
 // swagger:model PTX.API.Ship.Model.ShipWrapper[PTX.Service.DTO.Shared.Specification.V3.Base.Authority]
 type PTXAPIShipModelShipWrapperPTXServiceDTOSharedSpecificationV3BaseAuthority struct {
-
-	// Array
-	//
-	// 資料(陣列)
-	Authorities []*PTXServiceDTOSharedSpecificationV3BaseAuthority `json:"Authorities"`
 
 	// String
 	//
@@ -31,6 +26,11 @@ type PTXAPIShipModelShipWrapperPTXServiceDTOSharedSpecificationV3BaseAuthority s
 
 	// 資料總筆數<span class="emphasis fas fa-pen" rel="與來源Inbound XML不同，為提供資料的總筆數[該欄位由本平台自動產製]"></span>
 	Count int64 `json:"Count,omitempty"`
+
+	// Array
+	//
+	// 資料(陣列)
+	Ports []*PTXServiceDTOSharedSpecificationV3BaseAuthority `json:"Ports"`
 
 	// Int32
 	//
@@ -54,7 +54,7 @@ type PTXAPIShipModelShipWrapperPTXServiceDTOSharedSpecificationV3BaseAuthority s
 func (m *PTXAPIShipModelShipWrapperPTXServiceDTOSharedSpecificationV3BaseAuthority) Validate(formats strfmt.Registry) error {
 	var res []error
 
-	if err := m.validateAuthorities(formats); err != nil {
+	if err := m.validatePorts(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -72,21 +72,21 @@ func (m *PTXAPIShipModelShipWrapperPTXServiceDTOSharedSpecificationV3BaseAuthori
 	return nil
 }
 
-func (m *PTXAPIShipModelShipWrapperPTXServiceDTOSharedSpecificationV3BaseAuthority) validateAuthorities(formats strfmt.Registry) error {
+func (m *PTXAPIShipModelShipWrapperPTXServiceDTOSharedSpecificationV3BaseAuthority) validatePorts(formats strfmt.Registry) error {
 
-	if swag.IsZero(m.Authorities) { // not required
+	if swag.IsZero(m.Ports) { // not required
 		return nil
 	}
 
-	for i := 0; i < len(m.Authorities); i++ {
-		if swag.IsZero(m.Authorities[i]) { // not required
+	for i := 0; i < len(m.Ports); i++ {
+		if swag.IsZero(m.Ports[i]) { // not required
 			continue
 		}
 
-		if m.Authorities[i] != nil {
-			if err := m.Authorities[i].Validate(formats); err != nil {
+		if m.Ports[i] != nil {
+			if err := m.Ports[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
-					return ve.ValidateName("Authorities" + "." + strconv.Itoa(i))
+					return ve.ValidateName("Ports" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

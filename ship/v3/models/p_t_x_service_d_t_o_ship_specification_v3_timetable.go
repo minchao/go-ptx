@@ -8,18 +8,20 @@ package models
 import (
 	"strconv"
 
-	strfmt "github.com/go-openapi/strfmt"
-
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 )
 
 // PTXServiceDTOShipSpecificationV3Timetable Timetable
+//
 // swagger:model PTX.Service.DTO.Ship.Specification.V3.Timetable
 type PTXServiceDTOShipSpecificationV3Timetable struct {
 
 	// ServiceDay
-	ServiceDay *PTXServiceDTOShipSpecificationV3ServiceDay `json:"ServiceDay,omitempty"`
+	ServiceDay struct {
+		PTXServiceDTOShipSpecificationV3ServiceDay
+	} `json:"ServiceDay,omitempty"`
 
 	// Array
 	//
@@ -54,15 +56,6 @@ func (m *PTXServiceDTOShipSpecificationV3Timetable) validateServiceDay(formats s
 
 	if swag.IsZero(m.ServiceDay) { // not required
 		return nil
-	}
-
-	if m.ServiceDay != nil {
-		if err := m.ServiceDay.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("ServiceDay")
-			}
-			return err
-		}
 	}
 
 	return nil

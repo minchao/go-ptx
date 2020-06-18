@@ -8,14 +8,14 @@ package models
 import (
 	"strconv"
 
-	strfmt "github.com/go-openapi/strfmt"
-
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 )
 
 // MOTCAPIRailModelsTraDailyStationWrapperServiceDTOVersion3RailTRADailyStationTimeTableStationTimetable TRADailyStationTimeTableList
+//
 // swagger:model MOTC.API.Rail.Models.TraDailyStationWrapper[Service.DTO.Version3.Rail.TRA.DailyStationTimeTable.StationTimetable]
 type MOTCAPIRailModelsTraDailyStationWrapperServiceDTOVersion3RailTRADailyStationTimeTableStationTimetable struct {
 
@@ -26,7 +26,7 @@ type MOTCAPIRailModelsTraDailyStationWrapperServiceDTOVersion3RailTRADailyStatio
 	// 資料總筆數
 	Count int64 `json:"Count,omitempty"`
 
-	// 來源端平台資料更新週期(秒)
+	// 來源端平台資料更新週期(秒)['-1: 不定期更新']
 	// Required: true
 	SrcUpdateInterval *int32 `json:"SrcUpdateInterval"`
 
@@ -41,7 +41,8 @@ type MOTCAPIRailModelsTraDailyStationWrapperServiceDTOVersion3RailTRADailyStatio
 	StationTimetables []*ServiceDTOVersion3RailTRADailyStationTimeTableStationTimetable `json:"StationTimetables"`
 
 	// 營運日說明(yyyy-MM-dd)
-	TrainDate string `json:"TrainDate,omitempty"`
+	// Required: true
+	TrainDate *string `json:"TrainDate"`
 
 	// 本平台資料更新週期(秒)
 	// Required: true
@@ -50,7 +51,8 @@ type MOTCAPIRailModelsTraDailyStationWrapperServiceDTOVersion3RailTRADailyStatio
 	// DateTime
 	//
 	// 本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
-	UpdateTime string `json:"UpdateTime,omitempty"`
+	// Required: true
+	UpdateTime *string `json:"UpdateTime"`
 }
 
 // Validate validates this m o t c API rail models tra daily station wrapper service d t o version3 rail t r a daily station time table station timetable
@@ -73,7 +75,15 @@ func (m *MOTCAPIRailModelsTraDailyStationWrapperServiceDTOVersion3RailTRADailySt
 		res = append(res, err)
 	}
 
+	if err := m.validateTrainDate(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateUpdateInterval(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateUpdateTime(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -135,9 +145,27 @@ func (m *MOTCAPIRailModelsTraDailyStationWrapperServiceDTOVersion3RailTRADailySt
 	return nil
 }
 
+func (m *MOTCAPIRailModelsTraDailyStationWrapperServiceDTOVersion3RailTRADailyStationTimeTableStationTimetable) validateTrainDate(formats strfmt.Registry) error {
+
+	if err := validate.Required("TrainDate", "body", m.TrainDate); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *MOTCAPIRailModelsTraDailyStationWrapperServiceDTOVersion3RailTRADailyStationTimeTableStationTimetable) validateUpdateInterval(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateInterval", "body", m.UpdateInterval); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *MOTCAPIRailModelsTraDailyStationWrapperServiceDTOVersion3RailTRADailyStationTimeTableStationTimetable) validateUpdateTime(formats strfmt.Registry) error {
+
+	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
 		return err
 	}
 

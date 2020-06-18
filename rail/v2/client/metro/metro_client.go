@@ -9,12 +9,11 @@ import (
 	"fmt"
 
 	"github.com/go-openapi/runtime"
-
-	strfmt "github.com/go-openapi/strfmt"
+	"github.com/go-openapi/strfmt"
 )
 
 // New creates a new metro API client.
-func New(transport runtime.ClientTransport, formats strfmt.Registry) *Client {
+func New(transport runtime.ClientTransport, formats strfmt.Registry) ClientService {
 	return &Client{transport: transport, formats: formats}
 }
 
@@ -26,10 +25,51 @@ type Client struct {
 	formats   strfmt.Registry
 }
 
-/*
-MetroAPIAlert 取得營運通阻資料s
+// ClientService is the interface for Client methods
+type ClientService interface {
+	MetroAPIAlert(params *MetroAPIAlertParams) (*MetroAPIAlertOK, error)
 
-取得營運通阻資料
+	MetroAPIFirstLastTimetable(params *MetroAPIFirstLastTimetableParams) (*MetroAPIFirstLastTimetableOK, error)
+
+	MetroAPIFrequency(params *MetroAPIFrequencyParams) (*MetroAPIFrequencyOK, error)
+
+	MetroAPILine(params *MetroAPILineParams) (*MetroAPILineOK, error)
+
+	MetroAPILineTransfer(params *MetroAPILineTransferParams) (*MetroAPILineTransferOK, error)
+
+	MetroAPILiveBoard(params *MetroAPILiveBoardParams) (*MetroAPILiveBoardOK, error)
+
+	MetroAPINetwork(params *MetroAPINetworkParams) (*MetroAPINetworkOK, error)
+
+	MetroAPINews(params *MetroAPINewsParams) (*MetroAPINewsOK, error)
+
+	MetroAPIODFare(params *MetroAPIODFareParams) (*MetroAPIODFareOK, error)
+
+	MetroAPIRoute(params *MetroAPIRouteParams) (*MetroAPIRouteOK, error)
+
+	MetroAPIS2STravelTime(params *MetroAPIS2STravelTimeParams) (*MetroAPIS2STravelTimeOK, error)
+
+	MetroAPIShape(params *MetroAPIShapeParams) (*MetroAPIShapeOK, error)
+
+	MetroAPIStation(params *MetroAPIStationParams) (*MetroAPIStationOK, error)
+
+	MetroAPIStationExit(params *MetroAPIStationExitParams) (*MetroAPIStationExitOK, error)
+
+	MetroAPIStationFacility(params *MetroAPIStationFacilityParams) (*MetroAPIStationFacilityOK, error)
+
+	MetroAPIStationOfLine(params *MetroAPIStationOfLineParams) (*MetroAPIStationOfLineOK, error)
+
+	MetroAPIStationOfRoute(params *MetroAPIStationOfRouteParams) (*MetroAPIStationOfRouteOK, error)
+
+	MetroAPIStationTimeTable(params *MetroAPIStationTimeTableParams) (*MetroAPIStationTimeTableOK, error)
+
+	SetTransport(transport runtime.ClientTransport)
+}
+
+/*
+  MetroAPIAlert 取得營運通阻資料s
+
+  取得營運通阻資料
 */
 func (a *Client) MetroAPIAlert(params *MetroAPIAlertParams) (*MetroAPIAlertOK, error) {
 	// TODO: Validate the params before sending
@@ -42,7 +82,7 @@ func (a *Client) MetroAPIAlert(params *MetroAPIAlertParams) (*MetroAPIAlertOK, e
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/Metro/Alert/{Operator}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &MetroAPIAlertReader{formats: a.formats},
@@ -63,9 +103,9 @@ func (a *Client) MetroAPIAlert(params *MetroAPIAlertParams) (*MetroAPIAlertOK, e
 }
 
 /*
-MetroAPIFirstLastTimetable 取得捷運首末班車時刻表資料s
+  MetroAPIFirstLastTimetable 取得捷運首末班車時刻表資料s
 
-取得捷運首末班車時刻表資料
+  取得捷運首末班車時刻表資料
 */
 func (a *Client) MetroAPIFirstLastTimetable(params *MetroAPIFirstLastTimetableParams) (*MetroAPIFirstLastTimetableOK, error) {
 	// TODO: Validate the params before sending
@@ -78,7 +118,7 @@ func (a *Client) MetroAPIFirstLastTimetable(params *MetroAPIFirstLastTimetablePa
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/Metro/FirstLastTimetable/{Operator}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &MetroAPIFirstLastTimetableReader{formats: a.formats},
@@ -99,9 +139,9 @@ func (a *Client) MetroAPIFirstLastTimetable(params *MetroAPIFirstLastTimetablePa
 }
 
 /*
-MetroAPIFrequency 取得捷運路線發車班距頻率資料s
+  MetroAPIFrequency 取得捷運路線發車班距頻率資料s
 
-取得捷運路線發車班距頻率資料
+  取得捷運路線發車班距頻率資料
 */
 func (a *Client) MetroAPIFrequency(params *MetroAPIFrequencyParams) (*MetroAPIFrequencyOK, error) {
 	// TODO: Validate the params before sending
@@ -114,7 +154,7 @@ func (a *Client) MetroAPIFrequency(params *MetroAPIFrequencyParams) (*MetroAPIFr
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/Metro/Frequency/{Operator}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &MetroAPIFrequencyReader{formats: a.formats},
@@ -135,9 +175,9 @@ func (a *Client) MetroAPIFrequency(params *MetroAPIFrequencyParams) (*MetroAPIFr
 }
 
 /*
-MetroAPILine 取得捷運路線基本資料s
+  MetroAPILine 取得捷運路線基本資料s
 
-取得捷運路線基本資料
+  取得捷運路線基本資料
 */
 func (a *Client) MetroAPILine(params *MetroAPILineParams) (*MetroAPILineOK, error) {
 	// TODO: Validate the params before sending
@@ -150,7 +190,7 @@ func (a *Client) MetroAPILine(params *MetroAPILineParams) (*MetroAPILineOK, erro
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/Metro/Line/{Operator}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &MetroAPILineReader{formats: a.formats},
@@ -171,9 +211,9 @@ func (a *Client) MetroAPILine(params *MetroAPILineParams) (*MetroAPILineOK, erro
 }
 
 /*
-MetroAPILineTransfer 取得捷運路線站間轉乘基本資料s
+  MetroAPILineTransfer 取得捷運路線站間轉乘基本資料s
 
-取得捷運路線站間轉乘基本資料
+  取得捷運路線站間轉乘基本資料
 */
 func (a *Client) MetroAPILineTransfer(params *MetroAPILineTransferParams) (*MetroAPILineTransferOK, error) {
 	// TODO: Validate the params before sending
@@ -186,7 +226,7 @@ func (a *Client) MetroAPILineTransfer(params *MetroAPILineTransferParams) (*Metr
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/Metro/LineTransfer/{Operator}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &MetroAPILineTransferReader{formats: a.formats},
@@ -207,9 +247,9 @@ func (a *Client) MetroAPILineTransfer(params *MetroAPILineTransferParams) (*Metr
 }
 
 /*
-MetroAPILiveBoard 取得捷運車站別列車即時到離站電子看板資訊s
+  MetroAPILiveBoard 取得捷運車站別列車即時到離站電子看板資訊s
 
-取得捷運車站別列車即時到離站電子看板資訊
+  取得捷運車站別列車即時到離站電子看板資訊
 */
 func (a *Client) MetroAPILiveBoard(params *MetroAPILiveBoardParams) (*MetroAPILiveBoardOK, error) {
 	// TODO: Validate the params before sending
@@ -222,7 +262,7 @@ func (a *Client) MetroAPILiveBoard(params *MetroAPILiveBoardParams) (*MetroAPILi
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/Metro/LiveBoard/{Operator}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &MetroAPILiveBoardReader{formats: a.formats},
@@ -243,9 +283,9 @@ func (a *Client) MetroAPILiveBoard(params *MetroAPILiveBoardParams) (*MetroAPILi
 }
 
 /*
-MetroAPINetwork 取得捷運路網資料s
+  MetroAPINetwork 取得捷運路網資料s
 
-取得捷運路網資料
+  取得捷運路網資料
 */
 func (a *Client) MetroAPINetwork(params *MetroAPINetworkParams) (*MetroAPINetworkOK, error) {
 	// TODO: Validate the params before sending
@@ -258,7 +298,7 @@ func (a *Client) MetroAPINetwork(params *MetroAPINetworkParams) (*MetroAPINetwor
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/Metro/Network/{Operator}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &MetroAPINetworkReader{formats: a.formats},
@@ -279,9 +319,9 @@ func (a *Client) MetroAPINetwork(params *MetroAPINetworkParams) (*MetroAPINetwor
 }
 
 /*
-MetroAPINews 取得最新消息s
+  MetroAPINews 取得最新消息s
 
-取得最新消息
+  取得最新消息
 */
 func (a *Client) MetroAPINews(params *MetroAPINewsParams) (*MetroAPINewsOK, error) {
 	// TODO: Validate the params before sending
@@ -294,7 +334,7 @@ func (a *Client) MetroAPINews(params *MetroAPINewsParams) (*MetroAPINewsOK, erro
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/Metro/News/{Operator}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &MetroAPINewsReader{formats: a.formats},
@@ -315,9 +355,9 @@ func (a *Client) MetroAPINews(params *MetroAPINewsParams) (*MetroAPINewsOK, erro
 }
 
 /*
-MetroAPIODFare 取得捷運起迄站間票價資料s
+  MetroAPIODFare 取得捷運起迄站間票價資料s
 
-取得捷運起迄站間票價資料
+  取得捷運起迄站間票價資料
 */
 func (a *Client) MetroAPIODFare(params *MetroAPIODFareParams) (*MetroAPIODFareOK, error) {
 	// TODO: Validate the params before sending
@@ -330,7 +370,7 @@ func (a *Client) MetroAPIODFare(params *MetroAPIODFareParams) (*MetroAPIODFareOK
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/Metro/ODFare/{Operator}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &MetroAPIODFareReader{formats: a.formats},
@@ -351,9 +391,9 @@ func (a *Client) MetroAPIODFare(params *MetroAPIODFareParams) (*MetroAPIODFareOK
 }
 
 /*
-MetroAPIRoute 取得捷運營運路線基本資料s
+  MetroAPIRoute 取得捷運營運路線基本資料s
 
-取得捷運營運路線基本資料
+  取得捷運營運路線基本資料
 */
 func (a *Client) MetroAPIRoute(params *MetroAPIRouteParams) (*MetroAPIRouteOK, error) {
 	// TODO: Validate the params before sending
@@ -366,7 +406,7 @@ func (a *Client) MetroAPIRoute(params *MetroAPIRouteParams) (*MetroAPIRouteOK, e
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/Metro/Route/{Operator}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &MetroAPIRouteReader{formats: a.formats},
@@ -387,9 +427,9 @@ func (a *Client) MetroAPIRoute(params *MetroAPIRouteParams) (*MetroAPIRouteOK, e
 }
 
 /*
-MetroAPIS2STravelTime 取得捷運列車站間運行時間資料s
+  MetroAPIS2STravelTime 取得捷運列車站間運行時間資料s
 
-取得捷運列車站間運行時間資料
+  取得捷運列車站間運行時間資料
 */
 func (a *Client) MetroAPIS2STravelTime(params *MetroAPIS2STravelTimeParams) (*MetroAPIS2STravelTimeOK, error) {
 	// TODO: Validate the params before sending
@@ -402,7 +442,7 @@ func (a *Client) MetroAPIS2STravelTime(params *MetroAPIS2STravelTimeParams) (*Me
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/Metro/S2STravelTime/{Operator}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &MetroAPIS2STravelTimeReader{formats: a.formats},
@@ -423,9 +463,9 @@ func (a *Client) MetroAPIS2STravelTime(params *MetroAPIS2STravelTimeParams) (*Me
 }
 
 /*
-MetroAPIShape 取得指定營運業者之軌道路網實體路線圖資資料s
+  MetroAPIShape 取得指定營運業者之軌道路網實體路線圖資資料s
 
-取得指定營運業者之軌道路網實體路線圖資資料
+  取得指定營運業者之軌道路網實體路線圖資資料
 */
 func (a *Client) MetroAPIShape(params *MetroAPIShapeParams) (*MetroAPIShapeOK, error) {
 	// TODO: Validate the params before sending
@@ -438,7 +478,7 @@ func (a *Client) MetroAPIShape(params *MetroAPIShapeParams) (*MetroAPIShapeOK, e
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/Metro/Shape/{Operator}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &MetroAPIShapeReader{formats: a.formats},
@@ -459,9 +499,9 @@ func (a *Client) MetroAPIShape(params *MetroAPIShapeParams) (*MetroAPIShapeOK, e
 }
 
 /*
-MetroAPIStation 取得捷運車站基本資料s
+  MetroAPIStation 取得捷運車站基本資料s
 
-取得捷運車站基本資料
+  取得捷運車站基本資料
 */
 func (a *Client) MetroAPIStation(params *MetroAPIStationParams) (*MetroAPIStationOK, error) {
 	// TODO: Validate the params before sending
@@ -474,7 +514,7 @@ func (a *Client) MetroAPIStation(params *MetroAPIStationParams) (*MetroAPIStatio
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/Metro/Station/{Operator}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &MetroAPIStationReader{formats: a.formats},
@@ -495,9 +535,9 @@ func (a *Client) MetroAPIStation(params *MetroAPIStationParams) (*MetroAPIStatio
 }
 
 /*
-MetroAPIStationExit 取得捷運車站出入口基本資料s
+  MetroAPIStationExit 取得捷運車站出入口基本資料s
 
-取得捷運車站出入口基本資料
+  取得捷運車站出入口基本資料
 */
 func (a *Client) MetroAPIStationExit(params *MetroAPIStationExitParams) (*MetroAPIStationExitOK, error) {
 	// TODO: Validate the params before sending
@@ -510,7 +550,7 @@ func (a *Client) MetroAPIStationExit(params *MetroAPIStationExitParams) (*MetroA
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/Metro/StationExit/{Operator}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &MetroAPIStationExitReader{formats: a.formats},
@@ -531,9 +571,9 @@ func (a *Client) MetroAPIStationExit(params *MetroAPIStationExitParams) (*MetroA
 }
 
 /*
-MetroAPIStationFacility 取得捷運車站設施資料s
+  MetroAPIStationFacility 取得捷運車站設施資料s
 
-取得捷運車站設施資料
+  取得捷運車站設施資料
 */
 func (a *Client) MetroAPIStationFacility(params *MetroAPIStationFacilityParams) (*MetroAPIStationFacilityOK, error) {
 	// TODO: Validate the params before sending
@@ -546,7 +586,7 @@ func (a *Client) MetroAPIStationFacility(params *MetroAPIStationFacilityParams) 
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/Metro/StationFacility/{Operator}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &MetroAPIStationFacilityReader{formats: a.formats},
@@ -567,9 +607,9 @@ func (a *Client) MetroAPIStationFacility(params *MetroAPIStationFacilityParams) 
 }
 
 /*
-MetroAPIStationOfLine 取得捷運路線車站基本資料s
+  MetroAPIStationOfLine 取得捷運路線車站基本資料s
 
-取得捷運路線車站基本資料
+  取得捷運路線車站基本資料
 */
 func (a *Client) MetroAPIStationOfLine(params *MetroAPIStationOfLineParams) (*MetroAPIStationOfLineOK, error) {
 	// TODO: Validate the params before sending
@@ -582,7 +622,7 @@ func (a *Client) MetroAPIStationOfLine(params *MetroAPIStationOfLineParams) (*Me
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/Metro/StationOfLine/{Operator}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &MetroAPIStationOfLineReader{formats: a.formats},
@@ -603,9 +643,9 @@ func (a *Client) MetroAPIStationOfLine(params *MetroAPIStationOfLineParams) (*Me
 }
 
 /*
-MetroAPIStationOfRoute 取得捷運營運路線車站基本資料s
+  MetroAPIStationOfRoute 取得捷運營運路線車站基本資料s
 
-取得捷運營運路線車站基本資料
+  取得捷運營運路線車站基本資料
 */
 func (a *Client) MetroAPIStationOfRoute(params *MetroAPIStationOfRouteParams) (*MetroAPIStationOfRouteOK, error) {
 	// TODO: Validate the params before sending
@@ -618,7 +658,7 @@ func (a *Client) MetroAPIStationOfRoute(params *MetroAPIStationOfRouteParams) (*
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/Metro/StationOfRoute/{Operator}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &MetroAPIStationOfRouteReader{formats: a.formats},
@@ -639,9 +679,9 @@ func (a *Client) MetroAPIStationOfRoute(params *MetroAPIStationOfRouteParams) (*
 }
 
 /*
-MetroAPIStationTimeTable 取得捷運站別時刻表資料s
+  MetroAPIStationTimeTable 取得捷運站別時刻表資料s
 
-取得捷運站別時刻表資料
+  取得捷運站別時刻表資料
 
 ## 使用注意事項
 臺北捷運目前無提供文湖線站別時刻表，建議您可使用［取得捷運路線發車班距頻率資料］取得文湖線列車相關資訊。
@@ -657,7 +697,7 @@ func (a *Client) MetroAPIStationTimeTable(params *MetroAPIStationTimeTableParams
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/Metro/StationTimeTable/{Operator}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &MetroAPIStationTimeTableReader{formats: a.formats},

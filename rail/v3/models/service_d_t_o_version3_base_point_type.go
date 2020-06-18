@@ -6,14 +6,14 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	strfmt "github.com/go-openapi/strfmt"
-
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 )
 
 // ServiceDTOVersion3BasePointType PointType
 //
 // 座標資料型別
+//
 // swagger:model Service.DTO.Version3.Base.PointType
 type ServiceDTOVersion3BasePointType struct {
 

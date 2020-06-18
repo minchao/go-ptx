@@ -8,9 +8,8 @@ package models
 import (
 	"strconv"
 
-	strfmt "github.com/go-openapi/strfmt"
-
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 )
@@ -18,6 +17,7 @@ import (
 // ServiceDTOVersion3RailTRALineNetworkLineNetwork LineNetwork
 //
 // 路線網路拓撲基本資料
+//
 // swagger:model Service.DTO.Version3.Rail.TRA.LineNetwork.LineNetwork
 type ServiceDTOVersion3RailTRALineNetworkLineNetwork struct {
 

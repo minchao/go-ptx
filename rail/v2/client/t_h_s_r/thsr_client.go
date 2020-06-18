@@ -9,12 +9,11 @@ import (
 	"fmt"
 
 	"github.com/go-openapi/runtime"
-
-	strfmt "github.com/go-openapi/strfmt"
+	"github.com/go-openapi/strfmt"
 )
 
 // New creates a new t h s r API client.
-func New(transport runtime.ClientTransport, formats strfmt.Registry) *Client {
+func New(transport runtime.ClientTransport, formats strfmt.Registry) ClientService {
 	return &Client{transport: transport, formats: formats}
 }
 
@@ -26,10 +25,57 @@ type Client struct {
 	formats   strfmt.Registry
 }
 
-/*
-THSRAPIAlertInfo 取得即時通阻事件資料s
+// ClientService is the interface for Client methods
+type ClientService interface {
+	THSRAPIAlertInfo(params *THSRAPIAlertInfoParams) (*THSRAPIAlertInfoOK, error)
 
-取得即時通阻事件資料
+	THSRAPIAvailableSeatStatusList(params *THSRAPIAvailableSeatStatusListParams) (*THSRAPIAvailableSeatStatusListOK, error)
+
+	THSRAPIAvailableSeatStatusList1(params *THSRAPIAvailableSeatStatusList1Params) (*THSRAPIAvailableSeatStatusList1OK, error)
+
+	THSRAPIDailyTimetable(params *THSRAPIDailyTimetableParams) (*THSRAPIDailyTimetableOK, error)
+
+	THSRAPIDailyTimetable1(params *THSRAPIDailyTimetable1Params) (*THSRAPIDailyTimetable1OK, error)
+
+	THSRAPIDailyTimetable2(params *THSRAPIDailyTimetable2Params) (*THSRAPIDailyTimetable2OK, error)
+
+	THSRAPIDailyTimetable3(params *THSRAPIDailyTimetable3Params) (*THSRAPIDailyTimetable3OK, error)
+
+	THSRAPIDailyTrainInfo(params *THSRAPIDailyTrainInfoParams) (*THSRAPIDailyTrainInfoOK, error)
+
+	THSRAPIDailyTrainInfo1(params *THSRAPIDailyTrainInfo1Params) (*THSRAPIDailyTrainInfo1OK, error)
+
+	THSRAPIDailyTrainInfo2(params *THSRAPIDailyTrainInfo2Params) (*THSRAPIDailyTrainInfo2OK, error)
+
+	THSRAPIDailyTrainInfo3(params *THSRAPIDailyTrainInfo3Params) (*THSRAPIDailyTrainInfo3OK, error)
+
+	THSRAPIGeneralTimetable(params *THSRAPIGeneralTimetableParams) (*THSRAPIGeneralTimetableOK, error)
+
+	THSRAPIGeneralTimetable1(params *THSRAPIGeneralTimetable1Params) (*THSRAPIGeneralTimetable1OK, error)
+
+	THSRAPINews(params *THSRAPINewsParams) (*THSRAPINewsOK, error)
+
+	THSRAPIODDailyTimetable(params *THSRAPIODDailyTimetableParams) (*THSRAPIODDailyTimetableOK, error)
+
+	THSRAPIODFare(params *THSRAPIODFareParams) (*THSRAPIODFareOK, error)
+
+	THSRAPIODFare1(params *THSRAPIODFare1Params) (*THSRAPIODFare1OK, error)
+
+	THSRAPIShape(params *THSRAPIShapeParams) (*THSRAPIShapeOK, error)
+
+	THSRAPIStation(params *THSRAPIStationParams) (*THSRAPIStationOK, error)
+
+	THSRAPIStationExit(params *THSRAPIStationExitParams) (*THSRAPIStationExitOK, error)
+
+	THSRAPIStationTimetable(params *THSRAPIStationTimetableParams) (*THSRAPIStationTimetableOK, error)
+
+	SetTransport(transport runtime.ClientTransport)
+}
+
+/*
+  THSRAPIAlertInfo 取得即時通阻事件資料s
+
+  取得即時通阻事件資料
 */
 func (a *Client) THSRAPIAlertInfo(params *THSRAPIAlertInfoParams) (*THSRAPIAlertInfoOK, error) {
 	// TODO: Validate the params before sending
@@ -42,7 +88,7 @@ func (a *Client) THSRAPIAlertInfo(params *THSRAPIAlertInfoParams) (*THSRAPIAlert
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/AlertInfo",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &THSRAPIAlertInfoReader{formats: a.formats},
@@ -63,9 +109,9 @@ func (a *Client) THSRAPIAlertInfo(params *THSRAPIAlertInfoParams) (*THSRAPIAlert
 }
 
 /*
-THSRAPIAvailableSeatStatusList 取得動態指定s 車站 的對號座剩餘座位資訊看板資料
+  THSRAPIAvailableSeatStatusList 取得動態對號座剩餘座位資訊看板資料s
 
-取得動態指定[車站]的對號座剩餘座位資訊看板資料
+  取得動態對號座剩餘座位資訊看板資料
 */
 func (a *Client) THSRAPIAvailableSeatStatusList(params *THSRAPIAvailableSeatStatusListParams) (*THSRAPIAvailableSeatStatusListOK, error) {
 	// TODO: Validate the params before sending
@@ -76,9 +122,9 @@ func (a *Client) THSRAPIAvailableSeatStatusList(params *THSRAPIAvailableSeatStat
 	result, err := a.transport.Submit(&runtime.ClientOperation{
 		ID:                 "THSRApi_AvailableSeatStatusList",
 		Method:             "GET",
-		PathPattern:        "/v2/Rail/THSR/AvailableSeatStatusList/{StationID}",
+		PathPattern:        "/v2/Rail/THSR/AvailableSeatStatusList",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &THSRAPIAvailableSeatStatusListReader{formats: a.formats},
@@ -99,9 +145,45 @@ func (a *Client) THSRAPIAvailableSeatStatusList(params *THSRAPIAvailableSeatStat
 }
 
 /*
-THSRAPIDailyTimetable 取得當天所有車次的時刻表資料s
+  THSRAPIAvailableSeatStatusList1 取得動態指定s 車站 的對號座剩餘座位資訊看板資料
 
-取得當天所有車次的時刻表資料
+  取得動態指定[車站]的對號座剩餘座位資訊看板資料
+*/
+func (a *Client) THSRAPIAvailableSeatStatusList1(params *THSRAPIAvailableSeatStatusList1Params) (*THSRAPIAvailableSeatStatusList1OK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewTHSRAPIAvailableSeatStatusList1Params()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "THSRApi_AvailableSeatStatusList_1",
+		Method:             "GET",
+		PathPattern:        "/v2/Rail/THSR/AvailableSeatStatusList/{StationID}",
+		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &THSRAPIAvailableSeatStatusList1Reader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*THSRAPIAvailableSeatStatusList1OK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for THSRApi_AvailableSeatStatusList_1: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  THSRAPIDailyTimetable 取得當天所有車次的時刻表資料s
+
+  取得當天所有車次的時刻表資料
 */
 func (a *Client) THSRAPIDailyTimetable(params *THSRAPIDailyTimetableParams) (*THSRAPIDailyTimetableOK, error) {
 	// TODO: Validate the params before sending
@@ -114,7 +196,7 @@ func (a *Client) THSRAPIDailyTimetable(params *THSRAPIDailyTimetableParams) (*TH
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/DailyTimetable/Today",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &THSRAPIDailyTimetableReader{formats: a.formats},
@@ -135,9 +217,9 @@ func (a *Client) THSRAPIDailyTimetable(params *THSRAPIDailyTimetableParams) (*TH
 }
 
 /*
-THSRAPIDailyTimetable1 取得當天指定s 車次 的時刻表資料
+  THSRAPIDailyTimetable1 取得當天指定s 車次 的時刻表資料
 
-取得當天指定[車次]的時刻表資料
+  取得當天指定[車次]的時刻表資料
 */
 func (a *Client) THSRAPIDailyTimetable1(params *THSRAPIDailyTimetable1Params) (*THSRAPIDailyTimetable1OK, error) {
 	// TODO: Validate the params before sending
@@ -150,7 +232,7 @@ func (a *Client) THSRAPIDailyTimetable1(params *THSRAPIDailyTimetable1Params) (*
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/DailyTimetable/Today/TrainNo/{TrainNo}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &THSRAPIDailyTimetable1Reader{formats: a.formats},
@@ -171,9 +253,9 @@ func (a *Client) THSRAPIDailyTimetable1(params *THSRAPIDailyTimetable1Params) (*
 }
 
 /*
-THSRAPIDailyTimetable2 取得指定s 日期 所有車次的時刻表資料
+  THSRAPIDailyTimetable2 取得指定s 日期 所有車次的時刻表資料
 
-取得指定[日期]所有車次的時刻表資料(高鐵提供近28天每日時刻表)
+  取得指定[日期]所有車次的時刻表資料(高鐵提供近28天每日時刻表)
 */
 func (a *Client) THSRAPIDailyTimetable2(params *THSRAPIDailyTimetable2Params) (*THSRAPIDailyTimetable2OK, error) {
 	// TODO: Validate the params before sending
@@ -186,7 +268,7 @@ func (a *Client) THSRAPIDailyTimetable2(params *THSRAPIDailyTimetable2Params) (*
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/DailyTimetable/TrainDate/{TrainDate}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &THSRAPIDailyTimetable2Reader{formats: a.formats},
@@ -207,9 +289,9 @@ func (a *Client) THSRAPIDailyTimetable2(params *THSRAPIDailyTimetable2Params) (*
 }
 
 /*
-THSRAPIDailyTimetable3 取得指定s 日期 車次 的時刻表資料
+  THSRAPIDailyTimetable3 取得指定s 日期 車次 的時刻表資料
 
-取得指定[日期],[車次]的時刻表資料(高鐵提供近28天每日時刻表)
+  取得指定[日期],[車次]的時刻表資料(高鐵提供近28天每日時刻表)
 */
 func (a *Client) THSRAPIDailyTimetable3(params *THSRAPIDailyTimetable3Params) (*THSRAPIDailyTimetable3OK, error) {
 	// TODO: Validate the params before sending
@@ -222,7 +304,7 @@ func (a *Client) THSRAPIDailyTimetable3(params *THSRAPIDailyTimetable3Params) (*
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/DailyTimetable/TrainNo/{TrainNo}/TrainDate/{TrainDate}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &THSRAPIDailyTimetable3Reader{formats: a.formats},
@@ -243,9 +325,9 @@ func (a *Client) THSRAPIDailyTimetable3(params *THSRAPIDailyTimetable3Params) (*
 }
 
 /*
-THSRAPIDailyTrainInfo 取得當天所有車次的車次資料s
+  THSRAPIDailyTrainInfo 取得當天所有車次的車次資料s
 
-取得當天所有車次的車次資料
+  取得當天所有車次的車次資料
 */
 func (a *Client) THSRAPIDailyTrainInfo(params *THSRAPIDailyTrainInfoParams) (*THSRAPIDailyTrainInfoOK, error) {
 	// TODO: Validate the params before sending
@@ -258,7 +340,7 @@ func (a *Client) THSRAPIDailyTrainInfo(params *THSRAPIDailyTrainInfoParams) (*TH
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/DailyTrainInfo/Today",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &THSRAPIDailyTrainInfoReader{formats: a.formats},
@@ -279,9 +361,9 @@ func (a *Client) THSRAPIDailyTrainInfo(params *THSRAPIDailyTrainInfoParams) (*TH
 }
 
 /*
-THSRAPIDailyTrainInfo1 取得當天指定s 車次 的車次資料
+  THSRAPIDailyTrainInfo1 取得當天指定s 車次 的車次資料
 
-取得當天指定[車次]的車次資料
+  取得當天指定[車次]的車次資料
 */
 func (a *Client) THSRAPIDailyTrainInfo1(params *THSRAPIDailyTrainInfo1Params) (*THSRAPIDailyTrainInfo1OK, error) {
 	// TODO: Validate the params before sending
@@ -294,7 +376,7 @@ func (a *Client) THSRAPIDailyTrainInfo1(params *THSRAPIDailyTrainInfo1Params) (*
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/DailyTrainInfo/Today/TrainNo/{TrainNo}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &THSRAPIDailyTrainInfo1Reader{formats: a.formats},
@@ -315,9 +397,9 @@ func (a *Client) THSRAPIDailyTrainInfo1(params *THSRAPIDailyTrainInfo1Params) (*
 }
 
 /*
-THSRAPIDailyTrainInfo2 取得指定s 日期 所有車次的車次資料
+  THSRAPIDailyTrainInfo2 取得指定s 日期 所有車次的車次資料
 
-取得指定[日期]所有車次的車次資料(高鐵提供近28天每日時刻表)
+  取得指定[日期]所有車次的車次資料(高鐵提供近28天每日時刻表)
 */
 func (a *Client) THSRAPIDailyTrainInfo2(params *THSRAPIDailyTrainInfo2Params) (*THSRAPIDailyTrainInfo2OK, error) {
 	// TODO: Validate the params before sending
@@ -330,7 +412,7 @@ func (a *Client) THSRAPIDailyTrainInfo2(params *THSRAPIDailyTrainInfo2Params) (*
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/DailyTrainInfo/TrainDate/{TrainDate}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &THSRAPIDailyTrainInfo2Reader{formats: a.formats},
@@ -351,9 +433,9 @@ func (a *Client) THSRAPIDailyTrainInfo2(params *THSRAPIDailyTrainInfo2Params) (*
 }
 
 /*
-THSRAPIDailyTrainInfo3 取得指定s 日期 車次 的車次資料
+  THSRAPIDailyTrainInfo3 取得指定s 日期 車次 的車次資料
 
-取得指定[日期],[車次]的車次資料(高鐵提供近28天每日時刻表)
+  取得指定[日期],[車次]的車次資料(高鐵提供近28天每日時刻表)
 */
 func (a *Client) THSRAPIDailyTrainInfo3(params *THSRAPIDailyTrainInfo3Params) (*THSRAPIDailyTrainInfo3OK, error) {
 	// TODO: Validate the params before sending
@@ -366,7 +448,7 @@ func (a *Client) THSRAPIDailyTrainInfo3(params *THSRAPIDailyTrainInfo3Params) (*
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/DailyTrainInfo/TrainNo/{TrainNo}/TrainDate/{TrainDate}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &THSRAPIDailyTrainInfo3Reader{formats: a.formats},
@@ -387,9 +469,9 @@ func (a *Client) THSRAPIDailyTrainInfo3(params *THSRAPIDailyTrainInfo3Params) (*
 }
 
 /*
-THSRAPIGeneralTimetable 取得所有車次的定期時刻表資料s
+  THSRAPIGeneralTimetable 取得所有車次的定期時刻表資料s
 
-取得所有車次的定期時刻表資料
+  取得所有車次的定期時刻表資料
 */
 func (a *Client) THSRAPIGeneralTimetable(params *THSRAPIGeneralTimetableParams) (*THSRAPIGeneralTimetableOK, error) {
 	// TODO: Validate the params before sending
@@ -402,7 +484,7 @@ func (a *Client) THSRAPIGeneralTimetable(params *THSRAPIGeneralTimetableParams) 
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/GeneralTimetable",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &THSRAPIGeneralTimetableReader{formats: a.formats},
@@ -423,9 +505,9 @@ func (a *Client) THSRAPIGeneralTimetable(params *THSRAPIGeneralTimetableParams) 
 }
 
 /*
-THSRAPIGeneralTimetable1 取得指定s 車次 的定期時刻表資料
+  THSRAPIGeneralTimetable1 取得指定s 車次 的定期時刻表資料
 
-取得指定[車次]的定期時刻表資料
+  取得指定[車次]的定期時刻表資料
 */
 func (a *Client) THSRAPIGeneralTimetable1(params *THSRAPIGeneralTimetable1Params) (*THSRAPIGeneralTimetable1OK, error) {
 	// TODO: Validate the params before sending
@@ -438,7 +520,7 @@ func (a *Client) THSRAPIGeneralTimetable1(params *THSRAPIGeneralTimetable1Params
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/GeneralTimetable/TrainNo/{TrainNo}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &THSRAPIGeneralTimetable1Reader{formats: a.formats},
@@ -459,9 +541,9 @@ func (a *Client) THSRAPIGeneralTimetable1(params *THSRAPIGeneralTimetable1Params
 }
 
 /*
-THSRAPINews 取得高鐵最新消息資料s
+  THSRAPINews 取得高鐵最新消息資料s
 
-取得高鐵最新消息資料
+  取得高鐵最新消息資料
 */
 func (a *Client) THSRAPINews(params *THSRAPINewsParams) (*THSRAPINewsOK, error) {
 	// TODO: Validate the params before sending
@@ -474,7 +556,7 @@ func (a *Client) THSRAPINews(params *THSRAPINewsParams) (*THSRAPINewsOK, error) 
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/News",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &THSRAPINewsReader{formats: a.formats},
@@ -495,9 +577,9 @@ func (a *Client) THSRAPINews(params *THSRAPINewsParams) (*THSRAPINewsOK, error) 
 }
 
 /*
-THSRAPIODDailyTimetable 取得指定s 日期 起迄站間 之時刻表資料
+  THSRAPIODDailyTimetable 取得指定s 日期 起迄站間 之時刻表資料
 
-取得指定[日期],[起迄站間]之時刻表資料
+  取得指定[日期],[起迄站間]之時刻表資料
 */
 func (a *Client) THSRAPIODDailyTimetable(params *THSRAPIODDailyTimetableParams) (*THSRAPIODDailyTimetableOK, error) {
 	// TODO: Validate the params before sending
@@ -510,7 +592,7 @@ func (a *Client) THSRAPIODDailyTimetable(params *THSRAPIODDailyTimetableParams) 
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/DailyTimetable/OD/{OriginStationID}/to/{DestinationStationID}/{TrainDate}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &THSRAPIODDailyTimetableReader{formats: a.formats},
@@ -531,9 +613,9 @@ func (a *Client) THSRAPIODDailyTimetable(params *THSRAPIODDailyTimetableParams) 
 }
 
 /*
-THSRAPIODFare 取得票價資料s
+  THSRAPIODFare 取得票價資料s
 
-取得票價資料
+  取得票價資料
 */
 func (a *Client) THSRAPIODFare(params *THSRAPIODFareParams) (*THSRAPIODFareOK, error) {
 	// TODO: Validate the params before sending
@@ -546,7 +628,7 @@ func (a *Client) THSRAPIODFare(params *THSRAPIODFareParams) (*THSRAPIODFareOK, e
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/ODFare",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &THSRAPIODFareReader{formats: a.formats},
@@ -567,9 +649,9 @@ func (a *Client) THSRAPIODFare(params *THSRAPIODFareParams) (*THSRAPIODFareOK, e
 }
 
 /*
-THSRAPIODFare1 取得指定s 起訖站間 之票價資料
+  THSRAPIODFare1 取得指定s 起訖站間 之票價資料
 
-取得指定[起訖站間]之票價資料
+  取得指定[起訖站間]之票價資料
 */
 func (a *Client) THSRAPIODFare1(params *THSRAPIODFare1Params) (*THSRAPIODFare1OK, error) {
 	// TODO: Validate the params before sending
@@ -582,7 +664,7 @@ func (a *Client) THSRAPIODFare1(params *THSRAPIODFare1Params) (*THSRAPIODFare1OK
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/ODFare/{OriginStationID}/to/{DestinationStationID}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &THSRAPIODFare1Reader{formats: a.formats},
@@ -603,9 +685,9 @@ func (a *Client) THSRAPIODFare1(params *THSRAPIODFare1Params) (*THSRAPIODFare1OK
 }
 
 /*
-THSRAPIShape 取得軌道路網實體路線圖資資料s
+  THSRAPIShape 取得軌道路網實體路線圖資資料s
 
-取得軌道路網實體路線圖資資料
+  取得軌道路網實體路線圖資資料
 */
 func (a *Client) THSRAPIShape(params *THSRAPIShapeParams) (*THSRAPIShapeOK, error) {
 	// TODO: Validate the params before sending
@@ -618,7 +700,7 @@ func (a *Client) THSRAPIShape(params *THSRAPIShapeParams) (*THSRAPIShapeOK, erro
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/Shape",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &THSRAPIShapeReader{formats: a.formats},
@@ -639,9 +721,9 @@ func (a *Client) THSRAPIShape(params *THSRAPIShapeParams) (*THSRAPIShapeOK, erro
 }
 
 /*
-THSRAPIStation 取得車站基本資料s
+  THSRAPIStation 取得車站基本資料s
 
-取得車站基本資料
+  取得車站基本資料
 */
 func (a *Client) THSRAPIStation(params *THSRAPIStationParams) (*THSRAPIStationOK, error) {
 	// TODO: Validate the params before sending
@@ -654,7 +736,7 @@ func (a *Client) THSRAPIStation(params *THSRAPIStationParams) (*THSRAPIStationOK
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/Station",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &THSRAPIStationReader{formats: a.formats},
@@ -675,9 +757,9 @@ func (a *Client) THSRAPIStation(params *THSRAPIStationParams) (*THSRAPIStationOK
 }
 
 /*
-THSRAPIStationExit 取得車站出入口基本資料s
+  THSRAPIStationExit 取得車站出入口基本資料s
 
-取得車站出入口基本資料
+  取得車站出入口基本資料
 */
 func (a *Client) THSRAPIStationExit(params *THSRAPIStationExitParams) (*THSRAPIStationExitOK, error) {
 	// TODO: Validate the params before sending
@@ -690,7 +772,7 @@ func (a *Client) THSRAPIStationExit(params *THSRAPIStationExitParams) (*THSRAPIS
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/StationExit",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &THSRAPIStationExitReader{formats: a.formats},
@@ -711,9 +793,9 @@ func (a *Client) THSRAPIStationExit(params *THSRAPIStationExitParams) (*THSRAPIS
 }
 
 /*
-THSRAPIStationTimetable 取得指定s 日期 車站 的站別時刻表資料
+  THSRAPIStationTimetable 取得指定s 日期 車站 的站別時刻表資料
 
-取得指定[日期],[車站]的站別時刻表資料
+  取得指定[日期],[車站]的站別時刻表資料
 */
 func (a *Client) THSRAPIStationTimetable(params *THSRAPIStationTimetableParams) (*THSRAPIStationTimetableOK, error) {
 	// TODO: Validate the params before sending
@@ -726,7 +808,7 @@ func (a *Client) THSRAPIStationTimetable(params *THSRAPIStationTimetableParams) 
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/DailyTimetable/Station/{StationID}/{TrainDate}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{""},
+		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &THSRAPIStationTimetableReader{formats: a.formats},

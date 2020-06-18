@@ -6,12 +6,12 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	strfmt "github.com/go-openapi/strfmt"
-
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 )
 
 // ServiceDTOVersion2BusN1Estimate Estimate
+//
 // swagger:model Service.DTO.Version2.Bus.N1.Estimate
 type ServiceDTOVersion2BusN1Estimate struct {
 

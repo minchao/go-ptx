@@ -6,12 +6,12 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
-	strfmt "github.com/go-openapi/strfmt"
-
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 )
 
 // PTXServiceDTOSharedSpecificationV3BaseNameType NameType
+//
 // swagger:model PTX.Service.DTO.Shared.Specification.V3.Base.NameType
 type PTXServiceDTOSharedSpecificationV3BaseNameType struct {
 

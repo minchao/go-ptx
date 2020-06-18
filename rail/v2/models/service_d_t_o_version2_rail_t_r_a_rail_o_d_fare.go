@@ -8,9 +8,8 @@ package models
 import (
 	"strconv"
 
-	strfmt "github.com/go-openapi/strfmt"
-
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 )
@@ -18,6 +17,7 @@ import (
 // ServiceDTOVersion2RailTRARailODFare RailODFare
 //
 // 臺鐵起訖站票價資料
+//
 // swagger:model Service.DTO.Version2.Rail.TRA.RailODFare
 type ServiceDTOVersion2RailTRARailODFare struct {
 

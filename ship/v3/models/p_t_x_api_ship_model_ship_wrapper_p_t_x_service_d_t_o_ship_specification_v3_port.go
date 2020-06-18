@@ -8,14 +8,14 @@ package models
 import (
 	"strconv"
 
-	strfmt "github.com/go-openapi/strfmt"
-
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 )
 
 // PTXAPIShipModelShipWrapperPTXServiceDTOShipSpecificationV3Port ShipPortList
+//
 // swagger:model PTX.API.Ship.Model.ShipWrapper[PTX.Service.DTO.Ship.Specification.V3.Port]
 type PTXAPIShipModelShipWrapperPTXServiceDTOShipSpecificationV3Port struct {
 

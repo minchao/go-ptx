@@ -8,14 +8,14 @@ package models
 import (
 	"strconv"
 
-	strfmt "github.com/go-openapi/strfmt"
-
 	"github.com/go-openapi/errors"
+	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 )
 
 // MOTCAPIRailModelsTRASpecificWrapperServiceDTOVersion3RailTRASpecificTrainTimetable TRASpecificTrainTimetableList
+//
 // swagger:model MOTC.API.Rail.Models.TRASpecificWrapper[Service.DTO.Version3.Rail.TRA.SpecificTrainTimetable]
 type MOTCAPIRailModelsTRASpecificWrapperServiceDTOVersion3RailTRASpecificTrainTimetable struct {
 
@@ -37,7 +37,7 @@ type MOTCAPIRailModelsTRASpecificWrapperServiceDTOVersion3RailTRASpecificTrainTi
 	// 有效終止日期
 	ExpireDate string `json:"ExpireDate,omitempty"`
 
-	// 來源端平台資料更新週期(秒)
+	// 來源端平台資料更新週期(秒)['-1: 不定期更新']
 	// Required: true
 	SrcUpdateInterval *int32 `json:"SrcUpdateInterval"`
 
@@ -64,7 +64,8 @@ type MOTCAPIRailModelsTRASpecificWrapperServiceDTOVersion3RailTRASpecificTrainTi
 	// DateTime
 	//
 	// 本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
-	UpdateTime string `json:"UpdateTime,omitempty"`
+	// Required: true
+	UpdateTime *string `json:"UpdateTime"`
 
 	// 時刻表適用情形說明
 	ValidityDesciption string `json:"ValidityDesciption,omitempty"`
@@ -95,6 +96,10 @@ func (m *MOTCAPIRailModelsTRASpecificWrapperServiceDTOVersion3RailTRASpecificTra
 	}
 
 	if err := m.validateUpdateInterval(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateUpdateTime(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -168,6 +173,15 @@ func (m *MOTCAPIRailModelsTRASpecificWrapperServiceDTOVersion3RailTRASpecificTra
 func (m *MOTCAPIRailModelsTRASpecificWrapperServiceDTOVersion3RailTRASpecificTrainTimetable) validateUpdateInterval(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateInterval", "body", m.UpdateInterval); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *MOTCAPIRailModelsTRASpecificWrapperServiceDTOVersion3RailTRASpecificTrainTimetable) validateUpdateTime(formats strfmt.Registry) error {
+
+	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
 		return err
 	}
 
