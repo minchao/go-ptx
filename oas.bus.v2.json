@@ -4953,7 +4953,7 @@
         ],
         "summary": "取得指定[路線名稱]的公路客運動態定時資料(A1)[批次更新]",
         "description": "### 公路客運之定時資料(A1) ###\r\n- [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))",
-        "operationId": "InterCityBusApi_RealTimeByFrequency_2",
+        "operationId": "InterCityBusApi_RealTimeByFrequency_1",
         "consumes": [],
         "produces": [
           "application/json",
