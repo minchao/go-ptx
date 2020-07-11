@@ -3,7 +3,7 @@ set -eo pipefail
 
 owner="minchao"
 repo="go-ptx"
-isSpecChanged=false
+isSpecUpdated=false
 
 function setup() {
     if [[ "${TRAVIS}" == "true" ]]; then
@@ -18,7 +18,7 @@ function setup() {
     fi
 }
 
-function check_oas_spec() {
+function check_spec() {
     for spec in ./oas.*.*.json
     do
         IFS='.' read -r -a substrings <<< "${spec}"
@@ -33,7 +33,7 @@ function check_oas_spec() {
     output=$(eval "${git_diff_cmd}")
 
     if [[ -n "${output}" ]]; then
-        isSpecChanged=true
+        isSpecUpdated=true
     fi
 }
 
@@ -41,9 +41,9 @@ function git_push() {
     local version
     version=$(printf '%(%Y-%m-%d)T\n' -1)
 
-    new_branch="spec-changes-on-${version}"
+    new_branch="spec-updated-on-${version}"
     export new_branch
-    message="OAS spec changes on the ${version}"
+    message="spec updated on ${version}"
     export message
 
     local git_add_cmd
@@ -66,9 +66,9 @@ function create_github_pull_request() {
 
 setup
 git fetch origin master
-check_oas_spec
+check_spec
 
-if [[ ${isSpecChanged} == true ]]; then
+if [[ ${isSpecUpdated} == true ]]; then
     git_push
     create_github_pull_request
 fi
