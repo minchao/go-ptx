@@ -43,7 +43,7 @@ type ClientService interface {
 
 	InterCityBusAPIRealTimeByFrequency(params *InterCityBusAPIRealTimeByFrequencyParams) (*InterCityBusAPIRealTimeByFrequencyOK, *InterCityBusAPIRealTimeByFrequencyStatus299, error)
 
-	InterCityBusAPIRealTimeByFrequency1(params *InterCityBusAPIRealTimeByFrequency1Params) (*InterCityBusAPIRealTimeByFrequency1OK, *InterCityBusAPIRealTimeByFrequency1Status299, error)
+	InterCityBusAPIRealTimeByFrequency2(params *InterCityBusAPIRealTimeByFrequency2Params) (*InterCityBusAPIRealTimeByFrequency2OK, *InterCityBusAPIRealTimeByFrequency2Status299, error)
 
 	InterCityBusAPIRealTimeByFrequencyUDP(params *InterCityBusAPIRealTimeByFrequencyUDPParams) (*InterCityBusAPIRealTimeByFrequencyUDPOK, *InterCityBusAPIRealTimeByFrequencyUDPStatus299, error)
 
@@ -394,26 +394,26 @@ func (a *Client) InterCityBusAPIRealTimeByFrequency(params *InterCityBusAPIRealT
 }
 
 /*
-  InterCityBusAPIRealTimeByFrequency1 取得指定s 路線名稱 的公路客運動態定時資料 a1 批次更新
+  InterCityBusAPIRealTimeByFrequency2 取得指定s 路線名稱 的公路客運動態定時資料 a1 批次更新
 
   ### 公路客運之定時資料(A1) ###
 - [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))
 */
-func (a *Client) InterCityBusAPIRealTimeByFrequency1(params *InterCityBusAPIRealTimeByFrequency1Params) (*InterCityBusAPIRealTimeByFrequency1OK, *InterCityBusAPIRealTimeByFrequency1Status299, error) {
+func (a *Client) InterCityBusAPIRealTimeByFrequency2(params *InterCityBusAPIRealTimeByFrequency2Params) (*InterCityBusAPIRealTimeByFrequency2OK, *InterCityBusAPIRealTimeByFrequency2Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewInterCityBusAPIRealTimeByFrequency1Params()
+		params = NewInterCityBusAPIRealTimeByFrequency2Params()
 	}
 
 	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "InterCityBusApi_RealTimeByFrequency_1",
+		ID:                 "InterCityBusApi_RealTimeByFrequency_2",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/RealTimeByFrequency/InterCity/{RouteName}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &InterCityBusAPIRealTimeByFrequency1Reader{formats: a.formats},
+		Reader:             &InterCityBusAPIRealTimeByFrequency2Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
@@ -421,9 +421,9 @@ func (a *Client) InterCityBusAPIRealTimeByFrequency1(params *InterCityBusAPIReal
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *InterCityBusAPIRealTimeByFrequency1OK:
+	case *InterCityBusAPIRealTimeByFrequency2OK:
 		return value, nil, nil
-	case *InterCityBusAPIRealTimeByFrequency1Status299:
+	case *InterCityBusAPIRealTimeByFrequency2Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
