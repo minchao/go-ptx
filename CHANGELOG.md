@@ -6,6 +6,20 @@
 
 ## [Unreleased]
 
+## [0.6.0] - 2020-08-27
+
+### Added
+- 金門縣公車及自行車服務。
+- 北捷貓纜V2版本資料服務上架。
+- 高雄輕軌V2版資料服務上架。
+
+### Changed
+- 高鐵V2每日時刻表資料結構調整。
+- 高鐵定期時刻表資料修正。
+
+### Removed
+- 高雄市公共自行車服務。
+
 ## [0.5.0] - 2020-06-18
 
 ### Added
@@ -74,7 +88,8 @@
 ### Added
 - 首次發行，提供基本、航空、公車、軌道、自行車與觀光等 PTX API 用戶端程式庫。
 
-[Unreleased]: https://github.com/minchao/go-ptx/compare/v0.5.0...HEAD
+[Unreleased]: https://github.com/minchao/go-ptx/compare/v0.6.0...HEAD
+[0.6.0]: https://github.com/minchao/go-ptx/compare/v0.5.0...v0.6.0
 [0.5.0]: https://github.com/minchao/go-ptx/compare/v0.4.0...v0.5.0
 [0.4.0]: https://github.com/minchao/go-ptx/compare/v0.3.0...v0.4.0
 [0.3.0]: https://github.com/minchao/go-ptx/compare/v0.2.0...v0.3.0
