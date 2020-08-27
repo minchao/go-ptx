@@ -3,7 +3,7 @@
   "info": {
     "version": "v2",
     "title": "MOTC Transport API V2",
-    "description": "本平臺提供涵蓋全國尺度之公車、臺鐵、高鐵、捷運、航空、自行車等公共運輸旅運資料服務API，歡迎各產政學單位介接使用。\r\n                <br><span class=swagger-description-indicatation>利用本平臺開放資料進行各項應用服務開發時，請考量不同特性使用者(如:性別/身心障礙/老幼等)的需求，並歡迎回饋寶貴意見。</span>\r\n                <br><br>資料使用葵花寶典:[請點我](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/)\r\n                <br>資料服務開發實作參考手冊:[請點我](https://docs.google.com/viewer?url=https://github.com/ptxmotc/PTX_Web/blob/master/Swagger%E6%9C%8D%E5%8B%99%E8%AA%AA%E6%98%8E%E4%B8%8A%E5%82%B3%E5%8F%83%E8%80%83%E6%AA%94%E6%A1%88/%E5%85%AC%E5%85%B1%E9%81%8B%E8%BC%B8%E6%95%B4%E5%90%88%E8%B3%87%E8%A8%8A%E5%B9%B3%E5%8F%B0%E8%B3%87%E6%96%99%E6%9C%8D%E5%8B%99%E9%96%8B%E7%99%BC%E5%AF%A6%E4%BD%9C.pdf?raw=true)\r\n                <br>API URI Convention文件說明:[請點我](https://docs.google.com/viewer?url=https://github.com/ptxmotc/PTX_Web/blob/master/Swagger%E6%9C%8D%E5%8B%99%E8%AA%AA%E6%98%8E%E4%B8%8A%E5%82%B3%E5%8F%83%E8%80%83%E6%AA%94%E6%A1%88/API_URI_Convention%E6%96%87%E4%BB%B6_v1.pdf?raw=true)<br>資料文本OAS描述:[請點我](https://ptx.transportdata.tw/MOTC/v2/Rail/api-docs/oas)"
+    "description": "本平臺提供涵蓋全國尺度之公車、臺鐵、高鐵、捷運、航空、自行車等公共運輸旅運資料服務API，歡迎各產政學單位介接使用。\r\n                <br><span class=swagger-description-indicatation>利用本平臺開放資料進行各項應用服務開發時，請考量不同特性使用者(如:性別/身心障礙/老幼等)的需求，並歡迎回饋寶貴意見。</span>\r\n                <br><br>資料使用葵花寶典:[請點我](https://motc-ptx-api-documentation.gitbook.io/motc-ptx-api-documentation/)\r\n                <br>資料服務開發實作參考手冊:[請點我](https://docs.google.com/viewer?url=https://github.com/ptxmotc/PTX_Web/blob/master/Swagger%E6%9C%8D%E5%8B%99%E8%AA%AA%E6%98%8E%E4%B8%8A%E5%82%B3%E5%8F%83%E8%80%83%E6%AA%94%E6%A1%88/%E5%85%AC%E5%85%B1%E9%81%8B%E8%BC%B8%E6%95%B4%E5%90%88%E8%B3%87%E8%A8%8A%E5%B9%B3%E5%8F%B0%E8%B3%87%E6%96%99%E6%9C%8D%E5%8B%99%E9%96%8B%E7%99%BC%E5%AF%A6%E4%BD%9C.pdf?raw=true)\r\n                <br>API URI Convention文件說明:[請點我](https://docs.google.com/viewer?url=https://github.com/ptxmotc/PTX_Web/blob/master/Swagger%E6%9C%8D%E5%8B%99%E8%AA%AA%E6%98%8E%E4%B8%8A%E5%82%B3%E5%8F%83%E8%80%83%E6%AA%94%E6%A1%88/API_URI_Convention%E6%96%87%E4%BB%B6_v1.pdf?raw=true)<br>資料文本OAS描述:[請點我](https://ptx.transportdata.tw/MOTC/v2/Rail/api-docs/oas)"
   },
   "host": "ptx.transportdata.tw",
   "basePath": "/MOTC/",
@@ -34,10 +34,12 @@
             "enum": [
               "TRTC",
               "KRTC",
-              "TYMC"
+              "TYMC",
+              "TRTCMG"
             ],
             "x-enum": {
               "TRTC": "臺北捷運",
+              "TRTCMG": "貓空纜車",
               "KRTC": "高雄捷運",
               "TYMC": "桃園捷運"
             }
@@ -123,11 +125,13 @@
               "KRTC",
               "TYMC",
               "KLRT",
-              "NTDLRT"
+              "NTDLRT",
+              "TRTCMG"
             ],
             "x-enum": {
               "TYMC": "桃園捷運",
               "KLRT": "高雄輕軌",
+              "TRTCMG": "貓空纜車",
               "TRTC": "臺北捷運",
               "NTDLRT": "淡海輕軌",
               "KRTC": "高雄捷運"
@@ -214,14 +218,16 @@
               "KRTC",
               "TYMC",
               "KLRT",
-              "NTDLRT"
+              "NTDLRT",
+              "TRTCMG"
             ],
             "x-enum": {
               "KLRT": "高雄輕軌",
               "KRTC": "高雄捷運",
               "TRTC": "臺北捷運",
               "NTDLRT": "淡海輕軌",
-              "TYMC": "桃園捷運"
+              "TYMC": "桃園捷運",
+              "TRTCMG": "貓空纜車"
             }
           },
           {
@@ -311,14 +317,16 @@
               "KRTC",
               "TYMC",
               "KLRT",
-              "NTDLRT"
+              "NTDLRT",
+              "TRTCMG"
             ],
             "x-enum": {
               "KLRT": "高雄輕軌",
               "TRTC": "臺北捷運",
               "KRTC": "高雄捷運",
               "TYMC": "桃園捷運",
-              "NTDLRT": "淡海輕軌"
+              "NTDLRT": "淡海輕軌",
+              "TRTCMG": "貓空纜車"
             }
           },
           {
@@ -571,13 +579,15 @@
             "enum": [
               "TRTC",
               "KRTC",
-              "TYMC"
+              "TYMC",
+              "TRTCMG"
             ],
             "x-enum": {
               "TRTC": "臺北捷運",
               "KLRT": "高雄輕軌",
               "TYMC": "桃園捷運",
-              "KRTC": "高雄捷運"
+              "KRTC": "高雄捷運",
+              "TRTCMG": "貓空纜車"
             }
           },
           {
@@ -1018,12 +1028,14 @@
             "enum": [
               "TRTC",
               "KRTC",
-              "TYMC"
+              "TYMC",
+              "KLRT"
             ],
             "x-enum": {
               "KRTC": "高雄捷運",
               "TYMC": "桃園捷運",
-              "TRTC": "臺北捷運"
+              "TRTC": "臺北捷運",
+              "KLRT": "高雄輕軌"
             }
           },
           {
@@ -1107,13 +1119,15 @@
               "KRTC",
               "TYMC",
               "KLRT",
-              "NTDLRT"
+              "NTDLRT",
+              "TRTCMG"
             ],
             "x-enum": {
               "TYMC": "桃園捷運",
               "KLRT": "高雄輕軌",
               "KRTC": "高雄捷運",
               "TRTC": "臺北捷運",
+              "TRTCMG": "貓空纜車",
               "NTDLRT": "淡海輕軌"
             }
           },
@@ -1281,10 +1295,12 @@
             "enum": [
               "TRTC",
               "KRTC",
-              "TYMC"
+              "TYMC",
+              "KLRT"
             ],
             "x-enum": {
               "TYMC": "桃園捷運",
+              "KLRT": "高雄輕軌",
               "TRTC": "臺北捷運",
               "KRTC": "高雄捷運"
             }
@@ -1367,10 +1383,12 @@
             "type": "string",
             "enum": [
               "TRTC",
+              "NTDLRT",
               "KRTC",
               "TYMC"
             ],
             "x-enum": {
+              "NTDLRT": "淡海輕軌",
               "KRTC": "高雄捷運",
               "TRTC": "臺北捷運",
               "TYMC": "桃園捷運"
@@ -1458,8 +1476,8 @@
             ],
             "x-enum": {
               "TYMC": "桃園捷運",
-              "KLRT": "高雄輕軌",
-              "KRTC": "高雄捷運"
+              "KRTC": "高雄捷運",
+              "KLRT": "高雄輕軌"
             }
           },
           {
@@ -1550,9 +1568,9 @@
               "KLRT"
             ],
             "x-enum": {
+              "KRTC": "高雄捷運",
               "TYMC": "桃園捷運",
-              "KLRT": "高雄輕軌",
-              "KRTC": "高雄捷運"
+              "KLRT": "高雄輕軌"
             }
           },
           {
@@ -3001,7 +3019,7 @@
         ],
         "summary": "取得動態對號座剩餘座位資訊看板資料",
         "description": "取得動態對號座剩餘座位資訊看板資料",
-        "operationId": "THSRApi_AvailableSeatStatusList",
+        "operationId": "THSRApi_AvailableSeatStatusList_Station",
         "consumes": [],
         "produces": [
           "application/json",
@@ -3065,7 +3083,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/MOTC.API.Rail.Models.V2THSRAvaliableSeatStatusWrapper[Service.DTO.Version2.Rail.THSR.AvailableSeat]"
+              "$ref": "#/definitions/MOTC.API.Rail.Models.V2THSRAvaliableSeatStatusOldWrapper[Service.DTO.Version2.Rail.THSR.Old.AvailableSeat]"
             }
           }
         }
@@ -3078,7 +3096,7 @@
         ],
         "summary": "取得動態指定[車站]的對號座剩餘座位資訊看板資料",
         "description": "取得動態指定[車站]的對號座剩餘座位資訊看板資料",
-        "operationId": "THSRApi_AvailableSeatStatusList_1",
+        "operationId": "THSRApi_AvailableSeatStatusList_Station_1",
         "consumes": [],
         "produces": [
           "application/json",
@@ -3149,7 +3167,7 @@
           "200": {
             "description": "OK",
             "schema": {
-              "$ref": "#/definitions/MOTC.API.Rail.Models.V2THSRAvaliableSeatStatusWrapper[Service.DTO.Version2.Rail.THSR.AvailableSeat]"
+              "$ref": "#/definitions/MOTC.API.Rail.Models.V2THSRAvaliableSeatStatusOldWrapper[Service.DTO.Version2.Rail.THSR.Old.AvailableSeat]"
             }
           }
         }
@@ -3226,6 +3244,167 @@
               "items": {
                 "$ref": "#/definitions/Service.DTO.Version2.Rail.THSR.StationExit"
               }
+            }
+          }
+        }
+      }
+    },
+    "/v2/Rail/THSR/AvailableSeatStatus/Train/Leg/Today": {
+      "get": {
+        "tags": [
+          "THSR"
+        ],
+        "summary": "**(開發用測試版)** 取得當天對號座即時剩餘位資料({原始}列車區段Leg角度)",
+        "description": "取得當天對號座即時剩餘位資料({原始}列車區段Leg角度)\r\n- 高鐵對號座即時剩餘位(列車區段Leg角度)之資料使用注意事項([連結](https://motc-ptx-api-documentation.gitbook.io/motc-ptx-api-documentation/api-zi-liao-shi-yong-zhu-yi-shi-xiang/rail))\r\n- 當日(D)之更新頻率為每10分鐘\r\n- **(本服務尚在測試中,穩定度及更新頻率將持續優化)**",
+        "operationId": "THSRApi_AvailableSeatStatus",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$count",
+            "in": "query",
+            "description": "查詢數量",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/MOTC.API.Rail.Models.V2THSRAvaliableSeatStatusWrapper[Service.DTO.Version2.Rail.THSR.AvailableSeat]"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Rail/THSR/AvailableSeatStatus/Train/Leg/TrainDate/{TrainDate}": {
+      "get": {
+        "tags": [
+          "THSR"
+        ],
+        "summary": "**(開發用測試版)** 取得指定[日期]對號座即時剩餘位資料({原始}列車區段Leg角度)",
+        "description": "取得指定[日期]對號座即時剩餘位資料({原始}列車區段Leg角度)\r\n- 高鐵對號座即時剩餘位(列車區段Leg角度)之資料使用注意事項([連結](https://motc-ptx-api-documentation.gitbook.io/motc-ptx-api-documentation/api-zi-liao-shi-yong-zhu-yi-shi-xiang/rail))\r\n- 當日後27日(D+1~D+27)之更新頻率為每日的10、16、22時\r\n- **(本服務尚在測試中,穩定度及更新頻率將持續優化)**",
+        "operationId": "THSRApi_AvailableSeatStatus_1",
+        "consumes": [],
+        "produces": [
+          "application/json",
+          "text/json"
+        ],
+        "parameters": [
+          {
+            "name": "TrainDate",
+            "in": "path",
+            "description": "欲查詢車次的日期(格式: yyyy-MM-dd)",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "name": "$select",
+            "in": "query",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "name": "$filter",
+            "in": "query",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "name": "$orderby",
+            "in": "query",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "name": "$top",
+            "in": "query",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "name": "$skip",
+            "in": "query",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "name": "$count",
+            "in": "query",
+            "description": "查詢數量",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "name": "$format",
+            "in": "query",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "schema": {
+              "$ref": "#/definitions/MOTC.API.Rail.Models.V2THSRAvaliableSeatStatusWrapper[Service.DTO.Version2.Rail.THSR.AvailableSeat]"
             }
           }
         }
@@ -5528,7 +5707,7 @@
       }
     },
     "MOTC.API.Rail.Models.V2THSRAvaliableSeatStatusWrapper[Service.DTO.Version2.Rail.THSR.AvailableSeat]": {
-      "title": "V2THSRAvaliableSeatStatusWrapper[AvailableSeat]",
+      "title": "AvaliableSeatStatus",
       "required": [
         "AvailableSeats"
       ],
@@ -5536,7 +5715,21 @@
       "properties": {
         "UpdateTime": {
           "title": "DateTime",
-          "description": "更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "description": "PTX平台更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "SrcUpdateTime": {
+          "title": "DateTime",
+          "description": "來源平台更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "Count": {
+          "format": "int64",
+          "description": "資料總筆數",
+          "type": "integer"
+        },
+        "TrainDate": {
+          "description": "營運日說明(格式: yyyy-MM-dd)",
           "type": "string"
         },
         "AvailableSeats": {
@@ -5545,11 +5738,6 @@
           "items": {
             "$ref": "#/definitions/Service.DTO.Version2.Rail.THSR.AvailableSeat"
           }
-        },
-        "Count": {
-          "format": "int64",
-          "description": "資料總筆數",
-          "type": "integer"
         }
       }
     },
@@ -5559,14 +5747,13 @@
       "required": [
         "TrainNo",
         "Direction",
-        "StationID",
-        "StationName",
-        "DepartureTime",
+        "StartingStationID",
+        "StartingStationCode",
+        "StartingStationName",
         "EndingStationID",
+        "EndingStationCode",
         "EndingStationName",
-        "StopStations",
-        "SrcRecTime",
-        "UpdateTime"
+        "StopStations"
       ],
       "type": "object",
       "properties": {
@@ -5580,21 +5767,25 @@
           "description": "方向 : [0:'南下',1:'北上']",
           "type": "integer"
         },
-        "StationID": {
-          "description": "查詢車站代碼",
+        "StartingStationID": {
+          "description": "起點車站代碼",
           "type": "string"
         },
-        "StationName": {
+        "StartingStationCode": {
+          "description": "起站車站簡碼(訂票系統用)",
+          "type": "string"
+        },
+        "StartingStationName": {
           "$ref": "#/definitions/Service.DTO.Version2.Base.NameType",
           "title": "NameType",
-          "description": "查詢車站名稱"
-        },
-        "DepartureTime": {
-          "description": "發車時間(格式: HH:mm)",
-          "type": "string"
+          "description": "起點車站名稱"
         },
         "EndingStationID": {
           "description": "終點車站代碼",
+          "type": "string"
+        },
+        "EndingStationCode": {
+          "description": "終點車站簡碼(訂票系統用)",
           "type": "string"
         },
         "EndingStationName": {
@@ -5608,16 +5799,6 @@
           "items": {
             "$ref": "#/definitions/Service.DTO.Version2.Rail.THSR.StopStation"
           }
-        },
-        "SrcRecTime": {
-          "title": "DateTime",
-          "description": "來源端平台接收時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
-          "type": "string"
-        },
-        "UpdateTime": {
-          "title": "DateTime",
-          "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
-          "type": "string"
         }
       }
     },
@@ -5640,15 +5821,29 @@
       "title": "StopStation",
       "description": "車次停靠站點組合",
       "required": [
+        "StopSequence",
         "StationID",
+        "StationCode",
         "StationName",
+        "NextStationID",
+        "NextStationCode",
+        "NextStationName",
         "StandardSeatStatus",
         "BusinessSeatStatus"
       ],
       "type": "object",
       "properties": {
+        "StopSequence": {
+          "format": "int32",
+          "description": "跑法站序",
+          "type": "integer"
+        },
         "StationID": {
           "description": "車站代碼",
+          "type": "string"
+        },
+        "StationCode": {
+          "description": "車站簡碼(訂票系統用)",
           "type": "string"
         },
         "StationName": {
@@ -5656,12 +5851,25 @@
           "title": "NameType",
           "description": "車站名稱"
         },
+        "NextStationID": {
+          "description": "下一停靠站車站代碼",
+          "type": "string"
+        },
+        "NextStationCode": {
+          "description": "下一停靠站車站簡碼(訂票系統用)",
+          "type": "string"
+        },
+        "NextStationName": {
+          "$ref": "#/definitions/Service.DTO.Version2.Base.NameType",
+          "title": "NameType",
+          "description": "下一停靠站車站名稱"
+        },
         "StandardSeatStatus": {
-          "description": "標準席剩餘座位狀態 = ['Available: 尚有座位' or 'Limited: 座位有限' or 'Full: 已無座位']",
+          "description": "標準席剩餘座位狀態 = ['O: 尚有座位' or 'L: 座位有限' or 'X: 已無座位']",
           "type": "string"
         },
         "BusinessSeatStatus": {
-          "description": "商務席剩餘座位狀態 =  ['Available: 尚有座位' or 'Limited: 座位有限' or 'Full: 已無座位']",
+          "description": "商務席剩餘座位狀態 =  ['O: 尚有座位' or 'L: 座位有限' or 'X: 已無座位']",
           "type": "string"
         }
       }
@@ -8038,6 +8246,130 @@
           "format": "int32",
           "description": "票價",
           "type": "integer"
+        }
+      }
+    },
+    "MOTC.API.Rail.Models.V2THSRAvaliableSeatStatusOldWrapper[Service.DTO.Version2.Rail.THSR.Old.AvailableSeat]": {
+      "title": "V2THSRAvaliableSeatStatusWrapper",
+      "required": [
+        "AvailableSeats"
+      ],
+      "type": "object",
+      "properties": {
+        "UpdateTime": {
+          "title": "DateTime",
+          "description": "更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "AvailableSeats": {
+          "description": "對號座位狀態資訊(依高鐵規定若營運狀態有異常狀況時，剩餘座位資訊將停留在最後正常運行時間之狀態不做更新，實際資料請參考高鐵各車站現場對號座剩餘座位資訊看板)",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version2.Rail.THSR.Old.AvailableSeat"
+          }
+        },
+        "Count": {
+          "format": "int64",
+          "description": "資料總筆數",
+          "type": "integer"
+        }
+      }
+    },
+    "Service.DTO.Version2.Rail.THSR.Old.AvailableSeat": {
+      "title": "AvailableSeat",
+      "description": "高鐵對號座位狀態資訊",
+      "required": [
+        "TrainNo",
+        "Direction",
+        "StationID",
+        "StationName",
+        "DepartureTime",
+        "EndingStationID",
+        "EndingStationName",
+        "StopStations",
+        "SrcRecTime",
+        "UpdateTime"
+      ],
+      "type": "object",
+      "properties": {
+        "TrainNo": {
+          "description": "車次號碼",
+          "type": "string"
+        },
+        "Direction": {
+          "format": "int32",
+          "title": "integer",
+          "description": "方向 : [0:'南下',1:'北上']",
+          "type": "integer"
+        },
+        "StationID": {
+          "description": "查詢車站代碼",
+          "type": "string"
+        },
+        "StationName": {
+          "$ref": "#/definitions/Service.DTO.Version2.Base.NameType",
+          "title": "NameType",
+          "description": "查詢車站名稱"
+        },
+        "DepartureTime": {
+          "description": "發車時間(格式: HH:mm)",
+          "type": "string"
+        },
+        "EndingStationID": {
+          "description": "終點車站代碼",
+          "type": "string"
+        },
+        "EndingStationName": {
+          "$ref": "#/definitions/Service.DTO.Version2.Base.NameType",
+          "title": "NameType",
+          "description": "終點車站名稱"
+        },
+        "StopStations": {
+          "description": "車次停靠站點組合",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/Service.DTO.Version2.Rail.THSR.Old.StopStation"
+          }
+        },
+        "SrcRecTime": {
+          "title": "DateTime",
+          "description": "來源端平台接收時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "UpdateTime": {
+          "title": "DateTime",
+          "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        }
+      }
+    },
+    "Service.DTO.Version2.Rail.THSR.Old.StopStation": {
+      "title": "StopStation",
+      "description": "車次停靠站點組合",
+      "required": [
+        "StationID",
+        "StationName",
+        "StandardSeatStatus",
+        "BusinessSeatStatus"
+      ],
+      "type": "object",
+      "properties": {
+        "StationID": {
+          "description": "車站代碼",
+          "type": "string"
+        },
+        "StationName": {
+          "$ref": "#/definitions/Service.DTO.Version2.Base.NameType",
+          "title": "NameType",
+          "description": "車站名稱"
+        },
+        "StandardSeatStatus": {
+          "description": "標準席剩餘座位狀態 = ['Available: 尚有座位' or 'Limited: 座位有限' or 'Full: 已無座位']",
+          "type": "string"
+        },
+        "BusinessSeatStatus": {
+          "description": "商務席剩餘座位狀態 =  ['Available: 尚有座位' or 'Limited: 座位有限' or 'Full: 已無座位']",
+          "type": "string"
         }
       }
     },

@@ -12,18 +12,24 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// ServiceDTOVersion2BikeBikeShape BikeShape
+// PTXServiceDTOBikeSpecificationV2BikeShape BikeShape
 //
-// swagger:model Service.DTO.Version2.Bike.BikeShape
-type ServiceDTOVersion2BikeBikeShape struct {
+// swagger:model PTX.Service.DTO.Bike.Specification.V2.BikeShape
+type PTXServiceDTOBikeSpecificationV2BikeShape struct {
 
+	// String
+	//
 	// 業管機關名稱（可能包含多個業管機關）
 	AuthorityName string `json:"AuthorityName,omitempty"`
 
+	// String
+	//
 	// 路線所在縣市名稱
 	// Required: true
 	City *string `json:"City"`
 
+	// String
+	//
 	// 路線所在縣市代碼
 	// Required: true
 	CityCode *string `json:"CityCode"`
@@ -31,29 +37,45 @@ type ServiceDTOVersion2BikeBikeShape struct {
 	// 自行車道長度
 	CyclingLength float64 `json:"CyclingLength,omitempty"`
 
+	// String
+	//
 	// 自行車道類型
 	CyclingType string `json:"CyclingType,omitempty"`
 
+	// String
+	//
 	// 自行車道車行方向
 	Direction string `json:"Direction,omitempty"`
 
+	// String
+	//
 	// 自行車道完工日期時間
 	FinishedTime string `json:"FinishedTime,omitempty"`
 
+	// String
+	//
 	// 路線軌跡資料
 	// Required: true
 	Geometry *string `json:"Geometry"`
 
+	// String
+	//
 	// 路線迄點描述
 	RoadSectionEnd string `json:"RoadSectionEnd,omitempty"`
 
+	// String
+	//
 	// 路線起點描述
 	RoadSectionStart string `json:"RoadSectionStart,omitempty"`
 
+	// String
+	//
 	// 路線名稱
 	// Required: true
 	RouteName *string `json:"RouteName"`
 
+	// String
+	//
 	// 路線所在鄉鎮名稱（可能包含多個鄉鎮）
 	Town string `json:"Town,omitempty"`
 
@@ -64,8 +86,8 @@ type ServiceDTOVersion2BikeBikeShape struct {
 	UpdateTime *string `json:"UpdateTime"`
 }
 
-// Validate validates this service d t o version2 bike bike shape
-func (m *ServiceDTOVersion2BikeBikeShape) Validate(formats strfmt.Registry) error {
+// Validate validates this p t x service d t o bike specification v2 bike shape
+func (m *PTXServiceDTOBikeSpecificationV2BikeShape) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateCity(formats); err != nil {
@@ -94,7 +116,7 @@ func (m *ServiceDTOVersion2BikeBikeShape) Validate(formats strfmt.Registry) erro
 	return nil
 }
 
-func (m *ServiceDTOVersion2BikeBikeShape) validateCity(formats strfmt.Registry) error {
+func (m *PTXServiceDTOBikeSpecificationV2BikeShape) validateCity(formats strfmt.Registry) error {
 
 	if err := validate.Required("City", "body", m.City); err != nil {
 		return err
@@ -103,7 +125,7 @@ func (m *ServiceDTOVersion2BikeBikeShape) validateCity(formats strfmt.Registry) 
 	return nil
 }
 
-func (m *ServiceDTOVersion2BikeBikeShape) validateCityCode(formats strfmt.Registry) error {
+func (m *PTXServiceDTOBikeSpecificationV2BikeShape) validateCityCode(formats strfmt.Registry) error {
 
 	if err := validate.Required("CityCode", "body", m.CityCode); err != nil {
 		return err
@@ -112,7 +134,7 @@ func (m *ServiceDTOVersion2BikeBikeShape) validateCityCode(formats strfmt.Regist
 	return nil
 }
 
-func (m *ServiceDTOVersion2BikeBikeShape) validateGeometry(formats strfmt.Registry) error {
+func (m *PTXServiceDTOBikeSpecificationV2BikeShape) validateGeometry(formats strfmt.Registry) error {
 
 	if err := validate.Required("Geometry", "body", m.Geometry); err != nil {
 		return err
@@ -121,7 +143,7 @@ func (m *ServiceDTOVersion2BikeBikeShape) validateGeometry(formats strfmt.Regist
 	return nil
 }
 
-func (m *ServiceDTOVersion2BikeBikeShape) validateRouteName(formats strfmt.Registry) error {
+func (m *PTXServiceDTOBikeSpecificationV2BikeShape) validateRouteName(formats strfmt.Registry) error {
 
 	if err := validate.Required("RouteName", "body", m.RouteName); err != nil {
 		return err
@@ -130,7 +152,7 @@ func (m *ServiceDTOVersion2BikeBikeShape) validateRouteName(formats strfmt.Regis
 	return nil
 }
 
-func (m *ServiceDTOVersion2BikeBikeShape) validateUpdateTime(formats strfmt.Registry) error {
+func (m *PTXServiceDTOBikeSpecificationV2BikeShape) validateUpdateTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
 		return err
@@ -140,7 +162,7 @@ func (m *ServiceDTOVersion2BikeBikeShape) validateUpdateTime(formats strfmt.Regi
 }
 
 // MarshalBinary interface implementation
-func (m *ServiceDTOVersion2BikeBikeShape) MarshalBinary() ([]byte, error) {
+func (m *PTXServiceDTOBikeSpecificationV2BikeShape) MarshalBinary() ([]byte, error) {
 	if m == nil {
 		return nil, nil
 	}
@@ -148,8 +170,8 @@ func (m *ServiceDTOVersion2BikeBikeShape) MarshalBinary() ([]byte, error) {
 }
 
 // UnmarshalBinary interface implementation
-func (m *ServiceDTOVersion2BikeBikeShape) UnmarshalBinary(b []byte) error {
-	var res ServiceDTOVersion2BikeBikeShape
+func (m *PTXServiceDTOBikeSpecificationV2BikeShape) UnmarshalBinary(b []byte) error {
+	var res PTXServiceDTOBikeSpecificationV2BikeShape
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

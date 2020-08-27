@@ -33,7 +33,7 @@ type ServiceDTOVersion3RailTRAStationTransferBusTransfer struct {
 	IsOnSiteTransfer bool `json:"IsOnSiteTransfer,omitempty"`
 
 	// 最短轉乘時間
-	MinTransferTime int32 `json:"MinTransferTime,omitempty"`
+	MinTransferTime float64 `json:"MinTransferTime,omitempty"`
 
 	// 運具種類代碼
 	// Required: true

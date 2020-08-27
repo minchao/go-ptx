@@ -31,7 +31,7 @@ func (o *CyclingAPIShapeReader) ReadResponse(response runtime.ClientResponse, co
 		return result, nil
 
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
 }
 
@@ -42,17 +42,17 @@ func NewCyclingAPIShapeOK() *CyclingAPIShapeOK {
 
 /*CyclingAPIShapeOK handles this case with default header values.
 
-OK
+Success
 */
 type CyclingAPIShapeOK struct {
-	Payload []*models.ServiceDTOVersion2BikeBikeShape
+	Payload []*models.PTXServiceDTOBikeSpecificationV2BikeShape
 }
 
 func (o *CyclingAPIShapeOK) Error() string {
 	return fmt.Sprintf("[GET /v2/Cycling/Shape/{City}][%d] cyclingApiShapeOK  %+v", 200, o.Payload)
 }
 
-func (o *CyclingAPIShapeOK) GetPayload() []*models.ServiceDTOVersion2BikeBikeShape {
+func (o *CyclingAPIShapeOK) GetPayload() []*models.PTXServiceDTOBikeSpecificationV2BikeShape {
 	return o.Payload
 }
 

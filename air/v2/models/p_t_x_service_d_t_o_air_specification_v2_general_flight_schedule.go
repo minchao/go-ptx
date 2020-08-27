@@ -14,48 +14,68 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// ServiceDTOVersion2AviationGeneralFlightSchedule GeneralFlightSchedule
+// PTXServiceDTOAirSpecificationV2GeneralFlightSchedule GeneralFlightSchedule
 //
 // 航空定期時刻表資料
 //
-// swagger:model Service.DTO.Version2.Aviation.GeneralFlightSchedule
-type ServiceDTOVersion2AviationGeneralFlightSchedule struct {
+// swagger:model PTX.Service.DTO.Air.Specification.V2.GeneralFlightSchedule
+type PTXServiceDTOAirSpecificationV2GeneralFlightSchedule struct {
 
+	// String
+	//
 	// 航空公司IATA國際代碼
 	// Required: true
 	AirlineID *string `json:"AirlineID"`
 
+	// String
+	//
 	// 目的地機場IATA國際代碼
 	// Required: true
 	ArrivalAirportID *string `json:"ArrivalAirportID"`
 
+	// String
+	//
 	// 終點機場抵達時間 (格式: HH:mm 當地時間，跨日以+1 表示)
 	// Required: true
 	ArrivalTime *string `json:"ArrivalTime"`
 
+	// Array
+	//
 	// 共用班號
-	CodeShare []*ServiceDTOVersion2AviationCodeShare `json:"CodeShare"`
+	CodeShare []*PTXServiceDTOAirSpecificationV2CodeShare `json:"CodeShare"`
 
+	// String
+	//
 	// 起點機場IATA國際代碼
 	// Required: true
 	DepartureAirportID *string `json:"DepartureAirportID"`
 
+	// String
+	//
 	// 起點機場出發時間 (格式: HH:mm 當地時間，跨日以+1 表示)
 	// Required: true
 	DepartureTime *string `json:"DepartureTime"`
 
+	// String
+	//
 	// 班機號碼(包含航空公司的AirlineID，結構為AirlineID加上3~4碼航機班號數字；若班號僅有兩碼，其結構會加上0補足三碼，"AirlineID + 0 + 兩碼班號")
 	// Required: true
 	FlightNumber *string `json:"FlightNumber"`
 
+	// Boolean
+	//
 	// 週五飛行與否
 	// Required: true
 	Friday *bool `json:"Friday"`
 
+	// Boolean
+	//
 	// 週一飛行與否
 	// Required: true
 	Monday *bool `json:"Monday"`
 
+	// Boolean
+	//
 	// 週六飛行與否
 	// Required: true
 	Saturday *bool `json:"Saturday"`
@@ -72,17 +92,25 @@ type ServiceDTOVersion2AviationGeneralFlightSchedule struct {
 	// Required: true
 	ScheduleStartDate *string `json:"ScheduleStartDate"`
 
+	// Boolean
+	//
 	// 週日飛行與否
 	// Required: true
 	Sunday *bool `json:"Sunday"`
 
+	// String
+	//
 	// 航廈
 	Terminal string `json:"Terminal,omitempty"`
 
+	// Boolean
+	//
 	// 週四飛行與否
 	// Required: true
 	Thursday *bool `json:"Thursday"`
 
+	// Boolean
+	//
 	// 週二飛行與否
 	// Required: true
 	Tuesday *bool `json:"Tuesday"`
@@ -93,17 +121,21 @@ type ServiceDTOVersion2AviationGeneralFlightSchedule struct {
 	// Required: true
 	UpdateTime *string `json:"UpdateTime"`
 
+	// Int32
+	//
 	// 資料版本編號
 	// Required: true
 	VersionID *int32 `json:"VersionID"`
 
+	// Boolean
+	//
 	// 週三飛行與否
 	// Required: true
 	Wednesday *bool `json:"Wednesday"`
 }
 
-// Validate validates this service d t o version2 aviation general flight schedule
-func (m *ServiceDTOVersion2AviationGeneralFlightSchedule) Validate(formats strfmt.Registry) error {
+// Validate validates this p t x service d t o air specification v2 general flight schedule
+func (m *PTXServiceDTOAirSpecificationV2GeneralFlightSchedule) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateAirlineID(formats); err != nil {
@@ -184,7 +216,7 @@ func (m *ServiceDTOVersion2AviationGeneralFlightSchedule) Validate(formats strfm
 	return nil
 }
 
-func (m *ServiceDTOVersion2AviationGeneralFlightSchedule) validateAirlineID(formats strfmt.Registry) error {
+func (m *PTXServiceDTOAirSpecificationV2GeneralFlightSchedule) validateAirlineID(formats strfmt.Registry) error {
 
 	if err := validate.Required("AirlineID", "body", m.AirlineID); err != nil {
 		return err
@@ -193,7 +225,7 @@ func (m *ServiceDTOVersion2AviationGeneralFlightSchedule) validateAirlineID(form
 	return nil
 }
 
-func (m *ServiceDTOVersion2AviationGeneralFlightSchedule) validateArrivalAirportID(formats strfmt.Registry) error {
+func (m *PTXServiceDTOAirSpecificationV2GeneralFlightSchedule) validateArrivalAirportID(formats strfmt.Registry) error {
 
 	if err := validate.Required("ArrivalAirportID", "body", m.ArrivalAirportID); err != nil {
 		return err
@@ -202,7 +234,7 @@ func (m *ServiceDTOVersion2AviationGeneralFlightSchedule) validateArrivalAirport
 	return nil
 }
 
-func (m *ServiceDTOVersion2AviationGeneralFlightSchedule) validateArrivalTime(formats strfmt.Registry) error {
+func (m *PTXServiceDTOAirSpecificationV2GeneralFlightSchedule) validateArrivalTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("ArrivalTime", "body", m.ArrivalTime); err != nil {
 		return err
@@ -211,7 +243,7 @@ func (m *ServiceDTOVersion2AviationGeneralFlightSchedule) validateArrivalTime(fo
 	return nil
 }
 
-func (m *ServiceDTOVersion2AviationGeneralFlightSchedule) validateCodeShare(formats strfmt.Registry) error {
+func (m *PTXServiceDTOAirSpecificationV2GeneralFlightSchedule) validateCodeShare(formats strfmt.Registry) error {
 
 	if swag.IsZero(m.CodeShare) { // not required
 		return nil
@@ -236,7 +268,7 @@ func (m *ServiceDTOVersion2AviationGeneralFlightSchedule) validateCodeShare(form
 	return nil
 }
 
-func (m *ServiceDTOVersion2AviationGeneralFlightSchedule) validateDepartureAirportID(formats strfmt.Registry) error {
+func (m *PTXServiceDTOAirSpecificationV2GeneralFlightSchedule) validateDepartureAirportID(formats strfmt.Registry) error {
 
 	if err := validate.Required("DepartureAirportID", "body", m.DepartureAirportID); err != nil {
 		return err
@@ -245,7 +277,7 @@ func (m *ServiceDTOVersion2AviationGeneralFlightSchedule) validateDepartureAirpo
 	return nil
 }
 
-func (m *ServiceDTOVersion2AviationGeneralFlightSchedule) validateDepartureTime(formats strfmt.Registry) error {
+func (m *PTXServiceDTOAirSpecificationV2GeneralFlightSchedule) validateDepartureTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("DepartureTime", "body", m.DepartureTime); err != nil {
 		return err
@@ -254,7 +286,7 @@ func (m *ServiceDTOVersion2AviationGeneralFlightSchedule) validateDepartureTime(
 	return nil
 }
 
-func (m *ServiceDTOVersion2AviationGeneralFlightSchedule) validateFlightNumber(formats strfmt.Registry) error {
+func (m *PTXServiceDTOAirSpecificationV2GeneralFlightSchedule) validateFlightNumber(formats strfmt.Registry) error {
 
 	if err := validate.Required("FlightNumber", "body", m.FlightNumber); err != nil {
 		return err
@@ -263,7 +295,7 @@ func (m *ServiceDTOVersion2AviationGeneralFlightSchedule) validateFlightNumber(f
 	return nil
 }
 
-func (m *ServiceDTOVersion2AviationGeneralFlightSchedule) validateFriday(formats strfmt.Registry) error {
+func (m *PTXServiceDTOAirSpecificationV2GeneralFlightSchedule) validateFriday(formats strfmt.Registry) error {
 
 	if err := validate.Required("Friday", "body", m.Friday); err != nil {
 		return err
@@ -272,7 +304,7 @@ func (m *ServiceDTOVersion2AviationGeneralFlightSchedule) validateFriday(formats
 	return nil
 }
 
-func (m *ServiceDTOVersion2AviationGeneralFlightSchedule) validateMonday(formats strfmt.Registry) error {
+func (m *PTXServiceDTOAirSpecificationV2GeneralFlightSchedule) validateMonday(formats strfmt.Registry) error {
 
 	if err := validate.Required("Monday", "body", m.Monday); err != nil {
 		return err
@@ -281,7 +313,7 @@ func (m *ServiceDTOVersion2AviationGeneralFlightSchedule) validateMonday(formats
 	return nil
 }
 
-func (m *ServiceDTOVersion2AviationGeneralFlightSchedule) validateSaturday(formats strfmt.Registry) error {
+func (m *PTXServiceDTOAirSpecificationV2GeneralFlightSchedule) validateSaturday(formats strfmt.Registry) error {
 
 	if err := validate.Required("Saturday", "body", m.Saturday); err != nil {
 		return err
@@ -290,7 +322,7 @@ func (m *ServiceDTOVersion2AviationGeneralFlightSchedule) validateSaturday(forma
 	return nil
 }
 
-func (m *ServiceDTOVersion2AviationGeneralFlightSchedule) validateScheduleEndDate(formats strfmt.Registry) error {
+func (m *PTXServiceDTOAirSpecificationV2GeneralFlightSchedule) validateScheduleEndDate(formats strfmt.Registry) error {
 
 	if err := validate.Required("ScheduleEndDate", "body", m.ScheduleEndDate); err != nil {
 		return err
@@ -299,7 +331,7 @@ func (m *ServiceDTOVersion2AviationGeneralFlightSchedule) validateScheduleEndDat
 	return nil
 }
 
-func (m *ServiceDTOVersion2AviationGeneralFlightSchedule) validateScheduleStartDate(formats strfmt.Registry) error {
+func (m *PTXServiceDTOAirSpecificationV2GeneralFlightSchedule) validateScheduleStartDate(formats strfmt.Registry) error {
 
 	if err := validate.Required("ScheduleStartDate", "body", m.ScheduleStartDate); err != nil {
 		return err
@@ -308,7 +340,7 @@ func (m *ServiceDTOVersion2AviationGeneralFlightSchedule) validateScheduleStartD
 	return nil
 }
 
-func (m *ServiceDTOVersion2AviationGeneralFlightSchedule) validateSunday(formats strfmt.Registry) error {
+func (m *PTXServiceDTOAirSpecificationV2GeneralFlightSchedule) validateSunday(formats strfmt.Registry) error {
 
 	if err := validate.Required("Sunday", "body", m.Sunday); err != nil {
 		return err
@@ -317,7 +349,7 @@ func (m *ServiceDTOVersion2AviationGeneralFlightSchedule) validateSunday(formats
 	return nil
 }
 
-func (m *ServiceDTOVersion2AviationGeneralFlightSchedule) validateThursday(formats strfmt.Registry) error {
+func (m *PTXServiceDTOAirSpecificationV2GeneralFlightSchedule) validateThursday(formats strfmt.Registry) error {
 
 	if err := validate.Required("Thursday", "body", m.Thursday); err != nil {
 		return err
@@ -326,7 +358,7 @@ func (m *ServiceDTOVersion2AviationGeneralFlightSchedule) validateThursday(forma
 	return nil
 }
 
-func (m *ServiceDTOVersion2AviationGeneralFlightSchedule) validateTuesday(formats strfmt.Registry) error {
+func (m *PTXServiceDTOAirSpecificationV2GeneralFlightSchedule) validateTuesday(formats strfmt.Registry) error {
 
 	if err := validate.Required("Tuesday", "body", m.Tuesday); err != nil {
 		return err
@@ -335,7 +367,7 @@ func (m *ServiceDTOVersion2AviationGeneralFlightSchedule) validateTuesday(format
 	return nil
 }
 
-func (m *ServiceDTOVersion2AviationGeneralFlightSchedule) validateUpdateTime(formats strfmt.Registry) error {
+func (m *PTXServiceDTOAirSpecificationV2GeneralFlightSchedule) validateUpdateTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
 		return err
@@ -344,7 +376,7 @@ func (m *ServiceDTOVersion2AviationGeneralFlightSchedule) validateUpdateTime(for
 	return nil
 }
 
-func (m *ServiceDTOVersion2AviationGeneralFlightSchedule) validateVersionID(formats strfmt.Registry) error {
+func (m *PTXServiceDTOAirSpecificationV2GeneralFlightSchedule) validateVersionID(formats strfmt.Registry) error {
 
 	if err := validate.Required("VersionID", "body", m.VersionID); err != nil {
 		return err
@@ -353,7 +385,7 @@ func (m *ServiceDTOVersion2AviationGeneralFlightSchedule) validateVersionID(form
 	return nil
 }
 
-func (m *ServiceDTOVersion2AviationGeneralFlightSchedule) validateWednesday(formats strfmt.Registry) error {
+func (m *PTXServiceDTOAirSpecificationV2GeneralFlightSchedule) validateWednesday(formats strfmt.Registry) error {
 
 	if err := validate.Required("Wednesday", "body", m.Wednesday); err != nil {
 		return err
@@ -363,7 +395,7 @@ func (m *ServiceDTOVersion2AviationGeneralFlightSchedule) validateWednesday(form
 }
 
 // MarshalBinary interface implementation
-func (m *ServiceDTOVersion2AviationGeneralFlightSchedule) MarshalBinary() ([]byte, error) {
+func (m *PTXServiceDTOAirSpecificationV2GeneralFlightSchedule) MarshalBinary() ([]byte, error) {
 	if m == nil {
 		return nil, nil
 	}
@@ -371,8 +403,8 @@ func (m *ServiceDTOVersion2AviationGeneralFlightSchedule) MarshalBinary() ([]byt
 }
 
 // UnmarshalBinary interface implementation
-func (m *ServiceDTOVersion2AviationGeneralFlightSchedule) UnmarshalBinary(b []byte) error {
-	var res ServiceDTOVersion2AviationGeneralFlightSchedule
+func (m *PTXServiceDTOAirSpecificationV2GeneralFlightSchedule) UnmarshalBinary(b []byte) error {
+	var res PTXServiceDTOAirSpecificationV2GeneralFlightSchedule
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

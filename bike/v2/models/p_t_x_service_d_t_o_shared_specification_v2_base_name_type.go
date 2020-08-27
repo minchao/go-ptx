@@ -10,27 +10,31 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// ServiceDTOVersion2BaseNameType NameType
+// PTXServiceDTOSharedSpecificationV2BaseNameType NameType
 //
 // 名稱資料型別
 //
-// swagger:model Service.DTO.Version2.Base.NameType
-type ServiceDTOVersion2BaseNameType struct {
+// swagger:model PTX.Service.DTO.Shared.Specification.V2.Base.NameType
+type PTXServiceDTOSharedSpecificationV2BaseNameType struct {
 
+	// String
+	//
 	// 英文名稱
 	En string `json:"En,omitempty"`
 
+	// String
+	//
 	// 中文繁體名稱
 	ZhTw string `json:"Zh_tw,omitempty"`
 }
 
-// Validate validates this service d t o version2 base name type
-func (m *ServiceDTOVersion2BaseNameType) Validate(formats strfmt.Registry) error {
+// Validate validates this p t x service d t o shared specification v2 base name type
+func (m *PTXServiceDTOSharedSpecificationV2BaseNameType) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
 // MarshalBinary interface implementation
-func (m *ServiceDTOVersion2BaseNameType) MarshalBinary() ([]byte, error) {
+func (m *PTXServiceDTOSharedSpecificationV2BaseNameType) MarshalBinary() ([]byte, error) {
 	if m == nil {
 		return nil, nil
 	}
@@ -38,8 +42,8 @@ func (m *ServiceDTOVersion2BaseNameType) MarshalBinary() ([]byte, error) {
 }
 
 // UnmarshalBinary interface implementation
-func (m *ServiceDTOVersion2BaseNameType) UnmarshalBinary(b []byte) error {
-	var res ServiceDTOVersion2BaseNameType
+func (m *PTXServiceDTOSharedSpecificationV2BaseNameType) UnmarshalBinary(b []byte) error {
+	var res PTXServiceDTOSharedSpecificationV2BaseNameType
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

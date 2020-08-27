@@ -30,7 +30,7 @@ type PTXAPIShipModelShipWrapperPTXServiceDTOShipSpecificationV3Operator struct {
 	// Array
 	//
 	// 資料(陣列)
-	Ports []*PTXServiceDTOShipSpecificationV3Operator `json:"Ports"`
+	Operators []*PTXServiceDTOShipSpecificationV3Operator `json:"Operators"`
 
 	// Int32
 	//
@@ -54,7 +54,7 @@ type PTXAPIShipModelShipWrapperPTXServiceDTOShipSpecificationV3Operator struct {
 func (m *PTXAPIShipModelShipWrapperPTXServiceDTOShipSpecificationV3Operator) Validate(formats strfmt.Registry) error {
 	var res []error
 
-	if err := m.validatePorts(formats); err != nil {
+	if err := m.validateOperators(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -72,21 +72,21 @@ func (m *PTXAPIShipModelShipWrapperPTXServiceDTOShipSpecificationV3Operator) Val
 	return nil
 }
 
-func (m *PTXAPIShipModelShipWrapperPTXServiceDTOShipSpecificationV3Operator) validatePorts(formats strfmt.Registry) error {
+func (m *PTXAPIShipModelShipWrapperPTXServiceDTOShipSpecificationV3Operator) validateOperators(formats strfmt.Registry) error {
 
-	if swag.IsZero(m.Ports) { // not required
+	if swag.IsZero(m.Operators) { // not required
 		return nil
 	}
 
-	for i := 0; i < len(m.Ports); i++ {
-		if swag.IsZero(m.Ports[i]) { // not required
+	for i := 0; i < len(m.Operators); i++ {
+		if swag.IsZero(m.Operators[i]) { // not required
 			continue
 		}
 
-		if m.Ports[i] != nil {
-			if err := m.Ports[i].Validate(formats); err != nil {
+		if m.Operators[i] != nil {
+			if err := m.Operators[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
-					return ve.ValidateName("Ports" + "." + strconv.Itoa(i))
+					return ve.ValidateName("Operators" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

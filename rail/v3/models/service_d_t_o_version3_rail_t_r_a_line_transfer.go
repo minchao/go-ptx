@@ -41,7 +41,7 @@ type ServiceDTOVersion3RailTRALineTransfer struct {
 
 	// 轉乘耗時參考時間(分)
 	// Required: true
-	MinTransferTime *int32 `json:"MinTransferTime"`
+	MinTransferTime *float64 `json:"MinTransferTime"`
 
 	// 路線間轉乘(迄)之路線代碼
 	// Required: true

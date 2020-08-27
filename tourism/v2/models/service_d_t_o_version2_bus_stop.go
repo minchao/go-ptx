@@ -29,10 +29,6 @@ type ServiceDTOVersion2BusStop struct {
 	// 站牌所屬的站位ID
 	StationID string `json:"StationID,omitempty"`
 
-	// 站牌所屬的站名碼ID
-	// Required: true
-	StationNameID *string `json:"StationNameID"`
-
 	// integer
 	//
 	// 上下車站別 : [-1:'可下車',0:'可上下車',1:'可上車']
@@ -71,10 +67,6 @@ func (m *ServiceDTOVersion2BusStop) Validate(formats strfmt.Registry) error {
 		res = append(res, err)
 	}
 
-	if err := m.validateStationNameID(formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.validateStopID(formats); err != nil {
 		res = append(res, err)
 	}
@@ -104,15 +96,6 @@ func (m *ServiceDTOVersion2BusStop) Validate(formats strfmt.Registry) error {
 func (m *ServiceDTOVersion2BusStop) validateStationGroupID(formats strfmt.Registry) error {
 
 	if err := validate.Required("StationGroupID", "body", m.StationGroupID); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func (m *ServiceDTOVersion2BusStop) validateStationNameID(formats strfmt.Registry) error {
-
-	if err := validate.Required("StationNameID", "body", m.StationNameID); err != nil {
 		return err
 	}
 

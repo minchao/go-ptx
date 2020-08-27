@@ -12,46 +12,61 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// ServiceDTOVersion2BikeBikeStation BikeStation
+// PTXServiceDTOBikeSpecificationV2BikeStation BikeStation
 //
 // 自行車站點資訊
 //
-// swagger:model Service.DTO.Version2.Bike.BikeStation
-type ServiceDTOVersion2BikeBikeStation struct {
+// swagger:model PTX.Service.DTO.Bike.Specification.V2.BikeStation
+type PTXServiceDTOBikeSpecificationV2BikeStation struct {
 
+	// String
+	//
 	// 業管單位代碼
 	AuthorityID string `json:"AuthorityID,omitempty"`
 
+	// Int32
+	//
 	// 可容納之自行車總數
 	BikesCapacity int32 `json:"BikesCapacity,omitempty"`
 
 	// DateTime
 	//
 	// 來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
-	// Required: true
-	SrcUpdateTime *string `json:"SrcUpdateTime"`
+	SrcUpdateTime string `json:"SrcUpdateTime,omitempty"`
 
 	// NameType
 	//
 	// 站點地址
-	StationAddress *ServiceDTOVersion2BaseNameType `json:"StationAddress,omitempty"`
+	StationAddress struct {
+		PTXServiceDTOSharedSpecificationV2BaseNameType
+	} `json:"StationAddress,omitempty"`
 
+	// String
+	//
 	// 站點代碼
 	StationID string `json:"StationID,omitempty"`
 
 	// NameType
 	//
 	// 站點名稱
-	StationName *ServiceDTOVersion2BaseNameType `json:"StationName,omitempty"`
+	StationName struct {
+		PTXServiceDTOSharedSpecificationV2BaseNameType
+	} `json:"StationName,omitempty"`
 
 	// PointType
 	//
 	// 站點位置
-	StationPosition *ServiceDTOVersion2BasePointType `json:"StationPosition,omitempty"`
+	StationPosition struct {
+		PTXServiceDTOSharedSpecificationV2BasePointType
+	} `json:"StationPosition,omitempty"`
 
+	// String
+	//
 	// 站點唯一識別代碼，規則為 {業管機關代碼} + {StationID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢
 	StationUID string `json:"StationUID,omitempty"`
 
+	// String
+	//
 	// 站點描述
 	StopDescription string `json:"StopDescription,omitempty"`
 
@@ -62,13 +77,9 @@ type ServiceDTOVersion2BikeBikeStation struct {
 	UpdateTime *string `json:"UpdateTime"`
 }
 
-// Validate validates this service d t o version2 bike bike station
-func (m *ServiceDTOVersion2BikeBikeStation) Validate(formats strfmt.Registry) error {
+// Validate validates this p t x service d t o bike specification v2 bike station
+func (m *PTXServiceDTOBikeSpecificationV2BikeStation) Validate(formats strfmt.Registry) error {
 	var res []error
-
-	if err := m.validateSrcUpdateTime(formats); err != nil {
-		res = append(res, err)
-	}
 
 	if err := m.validateStationAddress(formats); err != nil {
 		res = append(res, err)
@@ -92,70 +103,34 @@ func (m *ServiceDTOVersion2BikeBikeStation) Validate(formats strfmt.Registry) er
 	return nil
 }
 
-func (m *ServiceDTOVersion2BikeBikeStation) validateSrcUpdateTime(formats strfmt.Registry) error {
-
-	if err := validate.Required("SrcUpdateTime", "body", m.SrcUpdateTime); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func (m *ServiceDTOVersion2BikeBikeStation) validateStationAddress(formats strfmt.Registry) error {
+func (m *PTXServiceDTOBikeSpecificationV2BikeStation) validateStationAddress(formats strfmt.Registry) error {
 
 	if swag.IsZero(m.StationAddress) { // not required
 		return nil
 	}
 
-	if m.StationAddress != nil {
-		if err := m.StationAddress.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("StationAddress")
-			}
-			return err
-		}
-	}
-
 	return nil
 }
 
-func (m *ServiceDTOVersion2BikeBikeStation) validateStationName(formats strfmt.Registry) error {
+func (m *PTXServiceDTOBikeSpecificationV2BikeStation) validateStationName(formats strfmt.Registry) error {
 
 	if swag.IsZero(m.StationName) { // not required
 		return nil
 	}
 
-	if m.StationName != nil {
-		if err := m.StationName.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("StationName")
-			}
-			return err
-		}
-	}
-
 	return nil
 }
 
-func (m *ServiceDTOVersion2BikeBikeStation) validateStationPosition(formats strfmt.Registry) error {
+func (m *PTXServiceDTOBikeSpecificationV2BikeStation) validateStationPosition(formats strfmt.Registry) error {
 
 	if swag.IsZero(m.StationPosition) { // not required
 		return nil
 	}
 
-	if m.StationPosition != nil {
-		if err := m.StationPosition.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("StationPosition")
-			}
-			return err
-		}
-	}
-
 	return nil
 }
 
-func (m *ServiceDTOVersion2BikeBikeStation) validateUpdateTime(formats strfmt.Registry) error {
+func (m *PTXServiceDTOBikeSpecificationV2BikeStation) validateUpdateTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
 		return err
@@ -165,7 +140,7 @@ func (m *ServiceDTOVersion2BikeBikeStation) validateUpdateTime(formats strfmt.Re
 }
 
 // MarshalBinary interface implementation
-func (m *ServiceDTOVersion2BikeBikeStation) MarshalBinary() ([]byte, error) {
+func (m *PTXServiceDTOBikeSpecificationV2BikeStation) MarshalBinary() ([]byte, error) {
 	if m == nil {
 		return nil, nil
 	}
@@ -173,8 +148,8 @@ func (m *ServiceDTOVersion2BikeBikeStation) MarshalBinary() ([]byte, error) {
 }
 
 // UnmarshalBinary interface implementation
-func (m *ServiceDTOVersion2BikeBikeStation) UnmarshalBinary(b []byte) error {
-	var res ServiceDTOVersion2BikeBikeStation
+func (m *PTXServiceDTOBikeSpecificationV2BikeStation) UnmarshalBinary(b []byte) error {
+	var res PTXServiceDTOBikeSpecificationV2BikeStation
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

@@ -31,7 +31,7 @@ func (o *AirAPIMETARReader) ReadResponse(response runtime.ClientResponse, consum
 		return result, nil
 
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
 }
 
@@ -42,17 +42,17 @@ func NewAirAPIMETAROK() *AirAPIMETAROK {
 
 /*AirAPIMETAROK handles this case with default header values.
 
-OK
+Success
 */
 type AirAPIMETAROK struct {
-	Payload []*models.ServiceDTOVersion2ApplicationMETAR
+	Payload []*models.PTXServiceDTOAirSpecificationV2METAR
 }
 
 func (o *AirAPIMETAROK) Error() string {
 	return fmt.Sprintf("[GET /v2/Air/METAR/Airport][%d] airApiMETAROK  %+v", 200, o.Payload)
 }
 
-func (o *AirAPIMETAROK) GetPayload() []*models.ServiceDTOVersion2ApplicationMETAR {
+func (o *AirAPIMETAROK) GetPayload() []*models.PTXServiceDTOAirSpecificationV2METAR {
 	return o.Payload
 }
 

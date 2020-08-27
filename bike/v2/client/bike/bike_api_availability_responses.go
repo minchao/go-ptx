@@ -31,7 +31,7 @@ func (o *BikeAPIAvailabilityReader) ReadResponse(response runtime.ClientResponse
 		return result, nil
 
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
 }
 
@@ -42,17 +42,17 @@ func NewBikeAPIAvailabilityOK() *BikeAPIAvailabilityOK {
 
 /*BikeAPIAvailabilityOK handles this case with default header values.
 
-OK
+Success
 */
 type BikeAPIAvailabilityOK struct {
-	Payload []*models.ServiceDTOVersion2BikeBikeAvailability
+	Payload []*models.PTXServiceDTOBikeSpecificationV2BikeAvailability
 }
 
 func (o *BikeAPIAvailabilityOK) Error() string {
 	return fmt.Sprintf("[GET /v2/Bike/Availability/{City}][%d] bikeApiAvailabilityOK  %+v", 200, o.Payload)
 }
 
-func (o *BikeAPIAvailabilityOK) GetPayload() []*models.ServiceDTOVersion2BikeBikeAvailability {
+func (o *BikeAPIAvailabilityOK) GetPayload() []*models.PTXServiceDTOBikeSpecificationV2BikeAvailability {
 	return o.Payload
 }
 

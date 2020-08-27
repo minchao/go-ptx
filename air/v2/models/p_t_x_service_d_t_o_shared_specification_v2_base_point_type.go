@@ -10,12 +10,17 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// ServiceDTOVersion2BasePointType PointType
+// PTXServiceDTOSharedSpecificationV2BasePointType PointType
 //
 // 座標資料型別
 //
-// swagger:model Service.DTO.Version2.Base.PointType
-type ServiceDTOVersion2BasePointType struct {
+// swagger:model PTX.Service.DTO.Shared.Specification.V2.Base.PointType
+type PTXServiceDTOSharedSpecificationV2BasePointType struct {
+
+	// String
+	//
+	// 位置雜湊
+	GeoHash string `json:"GeoHash,omitempty"`
 
 	// 位置緯度(WGS84)
 	PositionLat float64 `json:"PositionLat,omitempty"`
@@ -24,13 +29,13 @@ type ServiceDTOVersion2BasePointType struct {
 	PositionLon float64 `json:"PositionLon,omitempty"`
 }
 
-// Validate validates this service d t o version2 base point type
-func (m *ServiceDTOVersion2BasePointType) Validate(formats strfmt.Registry) error {
+// Validate validates this p t x service d t o shared specification v2 base point type
+func (m *PTXServiceDTOSharedSpecificationV2BasePointType) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
 // MarshalBinary interface implementation
-func (m *ServiceDTOVersion2BasePointType) MarshalBinary() ([]byte, error) {
+func (m *PTXServiceDTOSharedSpecificationV2BasePointType) MarshalBinary() ([]byte, error) {
 	if m == nil {
 		return nil, nil
 	}
@@ -38,8 +43,8 @@ func (m *ServiceDTOVersion2BasePointType) MarshalBinary() ([]byte, error) {
 }
 
 // UnmarshalBinary interface implementation
-func (m *ServiceDTOVersion2BasePointType) UnmarshalBinary(b []byte) error {
-	var res ServiceDTOVersion2BasePointType
+func (m *PTXServiceDTOSharedSpecificationV2BasePointType) UnmarshalBinary(b []byte) error {
+	var res PTXServiceDTOSharedSpecificationV2BasePointType
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

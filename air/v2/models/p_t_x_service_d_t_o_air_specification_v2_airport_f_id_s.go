@@ -14,22 +14,28 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// ServiceDTOVersion2AviationAirportFIDS Airport_FIDS
+// PTXServiceDTOAirSpecificationV2AirportFIDS Airport_FIDS
 //
 // 航班顯示資料(以機場角度)
 //
-// swagger:model Service.DTO.Version2.Aviation.Airport_FIDS
-type ServiceDTOVersion2AviationAirportFIDS struct {
+// swagger:model PTX.Service.DTO.Air.Specification.V2.Airport_FIDS
+type PTXServiceDTOAirSpecificationV2AirportFIDS struct {
 
+	// String
+	//
 	// 機場IATA國際代碼
 	// Required: true
 	AirportID *string `json:"AirportID"`
 
+	// Array
+	//
 	// 抵達航班顯示資料
-	FIDSArrival []*ServiceDTOVersion2AviationFIDSArrival `json:"FIDSArrival"`
+	FIDSArrival []*PTXServiceDTOAirSpecificationV2FIDSArrival `json:"FIDSArrival"`
 
+	// Array
+	//
 	// 出發航班顯示資料
-	FIDSDeparture []*ServiceDTOVersion2AviationFIDSDeparture `json:"FIDSDeparture"`
+	FIDSDeparture []*PTXServiceDTOAirSpecificationV2FIDSDeparture `json:"FIDSDeparture"`
 
 	// DateTime
 	//
@@ -38,8 +44,8 @@ type ServiceDTOVersion2AviationAirportFIDS struct {
 	UpdateTime *string `json:"UpdateTime"`
 }
 
-// Validate validates this service d t o version2 aviation airport f ID s
-func (m *ServiceDTOVersion2AviationAirportFIDS) Validate(formats strfmt.Registry) error {
+// Validate validates this p t x service d t o air specification v2 airport f ID s
+func (m *PTXServiceDTOAirSpecificationV2AirportFIDS) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateAirportID(formats); err != nil {
@@ -64,7 +70,7 @@ func (m *ServiceDTOVersion2AviationAirportFIDS) Validate(formats strfmt.Registry
 	return nil
 }
 
-func (m *ServiceDTOVersion2AviationAirportFIDS) validateAirportID(formats strfmt.Registry) error {
+func (m *PTXServiceDTOAirSpecificationV2AirportFIDS) validateAirportID(formats strfmt.Registry) error {
 
 	if err := validate.Required("AirportID", "body", m.AirportID); err != nil {
 		return err
@@ -73,7 +79,7 @@ func (m *ServiceDTOVersion2AviationAirportFIDS) validateAirportID(formats strfmt
 	return nil
 }
 
-func (m *ServiceDTOVersion2AviationAirportFIDS) validateFIDSArrival(formats strfmt.Registry) error {
+func (m *PTXServiceDTOAirSpecificationV2AirportFIDS) validateFIDSArrival(formats strfmt.Registry) error {
 
 	if swag.IsZero(m.FIDSArrival) { // not required
 		return nil
@@ -98,7 +104,7 @@ func (m *ServiceDTOVersion2AviationAirportFIDS) validateFIDSArrival(formats strf
 	return nil
 }
 
-func (m *ServiceDTOVersion2AviationAirportFIDS) validateFIDSDeparture(formats strfmt.Registry) error {
+func (m *PTXServiceDTOAirSpecificationV2AirportFIDS) validateFIDSDeparture(formats strfmt.Registry) error {
 
 	if swag.IsZero(m.FIDSDeparture) { // not required
 		return nil
@@ -123,7 +129,7 @@ func (m *ServiceDTOVersion2AviationAirportFIDS) validateFIDSDeparture(formats st
 	return nil
 }
 
-func (m *ServiceDTOVersion2AviationAirportFIDS) validateUpdateTime(formats strfmt.Registry) error {
+func (m *PTXServiceDTOAirSpecificationV2AirportFIDS) validateUpdateTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
 		return err
@@ -133,7 +139,7 @@ func (m *ServiceDTOVersion2AviationAirportFIDS) validateUpdateTime(formats strfm
 }
 
 // MarshalBinary interface implementation
-func (m *ServiceDTOVersion2AviationAirportFIDS) MarshalBinary() ([]byte, error) {
+func (m *PTXServiceDTOAirSpecificationV2AirportFIDS) MarshalBinary() ([]byte, error) {
 	if m == nil {
 		return nil, nil
 	}
@@ -141,8 +147,8 @@ func (m *ServiceDTOVersion2AviationAirportFIDS) MarshalBinary() ([]byte, error) 
 }
 
 // UnmarshalBinary interface implementation
-func (m *ServiceDTOVersion2AviationAirportFIDS) UnmarshalBinary(b []byte) error {
-	var res ServiceDTOVersion2AviationAirportFIDS
+func (m *PTXServiceDTOAirSpecificationV2AirportFIDS) UnmarshalBinary(b []byte) error {
+	var res PTXServiceDTOAirSpecificationV2AirportFIDS
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

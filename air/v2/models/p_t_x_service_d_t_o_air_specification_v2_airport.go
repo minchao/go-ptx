@@ -12,27 +12,37 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// ServiceDTOVersion2AviationAirport Airport
+// PTXServiceDTOAirSpecificationV2Airport Airport
 //
 // 機場資料
 //
-// swagger:model Service.DTO.Version2.Aviation.Airport
-type ServiceDTOVersion2AviationAirport struct {
+// swagger:model PTX.Service.DTO.Air.Specification.V2.Airport
+type PTXServiceDTOAirSpecificationV2Airport struct {
 
+	// String
+	//
 	// 機場地址
 	AirportAdrress string `json:"AirportAdrress,omitempty"`
 
 	// NameType
 	//
 	// 機場所屬城市
-	AirportCityName *ServiceDTOVersion2BaseNameType `json:"AirportCityName,omitempty"`
+	AirportCityName struct {
+		PTXServiceDTOSharedSpecificationV2BaseNameType
+	} `json:"AirportCityName,omitempty"`
 
+	// String
+	//
 	// 機場IATA國際代碼
 	AirportIATA string `json:"AirportIATA,omitempty"`
 
+	// String
+	//
 	// 機場ICAO國際代碼
 	AirportICAO string `json:"AirportICAO,omitempty"`
 
+	// String
+	//
 	// 機場IATA國際代碼
 	// Required: true
 	AirportID *string `json:"AirportID"`
@@ -40,23 +50,31 @@ type ServiceDTOVersion2AviationAirport struct {
 	// NameType
 	//
 	// 機場中文名稱
-	AirportName *ServiceDTOVersion2BaseNameType `json:"AirportName,omitempty"`
+	AirportName struct {
+		PTXServiceDTOSharedSpecificationV2BaseNameType
+	} `json:"AirportName,omitempty"`
 
+	// String
+	//
 	// 機場國籍
 	AirportNationality string `json:"AirportNationality,omitempty"`
 
+	// String
+	//
 	// 機場聯繫電話
 	AirportPhone string `json:"AirportPhone,omitempty"`
 
 	// PointType
 	//
 	// 機場位置
-	AirportPosition *ServiceDTOVersion2BasePointType `json:"AirportPosition,omitempty"`
+	AirportPosition struct {
+		PTXServiceDTOSharedSpecificationV2BasePointType
+	} `json:"AirportPosition,omitempty"`
 
+	// String
+	//
 	// 業管機關代碼(流水號)
-	// Max Length: 2
-	// Min Length: 0
-	AuthorityID *string `json:"AuthorityID,omitempty"`
+	AuthorityID string `json:"AuthorityID,omitempty"`
 
 	// DateTime
 	//
@@ -64,13 +82,15 @@ type ServiceDTOVersion2AviationAirport struct {
 	// Required: true
 	UpdateTime *string `json:"UpdateTime"`
 
+	// Int32
+	//
 	// 資料版本編號
 	// Required: true
 	VersionID *int32 `json:"VersionID"`
 }
 
-// Validate validates this service d t o version2 aviation airport
-func (m *ServiceDTOVersion2AviationAirport) Validate(formats strfmt.Registry) error {
+// Validate validates this p t x service d t o air specification v2 airport
+func (m *PTXServiceDTOAirSpecificationV2Airport) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateAirportCityName(formats); err != nil {
@@ -89,10 +109,6 @@ func (m *ServiceDTOVersion2AviationAirport) Validate(formats strfmt.Registry) er
 		res = append(res, err)
 	}
 
-	if err := m.validateAuthorityID(formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.validateUpdateTime(formats); err != nil {
 		res = append(res, err)
 	}
@@ -107,25 +123,16 @@ func (m *ServiceDTOVersion2AviationAirport) Validate(formats strfmt.Registry) er
 	return nil
 }
 
-func (m *ServiceDTOVersion2AviationAirport) validateAirportCityName(formats strfmt.Registry) error {
+func (m *PTXServiceDTOAirSpecificationV2Airport) validateAirportCityName(formats strfmt.Registry) error {
 
 	if swag.IsZero(m.AirportCityName) { // not required
 		return nil
 	}
 
-	if m.AirportCityName != nil {
-		if err := m.AirportCityName.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("AirportCityName")
-			}
-			return err
-		}
-	}
-
 	return nil
 }
 
-func (m *ServiceDTOVersion2AviationAirport) validateAirportID(formats strfmt.Registry) error {
+func (m *PTXServiceDTOAirSpecificationV2Airport) validateAirportID(formats strfmt.Registry) error {
 
 	if err := validate.Required("AirportID", "body", m.AirportID); err != nil {
 		return err
@@ -134,60 +141,25 @@ func (m *ServiceDTOVersion2AviationAirport) validateAirportID(formats strfmt.Reg
 	return nil
 }
 
-func (m *ServiceDTOVersion2AviationAirport) validateAirportName(formats strfmt.Registry) error {
+func (m *PTXServiceDTOAirSpecificationV2Airport) validateAirportName(formats strfmt.Registry) error {
 
 	if swag.IsZero(m.AirportName) { // not required
 		return nil
 	}
 
-	if m.AirportName != nil {
-		if err := m.AirportName.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("AirportName")
-			}
-			return err
-		}
-	}
-
 	return nil
 }
 
-func (m *ServiceDTOVersion2AviationAirport) validateAirportPosition(formats strfmt.Registry) error {
+func (m *PTXServiceDTOAirSpecificationV2Airport) validateAirportPosition(formats strfmt.Registry) error {
 
 	if swag.IsZero(m.AirportPosition) { // not required
 		return nil
 	}
 
-	if m.AirportPosition != nil {
-		if err := m.AirportPosition.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("AirportPosition")
-			}
-			return err
-		}
-	}
-
 	return nil
 }
 
-func (m *ServiceDTOVersion2AviationAirport) validateAuthorityID(formats strfmt.Registry) error {
-
-	if swag.IsZero(m.AuthorityID) { // not required
-		return nil
-	}
-
-	if err := validate.MinLength("AuthorityID", "body", string(*m.AuthorityID), 0); err != nil {
-		return err
-	}
-
-	if err := validate.MaxLength("AuthorityID", "body", string(*m.AuthorityID), 2); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func (m *ServiceDTOVersion2AviationAirport) validateUpdateTime(formats strfmt.Registry) error {
+func (m *PTXServiceDTOAirSpecificationV2Airport) validateUpdateTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
 		return err
@@ -196,7 +168,7 @@ func (m *ServiceDTOVersion2AviationAirport) validateUpdateTime(formats strfmt.Re
 	return nil
 }
 
-func (m *ServiceDTOVersion2AviationAirport) validateVersionID(formats strfmt.Registry) error {
+func (m *PTXServiceDTOAirSpecificationV2Airport) validateVersionID(formats strfmt.Registry) error {
 
 	if err := validate.Required("VersionID", "body", m.VersionID); err != nil {
 		return err
@@ -206,7 +178,7 @@ func (m *ServiceDTOVersion2AviationAirport) validateVersionID(formats strfmt.Reg
 }
 
 // MarshalBinary interface implementation
-func (m *ServiceDTOVersion2AviationAirport) MarshalBinary() ([]byte, error) {
+func (m *PTXServiceDTOAirSpecificationV2Airport) MarshalBinary() ([]byte, error) {
 	if m == nil {
 		return nil, nil
 	}
@@ -214,8 +186,8 @@ func (m *ServiceDTOVersion2AviationAirport) MarshalBinary() ([]byte, error) {
 }
 
 // UnmarshalBinary interface implementation
-func (m *ServiceDTOVersion2AviationAirport) UnmarshalBinary(b []byte) error {
-	var res ServiceDTOVersion2AviationAirport
+func (m *PTXServiceDTOAirSpecificationV2Airport) UnmarshalBinary(b []byte) error {
+	var res PTXServiceDTOAirSpecificationV2Airport
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

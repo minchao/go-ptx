@@ -31,7 +31,7 @@ func (o *AirAPIAirport1Reader) ReadResponse(response runtime.ClientResponse, con
 		return result, nil
 
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
 }
 
@@ -42,23 +42,23 @@ func NewAirAPIAirport1OK() *AirAPIAirport1OK {
 
 /*AirAPIAirport1OK handles this case with default header values.
 
-OK
+Success
 */
 type AirAPIAirport1OK struct {
-	Payload *models.ServiceDTOVersion2AviationAirport
+	Payload *models.PTXServiceDTOAirSpecificationV2Airport
 }
 
 func (o *AirAPIAirport1OK) Error() string {
 	return fmt.Sprintf("[GET /v2/Air/Airport/{IATA}][%d] airApiAirport1OK  %+v", 200, o.Payload)
 }
 
-func (o *AirAPIAirport1OK) GetPayload() *models.ServiceDTOVersion2AviationAirport {
+func (o *AirAPIAirport1OK) GetPayload() *models.PTXServiceDTOAirSpecificationV2Airport {
 	return o.Payload
 }
 
 func (o *AirAPIAirport1OK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.ServiceDTOVersion2AviationAirport)
+	o.Payload = new(models.PTXServiceDTOAirSpecificationV2Airport)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
