@@ -38,10 +38,6 @@ type ServiceDTOVersion2BusBusStation struct {
 	// Required: true
 	StationName *ServiceDTOVersion2BaseNameType `json:"StationName"`
 
-	// 站牌所屬的站名碼ID
-	// Required: true
-	StationNameID *string `json:"StationNameID"`
-
 	// PointType
 	//
 	// 站位位置
@@ -79,10 +75,6 @@ func (m *ServiceDTOVersion2BusBusStation) Validate(formats strfmt.Registry) erro
 	}
 
 	if err := m.validateStationName(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateStationNameID(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -143,15 +135,6 @@ func (m *ServiceDTOVersion2BusBusStation) validateStationName(formats strfmt.Reg
 			}
 			return err
 		}
-	}
-
-	return nil
-}
-
-func (m *ServiceDTOVersion2BusBusStation) validateStationNameID(formats strfmt.Registry) error {
-
-	if err := validate.Required("StationNameID", "body", m.StationNameID); err != nil {
-		return err
 	}
 
 	return nil

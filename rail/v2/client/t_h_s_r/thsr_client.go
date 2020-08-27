@@ -29,9 +29,13 @@ type Client struct {
 type ClientService interface {
 	THSRAPIAlertInfo(params *THSRAPIAlertInfoParams) (*THSRAPIAlertInfoOK, error)
 
-	THSRAPIAvailableSeatStatusList(params *THSRAPIAvailableSeatStatusListParams) (*THSRAPIAvailableSeatStatusListOK, error)
+	THSRAPIAvailableSeatStatus(params *THSRAPIAvailableSeatStatusParams) (*THSRAPIAvailableSeatStatusOK, error)
 
-	THSRAPIAvailableSeatStatusList1(params *THSRAPIAvailableSeatStatusList1Params) (*THSRAPIAvailableSeatStatusList1OK, error)
+	THSRAPIAvailableSeatStatusListStation(params *THSRAPIAvailableSeatStatusListStationParams) (*THSRAPIAvailableSeatStatusListStationOK, error)
+
+	THSRAPIAvailableSeatStatusListStation1(params *THSRAPIAvailableSeatStatusListStation1Params) (*THSRAPIAvailableSeatStatusListStation1OK, error)
+
+	THSRAPIAvailableSeatStatus1(params *THSRAPIAvailableSeatStatus1Params) (*THSRAPIAvailableSeatStatus1OK, error)
 
 	THSRAPIDailyTimetable(params *THSRAPIDailyTimetableParams) (*THSRAPIDailyTimetableOK, error)
 
@@ -109,74 +113,152 @@ func (a *Client) THSRAPIAlertInfo(params *THSRAPIAlertInfoParams) (*THSRAPIAlert
 }
 
 /*
-  THSRAPIAvailableSeatStatusList 取得動態對號座剩餘座位資訊看板資料s
+  THSRAPIAvailableSeatStatus 開發用測試版s 取得當天對號座即時剩餘位資料 原始 列車區段 leg角度
 
-  取得動態對號座剩餘座位資訊看板資料
+  取得當天對號座即時剩餘位資料({原始}列車區段Leg角度)
+- 高鐵對號座即時剩餘位(列車區段Leg角度)之資料使用注意事項([連結](https://motc-ptx-api-documentation.gitbook.io/motc-ptx-api-documentation/api-zi-liao-shi-yong-zhu-yi-shi-xiang/rail))
+- 當日(D)之更新頻率為每10分鐘
+- **(本服務尚在測試中,穩定度及更新頻率將持續優化)**
 */
-func (a *Client) THSRAPIAvailableSeatStatusList(params *THSRAPIAvailableSeatStatusListParams) (*THSRAPIAvailableSeatStatusListOK, error) {
+func (a *Client) THSRAPIAvailableSeatStatus(params *THSRAPIAvailableSeatStatusParams) (*THSRAPIAvailableSeatStatusOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewTHSRAPIAvailableSeatStatusListParams()
+		params = NewTHSRAPIAvailableSeatStatusParams()
 	}
 
 	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "THSRApi_AvailableSeatStatusList",
+		ID:                 "THSRApi_AvailableSeatStatus",
+		Method:             "GET",
+		PathPattern:        "/v2/Rail/THSR/AvailableSeatStatus/Train/Leg/Today",
+		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &THSRAPIAvailableSeatStatusReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*THSRAPIAvailableSeatStatusOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for THSRApi_AvailableSeatStatus: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  THSRAPIAvailableSeatStatusListStation 取得動態對號座剩餘座位資訊看板資料s
+
+  取得動態對號座剩餘座位資訊看板資料
+*/
+func (a *Client) THSRAPIAvailableSeatStatusListStation(params *THSRAPIAvailableSeatStatusListStationParams) (*THSRAPIAvailableSeatStatusListStationOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewTHSRAPIAvailableSeatStatusListStationParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "THSRApi_AvailableSeatStatusList_Station",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/AvailableSeatStatusList",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &THSRAPIAvailableSeatStatusListReader{formats: a.formats},
+		Reader:             &THSRAPIAvailableSeatStatusListStationReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
 	if err != nil {
 		return nil, err
 	}
-	success, ok := result.(*THSRAPIAvailableSeatStatusListOK)
+	success, ok := result.(*THSRAPIAvailableSeatStatusListStationOK)
 	if ok {
 		return success, nil
 	}
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for THSRApi_AvailableSeatStatusList: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for THSRApi_AvailableSeatStatusList_Station: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
 /*
-  THSRAPIAvailableSeatStatusList1 取得動態指定s 車站 的對號座剩餘座位資訊看板資料
+  THSRAPIAvailableSeatStatusListStation1 取得動態指定s 車站 的對號座剩餘座位資訊看板資料
 
   取得動態指定[車站]的對號座剩餘座位資訊看板資料
 */
-func (a *Client) THSRAPIAvailableSeatStatusList1(params *THSRAPIAvailableSeatStatusList1Params) (*THSRAPIAvailableSeatStatusList1OK, error) {
+func (a *Client) THSRAPIAvailableSeatStatusListStation1(params *THSRAPIAvailableSeatStatusListStation1Params) (*THSRAPIAvailableSeatStatusListStation1OK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewTHSRAPIAvailableSeatStatusList1Params()
+		params = NewTHSRAPIAvailableSeatStatusListStation1Params()
 	}
 
 	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "THSRApi_AvailableSeatStatusList_1",
+		ID:                 "THSRApi_AvailableSeatStatusList_Station_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/AvailableSeatStatusList/{StationID}",
 		ProducesMediaTypes: []string{"application/json", "text/json"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &THSRAPIAvailableSeatStatusList1Reader{formats: a.formats},
+		Reader:             &THSRAPIAvailableSeatStatusListStation1Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
 	if err != nil {
 		return nil, err
 	}
-	success, ok := result.(*THSRAPIAvailableSeatStatusList1OK)
+	success, ok := result.(*THSRAPIAvailableSeatStatusListStation1OK)
 	if ok {
 		return success, nil
 	}
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for THSRApi_AvailableSeatStatusList_1: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for THSRApi_AvailableSeatStatusList_Station_1: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  THSRAPIAvailableSeatStatus1 開發用測試版s 取得指定 日期 對號座即時剩餘位資料 原始 列車區段 leg角度
+
+  取得指定[日期]對號座即時剩餘位資料({原始}列車區段Leg角度)
+- 高鐵對號座即時剩餘位(列車區段Leg角度)之資料使用注意事項([連結](https://motc-ptx-api-documentation.gitbook.io/motc-ptx-api-documentation/api-zi-liao-shi-yong-zhu-yi-shi-xiang/rail))
+- 當日後27日(D+1~D+27)之更新頻率為每日的10、16、22時
+- **(本服務尚在測試中,穩定度及更新頻率將持續優化)**
+*/
+func (a *Client) THSRAPIAvailableSeatStatus1(params *THSRAPIAvailableSeatStatus1Params) (*THSRAPIAvailableSeatStatus1OK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewTHSRAPIAvailableSeatStatus1Params()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "THSRApi_AvailableSeatStatus_1",
+		Method:             "GET",
+		PathPattern:        "/v2/Rail/THSR/AvailableSeatStatus/Train/Leg/TrainDate/{TrainDate}",
+		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &THSRAPIAvailableSeatStatus1Reader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*THSRAPIAvailableSeatStatus1OK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for THSRApi_AvailableSeatStatus_1: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 

@@ -41,6 +41,10 @@ type ClientService interface {
 
 	CityBusAPIEstimatedTimeOfArrivalUDP1(params *CityBusAPIEstimatedTimeOfArrivalUDP1Params) (*CityBusAPIEstimatedTimeOfArrivalUdp1OK, *CityBusAPIEstimatedTimeOfArrivalUdp1Status299, error)
 
+	CityBusAPIFirstLastTripInfo(params *CityBusAPIFirstLastTripInfoParams) (*CityBusAPIFirstLastTripInfoOK, *CityBusAPIFirstLastTripInfoStatus299, error)
+
+	CityBusAPIFirstLastTripInfo1(params *CityBusAPIFirstLastTripInfo1Params) (*CityBusAPIFirstLastTripInfo1OK, *CityBusAPIFirstLastTripInfo1Status299, error)
+
 	CityBusAPINews(params *CityBusAPINewsParams) (*CityBusAPINewsOK, *CityBusAPINewsStatus299, error)
 
 	CityBusAPIOperator(params *CityBusAPIOperatorParams) (*CityBusAPIOperatorOK, *CityBusAPIOperatorStatus299, error)
@@ -80,8 +84,6 @@ type ClientService interface {
 	CityBusAPIStation(params *CityBusAPIStationParams) (*CityBusAPIStationOK, *CityBusAPIStationStatus299, error)
 
 	CityBusAPIStationGroup(params *CityBusAPIStationGroupParams) (*CityBusAPIStationGroupOK, *CityBusAPIStationGroupStatus299, error)
-
-	CityBusAPIStationName(params *CityBusAPIStationNameParams) (*CityBusAPIStationNameOK, *CityBusAPIStationNameStatus299, error)
 
 	CityBusAPIStop(params *CityBusAPIStopParams) (*CityBusAPIStopOK, *CityBusAPIStopStatus299, error)
 
@@ -356,6 +358,80 @@ func (a *Client) CityBusAPIEstimatedTimeOfArrivalUDP1(params *CityBusAPIEstimate
 	case *CityBusAPIEstimatedTimeOfArrivalUdp1OK:
 		return value, nil, nil
 	case *CityBusAPIEstimatedTimeOfArrivalUdp1Status299:
+		return nil, value, nil
+	}
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for city_bus: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  CityBusAPIFirstLastTripInfo 取得指定s 縣市 的市區公車路線首末班車資料
+
+  市區公車之路線首末班車資料
+*/
+func (a *Client) CityBusAPIFirstLastTripInfo(params *CityBusAPIFirstLastTripInfoParams) (*CityBusAPIFirstLastTripInfoOK, *CityBusAPIFirstLastTripInfoStatus299, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewCityBusAPIFirstLastTripInfoParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "CityBusApi_FirstLastTripInfo",
+		Method:             "GET",
+		PathPattern:        "/v2/Bus/FirstLastTripInfo/City/{City}",
+		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &CityBusAPIFirstLastTripInfoReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, nil, err
+	}
+	switch value := result.(type) {
+	case *CityBusAPIFirstLastTripInfoOK:
+		return value, nil, nil
+	case *CityBusAPIFirstLastTripInfoStatus299:
+		return nil, value, nil
+	}
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for city_bus: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  CityBusAPIFirstLastTripInfo1 取得指定s 縣市 路線名稱 的路線首末班車資料
+
+  市區公車之路線首末班車資料
+*/
+func (a *Client) CityBusAPIFirstLastTripInfo1(params *CityBusAPIFirstLastTripInfo1Params) (*CityBusAPIFirstLastTripInfo1OK, *CityBusAPIFirstLastTripInfo1Status299, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewCityBusAPIFirstLastTripInfo1Params()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "CityBusApi_FirstLastTripInfo_1",
+		Method:             "GET",
+		PathPattern:        "/v2/Bus/FirstLastTripInfo/City/{City}/{RouteName}",
+		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &CityBusAPIFirstLastTripInfo1Reader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, nil, err
+	}
+	switch value := result.(type) {
+	case *CityBusAPIFirstLastTripInfo1OK:
+		return value, nil, nil
+	case *CityBusAPIFirstLastTripInfo1Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -1104,43 +1180,6 @@ func (a *Client) CityBusAPIStationGroup(params *CityBusAPIStationGroupParams) (*
 	case *CityBusAPIStationGroupOK:
 		return value, nil, nil
 	case *CityBusAPIStationGroupStatus299:
-		return nil, value, nil
-	}
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for city_bus: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-  CityBusAPIStationName 取得指定s 縣市 的市區公車站名碼資料
-
-  市區公車之各站牌所屬的站名碼資料
-*/
-func (a *Client) CityBusAPIStationName(params *CityBusAPIStationNameParams) (*CityBusAPIStationNameOK, *CityBusAPIStationNameStatus299, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewCityBusAPIStationNameParams()
-	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "CityBusApi_StationName",
-		Method:             "GET",
-		PathPattern:        "/v2/Bus/StationName/City/{City}",
-		ProducesMediaTypes: []string{"application/json", "text/json"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &CityBusAPIStationNameReader{formats: a.formats},
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	})
-	if err != nil {
-		return nil, nil, err
-	}
-	switch value := result.(type) {
-	case *CityBusAPIStationNameOK:
-		return value, nil, nil
-	case *CityBusAPIStationNameStatus299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue

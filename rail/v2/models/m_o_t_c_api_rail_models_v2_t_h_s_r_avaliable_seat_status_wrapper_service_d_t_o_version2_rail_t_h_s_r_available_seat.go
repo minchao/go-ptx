@@ -14,7 +14,7 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// MOTCAPIRailModelsV2THSRAvaliableSeatStatusWrapperServiceDTOVersion2RailTHSRAvailableSeat V2THSRAvaliableSeatStatusWrapper[AvailableSeat]
+// MOTCAPIRailModelsV2THSRAvaliableSeatStatusWrapperServiceDTOVersion2RailTHSRAvailableSeat AvaliableSeatStatus
 //
 // swagger:model MOTC.API.Rail.Models.V2THSRAvaliableSeatStatusWrapper[Service.DTO.Version2.Rail.THSR.AvailableSeat]
 type MOTCAPIRailModelsV2THSRAvaliableSeatStatusWrapperServiceDTOVersion2RailTHSRAvailableSeat struct {
@@ -28,7 +28,15 @@ type MOTCAPIRailModelsV2THSRAvaliableSeatStatusWrapperServiceDTOVersion2RailTHSR
 
 	// DateTime
 	//
-	// 更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
+	// 來源平台更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
+	SrcUpdateTime string `json:"SrcUpdateTime,omitempty"`
+
+	// 營運日說明(格式: yyyy-MM-dd)
+	TrainDate string `json:"TrainDate,omitempty"`
+
+	// DateTime
+	//
+	// PTX平台更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	UpdateTime string `json:"UpdateTime,omitempty"`
 }
 

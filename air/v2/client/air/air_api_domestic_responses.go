@@ -31,7 +31,7 @@ func (o *AirAPIDomesticReader) ReadResponse(response runtime.ClientResponse, con
 		return result, nil
 
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
 }
 
@@ -42,17 +42,17 @@ func NewAirAPIDomesticOK() *AirAPIDomesticOK {
 
 /*AirAPIDomesticOK handles this case with default header values.
 
-OK
+Success
 */
 type AirAPIDomesticOK struct {
-	Payload []*models.ServiceDTOVersion2AviationGeneralFlightSchedule
+	Payload []*models.PTXServiceDTOAirSpecificationV2GeneralFlightSchedule
 }
 
 func (o *AirAPIDomesticOK) Error() string {
 	return fmt.Sprintf("[GET /v2/Air/GeneralSchedule/Domestic][%d] airApiDomesticOK  %+v", 200, o.Payload)
 }
 
-func (o *AirAPIDomesticOK) GetPayload() []*models.ServiceDTOVersion2AviationGeneralFlightSchedule {
+func (o *AirAPIDomesticOK) GetPayload() []*models.PTXServiceDTOAirSpecificationV2GeneralFlightSchedule {
 	return o.Payload
 }
 

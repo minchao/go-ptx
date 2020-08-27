@@ -12,25 +12,35 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// ServiceDTOVersion2AviationAirline Airline
+// PTXServiceDTOAirSpecificationV2Airline Airline
 //
 // 航空公司資料
 //
-// swagger:model Service.DTO.Version2.Aviation.Airline
-type ServiceDTOVersion2AviationAirline struct {
+// swagger:model PTX.Service.DTO.Air.Specification.V2.Airline
+type PTXServiceDTOAirSpecificationV2Airline struct {
 
+	// String
+	//
 	// 航空公司地址
 	AirlineAddress string `json:"AirlineAddress,omitempty"`
 
+	// String
+	//
 	// 航空公司電子信箱
 	AirlineEmail string `json:"AirlineEmail,omitempty"`
 
+	// String
+	//
 	// 航空公司IATA國際代碼
 	AirlineIATA string `json:"AirlineIATA,omitempty"`
 
+	// String
+	//
 	// 航空公司ICAO國際代碼
 	AirlineICAO string `json:"AirlineICAO,omitempty"`
 
+	// String
+	//
 	// 航空公司IATA國際代碼
 	// Required: true
 	AirlineID *string `json:"AirlineID"`
@@ -38,16 +48,24 @@ type ServiceDTOVersion2AviationAirline struct {
 	// NameType
 	//
 	// 航空公司名稱
-	AirlineName *ServiceDTOVersion2BaseNameType `json:"AirlineName,omitempty"`
+	AirlineName struct {
+		PTXServiceDTOSharedSpecificationV2BaseNameType
+	} `json:"AirlineName,omitempty"`
 
 	// NameType
 	//
 	// 航空公司簡稱
-	AirlineNameAlias *ServiceDTOVersion2BaseNameType `json:"AirlineNameAlias,omitempty"`
+	AirlineNameAlias struct {
+		PTXServiceDTOSharedSpecificationV2BaseNameType
+	} `json:"AirlineNameAlias,omitempty"`
 
+	// String
+	//
 	// 航空公司國籍
 	AirlineNationality string `json:"AirlineNationality,omitempty"`
 
+	// String
+	//
 	// 航空公司聯繫電話
 	AirlinePhone string `json:"AirlinePhone,omitempty"`
 
@@ -57,13 +75,15 @@ type ServiceDTOVersion2AviationAirline struct {
 	// Required: true
 	UpdateTime *string `json:"UpdateTime"`
 
+	// Int32
+	//
 	// 資料版本編號
 	// Required: true
 	VersionID *int32 `json:"VersionID"`
 }
 
-// Validate validates this service d t o version2 aviation airline
-func (m *ServiceDTOVersion2AviationAirline) Validate(formats strfmt.Registry) error {
+// Validate validates this p t x service d t o air specification v2 airline
+func (m *PTXServiceDTOAirSpecificationV2Airline) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateAirlineID(formats); err != nil {
@@ -92,7 +112,7 @@ func (m *ServiceDTOVersion2AviationAirline) Validate(formats strfmt.Registry) er
 	return nil
 }
 
-func (m *ServiceDTOVersion2AviationAirline) validateAirlineID(formats strfmt.Registry) error {
+func (m *PTXServiceDTOAirSpecificationV2Airline) validateAirlineID(formats strfmt.Registry) error {
 
 	if err := validate.Required("AirlineID", "body", m.AirlineID); err != nil {
 		return err
@@ -101,43 +121,25 @@ func (m *ServiceDTOVersion2AviationAirline) validateAirlineID(formats strfmt.Reg
 	return nil
 }
 
-func (m *ServiceDTOVersion2AviationAirline) validateAirlineName(formats strfmt.Registry) error {
+func (m *PTXServiceDTOAirSpecificationV2Airline) validateAirlineName(formats strfmt.Registry) error {
 
 	if swag.IsZero(m.AirlineName) { // not required
 		return nil
 	}
 
-	if m.AirlineName != nil {
-		if err := m.AirlineName.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("AirlineName")
-			}
-			return err
-		}
-	}
-
 	return nil
 }
 
-func (m *ServiceDTOVersion2AviationAirline) validateAirlineNameAlias(formats strfmt.Registry) error {
+func (m *PTXServiceDTOAirSpecificationV2Airline) validateAirlineNameAlias(formats strfmt.Registry) error {
 
 	if swag.IsZero(m.AirlineNameAlias) { // not required
 		return nil
 	}
 
-	if m.AirlineNameAlias != nil {
-		if err := m.AirlineNameAlias.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("AirlineNameAlias")
-			}
-			return err
-		}
-	}
-
 	return nil
 }
 
-func (m *ServiceDTOVersion2AviationAirline) validateUpdateTime(formats strfmt.Registry) error {
+func (m *PTXServiceDTOAirSpecificationV2Airline) validateUpdateTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
 		return err
@@ -146,7 +148,7 @@ func (m *ServiceDTOVersion2AviationAirline) validateUpdateTime(formats strfmt.Re
 	return nil
 }
 
-func (m *ServiceDTOVersion2AviationAirline) validateVersionID(formats strfmt.Registry) error {
+func (m *PTXServiceDTOAirSpecificationV2Airline) validateVersionID(formats strfmt.Registry) error {
 
 	if err := validate.Required("VersionID", "body", m.VersionID); err != nil {
 		return err
@@ -156,7 +158,7 @@ func (m *ServiceDTOVersion2AviationAirline) validateVersionID(formats strfmt.Reg
 }
 
 // MarshalBinary interface implementation
-func (m *ServiceDTOVersion2AviationAirline) MarshalBinary() ([]byte, error) {
+func (m *PTXServiceDTOAirSpecificationV2Airline) MarshalBinary() ([]byte, error) {
 	if m == nil {
 		return nil, nil
 	}
@@ -164,8 +166,8 @@ func (m *ServiceDTOVersion2AviationAirline) MarshalBinary() ([]byte, error) {
 }
 
 // UnmarshalBinary interface implementation
-func (m *ServiceDTOVersion2AviationAirline) UnmarshalBinary(b []byte) error {
-	var res ServiceDTOVersion2AviationAirline
+func (m *PTXServiceDTOAirSpecificationV2Airline) UnmarshalBinary(b []byte) error {
+	var res PTXServiceDTOAirSpecificationV2Airline
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

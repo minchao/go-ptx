@@ -37,11 +37,6 @@ type PTXServiceDTOSharedSpecificationV3BaseAuthority struct {
 	// Required: true
 	AuthorityEmail *string `json:"AuthorityEmail"`
 
-	// String
-	//
-	// 業管機關代號
-	AuthorityID string `json:"AuthorityID,omitempty"`
-
 	// NameType
 	//
 	// 業管機關名稱
@@ -67,51 +62,10 @@ type PTXServiceDTOSharedSpecificationV3BaseAuthority struct {
 	// 業管機關官網網址
 	AuthorityURL string `json:"AuthorityUrl,omitempty"`
 
-	// Int32
-	//
-	// 對應至程式所定義之Enum
-	EnumID int32 `json:"EnumID,omitempty"`
-
-	// Boolean
-	//
-	// 是否為航空資料之權責單位
-	IsAirDataAuth bool `json:"IsAirDataAuth,omitempty"`
-
-	// Boolean
-	//
-	// 是否為自行車資料之權責單位
-	IsBikeDataAuth bool `json:"IsBikeDataAuth,omitempty"`
-
-	// Boolean
-	//
-	// 是否為公車資料之權責單位
-	IsBusDataAuth bool `json:"IsBusDataAuth,omitempty"`
-
-	// Boolean
-	//
-	// 是否為軌道資料之權責單位
-	IsRailDataAuth bool `json:"IsRailDataAuth,omitempty"`
-
-	// Boolean
-	//
-	// 是否為航運資料之權責單位
-	IsShipDataAuth bool `json:"IsShipDataAuth,omitempty"`
-
-	// Boolean
-	//
-	// 是否為觀光資料之權責單位
-	IsTourismDataAuth bool `json:"IsTourismDataAuth,omitempty"`
-
 	// String
 	//
 	// 業管機關Logo網址
 	LogoURL string `json:"LogoURL,omitempty"`
-
-	// Guid
-	//
-	// 資料唯一碼
-	// Format: uuid
-	PKBaseAuthority strfmt.UUID `json:"PK_BaseAuthority,omitempty"`
 
 	// DateTime
 	//
@@ -145,10 +99,6 @@ func (m *PTXServiceDTOSharedSpecificationV3BaseAuthority) Validate(formats strfm
 	}
 
 	if err := m.validateAuthorityPhone(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validatePKBaseAuthority(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -206,19 +156,6 @@ func (m *PTXServiceDTOSharedSpecificationV3BaseAuthority) validateAuthorityOID(f
 func (m *PTXServiceDTOSharedSpecificationV3BaseAuthority) validateAuthorityPhone(formats strfmt.Registry) error {
 
 	if err := validate.Required("AuthorityPhone", "body", m.AuthorityPhone); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func (m *PTXServiceDTOSharedSpecificationV3BaseAuthority) validatePKBaseAuthority(formats strfmt.Registry) error {
-
-	if swag.IsZero(m.PKBaseAuthority) { // not required
-		return nil
-	}
-
-	if err := validate.FormatOf("PK_BaseAuthority", "body", "uuid", m.PKBaseAuthority.String(), formats); err != nil {
 		return err
 	}
 

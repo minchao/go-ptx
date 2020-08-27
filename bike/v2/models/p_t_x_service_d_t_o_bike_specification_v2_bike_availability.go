@@ -12,16 +12,20 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// ServiceDTOVersion2BikeBikeAvailability BikeAvailability
+// PTXServiceDTOBikeSpecificationV2BikeAvailability BikeAvailability
 //
 // 自行車站點剩餘數量資訊
 //
-// swagger:model Service.DTO.Version2.Bike.BikeAvailability
-type ServiceDTOVersion2BikeBikeAvailability struct {
+// swagger:model PTX.Service.DTO.Bike.Specification.V2.BikeAvailability
+type PTXServiceDTOBikeSpecificationV2BikeAvailability struct {
 
+	// Int32
+	//
 	// 可租借車數
 	AvailableRentBikes int32 `json:"AvailableRentBikes,omitempty"`
 
+	// Int32
+	//
 	// 可歸還車數
 	AvailableReturnBikes int32 `json:"AvailableReturnBikes,omitempty"`
 
@@ -33,12 +37,15 @@ type ServiceDTOVersion2BikeBikeAvailability struct {
 	// DateTime
 	//
 	// 來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
-	// Required: true
-	SrcUpdateTime *string `json:"SrcUpdateTime"`
+	SrcUpdateTime string `json:"SrcUpdateTime,omitempty"`
 
+	// String
+	//
 	// 站點代碼
 	StationID string `json:"StationID,omitempty"`
 
+	// String
+	//
 	// 站點唯一識別代碼，規則為 {業管機關代碼} + {StationID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢
 	StationUID string `json:"StationUID,omitempty"`
 
@@ -49,13 +56,9 @@ type ServiceDTOVersion2BikeBikeAvailability struct {
 	UpdateTime *string `json:"UpdateTime"`
 }
 
-// Validate validates this service d t o version2 bike bike availability
-func (m *ServiceDTOVersion2BikeBikeAvailability) Validate(formats strfmt.Registry) error {
+// Validate validates this p t x service d t o bike specification v2 bike availability
+func (m *PTXServiceDTOBikeSpecificationV2BikeAvailability) Validate(formats strfmt.Registry) error {
 	var res []error
-
-	if err := m.validateSrcUpdateTime(formats); err != nil {
-		res = append(res, err)
-	}
 
 	if err := m.validateUpdateTime(formats); err != nil {
 		res = append(res, err)
@@ -67,16 +70,7 @@ func (m *ServiceDTOVersion2BikeBikeAvailability) Validate(formats strfmt.Registr
 	return nil
 }
 
-func (m *ServiceDTOVersion2BikeBikeAvailability) validateSrcUpdateTime(formats strfmt.Registry) error {
-
-	if err := validate.Required("SrcUpdateTime", "body", m.SrcUpdateTime); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func (m *ServiceDTOVersion2BikeBikeAvailability) validateUpdateTime(formats strfmt.Registry) error {
+func (m *PTXServiceDTOBikeSpecificationV2BikeAvailability) validateUpdateTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
 		return err
@@ -86,7 +80,7 @@ func (m *ServiceDTOVersion2BikeBikeAvailability) validateUpdateTime(formats strf
 }
 
 // MarshalBinary interface implementation
-func (m *ServiceDTOVersion2BikeBikeAvailability) MarshalBinary() ([]byte, error) {
+func (m *PTXServiceDTOBikeSpecificationV2BikeAvailability) MarshalBinary() ([]byte, error) {
 	if m == nil {
 		return nil, nil
 	}
@@ -94,8 +88,8 @@ func (m *ServiceDTOVersion2BikeBikeAvailability) MarshalBinary() ([]byte, error)
 }
 
 // UnmarshalBinary interface implementation
-func (m *ServiceDTOVersion2BikeBikeAvailability) UnmarshalBinary(b []byte) error {
-	var res ServiceDTOVersion2BikeBikeAvailability
+func (m *PTXServiceDTOBikeSpecificationV2BikeAvailability) UnmarshalBinary(b []byte) error {
+	var res PTXServiceDTOBikeSpecificationV2BikeAvailability
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

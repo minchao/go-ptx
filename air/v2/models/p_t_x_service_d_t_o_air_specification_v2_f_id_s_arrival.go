@@ -12,13 +12,15 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// ServiceDTOVersion2AviationFIDS FIDS
+// PTXServiceDTOAirSpecificationV2FIDSArrival FIDSArrival
 //
-// 航班顯示資料
+// 抵達航班顯示資料
 //
-// swagger:model Service.DTO.Version2.Aviation.FIDS
-type ServiceDTOVersion2AviationFIDS struct {
+// swagger:model PTX.Service.DTO.Air.Specification.V2.FIDSArrival
+type PTXServiceDTOAirSpecificationV2FIDSArrival struct {
 
+	// String
+	//
 	// 航空器型號
 	AcType string `json:"AcType,omitempty"`
 
@@ -27,66 +29,58 @@ type ServiceDTOVersion2AviationFIDS struct {
 	// 實際抵達時間(ISO8601格式:yyyy-MM-ddTHH:mm)
 	ActualArrivalTime string `json:"ActualArrivalTime,omitempty"`
 
-	// DateTime
-	//
-	// 實際出發時間(ISO8601格式:yyyy-MM-ddTHH:mm)
-	ActualDepartureTime string `json:"ActualDepartureTime,omitempty"`
-
 	// integer
 	//
-	// 航線種類 : [-2:'特殊',1:'國際',2:'國內',3:'兩岸',4:'國際包機',5:'國內包機',6:'兩岸包機']
+	// 航線種類(目前民航局與桃機的FIDS系統都尚未提供此欄位資料) : [-2:'特殊',1:'國際',2:'國內',3:'兩岸',4:'國際包機',5:'國內包機',6:'兩岸包機']
 	AirRouteType int32 `json:"AirRouteType,omitempty"`
 
+	// String
+	//
 	// 航空公司IATA國際代碼
 	// Required: true
 	AirlineID *string `json:"AirlineID"`
 
+	// String
+	//
+	// 停機坪(僅貨機提供)
+	Apron string `json:"Apron,omitempty"`
+
+	// String
+	//
 	// 目的地機場IATA國際代碼
 	// Required: true
 	ArrivalAirportID *string `json:"ArrivalAirportID"`
 
-	// 抵達停機坪(僅貨機提供)
-	ArrivalApron string `json:"ArrivalApron,omitempty"`
-
-	// 抵達登機門(僅客機提供)
-	ArrivalGate string `json:"ArrivalGate,omitempty"`
-
+	// String
+	//
 	// 航班屬性狀態,為該機場觀點的狀態
 	ArrivalRemark string `json:"ArrivalRemark,omitempty"`
 
+	// String
+	//
 	// 航班屬性狀態(英文)
 	ArrivalRemarkEn string `json:"ArrivalRemarkEn,omitempty"`
 
-	// 抵達航廈
-	ArrivalTerminal string `json:"ArrivalTerminal,omitempty"`
-
-	// 行李轉盤
+	// String
+	//
+	// 行李轉盤(到站FIDS可能有「行李轉盤」資訊, 離站FIDS不會有, 貨機則無此資訊)
 	BaggageClaim string `json:"BaggageClaim,omitempty"`
 
-	// 報到櫃檯
+	// String
+	//
+	// 報到櫃檯(離站FIDS可能有「報到櫃台」資訊, 到站FIDS不會有, 貨機則無此資訊)
 	CheckCounter string `json:"CheckCounter,omitempty"`
 
+	// String
+	//
 	// 航班共用班號
 	CodeShare string `json:"CodeShare,omitempty"`
 
+	// String
+	//
 	// 起點機場IATA國際代碼
 	// Required: true
 	DepartureAirportID *string `json:"DepartureAirportID"`
-
-	// 出發停機坪(僅貨機提供)
-	DepartureApron string `json:"DepartureApron,omitempty"`
-
-	// 出發登機門(僅客機提供)
-	DepartureGate string `json:"DepartureGate,omitempty"`
-
-	// 航班屬性狀態,為第三方觀點的狀態(資料來源:民航局)
-	DepartureRemark string `json:"DepartureRemark,omitempty"`
-
-	// 航班屬性狀態(英文)
-	DepartureRemarkEn string `json:"DepartureRemarkEn,omitempty"`
-
-	// 出發航廈
-	DepartureTerminal string `json:"DepartureTerminal,omitempty"`
 
 	// DateTime
 	//
@@ -95,31 +89,23 @@ type ServiceDTOVersion2AviationFIDS struct {
 
 	// DateTime
 	//
-	// 預估出發時間(ISO8601格式:yyyy-MM-ddTHH:mm)
-	EstimatedDepartureTime string `json:"EstimatedDepartureTime,omitempty"`
-
-	// DateTime
-	//
 	// 航班日期(ISO8601格式:yyyy-MM-dd)
 	// Required: true
 	FlightDate *string `json:"FlightDate"`
 
+	// String
+	//
 	// 航機班號(不包含航空公司的AirlineID，僅有班號數字)
 	// Required: true
 	FlightNumber *string `json:"FlightNumber"`
 
-	// 航班屬性
-	FlightRemark string `json:"FlightRemark,omitempty"`
+	// String
+	//
+	// 登機門(僅客機提供)
+	Gate string `json:"Gate,omitempty"`
 
-	// 航班運行狀態,以航班的角度的狀態
-	FlightStatus string `json:"FlightStatus,omitempty"`
-
-	// 航班運行狀態(英文)
-	FlightStatusEn string `json:"FlightStatusEn,omitempty"`
-
-	// 航班運行狀態百分比(國內線)
-	FlightStatusPC string `json:"FlightStatusPC,omitempty"`
-
+	// Boolean
+	//
 	// 是否為貨機
 	IsCargo bool `json:"IsCargo,omitempty"`
 
@@ -128,10 +114,10 @@ type ServiceDTOVersion2AviationFIDS struct {
 	// 表訂抵達時間(ISO8601格式:yyyy-MM-ddTHH:mm)
 	ScheduleArrivalTime string `json:"ScheduleArrivalTime,omitempty"`
 
-	// DateTime
+	// String
 	//
-	// 表訂出發時間(ISO8601格式:yyyy-MM-ddTHH:mm)
-	ScheduleDepartureTime string `json:"ScheduleDepartureTime,omitempty"`
+	// 航廈
+	Terminal string `json:"Terminal,omitempty"`
 
 	// DateTime
 	//
@@ -140,8 +126,8 @@ type ServiceDTOVersion2AviationFIDS struct {
 	UpdateTime *string `json:"UpdateTime"`
 }
 
-// Validate validates this service d t o version2 aviation f ID s
-func (m *ServiceDTOVersion2AviationFIDS) Validate(formats strfmt.Registry) error {
+// Validate validates this p t x service d t o air specification v2 f ID s arrival
+func (m *PTXServiceDTOAirSpecificationV2FIDSArrival) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateAirlineID(formats); err != nil {
@@ -174,7 +160,7 @@ func (m *ServiceDTOVersion2AviationFIDS) Validate(formats strfmt.Registry) error
 	return nil
 }
 
-func (m *ServiceDTOVersion2AviationFIDS) validateAirlineID(formats strfmt.Registry) error {
+func (m *PTXServiceDTOAirSpecificationV2FIDSArrival) validateAirlineID(formats strfmt.Registry) error {
 
 	if err := validate.Required("AirlineID", "body", m.AirlineID); err != nil {
 		return err
@@ -183,7 +169,7 @@ func (m *ServiceDTOVersion2AviationFIDS) validateAirlineID(formats strfmt.Regist
 	return nil
 }
 
-func (m *ServiceDTOVersion2AviationFIDS) validateArrivalAirportID(formats strfmt.Registry) error {
+func (m *PTXServiceDTOAirSpecificationV2FIDSArrival) validateArrivalAirportID(formats strfmt.Registry) error {
 
 	if err := validate.Required("ArrivalAirportID", "body", m.ArrivalAirportID); err != nil {
 		return err
@@ -192,7 +178,7 @@ func (m *ServiceDTOVersion2AviationFIDS) validateArrivalAirportID(formats strfmt
 	return nil
 }
 
-func (m *ServiceDTOVersion2AviationFIDS) validateDepartureAirportID(formats strfmt.Registry) error {
+func (m *PTXServiceDTOAirSpecificationV2FIDSArrival) validateDepartureAirportID(formats strfmt.Registry) error {
 
 	if err := validate.Required("DepartureAirportID", "body", m.DepartureAirportID); err != nil {
 		return err
@@ -201,7 +187,7 @@ func (m *ServiceDTOVersion2AviationFIDS) validateDepartureAirportID(formats strf
 	return nil
 }
 
-func (m *ServiceDTOVersion2AviationFIDS) validateFlightDate(formats strfmt.Registry) error {
+func (m *PTXServiceDTOAirSpecificationV2FIDSArrival) validateFlightDate(formats strfmt.Registry) error {
 
 	if err := validate.Required("FlightDate", "body", m.FlightDate); err != nil {
 		return err
@@ -210,7 +196,7 @@ func (m *ServiceDTOVersion2AviationFIDS) validateFlightDate(formats strfmt.Regis
 	return nil
 }
 
-func (m *ServiceDTOVersion2AviationFIDS) validateFlightNumber(formats strfmt.Registry) error {
+func (m *PTXServiceDTOAirSpecificationV2FIDSArrival) validateFlightNumber(formats strfmt.Registry) error {
 
 	if err := validate.Required("FlightNumber", "body", m.FlightNumber); err != nil {
 		return err
@@ -219,7 +205,7 @@ func (m *ServiceDTOVersion2AviationFIDS) validateFlightNumber(formats strfmt.Reg
 	return nil
 }
 
-func (m *ServiceDTOVersion2AviationFIDS) validateUpdateTime(formats strfmt.Registry) error {
+func (m *PTXServiceDTOAirSpecificationV2FIDSArrival) validateUpdateTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
 		return err
@@ -229,7 +215,7 @@ func (m *ServiceDTOVersion2AviationFIDS) validateUpdateTime(formats strfmt.Regis
 }
 
 // MarshalBinary interface implementation
-func (m *ServiceDTOVersion2AviationFIDS) MarshalBinary() ([]byte, error) {
+func (m *PTXServiceDTOAirSpecificationV2FIDSArrival) MarshalBinary() ([]byte, error) {
 	if m == nil {
 		return nil, nil
 	}
@@ -237,8 +223,8 @@ func (m *ServiceDTOVersion2AviationFIDS) MarshalBinary() ([]byte, error) {
 }
 
 // UnmarshalBinary interface implementation
-func (m *ServiceDTOVersion2AviationFIDS) UnmarshalBinary(b []byte) error {
-	var res ServiceDTOVersion2AviationFIDS
+func (m *PTXServiceDTOAirSpecificationV2FIDSArrival) UnmarshalBinary(b []byte) error {
+	var res PTXServiceDTOAirSpecificationV2FIDSArrival
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

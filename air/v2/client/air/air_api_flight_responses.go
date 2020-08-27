@@ -31,7 +31,7 @@ func (o *AirAPIFlightReader) ReadResponse(response runtime.ClientResponse, consu
 		return result, nil
 
 	default:
-		return nil, runtime.NewAPIError("unknown error", response, response.Code())
+		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
 }
 
@@ -42,17 +42,17 @@ func NewAirAPIFlightOK() *AirAPIFlightOK {
 
 /*AirAPIFlightOK handles this case with default header values.
 
-OK
+Success
 */
 type AirAPIFlightOK struct {
-	Payload []*models.ServiceDTOVersion2AviationFIDS
+	Payload []*models.PTXServiceDTOAirSpecificationV2FIDS
 }
 
 func (o *AirAPIFlightOK) Error() string {
 	return fmt.Sprintf("[GET /v2/Air/FIDS/Flight][%d] airApiFlightOK  %+v", 200, o.Payload)
 }
 
-func (o *AirAPIFlightOK) GetPayload() []*models.ServiceDTOVersion2AviationFIDS {
+func (o *AirAPIFlightOK) GetPayload() []*models.PTXServiceDTOAirSpecificationV2FIDS {
 	return o.Payload
 }
 

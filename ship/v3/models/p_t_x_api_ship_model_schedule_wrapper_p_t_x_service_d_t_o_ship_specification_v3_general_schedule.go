@@ -40,7 +40,7 @@ type PTXAPIShipModelScheduleWrapperPTXServiceDTOShipSpecificationV3GeneralSchedu
 	// Array
 	//
 	// 資料(陣列)
-	Ports []*PTXServiceDTOShipSpecificationV3GeneralSchedule `json:"Ports"`
+	GeneralSchedules []*PTXServiceDTOShipSpecificationV3GeneralSchedule `json:"GeneralSchedules"`
 
 	// Int32
 	//
@@ -64,7 +64,7 @@ type PTXAPIShipModelScheduleWrapperPTXServiceDTOShipSpecificationV3GeneralSchedu
 func (m *PTXAPIShipModelScheduleWrapperPTXServiceDTOShipSpecificationV3GeneralSchedule) Validate(formats strfmt.Registry) error {
 	var res []error
 
-	if err := m.validatePorts(formats); err != nil {
+	if err := m.validateGeneralSchedules(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -82,21 +82,21 @@ func (m *PTXAPIShipModelScheduleWrapperPTXServiceDTOShipSpecificationV3GeneralSc
 	return nil
 }
 
-func (m *PTXAPIShipModelScheduleWrapperPTXServiceDTOShipSpecificationV3GeneralSchedule) validatePorts(formats strfmt.Registry) error {
+func (m *PTXAPIShipModelScheduleWrapperPTXServiceDTOShipSpecificationV3GeneralSchedule) validateGeneralSchedules(formats strfmt.Registry) error {
 
-	if swag.IsZero(m.Ports) { // not required
+	if swag.IsZero(m.GeneralSchedules) { // not required
 		return nil
 	}
 
-	for i := 0; i < len(m.Ports); i++ {
-		if swag.IsZero(m.Ports[i]) { // not required
+	for i := 0; i < len(m.GeneralSchedules); i++ {
+		if swag.IsZero(m.GeneralSchedules[i]) { // not required
 			continue
 		}
 
-		if m.Ports[i] != nil {
-			if err := m.Ports[i].Validate(formats); err != nil {
+		if m.GeneralSchedules[i] != nil {
+			if err := m.GeneralSchedules[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
-					return ve.ValidateName("Ports" + "." + strconv.Itoa(i))
+					return ve.ValidateName("GeneralSchedules" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

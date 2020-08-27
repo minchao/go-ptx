@@ -21,15 +21,15 @@ import (
 // swagger:model Service.DTO.Version2.Rail.THSR.AvailableSeat
 type ServiceDTOVersion2RailTHSRAvailableSeat struct {
 
-	// 發車時間(格式: HH:mm)
-	// Required: true
-	DepartureTime *string `json:"DepartureTime"`
-
 	// integer
 	//
 	// 方向 : [0:'南下',1:'北上']
 	// Required: true
 	Direction *int32 `json:"Direction"`
+
+	// 終點車站簡碼(訂票系統用)
+	// Required: true
+	EndingStationCode *string `json:"EndingStationCode"`
 
 	// 終點車站代碼
 	// Required: true
@@ -41,21 +41,19 @@ type ServiceDTOVersion2RailTHSRAvailableSeat struct {
 	// Required: true
 	EndingStationName *ServiceDTOVersion2BaseNameType `json:"EndingStationName"`
 
-	// DateTime
-	//
-	// 來源端平台接收時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
+	// 起站車站簡碼(訂票系統用)
 	// Required: true
-	SrcRecTime *string `json:"SrcRecTime"`
+	StartingStationCode *string `json:"StartingStationCode"`
 
-	// 查詢車站代碼
+	// 起點車站代碼
 	// Required: true
-	StationID *string `json:"StationID"`
+	StartingStationID *string `json:"StartingStationID"`
 
 	// NameType
 	//
-	// 查詢車站名稱
+	// 起點車站名稱
 	// Required: true
-	StationName *ServiceDTOVersion2BaseNameType `json:"StationName"`
+	StartingStationName *ServiceDTOVersion2BaseNameType `json:"StartingStationName"`
 
 	// 車次停靠站點組合
 	// Required: true
@@ -64,23 +62,17 @@ type ServiceDTOVersion2RailTHSRAvailableSeat struct {
 	// 車次號碼
 	// Required: true
 	TrainNo *string `json:"TrainNo"`
-
-	// DateTime
-	//
-	// 本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
-	// Required: true
-	UpdateTime *string `json:"UpdateTime"`
 }
 
 // Validate validates this service d t o version2 rail t h s r available seat
 func (m *ServiceDTOVersion2RailTHSRAvailableSeat) Validate(formats strfmt.Registry) error {
 	var res []error
 
-	if err := m.validateDepartureTime(formats); err != nil {
+	if err := m.validateDirection(formats); err != nil {
 		res = append(res, err)
 	}
 
-	if err := m.validateDirection(formats); err != nil {
+	if err := m.validateEndingStationCode(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -92,15 +84,15 @@ func (m *ServiceDTOVersion2RailTHSRAvailableSeat) Validate(formats strfmt.Regist
 		res = append(res, err)
 	}
 
-	if err := m.validateSrcRecTime(formats); err != nil {
+	if err := m.validateStartingStationCode(formats); err != nil {
 		res = append(res, err)
 	}
 
-	if err := m.validateStationID(formats); err != nil {
+	if err := m.validateStartingStationID(formats); err != nil {
 		res = append(res, err)
 	}
 
-	if err := m.validateStationName(formats); err != nil {
+	if err := m.validateStartingStationName(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -112,28 +104,24 @@ func (m *ServiceDTOVersion2RailTHSRAvailableSeat) Validate(formats strfmt.Regist
 		res = append(res, err)
 	}
 
-	if err := m.validateUpdateTime(formats); err != nil {
-		res = append(res, err)
-	}
-
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
 	return nil
 }
 
-func (m *ServiceDTOVersion2RailTHSRAvailableSeat) validateDepartureTime(formats strfmt.Registry) error {
+func (m *ServiceDTOVersion2RailTHSRAvailableSeat) validateDirection(formats strfmt.Registry) error {
 
-	if err := validate.Required("DepartureTime", "body", m.DepartureTime); err != nil {
+	if err := validate.Required("Direction", "body", m.Direction); err != nil {
 		return err
 	}
 
 	return nil
 }
 
-func (m *ServiceDTOVersion2RailTHSRAvailableSeat) validateDirection(formats strfmt.Registry) error {
+func (m *ServiceDTOVersion2RailTHSRAvailableSeat) validateEndingStationCode(formats strfmt.Registry) error {
 
-	if err := validate.Required("Direction", "body", m.Direction); err != nil {
+	if err := validate.Required("EndingStationCode", "body", m.EndingStationCode); err != nil {
 		return err
 	}
 
@@ -167,34 +155,34 @@ func (m *ServiceDTOVersion2RailTHSRAvailableSeat) validateEndingStationName(form
 	return nil
 }
 
-func (m *ServiceDTOVersion2RailTHSRAvailableSeat) validateSrcRecTime(formats strfmt.Registry) error {
+func (m *ServiceDTOVersion2RailTHSRAvailableSeat) validateStartingStationCode(formats strfmt.Registry) error {
 
-	if err := validate.Required("SrcRecTime", "body", m.SrcRecTime); err != nil {
+	if err := validate.Required("StartingStationCode", "body", m.StartingStationCode); err != nil {
 		return err
 	}
 
 	return nil
 }
 
-func (m *ServiceDTOVersion2RailTHSRAvailableSeat) validateStationID(formats strfmt.Registry) error {
+func (m *ServiceDTOVersion2RailTHSRAvailableSeat) validateStartingStationID(formats strfmt.Registry) error {
 
-	if err := validate.Required("StationID", "body", m.StationID); err != nil {
+	if err := validate.Required("StartingStationID", "body", m.StartingStationID); err != nil {
 		return err
 	}
 
 	return nil
 }
 
-func (m *ServiceDTOVersion2RailTHSRAvailableSeat) validateStationName(formats strfmt.Registry) error {
+func (m *ServiceDTOVersion2RailTHSRAvailableSeat) validateStartingStationName(formats strfmt.Registry) error {
 
-	if err := validate.Required("StationName", "body", m.StationName); err != nil {
+	if err := validate.Required("StartingStationName", "body", m.StartingStationName); err != nil {
 		return err
 	}
 
-	if m.StationName != nil {
-		if err := m.StationName.Validate(formats); err != nil {
+	if m.StartingStationName != nil {
+		if err := m.StartingStationName.Validate(formats); err != nil {
 			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("StationName")
+				return ve.ValidateName("StartingStationName")
 			}
 			return err
 		}
@@ -231,15 +219,6 @@ func (m *ServiceDTOVersion2RailTHSRAvailableSeat) validateStopStations(formats s
 func (m *ServiceDTOVersion2RailTHSRAvailableSeat) validateTrainNo(formats strfmt.Registry) error {
 
 	if err := validate.Required("TrainNo", "body", m.TrainNo); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func (m *ServiceDTOVersion2RailTHSRAvailableSeat) validateUpdateTime(formats strfmt.Registry) error {
-
-	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
 		return err
 	}
 

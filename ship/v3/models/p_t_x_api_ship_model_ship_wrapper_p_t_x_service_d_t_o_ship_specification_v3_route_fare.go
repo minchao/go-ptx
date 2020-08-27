@@ -30,7 +30,7 @@ type PTXAPIShipModelShipWrapperPTXServiceDTOShipSpecificationV3RouteFare struct 
 	// Array
 	//
 	// 資料(陣列)
-	Ports []*PTXServiceDTOShipSpecificationV3RouteFare `json:"Ports"`
+	RouteFares []*PTXServiceDTOShipSpecificationV3RouteFare `json:"RouteFares"`
 
 	// Int32
 	//
@@ -54,7 +54,7 @@ type PTXAPIShipModelShipWrapperPTXServiceDTOShipSpecificationV3RouteFare struct 
 func (m *PTXAPIShipModelShipWrapperPTXServiceDTOShipSpecificationV3RouteFare) Validate(formats strfmt.Registry) error {
 	var res []error
 
-	if err := m.validatePorts(formats); err != nil {
+	if err := m.validateRouteFares(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -72,21 +72,21 @@ func (m *PTXAPIShipModelShipWrapperPTXServiceDTOShipSpecificationV3RouteFare) Va
 	return nil
 }
 
-func (m *PTXAPIShipModelShipWrapperPTXServiceDTOShipSpecificationV3RouteFare) validatePorts(formats strfmt.Registry) error {
+func (m *PTXAPIShipModelShipWrapperPTXServiceDTOShipSpecificationV3RouteFare) validateRouteFares(formats strfmt.Registry) error {
 
-	if swag.IsZero(m.Ports) { // not required
+	if swag.IsZero(m.RouteFares) { // not required
 		return nil
 	}
 
-	for i := 0; i < len(m.Ports); i++ {
-		if swag.IsZero(m.Ports[i]) { // not required
+	for i := 0; i < len(m.RouteFares); i++ {
+		if swag.IsZero(m.RouteFares[i]) { // not required
 			continue
 		}
 
-		if m.Ports[i] != nil {
-			if err := m.Ports[i].Validate(formats); err != nil {
+		if m.RouteFares[i] != nil {
+			if err := m.RouteFares[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
-					return ve.ValidateName("Ports" + "." + strconv.Itoa(i))
+					return ve.ValidateName("RouteFares" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

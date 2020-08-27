@@ -12,11 +12,13 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// ServiceDTOVersion2ApplicationMETAR METAR
+// PTXServiceDTOAirSpecificationV2METAR METAR
 //
-// swagger:model Service.DTO.Version2.Application.METAR
-type ServiceDTOVersion2ApplicationMETAR struct {
+// swagger:model PTX.Service.DTO.Air.Specification.V2.METAR
+type PTXServiceDTOAirSpecificationV2METAR struct {
 
+	// String
+	//
 	// 機場代碼(IATA)
 	// Required: true
 	AirportID *string `json:"AirportID"`
@@ -25,8 +27,12 @@ type ServiceDTOVersion2ApplicationMETAR struct {
 	//
 	// 機場名稱
 	// Required: true
-	AirportName *ServiceDTOVersion2BaseNameType `json:"AirportName"`
+	AirportName struct {
+		PTXServiceDTOSharedSpecificationV2BaseNameType
+	} `json:"AirportName"`
 
+	// String
+	//
 	// 雲冪(含單位)
 	// Required: true
 	Ceiling *string `json:"Ceiling"`
@@ -35,18 +41,26 @@ type ServiceDTOVersion2ApplicationMETAR struct {
 	//
 	// 機場所屬城市
 	// Required: true
-	CityName *ServiceDTOVersion2BaseNameType `json:"CityName"`
+	CityName struct {
+		PTXServiceDTOSharedSpecificationV2BaseNameType
+	} `json:"CityName"`
 
 	// NameType
 	//
 	// 國家名稱
 	// Required: true
-	CountryName *ServiceDTOVersion2BaseNameType `json:"CountryName"`
+	CountryName struct {
+		PTXServiceDTOSharedSpecificationV2BaseNameType
+	} `json:"CountryName"`
 
+	// String
+	//
 	// 機場天氣報告(METAR/SPECI)
 	// Required: true
 	MetarText *string `json:"MetarText"`
 
+	// String
+	//
 	// 機場天氣報告時間(地方時)
 	// Required: true
 	MetarTime *string `json:"MetarTime"`
@@ -57,6 +71,8 @@ type ServiceDTOVersion2ApplicationMETAR struct {
 	// Required: true
 	ObservationTime *string `json:"ObservationTime"`
 
+	// String
+	//
 	// 機場氣象觀測站代碼(ICAO)
 	// Required: true
 	StationID *string `json:"StationID"`
@@ -65,8 +81,12 @@ type ServiceDTOVersion2ApplicationMETAR struct {
 	//
 	// 機場氣象觀測站座標
 	// Required: true
-	StationPosition *ServiceDTOVersion2BasePointType `json:"StationPosition"`
+	StationPosition struct {
+		PTXServiceDTOSharedSpecificationV2BasePointType
+	} `json:"StationPosition"`
 
+	// String
+	//
 	// 溫度(含單位)
 	// Required: true
 	Temperature *string `json:"Temperature"`
@@ -77,6 +97,8 @@ type ServiceDTOVersion2ApplicationMETAR struct {
 	// Required: true
 	UpdateTime *string `json:"UpdateTime"`
 
+	// String
+	//
 	// 盛行能見度(含單位，9999以10公里以上表示)
 	// Required: true
 	Visibility *string `json:"Visibility"`
@@ -85,19 +107,25 @@ type ServiceDTOVersion2ApplicationMETAR struct {
 	//
 	// 天氣描述
 	// Required: true
-	WeatherDescription *ServiceDTOVersion2BaseNameType `json:"WeatherDescription"`
+	WeatherDescription struct {
+		PTXServiceDTOSharedSpecificationV2BaseNameType
+	} `json:"WeatherDescription"`
 
+	// String
+	//
 	// 風向(含單位)
 	// Required: true
 	WindDirection *string `json:"WindDirection"`
 
+	// String
+	//
 	// 風速(含單位)
 	// Required: true
 	WindSpeed *string `json:"WindSpeed"`
 }
 
-// Validate validates this service d t o version2 application m e t a r
-func (m *ServiceDTOVersion2ApplicationMETAR) Validate(formats strfmt.Registry) error {
+// Validate validates this p t x service d t o air specification v2 m e t a r
+func (m *PTXServiceDTOAirSpecificationV2METAR) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateAirportID(formats); err != nil {
@@ -170,7 +198,7 @@ func (m *ServiceDTOVersion2ApplicationMETAR) Validate(formats strfmt.Registry) e
 	return nil
 }
 
-func (m *ServiceDTOVersion2ApplicationMETAR) validateAirportID(formats strfmt.Registry) error {
+func (m *PTXServiceDTOAirSpecificationV2METAR) validateAirportID(formats strfmt.Registry) error {
 
 	if err := validate.Required("AirportID", "body", m.AirportID); err != nil {
 		return err
@@ -179,25 +207,12 @@ func (m *ServiceDTOVersion2ApplicationMETAR) validateAirportID(formats strfmt.Re
 	return nil
 }
 
-func (m *ServiceDTOVersion2ApplicationMETAR) validateAirportName(formats strfmt.Registry) error {
-
-	if err := validate.Required("AirportName", "body", m.AirportName); err != nil {
-		return err
-	}
-
-	if m.AirportName != nil {
-		if err := m.AirportName.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("AirportName")
-			}
-			return err
-		}
-	}
+func (m *PTXServiceDTOAirSpecificationV2METAR) validateAirportName(formats strfmt.Registry) error {
 
 	return nil
 }
 
-func (m *ServiceDTOVersion2ApplicationMETAR) validateCeiling(formats strfmt.Registry) error {
+func (m *PTXServiceDTOAirSpecificationV2METAR) validateCeiling(formats strfmt.Registry) error {
 
 	if err := validate.Required("Ceiling", "body", m.Ceiling); err != nil {
 		return err
@@ -206,43 +221,17 @@ func (m *ServiceDTOVersion2ApplicationMETAR) validateCeiling(formats strfmt.Regi
 	return nil
 }
 
-func (m *ServiceDTOVersion2ApplicationMETAR) validateCityName(formats strfmt.Registry) error {
-
-	if err := validate.Required("CityName", "body", m.CityName); err != nil {
-		return err
-	}
-
-	if m.CityName != nil {
-		if err := m.CityName.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("CityName")
-			}
-			return err
-		}
-	}
+func (m *PTXServiceDTOAirSpecificationV2METAR) validateCityName(formats strfmt.Registry) error {
 
 	return nil
 }
 
-func (m *ServiceDTOVersion2ApplicationMETAR) validateCountryName(formats strfmt.Registry) error {
-
-	if err := validate.Required("CountryName", "body", m.CountryName); err != nil {
-		return err
-	}
-
-	if m.CountryName != nil {
-		if err := m.CountryName.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("CountryName")
-			}
-			return err
-		}
-	}
+func (m *PTXServiceDTOAirSpecificationV2METAR) validateCountryName(formats strfmt.Registry) error {
 
 	return nil
 }
 
-func (m *ServiceDTOVersion2ApplicationMETAR) validateMetarText(formats strfmt.Registry) error {
+func (m *PTXServiceDTOAirSpecificationV2METAR) validateMetarText(formats strfmt.Registry) error {
 
 	if err := validate.Required("MetarText", "body", m.MetarText); err != nil {
 		return err
@@ -251,7 +240,7 @@ func (m *ServiceDTOVersion2ApplicationMETAR) validateMetarText(formats strfmt.Re
 	return nil
 }
 
-func (m *ServiceDTOVersion2ApplicationMETAR) validateMetarTime(formats strfmt.Registry) error {
+func (m *PTXServiceDTOAirSpecificationV2METAR) validateMetarTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("MetarTime", "body", m.MetarTime); err != nil {
 		return err
@@ -260,7 +249,7 @@ func (m *ServiceDTOVersion2ApplicationMETAR) validateMetarTime(formats strfmt.Re
 	return nil
 }
 
-func (m *ServiceDTOVersion2ApplicationMETAR) validateObservationTime(formats strfmt.Registry) error {
+func (m *PTXServiceDTOAirSpecificationV2METAR) validateObservationTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("ObservationTime", "body", m.ObservationTime); err != nil {
 		return err
@@ -269,7 +258,7 @@ func (m *ServiceDTOVersion2ApplicationMETAR) validateObservationTime(formats str
 	return nil
 }
 
-func (m *ServiceDTOVersion2ApplicationMETAR) validateStationID(formats strfmt.Registry) error {
+func (m *PTXServiceDTOAirSpecificationV2METAR) validateStationID(formats strfmt.Registry) error {
 
 	if err := validate.Required("StationID", "body", m.StationID); err != nil {
 		return err
@@ -278,25 +267,12 @@ func (m *ServiceDTOVersion2ApplicationMETAR) validateStationID(formats strfmt.Re
 	return nil
 }
 
-func (m *ServiceDTOVersion2ApplicationMETAR) validateStationPosition(formats strfmt.Registry) error {
-
-	if err := validate.Required("StationPosition", "body", m.StationPosition); err != nil {
-		return err
-	}
-
-	if m.StationPosition != nil {
-		if err := m.StationPosition.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("StationPosition")
-			}
-			return err
-		}
-	}
+func (m *PTXServiceDTOAirSpecificationV2METAR) validateStationPosition(formats strfmt.Registry) error {
 
 	return nil
 }
 
-func (m *ServiceDTOVersion2ApplicationMETAR) validateTemperature(formats strfmt.Registry) error {
+func (m *PTXServiceDTOAirSpecificationV2METAR) validateTemperature(formats strfmt.Registry) error {
 
 	if err := validate.Required("Temperature", "body", m.Temperature); err != nil {
 		return err
@@ -305,7 +281,7 @@ func (m *ServiceDTOVersion2ApplicationMETAR) validateTemperature(formats strfmt.
 	return nil
 }
 
-func (m *ServiceDTOVersion2ApplicationMETAR) validateUpdateTime(formats strfmt.Registry) error {
+func (m *PTXServiceDTOAirSpecificationV2METAR) validateUpdateTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
 		return err
@@ -314,7 +290,7 @@ func (m *ServiceDTOVersion2ApplicationMETAR) validateUpdateTime(formats strfmt.R
 	return nil
 }
 
-func (m *ServiceDTOVersion2ApplicationMETAR) validateVisibility(formats strfmt.Registry) error {
+func (m *PTXServiceDTOAirSpecificationV2METAR) validateVisibility(formats strfmt.Registry) error {
 
 	if err := validate.Required("Visibility", "body", m.Visibility); err != nil {
 		return err
@@ -323,25 +299,12 @@ func (m *ServiceDTOVersion2ApplicationMETAR) validateVisibility(formats strfmt.R
 	return nil
 }
 
-func (m *ServiceDTOVersion2ApplicationMETAR) validateWeatherDescription(formats strfmt.Registry) error {
-
-	if err := validate.Required("WeatherDescription", "body", m.WeatherDescription); err != nil {
-		return err
-	}
-
-	if m.WeatherDescription != nil {
-		if err := m.WeatherDescription.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("WeatherDescription")
-			}
-			return err
-		}
-	}
+func (m *PTXServiceDTOAirSpecificationV2METAR) validateWeatherDescription(formats strfmt.Registry) error {
 
 	return nil
 }
 
-func (m *ServiceDTOVersion2ApplicationMETAR) validateWindDirection(formats strfmt.Registry) error {
+func (m *PTXServiceDTOAirSpecificationV2METAR) validateWindDirection(formats strfmt.Registry) error {
 
 	if err := validate.Required("WindDirection", "body", m.WindDirection); err != nil {
 		return err
@@ -350,7 +313,7 @@ func (m *ServiceDTOVersion2ApplicationMETAR) validateWindDirection(formats strfm
 	return nil
 }
 
-func (m *ServiceDTOVersion2ApplicationMETAR) validateWindSpeed(formats strfmt.Registry) error {
+func (m *PTXServiceDTOAirSpecificationV2METAR) validateWindSpeed(formats strfmt.Registry) error {
 
 	if err := validate.Required("WindSpeed", "body", m.WindSpeed); err != nil {
 		return err
@@ -360,7 +323,7 @@ func (m *ServiceDTOVersion2ApplicationMETAR) validateWindSpeed(formats strfmt.Re
 }
 
 // MarshalBinary interface implementation
-func (m *ServiceDTOVersion2ApplicationMETAR) MarshalBinary() ([]byte, error) {
+func (m *PTXServiceDTOAirSpecificationV2METAR) MarshalBinary() ([]byte, error) {
 	if m == nil {
 		return nil, nil
 	}
@@ -368,8 +331,8 @@ func (m *ServiceDTOVersion2ApplicationMETAR) MarshalBinary() ([]byte, error) {
 }
 
 // UnmarshalBinary interface implementation
-func (m *ServiceDTOVersion2ApplicationMETAR) UnmarshalBinary(b []byte) error {
-	var res ServiceDTOVersion2ApplicationMETAR
+func (m *PTXServiceDTOAirSpecificationV2METAR) UnmarshalBinary(b []byte) error {
+	var res PTXServiceDTOAirSpecificationV2METAR
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

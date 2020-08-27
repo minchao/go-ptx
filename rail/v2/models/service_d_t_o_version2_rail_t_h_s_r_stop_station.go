@@ -19,13 +19,31 @@ import (
 // swagger:model Service.DTO.Version2.Rail.THSR.StopStation
 type ServiceDTOVersion2RailTHSRStopStation struct {
 
-	// 商務席剩餘座位狀態 =  ['Available: 尚有座位' or 'Limited: 座位有限' or 'Full: 已無座位']
+	// 商務席剩餘座位狀態 =  ['O: 尚有座位' or 'L: 座位有限' or 'X: 已無座位']
 	// Required: true
 	BusinessSeatStatus *string `json:"BusinessSeatStatus"`
 
-	// 標準席剩餘座位狀態 = ['Available: 尚有座位' or 'Limited: 座位有限' or 'Full: 已無座位']
+	// 下一停靠站車站簡碼(訂票系統用)
+	// Required: true
+	NextStationCode *string `json:"NextStationCode"`
+
+	// 下一停靠站車站代碼
+	// Required: true
+	NextStationID *string `json:"NextStationID"`
+
+	// NameType
+	//
+	// 下一停靠站車站名稱
+	// Required: true
+	NextStationName *ServiceDTOVersion2BaseNameType `json:"NextStationName"`
+
+	// 標準席剩餘座位狀態 = ['O: 尚有座位' or 'L: 座位有限' or 'X: 已無座位']
 	// Required: true
 	StandardSeatStatus *string `json:"StandardSeatStatus"`
+
+	// 車站簡碼(訂票系統用)
+	// Required: true
+	StationCode *string `json:"StationCode"`
 
 	// 車站代碼
 	// Required: true
@@ -36,6 +54,10 @@ type ServiceDTOVersion2RailTHSRStopStation struct {
 	// 車站名稱
 	// Required: true
 	StationName *ServiceDTOVersion2BaseNameType `json:"StationName"`
+
+	// 跑法站序
+	// Required: true
+	StopSequence *int32 `json:"StopSequence"`
 }
 
 // Validate validates this service d t o version2 rail t h s r stop station
@@ -46,7 +68,23 @@ func (m *ServiceDTOVersion2RailTHSRStopStation) Validate(formats strfmt.Registry
 		res = append(res, err)
 	}
 
+	if err := m.validateNextStationCode(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateNextStationID(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateNextStationName(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateStandardSeatStatus(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateStationCode(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -55,6 +93,10 @@ func (m *ServiceDTOVersion2RailTHSRStopStation) Validate(formats strfmt.Registry
 	}
 
 	if err := m.validateStationName(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateStopSequence(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -73,9 +115,54 @@ func (m *ServiceDTOVersion2RailTHSRStopStation) validateBusinessSeatStatus(forma
 	return nil
 }
 
+func (m *ServiceDTOVersion2RailTHSRStopStation) validateNextStationCode(formats strfmt.Registry) error {
+
+	if err := validate.Required("NextStationCode", "body", m.NextStationCode); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *ServiceDTOVersion2RailTHSRStopStation) validateNextStationID(formats strfmt.Registry) error {
+
+	if err := validate.Required("NextStationID", "body", m.NextStationID); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *ServiceDTOVersion2RailTHSRStopStation) validateNextStationName(formats strfmt.Registry) error {
+
+	if err := validate.Required("NextStationName", "body", m.NextStationName); err != nil {
+		return err
+	}
+
+	if m.NextStationName != nil {
+		if err := m.NextStationName.Validate(formats); err != nil {
+			if ve, ok := err.(*errors.Validation); ok {
+				return ve.ValidateName("NextStationName")
+			}
+			return err
+		}
+	}
+
+	return nil
+}
+
 func (m *ServiceDTOVersion2RailTHSRStopStation) validateStandardSeatStatus(formats strfmt.Registry) error {
 
 	if err := validate.Required("StandardSeatStatus", "body", m.StandardSeatStatus); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *ServiceDTOVersion2RailTHSRStopStation) validateStationCode(formats strfmt.Registry) error {
+
+	if err := validate.Required("StationCode", "body", m.StationCode); err != nil {
 		return err
 	}
 
@@ -104,6 +191,15 @@ func (m *ServiceDTOVersion2RailTHSRStopStation) validateStationName(formats strf
 			}
 			return err
 		}
+	}
+
+	return nil
+}
+
+func (m *ServiceDTOVersion2RailTHSRStopStation) validateStopSequence(formats strfmt.Registry) error {
+
+	if err := validate.Required("StopSequence", "body", m.StopSequence); err != nil {
+		return err
 	}
 
 	return nil
