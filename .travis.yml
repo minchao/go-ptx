@@ -1,11 +1,11 @@
 language: go
 os: linux
-dist: bionic
+dist: focal
 
 jobs:
   include:
-    - go: 1.13.x
     - go: 1.14.x
+    - go: 1.15.x
     - go: master
   allow_failures:
     - go: master
@@ -44,7 +44,7 @@ deploy:
     script: bash ${TRAVIS_BUILD_DIR}/scripts/check-oas-spec.sh
     on:
       branch: check-oas-spec
-      condition: $TRAVIS_GO_VERSION =~ ^1\.14
+      condition: $TRAVIS_GO_VERSION =~ ^1\.15
 
 notifications:
   email:
