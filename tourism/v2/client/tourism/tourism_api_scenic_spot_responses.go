@@ -42,17 +42,17 @@ func NewTourismAPIScenicSpotOK() *TourismAPIScenicSpotOK {
 
 /*TourismAPIScenicSpotOK handles this case with default header values.
 
-OK
+Success
 */
 type TourismAPIScenicSpotOK struct {
-	Payload []*models.ServiceDTOVersion2ApplicationScenicSpotTourismInfo
+	Payload []*models.PTXServiceDTOTourismSpecificationV2ScenicSpotTourismInfo
 }
 
 func (o *TourismAPIScenicSpotOK) Error() string {
 	return fmt.Sprintf("[GET /v2/Tourism/ScenicSpot][%d] tourismApiScenicSpotOK  %+v", 200, o.Payload)
 }
 
-func (o *TourismAPIScenicSpotOK) GetPayload() []*models.ServiceDTOVersion2ApplicationScenicSpotTourismInfo {
+func (o *TourismAPIScenicSpotOK) GetPayload() []*models.PTXServiceDTOTourismSpecificationV2ScenicSpotTourismInfo {
 	return o.Payload
 }
 

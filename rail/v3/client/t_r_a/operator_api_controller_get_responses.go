@@ -42,23 +42,23 @@ func NewOperatorAPIControllerGetOK() *OperatorAPIControllerGetOK {
 
 /*OperatorAPIControllerGetOK handles this case with default header values.
 
-OK
+Success
 */
 type OperatorAPIControllerGetOK struct {
-	Payload *models.MOTCAPIRailModelsTRABaseWrapperServiceDTOVersion3RailTRAOperator
+	Payload *models.PTXAPIRailModelTRABaseWrapperPTXServiceDTORailSpecificationV3TRAOperator
 }
 
 func (o *OperatorAPIControllerGetOK) Error() string {
 	return fmt.Sprintf("[GET /v3/Rail/TRA/Operator][%d] operatorApiControllerGetOK  %+v", 200, o.Payload)
 }
 
-func (o *OperatorAPIControllerGetOK) GetPayload() *models.MOTCAPIRailModelsTRABaseWrapperServiceDTOVersion3RailTRAOperator {
+func (o *OperatorAPIControllerGetOK) GetPayload() *models.PTXAPIRailModelTRABaseWrapperPTXServiceDTORailSpecificationV3TRAOperator {
 	return o.Payload
 }
 
 func (o *OperatorAPIControllerGetOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.MOTCAPIRailModelsTRABaseWrapperServiceDTOVersion3RailTRAOperator)
+	o.Payload = new(models.PTXAPIRailModelTRABaseWrapperPTXServiceDTORailSpecificationV3TRAOperator)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

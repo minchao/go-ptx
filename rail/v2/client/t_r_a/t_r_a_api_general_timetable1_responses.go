@@ -42,17 +42,17 @@ func NewTRAAPIGeneralTimetable1OK() *TRAAPIGeneralTimetable1OK {
 
 /*TRAAPIGeneralTimetable1OK handles this case with default header values.
 
-OK
+Success
 */
 type TRAAPIGeneralTimetable1OK struct {
-	Payload []*models.ServiceDTOVersion2RailTRARailGeneralTimetable
+	Payload []*models.PTXServiceDTORailSpecificationV2TRARailGeneralTimetable
 }
 
 func (o *TRAAPIGeneralTimetable1OK) Error() string {
 	return fmt.Sprintf("[GET /v2/Rail/TRA/GeneralTimetable/TrainNo/{TrainNo}][%d] tRAApiGeneralTimetable1OK  %+v", 200, o.Payload)
 }
 
-func (o *TRAAPIGeneralTimetable1OK) GetPayload() []*models.ServiceDTOVersion2RailTRARailGeneralTimetable {
+func (o *TRAAPIGeneralTimetable1OK) GetPayload() []*models.PTXServiceDTORailSpecificationV2TRARailGeneralTimetable {
 	return o.Payload
 }
 

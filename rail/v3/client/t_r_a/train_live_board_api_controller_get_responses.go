@@ -42,23 +42,23 @@ func NewTrainLiveBoardAPIControllerGetOK() *TrainLiveBoardAPIControllerGetOK {
 
 /*TrainLiveBoardAPIControllerGetOK handles this case with default header values.
 
-OK
+Success
 */
 type TrainLiveBoardAPIControllerGetOK struct {
-	Payload *models.MOTCAPIRailModelsTRARealTimeWrapperServiceDTOVersion3RailTRATRATrainLiveBoardListTrainLiveBoard
+	Payload *models.PTXAPIRailModelTRARealTimeWrapperPTXServiceDTORailSpecificationV3TRATRATrainLiveBoardListTrainLiveBoard
 }
 
 func (o *TrainLiveBoardAPIControllerGetOK) Error() string {
 	return fmt.Sprintf("[GET /v3/Rail/TRA/TrainLiveBoard][%d] trainLiveBoardApiControllerGetOK  %+v", 200, o.Payload)
 }
 
-func (o *TrainLiveBoardAPIControllerGetOK) GetPayload() *models.MOTCAPIRailModelsTRARealTimeWrapperServiceDTOVersion3RailTRATRATrainLiveBoardListTrainLiveBoard {
+func (o *TrainLiveBoardAPIControllerGetOK) GetPayload() *models.PTXAPIRailModelTRARealTimeWrapperPTXServiceDTORailSpecificationV3TRATRATrainLiveBoardListTrainLiveBoard {
 	return o.Payload
 }
 
 func (o *TrainLiveBoardAPIControllerGetOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.MOTCAPIRailModelsTRARealTimeWrapperServiceDTOVersion3RailTRATRATrainLiveBoardListTrainLiveBoard)
+	o.Payload = new(models.PTXAPIRailModelTRARealTimeWrapperPTXServiceDTORailSpecificationV3TRATRATrainLiveBoardListTrainLiveBoard)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

@@ -42,17 +42,17 @@ func NewTRAAPILiveBoardOK() *TRAAPILiveBoardOK {
 
 /*TRAAPILiveBoardOK handles this case with default header values.
 
-OK
+Success
 */
 type TRAAPILiveBoardOK struct {
-	Payload []*models.ServiceDTOVersion2RailTRARailLiveBoard
+	Payload []*models.PTXServiceDTORailSpecificationV2TRARailLiveBoard
 }
 
 func (o *TRAAPILiveBoardOK) Error() string {
 	return fmt.Sprintf("[GET /v2/Rail/TRA/LiveBoard][%d] tRAApiLiveBoardOK  %+v", 200, o.Payload)
 }
 
-func (o *TRAAPILiveBoardOK) GetPayload() []*models.ServiceDTOVersion2RailTRARailLiveBoard {
+func (o *TRAAPILiveBoardOK) GetPayload() []*models.PTXServiceDTORailSpecificationV2TRARailLiveBoard {
 	return o.Payload
 }
 

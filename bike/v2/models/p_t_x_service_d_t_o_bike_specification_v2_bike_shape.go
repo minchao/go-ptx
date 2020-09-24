@@ -49,12 +49,18 @@ type PTXServiceDTOBikeSpecificationV2BikeShape struct {
 
 	// String
 	//
+	// 路線軌跡編碼(encoded polyline)
+	// Required: true
+	EncodedPolyline *string `json:"EncodedPolyline"`
+
+	// String
+	//
 	// 自行車道完工日期時間
 	FinishedTime string `json:"FinishedTime,omitempty"`
 
 	// String
 	//
-	// 路線軌跡資料
+	// well-known text，為路線軌跡資料
 	// Required: true
 	Geometry *string `json:"Geometry"`
 
@@ -98,6 +104,10 @@ func (m *PTXServiceDTOBikeSpecificationV2BikeShape) Validate(formats strfmt.Regi
 		res = append(res, err)
 	}
 
+	if err := m.validateEncodedPolyline(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateGeometry(formats); err != nil {
 		res = append(res, err)
 	}
@@ -128,6 +138,15 @@ func (m *PTXServiceDTOBikeSpecificationV2BikeShape) validateCity(formats strfmt.
 func (m *PTXServiceDTOBikeSpecificationV2BikeShape) validateCityCode(formats strfmt.Registry) error {
 
 	if err := validate.Required("CityCode", "body", m.CityCode); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTOBikeSpecificationV2BikeShape) validateEncodedPolyline(formats strfmt.Registry) error {
+
+	if err := validate.Required("EncodedPolyline", "body", m.EncodedPolyline); err != nil {
 		return err
 	}
 

@@ -42,23 +42,23 @@ func NewDailyStationTimeTableAPIControllerGet1OK() *DailyStationTimeTableAPICont
 
 /*DailyStationTimeTableAPIControllerGet1OK handles this case with default header values.
 
-OK
+Success
 */
 type DailyStationTimeTableAPIControllerGet1OK struct {
-	Payload *models.MOTCAPIRailModelsTraDailyStationWrapperServiceDTOVersion3RailTRADailyStationTimeTableStationTimetable
+	Payload *models.PTXAPIRailModelTraDailyStationWrapperPTXServiceDTORailSpecificationV3TRADailyStationTimeTableStationTimetable
 }
 
 func (o *DailyStationTimeTableAPIControllerGet1OK) Error() string {
 	return fmt.Sprintf("[GET /v3/Rail/TRA/DailyStationTimetable/Today/Station/{StationID}][%d] dailyStationTimeTableApiControllerGet1OK  %+v", 200, o.Payload)
 }
 
-func (o *DailyStationTimeTableAPIControllerGet1OK) GetPayload() *models.MOTCAPIRailModelsTraDailyStationWrapperServiceDTOVersion3RailTRADailyStationTimeTableStationTimetable {
+func (o *DailyStationTimeTableAPIControllerGet1OK) GetPayload() *models.PTXAPIRailModelTraDailyStationWrapperPTXServiceDTORailSpecificationV3TRADailyStationTimeTableStationTimetable {
 	return o.Payload
 }
 
 func (o *DailyStationTimeTableAPIControllerGet1OK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.MOTCAPIRailModelsTraDailyStationWrapperServiceDTOVersion3RailTRADailyStationTimeTableStationTimetable)
+	o.Payload = new(models.PTXAPIRailModelTraDailyStationWrapperPTXServiceDTORailSpecificationV3TRADailyStationTimeTableStationTimetable)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

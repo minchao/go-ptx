@@ -42,23 +42,23 @@ func NewMetroAPINewsOK() *MetroAPINewsOK {
 
 /*MetroAPINewsOK handles this case with default header values.
 
-OK
+Success
 */
 type MetroAPINewsOK struct {
-	Payload *models.MOTCAPIRailModelsMRTRealTimeWrapperServiceDTOVersion2RailMetroMRTNewsListNews
+	Payload *models.PTXAPIRailModelMRTRealTimeWrapperPTXServiceDTORailSpecificationV2MetroMRTNewsListNews
 }
 
 func (o *MetroAPINewsOK) Error() string {
 	return fmt.Sprintf("[GET /v2/Rail/Metro/News/{Operator}][%d] metroApiNewsOK  %+v", 200, o.Payload)
 }
 
-func (o *MetroAPINewsOK) GetPayload() *models.MOTCAPIRailModelsMRTRealTimeWrapperServiceDTOVersion2RailMetroMRTNewsListNews {
+func (o *MetroAPINewsOK) GetPayload() *models.PTXAPIRailModelMRTRealTimeWrapperPTXServiceDTORailSpecificationV2MetroMRTNewsListNews {
 	return o.Payload
 }
 
 func (o *MetroAPINewsOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.MOTCAPIRailModelsMRTRealTimeWrapperServiceDTOVersion2RailMetroMRTNewsListNews)
+	o.Payload = new(models.PTXAPIRailModelMRTRealTimeWrapperPTXServiceDTORailSpecificationV2MetroMRTNewsListNews)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

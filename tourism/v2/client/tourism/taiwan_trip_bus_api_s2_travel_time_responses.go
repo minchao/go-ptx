@@ -42,17 +42,17 @@ func NewTaiwanTripBusAPIS2TravelTimeOK() *TaiwanTripBusAPIS2TravelTimeOK {
 
 /*TaiwanTripBusAPIS2TravelTimeOK handles this case with default header values.
 
-OK
+Success
 */
 type TaiwanTripBusAPIS2TravelTimeOK struct {
-	Payload []*models.ServiceDTOVersion2TaiwanTripBusBusTaiwanTripS2STravelTime
+	Payload []*models.PTXServiceDTOTourismSpecificationV2BusTaiwanTripS2STravelTime
 }
 
 func (o *TaiwanTripBusAPIS2TravelTimeOK) Error() string {
 	return fmt.Sprintf("[GET /v2/Tourism/Bus/S2TravelTime/TaiwanTrip][%d] taiwanTripBusApiS2TravelTimeOK  %+v", 200, o.Payload)
 }
 
-func (o *TaiwanTripBusAPIS2TravelTimeOK) GetPayload() []*models.ServiceDTOVersion2TaiwanTripBusBusTaiwanTripS2STravelTime {
+func (o *TaiwanTripBusAPIS2TravelTimeOK) GetPayload() []*models.PTXServiceDTOTourismSpecificationV2BusTaiwanTripS2STravelTime {
 	return o.Payload
 }
 

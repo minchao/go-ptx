@@ -42,17 +42,17 @@ func NewMetroAPIFirstLastTimetableOK() *MetroAPIFirstLastTimetableOK {
 
 /*MetroAPIFirstLastTimetableOK handles this case with default header values.
 
-OK
+Success
 */
 type MetroAPIFirstLastTimetableOK struct {
-	Payload []*models.ServiceDTOVersion2RailMetroFirstLastTimetable
+	Payload []*models.PTXServiceDTORailSpecificationV2MetroFirstLastTimetable
 }
 
 func (o *MetroAPIFirstLastTimetableOK) Error() string {
 	return fmt.Sprintf("[GET /v2/Rail/Metro/FirstLastTimetable/{Operator}][%d] metroApiFirstLastTimetableOK  %+v", 200, o.Payload)
 }
 
-func (o *MetroAPIFirstLastTimetableOK) GetPayload() []*models.ServiceDTOVersion2RailMetroFirstLastTimetable {
+func (o *MetroAPIFirstLastTimetableOK) GetPayload() []*models.PTXServiceDTORailSpecificationV2MetroFirstLastTimetable {
 	return o.Payload
 }
 

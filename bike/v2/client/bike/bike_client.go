@@ -39,7 +39,7 @@ type ClientService interface {
 /*
   BikeAPIAvailability 取得動態指定s 縣市 的公共自行車即時車位資料
 
-  取得動態指定[縣市]的公共自行車即時車位資料<br />[更新頻率]2分鐘更新一次
+  取得動態指定[縣市]的公共自行車即時車位資料
 */
 func (a *Client) BikeAPIAvailability(params *BikeAPIAvailabilityParams) (*BikeAPIAvailabilityOK, error) {
 	// TODO: Validate the params before sending
@@ -75,7 +75,7 @@ func (a *Client) BikeAPIAvailability(params *BikeAPIAvailabilityParams) (*BikeAP
 /*
   BikeAPIStation 取得指定s 縣市 的公共自行車租借站位資料
 
-  取得指定[縣市]的公共自行車租借站位資料<br />[更新頻率]2分鐘更新一次
+  取得指定[縣市]的公共自行車租借站位資料
 */
 func (a *Client) BikeAPIStation(params *BikeAPIStationParams) (*BikeAPIStationOK, error) {
 	// TODO: Validate the params before sending

@@ -42,17 +42,17 @@ func NewTourismAPIHotelOK() *TourismAPIHotelOK {
 
 /*TourismAPIHotelOK handles this case with default header values.
 
-OK
+Success
 */
 type TourismAPIHotelOK struct {
-	Payload []*models.ServiceDTOVersion2ApplicationHotelTourismInfo
+	Payload []*models.PTXServiceDTOTourismSpecificationV2HotelTourismInfo
 }
 
 func (o *TourismAPIHotelOK) Error() string {
 	return fmt.Sprintf("[GET /v2/Tourism/Hotel][%d] tourismApiHotelOK  %+v", 200, o.Payload)
 }
 
-func (o *TourismAPIHotelOK) GetPayload() []*models.ServiceDTOVersion2ApplicationHotelTourismInfo {
+func (o *TourismAPIHotelOK) GetPayload() []*models.PTXServiceDTOTourismSpecificationV2HotelTourismInfo {
 	return o.Payload
 }
 

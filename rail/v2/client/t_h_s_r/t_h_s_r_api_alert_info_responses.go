@@ -42,17 +42,17 @@ func NewTHSRAPIAlertInfoOK() *THSRAPIAlertInfoOK {
 
 /*THSRAPIAlertInfoOK handles this case with default header values.
 
-OK
+Success
 */
 type THSRAPIAlertInfoOK struct {
-	Payload []*models.ServiceDTOVersion2RailTHSRAlertInfo
+	Payload []*models.PTXServiceDTORailSpecificationV2THSRAlertInfo
 }
 
 func (o *THSRAPIAlertInfoOK) Error() string {
 	return fmt.Sprintf("[GET /v2/Rail/THSR/AlertInfo][%d] tHSRApiAlertInfoOK  %+v", 200, o.Payload)
 }
 
-func (o *THSRAPIAlertInfoOK) GetPayload() []*models.ServiceDTOVersion2RailTHSRAlertInfo {
+func (o *THSRAPIAlertInfoOK) GetPayload() []*models.PTXServiceDTORailSpecificationV2THSRAlertInfo {
 	return o.Payload
 }
 

@@ -42,17 +42,17 @@ func NewTaiwanTripBusAPIRealTimeNearStopOK() *TaiwanTripBusAPIRealTimeNearStopOK
 
 /*TaiwanTripBusAPIRealTimeNearStopOK handles this case with default header values.
 
-OK
+Success
 */
 type TaiwanTripBusAPIRealTimeNearStopOK struct {
-	Payload []*models.ServiceDTOVersion2TaiwanTripBusBusA2Data
+	Payload []*models.PTXServiceDTOTourismSpecificationV2BusA2Data
 }
 
 func (o *TaiwanTripBusAPIRealTimeNearStopOK) Error() string {
 	return fmt.Sprintf("[GET /v2/Tourism/Bus/RealTimeNearStop/TaiwanTrip][%d] taiwanTripBusApiRealTimeNearStopOK  %+v", 200, o.Payload)
 }
 
-func (o *TaiwanTripBusAPIRealTimeNearStopOK) GetPayload() []*models.ServiceDTOVersion2TaiwanTripBusBusA2Data {
+func (o *TaiwanTripBusAPIRealTimeNearStopOK) GetPayload() []*models.PTXServiceDTOTourismSpecificationV2BusA2Data {
 	return o.Payload
 }
 

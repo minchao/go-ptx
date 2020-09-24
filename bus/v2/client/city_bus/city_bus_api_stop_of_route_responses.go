@@ -48,17 +48,17 @@ func NewCityBusAPIStopOfRouteOK() *CityBusAPIStopOfRouteOK {
 
 /*CityBusAPIStopOfRouteOK handles this case with default header values.
 
-OK
+Success
 */
 type CityBusAPIStopOfRouteOK struct {
-	Payload []*models.ServiceDTOVersion2BusBusStopOfRoute
+	Payload []*models.PTXServiceDTOBusSpecificationV2BusStopOfRoute
 }
 
 func (o *CityBusAPIStopOfRouteOK) Error() string {
 	return fmt.Sprintf("[GET /v2/Bus/StopOfRoute/City/{City}][%d] cityBusApiStopOfRouteOK  %+v", 200, o.Payload)
 }
 
-func (o *CityBusAPIStopOfRouteOK) GetPayload() []*models.ServiceDTOVersion2BusBusStopOfRoute {
+func (o *CityBusAPIStopOfRouteOK) GetPayload() []*models.PTXServiceDTOBusSpecificationV2BusStopOfRoute {
 	return o.Payload
 }
 
@@ -82,20 +82,20 @@ func NewCityBusAPIStopOfRouteStatus299() *CityBusAPIStopOfRouteStatus299 {
 加入參數'?health=true'即可查詢此API服務的健康狀態
 */
 type CityBusAPIStopOfRouteStatus299 struct {
-	Payload *models.ServiceDTOVersion3BaseDisplayHealth
+	Payload *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth
 }
 
 func (o *CityBusAPIStopOfRouteStatus299) Error() string {
 	return fmt.Sprintf("[GET /v2/Bus/StopOfRoute/City/{City}][%d] cityBusApiStopOfRouteStatus299  %+v", 299, o.Payload)
 }
 
-func (o *CityBusAPIStopOfRouteStatus299) GetPayload() *models.ServiceDTOVersion3BaseDisplayHealth {
+func (o *CityBusAPIStopOfRouteStatus299) GetPayload() *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth {
 	return o.Payload
 }
 
 func (o *CityBusAPIStopOfRouteStatus299) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.ServiceDTOVersion3BaseDisplayHealth)
+	o.Payload = new(models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

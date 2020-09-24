@@ -77,7 +77,7 @@ type GeneralStationTimetableAPIControllerGetParams struct {
 	  查詢數量
 
 	*/
-	DollarCount *string
+	DollarCount *bool
 	/*DollarFilter
 	  過濾
 
@@ -148,13 +148,13 @@ func (o *GeneralStationTimetableAPIControllerGetParams) SetHTTPClient(client *ht
 }
 
 // WithDollarCount adds the dollarCount to the general station timetable Api controller get params
-func (o *GeneralStationTimetableAPIControllerGetParams) WithDollarCount(dollarCount *string) *GeneralStationTimetableAPIControllerGetParams {
+func (o *GeneralStationTimetableAPIControllerGetParams) WithDollarCount(dollarCount *bool) *GeneralStationTimetableAPIControllerGetParams {
 	o.SetDollarCount(dollarCount)
 	return o
 }
 
 // SetDollarCount adds the dollarCount to the general station timetable Api controller get params
-func (o *GeneralStationTimetableAPIControllerGetParams) SetDollarCount(dollarCount *string) {
+func (o *GeneralStationTimetableAPIControllerGetParams) SetDollarCount(dollarCount *bool) {
 	o.DollarCount = dollarCount
 }
 
@@ -235,11 +235,11 @@ func (o *GeneralStationTimetableAPIControllerGetParams) WriteToRequest(r runtime
 	if o.DollarCount != nil {
 
 		// query param $count
-		var qrDollarCount string
+		var qrDollarCount bool
 		if o.DollarCount != nil {
 			qrDollarCount = *o.DollarCount
 		}
-		qDollarCount := qrDollarCount
+		qDollarCount := swag.FormatBool(qrDollarCount)
 		if qDollarCount != "" {
 			if err := r.SetQueryParam("$count", qDollarCount); err != nil {
 				return err

@@ -25,7 +25,7 @@ const (
 	DefaultHost string = "ptx.transportdata.tw"
 	// DefaultBasePath is the default BasePath
 	// found in Meta (info) section of spec file
-	DefaultBasePath string = "/MOTC/"
+	DefaultBasePath string = "/MOTC"
 )
 
 // DefaultSchemes are the default schemes found in Meta (info) section of spec file

@@ -42,23 +42,23 @@ func NewODFareAPIControllerAPIControllerGet1OK() *ODFareAPIControllerAPIControll
 
 /*ODFareAPIControllerAPIControllerGet1OK handles this case with default header values.
 
-OK
+Success
 */
 type ODFareAPIControllerAPIControllerGet1OK struct {
-	Payload *models.MOTCAPIRailModelsTRAODFareWrapperServiceDTOVersion3RailTRAODFareODFare
+	Payload *models.PTXAPIRailModelTRAODFareWrapperPTXServiceDTORailSpecificationV3TRAODFareODFare
 }
 
 func (o *ODFareAPIControllerAPIControllerGet1OK) Error() string {
 	return fmt.Sprintf("[GET /v3/Rail/TRA/ODFare/{OriginStationID}/to/{DestinationStationID}][%d] oDFareApiControllerApiControllerGet1OK  %+v", 200, o.Payload)
 }
 
-func (o *ODFareAPIControllerAPIControllerGet1OK) GetPayload() *models.MOTCAPIRailModelsTRAODFareWrapperServiceDTOVersion3RailTRAODFareODFare {
+func (o *ODFareAPIControllerAPIControllerGet1OK) GetPayload() *models.PTXAPIRailModelTRAODFareWrapperPTXServiceDTORailSpecificationV3TRAODFareODFare {
 	return o.Payload
 }
 
 func (o *ODFareAPIControllerAPIControllerGet1OK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.MOTCAPIRailModelsTRAODFareWrapperServiceDTOVersion3RailTRAODFareODFare)
+	o.Payload = new(models.PTXAPIRailModelTRAODFareWrapperPTXServiceDTORailSpecificationV3TRAODFareODFare)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

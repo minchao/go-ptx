@@ -48,23 +48,23 @@ func NewInterCityBusAPIDataVersionOK() *InterCityBusAPIDataVersionOK {
 
 /*InterCityBusAPIDataVersionOK handles this case with default header values.
 
-OK
+Success
 */
 type InterCityBusAPIDataVersionOK struct {
-	Payload *models.ServiceDTOVersion2BusBusVersion
+	Payload *models.PTXServiceDTOBusSpecificationV2BusVersion
 }
 
 func (o *InterCityBusAPIDataVersionOK) Error() string {
 	return fmt.Sprintf("[GET /v2/Bus/DataVersion/InterCity][%d] interCityBusApiDataVersionOK  %+v", 200, o.Payload)
 }
 
-func (o *InterCityBusAPIDataVersionOK) GetPayload() *models.ServiceDTOVersion2BusBusVersion {
+func (o *InterCityBusAPIDataVersionOK) GetPayload() *models.PTXServiceDTOBusSpecificationV2BusVersion {
 	return o.Payload
 }
 
 func (o *InterCityBusAPIDataVersionOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.ServiceDTOVersion2BusBusVersion)
+	o.Payload = new(models.PTXServiceDTOBusSpecificationV2BusVersion)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
@@ -84,20 +84,20 @@ func NewInterCityBusAPIDataVersionStatus299() *InterCityBusAPIDataVersionStatus2
 加入參數'?health=true'即可查詢此API服務的健康狀態
 */
 type InterCityBusAPIDataVersionStatus299 struct {
-	Payload *models.ServiceDTOVersion3BaseDisplayHealth
+	Payload *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth
 }
 
 func (o *InterCityBusAPIDataVersionStatus299) Error() string {
 	return fmt.Sprintf("[GET /v2/Bus/DataVersion/InterCity][%d] interCityBusApiDataVersionStatus299  %+v", 299, o.Payload)
 }
 
-func (o *InterCityBusAPIDataVersionStatus299) GetPayload() *models.ServiceDTOVersion3BaseDisplayHealth {
+func (o *InterCityBusAPIDataVersionStatus299) GetPayload() *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth {
 	return o.Payload
 }
 
 func (o *InterCityBusAPIDataVersionStatus299) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.ServiceDTOVersion3BaseDisplayHealth)
+	o.Payload = new(models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

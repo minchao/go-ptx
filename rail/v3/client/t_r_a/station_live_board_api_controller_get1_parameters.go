@@ -77,7 +77,7 @@ type StationLiveBoardAPIControllerGet1Params struct {
 	  查詢數量
 
 	*/
-	DollarCount *string
+	DollarCount *bool
 	/*DollarFilter
 	  過濾
 
@@ -153,13 +153,13 @@ func (o *StationLiveBoardAPIControllerGet1Params) SetHTTPClient(client *http.Cli
 }
 
 // WithDollarCount adds the dollarCount to the station live board Api controller get 1 params
-func (o *StationLiveBoardAPIControllerGet1Params) WithDollarCount(dollarCount *string) *StationLiveBoardAPIControllerGet1Params {
+func (o *StationLiveBoardAPIControllerGet1Params) WithDollarCount(dollarCount *bool) *StationLiveBoardAPIControllerGet1Params {
 	o.SetDollarCount(dollarCount)
 	return o
 }
 
 // SetDollarCount adds the dollarCount to the station live board Api controller get 1 params
-func (o *StationLiveBoardAPIControllerGet1Params) SetDollarCount(dollarCount *string) {
+func (o *StationLiveBoardAPIControllerGet1Params) SetDollarCount(dollarCount *bool) {
 	o.DollarCount = dollarCount
 }
 
@@ -251,11 +251,11 @@ func (o *StationLiveBoardAPIControllerGet1Params) WriteToRequest(r runtime.Clien
 	if o.DollarCount != nil {
 
 		// query param $count
-		var qrDollarCount string
+		var qrDollarCount bool
 		if o.DollarCount != nil {
 			qrDollarCount = *o.DollarCount
 		}
-		qDollarCount := qrDollarCount
+		qDollarCount := swag.FormatBool(qrDollarCount)
 		if qDollarCount != "" {
 			if err := r.SetQueryParam("$count", qDollarCount); err != nil {
 				return err

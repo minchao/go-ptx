@@ -77,7 +77,7 @@ type StationAPIControllerGetParams struct {
 	  查詢數量
 
 	*/
-	DollarCount *string
+	DollarCount *bool
 	/*DollarFilter
 	  過濾
 
@@ -103,6 +103,11 @@ type StationAPIControllerGetParams struct {
 
 	*/
 	DollarSkip *string
+	/*DollarSpatialFilter
+	  空間過濾
+
+	*/
+	DollarSpatialFilter *string
 	/*DollarTop
 	  取前幾筆
 
@@ -148,13 +153,13 @@ func (o *StationAPIControllerGetParams) SetHTTPClient(client *http.Client) {
 }
 
 // WithDollarCount adds the dollarCount to the station Api controller get params
-func (o *StationAPIControllerGetParams) WithDollarCount(dollarCount *string) *StationAPIControllerGetParams {
+func (o *StationAPIControllerGetParams) WithDollarCount(dollarCount *bool) *StationAPIControllerGetParams {
 	o.SetDollarCount(dollarCount)
 	return o
 }
 
 // SetDollarCount adds the dollarCount to the station Api controller get params
-func (o *StationAPIControllerGetParams) SetDollarCount(dollarCount *string) {
+func (o *StationAPIControllerGetParams) SetDollarCount(dollarCount *bool) {
 	o.DollarCount = dollarCount
 }
 
@@ -213,6 +218,17 @@ func (o *StationAPIControllerGetParams) SetDollarSkip(dollarSkip *string) {
 	o.DollarSkip = dollarSkip
 }
 
+// WithDollarSpatialFilter adds the dollarSpatialFilter to the station Api controller get params
+func (o *StationAPIControllerGetParams) WithDollarSpatialFilter(dollarSpatialFilter *string) *StationAPIControllerGetParams {
+	o.SetDollarSpatialFilter(dollarSpatialFilter)
+	return o
+}
+
+// SetDollarSpatialFilter adds the dollarSpatialFilter to the station Api controller get params
+func (o *StationAPIControllerGetParams) SetDollarSpatialFilter(dollarSpatialFilter *string) {
+	o.DollarSpatialFilter = dollarSpatialFilter
+}
+
 // WithDollarTop adds the dollarTop to the station Api controller get params
 func (o *StationAPIControllerGetParams) WithDollarTop(dollarTop *int64) *StationAPIControllerGetParams {
 	o.SetDollarTop(dollarTop)
@@ -235,11 +251,11 @@ func (o *StationAPIControllerGetParams) WriteToRequest(r runtime.ClientRequest, 
 	if o.DollarCount != nil {
 
 		// query param $count
-		var qrDollarCount string
+		var qrDollarCount bool
 		if o.DollarCount != nil {
 			qrDollarCount = *o.DollarCount
 		}
-		qDollarCount := qrDollarCount
+		qDollarCount := swag.FormatBool(qrDollarCount)
 		if qDollarCount != "" {
 			if err := r.SetQueryParam("$count", qDollarCount); err != nil {
 				return err
@@ -315,6 +331,22 @@ func (o *StationAPIControllerGetParams) WriteToRequest(r runtime.ClientRequest, 
 		qDollarSkip := qrDollarSkip
 		if qDollarSkip != "" {
 			if err := r.SetQueryParam("$skip", qDollarSkip); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.DollarSpatialFilter != nil {
+
+		// query param $spatialFilter
+		var qrDollarSpatialFilter string
+		if o.DollarSpatialFilter != nil {
+			qrDollarSpatialFilter = *o.DollarSpatialFilter
+		}
+		qDollarSpatialFilter := qrDollarSpatialFilter
+		if qDollarSpatialFilter != "" {
+			if err := r.SetQueryParam("$spatialFilter", qDollarSpatialFilter); err != nil {
 				return err
 			}
 		}

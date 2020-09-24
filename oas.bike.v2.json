@@ -17,7 +17,7 @@
           "Bike"
         ],
         "summary": "取得指定[縣市]的公共自行車租借站位資料",
-        "description": "取得指定[縣市]的公共自行車租借站位資料<br />[更新頻率]2分鐘更新一次",
+        "description": "取得指定[縣市]的公共自行車租借站位資料",
         "operationId": "BikeApi_Station",
         "produces": [
           "application/json",
@@ -38,23 +38,23 @@
               "NewTaipei",
               "PingtungCounty",
               "Taoyuan",
-              "KinmenCounty",
               "Taipei",
+              "KinmenCounty",
               "Kaohsiung",
               "Tainan"
             ],
             "x-enum": {
-              "NewTaipei": "新北市",
-              "Tainan": "臺南市",
-              "KinmenCounty": "金門縣",
-              "MiaoliCounty": "苗栗縣",
-              "Taipei": "臺北市",
-              "Hsinchu": "新竹市",
               "PingtungCounty": "屏東縣",
               "ChanghuaCounty": "彰化縣",
               "Taoyuan": "桃園市",
+              "NewTaipei": "新北市",
+              "Taipei": "臺北市",
               "Taichung": "臺中市",
-              "Kaohsiung": "高雄市"
+              "Kaohsiung": "高雄市",
+              "Tainan": "臺南市",
+              "KinmenCounty": "金門縣",
+              "MiaoliCounty": "苗栗縣",
+              "Hsinchu": "新竹市"
             }
           },
           {
@@ -126,7 +126,7 @@
           "Bike"
         ],
         "summary": "取得動態指定[縣市]的公共自行車即時車位資料",
-        "description": "取得動態指定[縣市]的公共自行車即時車位資料<br />[更新頻率]2分鐘更新一次",
+        "description": "取得動態指定[縣市]的公共自行車即時車位資料",
         "operationId": "BikeApi_Availability",
         "produces": [
           "application/json",
@@ -153,17 +153,17 @@
               "Tainan"
             ],
             "x-enum": {
-              "Taichung": "臺中市",
-              "Hsinchu": "新竹市",
-              "ChanghuaCounty": "彰化縣",
-              "KinmenCounty": "金門縣",
-              "Taipei": "臺北市",
-              "Tainan": "臺南市",
               "NewTaipei": "新北市",
               "Taoyuan": "桃園市",
+              "Taichung": "臺中市",
+              "ChanghuaCounty": "彰化縣",
+              "KinmenCounty": "金門縣",
+              "Tainan": "臺南市",
               "PingtungCounty": "屏東縣",
               "MiaoliCounty": "苗栗縣",
-              "Kaohsiung": "高雄市"
+              "Kaohsiung": "高雄市",
+              "Hsinchu": "新竹市",
+              "Taipei": "臺北市"
             }
           },
           {
@@ -265,28 +265,28 @@
               "Kaohsiung"
             ],
             "x-enum": {
-              "NantouCounty": "南投縣",
-              "HsinchuCounty": "新竹縣",
-              "Chiayi": "嘉義市",
-              "ChanghuaCounty": "彰化縣",
-              "Kaohsiung": "高雄市",
-              "Taichung": "臺中市",
-              "PingtungCounty": "屏東縣",
-              "YunlinCounty": "雲林縣",
-              "Hsinchu": "新竹市",
-              "PenghuCounty": "澎湖縣",
-              "TaitungCounty": "臺東縣",
-              "Taipei": "臺北市",
               "NewTaipei": "新北市",
               "Taoyuan": "桃園市",
               "MiaoliCounty": "苗栗縣",
               "YilanCounty": "宜蘭縣",
+              "NantouCounty": "南投縣",
+              "HsinchuCounty": "新竹縣",
+              "Chiayi": "嘉義市",
+              "Taichung": "臺中市",
+              "PingtungCounty": "屏東縣",
+              "YunlinCounty": "雲林縣",
+              "Hsinchu": "新竹市",
+              "TaitungCounty": "臺東縣",
               "Tainan": "臺南市",
               "ChiayiCounty": "嘉義縣",
               "Keelung": "基隆市",
               "HualienCounty": "花蓮縣",
               "LienchiangCounty": "連江縣",
-              "KinmenCounty": "金門縣"
+              "KinmenCounty": "金門縣",
+              "ChanghuaCounty": "彰化縣",
+              "Kaohsiung": "高雄市",
+              "PenghuCounty": "澎湖縣",
+              "Taipei": "臺北市"
             }
           },
           {
@@ -401,6 +401,7 @@
       "required": [
         "City",
         "CityCode",
+        "EncodedPolyline",
         "Geometry",
         "RouteName",
         "UpdateTime"
@@ -442,11 +443,6 @@
           "description": "路線迄點描述",
           "type": "string"
         },
-        "Geometry": {
-          "title": "String",
-          "description": "路線軌跡資料",
-          "type": "string"
-        },
         "Direction": {
           "title": "String",
           "description": "自行車道車行方向",
@@ -470,6 +466,16 @@
         "UpdateTime": {
           "title": "DateTime",
           "description": "資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "Geometry": {
+          "title": "String",
+          "description": "well-known text，為路線軌跡資料",
+          "type": "string"
+        },
+        "EncodedPolyline": {
+          "title": "String",
+          "description": "路線軌跡編碼(encoded polyline)",
           "type": "string"
         }
       }
@@ -508,7 +514,7 @@
         },
         "GeoHash": {
           "title": "String",
-          "description": "位置雜湊",
+          "description": "地理空間編碼",
           "type": "string"
         }
       }

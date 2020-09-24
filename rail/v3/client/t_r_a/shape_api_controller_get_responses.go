@@ -42,23 +42,23 @@ func NewShapeAPIControllerGetOK() *ShapeAPIControllerGetOK {
 
 /*ShapeAPIControllerGetOK handles this case with default header values.
 
-OK
+Success
 */
 type ShapeAPIControllerGetOK struct {
-	Payload *models.MOTCAPIRailModelsTRABaseWrapperServiceDTOVersion3RailTRAShape
+	Payload *models.PTXAPIRailModelTRABaseWrapperPTXServiceDTORailSpecificationV3TRAShape
 }
 
 func (o *ShapeAPIControllerGetOK) Error() string {
 	return fmt.Sprintf("[GET /v3/Rail/TRA/Shape][%d] shapeApiControllerGetOK  %+v", 200, o.Payload)
 }
 
-func (o *ShapeAPIControllerGetOK) GetPayload() *models.MOTCAPIRailModelsTRABaseWrapperServiceDTOVersion3RailTRAShape {
+func (o *ShapeAPIControllerGetOK) GetPayload() *models.PTXAPIRailModelTRABaseWrapperPTXServiceDTORailSpecificationV3TRAShape {
 	return o.Payload
 }
 
 func (o *ShapeAPIControllerGetOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.MOTCAPIRailModelsTRABaseWrapperServiceDTOVersion3RailTRAShape)
+	o.Payload = new(models.PTXAPIRailModelTRABaseWrapperPTXServiceDTORailSpecificationV3TRAShape)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

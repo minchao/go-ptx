@@ -77,7 +77,7 @@ type LineTransferAPIControllerGetParams struct {
 	  查詢數量
 
 	*/
-	DollarCount *string
+	DollarCount *bool
 	/*DollarFilter
 	  過濾
 
@@ -148,13 +148,13 @@ func (o *LineTransferAPIControllerGetParams) SetHTTPClient(client *http.Client) 
 }
 
 // WithDollarCount adds the dollarCount to the line transfer Api controller get params
-func (o *LineTransferAPIControllerGetParams) WithDollarCount(dollarCount *string) *LineTransferAPIControllerGetParams {
+func (o *LineTransferAPIControllerGetParams) WithDollarCount(dollarCount *bool) *LineTransferAPIControllerGetParams {
 	o.SetDollarCount(dollarCount)
 	return o
 }
 
 // SetDollarCount adds the dollarCount to the line transfer Api controller get params
-func (o *LineTransferAPIControllerGetParams) SetDollarCount(dollarCount *string) {
+func (o *LineTransferAPIControllerGetParams) SetDollarCount(dollarCount *bool) {
 	o.DollarCount = dollarCount
 }
 
@@ -235,11 +235,11 @@ func (o *LineTransferAPIControllerGetParams) WriteToRequest(r runtime.ClientRequ
 	if o.DollarCount != nil {
 
 		// query param $count
-		var qrDollarCount string
+		var qrDollarCount bool
 		if o.DollarCount != nil {
 			qrDollarCount = *o.DollarCount
 		}
-		qDollarCount := qrDollarCount
+		qDollarCount := swag.FormatBool(qrDollarCount)
 		if qDollarCount != "" {
 			if err := r.SetQueryParam("$count", qDollarCount); err != nil {
 				return err

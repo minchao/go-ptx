@@ -48,17 +48,17 @@ func NewCityBusAPINewsOK() *CityBusAPINewsOK {
 
 /*CityBusAPINewsOK handles this case with default header values.
 
-OK
+Success
 */
 type CityBusAPINewsOK struct {
-	Payload []*models.ServiceDTOVersion2BusBusNews
+	Payload []*models.PTXServiceDTOBusSpecificationV2BusNews
 }
 
 func (o *CityBusAPINewsOK) Error() string {
 	return fmt.Sprintf("[GET /v2/Bus/News/City/{City}][%d] cityBusApiNewsOK  %+v", 200, o.Payload)
 }
 
-func (o *CityBusAPINewsOK) GetPayload() []*models.ServiceDTOVersion2BusBusNews {
+func (o *CityBusAPINewsOK) GetPayload() []*models.PTXServiceDTOBusSpecificationV2BusNews {
 	return o.Payload
 }
 
@@ -82,20 +82,20 @@ func NewCityBusAPINewsStatus299() *CityBusAPINewsStatus299 {
 加入參數'?health=true'即可查詢此API服務的健康狀態
 */
 type CityBusAPINewsStatus299 struct {
-	Payload *models.ServiceDTOVersion3BaseDisplayHealth
+	Payload *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth
 }
 
 func (o *CityBusAPINewsStatus299) Error() string {
 	return fmt.Sprintf("[GET /v2/Bus/News/City/{City}][%d] cityBusApiNewsStatus299  %+v", 299, o.Payload)
 }
 
-func (o *CityBusAPINewsStatus299) GetPayload() *models.ServiceDTOVersion3BaseDisplayHealth {
+func (o *CityBusAPINewsStatus299) GetPayload() *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth {
 	return o.Payload
 }
 
 func (o *CityBusAPINewsStatus299) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.ServiceDTOVersion3BaseDisplayHealth)
+	o.Payload = new(models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

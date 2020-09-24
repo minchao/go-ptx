@@ -48,17 +48,17 @@ func NewInterCityBusAPIEstimatedTimeOfArrivalUdp1OK() *InterCityBusAPIEstimatedT
 
 /*InterCityBusAPIEstimatedTimeOfArrivalUdp1OK handles this case with default header values.
 
-OK
+Success
 */
 type InterCityBusAPIEstimatedTimeOfArrivalUdp1OK struct {
-	Payload []*models.ServiceDTOVersion2BusBusN1EstimateTime
+	Payload []*models.PTXServiceDTOBusSpecificationV2BusN1EstimateTime
 }
 
 func (o *InterCityBusAPIEstimatedTimeOfArrivalUdp1OK) Error() string {
 	return fmt.Sprintf("[GET /v2/Bus/EstimatedTimeOfArrival/Streaming/InterCity/{RouteName}][%d] interCityBusApiEstimatedTimeOfArrivalUdp1OK  %+v", 200, o.Payload)
 }
 
-func (o *InterCityBusAPIEstimatedTimeOfArrivalUdp1OK) GetPayload() []*models.ServiceDTOVersion2BusBusN1EstimateTime {
+func (o *InterCityBusAPIEstimatedTimeOfArrivalUdp1OK) GetPayload() []*models.PTXServiceDTOBusSpecificationV2BusN1EstimateTime {
 	return o.Payload
 }
 
@@ -82,20 +82,20 @@ func NewInterCityBusAPIEstimatedTimeOfArrivalUdp1Status299() *InterCityBusAPIEst
 加入參數'?health=true'即可查詢此API服務的健康狀態
 */
 type InterCityBusAPIEstimatedTimeOfArrivalUdp1Status299 struct {
-	Payload *models.ServiceDTOVersion3BaseDisplayHealth
+	Payload *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth
 }
 
 func (o *InterCityBusAPIEstimatedTimeOfArrivalUdp1Status299) Error() string {
 	return fmt.Sprintf("[GET /v2/Bus/EstimatedTimeOfArrival/Streaming/InterCity/{RouteName}][%d] interCityBusApiEstimatedTimeOfArrivalUdp1Status299  %+v", 299, o.Payload)
 }
 
-func (o *InterCityBusAPIEstimatedTimeOfArrivalUdp1Status299) GetPayload() *models.ServiceDTOVersion3BaseDisplayHealth {
+func (o *InterCityBusAPIEstimatedTimeOfArrivalUdp1Status299) GetPayload() *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth {
 	return o.Payload
 }
 
 func (o *InterCityBusAPIEstimatedTimeOfArrivalUdp1Status299) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.ServiceDTOVersion3BaseDisplayHealth)
+	o.Payload = new(models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

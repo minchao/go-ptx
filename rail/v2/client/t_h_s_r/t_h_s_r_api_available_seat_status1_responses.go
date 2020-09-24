@@ -42,23 +42,23 @@ func NewTHSRAPIAvailableSeatStatus1OK() *THSRAPIAvailableSeatStatus1OK {
 
 /*THSRAPIAvailableSeatStatus1OK handles this case with default header values.
 
-OK
+Success
 */
 type THSRAPIAvailableSeatStatus1OK struct {
-	Payload *models.MOTCAPIRailModelsV2THSRAvaliableSeatStatusWrapperServiceDTOVersion2RailTHSRAvailableSeat
+	Payload *models.PTXAPIRailModelV2THSRAvaliableSeatStatusWrapperPTXServiceDTORailSpecificationV2THSRAvailableSeat
 }
 
 func (o *THSRAPIAvailableSeatStatus1OK) Error() string {
 	return fmt.Sprintf("[GET /v2/Rail/THSR/AvailableSeatStatus/Train/Leg/TrainDate/{TrainDate}][%d] tHSRApiAvailableSeatStatus1OK  %+v", 200, o.Payload)
 }
 
-func (o *THSRAPIAvailableSeatStatus1OK) GetPayload() *models.MOTCAPIRailModelsV2THSRAvaliableSeatStatusWrapperServiceDTOVersion2RailTHSRAvailableSeat {
+func (o *THSRAPIAvailableSeatStatus1OK) GetPayload() *models.PTXAPIRailModelV2THSRAvaliableSeatStatusWrapperPTXServiceDTORailSpecificationV2THSRAvailableSeat {
 	return o.Payload
 }
 
 func (o *THSRAPIAvailableSeatStatus1OK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.MOTCAPIRailModelsV2THSRAvaliableSeatStatusWrapperServiceDTOVersion2RailTHSRAvailableSeat)
+	o.Payload = new(models.PTXAPIRailModelV2THSRAvaliableSeatStatusWrapperPTXServiceDTORailSpecificationV2THSRAvailableSeat)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

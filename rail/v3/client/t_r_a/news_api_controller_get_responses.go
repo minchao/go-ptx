@@ -42,23 +42,23 @@ func NewNewsAPIControllerGetOK() *NewsAPIControllerGetOK {
 
 /*NewsAPIControllerGetOK handles this case with default header values.
 
-OK
+Success
 */
 type NewsAPIControllerGetOK struct {
-	Payload *models.MOTCAPIRailModelsTRARealTimeWrapperServiceDTOVersion3RailTRATRANewsListNews
+	Payload *models.PTXAPIRailModelTRARealTimeWrapperPTXServiceDTORailSpecificationV3TRATRANewsListNews
 }
 
 func (o *NewsAPIControllerGetOK) Error() string {
 	return fmt.Sprintf("[GET /v3/Rail/TRA/News][%d] newsApiControllerGetOK  %+v", 200, o.Payload)
 }
 
-func (o *NewsAPIControllerGetOK) GetPayload() *models.MOTCAPIRailModelsTRARealTimeWrapperServiceDTOVersion3RailTRATRANewsListNews {
+func (o *NewsAPIControllerGetOK) GetPayload() *models.PTXAPIRailModelTRARealTimeWrapperPTXServiceDTORailSpecificationV3TRATRANewsListNews {
 	return o.Payload
 }
 
 func (o *NewsAPIControllerGetOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.MOTCAPIRailModelsTRARealTimeWrapperServiceDTOVersion3RailTRATRANewsListNews)
+	o.Payload = new(models.PTXAPIRailModelTRARealTimeWrapperPTXServiceDTORailSpecificationV3TRATRANewsListNews)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

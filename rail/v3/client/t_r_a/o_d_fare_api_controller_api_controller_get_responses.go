@@ -45,20 +45,20 @@ func NewODFareAPIControllerAPIControllerGetOK() *ODFareAPIControllerAPIControlle
 Gzipped Attachment Response
 */
 type ODFareAPIControllerAPIControllerGetOK struct {
-	Payload *models.MOTCAPIRailModelsTRAODFareWrapperServiceDTOVersion3RailTRAODFareODFare
+	Payload *models.PTXAPIRailModelTRAODFareWrapperPTXServiceDTORailSpecificationV3TRAODFareODFare
 }
 
 func (o *ODFareAPIControllerAPIControllerGetOK) Error() string {
 	return fmt.Sprintf("[GET /v3/Rail/TRA/ODFare][%d] oDFareApiControllerApiControllerGetOK  %+v", 200, o.Payload)
 }
 
-func (o *ODFareAPIControllerAPIControllerGetOK) GetPayload() *models.MOTCAPIRailModelsTRAODFareWrapperServiceDTOVersion3RailTRAODFareODFare {
+func (o *ODFareAPIControllerAPIControllerGetOK) GetPayload() *models.PTXAPIRailModelTRAODFareWrapperPTXServiceDTORailSpecificationV3TRAODFareODFare {
 	return o.Payload
 }
 
 func (o *ODFareAPIControllerAPIControllerGetOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.MOTCAPIRailModelsTRAODFareWrapperServiceDTOVersion3RailTRAODFareODFare)
+	o.Payload = new(models.PTXAPIRailModelTRAODFareWrapperPTXServiceDTORailSpecificationV3TRAODFareODFare)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

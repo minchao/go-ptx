@@ -37,6 +37,12 @@ type ClientService interface {
 
 	THSRAPIAvailableSeatStatus1(params *THSRAPIAvailableSeatStatus1Params) (*THSRAPIAvailableSeatStatus1OK, error)
 
+	THSRAPIAvailableSeatStatus2(params *THSRAPIAvailableSeatStatus2Params) (*THSRAPIAvailableSeatStatus2OK, error)
+
+	THSRAPIAvailableSeatStatus3(params *THSRAPIAvailableSeatStatus3Params) (*THSRAPIAvailableSeatStatus3OK, error)
+
+	THSRAPIAvailableSeatStatus4(params *THSRAPIAvailableSeatStatus4Params) (*THSRAPIAvailableSeatStatus4OK, error)
+
 	THSRAPIDailyTimetable(params *THSRAPIDailyTimetableParams) (*THSRAPIDailyTimetableOK, error)
 
 	THSRAPIDailyTimetable1(params *THSRAPIDailyTimetable1Params) (*THSRAPIDailyTimetable1OK, error)
@@ -91,7 +97,7 @@ func (a *Client) THSRAPIAlertInfo(params *THSRAPIAlertInfoParams) (*THSRAPIAlert
 		ID:                 "THSRApi_AlertInfo",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/AlertInfo",
-		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -116,8 +122,7 @@ func (a *Client) THSRAPIAlertInfo(params *THSRAPIAlertInfoParams) (*THSRAPIAlert
   THSRAPIAvailableSeatStatus 開發用測試版s 取得當天對號座即時剩餘位資料 原始 列車區段 leg角度
 
   取得當天對號座即時剩餘位資料({原始}列車區段Leg角度)
-- 高鐵對號座即時剩餘位(列車區段Leg角度)之資料使用注意事項([連結](https://motc-ptx-api-documentation.gitbook.io/motc-ptx-api-documentation/api-zi-liao-shi-yong-zhu-yi-shi-xiang/rail))
-- 當日(D)之更新頻率為每10分鐘
+- (更新頻率為10分鐘)
 - **(本服務尚在測試中,穩定度及更新頻率將持續優化)**
 */
 func (a *Client) THSRAPIAvailableSeatStatus(params *THSRAPIAvailableSeatStatusParams) (*THSRAPIAvailableSeatStatusOK, error) {
@@ -130,7 +135,7 @@ func (a *Client) THSRAPIAvailableSeatStatus(params *THSRAPIAvailableSeatStatusPa
 		ID:                 "THSRApi_AvailableSeatStatus",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/AvailableSeatStatus/Train/Leg/Today",
-		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -166,7 +171,7 @@ func (a *Client) THSRAPIAvailableSeatStatusListStation(params *THSRAPIAvailableS
 		ID:                 "THSRApi_AvailableSeatStatusList_Station",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/AvailableSeatStatusList",
-		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -202,7 +207,7 @@ func (a *Client) THSRAPIAvailableSeatStatusListStation1(params *THSRAPIAvailable
 		ID:                 "THSRApi_AvailableSeatStatusList_Station_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/AvailableSeatStatusList/{StationID}",
-		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -227,8 +232,7 @@ func (a *Client) THSRAPIAvailableSeatStatusListStation1(params *THSRAPIAvailable
   THSRAPIAvailableSeatStatus1 開發用測試版s 取得指定 日期 對號座即時剩餘位資料 原始 列車區段 leg角度
 
   取得指定[日期]對號座即時剩餘位資料({原始}列車區段Leg角度)
-- 高鐵對號座即時剩餘位(列車區段Leg角度)之資料使用注意事項([連結](https://motc-ptx-api-documentation.gitbook.io/motc-ptx-api-documentation/api-zi-liao-shi-yong-zhu-yi-shi-xiang/rail))
-- 當日後27日(D+1~D+27)之更新頻率為每日的10、16、22時
+- (更新頻率為每日的10、16、22時)
 - **(本服務尚在測試中,穩定度及更新頻率將持續優化)**
 */
 func (a *Client) THSRAPIAvailableSeatStatus1(params *THSRAPIAvailableSeatStatus1Params) (*THSRAPIAvailableSeatStatus1OK, error) {
@@ -241,7 +245,7 @@ func (a *Client) THSRAPIAvailableSeatStatus1(params *THSRAPIAvailableSeatStatus1
 		ID:                 "THSRApi_AvailableSeatStatus_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/AvailableSeatStatus/Train/Leg/TrainDate/{TrainDate}",
-		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -263,6 +267,123 @@ func (a *Client) THSRAPIAvailableSeatStatus1(params *THSRAPIAvailableSeatStatus1
 }
 
 /*
+  THSRAPIAvailableSeatStatus2 開發用測試版s 取得指定 日期 對號座即時剩餘位資料 加值型列車起迄段 o d角度
+
+  取得指定[日期]對號座即時剩餘位資料(加值型列車起迄段OD角度)
+- 當日(D)之更新頻率為每10分鐘
+- 當日後27日(D+1~D+27)之更新頻率為每日的10、16、22時
+- **(本服務尚在測試中,穩定度及更新頻率將持續優化)**
+*/
+func (a *Client) THSRAPIAvailableSeatStatus2(params *THSRAPIAvailableSeatStatus2Params) (*THSRAPIAvailableSeatStatus2OK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewTHSRAPIAvailableSeatStatus2Params()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "THSRApi_AvailableSeatStatus_2",
+		Method:             "GET",
+		PathPattern:        "/v2/Rail/THSR/AvailableSeatStatus/Train/OD/TrainDate/{TrainDate}",
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &THSRAPIAvailableSeatStatus2Reader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*THSRAPIAvailableSeatStatus2OK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for THSRApi_AvailableSeatStatus_2: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  THSRAPIAvailableSeatStatus3 開發用測試版s 取得指定 日期 起迄站 對號座即時剩餘位資料 加值型列車起迄段 o d角度
+
+  取得指定[日期], [起迄站]對號座即時剩餘位資料(加值型列車起迄段OD角度)
+- 當日(D)之更新頻率為每10分鐘
+- 當日後27日(D+1~D+27)之更新頻率為每日的10、16、22時
+- **(本服務尚在測試中,穩定度及更新頻率將持續優化)**
+*/
+func (a *Client) THSRAPIAvailableSeatStatus3(params *THSRAPIAvailableSeatStatus3Params) (*THSRAPIAvailableSeatStatus3OK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewTHSRAPIAvailableSeatStatus3Params()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "THSRApi_AvailableSeatStatus_3",
+		Method:             "GET",
+		PathPattern:        "/v2/Rail/THSR/AvailableSeatStatus/Train/OD/{OriginStationID}/to/{DestinationStationID}/TrainDate/{TrainDate}",
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &THSRAPIAvailableSeatStatus3Reader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*THSRAPIAvailableSeatStatus3OK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for THSRApi_AvailableSeatStatus_3: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  THSRAPIAvailableSeatStatus4 開發用測試版s 取得指定 日期 車次 起迄站 對號座即時剩餘位資料 加值型列車起迄段 o d角度
+
+  取得指定[日期], [起迄站]對號座即時剩餘位資料(加值型列車起迄段OD角度)
+- 當日(D)之更新頻率為每10分鐘
+- 當日後27日(D+1~D+27)之更新頻率為每日的10、16、22時
+- **(本服務尚在測試中,穩定度及更新頻率將持續優化)**
+*/
+func (a *Client) THSRAPIAvailableSeatStatus4(params *THSRAPIAvailableSeatStatus4Params) (*THSRAPIAvailableSeatStatus4OK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewTHSRAPIAvailableSeatStatus4Params()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "THSRApi_AvailableSeatStatus_4",
+		Method:             "GET",
+		PathPattern:        "/v2/Rail/THSR/AvailableSeatStatus/Train/OD/{OriginStationID}/to/{DestinationStationID}/TrainDate/{TrainDate}/TrainNo/{TrainNo}",
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &THSRAPIAvailableSeatStatus4Reader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*THSRAPIAvailableSeatStatus4OK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for THSRApi_AvailableSeatStatus_4: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
   THSRAPIDailyTimetable 取得當天所有車次的時刻表資料s
 
   取得當天所有車次的時刻表資料
@@ -277,7 +398,7 @@ func (a *Client) THSRAPIDailyTimetable(params *THSRAPIDailyTimetableParams) (*TH
 		ID:                 "THSRApi_DailyTimetable",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/DailyTimetable/Today",
-		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -313,7 +434,7 @@ func (a *Client) THSRAPIDailyTimetable1(params *THSRAPIDailyTimetable1Params) (*
 		ID:                 "THSRApi_DailyTimetable_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/DailyTimetable/Today/TrainNo/{TrainNo}",
-		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -349,7 +470,7 @@ func (a *Client) THSRAPIDailyTimetable2(params *THSRAPIDailyTimetable2Params) (*
 		ID:                 "THSRApi_DailyTimetable_2",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/DailyTimetable/TrainDate/{TrainDate}",
-		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -385,7 +506,7 @@ func (a *Client) THSRAPIDailyTimetable3(params *THSRAPIDailyTimetable3Params) (*
 		ID:                 "THSRApi_DailyTimetable_3",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/DailyTimetable/TrainNo/{TrainNo}/TrainDate/{TrainDate}",
-		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -421,7 +542,7 @@ func (a *Client) THSRAPIDailyTrainInfo(params *THSRAPIDailyTrainInfoParams) (*TH
 		ID:                 "THSRApi_DailyTrainInfo",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/DailyTrainInfo/Today",
-		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -457,7 +578,7 @@ func (a *Client) THSRAPIDailyTrainInfo1(params *THSRAPIDailyTrainInfo1Params) (*
 		ID:                 "THSRApi_DailyTrainInfo_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/DailyTrainInfo/Today/TrainNo/{TrainNo}",
-		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -493,7 +614,7 @@ func (a *Client) THSRAPIDailyTrainInfo2(params *THSRAPIDailyTrainInfo2Params) (*
 		ID:                 "THSRApi_DailyTrainInfo_2",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/DailyTrainInfo/TrainDate/{TrainDate}",
-		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -529,7 +650,7 @@ func (a *Client) THSRAPIDailyTrainInfo3(params *THSRAPIDailyTrainInfo3Params) (*
 		ID:                 "THSRApi_DailyTrainInfo_3",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/DailyTrainInfo/TrainNo/{TrainNo}/TrainDate/{TrainDate}",
-		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -565,7 +686,7 @@ func (a *Client) THSRAPIGeneralTimetable(params *THSRAPIGeneralTimetableParams) 
 		ID:                 "THSRApi_GeneralTimetable",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/GeneralTimetable",
-		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -601,7 +722,7 @@ func (a *Client) THSRAPIGeneralTimetable1(params *THSRAPIGeneralTimetable1Params
 		ID:                 "THSRApi_GeneralTimetable_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/GeneralTimetable/TrainNo/{TrainNo}",
-		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -637,7 +758,7 @@ func (a *Client) THSRAPINews(params *THSRAPINewsParams) (*THSRAPINewsOK, error) 
 		ID:                 "THSRApi_News",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/News",
-		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -673,7 +794,7 @@ func (a *Client) THSRAPIODDailyTimetable(params *THSRAPIODDailyTimetableParams) 
 		ID:                 "THSRApi_ODDailyTimetable",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/DailyTimetable/OD/{OriginStationID}/to/{DestinationStationID}/{TrainDate}",
-		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -709,7 +830,7 @@ func (a *Client) THSRAPIODFare(params *THSRAPIODFareParams) (*THSRAPIODFareOK, e
 		ID:                 "THSRApi_ODFare",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/ODFare",
-		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -745,7 +866,7 @@ func (a *Client) THSRAPIODFare1(params *THSRAPIODFare1Params) (*THSRAPIODFare1OK
 		ID:                 "THSRApi_ODFare_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/ODFare/{OriginStationID}/to/{DestinationStationID}",
-		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -781,7 +902,7 @@ func (a *Client) THSRAPIShape(params *THSRAPIShapeParams) (*THSRAPIShapeOK, erro
 		ID:                 "THSRApi_Shape",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/Shape",
-		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -817,7 +938,7 @@ func (a *Client) THSRAPIStation(params *THSRAPIStationParams) (*THSRAPIStationOK
 		ID:                 "THSRApi_Station",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/Station",
-		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -853,7 +974,7 @@ func (a *Client) THSRAPIStationExit(params *THSRAPIStationExitParams) (*THSRAPIS
 		ID:                 "THSRApi_StationExit",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/StationExit",
-		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -889,7 +1010,7 @@ func (a *Client) THSRAPIStationTimetable(params *THSRAPIStationTimetableParams) 
 		ID:                 "THSRApi_StationTimetable",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/DailyTimetable/Station/{StationID}/{TrainDate}",
-		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,

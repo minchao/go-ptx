@@ -48,17 +48,17 @@ func NewCityBusAPIEstimatedTimeOfArrivalUDPOK() *CityBusAPIEstimatedTimeOfArriva
 
 /*CityBusAPIEstimatedTimeOfArrivalUDPOK handles this case with default header values.
 
-OK
+Success
 */
 type CityBusAPIEstimatedTimeOfArrivalUDPOK struct {
-	Payload []*models.ServiceDTOVersion2BusBusN1EstimateTime
+	Payload []*models.PTXServiceDTOBusSpecificationV2BusN1EstimateTime
 }
 
 func (o *CityBusAPIEstimatedTimeOfArrivalUDPOK) Error() string {
 	return fmt.Sprintf("[GET /v2/Bus/EstimatedTimeOfArrival/Streaming/City/{City}][%d] cityBusApiEstimatedTimeOfArrivalUdpOK  %+v", 200, o.Payload)
 }
 
-func (o *CityBusAPIEstimatedTimeOfArrivalUDPOK) GetPayload() []*models.ServiceDTOVersion2BusBusN1EstimateTime {
+func (o *CityBusAPIEstimatedTimeOfArrivalUDPOK) GetPayload() []*models.PTXServiceDTOBusSpecificationV2BusN1EstimateTime {
 	return o.Payload
 }
 
@@ -82,20 +82,20 @@ func NewCityBusAPIEstimatedTimeOfArrivalUDPStatus299() *CityBusAPIEstimatedTimeO
 加入參數'?health=true'即可查詢此API服務的健康狀態
 */
 type CityBusAPIEstimatedTimeOfArrivalUDPStatus299 struct {
-	Payload *models.ServiceDTOVersion3BaseDisplayHealth
+	Payload *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth
 }
 
 func (o *CityBusAPIEstimatedTimeOfArrivalUDPStatus299) Error() string {
 	return fmt.Sprintf("[GET /v2/Bus/EstimatedTimeOfArrival/Streaming/City/{City}][%d] cityBusApiEstimatedTimeOfArrivalUdpStatus299  %+v", 299, o.Payload)
 }
 
-func (o *CityBusAPIEstimatedTimeOfArrivalUDPStatus299) GetPayload() *models.ServiceDTOVersion3BaseDisplayHealth {
+func (o *CityBusAPIEstimatedTimeOfArrivalUDPStatus299) GetPayload() *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth {
 	return o.Payload
 }
 
 func (o *CityBusAPIEstimatedTimeOfArrivalUDPStatus299) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.ServiceDTOVersion3BaseDisplayHealth)
+	o.Payload = new(models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

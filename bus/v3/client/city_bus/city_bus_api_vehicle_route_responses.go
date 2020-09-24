@@ -48,23 +48,23 @@ func NewCityBusAPIVehicleRouteOK() *CityBusAPIVehicleRouteOK {
 
 /*CityBusAPIVehicleRouteOK handles this case with default header values.
 
-OK
+Success
 */
 type CityBusAPIVehicleRouteOK struct {
-	Payload *models.MOTCAPIBusDALBusServiceDTOVersion3BusVehicleRoute
+	Payload *models.PTXServiceDTOBusSpecificationV3WrapperBusVWrapperPTXServiceDTOBusSpecificationV3VehicleRoute
 }
 
 func (o *CityBusAPIVehicleRouteOK) Error() string {
 	return fmt.Sprintf("[GET /v3/Bus/VehicleRoute/City/{City}][%d] cityBusApiVehicleRouteOK  %+v", 200, o.Payload)
 }
 
-func (o *CityBusAPIVehicleRouteOK) GetPayload() *models.MOTCAPIBusDALBusServiceDTOVersion3BusVehicleRoute {
+func (o *CityBusAPIVehicleRouteOK) GetPayload() *models.PTXServiceDTOBusSpecificationV3WrapperBusVWrapperPTXServiceDTOBusSpecificationV3VehicleRoute {
 	return o.Payload
 }
 
 func (o *CityBusAPIVehicleRouteOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.MOTCAPIBusDALBusServiceDTOVersion3BusVehicleRoute)
+	o.Payload = new(models.PTXServiceDTOBusSpecificationV3WrapperBusVWrapperPTXServiceDTOBusSpecificationV3VehicleRoute)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
@@ -84,20 +84,20 @@ func NewCityBusAPIVehicleRouteStatus299() *CityBusAPIVehicleRouteStatus299 {
 加入參數'?health=true'即可查詢此API服務的健康狀態
 */
 type CityBusAPIVehicleRouteStatus299 struct {
-	Payload *models.ServiceDTOVersion3BaseDisplayHealth
+	Payload *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth
 }
 
 func (o *CityBusAPIVehicleRouteStatus299) Error() string {
 	return fmt.Sprintf("[GET /v3/Bus/VehicleRoute/City/{City}][%d] cityBusApiVehicleRouteStatus299  %+v", 299, o.Payload)
 }
 
-func (o *CityBusAPIVehicleRouteStatus299) GetPayload() *models.ServiceDTOVersion3BaseDisplayHealth {
+func (o *CityBusAPIVehicleRouteStatus299) GetPayload() *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth {
 	return o.Payload
 }
 
 func (o *CityBusAPIVehicleRouteStatus299) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.ServiceDTOVersion3BaseDisplayHealth)
+	o.Payload = new(models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

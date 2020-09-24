@@ -77,7 +77,7 @@ type MetroAPIAlertParams struct {
 	  查詢數量
 
 	*/
-	DollarCount *string
+	DollarCount *bool
 	/*DollarFilter
 	  過濾
 
@@ -108,7 +108,10 @@ type MetroAPIAlertParams struct {
 
 	*/
 	DollarTop *int64
-	/*Operator*/
+	/*Operator
+	  欲查詢縣市
+
+	*/
 	Operator string
 
 	timeout    time.Duration
@@ -150,13 +153,13 @@ func (o *MetroAPIAlertParams) SetHTTPClient(client *http.Client) {
 }
 
 // WithDollarCount adds the dollarCount to the metro Api alert params
-func (o *MetroAPIAlertParams) WithDollarCount(dollarCount *string) *MetroAPIAlertParams {
+func (o *MetroAPIAlertParams) WithDollarCount(dollarCount *bool) *MetroAPIAlertParams {
 	o.SetDollarCount(dollarCount)
 	return o
 }
 
 // SetDollarCount adds the dollarCount to the metro Api alert params
-func (o *MetroAPIAlertParams) SetDollarCount(dollarCount *string) {
+func (o *MetroAPIAlertParams) SetDollarCount(dollarCount *bool) {
 	o.DollarCount = dollarCount
 }
 
@@ -248,11 +251,11 @@ func (o *MetroAPIAlertParams) WriteToRequest(r runtime.ClientRequest, reg strfmt
 	if o.DollarCount != nil {
 
 		// query param $count
-		var qrDollarCount string
+		var qrDollarCount bool
 		if o.DollarCount != nil {
 			qrDollarCount = *o.DollarCount
 		}
-		qDollarCount := qrDollarCount
+		qDollarCount := swag.FormatBool(qrDollarCount)
 		if qDollarCount != "" {
 			if err := r.SetQueryParam("$count", qDollarCount); err != nil {
 				return err

@@ -42,17 +42,17 @@ func NewTaiwanTripBusAPIRouteOK() *TaiwanTripBusAPIRouteOK {
 
 /*TaiwanTripBusAPIRouteOK handles this case with default header values.
 
-OK
+Success
 */
 type TaiwanTripBusAPIRouteOK struct {
-	Payload []*models.ServiceDTOVersion2TaiwanTripBusBusRoute
+	Payload []*models.PTXServiceDTOTourismSpecificationV2BusRoute
 }
 
 func (o *TaiwanTripBusAPIRouteOK) Error() string {
 	return fmt.Sprintf("[GET /v2/Tourism/Bus/Route/TaiwanTrip][%d] taiwanTripBusApiRouteOK  %+v", 200, o.Payload)
 }
 
-func (o *TaiwanTripBusAPIRouteOK) GetPayload() []*models.ServiceDTOVersion2TaiwanTripBusBusRoute {
+func (o *TaiwanTripBusAPIRouteOK) GetPayload() []*models.PTXServiceDTOTourismSpecificationV2BusRoute {
 	return o.Payload
 }
 

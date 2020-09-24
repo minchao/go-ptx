@@ -42,17 +42,17 @@ func NewTRAAPIStationOK() *TRAAPIStationOK {
 
 /*TRAAPIStationOK handles this case with default header values.
 
-OK
+Success
 */
 type TRAAPIStationOK struct {
-	Payload []*models.ServiceDTOVersion2RailTRARailStation
+	Payload []*models.PTXServiceDTORailSpecificationV2TRARailStation
 }
 
 func (o *TRAAPIStationOK) Error() string {
 	return fmt.Sprintf("[GET /v2/Rail/TRA/Station][%d] tRAApiStationOK  %+v", 200, o.Payload)
 }
 
-func (o *TRAAPIStationOK) GetPayload() []*models.ServiceDTOVersion2RailTRARailStation {
+func (o *TRAAPIStationOK) GetPayload() []*models.PTXServiceDTORailSpecificationV2TRARailStation {
 	return o.Payload
 }
 

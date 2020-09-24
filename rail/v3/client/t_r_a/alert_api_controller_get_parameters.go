@@ -77,7 +77,7 @@ type AlertAPIControllerGetParams struct {
 	  查詢數量
 
 	*/
-	DollarCount *string
+	DollarCount *bool
 	/*DollarFilter
 	  過濾
 
@@ -148,13 +148,13 @@ func (o *AlertAPIControllerGetParams) SetHTTPClient(client *http.Client) {
 }
 
 // WithDollarCount adds the dollarCount to the alert Api controller get params
-func (o *AlertAPIControllerGetParams) WithDollarCount(dollarCount *string) *AlertAPIControllerGetParams {
+func (o *AlertAPIControllerGetParams) WithDollarCount(dollarCount *bool) *AlertAPIControllerGetParams {
 	o.SetDollarCount(dollarCount)
 	return o
 }
 
 // SetDollarCount adds the dollarCount to the alert Api controller get params
-func (o *AlertAPIControllerGetParams) SetDollarCount(dollarCount *string) {
+func (o *AlertAPIControllerGetParams) SetDollarCount(dollarCount *bool) {
 	o.DollarCount = dollarCount
 }
 
@@ -235,11 +235,11 @@ func (o *AlertAPIControllerGetParams) WriteToRequest(r runtime.ClientRequest, re
 	if o.DollarCount != nil {
 
 		// query param $count
-		var qrDollarCount string
+		var qrDollarCount bool
 		if o.DollarCount != nil {
 			qrDollarCount = *o.DollarCount
 		}
-		qDollarCount := qrDollarCount
+		qDollarCount := swag.FormatBool(qrDollarCount)
 		if qDollarCount != "" {
 			if err := r.SetQueryParam("$count", qDollarCount); err != nil {
 				return err
