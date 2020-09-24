@@ -77,7 +77,7 @@ type CityBusAPIDepotParams struct {
 	  查詢數量
 
 	*/
-	DollarCount *string
+	DollarCount *bool
 	/*DollarFilter
 	  過濾
 
@@ -103,6 +103,11 @@ type CityBusAPIDepotParams struct {
 
 	*/
 	DollarSkip *string
+	/*DollarSpatialFilter
+	  空間過濾
+
+	*/
+	DollarSpatialFilter *string
 	/*DollarTop
 	  取前幾筆
 
@@ -158,13 +163,13 @@ func (o *CityBusAPIDepotParams) SetHTTPClient(client *http.Client) {
 }
 
 // WithDollarCount adds the dollarCount to the city bus Api depot params
-func (o *CityBusAPIDepotParams) WithDollarCount(dollarCount *string) *CityBusAPIDepotParams {
+func (o *CityBusAPIDepotParams) WithDollarCount(dollarCount *bool) *CityBusAPIDepotParams {
 	o.SetDollarCount(dollarCount)
 	return o
 }
 
 // SetDollarCount adds the dollarCount to the city bus Api depot params
-func (o *CityBusAPIDepotParams) SetDollarCount(dollarCount *string) {
+func (o *CityBusAPIDepotParams) SetDollarCount(dollarCount *bool) {
 	o.DollarCount = dollarCount
 }
 
@@ -223,6 +228,17 @@ func (o *CityBusAPIDepotParams) SetDollarSkip(dollarSkip *string) {
 	o.DollarSkip = dollarSkip
 }
 
+// WithDollarSpatialFilter adds the dollarSpatialFilter to the city bus Api depot params
+func (o *CityBusAPIDepotParams) WithDollarSpatialFilter(dollarSpatialFilter *string) *CityBusAPIDepotParams {
+	o.SetDollarSpatialFilter(dollarSpatialFilter)
+	return o
+}
+
+// SetDollarSpatialFilter adds the dollarSpatialFilter to the city bus Api depot params
+func (o *CityBusAPIDepotParams) SetDollarSpatialFilter(dollarSpatialFilter *string) {
+	o.DollarSpatialFilter = dollarSpatialFilter
+}
+
 // WithDollarTop adds the dollarTop to the city bus Api depot params
 func (o *CityBusAPIDepotParams) WithDollarTop(dollarTop *int64) *CityBusAPIDepotParams {
 	o.SetDollarTop(dollarTop)
@@ -267,11 +283,11 @@ func (o *CityBusAPIDepotParams) WriteToRequest(r runtime.ClientRequest, reg strf
 	if o.DollarCount != nil {
 
 		// query param $count
-		var qrDollarCount string
+		var qrDollarCount bool
 		if o.DollarCount != nil {
 			qrDollarCount = *o.DollarCount
 		}
-		qDollarCount := qrDollarCount
+		qDollarCount := swag.FormatBool(qrDollarCount)
 		if qDollarCount != "" {
 			if err := r.SetQueryParam("$count", qDollarCount); err != nil {
 				return err
@@ -347,6 +363,22 @@ func (o *CityBusAPIDepotParams) WriteToRequest(r runtime.ClientRequest, reg strf
 		qDollarSkip := qrDollarSkip
 		if qDollarSkip != "" {
 			if err := r.SetQueryParam("$skip", qDollarSkip); err != nil {
+				return err
+			}
+		}
+
+	}
+
+	if o.DollarSpatialFilter != nil {
+
+		// query param $spatialFilter
+		var qrDollarSpatialFilter string
+		if o.DollarSpatialFilter != nil {
+			qrDollarSpatialFilter = *o.DollarSpatialFilter
+		}
+		qDollarSpatialFilter := qrDollarSpatialFilter
+		if qDollarSpatialFilter != "" {
+			if err := r.SetQueryParam("$spatialFilter", qDollarSpatialFilter); err != nil {
 				return err
 			}
 		}

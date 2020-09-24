@@ -42,23 +42,23 @@ func NewAlertAPIControllerGetOK() *AlertAPIControllerGetOK {
 
 /*AlertAPIControllerGetOK handles this case with default header values.
 
-OK
+Success
 */
 type AlertAPIControllerGetOK struct {
-	Payload *models.MOTCAPIRailModelsTRARealTimeWrapperServiceDTOVersion3RailTRATRAAlertListAlert
+	Payload *models.PTXAPIRailModelTRARealTimeWrapperPTXServiceDTORailSpecificationV3TRATRAAlertListAlert
 }
 
 func (o *AlertAPIControllerGetOK) Error() string {
 	return fmt.Sprintf("[GET /v3/Rail/TRA/Alert][%d] alertApiControllerGetOK  %+v", 200, o.Payload)
 }
 
-func (o *AlertAPIControllerGetOK) GetPayload() *models.MOTCAPIRailModelsTRARealTimeWrapperServiceDTOVersion3RailTRATRAAlertListAlert {
+func (o *AlertAPIControllerGetOK) GetPayload() *models.PTXAPIRailModelTRARealTimeWrapperPTXServiceDTORailSpecificationV3TRATRAAlertListAlert {
 	return o.Payload
 }
 
 func (o *AlertAPIControllerGetOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.MOTCAPIRailModelsTRARealTimeWrapperServiceDTOVersion3RailTRATRAAlertListAlert)
+	o.Payload = new(models.PTXAPIRailModelTRARealTimeWrapperPTXServiceDTORailSpecificationV3TRATRAAlertListAlert)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

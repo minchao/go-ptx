@@ -48,17 +48,17 @@ func NewCityBusAPIRealTimeNearStopUDPOK() *CityBusAPIRealTimeNearStopUDPOK {
 
 /*CityBusAPIRealTimeNearStopUDPOK handles this case with default header values.
 
-OK
+Success
 */
 type CityBusAPIRealTimeNearStopUDPOK struct {
-	Payload []*models.ServiceDTOVersion2BusBusA2Data
+	Payload []*models.PTXServiceDTOBusSpecificationV2BusA2Data
 }
 
 func (o *CityBusAPIRealTimeNearStopUDPOK) Error() string {
 	return fmt.Sprintf("[GET /v2/Bus/RealTimeNearStop/Streaming/City/{City}][%d] cityBusApiRealTimeNearStopUdpOK  %+v", 200, o.Payload)
 }
 
-func (o *CityBusAPIRealTimeNearStopUDPOK) GetPayload() []*models.ServiceDTOVersion2BusBusA2Data {
+func (o *CityBusAPIRealTimeNearStopUDPOK) GetPayload() []*models.PTXServiceDTOBusSpecificationV2BusA2Data {
 	return o.Payload
 }
 
@@ -82,20 +82,20 @@ func NewCityBusAPIRealTimeNearStopUDPStatus299() *CityBusAPIRealTimeNearStopUDPS
 加入參數'?health=true'即可查詢此API服務的健康狀態
 */
 type CityBusAPIRealTimeNearStopUDPStatus299 struct {
-	Payload *models.ServiceDTOVersion3BaseDisplayHealth
+	Payload *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth
 }
 
 func (o *CityBusAPIRealTimeNearStopUDPStatus299) Error() string {
 	return fmt.Sprintf("[GET /v2/Bus/RealTimeNearStop/Streaming/City/{City}][%d] cityBusApiRealTimeNearStopUdpStatus299  %+v", 299, o.Payload)
 }
 
-func (o *CityBusAPIRealTimeNearStopUDPStatus299) GetPayload() *models.ServiceDTOVersion3BaseDisplayHealth {
+func (o *CityBusAPIRealTimeNearStopUDPStatus299) GetPayload() *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth {
 	return o.Payload
 }
 
 func (o *CityBusAPIRealTimeNearStopUDPStatus299) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.ServiceDTOVersion3BaseDisplayHealth)
+	o.Payload = new(models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

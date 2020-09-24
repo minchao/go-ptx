@@ -42,23 +42,23 @@ func NewTrainTypeAPIControllerGetOK() *TrainTypeAPIControllerGetOK {
 
 /*TrainTypeAPIControllerGetOK handles this case with default header values.
 
-OK
+Success
 */
 type TrainTypeAPIControllerGetOK struct {
-	Payload *models.MOTCAPIRailModelsTRABaseWrapperServiceDTOVersion3RailTRATrainType
+	Payload *models.PTXAPIRailModelTRABaseWrapperPTXServiceDTORailSpecificationV3TRATrainType
 }
 
 func (o *TrainTypeAPIControllerGetOK) Error() string {
 	return fmt.Sprintf("[GET /v3/Rail/TRA/TrainType][%d] trainTypeApiControllerGetOK  %+v", 200, o.Payload)
 }
 
-func (o *TrainTypeAPIControllerGetOK) GetPayload() *models.MOTCAPIRailModelsTRABaseWrapperServiceDTOVersion3RailTRATrainType {
+func (o *TrainTypeAPIControllerGetOK) GetPayload() *models.PTXAPIRailModelTRABaseWrapperPTXServiceDTORailSpecificationV3TRATrainType {
 	return o.Payload
 }
 
 func (o *TrainTypeAPIControllerGetOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.MOTCAPIRailModelsTRABaseWrapperServiceDTOVersion3RailTRATrainType)
+	o.Payload = new(models.PTXAPIRailModelTRABaseWrapperPTXServiceDTORailSpecificationV3TRATrainType)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

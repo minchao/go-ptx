@@ -524,18 +524,13 @@
       "title": "Provider",
       "description": "資料提供平台資料型別",
       "required": [
-        "UpdateTime",
         "ProviderID",
         "ProviderName",
+        "UpdateTime",
         "ProviderCode"
       ],
       "type": "object",
       "properties": {
-        "UpdateTime": {
-          "title": "DateTime",
-          "description": "資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
-          "type": "string"
-        },
         "ProviderID": {
           "description": "資料提供平台代碼",
           "type": "string"
@@ -555,6 +550,11 @@
         },
         "ProviderUrl": {
           "description": "資料提供平台網址鏈結",
+          "type": "string"
+        },
+        "UpdateTime": {
+          "title": "DateTime",
+          "description": "資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         },
         "ProviderCode": {

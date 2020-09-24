@@ -42,23 +42,23 @@ func NewStationTransferAPIControllerGetOK() *StationTransferAPIControllerGetOK {
 
 /*StationTransferAPIControllerGetOK handles this case with default header values.
 
-OK
+Success
 */
 type StationTransferAPIControllerGetOK struct {
-	Payload *models.MOTCAPIRailModelsTRABaseWrapperServiceDTOVersion3RailTRAStationTransferStationTransfer
+	Payload *models.PTXAPIRailModelTRABaseWrapperPTXServiceDTORailSpecificationV3TRAStationTransferStationTransfer
 }
 
 func (o *StationTransferAPIControllerGetOK) Error() string {
 	return fmt.Sprintf("[GET /v3/Rail/TRA/StationTransfer][%d] stationTransferApiControllerGetOK  %+v", 200, o.Payload)
 }
 
-func (o *StationTransferAPIControllerGetOK) GetPayload() *models.MOTCAPIRailModelsTRABaseWrapperServiceDTOVersion3RailTRAStationTransferStationTransfer {
+func (o *StationTransferAPIControllerGetOK) GetPayload() *models.PTXAPIRailModelTRABaseWrapperPTXServiceDTORailSpecificationV3TRAStationTransferStationTransfer {
 	return o.Payload
 }
 
 func (o *StationTransferAPIControllerGetOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.MOTCAPIRailModelsTRABaseWrapperServiceDTOVersion3RailTRAStationTransferStationTransfer)
+	o.Payload = new(models.PTXAPIRailModelTRABaseWrapperPTXServiceDTORailSpecificationV3TRAStationTransferStationTransfer)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

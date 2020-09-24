@@ -42,17 +42,17 @@ func NewMetroAPILiveBoardOK() *MetroAPILiveBoardOK {
 
 /*MetroAPILiveBoardOK handles this case with default header values.
 
-OK
+Success
 */
 type MetroAPILiveBoardOK struct {
-	Payload []*models.ServiceDTOVersion2RailMetroLiveBoard
+	Payload []*models.PTXServiceDTORailSpecificationV2MetroLiveBoard
 }
 
 func (o *MetroAPILiveBoardOK) Error() string {
 	return fmt.Sprintf("[GET /v2/Rail/Metro/LiveBoard/{Operator}][%d] metroApiLiveBoardOK  %+v", 200, o.Payload)
 }
 
-func (o *MetroAPILiveBoardOK) GetPayload() []*models.ServiceDTOVersion2RailMetroLiveBoard {
+func (o *MetroAPILiveBoardOK) GetPayload() []*models.PTXServiceDTORailSpecificationV2MetroLiveBoard {
 	return o.Payload
 }
 

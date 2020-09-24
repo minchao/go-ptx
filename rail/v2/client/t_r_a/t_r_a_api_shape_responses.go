@@ -42,17 +42,17 @@ func NewTRAAPIShapeOK() *TRAAPIShapeOK {
 
 /*TRAAPIShapeOK handles this case with default header values.
 
-OK
+Success
 */
 type TRAAPIShapeOK struct {
-	Payload []*models.ServiceDTOVersion2RailTRATRAShape
+	Payload []*models.PTXServiceDTORailSpecificationV2TRATRAShape
 }
 
 func (o *TRAAPIShapeOK) Error() string {
 	return fmt.Sprintf("[GET /v2/Rail/TRA/Shape][%d] tRAApiShapeOK  %+v", 200, o.Payload)
 }
 
-func (o *TRAAPIShapeOK) GetPayload() []*models.ServiceDTOVersion2RailTRATRAShape {
+func (o *TRAAPIShapeOK) GetPayload() []*models.PTXServiceDTORailSpecificationV2TRATRAShape {
 	return o.Payload
 }
 

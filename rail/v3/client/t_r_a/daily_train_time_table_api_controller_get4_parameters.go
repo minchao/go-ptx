@@ -77,7 +77,7 @@ type DailyTrainTimeTableAPIControllerGet4Params struct {
 	  查詢數量
 
 	*/
-	DollarCount *string
+	DollarCount *bool
 	/*DollarFilter
 	  過濾
 
@@ -163,13 +163,13 @@ func (o *DailyTrainTimeTableAPIControllerGet4Params) SetHTTPClient(client *http.
 }
 
 // WithDollarCount adds the dollarCount to the daily train time table Api controller get 4 params
-func (o *DailyTrainTimeTableAPIControllerGet4Params) WithDollarCount(dollarCount *string) *DailyTrainTimeTableAPIControllerGet4Params {
+func (o *DailyTrainTimeTableAPIControllerGet4Params) WithDollarCount(dollarCount *bool) *DailyTrainTimeTableAPIControllerGet4Params {
 	o.SetDollarCount(dollarCount)
 	return o
 }
 
 // SetDollarCount adds the dollarCount to the daily train time table Api controller get 4 params
-func (o *DailyTrainTimeTableAPIControllerGet4Params) SetDollarCount(dollarCount *string) {
+func (o *DailyTrainTimeTableAPIControllerGet4Params) SetDollarCount(dollarCount *bool) {
 	o.DollarCount = dollarCount
 }
 
@@ -283,11 +283,11 @@ func (o *DailyTrainTimeTableAPIControllerGet4Params) WriteToRequest(r runtime.Cl
 	if o.DollarCount != nil {
 
 		// query param $count
-		var qrDollarCount string
+		var qrDollarCount bool
 		if o.DollarCount != nil {
 			qrDollarCount = *o.DollarCount
 		}
-		qDollarCount := qrDollarCount
+		qDollarCount := swag.FormatBool(qrDollarCount)
 		if qDollarCount != "" {
 			if err := r.SetQueryParam("$count", qDollarCount); err != nil {
 				return err

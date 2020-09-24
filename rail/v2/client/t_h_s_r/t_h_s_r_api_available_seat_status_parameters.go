@@ -77,7 +77,7 @@ type THSRAPIAvailableSeatStatusParams struct {
 	  查詢數量
 
 	*/
-	DollarCount *string
+	DollarCount *bool
 	/*DollarFilter
 	  過濾
 
@@ -148,13 +148,13 @@ func (o *THSRAPIAvailableSeatStatusParams) SetHTTPClient(client *http.Client) {
 }
 
 // WithDollarCount adds the dollarCount to the t h s r Api available seat status params
-func (o *THSRAPIAvailableSeatStatusParams) WithDollarCount(dollarCount *string) *THSRAPIAvailableSeatStatusParams {
+func (o *THSRAPIAvailableSeatStatusParams) WithDollarCount(dollarCount *bool) *THSRAPIAvailableSeatStatusParams {
 	o.SetDollarCount(dollarCount)
 	return o
 }
 
 // SetDollarCount adds the dollarCount to the t h s r Api available seat status params
-func (o *THSRAPIAvailableSeatStatusParams) SetDollarCount(dollarCount *string) {
+func (o *THSRAPIAvailableSeatStatusParams) SetDollarCount(dollarCount *bool) {
 	o.DollarCount = dollarCount
 }
 
@@ -235,11 +235,11 @@ func (o *THSRAPIAvailableSeatStatusParams) WriteToRequest(r runtime.ClientReques
 	if o.DollarCount != nil {
 
 		// query param $count
-		var qrDollarCount string
+		var qrDollarCount bool
 		if o.DollarCount != nil {
 			qrDollarCount = *o.DollarCount
 		}
-		qDollarCount := qrDollarCount
+		qDollarCount := swag.FormatBool(qrDollarCount)
 		if qDollarCount != "" {
 			if err := r.SetQueryParam("$count", qDollarCount); err != nil {
 				return err

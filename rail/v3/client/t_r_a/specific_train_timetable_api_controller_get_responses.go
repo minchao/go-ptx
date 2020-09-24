@@ -42,23 +42,23 @@ func NewSpecificTrainTimetableAPIControllerGetOK() *SpecificTrainTimetableAPICon
 
 /*SpecificTrainTimetableAPIControllerGetOK handles this case with default header values.
 
-OK
+Success
 */
 type SpecificTrainTimetableAPIControllerGetOK struct {
-	Payload *models.MOTCAPIRailModelsTRASpecificWrapperServiceDTOVersion3RailTRASpecificTrainTimetable
+	Payload *models.PTXAPIRailModelTRASpecificWrapperPTXServiceDTORailSpecificationV3TRASpecificTrainTimetable
 }
 
 func (o *SpecificTrainTimetableAPIControllerGetOK) Error() string {
 	return fmt.Sprintf("[GET /v3/Rail/TRA/SpecificTrainTimetable][%d] specificTrainTimetableApiControllerGetOK  %+v", 200, o.Payload)
 }
 
-func (o *SpecificTrainTimetableAPIControllerGetOK) GetPayload() *models.MOTCAPIRailModelsTRASpecificWrapperServiceDTOVersion3RailTRASpecificTrainTimetable {
+func (o *SpecificTrainTimetableAPIControllerGetOK) GetPayload() *models.PTXAPIRailModelTRASpecificWrapperPTXServiceDTORailSpecificationV3TRASpecificTrainTimetable {
 	return o.Payload
 }
 
 func (o *SpecificTrainTimetableAPIControllerGetOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.MOTCAPIRailModelsTRASpecificWrapperServiceDTOVersion3RailTRASpecificTrainTimetable)
+	o.Payload = new(models.PTXAPIRailModelTRASpecificWrapperPTXServiceDTORailSpecificationV3TRASpecificTrainTimetable)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

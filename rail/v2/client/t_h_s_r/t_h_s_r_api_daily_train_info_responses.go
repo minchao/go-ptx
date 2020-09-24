@@ -42,17 +42,17 @@ func NewTHSRAPIDailyTrainInfoOK() *THSRAPIDailyTrainInfoOK {
 
 /*THSRAPIDailyTrainInfoOK handles this case with default header values.
 
-OK
+Success
 */
 type THSRAPIDailyTrainInfoOK struct {
-	Payload []*models.ServiceDTOVersion2RailTHSRRailDailyTrainInfo
+	Payload []*models.PTXServiceDTORailSpecificationV2THSRRailDailyTrainInfo
 }
 
 func (o *THSRAPIDailyTrainInfoOK) Error() string {
 	return fmt.Sprintf("[GET /v2/Rail/THSR/DailyTrainInfo/Today][%d] tHSRApiDailyTrainInfoOK  %+v", 200, o.Payload)
 }
 
-func (o *THSRAPIDailyTrainInfoOK) GetPayload() []*models.ServiceDTOVersion2RailTHSRRailDailyTrainInfo {
+func (o *THSRAPIDailyTrainInfoOK) GetPayload() []*models.PTXServiceDTORailSpecificationV2THSRRailDailyTrainInfo {
 	return o.Payload
 }
 

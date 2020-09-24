@@ -48,17 +48,17 @@ func NewCityBusAPIOperatorOK() *CityBusAPIOperatorOK {
 
 /*CityBusAPIOperatorOK handles this case with default header values.
 
-OK
+Success
 */
 type CityBusAPIOperatorOK struct {
-	Payload []*models.ServiceDTOVersion2BaseOperator
+	Payload []*models.PTXServiceDTOSharedSpecificationV2BaseOperator
 }
 
 func (o *CityBusAPIOperatorOK) Error() string {
 	return fmt.Sprintf("[GET /v2/Bus/Operator/City/{City}][%d] cityBusApiOperatorOK  %+v", 200, o.Payload)
 }
 
-func (o *CityBusAPIOperatorOK) GetPayload() []*models.ServiceDTOVersion2BaseOperator {
+func (o *CityBusAPIOperatorOK) GetPayload() []*models.PTXServiceDTOSharedSpecificationV2BaseOperator {
 	return o.Payload
 }
 
@@ -82,20 +82,20 @@ func NewCityBusAPIOperatorStatus299() *CityBusAPIOperatorStatus299 {
 加入參數'?health=true'即可查詢此API服務的健康狀態
 */
 type CityBusAPIOperatorStatus299 struct {
-	Payload *models.ServiceDTOVersion3BaseDisplayHealth
+	Payload *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth
 }
 
 func (o *CityBusAPIOperatorStatus299) Error() string {
 	return fmt.Sprintf("[GET /v2/Bus/Operator/City/{City}][%d] cityBusApiOperatorStatus299  %+v", 299, o.Payload)
 }
 
-func (o *CityBusAPIOperatorStatus299) GetPayload() *models.ServiceDTOVersion3BaseDisplayHealth {
+func (o *CityBusAPIOperatorStatus299) GetPayload() *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth {
 	return o.Payload
 }
 
 func (o *CityBusAPIOperatorStatus299) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.ServiceDTOVersion3BaseDisplayHealth)
+	o.Payload = new(models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

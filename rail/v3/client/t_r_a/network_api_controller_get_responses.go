@@ -42,23 +42,23 @@ func NewNetworkAPIControllerGetOK() *NetworkAPIControllerGetOK {
 
 /*NetworkAPIControllerGetOK handles this case with default header values.
 
-OK
+Success
 */
 type NetworkAPIControllerGetOK struct {
-	Payload *models.MOTCAPIRailModelsTRABaseWrapperServiceDTOVersion3RailTRANetworkNetwork
+	Payload *models.PTXAPIRailModelTRABaseWrapperPTXServiceDTORailSpecificationV3TRANetworkNetwork
 }
 
 func (o *NetworkAPIControllerGetOK) Error() string {
 	return fmt.Sprintf("[GET /v3/Rail/TRA/Network][%d] networkApiControllerGetOK  %+v", 200, o.Payload)
 }
 
-func (o *NetworkAPIControllerGetOK) GetPayload() *models.MOTCAPIRailModelsTRABaseWrapperServiceDTOVersion3RailTRANetworkNetwork {
+func (o *NetworkAPIControllerGetOK) GetPayload() *models.PTXAPIRailModelTRABaseWrapperPTXServiceDTORailSpecificationV3TRANetworkNetwork {
 	return o.Payload
 }
 
 func (o *NetworkAPIControllerGetOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.MOTCAPIRailModelsTRABaseWrapperServiceDTOVersion3RailTRANetworkNetwork)
+	o.Payload = new(models.PTXAPIRailModelTRABaseWrapperPTXServiceDTORailSpecificationV3TRANetworkNetwork)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

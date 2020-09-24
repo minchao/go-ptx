@@ -111,7 +111,7 @@ func (a *Client) CityBusAPIDataVersion(params *CityBusAPIDataVersionParams) (*Ci
 		ID:                 "CityBusApi_DataVersion",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/DataVersion/City/{City}",
-		ProducesMediaTypes: []string{"application/json", "application/xml", "text/json", "text/xml"},
+		ProducesMediaTypes: []string{"application/json", "application/xml", "text/json", "text/plain"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -148,7 +148,7 @@ func (a *Client) CityBusAPIDisplayStopOfRoute(params *CityBusAPIDisplayStopOfRou
 		ID:                 "CityBusApi_DisplayStopOfRoute",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/DisplayStopOfRoute/City/{City}",
-		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -185,7 +185,7 @@ func (a *Client) CityBusAPIDisplayStopOfRoute1(params *CityBusAPIDisplayStopOfRo
 		ID:                 "CityBusApi_DisplayStopOfRoute_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/DisplayStopOfRoute/City/{City}/{RouteName}",
-		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -211,7 +211,7 @@ func (a *Client) CityBusAPIDisplayStopOfRoute1(params *CityBusAPIDisplayStopOfRo
   CityBusAPIEstimatedTimeOfArrival 取得指定s 縣市 的公車預估到站資料 n1 批次更新
 
    ### 市區公車之預估到站資料(N1) ###
-- [部分縣市] 當 StopStatus = 1(尚未發車) 且 EstimateTime &gt; 0 (有值) 的情形, 屬正常情形, 雖目前尚未發車, 但提供EstimateTime值為預計多久後開始發車之時間。
+- [部分縣市] 當 StopStatus = 1(尚未發車) 且 EstimateTime > 0 (有值) 的情形, 屬正常情形, 雖目前尚未發車, 但提供EstimateTime值為預計多久後開始發車之時間。
 - [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))
 */
 func (a *Client) CityBusAPIEstimatedTimeOfArrival(params *CityBusAPIEstimatedTimeOfArrivalParams) (*CityBusAPIEstimatedTimeOfArrivalOK, *CityBusAPIEstimatedTimeOfArrivalStatus299, error) {
@@ -224,7 +224,7 @@ func (a *Client) CityBusAPIEstimatedTimeOfArrival(params *CityBusAPIEstimatedTim
 		ID:                 "CityBusApi_EstimatedTimeOfArrival",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/EstimatedTimeOfArrival/City/{City}",
-		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -250,7 +250,7 @@ func (a *Client) CityBusAPIEstimatedTimeOfArrival(params *CityBusAPIEstimatedTim
   CityBusAPIEstimatedTimeOfArrival1 取得指定s 縣市 路線名稱 的公車預估到站資料 n1 批次更新
 
    ### 市區公車之預估到站資料(N1) ###
-- [部分縣市] 當 StopStatus = 1(尚未發車) 且 EstimateTime &gt; 0 (有值) 的情形, 屬正常情形, 雖目前尚未發車, 但提供EstimateTime值為預計多久後開始發車之時間。
+- [部分縣市] 當 StopStatus = 1(尚未發車) 且 EstimateTime > 0 (有值) 的情形, 屬正常情形, 雖目前尚未發車, 但提供EstimateTime值為預計多久後開始發車之時間。
 - [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))
 */
 func (a *Client) CityBusAPIEstimatedTimeOfArrival1(params *CityBusAPIEstimatedTimeOfArrival1Params) (*CityBusAPIEstimatedTimeOfArrival1OK, *CityBusAPIEstimatedTimeOfArrival1Status299, error) {
@@ -263,7 +263,7 @@ func (a *Client) CityBusAPIEstimatedTimeOfArrival1(params *CityBusAPIEstimatedTi
 		ID:                 "CityBusApi_EstimatedTimeOfArrival_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/EstimatedTimeOfArrival/City/{City}/{RouteName}",
-		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -289,7 +289,7 @@ func (a *Client) CityBusAPIEstimatedTimeOfArrival1(params *CityBusAPIEstimatedTi
   CityBusAPIEstimatedTimeOfArrivalUDP 取得指定s 縣市 的公車預估到站資料 n1 逐筆更新
 
   ### 市區公車之預估到站資料(N1) ###
-- [部分縣市] 當 StopStatus = 1(尚未發車) 且 EstimateTime &gt; 0 (有值) 的情形, 屬正常情形, 雖目前尚未發車, 但提供EstimateTime值為預計多久後開始發車之時間。
+- [部分縣市] 當 StopStatus = 1(尚未發車) 且 EstimateTime > 0 (有值) 的情形, 屬正常情形, 雖目前尚未發車, 但提供EstimateTime值為預計多久後開始發車之時間。
 - [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))
 - N1僅於該路線上有任一車輛離站時，來源端才會重新計算並發佈，因此使用者需自行處理時間遞減機制，或以EstimateTime-(收到資料時間-SrcTrasTime)(秒)作為實際預估抵達時間。
 */
@@ -303,7 +303,7 @@ func (a *Client) CityBusAPIEstimatedTimeOfArrivalUDP(params *CityBusAPIEstimated
 		ID:                 "CityBusApi_EstimatedTimeOfArrival_UDP",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/EstimatedTimeOfArrival/Streaming/City/{City}",
-		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -329,7 +329,7 @@ func (a *Client) CityBusAPIEstimatedTimeOfArrivalUDP(params *CityBusAPIEstimated
   CityBusAPIEstimatedTimeOfArrivalUDP1 取得指定s 縣市 路線名稱 的公車預估到站資料 n1 逐筆更新
 
   ### 市區公車之預估到站資料(N1) ###
-- [部分縣市] 當 StopStatus = 1(尚未發車) 且 EstimateTime &gt; 0 (有值) 的情形, 屬正常情形, 雖目前尚未發車, 但提供EstimateTime值為預計多久後開始發車之時間。
+- [部分縣市] 當 StopStatus = 1(尚未發車) 且 EstimateTime > 0 (有值) 的情形, 屬正常情形, 雖目前尚未發車, 但提供EstimateTime值為預計多久後開始發車之時間。
 - [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))
 - N1僅於該路線上有任一車輛離站時，來源端才會重新計算並發佈，因此使用者需自行處理時間遞減機制，或以EstimateTime-(收到資料時間-SrcTrasTime)(秒)作為實際預估抵達時間。
 */
@@ -343,7 +343,7 @@ func (a *Client) CityBusAPIEstimatedTimeOfArrivalUDP1(params *CityBusAPIEstimate
 		ID:                 "CityBusApi_EstimatedTimeOfArrival_UDP_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/EstimatedTimeOfArrival/Streaming/City/{City}/{RouteName}",
-		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -380,7 +380,7 @@ func (a *Client) CityBusAPIFirstLastTripInfo(params *CityBusAPIFirstLastTripInfo
 		ID:                 "CityBusApi_FirstLastTripInfo",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/FirstLastTripInfo/City/{City}",
-		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -417,7 +417,7 @@ func (a *Client) CityBusAPIFirstLastTripInfo1(params *CityBusAPIFirstLastTripInf
 		ID:                 "CityBusApi_FirstLastTripInfo_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/FirstLastTripInfo/City/{City}/{RouteName}",
-		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -454,7 +454,7 @@ func (a *Client) CityBusAPINews(params *CityBusAPINewsParams) (*CityBusAPINewsOK
 		ID:                 "CityBusApi_News",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/News/City/{City}",
-		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -491,7 +491,7 @@ func (a *Client) CityBusAPIOperator(params *CityBusAPIOperatorParams) (*CityBusA
 		ID:                 "CityBusApi_Operator",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/Operator/City/{City}",
-		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -529,7 +529,7 @@ func (a *Client) CityBusAPIRealTimeByFrequency(params *CityBusAPIRealTimeByFrequ
 		ID:                 "CityBusApi_RealTimeByFrequency",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/RealTimeByFrequency/City/{City}",
-		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -567,7 +567,7 @@ func (a *Client) CityBusAPIRealTimeByFrequency1(params *CityBusAPIRealTimeByFreq
 		ID:                 "CityBusApi_RealTimeByFrequency_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/RealTimeByFrequency/City/{City}/{RouteName}",
-		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -605,7 +605,7 @@ func (a *Client) CityBusAPIRealTimeByFrequencyUDP(params *CityBusAPIRealTimeByFr
 		ID:                 "CityBusApi_RealTimeByFrequency_UDP",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/RealTimeByFrequency/Streaming/City/{City}",
-		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -643,7 +643,7 @@ func (a *Client) CityBusAPIRealTimeByFrequencyUDP1(params *CityBusAPIRealTimeByF
 		ID:                 "CityBusApi_RealTimeByFrequency_UDP_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/RealTimeByFrequency/Streaming/City/{City}/{RouteName}",
-		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -681,7 +681,7 @@ func (a *Client) CityBusAPIRealTimeNearStop(params *CityBusAPIRealTimeNearStopPa
 		ID:                 "CityBusApi_RealTimeNearStop",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/RealTimeNearStop/City/{City}",
-		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -719,7 +719,7 @@ func (a *Client) CityBusAPIRealTimeNearStop1(params *CityBusAPIRealTimeNearStop1
 		ID:                 "CityBusApi_RealTimeNearStop_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/RealTimeNearStop/City/{City}/{RouteName}",
-		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -757,7 +757,7 @@ func (a *Client) CityBusAPIRealTimeNearStopUDP(params *CityBusAPIRealTimeNearSto
 		ID:                 "CityBusApi_RealTimeNearStop_UDP",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/RealTimeNearStop/Streaming/City/{City}",
-		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -795,7 +795,7 @@ func (a *Client) CityBusAPIRealTimeNearStopUDP1(params *CityBusAPIRealTimeNearSt
 		ID:                 "CityBusApi_RealTimeNearStop_UDP_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/RealTimeNearStop/Streaming/City/{City}/{RouteName}",
-		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -832,7 +832,7 @@ func (a *Client) CityBusAPIRoute(params *CityBusAPIRouteParams) (*CityBusAPIRout
 		ID:                 "CityBusApi_Route",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/Route/City/{City}",
-		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -869,7 +869,7 @@ func (a *Client) CityBusAPIRouteFare(params *CityBusAPIRouteFareParams) (*CityBu
 		ID:                 "CityBusApi_RouteFare",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/RouteFare/City/{City}",
-		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -906,7 +906,7 @@ func (a *Client) CityBusAPIRouteFare1(params *CityBusAPIRouteFare1Params) (*City
 		ID:                 "CityBusApi_RouteFare_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/RouteFare/City/{City}/{RouteName}",
-		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -943,7 +943,7 @@ func (a *Client) CityBusAPIRoute1(params *CityBusAPIRoute1Params) (*CityBusAPIRo
 		ID:                 "CityBusApi_Route_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/Route/City/{City}/{RouteName}",
-		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -980,7 +980,7 @@ func (a *Client) CityBusAPISchedule(params *CityBusAPIScheduleParams) (*CityBusA
 		ID:                 "CityBusApi_Schedule",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/Schedule/City/{City}",
-		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -1017,7 +1017,7 @@ func (a *Client) CityBusAPISchedule1(params *CityBusAPISchedule1Params) (*CityBu
 		ID:                 "CityBusApi_Schedule_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/Schedule/City/{City}/{RouteName}",
-		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -1054,7 +1054,7 @@ func (a *Client) CityBusAPIShape(params *CityBusAPIShapeParams) (*CityBusAPIShap
 		ID:                 "CityBusApi_Shape",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/Shape/City/{City}",
-		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -1091,7 +1091,7 @@ func (a *Client) CityBusAPIShape1(params *CityBusAPIShape1Params) (*CityBusAPISh
 		ID:                 "CityBusApi_Shape_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/Shape/City/{City}/{RouteName}",
-		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -1128,7 +1128,7 @@ func (a *Client) CityBusAPIStation(params *CityBusAPIStationParams) (*CityBusAPI
 		ID:                 "CityBusApi_Station",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/Station/City/{City}",
-		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -1165,7 +1165,7 @@ func (a *Client) CityBusAPIStationGroup(params *CityBusAPIStationGroupParams) (*
 		ID:                 "CityBusApi_StationGroup",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/StationGroup/City/{City}",
-		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -1202,7 +1202,7 @@ func (a *Client) CityBusAPIStop(params *CityBusAPIStopParams) (*CityBusAPIStopOK
 		ID:                 "CityBusApi_Stop",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/Stop/City/{City}",
-		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -1239,7 +1239,7 @@ func (a *Client) CityBusAPIStopOfRoute(params *CityBusAPIStopOfRouteParams) (*Ci
 		ID:                 "CityBusApi_StopOfRoute",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/StopOfRoute/City/{City}",
-		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -1276,7 +1276,7 @@ func (a *Client) CityBusAPIStopOfRoute1(params *CityBusAPIStopOfRoute1Params) (*
 		ID:                 "CityBusApi_StopOfRoute_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/StopOfRoute/City/{City}/{RouteName}",
-		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -1313,7 +1313,7 @@ func (a *Client) CityBusAPIVehicle(params *CityBusAPIVehicleParams) (*CityBusAPI
 		ID:                 "CityBusApi_Vehicle",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/Vehicle/City/{City}",
-		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,

@@ -42,17 +42,17 @@ func NewMetroAPIS2STravelTimeOK() *MetroAPIS2STravelTimeOK {
 
 /*MetroAPIS2STravelTimeOK handles this case with default header values.
 
-OK
+Success
 */
 type MetroAPIS2STravelTimeOK struct {
-	Payload []*models.ServiceDTOVersion2RailMetroS2STravelTime
+	Payload []*models.PTXServiceDTORailSpecificationV2MetroS2STravelTime
 }
 
 func (o *MetroAPIS2STravelTimeOK) Error() string {
 	return fmt.Sprintf("[GET /v2/Rail/Metro/S2STravelTime/{Operator}][%d] metroApiS2STravelTimeOK  %+v", 200, o.Payload)
 }
 
-func (o *MetroAPIS2STravelTimeOK) GetPayload() []*models.ServiceDTOVersion2RailMetroS2STravelTime {
+func (o *MetroAPIS2STravelTimeOK) GetPayload() []*models.PTXServiceDTORailSpecificationV2MetroS2STravelTime {
 	return o.Payload
 }
 

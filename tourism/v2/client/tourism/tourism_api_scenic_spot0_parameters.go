@@ -108,10 +108,7 @@ type TourismAPIScenicSpot0Params struct {
 
 	*/
 	DollarTop *int64
-	/*City
-	  縣市名稱
-
-	*/
+	/*City*/
 	City string
 
 	timeout    time.Duration

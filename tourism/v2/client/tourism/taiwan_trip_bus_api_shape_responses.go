@@ -42,17 +42,17 @@ func NewTaiwanTripBusAPIShapeOK() *TaiwanTripBusAPIShapeOK {
 
 /*TaiwanTripBusAPIShapeOK handles this case with default header values.
 
-OK
+Success
 */
 type TaiwanTripBusAPIShapeOK struct {
-	Payload []*models.ServiceDTOVersion2TaiwanTripBusBusTaiwanTripShape
+	Payload []*models.PTXServiceDTOTourismSpecificationV2BusTaiwanTripShape
 }
 
 func (o *TaiwanTripBusAPIShapeOK) Error() string {
 	return fmt.Sprintf("[GET /v2/Tourism/Bus/Shape/TaiwanTrip][%d] taiwanTripBusApiShapeOK  %+v", 200, o.Payload)
 }
 
-func (o *TaiwanTripBusAPIShapeOK) GetPayload() []*models.ServiceDTOVersion2TaiwanTripBusBusTaiwanTripShape {
+func (o *TaiwanTripBusAPIShapeOK) GetPayload() []*models.PTXServiceDTOTourismSpecificationV2BusTaiwanTripShape {
 	return o.Payload
 }
 

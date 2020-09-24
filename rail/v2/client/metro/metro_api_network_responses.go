@@ -42,17 +42,17 @@ func NewMetroAPINetworkOK() *MetroAPINetworkOK {
 
 /*MetroAPINetworkOK handles this case with default header values.
 
-OK
+Success
 */
 type MetroAPINetworkOK struct {
-	Payload []*models.ServiceDTOVersion2RailMetroNetwork
+	Payload []*models.PTXServiceDTORailSpecificationV2MetroNetwork
 }
 
 func (o *MetroAPINetworkOK) Error() string {
 	return fmt.Sprintf("[GET /v2/Rail/Metro/Network/{Operator}][%d] metroApiNetworkOK  %+v", 200, o.Payload)
 }
 
-func (o *MetroAPINetworkOK) GetPayload() []*models.ServiceDTOVersion2RailMetroNetwork {
+func (o *MetroAPINetworkOK) GetPayload() []*models.PTXServiceDTORailSpecificationV2MetroNetwork {
 	return o.Payload
 }
 

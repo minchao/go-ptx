@@ -48,17 +48,17 @@ func NewInterCityBusAPISchedule1OK() *InterCityBusAPISchedule1OK {
 
 /*InterCityBusAPISchedule1OK handles this case with default header values.
 
-OK
+Success
 */
 type InterCityBusAPISchedule1OK struct {
-	Payload []*models.ServiceDTOVersion2BusBusSchedule
+	Payload []*models.PTXServiceDTOBusSpecificationV2BusSchedule
 }
 
 func (o *InterCityBusAPISchedule1OK) Error() string {
 	return fmt.Sprintf("[GET /v2/Bus/Schedule/InterCity/{RouteName}][%d] interCityBusApiSchedule1OK  %+v", 200, o.Payload)
 }
 
-func (o *InterCityBusAPISchedule1OK) GetPayload() []*models.ServiceDTOVersion2BusBusSchedule {
+func (o *InterCityBusAPISchedule1OK) GetPayload() []*models.PTXServiceDTOBusSpecificationV2BusSchedule {
 	return o.Payload
 }
 
@@ -82,20 +82,20 @@ func NewInterCityBusAPISchedule1Status299() *InterCityBusAPISchedule1Status299 {
 加入參數'?health=true'即可查詢此API服務的健康狀態
 */
 type InterCityBusAPISchedule1Status299 struct {
-	Payload *models.ServiceDTOVersion3BaseDisplayHealth
+	Payload *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth
 }
 
 func (o *InterCityBusAPISchedule1Status299) Error() string {
 	return fmt.Sprintf("[GET /v2/Bus/Schedule/InterCity/{RouteName}][%d] interCityBusApiSchedule1Status299  %+v", 299, o.Payload)
 }
 
-func (o *InterCityBusAPISchedule1Status299) GetPayload() *models.ServiceDTOVersion3BaseDisplayHealth {
+func (o *InterCityBusAPISchedule1Status299) GetPayload() *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth {
 	return o.Payload
 }
 
 func (o *InterCityBusAPISchedule1Status299) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.ServiceDTOVersion3BaseDisplayHealth)
+	o.Payload = new(models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

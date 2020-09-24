@@ -48,17 +48,17 @@ func NewInterCityBusAPIStationGroupOK() *InterCityBusAPIStationGroupOK {
 
 /*InterCityBusAPIStationGroupOK handles this case with default header values.
 
-OK
+Success
 */
 type InterCityBusAPIStationGroupOK struct {
-	Payload []*models.ServiceDTOVersion2BusBusStationGroup
+	Payload []*models.PTXServiceDTOBusSpecificationV2BusStationGroup
 }
 
 func (o *InterCityBusAPIStationGroupOK) Error() string {
 	return fmt.Sprintf("[GET /v2/Bus/StationGroup/InterCity][%d] interCityBusApiStationGroupOK  %+v", 200, o.Payload)
 }
 
-func (o *InterCityBusAPIStationGroupOK) GetPayload() []*models.ServiceDTOVersion2BusBusStationGroup {
+func (o *InterCityBusAPIStationGroupOK) GetPayload() []*models.PTXServiceDTOBusSpecificationV2BusStationGroup {
 	return o.Payload
 }
 
@@ -82,20 +82,20 @@ func NewInterCityBusAPIStationGroupStatus299() *InterCityBusAPIStationGroupStatu
 加入參數'?health=true'即可查詢此API服務的健康狀態
 */
 type InterCityBusAPIStationGroupStatus299 struct {
-	Payload *models.ServiceDTOVersion3BaseDisplayHealth
+	Payload *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth
 }
 
 func (o *InterCityBusAPIStationGroupStatus299) Error() string {
 	return fmt.Sprintf("[GET /v2/Bus/StationGroup/InterCity][%d] interCityBusApiStationGroupStatus299  %+v", 299, o.Payload)
 }
 
-func (o *InterCityBusAPIStationGroupStatus299) GetPayload() *models.ServiceDTOVersion3BaseDisplayHealth {
+func (o *InterCityBusAPIStationGroupStatus299) GetPayload() *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth {
 	return o.Payload
 }
 
 func (o *InterCityBusAPIStationGroupStatus299) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.ServiceDTOVersion3BaseDisplayHealth)
+	o.Payload = new(models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

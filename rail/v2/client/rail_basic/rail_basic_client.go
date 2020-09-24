@@ -33,7 +33,7 @@ type ClientService interface {
 }
 
 /*
-  RailAPIOperator rail Api operator API
+  RailAPIOperator 取得軌道營運業者資料s
 */
 func (a *Client) RailAPIOperator(params *RailAPIOperatorParams) (*RailAPIOperatorOK, error) {
 	// TODO: Validate the params before sending
@@ -45,7 +45,7 @@ func (a *Client) RailAPIOperator(params *RailAPIOperatorParams) (*RailAPIOperato
 		ID:                 "RailApi_Operator",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/Operator",
-		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,

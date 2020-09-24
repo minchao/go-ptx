@@ -77,7 +77,7 @@ type CityBusAPISubRouteParams struct {
 	  查詢數量
 
 	*/
-	DollarCount *string
+	DollarCount *bool
 	/*DollarFilter
 	  過濾
 
@@ -158,13 +158,13 @@ func (o *CityBusAPISubRouteParams) SetHTTPClient(client *http.Client) {
 }
 
 // WithDollarCount adds the dollarCount to the city bus Api sub route params
-func (o *CityBusAPISubRouteParams) WithDollarCount(dollarCount *string) *CityBusAPISubRouteParams {
+func (o *CityBusAPISubRouteParams) WithDollarCount(dollarCount *bool) *CityBusAPISubRouteParams {
 	o.SetDollarCount(dollarCount)
 	return o
 }
 
 // SetDollarCount adds the dollarCount to the city bus Api sub route params
-func (o *CityBusAPISubRouteParams) SetDollarCount(dollarCount *string) {
+func (o *CityBusAPISubRouteParams) SetDollarCount(dollarCount *bool) {
 	o.DollarCount = dollarCount
 }
 
@@ -267,11 +267,11 @@ func (o *CityBusAPISubRouteParams) WriteToRequest(r runtime.ClientRequest, reg s
 	if o.DollarCount != nil {
 
 		// query param $count
-		var qrDollarCount string
+		var qrDollarCount bool
 		if o.DollarCount != nil {
 			qrDollarCount = *o.DollarCount
 		}
-		qDollarCount := qrDollarCount
+		qDollarCount := swag.FormatBool(qrDollarCount)
 		if qDollarCount != "" {
 			if err := r.SetQueryParam("$count", qDollarCount); err != nil {
 				return err

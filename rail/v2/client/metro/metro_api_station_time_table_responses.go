@@ -42,17 +42,17 @@ func NewMetroAPIStationTimeTableOK() *MetroAPIStationTimeTableOK {
 
 /*MetroAPIStationTimeTableOK handles this case with default header values.
 
-OK
+Success
 */
 type MetroAPIStationTimeTableOK struct {
-	Payload []*models.ServiceDTOVersion2RailMetroStationTimeTable
+	Payload []*models.PTXServiceDTORailSpecificationV2MetroStationTimeTable
 }
 
 func (o *MetroAPIStationTimeTableOK) Error() string {
 	return fmt.Sprintf("[GET /v2/Rail/Metro/StationTimeTable/{Operator}][%d] metroApiStationTimeTableOK  %+v", 200, o.Payload)
 }
 
-func (o *MetroAPIStationTimeTableOK) GetPayload() []*models.ServiceDTOVersion2RailMetroStationTimeTable {
+func (o *MetroAPIStationTimeTableOK) GetPayload() []*models.PTXServiceDTORailSpecificationV2MetroStationTimeTable {
 	return o.Payload
 }
 

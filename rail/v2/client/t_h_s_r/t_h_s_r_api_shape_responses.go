@@ -42,17 +42,17 @@ func NewTHSRAPIShapeOK() *THSRAPIShapeOK {
 
 /*THSRAPIShapeOK handles this case with default header values.
 
-OK
+Success
 */
 type THSRAPIShapeOK struct {
-	Payload []*models.ServiceDTOVersion2RailTHSRTHSRShape
+	Payload []*models.PTXServiceDTORailSpecificationV2THSRTHSRShape
 }
 
 func (o *THSRAPIShapeOK) Error() string {
 	return fmt.Sprintf("[GET /v2/Rail/THSR/Shape][%d] tHSRApiShapeOK  %+v", 200, o.Payload)
 }
 
-func (o *THSRAPIShapeOK) GetPayload() []*models.ServiceDTOVersion2RailTHSRTHSRShape {
+func (o *THSRAPIShapeOK) GetPayload() []*models.PTXServiceDTORailSpecificationV2THSRTHSRShape {
 	return o.Payload
 }
 

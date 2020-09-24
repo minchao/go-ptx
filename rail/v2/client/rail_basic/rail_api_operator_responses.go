@@ -42,17 +42,17 @@ func NewRailAPIOperatorOK() *RailAPIOperatorOK {
 
 /*RailAPIOperatorOK handles this case with default header values.
 
-OK
+Success
 */
 type RailAPIOperatorOK struct {
-	Payload []*models.ServiceDTOVersion2BaseOperator
+	Payload []*models.PTXServiceDTOSharedSpecificationV2BaseOperator
 }
 
 func (o *RailAPIOperatorOK) Error() string {
 	return fmt.Sprintf("[GET /v2/Rail/Operator][%d] railApiOperatorOK  %+v", 200, o.Payload)
 }
 
-func (o *RailAPIOperatorOK) GetPayload() []*models.ServiceDTOVersion2BaseOperator {
+func (o *RailAPIOperatorOK) GetPayload() []*models.PTXServiceDTOSharedSpecificationV2BaseOperator {
 	return o.Payload
 }
 

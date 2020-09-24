@@ -42,17 +42,17 @@ func NewMetroAPIODFareOK() *MetroAPIODFareOK {
 
 /*MetroAPIODFareOK handles this case with default header values.
 
-OK
+Success
 */
 type MetroAPIODFareOK struct {
-	Payload []*models.ServiceDTOVersion2RailMetroODFare
+	Payload []*models.PTXServiceDTORailSpecificationV2MetroODFare
 }
 
 func (o *MetroAPIODFareOK) Error() string {
 	return fmt.Sprintf("[GET /v2/Rail/Metro/ODFare/{Operator}][%d] metroApiODFareOK  %+v", 200, o.Payload)
 }
 
-func (o *MetroAPIODFareOK) GetPayload() []*models.ServiceDTOVersion2RailMetroODFare {
+func (o *MetroAPIODFareOK) GetPayload() []*models.PTXServiceDTORailSpecificationV2MetroODFare {
 	return o.Payload
 }
 
