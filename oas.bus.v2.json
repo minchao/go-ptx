@@ -2243,7 +2243,6 @@
               "Taipei"
             ],
             "x-enum": {
-              "Taichung": "臺中市",
               "Taoyuan": "桃園市",
               "TaitungCounty": "臺東縣",
               "LienchiangCounty": "連江縣",
@@ -2264,7 +2263,8 @@
               "HualienCounty": "花蓮縣",
               "ChiayiCounty": "嘉義縣",
               "Chiayi": "嘉義市",
-              "Tainan": "臺南市"
+              "Tainan": "臺南市",
+              "Taichung": "臺中市"
             }
           },
           {
@@ -3668,7 +3668,6 @@
               "KinmenCounty"
             ],
             "x-enum": {
-              "Kaohsiung": "高雄市",
               "YunlinCounty": "雲林縣",
               "TaitungCounty": "臺東縣",
               "PenghuCounty": "澎湖縣",
@@ -3689,7 +3688,8 @@
               "ChiayiCounty": "嘉義縣",
               "PingtungCounty": "屏東縣",
               "Hsinchu": "新竹市",
-              "ChanghuaCounty": "彰化縣"
+              "ChanghuaCounty": "彰化縣",
+              "Kaohsiung": "高雄市"
             }
           },
           {
@@ -3800,7 +3800,6 @@
               "KinmenCounty"
             ],
             "x-enum": {
-              "Kaohsiung": "高雄市",
               "YunlinCounty": "雲林縣",
               "TaitungCounty": "臺東縣",
               "PenghuCounty": "澎湖縣",
@@ -3821,7 +3820,8 @@
               "ChiayiCounty": "嘉義縣",
               "PingtungCounty": "屏東縣",
               "Hsinchu": "新竹市",
-              "ChanghuaCounty": "彰化縣"
+              "ChanghuaCounty": "彰化縣",
+              "Kaohsiung": "高雄市"
             }
           },
           {

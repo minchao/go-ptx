@@ -37,11 +37,11 @@ type ClientService interface {
 
 	THSRAPIAvailableSeatStatus1(params *THSRAPIAvailableSeatStatus1Params) (*THSRAPIAvailableSeatStatus1OK, error)
 
-	THSRAPIAvailableSeatStatus2(params *THSRAPIAvailableSeatStatus2Params) (*THSRAPIAvailableSeatStatus2OK, error)
+	THSRAPIAvailableSeatStatusOD(params *THSRAPIAvailableSeatStatusODParams) (*THSRAPIAvailableSeatStatusODOK, error)
 
-	THSRAPIAvailableSeatStatus3(params *THSRAPIAvailableSeatStatus3Params) (*THSRAPIAvailableSeatStatus3OK, error)
+	THSRAPIAvailableSeatStatusOD1(params *THSRAPIAvailableSeatStatusOD1Params) (*THSRAPIAvailableSeatStatusOD1OK, error)
 
-	THSRAPIAvailableSeatStatus4(params *THSRAPIAvailableSeatStatus4Params) (*THSRAPIAvailableSeatStatus4OK, error)
+	THSRAPIAvailableSeatStatusOD2(params *THSRAPIAvailableSeatStatusOD2Params) (*THSRAPIAvailableSeatStatusOD2OK, error)
 
 	THSRAPIDailyTimetable(params *THSRAPIDailyTimetableParams) (*THSRAPIDailyTimetableOK, error)
 
@@ -267,119 +267,119 @@ func (a *Client) THSRAPIAvailableSeatStatus1(params *THSRAPIAvailableSeatStatus1
 }
 
 /*
-  THSRAPIAvailableSeatStatus2 開發用測試版s 取得指定 日期 對號座即時剩餘位資料 加值型列車起迄段 o d角度
+  THSRAPIAvailableSeatStatusOD 開發用測試版s 取得指定 日期 對號座即時剩餘位資料 加值型列車起迄段 o d角度
 
   取得指定[日期]對號座即時剩餘位資料(加值型列車起迄段OD角度)
 - 當日(D)之更新頻率為每10分鐘
 - 當日後27日(D+1~D+27)之更新頻率為每日的10、16、22時
 - **(本服務尚在測試中,穩定度及更新頻率將持續優化)**
 */
-func (a *Client) THSRAPIAvailableSeatStatus2(params *THSRAPIAvailableSeatStatus2Params) (*THSRAPIAvailableSeatStatus2OK, error) {
+func (a *Client) THSRAPIAvailableSeatStatusOD(params *THSRAPIAvailableSeatStatusODParams) (*THSRAPIAvailableSeatStatusODOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewTHSRAPIAvailableSeatStatus2Params()
+		params = NewTHSRAPIAvailableSeatStatusODParams()
 	}
 
 	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "THSRApi_AvailableSeatStatus_2",
+		ID:                 "THSRApi_AvailableSeatStatus_OD",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/AvailableSeatStatus/Train/OD/TrainDate/{TrainDate}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &THSRAPIAvailableSeatStatus2Reader{formats: a.formats},
+		Reader:             &THSRAPIAvailableSeatStatusODReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
 	if err != nil {
 		return nil, err
 	}
-	success, ok := result.(*THSRAPIAvailableSeatStatus2OK)
+	success, ok := result.(*THSRAPIAvailableSeatStatusODOK)
 	if ok {
 		return success, nil
 	}
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for THSRApi_AvailableSeatStatus_2: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for THSRApi_AvailableSeatStatus_OD: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
 /*
-  THSRAPIAvailableSeatStatus3 開發用測試版s 取得指定 日期 起迄站 對號座即時剩餘位資料 加值型列車起迄段 o d角度
+  THSRAPIAvailableSeatStatusOD1 開發用測試版s 取得指定 日期 起迄站 對號座即時剩餘位資料 加值型列車起迄段 o d角度
 
   取得指定[日期], [起迄站]對號座即時剩餘位資料(加值型列車起迄段OD角度)
 - 當日(D)之更新頻率為每10分鐘
 - 當日後27日(D+1~D+27)之更新頻率為每日的10、16、22時
 - **(本服務尚在測試中,穩定度及更新頻率將持續優化)**
 */
-func (a *Client) THSRAPIAvailableSeatStatus3(params *THSRAPIAvailableSeatStatus3Params) (*THSRAPIAvailableSeatStatus3OK, error) {
+func (a *Client) THSRAPIAvailableSeatStatusOD1(params *THSRAPIAvailableSeatStatusOD1Params) (*THSRAPIAvailableSeatStatusOD1OK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewTHSRAPIAvailableSeatStatus3Params()
+		params = NewTHSRAPIAvailableSeatStatusOD1Params()
 	}
 
 	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "THSRApi_AvailableSeatStatus_3",
+		ID:                 "THSRApi_AvailableSeatStatus_OD_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/AvailableSeatStatus/Train/OD/{OriginStationID}/to/{DestinationStationID}/TrainDate/{TrainDate}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &THSRAPIAvailableSeatStatus3Reader{formats: a.formats},
+		Reader:             &THSRAPIAvailableSeatStatusOD1Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
 	if err != nil {
 		return nil, err
 	}
-	success, ok := result.(*THSRAPIAvailableSeatStatus3OK)
+	success, ok := result.(*THSRAPIAvailableSeatStatusOD1OK)
 	if ok {
 		return success, nil
 	}
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for THSRApi_AvailableSeatStatus_3: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for THSRApi_AvailableSeatStatus_OD_1: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
 /*
-  THSRAPIAvailableSeatStatus4 開發用測試版s 取得指定 日期 車次 起迄站 對號座即時剩餘位資料 加值型列車起迄段 o d角度
+  THSRAPIAvailableSeatStatusOD2 開發用測試版s 取得指定 日期 車次 起迄站 對號座即時剩餘位資料 加值型列車起迄段 o d角度
 
   取得指定[日期], [起迄站]對號座即時剩餘位資料(加值型列車起迄段OD角度)
 - 當日(D)之更新頻率為每10分鐘
 - 當日後27日(D+1~D+27)之更新頻率為每日的10、16、22時
 - **(本服務尚在測試中,穩定度及更新頻率將持續優化)**
 */
-func (a *Client) THSRAPIAvailableSeatStatus4(params *THSRAPIAvailableSeatStatus4Params) (*THSRAPIAvailableSeatStatus4OK, error) {
+func (a *Client) THSRAPIAvailableSeatStatusOD2(params *THSRAPIAvailableSeatStatusOD2Params) (*THSRAPIAvailableSeatStatusOD2OK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewTHSRAPIAvailableSeatStatus4Params()
+		params = NewTHSRAPIAvailableSeatStatusOD2Params()
 	}
 
 	result, err := a.transport.Submit(&runtime.ClientOperation{
-		ID:                 "THSRApi_AvailableSeatStatus_4",
+		ID:                 "THSRApi_AvailableSeatStatus_OD_2",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/AvailableSeatStatus/Train/OD/{OriginStationID}/to/{DestinationStationID}/TrainDate/{TrainDate}/TrainNo/{TrainNo}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &THSRAPIAvailableSeatStatus4Reader{formats: a.formats},
+		Reader:             &THSRAPIAvailableSeatStatusOD2Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	})
 	if err != nil {
 		return nil, err
 	}
-	success, ok := result.(*THSRAPIAvailableSeatStatus4OK)
+	success, ok := result.(*THSRAPIAvailableSeatStatusOD2OK)
 	if ok {
 		return success, nil
 	}
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for THSRApi_AvailableSeatStatus_4: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for THSRApi_AvailableSeatStatus_OD_2: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
