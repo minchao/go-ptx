@@ -6,6 +6,18 @@
 
 ## [Unreleased]
 
+## [0.7.0] - 2020-09-30
+
+### Added
+- 高雄市公共自行車服務。
+- 公車服務更新。
+- 高鐵對號座即時剩餘位資料服務(加值型列車起迄段OD角度)上架。
+
+### Changed
+- 北捷V2版車站基本資料服務更新。
+- 軌道、自行車及觀光服務更新。
+- 高鐵V2每日時刻表資料結構已調整。
+
 ## [0.6.0] - 2020-08-27
 
 ### Added
@@ -88,7 +100,8 @@
 ### Added
 - 首次發行，提供基本、航空、公車、軌道、自行車與觀光等 PTX API 用戶端程式庫。
 
-[Unreleased]: https://github.com/minchao/go-ptx/compare/v0.6.0...HEAD
+[Unreleased]: https://github.com/minchao/go-ptx/compare/v0.7.0...HEAD
+[0.7.0]: https://github.com/minchao/go-ptx/compare/v0.6.0...v0.7.0
 [0.6.0]: https://github.com/minchao/go-ptx/compare/v0.5.0...v0.6.0
 [0.5.0]: https://github.com/minchao/go-ptx/compare/v0.4.0...v0.5.0
 [0.4.0]: https://github.com/minchao/go-ptx/compare/v0.3.0...v0.4.0
