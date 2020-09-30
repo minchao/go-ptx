@@ -106,10 +106,10 @@
               "TRTCMG"
             ],
             "x-enum": {
+              "TRTC": "臺北捷運",
               "TRTCMG": "貓空纜車",
               "KRTC": "高雄捷運",
-              "TYMC": "桃園捷運",
-              "TRTC": "臺北捷運"
+              "TYMC": "桃園捷運"
             }
           },
           {
@@ -197,12 +197,12 @@
               "TRTCMG"
             ],
             "x-enum": {
+              "TYMC": "桃園捷運",
+              "KLRT": "高雄輕軌",
               "TRTCMG": "貓空纜車",
               "TRTC": "臺北捷運",
               "NTDLRT": "淡海輕軌",
-              "KRTC": "高雄捷運",
-              "TYMC": "桃園捷運",
-              "KLRT": "高雄輕軌"
+              "KRTC": "高雄捷運"
             }
           },
           {
@@ -290,12 +290,12 @@
               "TRTCMG"
             ],
             "x-enum": {
-              "TRTC": "臺北捷運",
               "KLRT": "高雄輕軌",
+              "KRTC": "高雄捷運",
+              "TRTC": "臺北捷運",
               "NTDLRT": "淡海輕軌",
               "TYMC": "桃園捷運",
-              "TRTCMG": "貓空纜車",
-              "KRTC": "高雄捷運"
+              "TRTCMG": "貓空纜車"
             }
           },
           {
@@ -389,9 +389,9 @@
               "TRTCMG"
             ],
             "x-enum": {
+              "KLRT": "高雄輕軌",
               "TRTC": "臺北捷運",
               "KRTC": "高雄捷運",
-              "KLRT": "高雄輕軌",
               "TYMC": "桃園捷運",
               "NTDLRT": "淡海輕軌",
               "TRTCMG": "貓空纜車"
@@ -563,8 +563,8 @@
               "TYMC"
             ],
             "x-enum": {
-              "TRTC": "臺北捷運",
               "KRTC": "高雄捷運",
+              "TRTC": "臺北捷運",
               "TYMC": "桃園捷運"
             }
           },
@@ -651,9 +651,9 @@
               "TRTCMG"
             ],
             "x-enum": {
+              "TRTC": "臺北捷運",
               "KLRT": "高雄輕軌",
               "TYMC": "桃園捷運",
-              "TRTC": "臺北捷運",
               "KRTC": "高雄捷運",
               "TRTCMG": "貓空纜車"
             }
@@ -747,10 +747,10 @@
               "NTDLRT"
             ],
             "x-enum": {
+              "KRTC": "高雄捷運",
               "NTDLRT": "淡海輕軌",
               "TRTC": "臺北捷運",
-              "TYMC": "桃園捷運",
-              "KRTC": "高雄捷運"
+              "TYMC": "桃園捷運"
             }
           },
           {
@@ -836,10 +836,10 @@
               "NTDLRT"
             ],
             "x-enum": {
-              "KRTC": "高雄捷運",
-              "TYMC": "桃園捷運",
               "TRTC": "臺北捷運",
-              "NTDLRT": "淡海輕軌"
+              "NTDLRT": "淡海輕軌",
+              "KRTC": "高雄捷運",
+              "TYMC": "桃園捷運"
             }
           },
           {
@@ -926,9 +926,9 @@
             ],
             "x-enum": {
               "KRTC": "高雄捷運",
+              "KLRT": "高雄輕軌",
               "TYMC": "桃園捷運",
-              "TRTC": "臺北捷運",
-              "KLRT": "高雄輕軌"
+              "TRTC": "臺北捷運"
             }
           },
           {
@@ -1100,10 +1100,10 @@
               "KLRT"
             ],
             "x-enum": {
-              "TRTC": "臺北捷運",
-              "KLRT": "高雄輕軌",
               "KRTC": "高雄捷運",
-              "TYMC": "桃園捷運"
+              "TYMC": "桃園捷運",
+              "TRTC": "臺北捷運",
+              "KLRT": "高雄輕軌"
             }
           },
           {
@@ -1192,11 +1192,11 @@
             ],
             "x-enum": {
               "TYMC": "桃園捷運",
-              "TRTCMG": "貓空纜車",
-              "KRTC": "高雄捷運",
-              "NTDLRT": "淡海輕軌",
               "KLRT": "高雄輕軌",
-              "TRTC": "臺北捷運"
+              "KRTC": "高雄捷運",
+              "TRTC": "臺北捷運",
+              "TRTCMG": "貓空纜車",
+              "NTDLRT": "淡海輕軌"
             }
           },
           {
@@ -1452,8 +1452,8 @@
             "enum": [
               "TRTC",
               "KRTC",
-              "NTDLRT",
-              "TYMC"
+              "TYMC",
+              "NTDLRT"
             ],
             "x-enum": {
               "KRTC": "高雄捷運",
@@ -3482,7 +3482,7 @@
         ],
         "summary": "**(開發用測試版)** 取得指定[日期]對號座即時剩餘位資料(加值型列車起迄段OD角度)",
         "description": "取得指定[日期]對號座即時剩餘位資料(加值型列車起迄段OD角度)\r\n- 當日(D)之更新頻率為每10分鐘\r\n- 當日後27日(D+1~D+27)之更新頻率為每日的10、16、22時\r\n- **(本服務尚在測試中,穩定度及更新頻率將持續優化)**",
-        "operationId": "THSRApi_AvailableSeatStatus_2",
+        "operationId": "THSRApi_AvailableSeatStatus_OD",
         "produces": [
           "application/json",
           "application/xml"
@@ -3565,7 +3565,7 @@
         ],
         "summary": "**(開發用測試版)** 取得指定[日期], [起迄站]對號座即時剩餘位資料(加值型列車起迄段OD角度)",
         "description": "取得指定[日期], [起迄站]對號座即時剩餘位資料(加值型列車起迄段OD角度)\r\n- 當日(D)之更新頻率為每10分鐘\r\n- 當日後27日(D+1~D+27)之更新頻率為每日的10、16、22時\r\n- **(本服務尚在測試中,穩定度及更新頻率將持續優化)**",
-        "operationId": "THSRApi_AvailableSeatStatus_3",
+        "operationId": "THSRApi_AvailableSeatStatus_OD_1",
         "produces": [
           "application/json",
           "application/xml"
@@ -3662,7 +3662,7 @@
         ],
         "summary": "**(開發用測試版)** 取得指定[日期], [車次], [起迄站]對號座即時剩餘位資料(加值型列車起迄段OD角度)",
         "description": "取得指定[日期], [起迄站]對號座即時剩餘位資料(加值型列車起迄段OD角度)\r\n- 當日(D)之更新頻率為每10分鐘\r\n- 當日後27日(D+1~D+27)之更新頻率為每日的10、16、22時\r\n- **(本服務尚在測試中,穩定度及更新頻率將持續優化)**",
-        "operationId": "THSRApi_AvailableSeatStatus_4",
+        "operationId": "THSRApi_AvailableSeatStatus_OD_2",
         "produces": [
           "application/json",
           "application/xml"
