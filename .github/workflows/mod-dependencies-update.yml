@@ -1,0 +1,25 @@
+# ref https://github.com/peter-evans/create-pull-request
+name: Go mod dependencies update
+on:
+  schedule:
+    - cron: 0 0 * * *
+  workflow_dispatch: { }
+jobs:
+  upgrade:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: actions/setup-go@v2
+        with:
+          go-version: '1.14'
+      - name: Update mod dependencies
+        run: go get -u -v ./...
+      - run: make test
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          token: ${{ secrets.AUTOMATION_GITHUB_TOKEN}}
+          commit-message: "chore: mod dependencies update"
+          branch: auto/mod-update
+          title: "chore: mod dependencies update"
+          body: This PR executes update to the latest version
