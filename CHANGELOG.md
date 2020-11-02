@@ -6,6 +6,12 @@
 
 ## [Unreleased]
 
+## [0.8.0] - 2020-11-02
+
+### Changed
+- 公車資料服務更新。
+- 基礎資料及自行車服務更新。
+
 ## [0.7.0] - 2020-09-30
 
 ### Added
@@ -100,7 +106,8 @@
 ### Added
 - 首次發行，提供基本、航空、公車、軌道、自行車與觀光等 PTX API 用戶端程式庫。
 
-[Unreleased]: https://github.com/minchao/go-ptx/compare/v0.7.0...HEAD
+[Unreleased]: https://github.com/minchao/go-ptx/compare/v0.8.0...HEAD
+[0.7.0]: https://github.com/minchao/go-ptx/compare/v0.7.0...v0.8.0
 [0.7.0]: https://github.com/minchao/go-ptx/compare/v0.6.0...v0.7.0
 [0.6.0]: https://github.com/minchao/go-ptx/compare/v0.5.0...v0.6.0
 [0.5.0]: https://github.com/minchao/go-ptx/compare/v0.4.0...v0.5.0
