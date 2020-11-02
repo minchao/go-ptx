@@ -39,7 +39,7 @@ type ClientService interface {
 }
 
 /*
-  BasicAPIAuthority basic Api authority API
+  BasicAPIAuthority 取得業管機關資料s
 */
 func (a *Client) BasicAPIAuthority(params *BasicAPIAuthorityParams) (*BasicAPIAuthorityOK, error) {
 	// TODO: Validate the params before sending
@@ -51,7 +51,7 @@ func (a *Client) BasicAPIAuthority(params *BasicAPIAuthorityParams) (*BasicAPIAu
 		ID:                 "BasicApi_Authority",
 		Method:             "GET",
 		PathPattern:        "/v2/Basic/Authority",
-		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -73,7 +73,7 @@ func (a *Client) BasicAPIAuthority(params *BasicAPIAuthorityParams) (*BasicAPIAu
 }
 
 /*
-  BasicAPIOperator basic Api operator API
+  BasicAPIOperator 取得營運業者資料s
 */
 func (a *Client) BasicAPIOperator(params *BasicAPIOperatorParams) (*BasicAPIOperatorOK, error) {
 	// TODO: Validate the params before sending
@@ -85,7 +85,7 @@ func (a *Client) BasicAPIOperator(params *BasicAPIOperatorParams) (*BasicAPIOper
 		ID:                 "BasicApi_Operator",
 		Method:             "GET",
 		PathPattern:        "/v2/Basic/Operator",
-		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -107,7 +107,7 @@ func (a *Client) BasicAPIOperator(params *BasicAPIOperatorParams) (*BasicAPIOper
 }
 
 /*
-  BasicAPIProvider basic Api provider API
+  BasicAPIProvider 取得資料提供平台資料s
 */
 func (a *Client) BasicAPIProvider(params *BasicAPIProviderParams) (*BasicAPIProviderOK, error) {
 	// TODO: Validate the params before sending
@@ -119,7 +119,7 @@ func (a *Client) BasicAPIProvider(params *BasicAPIProviderParams) (*BasicAPIProv
 		ID:                 "BasicApi_Provider",
 		Method:             "GET",
 		PathPattern:        "/v2/Basic/Provider",
-		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
@@ -141,7 +141,7 @@ func (a *Client) BasicAPIProvider(params *BasicAPIProviderParams) (*BasicAPIProv
 }
 
 /*
-  WebSiteAPINews web site Api news API
+  WebSiteAPINews 取得s p t x官網最新消息資料
 */
 func (a *Client) WebSiteAPINews(params *WebSiteAPINewsParams) (*WebSiteAPINewsOK, error) {
 	// TODO: Validate the params before sending
@@ -153,7 +153,7 @@ func (a *Client) WebSiteAPINews(params *WebSiteAPINewsParams) (*WebSiteAPINewsOK
 		ID:                 "WebSiteApi_News",
 		Method:             "GET",
 		PathPattern:        "/v2/PTX/Web/News",
-		ProducesMediaTypes: []string{"application/json", "text/json"},
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,

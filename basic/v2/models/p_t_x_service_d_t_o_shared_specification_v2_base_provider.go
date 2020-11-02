@@ -12,20 +12,26 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// ServiceDTOVersion2BaseProvider Provider
+// PTXServiceDTOSharedSpecificationV2BaseProvider Provider
 //
 // 資料提供平台資料型別
 //
-// swagger:model Service.DTO.Version2.Base.Provider
-type ServiceDTOVersion2BaseProvider struct {
+// swagger:model PTX.Service.DTO.Shared.Specification.V2.Base.Provider
+type PTXServiceDTOSharedSpecificationV2BaseProvider struct {
 
+	// String
+	//
 	// 資料提供平台簡碼
 	// Required: true
 	ProviderCode *string `json:"ProviderCode"`
 
+	// String
+	//
 	// 資料提供平台電子信箱
 	ProviderEmail string `json:"ProviderEmail,omitempty"`
 
+	// String
+	//
 	// 資料提供平台代碼
 	// Required: true
 	ProviderID *string `json:"ProviderID"`
@@ -34,11 +40,17 @@ type ServiceDTOVersion2BaseProvider struct {
 	//
 	// 資料提供平台名稱
 	// Required: true
-	ProviderName *ServiceDTOVersion2BaseNameType `json:"ProviderName"`
+	ProviderName struct {
+		PTXServiceDTOSharedSpecificationV2BaseNameType
+	} `json:"ProviderName"`
 
+	// String
+	//
 	// 資料提供平台連絡電話
 	ProviderPhone string `json:"ProviderPhone,omitempty"`
 
+	// String
+	//
 	// 資料提供平台網址鏈結
 	ProviderURL string `json:"ProviderUrl,omitempty"`
 
@@ -49,8 +61,8 @@ type ServiceDTOVersion2BaseProvider struct {
 	UpdateTime *string `json:"UpdateTime"`
 }
 
-// Validate validates this service d t o version2 base provider
-func (m *ServiceDTOVersion2BaseProvider) Validate(formats strfmt.Registry) error {
+// Validate validates this p t x service d t o shared specification v2 base provider
+func (m *PTXServiceDTOSharedSpecificationV2BaseProvider) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateProviderCode(formats); err != nil {
@@ -75,7 +87,7 @@ func (m *ServiceDTOVersion2BaseProvider) Validate(formats strfmt.Registry) error
 	return nil
 }
 
-func (m *ServiceDTOVersion2BaseProvider) validateProviderCode(formats strfmt.Registry) error {
+func (m *PTXServiceDTOSharedSpecificationV2BaseProvider) validateProviderCode(formats strfmt.Registry) error {
 
 	if err := validate.Required("ProviderCode", "body", m.ProviderCode); err != nil {
 		return err
@@ -84,7 +96,7 @@ func (m *ServiceDTOVersion2BaseProvider) validateProviderCode(formats strfmt.Reg
 	return nil
 }
 
-func (m *ServiceDTOVersion2BaseProvider) validateProviderID(formats strfmt.Registry) error {
+func (m *PTXServiceDTOSharedSpecificationV2BaseProvider) validateProviderID(formats strfmt.Registry) error {
 
 	if err := validate.Required("ProviderID", "body", m.ProviderID); err != nil {
 		return err
@@ -93,25 +105,12 @@ func (m *ServiceDTOVersion2BaseProvider) validateProviderID(formats strfmt.Regis
 	return nil
 }
 
-func (m *ServiceDTOVersion2BaseProvider) validateProviderName(formats strfmt.Registry) error {
-
-	if err := validate.Required("ProviderName", "body", m.ProviderName); err != nil {
-		return err
-	}
-
-	if m.ProviderName != nil {
-		if err := m.ProviderName.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("ProviderName")
-			}
-			return err
-		}
-	}
+func (m *PTXServiceDTOSharedSpecificationV2BaseProvider) validateProviderName(formats strfmt.Registry) error {
 
 	return nil
 }
 
-func (m *ServiceDTOVersion2BaseProvider) validateUpdateTime(formats strfmt.Registry) error {
+func (m *PTXServiceDTOSharedSpecificationV2BaseProvider) validateUpdateTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
 		return err
@@ -121,7 +120,7 @@ func (m *ServiceDTOVersion2BaseProvider) validateUpdateTime(formats strfmt.Regis
 }
 
 // MarshalBinary interface implementation
-func (m *ServiceDTOVersion2BaseProvider) MarshalBinary() ([]byte, error) {
+func (m *PTXServiceDTOSharedSpecificationV2BaseProvider) MarshalBinary() ([]byte, error) {
 	if m == nil {
 		return nil, nil
 	}
@@ -129,8 +128,8 @@ func (m *ServiceDTOVersion2BaseProvider) MarshalBinary() ([]byte, error) {
 }
 
 // UnmarshalBinary interface implementation
-func (m *ServiceDTOVersion2BaseProvider) UnmarshalBinary(b []byte) error {
-	var res ServiceDTOVersion2BaseProvider
+func (m *PTXServiceDTOSharedSpecificationV2BaseProvider) UnmarshalBinary(b []byte) error {
+	var res PTXServiceDTOSharedSpecificationV2BaseProvider
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

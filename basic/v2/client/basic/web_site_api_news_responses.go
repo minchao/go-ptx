@@ -42,23 +42,23 @@ func NewWebSiteAPINewsOK() *WebSiteAPINewsOK {
 
 /*WebSiteAPINewsOK handles this case with default header values.
 
-OK
+Success
 */
 type WebSiteAPINewsOK struct {
-	Payload *models.MOTCAPIBasicModelsVersion2BasicWrapperServiceDTOVersion2BaseNews
+	Payload *models.PTXAPIBasicModelV2BasicWrapperPTXServiceDTOSharedSpecificationV2BaseNews
 }
 
 func (o *WebSiteAPINewsOK) Error() string {
 	return fmt.Sprintf("[GET /v2/PTX/Web/News][%d] webSiteApiNewsOK  %+v", 200, o.Payload)
 }
 
-func (o *WebSiteAPINewsOK) GetPayload() *models.MOTCAPIBasicModelsVersion2BasicWrapperServiceDTOVersion2BaseNews {
+func (o *WebSiteAPINewsOK) GetPayload() *models.PTXAPIBasicModelV2BasicWrapperPTXServiceDTOSharedSpecificationV2BaseNews {
 	return o.Payload
 }
 
 func (o *WebSiteAPINewsOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.MOTCAPIBasicModelsVersion2BasicWrapperServiceDTOVersion2BaseNews)
+	o.Payload = new(models.PTXAPIBasicModelV2BasicWrapperPTXServiceDTOSharedSpecificationV2BaseNews)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

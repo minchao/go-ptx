@@ -42,17 +42,17 @@ func NewBasicAPIAuthorityOK() *BasicAPIAuthorityOK {
 
 /*BasicAPIAuthorityOK handles this case with default header values.
 
-OK
+Success
 */
 type BasicAPIAuthorityOK struct {
-	Payload []*models.ServiceDTOVersion2BaseAuthority
+	Payload []*models.PTXServiceDTOSharedSpecificationV2BaseAuthority
 }
 
 func (o *BasicAPIAuthorityOK) Error() string {
 	return fmt.Sprintf("[GET /v2/Basic/Authority][%d] basicApiAuthorityOK  %+v", 200, o.Payload)
 }
 
-func (o *BasicAPIAuthorityOK) GetPayload() []*models.ServiceDTOVersion2BaseAuthority {
+func (o *BasicAPIAuthorityOK) GetPayload() []*models.PTXServiceDTOSharedSpecificationV2BaseAuthority {
 	return o.Payload
 }
 

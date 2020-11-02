@@ -42,17 +42,17 @@ func NewBasicAPIOperatorOK() *BasicAPIOperatorOK {
 
 /*BasicAPIOperatorOK handles this case with default header values.
 
-OK
+Success
 */
 type BasicAPIOperatorOK struct {
-	Payload []*models.ServiceDTOVersion2BaseOperator
+	Payload []*models.PTXServiceDTOSharedSpecificationV2BaseOperator
 }
 
 func (o *BasicAPIOperatorOK) Error() string {
 	return fmt.Sprintf("[GET /v2/Basic/Operator][%d] basicApiOperatorOK  %+v", 200, o.Payload)
 }
 
-func (o *BasicAPIOperatorOK) GetPayload() []*models.ServiceDTOVersion2BaseOperator {
+func (o *BasicAPIOperatorOK) GetPayload() []*models.PTXServiceDTOSharedSpecificationV2BaseOperator {
 	return o.Payload
 }
 

@@ -14,18 +14,22 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// MOTCAPIBasicModelsVersion2BasicWrapperServiceDTOVersion2BaseNews NewsList
+// PTXAPIBasicModelV2BasicWrapperPTXServiceDTOSharedSpecificationV2BaseNews NewsList
 //
-// swagger:model MOTC.API.Basic.Models.Version2.BasicWrapper[Service.DTO.Version2.Base.News]
-type MOTCAPIBasicModelsVersion2BasicWrapperServiceDTOVersion2BaseNews struct {
+// swagger:model PTX.API.Basic.Model.V2.BasicWrapper[PTX.Service.DTO.Shared.Specification.V2.Base.News]
+type PTXAPIBasicModelV2BasicWrapperPTXServiceDTOSharedSpecificationV2BaseNews struct {
 
 	// count
 	Count int64 `json:"Count,omitempty"`
 
+	// Array
+	//
 	// 資料(陣列)
 	// Required: true
-	Newses []*ServiceDTOVersion2BaseNews `json:"Newses"`
+	Newses []*PTXServiceDTOSharedSpecificationV2BaseNews `json:"Newses"`
 
+	// Int32
+	//
 	// 資料更新週期(秒)
 	// Required: true
 	UpdateInterval *int32 `json:"UpdateInterval"`
@@ -37,8 +41,8 @@ type MOTCAPIBasicModelsVersion2BasicWrapperServiceDTOVersion2BaseNews struct {
 	UpdateTime *string `json:"UpdateTime"`
 }
 
-// Validate validates this m o t c API basic models version2 basic wrapper service d t o version2 base news
-func (m *MOTCAPIBasicModelsVersion2BasicWrapperServiceDTOVersion2BaseNews) Validate(formats strfmt.Registry) error {
+// Validate validates this p t x API basic model v2 basic wrapper p t x service d t o shared specification v2 base news
+func (m *PTXAPIBasicModelV2BasicWrapperPTXServiceDTOSharedSpecificationV2BaseNews) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateNewses(formats); err != nil {
@@ -59,7 +63,7 @@ func (m *MOTCAPIBasicModelsVersion2BasicWrapperServiceDTOVersion2BaseNews) Valid
 	return nil
 }
 
-func (m *MOTCAPIBasicModelsVersion2BasicWrapperServiceDTOVersion2BaseNews) validateNewses(formats strfmt.Registry) error {
+func (m *PTXAPIBasicModelV2BasicWrapperPTXServiceDTOSharedSpecificationV2BaseNews) validateNewses(formats strfmt.Registry) error {
 
 	if err := validate.Required("Newses", "body", m.Newses); err != nil {
 		return err
@@ -84,7 +88,7 @@ func (m *MOTCAPIBasicModelsVersion2BasicWrapperServiceDTOVersion2BaseNews) valid
 	return nil
 }
 
-func (m *MOTCAPIBasicModelsVersion2BasicWrapperServiceDTOVersion2BaseNews) validateUpdateInterval(formats strfmt.Registry) error {
+func (m *PTXAPIBasicModelV2BasicWrapperPTXServiceDTOSharedSpecificationV2BaseNews) validateUpdateInterval(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateInterval", "body", m.UpdateInterval); err != nil {
 		return err
@@ -93,7 +97,7 @@ func (m *MOTCAPIBasicModelsVersion2BasicWrapperServiceDTOVersion2BaseNews) valid
 	return nil
 }
 
-func (m *MOTCAPIBasicModelsVersion2BasicWrapperServiceDTOVersion2BaseNews) validateUpdateTime(formats strfmt.Registry) error {
+func (m *PTXAPIBasicModelV2BasicWrapperPTXServiceDTOSharedSpecificationV2BaseNews) validateUpdateTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
 		return err
@@ -103,7 +107,7 @@ func (m *MOTCAPIBasicModelsVersion2BasicWrapperServiceDTOVersion2BaseNews) valid
 }
 
 // MarshalBinary interface implementation
-func (m *MOTCAPIBasicModelsVersion2BasicWrapperServiceDTOVersion2BaseNews) MarshalBinary() ([]byte, error) {
+func (m *PTXAPIBasicModelV2BasicWrapperPTXServiceDTOSharedSpecificationV2BaseNews) MarshalBinary() ([]byte, error) {
 	if m == nil {
 		return nil, nil
 	}
@@ -111,8 +115,8 @@ func (m *MOTCAPIBasicModelsVersion2BasicWrapperServiceDTOVersion2BaseNews) Marsh
 }
 
 // UnmarshalBinary interface implementation
-func (m *MOTCAPIBasicModelsVersion2BasicWrapperServiceDTOVersion2BaseNews) UnmarshalBinary(b []byte) error {
-	var res MOTCAPIBasicModelsVersion2BasicWrapperServiceDTOVersion2BaseNews
+func (m *PTXAPIBasicModelV2BasicWrapperPTXServiceDTOSharedSpecificationV2BaseNews) UnmarshalBinary(b []byte) error {
+	var res PTXAPIBasicModelV2BasicWrapperPTXServiceDTOSharedSpecificationV2BaseNews
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

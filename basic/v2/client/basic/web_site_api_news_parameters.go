@@ -77,7 +77,7 @@ type WebSiteAPINewsParams struct {
 	  查詢數量
 
 	*/
-	DollarCount *string
+	DollarCount *bool
 	/*DollarFilter
 	  過濾
 
@@ -148,13 +148,13 @@ func (o *WebSiteAPINewsParams) SetHTTPClient(client *http.Client) {
 }
 
 // WithDollarCount adds the dollarCount to the web site Api news params
-func (o *WebSiteAPINewsParams) WithDollarCount(dollarCount *string) *WebSiteAPINewsParams {
+func (o *WebSiteAPINewsParams) WithDollarCount(dollarCount *bool) *WebSiteAPINewsParams {
 	o.SetDollarCount(dollarCount)
 	return o
 }
 
 // SetDollarCount adds the dollarCount to the web site Api news params
-func (o *WebSiteAPINewsParams) SetDollarCount(dollarCount *string) {
+func (o *WebSiteAPINewsParams) SetDollarCount(dollarCount *bool) {
 	o.DollarCount = dollarCount
 }
 
@@ -235,11 +235,11 @@ func (o *WebSiteAPINewsParams) WriteToRequest(r runtime.ClientRequest, reg strfm
 	if o.DollarCount != nil {
 
 		// query param $count
-		var qrDollarCount string
+		var qrDollarCount bool
 		if o.DollarCount != nil {
 			qrDollarCount = *o.DollarCount
 		}
-		qDollarCount := qrDollarCount
+		qDollarCount := swag.FormatBool(qrDollarCount)
 		if qDollarCount != "" {
 			if err := r.SetQueryParam("$count", qDollarCount); err != nil {
 				return err

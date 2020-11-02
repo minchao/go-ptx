@@ -12,24 +12,32 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// ServiceDTOVersion2BaseOperator Operator
+// PTXServiceDTOSharedSpecificationV2BaseOperator Operator
 //
 // 營運業者資料型別
 //
-// swagger:model Service.DTO.Version2.Base.Operator
-type ServiceDTOVersion2BaseOperator struct {
+// swagger:model PTX.Service.DTO.Shared.Specification.V2.Base.Operator
+type PTXServiceDTOSharedSpecificationV2BaseOperator struct {
 
-	// 營運業者業管機關簡碼(對於公路客運/國道客運而言為THB)
+	// String
+	//
+	// 營運業者業管機關簡碼(對於於公路客運/國道客運而言為THB)
 	// Required: true
 	AuthorityCode *string `json:"AuthorityCode"`
 
+	// String
+	//
 	// 營運業者簡碼
 	// Required: true
 	OperatorCode *string `json:"OperatorCode"`
 
+	// String
+	//
 	// 營運業者電子信箱
 	OperatorEmail string `json:"OperatorEmail,omitempty"`
 
+	// String
+	//
 	// 營運業者代碼
 	// Required: true
 	OperatorID *string `json:"OperatorID"`
@@ -38,28 +46,44 @@ type ServiceDTOVersion2BaseOperator struct {
 	//
 	// 營運業者名稱
 	// Required: true
-	OperatorName *ServiceDTOVersion2BaseNameType `json:"OperatorName"`
+	OperatorName struct {
+		PTXServiceDTOSharedSpecificationV2BaseNameType
+	} `json:"OperatorName"`
 
+	// String
+	//
 	// 營運業者編號[交通部票證資料系統定義]
 	// Required: true
 	OperatorNo *string `json:"OperatorNo"`
 
+	// String
+	//
 	// 營運業者連絡電話
 	OperatorPhone string `json:"OperatorPhone,omitempty"`
 
+	// String
+	//
 	// 營運業者網址鏈結
 	OperatorURL string `json:"OperatorUrl,omitempty"`
 
+	// String
+	//
 	// 資料提供平台代碼
 	// Required: true
 	ProviderID *string `json:"ProviderID"`
 
+	// String
+	//
 	// 訂票連絡電話
 	ReservationPhone string `json:"ReservationPhone,omitempty"`
 
+	// String
+	//
 	// 訂票網址鏈結
 	ReservationURL string `json:"ReservationUrl,omitempty"`
 
+	// String
+	//
 	// 營運業者所屬業管子機關簡碼(對於公路客運/國道客運路線而言為區監理所如THB-VO10-1..等)
 	SubAuthorityCode string `json:"SubAuthorityCode,omitempty"`
 
@@ -70,8 +94,8 @@ type ServiceDTOVersion2BaseOperator struct {
 	UpdateTime *string `json:"UpdateTime"`
 }
 
-// Validate validates this service d t o version2 base operator
-func (m *ServiceDTOVersion2BaseOperator) Validate(formats strfmt.Registry) error {
+// Validate validates this p t x service d t o shared specification v2 base operator
+func (m *PTXServiceDTOSharedSpecificationV2BaseOperator) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateAuthorityCode(formats); err != nil {
@@ -108,7 +132,7 @@ func (m *ServiceDTOVersion2BaseOperator) Validate(formats strfmt.Registry) error
 	return nil
 }
 
-func (m *ServiceDTOVersion2BaseOperator) validateAuthorityCode(formats strfmt.Registry) error {
+func (m *PTXServiceDTOSharedSpecificationV2BaseOperator) validateAuthorityCode(formats strfmt.Registry) error {
 
 	if err := validate.Required("AuthorityCode", "body", m.AuthorityCode); err != nil {
 		return err
@@ -117,7 +141,7 @@ func (m *ServiceDTOVersion2BaseOperator) validateAuthorityCode(formats strfmt.Re
 	return nil
 }
 
-func (m *ServiceDTOVersion2BaseOperator) validateOperatorCode(formats strfmt.Registry) error {
+func (m *PTXServiceDTOSharedSpecificationV2BaseOperator) validateOperatorCode(formats strfmt.Registry) error {
 
 	if err := validate.Required("OperatorCode", "body", m.OperatorCode); err != nil {
 		return err
@@ -126,7 +150,7 @@ func (m *ServiceDTOVersion2BaseOperator) validateOperatorCode(formats strfmt.Reg
 	return nil
 }
 
-func (m *ServiceDTOVersion2BaseOperator) validateOperatorID(formats strfmt.Registry) error {
+func (m *PTXServiceDTOSharedSpecificationV2BaseOperator) validateOperatorID(formats strfmt.Registry) error {
 
 	if err := validate.Required("OperatorID", "body", m.OperatorID); err != nil {
 		return err
@@ -135,25 +159,12 @@ func (m *ServiceDTOVersion2BaseOperator) validateOperatorID(formats strfmt.Regis
 	return nil
 }
 
-func (m *ServiceDTOVersion2BaseOperator) validateOperatorName(formats strfmt.Registry) error {
-
-	if err := validate.Required("OperatorName", "body", m.OperatorName); err != nil {
-		return err
-	}
-
-	if m.OperatorName != nil {
-		if err := m.OperatorName.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("OperatorName")
-			}
-			return err
-		}
-	}
+func (m *PTXServiceDTOSharedSpecificationV2BaseOperator) validateOperatorName(formats strfmt.Registry) error {
 
 	return nil
 }
 
-func (m *ServiceDTOVersion2BaseOperator) validateOperatorNo(formats strfmt.Registry) error {
+func (m *PTXServiceDTOSharedSpecificationV2BaseOperator) validateOperatorNo(formats strfmt.Registry) error {
 
 	if err := validate.Required("OperatorNo", "body", m.OperatorNo); err != nil {
 		return err
@@ -162,7 +173,7 @@ func (m *ServiceDTOVersion2BaseOperator) validateOperatorNo(formats strfmt.Regis
 	return nil
 }
 
-func (m *ServiceDTOVersion2BaseOperator) validateProviderID(formats strfmt.Registry) error {
+func (m *PTXServiceDTOSharedSpecificationV2BaseOperator) validateProviderID(formats strfmt.Registry) error {
 
 	if err := validate.Required("ProviderID", "body", m.ProviderID); err != nil {
 		return err
@@ -171,7 +182,7 @@ func (m *ServiceDTOVersion2BaseOperator) validateProviderID(formats strfmt.Regis
 	return nil
 }
 
-func (m *ServiceDTOVersion2BaseOperator) validateUpdateTime(formats strfmt.Registry) error {
+func (m *PTXServiceDTOSharedSpecificationV2BaseOperator) validateUpdateTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
 		return err
@@ -181,7 +192,7 @@ func (m *ServiceDTOVersion2BaseOperator) validateUpdateTime(formats strfmt.Regis
 }
 
 // MarshalBinary interface implementation
-func (m *ServiceDTOVersion2BaseOperator) MarshalBinary() ([]byte, error) {
+func (m *PTXServiceDTOSharedSpecificationV2BaseOperator) MarshalBinary() ([]byte, error) {
 	if m == nil {
 		return nil, nil
 	}
@@ -189,8 +200,8 @@ func (m *ServiceDTOVersion2BaseOperator) MarshalBinary() ([]byte, error) {
 }
 
 // UnmarshalBinary interface implementation
-func (m *ServiceDTOVersion2BaseOperator) UnmarshalBinary(b []byte) error {
-	var res ServiceDTOVersion2BaseOperator
+func (m *PTXServiceDTOSharedSpecificationV2BaseOperator) UnmarshalBinary(b []byte) error {
+	var res PTXServiceDTOSharedSpecificationV2BaseOperator
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

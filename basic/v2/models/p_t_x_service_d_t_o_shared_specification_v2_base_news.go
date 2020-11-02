@@ -12,19 +12,25 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// ServiceDTOVersion2BaseNews News
+// PTXServiceDTOSharedSpecificationV2BaseNews News
 //
 // 業管機關資料型別
 //
-// swagger:model Service.DTO.Version2.Base.News
-type ServiceDTOVersion2BaseNews struct {
+// swagger:model PTX.Service.DTO.Shared.Specification.V2.Base.News
+type PTXServiceDTOSharedSpecificationV2BaseNews struct {
 
+	// String
+	//
 	// 相關網站連結
 	AttachmentURL string `json:"AttachmentURL,omitempty"`
 
+	// String
+	//
 	// 發布單位
 	Department string `json:"Department,omitempty"`
 
+	// String
+	//
 	// 內容描述
 	// Required: true
 	Description *string `json:"Description"`
@@ -34,6 +40,8 @@ type ServiceDTOVersion2BaseNews struct {
 	// 結束時間
 	EndTime string `json:"EndTime,omitempty"`
 
+	// String
+	//
 	// 語系
 	// Required: true
 	Language *string `json:"Language"`
@@ -43,11 +51,15 @@ type ServiceDTOVersion2BaseNews struct {
 	// 消息類別 : [1:'最新消息',2:'新聞稿',3:'營運資訊',4:'轉乘資訊',5:'活動訊息',6:'系統公告',7:'新服務上架',8:'API修正',9:'來源異常',99:'其他']
 	NewsCategory int32 `json:"NewsCategory,omitempty"`
 
+	// Guid
+	//
 	// 最新消息原單位發布代碼
 	// Required: true
 	// Format: uuid
 	NewsID *strfmt.UUID `json:"NewsID"`
 
+	// String
+	//
 	// 報導網站連結
 	NewsURL string `json:"NewsURL,omitempty"`
 
@@ -61,6 +73,8 @@ type ServiceDTOVersion2BaseNews struct {
 	// 開始時間
 	StartTime string `json:"StartTime,omitempty"`
 
+	// String
+	//
 	// 消息標題
 	Title string `json:"Title,omitempty"`
 
@@ -70,8 +84,8 @@ type ServiceDTOVersion2BaseNews struct {
 	UpdateTime string `json:"UpdateTime,omitempty"`
 }
 
-// Validate validates this service d t o version2 base news
-func (m *ServiceDTOVersion2BaseNews) Validate(formats strfmt.Registry) error {
+// Validate validates this p t x service d t o shared specification v2 base news
+func (m *PTXServiceDTOSharedSpecificationV2BaseNews) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateDescription(formats); err != nil {
@@ -92,7 +106,7 @@ func (m *ServiceDTOVersion2BaseNews) Validate(formats strfmt.Registry) error {
 	return nil
 }
 
-func (m *ServiceDTOVersion2BaseNews) validateDescription(formats strfmt.Registry) error {
+func (m *PTXServiceDTOSharedSpecificationV2BaseNews) validateDescription(formats strfmt.Registry) error {
 
 	if err := validate.Required("Description", "body", m.Description); err != nil {
 		return err
@@ -101,7 +115,7 @@ func (m *ServiceDTOVersion2BaseNews) validateDescription(formats strfmt.Registry
 	return nil
 }
 
-func (m *ServiceDTOVersion2BaseNews) validateLanguage(formats strfmt.Registry) error {
+func (m *PTXServiceDTOSharedSpecificationV2BaseNews) validateLanguage(formats strfmt.Registry) error {
 
 	if err := validate.Required("Language", "body", m.Language); err != nil {
 		return err
@@ -110,7 +124,7 @@ func (m *ServiceDTOVersion2BaseNews) validateLanguage(formats strfmt.Registry) e
 	return nil
 }
 
-func (m *ServiceDTOVersion2BaseNews) validateNewsID(formats strfmt.Registry) error {
+func (m *PTXServiceDTOSharedSpecificationV2BaseNews) validateNewsID(formats strfmt.Registry) error {
 
 	if err := validate.Required("NewsID", "body", m.NewsID); err != nil {
 		return err
@@ -124,7 +138,7 @@ func (m *ServiceDTOVersion2BaseNews) validateNewsID(formats strfmt.Registry) err
 }
 
 // MarshalBinary interface implementation
-func (m *ServiceDTOVersion2BaseNews) MarshalBinary() ([]byte, error) {
+func (m *PTXServiceDTOSharedSpecificationV2BaseNews) MarshalBinary() ([]byte, error) {
 	if m == nil {
 		return nil, nil
 	}
@@ -132,8 +146,8 @@ func (m *ServiceDTOVersion2BaseNews) MarshalBinary() ([]byte, error) {
 }
 
 // UnmarshalBinary interface implementation
-func (m *ServiceDTOVersion2BaseNews) UnmarshalBinary(b []byte) error {
-	var res ServiceDTOVersion2BaseNews
+func (m *PTXServiceDTOSharedSpecificationV2BaseNews) UnmarshalBinary(b []byte) error {
+	var res PTXServiceDTOSharedSpecificationV2BaseNews
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

@@ -12,20 +12,26 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// ServiceDTOVersion2BaseAuthority Authority
+// PTXServiceDTOSharedSpecificationV2BaseAuthority Authority
 //
 // 業管機關資料型別
 //
-// swagger:model Service.DTO.Version2.Base.Authority
-type ServiceDTOVersion2BaseAuthority struct {
+// swagger:model PTX.Service.DTO.Shared.Specification.V2.Base.Authority
+type PTXServiceDTOSharedSpecificationV2BaseAuthority struct {
 
+	// String
+	//
 	// 業管機關簡碼
 	// Required: true
 	AuthorityCode *string `json:"AuthorityCode"`
 
+	// String
+	//
 	// 業管機關電子信箱
 	AuthorityEmail string `json:"AuthorityEmail,omitempty"`
 
+	// String
+	//
 	// 業管機關代碼
 	// Required: true
 	AuthorityID *string `json:"AuthorityID"`
@@ -34,11 +40,17 @@ type ServiceDTOVersion2BaseAuthority struct {
 	//
 	// 業管機關名稱
 	// Required: true
-	AuthorityName *ServiceDTOVersion2BaseNameType `json:"AuthorityName"`
+	AuthorityName struct {
+		PTXServiceDTOSharedSpecificationV2BaseNameType
+	} `json:"AuthorityName"`
 
+	// String
+	//
 	// 業管機關連絡電話
 	AuthorityPhone string `json:"AuthorityPhone,omitempty"`
 
+	// String
+	//
 	// 業管機關網址鏈結
 	AuthorityURL string `json:"AuthorityUrl,omitempty"`
 
@@ -49,8 +61,8 @@ type ServiceDTOVersion2BaseAuthority struct {
 	UpdateTime *string `json:"UpdateTime"`
 }
 
-// Validate validates this service d t o version2 base authority
-func (m *ServiceDTOVersion2BaseAuthority) Validate(formats strfmt.Registry) error {
+// Validate validates this p t x service d t o shared specification v2 base authority
+func (m *PTXServiceDTOSharedSpecificationV2BaseAuthority) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateAuthorityCode(formats); err != nil {
@@ -75,7 +87,7 @@ func (m *ServiceDTOVersion2BaseAuthority) Validate(formats strfmt.Registry) erro
 	return nil
 }
 
-func (m *ServiceDTOVersion2BaseAuthority) validateAuthorityCode(formats strfmt.Registry) error {
+func (m *PTXServiceDTOSharedSpecificationV2BaseAuthority) validateAuthorityCode(formats strfmt.Registry) error {
 
 	if err := validate.Required("AuthorityCode", "body", m.AuthorityCode); err != nil {
 		return err
@@ -84,7 +96,7 @@ func (m *ServiceDTOVersion2BaseAuthority) validateAuthorityCode(formats strfmt.R
 	return nil
 }
 
-func (m *ServiceDTOVersion2BaseAuthority) validateAuthorityID(formats strfmt.Registry) error {
+func (m *PTXServiceDTOSharedSpecificationV2BaseAuthority) validateAuthorityID(formats strfmt.Registry) error {
 
 	if err := validate.Required("AuthorityID", "body", m.AuthorityID); err != nil {
 		return err
@@ -93,25 +105,12 @@ func (m *ServiceDTOVersion2BaseAuthority) validateAuthorityID(formats strfmt.Reg
 	return nil
 }
 
-func (m *ServiceDTOVersion2BaseAuthority) validateAuthorityName(formats strfmt.Registry) error {
-
-	if err := validate.Required("AuthorityName", "body", m.AuthorityName); err != nil {
-		return err
-	}
-
-	if m.AuthorityName != nil {
-		if err := m.AuthorityName.Validate(formats); err != nil {
-			if ve, ok := err.(*errors.Validation); ok {
-				return ve.ValidateName("AuthorityName")
-			}
-			return err
-		}
-	}
+func (m *PTXServiceDTOSharedSpecificationV2BaseAuthority) validateAuthorityName(formats strfmt.Registry) error {
 
 	return nil
 }
 
-func (m *ServiceDTOVersion2BaseAuthority) validateUpdateTime(formats strfmt.Registry) error {
+func (m *PTXServiceDTOSharedSpecificationV2BaseAuthority) validateUpdateTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
 		return err
@@ -121,7 +120,7 @@ func (m *ServiceDTOVersion2BaseAuthority) validateUpdateTime(formats strfmt.Regi
 }
 
 // MarshalBinary interface implementation
-func (m *ServiceDTOVersion2BaseAuthority) MarshalBinary() ([]byte, error) {
+func (m *PTXServiceDTOSharedSpecificationV2BaseAuthority) MarshalBinary() ([]byte, error) {
 	if m == nil {
 		return nil, nil
 	}
@@ -129,8 +128,8 @@ func (m *ServiceDTOVersion2BaseAuthority) MarshalBinary() ([]byte, error) {
 }
 
 // UnmarshalBinary interface implementation
-func (m *ServiceDTOVersion2BaseAuthority) UnmarshalBinary(b []byte) error {
-	var res ServiceDTOVersion2BaseAuthority
+func (m *PTXServiceDTOSharedSpecificationV2BaseAuthority) UnmarshalBinary(b []byte) error {
+	var res PTXServiceDTOSharedSpecificationV2BaseAuthority
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}
