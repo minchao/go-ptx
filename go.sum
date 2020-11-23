@@ -38,6 +38,8 @@ github.com/go-openapi/analysis v0.19.11 h1:IWit8yDJzyjkN9vSH3KHjAIrRY25zJsLA4uqH
 github.com/go-openapi/analysis v0.19.11/go.mod h1:qmhS3VNFxBlquFJ0RGoDtylO9y4pgTAUNE9AEEMdlJQ=
 github.com/go-openapi/analysis v0.19.12 h1:zmopuQzzL2egB/47YhmOJGHK6c+sFEZpD04UgG9ySKo=
 github.com/go-openapi/analysis v0.19.12/go.mod h1:qmhS3VNFxBlquFJ0RGoDtylO9y4pgTAUNE9AEEMdlJQ=
+github.com/go-openapi/analysis v0.19.14 h1:OPuUe8ApFeu59GeTsZtb0mLWHu5MipU4fDvxNLsG3bw=
+github.com/go-openapi/analysis v0.19.14/go.mod h1:zN0kY6i38wo2LQOwltVyMk61bqlqOm86n1/Iszo8F8Y=
 github.com/go-openapi/errors v0.17.0/go.mod h1:LcZQpmvG4wyF5j4IhA73wkLFQg+QJXOQHVjmcZxhka0=
 github.com/go-openapi/errors v0.18.0/go.mod h1:LcZQpmvG4wyF5j4IhA73wkLFQg+QJXOQHVjmcZxhka0=
 github.com/go-openapi/errors v0.19.2 h1:a2kIyV3w+OS3S97zxUndRVD46+FhGOUBDFY7nmu4CsY=
@@ -104,6 +106,8 @@ github.com/go-openapi/spec v0.19.12 h1:OO9WrvhDwtiMY/Opr1j1iFZzirI3JW4/bxNFRcntA
 github.com/go-openapi/spec v0.19.12/go.mod h1:gwrgJS15eCUgjLpMjBJmbZezCsw88LmgeEip0M63doA=
 github.com/go-openapi/spec v0.19.13 h1:AcZVcWsrfW7LqyHKVbTZYpFF7jQcMxmAsWrw2p/b9ew=
 github.com/go-openapi/spec v0.19.13/go.mod h1:gwrgJS15eCUgjLpMjBJmbZezCsw88LmgeEip0M63doA=
+github.com/go-openapi/spec v0.19.14 h1:r4fbYFo6N4ZelmSX8G6p+cv/hZRXzcuqQIADGT1iNKM=
+github.com/go-openapi/spec v0.19.14/go.mod h1:gwrgJS15eCUgjLpMjBJmbZezCsw88LmgeEip0M63doA=
 github.com/go-openapi/strfmt v0.17.0/go.mod h1:P82hnJI0CXkErkXi8IKjPbNBM6lV6+5pLP5l494TcyU=
 github.com/go-openapi/strfmt v0.18.0/go.mod h1:P82hnJI0CXkErkXi8IKjPbNBM6lV6+5pLP5l494TcyU=
 github.com/go-openapi/strfmt v0.19.0 h1:0Dn9qy1G9+UJfRU7TR8bmdGxb4uifB7HNrJjOnV0yPk=
@@ -122,6 +126,8 @@ github.com/go-openapi/strfmt v0.19.8 h1:9wAdSoImc5UCnUj79GhcjkJXxuU/nEwlbe6SKe9Z
 github.com/go-openapi/strfmt v0.19.8/go.mod h1:qBBipho+3EoIqn6YDI+4RnQEtj6jT/IdKm+PAlXxSUc=
 github.com/go-openapi/strfmt v0.19.10 h1:FEv6Pt/V4wLwP4vOCZbWlpfmi8kj4UiRip34IDE6SGw=
 github.com/go-openapi/strfmt v0.19.10/go.mod h1:qBBipho+3EoIqn6YDI+4RnQEtj6jT/IdKm+PAlXxSUc=
+github.com/go-openapi/strfmt v0.19.11 h1:0+YvbNh05rmBkgztd6zHp4OCFn7Mtu30bn46NQo2ZRw=
+github.com/go-openapi/strfmt v0.19.11/go.mod h1:UukAYgTaQfqJuAFlNxxMWNvMYiwiXtLsF2VwmoFtbtc=
 github.com/go-openapi/swag v0.17.0/go.mod h1:AByQ+nYG6gQg71GINrmuDXCPWdL640yX49/kXLo40Tg=
 github.com/go-openapi/swag v0.18.0/go.mod h1:AByQ+nYG6gQg71GINrmuDXCPWdL640yX49/kXLo40Tg=
 github.com/go-openapi/swag v0.19.2 h1:jvO6bCMBEilGwMfHhrd61zIID4oIFdwb76V17SM88dE=
@@ -135,6 +141,8 @@ github.com/go-openapi/swag v0.19.10 h1:A1SWXruroGP15P1sOiegIPbaKio+G9N5TwWTFaVPm
 github.com/go-openapi/swag v0.19.10/go.mod h1:Uc0gKkdR+ojzsEpjh39QChyu92vPgIr72POcgHMAgSY=
 github.com/go-openapi/swag v0.19.11 h1:RFTu/dlFySpyVvJDfp/7674JY4SDglYWKztbiIGFpmc=
 github.com/go-openapi/swag v0.19.11/go.mod h1:Uc0gKkdR+ojzsEpjh39QChyu92vPgIr72POcgHMAgSY=
+github.com/go-openapi/swag v0.19.12 h1:Bc0bnY2c3AoF7Gc+IMIAQQsD8fLHjHpc19wXvYuayQI=
+github.com/go-openapi/swag v0.19.12/go.mod h1:eFdyEBkTdoAf/9RXBvj4cr1nH7GD8Kzo5HTt47gr72M=
 github.com/go-openapi/validate v0.18.0/go.mod h1:Uh4HdOzKt19xGIGm1qHf/ofbX1YQ4Y+MYsct2VUrAJ4=
 github.com/go-openapi/validate v0.19.2 h1:ky5l57HjyVRrsJfd2+Ro5Z9PjGuKbsmftwyMtk8H7js=
 github.com/go-openapi/validate v0.19.2/go.mod h1:1tRCw7m3jtI8eNWEEliiAqUIcBztB2KDnRCRMUi7GTA=
@@ -146,6 +154,8 @@ github.com/go-openapi/validate v0.19.11 h1:8lCr0b9lNWKjVjW/hSZZvltUy+bULl7vbnCTs
 github.com/go-openapi/validate v0.19.11/go.mod h1:Rzou8hA/CBw8donlS6WNEUQupNvUZ0waH08tGe6kAQ4=
 github.com/go-openapi/validate v0.19.12 h1:mPLM/bfbd00PGOCJlU0yJL7IulkZ+q9VjPv7U11RMQQ=
 github.com/go-openapi/validate v0.19.12/go.mod h1:Rzou8hA/CBw8donlS6WNEUQupNvUZ0waH08tGe6kAQ4=
+github.com/go-openapi/validate v0.19.14 h1:G/lAG8al3droiEQyYdK0IP71au/V63x4LWF3TFv9n/k=
+github.com/go-openapi/validate v0.19.14/go.mod h1:PdGrHe0rp6MG3A1SrAY/rIHATqzJEEhohGE1atLkBEQ=
 github.com/go-sql-driver/mysql v1.5.0/go.mod h1:DCzpHaOWr8IXmIStZouvnhqoel9Qv2LBy8hT2VhHyBg=
 github.com/go-stack/stack v1.8.0 h1:5SgMzNM5HxrEjV0ww2lTmX6E2Izsfxas4+YHWRs3Lsk=
 github.com/go-stack/stack v1.8.0/go.mod h1:v0f6uXyyMGvRgIKkXu+yp6POWl0qKG85gN/melR3HDY=
