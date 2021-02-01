@@ -1,0 +1,57 @@
+name: tests
+on:
+  - push
+  - pull_request
+
+jobs:
+  lint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - uses: golangci/golangci-lint-action@v2
+        with:
+          version: v1.36
+
+  test:
+    strategy:
+      matrix:
+        go-version:
+          - 1.x
+          - 1.14.x
+        platform: [ ubuntu-latest ]
+    runs-on: ${{ matrix.platform }}
+
+    steps:
+      - uses: actions/setup-go@v2
+        with:
+          go-version: ${{ matrix.go-version }}
+      - uses: actions/checkout@v2
+
+      - name: Cache go modules
+        uses: actions/cache@v2
+        with:
+          path: ~/go/pkg/mod
+          key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
+          restore-keys: |
+            ${{ runner.os }}-go-
+
+      - run: go mod download
+
+      # refs:
+      # https://goswagger.io/install.html#static-binary
+      # https://docs.github.com/en/actions/reference/workflow-commands-for-github-actions#adding-a-system-path
+      - name: Install go-swagger
+        run: |
+          mkdir -p $HOME/.local/bin
+          download_url=$(curl -s https://api.github.com/repos/go-swagger/go-swagger/releases/latest | \
+            jq -r '.assets[] | select(.name | contains("'"$(uname | tr '[:upper:]' '[:lower:]')"'_amd64")) | .browser_download_url')
+          curl -o $HOME/.local/bin/swagger -L'#' "$download_url"
+          chmod +x $HOME/.local/bin/swagger
+          echo "$HOME/.local/bin" >> $GITHUB_PATH
+
+      - run: make validate
+      - run: make test
+      - run: make test-integration
+        env:
+          APP_ID: ${{ secrets.APP_ID }}
+          APP_KEY: ${{ secrets.APP_KEY }}
