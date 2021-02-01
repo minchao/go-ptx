@@ -6,6 +6,8 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
+
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
@@ -138,6 +140,25 @@ func (m *PTXServiceDTOBusSpecificationV2BusStopTime) validateStopUID(formats str
 	if err := validate.Required("StopUID", "body", m.StopUID); err != nil {
 		return err
 	}
+
+	return nil
+}
+
+// ContextValidate validate this p t x service d t o bus specification v2 bus stop time based on the context it is used
+func (m *PTXServiceDTOBusSpecificationV2BusStopTime) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateStopName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV2BusStopTime) contextValidateStopName(ctx context.Context, formats strfmt.Registry) error {
 
 	return nil
 }

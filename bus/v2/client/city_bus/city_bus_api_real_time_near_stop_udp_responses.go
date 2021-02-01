@@ -35,7 +35,12 @@ func (o *CityBusAPIRealTimeNearStopUDPReader) ReadResponse(response runtime.Clie
 			return nil, err
 		}
 		return result, nil
-
+	case 304:
+		result := NewCityBusAPIRealTimeNearStopUDPNotModified()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return nil, result
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -46,7 +51,7 @@ func NewCityBusAPIRealTimeNearStopUDPOK() *CityBusAPIRealTimeNearStopUDPOK {
 	return &CityBusAPIRealTimeNearStopUDPOK{}
 }
 
-/*CityBusAPIRealTimeNearStopUDPOK handles this case with default header values.
+/* CityBusAPIRealTimeNearStopUDPOK describes a response with status code 200, with default header values.
 
 Success
 */
@@ -57,7 +62,6 @@ type CityBusAPIRealTimeNearStopUDPOK struct {
 func (o *CityBusAPIRealTimeNearStopUDPOK) Error() string {
 	return fmt.Sprintf("[GET /v2/Bus/RealTimeNearStop/Streaming/City/{City}][%d] cityBusApiRealTimeNearStopUdpOK  %+v", 200, o.Payload)
 }
-
 func (o *CityBusAPIRealTimeNearStopUDPOK) GetPayload() []*models.PTXServiceDTOBusSpecificationV2BusA2Data {
 	return o.Payload
 }
@@ -77,7 +81,7 @@ func NewCityBusAPIRealTimeNearStopUDPStatus299() *CityBusAPIRealTimeNearStopUDPS
 	return &CityBusAPIRealTimeNearStopUDPStatus299{}
 }
 
-/*CityBusAPIRealTimeNearStopUDPStatus299 handles this case with default header values.
+/* CityBusAPIRealTimeNearStopUDPStatus299 describes a response with status code 299, with default header values.
 
 加入參數'?health=true'即可查詢此API服務的健康狀態
 */
@@ -88,7 +92,6 @@ type CityBusAPIRealTimeNearStopUDPStatus299 struct {
 func (o *CityBusAPIRealTimeNearStopUDPStatus299) Error() string {
 	return fmt.Sprintf("[GET /v2/Bus/RealTimeNearStop/Streaming/City/{City}][%d] cityBusApiRealTimeNearStopUdpStatus299  %+v", 299, o.Payload)
 }
-
 func (o *CityBusAPIRealTimeNearStopUDPStatus299) GetPayload() *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth {
 	return o.Payload
 }
@@ -101,6 +104,27 @@ func (o *CityBusAPIRealTimeNearStopUDPStatus299) readResponse(response runtime.C
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
+
+	return nil
+}
+
+// NewCityBusAPIRealTimeNearStopUDPNotModified creates a CityBusAPIRealTimeNearStopUDPNotModified with default headers values
+func NewCityBusAPIRealTimeNearStopUDPNotModified() *CityBusAPIRealTimeNearStopUDPNotModified {
+	return &CityBusAPIRealTimeNearStopUDPNotModified{}
+}
+
+/* CityBusAPIRealTimeNearStopUDPNotModified describes a response with status code 304, with default header values.
+
+服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content
+*/
+type CityBusAPIRealTimeNearStopUDPNotModified struct {
+}
+
+func (o *CityBusAPIRealTimeNearStopUDPNotModified) Error() string {
+	return fmt.Sprintf("[GET /v2/Bus/RealTimeNearStop/Streaming/City/{City}][%d] cityBusApiRealTimeNearStopUdpNotModified ", 304)
+}
+
+func (o *CityBusAPIRealTimeNearStopUDPNotModified) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

@@ -6,6 +6,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -114,6 +115,56 @@ func (m *PTXServiceDTOBusSpecificationV3RouteFareODFare) validateFares(formats s
 }
 
 func (m *PTXServiceDTOBusSpecificationV3RouteFareODFare) validateOriginStops(formats strfmt.Registry) error {
+
+	return nil
+}
+
+// ContextValidate validate this p t x service d t o bus specification v3 route fare o d fare based on the context it is used
+func (m *PTXServiceDTOBusSpecificationV3RouteFareODFare) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateDestinationStops(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateFares(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateOriginStops(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV3RouteFareODFare) contextValidateDestinationStops(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV3RouteFareODFare) contextValidateFares(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Fares); i++ {
+
+		if m.Fares[i] != nil {
+			if err := m.Fares[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("Fares" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV3RouteFareODFare) contextValidateOriginStops(ctx context.Context, formats strfmt.Registry) error {
 
 	return nil
 }

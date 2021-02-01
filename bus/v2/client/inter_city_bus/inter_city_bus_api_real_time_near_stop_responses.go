@@ -35,7 +35,12 @@ func (o *InterCityBusAPIRealTimeNearStopReader) ReadResponse(response runtime.Cl
 			return nil, err
 		}
 		return result, nil
-
+	case 304:
+		result := NewInterCityBusAPIRealTimeNearStopNotModified()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return nil, result
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -46,7 +51,7 @@ func NewInterCityBusAPIRealTimeNearStopOK() *InterCityBusAPIRealTimeNearStopOK {
 	return &InterCityBusAPIRealTimeNearStopOK{}
 }
 
-/*InterCityBusAPIRealTimeNearStopOK handles this case with default header values.
+/* InterCityBusAPIRealTimeNearStopOK describes a response with status code 200, with default header values.
 
 Success
 */
@@ -57,7 +62,6 @@ type InterCityBusAPIRealTimeNearStopOK struct {
 func (o *InterCityBusAPIRealTimeNearStopOK) Error() string {
 	return fmt.Sprintf("[GET /v2/Bus/RealTimeNearStop/InterCity][%d] interCityBusApiRealTimeNearStopOK  %+v", 200, o.Payload)
 }
-
 func (o *InterCityBusAPIRealTimeNearStopOK) GetPayload() []*models.PTXServiceDTOBusSpecificationV2BusA2Data {
 	return o.Payload
 }
@@ -77,7 +81,7 @@ func NewInterCityBusAPIRealTimeNearStopStatus299() *InterCityBusAPIRealTimeNearS
 	return &InterCityBusAPIRealTimeNearStopStatus299{}
 }
 
-/*InterCityBusAPIRealTimeNearStopStatus299 handles this case with default header values.
+/* InterCityBusAPIRealTimeNearStopStatus299 describes a response with status code 299, with default header values.
 
 加入參數'?health=true'即可查詢此API服務的健康狀態
 */
@@ -88,7 +92,6 @@ type InterCityBusAPIRealTimeNearStopStatus299 struct {
 func (o *InterCityBusAPIRealTimeNearStopStatus299) Error() string {
 	return fmt.Sprintf("[GET /v2/Bus/RealTimeNearStop/InterCity][%d] interCityBusApiRealTimeNearStopStatus299  %+v", 299, o.Payload)
 }
-
 func (o *InterCityBusAPIRealTimeNearStopStatus299) GetPayload() *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth {
 	return o.Payload
 }
@@ -101,6 +104,27 @@ func (o *InterCityBusAPIRealTimeNearStopStatus299) readResponse(response runtime
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
+
+	return nil
+}
+
+// NewInterCityBusAPIRealTimeNearStopNotModified creates a InterCityBusAPIRealTimeNearStopNotModified with default headers values
+func NewInterCityBusAPIRealTimeNearStopNotModified() *InterCityBusAPIRealTimeNearStopNotModified {
+	return &InterCityBusAPIRealTimeNearStopNotModified{}
+}
+
+/* InterCityBusAPIRealTimeNearStopNotModified describes a response with status code 304, with default header values.
+
+服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content
+*/
+type InterCityBusAPIRealTimeNearStopNotModified struct {
+}
+
+func (o *InterCityBusAPIRealTimeNearStopNotModified) Error() string {
+	return fmt.Sprintf("[GET /v2/Bus/RealTimeNearStop/InterCity][%d] interCityBusApiRealTimeNearStopNotModified ", 304)
+}
+
+func (o *InterCityBusAPIRealTimeNearStopNotModified) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

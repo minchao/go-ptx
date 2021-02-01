@@ -6,6 +6,8 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
+
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
@@ -119,18 +121,6 @@ type PTXServiceDTORailSpecificationV2TRATimeInfoRailGeneralTrainInfo struct {
 	// 山海線類型 : [0:'不經山海線',1:'山線',2:'海線',3:'成追線']
 	TripLine int32 `json:"TripLine,omitempty"`
 
-	// DateTime
-	//
-	// 資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
-	// Required: true
-	UpdateTime *string `json:"UpdateTime"`
-
-	// Int32
-	//
-	// 資料版本編號
-	// Required: true
-	VersionID *int32 `json:"VersionID"`
-
 	// integer
 	//
 	// 是否設身障旅客專用座位車 : [0:'否',1:'是']
@@ -183,14 +173,6 @@ func (m *PTXServiceDTORailSpecificationV2TRATimeInfoRailGeneralTrainInfo) Valida
 	}
 
 	if err := m.validateTrainTypeName(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateUpdateTime(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateVersionID(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -250,7 +232,6 @@ func (m *PTXServiceDTORailSpecificationV2TRATimeInfoRailGeneralTrainInfo) valida
 }
 
 func (m *PTXServiceDTORailSpecificationV2TRATimeInfoRailGeneralTrainInfo) validateEndingStationName(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.EndingStationName) { // not required
 		return nil
 	}
@@ -259,7 +240,6 @@ func (m *PTXServiceDTORailSpecificationV2TRATimeInfoRailGeneralTrainInfo) valida
 }
 
 func (m *PTXServiceDTORailSpecificationV2TRATimeInfoRailGeneralTrainInfo) validateNote(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Note) { // not required
 		return nil
 	}
@@ -277,7 +257,6 @@ func (m *PTXServiceDTORailSpecificationV2TRATimeInfoRailGeneralTrainInfo) valida
 }
 
 func (m *PTXServiceDTORailSpecificationV2TRATimeInfoRailGeneralTrainInfo) validateStartingStationName(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.StartingStationName) { // not required
 		return nil
 	}
@@ -295,27 +274,8 @@ func (m *PTXServiceDTORailSpecificationV2TRATimeInfoRailGeneralTrainInfo) valida
 }
 
 func (m *PTXServiceDTORailSpecificationV2TRATimeInfoRailGeneralTrainInfo) validateTrainTypeName(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.TrainTypeName) { // not required
 		return nil
-	}
-
-	return nil
-}
-
-func (m *PTXServiceDTORailSpecificationV2TRATimeInfoRailGeneralTrainInfo) validateUpdateTime(formats strfmt.Registry) error {
-
-	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func (m *PTXServiceDTORailSpecificationV2TRATimeInfoRailGeneralTrainInfo) validateVersionID(formats strfmt.Registry) error {
-
-	if err := validate.Required("VersionID", "body", m.VersionID); err != nil {
-		return err
 	}
 
 	return nil
@@ -326,6 +286,52 @@ func (m *PTXServiceDTORailSpecificationV2TRATimeInfoRailGeneralTrainInfo) valida
 	if err := validate.Required("WheelchairFlag", "body", m.WheelchairFlag); err != nil {
 		return err
 	}
+
+	return nil
+}
+
+// ContextValidate validate this p t x service d t o rail specification v2 t r a time info rail general train info based on the context it is used
+func (m *PTXServiceDTORailSpecificationV2TRATimeInfoRailGeneralTrainInfo) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateEndingStationName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateNote(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateStartingStationName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateTrainTypeName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV2TRATimeInfoRailGeneralTrainInfo) contextValidateEndingStationName(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV2TRATimeInfoRailGeneralTrainInfo) contextValidateNote(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV2TRATimeInfoRailGeneralTrainInfo) contextValidateStartingStationName(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV2TRATimeInfoRailGeneralTrainInfo) contextValidateTrainTypeName(ctx context.Context, formats strfmt.Registry) error {
 
 	return nil
 }

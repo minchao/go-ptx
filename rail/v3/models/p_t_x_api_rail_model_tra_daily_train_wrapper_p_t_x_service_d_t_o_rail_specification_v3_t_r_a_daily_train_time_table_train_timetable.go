@@ -6,6 +6,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -139,7 +140,6 @@ func (m *PTXAPIRailModelTraDailyTrainWrapperPTXServiceDTORailSpecificationV3TRAD
 }
 
 func (m *PTXAPIRailModelTraDailyTrainWrapperPTXServiceDTORailSpecificationV3TRADailyTrainTimeTableTrainTimetable) validateTrainTimetables(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.TrainTimetables) { // not required
 		return nil
 	}
@@ -176,6 +176,38 @@ func (m *PTXAPIRailModelTraDailyTrainWrapperPTXServiceDTORailSpecificationV3TRAD
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+// ContextValidate validate this p t x API rail model tra daily train wrapper p t x service d t o rail specification v3 t r a daily train time table train timetable based on the context it is used
+func (m *PTXAPIRailModelTraDailyTrainWrapperPTXServiceDTORailSpecificationV3TRADailyTrainTimeTableTrainTimetable) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateTrainTimetables(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXAPIRailModelTraDailyTrainWrapperPTXServiceDTORailSpecificationV3TRADailyTrainTimeTableTrainTimetable) contextValidateTrainTimetables(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.TrainTimetables); i++ {
+
+		if m.TrainTimetables[i] != nil {
+			if err := m.TrainTimetables[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("TrainTimetables" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
 	}
 
 	return nil

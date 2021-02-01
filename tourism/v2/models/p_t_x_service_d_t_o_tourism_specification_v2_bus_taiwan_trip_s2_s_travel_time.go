@@ -6,6 +6,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -127,6 +128,38 @@ func (m *PTXServiceDTOTourismSpecificationV2BusTaiwanTripS2STravelTime) validate
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+// ContextValidate validate this p t x service d t o tourism specification v2 bus taiwan trip s2 s travel time based on the context it is used
+func (m *PTXServiceDTOTourismSpecificationV2BusTaiwanTripS2STravelTime) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateTravelTimes(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTOTourismSpecificationV2BusTaiwanTripS2STravelTime) contextValidateTravelTimes(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.TravelTimes); i++ {
+
+		if m.TravelTimes[i] != nil {
+			if err := m.TravelTimes[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("TravelTimes" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
 	}
 
 	return nil

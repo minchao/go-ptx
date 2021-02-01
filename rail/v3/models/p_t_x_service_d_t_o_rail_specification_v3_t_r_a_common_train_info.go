@@ -6,6 +6,8 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
+
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
@@ -263,7 +265,6 @@ func (m *PTXServiceDTORailSpecificationV3TRACommonTrainInfo) validateDirection(f
 }
 
 func (m *PTXServiceDTORailSpecificationV3TRACommonTrainInfo) validateEndingStationName(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.EndingStationName) { // not required
 		return nil
 	}
@@ -290,7 +291,6 @@ func (m *PTXServiceDTORailSpecificationV3TRACommonTrainInfo) validatePackageServ
 }
 
 func (m *PTXServiceDTORailSpecificationV3TRACommonTrainInfo) validateStartingStationName(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.StartingStationName) { // not required
 		return nil
 	}
@@ -308,7 +308,6 @@ func (m *PTXServiceDTORailSpecificationV3TRACommonTrainInfo) validateTrainNo(for
 }
 
 func (m *PTXServiceDTORailSpecificationV3TRACommonTrainInfo) validateTrainTypeName(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.TrainTypeName) { // not required
 		return nil
 	}
@@ -321,6 +320,43 @@ func (m *PTXServiceDTORailSpecificationV3TRACommonTrainInfo) validateWheelChairF
 	if err := validate.Required("WheelChairFlag", "body", m.WheelChairFlag); err != nil {
 		return err
 	}
+
+	return nil
+}
+
+// ContextValidate validate this p t x service d t o rail specification v3 t r a common train info based on the context it is used
+func (m *PTXServiceDTORailSpecificationV3TRACommonTrainInfo) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateEndingStationName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateStartingStationName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateTrainTypeName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV3TRACommonTrainInfo) contextValidateEndingStationName(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV3TRACommonTrainInfo) contextValidateStartingStationName(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV3TRACommonTrainInfo) contextValidateTrainTypeName(ctx context.Context, formats strfmt.Registry) error {
 
 	return nil
 }

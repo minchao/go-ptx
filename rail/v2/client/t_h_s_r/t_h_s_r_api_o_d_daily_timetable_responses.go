@@ -29,7 +29,12 @@ func (o *THSRAPIODDailyTimetableReader) ReadResponse(response runtime.ClientResp
 			return nil, err
 		}
 		return result, nil
-
+	case 304:
+		result := NewTHSRAPIODDailyTimetableNotModified()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return nil, result
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -40,7 +45,7 @@ func NewTHSRAPIODDailyTimetableOK() *THSRAPIODDailyTimetableOK {
 	return &THSRAPIODDailyTimetableOK{}
 }
 
-/*THSRAPIODDailyTimetableOK handles this case with default header values.
+/* THSRAPIODDailyTimetableOK describes a response with status code 200, with default header values.
 
 Success
 */
@@ -51,7 +56,6 @@ type THSRAPIODDailyTimetableOK struct {
 func (o *THSRAPIODDailyTimetableOK) Error() string {
 	return fmt.Sprintf("[GET /v2/Rail/THSR/DailyTimetable/OD/{OriginStationID}/to/{DestinationStationID}/{TrainDate}][%d] tHSRApiODDailyTimetableOK  %+v", 200, o.Payload)
 }
-
 func (o *THSRAPIODDailyTimetableOK) GetPayload() []*models.PTXServiceDTORailSpecificationV2THSRRailODDailyTimetable {
 	return o.Payload
 }
@@ -62,6 +66,27 @@ func (o *THSRAPIODDailyTimetableOK) readResponse(response runtime.ClientResponse
 	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
+
+	return nil
+}
+
+// NewTHSRAPIODDailyTimetableNotModified creates a THSRAPIODDailyTimetableNotModified with default headers values
+func NewTHSRAPIODDailyTimetableNotModified() *THSRAPIODDailyTimetableNotModified {
+	return &THSRAPIODDailyTimetableNotModified{}
+}
+
+/* THSRAPIODDailyTimetableNotModified describes a response with status code 304, with default header values.
+
+服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content
+*/
+type THSRAPIODDailyTimetableNotModified struct {
+}
+
+func (o *THSRAPIODDailyTimetableNotModified) Error() string {
+	return fmt.Sprintf("[GET /v2/Rail/THSR/DailyTimetable/OD/{OriginStationID}/to/{DestinationStationID}/{TrainDate}][%d] tHSRApiODDailyTimetableNotModified ", 304)
+}
+
+func (o *THSRAPIODDailyTimetableNotModified) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

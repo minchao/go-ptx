@@ -6,6 +6,8 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
+
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
@@ -147,7 +149,6 @@ func (m *PTXServiceDTOTourismSpecificationV2BusTaiwanTripShape) validateSrcUpdat
 }
 
 func (m *PTXServiceDTOTourismSpecificationV2BusTaiwanTripShape) validateTaiwanTripName(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.TaiwanTripName) { // not required
 		return nil
 	}
@@ -160,6 +161,25 @@ func (m *PTXServiceDTOTourismSpecificationV2BusTaiwanTripShape) validateUpdateTi
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
 		return err
 	}
+
+	return nil
+}
+
+// ContextValidate validate this p t x service d t o tourism specification v2 bus taiwan trip shape based on the context it is used
+func (m *PTXServiceDTOTourismSpecificationV2BusTaiwanTripShape) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateTaiwanTripName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTOTourismSpecificationV2BusTaiwanTripShape) contextValidateTaiwanTripName(ctx context.Context, formats strfmt.Registry) error {
 
 	return nil
 }

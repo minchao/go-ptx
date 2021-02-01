@@ -6,8 +6,12 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
+
+	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
+	"github.com/go-openapi/validate"
 )
 
 // PTXServiceDTOShipSpecificationV3PointType PointType
@@ -18,16 +22,54 @@ type PTXServiceDTOShipSpecificationV3PointType struct {
 	// Double
 	//
 	// 位置緯度
-	PositionLat float64 `json:"PositionLat,omitempty"`
+	// Required: true
+	PositionLat *float64 `json:"PositionLat"`
 
 	// Double
 	//
 	// 位置經度
-	PositionLon float64 `json:"PositionLon,omitempty"`
+	// Required: true
+	PositionLon *float64 `json:"PositionLon"`
 }
 
 // Validate validates this p t x service d t o ship specification v3 point type
 func (m *PTXServiceDTOShipSpecificationV3PointType) Validate(formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.validatePositionLat(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validatePositionLon(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTOShipSpecificationV3PointType) validatePositionLat(formats strfmt.Registry) error {
+
+	if err := validate.Required("PositionLat", "body", m.PositionLat); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTOShipSpecificationV3PointType) validatePositionLon(formats strfmt.Registry) error {
+
+	if err := validate.Required("PositionLon", "body", m.PositionLon); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+// ContextValidate validates this p t x service d t o ship specification v3 point type based on context it is used
+func (m *PTXServiceDTOShipSpecificationV3PointType) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	return nil
 }
 

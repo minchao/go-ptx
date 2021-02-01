@@ -6,6 +6,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -97,6 +98,56 @@ func (m *PTXServiceDTORailSpecificationV3TRASpecificTrainTimetable) validateStop
 }
 
 func (m *PTXServiceDTORailSpecificationV3TRASpecificTrainTimetable) validateTrainInfo(formats strfmt.Registry) error {
+
+	return nil
+}
+
+// ContextValidate validate this p t x service d t o rail specification v3 t r a specific train timetable based on the context it is used
+func (m *PTXServiceDTORailSpecificationV3TRASpecificTrainTimetable) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateSpecialDay(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateStopTimes(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateTrainInfo(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV3TRASpecificTrainTimetable) contextValidateSpecialDay(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV3TRASpecificTrainTimetable) contextValidateStopTimes(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.StopTimes); i++ {
+
+		if m.StopTimes[i] != nil {
+			if err := m.StopTimes[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("StopTimes" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV3TRASpecificTrainTimetable) contextValidateTrainInfo(ctx context.Context, formats strfmt.Registry) error {
 
 	return nil
 }

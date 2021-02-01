@@ -6,6 +6,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -74,7 +75,6 @@ func (m *PTXServiceDTORailSpecificationV3TRAStationExitStationExit) Validate(for
 }
 
 func (m *PTXServiceDTORailSpecificationV3TRAStationExitStationExit) validateExitMapURLs(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.ExitMapURLs) { // not required
 		return nil
 	}
@@ -133,6 +133,69 @@ func (m *PTXServiceDTORailSpecificationV3TRAStationExitStationExit) validateStat
 }
 
 func (m *PTXServiceDTORailSpecificationV3TRAStationExitStationExit) validateStationName(formats strfmt.Registry) error {
+
+	return nil
+}
+
+// ContextValidate validate this p t x service d t o rail specification v3 t r a station exit station exit based on the context it is used
+func (m *PTXServiceDTORailSpecificationV3TRAStationExitStationExit) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateExitMapURLs(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateExits(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateStationName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV3TRAStationExitStationExit) contextValidateExitMapURLs(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.ExitMapURLs); i++ {
+
+		if m.ExitMapURLs[i] != nil {
+			if err := m.ExitMapURLs[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("ExitMapURLs" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV3TRAStationExitStationExit) contextValidateExits(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Exits); i++ {
+
+		if m.Exits[i] != nil {
+			if err := m.Exits[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("Exits" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV3TRAStationExitStationExit) contextValidateStationName(ctx context.Context, formats strfmt.Registry) error {
 
 	return nil
 }

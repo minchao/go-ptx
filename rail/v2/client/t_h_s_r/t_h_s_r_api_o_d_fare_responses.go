@@ -29,7 +29,12 @@ func (o *THSRAPIODFareReader) ReadResponse(response runtime.ClientResponse, cons
 			return nil, err
 		}
 		return result, nil
-
+	case 304:
+		result := NewTHSRAPIODFareNotModified()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return nil, result
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -40,7 +45,7 @@ func NewTHSRAPIODFareOK() *THSRAPIODFareOK {
 	return &THSRAPIODFareOK{}
 }
 
-/*THSRAPIODFareOK handles this case with default header values.
+/* THSRAPIODFareOK describes a response with status code 200, with default header values.
 
 Success
 */
@@ -51,7 +56,6 @@ type THSRAPIODFareOK struct {
 func (o *THSRAPIODFareOK) Error() string {
 	return fmt.Sprintf("[GET /v2/Rail/THSR/ODFare][%d] tHSRApiODFareOK  %+v", 200, o.Payload)
 }
-
 func (o *THSRAPIODFareOK) GetPayload() []*models.PTXServiceDTORailSpecificationV2THSRRailODFare {
 	return o.Payload
 }
@@ -62,6 +66,27 @@ func (o *THSRAPIODFareOK) readResponse(response runtime.ClientResponse, consumer
 	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
+
+	return nil
+}
+
+// NewTHSRAPIODFareNotModified creates a THSRAPIODFareNotModified with default headers values
+func NewTHSRAPIODFareNotModified() *THSRAPIODFareNotModified {
+	return &THSRAPIODFareNotModified{}
+}
+
+/* THSRAPIODFareNotModified describes a response with status code 304, with default header values.
+
+服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content
+*/
+type THSRAPIODFareNotModified struct {
+}
+
+func (o *THSRAPIODFareNotModified) Error() string {
+	return fmt.Sprintf("[GET /v2/Rail/THSR/ODFare][%d] tHSRApiODFareNotModified ", 304)
+}
+
+func (o *THSRAPIODFareNotModified) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

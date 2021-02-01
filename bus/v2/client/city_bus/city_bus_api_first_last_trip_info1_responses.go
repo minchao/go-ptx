@@ -35,7 +35,12 @@ func (o *CityBusAPIFirstLastTripInfo1Reader) ReadResponse(response runtime.Clien
 			return nil, err
 		}
 		return result, nil
-
+	case 304:
+		result := NewCityBusAPIFirstLastTripInfo1NotModified()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return nil, result
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -46,7 +51,7 @@ func NewCityBusAPIFirstLastTripInfo1OK() *CityBusAPIFirstLastTripInfo1OK {
 	return &CityBusAPIFirstLastTripInfo1OK{}
 }
 
-/*CityBusAPIFirstLastTripInfo1OK handles this case with default header values.
+/* CityBusAPIFirstLastTripInfo1OK describes a response with status code 200, with default header values.
 
 Success
 */
@@ -57,7 +62,6 @@ type CityBusAPIFirstLastTripInfo1OK struct {
 func (o *CityBusAPIFirstLastTripInfo1OK) Error() string {
 	return fmt.Sprintf("[GET /v2/Bus/FirstLastTripInfo/City/{City}/{RouteName}][%d] cityBusApiFirstLastTripInfo1OK  %+v", 200, o.Payload)
 }
-
 func (o *CityBusAPIFirstLastTripInfo1OK) GetPayload() []*models.PTXServiceDTOBusSpecificationV2BusFirstLastTripInfo {
 	return o.Payload
 }
@@ -77,7 +81,7 @@ func NewCityBusAPIFirstLastTripInfo1Status299() *CityBusAPIFirstLastTripInfo1Sta
 	return &CityBusAPIFirstLastTripInfo1Status299{}
 }
 
-/*CityBusAPIFirstLastTripInfo1Status299 handles this case with default header values.
+/* CityBusAPIFirstLastTripInfo1Status299 describes a response with status code 299, with default header values.
 
 加入參數'?health=true'即可查詢此API服務的健康狀態
 */
@@ -88,7 +92,6 @@ type CityBusAPIFirstLastTripInfo1Status299 struct {
 func (o *CityBusAPIFirstLastTripInfo1Status299) Error() string {
 	return fmt.Sprintf("[GET /v2/Bus/FirstLastTripInfo/City/{City}/{RouteName}][%d] cityBusApiFirstLastTripInfo1Status299  %+v", 299, o.Payload)
 }
-
 func (o *CityBusAPIFirstLastTripInfo1Status299) GetPayload() *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth {
 	return o.Payload
 }
@@ -101,6 +104,27 @@ func (o *CityBusAPIFirstLastTripInfo1Status299) readResponse(response runtime.Cl
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
+
+	return nil
+}
+
+// NewCityBusAPIFirstLastTripInfo1NotModified creates a CityBusAPIFirstLastTripInfo1NotModified with default headers values
+func NewCityBusAPIFirstLastTripInfo1NotModified() *CityBusAPIFirstLastTripInfo1NotModified {
+	return &CityBusAPIFirstLastTripInfo1NotModified{}
+}
+
+/* CityBusAPIFirstLastTripInfo1NotModified describes a response with status code 304, with default header values.
+
+服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content
+*/
+type CityBusAPIFirstLastTripInfo1NotModified struct {
+}
+
+func (o *CityBusAPIFirstLastTripInfo1NotModified) Error() string {
+	return fmt.Sprintf("[GET /v2/Bus/FirstLastTripInfo/City/{City}/{RouteName}][%d] cityBusApiFirstLastTripInfo1NotModified ", 304)
+}
+
+func (o *CityBusAPIFirstLastTripInfo1NotModified) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

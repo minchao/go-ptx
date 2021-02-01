@@ -6,6 +6,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -194,6 +195,38 @@ func (m *PTXServiceDTOBusSpecificationV3WrapperBusGWrapperPTXServiceDTOBusSpecif
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+// ContextValidate validate this p t x service d t o bus specification v3 wrapper bus g wrapper p t x service d t o bus specification v3 schedule based on the context it is used
+func (m *PTXServiceDTOBusSpecificationV3WrapperBusGWrapperPTXServiceDTOBusSpecificationV3Schedule) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateSchedules(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV3WrapperBusGWrapperPTXServiceDTOBusSpecificationV3Schedule) contextValidateSchedules(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Schedules); i++ {
+
+		if m.Schedules[i] != nil {
+			if err := m.Schedules[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("Schedules" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
 	}
 
 	return nil

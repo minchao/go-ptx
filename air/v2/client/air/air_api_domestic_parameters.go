@@ -17,96 +17,116 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewAirAPIDomesticParams creates a new AirAPIDomesticParams object
-// with the default values initialized.
+// NewAirAPIDomesticParams creates a new AirAPIDomesticParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewAirAPIDomesticParams() *AirAPIDomesticParams {
-	var (
-		dollarTopDefault = int64(30)
-	)
 	return &AirAPIDomesticParams{
-		DollarTop: &dollarTopDefault,
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewAirAPIDomesticParamsWithTimeout creates a new AirAPIDomesticParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewAirAPIDomesticParamsWithTimeout(timeout time.Duration) *AirAPIDomesticParams {
-	var (
-		dollarTopDefault = int64(30)
-	)
 	return &AirAPIDomesticParams{
-		DollarTop: &dollarTopDefault,
-
 		timeout: timeout,
 	}
 }
 
 // NewAirAPIDomesticParamsWithContext creates a new AirAPIDomesticParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewAirAPIDomesticParamsWithContext(ctx context.Context) *AirAPIDomesticParams {
-	var (
-		dollarTopDefault = int64(30)
-	)
 	return &AirAPIDomesticParams{
-		DollarTop: &dollarTopDefault,
-
 		Context: ctx,
 	}
 }
 
 // NewAirAPIDomesticParamsWithHTTPClient creates a new AirAPIDomesticParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewAirAPIDomesticParamsWithHTTPClient(client *http.Client) *AirAPIDomesticParams {
-	var (
-		dollarTopDefault = int64(30)
-	)
 	return &AirAPIDomesticParams{
-		DollarTop:  &dollarTopDefault,
 		HTTPClient: client,
 	}
 }
 
-/*AirAPIDomesticParams contains all the parameters to send to the API endpoint
-for the air Api domestic operation typically these are written to a http.Request
+/* AirAPIDomesticParams contains all the parameters to send to the API endpoint
+   for the air Api domestic operation.
+
+   Typically these are written to a http.Request.
 */
 type AirAPIDomesticParams struct {
 
-	/*DollarFilter
-	  過濾
+	/* DollarFilter.
 
+	   過濾
 	*/
 	DollarFilter *string
-	/*DollarFormat
-	  指定來源格式
 
+	/* DollarFormat.
+
+	   指定來源格式
 	*/
 	DollarFormat string
-	/*DollarOrderby
-	  排序
 
+	/* DollarOrderby.
+
+	   排序
 	*/
 	DollarOrderby *string
-	/*DollarSelect
-	  挑選
 
+	/* DollarSelect.
+
+	   挑選
 	*/
 	DollarSelect *string
-	/*DollarSkip
-	  跳過前幾筆
 
+	/* DollarSkip.
+
+	   跳過前幾筆
 	*/
 	DollarSkip *string
-	/*DollarTop
-	  取前幾筆
 
+	/* DollarTop.
+
+	   取前幾筆
+
+	   Default: 30
 	*/
 	DollarTop *int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the air Api domestic params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *AirAPIDomesticParams) WithDefaults() *AirAPIDomesticParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the air Api domestic params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *AirAPIDomesticParams) SetDefaults() {
+	var (
+		dollarTopDefault = int64(30)
+	)
+
+	val := AirAPIDomesticParams{
+		DollarTop: &dollarTopDefault,
+	}
+
+	val.timeout = o.timeout
+	val.Context = o.Context
+	val.HTTPClient = o.HTTPClient
+	*o = val
 }
 
 // WithTimeout adds the timeout to the air Api domestic params
@@ -220,22 +240,24 @@ func (o *AirAPIDomesticParams) WriteToRequest(r runtime.ClientRequest, reg strfm
 
 		// query param $filter
 		var qrDollarFilter string
+
 		if o.DollarFilter != nil {
 			qrDollarFilter = *o.DollarFilter
 		}
 		qDollarFilter := qrDollarFilter
 		if qDollarFilter != "" {
+
 			if err := r.SetQueryParam("$filter", qDollarFilter); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	// query param $format
 	qrDollarFormat := o.DollarFormat
 	qDollarFormat := qrDollarFormat
 	if qDollarFormat != "" {
+
 		if err := r.SetQueryParam("$format", qDollarFormat); err != nil {
 			return err
 		}
@@ -245,64 +267,68 @@ func (o *AirAPIDomesticParams) WriteToRequest(r runtime.ClientRequest, reg strfm
 
 		// query param $orderby
 		var qrDollarOrderby string
+
 		if o.DollarOrderby != nil {
 			qrDollarOrderby = *o.DollarOrderby
 		}
 		qDollarOrderby := qrDollarOrderby
 		if qDollarOrderby != "" {
+
 			if err := r.SetQueryParam("$orderby", qDollarOrderby); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.DollarSelect != nil {
 
 		// query param $select
 		var qrDollarSelect string
+
 		if o.DollarSelect != nil {
 			qrDollarSelect = *o.DollarSelect
 		}
 		qDollarSelect := qrDollarSelect
 		if qDollarSelect != "" {
+
 			if err := r.SetQueryParam("$select", qDollarSelect); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.DollarSkip != nil {
 
 		// query param $skip
 		var qrDollarSkip string
+
 		if o.DollarSkip != nil {
 			qrDollarSkip = *o.DollarSkip
 		}
 		qDollarSkip := qrDollarSkip
 		if qDollarSkip != "" {
+
 			if err := r.SetQueryParam("$skip", qDollarSkip); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.DollarTop != nil {
 
 		// query param $top
 		var qrDollarTop int64
+
 		if o.DollarTop != nil {
 			qrDollarTop = *o.DollarTop
 		}
 		qDollarTop := swag.FormatInt64(qrDollarTop)
 		if qDollarTop != "" {
+
 			if err := r.SetQueryParam("$top", qDollarTop); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if len(res) > 0 {

@@ -29,7 +29,12 @@ func (o *GeneralStationTimetableAPIControllerGet1Reader) ReadResponse(response r
 			return nil, err
 		}
 		return result, nil
-
+	case 304:
+		result := NewGeneralStationTimetableAPIControllerGet1NotModified()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return nil, result
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -40,7 +45,7 @@ func NewGeneralStationTimetableAPIControllerGet1OK() *GeneralStationTimetableAPI
 	return &GeneralStationTimetableAPIControllerGet1OK{}
 }
 
-/*GeneralStationTimetableAPIControllerGet1OK handles this case with default header values.
+/* GeneralStationTimetableAPIControllerGet1OK describes a response with status code 200, with default header values.
 
 Success
 */
@@ -51,7 +56,6 @@ type GeneralStationTimetableAPIControllerGet1OK struct {
 func (o *GeneralStationTimetableAPIControllerGet1OK) Error() string {
 	return fmt.Sprintf("[GET /v3/Rail/TRA/GeneralStationTimetable/Station/{StationID}][%d] generalStationTimetableApiControllerGet1OK  %+v", 200, o.Payload)
 }
-
 func (o *GeneralStationTimetableAPIControllerGet1OK) GetPayload() *models.PTXAPIRailModelTRAGeneralStationWrapperPTXServiceDTORailSpecificationV3TRAGeneralStationTimetableGeneralStationTimetable {
 	return o.Payload
 }
@@ -64,6 +68,27 @@ func (o *GeneralStationTimetableAPIControllerGet1OK) readResponse(response runti
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
+
+	return nil
+}
+
+// NewGeneralStationTimetableAPIControllerGet1NotModified creates a GeneralStationTimetableAPIControllerGet1NotModified with default headers values
+func NewGeneralStationTimetableAPIControllerGet1NotModified() *GeneralStationTimetableAPIControllerGet1NotModified {
+	return &GeneralStationTimetableAPIControllerGet1NotModified{}
+}
+
+/* GeneralStationTimetableAPIControllerGet1NotModified describes a response with status code 304, with default header values.
+
+服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content
+*/
+type GeneralStationTimetableAPIControllerGet1NotModified struct {
+}
+
+func (o *GeneralStationTimetableAPIControllerGet1NotModified) Error() string {
+	return fmt.Sprintf("[GET /v3/Rail/TRA/GeneralStationTimetable/Station/{StationID}][%d] generalStationTimetableApiControllerGet1NotModified ", 304)
+}
+
+func (o *GeneralStationTimetableAPIControllerGet1NotModified) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

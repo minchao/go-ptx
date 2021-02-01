@@ -29,7 +29,12 @@ func (o *TRAAPIGeneralTrainInfo1Reader) ReadResponse(response runtime.ClientResp
 			return nil, err
 		}
 		return result, nil
-
+	case 304:
+		result := NewTRAAPIGeneralTrainInfo1NotModified()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return nil, result
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -40,19 +45,18 @@ func NewTRAAPIGeneralTrainInfo1OK() *TRAAPIGeneralTrainInfo1OK {
 	return &TRAAPIGeneralTrainInfo1OK{}
 }
 
-/*TRAAPIGeneralTrainInfo1OK handles this case with default header values.
+/* TRAAPIGeneralTrainInfo1OK describes a response with status code 200, with default header values.
 
 Success
 */
 type TRAAPIGeneralTrainInfo1OK struct {
-	Payload []*models.PTXServiceDTORailSpecificationV2TRATimeInfoRailGeneralTrainInfo
+	Payload []*models.PTXServiceDTORailSpecificationV2TRARailGeneralTrainInfo
 }
 
 func (o *TRAAPIGeneralTrainInfo1OK) Error() string {
 	return fmt.Sprintf("[GET /v2/Rail/TRA/GeneralTrainInfo/TrainNo/{TrainNo}][%d] tRAApiGeneralTrainInfo1OK  %+v", 200, o.Payload)
 }
-
-func (o *TRAAPIGeneralTrainInfo1OK) GetPayload() []*models.PTXServiceDTORailSpecificationV2TRATimeInfoRailGeneralTrainInfo {
+func (o *TRAAPIGeneralTrainInfo1OK) GetPayload() []*models.PTXServiceDTORailSpecificationV2TRARailGeneralTrainInfo {
 	return o.Payload
 }
 
@@ -62,6 +66,27 @@ func (o *TRAAPIGeneralTrainInfo1OK) readResponse(response runtime.ClientResponse
 	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
+
+	return nil
+}
+
+// NewTRAAPIGeneralTrainInfo1NotModified creates a TRAAPIGeneralTrainInfo1NotModified with default headers values
+func NewTRAAPIGeneralTrainInfo1NotModified() *TRAAPIGeneralTrainInfo1NotModified {
+	return &TRAAPIGeneralTrainInfo1NotModified{}
+}
+
+/* TRAAPIGeneralTrainInfo1NotModified describes a response with status code 304, with default header values.
+
+服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content
+*/
+type TRAAPIGeneralTrainInfo1NotModified struct {
+}
+
+func (o *TRAAPIGeneralTrainInfo1NotModified) Error() string {
+	return fmt.Sprintf("[GET /v2/Rail/TRA/GeneralTrainInfo/TrainNo/{TrainNo}][%d] tRAApiGeneralTrainInfo1NotModified ", 304)
+}
+
+func (o *TRAAPIGeneralTrainInfo1NotModified) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

@@ -6,6 +6,8 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
+
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
@@ -167,6 +169,25 @@ func (m *PTXServiceDTOSharedSpecificationV3BaseAuthority) validateUpdateTime(for
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
 		return err
 	}
+
+	return nil
+}
+
+// ContextValidate validate this p t x service d t o shared specification v3 base authority based on the context it is used
+func (m *PTXServiceDTOSharedSpecificationV3BaseAuthority) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateAuthorityName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTOSharedSpecificationV3BaseAuthority) contextValidateAuthorityName(ctx context.Context, formats strfmt.Registry) error {
 
 	return nil
 }

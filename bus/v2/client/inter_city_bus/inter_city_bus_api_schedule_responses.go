@@ -35,7 +35,12 @@ func (o *InterCityBusAPIScheduleReader) ReadResponse(response runtime.ClientResp
 			return nil, err
 		}
 		return result, nil
-
+	case 304:
+		result := NewInterCityBusAPIScheduleNotModified()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return nil, result
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -46,7 +51,7 @@ func NewInterCityBusAPIScheduleOK() *InterCityBusAPIScheduleOK {
 	return &InterCityBusAPIScheduleOK{}
 }
 
-/*InterCityBusAPIScheduleOK handles this case with default header values.
+/* InterCityBusAPIScheduleOK describes a response with status code 200, with default header values.
 
 Success
 */
@@ -57,7 +62,6 @@ type InterCityBusAPIScheduleOK struct {
 func (o *InterCityBusAPIScheduleOK) Error() string {
 	return fmt.Sprintf("[GET /v2/Bus/Schedule/InterCity][%d] interCityBusApiScheduleOK  %+v", 200, o.Payload)
 }
-
 func (o *InterCityBusAPIScheduleOK) GetPayload() []*models.PTXServiceDTOBusSpecificationV2BusSchedule {
 	return o.Payload
 }
@@ -77,7 +81,7 @@ func NewInterCityBusAPIScheduleStatus299() *InterCityBusAPIScheduleStatus299 {
 	return &InterCityBusAPIScheduleStatus299{}
 }
 
-/*InterCityBusAPIScheduleStatus299 handles this case with default header values.
+/* InterCityBusAPIScheduleStatus299 describes a response with status code 299, with default header values.
 
 加入參數'?health=true'即可查詢此API服務的健康狀態
 */
@@ -88,7 +92,6 @@ type InterCityBusAPIScheduleStatus299 struct {
 func (o *InterCityBusAPIScheduleStatus299) Error() string {
 	return fmt.Sprintf("[GET /v2/Bus/Schedule/InterCity][%d] interCityBusApiScheduleStatus299  %+v", 299, o.Payload)
 }
-
 func (o *InterCityBusAPIScheduleStatus299) GetPayload() *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth {
 	return o.Payload
 }
@@ -101,6 +104,27 @@ func (o *InterCityBusAPIScheduleStatus299) readResponse(response runtime.ClientR
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
+
+	return nil
+}
+
+// NewInterCityBusAPIScheduleNotModified creates a InterCityBusAPIScheduleNotModified with default headers values
+func NewInterCityBusAPIScheduleNotModified() *InterCityBusAPIScheduleNotModified {
+	return &InterCityBusAPIScheduleNotModified{}
+}
+
+/* InterCityBusAPIScheduleNotModified describes a response with status code 304, with default header values.
+
+服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content
+*/
+type InterCityBusAPIScheduleNotModified struct {
+}
+
+func (o *InterCityBusAPIScheduleNotModified) Error() string {
+	return fmt.Sprintf("[GET /v2/Bus/Schedule/InterCity][%d] interCityBusApiScheduleNotModified ", 304)
+}
+
+func (o *InterCityBusAPIScheduleNotModified) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

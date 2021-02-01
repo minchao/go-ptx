@@ -29,7 +29,12 @@ func (o *TRAAPIDailyTrainInfo3Reader) ReadResponse(response runtime.ClientRespon
 			return nil, err
 		}
 		return result, nil
-
+	case 304:
+		result := NewTRAAPIDailyTrainInfo3NotModified()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return nil, result
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -40,7 +45,7 @@ func NewTRAAPIDailyTrainInfo3OK() *TRAAPIDailyTrainInfo3OK {
 	return &TRAAPIDailyTrainInfo3OK{}
 }
 
-/*TRAAPIDailyTrainInfo3OK handles this case with default header values.
+/* TRAAPIDailyTrainInfo3OK describes a response with status code 200, with default header values.
 
 Success
 */
@@ -51,7 +56,6 @@ type TRAAPIDailyTrainInfo3OK struct {
 func (o *TRAAPIDailyTrainInfo3OK) Error() string {
 	return fmt.Sprintf("[GET /v2/Rail/TRA/DailyTrainInfo/TrainNo/{TrainNo}/TrainDate/{TrainDate}][%d] tRAApiDailyTrainInfo3OK  %+v", 200, o.Payload)
 }
-
 func (o *TRAAPIDailyTrainInfo3OK) GetPayload() []*models.PTXServiceDTORailSpecificationV2TRARailDailyTrainInfo {
 	return o.Payload
 }
@@ -62,6 +66,27 @@ func (o *TRAAPIDailyTrainInfo3OK) readResponse(response runtime.ClientResponse, 
 	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
+
+	return nil
+}
+
+// NewTRAAPIDailyTrainInfo3NotModified creates a TRAAPIDailyTrainInfo3NotModified with default headers values
+func NewTRAAPIDailyTrainInfo3NotModified() *TRAAPIDailyTrainInfo3NotModified {
+	return &TRAAPIDailyTrainInfo3NotModified{}
+}
+
+/* TRAAPIDailyTrainInfo3NotModified describes a response with status code 304, with default header values.
+
+服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content
+*/
+type TRAAPIDailyTrainInfo3NotModified struct {
+}
+
+func (o *TRAAPIDailyTrainInfo3NotModified) Error() string {
+	return fmt.Sprintf("[GET /v2/Rail/TRA/DailyTrainInfo/TrainNo/{TrainNo}/TrainDate/{TrainDate}][%d] tRAApiDailyTrainInfo3NotModified ", 304)
+}
+
+func (o *TRAAPIDailyTrainInfo3NotModified) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

@@ -29,7 +29,12 @@ func (o *ShipAPIRouteFare1Reader) ReadResponse(response runtime.ClientResponse, 
 			return nil, err
 		}
 		return result, nil
-
+	case 304:
+		result := NewShipAPIRouteFare1NotModified()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return nil, result
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -40,7 +45,7 @@ func NewShipAPIRouteFare1OK() *ShipAPIRouteFare1OK {
 	return &ShipAPIRouteFare1OK{}
 }
 
-/*ShipAPIRouteFare1OK handles this case with default header values.
+/* ShipAPIRouteFare1OK describes a response with status code 200, with default header values.
 
 Success
 */
@@ -51,7 +56,6 @@ type ShipAPIRouteFare1OK struct {
 func (o *ShipAPIRouteFare1OK) Error() string {
 	return fmt.Sprintf("[GET /v3/Ship/RouteFare/{RouteID}][%d] shipApiRouteFare1OK  %+v", 200, o.Payload)
 }
-
 func (o *ShipAPIRouteFare1OK) GetPayload() *models.PTXAPIShipModelShipWrapperPTXServiceDTOShipSpecificationV3RouteFare {
 	return o.Payload
 }
@@ -64,6 +68,27 @@ func (o *ShipAPIRouteFare1OK) readResponse(response runtime.ClientResponse, cons
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
+
+	return nil
+}
+
+// NewShipAPIRouteFare1NotModified creates a ShipAPIRouteFare1NotModified with default headers values
+func NewShipAPIRouteFare1NotModified() *ShipAPIRouteFare1NotModified {
+	return &ShipAPIRouteFare1NotModified{}
+}
+
+/* ShipAPIRouteFare1NotModified describes a response with status code 304, with default header values.
+
+服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content
+*/
+type ShipAPIRouteFare1NotModified struct {
+}
+
+func (o *ShipAPIRouteFare1NotModified) Error() string {
+	return fmt.Sprintf("[GET /v3/Ship/RouteFare/{RouteID}][%d] shipApiRouteFare1NotModified ", 304)
+}
+
+func (o *ShipAPIRouteFare1NotModified) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

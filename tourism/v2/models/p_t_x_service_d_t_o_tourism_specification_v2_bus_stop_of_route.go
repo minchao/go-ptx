@@ -6,6 +6,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -49,7 +50,7 @@ type PTXServiceDTOTourismSpecificationV2BusStopOfRoute struct {
 	//
 	// 所有經過站牌
 	// Required: true
-	Stops []*PTXServiceDTOBusSpecificationV2Stop `json:"Stops"`
+	Stops []*PTXServiceDTOTourismSpecificationV2Stop `json:"Stops"`
 
 	// String
 	//
@@ -230,6 +231,56 @@ func (m *PTXServiceDTOTourismSpecificationV2BusStopOfRoute) validateUpdateTime(f
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
 		return err
 	}
+
+	return nil
+}
+
+// ContextValidate validate this p t x service d t o tourism specification v2 bus stop of route based on the context it is used
+func (m *PTXServiceDTOTourismSpecificationV2BusStopOfRoute) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateStops(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateSubRouteName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateTaiwanTripName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTOTourismSpecificationV2BusStopOfRoute) contextValidateStops(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Stops); i++ {
+
+		if m.Stops[i] != nil {
+			if err := m.Stops[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("Stops" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTOTourismSpecificationV2BusStopOfRoute) contextValidateSubRouteName(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTOTourismSpecificationV2BusStopOfRoute) contextValidateTaiwanTripName(ctx context.Context, formats strfmt.Registry) error {
 
 	return nil
 }

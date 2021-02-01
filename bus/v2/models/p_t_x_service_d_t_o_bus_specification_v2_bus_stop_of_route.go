@@ -6,6 +6,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -39,7 +40,7 @@ type PTXServiceDTOBusSpecificationV2BusStopOfRoute struct {
 	// Array
 	//
 	// 營運業者
-	Operators []*PTXServiceDTOBusSpecificationV2RouteOperator `json:"Operators"`
+	Operators []*PTXServiceDTOBusSpecificationV2EmbeddedRouteOperator `json:"Operators"`
 
 	// String
 	//
@@ -65,7 +66,7 @@ type PTXServiceDTOBusSpecificationV2BusStopOfRoute struct {
 	//
 	// 所有經過站牌
 	// Required: true
-	Stops []*PTXServiceDTOBusSpecificationV2Stop `json:"Stops"`
+	Stops []*PTXServiceDTOBusSpecificationV2EmbeddedStop `json:"Stops"`
 
 	// String
 	//
@@ -151,7 +152,6 @@ func (m *PTXServiceDTOBusSpecificationV2BusStopOfRoute) Validate(formats strfmt.
 }
 
 func (m *PTXServiceDTOBusSpecificationV2BusStopOfRoute) validateOperators(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Operators) { // not required
 		return nil
 	}
@@ -260,6 +260,78 @@ func (m *PTXServiceDTOBusSpecificationV2BusStopOfRoute) validateVersionID(format
 	if err := validate.Required("VersionID", "body", m.VersionID); err != nil {
 		return err
 	}
+
+	return nil
+}
+
+// ContextValidate validate this p t x service d t o bus specification v2 bus stop of route based on the context it is used
+func (m *PTXServiceDTOBusSpecificationV2BusStopOfRoute) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateOperators(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateRouteName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateStops(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateSubRouteName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV2BusStopOfRoute) contextValidateOperators(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Operators); i++ {
+
+		if m.Operators[i] != nil {
+			if err := m.Operators[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("Operators" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV2BusStopOfRoute) contextValidateRouteName(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV2BusStopOfRoute) contextValidateStops(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Stops); i++ {
+
+		if m.Stops[i] != nil {
+			if err := m.Stops[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("Stops" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV2BusStopOfRoute) contextValidateSubRouteName(ctx context.Context, formats strfmt.Registry) error {
 
 	return nil
 }

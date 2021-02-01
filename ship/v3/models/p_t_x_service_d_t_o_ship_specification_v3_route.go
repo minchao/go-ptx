@@ -6,6 +6,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -111,7 +112,6 @@ func (m *PTXServiceDTOShipSpecificationV3Route) Validate(formats strfmt.Registry
 }
 
 func (m *PTXServiceDTOShipSpecificationV3Route) validateOperators(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Operators) { // not required
 		return nil
 	}
@@ -136,7 +136,6 @@ func (m *PTXServiceDTOShipSpecificationV3Route) validateOperators(formats strfmt
 }
 
 func (m *PTXServiceDTOShipSpecificationV3Route) validateRouteName(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.RouteName) { // not required
 		return nil
 	}
@@ -145,10 +144,59 @@ func (m *PTXServiceDTOShipSpecificationV3Route) validateRouteName(formats strfmt
 }
 
 func (m *PTXServiceDTOShipSpecificationV3Route) validateTicketPriceDescription(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.TicketPriceDescription) { // not required
 		return nil
 	}
+
+	return nil
+}
+
+// ContextValidate validate this p t x service d t o ship specification v3 route based on the context it is used
+func (m *PTXServiceDTOShipSpecificationV3Route) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateOperators(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateRouteName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateTicketPriceDescription(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTOShipSpecificationV3Route) contextValidateOperators(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Operators); i++ {
+
+		if m.Operators[i] != nil {
+			if err := m.Operators[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("Operators" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTOShipSpecificationV3Route) contextValidateRouteName(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTOShipSpecificationV3Route) contextValidateTicketPriceDescription(ctx context.Context, formats strfmt.Registry) error {
 
 	return nil
 }

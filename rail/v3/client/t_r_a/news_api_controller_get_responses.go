@@ -29,7 +29,12 @@ func (o *NewsAPIControllerGetReader) ReadResponse(response runtime.ClientRespons
 			return nil, err
 		}
 		return result, nil
-
+	case 304:
+		result := NewNewsAPIControllerGetNotModified()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return nil, result
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -40,7 +45,7 @@ func NewNewsAPIControllerGetOK() *NewsAPIControllerGetOK {
 	return &NewsAPIControllerGetOK{}
 }
 
-/*NewsAPIControllerGetOK handles this case with default header values.
+/* NewsAPIControllerGetOK describes a response with status code 200, with default header values.
 
 Success
 */
@@ -51,7 +56,6 @@ type NewsAPIControllerGetOK struct {
 func (o *NewsAPIControllerGetOK) Error() string {
 	return fmt.Sprintf("[GET /v3/Rail/TRA/News][%d] newsApiControllerGetOK  %+v", 200, o.Payload)
 }
-
 func (o *NewsAPIControllerGetOK) GetPayload() *models.PTXAPIRailModelTRARealTimeWrapperPTXServiceDTORailSpecificationV3TRATRANewsListNews {
 	return o.Payload
 }
@@ -64,6 +68,27 @@ func (o *NewsAPIControllerGetOK) readResponse(response runtime.ClientResponse, c
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
+
+	return nil
+}
+
+// NewNewsAPIControllerGetNotModified creates a NewsAPIControllerGetNotModified with default headers values
+func NewNewsAPIControllerGetNotModified() *NewsAPIControllerGetNotModified {
+	return &NewsAPIControllerGetNotModified{}
+}
+
+/* NewsAPIControllerGetNotModified describes a response with status code 304, with default header values.
+
+服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content
+*/
+type NewsAPIControllerGetNotModified struct {
+}
+
+func (o *NewsAPIControllerGetNotModified) Error() string {
+	return fmt.Sprintf("[GET /v3/Rail/TRA/News][%d] newsApiControllerGetNotModified ", 304)
+}
+
+func (o *NewsAPIControllerGetNotModified) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

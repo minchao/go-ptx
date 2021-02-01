@@ -6,6 +6,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -142,7 +143,6 @@ func (m *PTXServiceDTORailSpecificationV3TRATRAAlertListAlertScope) validateLine
 }
 
 func (m *PTXServiceDTORailSpecificationV3TRATRAAlertListAlertScope) validateNetworkList(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.NetworkList) { // not required
 		return nil
 	}
@@ -213,6 +213,135 @@ func (m *PTXServiceDTORailSpecificationV3TRATRAAlertListAlertScope) validateTrai
 
 		if m.Trains[i] != nil {
 			if err := m.Trains[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("Trains" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+// ContextValidate validate this p t x service d t o rail specification v3 t r a t r a alert list alert scope based on the context it is used
+func (m *PTXServiceDTORailSpecificationV3TRATRAAlertListAlertScope) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateLineSections(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateLines(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateNetworkList(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateRoutes(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateStations(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateTrains(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV3TRATRAAlertListAlertScope) contextValidateLineSections(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.LineSections); i++ {
+
+		if m.LineSections[i] != nil {
+			if err := m.LineSections[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("LineSections" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV3TRATRAAlertListAlertScope) contextValidateLines(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Lines); i++ {
+
+		if m.Lines[i] != nil {
+			if err := m.Lines[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("Lines" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV3TRATRAAlertListAlertScope) contextValidateNetworkList(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV3TRATRAAlertListAlertScope) contextValidateRoutes(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Routes); i++ {
+
+		if m.Routes[i] != nil {
+			if err := m.Routes[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("Routes" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV3TRATRAAlertListAlertScope) contextValidateStations(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Stations); i++ {
+
+		if m.Stations[i] != nil {
+			if err := m.Stations[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("Stations" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV3TRATRAAlertListAlertScope) contextValidateTrains(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Trains); i++ {
+
+		if m.Trains[i] != nil {
+			if err := m.Trains[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("Trains" + "." + strconv.Itoa(i))
 				}

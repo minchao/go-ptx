@@ -6,6 +6,8 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
+
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 )
@@ -78,6 +80,11 @@ type PTXServiceDTOBusSpecificationV3ScheduleServiceDay struct {
 
 // Validate validates this p t x service d t o bus specification v3 schedule service day
 func (m *PTXServiceDTOBusSpecificationV3ScheduleServiceDay) Validate(formats strfmt.Registry) error {
+	return nil
+}
+
+// ContextValidate validates this p t x service d t o bus specification v3 schedule service day based on context it is used
+func (m *PTXServiceDTOBusSpecificationV3ScheduleServiceDay) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	return nil
 }
 

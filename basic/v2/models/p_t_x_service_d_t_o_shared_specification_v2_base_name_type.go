@@ -6,6 +6,8 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
+
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 )
@@ -30,6 +32,11 @@ type PTXServiceDTOSharedSpecificationV2BaseNameType struct {
 
 // Validate validates this p t x service d t o shared specification v2 base name type
 func (m *PTXServiceDTOSharedSpecificationV2BaseNameType) Validate(formats strfmt.Registry) error {
+	return nil
+}
+
+// ContextValidate validates this p t x service d t o shared specification v2 base name type based on context it is used
+func (m *PTXServiceDTOSharedSpecificationV2BaseNameType) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	return nil
 }
 

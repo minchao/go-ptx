@@ -6,6 +6,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -63,6 +64,12 @@ type PTXServiceDTORailSpecificationV2MetroNetwork struct {
 
 	// DateTime
 	//
+	// 來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
+	// Required: true
+	SrcUpdateTime *string `json:"SrcUpdateTime"`
+
+	// DateTime
+	//
 	// 本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Required: true
 	UpdateTime *string `json:"UpdateTime"`
@@ -99,6 +106,10 @@ func (m *PTXServiceDTORailSpecificationV2MetroNetwork) Validate(formats strfmt.R
 	}
 
 	if err := m.validateOperatorName(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateSrcUpdateTime(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -178,6 +189,15 @@ func (m *PTXServiceDTORailSpecificationV2MetroNetwork) validateOperatorName(form
 	return nil
 }
 
+func (m *PTXServiceDTORailSpecificationV2MetroNetwork) validateSrcUpdateTime(formats strfmt.Registry) error {
+
+	if err := validate.Required("SrcUpdateTime", "body", m.SrcUpdateTime); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *PTXServiceDTORailSpecificationV2MetroNetwork) validateUpdateTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
@@ -192,6 +212,56 @@ func (m *PTXServiceDTORailSpecificationV2MetroNetwork) validateVersionID(formats
 	if err := validate.Required("VersionID", "body", m.VersionID); err != nil {
 		return err
 	}
+
+	return nil
+}
+
+// ContextValidate validate this p t x service d t o rail specification v2 metro network based on the context it is used
+func (m *PTXServiceDTORailSpecificationV2MetroNetwork) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateLines(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateNetworkName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateOperatorName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV2MetroNetwork) contextValidateLines(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Lines); i++ {
+
+		if m.Lines[i] != nil {
+			if err := m.Lines[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("Lines" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV2MetroNetwork) contextValidateNetworkName(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV2MetroNetwork) contextValidateOperatorName(ctx context.Context, formats strfmt.Registry) error {
 
 	return nil
 }

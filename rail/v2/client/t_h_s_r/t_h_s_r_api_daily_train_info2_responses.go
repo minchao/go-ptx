@@ -29,7 +29,12 @@ func (o *THSRAPIDailyTrainInfo2Reader) ReadResponse(response runtime.ClientRespo
 			return nil, err
 		}
 		return result, nil
-
+	case 304:
+		result := NewTHSRAPIDailyTrainInfo2NotModified()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return nil, result
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -40,7 +45,7 @@ func NewTHSRAPIDailyTrainInfo2OK() *THSRAPIDailyTrainInfo2OK {
 	return &THSRAPIDailyTrainInfo2OK{}
 }
 
-/*THSRAPIDailyTrainInfo2OK handles this case with default header values.
+/* THSRAPIDailyTrainInfo2OK describes a response with status code 200, with default header values.
 
 Success
 */
@@ -51,7 +56,6 @@ type THSRAPIDailyTrainInfo2OK struct {
 func (o *THSRAPIDailyTrainInfo2OK) Error() string {
 	return fmt.Sprintf("[GET /v2/Rail/THSR/DailyTrainInfo/TrainDate/{TrainDate}][%d] tHSRApiDailyTrainInfo2OK  %+v", 200, o.Payload)
 }
-
 func (o *THSRAPIDailyTrainInfo2OK) GetPayload() []*models.PTXServiceDTORailSpecificationV2THSRRailDailyTrainInfo {
 	return o.Payload
 }
@@ -62,6 +66,27 @@ func (o *THSRAPIDailyTrainInfo2OK) readResponse(response runtime.ClientResponse,
 	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
+
+	return nil
+}
+
+// NewTHSRAPIDailyTrainInfo2NotModified creates a THSRAPIDailyTrainInfo2NotModified with default headers values
+func NewTHSRAPIDailyTrainInfo2NotModified() *THSRAPIDailyTrainInfo2NotModified {
+	return &THSRAPIDailyTrainInfo2NotModified{}
+}
+
+/* THSRAPIDailyTrainInfo2NotModified describes a response with status code 304, with default header values.
+
+服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content
+*/
+type THSRAPIDailyTrainInfo2NotModified struct {
+}
+
+func (o *THSRAPIDailyTrainInfo2NotModified) Error() string {
+	return fmt.Sprintf("[GET /v2/Rail/THSR/DailyTrainInfo/TrainDate/{TrainDate}][%d] tHSRApiDailyTrainInfo2NotModified ", 304)
+}
+
+func (o *THSRAPIDailyTrainInfo2NotModified) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

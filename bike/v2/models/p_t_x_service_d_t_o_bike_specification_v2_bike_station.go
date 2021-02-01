@@ -6,6 +6,8 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
+
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
@@ -104,7 +106,6 @@ func (m *PTXServiceDTOBikeSpecificationV2BikeStation) Validate(formats strfmt.Re
 }
 
 func (m *PTXServiceDTOBikeSpecificationV2BikeStation) validateStationAddress(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.StationAddress) { // not required
 		return nil
 	}
@@ -113,7 +114,6 @@ func (m *PTXServiceDTOBikeSpecificationV2BikeStation) validateStationAddress(for
 }
 
 func (m *PTXServiceDTOBikeSpecificationV2BikeStation) validateStationName(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.StationName) { // not required
 		return nil
 	}
@@ -122,7 +122,6 @@ func (m *PTXServiceDTOBikeSpecificationV2BikeStation) validateStationName(format
 }
 
 func (m *PTXServiceDTOBikeSpecificationV2BikeStation) validateStationPosition(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.StationPosition) { // not required
 		return nil
 	}
@@ -135,6 +134,43 @@ func (m *PTXServiceDTOBikeSpecificationV2BikeStation) validateUpdateTime(formats
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
 		return err
 	}
+
+	return nil
+}
+
+// ContextValidate validate this p t x service d t o bike specification v2 bike station based on the context it is used
+func (m *PTXServiceDTOBikeSpecificationV2BikeStation) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateStationAddress(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateStationName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateStationPosition(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTOBikeSpecificationV2BikeStation) contextValidateStationAddress(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTOBikeSpecificationV2BikeStation) contextValidateStationName(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTOBikeSpecificationV2BikeStation) contextValidateStationPosition(ctx context.Context, formats strfmt.Registry) error {
 
 	return nil
 }

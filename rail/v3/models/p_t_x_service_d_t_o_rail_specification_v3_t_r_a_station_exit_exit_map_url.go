@@ -6,6 +6,8 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
+
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
@@ -50,6 +52,25 @@ func (m *PTXServiceDTORailSpecificationV3TRAStationExitExitMapURL) Validate(form
 }
 
 func (m *PTXServiceDTORailSpecificationV3TRAStationExitExitMapURL) validateMapName(formats strfmt.Registry) error {
+
+	return nil
+}
+
+// ContextValidate validate this p t x service d t o rail specification v3 t r a station exit exit map URL based on the context it is used
+func (m *PTXServiceDTORailSpecificationV3TRAStationExitExitMapURL) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateMapName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV3TRAStationExitExitMapURL) contextValidateMapName(ctx context.Context, formats strfmt.Registry) error {
 
 	return nil
 }
