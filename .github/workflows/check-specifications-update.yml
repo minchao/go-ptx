@@ -1,0 +1,71 @@
+name: check specifications update
+on:
+  push: { }
+  workflow_dispatch: { }
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-go@v2
+        with:
+          go-version: ${{ matrix.go-version }}
+      - uses: actions/checkout@v2
+
+      - name: Cache go modules
+        uses: actions/cache@v2
+        with:
+          path: ~/go/pkg/mod
+          key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
+          restore-keys: |
+            ${{ runner.os }}-go-
+
+      - run: go mod download
+
+      - name: Install go-swagger
+        run: |
+          mkdir -p $HOME/.local/bin
+          download_url=$(curl -s https://api.github.com/repos/go-swagger/go-swagger/releases/latest | \
+            jq -r '.assets[] | select(.name | contains("'"$(uname | tr '[:upper:]' '[:lower:]')"'_amd64")) | .browser_download_url')
+          curl -o $HOME/.local/bin/swagger -L'#' "$download_url"
+          chmod +x $HOME/.local/bin/swagger
+          echo "$HOME/.local/bin" >> $GITHUB_PATH
+
+      - name: Fetche all newest openapi specifications
+        run: make spec
+      - name: Generate go client libraries
+        run: make generate
+
+      - run: |
+          git fetch --no-tags --prune --depth=1 origin +refs/heads/master:refs/remotes/origin/master
+          git branch -r
+
+      - name: Check if openapi specification is updateed
+        run: |
+          for spec in ./oas.*.*.json
+          do
+          IFS='.' read -r -a substrings <<< "${spec}"
+          target_folders="${target_folders} ${substrings[2]}"
+          done
+          target_folders=$(echo -e "${target_folders}" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')
+          git_diff_cmd="git diff refs/remotes/origin/master -- ${target_folders}"
+          output=$(eval "${git_diff_cmd}")
+          if [[ -z "${output}" ]]; then
+            exit 1
+          fi
+
+      - run: make validate
+      - run: make test
+      - run: make test-integration
+        env:
+          APP_ID: ${{ secrets.APP_ID }}
+          APP_KEY: ${{ secrets.APP_KEY }}
+
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@v3
+        with:
+          token: ${{ secrets.AUTOMATION_BOT_GITHUB_TOKEN }}
+          commit-message: "chore: openapi specifications update"
+          branch: auto/mod-update
+          title: "chore: openapi specifications update"
+          assignees: ${{ github.repository_owner }}
