@@ -106,6 +106,9 @@
               "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V3.Wrapper.BusVWrapper[PTX.Service.DTO.Bus.Specification.V3.Network]"
             }
           },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
@@ -215,6 +218,9 @@
             "schema": {
               "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V3.Wrapper.BusVWrapper[PTX.Service.DTO.Bus.Specification.V3.Stop]"
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
@@ -326,6 +332,9 @@
               "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V3.Wrapper.BusVWrapper[PTX.Service.DTO.Bus.Specification.V3.Station]"
             }
           },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
@@ -430,6 +439,9 @@
             "schema": {
               "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V3.Wrapper.BusVWrapper[PTX.Service.DTO.Bus.Specification.V3.Route]"
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
@@ -536,6 +548,9 @@
               "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V3.Wrapper.BusVWrapper[PTX.Service.DTO.Bus.Specification.V3.SubRoute]"
             }
           },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
@@ -639,6 +654,9 @@
             "schema": {
               "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V3.Wrapper.BusVWrapper[PTX.Service.DTO.Bus.Specification.V3.FirstLastTripInfo]"
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
@@ -750,6 +768,9 @@
               "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V3.Wrapper.BusVWrapper[PTX.Service.DTO.Bus.Specification.V3.Depot]"
             }
           },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
@@ -855,6 +876,9 @@
               "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V3.Wrapper.BusVWrapper[PTX.Service.DTO.Bus.Specification.V3.StopOfRoute]"
             }
           },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
@@ -958,6 +982,9 @@
             "schema": {
               "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V3.Wrapper.BusVWrapper[PTX.Service.DTO.Bus.Specification.V3.DisplayStopOfRoute]"
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
@@ -1063,6 +1090,9 @@
               "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V3.Wrapper.BusWrapper[PTX.Service.DTO.Bus.Specification.V3.RouteFare]"
             }
           },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
@@ -1167,6 +1197,9 @@
               "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V3.Wrapper.BusGWrapper[PTX.Service.DTO.Bus.Specification.V3.Schedule]"
             }
           },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
@@ -1270,6 +1303,9 @@
             "schema": {
               "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V3.Wrapper.BusWrapper[PTX.Service.DTO.Bus.Specification.V3.DailyTimeTable]"
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
@@ -1381,6 +1417,9 @@
             "schema": {
               "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V3.Wrapper.BusWrapper[PTX.Service.DTO.Bus.Specification.V3.A1Data]"
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
@@ -1500,6 +1539,9 @@
               "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V3.Wrapper.BusWrapper[PTX.Service.DTO.Bus.Specification.V3.A1Data]"
             }
           },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
@@ -1604,6 +1646,9 @@
             "schema": {
               "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V3.Wrapper.BusWrapper[PTX.Service.DTO.Bus.Specification.V3.A2Data]"
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
@@ -1717,6 +1762,9 @@
               "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V3.Wrapper.BusWrapper[PTX.Service.DTO.Bus.Specification.V3.A2Data]"
             }
           },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
@@ -1821,6 +1869,9 @@
             "schema": {
               "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V3.Wrapper.BusWrapper[PTX.Service.DTO.Bus.Specification.V3.N1Data]"
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
@@ -1934,6 +1985,9 @@
               "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V3.Wrapper.BusWrapper[PTX.Service.DTO.Bus.Specification.V3.N1Data]"
             }
           },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
@@ -2038,6 +2092,9 @@
             "schema": {
               "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V3.Wrapper.BusWrapper[PTX.Service.DTO.Bus.Specification.V3.Alert]"
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
@@ -2144,6 +2201,9 @@
               "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V3.Wrapper.BusWrapper[PTX.Service.DTO.Bus.Specification.V3.News]"
             }
           },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
@@ -2247,6 +2307,9 @@
             "schema": {
               "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V3.Wrapper.BusVWrapper[PTX.Service.DTO.Bus.Specification.V3.Operator]"
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
@@ -2352,6 +2415,9 @@
               "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V3.Wrapper.BusVWrapper[PTX.Service.DTO.Bus.Specification.V3.Vehicle]"
             }
           },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
@@ -2455,6 +2521,9 @@
             "schema": {
               "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V3.Wrapper.BusVWrapper[PTX.Service.DTO.Bus.Specification.V3.VehicleDepot]"
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
@@ -2560,6 +2629,9 @@
               "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V3.Wrapper.BusVWrapper[PTX.Service.DTO.Bus.Specification.V3.VehicleRoute]"
             }
           },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
@@ -2663,6 +2735,9 @@
             "schema": {
               "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V3.Wrapper.BusVWrapper[PTX.Service.DTO.Bus.Specification.V3.Shape]"
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
@@ -2768,6 +2843,9 @@
               "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V3.Wrapper.BusVWrapper[PTX.Service.DTO.Bus.Specification.V3.RouteNetwork]"
             }
           },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
@@ -2871,6 +2949,9 @@
             "schema": {
               "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V3.Wrapper.BusVWrapper[PTX.Service.DTO.Bus.Specification.V3.S2STravelTime]"
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",

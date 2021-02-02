@@ -6,6 +6,8 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
+
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
@@ -280,7 +282,6 @@ func (m *PTXServiceDTORailSpecificationV2TRARailStationTimetable) validateTrainN
 }
 
 func (m *PTXServiceDTORailSpecificationV2TRARailStationTimetable) validateTrainTypeName(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.TrainTypeName) { // not required
 		return nil
 	}
@@ -302,6 +303,52 @@ func (m *PTXServiceDTORailSpecificationV2TRARailStationTimetable) validateVersio
 	if err := validate.Required("VersionID", "body", m.VersionID); err != nil {
 		return err
 	}
+
+	return nil
+}
+
+// ContextValidate validate this p t x service d t o rail specification v2 t r a rail station timetable based on the context it is used
+func (m *PTXServiceDTORailSpecificationV2TRARailStationTimetable) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateEndingStationName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateStartingStationName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateStationName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateTrainTypeName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV2TRARailStationTimetable) contextValidateEndingStationName(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV2TRARailStationTimetable) contextValidateStartingStationName(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV2TRARailStationTimetable) contextValidateStationName(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV2TRARailStationTimetable) contextValidateTrainTypeName(ctx context.Context, formats strfmt.Registry) error {
 
 	return nil
 }

@@ -16,52 +16,66 @@ import (
 	"github.com/go-openapi/strfmt"
 )
 
-// NewODFareAPIControllerAPIControllerGetParams creates a new ODFareAPIControllerAPIControllerGetParams object
-// with the default values initialized.
+// NewODFareAPIControllerAPIControllerGetParams creates a new ODFareAPIControllerAPIControllerGetParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewODFareAPIControllerAPIControllerGetParams() *ODFareAPIControllerAPIControllerGetParams {
-
 	return &ODFareAPIControllerAPIControllerGetParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewODFareAPIControllerAPIControllerGetParamsWithTimeout creates a new ODFareAPIControllerAPIControllerGetParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewODFareAPIControllerAPIControllerGetParamsWithTimeout(timeout time.Duration) *ODFareAPIControllerAPIControllerGetParams {
-
 	return &ODFareAPIControllerAPIControllerGetParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewODFareAPIControllerAPIControllerGetParamsWithContext creates a new ODFareAPIControllerAPIControllerGetParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewODFareAPIControllerAPIControllerGetParamsWithContext(ctx context.Context) *ODFareAPIControllerAPIControllerGetParams {
-
 	return &ODFareAPIControllerAPIControllerGetParams{
-
 		Context: ctx,
 	}
 }
 
 // NewODFareAPIControllerAPIControllerGetParamsWithHTTPClient creates a new ODFareAPIControllerAPIControllerGetParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewODFareAPIControllerAPIControllerGetParamsWithHTTPClient(client *http.Client) *ODFareAPIControllerAPIControllerGetParams {
-
 	return &ODFareAPIControllerAPIControllerGetParams{
 		HTTPClient: client,
 	}
 }
 
-/*ODFareAPIControllerAPIControllerGetParams contains all the parameters to send to the API endpoint
-for the o d fare Api controller Api controller get operation typically these are written to a http.Request
+/* ODFareAPIControllerAPIControllerGetParams contains all the parameters to send to the API endpoint
+   for the o d fare Api controller Api controller get operation.
+
+   Typically these are written to a http.Request.
 */
 type ODFareAPIControllerAPIControllerGetParams struct {
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the o d fare Api controller Api controller get params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *ODFareAPIControllerAPIControllerGetParams) WithDefaults() *ODFareAPIControllerAPIControllerGetParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the o d fare Api controller Api controller get params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *ODFareAPIControllerAPIControllerGetParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the o d fare Api controller Api controller get params

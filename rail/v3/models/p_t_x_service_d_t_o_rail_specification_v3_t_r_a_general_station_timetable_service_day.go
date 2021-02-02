@@ -6,6 +6,8 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
+
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
@@ -177,6 +179,11 @@ func (m *PTXServiceDTORailSpecificationV3TRAGeneralStationTimetableServiceDay) v
 		return err
 	}
 
+	return nil
+}
+
+// ContextValidate validates this p t x service d t o rail specification v3 t r a general station timetable service day based on context it is used
+func (m *PTXServiceDTORailSpecificationV3TRAGeneralStationTimetableServiceDay) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	return nil
 }
 

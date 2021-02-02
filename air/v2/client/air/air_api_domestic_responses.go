@@ -29,7 +29,12 @@ func (o *AirAPIDomesticReader) ReadResponse(response runtime.ClientResponse, con
 			return nil, err
 		}
 		return result, nil
-
+	case 304:
+		result := NewAirAPIDomesticNotModified()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return nil, result
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -40,7 +45,7 @@ func NewAirAPIDomesticOK() *AirAPIDomesticOK {
 	return &AirAPIDomesticOK{}
 }
 
-/*AirAPIDomesticOK handles this case with default header values.
+/* AirAPIDomesticOK describes a response with status code 200, with default header values.
 
 Success
 */
@@ -51,7 +56,6 @@ type AirAPIDomesticOK struct {
 func (o *AirAPIDomesticOK) Error() string {
 	return fmt.Sprintf("[GET /v2/Air/GeneralSchedule/Domestic][%d] airApiDomesticOK  %+v", 200, o.Payload)
 }
-
 func (o *AirAPIDomesticOK) GetPayload() []*models.PTXServiceDTOAirSpecificationV2GeneralFlightSchedule {
 	return o.Payload
 }
@@ -62,6 +66,27 @@ func (o *AirAPIDomesticOK) readResponse(response runtime.ClientResponse, consume
 	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
+
+	return nil
+}
+
+// NewAirAPIDomesticNotModified creates a AirAPIDomesticNotModified with default headers values
+func NewAirAPIDomesticNotModified() *AirAPIDomesticNotModified {
+	return &AirAPIDomesticNotModified{}
+}
+
+/* AirAPIDomesticNotModified describes a response with status code 304, with default header values.
+
+服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content
+*/
+type AirAPIDomesticNotModified struct {
+}
+
+func (o *AirAPIDomesticNotModified) Error() string {
+	return fmt.Sprintf("[GET /v2/Air/GeneralSchedule/Domestic][%d] airApiDomesticNotModified ", 304)
+}
+
+func (o *AirAPIDomesticNotModified) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

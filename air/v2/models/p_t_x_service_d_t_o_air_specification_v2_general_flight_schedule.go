@@ -6,6 +6,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -244,7 +245,6 @@ func (m *PTXServiceDTOAirSpecificationV2GeneralFlightSchedule) validateArrivalTi
 }
 
 func (m *PTXServiceDTOAirSpecificationV2GeneralFlightSchedule) validateCodeShare(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.CodeShare) { // not required
 		return nil
 	}
@@ -389,6 +389,38 @@ func (m *PTXServiceDTOAirSpecificationV2GeneralFlightSchedule) validateWednesday
 
 	if err := validate.Required("Wednesday", "body", m.Wednesday); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+// ContextValidate validate this p t x service d t o air specification v2 general flight schedule based on the context it is used
+func (m *PTXServiceDTOAirSpecificationV2GeneralFlightSchedule) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateCodeShare(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTOAirSpecificationV2GeneralFlightSchedule) contextValidateCodeShare(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.CodeShare); i++ {
+
+		if m.CodeShare[i] != nil {
+			if err := m.CodeShare[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("CodeShare" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
 	}
 
 	return nil

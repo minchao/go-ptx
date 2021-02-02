@@ -17,96 +17,116 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewBasicAPIOperatorParams creates a new BasicAPIOperatorParams object
-// with the default values initialized.
+// NewBasicAPIOperatorParams creates a new BasicAPIOperatorParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewBasicAPIOperatorParams() *BasicAPIOperatorParams {
-	var (
-		dollarTopDefault = int64(30)
-	)
 	return &BasicAPIOperatorParams{
-		DollarTop: &dollarTopDefault,
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewBasicAPIOperatorParamsWithTimeout creates a new BasicAPIOperatorParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewBasicAPIOperatorParamsWithTimeout(timeout time.Duration) *BasicAPIOperatorParams {
-	var (
-		dollarTopDefault = int64(30)
-	)
 	return &BasicAPIOperatorParams{
-		DollarTop: &dollarTopDefault,
-
 		timeout: timeout,
 	}
 }
 
 // NewBasicAPIOperatorParamsWithContext creates a new BasicAPIOperatorParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewBasicAPIOperatorParamsWithContext(ctx context.Context) *BasicAPIOperatorParams {
-	var (
-		dollarTopDefault = int64(30)
-	)
 	return &BasicAPIOperatorParams{
-		DollarTop: &dollarTopDefault,
-
 		Context: ctx,
 	}
 }
 
 // NewBasicAPIOperatorParamsWithHTTPClient creates a new BasicAPIOperatorParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewBasicAPIOperatorParamsWithHTTPClient(client *http.Client) *BasicAPIOperatorParams {
-	var (
-		dollarTopDefault = int64(30)
-	)
 	return &BasicAPIOperatorParams{
-		DollarTop:  &dollarTopDefault,
 		HTTPClient: client,
 	}
 }
 
-/*BasicAPIOperatorParams contains all the parameters to send to the API endpoint
-for the basic Api operator operation typically these are written to a http.Request
+/* BasicAPIOperatorParams contains all the parameters to send to the API endpoint
+   for the basic Api operator operation.
+
+   Typically these are written to a http.Request.
 */
 type BasicAPIOperatorParams struct {
 
-	/*DollarFilter
-	  過濾
+	/* DollarFilter.
 
+	   過濾
 	*/
 	DollarFilter *string
-	/*DollarFormat
-	  指定來源格式
 
+	/* DollarFormat.
+
+	   指定來源格式
 	*/
 	DollarFormat string
-	/*DollarOrderby
-	  排序
 
+	/* DollarOrderby.
+
+	   排序
 	*/
 	DollarOrderby *string
-	/*DollarSelect
-	  挑選
 
+	/* DollarSelect.
+
+	   挑選
 	*/
 	DollarSelect *string
-	/*DollarSkip
-	  跳過前幾筆
 
+	/* DollarSkip.
+
+	   跳過前幾筆
 	*/
 	DollarSkip *string
-	/*DollarTop
-	  取前幾筆
 
+	/* DollarTop.
+
+	   取前幾筆
+
+	   Default: 30
 	*/
 	DollarTop *int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the basic Api operator params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *BasicAPIOperatorParams) WithDefaults() *BasicAPIOperatorParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the basic Api operator params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *BasicAPIOperatorParams) SetDefaults() {
+	var (
+		dollarTopDefault = int64(30)
+	)
+
+	val := BasicAPIOperatorParams{
+		DollarTop: &dollarTopDefault,
+	}
+
+	val.timeout = o.timeout
+	val.Context = o.Context
+	val.HTTPClient = o.HTTPClient
+	*o = val
 }
 
 // WithTimeout adds the timeout to the basic Api operator params
@@ -220,22 +240,24 @@ func (o *BasicAPIOperatorParams) WriteToRequest(r runtime.ClientRequest, reg str
 
 		// query param $filter
 		var qrDollarFilter string
+
 		if o.DollarFilter != nil {
 			qrDollarFilter = *o.DollarFilter
 		}
 		qDollarFilter := qrDollarFilter
 		if qDollarFilter != "" {
+
 			if err := r.SetQueryParam("$filter", qDollarFilter); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	// query param $format
 	qrDollarFormat := o.DollarFormat
 	qDollarFormat := qrDollarFormat
 	if qDollarFormat != "" {
+
 		if err := r.SetQueryParam("$format", qDollarFormat); err != nil {
 			return err
 		}
@@ -245,64 +267,68 @@ func (o *BasicAPIOperatorParams) WriteToRequest(r runtime.ClientRequest, reg str
 
 		// query param $orderby
 		var qrDollarOrderby string
+
 		if o.DollarOrderby != nil {
 			qrDollarOrderby = *o.DollarOrderby
 		}
 		qDollarOrderby := qrDollarOrderby
 		if qDollarOrderby != "" {
+
 			if err := r.SetQueryParam("$orderby", qDollarOrderby); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.DollarSelect != nil {
 
 		// query param $select
 		var qrDollarSelect string
+
 		if o.DollarSelect != nil {
 			qrDollarSelect = *o.DollarSelect
 		}
 		qDollarSelect := qrDollarSelect
 		if qDollarSelect != "" {
+
 			if err := r.SetQueryParam("$select", qDollarSelect); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.DollarSkip != nil {
 
 		// query param $skip
 		var qrDollarSkip string
+
 		if o.DollarSkip != nil {
 			qrDollarSkip = *o.DollarSkip
 		}
 		qDollarSkip := qrDollarSkip
 		if qDollarSkip != "" {
+
 			if err := r.SetQueryParam("$skip", qDollarSkip); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.DollarTop != nil {
 
 		// query param $top
 		var qrDollarTop int64
+
 		if o.DollarTop != nil {
 			qrDollarTop = *o.DollarTop
 		}
 		qDollarTop := swag.FormatInt64(qrDollarTop)
 		if qDollarTop != "" {
+
 			if err := r.SetQueryParam("$top", qDollarTop); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if len(res) > 0 {

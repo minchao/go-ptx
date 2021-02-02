@@ -16,64 +16,79 @@ import (
 	"github.com/go-openapi/strfmt"
 )
 
-// NewInterCityBusAPIDataVersionParams creates a new InterCityBusAPIDataVersionParams object
-// with the default values initialized.
+// NewInterCityBusAPIDataVersionParams creates a new InterCityBusAPIDataVersionParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewInterCityBusAPIDataVersionParams() *InterCityBusAPIDataVersionParams {
-	var ()
 	return &InterCityBusAPIDataVersionParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewInterCityBusAPIDataVersionParamsWithTimeout creates a new InterCityBusAPIDataVersionParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewInterCityBusAPIDataVersionParamsWithTimeout(timeout time.Duration) *InterCityBusAPIDataVersionParams {
-	var ()
 	return &InterCityBusAPIDataVersionParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewInterCityBusAPIDataVersionParamsWithContext creates a new InterCityBusAPIDataVersionParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewInterCityBusAPIDataVersionParamsWithContext(ctx context.Context) *InterCityBusAPIDataVersionParams {
-	var ()
 	return &InterCityBusAPIDataVersionParams{
-
 		Context: ctx,
 	}
 }
 
 // NewInterCityBusAPIDataVersionParamsWithHTTPClient creates a new InterCityBusAPIDataVersionParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewInterCityBusAPIDataVersionParamsWithHTTPClient(client *http.Client) *InterCityBusAPIDataVersionParams {
-	var ()
 	return &InterCityBusAPIDataVersionParams{
 		HTTPClient: client,
 	}
 }
 
-/*InterCityBusAPIDataVersionParams contains all the parameters to send to the API endpoint
-for the inter city bus Api data version operation typically these are written to a http.Request
+/* InterCityBusAPIDataVersionParams contains all the parameters to send to the API endpoint
+   for the inter city bus Api data version operation.
+
+   Typically these are written to a http.Request.
 */
 type InterCityBusAPIDataVersionParams struct {
 
-	/*DollarFormat
-	  指定來源格式
+	/* DollarFormat.
 
+	   指定來源格式
 	*/
 	DollarFormat string
-	/*Health
-	  加入參數'?health=true'即可查詢此API服務的健康狀態
 
+	/* Health.
+
+	   加入參數'?health=true'即可查詢此API服務的健康狀態
 	*/
 	Health *string
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the inter city bus Api data version params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *InterCityBusAPIDataVersionParams) WithDefaults() *InterCityBusAPIDataVersionParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the inter city bus Api data version params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *InterCityBusAPIDataVersionParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the inter city bus Api data version params
@@ -143,6 +158,7 @@ func (o *InterCityBusAPIDataVersionParams) WriteToRequest(r runtime.ClientReques
 	qrDollarFormat := o.DollarFormat
 	qDollarFormat := qrDollarFormat
 	if qDollarFormat != "" {
+
 		if err := r.SetQueryParam("$format", qDollarFormat); err != nil {
 			return err
 		}
@@ -152,16 +168,17 @@ func (o *InterCityBusAPIDataVersionParams) WriteToRequest(r runtime.ClientReques
 
 		// query param health
 		var qrHealth string
+
 		if o.Health != nil {
 			qrHealth = *o.Health
 		}
 		qHealth := qrHealth
 		if qHealth != "" {
+
 			if err := r.SetQueryParam("health", qHealth); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if len(res) > 0 {

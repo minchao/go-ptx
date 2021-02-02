@@ -6,6 +6,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -49,9 +50,9 @@ type PTXServiceDTORailSpecificationV2THSROldAvailableSeat struct {
 
 	// DateTime
 	//
-	// 來源端平台接收時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
+	// 來源平台更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Required: true
-	SrcRecTime *string `json:"SrcRecTime"`
+	SrcUpdateTime *string `json:"SrcUpdateTime"`
 
 	// String
 	//
@@ -78,12 +79,6 @@ type PTXServiceDTORailSpecificationV2THSROldAvailableSeat struct {
 	// 車次號碼
 	// Required: true
 	TrainNo *string `json:"TrainNo"`
-
-	// DateTime
-	//
-	// 本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
-	// Required: true
-	UpdateTime *string `json:"UpdateTime"`
 }
 
 // Validate validates this p t x service d t o rail specification v2 t h s r old available seat
@@ -106,7 +101,7 @@ func (m *PTXServiceDTORailSpecificationV2THSROldAvailableSeat) Validate(formats 
 		res = append(res, err)
 	}
 
-	if err := m.validateSrcRecTime(formats); err != nil {
+	if err := m.validateSrcUpdateTime(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -123,10 +118,6 @@ func (m *PTXServiceDTORailSpecificationV2THSROldAvailableSeat) Validate(formats 
 	}
 
 	if err := m.validateTrainNo(formats); err != nil {
-		res = append(res, err)
-	}
-
-	if err := m.validateUpdateTime(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -168,9 +159,9 @@ func (m *PTXServiceDTORailSpecificationV2THSROldAvailableSeat) validateEndingSta
 	return nil
 }
 
-func (m *PTXServiceDTORailSpecificationV2THSROldAvailableSeat) validateSrcRecTime(formats strfmt.Registry) error {
+func (m *PTXServiceDTORailSpecificationV2THSROldAvailableSeat) validateSrcUpdateTime(formats strfmt.Registry) error {
 
-	if err := validate.Required("SrcRecTime", "body", m.SrcRecTime); err != nil {
+	if err := validate.Required("SrcUpdateTime", "body", m.SrcUpdateTime); err != nil {
 		return err
 	}
 
@@ -225,10 +216,51 @@ func (m *PTXServiceDTORailSpecificationV2THSROldAvailableSeat) validateTrainNo(f
 	return nil
 }
 
-func (m *PTXServiceDTORailSpecificationV2THSROldAvailableSeat) validateUpdateTime(formats strfmt.Registry) error {
+// ContextValidate validate this p t x service d t o rail specification v2 t h s r old available seat based on the context it is used
+func (m *PTXServiceDTORailSpecificationV2THSROldAvailableSeat) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
 
-	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
-		return err
+	if err := m.contextValidateEndingStationName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateStationName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateStopStations(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV2THSROldAvailableSeat) contextValidateEndingStationName(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV2THSROldAvailableSeat) contextValidateStationName(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV2THSROldAvailableSeat) contextValidateStopStations(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.StopStations); i++ {
+
+		if m.StopStations[i] != nil {
+			if err := m.StopStations[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("StopStations" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
 	}
 
 	return nil

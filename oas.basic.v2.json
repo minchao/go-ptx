@@ -76,6 +76,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V2.Base.Authority"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -145,6 +148,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V2.Base.Provider"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -214,6 +220,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V2.Base.Operator"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -289,6 +298,9 @@
             "schema": {
               "$ref": "#/definitions/PTX.API.Basic.Model.V2.BasicWrapper[PTX.Service.DTO.Shared.Specification.V2.Base.News]"
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }

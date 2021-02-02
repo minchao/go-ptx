@@ -6,6 +6,8 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
+
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
@@ -89,10 +91,28 @@ func (m *PTXServiceDTOShipSpecificationV3Operator) Validate(formats strfmt.Regis
 }
 
 func (m *PTXServiceDTOShipSpecificationV3Operator) validateOperatorName(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.OperatorName) { // not required
 		return nil
 	}
+
+	return nil
+}
+
+// ContextValidate validate this p t x service d t o ship specification v3 operator based on the context it is used
+func (m *PTXServiceDTOShipSpecificationV3Operator) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateOperatorName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTOShipSpecificationV3Operator) contextValidateOperatorName(ctx context.Context, formats strfmt.Registry) error {
 
 	return nil
 }

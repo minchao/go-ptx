@@ -6,6 +6,8 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
+
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
@@ -57,6 +59,34 @@ func (m *PTXServiceDTORailSpecificationV3TRADailyTrainTimeTableDiningFlagSection
 }
 
 func (m *PTXServiceDTORailSpecificationV3TRADailyTrainTimeTableDiningFlagSection) validateStartSection(formats strfmt.Registry) error {
+
+	return nil
+}
+
+// ContextValidate validate this p t x service d t o rail specification v3 t r a daily train time table dining flag section based on the context it is used
+func (m *PTXServiceDTORailSpecificationV3TRADailyTrainTimeTableDiningFlagSection) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateEndSection(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateStartSection(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV3TRADailyTrainTimeTableDiningFlagSection) contextValidateEndSection(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV3TRADailyTrainTimeTableDiningFlagSection) contextValidateStartSection(ctx context.Context, formats strfmt.Registry) error {
 
 	return nil
 }

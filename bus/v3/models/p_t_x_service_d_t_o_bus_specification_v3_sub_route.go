@@ -6,6 +6,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -175,7 +176,6 @@ func (m *PTXServiceDTOBusSpecificationV3SubRoute) Validate(formats strfmt.Regist
 }
 
 func (m *PTXServiceDTOBusSpecificationV3SubRoute) validateDepartureStopName(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.DepartureStopName) { // not required
 		return nil
 	}
@@ -184,7 +184,6 @@ func (m *PTXServiceDTOBusSpecificationV3SubRoute) validateDepartureStopName(form
 }
 
 func (m *PTXServiceDTOBusSpecificationV3SubRoute) validateDestinationStopName(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.DestinationStopName) { // not required
 		return nil
 	}
@@ -202,7 +201,6 @@ func (m *PTXServiceDTOBusSpecificationV3SubRoute) validateDirection(formats strf
 }
 
 func (m *PTXServiceDTOBusSpecificationV3SubRoute) validateEndStop(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.EndStop) { // not required
 		return nil
 	}
@@ -259,7 +257,6 @@ func (m *PTXServiceDTOBusSpecificationV3SubRoute) validateRouteUID(formats strfm
 }
 
 func (m *PTXServiceDTOBusSpecificationV3SubRoute) validateStartStop(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.StartStop) { // not required
 		return nil
 	}
@@ -277,7 +274,6 @@ func (m *PTXServiceDTOBusSpecificationV3SubRoute) validateSubRouteID(formats str
 }
 
 func (m *PTXServiceDTOBusSpecificationV3SubRoute) validateSubRouteLongName(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.SubRouteLongName) { // not required
 		return nil
 	}
@@ -295,6 +291,101 @@ func (m *PTXServiceDTOBusSpecificationV3SubRoute) validateSubRouteUID(formats st
 	if err := validate.Required("SubRouteUID", "body", m.SubRouteUID); err != nil {
 		return err
 	}
+
+	return nil
+}
+
+// ContextValidate validate this p t x service d t o bus specification v3 sub route based on the context it is used
+func (m *PTXServiceDTOBusSpecificationV3SubRoute) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateDepartureStopName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateDestinationStopName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateEndStop(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateOperators(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateRouteName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateStartStop(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateSubRouteLongName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateSubRouteName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV3SubRoute) contextValidateDepartureStopName(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV3SubRoute) contextValidateDestinationStopName(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV3SubRoute) contextValidateEndStop(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV3SubRoute) contextValidateOperators(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Operators); i++ {
+
+		if m.Operators[i] != nil {
+			if err := m.Operators[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("Operators" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV3SubRoute) contextValidateRouteName(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV3SubRoute) contextValidateStartStop(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV3SubRoute) contextValidateSubRouteLongName(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV3SubRoute) contextValidateSubRouteName(ctx context.Context, formats strfmt.Registry) error {
 
 	return nil
 }

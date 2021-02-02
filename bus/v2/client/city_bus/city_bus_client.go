@@ -73,6 +73,8 @@ type ClientService interface {
 
 	CityBusAPIRoute1(params *CityBusAPIRoute1Params) (*CityBusAPIRoute1OK, *CityBusAPIRoute1Status299, error)
 
+	CityBusAPIS2STravelTimeDetail(params *CityBusAPIS2STravelTimeDetailParams) (*CityBusAPIS2STravelTimeDetailOK, *CityBusAPIS2STravelTimeDetailStatus299, error)
+
 	CityBusAPISchedule(params *CityBusAPIScheduleParams) (*CityBusAPIScheduleOK, *CityBusAPIScheduleStatus299, error)
 
 	CityBusAPISchedule1(params *CityBusAPISchedule1Params) (*CityBusAPISchedule1OK, *CityBusAPISchedule1Status299, error)
@@ -958,6 +960,43 @@ func (a *Client) CityBusAPIRoute1(params *CityBusAPIRoute1Params) (*CityBusAPIRo
 	case *CityBusAPIRoute1OK:
 		return value, nil, nil
 	case *CityBusAPIRoute1Status299:
+		return nil, value, nil
+	}
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for city_bus: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  CityBusAPIS2STravelTimeDetail 取得指定s 縣市 路線代碼 的市區公車站間旅行時間資料
+
+  指定[縣市],[路線代碼]的市區公車站間旅行時間資料
+*/
+func (a *Client) CityBusAPIS2STravelTimeDetail(params *CityBusAPIS2STravelTimeDetailParams) (*CityBusAPIS2STravelTimeDetailOK, *CityBusAPIS2STravelTimeDetailStatus299, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewCityBusAPIS2STravelTimeDetailParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "CityBusApi_S2STravelTimeDetail",
+		Method:             "GET",
+		PathPattern:        "/v2/Bus/S2STravelTime/City/{City}/{RouteID}",
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &CityBusAPIS2STravelTimeDetailReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, nil, err
+	}
+	switch value := result.(type) {
+	case *CityBusAPIS2STravelTimeDetailOK:
+		return value, nil, nil
+	case *CityBusAPIS2STravelTimeDetailStatus299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue

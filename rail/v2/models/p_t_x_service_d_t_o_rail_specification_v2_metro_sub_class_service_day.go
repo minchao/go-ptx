@@ -6,18 +6,20 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
+
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 )
 
-// PTXServiceDTORailSpecificationV2MetroSubClassServiceDays ServiceDays
+// PTXServiceDTORailSpecificationV2MetroSubClassServiceDay ServiceDay
 //
 // 服務日型態
 //
-// swagger:model PTX.Service.DTO.Rail.Specification.V2.Metro.SubClass.ServiceDays
-type PTXServiceDTORailSpecificationV2MetroSubClassServiceDays struct {
+// swagger:model PTX.Service.DTO.Rail.Specification.V2.Metro.SubClass.ServiceDay
+type PTXServiceDTORailSpecificationV2MetroSubClassServiceDay struct {
 
 	// Boolean
 	//
@@ -73,8 +75,8 @@ type PTXServiceDTORailSpecificationV2MetroSubClassServiceDays struct {
 	Wednesday *bool `json:"Wednesday"`
 }
 
-// Validate validates this p t x service d t o rail specification v2 metro sub class service days
-func (m *PTXServiceDTORailSpecificationV2MetroSubClassServiceDays) Validate(formats strfmt.Registry) error {
+// Validate validates this p t x service d t o rail specification v2 metro sub class service day
+func (m *PTXServiceDTORailSpecificationV2MetroSubClassServiceDay) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateFriday(formats); err != nil {
@@ -115,7 +117,7 @@ func (m *PTXServiceDTORailSpecificationV2MetroSubClassServiceDays) Validate(form
 	return nil
 }
 
-func (m *PTXServiceDTORailSpecificationV2MetroSubClassServiceDays) validateFriday(formats strfmt.Registry) error {
+func (m *PTXServiceDTORailSpecificationV2MetroSubClassServiceDay) validateFriday(formats strfmt.Registry) error {
 
 	if err := validate.Required("Friday", "body", m.Friday); err != nil {
 		return err
@@ -124,7 +126,7 @@ func (m *PTXServiceDTORailSpecificationV2MetroSubClassServiceDays) validateFrida
 	return nil
 }
 
-func (m *PTXServiceDTORailSpecificationV2MetroSubClassServiceDays) validateMonday(formats strfmt.Registry) error {
+func (m *PTXServiceDTORailSpecificationV2MetroSubClassServiceDay) validateMonday(formats strfmt.Registry) error {
 
 	if err := validate.Required("Monday", "body", m.Monday); err != nil {
 		return err
@@ -133,7 +135,7 @@ func (m *PTXServiceDTORailSpecificationV2MetroSubClassServiceDays) validateMonda
 	return nil
 }
 
-func (m *PTXServiceDTORailSpecificationV2MetroSubClassServiceDays) validateNationalHolidays(formats strfmt.Registry) error {
+func (m *PTXServiceDTORailSpecificationV2MetroSubClassServiceDay) validateNationalHolidays(formats strfmt.Registry) error {
 
 	if err := validate.Required("NationalHolidays", "body", m.NationalHolidays); err != nil {
 		return err
@@ -142,7 +144,7 @@ func (m *PTXServiceDTORailSpecificationV2MetroSubClassServiceDays) validateNatio
 	return nil
 }
 
-func (m *PTXServiceDTORailSpecificationV2MetroSubClassServiceDays) validateSaturday(formats strfmt.Registry) error {
+func (m *PTXServiceDTORailSpecificationV2MetroSubClassServiceDay) validateSaturday(formats strfmt.Registry) error {
 
 	if err := validate.Required("Saturday", "body", m.Saturday); err != nil {
 		return err
@@ -151,7 +153,7 @@ func (m *PTXServiceDTORailSpecificationV2MetroSubClassServiceDays) validateSatur
 	return nil
 }
 
-func (m *PTXServiceDTORailSpecificationV2MetroSubClassServiceDays) validateSunday(formats strfmt.Registry) error {
+func (m *PTXServiceDTORailSpecificationV2MetroSubClassServiceDay) validateSunday(formats strfmt.Registry) error {
 
 	if err := validate.Required("Sunday", "body", m.Sunday); err != nil {
 		return err
@@ -160,7 +162,7 @@ func (m *PTXServiceDTORailSpecificationV2MetroSubClassServiceDays) validateSunda
 	return nil
 }
 
-func (m *PTXServiceDTORailSpecificationV2MetroSubClassServiceDays) validateThursday(formats strfmt.Registry) error {
+func (m *PTXServiceDTORailSpecificationV2MetroSubClassServiceDay) validateThursday(formats strfmt.Registry) error {
 
 	if err := validate.Required("Thursday", "body", m.Thursday); err != nil {
 		return err
@@ -169,7 +171,7 @@ func (m *PTXServiceDTORailSpecificationV2MetroSubClassServiceDays) validateThurs
 	return nil
 }
 
-func (m *PTXServiceDTORailSpecificationV2MetroSubClassServiceDays) validateTuesday(formats strfmt.Registry) error {
+func (m *PTXServiceDTORailSpecificationV2MetroSubClassServiceDay) validateTuesday(formats strfmt.Registry) error {
 
 	if err := validate.Required("Tuesday", "body", m.Tuesday); err != nil {
 		return err
@@ -178,7 +180,7 @@ func (m *PTXServiceDTORailSpecificationV2MetroSubClassServiceDays) validateTuesd
 	return nil
 }
 
-func (m *PTXServiceDTORailSpecificationV2MetroSubClassServiceDays) validateWednesday(formats strfmt.Registry) error {
+func (m *PTXServiceDTORailSpecificationV2MetroSubClassServiceDay) validateWednesday(formats strfmt.Registry) error {
 
 	if err := validate.Required("Wednesday", "body", m.Wednesday); err != nil {
 		return err
@@ -187,8 +189,13 @@ func (m *PTXServiceDTORailSpecificationV2MetroSubClassServiceDays) validateWedne
 	return nil
 }
 
+// ContextValidate validates this p t x service d t o rail specification v2 metro sub class service day based on context it is used
+func (m *PTXServiceDTORailSpecificationV2MetroSubClassServiceDay) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	return nil
+}
+
 // MarshalBinary interface implementation
-func (m *PTXServiceDTORailSpecificationV2MetroSubClassServiceDays) MarshalBinary() ([]byte, error) {
+func (m *PTXServiceDTORailSpecificationV2MetroSubClassServiceDay) MarshalBinary() ([]byte, error) {
 	if m == nil {
 		return nil, nil
 	}
@@ -196,8 +203,8 @@ func (m *PTXServiceDTORailSpecificationV2MetroSubClassServiceDays) MarshalBinary
 }
 
 // UnmarshalBinary interface implementation
-func (m *PTXServiceDTORailSpecificationV2MetroSubClassServiceDays) UnmarshalBinary(b []byte) error {
-	var res PTXServiceDTORailSpecificationV2MetroSubClassServiceDays
+func (m *PTXServiceDTORailSpecificationV2MetroSubClassServiceDay) UnmarshalBinary(b []byte) error {
+	var res PTXServiceDTORailSpecificationV2MetroSubClassServiceDay
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

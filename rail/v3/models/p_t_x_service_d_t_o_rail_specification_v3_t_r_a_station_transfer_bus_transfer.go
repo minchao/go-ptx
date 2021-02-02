@@ -6,6 +6,8 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
+
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
@@ -193,6 +195,43 @@ func (m *PTXServiceDTORailSpecificationV3TRAStationTransferBusTransfer) validate
 }
 
 func (m *PTXServiceDTORailSpecificationV3TRAStationTransferBusTransfer) validateStopName(formats strfmt.Registry) error {
+
+	return nil
+}
+
+// ContextValidate validate this p t x service d t o rail specification v3 t r a station transfer bus transfer based on the context it is used
+func (m *PTXServiceDTORailSpecificationV3TRAStationTransferBusTransfer) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateOperatorName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateRouteName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateStopName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV3TRAStationTransferBusTransfer) contextValidateOperatorName(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV3TRAStationTransferBusTransfer) contextValidateRouteName(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV3TRAStationTransferBusTransfer) contextValidateStopName(ctx context.Context, formats strfmt.Registry) error {
 
 	return nil
 }

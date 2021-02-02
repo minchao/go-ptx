@@ -6,6 +6,8 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
+
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
@@ -56,13 +58,13 @@ type PTXServiceDTORailSpecificationV2MetroFirstLastTimetable struct {
 	// 首末班車次之路線代號
 	LineNo string `json:"LineNo,omitempty"`
 
-	// ServiceDays
+	// ServiceDay
 	//
 	// 服務日型態
 	// Required: true
-	ServiceDays struct {
-		PTXServiceDTORailSpecificationV2MetroSubClassServiceDays
-	} `json:"ServiceDays"`
+	ServiceDay struct {
+		PTXServiceDTORailSpecificationV2MetroSubClassServiceDay
+	} `json:"ServiceDay"`
 
 	// DateTime
 	//
@@ -129,7 +131,7 @@ func (m *PTXServiceDTORailSpecificationV2MetroFirstLastTimetable) Validate(forma
 		res = append(res, err)
 	}
 
-	if err := m.validateServiceDays(formats); err != nil {
+	if err := m.validateServiceDay(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -200,7 +202,7 @@ func (m *PTXServiceDTORailSpecificationV2MetroFirstLastTimetable) validateLineID
 	return nil
 }
 
-func (m *PTXServiceDTORailSpecificationV2MetroFirstLastTimetable) validateServiceDays(formats strfmt.Registry) error {
+func (m *PTXServiceDTORailSpecificationV2MetroFirstLastTimetable) validateServiceDay(formats strfmt.Registry) error {
 
 	return nil
 }
@@ -242,6 +244,43 @@ func (m *PTXServiceDTORailSpecificationV2MetroFirstLastTimetable) validateVersio
 	if err := validate.Required("VersionID", "body", m.VersionID); err != nil {
 		return err
 	}
+
+	return nil
+}
+
+// ContextValidate validate this p t x service d t o rail specification v2 metro first last timetable based on the context it is used
+func (m *PTXServiceDTORailSpecificationV2MetroFirstLastTimetable) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateDestinationStationName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateServiceDay(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateStationName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV2MetroFirstLastTimetable) contextValidateDestinationStationName(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV2MetroFirstLastTimetable) contextValidateServiceDay(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV2MetroFirstLastTimetable) contextValidateStationName(ctx context.Context, formats strfmt.Registry) error {
 
 	return nil
 }

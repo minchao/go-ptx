@@ -17,111 +17,134 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewTHSRAPIODDailyTimetableParams creates a new THSRAPIODDailyTimetableParams object
-// with the default values initialized.
+// NewTHSRAPIODDailyTimetableParams creates a new THSRAPIODDailyTimetableParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewTHSRAPIODDailyTimetableParams() *THSRAPIODDailyTimetableParams {
-	var (
-		dollarTopDefault = int64(30)
-	)
 	return &THSRAPIODDailyTimetableParams{
-		DollarTop: &dollarTopDefault,
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewTHSRAPIODDailyTimetableParamsWithTimeout creates a new THSRAPIODDailyTimetableParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewTHSRAPIODDailyTimetableParamsWithTimeout(timeout time.Duration) *THSRAPIODDailyTimetableParams {
-	var (
-		dollarTopDefault = int64(30)
-	)
 	return &THSRAPIODDailyTimetableParams{
-		DollarTop: &dollarTopDefault,
-
 		timeout: timeout,
 	}
 }
 
 // NewTHSRAPIODDailyTimetableParamsWithContext creates a new THSRAPIODDailyTimetableParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewTHSRAPIODDailyTimetableParamsWithContext(ctx context.Context) *THSRAPIODDailyTimetableParams {
-	var (
-		dollarTopDefault = int64(30)
-	)
 	return &THSRAPIODDailyTimetableParams{
-		DollarTop: &dollarTopDefault,
-
 		Context: ctx,
 	}
 }
 
 // NewTHSRAPIODDailyTimetableParamsWithHTTPClient creates a new THSRAPIODDailyTimetableParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewTHSRAPIODDailyTimetableParamsWithHTTPClient(client *http.Client) *THSRAPIODDailyTimetableParams {
-	var (
-		dollarTopDefault = int64(30)
-	)
 	return &THSRAPIODDailyTimetableParams{
-		DollarTop:  &dollarTopDefault,
 		HTTPClient: client,
 	}
 }
 
-/*THSRAPIODDailyTimetableParams contains all the parameters to send to the API endpoint
-for the t h s r Api o d daily timetable operation typically these are written to a http.Request
+/* THSRAPIODDailyTimetableParams contains all the parameters to send to the API endpoint
+   for the t h s r Api o d daily timetable operation.
+
+   Typically these are written to a http.Request.
 */
 type THSRAPIODDailyTimetableParams struct {
 
-	/*DollarFilter
-	  過濾
+	/* DollarFilter.
 
+	   過濾
 	*/
 	DollarFilter *string
-	/*DollarFormat
-	  指定來源格式
 
+	/* DollarFormat.
+
+	   指定來源格式
 	*/
 	DollarFormat string
-	/*DollarOrderby
-	  排序
 
+	/* DollarOrderby.
+
+	   排序
 	*/
 	DollarOrderby *string
-	/*DollarSelect
-	  挑選
 
+	/* DollarSelect.
+
+	   挑選
 	*/
 	DollarSelect *string
-	/*DollarSkip
-	  跳過前幾筆
 
+	/* DollarSkip.
+
+	   跳過前幾筆
 	*/
 	DollarSkip *string
-	/*DollarTop
-	  取前幾筆
 
+	/* DollarTop.
+
+	   取前幾筆
+
+	   Default: 30
 	*/
 	DollarTop *int64
-	/*DestinationStationID
-	  迄點車站代碼
 
+	/* DestinationStationID.
+
+	   迄點車站代碼
 	*/
 	DestinationStationID string
-	/*OriginStationID
-	  起點車站代碼
 
+	/* OriginStationID.
+
+	   起點車站代碼
 	*/
 	OriginStationID string
-	/*TrainDate
-	  欲查詢的日期(格式: yyyy-MM-dd)
 
+	/* TrainDate.
+
+	   欲查詢的日期(格式: yyyy-MM-dd)
 	*/
 	TrainDate string
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the t h s r Api o d daily timetable params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *THSRAPIODDailyTimetableParams) WithDefaults() *THSRAPIODDailyTimetableParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the t h s r Api o d daily timetable params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *THSRAPIODDailyTimetableParams) SetDefaults() {
+	var (
+		dollarTopDefault = int64(30)
+	)
+
+	val := THSRAPIODDailyTimetableParams{
+		DollarTop: &dollarTopDefault,
+	}
+
+	val.timeout = o.timeout
+	val.Context = o.Context
+	val.HTTPClient = o.HTTPClient
+	*o = val
 }
 
 // WithTimeout adds the timeout to the t h s r Api o d daily timetable params
@@ -268,22 +291,24 @@ func (o *THSRAPIODDailyTimetableParams) WriteToRequest(r runtime.ClientRequest, 
 
 		// query param $filter
 		var qrDollarFilter string
+
 		if o.DollarFilter != nil {
 			qrDollarFilter = *o.DollarFilter
 		}
 		qDollarFilter := qrDollarFilter
 		if qDollarFilter != "" {
+
 			if err := r.SetQueryParam("$filter", qDollarFilter); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	// query param $format
 	qrDollarFormat := o.DollarFormat
 	qDollarFormat := qrDollarFormat
 	if qDollarFormat != "" {
+
 		if err := r.SetQueryParam("$format", qDollarFormat); err != nil {
 			return err
 		}
@@ -293,64 +318,68 @@ func (o *THSRAPIODDailyTimetableParams) WriteToRequest(r runtime.ClientRequest, 
 
 		// query param $orderby
 		var qrDollarOrderby string
+
 		if o.DollarOrderby != nil {
 			qrDollarOrderby = *o.DollarOrderby
 		}
 		qDollarOrderby := qrDollarOrderby
 		if qDollarOrderby != "" {
+
 			if err := r.SetQueryParam("$orderby", qDollarOrderby); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.DollarSelect != nil {
 
 		// query param $select
 		var qrDollarSelect string
+
 		if o.DollarSelect != nil {
 			qrDollarSelect = *o.DollarSelect
 		}
 		qDollarSelect := qrDollarSelect
 		if qDollarSelect != "" {
+
 			if err := r.SetQueryParam("$select", qDollarSelect); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.DollarSkip != nil {
 
 		// query param $skip
 		var qrDollarSkip string
+
 		if o.DollarSkip != nil {
 			qrDollarSkip = *o.DollarSkip
 		}
 		qDollarSkip := qrDollarSkip
 		if qDollarSkip != "" {
+
 			if err := r.SetQueryParam("$skip", qDollarSkip); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.DollarTop != nil {
 
 		// query param $top
 		var qrDollarTop int64
+
 		if o.DollarTop != nil {
 			qrDollarTop = *o.DollarTop
 		}
 		qDollarTop := swag.FormatInt64(qrDollarTop)
 		if qDollarTop != "" {
+
 			if err := r.SetQueryParam("$top", qDollarTop); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	// path param DestinationStationID

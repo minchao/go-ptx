@@ -6,6 +6,8 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
+
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
@@ -198,7 +200,6 @@ func (m *PTXServiceDTOTourismSpecificationV2ScenicSpotTourismInfo) validateID(fo
 }
 
 func (m *PTXServiceDTOTourismSpecificationV2ScenicSpotTourismInfo) validateParkingPosition(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.ParkingPosition) { // not required
 		return nil
 	}
@@ -207,7 +208,6 @@ func (m *PTXServiceDTOTourismSpecificationV2ScenicSpotTourismInfo) validateParki
 }
 
 func (m *PTXServiceDTOTourismSpecificationV2ScenicSpotTourismInfo) validatePicture(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Picture) { // not required
 		return nil
 	}
@@ -216,7 +216,6 @@ func (m *PTXServiceDTOTourismSpecificationV2ScenicSpotTourismInfo) validatePictu
 }
 
 func (m *PTXServiceDTOTourismSpecificationV2ScenicSpotTourismInfo) validatePosition(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Position) { // not required
 		return nil
 	}
@@ -238,6 +237,43 @@ func (m *PTXServiceDTOTourismSpecificationV2ScenicSpotTourismInfo) validateUpdat
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
 		return err
 	}
+
+	return nil
+}
+
+// ContextValidate validate this p t x service d t o tourism specification v2 scenic spot tourism info based on the context it is used
+func (m *PTXServiceDTOTourismSpecificationV2ScenicSpotTourismInfo) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateParkingPosition(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidatePicture(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidatePosition(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTOTourismSpecificationV2ScenicSpotTourismInfo) contextValidateParkingPosition(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTOTourismSpecificationV2ScenicSpotTourismInfo) contextValidatePicture(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTOTourismSpecificationV2ScenicSpotTourismInfo) contextValidatePosition(ctx context.Context, formats strfmt.Registry) error {
 
 	return nil
 }

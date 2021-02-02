@@ -6,6 +6,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -158,7 +159,6 @@ func (m *PTXServiceDTOBusSpecificationV2BusStation) validateStationUID(formats s
 }
 
 func (m *PTXServiceDTOBusSpecificationV2BusStation) validateStops(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Stops) { // not required
 		return nil
 	}
@@ -195,6 +195,56 @@ func (m *PTXServiceDTOBusSpecificationV2BusStation) validateVersionID(formats st
 
 	if err := validate.Required("VersionID", "body", m.VersionID); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+// ContextValidate validate this p t x service d t o bus specification v2 bus station based on the context it is used
+func (m *PTXServiceDTOBusSpecificationV2BusStation) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateStationName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateStationPosition(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateStops(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV2BusStation) contextValidateStationName(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV2BusStation) contextValidateStationPosition(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV2BusStation) contextValidateStops(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Stops); i++ {
+
+		if m.Stops[i] != nil {
+			if err := m.Stops[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("Stops" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
 	}
 
 	return nil

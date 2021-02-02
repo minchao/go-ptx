@@ -6,64 +6,86 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
+
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 )
 
-// PTXServiceDTOBusSpecificationV2BusSubRoute BusSubRoute
+// PTXServiceDTOTourismSpecificationV2BusSubRoute BusSubRoute
 //
-// swagger:model PTX.Service.DTO.Bus.Specification.V2.BusSubRoute
-type PTXServiceDTOBusSpecificationV2BusSubRoute struct {
+// 附屬路線資料型別
+//
+// swagger:model PTX.Service.DTO.Tourism.Specification.V2.BusSubRoute
+type PTXServiceDTOTourismSpecificationV2BusSubRoute struct {
 
 	// integer
 	//
-	// [0:'去程',1:'返程',2:'迴圈',255:'未知']
+	// 去返程 : [0:'去程',1:'返程',2:'迴圈',255:'未知']
 	// Required: true
 	Direction *int32 `json:"Direction"`
 
 	// String
+	//
+	// 平日第一班發車時間
 	FirstBusTime string `json:"FirstBusTime,omitempty"`
 
 	// String
+	//
+	// 車頭描述
 	Headsign string `json:"Headsign,omitempty"`
 
 	// String
+	//
+	// 車頭英文描述
 	HeadsignEn string `json:"HeadsignEn,omitempty"`
 
 	// String
+	//
+	// 假日去程第一班發車時間
 	HolidayFirstBusTime string `json:"HolidayFirstBusTime,omitempty"`
 
 	// String
+	//
+	// 假日返程第一班發車時間
 	HolidayLastBusTime string `json:"HolidayLastBusTime,omitempty"`
 
 	// String
+	//
+	// 平日返程第一班發車時間
 	LastBusTime string `json:"LastBusTime,omitempty"`
 
 	// Array
+	//
+	// 營運業者代碼
 	// Required: true
 	OperatorIDs []string `json:"OperatorIDs"`
 
 	// String
+	//
+	// 地區既用中之附屬路線代碼(為原資料內碼)
 	// Required: true
 	SubRouteID *string `json:"SubRouteID"`
 
 	// NameType
 	//
-	// 名稱資料型別
+	// 附屬路線名稱
 	// Required: true
 	SubRouteName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
 	} `json:"SubRouteName"`
 
 	// String
+	//
+	// 附屬路線唯一識別代碼，規則為 {業管機關簡碼} + {SubRouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢
 	// Required: true
 	SubRouteUID *string `json:"SubRouteUID"`
 }
 
-// Validate validates this p t x service d t o bus specification v2 bus sub route
-func (m *PTXServiceDTOBusSpecificationV2BusSubRoute) Validate(formats strfmt.Registry) error {
+// Validate validates this p t x service d t o tourism specification v2 bus sub route
+func (m *PTXServiceDTOTourismSpecificationV2BusSubRoute) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateDirection(formats); err != nil {
@@ -92,7 +114,7 @@ func (m *PTXServiceDTOBusSpecificationV2BusSubRoute) Validate(formats strfmt.Reg
 	return nil
 }
 
-func (m *PTXServiceDTOBusSpecificationV2BusSubRoute) validateDirection(formats strfmt.Registry) error {
+func (m *PTXServiceDTOTourismSpecificationV2BusSubRoute) validateDirection(formats strfmt.Registry) error {
 
 	if err := validate.Required("Direction", "body", m.Direction); err != nil {
 		return err
@@ -101,7 +123,7 @@ func (m *PTXServiceDTOBusSpecificationV2BusSubRoute) validateDirection(formats s
 	return nil
 }
 
-func (m *PTXServiceDTOBusSpecificationV2BusSubRoute) validateOperatorIDs(formats strfmt.Registry) error {
+func (m *PTXServiceDTOTourismSpecificationV2BusSubRoute) validateOperatorIDs(formats strfmt.Registry) error {
 
 	if err := validate.Required("OperatorIDs", "body", m.OperatorIDs); err != nil {
 		return err
@@ -110,7 +132,7 @@ func (m *PTXServiceDTOBusSpecificationV2BusSubRoute) validateOperatorIDs(formats
 	return nil
 }
 
-func (m *PTXServiceDTOBusSpecificationV2BusSubRoute) validateSubRouteID(formats strfmt.Registry) error {
+func (m *PTXServiceDTOTourismSpecificationV2BusSubRoute) validateSubRouteID(formats strfmt.Registry) error {
 
 	if err := validate.Required("SubRouteID", "body", m.SubRouteID); err != nil {
 		return err
@@ -119,12 +141,12 @@ func (m *PTXServiceDTOBusSpecificationV2BusSubRoute) validateSubRouteID(formats 
 	return nil
 }
 
-func (m *PTXServiceDTOBusSpecificationV2BusSubRoute) validateSubRouteName(formats strfmt.Registry) error {
+func (m *PTXServiceDTOTourismSpecificationV2BusSubRoute) validateSubRouteName(formats strfmt.Registry) error {
 
 	return nil
 }
 
-func (m *PTXServiceDTOBusSpecificationV2BusSubRoute) validateSubRouteUID(formats strfmt.Registry) error {
+func (m *PTXServiceDTOTourismSpecificationV2BusSubRoute) validateSubRouteUID(formats strfmt.Registry) error {
 
 	if err := validate.Required("SubRouteUID", "body", m.SubRouteUID); err != nil {
 		return err
@@ -133,8 +155,27 @@ func (m *PTXServiceDTOBusSpecificationV2BusSubRoute) validateSubRouteUID(formats
 	return nil
 }
 
+// ContextValidate validate this p t x service d t o tourism specification v2 bus sub route based on the context it is used
+func (m *PTXServiceDTOTourismSpecificationV2BusSubRoute) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateSubRouteName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTOTourismSpecificationV2BusSubRoute) contextValidateSubRouteName(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
 // MarshalBinary interface implementation
-func (m *PTXServiceDTOBusSpecificationV2BusSubRoute) MarshalBinary() ([]byte, error) {
+func (m *PTXServiceDTOTourismSpecificationV2BusSubRoute) MarshalBinary() ([]byte, error) {
 	if m == nil {
 		return nil, nil
 	}
@@ -142,8 +183,8 @@ func (m *PTXServiceDTOBusSpecificationV2BusSubRoute) MarshalBinary() ([]byte, er
 }
 
 // UnmarshalBinary interface implementation
-func (m *PTXServiceDTOBusSpecificationV2BusSubRoute) UnmarshalBinary(b []byte) error {
-	var res PTXServiceDTOBusSpecificationV2BusSubRoute
+func (m *PTXServiceDTOTourismSpecificationV2BusSubRoute) UnmarshalBinary(b []byte) error {
+	var res PTXServiceDTOTourismSpecificationV2BusSubRoute
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

@@ -6,6 +6,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -152,6 +153,65 @@ func (m *PTXServiceDTORailSpecificationV3TRANetworkNetwork) validateOperatorCode
 }
 
 func (m *PTXServiceDTORailSpecificationV3TRANetworkNetwork) validateOperatorName(formats strfmt.Registry) error {
+
+	return nil
+}
+
+// ContextValidate validate this p t x service d t o rail specification v3 t r a network network based on the context it is used
+func (m *PTXServiceDTORailSpecificationV3TRANetworkNetwork) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateLines(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateNetworkMapURL(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateNetworkName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateOperatorName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV3TRANetworkNetwork) contextValidateLines(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Lines); i++ {
+
+		if m.Lines[i] != nil {
+			if err := m.Lines[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("Lines" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV3TRANetworkNetwork) contextValidateNetworkMapURL(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV3TRANetworkNetwork) contextValidateNetworkName(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV3TRANetworkNetwork) contextValidateOperatorName(ctx context.Context, formats strfmt.Registry) error {
 
 	return nil
 }

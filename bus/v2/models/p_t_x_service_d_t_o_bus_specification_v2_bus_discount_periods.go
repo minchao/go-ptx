@@ -6,6 +6,8 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
+
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
@@ -30,7 +32,7 @@ type PTXServiceDTOBusSpecificationV2BusDiscountPeriods struct {
 	// 營運日型態
 	// Required: true
 	ServiceDay struct {
-		PTXServiceDTOBusSpecificationV2ServiceDay
+		PTXServiceDTOBusSpecificationV2EmbeddedServiceDay
 	} `json:"ServiceDay"`
 
 	// String
@@ -81,6 +83,25 @@ func (m *PTXServiceDTOBusSpecificationV2BusDiscountPeriods) validateStartTime(fo
 	if err := validate.Required("StartTime", "body", m.StartTime); err != nil {
 		return err
 	}
+
+	return nil
+}
+
+// ContextValidate validate this p t x service d t o bus specification v2 bus discount periods based on the context it is used
+func (m *PTXServiceDTOBusSpecificationV2BusDiscountPeriods) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateServiceDay(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV2BusDiscountPeriods) contextValidateServiceDay(ctx context.Context, formats strfmt.Registry) error {
 
 	return nil
 }

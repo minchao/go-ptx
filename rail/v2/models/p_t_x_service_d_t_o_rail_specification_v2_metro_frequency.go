@@ -6,6 +6,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -52,13 +53,13 @@ type PTXServiceDTORailSpecificationV2MetroFrequency struct {
 	// Required: true
 	RouteID *string `json:"RouteID"`
 
-	// ServiceDays
+	// ServiceDay
 	//
 	// 服務日型態
 	// Required: true
-	ServiceDays struct {
-		PTXServiceDTORailSpecificationV2MetroSubClassServiceDays
-	} `json:"ServiceDays"`
+	ServiceDay struct {
+		PTXServiceDTORailSpecificationV2MetroSubClassServiceDay
+	} `json:"ServiceDay"`
 
 	// DateTime
 	//
@@ -102,7 +103,7 @@ func (m *PTXServiceDTORailSpecificationV2MetroFrequency) Validate(formats strfmt
 		res = append(res, err)
 	}
 
-	if err := m.validateServiceDays(formats); err != nil {
+	if err := m.validateServiceDay(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -172,7 +173,7 @@ func (m *PTXServiceDTORailSpecificationV2MetroFrequency) validateRouteID(formats
 	return nil
 }
 
-func (m *PTXServiceDTORailSpecificationV2MetroFrequency) validateServiceDays(formats strfmt.Registry) error {
+func (m *PTXServiceDTORailSpecificationV2MetroFrequency) validateServiceDay(formats strfmt.Registry) error {
 
 	return nil
 }
@@ -200,6 +201,56 @@ func (m *PTXServiceDTORailSpecificationV2MetroFrequency) validateVersionID(forma
 	if err := validate.Required("VersionID", "body", m.VersionID); err != nil {
 		return err
 	}
+
+	return nil
+}
+
+// ContextValidate validate this p t x service d t o rail specification v2 metro frequency based on the context it is used
+func (m *PTXServiceDTORailSpecificationV2MetroFrequency) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateHeadways(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateOperationTime(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateServiceDay(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV2MetroFrequency) contextValidateHeadways(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Headways); i++ {
+
+		if m.Headways[i] != nil {
+			if err := m.Headways[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("Headways" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV2MetroFrequency) contextValidateOperationTime(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV2MetroFrequency) contextValidateServiceDay(ctx context.Context, formats strfmt.Registry) error {
 
 	return nil
 }

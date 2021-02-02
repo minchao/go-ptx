@@ -6,6 +6,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -114,7 +115,6 @@ func (m *PTXServiceDTORailSpecificationV3TRAGeneralStationTimetableGeneralStatio
 }
 
 func (m *PTXServiceDTORailSpecificationV3TRAGeneralStationTimetableGeneralStationTimetable) validateStationName(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.StationName) { // not required
 		return nil
 	}
@@ -135,6 +135,56 @@ func (m *PTXServiceDTORailSpecificationV3TRAGeneralStationTimetableGeneralStatio
 
 		if m.Timetables[i] != nil {
 			if err := m.Timetables[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("Timetables" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+// ContextValidate validate this p t x service d t o rail specification v3 t r a general station timetable general station timetable based on the context it is used
+func (m *PTXServiceDTORailSpecificationV3TRAGeneralStationTimetableGeneralStationTimetable) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateServiceDay(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateStationName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateTimetables(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV3TRAGeneralStationTimetableGeneralStationTimetable) contextValidateServiceDay(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV3TRAGeneralStationTimetableGeneralStationTimetable) contextValidateStationName(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV3TRAGeneralStationTimetableGeneralStationTimetable) contextValidateTimetables(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Timetables); i++ {
+
+		if m.Timetables[i] != nil {
+			if err := m.Timetables[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("Timetables" + "." + strconv.Itoa(i))
 				}

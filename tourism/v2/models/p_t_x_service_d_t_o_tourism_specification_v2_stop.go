@@ -6,18 +6,20 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
+
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 )
 
-// PTXServiceDTOBusSpecificationV2Stop Stop
+// PTXServiceDTOTourismSpecificationV2Stop Stop
 //
 // 站牌代碼資料
 //
-// swagger:model PTX.Service.DTO.Bus.Specification.V2.Stop
-type PTXServiceDTOBusSpecificationV2Stop struct {
+// swagger:model PTX.Service.DTO.Tourism.Specification.V2.Stop
+type PTXServiceDTOTourismSpecificationV2Stop struct {
 
 	// String
 	//
@@ -75,8 +77,8 @@ type PTXServiceDTOBusSpecificationV2Stop struct {
 	StopUID *string `json:"StopUID"`
 }
 
-// Validate validates this p t x service d t o bus specification v2 stop
-func (m *PTXServiceDTOBusSpecificationV2Stop) Validate(formats strfmt.Registry) error {
+// Validate validates this p t x service d t o tourism specification v2 stop
+func (m *PTXServiceDTOTourismSpecificationV2Stop) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateStationGroupID(formats); err != nil {
@@ -109,7 +111,7 @@ func (m *PTXServiceDTOBusSpecificationV2Stop) Validate(formats strfmt.Registry) 
 	return nil
 }
 
-func (m *PTXServiceDTOBusSpecificationV2Stop) validateStationGroupID(formats strfmt.Registry) error {
+func (m *PTXServiceDTOTourismSpecificationV2Stop) validateStationGroupID(formats strfmt.Registry) error {
 
 	if err := validate.Required("StationGroupID", "body", m.StationGroupID); err != nil {
 		return err
@@ -118,7 +120,7 @@ func (m *PTXServiceDTOBusSpecificationV2Stop) validateStationGroupID(formats str
 	return nil
 }
 
-func (m *PTXServiceDTOBusSpecificationV2Stop) validateStopID(formats strfmt.Registry) error {
+func (m *PTXServiceDTOTourismSpecificationV2Stop) validateStopID(formats strfmt.Registry) error {
 
 	if err := validate.Required("StopID", "body", m.StopID); err != nil {
 		return err
@@ -127,17 +129,17 @@ func (m *PTXServiceDTOBusSpecificationV2Stop) validateStopID(formats strfmt.Regi
 	return nil
 }
 
-func (m *PTXServiceDTOBusSpecificationV2Stop) validateStopName(formats strfmt.Registry) error {
+func (m *PTXServiceDTOTourismSpecificationV2Stop) validateStopName(formats strfmt.Registry) error {
 
 	return nil
 }
 
-func (m *PTXServiceDTOBusSpecificationV2Stop) validateStopPosition(formats strfmt.Registry) error {
+func (m *PTXServiceDTOTourismSpecificationV2Stop) validateStopPosition(formats strfmt.Registry) error {
 
 	return nil
 }
 
-func (m *PTXServiceDTOBusSpecificationV2Stop) validateStopSequence(formats strfmt.Registry) error {
+func (m *PTXServiceDTOTourismSpecificationV2Stop) validateStopSequence(formats strfmt.Registry) error {
 
 	if err := validate.Required("StopSequence", "body", m.StopSequence); err != nil {
 		return err
@@ -146,7 +148,7 @@ func (m *PTXServiceDTOBusSpecificationV2Stop) validateStopSequence(formats strfm
 	return nil
 }
 
-func (m *PTXServiceDTOBusSpecificationV2Stop) validateStopUID(formats strfmt.Registry) error {
+func (m *PTXServiceDTOTourismSpecificationV2Stop) validateStopUID(formats strfmt.Registry) error {
 
 	if err := validate.Required("StopUID", "body", m.StopUID); err != nil {
 		return err
@@ -155,8 +157,36 @@ func (m *PTXServiceDTOBusSpecificationV2Stop) validateStopUID(formats strfmt.Reg
 	return nil
 }
 
+// ContextValidate validate this p t x service d t o tourism specification v2 stop based on the context it is used
+func (m *PTXServiceDTOTourismSpecificationV2Stop) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateStopName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateStopPosition(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTOTourismSpecificationV2Stop) contextValidateStopName(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTOTourismSpecificationV2Stop) contextValidateStopPosition(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
 // MarshalBinary interface implementation
-func (m *PTXServiceDTOBusSpecificationV2Stop) MarshalBinary() ([]byte, error) {
+func (m *PTXServiceDTOTourismSpecificationV2Stop) MarshalBinary() ([]byte, error) {
 	if m == nil {
 		return nil, nil
 	}
@@ -164,8 +194,8 @@ func (m *PTXServiceDTOBusSpecificationV2Stop) MarshalBinary() ([]byte, error) {
 }
 
 // UnmarshalBinary interface implementation
-func (m *PTXServiceDTOBusSpecificationV2Stop) UnmarshalBinary(b []byte) error {
-	var res PTXServiceDTOBusSpecificationV2Stop
+func (m *PTXServiceDTOTourismSpecificationV2Stop) UnmarshalBinary(b []byte) error {
+	var res PTXServiceDTOTourismSpecificationV2Stop
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

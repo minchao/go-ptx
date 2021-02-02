@@ -6,6 +6,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -164,7 +165,6 @@ func (m *PTXServiceDTOBusSpecificationV2BusSchedule) validateDirection(formats s
 }
 
 func (m *PTXServiceDTOBusSpecificationV2BusSchedule) validateFrequencys(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Frequencys) { // not required
 		return nil
 	}
@@ -235,7 +235,6 @@ func (m *PTXServiceDTOBusSpecificationV2BusSchedule) validateSubRouteUID(formats
 }
 
 func (m *PTXServiceDTOBusSpecificationV2BusSchedule) validateTimetables(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Timetables) { // not required
 		return nil
 	}
@@ -272,6 +271,78 @@ func (m *PTXServiceDTOBusSpecificationV2BusSchedule) validateVersionID(formats s
 
 	if err := validate.Required("VersionID", "body", m.VersionID); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+// ContextValidate validate this p t x service d t o bus specification v2 bus schedule based on the context it is used
+func (m *PTXServiceDTOBusSpecificationV2BusSchedule) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateFrequencys(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateRouteName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateSubRouteName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateTimetables(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV2BusSchedule) contextValidateFrequencys(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Frequencys); i++ {
+
+		if m.Frequencys[i] != nil {
+			if err := m.Frequencys[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("Frequencys" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV2BusSchedule) contextValidateRouteName(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV2BusSchedule) contextValidateSubRouteName(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV2BusSchedule) contextValidateTimetables(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Timetables); i++ {
+
+		if m.Timetables[i] != nil {
+			if err := m.Timetables[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("Timetables" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
 	}
 
 	return nil

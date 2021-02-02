@@ -82,6 +82,9 @@
             "schema": {
               "$ref": "#/definitions/PTX.API.Ship.Model.ShipWrapper[PTX.Service.DTO.Ship.Specification.V3.Port]"
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -157,6 +160,9 @@
             "schema": {
               "$ref": "#/definitions/PTX.API.Ship.Model.ShipWrapper[PTX.Service.DTO.Ship.Specification.V3.Operator]"
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -232,6 +238,9 @@
             "schema": {
               "$ref": "#/definitions/PTX.API.Ship.Model.ShipWrapper[PTX.Service.DTO.Ship.Specification.V3.Route]"
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -314,6 +323,9 @@
             "schema": {
               "$ref": "#/definitions/PTX.API.Ship.Model.ShipWrapper[PTX.Service.DTO.Ship.Specification.V3.Route]"
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -389,6 +401,9 @@
             "schema": {
               "$ref": "#/definitions/PTX.API.Ship.Model.ShipWrapper[PTX.Service.DTO.Ship.Specification.V3.RouteFare]"
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -471,6 +486,9 @@
             "schema": {
               "$ref": "#/definitions/PTX.API.Ship.Model.ShipWrapper[PTX.Service.DTO.Ship.Specification.V3.RouteFare]"
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -546,6 +564,9 @@
             "schema": {
               "$ref": "#/definitions/PTX.API.Ship.Model.ScheduleWrapper[PTX.Service.DTO.Ship.Specification.V3.GeneralSchedule]"
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -628,6 +649,9 @@
             "schema": {
               "$ref": "#/definitions/PTX.API.Ship.Model.ScheduleWrapper[PTX.Service.DTO.Ship.Specification.V3.GeneralSchedule]"
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -703,6 +727,87 @@
             "schema": {
               "$ref": "#/definitions/PTX.API.Ship.Model.ShipWrapper[PTX.Service.DTO.Shared.Specification.V3.Base.Authority]"
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          }
+        }
+      }
+    },
+    "/v3/Ship/LivePosition": {
+      "get": {
+        "tags": [
+          "Ship"
+        ],
+        "summary": "取得航運船舶即時位置資料",
+        "operationId": "ShipApi_LivePosition",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$count",
+            "description": "查詢數量",
+            "type": "boolean",
+            "enum": [
+              true,
+              false
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/PTX.API.Ship.Model.ShipLiveWrapper[PTX.Service.DTO.Ship.Specification.V3.LivePosition]"
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -835,6 +940,152 @@
         }
       }
     },
+    "PTX.Service.DTO.Ship.Specification.V3.PointType": {
+      "title": "PointType",
+      "required": [
+        "PositionLat",
+        "PositionLon"
+      ],
+      "type": "object",
+      "properties": {
+        "PositionLat": {
+          "format": "double",
+          "title": "Double",
+          "description": "位置緯度",
+          "type": "number"
+        },
+        "PositionLon": {
+          "format": "double",
+          "title": "Double",
+          "description": "位置經度",
+          "type": "number"
+        }
+      }
+    },
+    "PTX.Service.DTO.Ship.Specification.V3.LivePosition": {
+      "title": "LivePosition",
+      "required": [
+        "GPSTime",
+        "MMSI",
+        "NAVSTAT",
+        "VesselID",
+        "VesselPosition"
+      ],
+      "type": "object",
+      "properties": {
+        "VesselID": {
+          "title": "String",
+          "description": "船舶代碼",
+          "type": "string"
+        },
+        "MMSI": {
+          "title": "String",
+          "description": "AIS 船舶編號",
+          "type": "string"
+        },
+        "VesselName": {
+          "title": "NameType",
+          "description": "船舶名稱",
+          "allOf": [
+            {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.NameType"
+            }
+          ]
+        },
+        "VesselPosition": {
+          "title": "PointType",
+          "description": "船舶位置資訊",
+          "allOf": [
+            {
+              "$ref": "#/definitions/PTX.Service.DTO.Ship.Specification.V3.PointType"
+            }
+          ]
+        },
+        "NAVSTAT": {
+          "format": "int32",
+          "title": "integer",
+          "description": "航行狀態 : [0:'under way using engine',1:'at anchor',2:'not under command',3:'restricted maneuverability',4:'constrained by her draught',5:'moored',6:'aground',7:'engaged in fishing',8:'under way sailing',9:'reserved for future amendment of navigational status for ships carrying DG, HS, or MP, or IMO hazard or pollutant category C, high speed craft (HSC)',10:'reserved for future amendment of navigational status for ships carrying dangerous goods (DG), harmful substances (HS) or marine pollutants (MP), or IMO hazard or pollutant category A, wing in ground (WIG)',11:'power-driven vessel towing astern (regional use)',12:'power-driven vessel pushing ahead or towing alongside (regional use)',13:'reserved for future use',14:'AIS-SART (active), MOB-AIS, EPIRB-AIS',15:'undefined = default (also used by AIS-SART, MOB-AIS and EPIRB-AIS under test)']",
+          "type": "integer"
+        },
+        "SOG": {
+          "format": "float",
+          "title": "Single",
+          "description": "對地航速(Speed Over Ground，單位: knot(節，海里/小時))，精度至 1/10 knot",
+          "type": "number"
+        },
+        "COG": {
+          "format": "float",
+          "title": "Single",
+          "description": "對地航向(Course Over Ground，單位: degree(度，真北為零))，精度至 1/10 degree",
+          "type": "number"
+        },
+        "VesselType": {
+          "format": "int32",
+          "title": "integer",
+          "description": "船舶種類 : [0:'N/A',20:'WIG',30:'Vessel-Fishing',31:'not under command',32:'Vessel-Tow>200m,breadth>25m',33:'Vessel-Dredge,Underwater OP',34:'Vessel-Diving OP',35:'Vessel-Military OP',36:'Vessel-Sailing',37:'Vessel-Pleasure craft',40:'HSC',50:'Pilot vessel',51:'Search & rescue vessel',52:'Tug',53:'Port tender',54:'Anti-pollution vessel',55:'Law enforcement vessel',58:'Medical transport',59:'Resolution 18(Mob-83)',60:'Passenger ship',70:'Cargo ship',80:'Tanker',90:'Other',101:'Undefined']",
+          "type": "integer"
+        },
+        "GPSTime": {
+          "title": "DateTime",
+          "description": "GPS 記錄時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        }
+      }
+    },
+    "PTX.API.Ship.Model.ShipLiveWrapper[PTX.Service.DTO.Ship.Specification.V3.LivePosition]": {
+      "title": "ShipLivePositionList",
+      "required": [
+        "AuthorityCode",
+        "LivePositions",
+        "SrcUpdateInterval",
+        "SrcUpdateTime",
+        "UpdateInterval",
+        "UpdateTime"
+      ],
+      "type": "object",
+      "properties": {
+        "UpdateTime": {
+          "title": "DateTime",
+          "description": "[平臺]資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)<span class=\"emphasis fas fa-pen\" rel=\"與來源Inbound XML不同，為中心端處理完後提供資料的更新時間\"></span>",
+          "type": "string"
+        },
+        "UpdateInterval": {
+          "format": "int32",
+          "title": "Int32",
+          "description": "[平臺]資料更新週期(秒)<span class=\"emphasis fas fa-pen\" rel=\"與來源Inbound XML不同，為中心端更新資料的週期\"></span>",
+          "type": "integer"
+        },
+        "SrcUpdateTime": {
+          "title": "DateTime",
+          "description": "[來源端平臺]資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)<span class=\"emphasis fas fa-pen\" rel=\"為來源Inbound XML中的UpdateTime [該欄位由本平台自動產製]\"></span>",
+          "type": "string"
+        },
+        "SrcUpdateInterval": {
+          "format": "int32",
+          "title": "Int32",
+          "description": "[來源端平臺]資料更新週期(秒)['-1: 不定期更新']<span class=\"emphasis fas fa-pen\" rel=\"為來源Inbound XML中的UpdateInterval [該欄位由本平台自動產製]\"></span>",
+          "type": "integer"
+        },
+        "AuthorityCode": {
+          "title": "String",
+          "description": "業管機關簡碼",
+          "type": "string"
+        },
+        "Count": {
+          "format": "int64",
+          "description": "資料總筆數<span class=\"emphasis fas fa-pen\" rel=\"與來源Inbound XML不同，為提供資料的總筆數  [該欄位由本平台自動產製]\"></span>",
+          "type": "integer"
+        },
+        "LivePositions": {
+          "title": "Array",
+          "description": "資料(陣列)",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PTX.Service.DTO.Ship.Specification.V3.LivePosition"
+          }
+        }
+      }
+    },
     "PTX.Service.DTO.Ship.Specification.V3.Operator": {
       "title": "Operator",
       "type": "object",
@@ -945,26 +1196,17 @@
         }
       }
     },
-    "PTX.Service.DTO.Ship.Specification.V3.PointType": {
-      "title": "PointType",
-      "type": "object",
-      "properties": {
-        "PositionLat": {
-          "format": "double",
-          "title": "Double",
-          "description": "位置緯度",
-          "type": "number"
-        },
-        "PositionLon": {
-          "format": "double",
-          "title": "Double",
-          "description": "位置經度",
-          "type": "number"
-        }
-      }
-    },
     "PTX.Service.DTO.Ship.Specification.V3.Port": {
       "title": "Port",
+      "required": [
+        "City",
+        "CityCode",
+        "Country",
+        "CountryCode",
+        "PortID",
+        "PortName",
+        "PortPosition"
+      ],
       "type": "object",
       "properties": {
         "PortID": {

@@ -6,6 +6,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -28,7 +29,7 @@ type PTXServiceDTOTourismSpecificationV2BusSchedule struct {
 	// Array
 	//
 	// 發車班距
-	Frequencys []*PTXServiceDTOBusSpecificationV2BusFrequency `json:"Frequencys"`
+	Frequencys []*PTXServiceDTOTourismSpecificationV2BusFrequency `json:"Frequencys"`
 
 	// String
 	//
@@ -73,7 +74,7 @@ type PTXServiceDTOTourismSpecificationV2BusSchedule struct {
 	// Array
 	//
 	// 預定班表
-	Timetables []*PTXServiceDTOBusSpecificationV2BusTimetable `json:"Timetables"`
+	Timetables []*PTXServiceDTOTourismSpecificationV2BusTimetable `json:"Timetables"`
 
 	// DateTime
 	//
@@ -142,7 +143,6 @@ func (m *PTXServiceDTOTourismSpecificationV2BusSchedule) validateDirection(forma
 }
 
 func (m *PTXServiceDTOTourismSpecificationV2BusSchedule) validateFrequencys(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Frequencys) { // not required
 		return nil
 	}
@@ -213,7 +213,6 @@ func (m *PTXServiceDTOTourismSpecificationV2BusSchedule) validateTaiwanTripName(
 }
 
 func (m *PTXServiceDTOTourismSpecificationV2BusSchedule) validateTimetables(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Timetables) { // not required
 		return nil
 	}
@@ -241,6 +240,78 @@ func (m *PTXServiceDTOTourismSpecificationV2BusSchedule) validateUpdateTime(form
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+// ContextValidate validate this p t x service d t o tourism specification v2 bus schedule based on the context it is used
+func (m *PTXServiceDTOTourismSpecificationV2BusSchedule) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateFrequencys(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateSubRouteName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateTaiwanTripName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateTimetables(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTOTourismSpecificationV2BusSchedule) contextValidateFrequencys(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Frequencys); i++ {
+
+		if m.Frequencys[i] != nil {
+			if err := m.Frequencys[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("Frequencys" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTOTourismSpecificationV2BusSchedule) contextValidateSubRouteName(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTOTourismSpecificationV2BusSchedule) contextValidateTaiwanTripName(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTOTourismSpecificationV2BusSchedule) contextValidateTimetables(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Timetables); i++ {
+
+		if m.Timetables[i] != nil {
+			if err := m.Timetables[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("Timetables" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
 	}
 
 	return nil

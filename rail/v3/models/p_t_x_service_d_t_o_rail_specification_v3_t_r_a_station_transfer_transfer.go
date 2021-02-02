@@ -6,6 +6,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -303,6 +304,170 @@ func (m *PTXServiceDTORailSpecificationV3TRAStationTransferTransfer) validateTax
 
 		if m.TaxiTransfers[i] != nil {
 			if err := m.TaxiTransfers[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("TaxiTransfers" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+// ContextValidate validate this p t x service d t o rail specification v3 t r a station transfer transfer based on the context it is used
+func (m *PTXServiceDTORailSpecificationV3TRAStationTransferTransfer) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateAirportTransfers(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateBikeTransfers(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateBusTransfers(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateFerryTransfers(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateParkingTransfers(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateRailTransfers(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateTaxiTransfers(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV3TRAStationTransferTransfer) contextValidateAirportTransfers(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.AirportTransfers); i++ {
+
+		if m.AirportTransfers[i] != nil {
+			if err := m.AirportTransfers[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("AirportTransfers" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV3TRAStationTransferTransfer) contextValidateBikeTransfers(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.BikeTransfers); i++ {
+
+		if m.BikeTransfers[i] != nil {
+			if err := m.BikeTransfers[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("BikeTransfers" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV3TRAStationTransferTransfer) contextValidateBusTransfers(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.BusTransfers); i++ {
+
+		if m.BusTransfers[i] != nil {
+			if err := m.BusTransfers[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("BusTransfers" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV3TRAStationTransferTransfer) contextValidateFerryTransfers(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.FerryTransfers); i++ {
+
+		if m.FerryTransfers[i] != nil {
+			if err := m.FerryTransfers[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("FerryTransfers" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV3TRAStationTransferTransfer) contextValidateParkingTransfers(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.ParkingTransfers); i++ {
+
+		if m.ParkingTransfers[i] != nil {
+			if err := m.ParkingTransfers[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("ParkingTransfers" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV3TRAStationTransferTransfer) contextValidateRailTransfers(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.RailTransfers); i++ {
+
+		if m.RailTransfers[i] != nil {
+			if err := m.RailTransfers[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("RailTransfers" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV3TRAStationTransferTransfer) contextValidateTaxiTransfers(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.TaxiTransfers); i++ {
+
+		if m.TaxiTransfers[i] != nil {
+			if err := m.TaxiTransfers[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("TaxiTransfers" + "." + strconv.Itoa(i))
 				}

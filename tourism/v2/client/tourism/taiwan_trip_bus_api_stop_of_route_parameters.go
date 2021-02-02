@@ -17,96 +17,116 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewTaiwanTripBusAPIStopOfRouteParams creates a new TaiwanTripBusAPIStopOfRouteParams object
-// with the default values initialized.
+// NewTaiwanTripBusAPIStopOfRouteParams creates a new TaiwanTripBusAPIStopOfRouteParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewTaiwanTripBusAPIStopOfRouteParams() *TaiwanTripBusAPIStopOfRouteParams {
-	var (
-		dollarTopDefault = int64(30)
-	)
 	return &TaiwanTripBusAPIStopOfRouteParams{
-		DollarTop: &dollarTopDefault,
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewTaiwanTripBusAPIStopOfRouteParamsWithTimeout creates a new TaiwanTripBusAPIStopOfRouteParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewTaiwanTripBusAPIStopOfRouteParamsWithTimeout(timeout time.Duration) *TaiwanTripBusAPIStopOfRouteParams {
-	var (
-		dollarTopDefault = int64(30)
-	)
 	return &TaiwanTripBusAPIStopOfRouteParams{
-		DollarTop: &dollarTopDefault,
-
 		timeout: timeout,
 	}
 }
 
 // NewTaiwanTripBusAPIStopOfRouteParamsWithContext creates a new TaiwanTripBusAPIStopOfRouteParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewTaiwanTripBusAPIStopOfRouteParamsWithContext(ctx context.Context) *TaiwanTripBusAPIStopOfRouteParams {
-	var (
-		dollarTopDefault = int64(30)
-	)
 	return &TaiwanTripBusAPIStopOfRouteParams{
-		DollarTop: &dollarTopDefault,
-
 		Context: ctx,
 	}
 }
 
 // NewTaiwanTripBusAPIStopOfRouteParamsWithHTTPClient creates a new TaiwanTripBusAPIStopOfRouteParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewTaiwanTripBusAPIStopOfRouteParamsWithHTTPClient(client *http.Client) *TaiwanTripBusAPIStopOfRouteParams {
-	var (
-		dollarTopDefault = int64(30)
-	)
 	return &TaiwanTripBusAPIStopOfRouteParams{
-		DollarTop:  &dollarTopDefault,
 		HTTPClient: client,
 	}
 }
 
-/*TaiwanTripBusAPIStopOfRouteParams contains all the parameters to send to the API endpoint
-for the taiwan trip bus Api stop of route operation typically these are written to a http.Request
+/* TaiwanTripBusAPIStopOfRouteParams contains all the parameters to send to the API endpoint
+   for the taiwan trip bus Api stop of route operation.
+
+   Typically these are written to a http.Request.
 */
 type TaiwanTripBusAPIStopOfRouteParams struct {
 
-	/*DollarFilter
-	  過濾
+	/* DollarFilter.
 
+	   過濾
 	*/
 	DollarFilter *string
-	/*DollarFormat
-	  指定來源格式
 
+	/* DollarFormat.
+
+	   指定來源格式
 	*/
 	DollarFormat string
-	/*DollarOrderby
-	  排序
 
+	/* DollarOrderby.
+
+	   排序
 	*/
 	DollarOrderby *string
-	/*DollarSelect
-	  挑選
 
+	/* DollarSelect.
+
+	   挑選
 	*/
 	DollarSelect *string
-	/*DollarSkip
-	  跳過前幾筆
 
+	/* DollarSkip.
+
+	   跳過前幾筆
 	*/
 	DollarSkip *string
-	/*DollarTop
-	  取前幾筆
 
+	/* DollarTop.
+
+	   取前幾筆
+
+	   Default: 30
 	*/
 	DollarTop *int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the taiwan trip bus Api stop of route params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *TaiwanTripBusAPIStopOfRouteParams) WithDefaults() *TaiwanTripBusAPIStopOfRouteParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the taiwan trip bus Api stop of route params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *TaiwanTripBusAPIStopOfRouteParams) SetDefaults() {
+	var (
+		dollarTopDefault = int64(30)
+	)
+
+	val := TaiwanTripBusAPIStopOfRouteParams{
+		DollarTop: &dollarTopDefault,
+	}
+
+	val.timeout = o.timeout
+	val.Context = o.Context
+	val.HTTPClient = o.HTTPClient
+	*o = val
 }
 
 // WithTimeout adds the timeout to the taiwan trip bus Api stop of route params
@@ -220,22 +240,24 @@ func (o *TaiwanTripBusAPIStopOfRouteParams) WriteToRequest(r runtime.ClientReque
 
 		// query param $filter
 		var qrDollarFilter string
+
 		if o.DollarFilter != nil {
 			qrDollarFilter = *o.DollarFilter
 		}
 		qDollarFilter := qrDollarFilter
 		if qDollarFilter != "" {
+
 			if err := r.SetQueryParam("$filter", qDollarFilter); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	// query param $format
 	qrDollarFormat := o.DollarFormat
 	qDollarFormat := qrDollarFormat
 	if qDollarFormat != "" {
+
 		if err := r.SetQueryParam("$format", qDollarFormat); err != nil {
 			return err
 		}
@@ -245,64 +267,68 @@ func (o *TaiwanTripBusAPIStopOfRouteParams) WriteToRequest(r runtime.ClientReque
 
 		// query param $orderby
 		var qrDollarOrderby string
+
 		if o.DollarOrderby != nil {
 			qrDollarOrderby = *o.DollarOrderby
 		}
 		qDollarOrderby := qrDollarOrderby
 		if qDollarOrderby != "" {
+
 			if err := r.SetQueryParam("$orderby", qDollarOrderby); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.DollarSelect != nil {
 
 		// query param $select
 		var qrDollarSelect string
+
 		if o.DollarSelect != nil {
 			qrDollarSelect = *o.DollarSelect
 		}
 		qDollarSelect := qrDollarSelect
 		if qDollarSelect != "" {
+
 			if err := r.SetQueryParam("$select", qDollarSelect); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.DollarSkip != nil {
 
 		// query param $skip
 		var qrDollarSkip string
+
 		if o.DollarSkip != nil {
 			qrDollarSkip = *o.DollarSkip
 		}
 		qDollarSkip := qrDollarSkip
 		if qDollarSkip != "" {
+
 			if err := r.SetQueryParam("$skip", qDollarSkip); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.DollarTop != nil {
 
 		// query param $top
 		var qrDollarTop int64
+
 		if o.DollarTop != nil {
 			qrDollarTop = *o.DollarTop
 		}
 		qDollarTop := swag.FormatInt64(qrDollarTop)
 		if qDollarTop != "" {
+
 			if err := r.SetQueryParam("$top", qDollarTop); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if len(res) > 0 {

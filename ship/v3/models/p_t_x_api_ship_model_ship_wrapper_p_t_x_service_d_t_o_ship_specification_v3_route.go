@@ -6,6 +6,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -73,7 +74,6 @@ func (m *PTXAPIShipModelShipWrapperPTXServiceDTOShipSpecificationV3Route) Valida
 }
 
 func (m *PTXAPIShipModelShipWrapperPTXServiceDTOShipSpecificationV3Route) validateRoutes(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Routes) { // not required
 		return nil
 	}
@@ -110,6 +110,38 @@ func (m *PTXAPIShipModelShipWrapperPTXServiceDTOShipSpecificationV3Route) valida
 
 	if err := validate.Required("VersionID", "body", m.VersionID); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+// ContextValidate validate this p t x API ship model ship wrapper p t x service d t o ship specification v3 route based on the context it is used
+func (m *PTXAPIShipModelShipWrapperPTXServiceDTOShipSpecificationV3Route) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateRoutes(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXAPIShipModelShipWrapperPTXServiceDTOShipSpecificationV3Route) contextValidateRoutes(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Routes); i++ {
+
+		if m.Routes[i] != nil {
+			if err := m.Routes[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("Routes" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
 	}
 
 	return nil

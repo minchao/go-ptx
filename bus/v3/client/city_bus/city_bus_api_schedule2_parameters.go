@@ -17,111 +17,134 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewCityBusAPISchedule2Params creates a new CityBusAPISchedule2Params object
-// with the default values initialized.
+// NewCityBusAPISchedule2Params creates a new CityBusAPISchedule2Params object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewCityBusAPISchedule2Params() *CityBusAPISchedule2Params {
-	var (
-		dollarTopDefault = int64(30)
-	)
 	return &CityBusAPISchedule2Params{
-		DollarTop: &dollarTopDefault,
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewCityBusAPISchedule2ParamsWithTimeout creates a new CityBusAPISchedule2Params object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewCityBusAPISchedule2ParamsWithTimeout(timeout time.Duration) *CityBusAPISchedule2Params {
-	var (
-		dollarTopDefault = int64(30)
-	)
 	return &CityBusAPISchedule2Params{
-		DollarTop: &dollarTopDefault,
-
 		timeout: timeout,
 	}
 }
 
 // NewCityBusAPISchedule2ParamsWithContext creates a new CityBusAPISchedule2Params object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewCityBusAPISchedule2ParamsWithContext(ctx context.Context) *CityBusAPISchedule2Params {
-	var (
-		dollarTopDefault = int64(30)
-	)
 	return &CityBusAPISchedule2Params{
-		DollarTop: &dollarTopDefault,
-
 		Context: ctx,
 	}
 }
 
 // NewCityBusAPISchedule2ParamsWithHTTPClient creates a new CityBusAPISchedule2Params object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewCityBusAPISchedule2ParamsWithHTTPClient(client *http.Client) *CityBusAPISchedule2Params {
-	var (
-		dollarTopDefault = int64(30)
-	)
 	return &CityBusAPISchedule2Params{
-		DollarTop:  &dollarTopDefault,
 		HTTPClient: client,
 	}
 }
 
-/*CityBusAPISchedule2Params contains all the parameters to send to the API endpoint
-for the city bus Api schedule 2 operation typically these are written to a http.Request
+/* CityBusAPISchedule2Params contains all the parameters to send to the API endpoint
+   for the city bus Api schedule 2 operation.
+
+   Typically these are written to a http.Request.
 */
 type CityBusAPISchedule2Params struct {
 
-	/*DollarCount
-	  查詢數量
+	/* DollarCount.
 
+	   查詢數量
 	*/
 	DollarCount *bool
-	/*DollarFilter
-	  過濾
 
+	/* DollarFilter.
+
+	   過濾
 	*/
 	DollarFilter *string
-	/*DollarFormat
-	  指定來源格式
 
+	/* DollarFormat.
+
+	   指定來源格式
 	*/
 	DollarFormat string
-	/*DollarOrderby
-	  排序
 
+	/* DollarOrderby.
+
+	   排序
 	*/
 	DollarOrderby *string
-	/*DollarSelect
-	  挑選
 
+	/* DollarSelect.
+
+	   挑選
 	*/
 	DollarSelect *string
-	/*DollarSkip
-	  跳過前幾筆
 
+	/* DollarSkip.
+
+	   跳過前幾筆
 	*/
 	DollarSkip *string
-	/*DollarTop
-	  取前幾筆
 
+	/* DollarTop.
+
+	   取前幾筆
+
+	   Default: 30
 	*/
 	DollarTop *int64
-	/*City
-	  縣市
 
+	/* City.
+
+	   縣市
 	*/
 	City string
-	/*Health
-	  加入參數'?health=true'即可查詢此API服務的健康狀態
 
+	/* Health.
+
+	   加入參數'?health=true'即可查詢此API服務的健康狀態
 	*/
 	Health *string
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the city bus Api schedule 2 params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *CityBusAPISchedule2Params) WithDefaults() *CityBusAPISchedule2Params {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the city bus Api schedule 2 params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *CityBusAPISchedule2Params) SetDefaults() {
+	var (
+		dollarTopDefault = int64(30)
+	)
+
+	val := CityBusAPISchedule2Params{
+		DollarTop: &dollarTopDefault,
+	}
+
+	val.timeout = o.timeout
+	val.Context = o.Context
+	val.HTTPClient = o.HTTPClient
+	*o = val
 }
 
 // WithTimeout adds the timeout to the city bus Api schedule 2 params
@@ -268,38 +291,41 @@ func (o *CityBusAPISchedule2Params) WriteToRequest(r runtime.ClientRequest, reg 
 
 		// query param $count
 		var qrDollarCount bool
+
 		if o.DollarCount != nil {
 			qrDollarCount = *o.DollarCount
 		}
 		qDollarCount := swag.FormatBool(qrDollarCount)
 		if qDollarCount != "" {
+
 			if err := r.SetQueryParam("$count", qDollarCount); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.DollarFilter != nil {
 
 		// query param $filter
 		var qrDollarFilter string
+
 		if o.DollarFilter != nil {
 			qrDollarFilter = *o.DollarFilter
 		}
 		qDollarFilter := qrDollarFilter
 		if qDollarFilter != "" {
+
 			if err := r.SetQueryParam("$filter", qDollarFilter); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	// query param $format
 	qrDollarFormat := o.DollarFormat
 	qDollarFormat := qrDollarFormat
 	if qDollarFormat != "" {
+
 		if err := r.SetQueryParam("$format", qDollarFormat); err != nil {
 			return err
 		}
@@ -309,64 +335,68 @@ func (o *CityBusAPISchedule2Params) WriteToRequest(r runtime.ClientRequest, reg 
 
 		// query param $orderby
 		var qrDollarOrderby string
+
 		if o.DollarOrderby != nil {
 			qrDollarOrderby = *o.DollarOrderby
 		}
 		qDollarOrderby := qrDollarOrderby
 		if qDollarOrderby != "" {
+
 			if err := r.SetQueryParam("$orderby", qDollarOrderby); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.DollarSelect != nil {
 
 		// query param $select
 		var qrDollarSelect string
+
 		if o.DollarSelect != nil {
 			qrDollarSelect = *o.DollarSelect
 		}
 		qDollarSelect := qrDollarSelect
 		if qDollarSelect != "" {
+
 			if err := r.SetQueryParam("$select", qDollarSelect); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.DollarSkip != nil {
 
 		// query param $skip
 		var qrDollarSkip string
+
 		if o.DollarSkip != nil {
 			qrDollarSkip = *o.DollarSkip
 		}
 		qDollarSkip := qrDollarSkip
 		if qDollarSkip != "" {
+
 			if err := r.SetQueryParam("$skip", qDollarSkip); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.DollarTop != nil {
 
 		// query param $top
 		var qrDollarTop int64
+
 		if o.DollarTop != nil {
 			qrDollarTop = *o.DollarTop
 		}
 		qDollarTop := swag.FormatInt64(qrDollarTop)
 		if qDollarTop != "" {
+
 			if err := r.SetQueryParam("$top", qDollarTop); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	// path param City
@@ -378,16 +408,17 @@ func (o *CityBusAPISchedule2Params) WriteToRequest(r runtime.ClientRequest, reg 
 
 		// query param health
 		var qrHealth string
+
 		if o.Health != nil {
 			qrHealth = *o.Health
 		}
 		qHealth := qrHealth
 		if qHealth != "" {
+
 			if err := r.SetQueryParam("health", qHealth); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if len(res) > 0 {

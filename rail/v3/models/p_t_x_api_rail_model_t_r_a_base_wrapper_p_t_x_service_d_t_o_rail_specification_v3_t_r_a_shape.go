@@ -6,6 +6,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -158,6 +159,38 @@ func (m *PTXAPIRailModelTRABaseWrapperPTXServiceDTORailSpecificationV3TRAShape) 
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+// ContextValidate validate this p t x API rail model t r a base wrapper p t x service d t o rail specification v3 t r a shape based on the context it is used
+func (m *PTXAPIRailModelTRABaseWrapperPTXServiceDTORailSpecificationV3TRAShape) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateShapes(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXAPIRailModelTRABaseWrapperPTXServiceDTORailSpecificationV3TRAShape) contextValidateShapes(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Shapes); i++ {
+
+		if m.Shapes[i] != nil {
+			if err := m.Shapes[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("Shapes" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
 	}
 
 	return nil
