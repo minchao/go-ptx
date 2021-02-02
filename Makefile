@@ -9,7 +9,7 @@ help:
 	@sed -n 's/^##//p' ${MAKEFILE_LIST} | column -t -s ':' |  sed -e 's/^/ /'
 
 .PHONY: spec
-## spec: fetche all openapi specifications
+## spec: fetch all openapi specifications
 spec:
 	go run spec/main.go
 
