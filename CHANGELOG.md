@@ -6,6 +6,22 @@
 
 ## [Unreleased]
 
+## [0.9.0] - 2021-02-02
+
+### Added
+- 公路客運線型資料服務上架
+- 公車、軌道與自行車新資料服務上架
+- 航運V3版船舶即時位置資料服務上架
+
+### Changed
+- 軌道資料服務更新
+- 高鐵動態即時剩餘位資料服務預計資料結構調整
+- 航空資料服務更新
+- 台鐵、高鐵資料服務預計資料結構調整
+- 公車預估到站(N1)服務內容更新
+- 高鐵動態即時剩餘位資料服務資料結構調整
+- 淡海輕軌資料服務更新
+
 ## [0.8.0] - 2020-11-02
 
 ### Changed
@@ -106,8 +122,9 @@
 ### Added
 - 首次發行，提供基本、航空、公車、軌道、自行車與觀光等 PTX API 用戶端程式庫。
 
-[Unreleased]: https://github.com/minchao/go-ptx/compare/v0.8.0...HEAD
-[0.7.0]: https://github.com/minchao/go-ptx/compare/v0.7.0...v0.8.0
+[Unreleased]: https://github.com/minchao/go-ptx/compare/v0.9.0...HEAD
+[0.9.0]: https://github.com/minchao/go-ptx/compare/v0.8.0...v0.9.0
+[0.8.0]: https://github.com/minchao/go-ptx/compare/v0.7.0...v0.8.0
 [0.7.0]: https://github.com/minchao/go-ptx/compare/v0.6.0...v0.7.0
 [0.6.0]: https://github.com/minchao/go-ptx/compare/v0.5.0...v0.6.0
 [0.5.0]: https://github.com/minchao/go-ptx/compare/v0.4.0...v0.5.0
