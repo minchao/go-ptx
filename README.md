@@ -16,7 +16,7 @@ go-ptx 是[公共運輸整合資訊流通服務平臺](https://ptx.transportdata
 
 ## 開發
 
-go-ptx 使用 [go-swagger](https://github.com/go-swagger/go-swagger) 自動從 PTX 的 [OAS 2.0](https://swagger.io/specification/v2/) 定義檔產生客戶端庫。
+go-ptx 使用 [go-swagger](https://github.com/go-swagger/go-swagger) 自動從 PTX 的 [OpenAPI](https://swagger.io/specification/v2/) 定義檔產生客戶端庫。
 注意：請勿修改這些自動產生的程式碼。
 
 ### 必要條件
@@ -45,7 +45,7 @@ $ go mod download
 ### 產生客戶端庫
 
 ```console
-# 1. 下載 PTX 的 OAS 2.0 定義檔，並對已知問題進行修正。
+# 1. 下載 PTX 的 OpenAPI 定義檔，並對已知問題進行修正。
 $ make spec
 
 # 2. 驗證定義檔
@@ -74,8 +74,8 @@ $ APP_ID=YOUR_APP_ID APP_KEY=YOUR_APP_KEY make test-integration
 
 ### 更新客戶端庫
 
-PTX 會不定期更新 OAS API 定義檔來提供新功能或修正，為了減輕維護第三方客戶端庫的負擔，
-go-ptx 透過 Travis CI 的 Cron Jobs 機制，定期檢查 OAS 定義檔的更新，當發現異動時，自動產生 Pull request。
+PTX 會不定期更新 OpenAPI 定義檔來提供新功能或修正，為了減輕維護第三方客戶端庫的負擔，
+go-ptx 透過 GitHub Actions 的 Scheduled events 機制，[定期檢查 OpenAPI 定義檔](.github/workflows/check-specifications-update.yml)，發現異動時自動產生 Pull request 更新。
 
 ## 使用
 
