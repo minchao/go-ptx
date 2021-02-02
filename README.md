@@ -1,6 +1,6 @@
 # go-ptx
 
-[![Build Status](https://travis-ci.com/minchao/go-ptx.svg?branch=master)](https://travis-ci.com/minchao/go-ptx)
+[![tests](https://github.com/minchao/go-ptx/workflows/tests/badge.svg)](https://github.com/minchao/go-ptx/actions?query=workflow%3Atests)
 
 go-ptx 是[公共運輸整合資訊流通服務平臺](https://ptx.transportdata.tw/)（Public Transport Data eXchange，PTX）的非官方 Golang 客戶端庫。
 
