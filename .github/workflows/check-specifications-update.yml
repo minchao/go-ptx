@@ -1,0 +1,78 @@
+name: check specifications update
+on:
+  schedule:
+    - cron: 0 0 * * 6
+  workflow_dispatch: { }
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/setup-go@v2
+        with:
+          go-version: ${{ matrix.go-version }}
+      - uses: actions/checkout@v2
+
+      - name: Cache go modules
+        uses: actions/cache@v2
+        with:
+          path: ~/go/pkg/mod
+          key: ${{ runner.os }}-go-${{ hashFiles('**/go.sum') }}
+          restore-keys: |
+            ${{ runner.os }}-go-
+
+      - run: go mod download
+
+      - name: Install go-swagger
+        run: |
+          mkdir -p $HOME/.local/bin
+          download_url=$(curl -s https://api.github.com/repos/go-swagger/go-swagger/releases/latest | \
+            jq -r '.assets[] | select(.name | contains("'"$(uname | tr '[:upper:]' '[:lower:]')"'_amd64")) | .browser_download_url')
+          curl -o $HOME/.local/bin/swagger -L'#' "$download_url"
+          chmod +x $HOME/.local/bin/swagger
+          echo "$HOME/.local/bin" >> $GITHUB_PATH
+
+      - name: Fetche all newest openapi specifications
+        run: make spec
+      - name: Generate go client libraries
+        run: make generate
+
+      - run: |
+          git fetch --no-tags --prune --depth=1 origin +refs/heads/master:refs/remotes/origin/master
+          git branch -r
+
+      - name: Check if openapi specifications is updateed
+        id: check-specifications
+        run: |
+          for spec in ./oas.*.*.json
+          do
+            IFS='.' read -r -a substrings <<< "${spec}"
+            target_folders="${target_folders} ${substrings[2]}"
+          done
+          target_folders=$(echo -e "${target_folders}" | sed -e 's/^[[:space:]]*//' -e 's/[[:space:]]*$//')
+          git_diff_cmd="git diff refs/remotes/origin/master -- ${target_folders}"
+          output=$(eval "${git_diff_cmd}")
+          if [[ -n "${output}" ]]; then
+            echo '::set-output name=is-updated::true'
+          fi
+
+      - run: make validate
+        if: steps.check-specifications.outputs.is-updated == 'true'
+      - run: make test
+        if: steps.check-specifications.outputs.is-updated == 'true'
+      - run: make test-integration
+        if: steps.check-specifications.outputs.is-updated == 'true'
+        env:
+          APP_ID: ${{ secrets.APP_ID }}
+          APP_KEY: ${{ secrets.APP_KEY }}
+
+      - name: Create pull request
+        uses: peter-evans/create-pull-request@v3
+        if: steps.check-specifications.outputs.is-updated == 'true'
+        with:
+          token: ${{ secrets.AUTOMATION_BOT_GITHUB_TOKEN }}
+          commit-message: "chore(api): openapi specifications update"
+          branch: auto/specifications-update
+          title: "chore(api): openapi specifications update"
+          body: This PR updates specifications to the latest version
+          assignees: ${{ github.repository_owner }}
