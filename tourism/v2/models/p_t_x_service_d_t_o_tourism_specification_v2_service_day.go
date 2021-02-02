@@ -6,18 +6,20 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
+
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 )
 
-// PTXServiceDTOBusSpecificationV2ServiceDay ServiceDay
+// PTXServiceDTOTourismSpecificationV2ServiceDay ServiceDay
 //
 // 週內營運日資料
 //
-// swagger:model PTX.Service.DTO.Bus.Specification.V2.ServiceDay
-type PTXServiceDTOBusSpecificationV2ServiceDay struct {
+// swagger:model PTX.Service.DTO.Tourism.Specification.V2.ServiceDay
+type PTXServiceDTOTourismSpecificationV2ServiceDay struct {
 
 	// integer
 	//
@@ -67,8 +69,8 @@ type PTXServiceDTOBusSpecificationV2ServiceDay struct {
 	Wednesday *int32 `json:"Wednesday"`
 }
 
-// Validate validates this p t x service d t o bus specification v2 service day
-func (m *PTXServiceDTOBusSpecificationV2ServiceDay) Validate(formats strfmt.Registry) error {
+// Validate validates this p t x service d t o tourism specification v2 service day
+func (m *PTXServiceDTOTourismSpecificationV2ServiceDay) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateFriday(formats); err != nil {
@@ -105,7 +107,7 @@ func (m *PTXServiceDTOBusSpecificationV2ServiceDay) Validate(formats strfmt.Regi
 	return nil
 }
 
-func (m *PTXServiceDTOBusSpecificationV2ServiceDay) validateFriday(formats strfmt.Registry) error {
+func (m *PTXServiceDTOTourismSpecificationV2ServiceDay) validateFriday(formats strfmt.Registry) error {
 
 	if err := validate.Required("Friday", "body", m.Friday); err != nil {
 		return err
@@ -114,7 +116,7 @@ func (m *PTXServiceDTOBusSpecificationV2ServiceDay) validateFriday(formats strfm
 	return nil
 }
 
-func (m *PTXServiceDTOBusSpecificationV2ServiceDay) validateMonday(formats strfmt.Registry) error {
+func (m *PTXServiceDTOTourismSpecificationV2ServiceDay) validateMonday(formats strfmt.Registry) error {
 
 	if err := validate.Required("Monday", "body", m.Monday); err != nil {
 		return err
@@ -123,7 +125,7 @@ func (m *PTXServiceDTOBusSpecificationV2ServiceDay) validateMonday(formats strfm
 	return nil
 }
 
-func (m *PTXServiceDTOBusSpecificationV2ServiceDay) validateSaturday(formats strfmt.Registry) error {
+func (m *PTXServiceDTOTourismSpecificationV2ServiceDay) validateSaturday(formats strfmt.Registry) error {
 
 	if err := validate.Required("Saturday", "body", m.Saturday); err != nil {
 		return err
@@ -132,7 +134,7 @@ func (m *PTXServiceDTOBusSpecificationV2ServiceDay) validateSaturday(formats str
 	return nil
 }
 
-func (m *PTXServiceDTOBusSpecificationV2ServiceDay) validateSunday(formats strfmt.Registry) error {
+func (m *PTXServiceDTOTourismSpecificationV2ServiceDay) validateSunday(formats strfmt.Registry) error {
 
 	if err := validate.Required("Sunday", "body", m.Sunday); err != nil {
 		return err
@@ -141,7 +143,7 @@ func (m *PTXServiceDTOBusSpecificationV2ServiceDay) validateSunday(formats strfm
 	return nil
 }
 
-func (m *PTXServiceDTOBusSpecificationV2ServiceDay) validateThursday(formats strfmt.Registry) error {
+func (m *PTXServiceDTOTourismSpecificationV2ServiceDay) validateThursday(formats strfmt.Registry) error {
 
 	if err := validate.Required("Thursday", "body", m.Thursday); err != nil {
 		return err
@@ -150,7 +152,7 @@ func (m *PTXServiceDTOBusSpecificationV2ServiceDay) validateThursday(formats str
 	return nil
 }
 
-func (m *PTXServiceDTOBusSpecificationV2ServiceDay) validateTuesday(formats strfmt.Registry) error {
+func (m *PTXServiceDTOTourismSpecificationV2ServiceDay) validateTuesday(formats strfmt.Registry) error {
 
 	if err := validate.Required("Tuesday", "body", m.Tuesday); err != nil {
 		return err
@@ -159,7 +161,7 @@ func (m *PTXServiceDTOBusSpecificationV2ServiceDay) validateTuesday(formats strf
 	return nil
 }
 
-func (m *PTXServiceDTOBusSpecificationV2ServiceDay) validateWednesday(formats strfmt.Registry) error {
+func (m *PTXServiceDTOTourismSpecificationV2ServiceDay) validateWednesday(formats strfmt.Registry) error {
 
 	if err := validate.Required("Wednesday", "body", m.Wednesday); err != nil {
 		return err
@@ -168,8 +170,13 @@ func (m *PTXServiceDTOBusSpecificationV2ServiceDay) validateWednesday(formats st
 	return nil
 }
 
+// ContextValidate validates this p t x service d t o tourism specification v2 service day based on context it is used
+func (m *PTXServiceDTOTourismSpecificationV2ServiceDay) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	return nil
+}
+
 // MarshalBinary interface implementation
-func (m *PTXServiceDTOBusSpecificationV2ServiceDay) MarshalBinary() ([]byte, error) {
+func (m *PTXServiceDTOTourismSpecificationV2ServiceDay) MarshalBinary() ([]byte, error) {
 	if m == nil {
 		return nil, nil
 	}
@@ -177,8 +184,8 @@ func (m *PTXServiceDTOBusSpecificationV2ServiceDay) MarshalBinary() ([]byte, err
 }
 
 // UnmarshalBinary interface implementation
-func (m *PTXServiceDTOBusSpecificationV2ServiceDay) UnmarshalBinary(b []byte) error {
-	var res PTXServiceDTOBusSpecificationV2ServiceDay
+func (m *PTXServiceDTOTourismSpecificationV2ServiceDay) UnmarshalBinary(b []byte) error {
+	var res PTXServiceDTOTourismSpecificationV2ServiceDay
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

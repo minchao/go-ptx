@@ -6,6 +6,8 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
+
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
@@ -138,6 +140,25 @@ func (m *PTXServiceDTORailSpecificationV2TRARailLiveTrainDelay) validateUpdateTi
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
 		return err
 	}
+
+	return nil
+}
+
+// ContextValidate validate this p t x service d t o rail specification v2 t r a rail live train delay based on the context it is used
+func (m *PTXServiceDTORailSpecificationV2TRARailLiveTrainDelay) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateStationName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV2TRARailLiveTrainDelay) contextValidateStationName(ctx context.Context, formats strfmt.Registry) error {
 
 	return nil
 }

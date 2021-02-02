@@ -6,6 +6,8 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
+
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
@@ -96,11 +98,11 @@ type PTXServiceDTORailSpecificationV2MetroRoute struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
 	} `json:"StartStationName"`
 
-	// Int32
+	// Single
 	//
 	// 營運路線運行時間
 	// Required: true
-	TravelTime *int32 `json:"TravelTime"`
+	TravelTime *float32 `json:"TravelTime"`
 
 	// DateTime
 	//
@@ -291,6 +293,43 @@ func (m *PTXServiceDTORailSpecificationV2MetroRoute) validateVersionID(formats s
 	if err := validate.Required("VersionID", "body", m.VersionID); err != nil {
 		return err
 	}
+
+	return nil
+}
+
+// ContextValidate validate this p t x service d t o rail specification v2 metro route based on the context it is used
+func (m *PTXServiceDTORailSpecificationV2MetroRoute) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateEndStationName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateRouteName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateStartStationName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV2MetroRoute) contextValidateEndStationName(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV2MetroRoute) contextValidateRouteName(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV2MetroRoute) contextValidateStartStationName(ctx context.Context, formats strfmt.Registry) error {
 
 	return nil
 }

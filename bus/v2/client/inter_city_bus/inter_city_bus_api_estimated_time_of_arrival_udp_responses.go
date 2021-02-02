@@ -35,7 +35,12 @@ func (o *InterCityBusAPIEstimatedTimeOfArrivalUDPReader) ReadResponse(response r
 			return nil, err
 		}
 		return result, nil
-
+	case 304:
+		result := NewInterCityBusAPIEstimatedTimeOfArrivalUDPNotModified()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return nil, result
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -46,7 +51,7 @@ func NewInterCityBusAPIEstimatedTimeOfArrivalUDPOK() *InterCityBusAPIEstimatedTi
 	return &InterCityBusAPIEstimatedTimeOfArrivalUDPOK{}
 }
 
-/*InterCityBusAPIEstimatedTimeOfArrivalUDPOK handles this case with default header values.
+/* InterCityBusAPIEstimatedTimeOfArrivalUDPOK describes a response with status code 200, with default header values.
 
 Success
 */
@@ -57,7 +62,6 @@ type InterCityBusAPIEstimatedTimeOfArrivalUDPOK struct {
 func (o *InterCityBusAPIEstimatedTimeOfArrivalUDPOK) Error() string {
 	return fmt.Sprintf("[GET /v2/Bus/EstimatedTimeOfArrival/Streaming/InterCity][%d] interCityBusApiEstimatedTimeOfArrivalUdpOK  %+v", 200, o.Payload)
 }
-
 func (o *InterCityBusAPIEstimatedTimeOfArrivalUDPOK) GetPayload() []*models.PTXServiceDTOBusSpecificationV2BusN1EstimateTime {
 	return o.Payload
 }
@@ -77,7 +81,7 @@ func NewInterCityBusAPIEstimatedTimeOfArrivalUDPStatus299() *InterCityBusAPIEsti
 	return &InterCityBusAPIEstimatedTimeOfArrivalUDPStatus299{}
 }
 
-/*InterCityBusAPIEstimatedTimeOfArrivalUDPStatus299 handles this case with default header values.
+/* InterCityBusAPIEstimatedTimeOfArrivalUDPStatus299 describes a response with status code 299, with default header values.
 
 加入參數'?health=true'即可查詢此API服務的健康狀態
 */
@@ -88,7 +92,6 @@ type InterCityBusAPIEstimatedTimeOfArrivalUDPStatus299 struct {
 func (o *InterCityBusAPIEstimatedTimeOfArrivalUDPStatus299) Error() string {
 	return fmt.Sprintf("[GET /v2/Bus/EstimatedTimeOfArrival/Streaming/InterCity][%d] interCityBusApiEstimatedTimeOfArrivalUdpStatus299  %+v", 299, o.Payload)
 }
-
 func (o *InterCityBusAPIEstimatedTimeOfArrivalUDPStatus299) GetPayload() *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth {
 	return o.Payload
 }
@@ -101,6 +104,27 @@ func (o *InterCityBusAPIEstimatedTimeOfArrivalUDPStatus299) readResponse(respons
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
+
+	return nil
+}
+
+// NewInterCityBusAPIEstimatedTimeOfArrivalUDPNotModified creates a InterCityBusAPIEstimatedTimeOfArrivalUDPNotModified with default headers values
+func NewInterCityBusAPIEstimatedTimeOfArrivalUDPNotModified() *InterCityBusAPIEstimatedTimeOfArrivalUDPNotModified {
+	return &InterCityBusAPIEstimatedTimeOfArrivalUDPNotModified{}
+}
+
+/* InterCityBusAPIEstimatedTimeOfArrivalUDPNotModified describes a response with status code 304, with default header values.
+
+服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content
+*/
+type InterCityBusAPIEstimatedTimeOfArrivalUDPNotModified struct {
+}
+
+func (o *InterCityBusAPIEstimatedTimeOfArrivalUDPNotModified) Error() string {
+	return fmt.Sprintf("[GET /v2/Bus/EstimatedTimeOfArrival/Streaming/InterCity][%d] interCityBusApiEstimatedTimeOfArrivalUdpNotModified ", 304)
+}
+
+func (o *InterCityBusAPIEstimatedTimeOfArrivalUDPNotModified) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

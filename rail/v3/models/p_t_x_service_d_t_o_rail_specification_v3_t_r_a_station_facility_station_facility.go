@@ -6,6 +6,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -231,6 +232,135 @@ func (m *PTXServiceDTORailSpecificationV3TRAStationFacilityStationFacility) vali
 
 		if m.Toilets[i] != nil {
 			if err := m.Toilets[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("Toilets" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+// ContextValidate validate this p t x service d t o rail specification v3 t r a station facility station facility based on the context it is used
+func (m *PTXServiceDTORailSpecificationV3TRAStationFacilityStationFacility) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateDrinkingFountains(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateElevators(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateFacilityMapURLs(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateInformationSpots(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateStationName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateToilets(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV3TRAStationFacilityStationFacility) contextValidateDrinkingFountains(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.DrinkingFountains); i++ {
+
+		if m.DrinkingFountains[i] != nil {
+			if err := m.DrinkingFountains[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("DrinkingFountains" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV3TRAStationFacilityStationFacility) contextValidateElevators(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Elevators); i++ {
+
+		if m.Elevators[i] != nil {
+			if err := m.Elevators[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("Elevators" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV3TRAStationFacilityStationFacility) contextValidateFacilityMapURLs(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.FacilityMapURLs); i++ {
+
+		if m.FacilityMapURLs[i] != nil {
+			if err := m.FacilityMapURLs[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("FacilityMapURLs" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV3TRAStationFacilityStationFacility) contextValidateInformationSpots(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.InformationSpots); i++ {
+
+		if m.InformationSpots[i] != nil {
+			if err := m.InformationSpots[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("InformationSpots" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV3TRAStationFacilityStationFacility) contextValidateStationName(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV3TRAStationFacilityStationFacility) contextValidateToilets(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Toilets); i++ {
+
+		if m.Toilets[i] != nil {
+			if err := m.Toilets[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("Toilets" + "." + strconv.Itoa(i))
 				}

@@ -76,6 +76,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V2.Base.Operator"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -103,13 +106,15 @@
               "TRTC",
               "KRTC",
               "TYMC",
-              "TRTCMG"
+              "TRTCMG",
+              "TMRT"
             ],
             "x-enum": {
+              "TYMC": "桃園捷運",
               "KRTC": "高雄捷運",
-              "TRTC": "臺北捷運",
               "TRTCMG": "貓空纜車",
-              "TYMC": "桃園捷運"
+              "TMRT": "臺中捷運",
+              "TRTC": "臺北捷運"
             }
           },
           {
@@ -165,6 +170,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.Metro.Network"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -194,15 +202,17 @@
               "TYMC",
               "KLRT",
               "NTDLRT",
-              "TRTCMG"
+              "TRTCMG",
+              "TMRT"
             ],
             "x-enum": {
-              "KRTC": "高雄捷運",
-              "TRTCMG": "貓空纜車",
-              "KLRT": "高雄輕軌",
               "TYMC": "桃園捷運",
               "NTDLRT": "淡海輕軌",
-              "TRTC": "臺北捷運"
+              "KLRT": "高雄輕軌",
+              "TRTC": "臺北捷運",
+              "TMRT": "臺中捷運",
+              "TRTCMG": "貓空纜車",
+              "KRTC": "高雄捷運"
             }
           },
           {
@@ -258,6 +268,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.Metro.Line"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -287,15 +300,17 @@
               "TYMC",
               "KLRT",
               "NTDLRT",
-              "TRTCMG"
+              "TRTCMG",
+              "TMRT"
             ],
             "x-enum": {
-              "KRTC": "高雄捷運",
               "TRTCMG": "貓空纜車",
+              "KRTC": "高雄捷運",
               "TRTC": "臺北捷運",
-              "TYMC": "桃園捷運",
               "NTDLRT": "淡海輕軌",
-              "KLRT": "高雄輕軌"
+              "TYMC": "桃園捷運",
+              "KLRT": "高雄輕軌",
+              "TMRT": "臺中捷運"
             }
           },
           {
@@ -331,12 +346,6 @@
           },
           {
             "in": "query",
-            "name": "$spatialFilter",
-            "description": "空間過濾",
-            "type": "string"
-          },
-          {
-            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -357,6 +366,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.Metro.Station"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -386,15 +398,17 @@
               "TYMC",
               "KLRT",
               "NTDLRT",
-              "TRTCMG"
+              "TRTCMG",
+              "TMRT"
             ],
             "x-enum": {
-              "NTDLRT": "淡海輕軌",
-              "KRTC": "高雄捷運",
-              "TRTCMG": "貓空纜車",
-              "TYMC": "桃園捷運",
               "TRTC": "臺北捷運",
-              "KLRT": "高雄輕軌"
+              "KLRT": "高雄輕軌",
+              "TRTCMG": "貓空纜車",
+              "NTDLRT": "淡海輕軌",
+              "TYMC": "桃園捷運",
+              "TMRT": "臺中捷運",
+              "KRTC": "高雄捷運"
             }
           },
           {
@@ -450,6 +464,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.Metro.StationOfLine"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -478,9 +495,9 @@
               "KRTC"
             ],
             "x-enum": {
-              "TRTC": "臺北捷運",
+              "TYMC": "桃園捷運",
               "KRTC": "高雄捷運",
-              "TYMC": "桃園捷運"
+              "TRTC": "臺北捷運"
             }
           },
           {
@@ -536,6 +553,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.Metro.LineTransfer"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -563,9 +583,9 @@
               "TYMC"
             ],
             "x-enum": {
-              "TRTC": "臺北捷運",
               "TYMC": "桃園捷運",
-              "KRTC": "高雄捷運"
+              "KRTC": "高雄捷運",
+              "TRTC": "臺北捷運"
             }
           },
           {
@@ -621,6 +641,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.Metro.StationFacility"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -648,14 +671,16 @@
               "TRTC",
               "KRTC",
               "TYMC",
-              "TRTCMG"
+              "TRTCMG",
+              "TMRT"
             ],
             "x-enum": {
-              "KRTC": "高雄捷運",
+              "TRTCMG": "貓空纜車",
+              "TMRT": "臺中捷運",
+              "TRTC": "臺北捷運",
               "KLRT": "高雄輕軌",
               "TYMC": "桃園捷運",
-              "TRTC": "臺北捷運",
-              "TRTCMG": "貓空纜車"
+              "KRTC": "高雄捷運"
             }
           },
           {
@@ -717,6 +742,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.Metro.StationExit"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -744,13 +772,15 @@
               "TRTC",
               "KRTC",
               "TYMC",
-              "NTDLRT"
+              "NTDLRT",
+              "TMRT"
             ],
             "x-enum": {
               "TRTC": "臺北捷運",
-              "KRTC": "高雄捷運",
+              "TMRT": "臺中捷運",
               "NTDLRT": "淡海輕軌",
-              "TYMC": "桃園捷運"
+              "TYMC": "桃園捷運",
+              "KRTC": "高雄捷運"
             }
           },
           {
@@ -806,6 +836,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.Metro.Route"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -833,13 +866,15 @@
               "TRTC",
               "KRTC",
               "TYMC",
-              "NTDLRT"
+              "NTDLRT",
+              "TMRT"
             ],
             "x-enum": {
-              "KRTC": "高雄捷運",
               "TRTC": "臺北捷運",
               "TYMC": "桃園捷運",
-              "NTDLRT": "淡海輕軌"
+              "NTDLRT": "淡海輕軌",
+              "TMRT": "臺中捷運",
+              "KRTC": "高雄捷運"
             }
           },
           {
@@ -895,6 +930,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.Metro.StationOfRoute"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -922,12 +960,14 @@
               "TRTC",
               "KRTC",
               "TYMC",
-              "KLRT"
+              "KLRT",
+              "TMRT"
             ],
             "x-enum": {
               "TYMC": "桃園捷運",
-              "KRTC": "高雄捷運",
               "KLRT": "高雄輕軌",
+              "TMRT": "臺中捷運",
+              "KRTC": "高雄捷運",
               "TRTC": "臺北捷運"
             }
           },
@@ -984,6 +1024,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.Metro.FirstLastTimetable"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -1009,12 +1052,14 @@
             "type": "string",
             "enum": [
               "TRTC",
-              "TYMC"
+              "TYMC",
+              "TMRT"
             ],
             "x-enum": {
-              "KRTC": "高雄捷運",
+              "TMRT": "臺中捷運",
               "TRTC": "臺北捷運",
-              "TYMC": "桃園捷運"
+              "TYMC": "桃園捷運",
+              "KRTC": "高雄捷運"
             }
           },
           {
@@ -1070,6 +1115,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.Metro.Frequency"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -1100,10 +1148,10 @@
               "KLRT"
             ],
             "x-enum": {
-              "KLRT": "高雄輕軌",
+              "KRTC": "高雄捷運",
               "TYMC": "桃園捷運",
-              "TRTC": "臺北捷運",
-              "KRTC": "高雄捷運"
+              "KLRT": "高雄輕軌",
+              "TRTC": "臺北捷運"
             }
           },
           {
@@ -1159,6 +1207,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.Metro.S2STravelTime"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -1188,14 +1239,16 @@
               "TYMC",
               "KLRT",
               "NTDLRT",
-              "TRTCMG"
+              "TRTCMG",
+              "TMRT"
             ],
             "x-enum": {
-              "NTDLRT": "淡海輕軌",
-              "KLRT": "高雄輕軌",
+              "TMRT": "臺中捷運",
               "TRTCMG": "貓空纜車",
               "KRTC": "高雄捷運",
+              "KLRT": "高雄輕軌",
               "TYMC": "桃園捷運",
+              "NTDLRT": "淡海輕軌",
               "TRTC": "臺北捷運"
             }
           },
@@ -1252,6 +1305,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.Metro.ODFare"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -1279,9 +1335,9 @@
               "KRTC"
             ],
             "x-enum": {
-              "KRTC": "高雄捷運",
+              "TYMC": "桃園捷運",
               "TRTC": "臺北捷運",
-              "TYMC": "桃園捷運"
+              "KRTC": "高雄捷運"
             }
           },
           {
@@ -1337,6 +1393,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.Metro.LiveBoard"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -1367,10 +1426,10 @@
               "KLRT"
             ],
             "x-enum": {
-              "KRTC": "高雄捷運",
               "TYMC": "桃園捷運",
+              "KLRT": "高雄輕軌",
               "TRTC": "臺北捷運",
-              "KLRT": "高雄輕軌"
+              "KRTC": "高雄捷運"
             }
           },
           {
@@ -1426,6 +1485,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.Metro.StationTimeTable"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -1456,10 +1518,10 @@
               "NTDLRT"
             ],
             "x-enum": {
-              "TRTC": "臺北捷運",
-              "KRTC": "高雄捷運",
+              "NTDLRT": "淡海輕軌",
               "TYMC": "桃園捷運",
-              "NTDLRT": "淡海輕軌"
+              "KRTC": "高雄捷運",
+              "TRTC": "臺北捷運"
             }
           },
           {
@@ -1515,6 +1577,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.Metro.MetroShape"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -1544,9 +1609,9 @@
               "KLRT"
             ],
             "x-enum": {
-              "KRTC": "高雄捷運",
               "TYMC": "桃園捷運",
-              "KLRT": "高雄輕軌"
+              "KLRT": "高雄輕軌",
+              "KRTC": "高雄捷運"
             }
           },
           {
@@ -1608,6 +1673,9 @@
             "schema": {
               "$ref": "#/definitions/PTX.API.Rail.Model.MRTRealTimeWrapper[PTX.Service.DTO.Rail.Specification.V2.Metro.MRTNewsList.News]"
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -1638,8 +1706,8 @@
             ],
             "x-enum": {
               "KLRT": "高雄輕軌",
-              "KRTC": "高雄捷運",
-              "TYMC": "桃園捷運"
+              "TYMC": "桃園捷運",
+              "KRTC": "高雄捷運"
             }
           },
           {
@@ -1701,6 +1769,9 @@
             "schema": {
               "$ref": "#/definitions/PTX.API.Rail.Model.MRTRealTimeWrapper[PTX.Service.DTO.Rail.Specification.V2.Metro.Alert]"
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -1751,12 +1822,6 @@
           },
           {
             "in": "query",
-            "name": "$spatialFilter",
-            "description": "空間過濾",
-            "type": "string"
-          },
-          {
-            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -1777,6 +1842,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.THSR.RailStation"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -1847,6 +1915,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.THSR.RailODFare"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -1931,6 +2002,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.THSR.RailODFare"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -2001,6 +2075,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.THSR.RailGeneralTimetable"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -2078,6 +2155,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.THSR.RailGeneralTimetable"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -2148,6 +2228,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.THSR.RailDailyTrainInfo"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -2225,6 +2308,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.THSR.RailDailyTrainInfo"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -2302,6 +2388,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.THSR.RailDailyTrainInfo"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -2386,6 +2475,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.THSR.RailDailyTrainInfo"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -2456,6 +2548,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.THSR.RailDailyTimetable"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -2533,6 +2628,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.THSR.RailDailyTimetable"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -2610,6 +2708,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.THSR.RailDailyTimetable"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -2694,6 +2795,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.THSR.RailDailyTimetable"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -2776,6 +2880,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.THSR.RailStationTimetable"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -2867,6 +2974,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.THSR.RailODDailyTimetable"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -2937,6 +3047,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.THSR.AlertInfo"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -3007,6 +3120,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.THSR.News"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -3077,6 +3193,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.THSR.THSRShape"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -3151,8 +3270,11 @@
           "200": {
             "description": "Success",
             "schema": {
-              "$ref": "#/definitions/PTX.API.Rail.Model.V2THSRAvaliableSeatStatusOldWrapper[PTX.Service.DTO.Rail.Specification.V2.THSR.Old.AvailableSeat]"
+              "$ref": "#/definitions/PTX.API.Rail.Model.V2THSRAvailableSeatStatusOldWrapper[PTX.Service.DTO.Rail.Specification.V2.THSR.Old.AvailableSeat]"
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -3234,8 +3356,11 @@
           "200": {
             "description": "Success",
             "schema": {
-              "$ref": "#/definitions/PTX.API.Rail.Model.V2THSRAvaliableSeatStatusOldWrapper[PTX.Service.DTO.Rail.Specification.V2.THSR.Old.AvailableSeat]"
+              "$ref": "#/definitions/PTX.API.Rail.Model.V2THSRAvailableSeatStatusOldWrapper[PTX.Service.DTO.Rail.Specification.V2.THSR.Old.AvailableSeat]"
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -3312,6 +3437,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.THSR.StationExit"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -3386,8 +3514,11 @@
           "200": {
             "description": "Success",
             "schema": {
-              "$ref": "#/definitions/PTX.API.Rail.Model.V2THSRAvaliableSeatStatusWrapper[PTX.Service.DTO.Rail.Specification.V2.THSR.AvailableSeat]"
+              "$ref": "#/definitions/PTX.API.Rail.Model.V2THSRAvailableSeatStatusWrapper[PTX.Service.DTO.Rail.Specification.V2.THSR.AvailableSeat]"
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -3469,8 +3600,11 @@
           "200": {
             "description": "Success",
             "schema": {
-              "$ref": "#/definitions/PTX.API.Rail.Model.V2THSRAvaliableSeatStatusWrapper[PTX.Service.DTO.Rail.Specification.V2.THSR.AvailableSeat]"
+              "$ref": "#/definitions/PTX.API.Rail.Model.V2THSRAvailableSeatStatusWrapper[PTX.Service.DTO.Rail.Specification.V2.THSR.AvailableSeat]"
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -3552,8 +3686,11 @@
           "200": {
             "description": "Success",
             "schema": {
-              "$ref": "#/definitions/PTX.API.Rail.Model.V2THSRODAvaliableSeatStatusWrapper[PTX.Service.DTO.Rail.Specification.V2.THSR.OD.AvailableSeat]"
+              "$ref": "#/definitions/PTX.API.Rail.Model.V2THSRODAvailableSeatStatusWrapper[PTX.Service.DTO.Rail.Specification.V2.THSR.OD.AvailableSeat]"
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -3649,8 +3786,11 @@
           "200": {
             "description": "Success",
             "schema": {
-              "$ref": "#/definitions/PTX.API.Rail.Model.V2THSRODAvaliableSeatStatusWrapper[PTX.Service.DTO.Rail.Specification.V2.THSR.OD.AvailableSeat]"
+              "$ref": "#/definitions/PTX.API.Rail.Model.V2THSRODAvailableSeatStatusWrapper[PTX.Service.DTO.Rail.Specification.V2.THSR.OD.AvailableSeat]"
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -3753,8 +3893,11 @@
           "200": {
             "description": "Success",
             "schema": {
-              "$ref": "#/definitions/PTX.API.Rail.Model.V2THSRODAvaliableSeatStatusWrapper[PTX.Service.DTO.Rail.Specification.V2.THSR.OD.AvailableSeat]"
+              "$ref": "#/definitions/PTX.API.Rail.Model.V2THSRODAvailableSeatStatusWrapper[PTX.Service.DTO.Rail.Specification.V2.THSR.OD.AvailableSeat]"
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -3825,6 +3968,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.TRA.Network"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -3875,12 +4021,6 @@
           },
           {
             "in": "query",
-            "name": "$spatialFilter",
-            "description": "空間過濾",
-            "type": "string"
-          },
-          {
-            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -3901,6 +4041,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.TRA.RailStation"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -3971,6 +4114,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.TRA.Line"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -4041,6 +4187,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.TRA.StationOfLine"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -4111,6 +4260,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.TRA.TrainType"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -4181,6 +4333,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.TRA.TRAShape"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -4265,6 +4420,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.TRA.RailODFare"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -4335,6 +4493,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.TRA.RailODFare"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -4402,9 +4563,12 @@
               "title": "Array",
               "type": "array",
               "items": {
-                "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.TRA.TimeInfo.RailGeneralTrainInfo"
+                "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.TRA.RailGeneralTrainInfo"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -4479,9 +4643,12 @@
               "title": "Array",
               "type": "array",
               "items": {
-                "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.TRA.TimeInfo.RailGeneralTrainInfo"
+                "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.TRA.RailGeneralTrainInfo"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -4552,6 +4719,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.TRA.RailGeneralTimetable"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -4629,6 +4799,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.TRA.RailGeneralTimetable"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -4699,6 +4872,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.TRA.RailDailyTrainInfo"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -4776,6 +4952,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.TRA.RailDailyTrainInfo"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -4853,6 +5032,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.TRA.RailDailyTrainInfo"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -4937,6 +5119,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.TRA.RailDailyTrainInfo"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -5007,6 +5192,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.TRA.RailDailyTimetable"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -5084,6 +5272,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.TRA.RailDailyTimetable"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -5161,6 +5352,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.TRA.RailDailyTimetable"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -5245,6 +5439,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.TRA.RailDailyTimetable"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -5329,6 +5526,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.TRA.RailStationTimetable"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -5420,6 +5620,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.TRA.RailODDailyTimetable"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -5490,6 +5693,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.TRA.RailLiveBoard"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -5567,6 +5773,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.TRA.RailLiveBoard"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -5637,6 +5846,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.TRA.RailLiveTrainDelay"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -6201,8 +6413,8 @@
         }
       }
     },
-    "PTX.API.Rail.Model.V2THSRAvaliableSeatStatusWrapper[PTX.Service.DTO.Rail.Specification.V2.THSR.AvailableSeat]": {
-      "title": "AvaliableSeatStatus",
+    "PTX.API.Rail.Model.V2THSRAvailableSeatStatusWrapper[PTX.Service.DTO.Rail.Specification.V2.THSR.AvailableSeat]": {
+      "title": "AvailableSeatStatus",
       "required": [
         "AvailableSeats"
       ],
@@ -6851,8 +7063,8 @@
         }
       }
     },
-    "PTX.Service.DTO.Rail.Specification.V2.Metro.SubClass.ServiceDays": {
-      "title": "ServiceDays",
+    "PTX.Service.DTO.Rail.Specification.V2.Metro.SubClass.ServiceDay": {
+      "title": "ServiceDay",
       "description": "服務日型態",
       "required": [
         "Friday",
@@ -6922,7 +7134,7 @@
         "FirstTrainTime",
         "LastTrainTime",
         "LineID",
-        "ServiceDays",
+        "ServiceDay",
         "SrcUpdateTime",
         "StationID",
         "StationName",
@@ -6989,12 +7201,12 @@
           "description": "末班車時刻",
           "type": "string"
         },
-        "ServiceDays": {
-          "title": "ServiceDays",
+        "ServiceDay": {
+          "title": "ServiceDay",
           "description": "服務日型態",
           "allOf": [
             {
-              "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.Metro.SubClass.ServiceDays"
+              "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.Metro.SubClass.ServiceDay"
             }
           ]
         },
@@ -7086,7 +7298,7 @@
         "LineID",
         "OperationTime",
         "RouteID",
-        "ServiceDays",
+        "ServiceDay",
         "SrcUpdateTime",
         "UpdateTime",
         "VersionID"
@@ -7113,12 +7325,12 @@
           "description": "車種(0:不分車種, 1:普通車, 2:直達車)",
           "type": "integer"
         },
-        "ServiceDays": {
-          "title": "ServiceDays",
+        "ServiceDay": {
+          "title": "ServiceDay",
           "description": "服務日型態",
           "allOf": [
             {
-              "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.Metro.SubClass.ServiceDays"
+              "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.Metro.SubClass.ServiceDay"
             }
           ]
         },
@@ -7168,8 +7380,6 @@
         "Direction",
         "PackageServiceFlag",
         "TrainNo",
-        "UpdateTime",
-        "VersionID",
         "WheelchairFlag"
       ],
       "type": "object",
@@ -7287,17 +7497,6 @@
               "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V2.Base.NameType"
             }
           ]
-        },
-        "UpdateTime": {
-          "title": "DateTime",
-          "description": "資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
-          "type": "string"
-        },
-        "VersionID": {
-          "format": "int32",
-          "title": "Int32",
-          "description": "資料版本編號",
-          "type": "integer"
         }
       }
     },
@@ -7634,6 +7833,150 @@
               "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.THSR.GeneralTimetable"
             }
           ]
+        }
+      }
+    },
+    "PTX.Service.DTO.Rail.Specification.V2.TRA.RailGeneralTrainInfo": {
+      "title": "RailGeneralTrainInfo",
+      "description": "臺鐵車次定期資料型別",
+      "required": [
+        "BikeFlag",
+        "BreastFeedingFlag",
+        "DailyFlag",
+        "DiningFlag",
+        "Direction",
+        "PackageServiceFlag",
+        "TrainNo",
+        "UpdateTime",
+        "VersionID",
+        "WheelchairFlag"
+      ],
+      "type": "object",
+      "properties": {
+        "TrainNo": {
+          "title": "String",
+          "description": "車次代碼",
+          "type": "string"
+        },
+        "Direction": {
+          "format": "int32",
+          "title": "integer",
+          "description": "順逆行 : [0:'順行',1:'逆行']",
+          "type": "integer"
+        },
+        "StartingStationID": {
+          "title": "String",
+          "description": "列車起點車站代號",
+          "type": "string"
+        },
+        "StartingStationName": {
+          "title": "NameType",
+          "description": "列車起點車站名稱",
+          "allOf": [
+            {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V2.Base.NameType"
+            }
+          ]
+        },
+        "EndingStationID": {
+          "title": "String",
+          "description": "列車終點車站代號",
+          "type": "string"
+        },
+        "EndingStationName": {
+          "title": "NameType",
+          "description": "列車終點車站名稱",
+          "allOf": [
+            {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V2.Base.NameType"
+            }
+          ]
+        },
+        "TrainTypeID": {
+          "title": "String",
+          "description": "列車車種代碼",
+          "type": "string"
+        },
+        "TrainTypeCode": {
+          "title": "String",
+          "description": "列車車種簡碼",
+          "type": "string"
+        },
+        "TrainTypeName": {
+          "title": "NameType",
+          "description": "列車車種名稱",
+          "allOf": [
+            {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V2.Base.NameType"
+            }
+          ]
+        },
+        "TripLine": {
+          "format": "int32",
+          "title": "integer",
+          "description": "山海線類型 : [0:'不經山海線',1:'山線',2:'海線',3:'成追線']",
+          "type": "integer"
+        },
+        "OverNightStationID": {
+          "title": "String",
+          "description": "跨夜車站代碼",
+          "type": "string"
+        },
+        "WheelchairFlag": {
+          "format": "int32",
+          "title": "integer",
+          "description": "是否設身障旅客專用座位車 : [0:'否',1:'是']",
+          "type": "integer"
+        },
+        "PackageServiceFlag": {
+          "format": "int32",
+          "title": "integer",
+          "description": "是否提供行李服務 : [0:'否',1:'是']",
+          "type": "integer"
+        },
+        "DiningFlag": {
+          "format": "int32",
+          "title": "integer",
+          "description": "是否提供訂便當服務 : [0:'否',1:'是']",
+          "type": "integer"
+        },
+        "BikeFlag": {
+          "format": "int32",
+          "title": "integer",
+          "description": "是否人車同行班次(置於攜車袋之自行車各級列車均可乘車) : [0:'否',1:'是']",
+          "type": "integer"
+        },
+        "BreastFeedingFlag": {
+          "format": "int32",
+          "title": "integer",
+          "description": "是否設有哺(集)乳室車廂 : [0:'否',1:'是']",
+          "type": "integer"
+        },
+        "DailyFlag": {
+          "format": "int32",
+          "title": "integer",
+          "description": "是否為每日行駛 : [0:'否',1:'是']",
+          "type": "integer"
+        },
+        "Note": {
+          "title": "NameType",
+          "description": "附註說明",
+          "allOf": [
+            {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V2.Base.NameType"
+            }
+          ]
+        },
+        "UpdateTime": {
+          "title": "DateTime",
+          "description": "資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "VersionID": {
+          "format": "int32",
+          "title": "Int32",
+          "description": "資料版本編號",
+          "type": "integer"
         }
       }
     },
@@ -8175,6 +8518,7 @@
         "NetworkName",
         "OperatorCode",
         "OperatorName",
+        "SrcUpdateTime",
         "UpdateTime",
         "VersionID"
       ],
@@ -8220,6 +8564,11 @@
           "items": {
             "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.Metro.NetworkSubClass.Line"
           }
+        },
+        "SrcUpdateTime": {
+          "title": "DateTime",
+          "description": "來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
         },
         "UpdateTime": {
           "title": "DateTime",
@@ -8609,8 +8958,8 @@
         }
       }
     },
-    "PTX.API.Rail.Model.V2THSRODAvaliableSeatStatusWrapper[PTX.Service.DTO.Rail.Specification.V2.THSR.OD.AvailableSeat]": {
-      "title": "AvaliableSeatStatus",
+    "PTX.API.Rail.Model.V2THSRODAvailableSeatStatusWrapper[PTX.Service.DTO.Rail.Specification.V2.THSR.OD.AvailableSeat]": {
+      "title": "AvailableSeatStatus",
       "required": [
         "AvailableSeats"
       ],
@@ -9069,12 +9418,11 @@
         "Direction",
         "EndingStationID",
         "EndingStationName",
-        "SrcRecTime",
+        "SrcUpdateTime",
         "StationID",
         "StationName",
         "StopStations",
-        "TrainNo",
-        "UpdateTime"
+        "TrainNo"
       ],
       "type": "object",
       "properties": {
@@ -9130,20 +9478,15 @@
             "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.THSR.StopStation"
           }
         },
-        "SrcRecTime": {
+        "SrcUpdateTime": {
           "title": "DateTime",
-          "description": "來源端平台接收時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
-          "type": "string"
-        },
-        "UpdateTime": {
-          "title": "DateTime",
-          "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "description": "來源平台更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         }
       }
     },
-    "PTX.API.Rail.Model.V2THSRAvaliableSeatStatusOldWrapper[PTX.Service.DTO.Rail.Specification.V2.THSR.Old.AvailableSeat]": {
-      "title": "V2THSRAvaliableSeatStatusWrapper",
+    "PTX.API.Rail.Model.V2THSRAvailableSeatStatusOldWrapper[PTX.Service.DTO.Rail.Specification.V2.THSR.Old.AvailableSeat]": {
+      "title": "AvailableSeatStatus",
       "required": [
         "AvailableSeats"
       ],
@@ -9339,10 +9682,10 @@
           ]
         },
         "TravelTime": {
-          "format": "int32",
-          "title": "Int32",
+          "format": "float",
+          "title": "Single",
           "description": "營運路線運行時間",
-          "type": "integer"
+          "type": "number"
         },
         "RouteLength": {
           "format": "float",
@@ -9626,7 +9969,7 @@
         }
       }
     },
-    "PTX.Service.DTO.Shared.Specification.V2.Base.PointType": {
+    "PTX.Service.DTO.Rail.Specification.V2.PointType": {
       "title": "PointType",
       "description": "座標資料型別",
       "type": "object",
@@ -9656,7 +9999,6 @@
         "StationAddress",
         "StationID",
         "StationName",
-        "StationPosition",
         "StationUID",
         "UpdateTime",
         "VersionID"
@@ -9679,15 +10021,6 @@
           "allOf": [
             {
               "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V2.Base.NameType"
-            }
-          ]
-        },
-        "StationPosition": {
-          "title": "PointType",
-          "description": "車站位置",
-          "allOf": [
-            {
-              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V2.Base.PointType"
             }
           ]
         },
@@ -9726,6 +10059,35 @@
           "title": "Int32",
           "description": "資料版本編號",
           "type": "integer"
+        },
+        "StationPosition": {
+          "title": "PointType",
+          "description": "車站位置",
+          "allOf": [
+            {
+              "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.PointType"
+            }
+          ]
+        },
+        "LocationCity": {
+          "title": "String",
+          "description": "車站位置所屬縣市",
+          "type": "string"
+        },
+        "LocationCityCode": {
+          "title": "String",
+          "description": "車站位置所屬縣市代碼",
+          "type": "string"
+        },
+        "LocationTown": {
+          "title": "String",
+          "description": "車站位置所屬鄉鎮",
+          "type": "string"
+        },
+        "LocationTownCode": {
+          "title": "String",
+          "description": "車站位置所屬鄉鎮代碼",
+          "type": "string"
         }
       }
     },
@@ -9735,9 +10097,9 @@
       "required": [
         "OperatorID",
         "StationAddress",
+        "StationCode",
         "StationID",
         "StationName",
-        "StationPosition",
         "StationUID",
         "UpdateTime",
         "VersionID"
@@ -9754,21 +10116,17 @@
           "description": "車站代碼",
           "type": "string"
         },
+        "StationCode": {
+          "title": "String",
+          "description": "車站簡碼(訂票系統用)",
+          "type": "string"
+        },
         "StationName": {
           "title": "NameType",
           "description": "車站名稱",
           "allOf": [
             {
               "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V2.Base.NameType"
-            }
-          ]
-        },
-        "StationPosition": {
-          "title": "PointType",
-          "description": "車站位置",
-          "allOf": [
-            {
-              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V2.Base.PointType"
             }
           ]
         },
@@ -9797,6 +10155,35 @@
           "title": "Int32",
           "description": "資料版本編號",
           "type": "integer"
+        },
+        "StationPosition": {
+          "title": "PointType",
+          "description": "車站位置",
+          "allOf": [
+            {
+              "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.PointType"
+            }
+          ]
+        },
+        "LocationCity": {
+          "title": "String",
+          "description": "車站位置所屬縣市",
+          "type": "string"
+        },
+        "LocationCityCode": {
+          "title": "String",
+          "description": "車站位置所屬縣市代碼",
+          "type": "string"
+        },
+        "LocationTown": {
+          "title": "String",
+          "description": "車站位置所屬鄉鎮",
+          "type": "string"
+        },
+        "LocationTownCode": {
+          "title": "String",
+          "description": "車站位置所屬鄉鎮代碼",
+          "type": "string"
         }
       }
     },
@@ -9809,7 +10196,6 @@
         "StationAddress",
         "StationID",
         "StationName",
-        "StationPosition",
         "StationUID",
         "UpdateTime",
         "VersionID"
@@ -9832,15 +10218,6 @@
           "allOf": [
             {
               "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V2.Base.NameType"
-            }
-          ]
-        },
-        "StationPosition": {
-          "title": "PointType",
-          "description": "車站座標",
-          "allOf": [
-            {
-              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V2.Base.PointType"
             }
           ]
         },
@@ -9869,6 +10246,57 @@
           "title": "Int32",
           "description": "資料版本編號",
           "type": "integer"
+        },
+        "StationPosition": {
+          "title": "PointType",
+          "description": "車站位置",
+          "allOf": [
+            {
+              "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.PointType"
+            }
+          ]
+        },
+        "LocationCity": {
+          "title": "String",
+          "description": "車站位置所屬縣市",
+          "type": "string"
+        },
+        "LocationCityCode": {
+          "title": "String",
+          "description": "車站位置所屬縣市代碼",
+          "type": "string"
+        },
+        "LocationTown": {
+          "title": "String",
+          "description": "車站位置所屬鄉鎮",
+          "type": "string"
+        },
+        "LocationTownCode": {
+          "title": "String",
+          "description": "車站位置所屬鄉鎮代碼",
+          "type": "string"
+        }
+      }
+    },
+    "PTX.Service.DTO.Shared.Specification.V2.Base.PointType": {
+      "title": "PointType",
+      "description": "座標資料型別",
+      "type": "object",
+      "properties": {
+        "PositionLat": {
+          "format": "double",
+          "description": "位置緯度(WGS84)",
+          "type": "number"
+        },
+        "PositionLon": {
+          "format": "double",
+          "description": "位置經度(WGS84)",
+          "type": "number"
+        },
+        "GeoHash": {
+          "title": "String",
+          "description": "地理空間編碼",
+          "type": "string"
         }
       }
     },
@@ -10739,7 +11167,7 @@
         "DestinationStaionID",
         "DestinationStationName",
         "LineID",
-        "ServiceDays",
+        "ServiceDay",
         "SrcUpdateTime",
         "StationID",
         "StationName",
@@ -10801,12 +11229,12 @@
             "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.Metro.SubClass.Timetable"
           }
         },
-        "ServiceDays": {
-          "title": "ServiceDays",
+        "ServiceDay": {
+          "title": "ServiceDay",
           "description": "服務日型態",
           "allOf": [
             {
-              "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.Metro.SubClass.ServiceDays"
+              "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.Metro.SubClass.ServiceDay"
             }
           ]
         },

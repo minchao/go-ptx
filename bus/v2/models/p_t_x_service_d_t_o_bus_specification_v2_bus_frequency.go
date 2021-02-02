@@ -6,6 +6,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -43,7 +44,7 @@ type PTXServiceDTOBusSpecificationV2BusFrequency struct {
 	//
 	// 週內營運日
 	ServiceDay struct {
-		PTXServiceDTOBusSpecificationV2ServiceDay
+		PTXServiceDTOBusSpecificationV2EmbeddedServiceDay
 	} `json:"ServiceDay,omitempty"`
 
 	// Array
@@ -120,7 +121,6 @@ func (m *PTXServiceDTOBusSpecificationV2BusFrequency) validateMinHeadwayMins(for
 }
 
 func (m *PTXServiceDTOBusSpecificationV2BusFrequency) validateServiceDay(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.ServiceDay) { // not required
 		return nil
 	}
@@ -129,7 +129,6 @@ func (m *PTXServiceDTOBusSpecificationV2BusFrequency) validateServiceDay(formats
 }
 
 func (m *PTXServiceDTOBusSpecificationV2BusFrequency) validateSpecialDays(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.SpecialDays) { // not required
 		return nil
 	}
@@ -157,6 +156,47 @@ func (m *PTXServiceDTOBusSpecificationV2BusFrequency) validateStartTime(formats 
 
 	if err := validate.Required("StartTime", "body", m.StartTime); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+// ContextValidate validate this p t x service d t o bus specification v2 bus frequency based on the context it is used
+func (m *PTXServiceDTOBusSpecificationV2BusFrequency) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateServiceDay(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateSpecialDays(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV2BusFrequency) contextValidateServiceDay(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV2BusFrequency) contextValidateSpecialDays(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.SpecialDays); i++ {
+
+		if m.SpecialDays[i] != nil {
+			if err := m.SpecialDays[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("SpecialDays" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
 	}
 
 	return nil

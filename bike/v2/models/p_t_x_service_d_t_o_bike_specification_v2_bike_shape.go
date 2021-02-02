@@ -6,6 +6,8 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
+
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
@@ -177,6 +179,11 @@ func (m *PTXServiceDTOBikeSpecificationV2BikeShape) validateUpdateTime(formats s
 		return err
 	}
 
+	return nil
+}
+
+// ContextValidate validates this p t x service d t o bike specification v2 bike shape based on context it is used
+func (m *PTXServiceDTOBikeSpecificationV2BikeShape) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	return nil
 }
 

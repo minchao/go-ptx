@@ -83,6 +83,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Air.Specification.V2.Airport"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -241,6 +244,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Air.Specification.V2.Airline"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -317,6 +323,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Air.Specification.V2.FIDSDeparture"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -400,6 +409,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Air.Specification.V2.FIDSDeparture"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -476,6 +488,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Air.Specification.V2.FIDSArrival"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -559,6 +574,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Air.Specification.V2.FIDSArrival"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -635,6 +653,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Air.Specification.V2.FIDS"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -717,6 +738,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Air.Specification.V2.FIDS"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -787,6 +811,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Air.Specification.V2.Airport_FIDS"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -864,6 +891,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Air.Specification.V2.Airport_FIDS"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -940,6 +970,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Air.Specification.V2.METAR"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -1023,6 +1056,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Air.Specification.V2.METAR"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -1092,6 +1128,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Air.Specification.V2.GeneralFlightSchedule"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -1161,6 +1200,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Air.Specification.V2.GeneralFlightSchedule"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -1277,7 +1319,7 @@
         },
         "GeoHash": {
           "title": "String",
-          "description": "位置雜湊",
+          "description": "地理空間編碼",
           "type": "string"
         }
       }
@@ -1334,7 +1376,7 @@
             }
           ]
         },
-        "AirportAdrress": {
+        "AirportAddress": {
           "title": "String",
           "description": "機場地址",
           "type": "string"

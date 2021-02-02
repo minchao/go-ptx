@@ -6,6 +6,8 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
+
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
@@ -201,7 +203,6 @@ func (m *PTXServiceDTOTourismSpecificationV2BusA2Data) validatePlateNumb(formats
 }
 
 func (m *PTXServiceDTOTourismSpecificationV2BusA2Data) validateStopName(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.StopName) { // not required
 		return nil
 	}
@@ -210,7 +211,6 @@ func (m *PTXServiceDTOTourismSpecificationV2BusA2Data) validateStopName(formats 
 }
 
 func (m *PTXServiceDTOTourismSpecificationV2BusA2Data) validateSubRouteName(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.SubRouteName) { // not required
 		return nil
 	}
@@ -219,7 +219,6 @@ func (m *PTXServiceDTOTourismSpecificationV2BusA2Data) validateSubRouteName(form
 }
 
 func (m *PTXServiceDTOTourismSpecificationV2BusA2Data) validateTaiwanTripName(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.TaiwanTripName) { // not required
 		return nil
 	}
@@ -232,6 +231,43 @@ func (m *PTXServiceDTOTourismSpecificationV2BusA2Data) validateUpdateTime(format
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
 		return err
 	}
+
+	return nil
+}
+
+// ContextValidate validate this p t x service d t o tourism specification v2 bus a2 data based on the context it is used
+func (m *PTXServiceDTOTourismSpecificationV2BusA2Data) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateStopName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateSubRouteName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateTaiwanTripName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTOTourismSpecificationV2BusA2Data) contextValidateStopName(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTOTourismSpecificationV2BusA2Data) contextValidateSubRouteName(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTOTourismSpecificationV2BusA2Data) contextValidateTaiwanTripName(ctx context.Context, formats strfmt.Registry) error {
 
 	return nil
 }

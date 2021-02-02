@@ -6,6 +6,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -200,7 +201,6 @@ func (m *PTXServiceDTOBusSpecificationV2BusN1EstimateTime) validateDirection(for
 }
 
 func (m *PTXServiceDTOBusSpecificationV2BusN1EstimateTime) validateEstimates(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Estimates) { // not required
 		return nil
 	}
@@ -225,7 +225,6 @@ func (m *PTXServiceDTOBusSpecificationV2BusN1EstimateTime) validateEstimates(for
 }
 
 func (m *PTXServiceDTOBusSpecificationV2BusN1EstimateTime) validateRouteName(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.RouteName) { // not required
 		return nil
 	}
@@ -234,7 +233,6 @@ func (m *PTXServiceDTOBusSpecificationV2BusN1EstimateTime) validateRouteName(for
 }
 
 func (m *PTXServiceDTOBusSpecificationV2BusN1EstimateTime) validateStopName(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.StopName) { // not required
 		return nil
 	}
@@ -243,7 +241,6 @@ func (m *PTXServiceDTOBusSpecificationV2BusN1EstimateTime) validateStopName(form
 }
 
 func (m *PTXServiceDTOBusSpecificationV2BusN1EstimateTime) validateSubRouteName(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.SubRouteName) { // not required
 		return nil
 	}
@@ -256,6 +253,65 @@ func (m *PTXServiceDTOBusSpecificationV2BusN1EstimateTime) validateUpdateTime(fo
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
 		return err
 	}
+
+	return nil
+}
+
+// ContextValidate validate this p t x service d t o bus specification v2 bus n1 estimate time based on the context it is used
+func (m *PTXServiceDTOBusSpecificationV2BusN1EstimateTime) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateEstimates(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateRouteName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateStopName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateSubRouteName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV2BusN1EstimateTime) contextValidateEstimates(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Estimates); i++ {
+
+		if m.Estimates[i] != nil {
+			if err := m.Estimates[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("Estimates" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV2BusN1EstimateTime) contextValidateRouteName(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV2BusN1EstimateTime) contextValidateStopName(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV2BusN1EstimateTime) contextValidateSubRouteName(ctx context.Context, formats strfmt.Registry) error {
 
 	return nil
 }

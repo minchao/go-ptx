@@ -6,6 +6,8 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
+
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 )
@@ -23,6 +25,11 @@ type PTXServiceDTOShipSpecificationV3Operators struct {
 
 // Validate validates this p t x service d t o ship specification v3 operators
 func (m *PTXServiceDTOShipSpecificationV3Operators) Validate(formats strfmt.Registry) error {
+	return nil
+}
+
+// ContextValidate validates this p t x service d t o ship specification v3 operators based on context it is used
+func (m *PTXServiceDTOShipSpecificationV3Operators) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	return nil
 }
 

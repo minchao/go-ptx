@@ -6,6 +6,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -89,6 +90,47 @@ func (m *PTXServiceDTOBusSpecificationV3VehicleDepot) validateVehicles(formats s
 
 		if m.Vehicles[i] != nil {
 			if err := m.Vehicles[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("Vehicles" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+// ContextValidate validate this p t x service d t o bus specification v3 vehicle depot based on the context it is used
+func (m *PTXServiceDTOBusSpecificationV3VehicleDepot) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateDepotName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateVehicles(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV3VehicleDepot) contextValidateDepotName(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV3VehicleDepot) contextValidateVehicles(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Vehicles); i++ {
+
+		if m.Vehicles[i] != nil {
+			if err := m.Vehicles[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("Vehicles" + "." + strconv.Itoa(i))
 				}

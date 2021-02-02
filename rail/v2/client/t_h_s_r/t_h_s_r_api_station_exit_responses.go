@@ -29,7 +29,12 @@ func (o *THSRAPIStationExitReader) ReadResponse(response runtime.ClientResponse,
 			return nil, err
 		}
 		return result, nil
-
+	case 304:
+		result := NewTHSRAPIStationExitNotModified()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return nil, result
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -40,7 +45,7 @@ func NewTHSRAPIStationExitOK() *THSRAPIStationExitOK {
 	return &THSRAPIStationExitOK{}
 }
 
-/*THSRAPIStationExitOK handles this case with default header values.
+/* THSRAPIStationExitOK describes a response with status code 200, with default header values.
 
 Success
 */
@@ -51,7 +56,6 @@ type THSRAPIStationExitOK struct {
 func (o *THSRAPIStationExitOK) Error() string {
 	return fmt.Sprintf("[GET /v2/Rail/THSR/StationExit][%d] tHSRApiStationExitOK  %+v", 200, o.Payload)
 }
-
 func (o *THSRAPIStationExitOK) GetPayload() []*models.PTXServiceDTORailSpecificationV2THSRStationExit {
 	return o.Payload
 }
@@ -62,6 +66,27 @@ func (o *THSRAPIStationExitOK) readResponse(response runtime.ClientResponse, con
 	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
+
+	return nil
+}
+
+// NewTHSRAPIStationExitNotModified creates a THSRAPIStationExitNotModified with default headers values
+func NewTHSRAPIStationExitNotModified() *THSRAPIStationExitNotModified {
+	return &THSRAPIStationExitNotModified{}
+}
+
+/* THSRAPIStationExitNotModified describes a response with status code 304, with default header values.
+
+服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content
+*/
+type THSRAPIStationExitNotModified struct {
+}
+
+func (o *THSRAPIStationExitNotModified) Error() string {
+	return fmt.Sprintf("[GET /v2/Rail/THSR/StationExit][%d] tHSRApiStationExitNotModified ", 304)
+}
+
+func (o *THSRAPIStationExitNotModified) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

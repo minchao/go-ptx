@@ -6,6 +6,8 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
+
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
@@ -122,7 +124,6 @@ func (m *PTXServiceDTOAirSpecificationV2Airline) validateAirlineID(formats strfm
 }
 
 func (m *PTXServiceDTOAirSpecificationV2Airline) validateAirlineName(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.AirlineName) { // not required
 		return nil
 	}
@@ -131,7 +132,6 @@ func (m *PTXServiceDTOAirSpecificationV2Airline) validateAirlineName(formats str
 }
 
 func (m *PTXServiceDTOAirSpecificationV2Airline) validateAirlineNameAlias(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.AirlineNameAlias) { // not required
 		return nil
 	}
@@ -153,6 +153,34 @@ func (m *PTXServiceDTOAirSpecificationV2Airline) validateVersionID(formats strfm
 	if err := validate.Required("VersionID", "body", m.VersionID); err != nil {
 		return err
 	}
+
+	return nil
+}
+
+// ContextValidate validate this p t x service d t o air specification v2 airline based on the context it is used
+func (m *PTXServiceDTOAirSpecificationV2Airline) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateAirlineName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateAirlineNameAlias(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTOAirSpecificationV2Airline) contextValidateAirlineName(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTOAirSpecificationV2Airline) contextValidateAirlineNameAlias(ctx context.Context, formats strfmt.Registry) error {
 
 	return nil
 }

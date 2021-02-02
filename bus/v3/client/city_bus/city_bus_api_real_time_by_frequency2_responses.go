@@ -35,7 +35,12 @@ func (o *CityBusAPIRealTimeByFrequency2Reader) ReadResponse(response runtime.Cli
 			return nil, err
 		}
 		return result, nil
-
+	case 304:
+		result := NewCityBusAPIRealTimeByFrequency2NotModified()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return nil, result
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -46,7 +51,7 @@ func NewCityBusAPIRealTimeByFrequency2OK() *CityBusAPIRealTimeByFrequency2OK {
 	return &CityBusAPIRealTimeByFrequency2OK{}
 }
 
-/*CityBusAPIRealTimeByFrequency2OK handles this case with default header values.
+/* CityBusAPIRealTimeByFrequency2OK describes a response with status code 200, with default header values.
 
 Success
 */
@@ -57,7 +62,6 @@ type CityBusAPIRealTimeByFrequency2OK struct {
 func (o *CityBusAPIRealTimeByFrequency2OK) Error() string {
 	return fmt.Sprintf("[GET /v3/Bus/RealTimeByFrequency/City/{City}][%d] cityBusApiRealTimeByFrequency2OK  %+v", 200, o.Payload)
 }
-
 func (o *CityBusAPIRealTimeByFrequency2OK) GetPayload() *models.PTXServiceDTOBusSpecificationV3WrapperBusWrapperPTXServiceDTOBusSpecificationV3A1Data {
 	return o.Payload
 }
@@ -79,7 +83,7 @@ func NewCityBusAPIRealTimeByFrequency2Status299() *CityBusAPIRealTimeByFrequency
 	return &CityBusAPIRealTimeByFrequency2Status299{}
 }
 
-/*CityBusAPIRealTimeByFrequency2Status299 handles this case with default header values.
+/* CityBusAPIRealTimeByFrequency2Status299 describes a response with status code 299, with default header values.
 
 加入參數'?health=true'即可查詢此API服務的健康狀態
 */
@@ -90,7 +94,6 @@ type CityBusAPIRealTimeByFrequency2Status299 struct {
 func (o *CityBusAPIRealTimeByFrequency2Status299) Error() string {
 	return fmt.Sprintf("[GET /v3/Bus/RealTimeByFrequency/City/{City}][%d] cityBusApiRealTimeByFrequency2Status299  %+v", 299, o.Payload)
 }
-
 func (o *CityBusAPIRealTimeByFrequency2Status299) GetPayload() *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth {
 	return o.Payload
 }
@@ -103,6 +106,27 @@ func (o *CityBusAPIRealTimeByFrequency2Status299) readResponse(response runtime.
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
+
+	return nil
+}
+
+// NewCityBusAPIRealTimeByFrequency2NotModified creates a CityBusAPIRealTimeByFrequency2NotModified with default headers values
+func NewCityBusAPIRealTimeByFrequency2NotModified() *CityBusAPIRealTimeByFrequency2NotModified {
+	return &CityBusAPIRealTimeByFrequency2NotModified{}
+}
+
+/* CityBusAPIRealTimeByFrequency2NotModified describes a response with status code 304, with default header values.
+
+服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content
+*/
+type CityBusAPIRealTimeByFrequency2NotModified struct {
+}
+
+func (o *CityBusAPIRealTimeByFrequency2NotModified) Error() string {
+	return fmt.Sprintf("[GET /v3/Bus/RealTimeByFrequency/City/{City}][%d] cityBusApiRealTimeByFrequency2NotModified ", 304)
+}
+
+func (o *CityBusAPIRealTimeByFrequency2NotModified) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

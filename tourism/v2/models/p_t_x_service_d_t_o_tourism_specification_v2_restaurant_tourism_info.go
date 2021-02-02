@@ -6,6 +6,8 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
+
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
@@ -147,7 +149,6 @@ func (m *PTXServiceDTOTourismSpecificationV2RestaurantTourismInfo) validateID(fo
 }
 
 func (m *PTXServiceDTOTourismSpecificationV2RestaurantTourismInfo) validatePicture(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Picture) { // not required
 		return nil
 	}
@@ -156,7 +157,6 @@ func (m *PTXServiceDTOTourismSpecificationV2RestaurantTourismInfo) validatePictu
 }
 
 func (m *PTXServiceDTOTourismSpecificationV2RestaurantTourismInfo) validatePosition(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Position) { // not required
 		return nil
 	}
@@ -178,6 +178,34 @@ func (m *PTXServiceDTOTourismSpecificationV2RestaurantTourismInfo) validateUpdat
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
 		return err
 	}
+
+	return nil
+}
+
+// ContextValidate validate this p t x service d t o tourism specification v2 restaurant tourism info based on the context it is used
+func (m *PTXServiceDTOTourismSpecificationV2RestaurantTourismInfo) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidatePicture(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidatePosition(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTOTourismSpecificationV2RestaurantTourismInfo) contextValidatePicture(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTOTourismSpecificationV2RestaurantTourismInfo) contextValidatePosition(ctx context.Context, formats strfmt.Registry) error {
 
 	return nil
 }

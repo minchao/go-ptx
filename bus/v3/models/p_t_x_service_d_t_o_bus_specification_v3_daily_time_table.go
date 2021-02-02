@@ -6,6 +6,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -208,7 +209,6 @@ func (m *PTXServiceDTOBusSpecificationV3DailyTimeTable) validateSubRouteID(forma
 }
 
 func (m *PTXServiceDTOBusSpecificationV3DailyTimeTable) validateSubRouteName(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.SubRouteName) { // not required
 		return nil
 	}
@@ -217,7 +217,6 @@ func (m *PTXServiceDTOBusSpecificationV3DailyTimeTable) validateSubRouteName(for
 }
 
 func (m *PTXServiceDTOBusSpecificationV3DailyTimeTable) validateTimetables(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Timetables) { // not required
 		return nil
 	}
@@ -229,6 +228,56 @@ func (m *PTXServiceDTOBusSpecificationV3DailyTimeTable) validateTimetables(forma
 
 		if m.Timetables[i] != nil {
 			if err := m.Timetables[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("Timetables" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+// ContextValidate validate this p t x service d t o bus specification v3 daily time table based on the context it is used
+func (m *PTXServiceDTOBusSpecificationV3DailyTimeTable) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateRouteName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateSubRouteName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateTimetables(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV3DailyTimeTable) contextValidateRouteName(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV3DailyTimeTable) contextValidateSubRouteName(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV3DailyTimeTable) contextValidateTimetables(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Timetables); i++ {
+
+		if m.Timetables[i] != nil {
+			if err := m.Timetables[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("Timetables" + "." + strconv.Itoa(i))
 				}

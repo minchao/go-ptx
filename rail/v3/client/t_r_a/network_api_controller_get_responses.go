@@ -29,7 +29,12 @@ func (o *NetworkAPIControllerGetReader) ReadResponse(response runtime.ClientResp
 			return nil, err
 		}
 		return result, nil
-
+	case 304:
+		result := NewNetworkAPIControllerGetNotModified()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return nil, result
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -40,7 +45,7 @@ func NewNetworkAPIControllerGetOK() *NetworkAPIControllerGetOK {
 	return &NetworkAPIControllerGetOK{}
 }
 
-/*NetworkAPIControllerGetOK handles this case with default header values.
+/* NetworkAPIControllerGetOK describes a response with status code 200, with default header values.
 
 Success
 */
@@ -51,7 +56,6 @@ type NetworkAPIControllerGetOK struct {
 func (o *NetworkAPIControllerGetOK) Error() string {
 	return fmt.Sprintf("[GET /v3/Rail/TRA/Network][%d] networkApiControllerGetOK  %+v", 200, o.Payload)
 }
-
 func (o *NetworkAPIControllerGetOK) GetPayload() *models.PTXAPIRailModelTRABaseWrapperPTXServiceDTORailSpecificationV3TRANetworkNetwork {
 	return o.Payload
 }
@@ -64,6 +68,27 @@ func (o *NetworkAPIControllerGetOK) readResponse(response runtime.ClientResponse
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
+
+	return nil
+}
+
+// NewNetworkAPIControllerGetNotModified creates a NetworkAPIControllerGetNotModified with default headers values
+func NewNetworkAPIControllerGetNotModified() *NetworkAPIControllerGetNotModified {
+	return &NetworkAPIControllerGetNotModified{}
+}
+
+/* NetworkAPIControllerGetNotModified describes a response with status code 304, with default header values.
+
+服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content
+*/
+type NetworkAPIControllerGetNotModified struct {
+}
+
+func (o *NetworkAPIControllerGetNotModified) Error() string {
+	return fmt.Sprintf("[GET /v3/Rail/TRA/Network][%d] networkApiControllerGetNotModified ", 304)
+}
+
+func (o *NetworkAPIControllerGetNotModified) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

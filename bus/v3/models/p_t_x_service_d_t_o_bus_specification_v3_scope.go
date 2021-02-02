@@ -6,6 +6,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -68,7 +69,6 @@ func (m *PTXServiceDTOBusSpecificationV3Scope) Validate(formats strfmt.Registry)
 }
 
 func (m *PTXServiceDTOBusSpecificationV3Scope) validateRoutes(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Routes) { // not required
 		return nil
 	}
@@ -93,7 +93,6 @@ func (m *PTXServiceDTOBusSpecificationV3Scope) validateRoutes(formats strfmt.Reg
 }
 
 func (m *PTXServiceDTOBusSpecificationV3Scope) validateStops(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Stops) { // not required
 		return nil
 	}
@@ -118,7 +117,6 @@ func (m *PTXServiceDTOBusSpecificationV3Scope) validateStops(formats strfmt.Regi
 }
 
 func (m *PTXServiceDTOBusSpecificationV3Scope) validateSubRoutes(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.SubRoutes) { // not required
 		return nil
 	}
@@ -143,7 +141,6 @@ func (m *PTXServiceDTOBusSpecificationV3Scope) validateSubRoutes(formats strfmt.
 }
 
 func (m *PTXServiceDTOBusSpecificationV3Scope) validateTripIDs(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.TripIDs) { // not required
 		return nil
 	}
@@ -155,6 +152,104 @@ func (m *PTXServiceDTOBusSpecificationV3Scope) validateTripIDs(formats strfmt.Re
 
 		if m.TripIDs[i] != nil {
 			if err := m.TripIDs[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("TripIDs" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+// ContextValidate validate this p t x service d t o bus specification v3 scope based on the context it is used
+func (m *PTXServiceDTOBusSpecificationV3Scope) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateRoutes(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateStops(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateSubRoutes(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateTripIDs(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV3Scope) contextValidateRoutes(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Routes); i++ {
+
+		if m.Routes[i] != nil {
+			if err := m.Routes[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("Routes" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV3Scope) contextValidateStops(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Stops); i++ {
+
+		if m.Stops[i] != nil {
+			if err := m.Stops[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("Stops" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV3Scope) contextValidateSubRoutes(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.SubRoutes); i++ {
+
+		if m.SubRoutes[i] != nil {
+			if err := m.SubRoutes[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("SubRoutes" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV3Scope) contextValidateTripIDs(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.TripIDs); i++ {
+
+		if m.TripIDs[i] != nil {
+			if err := m.TripIDs[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("TripIDs" + "." + strconv.Itoa(i))
 				}

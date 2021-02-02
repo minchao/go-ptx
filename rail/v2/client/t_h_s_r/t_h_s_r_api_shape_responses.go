@@ -29,7 +29,12 @@ func (o *THSRAPIShapeReader) ReadResponse(response runtime.ClientResponse, consu
 			return nil, err
 		}
 		return result, nil
-
+	case 304:
+		result := NewTHSRAPIShapeNotModified()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return nil, result
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -40,7 +45,7 @@ func NewTHSRAPIShapeOK() *THSRAPIShapeOK {
 	return &THSRAPIShapeOK{}
 }
 
-/*THSRAPIShapeOK handles this case with default header values.
+/* THSRAPIShapeOK describes a response with status code 200, with default header values.
 
 Success
 */
@@ -51,7 +56,6 @@ type THSRAPIShapeOK struct {
 func (o *THSRAPIShapeOK) Error() string {
 	return fmt.Sprintf("[GET /v2/Rail/THSR/Shape][%d] tHSRApiShapeOK  %+v", 200, o.Payload)
 }
-
 func (o *THSRAPIShapeOK) GetPayload() []*models.PTXServiceDTORailSpecificationV2THSRTHSRShape {
 	return o.Payload
 }
@@ -62,6 +66,27 @@ func (o *THSRAPIShapeOK) readResponse(response runtime.ClientResponse, consumer 
 	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
+
+	return nil
+}
+
+// NewTHSRAPIShapeNotModified creates a THSRAPIShapeNotModified with default headers values
+func NewTHSRAPIShapeNotModified() *THSRAPIShapeNotModified {
+	return &THSRAPIShapeNotModified{}
+}
+
+/* THSRAPIShapeNotModified describes a response with status code 304, with default header values.
+
+服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content
+*/
+type THSRAPIShapeNotModified struct {
+}
+
+func (o *THSRAPIShapeNotModified) Error() string {
+	return fmt.Sprintf("[GET /v2/Rail/THSR/Shape][%d] tHSRApiShapeNotModified ", 304)
+}
+
+func (o *THSRAPIShapeNotModified) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

@@ -16,64 +16,79 @@ import (
 	"github.com/go-openapi/strfmt"
 )
 
-// NewAirAPIAirport1Params creates a new AirAPIAirport1Params object
-// with the default values initialized.
+// NewAirAPIAirport1Params creates a new AirAPIAirport1Params object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewAirAPIAirport1Params() *AirAPIAirport1Params {
-	var ()
 	return &AirAPIAirport1Params{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewAirAPIAirport1ParamsWithTimeout creates a new AirAPIAirport1Params object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewAirAPIAirport1ParamsWithTimeout(timeout time.Duration) *AirAPIAirport1Params {
-	var ()
 	return &AirAPIAirport1Params{
-
 		timeout: timeout,
 	}
 }
 
 // NewAirAPIAirport1ParamsWithContext creates a new AirAPIAirport1Params object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewAirAPIAirport1ParamsWithContext(ctx context.Context) *AirAPIAirport1Params {
-	var ()
 	return &AirAPIAirport1Params{
-
 		Context: ctx,
 	}
 }
 
 // NewAirAPIAirport1ParamsWithHTTPClient creates a new AirAPIAirport1Params object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewAirAPIAirport1ParamsWithHTTPClient(client *http.Client) *AirAPIAirport1Params {
-	var ()
 	return &AirAPIAirport1Params{
 		HTTPClient: client,
 	}
 }
 
-/*AirAPIAirport1Params contains all the parameters to send to the API endpoint
-for the air Api airport 1 operation typically these are written to a http.Request
+/* AirAPIAirport1Params contains all the parameters to send to the API endpoint
+   for the air Api airport 1 operation.
+
+   Typically these are written to a http.Request.
 */
 type AirAPIAirport1Params struct {
 
-	/*DollarFormat
-	  指定來源格式
+	/* DollarFormat.
 
+	   指定來源格式
 	*/
 	DollarFormat string
-	/*IATA
-	  機場代碼
 
+	/* IATA.
+
+	   機場代碼
 	*/
 	IATA string
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the air Api airport 1 params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *AirAPIAirport1Params) WithDefaults() *AirAPIAirport1Params {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the air Api airport 1 params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *AirAPIAirport1Params) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the air Api airport 1 params
@@ -143,6 +158,7 @@ func (o *AirAPIAirport1Params) WriteToRequest(r runtime.ClientRequest, reg strfm
 	qrDollarFormat := o.DollarFormat
 	qDollarFormat := qrDollarFormat
 	if qDollarFormat != "" {
+
 		if err := r.SetQueryParam("$format", qDollarFormat); err != nil {
 			return err
 		}

@@ -44,17 +44,17 @@
               "Tainan"
             ],
             "x-enum": {
-              "NewTaipei": "新北市",
+              "Taichung": "臺中市",
               "Hsinchu": "新竹市",
-              "Kaohsiung": "高雄市",
-              "PingtungCounty": "屏東縣",
-              "Taipei": "臺北市",
               "MiaoliCounty": "苗栗縣",
               "ChanghuaCounty": "彰化縣",
-              "Taichung": "臺中市",
+              "NewTaipei": "新北市",
+              "PingtungCounty": "屏東縣",
               "KinmenCounty": "金門縣",
-              "Tainan": "臺南市",
-              "Taoyuan": "桃園市"
+              "Taoyuan": "桃園市",
+              "Taipei": "臺北市",
+              "Kaohsiung": "高雄市",
+              "Tainan": "臺南市"
             }
           },
           {
@@ -116,6 +116,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Bike.Specification.V2.BikeStation"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -153,17 +156,17 @@
               "Tainan"
             ],
             "x-enum": {
-              "KinmenCounty": "金門縣",
-              "Tainan": "臺南市",
-              "Taoyuan": "桃園市",
-              "MiaoliCounty": "苗栗縣",
               "Taichung": "臺中市",
-              "Kaohsiung": "高雄市",
               "Hsinchu": "新竹市",
+              "MiaoliCounty": "苗栗縣",
+              "ChanghuaCounty": "彰化縣",
               "NewTaipei": "新北市",
               "PingtungCounty": "屏東縣",
-              "ChanghuaCounty": "彰化縣",
-              "Taipei": "臺北市"
+              "KinmenCounty": "金門縣",
+              "Taoyuan": "桃園市",
+              "Taipei": "臺北市",
+              "Kaohsiung": "高雄市",
+              "Tainan": "臺南市"
             }
           },
           {
@@ -219,6 +222,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Bike.Specification.V2.BikeAvailability"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -265,28 +271,28 @@
               "Tainan"
             ],
             "x-enum": {
-              "HualienCounty": "花蓮縣",
-              "YunlinCounty": "雲林縣",
-              "Kaohsiung": "高雄市",
-              "Hsinchu": "新竹市",
-              "PenghuCounty": "澎湖縣",
-              "MiaoliCounty": "苗栗縣",
-              "YilanCounty": "宜蘭縣",
-              "Tainan": "臺南市",
-              "Taipei": "臺北市",
-              "PingtungCounty": "屏東縣",
-              "ChiayiCounty": "嘉義縣",
-              "TaitungCounty": "臺東縣",
               "Taichung": "臺中市",
-              "Taoyuan": "桃園市",
-              "KinmenCounty": "金門縣",
               "Keelung": "基隆市",
-              "ChanghuaCounty": "彰化縣",
-              "Chiayi": "嘉義市",
-              "NantouCounty": "南投縣",
-              "NewTaipei": "新北市",
+              "Hsinchu": "新竹市",
               "HsinchuCounty": "新竹縣",
-              "LienchiangCounty": "連江縣"
+              "MiaoliCounty": "苗栗縣",
+              "ChanghuaCounty": "彰化縣",
+              "NewTaipei": "新北市",
+              "NantouCounty": "南投縣",
+              "YunlinCounty": "雲林縣",
+              "ChiayiCounty": "嘉義縣",
+              "Chiayi": "嘉義市",
+              "PingtungCounty": "屏東縣",
+              "YilanCounty": "宜蘭縣",
+              "HualienCounty": "花蓮縣",
+              "TaitungCounty": "臺東縣",
+              "KinmenCounty": "金門縣",
+              "PenghuCounty": "澎湖縣",
+              "LienchiangCounty": "連江縣",
+              "Taoyuan": "桃園市",
+              "Taipei": "臺北市",
+              "Kaohsiung": "高雄市",
+              "Tainan": "臺南市"
             }
           },
           {
@@ -342,6 +348,169 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Bike.Specification.V2.BikeShape"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          }
+        }
+      }
+    },
+    "/v2/Bike/Station/NearBy": {
+      "get": {
+        "tags": [
+          "Advanced"
+        ],
+        "summary": "取得指定[位置,範圍]的全臺公共自行車租借站位資料",
+        "description": "取得指定[位置,範圍]的全臺公共自行車租借站位資料",
+        "operationId": "BikeApi_Station_AllCity_NearBy",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$spatialFilter",
+            "description": "空間過濾(最大搜尋半徑為1000公尺)",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "title": "Array",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PTX.Service.DTO.Bike.Specification.V2.BikeStation"
+              }
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          }
+        }
+      }
+    },
+    "/v2/Bike/Availability/NearBy": {
+      "get": {
+        "tags": [
+          "Advanced"
+        ],
+        "summary": "取得指定[位置,範圍]的全臺公共自行車即時車位資料",
+        "description": "取得指定[位置,範圍]的全臺公共自行車即時車位資料",
+        "operationId": "BikeApi_Availability_AllCity_NearBy",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$spatialFilter",
+            "description": "空間過濾(最大搜尋半徑為1000公尺)",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "title": "Array",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PTX.Service.DTO.Bike.Specification.V2.BikeAvailability"
+              }
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
@@ -597,6 +766,10 @@
     {
       "name": "Bike",
       "description": "自行車"
+    },
+    {
+      "name": "Advanced",
+      "description": "進階"
     }
   ]
 }

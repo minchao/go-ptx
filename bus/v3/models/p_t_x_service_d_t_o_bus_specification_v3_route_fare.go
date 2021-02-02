@@ -6,6 +6,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -174,7 +175,6 @@ func (m *PTXServiceDTOBusSpecificationV3RouteFare) validateIsFreeBus(formats str
 }
 
 func (m *PTXServiceDTOBusSpecificationV3RouteFare) validateODFares(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.ODFares) { // not required
 		return nil
 	}
@@ -208,7 +208,6 @@ func (m *PTXServiceDTOBusSpecificationV3RouteFare) validateRouteID(formats strfm
 }
 
 func (m *PTXServiceDTOBusSpecificationV3RouteFare) validateRouteName(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.RouteName) { // not required
 		return nil
 	}
@@ -226,7 +225,6 @@ func (m *PTXServiceDTOBusSpecificationV3RouteFare) validateRouteUID(formats strf
 }
 
 func (m *PTXServiceDTOBusSpecificationV3RouteFare) validateSectionFares(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.SectionFares) { // not required
 		return nil
 	}
@@ -251,7 +249,6 @@ func (m *PTXServiceDTOBusSpecificationV3RouteFare) validateSectionFares(formats 
 }
 
 func (m *PTXServiceDTOBusSpecificationV3RouteFare) validateStageFares(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.StageFares) { // not required
 		return nil
 	}
@@ -276,10 +273,103 @@ func (m *PTXServiceDTOBusSpecificationV3RouteFare) validateStageFares(formats st
 }
 
 func (m *PTXServiceDTOBusSpecificationV3RouteFare) validateSubRouteName(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.SubRouteName) { // not required
 		return nil
 	}
+
+	return nil
+}
+
+// ContextValidate validate this p t x service d t o bus specification v3 route fare based on the context it is used
+func (m *PTXServiceDTOBusSpecificationV3RouteFare) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateODFares(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateRouteName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateSectionFares(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateStageFares(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateSubRouteName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV3RouteFare) contextValidateODFares(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.ODFares); i++ {
+
+		if m.ODFares[i] != nil {
+			if err := m.ODFares[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("ODFares" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV3RouteFare) contextValidateRouteName(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV3RouteFare) contextValidateSectionFares(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.SectionFares); i++ {
+
+		if m.SectionFares[i] != nil {
+			if err := m.SectionFares[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("SectionFares" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV3RouteFare) contextValidateStageFares(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.StageFares); i++ {
+
+		if m.StageFares[i] != nil {
+			if err := m.StageFares[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("StageFares" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV3RouteFare) contextValidateSubRouteName(ctx context.Context, formats strfmt.Registry) error {
 
 	return nil
 }

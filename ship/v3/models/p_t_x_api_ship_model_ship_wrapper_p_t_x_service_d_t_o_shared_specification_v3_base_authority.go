@@ -6,6 +6,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -73,7 +74,6 @@ func (m *PTXAPIShipModelShipWrapperPTXServiceDTOSharedSpecificationV3BaseAuthori
 }
 
 func (m *PTXAPIShipModelShipWrapperPTXServiceDTOSharedSpecificationV3BaseAuthority) validateAuthorities(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.Authorities) { // not required
 		return nil
 	}
@@ -110,6 +110,38 @@ func (m *PTXAPIShipModelShipWrapperPTXServiceDTOSharedSpecificationV3BaseAuthori
 
 	if err := validate.Required("VersionID", "body", m.VersionID); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+// ContextValidate validate this p t x API ship model ship wrapper p t x service d t o shared specification v3 base authority based on the context it is used
+func (m *PTXAPIShipModelShipWrapperPTXServiceDTOSharedSpecificationV3BaseAuthority) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateAuthorities(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXAPIShipModelShipWrapperPTXServiceDTOSharedSpecificationV3BaseAuthority) contextValidateAuthorities(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Authorities); i++ {
+
+		if m.Authorities[i] != nil {
+			if err := m.Authorities[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("Authorities" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
 	}
 
 	return nil

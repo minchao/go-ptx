@@ -10,6 +10,7 @@ import (
 	httptransport "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
+	"github.com/minchao/go-ptx/bike/v2/client/advanced"
 	"github.com/minchao/go-ptx/bike/v2/client/bike"
 )
 
@@ -55,6 +56,7 @@ func New(transport runtime.ClientTransport, formats strfmt.Registry) *MOTCTransp
 
 	cli := new(MOTCTransportAPIV2)
 	cli.Transport = transport
+	cli.Advanced = advanced.New(transport, formats)
 	cli.Bike = bike.New(transport, formats)
 	return cli
 }
@@ -100,6 +102,8 @@ func (cfg *TransportConfig) WithSchemes(schemes []string) *TransportConfig {
 
 // MOTCTransportAPIV2 is a client for m o t c transport API v2
 type MOTCTransportAPIV2 struct {
+	Advanced advanced.ClientService
+
 	Bike bike.ClientService
 
 	Transport runtime.ClientTransport
@@ -108,5 +112,6 @@ type MOTCTransportAPIV2 struct {
 // SetTransport changes the transport on the client and all its subresources
 func (c *MOTCTransportAPIV2) SetTransport(transport runtime.ClientTransport) {
 	c.Transport = transport
+	c.Advanced.SetTransport(transport)
 	c.Bike.SetTransport(transport)
 }

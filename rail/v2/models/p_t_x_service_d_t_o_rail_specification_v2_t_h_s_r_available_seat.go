@@ -6,6 +6,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -210,6 +211,56 @@ func (m *PTXServiceDTORailSpecificationV2THSRAvailableSeat) validateTrainNo(form
 
 	if err := validate.Required("TrainNo", "body", m.TrainNo); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+// ContextValidate validate this p t x service d t o rail specification v2 t h s r available seat based on the context it is used
+func (m *PTXServiceDTORailSpecificationV2THSRAvailableSeat) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateEndingStationName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateStartingStationName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateStopStations(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV2THSRAvailableSeat) contextValidateEndingStationName(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV2THSRAvailableSeat) contextValidateStartingStationName(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV2THSRAvailableSeat) contextValidateStopStations(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.StopStations); i++ {
+
+		if m.StopStations[i] != nil {
+			if err := m.StopStations[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("StopStations" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
 	}
 
 	return nil

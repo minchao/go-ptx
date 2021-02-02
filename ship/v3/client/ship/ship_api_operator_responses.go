@@ -29,7 +29,12 @@ func (o *ShipAPIOperatorReader) ReadResponse(response runtime.ClientResponse, co
 			return nil, err
 		}
 		return result, nil
-
+	case 304:
+		result := NewShipAPIOperatorNotModified()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return nil, result
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -40,7 +45,7 @@ func NewShipAPIOperatorOK() *ShipAPIOperatorOK {
 	return &ShipAPIOperatorOK{}
 }
 
-/*ShipAPIOperatorOK handles this case with default header values.
+/* ShipAPIOperatorOK describes a response with status code 200, with default header values.
 
 Success
 */
@@ -51,7 +56,6 @@ type ShipAPIOperatorOK struct {
 func (o *ShipAPIOperatorOK) Error() string {
 	return fmt.Sprintf("[GET /v3/Ship/Operator][%d] shipApiOperatorOK  %+v", 200, o.Payload)
 }
-
 func (o *ShipAPIOperatorOK) GetPayload() *models.PTXAPIShipModelShipWrapperPTXServiceDTOShipSpecificationV3Operator {
 	return o.Payload
 }
@@ -64,6 +68,27 @@ func (o *ShipAPIOperatorOK) readResponse(response runtime.ClientResponse, consum
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
+
+	return nil
+}
+
+// NewShipAPIOperatorNotModified creates a ShipAPIOperatorNotModified with default headers values
+func NewShipAPIOperatorNotModified() *ShipAPIOperatorNotModified {
+	return &ShipAPIOperatorNotModified{}
+}
+
+/* ShipAPIOperatorNotModified describes a response with status code 304, with default header values.
+
+服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content
+*/
+type ShipAPIOperatorNotModified struct {
+}
+
+func (o *ShipAPIOperatorNotModified) Error() string {
+	return fmt.Sprintf("[GET /v3/Ship/Operator][%d] shipApiOperatorNotModified ", 304)
+}
+
+func (o *ShipAPIOperatorNotModified) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

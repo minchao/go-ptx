@@ -6,6 +6,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -257,7 +258,6 @@ func (m *PTXServiceDTORailSpecificationV3TRADailyTrainTimeTableTrainInfo) valida
 }
 
 func (m *PTXServiceDTORailSpecificationV3TRADailyTrainTimeTableTrainInfo) validateDiningFlagSections(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.DiningFlagSections) { // not required
 		return nil
 	}
@@ -346,6 +346,65 @@ func (m *PTXServiceDTORailSpecificationV3TRADailyTrainTimeTableTrainInfo) valida
 	if err := validate.Required("WheelChairFlag", "body", m.WheelChairFlag); err != nil {
 		return err
 	}
+
+	return nil
+}
+
+// ContextValidate validate this p t x service d t o rail specification v3 t r a daily train time table train info based on the context it is used
+func (m *PTXServiceDTORailSpecificationV3TRADailyTrainTimeTableTrainInfo) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateDiningFlagSections(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateEndingStationName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateStartingStationName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateTrainTypeName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV3TRADailyTrainTimeTableTrainInfo) contextValidateDiningFlagSections(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.DiningFlagSections); i++ {
+
+		if m.DiningFlagSections[i] != nil {
+			if err := m.DiningFlagSections[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("DiningFlagSections" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV3TRADailyTrainTimeTableTrainInfo) contextValidateEndingStationName(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV3TRADailyTrainTimeTableTrainInfo) contextValidateStartingStationName(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV3TRADailyTrainTimeTableTrainInfo) contextValidateTrainTypeName(ctx context.Context, formats strfmt.Registry) error {
 
 	return nil
 }

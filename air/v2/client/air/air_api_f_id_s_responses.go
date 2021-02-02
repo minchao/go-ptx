@@ -29,7 +29,12 @@ func (o *AirAPIFIDSReader) ReadResponse(response runtime.ClientResponse, consume
 			return nil, err
 		}
 		return result, nil
-
+	case 304:
+		result := NewAirAPIFIDSNotModified()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return nil, result
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -40,7 +45,7 @@ func NewAirAPIFIDSOK() *AirAPIFIDSOK {
 	return &AirAPIFIDSOK{}
 }
 
-/*AirAPIFIDSOK handles this case with default header values.
+/* AirAPIFIDSOK describes a response with status code 200, with default header values.
 
 Success
 */
@@ -51,7 +56,6 @@ type AirAPIFIDSOK struct {
 func (o *AirAPIFIDSOK) Error() string {
 	return fmt.Sprintf("[GET /v2/Air/FIDS/Airport][%d] airApiFIdSOK  %+v", 200, o.Payload)
 }
-
 func (o *AirAPIFIDSOK) GetPayload() []*models.PTXServiceDTOAirSpecificationV2AirportFIDS {
 	return o.Payload
 }
@@ -62,6 +66,27 @@ func (o *AirAPIFIDSOK) readResponse(response runtime.ClientResponse, consumer ru
 	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
+
+	return nil
+}
+
+// NewAirAPIFIDSNotModified creates a AirAPIFIDSNotModified with default headers values
+func NewAirAPIFIDSNotModified() *AirAPIFIDSNotModified {
+	return &AirAPIFIDSNotModified{}
+}
+
+/* AirAPIFIDSNotModified describes a response with status code 304, with default header values.
+
+服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content
+*/
+type AirAPIFIDSNotModified struct {
+}
+
+func (o *AirAPIFIDSNotModified) Error() string {
+	return fmt.Sprintf("[GET /v2/Air/FIDS/Airport][%d] airApiFIdSNotModified ", 304)
+}
+
+func (o *AirAPIFIDSNotModified) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

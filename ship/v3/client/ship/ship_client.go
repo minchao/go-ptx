@@ -33,6 +33,8 @@ type ClientService interface {
 
 	ShipAPIGeneralSchedule1(params *ShipAPIGeneralSchedule1Params) (*ShipAPIGeneralSchedule1OK, error)
 
+	ShipAPILivePosition(params *ShipAPILivePositionParams) (*ShipAPILivePositionOK, error)
+
 	ShipAPIOperator(params *ShipAPIOperatorParams) (*ShipAPIOperatorOK, error)
 
 	ShipAPIPort(params *ShipAPIPortParams) (*ShipAPIPortOK, error)
@@ -147,6 +149,40 @@ func (a *Client) ShipAPIGeneralSchedule1(params *ShipAPIGeneralSchedule1Params) 
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
 	msg := fmt.Sprintf("unexpected success response for ShipApi_GeneralSchedule_1: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  ShipAPILivePosition 取得航運船舶即時位置資料s
+*/
+func (a *Client) ShipAPILivePosition(params *ShipAPILivePositionParams) (*ShipAPILivePositionOK, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewShipAPILivePositionParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "ShipApi_LivePosition",
+		Method:             "GET",
+		PathPattern:        "/v3/Ship/LivePosition",
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &ShipAPILivePositionReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, err
+	}
+	success, ok := result.(*ShipAPILivePositionOK)
+	if ok {
+		return success, nil
+	}
+	// unexpected success response
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for ShipApi_LivePosition: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 

@@ -6,6 +6,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -77,7 +78,6 @@ func (m *PTXServiceDTOBusSpecificationV2BusFare) Validate(formats strfmt.Registr
 }
 
 func (m *PTXServiceDTOBusSpecificationV2BusFare) validateDiscountPeriods(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.DiscountPeriods) { // not required
 		return nil
 	}
@@ -123,6 +123,38 @@ func (m *PTXServiceDTOBusSpecificationV2BusFare) validateTicketType(formats strf
 
 	if err := validate.Required("TicketType", "body", m.TicketType); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+// ContextValidate validate this p t x service d t o bus specification v2 bus fare based on the context it is used
+func (m *PTXServiceDTOBusSpecificationV2BusFare) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateDiscountPeriods(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV2BusFare) contextValidateDiscountPeriods(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.DiscountPeriods); i++ {
+
+		if m.DiscountPeriods[i] != nil {
+			if err := m.DiscountPeriods[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("DiscountPeriods" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
 	}
 
 	return nil

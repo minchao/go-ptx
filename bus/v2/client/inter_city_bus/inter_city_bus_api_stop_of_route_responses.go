@@ -35,7 +35,12 @@ func (o *InterCityBusAPIStopOfRouteReader) ReadResponse(response runtime.ClientR
 			return nil, err
 		}
 		return result, nil
-
+	case 304:
+		result := NewInterCityBusAPIStopOfRouteNotModified()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return nil, result
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -46,7 +51,7 @@ func NewInterCityBusAPIStopOfRouteOK() *InterCityBusAPIStopOfRouteOK {
 	return &InterCityBusAPIStopOfRouteOK{}
 }
 
-/*InterCityBusAPIStopOfRouteOK handles this case with default header values.
+/* InterCityBusAPIStopOfRouteOK describes a response with status code 200, with default header values.
 
 Success
 */
@@ -57,7 +62,6 @@ type InterCityBusAPIStopOfRouteOK struct {
 func (o *InterCityBusAPIStopOfRouteOK) Error() string {
 	return fmt.Sprintf("[GET /v2/Bus/StopOfRoute/InterCity][%d] interCityBusApiStopOfRouteOK  %+v", 200, o.Payload)
 }
-
 func (o *InterCityBusAPIStopOfRouteOK) GetPayload() []*models.PTXServiceDTOBusSpecificationV2BusStopOfRoute {
 	return o.Payload
 }
@@ -77,7 +81,7 @@ func NewInterCityBusAPIStopOfRouteStatus299() *InterCityBusAPIStopOfRouteStatus2
 	return &InterCityBusAPIStopOfRouteStatus299{}
 }
 
-/*InterCityBusAPIStopOfRouteStatus299 handles this case with default header values.
+/* InterCityBusAPIStopOfRouteStatus299 describes a response with status code 299, with default header values.
 
 加入參數'?health=true'即可查詢此API服務的健康狀態
 */
@@ -88,7 +92,6 @@ type InterCityBusAPIStopOfRouteStatus299 struct {
 func (o *InterCityBusAPIStopOfRouteStatus299) Error() string {
 	return fmt.Sprintf("[GET /v2/Bus/StopOfRoute/InterCity][%d] interCityBusApiStopOfRouteStatus299  %+v", 299, o.Payload)
 }
-
 func (o *InterCityBusAPIStopOfRouteStatus299) GetPayload() *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth {
 	return o.Payload
 }
@@ -101,6 +104,27 @@ func (o *InterCityBusAPIStopOfRouteStatus299) readResponse(response runtime.Clie
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
+
+	return nil
+}
+
+// NewInterCityBusAPIStopOfRouteNotModified creates a InterCityBusAPIStopOfRouteNotModified with default headers values
+func NewInterCityBusAPIStopOfRouteNotModified() *InterCityBusAPIStopOfRouteNotModified {
+	return &InterCityBusAPIStopOfRouteNotModified{}
+}
+
+/* InterCityBusAPIStopOfRouteNotModified describes a response with status code 304, with default header values.
+
+服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content
+*/
+type InterCityBusAPIStopOfRouteNotModified struct {
+}
+
+func (o *InterCityBusAPIStopOfRouteNotModified) Error() string {
+	return fmt.Sprintf("[GET /v2/Bus/StopOfRoute/InterCity][%d] interCityBusApiStopOfRouteNotModified ", 304)
+}
+
+func (o *InterCityBusAPIStopOfRouteNotModified) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

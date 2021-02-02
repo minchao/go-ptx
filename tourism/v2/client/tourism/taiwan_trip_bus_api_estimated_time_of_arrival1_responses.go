@@ -29,7 +29,6 @@ func (o *TaiwanTripBusAPIEstimatedTimeOfArrival1Reader) ReadResponse(response ru
 			return nil, err
 		}
 		return result, nil
-
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -40,7 +39,7 @@ func NewTaiwanTripBusAPIEstimatedTimeOfArrival1OK() *TaiwanTripBusAPIEstimatedTi
 	return &TaiwanTripBusAPIEstimatedTimeOfArrival1OK{}
 }
 
-/*TaiwanTripBusAPIEstimatedTimeOfArrival1OK handles this case with default header values.
+/* TaiwanTripBusAPIEstimatedTimeOfArrival1OK describes a response with status code 200, with default header values.
 
 Success
 */
@@ -51,7 +50,6 @@ type TaiwanTripBusAPIEstimatedTimeOfArrival1OK struct {
 func (o *TaiwanTripBusAPIEstimatedTimeOfArrival1OK) Error() string {
 	return fmt.Sprintf("[GET /v2/Tourism/Bus/EstimatedTimeOfArrival/TaiwanTrip/{TaiwanTripName}][%d] taiwanTripBusApiEstimatedTimeOfArrival1OK  %+v", 200, o.Payload)
 }
-
 func (o *TaiwanTripBusAPIEstimatedTimeOfArrival1OK) GetPayload() []*models.PTXServiceDTOTourismSpecificationV2BusN1EstimateTime {
 	return o.Payload
 }

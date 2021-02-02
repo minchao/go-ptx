@@ -6,6 +6,8 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
+
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
@@ -22,7 +24,7 @@ type PTXServiceDTOAirSpecificationV2Airport struct {
 	// String
 	//
 	// 機場地址
-	AirportAdrress string `json:"AirportAdrress,omitempty"`
+	AirportAddress string `json:"AirportAddress,omitempty"`
 
 	// NameType
 	//
@@ -124,7 +126,6 @@ func (m *PTXServiceDTOAirSpecificationV2Airport) Validate(formats strfmt.Registr
 }
 
 func (m *PTXServiceDTOAirSpecificationV2Airport) validateAirportCityName(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.AirportCityName) { // not required
 		return nil
 	}
@@ -142,7 +143,6 @@ func (m *PTXServiceDTOAirSpecificationV2Airport) validateAirportID(formats strfm
 }
 
 func (m *PTXServiceDTOAirSpecificationV2Airport) validateAirportName(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.AirportName) { // not required
 		return nil
 	}
@@ -151,7 +151,6 @@ func (m *PTXServiceDTOAirSpecificationV2Airport) validateAirportName(formats str
 }
 
 func (m *PTXServiceDTOAirSpecificationV2Airport) validateAirportPosition(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.AirportPosition) { // not required
 		return nil
 	}
@@ -173,6 +172,43 @@ func (m *PTXServiceDTOAirSpecificationV2Airport) validateVersionID(formats strfm
 	if err := validate.Required("VersionID", "body", m.VersionID); err != nil {
 		return err
 	}
+
+	return nil
+}
+
+// ContextValidate validate this p t x service d t o air specification v2 airport based on the context it is used
+func (m *PTXServiceDTOAirSpecificationV2Airport) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateAirportCityName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateAirportName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateAirportPosition(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTOAirSpecificationV2Airport) contextValidateAirportCityName(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTOAirSpecificationV2Airport) contextValidateAirportName(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTOAirSpecificationV2Airport) contextValidateAirportPosition(ctx context.Context, formats strfmt.Registry) error {
 
 	return nil
 }

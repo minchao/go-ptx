@@ -6,6 +6,8 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
+
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
@@ -64,10 +66,28 @@ func (m *PTXServiceDTOShipSpecificationV3Stoptime) Validate(formats strfmt.Regis
 }
 
 func (m *PTXServiceDTOShipSpecificationV3Stoptime) validatePortName(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.PortName) { // not required
 		return nil
 	}
+
+	return nil
+}
+
+// ContextValidate validate this p t x service d t o ship specification v3 stoptime based on the context it is used
+func (m *PTXServiceDTOShipSpecificationV3Stoptime) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidatePortName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTOShipSpecificationV3Stoptime) contextValidatePortName(ctx context.Context, formats strfmt.Registry) error {
 
 	return nil
 }
