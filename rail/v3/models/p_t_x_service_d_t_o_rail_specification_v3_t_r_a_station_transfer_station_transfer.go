@@ -6,6 +6,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -166,6 +167,91 @@ func (m *PTXServiceDTORailSpecificationV3TRAStationTransferStationTransfer) vali
 
 		if m.Transfers[i] != nil {
 			if err := m.Transfers[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("Transfers" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+// ContextValidate validate this p t x service d t o rail specification v3 t r a station transfer station transfer based on the context it is used
+func (m *PTXServiceDTORailSpecificationV3TRAStationTransferStationTransfer) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateExteriorMapURLs(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateInteriorMapURLs(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateStationName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateTransfers(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV3TRAStationTransferStationTransfer) contextValidateExteriorMapURLs(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.ExteriorMapURLs); i++ {
+
+		if m.ExteriorMapURLs[i] != nil {
+			if err := m.ExteriorMapURLs[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("ExteriorMapURLs" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV3TRAStationTransferStationTransfer) contextValidateInteriorMapURLs(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.InteriorMapURLs); i++ {
+
+		if m.InteriorMapURLs[i] != nil {
+			if err := m.InteriorMapURLs[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("InteriorMapURLs" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV3TRAStationTransferStationTransfer) contextValidateStationName(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV3TRAStationTransferStationTransfer) contextValidateTransfers(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Transfers); i++ {
+
+		if m.Transfers[i] != nil {
+			if err := m.Transfers[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("Transfers" + "." + strconv.Itoa(i))
 				}

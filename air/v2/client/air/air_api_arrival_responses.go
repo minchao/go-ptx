@@ -29,7 +29,12 @@ func (o *AirAPIArrivalReader) ReadResponse(response runtime.ClientResponse, cons
 			return nil, err
 		}
 		return result, nil
-
+	case 304:
+		result := NewAirAPIArrivalNotModified()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return nil, result
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -40,7 +45,7 @@ func NewAirAPIArrivalOK() *AirAPIArrivalOK {
 	return &AirAPIArrivalOK{}
 }
 
-/*AirAPIArrivalOK handles this case with default header values.
+/* AirAPIArrivalOK describes a response with status code 200, with default header values.
 
 Success
 */
@@ -51,7 +56,6 @@ type AirAPIArrivalOK struct {
 func (o *AirAPIArrivalOK) Error() string {
 	return fmt.Sprintf("[GET /v2/Air/FIDS/Airport/Arrival][%d] airApiArrivalOK  %+v", 200, o.Payload)
 }
-
 func (o *AirAPIArrivalOK) GetPayload() []*models.PTXServiceDTOAirSpecificationV2FIDSArrival {
 	return o.Payload
 }
@@ -62,6 +66,27 @@ func (o *AirAPIArrivalOK) readResponse(response runtime.ClientResponse, consumer
 	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
+
+	return nil
+}
+
+// NewAirAPIArrivalNotModified creates a AirAPIArrivalNotModified with default headers values
+func NewAirAPIArrivalNotModified() *AirAPIArrivalNotModified {
+	return &AirAPIArrivalNotModified{}
+}
+
+/* AirAPIArrivalNotModified describes a response with status code 304, with default header values.
+
+服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content
+*/
+type AirAPIArrivalNotModified struct {
+}
+
+func (o *AirAPIArrivalNotModified) Error() string {
+	return fmt.Sprintf("[GET /v2/Air/FIDS/Airport/Arrival][%d] airApiArrivalNotModified ", 304)
+}
+
+func (o *AirAPIArrivalNotModified) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

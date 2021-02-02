@@ -16,69 +16,85 @@ import (
 	"github.com/go-openapi/strfmt"
 )
 
-// NewCityBusAPIDataVersionParams creates a new CityBusAPIDataVersionParams object
-// with the default values initialized.
+// NewCityBusAPIDataVersionParams creates a new CityBusAPIDataVersionParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewCityBusAPIDataVersionParams() *CityBusAPIDataVersionParams {
-	var ()
 	return &CityBusAPIDataVersionParams{
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewCityBusAPIDataVersionParamsWithTimeout creates a new CityBusAPIDataVersionParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewCityBusAPIDataVersionParamsWithTimeout(timeout time.Duration) *CityBusAPIDataVersionParams {
-	var ()
 	return &CityBusAPIDataVersionParams{
-
 		timeout: timeout,
 	}
 }
 
 // NewCityBusAPIDataVersionParamsWithContext creates a new CityBusAPIDataVersionParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewCityBusAPIDataVersionParamsWithContext(ctx context.Context) *CityBusAPIDataVersionParams {
-	var ()
 	return &CityBusAPIDataVersionParams{
-
 		Context: ctx,
 	}
 }
 
 // NewCityBusAPIDataVersionParamsWithHTTPClient creates a new CityBusAPIDataVersionParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewCityBusAPIDataVersionParamsWithHTTPClient(client *http.Client) *CityBusAPIDataVersionParams {
-	var ()
 	return &CityBusAPIDataVersionParams{
 		HTTPClient: client,
 	}
 }
 
-/*CityBusAPIDataVersionParams contains all the parameters to send to the API endpoint
-for the city bus Api data version operation typically these are written to a http.Request
+/* CityBusAPIDataVersionParams contains all the parameters to send to the API endpoint
+   for the city bus Api data version operation.
+
+   Typically these are written to a http.Request.
 */
 type CityBusAPIDataVersionParams struct {
 
-	/*DollarFormat
-	  指定來源格式
+	/* DollarFormat.
 
+	   指定來源格式
 	*/
 	DollarFormat string
-	/*City
-	  欲查詢縣市
 
+	/* City.
+
+	   欲查詢縣市
 	*/
 	City string
-	/*Health
-	  加入參數'?health=true'即可查詢此API服務的健康狀態
 
+	/* Health.
+
+	   加入參數'?health=true'即可查詢此API服務的健康狀態
 	*/
 	Health *string
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the city bus Api data version params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *CityBusAPIDataVersionParams) WithDefaults() *CityBusAPIDataVersionParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the city bus Api data version params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *CityBusAPIDataVersionParams) SetDefaults() {
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the city bus Api data version params
@@ -159,6 +175,7 @@ func (o *CityBusAPIDataVersionParams) WriteToRequest(r runtime.ClientRequest, re
 	qrDollarFormat := o.DollarFormat
 	qDollarFormat := qrDollarFormat
 	if qDollarFormat != "" {
+
 		if err := r.SetQueryParam("$format", qDollarFormat); err != nil {
 			return err
 		}
@@ -173,16 +190,17 @@ func (o *CityBusAPIDataVersionParams) WriteToRequest(r runtime.ClientRequest, re
 
 		// query param health
 		var qrHealth string
+
 		if o.Health != nil {
 			qrHealth = *o.Health
 		}
 		qHealth := qrHealth
 		if qHealth != "" {
+
 			if err := r.SetQueryParam("health", qHealth); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if len(res) > 0 {

@@ -35,7 +35,12 @@ func (o *CityBusAPIStopReader) ReadResponse(response runtime.ClientResponse, con
 			return nil, err
 		}
 		return result, nil
-
+	case 304:
+		result := NewCityBusAPIStopNotModified()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return nil, result
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -46,7 +51,7 @@ func NewCityBusAPIStopOK() *CityBusAPIStopOK {
 	return &CityBusAPIStopOK{}
 }
 
-/*CityBusAPIStopOK handles this case with default header values.
+/* CityBusAPIStopOK describes a response with status code 200, with default header values.
 
 Success
 */
@@ -57,7 +62,6 @@ type CityBusAPIStopOK struct {
 func (o *CityBusAPIStopOK) Error() string {
 	return fmt.Sprintf("[GET /v2/Bus/Stop/City/{City}][%d] cityBusApiStopOK  %+v", 200, o.Payload)
 }
-
 func (o *CityBusAPIStopOK) GetPayload() []*models.PTXServiceDTOBusSpecificationV2BusStop {
 	return o.Payload
 }
@@ -77,7 +81,7 @@ func NewCityBusAPIStopStatus299() *CityBusAPIStopStatus299 {
 	return &CityBusAPIStopStatus299{}
 }
 
-/*CityBusAPIStopStatus299 handles this case with default header values.
+/* CityBusAPIStopStatus299 describes a response with status code 299, with default header values.
 
 加入參數'?health=true'即可查詢此API服務的健康狀態
 */
@@ -88,7 +92,6 @@ type CityBusAPIStopStatus299 struct {
 func (o *CityBusAPIStopStatus299) Error() string {
 	return fmt.Sprintf("[GET /v2/Bus/Stop/City/{City}][%d] cityBusApiStopStatus299  %+v", 299, o.Payload)
 }
-
 func (o *CityBusAPIStopStatus299) GetPayload() *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth {
 	return o.Payload
 }
@@ -101,6 +104,27 @@ func (o *CityBusAPIStopStatus299) readResponse(response runtime.ClientResponse, 
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
+
+	return nil
+}
+
+// NewCityBusAPIStopNotModified creates a CityBusAPIStopNotModified with default headers values
+func NewCityBusAPIStopNotModified() *CityBusAPIStopNotModified {
+	return &CityBusAPIStopNotModified{}
+}
+
+/* CityBusAPIStopNotModified describes a response with status code 304, with default header values.
+
+服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content
+*/
+type CityBusAPIStopNotModified struct {
+}
+
+func (o *CityBusAPIStopNotModified) Error() string {
+	return fmt.Sprintf("[GET /v2/Bus/Stop/City/{City}][%d] cityBusApiStopNotModified ", 304)
+}
+
+func (o *CityBusAPIStopNotModified) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

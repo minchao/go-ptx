@@ -29,7 +29,12 @@ func (o *TrainLiveBoardAPIControllerGetReader) ReadResponse(response runtime.Cli
 			return nil, err
 		}
 		return result, nil
-
+	case 304:
+		result := NewTrainLiveBoardAPIControllerGetNotModified()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return nil, result
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -40,7 +45,7 @@ func NewTrainLiveBoardAPIControllerGetOK() *TrainLiveBoardAPIControllerGetOK {
 	return &TrainLiveBoardAPIControllerGetOK{}
 }
 
-/*TrainLiveBoardAPIControllerGetOK handles this case with default header values.
+/* TrainLiveBoardAPIControllerGetOK describes a response with status code 200, with default header values.
 
 Success
 */
@@ -51,7 +56,6 @@ type TrainLiveBoardAPIControllerGetOK struct {
 func (o *TrainLiveBoardAPIControllerGetOK) Error() string {
 	return fmt.Sprintf("[GET /v3/Rail/TRA/TrainLiveBoard][%d] trainLiveBoardApiControllerGetOK  %+v", 200, o.Payload)
 }
-
 func (o *TrainLiveBoardAPIControllerGetOK) GetPayload() *models.PTXAPIRailModelTRARealTimeWrapperPTXServiceDTORailSpecificationV3TRATRATrainLiveBoardListTrainLiveBoard {
 	return o.Payload
 }
@@ -64,6 +68,27 @@ func (o *TrainLiveBoardAPIControllerGetOK) readResponse(response runtime.ClientR
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
+
+	return nil
+}
+
+// NewTrainLiveBoardAPIControllerGetNotModified creates a TrainLiveBoardAPIControllerGetNotModified with default headers values
+func NewTrainLiveBoardAPIControllerGetNotModified() *TrainLiveBoardAPIControllerGetNotModified {
+	return &TrainLiveBoardAPIControllerGetNotModified{}
+}
+
+/* TrainLiveBoardAPIControllerGetNotModified describes a response with status code 304, with default header values.
+
+服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content
+*/
+type TrainLiveBoardAPIControllerGetNotModified struct {
+}
+
+func (o *TrainLiveBoardAPIControllerGetNotModified) Error() string {
+	return fmt.Sprintf("[GET /v3/Rail/TRA/TrainLiveBoard][%d] trainLiveBoardApiControllerGetNotModified ", 304)
+}
+
+func (o *TrainLiveBoardAPIControllerGetNotModified) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

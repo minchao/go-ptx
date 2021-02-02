@@ -6,6 +6,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -173,6 +174,38 @@ func (m *PTXAPIRailModelTRAODFareWrapperPTXServiceDTORailSpecificationV3TRAODFar
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+// ContextValidate validate this p t x API rail model t r a o d fare wrapper p t x service d t o rail specification v3 t r a o d fare o d fare based on the context it is used
+func (m *PTXAPIRailModelTRAODFareWrapperPTXServiceDTORailSpecificationV3TRAODFareODFare) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateODFares(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXAPIRailModelTRAODFareWrapperPTXServiceDTORailSpecificationV3TRAODFareODFare) contextValidateODFares(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.ODFares); i++ {
+
+		if m.ODFares[i] != nil {
+			if err := m.ODFares[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("ODFares" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
 	}
 
 	return nil

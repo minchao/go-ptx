@@ -6,6 +6,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -160,6 +161,38 @@ func (m *PTXServiceDTOBusSpecificationV3WrapperBusWrapperPTXServiceDTOBusSpecifi
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+// ContextValidate validate this p t x service d t o bus specification v3 wrapper bus wrapper p t x service d t o bus specification v3 a2 data based on the context it is used
+func (m *PTXServiceDTOBusSpecificationV3WrapperBusWrapperPTXServiceDTOBusSpecificationV3A2Data) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateA2Datas(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV3WrapperBusWrapperPTXServiceDTOBusSpecificationV3A2Data) contextValidateA2Datas(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.A2Datas); i++ {
+
+		if m.A2Datas[i] != nil {
+			if err := m.A2Datas[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("A2Datas" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
 	}
 
 	return nil

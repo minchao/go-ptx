@@ -65,9 +65,15 @@ type ClientService interface {
 
 	InterCityBusAPIRoute1(params *InterCityBusAPIRoute1Params) (*InterCityBusAPIRoute1OK, *InterCityBusAPIRoute1Status299, error)
 
+	InterCityBusAPIS2STravelTimeDetail(params *InterCityBusAPIS2STravelTimeDetailParams) (*InterCityBusAPIS2STravelTimeDetailOK, *InterCityBusAPIS2STravelTimeDetailStatus299, error)
+
 	InterCityBusAPISchedule(params *InterCityBusAPIScheduleParams) (*InterCityBusAPIScheduleOK, *InterCityBusAPIScheduleStatus299, error)
 
 	InterCityBusAPISchedule1(params *InterCityBusAPISchedule1Params) (*InterCityBusAPISchedule1OK, *InterCityBusAPISchedule1Status299, error)
+
+	InterCityBusAPIShape(params *InterCityBusAPIShapeParams) (*InterCityBusAPIShapeOK, *InterCityBusAPIShapeStatus299, error)
+
+	InterCityBusAPIShape1(params *InterCityBusAPIShape1Params) (*InterCityBusAPIShape1OK, *InterCityBusAPIShape1Status299, error)
 
 	InterCityBusAPIStation(params *InterCityBusAPIStationParams) (*InterCityBusAPIStationOK, *InterCityBusAPIStationStatus299, error)
 
@@ -806,6 +812,43 @@ func (a *Client) InterCityBusAPIRoute1(params *InterCityBusAPIRoute1Params) (*In
 }
 
 /*
+  InterCityBusAPIS2STravelTimeDetail 取得指定s 路線代碼 的公路客運站間旅行時間資料
+
+  指定[路線代碼]的公路客運站間旅行時間資料
+*/
+func (a *Client) InterCityBusAPIS2STravelTimeDetail(params *InterCityBusAPIS2STravelTimeDetailParams) (*InterCityBusAPIS2STravelTimeDetailOK, *InterCityBusAPIS2STravelTimeDetailStatus299, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewInterCityBusAPIS2STravelTimeDetailParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "InterCityBusApi_S2STravelTimeDetail",
+		Method:             "GET",
+		PathPattern:        "/v2/Bus/S2STravelTime/InterCity/{RouteID}",
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &InterCityBusAPIS2STravelTimeDetailReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, nil, err
+	}
+	switch value := result.(type) {
+	case *InterCityBusAPIS2STravelTimeDetailOK:
+		return value, nil, nil
+	case *InterCityBusAPIS2STravelTimeDetailStatus299:
+		return nil, value, nil
+	}
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for inter_city_bus: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
   InterCityBusAPISchedule 取得公路客運路線班表資料s
 
   公路客運之預定班表及班距資料。公路及國道客運多採用【班表】式時刻表
@@ -872,6 +915,80 @@ func (a *Client) InterCityBusAPISchedule1(params *InterCityBusAPISchedule1Params
 	case *InterCityBusAPISchedule1OK:
 		return value, nil, nil
 	case *InterCityBusAPISchedule1Status299:
+		return nil, value, nil
+	}
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for inter_city_bus: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  InterCityBusAPIShape 取得公路公車線型資料s
+
+  公路客運之線型資料
+*/
+func (a *Client) InterCityBusAPIShape(params *InterCityBusAPIShapeParams) (*InterCityBusAPIShapeOK, *InterCityBusAPIShapeStatus299, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewInterCityBusAPIShapeParams()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "InterCityBusApi_Shape",
+		Method:             "GET",
+		PathPattern:        "/v2/Bus/Shape/InterCity",
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &InterCityBusAPIShapeReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, nil, err
+	}
+	switch value := result.(type) {
+	case *InterCityBusAPIShapeOK:
+		return value, nil, nil
+	case *InterCityBusAPIShapeStatus299:
+		return nil, value, nil
+	}
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for inter_city_bus: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  InterCityBusAPIShape1 取得指定s 路線名稱 的公路公車線型資料
+
+  公路客運之線型資料
+*/
+func (a *Client) InterCityBusAPIShape1(params *InterCityBusAPIShape1Params) (*InterCityBusAPIShape1OK, *InterCityBusAPIShape1Status299, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewInterCityBusAPIShape1Params()
+	}
+
+	result, err := a.transport.Submit(&runtime.ClientOperation{
+		ID:                 "InterCityBusApi_Shape_1",
+		Method:             "GET",
+		PathPattern:        "/v2/Bus/Shape/InterCity/{RouteName}",
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &InterCityBusAPIShape1Reader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	})
+	if err != nil {
+		return nil, nil, err
+	}
+	switch value := result.(type) {
+	case *InterCityBusAPIShape1OK:
+		return value, nil, nil
+	case *InterCityBusAPIShape1Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue

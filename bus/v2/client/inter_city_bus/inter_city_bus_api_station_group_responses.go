@@ -35,7 +35,12 @@ func (o *InterCityBusAPIStationGroupReader) ReadResponse(response runtime.Client
 			return nil, err
 		}
 		return result, nil
-
+	case 304:
+		result := NewInterCityBusAPIStationGroupNotModified()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return nil, result
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -46,7 +51,7 @@ func NewInterCityBusAPIStationGroupOK() *InterCityBusAPIStationGroupOK {
 	return &InterCityBusAPIStationGroupOK{}
 }
 
-/*InterCityBusAPIStationGroupOK handles this case with default header values.
+/* InterCityBusAPIStationGroupOK describes a response with status code 200, with default header values.
 
 Success
 */
@@ -57,7 +62,6 @@ type InterCityBusAPIStationGroupOK struct {
 func (o *InterCityBusAPIStationGroupOK) Error() string {
 	return fmt.Sprintf("[GET /v2/Bus/StationGroup/InterCity][%d] interCityBusApiStationGroupOK  %+v", 200, o.Payload)
 }
-
 func (o *InterCityBusAPIStationGroupOK) GetPayload() []*models.PTXServiceDTOBusSpecificationV2BusStationGroup {
 	return o.Payload
 }
@@ -77,7 +81,7 @@ func NewInterCityBusAPIStationGroupStatus299() *InterCityBusAPIStationGroupStatu
 	return &InterCityBusAPIStationGroupStatus299{}
 }
 
-/*InterCityBusAPIStationGroupStatus299 handles this case with default header values.
+/* InterCityBusAPIStationGroupStatus299 describes a response with status code 299, with default header values.
 
 加入參數'?health=true'即可查詢此API服務的健康狀態
 */
@@ -88,7 +92,6 @@ type InterCityBusAPIStationGroupStatus299 struct {
 func (o *InterCityBusAPIStationGroupStatus299) Error() string {
 	return fmt.Sprintf("[GET /v2/Bus/StationGroup/InterCity][%d] interCityBusApiStationGroupStatus299  %+v", 299, o.Payload)
 }
-
 func (o *InterCityBusAPIStationGroupStatus299) GetPayload() *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth {
 	return o.Payload
 }
@@ -101,6 +104,27 @@ func (o *InterCityBusAPIStationGroupStatus299) readResponse(response runtime.Cli
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
+
+	return nil
+}
+
+// NewInterCityBusAPIStationGroupNotModified creates a InterCityBusAPIStationGroupNotModified with default headers values
+func NewInterCityBusAPIStationGroupNotModified() *InterCityBusAPIStationGroupNotModified {
+	return &InterCityBusAPIStationGroupNotModified{}
+}
+
+/* InterCityBusAPIStationGroupNotModified describes a response with status code 304, with default header values.
+
+服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content
+*/
+type InterCityBusAPIStationGroupNotModified struct {
+}
+
+func (o *InterCityBusAPIStationGroupNotModified) Error() string {
+	return fmt.Sprintf("[GET /v2/Bus/StationGroup/InterCity][%d] interCityBusApiStationGroupNotModified ", 304)
+}
+
+func (o *InterCityBusAPIStationGroupNotModified) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

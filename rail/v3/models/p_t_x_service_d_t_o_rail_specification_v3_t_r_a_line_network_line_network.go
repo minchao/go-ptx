@@ -6,6 +6,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -78,7 +79,6 @@ func (m *PTXServiceDTORailSpecificationV3TRALineNetworkLineNetwork) validateLine
 }
 
 func (m *PTXServiceDTORailSpecificationV3TRALineNetworkLineNetwork) validateLineSegments(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.LineSegments) { // not required
 		return nil
 	}
@@ -90,6 +90,47 @@ func (m *PTXServiceDTORailSpecificationV3TRALineNetworkLineNetwork) validateLine
 
 		if m.LineSegments[i] != nil {
 			if err := m.LineSegments[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("LineSegments" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+// ContextValidate validate this p t x service d t o rail specification v3 t r a line network line network based on the context it is used
+func (m *PTXServiceDTORailSpecificationV3TRALineNetworkLineNetwork) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateLineName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateLineSegments(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV3TRALineNetworkLineNetwork) contextValidateLineName(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV3TRALineNetworkLineNetwork) contextValidateLineSegments(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.LineSegments); i++ {
+
+		if m.LineSegments[i] != nil {
+			if err := m.LineSegments[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("LineSegments" + "." + strconv.Itoa(i))
 				}

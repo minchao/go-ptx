@@ -6,6 +6,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -197,6 +198,38 @@ func (m *PTXAPIRailModelTRAGeneralStationWrapperPTXServiceDTORailSpecificationV3
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+// ContextValidate validate this p t x API rail model t r a general station wrapper p t x service d t o rail specification v3 t r a general station timetable general station timetable based on the context it is used
+func (m *PTXAPIRailModelTRAGeneralStationWrapperPTXServiceDTORailSpecificationV3TRAGeneralStationTimetableGeneralStationTimetable) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateStationTimetables(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXAPIRailModelTRAGeneralStationWrapperPTXServiceDTORailSpecificationV3TRAGeneralStationTimetableGeneralStationTimetable) contextValidateStationTimetables(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.StationTimetables); i++ {
+
+		if m.StationTimetables[i] != nil {
+			if err := m.StationTimetables[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("StationTimetables" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
 	}
 
 	return nil

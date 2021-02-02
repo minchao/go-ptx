@@ -6,6 +6,8 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
+
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
@@ -182,7 +184,6 @@ func (m *PTXServiceDTOBusSpecificationV3N1Data) Validate(formats strfmt.Registry
 }
 
 func (m *PTXServiceDTOBusSpecificationV3N1Data) validateDestinationStopName(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.DestinationStopName) { // not required
 		return nil
 	}
@@ -218,7 +219,6 @@ func (m *PTXServiceDTOBusSpecificationV3N1Data) validateRouteID(formats strfmt.R
 }
 
 func (m *PTXServiceDTOBusSpecificationV3N1Data) validateRouteName(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.RouteName) { // not required
 		return nil
 	}
@@ -236,7 +236,6 @@ func (m *PTXServiceDTOBusSpecificationV3N1Data) validateStopID(formats strfmt.Re
 }
 
 func (m *PTXServiceDTOBusSpecificationV3N1Data) validateStopName(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.StopName) { // not required
 		return nil
 	}
@@ -245,7 +244,6 @@ func (m *PTXServiceDTOBusSpecificationV3N1Data) validateStopName(formats strfmt.
 }
 
 func (m *PTXServiceDTOBusSpecificationV3N1Data) validateSubRouteName(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.SubRouteName) { // not required
 		return nil
 	}
@@ -258,6 +256,52 @@ func (m *PTXServiceDTOBusSpecificationV3N1Data) validateTransTime(formats strfmt
 	if err := validate.Required("TransTime", "body", m.TransTime); err != nil {
 		return err
 	}
+
+	return nil
+}
+
+// ContextValidate validate this p t x service d t o bus specification v3 n1 data based on the context it is used
+func (m *PTXServiceDTOBusSpecificationV3N1Data) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateDestinationStopName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateRouteName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateStopName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateSubRouteName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV3N1Data) contextValidateDestinationStopName(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV3N1Data) contextValidateRouteName(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV3N1Data) contextValidateStopName(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV3N1Data) contextValidateSubRouteName(ctx context.Context, formats strfmt.Registry) error {
 
 	return nil
 }

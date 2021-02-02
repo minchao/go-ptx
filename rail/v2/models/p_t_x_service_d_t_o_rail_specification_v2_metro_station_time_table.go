@@ -6,6 +6,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -51,13 +52,13 @@ type PTXServiceDTORailSpecificationV2MetroStationTimeTable struct {
 	// 營運路線代碼
 	RouteID string `json:"RouteID,omitempty"`
 
-	// ServiceDays
+	// ServiceDay
 	//
 	// 服務日型態
 	// Required: true
-	ServiceDays struct {
-		PTXServiceDTORailSpecificationV2MetroSubClassServiceDays
-	} `json:"ServiceDays"`
+	ServiceDay struct {
+		PTXServiceDTORailSpecificationV2MetroSubClassServiceDay
+	} `json:"ServiceDay"`
 
 	// Array
 	//
@@ -119,7 +120,7 @@ func (m *PTXServiceDTORailSpecificationV2MetroStationTimeTable) Validate(formats
 		res = append(res, err)
 	}
 
-	if err := m.validateServiceDays(formats); err != nil {
+	if err := m.validateServiceDay(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -180,13 +181,12 @@ func (m *PTXServiceDTORailSpecificationV2MetroStationTimeTable) validateLineID(f
 	return nil
 }
 
-func (m *PTXServiceDTORailSpecificationV2MetroStationTimeTable) validateServiceDays(formats strfmt.Registry) error {
+func (m *PTXServiceDTORailSpecificationV2MetroStationTimeTable) validateServiceDay(formats strfmt.Registry) error {
 
 	return nil
 }
 
 func (m *PTXServiceDTORailSpecificationV2MetroStationTimeTable) validateSpecialDays(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.SpecialDays) { // not required
 		return nil
 	}
@@ -271,6 +271,87 @@ func (m *PTXServiceDTORailSpecificationV2MetroStationTimeTable) validateVersionI
 
 	if err := validate.Required("VersionID", "body", m.VersionID); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+// ContextValidate validate this p t x service d t o rail specification v2 metro station time table based on the context it is used
+func (m *PTXServiceDTORailSpecificationV2MetroStationTimeTable) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateDestinationStationName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateServiceDay(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateSpecialDays(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateStationName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateTimetables(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV2MetroStationTimeTable) contextValidateDestinationStationName(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV2MetroStationTimeTable) contextValidateServiceDay(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV2MetroStationTimeTable) contextValidateSpecialDays(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.SpecialDays); i++ {
+
+		if m.SpecialDays[i] != nil {
+			if err := m.SpecialDays[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("SpecialDays" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV2MetroStationTimeTable) contextValidateStationName(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV2MetroStationTimeTable) contextValidateTimetables(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Timetables); i++ {
+
+		if m.Timetables[i] != nil {
+			if err := m.Timetables[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("Timetables" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
 	}
 
 	return nil

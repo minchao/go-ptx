@@ -6,6 +6,8 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
+
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
@@ -267,6 +269,43 @@ func (m *PTXServiceDTORailSpecificationV2THSRRailStationTimetable) validateVersi
 	if err := validate.Required("VersionID", "body", m.VersionID); err != nil {
 		return err
 	}
+
+	return nil
+}
+
+// ContextValidate validate this p t x service d t o rail specification v2 t h s r rail station timetable based on the context it is used
+func (m *PTXServiceDTORailSpecificationV2THSRRailStationTimetable) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateEndingStationName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateStartingStationName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateStationName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV2THSRRailStationTimetable) contextValidateEndingStationName(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV2THSRRailStationTimetable) contextValidateStartingStationName(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV2THSRRailStationTimetable) contextValidateStationName(ctx context.Context, formats strfmt.Registry) error {
 
 	return nil
 }

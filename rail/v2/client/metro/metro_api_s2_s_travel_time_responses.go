@@ -29,7 +29,12 @@ func (o *MetroAPIS2STravelTimeReader) ReadResponse(response runtime.ClientRespon
 			return nil, err
 		}
 		return result, nil
-
+	case 304:
+		result := NewMetroAPIS2STravelTimeNotModified()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return nil, result
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -40,7 +45,7 @@ func NewMetroAPIS2STravelTimeOK() *MetroAPIS2STravelTimeOK {
 	return &MetroAPIS2STravelTimeOK{}
 }
 
-/*MetroAPIS2STravelTimeOK handles this case with default header values.
+/* MetroAPIS2STravelTimeOK describes a response with status code 200, with default header values.
 
 Success
 */
@@ -51,7 +56,6 @@ type MetroAPIS2STravelTimeOK struct {
 func (o *MetroAPIS2STravelTimeOK) Error() string {
 	return fmt.Sprintf("[GET /v2/Rail/Metro/S2STravelTime/{Operator}][%d] metroApiS2STravelTimeOK  %+v", 200, o.Payload)
 }
-
 func (o *MetroAPIS2STravelTimeOK) GetPayload() []*models.PTXServiceDTORailSpecificationV2MetroS2STravelTime {
 	return o.Payload
 }
@@ -62,6 +66,27 @@ func (o *MetroAPIS2STravelTimeOK) readResponse(response runtime.ClientResponse, 
 	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
+
+	return nil
+}
+
+// NewMetroAPIS2STravelTimeNotModified creates a MetroAPIS2STravelTimeNotModified with default headers values
+func NewMetroAPIS2STravelTimeNotModified() *MetroAPIS2STravelTimeNotModified {
+	return &MetroAPIS2STravelTimeNotModified{}
+}
+
+/* MetroAPIS2STravelTimeNotModified describes a response with status code 304, with default header values.
+
+服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content
+*/
+type MetroAPIS2STravelTimeNotModified struct {
+}
+
+func (o *MetroAPIS2STravelTimeNotModified) Error() string {
+	return fmt.Sprintf("[GET /v2/Rail/Metro/S2STravelTime/{Operator}][%d] metroApiS2STravelTimeNotModified ", 304)
+}
+
+func (o *MetroAPIS2STravelTimeNotModified) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

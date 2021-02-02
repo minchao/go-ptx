@@ -6,6 +6,8 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
+
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
@@ -21,6 +23,26 @@ type PTXServiceDTORailSpecificationV2THSRRailStation struct {
 
 	// String
 	//
+	// 車站位置所屬縣市
+	LocationCity string `json:"LocationCity,omitempty"`
+
+	// String
+	//
+	// 車站位置所屬縣市代碼
+	LocationCityCode string `json:"LocationCityCode,omitempty"`
+
+	// String
+	//
+	// 車站位置所屬鄉鎮
+	LocationTown string `json:"LocationTown,omitempty"`
+
+	// String
+	//
+	// 車站位置所屬鄉鎮代碼
+	LocationTownCode string `json:"LocationTownCode,omitempty"`
+
+	// String
+	//
 	// 營運業者代碼
 	// Required: true
 	OperatorID *string `json:"OperatorID"`
@@ -30,6 +52,12 @@ type PTXServiceDTORailSpecificationV2THSRRailStation struct {
 	// 車站地址
 	// Required: true
 	StationAddress *string `json:"StationAddress"`
+
+	// String
+	//
+	// 車站簡碼(訂票系統用)
+	// Required: true
+	StationCode *string `json:"StationCode"`
 
 	// String
 	//
@@ -53,10 +81,9 @@ type PTXServiceDTORailSpecificationV2THSRRailStation struct {
 	// PointType
 	//
 	// 車站位置
-	// Required: true
 	StationPosition struct {
-		PTXServiceDTOSharedSpecificationV2BasePointType
-	} `json:"StationPosition"`
+		PTXServiceDTORailSpecificationV2PointType
+	} `json:"StationPosition,omitempty"`
 
 	// String
 	//
@@ -86,6 +113,10 @@ func (m *PTXServiceDTORailSpecificationV2THSRRailStation) Validate(formats strfm
 	}
 
 	if err := m.validateStationAddress(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateStationCode(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -137,6 +168,15 @@ func (m *PTXServiceDTORailSpecificationV2THSRRailStation) validateStationAddress
 	return nil
 }
 
+func (m *PTXServiceDTORailSpecificationV2THSRRailStation) validateStationCode(formats strfmt.Registry) error {
+
+	if err := validate.Required("StationCode", "body", m.StationCode); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *PTXServiceDTORailSpecificationV2THSRRailStation) validateStationID(formats strfmt.Registry) error {
 
 	if err := validate.Required("StationID", "body", m.StationID); err != nil {
@@ -152,6 +192,9 @@ func (m *PTXServiceDTORailSpecificationV2THSRRailStation) validateStationName(fo
 }
 
 func (m *PTXServiceDTORailSpecificationV2THSRRailStation) validateStationPosition(formats strfmt.Registry) error {
+	if swag.IsZero(m.StationPosition) { // not required
+		return nil
+	}
 
 	return nil
 }
@@ -179,6 +222,34 @@ func (m *PTXServiceDTORailSpecificationV2THSRRailStation) validateVersionID(form
 	if err := validate.Required("VersionID", "body", m.VersionID); err != nil {
 		return err
 	}
+
+	return nil
+}
+
+// ContextValidate validate this p t x service d t o rail specification v2 t h s r rail station based on the context it is used
+func (m *PTXServiceDTORailSpecificationV2THSRRailStation) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateStationName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateStationPosition(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV2THSRRailStation) contextValidateStationName(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV2THSRRailStation) contextValidateStationPosition(ctx context.Context, formats strfmt.Registry) error {
 
 	return nil
 }

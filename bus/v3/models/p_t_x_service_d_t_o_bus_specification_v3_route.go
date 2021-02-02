@@ -6,6 +6,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -242,7 +243,6 @@ func (m *PTXServiceDTOBusSpecificationV3Route) validateEndStop(formats strfmt.Re
 }
 
 func (m *PTXServiceDTOBusSpecificationV3Route) validateFareBufferZoneDescription(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.FareBufferZoneDescription) { // not required
 		return nil
 	}
@@ -303,7 +303,6 @@ func (m *PTXServiceDTOBusSpecificationV3Route) validateRouteID(formats strfmt.Re
 }
 
 func (m *PTXServiceDTOBusSpecificationV3Route) validateRouteLongName(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.RouteLongName) { // not required
 		return nil
 	}
@@ -345,6 +344,119 @@ func (m *PTXServiceDTOBusSpecificationV3Route) validateStartStop(formats strfmt.
 }
 
 func (m *PTXServiceDTOBusSpecificationV3Route) validateTicketPriceDescription(formats strfmt.Registry) error {
+
+	return nil
+}
+
+// ContextValidate validate this p t x service d t o bus specification v3 route based on the context it is used
+func (m *PTXServiceDTOBusSpecificationV3Route) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateDepartureStopName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateDestinationStopName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateEndStop(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateFareBufferZoneDescription(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateOperators(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateRouteLongName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateRouteName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateServiceType(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateStartStop(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateTicketPriceDescription(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV3Route) contextValidateDepartureStopName(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV3Route) contextValidateDestinationStopName(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV3Route) contextValidateEndStop(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV3Route) contextValidateFareBufferZoneDescription(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV3Route) contextValidateOperators(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Operators); i++ {
+
+		if m.Operators[i] != nil {
+			if err := m.Operators[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("Operators" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV3Route) contextValidateRouteLongName(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV3Route) contextValidateRouteName(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV3Route) contextValidateServiceType(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV3Route) contextValidateStartStop(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV3Route) contextValidateTicketPriceDescription(ctx context.Context, formats strfmt.Registry) error {
 
 	return nil
 }

@@ -6,6 +6,8 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
+
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
@@ -318,6 +320,61 @@ func (m *PTXServiceDTOAirSpecificationV2METAR) validateWindSpeed(formats strfmt.
 	if err := validate.Required("WindSpeed", "body", m.WindSpeed); err != nil {
 		return err
 	}
+
+	return nil
+}
+
+// ContextValidate validate this p t x service d t o air specification v2 m e t a r based on the context it is used
+func (m *PTXServiceDTOAirSpecificationV2METAR) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateAirportName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateCityName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateCountryName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateStationPosition(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateWeatherDescription(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTOAirSpecificationV2METAR) contextValidateAirportName(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTOAirSpecificationV2METAR) contextValidateCityName(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTOAirSpecificationV2METAR) contextValidateCountryName(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTOAirSpecificationV2METAR) contextValidateStationPosition(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTOAirSpecificationV2METAR) contextValidateWeatherDescription(ctx context.Context, formats strfmt.Registry) error {
 
 	return nil
 }

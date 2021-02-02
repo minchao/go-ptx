@@ -6,18 +6,20 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
+
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
 	"github.com/go-openapi/validate"
 )
 
-// PTXServiceDTOBusSpecificationV2RouteOperator RouteOperator
+// PTXServiceDTOBusSpecificationV2EmbeddedRouteOperator RouteOperator
 //
 // 營運業者資訊
 //
-// swagger:model PTX.Service.DTO.Bus.Specification.V2.RouteOperator
-type PTXServiceDTOBusSpecificationV2RouteOperator struct {
+// swagger:model PTX.Service.DTO.Bus.Specification.V2.Embedded.RouteOperator
+type PTXServiceDTOBusSpecificationV2EmbeddedRouteOperator struct {
 
 	// String
 	//
@@ -46,8 +48,8 @@ type PTXServiceDTOBusSpecificationV2RouteOperator struct {
 	OperatorNo *string `json:"OperatorNo"`
 }
 
-// Validate validates this p t x service d t o bus specification v2 route operator
-func (m *PTXServiceDTOBusSpecificationV2RouteOperator) Validate(formats strfmt.Registry) error {
+// Validate validates this p t x service d t o bus specification v2 embedded route operator
+func (m *PTXServiceDTOBusSpecificationV2EmbeddedRouteOperator) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateOperatorCode(formats); err != nil {
@@ -72,7 +74,7 @@ func (m *PTXServiceDTOBusSpecificationV2RouteOperator) Validate(formats strfmt.R
 	return nil
 }
 
-func (m *PTXServiceDTOBusSpecificationV2RouteOperator) validateOperatorCode(formats strfmt.Registry) error {
+func (m *PTXServiceDTOBusSpecificationV2EmbeddedRouteOperator) validateOperatorCode(formats strfmt.Registry) error {
 
 	if err := validate.Required("OperatorCode", "body", m.OperatorCode); err != nil {
 		return err
@@ -81,7 +83,7 @@ func (m *PTXServiceDTOBusSpecificationV2RouteOperator) validateOperatorCode(form
 	return nil
 }
 
-func (m *PTXServiceDTOBusSpecificationV2RouteOperator) validateOperatorID(formats strfmt.Registry) error {
+func (m *PTXServiceDTOBusSpecificationV2EmbeddedRouteOperator) validateOperatorID(formats strfmt.Registry) error {
 
 	if err := validate.Required("OperatorID", "body", m.OperatorID); err != nil {
 		return err
@@ -90,12 +92,12 @@ func (m *PTXServiceDTOBusSpecificationV2RouteOperator) validateOperatorID(format
 	return nil
 }
 
-func (m *PTXServiceDTOBusSpecificationV2RouteOperator) validateOperatorName(formats strfmt.Registry) error {
+func (m *PTXServiceDTOBusSpecificationV2EmbeddedRouteOperator) validateOperatorName(formats strfmt.Registry) error {
 
 	return nil
 }
 
-func (m *PTXServiceDTOBusSpecificationV2RouteOperator) validateOperatorNo(formats strfmt.Registry) error {
+func (m *PTXServiceDTOBusSpecificationV2EmbeddedRouteOperator) validateOperatorNo(formats strfmt.Registry) error {
 
 	if err := validate.Required("OperatorNo", "body", m.OperatorNo); err != nil {
 		return err
@@ -104,8 +106,27 @@ func (m *PTXServiceDTOBusSpecificationV2RouteOperator) validateOperatorNo(format
 	return nil
 }
 
+// ContextValidate validate this p t x service d t o bus specification v2 embedded route operator based on the context it is used
+func (m *PTXServiceDTOBusSpecificationV2EmbeddedRouteOperator) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateOperatorName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV2EmbeddedRouteOperator) contextValidateOperatorName(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
 // MarshalBinary interface implementation
-func (m *PTXServiceDTOBusSpecificationV2RouteOperator) MarshalBinary() ([]byte, error) {
+func (m *PTXServiceDTOBusSpecificationV2EmbeddedRouteOperator) MarshalBinary() ([]byte, error) {
 	if m == nil {
 		return nil, nil
 	}
@@ -113,8 +134,8 @@ func (m *PTXServiceDTOBusSpecificationV2RouteOperator) MarshalBinary() ([]byte, 
 }
 
 // UnmarshalBinary interface implementation
-func (m *PTXServiceDTOBusSpecificationV2RouteOperator) UnmarshalBinary(b []byte) error {
-	var res PTXServiceDTOBusSpecificationV2RouteOperator
+func (m *PTXServiceDTOBusSpecificationV2EmbeddedRouteOperator) UnmarshalBinary(b []byte) error {
+	var res PTXServiceDTOBusSpecificationV2EmbeddedRouteOperator
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

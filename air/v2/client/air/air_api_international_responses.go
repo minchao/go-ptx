@@ -29,7 +29,12 @@ func (o *AirAPIInternationalReader) ReadResponse(response runtime.ClientResponse
 			return nil, err
 		}
 		return result, nil
-
+	case 304:
+		result := NewAirAPIInternationalNotModified()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return nil, result
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -40,7 +45,7 @@ func NewAirAPIInternationalOK() *AirAPIInternationalOK {
 	return &AirAPIInternationalOK{}
 }
 
-/*AirAPIInternationalOK handles this case with default header values.
+/* AirAPIInternationalOK describes a response with status code 200, with default header values.
 
 Success
 */
@@ -51,7 +56,6 @@ type AirAPIInternationalOK struct {
 func (o *AirAPIInternationalOK) Error() string {
 	return fmt.Sprintf("[GET /v2/Air/GeneralSchedule/International][%d] airApiInternationalOK  %+v", 200, o.Payload)
 }
-
 func (o *AirAPIInternationalOK) GetPayload() []*models.PTXServiceDTOAirSpecificationV2GeneralFlightSchedule {
 	return o.Payload
 }
@@ -62,6 +66,27 @@ func (o *AirAPIInternationalOK) readResponse(response runtime.ClientResponse, co
 	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
+
+	return nil
+}
+
+// NewAirAPIInternationalNotModified creates a AirAPIInternationalNotModified with default headers values
+func NewAirAPIInternationalNotModified() *AirAPIInternationalNotModified {
+	return &AirAPIInternationalNotModified{}
+}
+
+/* AirAPIInternationalNotModified describes a response with status code 304, with default header values.
+
+服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content
+*/
+type AirAPIInternationalNotModified struct {
+}
+
+func (o *AirAPIInternationalNotModified) Error() string {
+	return fmt.Sprintf("[GET /v2/Air/GeneralSchedule/International][%d] airApiInternationalNotModified ", 304)
+}
+
+func (o *AirAPIInternationalNotModified) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

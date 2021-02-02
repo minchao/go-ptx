@@ -35,7 +35,12 @@ func (o *CityBusAPIDailyTimeTableReader) ReadResponse(response runtime.ClientRes
 			return nil, err
 		}
 		return result, nil
-
+	case 304:
+		result := NewCityBusAPIDailyTimeTableNotModified()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return nil, result
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -46,7 +51,7 @@ func NewCityBusAPIDailyTimeTableOK() *CityBusAPIDailyTimeTableOK {
 	return &CityBusAPIDailyTimeTableOK{}
 }
 
-/*CityBusAPIDailyTimeTableOK handles this case with default header values.
+/* CityBusAPIDailyTimeTableOK describes a response with status code 200, with default header values.
 
 Success
 */
@@ -57,7 +62,6 @@ type CityBusAPIDailyTimeTableOK struct {
 func (o *CityBusAPIDailyTimeTableOK) Error() string {
 	return fmt.Sprintf("[GET /v3/Bus/DailyTimeTable/City/{City}][%d] cityBusApiDailyTimeTableOK  %+v", 200, o.Payload)
 }
-
 func (o *CityBusAPIDailyTimeTableOK) GetPayload() *models.PTXServiceDTOBusSpecificationV3WrapperBusWrapperPTXServiceDTOBusSpecificationV3DailyTimeTable {
 	return o.Payload
 }
@@ -79,7 +83,7 @@ func NewCityBusAPIDailyTimeTableStatus299() *CityBusAPIDailyTimeTableStatus299 {
 	return &CityBusAPIDailyTimeTableStatus299{}
 }
 
-/*CityBusAPIDailyTimeTableStatus299 handles this case with default header values.
+/* CityBusAPIDailyTimeTableStatus299 describes a response with status code 299, with default header values.
 
 加入參數'?health=true'即可查詢此API服務的健康狀態
 */
@@ -90,7 +94,6 @@ type CityBusAPIDailyTimeTableStatus299 struct {
 func (o *CityBusAPIDailyTimeTableStatus299) Error() string {
 	return fmt.Sprintf("[GET /v3/Bus/DailyTimeTable/City/{City}][%d] cityBusApiDailyTimeTableStatus299  %+v", 299, o.Payload)
 }
-
 func (o *CityBusAPIDailyTimeTableStatus299) GetPayload() *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth {
 	return o.Payload
 }
@@ -103,6 +106,27 @@ func (o *CityBusAPIDailyTimeTableStatus299) readResponse(response runtime.Client
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
+
+	return nil
+}
+
+// NewCityBusAPIDailyTimeTableNotModified creates a CityBusAPIDailyTimeTableNotModified with default headers values
+func NewCityBusAPIDailyTimeTableNotModified() *CityBusAPIDailyTimeTableNotModified {
+	return &CityBusAPIDailyTimeTableNotModified{}
+}
+
+/* CityBusAPIDailyTimeTableNotModified describes a response with status code 304, with default header values.
+
+服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content
+*/
+type CityBusAPIDailyTimeTableNotModified struct {
+}
+
+func (o *CityBusAPIDailyTimeTableNotModified) Error() string {
+	return fmt.Sprintf("[GET /v3/Bus/DailyTimeTable/City/{City}][%d] cityBusApiDailyTimeTableNotModified ", 304)
+}
+
+func (o *CityBusAPIDailyTimeTableNotModified) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

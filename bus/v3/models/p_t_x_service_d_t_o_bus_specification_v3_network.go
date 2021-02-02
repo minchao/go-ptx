@@ -6,6 +6,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -74,7 +75,6 @@ func (m *PTXServiceDTOBusSpecificationV3Network) Validate(formats strfmt.Registr
 }
 
 func (m *PTXServiceDTOBusSpecificationV3Network) validateLBSMapURLs(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.LBSMapURLs) { // not required
 		return nil
 	}
@@ -113,6 +113,56 @@ func (m *PTXServiceDTOBusSpecificationV3Network) validateNetworkMapURL(formats s
 }
 
 func (m *PTXServiceDTOBusSpecificationV3Network) validateNetworkName(formats strfmt.Registry) error {
+
+	return nil
+}
+
+// ContextValidate validate this p t x service d t o bus specification v3 network based on the context it is used
+func (m *PTXServiceDTOBusSpecificationV3Network) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateLBSMapURLs(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateNetworkMapURL(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateNetworkName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV3Network) contextValidateLBSMapURLs(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.LBSMapURLs); i++ {
+
+		if m.LBSMapURLs[i] != nil {
+			if err := m.LBSMapURLs[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("LBSMapURLs" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV3Network) contextValidateNetworkMapURL(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV3Network) contextValidateNetworkName(ctx context.Context, formats strfmt.Registry) error {
 
 	return nil
 }

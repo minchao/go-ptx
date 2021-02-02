@@ -35,7 +35,12 @@ func (o *CityBusAPIStopOfRoute1Reader) ReadResponse(response runtime.ClientRespo
 			return nil, err
 		}
 		return result, nil
-
+	case 304:
+		result := NewCityBusAPIStopOfRoute1NotModified()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return nil, result
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -46,7 +51,7 @@ func NewCityBusAPIStopOfRoute1OK() *CityBusAPIStopOfRoute1OK {
 	return &CityBusAPIStopOfRoute1OK{}
 }
 
-/*CityBusAPIStopOfRoute1OK handles this case with default header values.
+/* CityBusAPIStopOfRoute1OK describes a response with status code 200, with default header values.
 
 Success
 */
@@ -57,7 +62,6 @@ type CityBusAPIStopOfRoute1OK struct {
 func (o *CityBusAPIStopOfRoute1OK) Error() string {
 	return fmt.Sprintf("[GET /v2/Bus/StopOfRoute/City/{City}/{RouteName}][%d] cityBusApiStopOfRoute1OK  %+v", 200, o.Payload)
 }
-
 func (o *CityBusAPIStopOfRoute1OK) GetPayload() []*models.PTXServiceDTOBusSpecificationV2BusStopOfRoute {
 	return o.Payload
 }
@@ -77,7 +81,7 @@ func NewCityBusAPIStopOfRoute1Status299() *CityBusAPIStopOfRoute1Status299 {
 	return &CityBusAPIStopOfRoute1Status299{}
 }
 
-/*CityBusAPIStopOfRoute1Status299 handles this case with default header values.
+/* CityBusAPIStopOfRoute1Status299 describes a response with status code 299, with default header values.
 
 加入參數'?health=true'即可查詢此API服務的健康狀態
 */
@@ -88,7 +92,6 @@ type CityBusAPIStopOfRoute1Status299 struct {
 func (o *CityBusAPIStopOfRoute1Status299) Error() string {
 	return fmt.Sprintf("[GET /v2/Bus/StopOfRoute/City/{City}/{RouteName}][%d] cityBusApiStopOfRoute1Status299  %+v", 299, o.Payload)
 }
-
 func (o *CityBusAPIStopOfRoute1Status299) GetPayload() *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth {
 	return o.Payload
 }
@@ -101,6 +104,27 @@ func (o *CityBusAPIStopOfRoute1Status299) readResponse(response runtime.ClientRe
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
+
+	return nil
+}
+
+// NewCityBusAPIStopOfRoute1NotModified creates a CityBusAPIStopOfRoute1NotModified with default headers values
+func NewCityBusAPIStopOfRoute1NotModified() *CityBusAPIStopOfRoute1NotModified {
+	return &CityBusAPIStopOfRoute1NotModified{}
+}
+
+/* CityBusAPIStopOfRoute1NotModified describes a response with status code 304, with default header values.
+
+服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content
+*/
+type CityBusAPIStopOfRoute1NotModified struct {
+}
+
+func (o *CityBusAPIStopOfRoute1NotModified) Error() string {
+	return fmt.Sprintf("[GET /v2/Bus/StopOfRoute/City/{City}/{RouteName}][%d] cityBusApiStopOfRoute1NotModified ", 304)
+}
+
+func (o *CityBusAPIStopOfRoute1NotModified) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

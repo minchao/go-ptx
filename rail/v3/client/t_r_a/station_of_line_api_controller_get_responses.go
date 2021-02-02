@@ -29,7 +29,12 @@ func (o *StationOfLineAPIControllerGetReader) ReadResponse(response runtime.Clie
 			return nil, err
 		}
 		return result, nil
-
+	case 304:
+		result := NewStationOfLineAPIControllerGetNotModified()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return nil, result
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -40,7 +45,7 @@ func NewStationOfLineAPIControllerGetOK() *StationOfLineAPIControllerGetOK {
 	return &StationOfLineAPIControllerGetOK{}
 }
 
-/*StationOfLineAPIControllerGetOK handles this case with default header values.
+/* StationOfLineAPIControllerGetOK describes a response with status code 200, with default header values.
 
 Success
 */
@@ -51,7 +56,6 @@ type StationOfLineAPIControllerGetOK struct {
 func (o *StationOfLineAPIControllerGetOK) Error() string {
 	return fmt.Sprintf("[GET /v3/Rail/TRA/StationOfLine][%d] stationOfLineApiControllerGetOK  %+v", 200, o.Payload)
 }
-
 func (o *StationOfLineAPIControllerGetOK) GetPayload() *models.PTXAPIRailModelTRABaseWrapperPTXServiceDTORailSpecificationV3TRAStationOfLineStationOfLine {
 	return o.Payload
 }
@@ -64,6 +68,27 @@ func (o *StationOfLineAPIControllerGetOK) readResponse(response runtime.ClientRe
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
+
+	return nil
+}
+
+// NewStationOfLineAPIControllerGetNotModified creates a StationOfLineAPIControllerGetNotModified with default headers values
+func NewStationOfLineAPIControllerGetNotModified() *StationOfLineAPIControllerGetNotModified {
+	return &StationOfLineAPIControllerGetNotModified{}
+}
+
+/* StationOfLineAPIControllerGetNotModified describes a response with status code 304, with default header values.
+
+服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content
+*/
+type StationOfLineAPIControllerGetNotModified struct {
+}
+
+func (o *StationOfLineAPIControllerGetNotModified) Error() string {
+	return fmt.Sprintf("[GET /v3/Rail/TRA/StationOfLine][%d] stationOfLineApiControllerGetNotModified ", 304)
+}
+
+func (o *StationOfLineAPIControllerGetNotModified) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

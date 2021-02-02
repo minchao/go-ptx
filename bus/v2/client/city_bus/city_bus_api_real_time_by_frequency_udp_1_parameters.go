@@ -17,116 +17,140 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewCityBusAPIRealTimeByFrequencyUDP1Params creates a new CityBusAPIRealTimeByFrequencyUDP1Params object
-// with the default values initialized.
+// NewCityBusAPIRealTimeByFrequencyUDP1Params creates a new CityBusAPIRealTimeByFrequencyUDP1Params object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewCityBusAPIRealTimeByFrequencyUDP1Params() *CityBusAPIRealTimeByFrequencyUDP1Params {
-	var (
-		dollarTopDefault = int64(30)
-	)
 	return &CityBusAPIRealTimeByFrequencyUDP1Params{
-		DollarTop: &dollarTopDefault,
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewCityBusAPIRealTimeByFrequencyUDP1ParamsWithTimeout creates a new CityBusAPIRealTimeByFrequencyUDP1Params object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewCityBusAPIRealTimeByFrequencyUDP1ParamsWithTimeout(timeout time.Duration) *CityBusAPIRealTimeByFrequencyUDP1Params {
-	var (
-		dollarTopDefault = int64(30)
-	)
 	return &CityBusAPIRealTimeByFrequencyUDP1Params{
-		DollarTop: &dollarTopDefault,
-
 		timeout: timeout,
 	}
 }
 
 // NewCityBusAPIRealTimeByFrequencyUDP1ParamsWithContext creates a new CityBusAPIRealTimeByFrequencyUDP1Params object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewCityBusAPIRealTimeByFrequencyUDP1ParamsWithContext(ctx context.Context) *CityBusAPIRealTimeByFrequencyUDP1Params {
-	var (
-		dollarTopDefault = int64(30)
-	)
 	return &CityBusAPIRealTimeByFrequencyUDP1Params{
-		DollarTop: &dollarTopDefault,
-
 		Context: ctx,
 	}
 }
 
 // NewCityBusAPIRealTimeByFrequencyUDP1ParamsWithHTTPClient creates a new CityBusAPIRealTimeByFrequencyUDP1Params object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewCityBusAPIRealTimeByFrequencyUDP1ParamsWithHTTPClient(client *http.Client) *CityBusAPIRealTimeByFrequencyUDP1Params {
-	var (
-		dollarTopDefault = int64(30)
-	)
 	return &CityBusAPIRealTimeByFrequencyUDP1Params{
-		DollarTop:  &dollarTopDefault,
 		HTTPClient: client,
 	}
 }
 
-/*CityBusAPIRealTimeByFrequencyUDP1Params contains all the parameters to send to the API endpoint
-for the city bus Api real time by frequency UDP 1 operation typically these are written to a http.Request
+/* CityBusAPIRealTimeByFrequencyUDP1Params contains all the parameters to send to the API endpoint
+   for the city bus Api real time by frequency UDP 1 operation.
+
+   Typically these are written to a http.Request.
 */
 type CityBusAPIRealTimeByFrequencyUDP1Params struct {
 
-	/*DollarFilter
-	  過濾
+	/* DollarFilter.
 
+	   過濾
 	*/
 	DollarFilter *string
-	/*DollarFormat
-	  指定來源格式
 
+	/* DollarFormat.
+
+	   指定來源格式
 	*/
 	DollarFormat string
-	/*DollarOrderby
-	  排序
 
+	/* DollarOrderby.
+
+	   排序
 	*/
 	DollarOrderby *string
-	/*DollarSelect
-	  挑選
 
+	/* DollarSelect.
+
+	   挑選
 	*/
 	DollarSelect *string
-	/*DollarSkip
-	  跳過前幾筆
 
+	/* DollarSkip.
+
+	   跳過前幾筆
 	*/
 	DollarSkip *string
-	/*DollarSpatialFilter
-	  空間過濾
 
+	/* DollarSpatialFilter.
+
+	   空間過濾
 	*/
 	DollarSpatialFilter *string
-	/*DollarTop
-	  取前幾筆
 
+	/* DollarTop.
+
+	   取前幾筆
+
+	   Default: 30
 	*/
 	DollarTop *int64
-	/*City
-	  欲查詢縣市
 
+	/* City.
+
+	   欲查詢縣市
 	*/
 	City string
-	/*RouteName
-	  繁體中文路線名稱，如'307'
 
+	/* RouteName.
+
+	   繁體中文路線名稱，如'307'
 	*/
 	RouteName string
-	/*Health
-	  加入參數'?health=true'即可查詢此API服務的健康狀態
 
+	/* Health.
+
+	   加入參數'?health=true'即可查詢此API服務的健康狀態
 	*/
 	Health *string
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the city bus Api real time by frequency UDP 1 params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *CityBusAPIRealTimeByFrequencyUDP1Params) WithDefaults() *CityBusAPIRealTimeByFrequencyUDP1Params {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the city bus Api real time by frequency UDP 1 params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *CityBusAPIRealTimeByFrequencyUDP1Params) SetDefaults() {
+	var (
+		dollarTopDefault = int64(30)
+	)
+
+	val := CityBusAPIRealTimeByFrequencyUDP1Params{
+		DollarTop: &dollarTopDefault,
+	}
+
+	val.timeout = o.timeout
+	val.Context = o.Context
+	val.HTTPClient = o.HTTPClient
+	*o = val
 }
 
 // WithTimeout adds the timeout to the city bus Api real time by frequency UDP 1 params
@@ -284,22 +308,24 @@ func (o *CityBusAPIRealTimeByFrequencyUDP1Params) WriteToRequest(r runtime.Clien
 
 		// query param $filter
 		var qrDollarFilter string
+
 		if o.DollarFilter != nil {
 			qrDollarFilter = *o.DollarFilter
 		}
 		qDollarFilter := qrDollarFilter
 		if qDollarFilter != "" {
+
 			if err := r.SetQueryParam("$filter", qDollarFilter); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	// query param $format
 	qrDollarFormat := o.DollarFormat
 	qDollarFormat := qrDollarFormat
 	if qDollarFormat != "" {
+
 		if err := r.SetQueryParam("$format", qDollarFormat); err != nil {
 			return err
 		}
@@ -309,80 +335,85 @@ func (o *CityBusAPIRealTimeByFrequencyUDP1Params) WriteToRequest(r runtime.Clien
 
 		// query param $orderby
 		var qrDollarOrderby string
+
 		if o.DollarOrderby != nil {
 			qrDollarOrderby = *o.DollarOrderby
 		}
 		qDollarOrderby := qrDollarOrderby
 		if qDollarOrderby != "" {
+
 			if err := r.SetQueryParam("$orderby", qDollarOrderby); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.DollarSelect != nil {
 
 		// query param $select
 		var qrDollarSelect string
+
 		if o.DollarSelect != nil {
 			qrDollarSelect = *o.DollarSelect
 		}
 		qDollarSelect := qrDollarSelect
 		if qDollarSelect != "" {
+
 			if err := r.SetQueryParam("$select", qDollarSelect); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.DollarSkip != nil {
 
 		// query param $skip
 		var qrDollarSkip string
+
 		if o.DollarSkip != nil {
 			qrDollarSkip = *o.DollarSkip
 		}
 		qDollarSkip := qrDollarSkip
 		if qDollarSkip != "" {
+
 			if err := r.SetQueryParam("$skip", qDollarSkip); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.DollarSpatialFilter != nil {
 
 		// query param $spatialFilter
 		var qrDollarSpatialFilter string
+
 		if o.DollarSpatialFilter != nil {
 			qrDollarSpatialFilter = *o.DollarSpatialFilter
 		}
 		qDollarSpatialFilter := qrDollarSpatialFilter
 		if qDollarSpatialFilter != "" {
+
 			if err := r.SetQueryParam("$spatialFilter", qDollarSpatialFilter); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.DollarTop != nil {
 
 		// query param $top
 		var qrDollarTop int64
+
 		if o.DollarTop != nil {
 			qrDollarTop = *o.DollarTop
 		}
 		qDollarTop := swag.FormatInt64(qrDollarTop)
 		if qDollarTop != "" {
+
 			if err := r.SetQueryParam("$top", qDollarTop); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	// path param City
@@ -399,16 +430,17 @@ func (o *CityBusAPIRealTimeByFrequencyUDP1Params) WriteToRequest(r runtime.Clien
 
 		// query param health
 		var qrHealth string
+
 		if o.Health != nil {
 			qrHealth = *o.Health
 		}
 		qHealth := qrHealth
 		if qHealth != "" {
+
 			if err := r.SetQueryParam("health", qHealth); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if len(res) > 0 {

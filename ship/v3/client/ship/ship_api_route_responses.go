@@ -29,7 +29,12 @@ func (o *ShipAPIRouteReader) ReadResponse(response runtime.ClientResponse, consu
 			return nil, err
 		}
 		return result, nil
-
+	case 304:
+		result := NewShipAPIRouteNotModified()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return nil, result
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -40,7 +45,7 @@ func NewShipAPIRouteOK() *ShipAPIRouteOK {
 	return &ShipAPIRouteOK{}
 }
 
-/*ShipAPIRouteOK handles this case with default header values.
+/* ShipAPIRouteOK describes a response with status code 200, with default header values.
 
 Success
 */
@@ -51,7 +56,6 @@ type ShipAPIRouteOK struct {
 func (o *ShipAPIRouteOK) Error() string {
 	return fmt.Sprintf("[GET /v3/Ship/Route][%d] shipApiRouteOK  %+v", 200, o.Payload)
 }
-
 func (o *ShipAPIRouteOK) GetPayload() *models.PTXAPIShipModelShipWrapperPTXServiceDTOShipSpecificationV3Route {
 	return o.Payload
 }
@@ -64,6 +68,27 @@ func (o *ShipAPIRouteOK) readResponse(response runtime.ClientResponse, consumer 
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
+
+	return nil
+}
+
+// NewShipAPIRouteNotModified creates a ShipAPIRouteNotModified with default headers values
+func NewShipAPIRouteNotModified() *ShipAPIRouteNotModified {
+	return &ShipAPIRouteNotModified{}
+}
+
+/* ShipAPIRouteNotModified describes a response with status code 304, with default header values.
+
+服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content
+*/
+type ShipAPIRouteNotModified struct {
+}
+
+func (o *ShipAPIRouteNotModified) Error() string {
+	return fmt.Sprintf("[GET /v3/Ship/Route][%d] shipApiRouteNotModified ", 304)
+}
+
+func (o *ShipAPIRouteNotModified) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

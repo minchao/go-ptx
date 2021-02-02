@@ -6,9 +6,12 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
+
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
+	"github.com/go-openapi/validate"
 )
 
 // PTXServiceDTOShipSpecificationV3Port Port
@@ -19,22 +22,26 @@ type PTXServiceDTOShipSpecificationV3Port struct {
 	// String
 	//
 	// 港口所屬城市
-	City string `json:"City,omitempty"`
+	// Required: true
+	City *string `json:"City"`
 
 	// String
 	//
 	// 城市簡碼
-	CityCode string `json:"CityCode,omitempty"`
+	// Required: true
+	CityCode *string `json:"CityCode"`
 
 	// String
 	//
 	// 港口所屬國家
-	Country string `json:"Country,omitempty"`
+	// Required: true
+	Country *string `json:"Country"`
 
 	// String
 	//
 	// 國家簡碼
-	CountryCode string `json:"CountryCode,omitempty"`
+	// Required: true
+	CountryCode *string `json:"CountryCode"`
 
 	// String
 	//
@@ -49,14 +56,16 @@ type PTXServiceDTOShipSpecificationV3Port struct {
 	// String
 	//
 	// 港口代碼
-	PortID string `json:"PortID,omitempty"`
+	// Required: true
+	PortID *string `json:"PortID"`
 
 	// NameType
 	//
 	// 港口名稱
+	// Required: true
 	PortName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"PortName,omitempty"`
+	} `json:"PortName"`
 
 	// String
 	//
@@ -66,9 +75,10 @@ type PTXServiceDTOShipSpecificationV3Port struct {
 	// PointType
 	//
 	// 港口位置座標
+	// Required: true
 	PortPosition struct {
 		PTXServiceDTOShipSpecificationV3PointType
-	} `json:"PortPosition,omitempty"`
+	} `json:"PortPosition"`
 
 	// String
 	//
@@ -79,6 +89,26 @@ type PTXServiceDTOShipSpecificationV3Port struct {
 // Validate validates this p t x service d t o ship specification v3 port
 func (m *PTXServiceDTOShipSpecificationV3Port) Validate(formats strfmt.Registry) error {
 	var res []error
+
+	if err := m.validateCity(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateCityCode(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateCountry(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateCountryCode(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validatePortID(formats); err != nil {
+		res = append(res, err)
+	}
 
 	if err := m.validatePortName(formats); err != nil {
 		res = append(res, err)
@@ -94,20 +124,85 @@ func (m *PTXServiceDTOShipSpecificationV3Port) Validate(formats strfmt.Registry)
 	return nil
 }
 
-func (m *PTXServiceDTOShipSpecificationV3Port) validatePortName(formats strfmt.Registry) error {
+func (m *PTXServiceDTOShipSpecificationV3Port) validateCity(formats strfmt.Registry) error {
 
-	if swag.IsZero(m.PortName) { // not required
-		return nil
+	if err := validate.Required("City", "body", m.City); err != nil {
+		return err
 	}
+
+	return nil
+}
+
+func (m *PTXServiceDTOShipSpecificationV3Port) validateCityCode(formats strfmt.Registry) error {
+
+	if err := validate.Required("CityCode", "body", m.CityCode); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTOShipSpecificationV3Port) validateCountry(formats strfmt.Registry) error {
+
+	if err := validate.Required("Country", "body", m.Country); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTOShipSpecificationV3Port) validateCountryCode(formats strfmt.Registry) error {
+
+	if err := validate.Required("CountryCode", "body", m.CountryCode); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTOShipSpecificationV3Port) validatePortID(formats strfmt.Registry) error {
+
+	if err := validate.Required("PortID", "body", m.PortID); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTOShipSpecificationV3Port) validatePortName(formats strfmt.Registry) error {
 
 	return nil
 }
 
 func (m *PTXServiceDTOShipSpecificationV3Port) validatePortPosition(formats strfmt.Registry) error {
 
-	if swag.IsZero(m.PortPosition) { // not required
-		return nil
+	return nil
+}
+
+// ContextValidate validate this p t x service d t o ship specification v3 port based on the context it is used
+func (m *PTXServiceDTOShipSpecificationV3Port) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidatePortName(ctx, formats); err != nil {
+		res = append(res, err)
 	}
+
+	if err := m.contextValidatePortPosition(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTOShipSpecificationV3Port) contextValidatePortName(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTOShipSpecificationV3Port) contextValidatePortPosition(ctx context.Context, formats strfmt.Registry) error {
 
 	return nil
 }

@@ -6,6 +6,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -94,7 +95,7 @@ type PTXServiceDTOTourismSpecificationV2BusRoute struct {
 	//
 	// 營運業者
 	// Required: true
-	Operators []*PTXServiceDTOBusSpecificationV2RouteOperator `json:"Operators"`
+	Operators []*PTXServiceDTOTourismSpecificationV2RouteOperator `json:"Operators"`
 
 	// String
 	//
@@ -127,7 +128,7 @@ type PTXServiceDTOTourismSpecificationV2BusRoute struct {
 	// Array
 	//
 	// 附屬路線資料(如果原始資料並無提供附屬路線ID，而本平台基於跨來源資料之一致性，會以SubRouteID=RouteID產製一份相對應的附屬路線資料(若有去返程，則會有兩筆))
-	SubRoutes []*PTXServiceDTOBusSpecificationV2BusSubRoute `json:"SubRoutes"`
+	SubRoutes []*PTXServiceDTOTourismSpecificationV2BusSubRoute `json:"SubRoutes"`
 
 	// NameType
 	//
@@ -297,7 +298,6 @@ func (m *PTXServiceDTOTourismSpecificationV2BusRoute) validateRouteUID(formats s
 }
 
 func (m *PTXServiceDTOTourismSpecificationV2BusRoute) validateSubRoutes(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.SubRoutes) { // not required
 		return nil
 	}
@@ -331,6 +331,69 @@ func (m *PTXServiceDTOTourismSpecificationV2BusRoute) validateUpdateTime(formats
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
 		return err
 	}
+
+	return nil
+}
+
+// ContextValidate validate this p t x service d t o tourism specification v2 bus route based on the context it is used
+func (m *PTXServiceDTOTourismSpecificationV2BusRoute) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateOperators(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateSubRoutes(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateTaiwanTripName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTOTourismSpecificationV2BusRoute) contextValidateOperators(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Operators); i++ {
+
+		if m.Operators[i] != nil {
+			if err := m.Operators[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("Operators" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTOTourismSpecificationV2BusRoute) contextValidateSubRoutes(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.SubRoutes); i++ {
+
+		if m.SubRoutes[i] != nil {
+			if err := m.SubRoutes[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("SubRoutes" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTOTourismSpecificationV2BusRoute) contextValidateTaiwanTripName(ctx context.Context, formats strfmt.Registry) error {
 
 	return nil
 }

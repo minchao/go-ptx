@@ -46,19 +46,19 @@
               "PenghuCounty"
             ],
             "x-enum": {
-              "YilanCounty": "宜蘭縣",
-              "NantouCounty": "南投縣",
-              "PenghuCounty": "澎湖縣",
-              "ChiayiCounty": "嘉義縣",
               "HsinchuCounty": "新竹縣",
-              "ChanghuaCounty": "彰化縣",
-              "MiaoliCounty": "苗栗縣",
               "HualienCounty": "花蓮縣",
               "Chiayi": "嘉義市",
+              "NantouCounty": "南投縣",
+              "YilanCounty": "宜蘭縣",
+              "PingtungCounty": "屏東縣",
+              "TaitungCounty": "臺東縣",
               "YunlinCounty": "雲林縣",
               "Hsinchu": "新竹市",
-              "TaitungCounty": "臺東縣",
-              "PingtungCounty": "屏東縣"
+              "ChiayiCounty": "嘉義縣",
+              "ChanghuaCounty": "彰化縣",
+              "PenghuCounty": "澎湖縣",
+              "MiaoliCounty": "苗栗縣"
             }
           },
           {
@@ -130,6 +130,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusA1Data"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
@@ -175,19 +178,19 @@
               "PenghuCounty"
             ],
             "x-enum": {
-              "YilanCounty": "宜蘭縣",
-              "NantouCounty": "南投縣",
-              "PenghuCounty": "澎湖縣",
-              "ChiayiCounty": "嘉義縣",
               "HsinchuCounty": "新竹縣",
-              "ChanghuaCounty": "彰化縣",
-              "MiaoliCounty": "苗栗縣",
               "HualienCounty": "花蓮縣",
               "Chiayi": "嘉義市",
+              "NantouCounty": "南投縣",
+              "YilanCounty": "宜蘭縣",
+              "PingtungCounty": "屏東縣",
+              "TaitungCounty": "臺東縣",
               "YunlinCounty": "雲林縣",
               "Hsinchu": "新竹市",
-              "TaitungCounty": "臺東縣",
-              "PingtungCounty": "屏東縣"
+              "ChiayiCounty": "嘉義縣",
+              "ChanghuaCounty": "彰化縣",
+              "PenghuCounty": "澎湖縣",
+              "MiaoliCounty": "苗栗縣"
             }
           },
           {
@@ -267,6 +270,9 @@
               }
             }
           },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
@@ -311,19 +317,19 @@
               "PenghuCounty"
             ],
             "x-enum": {
-              "ChanghuaCounty": "彰化縣",
-              "PingtungCounty": "屏東縣",
-              "Chiayi": "嘉義市",
-              "YilanCounty": "宜蘭縣",
-              "TaitungCounty": "臺東縣",
-              "ChiayiCounty": "嘉義縣",
-              "PenghuCounty": "澎湖縣",
-              "HualienCounty": "花蓮縣",
-              "YunlinCounty": "雲林縣",
-              "Hsinchu": "新竹市",
               "MiaoliCounty": "苗栗縣",
+              "PingtungCounty": "屏東縣",
+              "ChiayiCounty": "嘉義縣",
+              "HsinchuCounty": "新竹縣",
+              "HualienCounty": "花蓮縣",
+              "YilanCounty": "宜蘭縣",
+              "PenghuCounty": "澎湖縣",
+              "YunlinCounty": "雲林縣",
+              "TaitungCounty": "臺東縣",
               "NantouCounty": "南投縣",
-              "HsinchuCounty": "新竹縣"
+              "Chiayi": "嘉義市",
+              "ChanghuaCounty": "彰化縣",
+              "Hsinchu": "新竹市"
             }
           },
           {
@@ -389,6 +395,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusA2Data"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
@@ -434,19 +443,19 @@
               "PenghuCounty"
             ],
             "x-enum": {
-              "ChanghuaCounty": "彰化縣",
-              "PingtungCounty": "屏東縣",
-              "Chiayi": "嘉義市",
-              "YilanCounty": "宜蘭縣",
-              "TaitungCounty": "臺東縣",
-              "ChiayiCounty": "嘉義縣",
-              "PenghuCounty": "澎湖縣",
-              "HualienCounty": "花蓮縣",
-              "YunlinCounty": "雲林縣",
-              "Hsinchu": "新竹市",
               "MiaoliCounty": "苗栗縣",
+              "PingtungCounty": "屏東縣",
+              "ChiayiCounty": "嘉義縣",
+              "HsinchuCounty": "新竹縣",
+              "HualienCounty": "花蓮縣",
+              "YilanCounty": "宜蘭縣",
+              "PenghuCounty": "澎湖縣",
+              "YunlinCounty": "雲林縣",
+              "TaitungCounty": "臺東縣",
               "NantouCounty": "南投縣",
-              "HsinchuCounty": "新竹縣"
+              "Chiayi": "嘉義市",
+              "ChanghuaCounty": "彰化縣",
+              "Hsinchu": "新竹市"
             }
           },
           {
@@ -520,6 +529,9 @@
               }
             }
           },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
@@ -564,19 +576,19 @@
               "PenghuCounty"
             ],
             "x-enum": {
-              "HsinchuCounty": "新竹縣",
               "ChanghuaCounty": "彰化縣",
+              "Hsinchu": "新竹市",
+              "NantouCounty": "南投縣",
               "TaitungCounty": "臺東縣",
+              "PenghuCounty": "澎湖縣",
               "ChiayiCounty": "嘉義縣",
               "MiaoliCounty": "苗栗縣",
-              "NantouCounty": "南投縣",
-              "YunlinCounty": "雲林縣",
+              "HualienCounty": "花蓮縣",
+              "HsinchuCounty": "新竹縣",
+              "YilanCounty": "宜蘭縣",
               "Chiayi": "嘉義市",
               "PingtungCounty": "屏東縣",
-              "HualienCounty": "花蓮縣",
-              "PenghuCounty": "澎湖縣",
-              "Hsinchu": "新竹市",
-              "YilanCounty": "宜蘭縣"
+              "YunlinCounty": "雲林縣"
             }
           },
           {
@@ -643,6 +655,9 @@
               }
             }
           },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
@@ -687,19 +702,19 @@
               "PenghuCounty"
             ],
             "x-enum": {
-              "HsinchuCounty": "新竹縣",
               "ChanghuaCounty": "彰化縣",
+              "Hsinchu": "新竹市",
+              "NantouCounty": "南投縣",
               "TaitungCounty": "臺東縣",
+              "PenghuCounty": "澎湖縣",
               "ChiayiCounty": "嘉義縣",
               "MiaoliCounty": "苗栗縣",
-              "NantouCounty": "南投縣",
-              "YunlinCounty": "雲林縣",
+              "HualienCounty": "花蓮縣",
+              "HsinchuCounty": "新竹縣",
+              "YilanCounty": "宜蘭縣",
               "Chiayi": "嘉義市",
               "PingtungCounty": "屏東縣",
-              "HualienCounty": "花蓮縣",
-              "PenghuCounty": "澎湖縣",
-              "Hsinchu": "新竹市",
-              "YilanCounty": "宜蘭縣"
+              "YunlinCounty": "雲林縣"
             }
           },
           {
@@ -772,6 +787,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusN1EstimateTime"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
@@ -826,28 +844,28 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "Taoyuan": "桃園市",
-              "YilanCounty": "宜蘭縣",
-              "NantouCounty": "南投縣",
-              "PenghuCounty": "澎湖縣",
-              "ChanghuaCounty": "彰化縣",
               "Chiayi": "嘉義市",
-              "Kaohsiung": "高雄市",
-              "HualienCounty": "花蓮縣",
-              "KinmenCounty": "金門縣",
-              "Taichung": "臺中市",
-              "TaitungCounty": "臺東縣",
-              "HsinchuCounty": "新竹縣",
-              "PingtungCounty": "屏東縣",
-              "Hsinchu": "新竹市",
-              "ChiayiCounty": "嘉義縣",
-              "MiaoliCounty": "苗栗縣",
-              "NewTaipei": "新北市",
               "LienchiangCounty": "連江縣",
-              "Tainan": "臺南市",
-              "YunlinCounty": "雲林縣",
+              "Kaohsiung": "高雄市",
               "Keelung": "基隆市",
-              "Taipei": "臺北市"
+              "TaitungCounty": "臺東縣",
+              "MiaoliCounty": "苗栗縣",
+              "Hsinchu": "新竹市",
+              "ChanghuaCounty": "彰化縣",
+              "YilanCounty": "宜蘭縣",
+              "YunlinCounty": "雲林縣",
+              "Taichung": "臺中市",
+              "NewTaipei": "新北市",
+              "KinmenCounty": "金門縣",
+              "Taipei": "臺北市",
+              "ChiayiCounty": "嘉義縣",
+              "HualienCounty": "花蓮縣",
+              "Taoyuan": "桃園市",
+              "PenghuCounty": "澎湖縣",
+              "Tainan": "臺南市",
+              "PingtungCounty": "屏東縣",
+              "HsinchuCounty": "新竹縣",
+              "NantouCounty": "南投縣"
             }
           },
           {
@@ -919,6 +937,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusA1Data"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
@@ -973,28 +994,28 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "Taoyuan": "桃園市",
-              "YilanCounty": "宜蘭縣",
-              "NantouCounty": "南投縣",
-              "PenghuCounty": "澎湖縣",
-              "ChanghuaCounty": "彰化縣",
               "Chiayi": "嘉義市",
-              "Kaohsiung": "高雄市",
-              "HualienCounty": "花蓮縣",
-              "KinmenCounty": "金門縣",
-              "Taichung": "臺中市",
-              "TaitungCounty": "臺東縣",
-              "HsinchuCounty": "新竹縣",
-              "PingtungCounty": "屏東縣",
-              "Hsinchu": "新竹市",
-              "ChiayiCounty": "嘉義縣",
-              "MiaoliCounty": "苗栗縣",
-              "NewTaipei": "新北市",
               "LienchiangCounty": "連江縣",
-              "Tainan": "臺南市",
-              "YunlinCounty": "雲林縣",
+              "Kaohsiung": "高雄市",
               "Keelung": "基隆市",
-              "Taipei": "臺北市"
+              "TaitungCounty": "臺東縣",
+              "MiaoliCounty": "苗栗縣",
+              "Hsinchu": "新竹市",
+              "ChanghuaCounty": "彰化縣",
+              "YilanCounty": "宜蘭縣",
+              "YunlinCounty": "雲林縣",
+              "Taichung": "臺中市",
+              "NewTaipei": "新北市",
+              "KinmenCounty": "金門縣",
+              "Taipei": "臺北市",
+              "ChiayiCounty": "嘉義縣",
+              "HualienCounty": "花蓮縣",
+              "Taoyuan": "桃園市",
+              "PenghuCounty": "澎湖縣",
+              "Tainan": "臺南市",
+              "PingtungCounty": "屏東縣",
+              "HsinchuCounty": "新竹縣",
+              "NantouCounty": "南投縣"
             }
           },
           {
@@ -1074,6 +1095,9 @@
               }
             }
           },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
@@ -1127,28 +1151,28 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "Keelung": "基隆市",
-              "PingtungCounty": "屏東縣",
-              "YilanCounty": "宜蘭縣",
-              "Taipei": "臺北市",
-              "ChanghuaCounty": "彰化縣",
-              "NantouCounty": "南投縣",
-              "PenghuCounty": "澎湖縣",
-              "NewTaipei": "新北市",
-              "HualienCounty": "花蓮縣",
-              "HsinchuCounty": "新竹縣",
-              "Kaohsiung": "高雄市",
               "LienchiangCounty": "連江縣",
-              "Chiayi": "嘉義市",
-              "MiaoliCounty": "苗栗縣",
-              "Taichung": "臺中市",
-              "KinmenCounty": "金門縣",
+              "PenghuCounty": "澎湖縣",
               "YunlinCounty": "雲林縣",
-              "ChiayiCounty": "嘉義縣",
-              "TaitungCounty": "臺東縣",
-              "Taoyuan": "桃園市",
+              "HsinchuCounty": "新竹縣",
+              "ChanghuaCounty": "彰化縣",
               "Hsinchu": "新竹市",
-              "Tainan": "臺南市"
+              "YilanCounty": "宜蘭縣",
+              "MiaoliCounty": "苗栗縣",
+              "Taoyuan": "桃園市",
+              "TaitungCounty": "臺東縣",
+              "PingtungCounty": "屏東縣",
+              "Taipei": "臺北市",
+              "HualienCounty": "花蓮縣",
+              "NantouCounty": "南投縣",
+              "Taichung": "臺中市",
+              "NewTaipei": "新北市",
+              "ChiayiCounty": "嘉義縣",
+              "Chiayi": "嘉義市",
+              "Kaohsiung": "高雄市",
+              "Keelung": "基隆市",
+              "Tainan": "臺南市",
+              "KinmenCounty": "金門縣"
             }
           },
           {
@@ -1214,6 +1238,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusA2Data"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
@@ -1268,28 +1295,28 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "Keelung": "基隆市",
-              "PingtungCounty": "屏東縣",
-              "YilanCounty": "宜蘭縣",
-              "Taipei": "臺北市",
-              "ChanghuaCounty": "彰化縣",
-              "NantouCounty": "南投縣",
-              "PenghuCounty": "澎湖縣",
-              "NewTaipei": "新北市",
-              "HualienCounty": "花蓮縣",
-              "HsinchuCounty": "新竹縣",
-              "Kaohsiung": "高雄市",
               "LienchiangCounty": "連江縣",
-              "Chiayi": "嘉義市",
-              "MiaoliCounty": "苗栗縣",
-              "Taichung": "臺中市",
-              "KinmenCounty": "金門縣",
+              "PenghuCounty": "澎湖縣",
               "YunlinCounty": "雲林縣",
-              "ChiayiCounty": "嘉義縣",
-              "TaitungCounty": "臺東縣",
-              "Taoyuan": "桃園市",
+              "HsinchuCounty": "新竹縣",
+              "ChanghuaCounty": "彰化縣",
               "Hsinchu": "新竹市",
-              "Tainan": "臺南市"
+              "YilanCounty": "宜蘭縣",
+              "MiaoliCounty": "苗栗縣",
+              "Taoyuan": "桃園市",
+              "TaitungCounty": "臺東縣",
+              "PingtungCounty": "屏東縣",
+              "Taipei": "臺北市",
+              "HualienCounty": "花蓮縣",
+              "NantouCounty": "南投縣",
+              "Taichung": "臺中市",
+              "NewTaipei": "新北市",
+              "ChiayiCounty": "嘉義縣",
+              "Chiayi": "嘉義市",
+              "Kaohsiung": "高雄市",
+              "Keelung": "基隆市",
+              "Tainan": "臺南市",
+              "KinmenCounty": "金門縣"
             }
           },
           {
@@ -1363,6 +1390,9 @@
               }
             }
           },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
@@ -1416,28 +1446,28 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "PenghuCounty": "澎湖縣",
-              "Taipei": "臺北市",
-              "YunlinCounty": "雲林縣",
-              "ChiayiCounty": "嘉義縣",
-              "Kaohsiung": "高雄市",
-              "NantouCounty": "南投縣",
-              "KinmenCounty": "金門縣",
-              "PingtungCounty": "屏東縣",
-              "Taichung": "臺中市",
-              "TaitungCounty": "臺東縣",
-              "MiaoliCounty": "苗栗縣",
-              "Chiayi": "嘉義市",
-              "Tainan": "臺南市",
-              "ChanghuaCounty": "彰化縣",
-              "Taoyuan": "桃園市",
-              "NewTaipei": "新北市",
-              "YilanCounty": "宜蘭縣",
-              "LienchiangCounty": "連江縣",
-              "Hsinchu": "新竹市",
               "HsinchuCounty": "新竹縣",
+              "MiaoliCounty": "苗栗縣",
+              "LienchiangCounty": "連江縣",
+              "Taoyuan": "桃園市",
+              "ChanghuaCounty": "彰化縣",
+              "Kaohsiung": "高雄市",
+              "Taipei": "臺北市",
+              "Hsinchu": "新竹市",
+              "YilanCounty": "宜蘭縣",
+              "TaitungCounty": "臺東縣",
+              "YunlinCounty": "雲林縣",
+              "Chiayi": "嘉義市",
+              "PenghuCounty": "澎湖縣",
+              "KinmenCounty": "金門縣",
+              "Taichung": "臺中市",
+              "Keelung": "基隆市",
+              "Tainan": "臺南市",
               "HualienCounty": "花蓮縣",
-              "Keelung": "基隆市"
+              "NewTaipei": "新北市",
+              "ChiayiCounty": "嘉義縣",
+              "NantouCounty": "南投縣",
+              "PingtungCounty": "屏東縣"
             }
           },
           {
@@ -1504,6 +1534,9 @@
               }
             }
           },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
@@ -1557,28 +1590,28 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "PenghuCounty": "澎湖縣",
-              "Taipei": "臺北市",
-              "YunlinCounty": "雲林縣",
-              "ChiayiCounty": "嘉義縣",
-              "Kaohsiung": "高雄市",
-              "NantouCounty": "南投縣",
-              "KinmenCounty": "金門縣",
-              "PingtungCounty": "屏東縣",
-              "Taichung": "臺中市",
-              "TaitungCounty": "臺東縣",
-              "MiaoliCounty": "苗栗縣",
-              "Chiayi": "嘉義市",
-              "Tainan": "臺南市",
-              "ChanghuaCounty": "彰化縣",
-              "Taoyuan": "桃園市",
-              "NewTaipei": "新北市",
-              "YilanCounty": "宜蘭縣",
-              "LienchiangCounty": "連江縣",
-              "Hsinchu": "新竹市",
               "HsinchuCounty": "新竹縣",
+              "MiaoliCounty": "苗栗縣",
+              "LienchiangCounty": "連江縣",
+              "Taoyuan": "桃園市",
+              "ChanghuaCounty": "彰化縣",
+              "Kaohsiung": "高雄市",
+              "Taipei": "臺北市",
+              "Hsinchu": "新竹市",
+              "YilanCounty": "宜蘭縣",
+              "TaitungCounty": "臺東縣",
+              "YunlinCounty": "雲林縣",
+              "Chiayi": "嘉義市",
+              "PenghuCounty": "澎湖縣",
+              "KinmenCounty": "金門縣",
+              "Taichung": "臺中市",
+              "Keelung": "基隆市",
+              "Tainan": "臺南市",
               "HualienCounty": "花蓮縣",
-              "Keelung": "基隆市"
+              "NewTaipei": "新北市",
+              "ChiayiCounty": "嘉義縣",
+              "NantouCounty": "南投縣",
+              "PingtungCounty": "屏東縣"
             }
           },
           {
@@ -1651,6 +1684,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusN1EstimateTime"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
@@ -1707,28 +1743,28 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "YilanCounty": "宜蘭縣",
-              "ChanghuaCounty": "彰化縣",
-              "KinmenCounty": "金門縣",
-              "HualienCounty": "花蓮縣",
-              "PingtungCounty": "屏東縣",
-              "Taichung": "臺中市",
-              "NewTaipei": "新北市",
               "Tainan": "臺南市",
-              "Kaohsiung": "高雄市",
-              "ChiayiCounty": "嘉義縣",
-              "Keelung": "基隆市",
-              "TaitungCounty": "臺東縣",
-              "YunlinCounty": "雲林縣",
               "Taoyuan": "桃園市",
-              "Chiayi": "嘉義市",
-              "NantouCounty": "南投縣",
+              "MiaoliCounty": "苗栗縣",
               "HsinchuCounty": "新竹縣",
+              "HualienCounty": "花蓮縣",
+              "NantouCounty": "南投縣",
+              "Chiayi": "嘉義市",
+              "NewTaipei": "新北市",
+              "ChanghuaCounty": "彰化縣",
+              "Keelung": "基隆市",
+              "YunlinCounty": "雲林縣",
+              "YilanCounty": "宜蘭縣",
               "PenghuCounty": "澎湖縣",
-              "LienchiangCounty": "連江縣",
               "Taipei": "臺北市",
+              "Taichung": "臺中市",
+              "ChiayiCounty": "嘉義縣",
+              "KinmenCounty": "金門縣",
+              "LienchiangCounty": "連江縣",
+              "PingtungCounty": "屏東縣",
               "Hsinchu": "新竹市",
-              "MiaoliCounty": "苗栗縣"
+              "TaitungCounty": "臺東縣",
+              "Kaohsiung": "高雄市"
             }
           },
           {
@@ -1759,6 +1795,9 @@
             "schema": {
               "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusVersion"
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
@@ -1813,28 +1852,28 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "MiaoliCounty": "苗栗縣",
-              "PingtungCounty": "屏東縣",
-              "KinmenCounty": "金門縣",
-              "PenghuCounty": "澎湖縣",
-              "Keelung": "基隆市",
-              "YunlinCounty": "雲林縣",
-              "ChiayiCounty": "嘉義縣",
               "HsinchuCounty": "新竹縣",
-              "LienchiangCounty": "連江縣",
-              "Hsinchu": "新竹市",
+              "YunlinCounty": "雲林縣",
               "TaitungCounty": "臺東縣",
-              "NantouCounty": "南投縣",
-              "YilanCounty": "宜蘭縣",
-              "Taipei": "臺北市",
-              "Tainan": "臺南市",
-              "NewTaipei": "新北市",
-              "Taichung": "臺中市",
-              "Kaohsiung": "高雄市",
-              "ChanghuaCounty": "彰化縣",
+              "KinmenCounty": "金門縣",
               "HualienCounty": "花蓮縣",
+              "Kaohsiung": "高雄市",
+              "PingtungCounty": "屏東縣",
+              "NantouCounty": "南投縣",
+              "Hsinchu": "新竹市",
+              "Taichung": "臺中市",
+              "ChiayiCounty": "嘉義縣",
+              "Tainan": "臺南市",
+              "YilanCounty": "宜蘭縣",
+              "Keelung": "基隆市",
               "Taoyuan": "桃園市",
-              "Chiayi": "嘉義市"
+              "MiaoliCounty": "苗栗縣",
+              "NewTaipei": "新北市",
+              "ChanghuaCounty": "彰化縣",
+              "PenghuCounty": "澎湖縣",
+              "LienchiangCounty": "連江縣",
+              "Chiayi": "嘉義市",
+              "Taipei": "臺北市"
             }
           },
           {
@@ -1901,6 +1940,9 @@
               }
             }
           },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
@@ -1954,28 +1996,28 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "NantouCounty": "南投縣",
-              "Taipei": "臺北市",
-              "Tainan": "臺南市",
-              "NewTaipei": "新北市",
-              "ChanghuaCounty": "彰化縣",
-              "HualienCounty": "花蓮縣",
-              "Chiayi": "嘉義市",
-              "YunlinCounty": "雲林縣",
-              "HsinchuCounty": "新竹縣",
-              "Taoyuan": "桃園市",
-              "ChiayiCounty": "嘉義縣",
-              "MiaoliCounty": "苗栗縣",
-              "KinmenCounty": "金門縣",
-              "TaitungCounty": "臺東縣",
-              "Hsinchu": "新竹市",
-              "Taichung": "臺中市",
               "Keelung": "基隆市",
-              "Kaohsiung": "高雄市",
-              "LienchiangCounty": "連江縣",
+              "Taipei": "臺北市",
+              "MiaoliCounty": "苗栗縣",
+              "NewTaipei": "新北市",
+              "Tainan": "臺南市",
+              "Taichung": "臺中市",
+              "KinmenCounty": "金門縣",
+              "Chiayi": "嘉義市",
+              "YilanCounty": "宜蘭縣",
+              "Taoyuan": "桃園市",
+              "HualienCounty": "花蓮縣",
+              "ChanghuaCounty": "彰化縣",
+              "YunlinCounty": "雲林縣",
+              "Hsinchu": "新竹市",
+              "NantouCounty": "南投縣",
+              "ChiayiCounty": "嘉義縣",
               "PenghuCounty": "澎湖縣",
+              "LienchiangCounty": "連江縣",
+              "TaitungCounty": "臺東縣",
               "PingtungCounty": "屏東縣",
-              "YilanCounty": "宜蘭縣"
+              "HsinchuCounty": "新竹縣",
+              "Kaohsiung": "高雄市"
             }
           },
           {
@@ -2042,6 +2084,9 @@
               }
             }
           },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
@@ -2095,28 +2140,28 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "NantouCounty": "南投縣",
-              "Taipei": "臺北市",
-              "Tainan": "臺南市",
-              "NewTaipei": "新北市",
-              "ChanghuaCounty": "彰化縣",
-              "HualienCounty": "花蓮縣",
-              "Chiayi": "嘉義市",
-              "YunlinCounty": "雲林縣",
-              "HsinchuCounty": "新竹縣",
-              "Taoyuan": "桃園市",
-              "ChiayiCounty": "嘉義縣",
-              "MiaoliCounty": "苗栗縣",
-              "KinmenCounty": "金門縣",
-              "TaitungCounty": "臺東縣",
-              "Hsinchu": "新竹市",
-              "Taichung": "臺中市",
               "Keelung": "基隆市",
-              "Kaohsiung": "高雄市",
-              "LienchiangCounty": "連江縣",
+              "Taipei": "臺北市",
+              "MiaoliCounty": "苗栗縣",
+              "NewTaipei": "新北市",
+              "Tainan": "臺南市",
+              "Taichung": "臺中市",
+              "KinmenCounty": "金門縣",
+              "Chiayi": "嘉義市",
+              "YilanCounty": "宜蘭縣",
+              "Taoyuan": "桃園市",
+              "HualienCounty": "花蓮縣",
+              "ChanghuaCounty": "彰化縣",
+              "YunlinCounty": "雲林縣",
+              "Hsinchu": "新竹市",
+              "NantouCounty": "南投縣",
+              "ChiayiCounty": "嘉義縣",
               "PenghuCounty": "澎湖縣",
+              "LienchiangCounty": "連江縣",
+              "TaitungCounty": "臺東縣",
               "PingtungCounty": "屏東縣",
-              "YilanCounty": "宜蘭縣"
+              "HsinchuCounty": "新竹縣",
+              "Kaohsiung": "高雄市"
             }
           },
           {
@@ -2190,6 +2235,9 @@
               }
             }
           },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
@@ -2243,28 +2291,28 @@
               "Taipei"
             ],
             "x-enum": {
-              "Taipei": "臺北市",
-              "PenghuCounty": "澎湖縣",
-              "YilanCounty": "宜蘭縣",
+              "Keelung": "基隆市",
+              "Hsinchu": "新竹市",
+              "KinmenCounty": "金門縣",
+              "ChiayiCounty": "嘉義縣",
+              "Kaohsiung": "高雄市",
               "NantouCounty": "南投縣",
+              "Taichung": "臺中市",
+              "PenghuCounty": "澎湖縣",
+              "Tainan": "臺南市",
+              "ChanghuaCounty": "彰化縣",
+              "Taoyuan": "桃園市",
+              "Taipei": "臺北市",
+              "MiaoliCounty": "苗栗縣",
+              "Chiayi": "嘉義市",
+              "YilanCounty": "宜蘭縣",
+              "HsinchuCounty": "新竹縣",
               "YunlinCounty": "雲林縣",
               "PingtungCounty": "屏東縣",
-              "KinmenCounty": "金門縣",
-              "Hsinchu": "新竹市",
-              "TaitungCounty": "臺東縣",
-              "Keelung": "基隆市",
-              "ChanghuaCounty": "彰化縣",
-              "HsinchuCounty": "新竹縣",
-              "NewTaipei": "新北市",
               "HualienCounty": "花蓮縣",
-              "ChiayiCounty": "嘉義縣",
-              "Chiayi": "嘉義市",
-              "Tainan": "臺南市",
-              "Taichung": "臺中市",
-              "Taoyuan": "桃園市",
               "LienchiangCounty": "連江縣",
-              "MiaoliCounty": "苗栗縣",
-              "Kaohsiung": "高雄市"
+              "NewTaipei": "新北市",
+              "TaitungCounty": "臺東縣"
             }
           },
           {
@@ -2337,6 +2385,9 @@
               }
             }
           },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
@@ -2386,24 +2437,24 @@
               "KinmenCounty"
             ],
             "x-enum": {
-              "NewTaipei": "新北市",
-              "Chiayi": "嘉義市",
-              "TaitungCounty": "臺東縣",
               "NantouCounty": "南投縣",
-              "ChanghuaCounty": "彰化縣",
-              "Taipei": "臺北市",
-              "ChiayiCounty": "嘉義縣",
-              "PenghuCounty": "澎湖縣",
-              "HsinchuCounty": "新竹縣",
-              "Kaohsiung": "高雄市",
-              "Hsinchu": "新竹市",
-              "PingtungCounty": "屏東縣",
-              "KinmenCounty": "金門縣",
-              "Tainan": "臺南市",
-              "YunlinCounty": "雲林縣",
               "HualienCounty": "花蓮縣",
               "MiaoliCounty": "苗栗縣",
-              "YilanCounty": "宜蘭縣"
+              "Hsinchu": "新竹市",
+              "NewTaipei": "新北市",
+              "YilanCounty": "宜蘭縣",
+              "YunlinCounty": "雲林縣",
+              "Tainan": "臺南市",
+              "Chiayi": "嘉義市",
+              "Kaohsiung": "高雄市",
+              "ChiayiCounty": "嘉義縣",
+              "Taipei": "臺北市",
+              "ChanghuaCounty": "彰化縣",
+              "KinmenCounty": "金門縣",
+              "PenghuCounty": "澎湖縣",
+              "HsinchuCounty": "新竹縣",
+              "PingtungCounty": "屏東縣",
+              "TaitungCounty": "臺東縣"
             }
           },
           {
@@ -2476,6 +2527,9 @@
               }
             }
           },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
@@ -2510,8 +2564,8 @@
               "NewTaipei"
             ],
             "x-enum": {
-              "Taipei": "臺北市",
               "Tainan": "臺南市",
+              "Taipei": "臺北市",
               "NewTaipei": "新北市"
             }
           },
@@ -2579,6 +2633,9 @@
               }
             }
           },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
@@ -2613,8 +2670,8 @@
               "NewTaipei"
             ],
             "x-enum": {
-              "Taipei": "臺北市",
               "Tainan": "臺南市",
+              "Taipei": "臺北市",
               "NewTaipei": "新北市"
             }
           },
@@ -2688,6 +2745,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusDisplayStopOfRoute"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
@@ -2742,28 +2802,28 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "NewTaipei": "新北市",
-              "Keelung": "基隆市",
-              "Hsinchu": "新竹市",
-              "Chiayi": "嘉義市",
-              "HualienCounty": "花蓮縣",
-              "Taoyuan": "桃園市",
-              "KinmenCounty": "金門縣",
-              "PingtungCounty": "屏東縣",
-              "Kaohsiung": "高雄市",
-              "NantouCounty": "南投縣",
-              "Tainan": "臺南市",
-              "ChanghuaCounty": "彰化縣",
-              "Taipei": "臺北市",
-              "TaitungCounty": "臺東縣",
-              "MiaoliCounty": "苗栗縣",
-              "Taichung": "臺中市",
-              "PenghuCounty": "澎湖縣",
-              "HsinchuCounty": "新竹縣",
-              "YilanCounty": "宜蘭縣",
               "ChiayiCounty": "嘉義縣",
+              "HsinchuCounty": "新竹縣",
+              "NewTaipei": "新北市",
+              "Tainan": "臺南市",
+              "HualienCounty": "花蓮縣",
+              "MiaoliCounty": "苗栗縣",
+              "NantouCounty": "南投縣",
+              "Keelung": "基隆市",
+              "Taichung": "臺中市",
+              "Taipei": "臺北市",
+              "Taoyuan": "桃園市",
+              "Chiayi": "嘉義市",
+              "ChanghuaCounty": "彰化縣",
+              "PingtungCounty": "屏東縣",
+              "PenghuCounty": "澎湖縣",
+              "Hsinchu": "新竹市",
+              "TaitungCounty": "臺東縣",
+              "KinmenCounty": "金門縣",
+              "YilanCounty": "宜蘭縣",
+              "YunlinCounty": "雲林縣",
               "LienchiangCounty": "連江縣",
-              "YunlinCounty": "雲林縣"
+              "Kaohsiung": "高雄市"
             }
           },
           {
@@ -2829,6 +2889,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusStopOfRoute"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
@@ -2883,28 +2946,28 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "NewTaipei": "新北市",
-              "Keelung": "基隆市",
-              "Hsinchu": "新竹市",
-              "Chiayi": "嘉義市",
-              "HualienCounty": "花蓮縣",
-              "Taoyuan": "桃園市",
-              "KinmenCounty": "金門縣",
-              "PingtungCounty": "屏東縣",
-              "Kaohsiung": "高雄市",
-              "NantouCounty": "南投縣",
-              "Tainan": "臺南市",
-              "ChanghuaCounty": "彰化縣",
-              "Taipei": "臺北市",
-              "TaitungCounty": "臺東縣",
-              "MiaoliCounty": "苗栗縣",
-              "Taichung": "臺中市",
-              "PenghuCounty": "澎湖縣",
-              "HsinchuCounty": "新竹縣",
-              "YilanCounty": "宜蘭縣",
               "ChiayiCounty": "嘉義縣",
+              "HsinchuCounty": "新竹縣",
+              "NewTaipei": "新北市",
+              "Tainan": "臺南市",
+              "HualienCounty": "花蓮縣",
+              "MiaoliCounty": "苗栗縣",
+              "NantouCounty": "南投縣",
+              "Keelung": "基隆市",
+              "Taichung": "臺中市",
+              "Taipei": "臺北市",
+              "Taoyuan": "桃園市",
+              "Chiayi": "嘉義市",
+              "ChanghuaCounty": "彰化縣",
+              "PingtungCounty": "屏東縣",
+              "PenghuCounty": "澎湖縣",
+              "Hsinchu": "新竹市",
+              "TaitungCounty": "臺東縣",
+              "KinmenCounty": "金門縣",
+              "YilanCounty": "宜蘭縣",
+              "YunlinCounty": "雲林縣",
               "LienchiangCounty": "連江縣",
-              "YunlinCounty": "雲林縣"
+              "Kaohsiung": "高雄市"
             }
           },
           {
@@ -2978,6 +3041,9 @@
               }
             }
           },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
@@ -3027,24 +3093,24 @@
               "PenghuCounty"
             ],
             "x-enum": {
-              "NewTaipei": "新北市",
-              "KinmenCounty": "金門縣",
-              "Chiayi": "嘉義市",
-              "MiaoliCounty": "苗栗縣",
-              "HualienCounty": "花蓮縣",
-              "Hsinchu": "新竹市",
+              "HsinchuCounty": "新竹縣",
               "TaitungCounty": "臺東縣",
+              "NewTaipei": "新北市",
+              "MiaoliCounty": "苗栗縣",
+              "Hsinchu": "新竹市",
+              "Taipei": "臺北市",
+              "Tainan": "臺南市",
+              "ChanghuaCounty": "彰化縣",
+              "Keelung": "基隆市",
               "ChiayiCounty": "嘉義縣",
               "YunlinCounty": "雲林縣",
-              "Tainan": "臺南市",
-              "YilanCounty": "宜蘭縣",
-              "Keelung": "基隆市",
-              "PenghuCounty": "澎湖縣",
-              "NantouCounty": "南投縣",
+              "KinmenCounty": "金門縣",
               "PingtungCounty": "屏東縣",
-              "HsinchuCounty": "新竹縣",
-              "ChanghuaCounty": "彰化縣",
-              "Taipei": "臺北市"
+              "YilanCounty": "宜蘭縣",
+              "Chiayi": "嘉義市",
+              "NantouCounty": "南投縣",
+              "HualienCounty": "花蓮縣",
+              "PenghuCounty": "澎湖縣"
             }
           },
           {
@@ -3111,6 +3177,9 @@
               }
             }
           },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
@@ -3160,24 +3229,24 @@
               "PenghuCounty"
             ],
             "x-enum": {
-              "NewTaipei": "新北市",
-              "KinmenCounty": "金門縣",
-              "Chiayi": "嘉義市",
-              "MiaoliCounty": "苗栗縣",
-              "HualienCounty": "花蓮縣",
-              "Hsinchu": "新竹市",
+              "HsinchuCounty": "新竹縣",
               "TaitungCounty": "臺東縣",
+              "NewTaipei": "新北市",
+              "MiaoliCounty": "苗栗縣",
+              "Hsinchu": "新竹市",
+              "Taipei": "臺北市",
+              "Tainan": "臺南市",
+              "ChanghuaCounty": "彰化縣",
+              "Keelung": "基隆市",
               "ChiayiCounty": "嘉義縣",
               "YunlinCounty": "雲林縣",
-              "Tainan": "臺南市",
-              "YilanCounty": "宜蘭縣",
-              "Keelung": "基隆市",
-              "PenghuCounty": "澎湖縣",
-              "NantouCounty": "南投縣",
+              "KinmenCounty": "金門縣",
               "PingtungCounty": "屏東縣",
-              "HsinchuCounty": "新竹縣",
-              "ChanghuaCounty": "彰化縣",
-              "Taipei": "臺北市"
+              "YilanCounty": "宜蘭縣",
+              "Chiayi": "嘉義市",
+              "NantouCounty": "南投縣",
+              "HualienCounty": "花蓮縣",
+              "PenghuCounty": "澎湖縣"
             }
           },
           {
@@ -3251,6 +3320,9 @@
               }
             }
           },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
@@ -3303,28 +3375,28 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "Chiayi": "嘉義市",
-              "NewTaipei": "新北市",
-              "ChiayiCounty": "嘉義縣",
-              "ChanghuaCounty": "彰化縣",
-              "NantouCounty": "南投縣",
+              "Hsinchu": "新竹市",
               "PenghuCounty": "澎湖縣",
-              "HsinchuCounty": "新竹縣",
-              "HualienCounty": "花蓮縣",
-              "MiaoliCounty": "苗栗縣",
               "Kaohsiung": "高雄市",
-              "Taipei": "臺北市",
-              "KinmenCounty": "金門縣",
-              "Tainan": "臺南市",
-              "LienchiangCounty": "連江縣",
-              "Taichung": "臺中市",
-              "YunlinCounty": "雲林縣",
               "TaitungCounty": "臺東縣",
+              "Tainan": "臺南市",
+              "HualienCounty": "花蓮縣",
+              "HsinchuCounty": "新竹縣",
+              "LienchiangCounty": "連江縣",
+              "NewTaipei": "新北市",
               "PingtungCounty": "屏東縣",
-              "YilanCounty": "宜蘭縣",
               "Keelung": "基隆市",
+              "MiaoliCounty": "苗栗縣",
+              "Taichung": "臺中市",
               "Taoyuan": "桃園市",
-              "Hsinchu": "新竹市"
+              "ChiayiCounty": "嘉義縣",
+              "KinmenCounty": "金門縣",
+              "YilanCounty": "宜蘭縣",
+              "Chiayi": "嘉義市",
+              "Taipei": "臺北市",
+              "YunlinCounty": "雲林縣",
+              "ChanghuaCounty": "彰化縣",
+              "NantouCounty": "南投縣"
             }
           },
           {
@@ -3391,6 +3463,9 @@
               }
             }
           },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
@@ -3427,17 +3502,43 @@
               "Tainan",
               "Kaohsiung",
               "Keelung",
-              "KinmenCounty"
+              "KinmenCounty",
+              "Hsinchu",
+              "HsinchuCounty",
+              "MiaoliCounty",
+              "ChanghuaCounty",
+              "NantouCounty",
+              "YunlinCounty",
+              "ChiayiCounty",
+              "Chiayi",
+              "PingtungCounty",
+              "YilanCounty",
+              "HualienCounty",
+              "TaitungCounty",
+              "PenghuCounty"
             ],
             "x-enum": {
-              "Taichung": "臺中市",
-              "KinmenCounty": "金門縣",
               "Tainan": "臺南市",
-              "Taoyuan": "桃園市",
-              "Taipei": "臺北市",
-              "Kaohsiung": "高雄市",
+              "Hsinchu": "新竹市",
               "Keelung": "基隆市",
-              "NewTaipei": "新北市"
+              "YilanCounty": "宜蘭縣",
+              "YunlinCounty": "雲林縣",
+              "Taipei": "臺北市",
+              "PingtungCounty": "屏東縣",
+              "KinmenCounty": "金門縣",
+              "Taichung": "臺中市",
+              "HualienCounty": "花蓮縣",
+              "PenghuCounty": "澎湖縣",
+              "ChiayiCounty": "嘉義縣",
+              "Chiayi": "嘉義市",
+              "ChanghuaCounty": "彰化縣",
+              "MiaoliCounty": "苗栗縣",
+              "Taoyuan": "桃園市",
+              "TaitungCounty": "臺東縣",
+              "NantouCounty": "南投縣",
+              "NewTaipei": "新北市",
+              "Kaohsiung": "高雄市",
+              "HsinchuCounty": "新竹縣"
             }
           },
           {
@@ -3504,6 +3605,9 @@
               }
             }
           },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
@@ -3540,17 +3644,43 @@
               "Tainan",
               "Kaohsiung",
               "Keelung",
-              "KinmenCounty"
+              "KinmenCounty",
+              "Hsinchu",
+              "HsinchuCounty",
+              "MiaoliCounty",
+              "ChanghuaCounty",
+              "NantouCounty",
+              "YunlinCounty",
+              "ChiayiCounty",
+              "Chiayi",
+              "PingtungCounty",
+              "YilanCounty",
+              "HualienCounty",
+              "TaitungCounty",
+              "PenghuCounty"
             ],
             "x-enum": {
-              "Taichung": "臺中市",
-              "KinmenCounty": "金門縣",
               "Tainan": "臺南市",
-              "Taoyuan": "桃園市",
-              "Taipei": "臺北市",
-              "Kaohsiung": "高雄市",
+              "Hsinchu": "新竹市",
               "Keelung": "基隆市",
-              "NewTaipei": "新北市"
+              "YilanCounty": "宜蘭縣",
+              "YunlinCounty": "雲林縣",
+              "Taipei": "臺北市",
+              "PingtungCounty": "屏東縣",
+              "KinmenCounty": "金門縣",
+              "Taichung": "臺中市",
+              "HualienCounty": "花蓮縣",
+              "PenghuCounty": "澎湖縣",
+              "ChiayiCounty": "嘉義縣",
+              "Chiayi": "嘉義市",
+              "ChanghuaCounty": "彰化縣",
+              "MiaoliCounty": "苗栗縣",
+              "Taoyuan": "桃園市",
+              "TaitungCounty": "臺東縣",
+              "NantouCounty": "南投縣",
+              "NewTaipei": "新北市",
+              "Kaohsiung": "高雄市",
+              "HsinchuCounty": "新竹縣"
             }
           },
           {
@@ -3623,6 +3753,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusShape"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
@@ -3668,28 +3801,28 @@
               "KinmenCounty"
             ],
             "x-enum": {
-              "Taichung": "臺中市",
-              "KinmenCounty": "金門縣",
-              "LienchiangCounty": "連江縣",
-              "Tainan": "臺南市",
-              "HualienCounty": "花蓮縣",
-              "HsinchuCounty": "新竹縣",
-              "YunlinCounty": "雲林縣",
-              "TaitungCounty": "臺東縣",
-              "PenghuCounty": "澎湖縣",
               "MiaoliCounty": "苗栗縣",
+              "YunlinCounty": "雲林縣",
+              "ChanghuaCounty": "彰化縣",
+              "Chiayi": "嘉義市",
+              "KinmenCounty": "金門縣",
+              "ChiayiCounty": "嘉義縣",
               "Keelung": "基隆市",
+              "HualienCounty": "花蓮縣",
+              "PingtungCounty": "屏東縣",
+              "Tainan": "臺南市",
+              "Hsinchu": "新竹市",
+              "NewTaipei": "新北市",
               "NantouCounty": "南投縣",
               "Taoyuan": "桃園市",
-              "ChiayiCounty": "嘉義縣",
-              "PingtungCounty": "屏東縣",
-              "Hsinchu": "新竹市",
-              "ChanghuaCounty": "彰化縣",
-              "Kaohsiung": "高雄市",
+              "HsinchuCounty": "新竹縣",
+              "TaitungCounty": "臺東縣",
               "Taipei": "臺北市",
-              "Chiayi": "嘉義市",
-              "YilanCounty": "宜蘭縣",
-              "NewTaipei": "新北市"
+              "PenghuCounty": "澎湖縣",
+              "Kaohsiung": "高雄市",
+              "LienchiangCounty": "連江縣",
+              "Taichung": "臺中市",
+              "YilanCounty": "宜蘭縣"
             }
           },
           {
@@ -3756,6 +3889,9 @@
               }
             }
           },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
@@ -3800,28 +3936,28 @@
               "KinmenCounty"
             ],
             "x-enum": {
-              "Taichung": "臺中市",
-              "KinmenCounty": "金門縣",
-              "LienchiangCounty": "連江縣",
-              "Tainan": "臺南市",
-              "HualienCounty": "花蓮縣",
-              "HsinchuCounty": "新竹縣",
-              "YunlinCounty": "雲林縣",
-              "TaitungCounty": "臺東縣",
-              "PenghuCounty": "澎湖縣",
               "MiaoliCounty": "苗栗縣",
+              "YunlinCounty": "雲林縣",
+              "ChanghuaCounty": "彰化縣",
+              "Chiayi": "嘉義市",
+              "KinmenCounty": "金門縣",
+              "ChiayiCounty": "嘉義縣",
               "Keelung": "基隆市",
+              "HualienCounty": "花蓮縣",
+              "PingtungCounty": "屏東縣",
+              "Tainan": "臺南市",
+              "Hsinchu": "新竹市",
+              "NewTaipei": "新北市",
               "NantouCounty": "南投縣",
               "Taoyuan": "桃園市",
-              "ChiayiCounty": "嘉義縣",
-              "PingtungCounty": "屏東縣",
-              "Hsinchu": "新竹市",
-              "ChanghuaCounty": "彰化縣",
-              "Kaohsiung": "高雄市",
+              "HsinchuCounty": "新竹縣",
+              "TaitungCounty": "臺東縣",
               "Taipei": "臺北市",
-              "Chiayi": "嘉義市",
-              "YilanCounty": "宜蘭縣",
-              "NewTaipei": "新北市"
+              "PenghuCounty": "澎湖縣",
+              "Kaohsiung": "高雄市",
+              "LienchiangCounty": "連江縣",
+              "Taichung": "臺中市",
+              "YilanCounty": "宜蘭縣"
             }
           },
           {
@@ -3895,6 +4031,9 @@
               }
             }
           },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
@@ -3929,9 +4068,9 @@
               "KinmenCounty"
             ],
             "x-enum": {
-              "Tainan": "臺南市",
+              "KinmenCounty": "金門縣",
               "Keelung": "基隆市",
-              "KinmenCounty": "金門縣"
+              "Tainan": "臺南市"
             }
           },
           {
@@ -3998,6 +4137,9 @@
               }
             }
           },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
@@ -4042,19 +4184,19 @@
               "PenghuCounty"
             ],
             "x-enum": {
-              "Chiayi": "嘉義市",
-              "MiaoliCounty": "苗栗縣",
-              "PenghuCounty": "澎湖縣",
-              "YilanCounty": "宜蘭縣",
               "TaitungCounty": "臺東縣",
               "HualienCounty": "花蓮縣",
-              "Hsinchu": "新竹市",
-              "YunlinCounty": "雲林縣",
               "NantouCounty": "南投縣",
-              "ChanghuaCounty": "彰化縣",
+              "PenghuCounty": "澎湖縣",
               "HsinchuCounty": "新竹縣",
+              "ChanghuaCounty": "彰化縣",
               "ChiayiCounty": "嘉義縣",
-              "PingtungCounty": "屏東縣"
+              "Hsinchu": "新竹市",
+              "PingtungCounty": "屏東縣",
+              "Chiayi": "嘉義市",
+              "YunlinCounty": "雲林縣",
+              "YilanCounty": "宜蘭縣",
+              "MiaoliCounty": "苗栗縣"
             }
           },
           {
@@ -4126,6 +4268,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusStationGroup"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
@@ -4225,6 +4370,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusFirstLastTripInfo"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
@@ -4332,6 +4480,151 @@
               }
             }
           },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Bus/S2STravelTime/City/{City}/{RouteID}": {
+      "get": {
+        "tags": [
+          "CityBus"
+        ],
+        "summary": "取得指定[縣市],[路線代碼]的市區公車站間旅行時間資料",
+        "description": "指定[縣市],[路線代碼]的市區公車站間旅行時間資料",
+        "operationId": "CityBusApi_S2STravelTimeDetail",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "City",
+            "description": "欲查詢縣市",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "Hsinchu",
+              "HsinchuCounty",
+              "MiaoliCounty",
+              "ChanghuaCounty",
+              "NantouCounty",
+              "YunlinCounty",
+              "ChiayiCounty",
+              "Chiayi",
+              "PingtungCounty",
+              "YilanCounty",
+              "HualienCounty",
+              "TaitungCounty",
+              "PenghuCounty"
+            ],
+            "x-enum": {
+              "KinmenCounty": "金門縣",
+              "PenghuCounty": "澎湖縣",
+              "Hsinchu": "新竹市",
+              "HsinchuCounty": "新竹縣",
+              "NantouCounty": "南投縣",
+              "LienchiangCounty": "連江縣",
+              "YunlinCounty": "雲林縣",
+              "Kaohsiung": "高雄市",
+              "HualienCounty": "花蓮縣",
+              "Taoyuan": "桃園市",
+              "MiaoliCounty": "苗栗縣",
+              "ChiayiCounty": "嘉義縣",
+              "TaitungCounty": "臺東縣",
+              "Taipei": "臺北市",
+              "YilanCounty": "宜蘭縣",
+              "NewTaipei": "新北市",
+              "ChanghuaCounty": "彰化縣",
+              "Taichung": "臺中市",
+              "PingtungCounty": "屏東縣",
+              "Tainan": "臺南市",
+              "Chiayi": "嘉義市",
+              "Keelung": "基隆市"
+            }
+          },
+          {
+            "in": "path",
+            "name": "RouteID",
+            "description": "路線代碼",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "title": "Array",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusS2STravelTime"
+              }
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
@@ -4423,6 +4716,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusA1Data"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
@@ -4523,6 +4819,9 @@
               }
             }
           },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
@@ -4608,6 +4907,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusA2Data"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
@@ -4702,6 +5004,9 @@
               }
             }
           },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
@@ -4787,6 +5092,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusN1EstimateTime"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
@@ -4881,6 +5189,9 @@
               }
             }
           },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
@@ -4972,6 +5283,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusA1Data"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
@@ -5072,6 +5386,9 @@
               }
             }
           },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
@@ -5157,6 +5474,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusA2Data"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
@@ -5251,6 +5571,9 @@
               }
             }
           },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
@@ -5336,6 +5659,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusN1EstimateTime"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
@@ -5430,6 +5756,9 @@
               }
             }
           },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
@@ -5482,6 +5811,9 @@
             "schema": {
               "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusVersion"
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
@@ -5569,6 +5901,9 @@
               }
             }
           },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
@@ -5654,6 +5989,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusRoute"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
@@ -5748,6 +6086,9 @@
               }
             }
           },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
@@ -5839,6 +6180,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusStop"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
@@ -5932,6 +6276,9 @@
               }
             }
           },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
@@ -6017,6 +6364,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusStopOfRoute"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
@@ -6111,6 +6461,9 @@
               }
             }
           },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
@@ -6196,6 +6549,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusSchedule"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
@@ -6290,6 +6646,9 @@
               }
             }
           },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
@@ -6375,6 +6734,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusNews"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
@@ -6462,6 +6824,9 @@
               }
             }
           },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
@@ -6547,6 +6912,9 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusRouteFare"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
@@ -6641,6 +7009,9 @@
               }
             }
           },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
@@ -6732,6 +7103,866 @@
                 "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusStationGroup"
               }
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Bus/Shape/InterCity": {
+      "get": {
+        "tags": [
+          "InterCityBus"
+        ],
+        "summary": "取得公路公車線型資料",
+        "description": "公路客運之線型資料",
+        "operationId": "InterCityBusApi_Shape",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "title": "Array",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusShape"
+              }
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Bus/Shape/InterCity/{RouteName}": {
+      "get": {
+        "tags": [
+          "InterCityBus"
+        ],
+        "summary": "取得指定[路線名稱]的公路公車線型資料",
+        "description": "公路客運之線型資料",
+        "operationId": "InterCityBusApi_Shape_1",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "RouteName",
+            "description": "繁體中文路線名稱，如'307'",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "title": "Array",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusShape"
+              }
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Bus/S2STravelTime/InterCity/{RouteID}": {
+      "get": {
+        "tags": [
+          "InterCityBus"
+        ],
+        "summary": "取得指定[路線代碼]的公路客運站間旅行時間資料",
+        "description": "指定[路線代碼]的公路客運站間旅行時間資料",
+        "operationId": "InterCityBusApi_S2STravelTimeDetail",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "RouteID",
+            "description": "路線代碼",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "title": "Array",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusS2STravelTime"
+              }
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Bus/Stop/NearBy": {
+      "get": {
+        "tags": [
+          "Advanced"
+        ],
+        "summary": "取得指定[位置,範圍]的全臺公車站牌資料",
+        "description": "取得指定[位置,範圍]的全臺公車站牌資料",
+        "operationId": "BusApi_Stop_NearBy",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$spatialFilter",
+            "description": "空間過濾(最大搜尋半徑為1000公尺)",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "title": "Array",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusStop"
+              }
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Bus/Station/NearBy": {
+      "get": {
+        "tags": [
+          "Advanced"
+        ],
+        "summary": "取得指定[位置,範圍]的全臺公車站位資料",
+        "description": "取得指定[位置,範圍]的全臺公車站位資料",
+        "operationId": "BusApi_Station_NearBy",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$spatialFilter",
+            "description": "空間過濾(最大搜尋半徑為1000公尺)",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "title": "Array",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusStation"
+              }
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Bus/Route/NearBy": {
+      "get": {
+        "tags": [
+          "Advanced"
+        ],
+        "summary": "取得指定[位置,範圍]的全臺公車路線資料",
+        "description": "取得指定[位置,範圍]的全臺公車路線資料",
+        "operationId": "BusApi_Route_NearBy",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$spatialFilter",
+            "description": "空間過濾(最大搜尋半徑為1000公尺)",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "title": "Array",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusRoute"
+              }
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Bus/RealTimeByFrequency/NearBy": {
+      "get": {
+        "tags": [
+          "Advanced"
+        ],
+        "summary": "取得指定[位置,範圍]的全臺公車動態定時資料(A1)",
+        "description": "取得指定[位置,範圍]的全臺公車動態定時資料(A1)",
+        "operationId": "BusApi_RealTimeByFrequency_NearBy",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$spatialFilter",
+            "description": "空間過濾(最大搜尋半徑為1000公尺)",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "title": "Array",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusA1Data"
+              }
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Bus/RealTimeNearStop/NearBy": {
+      "get": {
+        "tags": [
+          "Advanced"
+        ],
+        "summary": "取得指定[位置,範圍]的全臺公車動態定點資料(A2)",
+        "description": "取得指定[位置,範圍]的全臺公車動態定點資料(A2)",
+        "operationId": "BusApi_RealTimeNearStop_NearBy",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$spatialFilter",
+            "description": "空間過濾(最大搜尋半徑為1000公尺)",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "title": "Array",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusA2Data"
+              }
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Bus/EstimatedTimeOfArrival/NearBy": {
+      "get": {
+        "tags": [
+          "Advanced"
+        ],
+        "summary": "取得指定[位置,範圍]的全臺公車預估到站資料(N1)",
+        "description": "取得指定[位置,範圍]的全臺公車預估到站資料(N1)",
+        "operationId": "BusApi_EstimatedTimeOfArrival_NearBy",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$spatialFilter",
+            "description": "空間過濾(最大搜尋半徑為1000公尺)",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "title": "Array",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusN1EstimateTime"
+              }
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
@@ -7155,7 +8386,7 @@
         }
       }
     },
-    "PTX.Service.DTO.Bus.Specification.V2.Stop": {
+    "PTX.Service.DTO.Bus.Specification.V2.Embedded.Stop": {
       "title": "Stop",
       "description": "站牌代碼資料",
       "required": [
@@ -7268,7 +8499,7 @@
           "description": "所有經過站牌",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.Stop"
+            "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.Embedded.Stop"
           }
         },
         "UpdateTime": {
@@ -7297,6 +8528,24 @@
       ],
       "type": "object",
       "properties": {
+        "DayBeforeNationalHoliday": {
+          "format": "int32",
+          "title": "integer",
+          "description": "國定假日前一日營運與否 : [0:'否',1:'是']",
+          "type": "integer"
+        },
+        "DayAfterNationalHoliday": {
+          "format": "int32",
+          "title": "integer",
+          "description": "國定假日後一日營運與否 : [0:'否',1:'是']",
+          "type": "integer"
+        },
+        "TyphoonDay": {
+          "format": "int32",
+          "title": "integer",
+          "description": "颱風停止上班上課期間營運與否 : [0:'否',1:'是']",
+          "type": "integer"
+        },
         "Sunday": {
           "format": "int32",
           "title": "integer",
@@ -7343,24 +8592,6 @@
           "format": "int32",
           "title": "integer",
           "description": "國定假日營運與否 : [0:'否',1:'是']",
-          "type": "integer"
-        },
-        "DayBeforeNationalHoliday": {
-          "format": "int32",
-          "title": "integer",
-          "description": "國定假日前一日營運與否 : [0:'否',1:'是']",
-          "type": "integer"
-        },
-        "DayAfterNationalHoliday": {
-          "format": "int32",
-          "title": "integer",
-          "description": "國定假日後一日營運與否 : [0:'否',1:'是']",
-          "type": "integer"
-        },
-        "TyphoonDay": {
-          "format": "int32",
-          "title": "integer",
-          "description": "颱風停止上班上課期間營運與否 : [0:'否',1:'是']",
           "type": "integer"
         }
       }
@@ -7827,7 +9058,7 @@
         }
       }
     },
-    "PTX.Service.DTO.Bus.Specification.V2.RouteOperator": {
+    "PTX.Service.DTO.Bus.Specification.V2.Embedded.RouteOperator": {
       "title": "RouteOperator",
       "description": "營運業者資訊",
       "required": [
@@ -7979,7 +9210,7 @@
           "description": "營運業者",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.RouteOperator"
+            "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.Embedded.RouteOperator"
           }
         },
         "AuthorityID": {
@@ -8231,7 +9462,7 @@
         }
       }
     },
-    "PTX.Service.DTO.Bus.Specification.V2.ServiceDay": {
+    "PTX.Service.DTO.Bus.Specification.V2.Embedded.ServiceDay": {
       "title": "ServiceDay",
       "description": "週內營運日資料",
       "required": [
@@ -8290,7 +9521,7 @@
         "NationalHolidays": {
           "format": "int32",
           "title": "integer",
-          "description": "國定假日是否營運 : [0:'否',1:'是']",
+          "description": "國定假日營運與否 : [0:'否',1:'是']",
           "type": "integer"
         }
       }
@@ -8310,7 +9541,7 @@
           "description": "營運日型態",
           "allOf": [
             {
-              "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.ServiceDay"
+              "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.Embedded.ServiceDay"
             }
           ]
         },
@@ -8493,6 +9724,139 @@
         }
       }
     },
+    "PTX.Service.DTO.Bus.Specification.V2.TravelTime": {
+      "title": "TravelTime",
+      "required": [
+        "FromStationID",
+        "FromStopID",
+        "RunTime",
+        "ToStationID",
+        "ToStopID"
+      ],
+      "type": "object",
+      "properties": {
+        "FromStopID": {
+          "title": "String",
+          "description": "起始站牌代碼",
+          "type": "string"
+        },
+        "ToStopID": {
+          "title": "String",
+          "description": "終點站牌代碼",
+          "type": "string"
+        },
+        "FromStationID": {
+          "title": "String",
+          "description": "起始站位代碼",
+          "type": "string"
+        },
+        "ToStationID": {
+          "title": "String",
+          "description": "終點站位代碼",
+          "type": "string"
+        },
+        "RunTime": {
+          "format": "int32",
+          "title": "Int32",
+          "description": "站間預估行駛時間 [當RunTime值為-1時，代表該區間無提供旅行時間資料。]",
+          "type": "integer"
+        }
+      }
+    },
+    "PTX.Service.DTO.Bus.Specification.V2.ServiceTime": {
+      "title": "ServiceTime",
+      "description": "行駛時間資料型別",
+      "required": [
+        "EndHour",
+        "S2STimes",
+        "StartHour",
+        "Weekday"
+      ],
+      "type": "object",
+      "properties": {
+        "Weekday": {
+          "format": "int32",
+          "title": "Int32",
+          "description": "星期",
+          "type": "integer"
+        },
+        "StartHour": {
+          "format": "int32",
+          "title": "Int32",
+          "description": "起始時區(小時)",
+          "type": "integer"
+        },
+        "EndHour": {
+          "format": "int32",
+          "title": "Int32",
+          "description": "結束時區(小時)",
+          "type": "integer"
+        },
+        "S2STimes": {
+          "title": "Array",
+          "description": "站間行駛時間資訊",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.TravelTime"
+          }
+        }
+      }
+    },
+    "PTX.Service.DTO.Bus.Specification.V2.BusS2STravelTime": {
+      "title": "BusS2STravelTime",
+      "description": "站間旅行時間資料型別",
+      "required": [
+        "Direction",
+        "RouteID",
+        "RouteUID",
+        "SubRouteID",
+        "SubRouteUID",
+        "TravelTimes",
+        "UpdateTime"
+      ],
+      "type": "object",
+      "properties": {
+        "RouteUID": {
+          "title": "String",
+          "description": "路線唯一識別代碼，規則為 {業管機關簡碼} + {RouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
+          "type": "string"
+        },
+        "RouteID": {
+          "title": "String",
+          "description": "地區既用中之路線代碼(為原資料內碼)",
+          "type": "string"
+        },
+        "SubRouteUID": {
+          "title": "String",
+          "description": "附屬路線唯一識別代碼，規則為 {業管機關簡碼} + {SubRouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
+          "type": "string"
+        },
+        "SubRouteID": {
+          "title": "String",
+          "description": "地區既用中之附屬路線代碼(為原資料內碼)",
+          "type": "string"
+        },
+        "Direction": {
+          "format": "int32",
+          "title": "integer",
+          "description": "去返程 : [0:'去程',1:'返程',2:'迴圈',255:'未知']",
+          "type": "integer"
+        },
+        "TravelTimes": {
+          "title": "Array",
+          "description": "旅行時間資訊",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.ServiceTime"
+          }
+        },
+        "UpdateTime": {
+          "title": "DateTime",
+          "description": "資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        }
+      }
+    },
     "PTX.Service.DTO.Bus.Specification.V2.DatePeriod": {
       "title": "DatePeriod",
       "type": "object",
@@ -8613,7 +9977,7 @@
           "description": "週內營運日",
           "allOf": [
             {
-              "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.ServiceDay"
+              "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.Embedded.ServiceDay"
             }
           ]
         },
@@ -8673,7 +10037,7 @@
           "description": "週內營運日",
           "allOf": [
             {
-              "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.ServiceDay"
+              "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.Embedded.ServiceDay"
             }
           ]
         },
@@ -8796,6 +10160,7 @@
         "RouteID",
         "RouteName",
         "RouteUID",
+        "SubRouteUID",
         "UpdateTime",
         "VersionID"
       ],
@@ -8820,21 +10185,28 @@
             }
           ]
         },
+        "SubRouteUID": {
+          "title": "String",
+          "type": "string"
+        },
+        "SubRouteID": {
+          "title": "String",
+          "description": "附屬路線唯一識別代碼，規則為 {業管機關簡碼} + {SubRouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
+          "type": "string"
+        },
+        "SubRouteName": {
+          "title": "NameType",
+          "description": "附屬路線名稱",
+          "allOf": [
+            {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V2.Base.NameType"
+            }
+          ]
+        },
         "Direction": {
           "format": "int32",
           "title": "integer",
           "description": "去返程，若無值則表示來源尚無區分去返程 : [0:'去程',1:'返程',2:'迴圈',255:'未知']",
-          "type": "integer"
-        },
-        "UpdateTime": {
-          "title": "DateTime",
-          "description": "資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
-          "type": "string"
-        },
-        "VersionID": {
-          "format": "int32",
-          "title": "Int32",
-          "description": "資料版本編號",
           "type": "integer"
         },
         "Geometry": {
@@ -8846,6 +10218,17 @@
           "title": "String",
           "description": "路線軌跡編碼(encoded polyline)",
           "type": "string"
+        },
+        "UpdateTime": {
+          "title": "DateTime",
+          "description": "資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "VersionID": {
+          "format": "int32",
+          "title": "Int32",
+          "description": "資料版本編號(由於該服務資料不再版控，固定帶入版號0)",
+          "type": "integer"
         }
       }
     },
@@ -9170,7 +10553,7 @@
           "description": "營運業者",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.RouteOperator"
+            "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.Embedded.RouteOperator"
           }
         },
         "SubRouteUID": {
@@ -9213,7 +10596,7 @@
           "description": "所有經過站牌",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.Stop"
+            "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.Embedded.Stop"
           }
         },
         "UpdateTime": {
@@ -9294,6 +10677,10 @@
     {
       "name": "InterCityBus",
       "description": "公路客運"
+    },
+    {
+      "name": "Advanced",
+      "description": "進階"
     }
   ]
 }

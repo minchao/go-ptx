@@ -29,7 +29,12 @@ func (o *THSRAPIAvailableSeatStatusReader) ReadResponse(response runtime.ClientR
 			return nil, err
 		}
 		return result, nil
-
+	case 304:
+		result := NewTHSRAPIAvailableSeatStatusNotModified()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return nil, result
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -40,30 +45,50 @@ func NewTHSRAPIAvailableSeatStatusOK() *THSRAPIAvailableSeatStatusOK {
 	return &THSRAPIAvailableSeatStatusOK{}
 }
 
-/*THSRAPIAvailableSeatStatusOK handles this case with default header values.
+/* THSRAPIAvailableSeatStatusOK describes a response with status code 200, with default header values.
 
 Success
 */
 type THSRAPIAvailableSeatStatusOK struct {
-	Payload *models.PTXAPIRailModelV2THSRAvaliableSeatStatusWrapperPTXServiceDTORailSpecificationV2THSRAvailableSeat
+	Payload *models.PTXAPIRailModelV2THSRAvailableSeatStatusWrapperPTXServiceDTORailSpecificationV2THSRAvailableSeat
 }
 
 func (o *THSRAPIAvailableSeatStatusOK) Error() string {
 	return fmt.Sprintf("[GET /v2/Rail/THSR/AvailableSeatStatus/Train/Leg/Today][%d] tHSRApiAvailableSeatStatusOK  %+v", 200, o.Payload)
 }
-
-func (o *THSRAPIAvailableSeatStatusOK) GetPayload() *models.PTXAPIRailModelV2THSRAvaliableSeatStatusWrapperPTXServiceDTORailSpecificationV2THSRAvailableSeat {
+func (o *THSRAPIAvailableSeatStatusOK) GetPayload() *models.PTXAPIRailModelV2THSRAvailableSeatStatusWrapperPTXServiceDTORailSpecificationV2THSRAvailableSeat {
 	return o.Payload
 }
 
 func (o *THSRAPIAvailableSeatStatusOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.PTXAPIRailModelV2THSRAvaliableSeatStatusWrapperPTXServiceDTORailSpecificationV2THSRAvailableSeat)
+	o.Payload = new(models.PTXAPIRailModelV2THSRAvailableSeatStatusWrapperPTXServiceDTORailSpecificationV2THSRAvailableSeat)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
+
+	return nil
+}
+
+// NewTHSRAPIAvailableSeatStatusNotModified creates a THSRAPIAvailableSeatStatusNotModified with default headers values
+func NewTHSRAPIAvailableSeatStatusNotModified() *THSRAPIAvailableSeatStatusNotModified {
+	return &THSRAPIAvailableSeatStatusNotModified{}
+}
+
+/* THSRAPIAvailableSeatStatusNotModified describes a response with status code 304, with default header values.
+
+服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content
+*/
+type THSRAPIAvailableSeatStatusNotModified struct {
+}
+
+func (o *THSRAPIAvailableSeatStatusNotModified) Error() string {
+	return fmt.Sprintf("[GET /v2/Rail/THSR/AvailableSeatStatus/Train/Leg/Today][%d] tHSRApiAvailableSeatStatusNotModified ", 304)
+}
+
+func (o *THSRAPIAvailableSeatStatusNotModified) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

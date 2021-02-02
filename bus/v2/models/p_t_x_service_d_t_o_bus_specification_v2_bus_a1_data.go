@@ -6,6 +6,8 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
+
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
@@ -165,7 +167,6 @@ func (m *PTXServiceDTOBusSpecificationV2BusA1Data) Validate(formats strfmt.Regis
 }
 
 func (m *PTXServiceDTOBusSpecificationV2BusA1Data) validateBusPosition(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.BusPosition) { // not required
 		return nil
 	}
@@ -192,7 +193,6 @@ func (m *PTXServiceDTOBusSpecificationV2BusA1Data) validatePlateNumb(formats str
 }
 
 func (m *PTXServiceDTOBusSpecificationV2BusA1Data) validateRouteName(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.RouteName) { // not required
 		return nil
 	}
@@ -201,7 +201,6 @@ func (m *PTXServiceDTOBusSpecificationV2BusA1Data) validateRouteName(formats str
 }
 
 func (m *PTXServiceDTOBusSpecificationV2BusA1Data) validateSubRouteName(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.SubRouteName) { // not required
 		return nil
 	}
@@ -214,6 +213,43 @@ func (m *PTXServiceDTOBusSpecificationV2BusA1Data) validateUpdateTime(formats st
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
 		return err
 	}
+
+	return nil
+}
+
+// ContextValidate validate this p t x service d t o bus specification v2 bus a1 data based on the context it is used
+func (m *PTXServiceDTOBusSpecificationV2BusA1Data) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateBusPosition(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateRouteName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateSubRouteName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV2BusA1Data) contextValidateBusPosition(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV2BusA1Data) contextValidateRouteName(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV2BusA1Data) contextValidateSubRouteName(ctx context.Context, formats strfmt.Registry) error {
 
 	return nil
 }

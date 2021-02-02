@@ -6,6 +6,8 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
+
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
@@ -46,10 +48,28 @@ func (m *PTXServiceDTOBusSpecificationV3ScopeRoute) Validate(formats strfmt.Regi
 }
 
 func (m *PTXServiceDTOBusSpecificationV3ScopeRoute) validateRouteName(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.RouteName) { // not required
 		return nil
 	}
+
+	return nil
+}
+
+// ContextValidate validate this p t x service d t o bus specification v3 scope route based on the context it is used
+func (m *PTXServiceDTOBusSpecificationV3ScopeRoute) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateRouteName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV3ScopeRoute) contextValidateRouteName(ctx context.Context, formats strfmt.Registry) error {
 
 	return nil
 }

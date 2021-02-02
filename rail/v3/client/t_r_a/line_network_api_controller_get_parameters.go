@@ -17,101 +17,122 @@ import (
 	"github.com/go-openapi/swag"
 )
 
-// NewLineNetworkAPIControllerGetParams creates a new LineNetworkAPIControllerGetParams object
-// with the default values initialized.
+// NewLineNetworkAPIControllerGetParams creates a new LineNetworkAPIControllerGetParams object,
+// with the default timeout for this client.
+//
+// Default values are not hydrated, since defaults are normally applied by the API server side.
+//
+// To enforce default values in parameter, use SetDefaults or WithDefaults.
 func NewLineNetworkAPIControllerGetParams() *LineNetworkAPIControllerGetParams {
-	var (
-		dollarTopDefault = int64(30)
-	)
 	return &LineNetworkAPIControllerGetParams{
-		DollarTop: &dollarTopDefault,
-
 		timeout: cr.DefaultTimeout,
 	}
 }
 
 // NewLineNetworkAPIControllerGetParamsWithTimeout creates a new LineNetworkAPIControllerGetParams object
-// with the default values initialized, and the ability to set a timeout on a request
+// with the ability to set a timeout on a request.
 func NewLineNetworkAPIControllerGetParamsWithTimeout(timeout time.Duration) *LineNetworkAPIControllerGetParams {
-	var (
-		dollarTopDefault = int64(30)
-	)
 	return &LineNetworkAPIControllerGetParams{
-		DollarTop: &dollarTopDefault,
-
 		timeout: timeout,
 	}
 }
 
 // NewLineNetworkAPIControllerGetParamsWithContext creates a new LineNetworkAPIControllerGetParams object
-// with the default values initialized, and the ability to set a context for a request
+// with the ability to set a context for a request.
 func NewLineNetworkAPIControllerGetParamsWithContext(ctx context.Context) *LineNetworkAPIControllerGetParams {
-	var (
-		dollarTopDefault = int64(30)
-	)
 	return &LineNetworkAPIControllerGetParams{
-		DollarTop: &dollarTopDefault,
-
 		Context: ctx,
 	}
 }
 
 // NewLineNetworkAPIControllerGetParamsWithHTTPClient creates a new LineNetworkAPIControllerGetParams object
-// with the default values initialized, and the ability to set a custom HTTPClient for a request
+// with the ability to set a custom HTTPClient for a request.
 func NewLineNetworkAPIControllerGetParamsWithHTTPClient(client *http.Client) *LineNetworkAPIControllerGetParams {
-	var (
-		dollarTopDefault = int64(30)
-	)
 	return &LineNetworkAPIControllerGetParams{
-		DollarTop:  &dollarTopDefault,
 		HTTPClient: client,
 	}
 }
 
-/*LineNetworkAPIControllerGetParams contains all the parameters to send to the API endpoint
-for the line network Api controller get operation typically these are written to a http.Request
+/* LineNetworkAPIControllerGetParams contains all the parameters to send to the API endpoint
+   for the line network Api controller get operation.
+
+   Typically these are written to a http.Request.
 */
 type LineNetworkAPIControllerGetParams struct {
 
-	/*DollarCount
-	  查詢數量
+	/* DollarCount.
 
+	   查詢數量
 	*/
 	DollarCount *bool
-	/*DollarFilter
-	  過濾
 
+	/* DollarFilter.
+
+	   過濾
 	*/
 	DollarFilter *string
-	/*DollarFormat
-	  指定來源格式
 
+	/* DollarFormat.
+
+	   指定來源格式
 	*/
 	DollarFormat string
-	/*DollarOrderby
-	  排序
 
+	/* DollarOrderby.
+
+	   排序
 	*/
 	DollarOrderby *string
-	/*DollarSelect
-	  挑選
 
+	/* DollarSelect.
+
+	   挑選
 	*/
 	DollarSelect *string
-	/*DollarSkip
-	  跳過前幾筆
 
+	/* DollarSkip.
+
+	   跳過前幾筆
 	*/
 	DollarSkip *string
-	/*DollarTop
-	  取前幾筆
 
+	/* DollarTop.
+
+	   取前幾筆
+
+	   Default: 30
 	*/
 	DollarTop *int64
 
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
+}
+
+// WithDefaults hydrates default values in the line network Api controller get params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *LineNetworkAPIControllerGetParams) WithDefaults() *LineNetworkAPIControllerGetParams {
+	o.SetDefaults()
+	return o
+}
+
+// SetDefaults hydrates default values in the line network Api controller get params (not the query body).
+//
+// All values with no default are reset to their zero value.
+func (o *LineNetworkAPIControllerGetParams) SetDefaults() {
+	var (
+		dollarTopDefault = int64(30)
+	)
+
+	val := LineNetworkAPIControllerGetParams{
+		DollarTop: &dollarTopDefault,
+	}
+
+	val.timeout = o.timeout
+	val.Context = o.Context
+	val.HTTPClient = o.HTTPClient
+	*o = val
 }
 
 // WithTimeout adds the timeout to the line network Api controller get params
@@ -236,38 +257,41 @@ func (o *LineNetworkAPIControllerGetParams) WriteToRequest(r runtime.ClientReque
 
 		// query param $count
 		var qrDollarCount bool
+
 		if o.DollarCount != nil {
 			qrDollarCount = *o.DollarCount
 		}
 		qDollarCount := swag.FormatBool(qrDollarCount)
 		if qDollarCount != "" {
+
 			if err := r.SetQueryParam("$count", qDollarCount); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.DollarFilter != nil {
 
 		// query param $filter
 		var qrDollarFilter string
+
 		if o.DollarFilter != nil {
 			qrDollarFilter = *o.DollarFilter
 		}
 		qDollarFilter := qrDollarFilter
 		if qDollarFilter != "" {
+
 			if err := r.SetQueryParam("$filter", qDollarFilter); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	// query param $format
 	qrDollarFormat := o.DollarFormat
 	qDollarFormat := qrDollarFormat
 	if qDollarFormat != "" {
+
 		if err := r.SetQueryParam("$format", qDollarFormat); err != nil {
 			return err
 		}
@@ -277,64 +301,68 @@ func (o *LineNetworkAPIControllerGetParams) WriteToRequest(r runtime.ClientReque
 
 		// query param $orderby
 		var qrDollarOrderby string
+
 		if o.DollarOrderby != nil {
 			qrDollarOrderby = *o.DollarOrderby
 		}
 		qDollarOrderby := qrDollarOrderby
 		if qDollarOrderby != "" {
+
 			if err := r.SetQueryParam("$orderby", qDollarOrderby); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.DollarSelect != nil {
 
 		// query param $select
 		var qrDollarSelect string
+
 		if o.DollarSelect != nil {
 			qrDollarSelect = *o.DollarSelect
 		}
 		qDollarSelect := qrDollarSelect
 		if qDollarSelect != "" {
+
 			if err := r.SetQueryParam("$select", qDollarSelect); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.DollarSkip != nil {
 
 		// query param $skip
 		var qrDollarSkip string
+
 		if o.DollarSkip != nil {
 			qrDollarSkip = *o.DollarSkip
 		}
 		qDollarSkip := qrDollarSkip
 		if qDollarSkip != "" {
+
 			if err := r.SetQueryParam("$skip", qDollarSkip); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if o.DollarTop != nil {
 
 		// query param $top
 		var qrDollarTop int64
+
 		if o.DollarTop != nil {
 			qrDollarTop = *o.DollarTop
 		}
 		qDollarTop := swag.FormatInt64(qrDollarTop)
 		if qDollarTop != "" {
+
 			if err := r.SetQueryParam("$top", qDollarTop); err != nil {
 				return err
 			}
 		}
-
 	}
 
 	if len(res) > 0 {

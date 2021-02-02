@@ -6,6 +6,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -158,6 +159,38 @@ func (m *PTXAPIRailModelTRABaseWrapperPTXServiceDTORailSpecificationV3TRAStation
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+// ContextValidate validate this p t x API rail model t r a base wrapper p t x service d t o rail specification v3 t r a station of line station of line based on the context it is used
+func (m *PTXAPIRailModelTRABaseWrapperPTXServiceDTORailSpecificationV3TRAStationOfLineStationOfLine) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateStationOfLines(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXAPIRailModelTRABaseWrapperPTXServiceDTORailSpecificationV3TRAStationOfLineStationOfLine) contextValidateStationOfLines(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.StationOfLines); i++ {
+
+		if m.StationOfLines[i] != nil {
+			if err := m.StationOfLines[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("StationOfLines" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
 	}
 
 	return nil

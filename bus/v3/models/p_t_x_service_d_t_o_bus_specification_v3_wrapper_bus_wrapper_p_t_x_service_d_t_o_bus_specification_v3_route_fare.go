@@ -6,6 +6,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -160,6 +161,38 @@ func (m *PTXServiceDTOBusSpecificationV3WrapperBusWrapperPTXServiceDTOBusSpecifi
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+// ContextValidate validate this p t x service d t o bus specification v3 wrapper bus wrapper p t x service d t o bus specification v3 route fare based on the context it is used
+func (m *PTXServiceDTOBusSpecificationV3WrapperBusWrapperPTXServiceDTOBusSpecificationV3RouteFare) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateRouteFares(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV3WrapperBusWrapperPTXServiceDTOBusSpecificationV3RouteFare) contextValidateRouteFares(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.RouteFares); i++ {
+
+		if m.RouteFares[i] != nil {
+			if err := m.RouteFares[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("RouteFares" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
 	}
 
 	return nil

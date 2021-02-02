@@ -6,6 +6,7 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
 	"strconv"
 
 	"github.com/go-openapi/errors"
@@ -80,7 +81,6 @@ func (m *PTXServiceDTOAirSpecificationV2AirportFIDS) validateAirportID(formats s
 }
 
 func (m *PTXServiceDTOAirSpecificationV2AirportFIDS) validateFIDSArrival(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.FIDSArrival) { // not required
 		return nil
 	}
@@ -105,7 +105,6 @@ func (m *PTXServiceDTOAirSpecificationV2AirportFIDS) validateFIDSArrival(formats
 }
 
 func (m *PTXServiceDTOAirSpecificationV2AirportFIDS) validateFIDSDeparture(formats strfmt.Registry) error {
-
 	if swag.IsZero(m.FIDSDeparture) { // not required
 		return nil
 	}
@@ -133,6 +132,60 @@ func (m *PTXServiceDTOAirSpecificationV2AirportFIDS) validateUpdateTime(formats 
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+// ContextValidate validate this p t x service d t o air specification v2 airport f ID s based on the context it is used
+func (m *PTXServiceDTOAirSpecificationV2AirportFIDS) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateFIDSArrival(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateFIDSDeparture(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTOAirSpecificationV2AirportFIDS) contextValidateFIDSArrival(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.FIDSArrival); i++ {
+
+		if m.FIDSArrival[i] != nil {
+			if err := m.FIDSArrival[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("FIDSArrival" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTOAirSpecificationV2AirportFIDS) contextValidateFIDSDeparture(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.FIDSDeparture); i++ {
+
+		if m.FIDSDeparture[i] != nil {
+			if err := m.FIDSDeparture[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("FIDSDeparture" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
 	}
 
 	return nil

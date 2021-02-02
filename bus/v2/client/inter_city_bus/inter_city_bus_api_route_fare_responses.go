@@ -35,7 +35,12 @@ func (o *InterCityBusAPIRouteFareReader) ReadResponse(response runtime.ClientRes
 			return nil, err
 		}
 		return result, nil
-
+	case 304:
+		result := NewInterCityBusAPIRouteFareNotModified()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return nil, result
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -46,7 +51,7 @@ func NewInterCityBusAPIRouteFareOK() *InterCityBusAPIRouteFareOK {
 	return &InterCityBusAPIRouteFareOK{}
 }
 
-/*InterCityBusAPIRouteFareOK handles this case with default header values.
+/* InterCityBusAPIRouteFareOK describes a response with status code 200, with default header values.
 
 Success
 */
@@ -57,7 +62,6 @@ type InterCityBusAPIRouteFareOK struct {
 func (o *InterCityBusAPIRouteFareOK) Error() string {
 	return fmt.Sprintf("[GET /v2/Bus/RouteFare/InterCity][%d] interCityBusApiRouteFareOK  %+v", 200, o.Payload)
 }
-
 func (o *InterCityBusAPIRouteFareOK) GetPayload() []*models.PTXServiceDTOBusSpecificationV2BusRouteFare {
 	return o.Payload
 }
@@ -77,7 +81,7 @@ func NewInterCityBusAPIRouteFareStatus299() *InterCityBusAPIRouteFareStatus299 {
 	return &InterCityBusAPIRouteFareStatus299{}
 }
 
-/*InterCityBusAPIRouteFareStatus299 handles this case with default header values.
+/* InterCityBusAPIRouteFareStatus299 describes a response with status code 299, with default header values.
 
 加入參數'?health=true'即可查詢此API服務的健康狀態
 */
@@ -88,7 +92,6 @@ type InterCityBusAPIRouteFareStatus299 struct {
 func (o *InterCityBusAPIRouteFareStatus299) Error() string {
 	return fmt.Sprintf("[GET /v2/Bus/RouteFare/InterCity][%d] interCityBusApiRouteFareStatus299  %+v", 299, o.Payload)
 }
-
 func (o *InterCityBusAPIRouteFareStatus299) GetPayload() *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth {
 	return o.Payload
 }
@@ -101,6 +104,27 @@ func (o *InterCityBusAPIRouteFareStatus299) readResponse(response runtime.Client
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
+
+	return nil
+}
+
+// NewInterCityBusAPIRouteFareNotModified creates a InterCityBusAPIRouteFareNotModified with default headers values
+func NewInterCityBusAPIRouteFareNotModified() *InterCityBusAPIRouteFareNotModified {
+	return &InterCityBusAPIRouteFareNotModified{}
+}
+
+/* InterCityBusAPIRouteFareNotModified describes a response with status code 304, with default header values.
+
+服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content
+*/
+type InterCityBusAPIRouteFareNotModified struct {
+}
+
+func (o *InterCityBusAPIRouteFareNotModified) Error() string {
+	return fmt.Sprintf("[GET /v2/Bus/RouteFare/InterCity][%d] interCityBusApiRouteFareNotModified ", 304)
+}
+
+func (o *InterCityBusAPIRouteFareNotModified) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

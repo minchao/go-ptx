@@ -6,6 +6,8 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
+
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
@@ -57,6 +59,22 @@ type PTXServiceDTOBusSpecificationV2BusShape struct {
 	// Required: true
 	RouteUID *string `json:"RouteUID"`
 
+	// String
+	//
+	// 附屬路線唯一識別代碼，規則為 {業管機關簡碼} + {SubRouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢
+	SubRouteID string `json:"SubRouteID,omitempty"`
+
+	// NameType
+	//
+	// 附屬路線名稱
+	SubRouteName struct {
+		PTXServiceDTOSharedSpecificationV2BaseNameType
+	} `json:"SubRouteName,omitempty"`
+
+	// String
+	// Required: true
+	SubRouteUID *string `json:"SubRouteUID"`
+
 	// DateTime
 	//
 	// 資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
@@ -65,7 +83,7 @@ type PTXServiceDTOBusSpecificationV2BusShape struct {
 
 	// Int32
 	//
-	// 資料版本編號
+	// 資料版本編號(由於該服務資料不再版控，固定帶入版號0)
 	// Required: true
 	VersionID *int32 `json:"VersionID"`
 }
@@ -95,6 +113,14 @@ func (m *PTXServiceDTOBusSpecificationV2BusShape) Validate(formats strfmt.Regist
 	}
 
 	if err := m.validateRouteUID(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateSubRouteName(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateSubRouteUID(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -162,6 +188,23 @@ func (m *PTXServiceDTOBusSpecificationV2BusShape) validateRouteUID(formats strfm
 	return nil
 }
 
+func (m *PTXServiceDTOBusSpecificationV2BusShape) validateSubRouteName(formats strfmt.Registry) error {
+	if swag.IsZero(m.SubRouteName) { // not required
+		return nil
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV2BusShape) validateSubRouteUID(formats strfmt.Registry) error {
+
+	if err := validate.Required("SubRouteUID", "body", m.SubRouteUID); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *PTXServiceDTOBusSpecificationV2BusShape) validateUpdateTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
@@ -176,6 +219,34 @@ func (m *PTXServiceDTOBusSpecificationV2BusShape) validateVersionID(formats strf
 	if err := validate.Required("VersionID", "body", m.VersionID); err != nil {
 		return err
 	}
+
+	return nil
+}
+
+// ContextValidate validate this p t x service d t o bus specification v2 bus shape based on the context it is used
+func (m *PTXServiceDTOBusSpecificationV2BusShape) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateRouteName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateSubRouteName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV2BusShape) contextValidateRouteName(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV2BusShape) contextValidateSubRouteName(ctx context.Context, formats strfmt.Registry) error {
 
 	return nil
 }

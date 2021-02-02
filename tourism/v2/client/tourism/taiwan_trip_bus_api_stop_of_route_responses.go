@@ -29,7 +29,6 @@ func (o *TaiwanTripBusAPIStopOfRouteReader) ReadResponse(response runtime.Client
 			return nil, err
 		}
 		return result, nil
-
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -40,7 +39,7 @@ func NewTaiwanTripBusAPIStopOfRouteOK() *TaiwanTripBusAPIStopOfRouteOK {
 	return &TaiwanTripBusAPIStopOfRouteOK{}
 }
 
-/*TaiwanTripBusAPIStopOfRouteOK handles this case with default header values.
+/* TaiwanTripBusAPIStopOfRouteOK describes a response with status code 200, with default header values.
 
 Success
 */
@@ -51,7 +50,6 @@ type TaiwanTripBusAPIStopOfRouteOK struct {
 func (o *TaiwanTripBusAPIStopOfRouteOK) Error() string {
 	return fmt.Sprintf("[GET /v2/Tourism/Bus/StopOfRoute/TaiwanTrip][%d] taiwanTripBusApiStopOfRouteOK  %+v", 200, o.Payload)
 }
-
 func (o *TaiwanTripBusAPIStopOfRouteOK) GetPayload() []*models.PTXServiceDTOTourismSpecificationV2BusStopOfRoute {
 	return o.Payload
 }

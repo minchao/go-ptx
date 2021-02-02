@@ -6,6 +6,8 @@ package models
 // Editing this file might prove futile when you re-run the swagger generate command
 
 import (
+	"context"
+
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
@@ -119,6 +121,34 @@ func (m *PTXServiceDTORailSpecificationV3TRAStationTransferFerryTransfer) valida
 }
 
 func (m *PTXServiceDTORailSpecificationV3TRAStationTransferFerryTransfer) validateOperatorName(formats strfmt.Registry) error {
+
+	return nil
+}
+
+// ContextValidate validate this p t x service d t o rail specification v3 t r a station transfer ferry transfer based on the context it is used
+func (m *PTXServiceDTORailSpecificationV3TRAStationTransferFerryTransfer) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.contextValidateFerryStationName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateOperatorName(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV3TRAStationTransferFerryTransfer) contextValidateFerryStationName(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV3TRAStationTransferFerryTransfer) contextValidateOperatorName(ctx context.Context, formats strfmt.Registry) error {
 
 	return nil
 }

@@ -35,7 +35,12 @@ func (o *InterCityBusAPIRealTimeByFrequencyUDPReader) ReadResponse(response runt
 			return nil, err
 		}
 		return result, nil
-
+	case 304:
+		result := NewInterCityBusAPIRealTimeByFrequencyUDPNotModified()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return nil, result
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -46,7 +51,7 @@ func NewInterCityBusAPIRealTimeByFrequencyUDPOK() *InterCityBusAPIRealTimeByFreq
 	return &InterCityBusAPIRealTimeByFrequencyUDPOK{}
 }
 
-/*InterCityBusAPIRealTimeByFrequencyUDPOK handles this case with default header values.
+/* InterCityBusAPIRealTimeByFrequencyUDPOK describes a response with status code 200, with default header values.
 
 Success
 */
@@ -57,7 +62,6 @@ type InterCityBusAPIRealTimeByFrequencyUDPOK struct {
 func (o *InterCityBusAPIRealTimeByFrequencyUDPOK) Error() string {
 	return fmt.Sprintf("[GET /v2/Bus/RealTimeByFrequency/Streaming/InterCity][%d] interCityBusApiRealTimeByFrequencyUdpOK  %+v", 200, o.Payload)
 }
-
 func (o *InterCityBusAPIRealTimeByFrequencyUDPOK) GetPayload() []*models.PTXServiceDTOBusSpecificationV2BusA1Data {
 	return o.Payload
 }
@@ -77,7 +81,7 @@ func NewInterCityBusAPIRealTimeByFrequencyUDPStatus299() *InterCityBusAPIRealTim
 	return &InterCityBusAPIRealTimeByFrequencyUDPStatus299{}
 }
 
-/*InterCityBusAPIRealTimeByFrequencyUDPStatus299 handles this case with default header values.
+/* InterCityBusAPIRealTimeByFrequencyUDPStatus299 describes a response with status code 299, with default header values.
 
 加入參數'?health=true'即可查詢此API服務的健康狀態
 */
@@ -88,7 +92,6 @@ type InterCityBusAPIRealTimeByFrequencyUDPStatus299 struct {
 func (o *InterCityBusAPIRealTimeByFrequencyUDPStatus299) Error() string {
 	return fmt.Sprintf("[GET /v2/Bus/RealTimeByFrequency/Streaming/InterCity][%d] interCityBusApiRealTimeByFrequencyUdpStatus299  %+v", 299, o.Payload)
 }
-
 func (o *InterCityBusAPIRealTimeByFrequencyUDPStatus299) GetPayload() *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth {
 	return o.Payload
 }
@@ -101,6 +104,27 @@ func (o *InterCityBusAPIRealTimeByFrequencyUDPStatus299) readResponse(response r
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
+
+	return nil
+}
+
+// NewInterCityBusAPIRealTimeByFrequencyUDPNotModified creates a InterCityBusAPIRealTimeByFrequencyUDPNotModified with default headers values
+func NewInterCityBusAPIRealTimeByFrequencyUDPNotModified() *InterCityBusAPIRealTimeByFrequencyUDPNotModified {
+	return &InterCityBusAPIRealTimeByFrequencyUDPNotModified{}
+}
+
+/* InterCityBusAPIRealTimeByFrequencyUDPNotModified describes a response with status code 304, with default header values.
+
+服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content
+*/
+type InterCityBusAPIRealTimeByFrequencyUDPNotModified struct {
+}
+
+func (o *InterCityBusAPIRealTimeByFrequencyUDPNotModified) Error() string {
+	return fmt.Sprintf("[GET /v2/Bus/RealTimeByFrequency/Streaming/InterCity][%d] interCityBusApiRealTimeByFrequencyUdpNotModified ", 304)
+}
+
+func (o *InterCityBusAPIRealTimeByFrequencyUDPNotModified) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

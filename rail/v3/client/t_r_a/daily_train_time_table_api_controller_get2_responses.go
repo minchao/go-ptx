@@ -29,7 +29,12 @@ func (o *DailyTrainTimeTableAPIControllerGet2Reader) ReadResponse(response runti
 			return nil, err
 		}
 		return result, nil
-
+	case 304:
+		result := NewDailyTrainTimeTableAPIControllerGet2NotModified()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return nil, result
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -40,7 +45,7 @@ func NewDailyTrainTimeTableAPIControllerGet2OK() *DailyTrainTimeTableAPIControll
 	return &DailyTrainTimeTableAPIControllerGet2OK{}
 }
 
-/*DailyTrainTimeTableAPIControllerGet2OK handles this case with default header values.
+/* DailyTrainTimeTableAPIControllerGet2OK describes a response with status code 200, with default header values.
 
 Success
 */
@@ -51,7 +56,6 @@ type DailyTrainTimeTableAPIControllerGet2OK struct {
 func (o *DailyTrainTimeTableAPIControllerGet2OK) Error() string {
 	return fmt.Sprintf("[GET /v3/Rail/TRA/DailyTrainTimetable/TrainDate/{TrainDate}][%d] dailyTrainTimeTableApiControllerGet2OK  %+v", 200, o.Payload)
 }
-
 func (o *DailyTrainTimeTableAPIControllerGet2OK) GetPayload() *models.PTXAPIRailModelTraDailyTrainWrapperPTXServiceDTORailSpecificationV3TRADailyTrainTimeTableTrainTimetable {
 	return o.Payload
 }
@@ -64,6 +68,27 @@ func (o *DailyTrainTimeTableAPIControllerGet2OK) readResponse(response runtime.C
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
+
+	return nil
+}
+
+// NewDailyTrainTimeTableAPIControllerGet2NotModified creates a DailyTrainTimeTableAPIControllerGet2NotModified with default headers values
+func NewDailyTrainTimeTableAPIControllerGet2NotModified() *DailyTrainTimeTableAPIControllerGet2NotModified {
+	return &DailyTrainTimeTableAPIControllerGet2NotModified{}
+}
+
+/* DailyTrainTimeTableAPIControllerGet2NotModified describes a response with status code 304, with default header values.
+
+服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content
+*/
+type DailyTrainTimeTableAPIControllerGet2NotModified struct {
+}
+
+func (o *DailyTrainTimeTableAPIControllerGet2NotModified) Error() string {
+	return fmt.Sprintf("[GET /v3/Rail/TRA/DailyTrainTimetable/TrainDate/{TrainDate}][%d] dailyTrainTimeTableApiControllerGet2NotModified ", 304)
+}
+
+func (o *DailyTrainTimeTableAPIControllerGet2NotModified) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }
