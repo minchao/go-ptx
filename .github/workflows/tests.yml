@@ -13,6 +13,14 @@ jobs:
         with:
           version: v1.36
 
+  commitlint:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - uses: wagoid/commitlint-github-action@v2
+
   test:
     strategy:
       matrix:
