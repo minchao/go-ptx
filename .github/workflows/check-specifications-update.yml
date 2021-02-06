@@ -23,14 +23,8 @@ jobs:
 
       - run: go mod download
 
-      - name: Install go-swagger
-        run: |
-          mkdir -p $HOME/.local/bin
-          download_url=$(curl -s https://api.github.com/repos/go-swagger/go-swagger/releases/latest | \
-            jq -r '.assets[] | select(.name | contains("'"$(uname | tr '[:upper:]' '[:lower:]')"'_amd64")) | .browser_download_url')
-          curl -o $HOME/.local/bin/swagger -L'#' "$download_url"
-          chmod +x $HOME/.local/bin/swagger
-          echo "$HOME/.local/bin" >> $GITHUB_PATH
+      - name: go-swagger installer
+        uses: minchao/setup-goswagger@v1
 
       - name: Fetche all newest openapi specifications
         run: make spec
