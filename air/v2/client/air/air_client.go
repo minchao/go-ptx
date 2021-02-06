@@ -25,39 +25,42 @@ type Client struct {
 	formats   strfmt.Registry
 }
 
+// ClientOption is the option for Client methods
+type ClientOption func(*runtime.ClientOperation)
+
 // ClientService is the interface for Client methods
 type ClientService interface {
-	AirAPIAirline(params *AirAPIAirlineParams) (*AirAPIAirlineOK, error)
+	AirAPIAirline(params *AirAPIAirlineParams, opts ...ClientOption) (*AirAPIAirlineOK, error)
 
-	AirAPIAirline1(params *AirAPIAirline1Params) (*AirAPIAirline1OK, error)
+	AirAPIAirline1(params *AirAPIAirline1Params, opts ...ClientOption) (*AirAPIAirline1OK, error)
 
-	AirAPIAirport(params *AirAPIAirportParams) (*AirAPIAirportOK, error)
+	AirAPIAirport(params *AirAPIAirportParams, opts ...ClientOption) (*AirAPIAirportOK, error)
 
-	AirAPIAirport1(params *AirAPIAirport1Params) (*AirAPIAirport1OK, error)
+	AirAPIAirport1(params *AirAPIAirport1Params, opts ...ClientOption) (*AirAPIAirport1OK, error)
 
-	AirAPIArrival(params *AirAPIArrivalParams) (*AirAPIArrivalOK, error)
+	AirAPIArrival(params *AirAPIArrivalParams, opts ...ClientOption) (*AirAPIArrivalOK, error)
 
-	AirAPIArrival1(params *AirAPIArrival1Params) (*AirAPIArrival1OK, error)
+	AirAPIArrival1(params *AirAPIArrival1Params, opts ...ClientOption) (*AirAPIArrival1OK, error)
 
-	AirAPIDeparture(params *AirAPIDepartureParams) (*AirAPIDepartureOK, error)
+	AirAPIDeparture(params *AirAPIDepartureParams, opts ...ClientOption) (*AirAPIDepartureOK, error)
 
-	AirAPIDeparture1(params *AirAPIDeparture1Params) (*AirAPIDeparture1OK, error)
+	AirAPIDeparture1(params *AirAPIDeparture1Params, opts ...ClientOption) (*AirAPIDeparture1OK, error)
 
-	AirAPIDomestic(params *AirAPIDomesticParams) (*AirAPIDomesticOK, error)
+	AirAPIDomestic(params *AirAPIDomesticParams, opts ...ClientOption) (*AirAPIDomesticOK, error)
 
-	AirAPIFIDS(params *AirAPIFIDSParams) (*AirAPIFIDSOK, error)
+	AirAPIFIDS(params *AirAPIFIDSParams, opts ...ClientOption) (*AirAPIFIDSOK, error)
 
-	AirAPIFIDS1(params *AirAPIFIDS1Params) (*AirAPIFIDS1OK, error)
+	AirAPIFIDS1(params *AirAPIFIDS1Params, opts ...ClientOption) (*AirAPIFIDS1OK, error)
 
-	AirAPIFlight(params *AirAPIFlightParams) (*AirAPIFlightOK, error)
+	AirAPIFlight(params *AirAPIFlightParams, opts ...ClientOption) (*AirAPIFlightOK, error)
 
-	AirAPIFlight1(params *AirAPIFlight1Params) (*AirAPIFlight1OK, error)
+	AirAPIFlight1(params *AirAPIFlight1Params, opts ...ClientOption) (*AirAPIFlight1OK, error)
 
-	AirAPIInternational(params *AirAPIInternationalParams) (*AirAPIInternationalOK, error)
+	AirAPIInternational(params *AirAPIInternationalParams, opts ...ClientOption) (*AirAPIInternationalOK, error)
 
-	AirAPIMETAR(params *AirAPIMETARParams) (*AirAPIMETAROK, error)
+	AirAPIMETAR(params *AirAPIMETARParams, opts ...ClientOption) (*AirAPIMETAROK, error)
 
-	AirAPIMETAR1(params *AirAPIMETAR1Params) (*AirAPIMETAR1OK, error)
+	AirAPIMETAR1(params *AirAPIMETAR1Params, opts ...ClientOption) (*AirAPIMETAR1OK, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
@@ -67,13 +70,12 @@ type ClientService interface {
 
   取得指定[航空公司]資料
 */
-func (a *Client) AirAPIAirline(params *AirAPIAirlineParams) (*AirAPIAirlineOK, error) {
+func (a *Client) AirAPIAirline(params *AirAPIAirlineParams, opts ...ClientOption) (*AirAPIAirlineOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewAirAPIAirlineParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "AirApi_Airline",
 		Method:             "GET",
 		PathPattern:        "/v2/Air/Airline/{IATA}",
@@ -84,7 +86,12 @@ func (a *Client) AirAPIAirline(params *AirAPIAirlineParams) (*AirAPIAirlineOK, e
 		Reader:             &AirAPIAirlineReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -103,13 +110,12 @@ func (a *Client) AirAPIAirline(params *AirAPIAirlineParams) (*AirAPIAirlineOK, e
 
   取得所有航空公司資料
 */
-func (a *Client) AirAPIAirline1(params *AirAPIAirline1Params) (*AirAPIAirline1OK, error) {
+func (a *Client) AirAPIAirline1(params *AirAPIAirline1Params, opts ...ClientOption) (*AirAPIAirline1OK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewAirAPIAirline1Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "AirApi_Airline_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Air/Airline",
@@ -120,7 +126,12 @@ func (a *Client) AirAPIAirline1(params *AirAPIAirline1Params) (*AirAPIAirline1OK
 		Reader:             &AirAPIAirline1Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -139,13 +150,12 @@ func (a *Client) AirAPIAirline1(params *AirAPIAirline1Params) (*AirAPIAirline1OK
 
   取得所有機場資料
 */
-func (a *Client) AirAPIAirport(params *AirAPIAirportParams) (*AirAPIAirportOK, error) {
+func (a *Client) AirAPIAirport(params *AirAPIAirportParams, opts ...ClientOption) (*AirAPIAirportOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewAirAPIAirportParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "AirApi_Airport",
 		Method:             "GET",
 		PathPattern:        "/v2/Air/Airport",
@@ -156,7 +166,12 @@ func (a *Client) AirAPIAirport(params *AirAPIAirportParams) (*AirAPIAirportOK, e
 		Reader:             &AirAPIAirportReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -175,13 +190,12 @@ func (a *Client) AirAPIAirport(params *AirAPIAirportParams) (*AirAPIAirportOK, e
 
   取得指定[機場]資料
 */
-func (a *Client) AirAPIAirport1(params *AirAPIAirport1Params) (*AirAPIAirport1OK, error) {
+func (a *Client) AirAPIAirport1(params *AirAPIAirport1Params, opts ...ClientOption) (*AirAPIAirport1OK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewAirAPIAirport1Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "AirApi_Airport_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Air/Airport/{IATA}",
@@ -192,7 +206,12 @@ func (a *Client) AirAPIAirport1(params *AirAPIAirport1Params) (*AirAPIAirport1OK
 		Reader:             &AirAPIAirport1Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -211,13 +230,12 @@ func (a *Client) AirAPIAirport1(params *AirAPIAirport1Params) (*AirAPIAirport1OK
 
   取得機場的即時入境航班
 */
-func (a *Client) AirAPIArrival(params *AirAPIArrivalParams) (*AirAPIArrivalOK, error) {
+func (a *Client) AirAPIArrival(params *AirAPIArrivalParams, opts ...ClientOption) (*AirAPIArrivalOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewAirAPIArrivalParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "AirApi_Arrival",
 		Method:             "GET",
 		PathPattern:        "/v2/Air/FIDS/Airport/Arrival",
@@ -228,7 +246,12 @@ func (a *Client) AirAPIArrival(params *AirAPIArrivalParams) (*AirAPIArrivalOK, e
 		Reader:             &AirAPIArrivalReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -247,13 +270,12 @@ func (a *Client) AirAPIArrival(params *AirAPIArrivalParams) (*AirAPIArrivalOK, e
 
   取得[指定機場]的即時入境航班
 */
-func (a *Client) AirAPIArrival1(params *AirAPIArrival1Params) (*AirAPIArrival1OK, error) {
+func (a *Client) AirAPIArrival1(params *AirAPIArrival1Params, opts ...ClientOption) (*AirAPIArrival1OK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewAirAPIArrival1Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "AirApi_Arrival_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Air/FIDS/Airport/Arrival/{IATA}",
@@ -264,7 +286,12 @@ func (a *Client) AirAPIArrival1(params *AirAPIArrival1Params) (*AirAPIArrival1OK
 		Reader:             &AirAPIArrival1Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -283,13 +310,12 @@ func (a *Client) AirAPIArrival1(params *AirAPIArrival1Params) (*AirAPIArrival1OK
 
   取得機場的即時出境航班
 */
-func (a *Client) AirAPIDeparture(params *AirAPIDepartureParams) (*AirAPIDepartureOK, error) {
+func (a *Client) AirAPIDeparture(params *AirAPIDepartureParams, opts ...ClientOption) (*AirAPIDepartureOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewAirAPIDepartureParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "AirApi_Departure",
 		Method:             "GET",
 		PathPattern:        "/v2/Air/FIDS/Airport/Departure",
@@ -300,7 +326,12 @@ func (a *Client) AirAPIDeparture(params *AirAPIDepartureParams) (*AirAPIDepartur
 		Reader:             &AirAPIDepartureReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -319,13 +350,12 @@ func (a *Client) AirAPIDeparture(params *AirAPIDepartureParams) (*AirAPIDepartur
 
   取得指定的[機場即時出境航班]
 */
-func (a *Client) AirAPIDeparture1(params *AirAPIDeparture1Params) (*AirAPIDeparture1OK, error) {
+func (a *Client) AirAPIDeparture1(params *AirAPIDeparture1Params, opts ...ClientOption) (*AirAPIDeparture1OK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewAirAPIDeparture1Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "AirApi_Departure_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Air/FIDS/Airport/Departure/{IATA}",
@@ -336,7 +366,12 @@ func (a *Client) AirAPIDeparture1(params *AirAPIDeparture1Params) (*AirAPIDepart
 		Reader:             &AirAPIDeparture1Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -353,13 +388,12 @@ func (a *Client) AirAPIDeparture1(params *AirAPIDeparture1Params) (*AirAPIDepart
 /*
   AirAPIDomestic 取得國內航空定期時刻表s
 */
-func (a *Client) AirAPIDomestic(params *AirAPIDomesticParams) (*AirAPIDomesticOK, error) {
+func (a *Client) AirAPIDomestic(params *AirAPIDomesticParams, opts ...ClientOption) (*AirAPIDomesticOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewAirAPIDomesticParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "AirApi_Domestic",
 		Method:             "GET",
 		PathPattern:        "/v2/Air/GeneralSchedule/Domestic",
@@ -370,7 +404,12 @@ func (a *Client) AirAPIDomestic(params *AirAPIDomesticParams) (*AirAPIDomesticOK
 		Reader:             &AirAPIDomesticReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -389,13 +428,12 @@ func (a *Client) AirAPIDomestic(params *AirAPIDomesticParams) (*AirAPIDomesticOK
 
   取得即時航班資料
 */
-func (a *Client) AirAPIFIDS(params *AirAPIFIDSParams) (*AirAPIFIDSOK, error) {
+func (a *Client) AirAPIFIDS(params *AirAPIFIDSParams, opts ...ClientOption) (*AirAPIFIDSOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewAirAPIFIDSParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "AirApi_FIDS",
 		Method:             "GET",
 		PathPattern:        "/v2/Air/FIDS/Airport",
@@ -406,7 +444,12 @@ func (a *Client) AirAPIFIDS(params *AirAPIFIDSParams) (*AirAPIFIDSOK, error) {
 		Reader:             &AirAPIFIDSReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -425,13 +468,12 @@ func (a *Client) AirAPIFIDS(params *AirAPIFIDSParams) (*AirAPIFIDSOK, error) {
 
   取得指定[機場的即時航班]資料
 */
-func (a *Client) AirAPIFIDS1(params *AirAPIFIDS1Params) (*AirAPIFIDS1OK, error) {
+func (a *Client) AirAPIFIDS1(params *AirAPIFIDS1Params, opts ...ClientOption) (*AirAPIFIDS1OK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewAirAPIFIDS1Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "AirApi_FIDS_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Air/FIDS/Airport/{IATA}",
@@ -442,7 +484,12 @@ func (a *Client) AirAPIFIDS1(params *AirAPIFIDS1Params) (*AirAPIFIDS1OK, error) 
 		Reader:             &AirAPIFIDS1Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -461,13 +508,12 @@ func (a *Client) AirAPIFIDS1(params *AirAPIFIDS1Params) (*AirAPIFIDS1OK, error) 
 
   取得即時航班資料
 */
-func (a *Client) AirAPIFlight(params *AirAPIFlightParams) (*AirAPIFlightOK, error) {
+func (a *Client) AirAPIFlight(params *AirAPIFlightParams, opts ...ClientOption) (*AirAPIFlightOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewAirAPIFlightParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "AirApi_Flight",
 		Method:             "GET",
 		PathPattern:        "/v2/Air/FIDS/Flight",
@@ -478,7 +524,12 @@ func (a *Client) AirAPIFlight(params *AirAPIFlightParams) (*AirAPIFlightOK, erro
 		Reader:             &AirAPIFlightReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -495,13 +546,12 @@ func (a *Client) AirAPIFlight(params *AirAPIFlightParams) (*AirAPIFlightOK, erro
 /*
   AirAPIFlight1 取得指定s 即時航班 資料
 */
-func (a *Client) AirAPIFlight1(params *AirAPIFlight1Params) (*AirAPIFlight1OK, error) {
+func (a *Client) AirAPIFlight1(params *AirAPIFlight1Params, opts ...ClientOption) (*AirAPIFlight1OK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewAirAPIFlight1Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "AirApi_Flight_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Air/FIDS/Flight/{FlightNo}",
@@ -512,7 +562,12 @@ func (a *Client) AirAPIFlight1(params *AirAPIFlight1Params) (*AirAPIFlight1OK, e
 		Reader:             &AirAPIFlight1Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -529,13 +584,12 @@ func (a *Client) AirAPIFlight1(params *AirAPIFlight1Params) (*AirAPIFlight1OK, e
 /*
   AirAPIInternational 取得國際航空定期時刻表s
 */
-func (a *Client) AirAPIInternational(params *AirAPIInternationalParams) (*AirAPIInternationalOK, error) {
+func (a *Client) AirAPIInternational(params *AirAPIInternationalParams, opts ...ClientOption) (*AirAPIInternationalOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewAirAPIInternationalParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "AirApi_International",
 		Method:             "GET",
 		PathPattern:        "/v2/Air/GeneralSchedule/International",
@@ -546,7 +600,12 @@ func (a *Client) AirAPIInternational(params *AirAPIInternationalParams) (*AirAPI
 		Reader:             &AirAPIInternationalReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -573,13 +632,12 @@ func (a *Client) AirAPIInternational(params *AirAPIInternationalParams) (*AirAPI
 <br />RCYU:花蓮機場    RCFN:臺東機場
 <br />RCLY:蘭嶼機場    RCGI:綠島機場
 */
-func (a *Client) AirAPIMETAR(params *AirAPIMETARParams) (*AirAPIMETAROK, error) {
+func (a *Client) AirAPIMETAR(params *AirAPIMETARParams, opts ...ClientOption) (*AirAPIMETAROK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewAirAPIMETARParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "AirApi_METAR",
 		Method:             "GET",
 		PathPattern:        "/v2/Air/METAR/Airport",
@@ -590,7 +648,12 @@ func (a *Client) AirAPIMETAR(params *AirAPIMETARParams) (*AirAPIMETAROK, error) 
 		Reader:             &AirAPIMETARReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -609,13 +672,12 @@ func (a *Client) AirAPIMETAR(params *AirAPIMETARParams) (*AirAPIMETAROK, error) 
 
   取得指定[國內機場]氣象資訊觀測資料
 */
-func (a *Client) AirAPIMETAR1(params *AirAPIMETAR1Params) (*AirAPIMETAR1OK, error) {
+func (a *Client) AirAPIMETAR1(params *AirAPIMETAR1Params, opts ...ClientOption) (*AirAPIMETAR1OK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewAirAPIMETAR1Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "AirApi_METAR_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Air/METAR/Airport/{IATA}",
@@ -626,7 +688,12 @@ func (a *Client) AirAPIMETAR1(params *AirAPIMETAR1Params) (*AirAPIMETAR1OK, erro
 		Reader:             &AirAPIMETAR1Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}

@@ -25,9 +25,12 @@ type Client struct {
 	formats   strfmt.Registry
 }
 
+// ClientOption is the option for Client methods
+type ClientOption func(*runtime.ClientOperation)
+
 // ClientService is the interface for Client methods
 type ClientService interface {
-	RailAPIOperator(params *RailAPIOperatorParams) (*RailAPIOperatorOK, error)
+	RailAPIOperator(params *RailAPIOperatorParams, opts ...ClientOption) (*RailAPIOperatorOK, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
@@ -35,13 +38,12 @@ type ClientService interface {
 /*
   RailAPIOperator 取得軌道營運業者資料s
 */
-func (a *Client) RailAPIOperator(params *RailAPIOperatorParams) (*RailAPIOperatorOK, error) {
+func (a *Client) RailAPIOperator(params *RailAPIOperatorParams, opts ...ClientOption) (*RailAPIOperatorOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewRailAPIOperatorParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "RailApi_Operator",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/Operator",
@@ -52,7 +54,12 @@ func (a *Client) RailAPIOperator(params *RailAPIOperatorParams) (*RailAPIOperato
 		Reader:             &RailAPIOperatorReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}

@@ -25,59 +25,62 @@ type Client struct {
 	formats   strfmt.Registry
 }
 
+// ClientOption is the option for Client methods
+type ClientOption func(*runtime.ClientOperation)
+
 // ClientService is the interface for Client methods
 type ClientService interface {
-	THSRAPIAlertInfo(params *THSRAPIAlertInfoParams) (*THSRAPIAlertInfoOK, error)
+	THSRAPIAlertInfo(params *THSRAPIAlertInfoParams, opts ...ClientOption) (*THSRAPIAlertInfoOK, error)
 
-	THSRAPIAvailableSeatStatus(params *THSRAPIAvailableSeatStatusParams) (*THSRAPIAvailableSeatStatusOK, error)
+	THSRAPIAvailableSeatStatus(params *THSRAPIAvailableSeatStatusParams, opts ...ClientOption) (*THSRAPIAvailableSeatStatusOK, error)
 
-	THSRAPIAvailableSeatStatusListStation(params *THSRAPIAvailableSeatStatusListStationParams) (*THSRAPIAvailableSeatStatusListStationOK, error)
+	THSRAPIAvailableSeatStatusListStation(params *THSRAPIAvailableSeatStatusListStationParams, opts ...ClientOption) (*THSRAPIAvailableSeatStatusListStationOK, error)
 
-	THSRAPIAvailableSeatStatusListStation1(params *THSRAPIAvailableSeatStatusListStation1Params) (*THSRAPIAvailableSeatStatusListStation1OK, error)
+	THSRAPIAvailableSeatStatusListStation1(params *THSRAPIAvailableSeatStatusListStation1Params, opts ...ClientOption) (*THSRAPIAvailableSeatStatusListStation1OK, error)
 
-	THSRAPIAvailableSeatStatus1(params *THSRAPIAvailableSeatStatus1Params) (*THSRAPIAvailableSeatStatus1OK, error)
+	THSRAPIAvailableSeatStatus1(params *THSRAPIAvailableSeatStatus1Params, opts ...ClientOption) (*THSRAPIAvailableSeatStatus1OK, error)
 
-	THSRAPIAvailableSeatStatusOD(params *THSRAPIAvailableSeatStatusODParams) (*THSRAPIAvailableSeatStatusODOK, error)
+	THSRAPIAvailableSeatStatusOD(params *THSRAPIAvailableSeatStatusODParams, opts ...ClientOption) (*THSRAPIAvailableSeatStatusODOK, error)
 
-	THSRAPIAvailableSeatStatusOD1(params *THSRAPIAvailableSeatStatusOD1Params) (*THSRAPIAvailableSeatStatusOD1OK, error)
+	THSRAPIAvailableSeatStatusOD1(params *THSRAPIAvailableSeatStatusOD1Params, opts ...ClientOption) (*THSRAPIAvailableSeatStatusOD1OK, error)
 
-	THSRAPIAvailableSeatStatusOD2(params *THSRAPIAvailableSeatStatusOD2Params) (*THSRAPIAvailableSeatStatusOD2OK, error)
+	THSRAPIAvailableSeatStatusOD2(params *THSRAPIAvailableSeatStatusOD2Params, opts ...ClientOption) (*THSRAPIAvailableSeatStatusOD2OK, error)
 
-	THSRAPIDailyTimetable(params *THSRAPIDailyTimetableParams) (*THSRAPIDailyTimetableOK, error)
+	THSRAPIDailyTimetable(params *THSRAPIDailyTimetableParams, opts ...ClientOption) (*THSRAPIDailyTimetableOK, error)
 
-	THSRAPIDailyTimetable1(params *THSRAPIDailyTimetable1Params) (*THSRAPIDailyTimetable1OK, error)
+	THSRAPIDailyTimetable1(params *THSRAPIDailyTimetable1Params, opts ...ClientOption) (*THSRAPIDailyTimetable1OK, error)
 
-	THSRAPIDailyTimetable2(params *THSRAPIDailyTimetable2Params) (*THSRAPIDailyTimetable2OK, error)
+	THSRAPIDailyTimetable2(params *THSRAPIDailyTimetable2Params, opts ...ClientOption) (*THSRAPIDailyTimetable2OK, error)
 
-	THSRAPIDailyTimetable3(params *THSRAPIDailyTimetable3Params) (*THSRAPIDailyTimetable3OK, error)
+	THSRAPIDailyTimetable3(params *THSRAPIDailyTimetable3Params, opts ...ClientOption) (*THSRAPIDailyTimetable3OK, error)
 
-	THSRAPIDailyTrainInfo(params *THSRAPIDailyTrainInfoParams) (*THSRAPIDailyTrainInfoOK, error)
+	THSRAPIDailyTrainInfo(params *THSRAPIDailyTrainInfoParams, opts ...ClientOption) (*THSRAPIDailyTrainInfoOK, error)
 
-	THSRAPIDailyTrainInfo1(params *THSRAPIDailyTrainInfo1Params) (*THSRAPIDailyTrainInfo1OK, error)
+	THSRAPIDailyTrainInfo1(params *THSRAPIDailyTrainInfo1Params, opts ...ClientOption) (*THSRAPIDailyTrainInfo1OK, error)
 
-	THSRAPIDailyTrainInfo2(params *THSRAPIDailyTrainInfo2Params) (*THSRAPIDailyTrainInfo2OK, error)
+	THSRAPIDailyTrainInfo2(params *THSRAPIDailyTrainInfo2Params, opts ...ClientOption) (*THSRAPIDailyTrainInfo2OK, error)
 
-	THSRAPIDailyTrainInfo3(params *THSRAPIDailyTrainInfo3Params) (*THSRAPIDailyTrainInfo3OK, error)
+	THSRAPIDailyTrainInfo3(params *THSRAPIDailyTrainInfo3Params, opts ...ClientOption) (*THSRAPIDailyTrainInfo3OK, error)
 
-	THSRAPIGeneralTimetable(params *THSRAPIGeneralTimetableParams) (*THSRAPIGeneralTimetableOK, error)
+	THSRAPIGeneralTimetable(params *THSRAPIGeneralTimetableParams, opts ...ClientOption) (*THSRAPIGeneralTimetableOK, error)
 
-	THSRAPIGeneralTimetable1(params *THSRAPIGeneralTimetable1Params) (*THSRAPIGeneralTimetable1OK, error)
+	THSRAPIGeneralTimetable1(params *THSRAPIGeneralTimetable1Params, opts ...ClientOption) (*THSRAPIGeneralTimetable1OK, error)
 
-	THSRAPINews(params *THSRAPINewsParams) (*THSRAPINewsOK, error)
+	THSRAPINews(params *THSRAPINewsParams, opts ...ClientOption) (*THSRAPINewsOK, error)
 
-	THSRAPIODDailyTimetable(params *THSRAPIODDailyTimetableParams) (*THSRAPIODDailyTimetableOK, error)
+	THSRAPIODDailyTimetable(params *THSRAPIODDailyTimetableParams, opts ...ClientOption) (*THSRAPIODDailyTimetableOK, error)
 
-	THSRAPIODFare(params *THSRAPIODFareParams) (*THSRAPIODFareOK, error)
+	THSRAPIODFare(params *THSRAPIODFareParams, opts ...ClientOption) (*THSRAPIODFareOK, error)
 
-	THSRAPIODFare1(params *THSRAPIODFare1Params) (*THSRAPIODFare1OK, error)
+	THSRAPIODFare1(params *THSRAPIODFare1Params, opts ...ClientOption) (*THSRAPIODFare1OK, error)
 
-	THSRAPIShape(params *THSRAPIShapeParams) (*THSRAPIShapeOK, error)
+	THSRAPIShape(params *THSRAPIShapeParams, opts ...ClientOption) (*THSRAPIShapeOK, error)
 
-	THSRAPIStation(params *THSRAPIStationParams) (*THSRAPIStationOK, error)
+	THSRAPIStation(params *THSRAPIStationParams, opts ...ClientOption) (*THSRAPIStationOK, error)
 
-	THSRAPIStationExit(params *THSRAPIStationExitParams) (*THSRAPIStationExitOK, error)
+	THSRAPIStationExit(params *THSRAPIStationExitParams, opts ...ClientOption) (*THSRAPIStationExitOK, error)
 
-	THSRAPIStationTimetable(params *THSRAPIStationTimetableParams) (*THSRAPIStationTimetableOK, error)
+	THSRAPIStationTimetable(params *THSRAPIStationTimetableParams, opts ...ClientOption) (*THSRAPIStationTimetableOK, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
@@ -87,13 +90,12 @@ type ClientService interface {
 
   取得即時通阻事件資料
 */
-func (a *Client) THSRAPIAlertInfo(params *THSRAPIAlertInfoParams) (*THSRAPIAlertInfoOK, error) {
+func (a *Client) THSRAPIAlertInfo(params *THSRAPIAlertInfoParams, opts ...ClientOption) (*THSRAPIAlertInfoOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTHSRAPIAlertInfoParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "THSRApi_AlertInfo",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/AlertInfo",
@@ -104,7 +106,12 @@ func (a *Client) THSRAPIAlertInfo(params *THSRAPIAlertInfoParams) (*THSRAPIAlert
 		Reader:             &THSRAPIAlertInfoReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -125,13 +132,12 @@ func (a *Client) THSRAPIAlertInfo(params *THSRAPIAlertInfoParams) (*THSRAPIAlert
 - (更新頻率為10分鐘)
 - **(本服務尚在測試中,穩定度及更新頻率將持續優化)**
 */
-func (a *Client) THSRAPIAvailableSeatStatus(params *THSRAPIAvailableSeatStatusParams) (*THSRAPIAvailableSeatStatusOK, error) {
+func (a *Client) THSRAPIAvailableSeatStatus(params *THSRAPIAvailableSeatStatusParams, opts ...ClientOption) (*THSRAPIAvailableSeatStatusOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTHSRAPIAvailableSeatStatusParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "THSRApi_AvailableSeatStatus",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/AvailableSeatStatus/Train/Leg/Today",
@@ -142,7 +148,12 @@ func (a *Client) THSRAPIAvailableSeatStatus(params *THSRAPIAvailableSeatStatusPa
 		Reader:             &THSRAPIAvailableSeatStatusReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -161,13 +172,12 @@ func (a *Client) THSRAPIAvailableSeatStatus(params *THSRAPIAvailableSeatStatusPa
 
   取得動態對號座剩餘座位資訊看板資料
 */
-func (a *Client) THSRAPIAvailableSeatStatusListStation(params *THSRAPIAvailableSeatStatusListStationParams) (*THSRAPIAvailableSeatStatusListStationOK, error) {
+func (a *Client) THSRAPIAvailableSeatStatusListStation(params *THSRAPIAvailableSeatStatusListStationParams, opts ...ClientOption) (*THSRAPIAvailableSeatStatusListStationOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTHSRAPIAvailableSeatStatusListStationParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "THSRApi_AvailableSeatStatusList_Station",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/AvailableSeatStatusList",
@@ -178,7 +188,12 @@ func (a *Client) THSRAPIAvailableSeatStatusListStation(params *THSRAPIAvailableS
 		Reader:             &THSRAPIAvailableSeatStatusListStationReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -197,13 +212,12 @@ func (a *Client) THSRAPIAvailableSeatStatusListStation(params *THSRAPIAvailableS
 
   取得動態指定[車站]的對號座剩餘座位資訊看板資料
 */
-func (a *Client) THSRAPIAvailableSeatStatusListStation1(params *THSRAPIAvailableSeatStatusListStation1Params) (*THSRAPIAvailableSeatStatusListStation1OK, error) {
+func (a *Client) THSRAPIAvailableSeatStatusListStation1(params *THSRAPIAvailableSeatStatusListStation1Params, opts ...ClientOption) (*THSRAPIAvailableSeatStatusListStation1OK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTHSRAPIAvailableSeatStatusListStation1Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "THSRApi_AvailableSeatStatusList_Station_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/AvailableSeatStatusList/{StationID}",
@@ -214,7 +228,12 @@ func (a *Client) THSRAPIAvailableSeatStatusListStation1(params *THSRAPIAvailable
 		Reader:             &THSRAPIAvailableSeatStatusListStation1Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -235,13 +254,12 @@ func (a *Client) THSRAPIAvailableSeatStatusListStation1(params *THSRAPIAvailable
 - (更新頻率為每日的10、16、22時)
 - **(本服務尚在測試中,穩定度及更新頻率將持續優化)**
 */
-func (a *Client) THSRAPIAvailableSeatStatus1(params *THSRAPIAvailableSeatStatus1Params) (*THSRAPIAvailableSeatStatus1OK, error) {
+func (a *Client) THSRAPIAvailableSeatStatus1(params *THSRAPIAvailableSeatStatus1Params, opts ...ClientOption) (*THSRAPIAvailableSeatStatus1OK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTHSRAPIAvailableSeatStatus1Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "THSRApi_AvailableSeatStatus_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/AvailableSeatStatus/Train/Leg/TrainDate/{TrainDate}",
@@ -252,7 +270,12 @@ func (a *Client) THSRAPIAvailableSeatStatus1(params *THSRAPIAvailableSeatStatus1
 		Reader:             &THSRAPIAvailableSeatStatus1Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -274,13 +297,12 @@ func (a *Client) THSRAPIAvailableSeatStatus1(params *THSRAPIAvailableSeatStatus1
 - 當日後27日(D+1~D+27)之更新頻率為每日的10、16、22時
 - **(本服務尚在測試中,穩定度及更新頻率將持續優化)**
 */
-func (a *Client) THSRAPIAvailableSeatStatusOD(params *THSRAPIAvailableSeatStatusODParams) (*THSRAPIAvailableSeatStatusODOK, error) {
+func (a *Client) THSRAPIAvailableSeatStatusOD(params *THSRAPIAvailableSeatStatusODParams, opts ...ClientOption) (*THSRAPIAvailableSeatStatusODOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTHSRAPIAvailableSeatStatusODParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "THSRApi_AvailableSeatStatus_OD",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/AvailableSeatStatus/Train/OD/TrainDate/{TrainDate}",
@@ -291,7 +313,12 @@ func (a *Client) THSRAPIAvailableSeatStatusOD(params *THSRAPIAvailableSeatStatus
 		Reader:             &THSRAPIAvailableSeatStatusODReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -313,13 +340,12 @@ func (a *Client) THSRAPIAvailableSeatStatusOD(params *THSRAPIAvailableSeatStatus
 - 當日後27日(D+1~D+27)之更新頻率為每日的10、16、22時
 - **(本服務尚在測試中,穩定度及更新頻率將持續優化)**
 */
-func (a *Client) THSRAPIAvailableSeatStatusOD1(params *THSRAPIAvailableSeatStatusOD1Params) (*THSRAPIAvailableSeatStatusOD1OK, error) {
+func (a *Client) THSRAPIAvailableSeatStatusOD1(params *THSRAPIAvailableSeatStatusOD1Params, opts ...ClientOption) (*THSRAPIAvailableSeatStatusOD1OK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTHSRAPIAvailableSeatStatusOD1Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "THSRApi_AvailableSeatStatus_OD_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/AvailableSeatStatus/Train/OD/{OriginStationID}/to/{DestinationStationID}/TrainDate/{TrainDate}",
@@ -330,7 +356,12 @@ func (a *Client) THSRAPIAvailableSeatStatusOD1(params *THSRAPIAvailableSeatStatu
 		Reader:             &THSRAPIAvailableSeatStatusOD1Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -352,13 +383,12 @@ func (a *Client) THSRAPIAvailableSeatStatusOD1(params *THSRAPIAvailableSeatStatu
 - 當日後27日(D+1~D+27)之更新頻率為每日的10、16、22時
 - **(本服務尚在測試中,穩定度及更新頻率將持續優化)**
 */
-func (a *Client) THSRAPIAvailableSeatStatusOD2(params *THSRAPIAvailableSeatStatusOD2Params) (*THSRAPIAvailableSeatStatusOD2OK, error) {
+func (a *Client) THSRAPIAvailableSeatStatusOD2(params *THSRAPIAvailableSeatStatusOD2Params, opts ...ClientOption) (*THSRAPIAvailableSeatStatusOD2OK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTHSRAPIAvailableSeatStatusOD2Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "THSRApi_AvailableSeatStatus_OD_2",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/AvailableSeatStatus/Train/OD/{OriginStationID}/to/{DestinationStationID}/TrainDate/{TrainDate}/TrainNo/{TrainNo}",
@@ -369,7 +399,12 @@ func (a *Client) THSRAPIAvailableSeatStatusOD2(params *THSRAPIAvailableSeatStatu
 		Reader:             &THSRAPIAvailableSeatStatusOD2Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -388,13 +423,12 @@ func (a *Client) THSRAPIAvailableSeatStatusOD2(params *THSRAPIAvailableSeatStatu
 
   取得當天所有車次的時刻表資料
 */
-func (a *Client) THSRAPIDailyTimetable(params *THSRAPIDailyTimetableParams) (*THSRAPIDailyTimetableOK, error) {
+func (a *Client) THSRAPIDailyTimetable(params *THSRAPIDailyTimetableParams, opts ...ClientOption) (*THSRAPIDailyTimetableOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTHSRAPIDailyTimetableParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "THSRApi_DailyTimetable",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/DailyTimetable/Today",
@@ -405,7 +439,12 @@ func (a *Client) THSRAPIDailyTimetable(params *THSRAPIDailyTimetableParams) (*TH
 		Reader:             &THSRAPIDailyTimetableReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -424,13 +463,12 @@ func (a *Client) THSRAPIDailyTimetable(params *THSRAPIDailyTimetableParams) (*TH
 
   取得當天指定[車次]的時刻表資料
 */
-func (a *Client) THSRAPIDailyTimetable1(params *THSRAPIDailyTimetable1Params) (*THSRAPIDailyTimetable1OK, error) {
+func (a *Client) THSRAPIDailyTimetable1(params *THSRAPIDailyTimetable1Params, opts ...ClientOption) (*THSRAPIDailyTimetable1OK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTHSRAPIDailyTimetable1Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "THSRApi_DailyTimetable_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/DailyTimetable/Today/TrainNo/{TrainNo}",
@@ -441,7 +479,12 @@ func (a *Client) THSRAPIDailyTimetable1(params *THSRAPIDailyTimetable1Params) (*
 		Reader:             &THSRAPIDailyTimetable1Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -460,13 +503,12 @@ func (a *Client) THSRAPIDailyTimetable1(params *THSRAPIDailyTimetable1Params) (*
 
   取得指定[日期]所有車次的時刻表資料(高鐵提供近28天每日時刻表)
 */
-func (a *Client) THSRAPIDailyTimetable2(params *THSRAPIDailyTimetable2Params) (*THSRAPIDailyTimetable2OK, error) {
+func (a *Client) THSRAPIDailyTimetable2(params *THSRAPIDailyTimetable2Params, opts ...ClientOption) (*THSRAPIDailyTimetable2OK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTHSRAPIDailyTimetable2Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "THSRApi_DailyTimetable_2",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/DailyTimetable/TrainDate/{TrainDate}",
@@ -477,7 +519,12 @@ func (a *Client) THSRAPIDailyTimetable2(params *THSRAPIDailyTimetable2Params) (*
 		Reader:             &THSRAPIDailyTimetable2Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -496,13 +543,12 @@ func (a *Client) THSRAPIDailyTimetable2(params *THSRAPIDailyTimetable2Params) (*
 
   取得指定[日期],[車次]的時刻表資料(高鐵提供近28天每日時刻表)
 */
-func (a *Client) THSRAPIDailyTimetable3(params *THSRAPIDailyTimetable3Params) (*THSRAPIDailyTimetable3OK, error) {
+func (a *Client) THSRAPIDailyTimetable3(params *THSRAPIDailyTimetable3Params, opts ...ClientOption) (*THSRAPIDailyTimetable3OK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTHSRAPIDailyTimetable3Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "THSRApi_DailyTimetable_3",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/DailyTimetable/TrainNo/{TrainNo}/TrainDate/{TrainDate}",
@@ -513,7 +559,12 @@ func (a *Client) THSRAPIDailyTimetable3(params *THSRAPIDailyTimetable3Params) (*
 		Reader:             &THSRAPIDailyTimetable3Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -532,13 +583,12 @@ func (a *Client) THSRAPIDailyTimetable3(params *THSRAPIDailyTimetable3Params) (*
 
   取得當天所有車次的車次資料
 */
-func (a *Client) THSRAPIDailyTrainInfo(params *THSRAPIDailyTrainInfoParams) (*THSRAPIDailyTrainInfoOK, error) {
+func (a *Client) THSRAPIDailyTrainInfo(params *THSRAPIDailyTrainInfoParams, opts ...ClientOption) (*THSRAPIDailyTrainInfoOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTHSRAPIDailyTrainInfoParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "THSRApi_DailyTrainInfo",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/DailyTrainInfo/Today",
@@ -549,7 +599,12 @@ func (a *Client) THSRAPIDailyTrainInfo(params *THSRAPIDailyTrainInfoParams) (*TH
 		Reader:             &THSRAPIDailyTrainInfoReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -568,13 +623,12 @@ func (a *Client) THSRAPIDailyTrainInfo(params *THSRAPIDailyTrainInfoParams) (*TH
 
   取得當天指定[車次]的車次資料
 */
-func (a *Client) THSRAPIDailyTrainInfo1(params *THSRAPIDailyTrainInfo1Params) (*THSRAPIDailyTrainInfo1OK, error) {
+func (a *Client) THSRAPIDailyTrainInfo1(params *THSRAPIDailyTrainInfo1Params, opts ...ClientOption) (*THSRAPIDailyTrainInfo1OK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTHSRAPIDailyTrainInfo1Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "THSRApi_DailyTrainInfo_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/DailyTrainInfo/Today/TrainNo/{TrainNo}",
@@ -585,7 +639,12 @@ func (a *Client) THSRAPIDailyTrainInfo1(params *THSRAPIDailyTrainInfo1Params) (*
 		Reader:             &THSRAPIDailyTrainInfo1Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -604,13 +663,12 @@ func (a *Client) THSRAPIDailyTrainInfo1(params *THSRAPIDailyTrainInfo1Params) (*
 
   取得指定[日期]所有車次的車次資料(高鐵提供近28天每日時刻表)
 */
-func (a *Client) THSRAPIDailyTrainInfo2(params *THSRAPIDailyTrainInfo2Params) (*THSRAPIDailyTrainInfo2OK, error) {
+func (a *Client) THSRAPIDailyTrainInfo2(params *THSRAPIDailyTrainInfo2Params, opts ...ClientOption) (*THSRAPIDailyTrainInfo2OK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTHSRAPIDailyTrainInfo2Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "THSRApi_DailyTrainInfo_2",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/DailyTrainInfo/TrainDate/{TrainDate}",
@@ -621,7 +679,12 @@ func (a *Client) THSRAPIDailyTrainInfo2(params *THSRAPIDailyTrainInfo2Params) (*
 		Reader:             &THSRAPIDailyTrainInfo2Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -640,13 +703,12 @@ func (a *Client) THSRAPIDailyTrainInfo2(params *THSRAPIDailyTrainInfo2Params) (*
 
   取得指定[日期],[車次]的車次資料(高鐵提供近28天每日時刻表)
 */
-func (a *Client) THSRAPIDailyTrainInfo3(params *THSRAPIDailyTrainInfo3Params) (*THSRAPIDailyTrainInfo3OK, error) {
+func (a *Client) THSRAPIDailyTrainInfo3(params *THSRAPIDailyTrainInfo3Params, opts ...ClientOption) (*THSRAPIDailyTrainInfo3OK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTHSRAPIDailyTrainInfo3Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "THSRApi_DailyTrainInfo_3",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/DailyTrainInfo/TrainNo/{TrainNo}/TrainDate/{TrainDate}",
@@ -657,7 +719,12 @@ func (a *Client) THSRAPIDailyTrainInfo3(params *THSRAPIDailyTrainInfo3Params) (*
 		Reader:             &THSRAPIDailyTrainInfo3Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -676,13 +743,12 @@ func (a *Client) THSRAPIDailyTrainInfo3(params *THSRAPIDailyTrainInfo3Params) (*
 
   取得所有車次的定期時刻表資料
 */
-func (a *Client) THSRAPIGeneralTimetable(params *THSRAPIGeneralTimetableParams) (*THSRAPIGeneralTimetableOK, error) {
+func (a *Client) THSRAPIGeneralTimetable(params *THSRAPIGeneralTimetableParams, opts ...ClientOption) (*THSRAPIGeneralTimetableOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTHSRAPIGeneralTimetableParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "THSRApi_GeneralTimetable",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/GeneralTimetable",
@@ -693,7 +759,12 @@ func (a *Client) THSRAPIGeneralTimetable(params *THSRAPIGeneralTimetableParams) 
 		Reader:             &THSRAPIGeneralTimetableReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -712,13 +783,12 @@ func (a *Client) THSRAPIGeneralTimetable(params *THSRAPIGeneralTimetableParams) 
 
   取得指定[車次]的定期時刻表資料
 */
-func (a *Client) THSRAPIGeneralTimetable1(params *THSRAPIGeneralTimetable1Params) (*THSRAPIGeneralTimetable1OK, error) {
+func (a *Client) THSRAPIGeneralTimetable1(params *THSRAPIGeneralTimetable1Params, opts ...ClientOption) (*THSRAPIGeneralTimetable1OK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTHSRAPIGeneralTimetable1Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "THSRApi_GeneralTimetable_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/GeneralTimetable/TrainNo/{TrainNo}",
@@ -729,7 +799,12 @@ func (a *Client) THSRAPIGeneralTimetable1(params *THSRAPIGeneralTimetable1Params
 		Reader:             &THSRAPIGeneralTimetable1Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -748,13 +823,12 @@ func (a *Client) THSRAPIGeneralTimetable1(params *THSRAPIGeneralTimetable1Params
 
   取得高鐵最新消息資料
 */
-func (a *Client) THSRAPINews(params *THSRAPINewsParams) (*THSRAPINewsOK, error) {
+func (a *Client) THSRAPINews(params *THSRAPINewsParams, opts ...ClientOption) (*THSRAPINewsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTHSRAPINewsParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "THSRApi_News",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/News",
@@ -765,7 +839,12 @@ func (a *Client) THSRAPINews(params *THSRAPINewsParams) (*THSRAPINewsOK, error) 
 		Reader:             &THSRAPINewsReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -784,13 +863,12 @@ func (a *Client) THSRAPINews(params *THSRAPINewsParams) (*THSRAPINewsOK, error) 
 
   取得指定[日期],[起迄站間]之時刻表資料
 */
-func (a *Client) THSRAPIODDailyTimetable(params *THSRAPIODDailyTimetableParams) (*THSRAPIODDailyTimetableOK, error) {
+func (a *Client) THSRAPIODDailyTimetable(params *THSRAPIODDailyTimetableParams, opts ...ClientOption) (*THSRAPIODDailyTimetableOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTHSRAPIODDailyTimetableParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "THSRApi_ODDailyTimetable",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/DailyTimetable/OD/{OriginStationID}/to/{DestinationStationID}/{TrainDate}",
@@ -801,7 +879,12 @@ func (a *Client) THSRAPIODDailyTimetable(params *THSRAPIODDailyTimetableParams) 
 		Reader:             &THSRAPIODDailyTimetableReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -820,13 +903,12 @@ func (a *Client) THSRAPIODDailyTimetable(params *THSRAPIODDailyTimetableParams) 
 
   取得票價資料
 */
-func (a *Client) THSRAPIODFare(params *THSRAPIODFareParams) (*THSRAPIODFareOK, error) {
+func (a *Client) THSRAPIODFare(params *THSRAPIODFareParams, opts ...ClientOption) (*THSRAPIODFareOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTHSRAPIODFareParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "THSRApi_ODFare",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/ODFare",
@@ -837,7 +919,12 @@ func (a *Client) THSRAPIODFare(params *THSRAPIODFareParams) (*THSRAPIODFareOK, e
 		Reader:             &THSRAPIODFareReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -856,13 +943,12 @@ func (a *Client) THSRAPIODFare(params *THSRAPIODFareParams) (*THSRAPIODFareOK, e
 
   取得指定[起訖站間]之票價資料
 */
-func (a *Client) THSRAPIODFare1(params *THSRAPIODFare1Params) (*THSRAPIODFare1OK, error) {
+func (a *Client) THSRAPIODFare1(params *THSRAPIODFare1Params, opts ...ClientOption) (*THSRAPIODFare1OK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTHSRAPIODFare1Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "THSRApi_ODFare_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/ODFare/{OriginStationID}/to/{DestinationStationID}",
@@ -873,7 +959,12 @@ func (a *Client) THSRAPIODFare1(params *THSRAPIODFare1Params) (*THSRAPIODFare1OK
 		Reader:             &THSRAPIODFare1Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -892,13 +983,12 @@ func (a *Client) THSRAPIODFare1(params *THSRAPIODFare1Params) (*THSRAPIODFare1OK
 
   取得軌道路網實體路線圖資資料
 */
-func (a *Client) THSRAPIShape(params *THSRAPIShapeParams) (*THSRAPIShapeOK, error) {
+func (a *Client) THSRAPIShape(params *THSRAPIShapeParams, opts ...ClientOption) (*THSRAPIShapeOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTHSRAPIShapeParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "THSRApi_Shape",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/Shape",
@@ -909,7 +999,12 @@ func (a *Client) THSRAPIShape(params *THSRAPIShapeParams) (*THSRAPIShapeOK, erro
 		Reader:             &THSRAPIShapeReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -928,13 +1023,12 @@ func (a *Client) THSRAPIShape(params *THSRAPIShapeParams) (*THSRAPIShapeOK, erro
 
   取得車站基本資料
 */
-func (a *Client) THSRAPIStation(params *THSRAPIStationParams) (*THSRAPIStationOK, error) {
+func (a *Client) THSRAPIStation(params *THSRAPIStationParams, opts ...ClientOption) (*THSRAPIStationOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTHSRAPIStationParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "THSRApi_Station",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/Station",
@@ -945,7 +1039,12 @@ func (a *Client) THSRAPIStation(params *THSRAPIStationParams) (*THSRAPIStationOK
 		Reader:             &THSRAPIStationReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -964,13 +1063,12 @@ func (a *Client) THSRAPIStation(params *THSRAPIStationParams) (*THSRAPIStationOK
 
   取得車站出入口基本資料
 */
-func (a *Client) THSRAPIStationExit(params *THSRAPIStationExitParams) (*THSRAPIStationExitOK, error) {
+func (a *Client) THSRAPIStationExit(params *THSRAPIStationExitParams, opts ...ClientOption) (*THSRAPIStationExitOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTHSRAPIStationExitParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "THSRApi_StationExit",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/StationExit",
@@ -981,7 +1079,12 @@ func (a *Client) THSRAPIStationExit(params *THSRAPIStationExitParams) (*THSRAPIS
 		Reader:             &THSRAPIStationExitReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -1000,13 +1103,12 @@ func (a *Client) THSRAPIStationExit(params *THSRAPIStationExitParams) (*THSRAPIS
 
   取得指定[日期],[車站]的站別時刻表資料
 */
-func (a *Client) THSRAPIStationTimetable(params *THSRAPIStationTimetableParams) (*THSRAPIStationTimetableOK, error) {
+func (a *Client) THSRAPIStationTimetable(params *THSRAPIStationTimetableParams, opts ...ClientOption) (*THSRAPIStationTimetableOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTHSRAPIStationTimetableParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "THSRApi_StationTimetable",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/DailyTimetable/Station/{StationID}/{TrainDate}",
@@ -1017,7 +1119,12 @@ func (a *Client) THSRAPIStationTimetable(params *THSRAPIStationTimetableParams) 
 		Reader:             &THSRAPIStationTimetableReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}

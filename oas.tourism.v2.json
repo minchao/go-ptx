@@ -133,7 +133,6 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "NantouCounty": "南投縣",
               "LienchiangCounty": "連江縣",
               "MiaoliCounty": "苗栗縣",
               "Taichung": "臺中市",
@@ -144,6 +143,7 @@
               "Kaohsiung": "高雄市",
               "Taipei": "臺北市",
               "PingtungCounty": "屏東縣",
+              "NantouCounty": "南投縣",
               "Taoyuan": "桃園市",
               "Keelung": "基隆市",
               "YunlinCounty": "雲林縣",

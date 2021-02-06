@@ -25,57 +25,60 @@ type Client struct {
 	formats   strfmt.Registry
 }
 
+// ClientOption is the option for Client methods
+type ClientOption func(*runtime.ClientOperation)
+
 // ClientService is the interface for Client methods
 type ClientService interface {
-	TRAAPIDailyTimetable(params *TRAAPIDailyTimetableParams) (*TRAAPIDailyTimetableOK, error)
+	TRAAPIDailyTimetable(params *TRAAPIDailyTimetableParams, opts ...ClientOption) (*TRAAPIDailyTimetableOK, error)
 
-	TRAAPIDailyTimetable1(params *TRAAPIDailyTimetable1Params) (*TRAAPIDailyTimetable1OK, error)
+	TRAAPIDailyTimetable1(params *TRAAPIDailyTimetable1Params, opts ...ClientOption) (*TRAAPIDailyTimetable1OK, error)
 
-	TRAAPIDailyTimetable2(params *TRAAPIDailyTimetable2Params) (*TRAAPIDailyTimetable2OK, error)
+	TRAAPIDailyTimetable2(params *TRAAPIDailyTimetable2Params, opts ...ClientOption) (*TRAAPIDailyTimetable2OK, error)
 
-	TRAAPIDailyTimetable3(params *TRAAPIDailyTimetable3Params) (*TRAAPIDailyTimetable3OK, error)
+	TRAAPIDailyTimetable3(params *TRAAPIDailyTimetable3Params, opts ...ClientOption) (*TRAAPIDailyTimetable3OK, error)
 
-	TRAAPIDailyTrainInfo(params *TRAAPIDailyTrainInfoParams) (*TRAAPIDailyTrainInfoOK, error)
+	TRAAPIDailyTrainInfo(params *TRAAPIDailyTrainInfoParams, opts ...ClientOption) (*TRAAPIDailyTrainInfoOK, error)
 
-	TRAAPIDailyTrainInfo1(params *TRAAPIDailyTrainInfo1Params) (*TRAAPIDailyTrainInfo1OK, error)
+	TRAAPIDailyTrainInfo1(params *TRAAPIDailyTrainInfo1Params, opts ...ClientOption) (*TRAAPIDailyTrainInfo1OK, error)
 
-	TRAAPIDailyTrainInfo2(params *TRAAPIDailyTrainInfo2Params) (*TRAAPIDailyTrainInfo2OK, error)
+	TRAAPIDailyTrainInfo2(params *TRAAPIDailyTrainInfo2Params, opts ...ClientOption) (*TRAAPIDailyTrainInfo2OK, error)
 
-	TRAAPIDailyTrainInfo3(params *TRAAPIDailyTrainInfo3Params) (*TRAAPIDailyTrainInfo3OK, error)
+	TRAAPIDailyTrainInfo3(params *TRAAPIDailyTrainInfo3Params, opts ...ClientOption) (*TRAAPIDailyTrainInfo3OK, error)
 
-	TRAAPIGeneralTimetable(params *TRAAPIGeneralTimetableParams) (*TRAAPIGeneralTimetableOK, error)
+	TRAAPIGeneralTimetable(params *TRAAPIGeneralTimetableParams, opts ...ClientOption) (*TRAAPIGeneralTimetableOK, error)
 
-	TRAAPIGeneralTimetable1(params *TRAAPIGeneralTimetable1Params) (*TRAAPIGeneralTimetable1OK, error)
+	TRAAPIGeneralTimetable1(params *TRAAPIGeneralTimetable1Params, opts ...ClientOption) (*TRAAPIGeneralTimetable1OK, error)
 
-	TRAAPIGeneralTrainInfo(params *TRAAPIGeneralTrainInfoParams) (*TRAAPIGeneralTrainInfoOK, error)
+	TRAAPIGeneralTrainInfo(params *TRAAPIGeneralTrainInfoParams, opts ...ClientOption) (*TRAAPIGeneralTrainInfoOK, error)
 
-	TRAAPIGeneralTrainInfo1(params *TRAAPIGeneralTrainInfo1Params) (*TRAAPIGeneralTrainInfo1OK, error)
+	TRAAPIGeneralTrainInfo1(params *TRAAPIGeneralTrainInfo1Params, opts ...ClientOption) (*TRAAPIGeneralTrainInfo1OK, error)
 
-	TRAAPILine(params *TRAAPILineParams) (*TRAAPILineOK, error)
+	TRAAPILine(params *TRAAPILineParams, opts ...ClientOption) (*TRAAPILineOK, error)
 
-	TRAAPILiveBoard(params *TRAAPILiveBoardParams) (*TRAAPILiveBoardOK, error)
+	TRAAPILiveBoard(params *TRAAPILiveBoardParams, opts ...ClientOption) (*TRAAPILiveBoardOK, error)
 
-	TRAAPILiveBoard1(params *TRAAPILiveBoard1Params) (*TRAAPILiveBoard1OK, error)
+	TRAAPILiveBoard1(params *TRAAPILiveBoard1Params, opts ...ClientOption) (*TRAAPILiveBoard1OK, error)
 
-	TRAAPILiveTrainDelay(params *TRAAPILiveTrainDelayParams) (*TRAAPILiveTrainDelayOK, error)
+	TRAAPILiveTrainDelay(params *TRAAPILiveTrainDelayParams, opts ...ClientOption) (*TRAAPILiveTrainDelayOK, error)
 
-	TRAAPINetwork(params *TRAAPINetworkParams) (*TRAAPINetworkOK, error)
+	TRAAPINetwork(params *TRAAPINetworkParams, opts ...ClientOption) (*TRAAPINetworkOK, error)
 
-	TRAAPIODDailyTimetable(params *TRAAPIODDailyTimetableParams) (*TRAAPIODDailyTimetableOK, error)
+	TRAAPIODDailyTimetable(params *TRAAPIODDailyTimetableParams, opts ...ClientOption) (*TRAAPIODDailyTimetableOK, error)
 
-	TRAAPIODFareStation(params *TRAAPIODFareStationParams) (*TRAAPIODFareStationOK, error)
+	TRAAPIODFareStation(params *TRAAPIODFareStationParams, opts ...ClientOption) (*TRAAPIODFareStationOK, error)
 
-	TRAAPIODFareStation1(params *TRAAPIODFareStation1Params) (*TRAAPIODFareStation1OK, error)
+	TRAAPIODFareStation1(params *TRAAPIODFareStation1Params, opts ...ClientOption) (*TRAAPIODFareStation1OK, error)
 
-	TRAAPIShape(params *TRAAPIShapeParams) (*TRAAPIShapeOK, error)
+	TRAAPIShape(params *TRAAPIShapeParams, opts ...ClientOption) (*TRAAPIShapeOK, error)
 
-	TRAAPIStation(params *TRAAPIStationParams) (*TRAAPIStationOK, error)
+	TRAAPIStation(params *TRAAPIStationParams, opts ...ClientOption) (*TRAAPIStationOK, error)
 
-	TRAAPIStationOfLine(params *TRAAPIStationOfLineParams) (*TRAAPIStationOfLineOK, error)
+	TRAAPIStationOfLine(params *TRAAPIStationOfLineParams, opts ...ClientOption) (*TRAAPIStationOfLineOK, error)
 
-	TRAAPIStationTimetable(params *TRAAPIStationTimetableParams) (*TRAAPIStationTimetableOK, error)
+	TRAAPIStationTimetable(params *TRAAPIStationTimetableParams, opts ...ClientOption) (*TRAAPIStationTimetableOK, error)
 
-	TRAAPITrainType(params *TRAAPITrainTypeParams) (*TRAAPITrainTypeOK, error)
+	TRAAPITrainType(params *TRAAPITrainTypeParams, opts ...ClientOption) (*TRAAPITrainTypeOK, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
@@ -85,13 +88,12 @@ type ClientService interface {
 
   取得當天所有車次的時刻表資料
 */
-func (a *Client) TRAAPIDailyTimetable(params *TRAAPIDailyTimetableParams) (*TRAAPIDailyTimetableOK, error) {
+func (a *Client) TRAAPIDailyTimetable(params *TRAAPIDailyTimetableParams, opts ...ClientOption) (*TRAAPIDailyTimetableOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTRAAPIDailyTimetableParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "TRAApi_DailyTimetable",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/DailyTimetable/Today",
@@ -102,7 +104,12 @@ func (a *Client) TRAAPIDailyTimetable(params *TRAAPIDailyTimetableParams) (*TRAA
 		Reader:             &TRAAPIDailyTimetableReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -121,13 +128,12 @@ func (a *Client) TRAAPIDailyTimetable(params *TRAAPIDailyTimetableParams) (*TRAA
 
   取得當天指定[車次]的時刻表資料
 */
-func (a *Client) TRAAPIDailyTimetable1(params *TRAAPIDailyTimetable1Params) (*TRAAPIDailyTimetable1OK, error) {
+func (a *Client) TRAAPIDailyTimetable1(params *TRAAPIDailyTimetable1Params, opts ...ClientOption) (*TRAAPIDailyTimetable1OK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTRAAPIDailyTimetable1Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "TRAApi_DailyTimetable_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/DailyTimetable/Today/TrainNo/{TrainNo}",
@@ -138,7 +144,12 @@ func (a *Client) TRAAPIDailyTimetable1(params *TRAAPIDailyTimetable1Params) (*TR
 		Reader:             &TRAAPIDailyTimetable1Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -157,13 +168,12 @@ func (a *Client) TRAAPIDailyTimetable1(params *TRAAPIDailyTimetable1Params) (*TR
 
   取得指定[日期]所有車次的時刻表資料(台鐵提供近60天每日時刻表)
 */
-func (a *Client) TRAAPIDailyTimetable2(params *TRAAPIDailyTimetable2Params) (*TRAAPIDailyTimetable2OK, error) {
+func (a *Client) TRAAPIDailyTimetable2(params *TRAAPIDailyTimetable2Params, opts ...ClientOption) (*TRAAPIDailyTimetable2OK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTRAAPIDailyTimetable2Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "TRAApi_DailyTimetable_2",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/DailyTimetable/TrainDate/{TrainDate}",
@@ -174,7 +184,12 @@ func (a *Client) TRAAPIDailyTimetable2(params *TRAAPIDailyTimetable2Params) (*TR
 		Reader:             &TRAAPIDailyTimetable2Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -193,13 +208,12 @@ func (a *Client) TRAAPIDailyTimetable2(params *TRAAPIDailyTimetable2Params) (*TR
 
   取得指定[日期],[車次]的時刻表資料(台鐵提供近60天每日時刻表)
 */
-func (a *Client) TRAAPIDailyTimetable3(params *TRAAPIDailyTimetable3Params) (*TRAAPIDailyTimetable3OK, error) {
+func (a *Client) TRAAPIDailyTimetable3(params *TRAAPIDailyTimetable3Params, opts ...ClientOption) (*TRAAPIDailyTimetable3OK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTRAAPIDailyTimetable3Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "TRAApi_DailyTimetable_3",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/DailyTimetable/TrainNo/{TrainNo}/TrainDate/{TrainDate}",
@@ -210,7 +224,12 @@ func (a *Client) TRAAPIDailyTimetable3(params *TRAAPIDailyTimetable3Params) (*TR
 		Reader:             &TRAAPIDailyTimetable3Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -229,13 +248,12 @@ func (a *Client) TRAAPIDailyTimetable3(params *TRAAPIDailyTimetable3Params) (*TR
 
   取得當天所有車次的車次資料
 */
-func (a *Client) TRAAPIDailyTrainInfo(params *TRAAPIDailyTrainInfoParams) (*TRAAPIDailyTrainInfoOK, error) {
+func (a *Client) TRAAPIDailyTrainInfo(params *TRAAPIDailyTrainInfoParams, opts ...ClientOption) (*TRAAPIDailyTrainInfoOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTRAAPIDailyTrainInfoParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "TRAApi_DailyTrainInfo",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/DailyTrainInfo/Today",
@@ -246,7 +264,12 @@ func (a *Client) TRAAPIDailyTrainInfo(params *TRAAPIDailyTrainInfoParams) (*TRAA
 		Reader:             &TRAAPIDailyTrainInfoReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -265,13 +288,12 @@ func (a *Client) TRAAPIDailyTrainInfo(params *TRAAPIDailyTrainInfoParams) (*TRAA
 
   取得當天指定[車次]的車次資料
 */
-func (a *Client) TRAAPIDailyTrainInfo1(params *TRAAPIDailyTrainInfo1Params) (*TRAAPIDailyTrainInfo1OK, error) {
+func (a *Client) TRAAPIDailyTrainInfo1(params *TRAAPIDailyTrainInfo1Params, opts ...ClientOption) (*TRAAPIDailyTrainInfo1OK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTRAAPIDailyTrainInfo1Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "TRAApi_DailyTrainInfo_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/DailyTrainInfo/Today/TrainNo/{TrainNo}",
@@ -282,7 +304,12 @@ func (a *Client) TRAAPIDailyTrainInfo1(params *TRAAPIDailyTrainInfo1Params) (*TR
 		Reader:             &TRAAPIDailyTrainInfo1Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -301,13 +328,12 @@ func (a *Client) TRAAPIDailyTrainInfo1(params *TRAAPIDailyTrainInfo1Params) (*TR
 
   取得指定[日期]所有車次的車次資料(台鐵提供近60天每日時刻表)
 */
-func (a *Client) TRAAPIDailyTrainInfo2(params *TRAAPIDailyTrainInfo2Params) (*TRAAPIDailyTrainInfo2OK, error) {
+func (a *Client) TRAAPIDailyTrainInfo2(params *TRAAPIDailyTrainInfo2Params, opts ...ClientOption) (*TRAAPIDailyTrainInfo2OK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTRAAPIDailyTrainInfo2Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "TRAApi_DailyTrainInfo_2",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/DailyTrainInfo/TrainDate/{TrainDate}",
@@ -318,7 +344,12 @@ func (a *Client) TRAAPIDailyTrainInfo2(params *TRAAPIDailyTrainInfo2Params) (*TR
 		Reader:             &TRAAPIDailyTrainInfo2Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -337,13 +368,12 @@ func (a *Client) TRAAPIDailyTrainInfo2(params *TRAAPIDailyTrainInfo2Params) (*TR
 
   取得指定[日期]與[車次]的車次資料(台鐵提供近60天每日時刻表)
 */
-func (a *Client) TRAAPIDailyTrainInfo3(params *TRAAPIDailyTrainInfo3Params) (*TRAAPIDailyTrainInfo3OK, error) {
+func (a *Client) TRAAPIDailyTrainInfo3(params *TRAAPIDailyTrainInfo3Params, opts ...ClientOption) (*TRAAPIDailyTrainInfo3OK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTRAAPIDailyTrainInfo3Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "TRAApi_DailyTrainInfo_3",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/DailyTrainInfo/TrainNo/{TrainNo}/TrainDate/{TrainDate}",
@@ -354,7 +384,12 @@ func (a *Client) TRAAPIDailyTrainInfo3(params *TRAAPIDailyTrainInfo3Params) (*TR
 		Reader:             &TRAAPIDailyTrainInfo3Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -373,13 +408,12 @@ func (a *Client) TRAAPIDailyTrainInfo3(params *TRAAPIDailyTrainInfo3Params) (*TR
 
   取得所有車次的定期時刻表資料
 */
-func (a *Client) TRAAPIGeneralTimetable(params *TRAAPIGeneralTimetableParams) (*TRAAPIGeneralTimetableOK, error) {
+func (a *Client) TRAAPIGeneralTimetable(params *TRAAPIGeneralTimetableParams, opts ...ClientOption) (*TRAAPIGeneralTimetableOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTRAAPIGeneralTimetableParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "TRAApi_GeneralTimetable",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/GeneralTimetable",
@@ -390,7 +424,12 @@ func (a *Client) TRAAPIGeneralTimetable(params *TRAAPIGeneralTimetableParams) (*
 		Reader:             &TRAAPIGeneralTimetableReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -409,13 +448,12 @@ func (a *Client) TRAAPIGeneralTimetable(params *TRAAPIGeneralTimetableParams) (*
 
   取得指定[車次]的定期時刻表資料
 */
-func (a *Client) TRAAPIGeneralTimetable1(params *TRAAPIGeneralTimetable1Params) (*TRAAPIGeneralTimetable1OK, error) {
+func (a *Client) TRAAPIGeneralTimetable1(params *TRAAPIGeneralTimetable1Params, opts ...ClientOption) (*TRAAPIGeneralTimetable1OK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTRAAPIGeneralTimetable1Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "TRAApi_GeneralTimetable_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/GeneralTimetable/TrainNo/{TrainNo}",
@@ -426,7 +464,12 @@ func (a *Client) TRAAPIGeneralTimetable1(params *TRAAPIGeneralTimetable1Params) 
 		Reader:             &TRAAPIGeneralTimetable1Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -445,13 +488,12 @@ func (a *Client) TRAAPIGeneralTimetable1(params *TRAAPIGeneralTimetable1Params) 
 
   取得所有車次的定期車次資料
 */
-func (a *Client) TRAAPIGeneralTrainInfo(params *TRAAPIGeneralTrainInfoParams) (*TRAAPIGeneralTrainInfoOK, error) {
+func (a *Client) TRAAPIGeneralTrainInfo(params *TRAAPIGeneralTrainInfoParams, opts ...ClientOption) (*TRAAPIGeneralTrainInfoOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTRAAPIGeneralTrainInfoParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "TRAApi_GeneralTrainInfo",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/GeneralTrainInfo",
@@ -462,7 +504,12 @@ func (a *Client) TRAAPIGeneralTrainInfo(params *TRAAPIGeneralTrainInfoParams) (*
 		Reader:             &TRAAPIGeneralTrainInfoReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -481,13 +528,12 @@ func (a *Client) TRAAPIGeneralTrainInfo(params *TRAAPIGeneralTrainInfoParams) (*
 
   取得指定[車次]的定期車次資料
 */
-func (a *Client) TRAAPIGeneralTrainInfo1(params *TRAAPIGeneralTrainInfo1Params) (*TRAAPIGeneralTrainInfo1OK, error) {
+func (a *Client) TRAAPIGeneralTrainInfo1(params *TRAAPIGeneralTrainInfo1Params, opts ...ClientOption) (*TRAAPIGeneralTrainInfo1OK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTRAAPIGeneralTrainInfo1Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "TRAApi_GeneralTrainInfo_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/GeneralTrainInfo/TrainNo/{TrainNo}",
@@ -498,7 +544,12 @@ func (a *Client) TRAAPIGeneralTrainInfo1(params *TRAAPIGeneralTrainInfo1Params) 
 		Reader:             &TRAAPIGeneralTrainInfo1Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -517,13 +568,12 @@ func (a *Client) TRAAPIGeneralTrainInfo1(params *TRAAPIGeneralTrainInfo1Params) 
 
   取得路線基本資料
 */
-func (a *Client) TRAAPILine(params *TRAAPILineParams) (*TRAAPILineOK, error) {
+func (a *Client) TRAAPILine(params *TRAAPILineParams, opts ...ClientOption) (*TRAAPILineOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTRAAPILineParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "TRAApi_Line",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/Line",
@@ -534,7 +584,12 @@ func (a *Client) TRAAPILine(params *TRAAPILineParams) (*TRAAPILineOK, error) {
 		Reader:             &TRAAPILineReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -553,13 +608,12 @@ func (a *Client) TRAAPILine(params *TRAAPILineParams) (*TRAAPILineOK, error) {
 
   取得車站別列車即時到離站電子看板(動態前後30分鐘的車次)。更新頻率：2分鐘。此資料已過濾離站車次資訊
 */
-func (a *Client) TRAAPILiveBoard(params *TRAAPILiveBoardParams) (*TRAAPILiveBoardOK, error) {
+func (a *Client) TRAAPILiveBoard(params *TRAAPILiveBoardParams, opts ...ClientOption) (*TRAAPILiveBoardOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTRAAPILiveBoardParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "TRAApi_LiveBoard",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/LiveBoard",
@@ -570,7 +624,12 @@ func (a *Client) TRAAPILiveBoard(params *TRAAPILiveBoardParams) (*TRAAPILiveBoar
 		Reader:             &TRAAPILiveBoardReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -589,13 +648,12 @@ func (a *Client) TRAAPILiveBoard(params *TRAAPILiveBoardParams) (*TRAAPILiveBoar
 
   取得指定[車站]列車即時到離站電子看板(動態前後30分鐘的車次)。更新頻率：2分鐘。此資料已過濾離站車次資訊
 */
-func (a *Client) TRAAPILiveBoard1(params *TRAAPILiveBoard1Params) (*TRAAPILiveBoard1OK, error) {
+func (a *Client) TRAAPILiveBoard1(params *TRAAPILiveBoard1Params, opts ...ClientOption) (*TRAAPILiveBoard1OK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTRAAPILiveBoard1Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "TRAApi_LiveBoard_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/LiveBoard/Station/{StationID}",
@@ -606,7 +664,12 @@ func (a *Client) TRAAPILiveBoard1(params *TRAAPILiveBoard1Params) (*TRAAPILiveBo
 		Reader:             &TRAAPILiveBoard1Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -625,13 +688,12 @@ func (a *Client) TRAAPILiveBoard1(params *TRAAPILiveBoard1Params) (*TRAAPILiveBo
 
   取得列車即時準點/延誤時間資料。更新頻率：2分鐘
 */
-func (a *Client) TRAAPILiveTrainDelay(params *TRAAPILiveTrainDelayParams) (*TRAAPILiveTrainDelayOK, error) {
+func (a *Client) TRAAPILiveTrainDelay(params *TRAAPILiveTrainDelayParams, opts ...ClientOption) (*TRAAPILiveTrainDelayOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTRAAPILiveTrainDelayParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "TRAApi_LiveTrainDelay",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/LiveTrainDelay",
@@ -642,7 +704,12 @@ func (a *Client) TRAAPILiveTrainDelay(params *TRAAPILiveTrainDelayParams) (*TRAA
 		Reader:             &TRAAPILiveTrainDelayReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -661,13 +728,12 @@ func (a *Client) TRAAPILiveTrainDelay(params *TRAAPILiveTrainDelayParams) (*TRAA
 
   取得臺鐵路網資料
 */
-func (a *Client) TRAAPINetwork(params *TRAAPINetworkParams) (*TRAAPINetworkOK, error) {
+func (a *Client) TRAAPINetwork(params *TRAAPINetworkParams, opts ...ClientOption) (*TRAAPINetworkOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTRAAPINetworkParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "TRAApi_Network",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/Network",
@@ -678,7 +744,12 @@ func (a *Client) TRAAPINetwork(params *TRAAPINetworkParams) (*TRAAPINetworkOK, e
 		Reader:             &TRAAPINetworkReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -697,13 +768,12 @@ func (a *Client) TRAAPINetwork(params *TRAAPINetworkParams) (*TRAAPINetworkOK, e
 
   取得指定[日期],[起迄站間]之站間時刻表資料
 */
-func (a *Client) TRAAPIODDailyTimetable(params *TRAAPIODDailyTimetableParams) (*TRAAPIODDailyTimetableOK, error) {
+func (a *Client) TRAAPIODDailyTimetable(params *TRAAPIODDailyTimetableParams, opts ...ClientOption) (*TRAAPIODDailyTimetableOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTRAAPIODDailyTimetableParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "TRAApi_ODDailyTimetable",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/DailyTimetable/OD/{OriginStationID}/to/{DestinationStationID}/{TrainDate}",
@@ -714,7 +784,12 @@ func (a *Client) TRAAPIODDailyTimetable(params *TRAAPIODDailyTimetableParams) (*
 		Reader:             &TRAAPIODDailyTimetableReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -733,13 +808,12 @@ func (a *Client) TRAAPIODDailyTimetable(params *TRAAPIODDailyTimetableParams) (*
 
   取得指定[起訖站間]之票價資料
 */
-func (a *Client) TRAAPIODFareStation(params *TRAAPIODFareStationParams) (*TRAAPIODFareStationOK, error) {
+func (a *Client) TRAAPIODFareStation(params *TRAAPIODFareStationParams, opts ...ClientOption) (*TRAAPIODFareStationOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTRAAPIODFareStationParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "TRAApi_ODFareStation",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/ODFare/{OriginStationID}/to/{DestinationStationID}",
@@ -750,7 +824,12 @@ func (a *Client) TRAAPIODFareStation(params *TRAAPIODFareStationParams) (*TRAAPI
 		Reader:             &TRAAPIODFareStationReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -769,13 +848,12 @@ func (a *Client) TRAAPIODFareStation(params *TRAAPIODFareStationParams) (*TRAAPI
 
   取得票價資料
 */
-func (a *Client) TRAAPIODFareStation1(params *TRAAPIODFareStation1Params) (*TRAAPIODFareStation1OK, error) {
+func (a *Client) TRAAPIODFareStation1(params *TRAAPIODFareStation1Params, opts ...ClientOption) (*TRAAPIODFareStation1OK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTRAAPIODFareStation1Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "TRAApi_ODFareStation_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/ODFare",
@@ -786,7 +864,12 @@ func (a *Client) TRAAPIODFareStation1(params *TRAAPIODFareStation1Params) (*TRAA
 		Reader:             &TRAAPIODFareStation1Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -805,13 +888,12 @@ func (a *Client) TRAAPIODFareStation1(params *TRAAPIODFareStation1Params) (*TRAA
 
   取得軌道路網實體路線圖資資料
 */
-func (a *Client) TRAAPIShape(params *TRAAPIShapeParams) (*TRAAPIShapeOK, error) {
+func (a *Client) TRAAPIShape(params *TRAAPIShapeParams, opts ...ClientOption) (*TRAAPIShapeOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTRAAPIShapeParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "TRAApi_Shape",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/Shape",
@@ -822,7 +904,12 @@ func (a *Client) TRAAPIShape(params *TRAAPIShapeParams) (*TRAAPIShapeOK, error) 
 		Reader:             &TRAAPIShapeReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -841,13 +928,12 @@ func (a *Client) TRAAPIShape(params *TRAAPIShapeParams) (*TRAAPIShapeOK, error) 
 
   取得車站基本資料
 */
-func (a *Client) TRAAPIStation(params *TRAAPIStationParams) (*TRAAPIStationOK, error) {
+func (a *Client) TRAAPIStation(params *TRAAPIStationParams, opts ...ClientOption) (*TRAAPIStationOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTRAAPIStationParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "TRAApi_Station",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/Station",
@@ -858,7 +944,12 @@ func (a *Client) TRAAPIStation(params *TRAAPIStationParams) (*TRAAPIStationOK, e
 		Reader:             &TRAAPIStationReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -877,13 +968,12 @@ func (a *Client) TRAAPIStation(params *TRAAPIStationParams) (*TRAAPIStationOK, e
 
   取得路線車站基本資料
 */
-func (a *Client) TRAAPIStationOfLine(params *TRAAPIStationOfLineParams) (*TRAAPIStationOfLineOK, error) {
+func (a *Client) TRAAPIStationOfLine(params *TRAAPIStationOfLineParams, opts ...ClientOption) (*TRAAPIStationOfLineOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTRAAPIStationOfLineParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "TRAApi_StationOfLine",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/StationOfLine",
@@ -894,7 +984,12 @@ func (a *Client) TRAAPIStationOfLine(params *TRAAPIStationOfLineParams) (*TRAAPI
 		Reader:             &TRAAPIStationOfLineReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -913,13 +1008,12 @@ func (a *Client) TRAAPIStationOfLine(params *TRAAPIStationOfLineParams) (*TRAAPI
 
   取得指定[日期],[車站]的站別時刻表資料
 */
-func (a *Client) TRAAPIStationTimetable(params *TRAAPIStationTimetableParams) (*TRAAPIStationTimetableOK, error) {
+func (a *Client) TRAAPIStationTimetable(params *TRAAPIStationTimetableParams, opts ...ClientOption) (*TRAAPIStationTimetableOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTRAAPIStationTimetableParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "TRAApi_StationTimetable",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/DailyTimetable/Station/{StationID}/{TrainDate}",
@@ -930,7 +1024,12 @@ func (a *Client) TRAAPIStationTimetable(params *TRAAPIStationTimetableParams) (*
 		Reader:             &TRAAPIStationTimetableReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -949,13 +1048,12 @@ func (a *Client) TRAAPIStationTimetable(params *TRAAPIStationTimetableParams) (*
 
   取得所有列車車種資料
 */
-func (a *Client) TRAAPITrainType(params *TRAAPITrainTypeParams) (*TRAAPITrainTypeOK, error) {
+func (a *Client) TRAAPITrainType(params *TRAAPITrainTypeParams, opts ...ClientOption) (*TRAAPITrainTypeOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTRAAPITrainTypeParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "TRAApi_TrainType",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/TrainType",
@@ -966,7 +1064,12 @@ func (a *Client) TRAAPITrainType(params *TRAAPITrainTypeParams) (*TRAAPITrainTyp
 		Reader:             &TRAAPITrainTypeReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
