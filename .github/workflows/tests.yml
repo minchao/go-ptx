@@ -46,8 +46,9 @@ jobs:
 
       - run: go mod download
 
-      - name: go-swagger installer
-        uses: minchao/setup-goswagger@v1
+      - uses: minchao/setup-go-swagger@v1
+        with:
+          version: v0.26.1
 
       - run: make validate
       - run: make test
