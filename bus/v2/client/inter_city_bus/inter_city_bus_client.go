@@ -25,67 +25,70 @@ type Client struct {
 	formats   strfmt.Registry
 }
 
+// ClientOption is the option for Client methods
+type ClientOption func(*runtime.ClientOperation)
+
 // ClientService is the interface for Client methods
 type ClientService interface {
-	InterCityBusAPIDataVersion(params *InterCityBusAPIDataVersionParams) (*InterCityBusAPIDataVersionOK, *InterCityBusAPIDataVersionStatus299, error)
+	InterCityBusAPIDataVersion(params *InterCityBusAPIDataVersionParams, opts ...ClientOption) (*InterCityBusAPIDataVersionOK, *InterCityBusAPIDataVersionStatus299, error)
 
-	InterCityBusAPIEstimatedTimeOfArrival(params *InterCityBusAPIEstimatedTimeOfArrivalParams) (*InterCityBusAPIEstimatedTimeOfArrivalOK, *InterCityBusAPIEstimatedTimeOfArrivalStatus299, error)
+	InterCityBusAPIEstimatedTimeOfArrival(params *InterCityBusAPIEstimatedTimeOfArrivalParams, opts ...ClientOption) (*InterCityBusAPIEstimatedTimeOfArrivalOK, *InterCityBusAPIEstimatedTimeOfArrivalStatus299, error)
 
-	InterCityBusAPIEstimatedTimeOfArrival1(params *InterCityBusAPIEstimatedTimeOfArrival1Params) (*InterCityBusAPIEstimatedTimeOfArrival1OK, *InterCityBusAPIEstimatedTimeOfArrival1Status299, error)
+	InterCityBusAPIEstimatedTimeOfArrival1(params *InterCityBusAPIEstimatedTimeOfArrival1Params, opts ...ClientOption) (*InterCityBusAPIEstimatedTimeOfArrival1OK, *InterCityBusAPIEstimatedTimeOfArrival1Status299, error)
 
-	InterCityBusAPIEstimatedTimeOfArrivalUDP(params *InterCityBusAPIEstimatedTimeOfArrivalUDPParams) (*InterCityBusAPIEstimatedTimeOfArrivalUDPOK, *InterCityBusAPIEstimatedTimeOfArrivalUDPStatus299, error)
+	InterCityBusAPIEstimatedTimeOfArrivalUDP(params *InterCityBusAPIEstimatedTimeOfArrivalUDPParams, opts ...ClientOption) (*InterCityBusAPIEstimatedTimeOfArrivalUDPOK, *InterCityBusAPIEstimatedTimeOfArrivalUDPStatus299, error)
 
-	InterCityBusAPIEstimatedTimeOfArrivalUDP1(params *InterCityBusAPIEstimatedTimeOfArrivalUDP1Params) (*InterCityBusAPIEstimatedTimeOfArrivalUdp1OK, *InterCityBusAPIEstimatedTimeOfArrivalUdp1Status299, error)
+	InterCityBusAPIEstimatedTimeOfArrivalUDP1(params *InterCityBusAPIEstimatedTimeOfArrivalUDP1Params, opts ...ClientOption) (*InterCityBusAPIEstimatedTimeOfArrivalUdp1OK, *InterCityBusAPIEstimatedTimeOfArrivalUdp1Status299, error)
 
-	InterCityBusAPINews(params *InterCityBusAPINewsParams) (*InterCityBusAPINewsOK, *InterCityBusAPINewsStatus299, error)
+	InterCityBusAPINews(params *InterCityBusAPINewsParams, opts ...ClientOption) (*InterCityBusAPINewsOK, *InterCityBusAPINewsStatus299, error)
 
-	InterCityBusAPIOperator(params *InterCityBusAPIOperatorParams) (*InterCityBusAPIOperatorOK, *InterCityBusAPIOperatorStatus299, error)
+	InterCityBusAPIOperator(params *InterCityBusAPIOperatorParams, opts ...ClientOption) (*InterCityBusAPIOperatorOK, *InterCityBusAPIOperatorStatus299, error)
 
-	InterCityBusAPIRealTimeByFrequency(params *InterCityBusAPIRealTimeByFrequencyParams) (*InterCityBusAPIRealTimeByFrequencyOK, *InterCityBusAPIRealTimeByFrequencyStatus299, error)
+	InterCityBusAPIRealTimeByFrequency(params *InterCityBusAPIRealTimeByFrequencyParams, opts ...ClientOption) (*InterCityBusAPIRealTimeByFrequencyOK, *InterCityBusAPIRealTimeByFrequencyStatus299, error)
 
-	InterCityBusAPIRealTimeByFrequency1(params *InterCityBusAPIRealTimeByFrequency1Params) (*InterCityBusAPIRealTimeByFrequency1OK, *InterCityBusAPIRealTimeByFrequency1Status299, error)
+	InterCityBusAPIRealTimeByFrequency1(params *InterCityBusAPIRealTimeByFrequency1Params, opts ...ClientOption) (*InterCityBusAPIRealTimeByFrequency1OK, *InterCityBusAPIRealTimeByFrequency1Status299, error)
 
-	InterCityBusAPIRealTimeByFrequencyUDP(params *InterCityBusAPIRealTimeByFrequencyUDPParams) (*InterCityBusAPIRealTimeByFrequencyUDPOK, *InterCityBusAPIRealTimeByFrequencyUDPStatus299, error)
+	InterCityBusAPIRealTimeByFrequencyUDP(params *InterCityBusAPIRealTimeByFrequencyUDPParams, opts ...ClientOption) (*InterCityBusAPIRealTimeByFrequencyUDPOK, *InterCityBusAPIRealTimeByFrequencyUDPStatus299, error)
 
-	InterCityBusAPIRealTimeByFrequencyUDP1(params *InterCityBusAPIRealTimeByFrequencyUDP1Params) (*InterCityBusAPIRealTimeByFrequencyUdp1OK, *InterCityBusAPIRealTimeByFrequencyUdp1Status299, error)
+	InterCityBusAPIRealTimeByFrequencyUDP1(params *InterCityBusAPIRealTimeByFrequencyUDP1Params, opts ...ClientOption) (*InterCityBusAPIRealTimeByFrequencyUdp1OK, *InterCityBusAPIRealTimeByFrequencyUdp1Status299, error)
 
-	InterCityBusAPIRealTimeNearStop(params *InterCityBusAPIRealTimeNearStopParams) (*InterCityBusAPIRealTimeNearStopOK, *InterCityBusAPIRealTimeNearStopStatus299, error)
+	InterCityBusAPIRealTimeNearStop(params *InterCityBusAPIRealTimeNearStopParams, opts ...ClientOption) (*InterCityBusAPIRealTimeNearStopOK, *InterCityBusAPIRealTimeNearStopStatus299, error)
 
-	InterCityBusAPIRealTimeNearStop1(params *InterCityBusAPIRealTimeNearStop1Params) (*InterCityBusAPIRealTimeNearStop1OK, *InterCityBusAPIRealTimeNearStop1Status299, error)
+	InterCityBusAPIRealTimeNearStop1(params *InterCityBusAPIRealTimeNearStop1Params, opts ...ClientOption) (*InterCityBusAPIRealTimeNearStop1OK, *InterCityBusAPIRealTimeNearStop1Status299, error)
 
-	InterCityBusAPIRealTimeNearStopUDP(params *InterCityBusAPIRealTimeNearStopUDPParams) (*InterCityBusAPIRealTimeNearStopUDPOK, *InterCityBusAPIRealTimeNearStopUDPStatus299, error)
+	InterCityBusAPIRealTimeNearStopUDP(params *InterCityBusAPIRealTimeNearStopUDPParams, opts ...ClientOption) (*InterCityBusAPIRealTimeNearStopUDPOK, *InterCityBusAPIRealTimeNearStopUDPStatus299, error)
 
-	InterCityBusAPIRealTimeNearStopUDP1(params *InterCityBusAPIRealTimeNearStopUDP1Params) (*InterCityBusAPIRealTimeNearStopUdp1OK, *InterCityBusAPIRealTimeNearStopUdp1Status299, error)
+	InterCityBusAPIRealTimeNearStopUDP1(params *InterCityBusAPIRealTimeNearStopUDP1Params, opts ...ClientOption) (*InterCityBusAPIRealTimeNearStopUdp1OK, *InterCityBusAPIRealTimeNearStopUdp1Status299, error)
 
-	InterCityBusAPIRoute(params *InterCityBusAPIRouteParams) (*InterCityBusAPIRouteOK, *InterCityBusAPIRouteStatus299, error)
+	InterCityBusAPIRoute(params *InterCityBusAPIRouteParams, opts ...ClientOption) (*InterCityBusAPIRouteOK, *InterCityBusAPIRouteStatus299, error)
 
-	InterCityBusAPIRouteFare(params *InterCityBusAPIRouteFareParams) (*InterCityBusAPIRouteFareOK, *InterCityBusAPIRouteFareStatus299, error)
+	InterCityBusAPIRouteFare(params *InterCityBusAPIRouteFareParams, opts ...ClientOption) (*InterCityBusAPIRouteFareOK, *InterCityBusAPIRouteFareStatus299, error)
 
-	InterCityBusAPIRouteFare1(params *InterCityBusAPIRouteFare1Params) (*InterCityBusAPIRouteFare1OK, *InterCityBusAPIRouteFare1Status299, error)
+	InterCityBusAPIRouteFare1(params *InterCityBusAPIRouteFare1Params, opts ...ClientOption) (*InterCityBusAPIRouteFare1OK, *InterCityBusAPIRouteFare1Status299, error)
 
-	InterCityBusAPIRoute1(params *InterCityBusAPIRoute1Params) (*InterCityBusAPIRoute1OK, *InterCityBusAPIRoute1Status299, error)
+	InterCityBusAPIRoute1(params *InterCityBusAPIRoute1Params, opts ...ClientOption) (*InterCityBusAPIRoute1OK, *InterCityBusAPIRoute1Status299, error)
 
-	InterCityBusAPIS2STravelTimeDetail(params *InterCityBusAPIS2STravelTimeDetailParams) (*InterCityBusAPIS2STravelTimeDetailOK, *InterCityBusAPIS2STravelTimeDetailStatus299, error)
+	InterCityBusAPIS2STravelTimeDetail(params *InterCityBusAPIS2STravelTimeDetailParams, opts ...ClientOption) (*InterCityBusAPIS2STravelTimeDetailOK, *InterCityBusAPIS2STravelTimeDetailStatus299, error)
 
-	InterCityBusAPISchedule(params *InterCityBusAPIScheduleParams) (*InterCityBusAPIScheduleOK, *InterCityBusAPIScheduleStatus299, error)
+	InterCityBusAPISchedule(params *InterCityBusAPIScheduleParams, opts ...ClientOption) (*InterCityBusAPIScheduleOK, *InterCityBusAPIScheduleStatus299, error)
 
-	InterCityBusAPISchedule1(params *InterCityBusAPISchedule1Params) (*InterCityBusAPISchedule1OK, *InterCityBusAPISchedule1Status299, error)
+	InterCityBusAPISchedule1(params *InterCityBusAPISchedule1Params, opts ...ClientOption) (*InterCityBusAPISchedule1OK, *InterCityBusAPISchedule1Status299, error)
 
-	InterCityBusAPIShape(params *InterCityBusAPIShapeParams) (*InterCityBusAPIShapeOK, *InterCityBusAPIShapeStatus299, error)
+	InterCityBusAPIShape(params *InterCityBusAPIShapeParams, opts ...ClientOption) (*InterCityBusAPIShapeOK, *InterCityBusAPIShapeStatus299, error)
 
-	InterCityBusAPIShape1(params *InterCityBusAPIShape1Params) (*InterCityBusAPIShape1OK, *InterCityBusAPIShape1Status299, error)
+	InterCityBusAPIShape1(params *InterCityBusAPIShape1Params, opts ...ClientOption) (*InterCityBusAPIShape1OK, *InterCityBusAPIShape1Status299, error)
 
-	InterCityBusAPIStation(params *InterCityBusAPIStationParams) (*InterCityBusAPIStationOK, *InterCityBusAPIStationStatus299, error)
+	InterCityBusAPIStation(params *InterCityBusAPIStationParams, opts ...ClientOption) (*InterCityBusAPIStationOK, *InterCityBusAPIStationStatus299, error)
 
-	InterCityBusAPIStationGroup(params *InterCityBusAPIStationGroupParams) (*InterCityBusAPIStationGroupOK, *InterCityBusAPIStationGroupStatus299, error)
+	InterCityBusAPIStationGroup(params *InterCityBusAPIStationGroupParams, opts ...ClientOption) (*InterCityBusAPIStationGroupOK, *InterCityBusAPIStationGroupStatus299, error)
 
-	InterCityBusAPIStop(params *InterCityBusAPIStopParams) (*InterCityBusAPIStopOK, *InterCityBusAPIStopStatus299, error)
+	InterCityBusAPIStop(params *InterCityBusAPIStopParams, opts ...ClientOption) (*InterCityBusAPIStopOK, *InterCityBusAPIStopStatus299, error)
 
-	InterCityBusAPIStopOfRoute(params *InterCityBusAPIStopOfRouteParams) (*InterCityBusAPIStopOfRouteOK, *InterCityBusAPIStopOfRouteStatus299, error)
+	InterCityBusAPIStopOfRoute(params *InterCityBusAPIStopOfRouteParams, opts ...ClientOption) (*InterCityBusAPIStopOfRouteOK, *InterCityBusAPIStopOfRouteStatus299, error)
 
-	InterCityBusAPIStopOfRoute1(params *InterCityBusAPIStopOfRoute1Params) (*InterCityBusAPIStopOfRoute1OK, *InterCityBusAPIStopOfRoute1Status299, error)
+	InterCityBusAPIStopOfRoute1(params *InterCityBusAPIStopOfRoute1Params, opts ...ClientOption) (*InterCityBusAPIStopOfRoute1OK, *InterCityBusAPIStopOfRoute1Status299, error)
 
-	InterCityBusAPIVehicle(params *InterCityBusAPIVehicleParams) (*InterCityBusAPIVehicleOK, *InterCityBusAPIVehicleStatus299, error)
+	InterCityBusAPIVehicle(params *InterCityBusAPIVehicleParams, opts ...ClientOption) (*InterCityBusAPIVehicleOK, *InterCityBusAPIVehicleStatus299, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
@@ -95,13 +98,12 @@ type ClientService interface {
 
   版本詳細資訊
 */
-func (a *Client) InterCityBusAPIDataVersion(params *InterCityBusAPIDataVersionParams) (*InterCityBusAPIDataVersionOK, *InterCityBusAPIDataVersionStatus299, error) {
+func (a *Client) InterCityBusAPIDataVersion(params *InterCityBusAPIDataVersionParams, opts ...ClientOption) (*InterCityBusAPIDataVersionOK, *InterCityBusAPIDataVersionStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewInterCityBusAPIDataVersionParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "InterCityBusApi_DataVersion",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/DataVersion/InterCity",
@@ -112,7 +114,12 @@ func (a *Client) InterCityBusAPIDataVersion(params *InterCityBusAPIDataVersionPa
 		Reader:             &InterCityBusAPIDataVersionReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -134,13 +141,12 @@ func (a *Client) InterCityBusAPIDataVersion(params *InterCityBusAPIDataVersionPa
 - 不保留[現在時間]超過[本平台資料更新時間]兩分鐘的資料
 - [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))
 */
-func (a *Client) InterCityBusAPIEstimatedTimeOfArrival(params *InterCityBusAPIEstimatedTimeOfArrivalParams) (*InterCityBusAPIEstimatedTimeOfArrivalOK, *InterCityBusAPIEstimatedTimeOfArrivalStatus299, error) {
+func (a *Client) InterCityBusAPIEstimatedTimeOfArrival(params *InterCityBusAPIEstimatedTimeOfArrivalParams, opts ...ClientOption) (*InterCityBusAPIEstimatedTimeOfArrivalOK, *InterCityBusAPIEstimatedTimeOfArrivalStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewInterCityBusAPIEstimatedTimeOfArrivalParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "InterCityBusApi_EstimatedTimeOfArrival",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/EstimatedTimeOfArrival/InterCity",
@@ -151,7 +157,12 @@ func (a *Client) InterCityBusAPIEstimatedTimeOfArrival(params *InterCityBusAPIEs
 		Reader:             &InterCityBusAPIEstimatedTimeOfArrivalReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -173,13 +184,12 @@ func (a *Client) InterCityBusAPIEstimatedTimeOfArrival(params *InterCityBusAPIEs
 - 不保留[現在時間]超過[本平台資料更新時間]兩分鐘的資料
 - [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))
 */
-func (a *Client) InterCityBusAPIEstimatedTimeOfArrival1(params *InterCityBusAPIEstimatedTimeOfArrival1Params) (*InterCityBusAPIEstimatedTimeOfArrival1OK, *InterCityBusAPIEstimatedTimeOfArrival1Status299, error) {
+func (a *Client) InterCityBusAPIEstimatedTimeOfArrival1(params *InterCityBusAPIEstimatedTimeOfArrival1Params, opts ...ClientOption) (*InterCityBusAPIEstimatedTimeOfArrival1OK, *InterCityBusAPIEstimatedTimeOfArrival1Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewInterCityBusAPIEstimatedTimeOfArrival1Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "InterCityBusApi_EstimatedTimeOfArrival_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/EstimatedTimeOfArrival/InterCity/{RouteName}",
@@ -190,7 +200,12 @@ func (a *Client) InterCityBusAPIEstimatedTimeOfArrival1(params *InterCityBusAPIE
 		Reader:             &InterCityBusAPIEstimatedTimeOfArrival1Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -213,13 +228,12 @@ func (a *Client) InterCityBusAPIEstimatedTimeOfArrival1(params *InterCityBusAPIE
 - [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))
 - N1僅於該路線上有任一車輛離站時，來源端才會重新計算並發佈，因此使用者需自行處理時間遞減機制，或以EstimateTime-(收到資料時間-SrcTrasTime)(秒)作為實際預估抵達時間。
 */
-func (a *Client) InterCityBusAPIEstimatedTimeOfArrivalUDP(params *InterCityBusAPIEstimatedTimeOfArrivalUDPParams) (*InterCityBusAPIEstimatedTimeOfArrivalUDPOK, *InterCityBusAPIEstimatedTimeOfArrivalUDPStatus299, error) {
+func (a *Client) InterCityBusAPIEstimatedTimeOfArrivalUDP(params *InterCityBusAPIEstimatedTimeOfArrivalUDPParams, opts ...ClientOption) (*InterCityBusAPIEstimatedTimeOfArrivalUDPOK, *InterCityBusAPIEstimatedTimeOfArrivalUDPStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewInterCityBusAPIEstimatedTimeOfArrivalUDPParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "InterCityBusApi_EstimatedTimeOfArrival_UDP",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/EstimatedTimeOfArrival/Streaming/InterCity",
@@ -230,7 +244,12 @@ func (a *Client) InterCityBusAPIEstimatedTimeOfArrivalUDP(params *InterCityBusAP
 		Reader:             &InterCityBusAPIEstimatedTimeOfArrivalUDPReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -253,13 +272,12 @@ func (a *Client) InterCityBusAPIEstimatedTimeOfArrivalUDP(params *InterCityBusAP
 - [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))
 - N1僅於該路線上有任一車輛離站時，來源端才會重新計算並發佈，因此使用者需自行處理時間遞減機制，或以EstimateTime-(收到資料時間-SrcTrasTime)(秒)作為實際預估抵達時間。
 */
-func (a *Client) InterCityBusAPIEstimatedTimeOfArrivalUDP1(params *InterCityBusAPIEstimatedTimeOfArrivalUDP1Params) (*InterCityBusAPIEstimatedTimeOfArrivalUdp1OK, *InterCityBusAPIEstimatedTimeOfArrivalUdp1Status299, error) {
+func (a *Client) InterCityBusAPIEstimatedTimeOfArrivalUDP1(params *InterCityBusAPIEstimatedTimeOfArrivalUDP1Params, opts ...ClientOption) (*InterCityBusAPIEstimatedTimeOfArrivalUdp1OK, *InterCityBusAPIEstimatedTimeOfArrivalUdp1Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewInterCityBusAPIEstimatedTimeOfArrivalUDP1Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "InterCityBusApi_EstimatedTimeOfArrival_UDP_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/EstimatedTimeOfArrival/Streaming/InterCity/{RouteName}",
@@ -270,7 +288,12 @@ func (a *Client) InterCityBusAPIEstimatedTimeOfArrivalUDP1(params *InterCityBusA
 		Reader:             &InterCityBusAPIEstimatedTimeOfArrivalUDP1Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -290,13 +313,12 @@ func (a *Client) InterCityBusAPIEstimatedTimeOfArrivalUDP1(params *InterCityBusA
 
   公路客運之最新消息
 */
-func (a *Client) InterCityBusAPINews(params *InterCityBusAPINewsParams) (*InterCityBusAPINewsOK, *InterCityBusAPINewsStatus299, error) {
+func (a *Client) InterCityBusAPINews(params *InterCityBusAPINewsParams, opts ...ClientOption) (*InterCityBusAPINewsOK, *InterCityBusAPINewsStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewInterCityBusAPINewsParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "InterCityBusApi_News",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/News/InterCity",
@@ -307,7 +329,12 @@ func (a *Client) InterCityBusAPINews(params *InterCityBusAPINewsParams) (*InterC
 		Reader:             &InterCityBusAPINewsReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -327,13 +354,12 @@ func (a *Client) InterCityBusAPINews(params *InterCityBusAPINewsParams) (*InterC
 
   公路客運之營運業者資料
 */
-func (a *Client) InterCityBusAPIOperator(params *InterCityBusAPIOperatorParams) (*InterCityBusAPIOperatorOK, *InterCityBusAPIOperatorStatus299, error) {
+func (a *Client) InterCityBusAPIOperator(params *InterCityBusAPIOperatorParams, opts ...ClientOption) (*InterCityBusAPIOperatorOK, *InterCityBusAPIOperatorStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewInterCityBusAPIOperatorParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "InterCityBusApi_Operator",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/Operator/InterCity",
@@ -344,7 +370,12 @@ func (a *Client) InterCityBusAPIOperator(params *InterCityBusAPIOperatorParams) 
 		Reader:             &InterCityBusAPIOperatorReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -365,13 +396,12 @@ func (a *Client) InterCityBusAPIOperator(params *InterCityBusAPIOperatorParams) 
   ### 公路客運之定時資料(A1) ###
 - [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))
 */
-func (a *Client) InterCityBusAPIRealTimeByFrequency(params *InterCityBusAPIRealTimeByFrequencyParams) (*InterCityBusAPIRealTimeByFrequencyOK, *InterCityBusAPIRealTimeByFrequencyStatus299, error) {
+func (a *Client) InterCityBusAPIRealTimeByFrequency(params *InterCityBusAPIRealTimeByFrequencyParams, opts ...ClientOption) (*InterCityBusAPIRealTimeByFrequencyOK, *InterCityBusAPIRealTimeByFrequencyStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewInterCityBusAPIRealTimeByFrequencyParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "InterCityBusApi_RealTimeByFrequency",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/RealTimeByFrequency/InterCity",
@@ -382,7 +412,12 @@ func (a *Client) InterCityBusAPIRealTimeByFrequency(params *InterCityBusAPIRealT
 		Reader:             &InterCityBusAPIRealTimeByFrequencyReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -403,13 +438,12 @@ func (a *Client) InterCityBusAPIRealTimeByFrequency(params *InterCityBusAPIRealT
   ### 公路客運之定時資料(A1) ###
 - [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))
 */
-func (a *Client) InterCityBusAPIRealTimeByFrequency1(params *InterCityBusAPIRealTimeByFrequency1Params) (*InterCityBusAPIRealTimeByFrequency1OK, *InterCityBusAPIRealTimeByFrequency1Status299, error) {
+func (a *Client) InterCityBusAPIRealTimeByFrequency1(params *InterCityBusAPIRealTimeByFrequency1Params, opts ...ClientOption) (*InterCityBusAPIRealTimeByFrequency1OK, *InterCityBusAPIRealTimeByFrequency1Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewInterCityBusAPIRealTimeByFrequency1Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "InterCityBusApi_RealTimeByFrequency_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/RealTimeByFrequency/InterCity/{RouteName}",
@@ -420,7 +454,12 @@ func (a *Client) InterCityBusAPIRealTimeByFrequency1(params *InterCityBusAPIReal
 		Reader:             &InterCityBusAPIRealTimeByFrequency1Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -441,13 +480,12 @@ func (a *Client) InterCityBusAPIRealTimeByFrequency1(params *InterCityBusAPIReal
   ### 公路客運之定時資料(A1) ###
 - [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))
 */
-func (a *Client) InterCityBusAPIRealTimeByFrequencyUDP(params *InterCityBusAPIRealTimeByFrequencyUDPParams) (*InterCityBusAPIRealTimeByFrequencyUDPOK, *InterCityBusAPIRealTimeByFrequencyUDPStatus299, error) {
+func (a *Client) InterCityBusAPIRealTimeByFrequencyUDP(params *InterCityBusAPIRealTimeByFrequencyUDPParams, opts ...ClientOption) (*InterCityBusAPIRealTimeByFrequencyUDPOK, *InterCityBusAPIRealTimeByFrequencyUDPStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewInterCityBusAPIRealTimeByFrequencyUDPParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "InterCityBusApi_RealTimeByFrequency_UDP",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/RealTimeByFrequency/Streaming/InterCity",
@@ -458,7 +496,12 @@ func (a *Client) InterCityBusAPIRealTimeByFrequencyUDP(params *InterCityBusAPIRe
 		Reader:             &InterCityBusAPIRealTimeByFrequencyUDPReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -479,13 +522,12 @@ func (a *Client) InterCityBusAPIRealTimeByFrequencyUDP(params *InterCityBusAPIRe
   ### 公路客運之定時資料(A1) ###
 - [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))
 */
-func (a *Client) InterCityBusAPIRealTimeByFrequencyUDP1(params *InterCityBusAPIRealTimeByFrequencyUDP1Params) (*InterCityBusAPIRealTimeByFrequencyUdp1OK, *InterCityBusAPIRealTimeByFrequencyUdp1Status299, error) {
+func (a *Client) InterCityBusAPIRealTimeByFrequencyUDP1(params *InterCityBusAPIRealTimeByFrequencyUDP1Params, opts ...ClientOption) (*InterCityBusAPIRealTimeByFrequencyUdp1OK, *InterCityBusAPIRealTimeByFrequencyUdp1Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewInterCityBusAPIRealTimeByFrequencyUDP1Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "InterCityBusApi_RealTimeByFrequency_UDP_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/RealTimeByFrequency/Streaming/InterCity/{RouteName}",
@@ -496,7 +538,12 @@ func (a *Client) InterCityBusAPIRealTimeByFrequencyUDP1(params *InterCityBusAPIR
 		Reader:             &InterCityBusAPIRealTimeByFrequencyUDP1Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -517,13 +564,12 @@ func (a *Client) InterCityBusAPIRealTimeByFrequencyUDP1(params *InterCityBusAPIR
   ### 公路客運之定點資料(A2) ###
 - [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))
 */
-func (a *Client) InterCityBusAPIRealTimeNearStop(params *InterCityBusAPIRealTimeNearStopParams) (*InterCityBusAPIRealTimeNearStopOK, *InterCityBusAPIRealTimeNearStopStatus299, error) {
+func (a *Client) InterCityBusAPIRealTimeNearStop(params *InterCityBusAPIRealTimeNearStopParams, opts ...ClientOption) (*InterCityBusAPIRealTimeNearStopOK, *InterCityBusAPIRealTimeNearStopStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewInterCityBusAPIRealTimeNearStopParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "InterCityBusApi_RealTimeNearStop",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/RealTimeNearStop/InterCity",
@@ -534,7 +580,12 @@ func (a *Client) InterCityBusAPIRealTimeNearStop(params *InterCityBusAPIRealTime
 		Reader:             &InterCityBusAPIRealTimeNearStopReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -555,13 +606,12 @@ func (a *Client) InterCityBusAPIRealTimeNearStop(params *InterCityBusAPIRealTime
   ### 公路客運之定點資料(A2) ###
 - [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))
 */
-func (a *Client) InterCityBusAPIRealTimeNearStop1(params *InterCityBusAPIRealTimeNearStop1Params) (*InterCityBusAPIRealTimeNearStop1OK, *InterCityBusAPIRealTimeNearStop1Status299, error) {
+func (a *Client) InterCityBusAPIRealTimeNearStop1(params *InterCityBusAPIRealTimeNearStop1Params, opts ...ClientOption) (*InterCityBusAPIRealTimeNearStop1OK, *InterCityBusAPIRealTimeNearStop1Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewInterCityBusAPIRealTimeNearStop1Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "InterCityBusApi_RealTimeNearStop_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/RealTimeNearStop/InterCity/{RouteName}",
@@ -572,7 +622,12 @@ func (a *Client) InterCityBusAPIRealTimeNearStop1(params *InterCityBusAPIRealTim
 		Reader:             &InterCityBusAPIRealTimeNearStop1Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -593,13 +648,12 @@ func (a *Client) InterCityBusAPIRealTimeNearStop1(params *InterCityBusAPIRealTim
   ### 公路客運之定點資料(A2) ###
 - [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))
 */
-func (a *Client) InterCityBusAPIRealTimeNearStopUDP(params *InterCityBusAPIRealTimeNearStopUDPParams) (*InterCityBusAPIRealTimeNearStopUDPOK, *InterCityBusAPIRealTimeNearStopUDPStatus299, error) {
+func (a *Client) InterCityBusAPIRealTimeNearStopUDP(params *InterCityBusAPIRealTimeNearStopUDPParams, opts ...ClientOption) (*InterCityBusAPIRealTimeNearStopUDPOK, *InterCityBusAPIRealTimeNearStopUDPStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewInterCityBusAPIRealTimeNearStopUDPParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "InterCityBusApi_RealTimeNearStop_UDP",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/RealTimeNearStop/Streaming/InterCity",
@@ -610,7 +664,12 @@ func (a *Client) InterCityBusAPIRealTimeNearStopUDP(params *InterCityBusAPIRealT
 		Reader:             &InterCityBusAPIRealTimeNearStopUDPReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -631,13 +690,12 @@ func (a *Client) InterCityBusAPIRealTimeNearStopUDP(params *InterCityBusAPIRealT
   ### 公路客運之定點資料(A2) ###
 - [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))
 */
-func (a *Client) InterCityBusAPIRealTimeNearStopUDP1(params *InterCityBusAPIRealTimeNearStopUDP1Params) (*InterCityBusAPIRealTimeNearStopUdp1OK, *InterCityBusAPIRealTimeNearStopUdp1Status299, error) {
+func (a *Client) InterCityBusAPIRealTimeNearStopUDP1(params *InterCityBusAPIRealTimeNearStopUDP1Params, opts ...ClientOption) (*InterCityBusAPIRealTimeNearStopUdp1OK, *InterCityBusAPIRealTimeNearStopUdp1Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewInterCityBusAPIRealTimeNearStopUDP1Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "InterCityBusApi_RealTimeNearStop_UDP_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/RealTimeNearStop/Streaming/InterCity/{RouteName}",
@@ -648,7 +706,12 @@ func (a *Client) InterCityBusAPIRealTimeNearStopUDP1(params *InterCityBusAPIReal
 		Reader:             &InterCityBusAPIRealTimeNearStopUDP1Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -668,13 +731,12 @@ func (a *Client) InterCityBusAPIRealTimeNearStopUDP1(params *InterCityBusAPIReal
 
   公路客運之路線資料
 */
-func (a *Client) InterCityBusAPIRoute(params *InterCityBusAPIRouteParams) (*InterCityBusAPIRouteOK, *InterCityBusAPIRouteStatus299, error) {
+func (a *Client) InterCityBusAPIRoute(params *InterCityBusAPIRouteParams, opts ...ClientOption) (*InterCityBusAPIRouteOK, *InterCityBusAPIRouteStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewInterCityBusAPIRouteParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "InterCityBusApi_Route",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/Route/InterCity",
@@ -685,7 +747,12 @@ func (a *Client) InterCityBusAPIRoute(params *InterCityBusAPIRouteParams) (*Inte
 		Reader:             &InterCityBusAPIRouteReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -705,13 +772,12 @@ func (a *Client) InterCityBusAPIRoute(params *InterCityBusAPIRouteParams) (*Inte
 
   公路客運之路線票價資料
 */
-func (a *Client) InterCityBusAPIRouteFare(params *InterCityBusAPIRouteFareParams) (*InterCityBusAPIRouteFareOK, *InterCityBusAPIRouteFareStatus299, error) {
+func (a *Client) InterCityBusAPIRouteFare(params *InterCityBusAPIRouteFareParams, opts ...ClientOption) (*InterCityBusAPIRouteFareOK, *InterCityBusAPIRouteFareStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewInterCityBusAPIRouteFareParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "InterCityBusApi_RouteFare",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/RouteFare/InterCity",
@@ -722,7 +788,12 @@ func (a *Client) InterCityBusAPIRouteFare(params *InterCityBusAPIRouteFareParams
 		Reader:             &InterCityBusAPIRouteFareReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -742,13 +813,12 @@ func (a *Client) InterCityBusAPIRouteFare(params *InterCityBusAPIRouteFareParams
 
   公路客運之路線票價資料
 */
-func (a *Client) InterCityBusAPIRouteFare1(params *InterCityBusAPIRouteFare1Params) (*InterCityBusAPIRouteFare1OK, *InterCityBusAPIRouteFare1Status299, error) {
+func (a *Client) InterCityBusAPIRouteFare1(params *InterCityBusAPIRouteFare1Params, opts ...ClientOption) (*InterCityBusAPIRouteFare1OK, *InterCityBusAPIRouteFare1Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewInterCityBusAPIRouteFare1Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "InterCityBusApi_RouteFare_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/RouteFare/InterCity/{RouteName}",
@@ -759,7 +829,12 @@ func (a *Client) InterCityBusAPIRouteFare1(params *InterCityBusAPIRouteFare1Para
 		Reader:             &InterCityBusAPIRouteFare1Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -779,13 +854,12 @@ func (a *Client) InterCityBusAPIRouteFare1(params *InterCityBusAPIRouteFare1Para
 
   公路客運之路線資料
 */
-func (a *Client) InterCityBusAPIRoute1(params *InterCityBusAPIRoute1Params) (*InterCityBusAPIRoute1OK, *InterCityBusAPIRoute1Status299, error) {
+func (a *Client) InterCityBusAPIRoute1(params *InterCityBusAPIRoute1Params, opts ...ClientOption) (*InterCityBusAPIRoute1OK, *InterCityBusAPIRoute1Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewInterCityBusAPIRoute1Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "InterCityBusApi_Route_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/Route/InterCity/{RouteName}",
@@ -796,7 +870,12 @@ func (a *Client) InterCityBusAPIRoute1(params *InterCityBusAPIRoute1Params) (*In
 		Reader:             &InterCityBusAPIRoute1Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -816,13 +895,12 @@ func (a *Client) InterCityBusAPIRoute1(params *InterCityBusAPIRoute1Params) (*In
 
   指定[路線代碼]的公路客運站間旅行時間資料
 */
-func (a *Client) InterCityBusAPIS2STravelTimeDetail(params *InterCityBusAPIS2STravelTimeDetailParams) (*InterCityBusAPIS2STravelTimeDetailOK, *InterCityBusAPIS2STravelTimeDetailStatus299, error) {
+func (a *Client) InterCityBusAPIS2STravelTimeDetail(params *InterCityBusAPIS2STravelTimeDetailParams, opts ...ClientOption) (*InterCityBusAPIS2STravelTimeDetailOK, *InterCityBusAPIS2STravelTimeDetailStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewInterCityBusAPIS2STravelTimeDetailParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "InterCityBusApi_S2STravelTimeDetail",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/S2STravelTime/InterCity/{RouteID}",
@@ -833,7 +911,12 @@ func (a *Client) InterCityBusAPIS2STravelTimeDetail(params *InterCityBusAPIS2STr
 		Reader:             &InterCityBusAPIS2STravelTimeDetailReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -853,13 +936,12 @@ func (a *Client) InterCityBusAPIS2STravelTimeDetail(params *InterCityBusAPIS2STr
 
   公路客運之預定班表及班距資料。公路及國道客運多採用【班表】式時刻表
 */
-func (a *Client) InterCityBusAPISchedule(params *InterCityBusAPIScheduleParams) (*InterCityBusAPIScheduleOK, *InterCityBusAPIScheduleStatus299, error) {
+func (a *Client) InterCityBusAPISchedule(params *InterCityBusAPIScheduleParams, opts ...ClientOption) (*InterCityBusAPIScheduleOK, *InterCityBusAPIScheduleStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewInterCityBusAPIScheduleParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "InterCityBusApi_Schedule",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/Schedule/InterCity",
@@ -870,7 +952,12 @@ func (a *Client) InterCityBusAPISchedule(params *InterCityBusAPIScheduleParams) 
 		Reader:             &InterCityBusAPIScheduleReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -890,13 +977,12 @@ func (a *Client) InterCityBusAPISchedule(params *InterCityBusAPIScheduleParams) 
 
   公路客運之預定班表及班距資料。公路及國道客運多採用【班表】式時刻表
 */
-func (a *Client) InterCityBusAPISchedule1(params *InterCityBusAPISchedule1Params) (*InterCityBusAPISchedule1OK, *InterCityBusAPISchedule1Status299, error) {
+func (a *Client) InterCityBusAPISchedule1(params *InterCityBusAPISchedule1Params, opts ...ClientOption) (*InterCityBusAPISchedule1OK, *InterCityBusAPISchedule1Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewInterCityBusAPISchedule1Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "InterCityBusApi_Schedule_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/Schedule/InterCity/{RouteName}",
@@ -907,7 +993,12 @@ func (a *Client) InterCityBusAPISchedule1(params *InterCityBusAPISchedule1Params
 		Reader:             &InterCityBusAPISchedule1Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -927,13 +1018,12 @@ func (a *Client) InterCityBusAPISchedule1(params *InterCityBusAPISchedule1Params
 
   公路客運之線型資料
 */
-func (a *Client) InterCityBusAPIShape(params *InterCityBusAPIShapeParams) (*InterCityBusAPIShapeOK, *InterCityBusAPIShapeStatus299, error) {
+func (a *Client) InterCityBusAPIShape(params *InterCityBusAPIShapeParams, opts ...ClientOption) (*InterCityBusAPIShapeOK, *InterCityBusAPIShapeStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewInterCityBusAPIShapeParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "InterCityBusApi_Shape",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/Shape/InterCity",
@@ -944,7 +1034,12 @@ func (a *Client) InterCityBusAPIShape(params *InterCityBusAPIShapeParams) (*Inte
 		Reader:             &InterCityBusAPIShapeReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -964,13 +1059,12 @@ func (a *Client) InterCityBusAPIShape(params *InterCityBusAPIShapeParams) (*Inte
 
   公路客運之線型資料
 */
-func (a *Client) InterCityBusAPIShape1(params *InterCityBusAPIShape1Params) (*InterCityBusAPIShape1OK, *InterCityBusAPIShape1Status299, error) {
+func (a *Client) InterCityBusAPIShape1(params *InterCityBusAPIShape1Params, opts ...ClientOption) (*InterCityBusAPIShape1OK, *InterCityBusAPIShape1Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewInterCityBusAPIShape1Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "InterCityBusApi_Shape_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/Shape/InterCity/{RouteName}",
@@ -981,7 +1075,12 @@ func (a *Client) InterCityBusAPIShape1(params *InterCityBusAPIShape1Params) (*In
 		Reader:             &InterCityBusAPIShape1Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -1001,13 +1100,12 @@ func (a *Client) InterCityBusAPIShape1(params *InterCityBusAPIShape1Params) (*In
 
   公路客運之各站牌所屬的站位資料
 */
-func (a *Client) InterCityBusAPIStation(params *InterCityBusAPIStationParams) (*InterCityBusAPIStationOK, *InterCityBusAPIStationStatus299, error) {
+func (a *Client) InterCityBusAPIStation(params *InterCityBusAPIStationParams, opts ...ClientOption) (*InterCityBusAPIStationOK, *InterCityBusAPIStationStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewInterCityBusAPIStationParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "InterCityBusApi_Station",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/Station/InterCity",
@@ -1018,7 +1116,12 @@ func (a *Client) InterCityBusAPIStation(params *InterCityBusAPIStationParams) (*
 		Reader:             &InterCityBusAPIStationReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -1038,13 +1141,12 @@ func (a *Client) InterCityBusAPIStation(params *InterCityBusAPIStationParams) (*
 
   公路客運之各站牌所屬的組站位資料
 */
-func (a *Client) InterCityBusAPIStationGroup(params *InterCityBusAPIStationGroupParams) (*InterCityBusAPIStationGroupOK, *InterCityBusAPIStationGroupStatus299, error) {
+func (a *Client) InterCityBusAPIStationGroup(params *InterCityBusAPIStationGroupParams, opts ...ClientOption) (*InterCityBusAPIStationGroupOK, *InterCityBusAPIStationGroupStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewInterCityBusAPIStationGroupParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "InterCityBusApi_StationGroup",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/StationGroup/InterCity",
@@ -1055,7 +1157,12 @@ func (a *Client) InterCityBusAPIStationGroup(params *InterCityBusAPIStationGroup
 		Reader:             &InterCityBusAPIStationGroupReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -1075,13 +1182,12 @@ func (a *Client) InterCityBusAPIStationGroup(params *InterCityBusAPIStationGroup
 
   公路客運之站牌資料
 */
-func (a *Client) InterCityBusAPIStop(params *InterCityBusAPIStopParams) (*InterCityBusAPIStopOK, *InterCityBusAPIStopStatus299, error) {
+func (a *Client) InterCityBusAPIStop(params *InterCityBusAPIStopParams, opts ...ClientOption) (*InterCityBusAPIStopOK, *InterCityBusAPIStopStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewInterCityBusAPIStopParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "InterCityBusApi_Stop",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/Stop/InterCity",
@@ -1092,7 +1198,12 @@ func (a *Client) InterCityBusAPIStop(params *InterCityBusAPIStopParams) (*InterC
 		Reader:             &InterCityBusAPIStopReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -1112,13 +1223,12 @@ func (a *Client) InterCityBusAPIStop(params *InterCityBusAPIStopParams) (*InterC
 
   公路客運之路線與站牌資料
 */
-func (a *Client) InterCityBusAPIStopOfRoute(params *InterCityBusAPIStopOfRouteParams) (*InterCityBusAPIStopOfRouteOK, *InterCityBusAPIStopOfRouteStatus299, error) {
+func (a *Client) InterCityBusAPIStopOfRoute(params *InterCityBusAPIStopOfRouteParams, opts ...ClientOption) (*InterCityBusAPIStopOfRouteOK, *InterCityBusAPIStopOfRouteStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewInterCityBusAPIStopOfRouteParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "InterCityBusApi_StopOfRoute",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/StopOfRoute/InterCity",
@@ -1129,7 +1239,12 @@ func (a *Client) InterCityBusAPIStopOfRoute(params *InterCityBusAPIStopOfRoutePa
 		Reader:             &InterCityBusAPIStopOfRouteReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -1149,13 +1264,12 @@ func (a *Client) InterCityBusAPIStopOfRoute(params *InterCityBusAPIStopOfRoutePa
 
   公路客運之路線與站牌資料
 */
-func (a *Client) InterCityBusAPIStopOfRoute1(params *InterCityBusAPIStopOfRoute1Params) (*InterCityBusAPIStopOfRoute1OK, *InterCityBusAPIStopOfRoute1Status299, error) {
+func (a *Client) InterCityBusAPIStopOfRoute1(params *InterCityBusAPIStopOfRoute1Params, opts ...ClientOption) (*InterCityBusAPIStopOfRoute1OK, *InterCityBusAPIStopOfRoute1Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewInterCityBusAPIStopOfRoute1Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "InterCityBusApi_StopOfRoute_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/StopOfRoute/InterCity/{RouteName}",
@@ -1166,7 +1280,12 @@ func (a *Client) InterCityBusAPIStopOfRoute1(params *InterCityBusAPIStopOfRoute1
 		Reader:             &InterCityBusAPIStopOfRoute1Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -1186,13 +1305,12 @@ func (a *Client) InterCityBusAPIStopOfRoute1(params *InterCityBusAPIStopOfRoute1
 
   公路客運之車輛資料
 */
-func (a *Client) InterCityBusAPIVehicle(params *InterCityBusAPIVehicleParams) (*InterCityBusAPIVehicleOK, *InterCityBusAPIVehicleStatus299, error) {
+func (a *Client) InterCityBusAPIVehicle(params *InterCityBusAPIVehicleParams, opts ...ClientOption) (*InterCityBusAPIVehicleOK, *InterCityBusAPIVehicleStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewInterCityBusAPIVehicleParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "InterCityBusApi_Vehicle",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/Vehicle/InterCity",
@@ -1203,7 +1321,12 @@ func (a *Client) InterCityBusAPIVehicle(params *InterCityBusAPIVehicleParams) (*
 		Reader:             &InterCityBusAPIVehicleReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, nil, err
 	}

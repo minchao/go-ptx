@@ -25,75 +25,78 @@ type Client struct {
 	formats   strfmt.Registry
 }
 
+// ClientOption is the option for Client methods
+type ClientOption func(*runtime.ClientOperation)
+
 // ClientService is the interface for Client methods
 type ClientService interface {
-	AlertAPIControllerGet(params *AlertAPIControllerGetParams) (*AlertAPIControllerGetOK, error)
+	AlertAPIControllerGet(params *AlertAPIControllerGetParams, opts ...ClientOption) (*AlertAPIControllerGetOK, error)
 
-	DailyStationTimeTableAPIControllerGet(params *DailyStationTimeTableAPIControllerGetParams) (*DailyStationTimeTableAPIControllerGetOK, error)
+	DailyStationTimeTableAPIControllerGet(params *DailyStationTimeTableAPIControllerGetParams, opts ...ClientOption) (*DailyStationTimeTableAPIControllerGetOK, error)
 
-	DailyStationTimeTableAPIControllerGet1(params *DailyStationTimeTableAPIControllerGet1Params) (*DailyStationTimeTableAPIControllerGet1OK, error)
+	DailyStationTimeTableAPIControllerGet1(params *DailyStationTimeTableAPIControllerGet1Params, opts ...ClientOption) (*DailyStationTimeTableAPIControllerGet1OK, error)
 
-	DailyStationTimeTableAPIControllerGet2(params *DailyStationTimeTableAPIControllerGet2Params) (*DailyStationTimeTableAPIControllerGet2OK, error)
+	DailyStationTimeTableAPIControllerGet2(params *DailyStationTimeTableAPIControllerGet2Params, opts ...ClientOption) (*DailyStationTimeTableAPIControllerGet2OK, error)
 
-	DailyTrainTimeTableAPIControllerGet(params *DailyTrainTimeTableAPIControllerGetParams) (*DailyTrainTimeTableAPIControllerGetOK, error)
+	DailyTrainTimeTableAPIControllerGet(params *DailyTrainTimeTableAPIControllerGetParams, opts ...ClientOption) (*DailyTrainTimeTableAPIControllerGetOK, error)
 
-	DailyTrainTimeTableAPIControllerGet1(params *DailyTrainTimeTableAPIControllerGet1Params) (*DailyTrainTimeTableAPIControllerGet1OK, error)
+	DailyTrainTimeTableAPIControllerGet1(params *DailyTrainTimeTableAPIControllerGet1Params, opts ...ClientOption) (*DailyTrainTimeTableAPIControllerGet1OK, error)
 
-	DailyTrainTimeTableAPIControllerGet2(params *DailyTrainTimeTableAPIControllerGet2Params) (*DailyTrainTimeTableAPIControllerGet2OK, error)
+	DailyTrainTimeTableAPIControllerGet2(params *DailyTrainTimeTableAPIControllerGet2Params, opts ...ClientOption) (*DailyTrainTimeTableAPIControllerGet2OK, error)
 
-	DailyTrainTimeTableAPIControllerGet3(params *DailyTrainTimeTableAPIControllerGet3Params) (*DailyTrainTimeTableAPIControllerGet3OK, error)
+	DailyTrainTimeTableAPIControllerGet3(params *DailyTrainTimeTableAPIControllerGet3Params, opts ...ClientOption) (*DailyTrainTimeTableAPIControllerGet3OK, error)
 
-	DailyTrainTimeTableAPIControllerGet4(params *DailyTrainTimeTableAPIControllerGet4Params) (*DailyTrainTimeTableAPIControllerGet4OK, error)
+	DailyTrainTimeTableAPIControllerGet4(params *DailyTrainTimeTableAPIControllerGet4Params, opts ...ClientOption) (*DailyTrainTimeTableAPIControllerGet4OK, error)
 
-	GeneralStationTimetableAPIControllerGet(params *GeneralStationTimetableAPIControllerGetParams) (*GeneralStationTimetableAPIControllerGetOK, error)
+	GeneralStationTimetableAPIControllerGet(params *GeneralStationTimetableAPIControllerGetParams, opts ...ClientOption) (*GeneralStationTimetableAPIControllerGetOK, error)
 
-	GeneralStationTimetableAPIControllerGet1(params *GeneralStationTimetableAPIControllerGet1Params) (*GeneralStationTimetableAPIControllerGet1OK, error)
+	GeneralStationTimetableAPIControllerGet1(params *GeneralStationTimetableAPIControllerGet1Params, opts ...ClientOption) (*GeneralStationTimetableAPIControllerGet1OK, error)
 
-	GeneralTrainTimetableAPIControllerGet(params *GeneralTrainTimetableAPIControllerGetParams) (*GeneralTrainTimetableAPIControllerGetOK, error)
+	GeneralTrainTimetableAPIControllerGet(params *GeneralTrainTimetableAPIControllerGetParams, opts ...ClientOption) (*GeneralTrainTimetableAPIControllerGetOK, error)
 
-	GeneralTrainTimetableAPIControllerGet1(params *GeneralTrainTimetableAPIControllerGet1Params) (*GeneralTrainTimetableAPIControllerGet1OK, error)
+	GeneralTrainTimetableAPIControllerGet1(params *GeneralTrainTimetableAPIControllerGet1Params, opts ...ClientOption) (*GeneralTrainTimetableAPIControllerGet1OK, error)
 
-	LineAPIControllerGet(params *LineAPIControllerGetParams) (*LineAPIControllerGetOK, error)
+	LineAPIControllerGet(params *LineAPIControllerGetParams, opts ...ClientOption) (*LineAPIControllerGetOK, error)
 
-	LineNetworkAPIControllerGet(params *LineNetworkAPIControllerGetParams) (*LineNetworkAPIControllerGetOK, error)
+	LineNetworkAPIControllerGet(params *LineNetworkAPIControllerGetParams, opts ...ClientOption) (*LineNetworkAPIControllerGetOK, error)
 
-	LineTransferAPIControllerGet(params *LineTransferAPIControllerGetParams) (*LineTransferAPIControllerGetOK, error)
+	LineTransferAPIControllerGet(params *LineTransferAPIControllerGetParams, opts ...ClientOption) (*LineTransferAPIControllerGetOK, error)
 
-	NetworkAPIControllerGet(params *NetworkAPIControllerGetParams) (*NetworkAPIControllerGetOK, error)
+	NetworkAPIControllerGet(params *NetworkAPIControllerGetParams, opts ...ClientOption) (*NetworkAPIControllerGetOK, error)
 
-	NewsAPIControllerGet(params *NewsAPIControllerGetParams) (*NewsAPIControllerGetOK, error)
+	NewsAPIControllerGet(params *NewsAPIControllerGetParams, opts ...ClientOption) (*NewsAPIControllerGetOK, error)
 
-	ODFareAPIControllerAPIControllerGet(params *ODFareAPIControllerAPIControllerGetParams) (*ODFareAPIControllerAPIControllerGetOK, error)
+	ODFareAPIControllerAPIControllerGet(params *ODFareAPIControllerAPIControllerGetParams, opts ...ClientOption) (*ODFareAPIControllerAPIControllerGetOK, error)
 
-	ODFareAPIControllerAPIControllerGet1(params *ODFareAPIControllerAPIControllerGet1Params) (*ODFareAPIControllerAPIControllerGet1OK, error)
+	ODFareAPIControllerAPIControllerGet1(params *ODFareAPIControllerAPIControllerGet1Params, opts ...ClientOption) (*ODFareAPIControllerAPIControllerGet1OK, error)
 
-	OperatorAPIControllerGet(params *OperatorAPIControllerGetParams) (*OperatorAPIControllerGetOK, error)
+	OperatorAPIControllerGet(params *OperatorAPIControllerGetParams, opts ...ClientOption) (*OperatorAPIControllerGetOK, error)
 
-	ShapeAPIControllerGet(params *ShapeAPIControllerGetParams) (*ShapeAPIControllerGetOK, error)
+	ShapeAPIControllerGet(params *ShapeAPIControllerGetParams, opts ...ClientOption) (*ShapeAPIControllerGetOK, error)
 
-	SpecificTrainTimetableAPIControllerGet(params *SpecificTrainTimetableAPIControllerGetParams) (*SpecificTrainTimetableAPIControllerGetOK, error)
+	SpecificTrainTimetableAPIControllerGet(params *SpecificTrainTimetableAPIControllerGetParams, opts ...ClientOption) (*SpecificTrainTimetableAPIControllerGetOK, error)
 
-	SpecificTrainTimetableAPIControllerGet1(params *SpecificTrainTimetableAPIControllerGet1Params) (*SpecificTrainTimetableAPIControllerGet1OK, error)
+	SpecificTrainTimetableAPIControllerGet1(params *SpecificTrainTimetableAPIControllerGet1Params, opts ...ClientOption) (*SpecificTrainTimetableAPIControllerGet1OK, error)
 
-	StationAPIControllerGet(params *StationAPIControllerGetParams) (*StationAPIControllerGetOK, error)
+	StationAPIControllerGet(params *StationAPIControllerGetParams, opts ...ClientOption) (*StationAPIControllerGetOK, error)
 
-	StationExitAPIControllerGet(params *StationExitAPIControllerGetParams) (*StationExitAPIControllerGetOK, error)
+	StationExitAPIControllerGet(params *StationExitAPIControllerGetParams, opts ...ClientOption) (*StationExitAPIControllerGetOK, error)
 
-	StationFacilityAPIControllerGet(params *StationFacilityAPIControllerGetParams) (*StationFacilityAPIControllerGetOK, error)
+	StationFacilityAPIControllerGet(params *StationFacilityAPIControllerGetParams, opts ...ClientOption) (*StationFacilityAPIControllerGetOK, error)
 
-	StationLiveBoardAPIControllerGet(params *StationLiveBoardAPIControllerGetParams) (*StationLiveBoardAPIControllerGetOK, error)
+	StationLiveBoardAPIControllerGet(params *StationLiveBoardAPIControllerGetParams, opts ...ClientOption) (*StationLiveBoardAPIControllerGetOK, error)
 
-	StationLiveBoardAPIControllerGet1(params *StationLiveBoardAPIControllerGet1Params) (*StationLiveBoardAPIControllerGet1OK, error)
+	StationLiveBoardAPIControllerGet1(params *StationLiveBoardAPIControllerGet1Params, opts ...ClientOption) (*StationLiveBoardAPIControllerGet1OK, error)
 
-	StationOfLineAPIControllerGet(params *StationOfLineAPIControllerGetParams) (*StationOfLineAPIControllerGetOK, error)
+	StationOfLineAPIControllerGet(params *StationOfLineAPIControllerGetParams, opts ...ClientOption) (*StationOfLineAPIControllerGetOK, error)
 
-	StationTransferAPIControllerGet(params *StationTransferAPIControllerGetParams) (*StationTransferAPIControllerGetOK, error)
+	StationTransferAPIControllerGet(params *StationTransferAPIControllerGetParams, opts ...ClientOption) (*StationTransferAPIControllerGetOK, error)
 
-	TrainLiveBoardAPIControllerGet(params *TrainLiveBoardAPIControllerGetParams) (*TrainLiveBoardAPIControllerGetOK, error)
+	TrainLiveBoardAPIControllerGet(params *TrainLiveBoardAPIControllerGetParams, opts ...ClientOption) (*TrainLiveBoardAPIControllerGetOK, error)
 
-	TrainLiveBoardAPIControllerGet1(params *TrainLiveBoardAPIControllerGet1Params) (*TrainLiveBoardAPIControllerGet1OK, error)
+	TrainLiveBoardAPIControllerGet1(params *TrainLiveBoardAPIControllerGet1Params, opts ...ClientOption) (*TrainLiveBoardAPIControllerGet1OK, error)
 
-	TrainTypeAPIControllerGet(params *TrainTypeAPIControllerGetParams) (*TrainTypeAPIControllerGetOK, error)
+	TrainTypeAPIControllerGet(params *TrainTypeAPIControllerGetParams, opts ...ClientOption) (*TrainTypeAPIControllerGetOK, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
@@ -103,13 +106,12 @@ type ClientService interface {
 
   取得營運通阻資料
 */
-func (a *Client) AlertAPIControllerGet(params *AlertAPIControllerGetParams) (*AlertAPIControllerGetOK, error) {
+func (a *Client) AlertAPIControllerGet(params *AlertAPIControllerGetParams, opts ...ClientOption) (*AlertAPIControllerGetOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewAlertAPIControllerGetParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "AlertApiController_Get",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/Alert",
@@ -120,7 +122,12 @@ func (a *Client) AlertAPIControllerGet(params *AlertAPIControllerGetParams) (*Al
 		Reader:             &AlertAPIControllerGetReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -139,13 +146,12 @@ func (a *Client) AlertAPIControllerGet(params *AlertAPIControllerGetParams) (*Al
 
   取得當天各站站別時刻表資料
 */
-func (a *Client) DailyStationTimeTableAPIControllerGet(params *DailyStationTimeTableAPIControllerGetParams) (*DailyStationTimeTableAPIControllerGetOK, error) {
+func (a *Client) DailyStationTimeTableAPIControllerGet(params *DailyStationTimeTableAPIControllerGetParams, opts ...ClientOption) (*DailyStationTimeTableAPIControllerGetOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDailyStationTimeTableAPIControllerGetParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "DailyStationTimeTableApiController_Get",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/DailyStationTimetable/Today",
@@ -156,7 +162,12 @@ func (a *Client) DailyStationTimeTableAPIControllerGet(params *DailyStationTimeT
 		Reader:             &DailyStationTimeTableAPIControllerGetReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -175,13 +186,12 @@ func (a *Client) DailyStationTimeTableAPIControllerGet(params *DailyStationTimeT
 
   取得當天指定[車站]的時刻表資料
 */
-func (a *Client) DailyStationTimeTableAPIControllerGet1(params *DailyStationTimeTableAPIControllerGet1Params) (*DailyStationTimeTableAPIControllerGet1OK, error) {
+func (a *Client) DailyStationTimeTableAPIControllerGet1(params *DailyStationTimeTableAPIControllerGet1Params, opts ...ClientOption) (*DailyStationTimeTableAPIControllerGet1OK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDailyStationTimeTableAPIControllerGet1Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "DailyStationTimeTableApiController_Get_1",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/DailyStationTimetable/Today/Station/{StationID}",
@@ -192,7 +202,12 @@ func (a *Client) DailyStationTimeTableAPIControllerGet1(params *DailyStationTime
 		Reader:             &DailyStationTimeTableAPIControllerGet1Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -211,13 +226,12 @@ func (a *Client) DailyStationTimeTableAPIControllerGet1(params *DailyStationTime
 
   取得各站每日站別時刻表資料
 */
-func (a *Client) DailyStationTimeTableAPIControllerGet2(params *DailyStationTimeTableAPIControllerGet2Params) (*DailyStationTimeTableAPIControllerGet2OK, error) {
+func (a *Client) DailyStationTimeTableAPIControllerGet2(params *DailyStationTimeTableAPIControllerGet2Params, opts ...ClientOption) (*DailyStationTimeTableAPIControllerGet2OK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDailyStationTimeTableAPIControllerGet2Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "DailyStationTimeTableApiController_Get_2",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/DailyStationTimetable/TrainDate/{TrainDate}",
@@ -228,7 +242,12 @@ func (a *Client) DailyStationTimeTableAPIControllerGet2(params *DailyStationTime
 		Reader:             &DailyStationTimeTableAPIControllerGet2Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -247,13 +266,12 @@ func (a *Client) DailyStationTimeTableAPIControllerGet2(params *DailyStationTime
 
   取得當天車次時刻表資料
 */
-func (a *Client) DailyTrainTimeTableAPIControllerGet(params *DailyTrainTimeTableAPIControllerGetParams) (*DailyTrainTimeTableAPIControllerGetOK, error) {
+func (a *Client) DailyTrainTimeTableAPIControllerGet(params *DailyTrainTimeTableAPIControllerGetParams, opts ...ClientOption) (*DailyTrainTimeTableAPIControllerGetOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDailyTrainTimeTableAPIControllerGetParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "DailyTrainTimeTableApiController_Get",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/DailyTrainTimetable/Today",
@@ -264,7 +282,12 @@ func (a *Client) DailyTrainTimeTableAPIControllerGet(params *DailyTrainTimeTable
 		Reader:             &DailyTrainTimeTableAPIControllerGetReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -283,13 +306,12 @@ func (a *Client) DailyTrainTimeTableAPIControllerGet(params *DailyTrainTimeTable
 
   取得當天指定[車次]的時刻表資料
 */
-func (a *Client) DailyTrainTimeTableAPIControllerGet1(params *DailyTrainTimeTableAPIControllerGet1Params) (*DailyTrainTimeTableAPIControllerGet1OK, error) {
+func (a *Client) DailyTrainTimeTableAPIControllerGet1(params *DailyTrainTimeTableAPIControllerGet1Params, opts ...ClientOption) (*DailyTrainTimeTableAPIControllerGet1OK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDailyTrainTimeTableAPIControllerGet1Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "DailyTrainTimeTableApiController_Get_1",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/DailyTrainTimetable/Today/TrainNo/{TrainNo}",
@@ -300,7 +322,12 @@ func (a *Client) DailyTrainTimeTableAPIControllerGet1(params *DailyTrainTimeTabl
 		Reader:             &DailyTrainTimeTableAPIControllerGet1Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -319,13 +346,12 @@ func (a *Client) DailyTrainTimeTableAPIControllerGet1(params *DailyTrainTimeTabl
 
   取得指定[日期]所有車次的時刻表資料(台鐵提供近60天每日時刻表)
 */
-func (a *Client) DailyTrainTimeTableAPIControllerGet2(params *DailyTrainTimeTableAPIControllerGet2Params) (*DailyTrainTimeTableAPIControllerGet2OK, error) {
+func (a *Client) DailyTrainTimeTableAPIControllerGet2(params *DailyTrainTimeTableAPIControllerGet2Params, opts ...ClientOption) (*DailyTrainTimeTableAPIControllerGet2OK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDailyTrainTimeTableAPIControllerGet2Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "DailyTrainTimeTableApiController_Get_2",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/DailyTrainTimetable/TrainDate/{TrainDate}",
@@ -336,7 +362,12 @@ func (a *Client) DailyTrainTimeTableAPIControllerGet2(params *DailyTrainTimeTabl
 		Reader:             &DailyTrainTimeTableAPIControllerGet2Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -355,13 +386,12 @@ func (a *Client) DailyTrainTimeTableAPIControllerGet2(params *DailyTrainTimeTabl
 
   取得指定[日期],[起迄站間]之站間時刻表資料(僅列出查詢的停靠站)
 */
-func (a *Client) DailyTrainTimeTableAPIControllerGet3(params *DailyTrainTimeTableAPIControllerGet3Params) (*DailyTrainTimeTableAPIControllerGet3OK, error) {
+func (a *Client) DailyTrainTimeTableAPIControllerGet3(params *DailyTrainTimeTableAPIControllerGet3Params, opts ...ClientOption) (*DailyTrainTimeTableAPIControllerGet3OK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDailyTrainTimeTableAPIControllerGet3Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "DailyTrainTimeTableApiController_Get_3",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/DailyTrainTimetable/OD/{OriginStationID}/to/{DestinationStationID}/{TrainDate}",
@@ -372,7 +402,12 @@ func (a *Client) DailyTrainTimeTableAPIControllerGet3(params *DailyTrainTimeTabl
 		Reader:             &DailyTrainTimeTableAPIControllerGet3Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -391,13 +426,12 @@ func (a *Client) DailyTrainTimeTableAPIControllerGet3(params *DailyTrainTimeTabl
 
   取得指定[日期],[起迄站間]之站間時刻表資料
 */
-func (a *Client) DailyTrainTimeTableAPIControllerGet4(params *DailyTrainTimeTableAPIControllerGet4Params) (*DailyTrainTimeTableAPIControllerGet4OK, error) {
+func (a *Client) DailyTrainTimeTableAPIControllerGet4(params *DailyTrainTimeTableAPIControllerGet4Params, opts ...ClientOption) (*DailyTrainTimeTableAPIControllerGet4OK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDailyTrainTimeTableAPIControllerGet4Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "DailyTrainTimeTableApiController_Get_4",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/DailyTrainTimetable/OD/Inclusive/{OriginStationID}/to/{DestinationStationID}/{TrainDate}",
@@ -408,7 +442,12 @@ func (a *Client) DailyTrainTimeTableAPIControllerGet4(params *DailyTrainTimeTabl
 		Reader:             &DailyTrainTimeTableAPIControllerGet4Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -427,13 +466,12 @@ func (a *Client) DailyTrainTimeTableAPIControllerGet4(params *DailyTrainTimeTabl
 
   取得各站的定期站別時刻表資料
 */
-func (a *Client) GeneralStationTimetableAPIControllerGet(params *GeneralStationTimetableAPIControllerGetParams) (*GeneralStationTimetableAPIControllerGetOK, error) {
+func (a *Client) GeneralStationTimetableAPIControllerGet(params *GeneralStationTimetableAPIControllerGetParams, opts ...ClientOption) (*GeneralStationTimetableAPIControllerGetOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGeneralStationTimetableAPIControllerGetParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "GeneralStationTimetableApiController_Get",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/GeneralStationTimetable",
@@ -444,7 +482,12 @@ func (a *Client) GeneralStationTimetableAPIControllerGet(params *GeneralStationT
 		Reader:             &GeneralStationTimetableAPIControllerGetReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -463,13 +506,12 @@ func (a *Client) GeneralStationTimetableAPIControllerGet(params *GeneralStationT
 
   取得指定[車站]的定期站別時刻表資料
 */
-func (a *Client) GeneralStationTimetableAPIControllerGet1(params *GeneralStationTimetableAPIControllerGet1Params) (*GeneralStationTimetableAPIControllerGet1OK, error) {
+func (a *Client) GeneralStationTimetableAPIControllerGet1(params *GeneralStationTimetableAPIControllerGet1Params, opts ...ClientOption) (*GeneralStationTimetableAPIControllerGet1OK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGeneralStationTimetableAPIControllerGet1Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "GeneralStationTimetableApiController_Get_1",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/GeneralStationTimetable/Station/{StationID}",
@@ -480,7 +522,12 @@ func (a *Client) GeneralStationTimetableAPIControllerGet1(params *GeneralStation
 		Reader:             &GeneralStationTimetableAPIControllerGet1Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -499,13 +546,12 @@ func (a *Client) GeneralStationTimetableAPIControllerGet1(params *GeneralStation
 
   取得所有車次的定期時刻表資料
 */
-func (a *Client) GeneralTrainTimetableAPIControllerGet(params *GeneralTrainTimetableAPIControllerGetParams) (*GeneralTrainTimetableAPIControllerGetOK, error) {
+func (a *Client) GeneralTrainTimetableAPIControllerGet(params *GeneralTrainTimetableAPIControllerGetParams, opts ...ClientOption) (*GeneralTrainTimetableAPIControllerGetOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGeneralTrainTimetableAPIControllerGetParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "GeneralTrainTimetableApiController_Get",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/GeneralTrainTimetable",
@@ -516,7 +562,12 @@ func (a *Client) GeneralTrainTimetableAPIControllerGet(params *GeneralTrainTimet
 		Reader:             &GeneralTrainTimetableAPIControllerGetReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -535,13 +586,12 @@ func (a *Client) GeneralTrainTimetableAPIControllerGet(params *GeneralTrainTimet
 
   取得指定[車次]的定期時刻表資料
 */
-func (a *Client) GeneralTrainTimetableAPIControllerGet1(params *GeneralTrainTimetableAPIControllerGet1Params) (*GeneralTrainTimetableAPIControllerGet1OK, error) {
+func (a *Client) GeneralTrainTimetableAPIControllerGet1(params *GeneralTrainTimetableAPIControllerGet1Params, opts ...ClientOption) (*GeneralTrainTimetableAPIControllerGet1OK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGeneralTrainTimetableAPIControllerGet1Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "GeneralTrainTimetableApiController_Get_1",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/GeneralTrainTimetable/TrainNo/{TrainNo}",
@@ -552,7 +602,12 @@ func (a *Client) GeneralTrainTimetableAPIControllerGet1(params *GeneralTrainTime
 		Reader:             &GeneralTrainTimetableAPIControllerGet1Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -571,13 +626,12 @@ func (a *Client) GeneralTrainTimetableAPIControllerGet1(params *GeneralTrainTime
 
   取得路線基本資料
 */
-func (a *Client) LineAPIControllerGet(params *LineAPIControllerGetParams) (*LineAPIControllerGetOK, error) {
+func (a *Client) LineAPIControllerGet(params *LineAPIControllerGetParams, opts ...ClientOption) (*LineAPIControllerGetOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewLineAPIControllerGetParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "LineApiController_Get",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/Line",
@@ -588,7 +642,12 @@ func (a *Client) LineAPIControllerGet(params *LineAPIControllerGetParams) (*Line
 		Reader:             &LineAPIControllerGetReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -607,13 +666,12 @@ func (a *Client) LineAPIControllerGet(params *LineAPIControllerGetParams) (*Line
 
   取得路線網路拓撲基本資料
 */
-func (a *Client) LineNetworkAPIControllerGet(params *LineNetworkAPIControllerGetParams) (*LineNetworkAPIControllerGetOK, error) {
+func (a *Client) LineNetworkAPIControllerGet(params *LineNetworkAPIControllerGetParams, opts ...ClientOption) (*LineNetworkAPIControllerGetOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewLineNetworkAPIControllerGetParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "LineNetworkApiController_Get",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/LineNetwork",
@@ -624,7 +682,12 @@ func (a *Client) LineNetworkAPIControllerGet(params *LineNetworkAPIControllerGet
 		Reader:             &LineNetworkAPIControllerGetReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -643,13 +706,12 @@ func (a *Client) LineNetworkAPIControllerGet(params *LineNetworkAPIControllerGet
 
   取得內部路線轉乘資料
 */
-func (a *Client) LineTransferAPIControllerGet(params *LineTransferAPIControllerGetParams) (*LineTransferAPIControllerGetOK, error) {
+func (a *Client) LineTransferAPIControllerGet(params *LineTransferAPIControllerGetParams, opts ...ClientOption) (*LineTransferAPIControllerGetOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewLineTransferAPIControllerGetParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "LineTransferApiController_Get",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/LineTransfer",
@@ -660,7 +722,12 @@ func (a *Client) LineTransferAPIControllerGet(params *LineTransferAPIControllerG
 		Reader:             &LineTransferAPIControllerGetReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -679,13 +746,12 @@ func (a *Client) LineTransferAPIControllerGet(params *LineTransferAPIControllerG
 
   取得臺鐵路網資料
 */
-func (a *Client) NetworkAPIControllerGet(params *NetworkAPIControllerGetParams) (*NetworkAPIControllerGetOK, error) {
+func (a *Client) NetworkAPIControllerGet(params *NetworkAPIControllerGetParams, opts ...ClientOption) (*NetworkAPIControllerGetOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewNetworkAPIControllerGetParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "NetworkApiController_Get",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/Network",
@@ -696,7 +762,12 @@ func (a *Client) NetworkAPIControllerGet(params *NetworkAPIControllerGetParams) 
 		Reader:             &NetworkAPIControllerGetReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -715,13 +786,12 @@ func (a *Client) NetworkAPIControllerGet(params *NetworkAPIControllerGetParams) 
 
   取得最新消息
 */
-func (a *Client) NewsAPIControllerGet(params *NewsAPIControllerGetParams) (*NewsAPIControllerGetOK, error) {
+func (a *Client) NewsAPIControllerGet(params *NewsAPIControllerGetParams, opts ...ClientOption) (*NewsAPIControllerGetOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewNewsAPIControllerGetParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "NewsApiController_Get",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/News",
@@ -732,7 +802,12 @@ func (a *Client) NewsAPIControllerGet(params *NewsAPIControllerGetParams) (*News
 		Reader:             &NewsAPIControllerGetReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -751,13 +826,12 @@ func (a *Client) NewsAPIControllerGet(params *NewsAPIControllerGetParams) (*News
 
   取得Gzip壓縮檔
 */
-func (a *Client) ODFareAPIControllerAPIControllerGet(params *ODFareAPIControllerAPIControllerGetParams) (*ODFareAPIControllerAPIControllerGetOK, error) {
+func (a *Client) ODFareAPIControllerAPIControllerGet(params *ODFareAPIControllerAPIControllerGetParams, opts ...ClientOption) (*ODFareAPIControllerAPIControllerGetOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewODFareAPIControllerAPIControllerGetParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "ODFareApiControllerApiController_Get",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/ODFare",
@@ -768,7 +842,12 @@ func (a *Client) ODFareAPIControllerAPIControllerGet(params *ODFareAPIController
 		Reader:             &ODFareAPIControllerAPIControllerGetReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -787,13 +866,12 @@ func (a *Client) ODFareAPIControllerAPIControllerGet(params *ODFareAPIController
 
   取得指定起迄站間票價資料
 */
-func (a *Client) ODFareAPIControllerAPIControllerGet1(params *ODFareAPIControllerAPIControllerGet1Params) (*ODFareAPIControllerAPIControllerGet1OK, error) {
+func (a *Client) ODFareAPIControllerAPIControllerGet1(params *ODFareAPIControllerAPIControllerGet1Params, opts ...ClientOption) (*ODFareAPIControllerAPIControllerGet1OK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewODFareAPIControllerAPIControllerGet1Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "ODFareApiControllerApiController_Get_1",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/ODFare/{OriginStationID}/to/{DestinationStationID}",
@@ -804,7 +882,12 @@ func (a *Client) ODFareAPIControllerAPIControllerGet1(params *ODFareAPIControlle
 		Reader:             &ODFareAPIControllerAPIControllerGet1Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -823,13 +906,12 @@ func (a *Client) ODFareAPIControllerAPIControllerGet1(params *ODFareAPIControlle
 
   取得台鐵營運業者基本資料
 */
-func (a *Client) OperatorAPIControllerGet(params *OperatorAPIControllerGetParams) (*OperatorAPIControllerGetOK, error) {
+func (a *Client) OperatorAPIControllerGet(params *OperatorAPIControllerGetParams, opts ...ClientOption) (*OperatorAPIControllerGetOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewOperatorAPIControllerGetParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "OperatorApiController_Get",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/Operator",
@@ -840,7 +922,12 @@ func (a *Client) OperatorAPIControllerGet(params *OperatorAPIControllerGetParams
 		Reader:             &OperatorAPIControllerGetReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -859,13 +946,12 @@ func (a *Client) OperatorAPIControllerGet(params *OperatorAPIControllerGetParams
 
   取得線型基本資料
 */
-func (a *Client) ShapeAPIControllerGet(params *ShapeAPIControllerGetParams) (*ShapeAPIControllerGetOK, error) {
+func (a *Client) ShapeAPIControllerGet(params *ShapeAPIControllerGetParams, opts ...ClientOption) (*ShapeAPIControllerGetOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewShapeAPIControllerGetParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "ShapeApiController_Get",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/Shape",
@@ -876,7 +962,12 @@ func (a *Client) ShapeAPIControllerGet(params *ShapeAPIControllerGetParams) (*Sh
 		Reader:             &ShapeAPIControllerGetReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -895,13 +986,12 @@ func (a *Client) ShapeAPIControllerGet(params *ShapeAPIControllerGetParams) (*Sh
 
   取得所有特殊車次時刻表資料
 */
-func (a *Client) SpecificTrainTimetableAPIControllerGet(params *SpecificTrainTimetableAPIControllerGetParams) (*SpecificTrainTimetableAPIControllerGetOK, error) {
+func (a *Client) SpecificTrainTimetableAPIControllerGet(params *SpecificTrainTimetableAPIControllerGetParams, opts ...ClientOption) (*SpecificTrainTimetableAPIControllerGetOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewSpecificTrainTimetableAPIControllerGetParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "SpecificTrainTimetableApiController_Get",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/SpecificTrainTimetable",
@@ -912,7 +1002,12 @@ func (a *Client) SpecificTrainTimetableAPIControllerGet(params *SpecificTrainTim
 		Reader:             &SpecificTrainTimetableAPIControllerGetReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -931,13 +1026,12 @@ func (a *Client) SpecificTrainTimetableAPIControllerGet(params *SpecificTrainTim
 
   取得指定[車次]的特殊車次時刻表資料
 */
-func (a *Client) SpecificTrainTimetableAPIControllerGet1(params *SpecificTrainTimetableAPIControllerGet1Params) (*SpecificTrainTimetableAPIControllerGet1OK, error) {
+func (a *Client) SpecificTrainTimetableAPIControllerGet1(params *SpecificTrainTimetableAPIControllerGet1Params, opts ...ClientOption) (*SpecificTrainTimetableAPIControllerGet1OK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewSpecificTrainTimetableAPIControllerGet1Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "SpecificTrainTimetableApiController_Get_1",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/SpecificTrainTimetable/TrainNo/{TrainNo}",
@@ -948,7 +1042,12 @@ func (a *Client) SpecificTrainTimetableAPIControllerGet1(params *SpecificTrainTi
 		Reader:             &SpecificTrainTimetableAPIControllerGet1Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -967,13 +1066,12 @@ func (a *Client) SpecificTrainTimetableAPIControllerGet1(params *SpecificTrainTi
 
   取得車站基本資料
 */
-func (a *Client) StationAPIControllerGet(params *StationAPIControllerGetParams) (*StationAPIControllerGetOK, error) {
+func (a *Client) StationAPIControllerGet(params *StationAPIControllerGetParams, opts ...ClientOption) (*StationAPIControllerGetOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewStationAPIControllerGetParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "StationApiController_Get",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/Station",
@@ -984,7 +1082,12 @@ func (a *Client) StationAPIControllerGet(params *StationAPIControllerGetParams) 
 		Reader:             &StationAPIControllerGetReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -1003,13 +1106,12 @@ func (a *Client) StationAPIControllerGet(params *StationAPIControllerGetParams) 
 
   取得車站出入口基本資料
 */
-func (a *Client) StationExitAPIControllerGet(params *StationExitAPIControllerGetParams) (*StationExitAPIControllerGetOK, error) {
+func (a *Client) StationExitAPIControllerGet(params *StationExitAPIControllerGetParams, opts ...ClientOption) (*StationExitAPIControllerGetOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewStationExitAPIControllerGetParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "StationExitApiController_Get",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/StationExit",
@@ -1020,7 +1122,12 @@ func (a *Client) StationExitAPIControllerGet(params *StationExitAPIControllerGet
 		Reader:             &StationExitAPIControllerGetReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -1039,13 +1146,12 @@ func (a *Client) StationExitAPIControllerGet(params *StationExitAPIControllerGet
 
   取得車站設施資料
 */
-func (a *Client) StationFacilityAPIControllerGet(params *StationFacilityAPIControllerGetParams) (*StationFacilityAPIControllerGetOK, error) {
+func (a *Client) StationFacilityAPIControllerGet(params *StationFacilityAPIControllerGetParams, opts ...ClientOption) (*StationFacilityAPIControllerGetOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewStationFacilityAPIControllerGetParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "StationFacilityApiController_Get",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/StationFacility",
@@ -1056,7 +1162,12 @@ func (a *Client) StationFacilityAPIControllerGet(params *StationFacilityAPIContr
 		Reader:             &StationFacilityAPIControllerGetReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -1075,13 +1186,12 @@ func (a *Client) StationFacilityAPIControllerGet(params *StationFacilityAPIContr
 
   取得列車即時到離站資料
 */
-func (a *Client) StationLiveBoardAPIControllerGet(params *StationLiveBoardAPIControllerGetParams) (*StationLiveBoardAPIControllerGetOK, error) {
+func (a *Client) StationLiveBoardAPIControllerGet(params *StationLiveBoardAPIControllerGetParams, opts ...ClientOption) (*StationLiveBoardAPIControllerGetOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewStationLiveBoardAPIControllerGetParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "StationLiveBoardApiController_Get",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/StationLiveBoard",
@@ -1092,7 +1202,12 @@ func (a *Client) StationLiveBoardAPIControllerGet(params *StationLiveBoardAPICon
 		Reader:             &StationLiveBoardAPIControllerGetReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -1111,13 +1226,12 @@ func (a *Client) StationLiveBoardAPIControllerGet(params *StationLiveBoardAPICon
 
   取得指定[車站]的列車即時到離站資料
 */
-func (a *Client) StationLiveBoardAPIControllerGet1(params *StationLiveBoardAPIControllerGet1Params) (*StationLiveBoardAPIControllerGet1OK, error) {
+func (a *Client) StationLiveBoardAPIControllerGet1(params *StationLiveBoardAPIControllerGet1Params, opts ...ClientOption) (*StationLiveBoardAPIControllerGet1OK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewStationLiveBoardAPIControllerGet1Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "StationLiveBoardApiController_Get_1",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/StationLiveBoard/Station/{StationID}",
@@ -1128,7 +1242,12 @@ func (a *Client) StationLiveBoardAPIControllerGet1(params *StationLiveBoardAPICo
 		Reader:             &StationLiveBoardAPIControllerGet1Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -1147,13 +1266,12 @@ func (a *Client) StationLiveBoardAPIControllerGet1(params *StationLiveBoardAPICo
 
   取得路線車站基本資料
 */
-func (a *Client) StationOfLineAPIControllerGet(params *StationOfLineAPIControllerGetParams) (*StationOfLineAPIControllerGetOK, error) {
+func (a *Client) StationOfLineAPIControllerGet(params *StationOfLineAPIControllerGetParams, opts ...ClientOption) (*StationOfLineAPIControllerGetOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewStationOfLineAPIControllerGetParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "StationOfLineApiController_Get",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/StationOfLine",
@@ -1164,7 +1282,12 @@ func (a *Client) StationOfLineAPIControllerGet(params *StationOfLineAPIControlle
 		Reader:             &StationOfLineAPIControllerGetReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -1183,13 +1306,12 @@ func (a *Client) StationOfLineAPIControllerGet(params *StationOfLineAPIControlle
 
   取得車站跨運具轉乘資訊
 */
-func (a *Client) StationTransferAPIControllerGet(params *StationTransferAPIControllerGetParams) (*StationTransferAPIControllerGetOK, error) {
+func (a *Client) StationTransferAPIControllerGet(params *StationTransferAPIControllerGetParams, opts ...ClientOption) (*StationTransferAPIControllerGetOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewStationTransferAPIControllerGetParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "StationTransferApiController_Get",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/StationTransfer",
@@ -1200,7 +1322,12 @@ func (a *Client) StationTransferAPIControllerGet(params *StationTransferAPIContr
 		Reader:             &StationTransferAPIControllerGetReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -1225,13 +1352,12 @@ func (a *Client) StationTransferAPIControllerGet(params *StationTransferAPIContr
 3.  提供所有經過站資料是為確保車次的準誤點資料都會是最新的 (尤其是東部幹線普悠瑪、太魯閣車次，因停靠站少，更新頻率低的話會使呈現的準誤點時間誤差過大)。
 4.  基於上述原因，本項資料並非僅提供列車停靠站資料，因為這樣提供方式會使列車位置資訊更狹隘，例如:只知道離開台北站，不曉得經過哪一站了，故請加值者使用時多加注意。
 */
-func (a *Client) TrainLiveBoardAPIControllerGet(params *TrainLiveBoardAPIControllerGetParams) (*TrainLiveBoardAPIControllerGetOK, error) {
+func (a *Client) TrainLiveBoardAPIControllerGet(params *TrainLiveBoardAPIControllerGetParams, opts ...ClientOption) (*TrainLiveBoardAPIControllerGetOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTrainLiveBoardAPIControllerGetParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "TrainLiveBoardApiController_Get",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/TrainLiveBoard",
@@ -1242,7 +1368,12 @@ func (a *Client) TrainLiveBoardAPIControllerGet(params *TrainLiveBoardAPIControl
 		Reader:             &TrainLiveBoardAPIControllerGetReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -1267,13 +1398,12 @@ func (a *Client) TrainLiveBoardAPIControllerGet(params *TrainLiveBoardAPIControl
 3.  提供所有經過站資料是為確保車次的準誤點資料都會是最新的 (尤其是東部幹線普悠瑪、太魯閣車次，因停靠站少，更新頻率低的話會使呈現的準誤點時間誤差過大)。
 4.  基於上述原因，本項資料並非僅提供列車停靠站資料，因為這樣提供方式會使列車位置資訊更狹隘，例如:只知道離開台北站，不曉得經過哪一站了，故請加值者使用時多加注意。
 */
-func (a *Client) TrainLiveBoardAPIControllerGet1(params *TrainLiveBoardAPIControllerGet1Params) (*TrainLiveBoardAPIControllerGet1OK, error) {
+func (a *Client) TrainLiveBoardAPIControllerGet1(params *TrainLiveBoardAPIControllerGet1Params, opts ...ClientOption) (*TrainLiveBoardAPIControllerGet1OK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTrainLiveBoardAPIControllerGet1Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "TrainLiveBoardApiController_Get_1",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/TrainLiveBoard/TrainNo/{TrainNo}",
@@ -1284,7 +1414,12 @@ func (a *Client) TrainLiveBoardAPIControllerGet1(params *TrainLiveBoardAPIContro
 		Reader:             &TrainLiveBoardAPIControllerGet1Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -1303,13 +1438,12 @@ func (a *Client) TrainLiveBoardAPIControllerGet1(params *TrainLiveBoardAPIContro
 
   取得所有列車車種資料
 */
-func (a *Client) TrainTypeAPIControllerGet(params *TrainTypeAPIControllerGetParams) (*TrainTypeAPIControllerGetOK, error) {
+func (a *Client) TrainTypeAPIControllerGet(params *TrainTypeAPIControllerGetParams, opts ...ClientOption) (*TrainTypeAPIControllerGetOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTrainTypeAPIControllerGetParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "TrainTypeApiController_Get",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/TrainType",
@@ -1320,7 +1454,12 @@ func (a *Client) TrainTypeAPIControllerGet(params *TrainTypeAPIControllerGetPara
 		Reader:             &TrainTypeAPIControllerGetReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}

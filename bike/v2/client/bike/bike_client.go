@@ -25,13 +25,16 @@ type Client struct {
 	formats   strfmt.Registry
 }
 
+// ClientOption is the option for Client methods
+type ClientOption func(*runtime.ClientOperation)
+
 // ClientService is the interface for Client methods
 type ClientService interface {
-	BikeAPIAvailability(params *BikeAPIAvailabilityParams) (*BikeAPIAvailabilityOK, error)
+	BikeAPIAvailability(params *BikeAPIAvailabilityParams, opts ...ClientOption) (*BikeAPIAvailabilityOK, error)
 
-	BikeAPIStation(params *BikeAPIStationParams) (*BikeAPIStationOK, error)
+	BikeAPIStation(params *BikeAPIStationParams, opts ...ClientOption) (*BikeAPIStationOK, error)
 
-	CyclingAPIShape(params *CyclingAPIShapeParams) (*CyclingAPIShapeOK, error)
+	CyclingAPIShape(params *CyclingAPIShapeParams, opts ...ClientOption) (*CyclingAPIShapeOK, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
@@ -41,13 +44,12 @@ type ClientService interface {
 
   取得動態指定[縣市]的公共自行車即時車位資料
 */
-func (a *Client) BikeAPIAvailability(params *BikeAPIAvailabilityParams) (*BikeAPIAvailabilityOK, error) {
+func (a *Client) BikeAPIAvailability(params *BikeAPIAvailabilityParams, opts ...ClientOption) (*BikeAPIAvailabilityOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewBikeAPIAvailabilityParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "BikeApi_Availability",
 		Method:             "GET",
 		PathPattern:        "/v2/Bike/Availability/{City}",
@@ -58,7 +60,12 @@ func (a *Client) BikeAPIAvailability(params *BikeAPIAvailabilityParams) (*BikeAP
 		Reader:             &BikeAPIAvailabilityReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -77,13 +84,12 @@ func (a *Client) BikeAPIAvailability(params *BikeAPIAvailabilityParams) (*BikeAP
 
   取得指定[縣市]的公共自行車租借站位資料
 */
-func (a *Client) BikeAPIStation(params *BikeAPIStationParams) (*BikeAPIStationOK, error) {
+func (a *Client) BikeAPIStation(params *BikeAPIStationParams, opts ...ClientOption) (*BikeAPIStationOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewBikeAPIStationParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "BikeApi_Station",
 		Method:             "GET",
 		PathPattern:        "/v2/Bike/Station/{City}",
@@ -94,7 +100,12 @@ func (a *Client) BikeAPIStation(params *BikeAPIStationParams) (*BikeAPIStationOK
 		Reader:             &BikeAPIStationReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -113,13 +124,12 @@ func (a *Client) BikeAPIStation(params *BikeAPIStationParams) (*BikeAPIStationOK
 
   取得指定縣市之自行車道路網圖資
 */
-func (a *Client) CyclingAPIShape(params *CyclingAPIShapeParams) (*CyclingAPIShapeOK, error) {
+func (a *Client) CyclingAPIShape(params *CyclingAPIShapeParams, opts ...ClientOption) (*CyclingAPIShapeOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewCyclingAPIShapeParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "CyclingApi_Shape",
 		Method:             "GET",
 		PathPattern:        "/v2/Cycling/Shape/{City}",
@@ -130,7 +140,12 @@ func (a *Client) CyclingAPIShape(params *CyclingAPIShapeParams) (*CyclingAPIShap
 		Reader:             &CyclingAPIShapeReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}

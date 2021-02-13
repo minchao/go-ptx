@@ -25,55 +25,58 @@ type Client struct {
 	formats   strfmt.Registry
 }
 
+// ClientOption is the option for Client methods
+type ClientOption func(*runtime.ClientOperation)
+
 // ClientService is the interface for Client methods
 type ClientService interface {
-	TaiwanTripBusAPIEstimatedTimeOfArrival(params *TaiwanTripBusAPIEstimatedTimeOfArrivalParams) (*TaiwanTripBusAPIEstimatedTimeOfArrivalOK, error)
+	TaiwanTripBusAPIEstimatedTimeOfArrival(params *TaiwanTripBusAPIEstimatedTimeOfArrivalParams, opts ...ClientOption) (*TaiwanTripBusAPIEstimatedTimeOfArrivalOK, error)
 
-	TaiwanTripBusAPIEstimatedTimeOfArrival1(params *TaiwanTripBusAPIEstimatedTimeOfArrival1Params) (*TaiwanTripBusAPIEstimatedTimeOfArrival1OK, error)
+	TaiwanTripBusAPIEstimatedTimeOfArrival1(params *TaiwanTripBusAPIEstimatedTimeOfArrival1Params, opts ...ClientOption) (*TaiwanTripBusAPIEstimatedTimeOfArrival1OK, error)
 
-	TaiwanTripBusAPINews(params *TaiwanTripBusAPINewsParams) (*TaiwanTripBusAPINewsOK, error)
+	TaiwanTripBusAPINews(params *TaiwanTripBusAPINewsParams, opts ...ClientOption) (*TaiwanTripBusAPINewsOK, error)
 
-	TaiwanTripBusAPIRealTimeByFrequency(params *TaiwanTripBusAPIRealTimeByFrequencyParams) (*TaiwanTripBusAPIRealTimeByFrequencyOK, error)
+	TaiwanTripBusAPIRealTimeByFrequency(params *TaiwanTripBusAPIRealTimeByFrequencyParams, opts ...ClientOption) (*TaiwanTripBusAPIRealTimeByFrequencyOK, error)
 
-	TaiwanTripBusAPIRealTimeByFrequency1(params *TaiwanTripBusAPIRealTimeByFrequency1Params) (*TaiwanTripBusAPIRealTimeByFrequency1OK, error)
+	TaiwanTripBusAPIRealTimeByFrequency1(params *TaiwanTripBusAPIRealTimeByFrequency1Params, opts ...ClientOption) (*TaiwanTripBusAPIRealTimeByFrequency1OK, error)
 
-	TaiwanTripBusAPIRealTimeNearStop(params *TaiwanTripBusAPIRealTimeNearStopParams) (*TaiwanTripBusAPIRealTimeNearStopOK, error)
+	TaiwanTripBusAPIRealTimeNearStop(params *TaiwanTripBusAPIRealTimeNearStopParams, opts ...ClientOption) (*TaiwanTripBusAPIRealTimeNearStopOK, error)
 
-	TaiwanTripBusAPIRealTimeNearStop1(params *TaiwanTripBusAPIRealTimeNearStop1Params) (*TaiwanTripBusAPIRealTimeNearStop1OK, error)
+	TaiwanTripBusAPIRealTimeNearStop1(params *TaiwanTripBusAPIRealTimeNearStop1Params, opts ...ClientOption) (*TaiwanTripBusAPIRealTimeNearStop1OK, error)
 
-	TaiwanTripBusAPIRoute(params *TaiwanTripBusAPIRouteParams) (*TaiwanTripBusAPIRouteOK, error)
+	TaiwanTripBusAPIRoute(params *TaiwanTripBusAPIRouteParams, opts ...ClientOption) (*TaiwanTripBusAPIRouteOK, error)
 
-	TaiwanTripBusAPIRoute1(params *TaiwanTripBusAPIRoute1Params) (*TaiwanTripBusAPIRoute1OK, error)
+	TaiwanTripBusAPIRoute1(params *TaiwanTripBusAPIRoute1Params, opts ...ClientOption) (*TaiwanTripBusAPIRoute1OK, error)
 
-	TaiwanTripBusAPIS2TravelTime(params *TaiwanTripBusAPIS2TravelTimeParams) (*TaiwanTripBusAPIS2TravelTimeOK, error)
+	TaiwanTripBusAPIS2TravelTime(params *TaiwanTripBusAPIS2TravelTimeParams, opts ...ClientOption) (*TaiwanTripBusAPIS2TravelTimeOK, error)
 
-	TaiwanTripBusAPISchedule(params *TaiwanTripBusAPIScheduleParams) (*TaiwanTripBusAPIScheduleOK, error)
+	TaiwanTripBusAPISchedule(params *TaiwanTripBusAPIScheduleParams, opts ...ClientOption) (*TaiwanTripBusAPIScheduleOK, error)
 
-	TaiwanTripBusAPISchedule1(params *TaiwanTripBusAPISchedule1Params) (*TaiwanTripBusAPISchedule1OK, error)
+	TaiwanTripBusAPISchedule1(params *TaiwanTripBusAPISchedule1Params, opts ...ClientOption) (*TaiwanTripBusAPISchedule1OK, error)
 
-	TaiwanTripBusAPIShape(params *TaiwanTripBusAPIShapeParams) (*TaiwanTripBusAPIShapeOK, error)
+	TaiwanTripBusAPIShape(params *TaiwanTripBusAPIShapeParams, opts ...ClientOption) (*TaiwanTripBusAPIShapeOK, error)
 
-	TaiwanTripBusAPIShape1(params *TaiwanTripBusAPIShape1Params) (*TaiwanTripBusAPIShape1OK, error)
+	TaiwanTripBusAPIShape1(params *TaiwanTripBusAPIShape1Params, opts ...ClientOption) (*TaiwanTripBusAPIShape1OK, error)
 
-	TaiwanTripBusAPIStopOfRoute(params *TaiwanTripBusAPIStopOfRouteParams) (*TaiwanTripBusAPIStopOfRouteOK, error)
+	TaiwanTripBusAPIStopOfRoute(params *TaiwanTripBusAPIStopOfRouteParams, opts ...ClientOption) (*TaiwanTripBusAPIStopOfRouteOK, error)
 
-	TaiwanTripBusAPIStopOfRoute1(params *TaiwanTripBusAPIStopOfRoute1Params) (*TaiwanTripBusAPIStopOfRoute1OK, error)
+	TaiwanTripBusAPIStopOfRoute1(params *TaiwanTripBusAPIStopOfRoute1Params, opts ...ClientOption) (*TaiwanTripBusAPIStopOfRoute1OK, error)
 
-	TourismAPIActivity(params *TourismAPIActivityParams) (*TourismAPIActivityOK, error)
+	TourismAPIActivity(params *TourismAPIActivityParams, opts ...ClientOption) (*TourismAPIActivityOK, error)
 
-	TourismAPIActivity0(params *TourismAPIActivity0Params) (*TourismAPIActivity0OK, error)
+	TourismAPIActivity0(params *TourismAPIActivity0Params, opts ...ClientOption) (*TourismAPIActivity0OK, error)
 
-	TourismAPIHotel(params *TourismAPIHotelParams) (*TourismAPIHotelOK, error)
+	TourismAPIHotel(params *TourismAPIHotelParams, opts ...ClientOption) (*TourismAPIHotelOK, error)
 
-	TourismAPIHotel0(params *TourismAPIHotel0Params) (*TourismAPIHotel0OK, error)
+	TourismAPIHotel0(params *TourismAPIHotel0Params, opts ...ClientOption) (*TourismAPIHotel0OK, error)
 
-	TourismAPIRestaurant(params *TourismAPIRestaurantParams) (*TourismAPIRestaurantOK, error)
+	TourismAPIRestaurant(params *TourismAPIRestaurantParams, opts ...ClientOption) (*TourismAPIRestaurantOK, error)
 
-	TourismAPIRestaurant0(params *TourismAPIRestaurant0Params) (*TourismAPIRestaurant0OK, error)
+	TourismAPIRestaurant0(params *TourismAPIRestaurant0Params, opts ...ClientOption) (*TourismAPIRestaurant0OK, error)
 
-	TourismAPIScenicSpot(params *TourismAPIScenicSpotParams) (*TourismAPIScenicSpotOK, error)
+	TourismAPIScenicSpot(params *TourismAPIScenicSpotParams, opts ...ClientOption) (*TourismAPIScenicSpotOK, error)
 
-	TourismAPIScenicSpot0(params *TourismAPIScenicSpot0Params) (*TourismAPIScenicSpot0OK, error)
+	TourismAPIScenicSpot0(params *TourismAPIScenicSpot0Params, opts ...ClientOption) (*TourismAPIScenicSpot0OK, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
@@ -83,13 +86,12 @@ type ClientService interface {
 
   取得台灣好行公車的預估到站資料(N1)
 */
-func (a *Client) TaiwanTripBusAPIEstimatedTimeOfArrival(params *TaiwanTripBusAPIEstimatedTimeOfArrivalParams) (*TaiwanTripBusAPIEstimatedTimeOfArrivalOK, error) {
+func (a *Client) TaiwanTripBusAPIEstimatedTimeOfArrival(params *TaiwanTripBusAPIEstimatedTimeOfArrivalParams, opts ...ClientOption) (*TaiwanTripBusAPIEstimatedTimeOfArrivalOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTaiwanTripBusAPIEstimatedTimeOfArrivalParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "TaiwanTripBusApi_EstimatedTimeOfArrival",
 		Method:             "GET",
 		PathPattern:        "/v2/Tourism/Bus/EstimatedTimeOfArrival/TaiwanTrip",
@@ -100,7 +102,12 @@ func (a *Client) TaiwanTripBusAPIEstimatedTimeOfArrival(params *TaiwanTripBusAPI
 		Reader:             &TaiwanTripBusAPIEstimatedTimeOfArrivalReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -119,13 +126,12 @@ func (a *Client) TaiwanTripBusAPIEstimatedTimeOfArrival(params *TaiwanTripBusAPI
 
   取得指定[路線名稱]的台灣好行公車的預估到站資料(N1)
 */
-func (a *Client) TaiwanTripBusAPIEstimatedTimeOfArrival1(params *TaiwanTripBusAPIEstimatedTimeOfArrival1Params) (*TaiwanTripBusAPIEstimatedTimeOfArrival1OK, error) {
+func (a *Client) TaiwanTripBusAPIEstimatedTimeOfArrival1(params *TaiwanTripBusAPIEstimatedTimeOfArrival1Params, opts ...ClientOption) (*TaiwanTripBusAPIEstimatedTimeOfArrival1OK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTaiwanTripBusAPIEstimatedTimeOfArrival1Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "TaiwanTripBusApi_EstimatedTimeOfArrival_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Tourism/Bus/EstimatedTimeOfArrival/TaiwanTrip/{TaiwanTripName}",
@@ -136,7 +142,12 @@ func (a *Client) TaiwanTripBusAPIEstimatedTimeOfArrival1(params *TaiwanTripBusAP
 		Reader:             &TaiwanTripBusAPIEstimatedTimeOfArrival1Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -155,13 +166,12 @@ func (a *Client) TaiwanTripBusAPIEstimatedTimeOfArrival1(params *TaiwanTripBusAP
 
   取得台灣好行公車之最新消息
 */
-func (a *Client) TaiwanTripBusAPINews(params *TaiwanTripBusAPINewsParams) (*TaiwanTripBusAPINewsOK, error) {
+func (a *Client) TaiwanTripBusAPINews(params *TaiwanTripBusAPINewsParams, opts ...ClientOption) (*TaiwanTripBusAPINewsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTaiwanTripBusAPINewsParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "TaiwanTripBusApi_News",
 		Method:             "GET",
 		PathPattern:        "/v2/Tourism/Bus/News/TaiwanTrip",
@@ -172,7 +182,12 @@ func (a *Client) TaiwanTripBusAPINews(params *TaiwanTripBusAPINewsParams) (*Taiw
 		Reader:             &TaiwanTripBusAPINewsReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -191,13 +206,12 @@ func (a *Client) TaiwanTripBusAPINews(params *TaiwanTripBusAPINewsParams) (*Taiw
 
   取得台灣好行公車的動態定時資料(A1)
 */
-func (a *Client) TaiwanTripBusAPIRealTimeByFrequency(params *TaiwanTripBusAPIRealTimeByFrequencyParams) (*TaiwanTripBusAPIRealTimeByFrequencyOK, error) {
+func (a *Client) TaiwanTripBusAPIRealTimeByFrequency(params *TaiwanTripBusAPIRealTimeByFrequencyParams, opts ...ClientOption) (*TaiwanTripBusAPIRealTimeByFrequencyOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTaiwanTripBusAPIRealTimeByFrequencyParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "TaiwanTripBusApi_RealTimeByFrequency",
 		Method:             "GET",
 		PathPattern:        "/v2/Tourism/Bus/RealTimeByFrequency/TaiwanTrip",
@@ -208,7 +222,12 @@ func (a *Client) TaiwanTripBusAPIRealTimeByFrequency(params *TaiwanTripBusAPIRea
 		Reader:             &TaiwanTripBusAPIRealTimeByFrequencyReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -227,13 +246,12 @@ func (a *Client) TaiwanTripBusAPIRealTimeByFrequency(params *TaiwanTripBusAPIRea
 
   取得指定[路線名稱]的台灣好行公車的動態定時資料(A1)
 */
-func (a *Client) TaiwanTripBusAPIRealTimeByFrequency1(params *TaiwanTripBusAPIRealTimeByFrequency1Params) (*TaiwanTripBusAPIRealTimeByFrequency1OK, error) {
+func (a *Client) TaiwanTripBusAPIRealTimeByFrequency1(params *TaiwanTripBusAPIRealTimeByFrequency1Params, opts ...ClientOption) (*TaiwanTripBusAPIRealTimeByFrequency1OK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTaiwanTripBusAPIRealTimeByFrequency1Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "TaiwanTripBusApi_RealTimeByFrequency_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Tourism/Bus/RealTimeByFrequency/TaiwanTrip/{TaiwanTripName}",
@@ -244,7 +262,12 @@ func (a *Client) TaiwanTripBusAPIRealTimeByFrequency1(params *TaiwanTripBusAPIRe
 		Reader:             &TaiwanTripBusAPIRealTimeByFrequency1Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -263,13 +286,12 @@ func (a *Client) TaiwanTripBusAPIRealTimeByFrequency1(params *TaiwanTripBusAPIRe
 
   取得台灣好行公車的動態定點資料(A2)
 */
-func (a *Client) TaiwanTripBusAPIRealTimeNearStop(params *TaiwanTripBusAPIRealTimeNearStopParams) (*TaiwanTripBusAPIRealTimeNearStopOK, error) {
+func (a *Client) TaiwanTripBusAPIRealTimeNearStop(params *TaiwanTripBusAPIRealTimeNearStopParams, opts ...ClientOption) (*TaiwanTripBusAPIRealTimeNearStopOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTaiwanTripBusAPIRealTimeNearStopParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "TaiwanTripBusApi_RealTimeNearStop",
 		Method:             "GET",
 		PathPattern:        "/v2/Tourism/Bus/RealTimeNearStop/TaiwanTrip",
@@ -280,7 +302,12 @@ func (a *Client) TaiwanTripBusAPIRealTimeNearStop(params *TaiwanTripBusAPIRealTi
 		Reader:             &TaiwanTripBusAPIRealTimeNearStopReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -299,13 +326,12 @@ func (a *Client) TaiwanTripBusAPIRealTimeNearStop(params *TaiwanTripBusAPIRealTi
 
   取得指定[路線名稱]的台灣好行公車的動態定點資料(A2)
 */
-func (a *Client) TaiwanTripBusAPIRealTimeNearStop1(params *TaiwanTripBusAPIRealTimeNearStop1Params) (*TaiwanTripBusAPIRealTimeNearStop1OK, error) {
+func (a *Client) TaiwanTripBusAPIRealTimeNearStop1(params *TaiwanTripBusAPIRealTimeNearStop1Params, opts ...ClientOption) (*TaiwanTripBusAPIRealTimeNearStop1OK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTaiwanTripBusAPIRealTimeNearStop1Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "TaiwanTripBusApi_RealTimeNearStop_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Tourism/Bus/RealTimeNearStop/TaiwanTrip/{TaiwanTripName}",
@@ -316,7 +342,12 @@ func (a *Client) TaiwanTripBusAPIRealTimeNearStop1(params *TaiwanTripBusAPIRealT
 		Reader:             &TaiwanTripBusAPIRealTimeNearStop1Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -335,13 +366,12 @@ func (a *Client) TaiwanTripBusAPIRealTimeNearStop1(params *TaiwanTripBusAPIRealT
 
   取得台灣好行公車路線資料
 */
-func (a *Client) TaiwanTripBusAPIRoute(params *TaiwanTripBusAPIRouteParams) (*TaiwanTripBusAPIRouteOK, error) {
+func (a *Client) TaiwanTripBusAPIRoute(params *TaiwanTripBusAPIRouteParams, opts ...ClientOption) (*TaiwanTripBusAPIRouteOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTaiwanTripBusAPIRouteParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "TaiwanTripBusApi_Route",
 		Method:             "GET",
 		PathPattern:        "/v2/Tourism/Bus/Route/TaiwanTrip",
@@ -352,7 +382,12 @@ func (a *Client) TaiwanTripBusAPIRoute(params *TaiwanTripBusAPIRouteParams) (*Ta
 		Reader:             &TaiwanTripBusAPIRouteReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -371,13 +406,12 @@ func (a *Client) TaiwanTripBusAPIRoute(params *TaiwanTripBusAPIRouteParams) (*Ta
 
   取得指定[路線名稱]的台灣好行公車路線資料
 */
-func (a *Client) TaiwanTripBusAPIRoute1(params *TaiwanTripBusAPIRoute1Params) (*TaiwanTripBusAPIRoute1OK, error) {
+func (a *Client) TaiwanTripBusAPIRoute1(params *TaiwanTripBusAPIRoute1Params, opts ...ClientOption) (*TaiwanTripBusAPIRoute1OK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTaiwanTripBusAPIRoute1Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "TaiwanTripBusApi_Route_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Tourism/Bus/Route/TaiwanTrip/{TaiwanTripName}",
@@ -388,7 +422,12 @@ func (a *Client) TaiwanTripBusAPIRoute1(params *TaiwanTripBusAPIRoute1Params) (*
 		Reader:             &TaiwanTripBusAPIRoute1Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -407,13 +446,12 @@ func (a *Client) TaiwanTripBusAPIRoute1(params *TaiwanTripBusAPIRoute1Params) (*
 
   取得台灣好行公車路線站間旅行時間基本資料
 */
-func (a *Client) TaiwanTripBusAPIS2TravelTime(params *TaiwanTripBusAPIS2TravelTimeParams) (*TaiwanTripBusAPIS2TravelTimeOK, error) {
+func (a *Client) TaiwanTripBusAPIS2TravelTime(params *TaiwanTripBusAPIS2TravelTimeParams, opts ...ClientOption) (*TaiwanTripBusAPIS2TravelTimeOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTaiwanTripBusAPIS2TravelTimeParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "TaiwanTripBusApi_S2TravelTime",
 		Method:             "GET",
 		PathPattern:        "/v2/Tourism/Bus/S2TravelTime/TaiwanTrip",
@@ -424,7 +462,12 @@ func (a *Client) TaiwanTripBusAPIS2TravelTime(params *TaiwanTripBusAPIS2TravelTi
 		Reader:             &TaiwanTripBusAPIS2TravelTimeReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -443,13 +486,12 @@ func (a *Client) TaiwanTripBusAPIS2TravelTime(params *TaiwanTripBusAPIS2TravelTi
 
   取得台灣好行公車路線班表資料
 */
-func (a *Client) TaiwanTripBusAPISchedule(params *TaiwanTripBusAPIScheduleParams) (*TaiwanTripBusAPIScheduleOK, error) {
+func (a *Client) TaiwanTripBusAPISchedule(params *TaiwanTripBusAPIScheduleParams, opts ...ClientOption) (*TaiwanTripBusAPIScheduleOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTaiwanTripBusAPIScheduleParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "TaiwanTripBusApi_Schedule",
 		Method:             "GET",
 		PathPattern:        "/v2/Tourism/Bus/Schedule/TaiwanTrip",
@@ -460,7 +502,12 @@ func (a *Client) TaiwanTripBusAPISchedule(params *TaiwanTripBusAPIScheduleParams
 		Reader:             &TaiwanTripBusAPIScheduleReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -479,13 +526,12 @@ func (a *Client) TaiwanTripBusAPISchedule(params *TaiwanTripBusAPIScheduleParams
 
   取得指定[路線名稱]的台灣好行公車路線班表資料
 */
-func (a *Client) TaiwanTripBusAPISchedule1(params *TaiwanTripBusAPISchedule1Params) (*TaiwanTripBusAPISchedule1OK, error) {
+func (a *Client) TaiwanTripBusAPISchedule1(params *TaiwanTripBusAPISchedule1Params, opts ...ClientOption) (*TaiwanTripBusAPISchedule1OK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTaiwanTripBusAPISchedule1Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "TaiwanTripBusApi_Schedule_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Tourism/Bus/Schedule/TaiwanTrip/{TaiwanTripName}",
@@ -496,7 +542,12 @@ func (a *Client) TaiwanTripBusAPISchedule1(params *TaiwanTripBusAPISchedule1Para
 		Reader:             &TaiwanTripBusAPISchedule1Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -515,13 +566,12 @@ func (a *Client) TaiwanTripBusAPISchedule1(params *TaiwanTripBusAPISchedule1Para
 
   取得台灣好行公車線型資料
 */
-func (a *Client) TaiwanTripBusAPIShape(params *TaiwanTripBusAPIShapeParams) (*TaiwanTripBusAPIShapeOK, error) {
+func (a *Client) TaiwanTripBusAPIShape(params *TaiwanTripBusAPIShapeParams, opts ...ClientOption) (*TaiwanTripBusAPIShapeOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTaiwanTripBusAPIShapeParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "TaiwanTripBusApi_Shape",
 		Method:             "GET",
 		PathPattern:        "/v2/Tourism/Bus/Shape/TaiwanTrip",
@@ -532,7 +582,12 @@ func (a *Client) TaiwanTripBusAPIShape(params *TaiwanTripBusAPIShapeParams) (*Ta
 		Reader:             &TaiwanTripBusAPIShapeReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -551,13 +606,12 @@ func (a *Client) TaiwanTripBusAPIShape(params *TaiwanTripBusAPIShapeParams) (*Ta
 
   取得指定[路線名稱]的台灣好行公車線型資料
 */
-func (a *Client) TaiwanTripBusAPIShape1(params *TaiwanTripBusAPIShape1Params) (*TaiwanTripBusAPIShape1OK, error) {
+func (a *Client) TaiwanTripBusAPIShape1(params *TaiwanTripBusAPIShape1Params, opts ...ClientOption) (*TaiwanTripBusAPIShape1OK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTaiwanTripBusAPIShape1Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "TaiwanTripBusApi_Shape_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Tourism/Bus/Shape/TaiwanTrip/{TaiwanTripName}",
@@ -568,7 +622,12 @@ func (a *Client) TaiwanTripBusAPIShape1(params *TaiwanTripBusAPIShape1Params) (*
 		Reader:             &TaiwanTripBusAPIShape1Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -587,13 +646,12 @@ func (a *Client) TaiwanTripBusAPIShape1(params *TaiwanTripBusAPIShape1Params) (*
 
   取得台灣好行公車路線與站牌資料
 */
-func (a *Client) TaiwanTripBusAPIStopOfRoute(params *TaiwanTripBusAPIStopOfRouteParams) (*TaiwanTripBusAPIStopOfRouteOK, error) {
+func (a *Client) TaiwanTripBusAPIStopOfRoute(params *TaiwanTripBusAPIStopOfRouteParams, opts ...ClientOption) (*TaiwanTripBusAPIStopOfRouteOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTaiwanTripBusAPIStopOfRouteParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "TaiwanTripBusApi_StopOfRoute",
 		Method:             "GET",
 		PathPattern:        "/v2/Tourism/Bus/StopOfRoute/TaiwanTrip",
@@ -604,7 +662,12 @@ func (a *Client) TaiwanTripBusAPIStopOfRoute(params *TaiwanTripBusAPIStopOfRoute
 		Reader:             &TaiwanTripBusAPIStopOfRouteReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -623,13 +686,12 @@ func (a *Client) TaiwanTripBusAPIStopOfRoute(params *TaiwanTripBusAPIStopOfRoute
 
   取得指定[路線名稱]的台灣好行公車路線與站牌資料
 */
-func (a *Client) TaiwanTripBusAPIStopOfRoute1(params *TaiwanTripBusAPIStopOfRoute1Params) (*TaiwanTripBusAPIStopOfRoute1OK, error) {
+func (a *Client) TaiwanTripBusAPIStopOfRoute1(params *TaiwanTripBusAPIStopOfRoute1Params, opts ...ClientOption) (*TaiwanTripBusAPIStopOfRoute1OK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTaiwanTripBusAPIStopOfRoute1Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "TaiwanTripBusApi_StopOfRoute_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Tourism/Bus/StopOfRoute/TaiwanTrip/{TaiwanTripName}",
@@ -640,7 +702,12 @@ func (a *Client) TaiwanTripBusAPIStopOfRoute1(params *TaiwanTripBusAPIStopOfRout
 		Reader:             &TaiwanTripBusAPIStopOfRoute1Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -659,13 +726,12 @@ func (a *Client) TaiwanTripBusAPIStopOfRoute1(params *TaiwanTripBusAPIStopOfRout
 
   取得所有觀光活動資料
 */
-func (a *Client) TourismAPIActivity(params *TourismAPIActivityParams) (*TourismAPIActivityOK, error) {
+func (a *Client) TourismAPIActivity(params *TourismAPIActivityParams, opts ...ClientOption) (*TourismAPIActivityOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTourismAPIActivityParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "TourismApi_Activity",
 		Method:             "GET",
 		PathPattern:        "/v2/Tourism/Activity",
@@ -676,7 +742,12 @@ func (a *Client) TourismAPIActivity(params *TourismAPIActivityParams) (*TourismA
 		Reader:             &TourismAPIActivityReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -695,13 +766,12 @@ func (a *Client) TourismAPIActivity(params *TourismAPIActivityParams) (*TourismA
 
   取得指定[縣市]觀光活動資料
 */
-func (a *Client) TourismAPIActivity0(params *TourismAPIActivity0Params) (*TourismAPIActivity0OK, error) {
+func (a *Client) TourismAPIActivity0(params *TourismAPIActivity0Params, opts ...ClientOption) (*TourismAPIActivity0OK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTourismAPIActivity0Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "TourismApi_Activity_0",
 		Method:             "GET",
 		PathPattern:        "/v2/Tourism/Activity/{City}",
@@ -712,7 +782,12 @@ func (a *Client) TourismAPIActivity0(params *TourismAPIActivity0Params) (*Touris
 		Reader:             &TourismAPIActivity0Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -731,13 +806,12 @@ func (a *Client) TourismAPIActivity0(params *TourismAPIActivity0Params) (*Touris
 
   取得所有觀光旅宿資料
 */
-func (a *Client) TourismAPIHotel(params *TourismAPIHotelParams) (*TourismAPIHotelOK, error) {
+func (a *Client) TourismAPIHotel(params *TourismAPIHotelParams, opts ...ClientOption) (*TourismAPIHotelOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTourismAPIHotelParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "TourismApi_Hotel",
 		Method:             "GET",
 		PathPattern:        "/v2/Tourism/Hotel",
@@ -748,7 +822,12 @@ func (a *Client) TourismAPIHotel(params *TourismAPIHotelParams) (*TourismAPIHote
 		Reader:             &TourismAPIHotelReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -767,13 +846,12 @@ func (a *Client) TourismAPIHotel(params *TourismAPIHotelParams) (*TourismAPIHote
 
   取得指定[縣市]觀光旅宿資料
 */
-func (a *Client) TourismAPIHotel0(params *TourismAPIHotel0Params) (*TourismAPIHotel0OK, error) {
+func (a *Client) TourismAPIHotel0(params *TourismAPIHotel0Params, opts ...ClientOption) (*TourismAPIHotel0OK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTourismAPIHotel0Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "TourismApi_Hotel_0",
 		Method:             "GET",
 		PathPattern:        "/v2/Tourism/Hotel/{City}",
@@ -784,7 +862,12 @@ func (a *Client) TourismAPIHotel0(params *TourismAPIHotel0Params) (*TourismAPIHo
 		Reader:             &TourismAPIHotel0Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -803,13 +886,12 @@ func (a *Client) TourismAPIHotel0(params *TourismAPIHotel0Params) (*TourismAPIHo
 
   取得所有觀光餐飲資料
 */
-func (a *Client) TourismAPIRestaurant(params *TourismAPIRestaurantParams) (*TourismAPIRestaurantOK, error) {
+func (a *Client) TourismAPIRestaurant(params *TourismAPIRestaurantParams, opts ...ClientOption) (*TourismAPIRestaurantOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTourismAPIRestaurantParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "TourismApi_Restaurant",
 		Method:             "GET",
 		PathPattern:        "/v2/Tourism/Restaurant",
@@ -820,7 +902,12 @@ func (a *Client) TourismAPIRestaurant(params *TourismAPIRestaurantParams) (*Tour
 		Reader:             &TourismAPIRestaurantReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -839,13 +926,12 @@ func (a *Client) TourismAPIRestaurant(params *TourismAPIRestaurantParams) (*Tour
 
   取得指定[縣市]觀光餐飲資料
 */
-func (a *Client) TourismAPIRestaurant0(params *TourismAPIRestaurant0Params) (*TourismAPIRestaurant0OK, error) {
+func (a *Client) TourismAPIRestaurant0(params *TourismAPIRestaurant0Params, opts ...ClientOption) (*TourismAPIRestaurant0OK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTourismAPIRestaurant0Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "TourismApi_Restaurant_0",
 		Method:             "GET",
 		PathPattern:        "/v2/Tourism/Restaurant/{City}",
@@ -856,7 +942,12 @@ func (a *Client) TourismAPIRestaurant0(params *TourismAPIRestaurant0Params) (*To
 		Reader:             &TourismAPIRestaurant0Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -875,13 +966,12 @@ func (a *Client) TourismAPIRestaurant0(params *TourismAPIRestaurant0Params) (*To
 
   取得所有觀光景點資料
 */
-func (a *Client) TourismAPIScenicSpot(params *TourismAPIScenicSpotParams) (*TourismAPIScenicSpotOK, error) {
+func (a *Client) TourismAPIScenicSpot(params *TourismAPIScenicSpotParams, opts ...ClientOption) (*TourismAPIScenicSpotOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTourismAPIScenicSpotParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "TourismApi_ScenicSpot",
 		Method:             "GET",
 		PathPattern:        "/v2/Tourism/ScenicSpot",
@@ -892,7 +982,12 @@ func (a *Client) TourismAPIScenicSpot(params *TourismAPIScenicSpotParams) (*Tour
 		Reader:             &TourismAPIScenicSpotReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -911,13 +1006,12 @@ func (a *Client) TourismAPIScenicSpot(params *TourismAPIScenicSpotParams) (*Tour
 
   取得所有觀光景點資料
 */
-func (a *Client) TourismAPIScenicSpot0(params *TourismAPIScenicSpot0Params) (*TourismAPIScenicSpot0OK, error) {
+func (a *Client) TourismAPIScenicSpot0(params *TourismAPIScenicSpot0Params, opts ...ClientOption) (*TourismAPIScenicSpot0OK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTourismAPIScenicSpot0Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "TourismApi_ScenicSpot_0",
 		Method:             "GET",
 		PathPattern:        "/v2/Tourism/ScenicSpot/{City}",
@@ -928,7 +1022,12 @@ func (a *Client) TourismAPIScenicSpot0(params *TourismAPIScenicSpot0Params) (*To
 		Reader:             &TourismAPIScenicSpot0Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
