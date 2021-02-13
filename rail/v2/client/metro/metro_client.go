@@ -25,43 +25,46 @@ type Client struct {
 	formats   strfmt.Registry
 }
 
+// ClientOption is the option for Client methods
+type ClientOption func(*runtime.ClientOperation)
+
 // ClientService is the interface for Client methods
 type ClientService interface {
-	MetroAPIAlert(params *MetroAPIAlertParams) (*MetroAPIAlertOK, error)
+	MetroAPIAlert(params *MetroAPIAlertParams, opts ...ClientOption) (*MetroAPIAlertOK, error)
 
-	MetroAPIFirstLastTimetable(params *MetroAPIFirstLastTimetableParams) (*MetroAPIFirstLastTimetableOK, error)
+	MetroAPIFirstLastTimetable(params *MetroAPIFirstLastTimetableParams, opts ...ClientOption) (*MetroAPIFirstLastTimetableOK, error)
 
-	MetroAPIFrequency(params *MetroAPIFrequencyParams) (*MetroAPIFrequencyOK, error)
+	MetroAPIFrequency(params *MetroAPIFrequencyParams, opts ...ClientOption) (*MetroAPIFrequencyOK, error)
 
-	MetroAPILine(params *MetroAPILineParams) (*MetroAPILineOK, error)
+	MetroAPILine(params *MetroAPILineParams, opts ...ClientOption) (*MetroAPILineOK, error)
 
-	MetroAPILineTransfer(params *MetroAPILineTransferParams) (*MetroAPILineTransferOK, error)
+	MetroAPILineTransfer(params *MetroAPILineTransferParams, opts ...ClientOption) (*MetroAPILineTransferOK, error)
 
-	MetroAPILiveBoard(params *MetroAPILiveBoardParams) (*MetroAPILiveBoardOK, error)
+	MetroAPILiveBoard(params *MetroAPILiveBoardParams, opts ...ClientOption) (*MetroAPILiveBoardOK, error)
 
-	MetroAPINetwork(params *MetroAPINetworkParams) (*MetroAPINetworkOK, error)
+	MetroAPINetwork(params *MetroAPINetworkParams, opts ...ClientOption) (*MetroAPINetworkOK, error)
 
-	MetroAPINews(params *MetroAPINewsParams) (*MetroAPINewsOK, error)
+	MetroAPINews(params *MetroAPINewsParams, opts ...ClientOption) (*MetroAPINewsOK, error)
 
-	MetroAPIODFare(params *MetroAPIODFareParams) (*MetroAPIODFareOK, error)
+	MetroAPIODFare(params *MetroAPIODFareParams, opts ...ClientOption) (*MetroAPIODFareOK, error)
 
-	MetroAPIRoute(params *MetroAPIRouteParams) (*MetroAPIRouteOK, error)
+	MetroAPIRoute(params *MetroAPIRouteParams, opts ...ClientOption) (*MetroAPIRouteOK, error)
 
-	MetroAPIS2STravelTime(params *MetroAPIS2STravelTimeParams) (*MetroAPIS2STravelTimeOK, error)
+	MetroAPIS2STravelTime(params *MetroAPIS2STravelTimeParams, opts ...ClientOption) (*MetroAPIS2STravelTimeOK, error)
 
-	MetroAPIShape(params *MetroAPIShapeParams) (*MetroAPIShapeOK, error)
+	MetroAPIShape(params *MetroAPIShapeParams, opts ...ClientOption) (*MetroAPIShapeOK, error)
 
-	MetroAPIStation(params *MetroAPIStationParams) (*MetroAPIStationOK, error)
+	MetroAPIStation(params *MetroAPIStationParams, opts ...ClientOption) (*MetroAPIStationOK, error)
 
-	MetroAPIStationExit(params *MetroAPIStationExitParams) (*MetroAPIStationExitOK, error)
+	MetroAPIStationExit(params *MetroAPIStationExitParams, opts ...ClientOption) (*MetroAPIStationExitOK, error)
 
-	MetroAPIStationFacility(params *MetroAPIStationFacilityParams) (*MetroAPIStationFacilityOK, error)
+	MetroAPIStationFacility(params *MetroAPIStationFacilityParams, opts ...ClientOption) (*MetroAPIStationFacilityOK, error)
 
-	MetroAPIStationOfLine(params *MetroAPIStationOfLineParams) (*MetroAPIStationOfLineOK, error)
+	MetroAPIStationOfLine(params *MetroAPIStationOfLineParams, opts ...ClientOption) (*MetroAPIStationOfLineOK, error)
 
-	MetroAPIStationOfRoute(params *MetroAPIStationOfRouteParams) (*MetroAPIStationOfRouteOK, error)
+	MetroAPIStationOfRoute(params *MetroAPIStationOfRouteParams, opts ...ClientOption) (*MetroAPIStationOfRouteOK, error)
 
-	MetroAPIStationTimeTable(params *MetroAPIStationTimeTableParams) (*MetroAPIStationTimeTableOK, error)
+	MetroAPIStationTimeTable(params *MetroAPIStationTimeTableParams, opts ...ClientOption) (*MetroAPIStationTimeTableOK, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
@@ -71,13 +74,12 @@ type ClientService interface {
 
   取得營運通阻資料
 */
-func (a *Client) MetroAPIAlert(params *MetroAPIAlertParams) (*MetroAPIAlertOK, error) {
+func (a *Client) MetroAPIAlert(params *MetroAPIAlertParams, opts ...ClientOption) (*MetroAPIAlertOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewMetroAPIAlertParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "MetroApi_Alert",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/Metro/Alert/{Operator}",
@@ -88,7 +90,12 @@ func (a *Client) MetroAPIAlert(params *MetroAPIAlertParams) (*MetroAPIAlertOK, e
 		Reader:             &MetroAPIAlertReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -107,13 +114,12 @@ func (a *Client) MetroAPIAlert(params *MetroAPIAlertParams) (*MetroAPIAlertOK, e
 
   取得捷運首末班車時刻表資料
 */
-func (a *Client) MetroAPIFirstLastTimetable(params *MetroAPIFirstLastTimetableParams) (*MetroAPIFirstLastTimetableOK, error) {
+func (a *Client) MetroAPIFirstLastTimetable(params *MetroAPIFirstLastTimetableParams, opts ...ClientOption) (*MetroAPIFirstLastTimetableOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewMetroAPIFirstLastTimetableParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "MetroApi_FirstLastTimetable",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/Metro/FirstLastTimetable/{Operator}",
@@ -124,7 +130,12 @@ func (a *Client) MetroAPIFirstLastTimetable(params *MetroAPIFirstLastTimetablePa
 		Reader:             &MetroAPIFirstLastTimetableReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -143,13 +154,12 @@ func (a *Client) MetroAPIFirstLastTimetable(params *MetroAPIFirstLastTimetablePa
 
   取得捷運路線發車班距頻率資料
 */
-func (a *Client) MetroAPIFrequency(params *MetroAPIFrequencyParams) (*MetroAPIFrequencyOK, error) {
+func (a *Client) MetroAPIFrequency(params *MetroAPIFrequencyParams, opts ...ClientOption) (*MetroAPIFrequencyOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewMetroAPIFrequencyParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "MetroApi_Frequency",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/Metro/Frequency/{Operator}",
@@ -160,7 +170,12 @@ func (a *Client) MetroAPIFrequency(params *MetroAPIFrequencyParams) (*MetroAPIFr
 		Reader:             &MetroAPIFrequencyReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -179,13 +194,12 @@ func (a *Client) MetroAPIFrequency(params *MetroAPIFrequencyParams) (*MetroAPIFr
 
   取得捷運路線基本資料
 */
-func (a *Client) MetroAPILine(params *MetroAPILineParams) (*MetroAPILineOK, error) {
+func (a *Client) MetroAPILine(params *MetroAPILineParams, opts ...ClientOption) (*MetroAPILineOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewMetroAPILineParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "MetroApi_Line",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/Metro/Line/{Operator}",
@@ -196,7 +210,12 @@ func (a *Client) MetroAPILine(params *MetroAPILineParams) (*MetroAPILineOK, erro
 		Reader:             &MetroAPILineReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -215,13 +234,12 @@ func (a *Client) MetroAPILine(params *MetroAPILineParams) (*MetroAPILineOK, erro
 
   取得捷運路線站間轉乘基本資料
 */
-func (a *Client) MetroAPILineTransfer(params *MetroAPILineTransferParams) (*MetroAPILineTransferOK, error) {
+func (a *Client) MetroAPILineTransfer(params *MetroAPILineTransferParams, opts ...ClientOption) (*MetroAPILineTransferOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewMetroAPILineTransferParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "MetroApi_LineTransfer",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/Metro/LineTransfer/{Operator}",
@@ -232,7 +250,12 @@ func (a *Client) MetroAPILineTransfer(params *MetroAPILineTransferParams) (*Metr
 		Reader:             &MetroAPILineTransferReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -251,13 +274,12 @@ func (a *Client) MetroAPILineTransfer(params *MetroAPILineTransferParams) (*Metr
 
   取得捷運車站別列車即時到離站電子看板資訊
 */
-func (a *Client) MetroAPILiveBoard(params *MetroAPILiveBoardParams) (*MetroAPILiveBoardOK, error) {
+func (a *Client) MetroAPILiveBoard(params *MetroAPILiveBoardParams, opts ...ClientOption) (*MetroAPILiveBoardOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewMetroAPILiveBoardParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "MetroApi_LiveBoard",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/Metro/LiveBoard/{Operator}",
@@ -268,7 +290,12 @@ func (a *Client) MetroAPILiveBoard(params *MetroAPILiveBoardParams) (*MetroAPILi
 		Reader:             &MetroAPILiveBoardReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -287,13 +314,12 @@ func (a *Client) MetroAPILiveBoard(params *MetroAPILiveBoardParams) (*MetroAPILi
 
   取得捷運路網資料
 */
-func (a *Client) MetroAPINetwork(params *MetroAPINetworkParams) (*MetroAPINetworkOK, error) {
+func (a *Client) MetroAPINetwork(params *MetroAPINetworkParams, opts ...ClientOption) (*MetroAPINetworkOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewMetroAPINetworkParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "MetroApi_Network",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/Metro/Network/{Operator}",
@@ -304,7 +330,12 @@ func (a *Client) MetroAPINetwork(params *MetroAPINetworkParams) (*MetroAPINetwor
 		Reader:             &MetroAPINetworkReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -323,13 +354,12 @@ func (a *Client) MetroAPINetwork(params *MetroAPINetworkParams) (*MetroAPINetwor
 
   取得最新消息
 */
-func (a *Client) MetroAPINews(params *MetroAPINewsParams) (*MetroAPINewsOK, error) {
+func (a *Client) MetroAPINews(params *MetroAPINewsParams, opts ...ClientOption) (*MetroAPINewsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewMetroAPINewsParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "MetroApi_News",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/Metro/News/{Operator}",
@@ -340,7 +370,12 @@ func (a *Client) MetroAPINews(params *MetroAPINewsParams) (*MetroAPINewsOK, erro
 		Reader:             &MetroAPINewsReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -359,13 +394,12 @@ func (a *Client) MetroAPINews(params *MetroAPINewsParams) (*MetroAPINewsOK, erro
 
   取得捷運起迄站間票價資料
 */
-func (a *Client) MetroAPIODFare(params *MetroAPIODFareParams) (*MetroAPIODFareOK, error) {
+func (a *Client) MetroAPIODFare(params *MetroAPIODFareParams, opts ...ClientOption) (*MetroAPIODFareOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewMetroAPIODFareParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "MetroApi_ODFare",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/Metro/ODFare/{Operator}",
@@ -376,7 +410,12 @@ func (a *Client) MetroAPIODFare(params *MetroAPIODFareParams) (*MetroAPIODFareOK
 		Reader:             &MetroAPIODFareReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -395,13 +434,12 @@ func (a *Client) MetroAPIODFare(params *MetroAPIODFareParams) (*MetroAPIODFareOK
 
   取得捷運營運路線基本資料
 */
-func (a *Client) MetroAPIRoute(params *MetroAPIRouteParams) (*MetroAPIRouteOK, error) {
+func (a *Client) MetroAPIRoute(params *MetroAPIRouteParams, opts ...ClientOption) (*MetroAPIRouteOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewMetroAPIRouteParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "MetroApi_Route",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/Metro/Route/{Operator}",
@@ -412,7 +450,12 @@ func (a *Client) MetroAPIRoute(params *MetroAPIRouteParams) (*MetroAPIRouteOK, e
 		Reader:             &MetroAPIRouteReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -431,13 +474,12 @@ func (a *Client) MetroAPIRoute(params *MetroAPIRouteParams) (*MetroAPIRouteOK, e
 
   取得捷運列車站間運行時間資料
 */
-func (a *Client) MetroAPIS2STravelTime(params *MetroAPIS2STravelTimeParams) (*MetroAPIS2STravelTimeOK, error) {
+func (a *Client) MetroAPIS2STravelTime(params *MetroAPIS2STravelTimeParams, opts ...ClientOption) (*MetroAPIS2STravelTimeOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewMetroAPIS2STravelTimeParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "MetroApi_S2STravelTime",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/Metro/S2STravelTime/{Operator}",
@@ -448,7 +490,12 @@ func (a *Client) MetroAPIS2STravelTime(params *MetroAPIS2STravelTimeParams) (*Me
 		Reader:             &MetroAPIS2STravelTimeReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -467,13 +514,12 @@ func (a *Client) MetroAPIS2STravelTime(params *MetroAPIS2STravelTimeParams) (*Me
 
   取得指定營運業者之軌道路網實體路線圖資資料
 */
-func (a *Client) MetroAPIShape(params *MetroAPIShapeParams) (*MetroAPIShapeOK, error) {
+func (a *Client) MetroAPIShape(params *MetroAPIShapeParams, opts ...ClientOption) (*MetroAPIShapeOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewMetroAPIShapeParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "MetroApi_Shape",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/Metro/Shape/{Operator}",
@@ -484,7 +530,12 @@ func (a *Client) MetroAPIShape(params *MetroAPIShapeParams) (*MetroAPIShapeOK, e
 		Reader:             &MetroAPIShapeReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -503,13 +554,12 @@ func (a *Client) MetroAPIShape(params *MetroAPIShapeParams) (*MetroAPIShapeOK, e
 
   取得捷運車站基本資料
 */
-func (a *Client) MetroAPIStation(params *MetroAPIStationParams) (*MetroAPIStationOK, error) {
+func (a *Client) MetroAPIStation(params *MetroAPIStationParams, opts ...ClientOption) (*MetroAPIStationOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewMetroAPIStationParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "MetroApi_Station",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/Metro/Station/{Operator}",
@@ -520,7 +570,12 @@ func (a *Client) MetroAPIStation(params *MetroAPIStationParams) (*MetroAPIStatio
 		Reader:             &MetroAPIStationReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -539,13 +594,12 @@ func (a *Client) MetroAPIStation(params *MetroAPIStationParams) (*MetroAPIStatio
 
   取得捷運車站出入口基本資料
 */
-func (a *Client) MetroAPIStationExit(params *MetroAPIStationExitParams) (*MetroAPIStationExitOK, error) {
+func (a *Client) MetroAPIStationExit(params *MetroAPIStationExitParams, opts ...ClientOption) (*MetroAPIStationExitOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewMetroAPIStationExitParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "MetroApi_StationExit",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/Metro/StationExit/{Operator}",
@@ -556,7 +610,12 @@ func (a *Client) MetroAPIStationExit(params *MetroAPIStationExitParams) (*MetroA
 		Reader:             &MetroAPIStationExitReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -575,13 +634,12 @@ func (a *Client) MetroAPIStationExit(params *MetroAPIStationExitParams) (*MetroA
 
   取得捷運車站設施資料
 */
-func (a *Client) MetroAPIStationFacility(params *MetroAPIStationFacilityParams) (*MetroAPIStationFacilityOK, error) {
+func (a *Client) MetroAPIStationFacility(params *MetroAPIStationFacilityParams, opts ...ClientOption) (*MetroAPIStationFacilityOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewMetroAPIStationFacilityParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "MetroApi_StationFacility",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/Metro/StationFacility/{Operator}",
@@ -592,7 +650,12 @@ func (a *Client) MetroAPIStationFacility(params *MetroAPIStationFacilityParams) 
 		Reader:             &MetroAPIStationFacilityReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -611,13 +674,12 @@ func (a *Client) MetroAPIStationFacility(params *MetroAPIStationFacilityParams) 
 
   取得捷運路線車站基本資料
 */
-func (a *Client) MetroAPIStationOfLine(params *MetroAPIStationOfLineParams) (*MetroAPIStationOfLineOK, error) {
+func (a *Client) MetroAPIStationOfLine(params *MetroAPIStationOfLineParams, opts ...ClientOption) (*MetroAPIStationOfLineOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewMetroAPIStationOfLineParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "MetroApi_StationOfLine",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/Metro/StationOfLine/{Operator}",
@@ -628,7 +690,12 @@ func (a *Client) MetroAPIStationOfLine(params *MetroAPIStationOfLineParams) (*Me
 		Reader:             &MetroAPIStationOfLineReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -647,13 +714,12 @@ func (a *Client) MetroAPIStationOfLine(params *MetroAPIStationOfLineParams) (*Me
 
   取得捷運營運路線車站基本資料
 */
-func (a *Client) MetroAPIStationOfRoute(params *MetroAPIStationOfRouteParams) (*MetroAPIStationOfRouteOK, error) {
+func (a *Client) MetroAPIStationOfRoute(params *MetroAPIStationOfRouteParams, opts ...ClientOption) (*MetroAPIStationOfRouteOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewMetroAPIStationOfRouteParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "MetroApi_StationOfRoute",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/Metro/StationOfRoute/{Operator}",
@@ -664,7 +730,12 @@ func (a *Client) MetroAPIStationOfRoute(params *MetroAPIStationOfRouteParams) (*
 		Reader:             &MetroAPIStationOfRouteReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -686,13 +757,12 @@ func (a *Client) MetroAPIStationOfRoute(params *MetroAPIStationOfRouteParams) (*
 ## 使用注意事項
 臺北捷運目前無提供文湖線站別時刻表，建議您可使用［取得捷運路線發車班距頻率資料］取得文湖線列車相關資訊。
 */
-func (a *Client) MetroAPIStationTimeTable(params *MetroAPIStationTimeTableParams) (*MetroAPIStationTimeTableOK, error) {
+func (a *Client) MetroAPIStationTimeTable(params *MetroAPIStationTimeTableParams, opts ...ClientOption) (*MetroAPIStationTimeTableOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewMetroAPIStationTimeTableParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "MetroApi_StationTimeTable",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/Metro/StationTimeTable/{Operator}",
@@ -703,7 +773,12 @@ func (a *Client) MetroAPIStationTimeTable(params *MetroAPIStationTimeTableParams
 		Reader:             &MetroAPIStationTimeTableReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}

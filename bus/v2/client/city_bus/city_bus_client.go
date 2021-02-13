@@ -25,75 +25,78 @@ type Client struct {
 	formats   strfmt.Registry
 }
 
+// ClientOption is the option for Client methods
+type ClientOption func(*runtime.ClientOperation)
+
 // ClientService is the interface for Client methods
 type ClientService interface {
-	CityBusAPIDataVersion(params *CityBusAPIDataVersionParams) (*CityBusAPIDataVersionOK, *CityBusAPIDataVersionStatus299, error)
+	CityBusAPIDataVersion(params *CityBusAPIDataVersionParams, opts ...ClientOption) (*CityBusAPIDataVersionOK, *CityBusAPIDataVersionStatus299, error)
 
-	CityBusAPIDisplayStopOfRoute(params *CityBusAPIDisplayStopOfRouteParams) (*CityBusAPIDisplayStopOfRouteOK, *CityBusAPIDisplayStopOfRouteStatus299, error)
+	CityBusAPIDisplayStopOfRoute(params *CityBusAPIDisplayStopOfRouteParams, opts ...ClientOption) (*CityBusAPIDisplayStopOfRouteOK, *CityBusAPIDisplayStopOfRouteStatus299, error)
 
-	CityBusAPIDisplayStopOfRoute1(params *CityBusAPIDisplayStopOfRoute1Params) (*CityBusAPIDisplayStopOfRoute1OK, *CityBusAPIDisplayStopOfRoute1Status299, error)
+	CityBusAPIDisplayStopOfRoute1(params *CityBusAPIDisplayStopOfRoute1Params, opts ...ClientOption) (*CityBusAPIDisplayStopOfRoute1OK, *CityBusAPIDisplayStopOfRoute1Status299, error)
 
-	CityBusAPIEstimatedTimeOfArrival(params *CityBusAPIEstimatedTimeOfArrivalParams) (*CityBusAPIEstimatedTimeOfArrivalOK, *CityBusAPIEstimatedTimeOfArrivalStatus299, error)
+	CityBusAPIEstimatedTimeOfArrival(params *CityBusAPIEstimatedTimeOfArrivalParams, opts ...ClientOption) (*CityBusAPIEstimatedTimeOfArrivalOK, *CityBusAPIEstimatedTimeOfArrivalStatus299, error)
 
-	CityBusAPIEstimatedTimeOfArrival1(params *CityBusAPIEstimatedTimeOfArrival1Params) (*CityBusAPIEstimatedTimeOfArrival1OK, *CityBusAPIEstimatedTimeOfArrival1Status299, error)
+	CityBusAPIEstimatedTimeOfArrival1(params *CityBusAPIEstimatedTimeOfArrival1Params, opts ...ClientOption) (*CityBusAPIEstimatedTimeOfArrival1OK, *CityBusAPIEstimatedTimeOfArrival1Status299, error)
 
-	CityBusAPIEstimatedTimeOfArrivalUDP(params *CityBusAPIEstimatedTimeOfArrivalUDPParams) (*CityBusAPIEstimatedTimeOfArrivalUDPOK, *CityBusAPIEstimatedTimeOfArrivalUDPStatus299, error)
+	CityBusAPIEstimatedTimeOfArrivalUDP(params *CityBusAPIEstimatedTimeOfArrivalUDPParams, opts ...ClientOption) (*CityBusAPIEstimatedTimeOfArrivalUDPOK, *CityBusAPIEstimatedTimeOfArrivalUDPStatus299, error)
 
-	CityBusAPIEstimatedTimeOfArrivalUDP1(params *CityBusAPIEstimatedTimeOfArrivalUDP1Params) (*CityBusAPIEstimatedTimeOfArrivalUdp1OK, *CityBusAPIEstimatedTimeOfArrivalUdp1Status299, error)
+	CityBusAPIEstimatedTimeOfArrivalUDP1(params *CityBusAPIEstimatedTimeOfArrivalUDP1Params, opts ...ClientOption) (*CityBusAPIEstimatedTimeOfArrivalUdp1OK, *CityBusAPIEstimatedTimeOfArrivalUdp1Status299, error)
 
-	CityBusAPIFirstLastTripInfo(params *CityBusAPIFirstLastTripInfoParams) (*CityBusAPIFirstLastTripInfoOK, *CityBusAPIFirstLastTripInfoStatus299, error)
+	CityBusAPIFirstLastTripInfo(params *CityBusAPIFirstLastTripInfoParams, opts ...ClientOption) (*CityBusAPIFirstLastTripInfoOK, *CityBusAPIFirstLastTripInfoStatus299, error)
 
-	CityBusAPIFirstLastTripInfo1(params *CityBusAPIFirstLastTripInfo1Params) (*CityBusAPIFirstLastTripInfo1OK, *CityBusAPIFirstLastTripInfo1Status299, error)
+	CityBusAPIFirstLastTripInfo1(params *CityBusAPIFirstLastTripInfo1Params, opts ...ClientOption) (*CityBusAPIFirstLastTripInfo1OK, *CityBusAPIFirstLastTripInfo1Status299, error)
 
-	CityBusAPINews(params *CityBusAPINewsParams) (*CityBusAPINewsOK, *CityBusAPINewsStatus299, error)
+	CityBusAPINews(params *CityBusAPINewsParams, opts ...ClientOption) (*CityBusAPINewsOK, *CityBusAPINewsStatus299, error)
 
-	CityBusAPIOperator(params *CityBusAPIOperatorParams) (*CityBusAPIOperatorOK, *CityBusAPIOperatorStatus299, error)
+	CityBusAPIOperator(params *CityBusAPIOperatorParams, opts ...ClientOption) (*CityBusAPIOperatorOK, *CityBusAPIOperatorStatus299, error)
 
-	CityBusAPIRealTimeByFrequency(params *CityBusAPIRealTimeByFrequencyParams) (*CityBusAPIRealTimeByFrequencyOK, *CityBusAPIRealTimeByFrequencyStatus299, error)
+	CityBusAPIRealTimeByFrequency(params *CityBusAPIRealTimeByFrequencyParams, opts ...ClientOption) (*CityBusAPIRealTimeByFrequencyOK, *CityBusAPIRealTimeByFrequencyStatus299, error)
 
-	CityBusAPIRealTimeByFrequency1(params *CityBusAPIRealTimeByFrequency1Params) (*CityBusAPIRealTimeByFrequency1OK, *CityBusAPIRealTimeByFrequency1Status299, error)
+	CityBusAPIRealTimeByFrequency1(params *CityBusAPIRealTimeByFrequency1Params, opts ...ClientOption) (*CityBusAPIRealTimeByFrequency1OK, *CityBusAPIRealTimeByFrequency1Status299, error)
 
-	CityBusAPIRealTimeByFrequencyUDP(params *CityBusAPIRealTimeByFrequencyUDPParams) (*CityBusAPIRealTimeByFrequencyUDPOK, *CityBusAPIRealTimeByFrequencyUDPStatus299, error)
+	CityBusAPIRealTimeByFrequencyUDP(params *CityBusAPIRealTimeByFrequencyUDPParams, opts ...ClientOption) (*CityBusAPIRealTimeByFrequencyUDPOK, *CityBusAPIRealTimeByFrequencyUDPStatus299, error)
 
-	CityBusAPIRealTimeByFrequencyUDP1(params *CityBusAPIRealTimeByFrequencyUDP1Params) (*CityBusAPIRealTimeByFrequencyUdp1OK, *CityBusAPIRealTimeByFrequencyUdp1Status299, error)
+	CityBusAPIRealTimeByFrequencyUDP1(params *CityBusAPIRealTimeByFrequencyUDP1Params, opts ...ClientOption) (*CityBusAPIRealTimeByFrequencyUdp1OK, *CityBusAPIRealTimeByFrequencyUdp1Status299, error)
 
-	CityBusAPIRealTimeNearStop(params *CityBusAPIRealTimeNearStopParams) (*CityBusAPIRealTimeNearStopOK, *CityBusAPIRealTimeNearStopStatus299, error)
+	CityBusAPIRealTimeNearStop(params *CityBusAPIRealTimeNearStopParams, opts ...ClientOption) (*CityBusAPIRealTimeNearStopOK, *CityBusAPIRealTimeNearStopStatus299, error)
 
-	CityBusAPIRealTimeNearStop1(params *CityBusAPIRealTimeNearStop1Params) (*CityBusAPIRealTimeNearStop1OK, *CityBusAPIRealTimeNearStop1Status299, error)
+	CityBusAPIRealTimeNearStop1(params *CityBusAPIRealTimeNearStop1Params, opts ...ClientOption) (*CityBusAPIRealTimeNearStop1OK, *CityBusAPIRealTimeNearStop1Status299, error)
 
-	CityBusAPIRealTimeNearStopUDP(params *CityBusAPIRealTimeNearStopUDPParams) (*CityBusAPIRealTimeNearStopUDPOK, *CityBusAPIRealTimeNearStopUDPStatus299, error)
+	CityBusAPIRealTimeNearStopUDP(params *CityBusAPIRealTimeNearStopUDPParams, opts ...ClientOption) (*CityBusAPIRealTimeNearStopUDPOK, *CityBusAPIRealTimeNearStopUDPStatus299, error)
 
-	CityBusAPIRealTimeNearStopUDP1(params *CityBusAPIRealTimeNearStopUDP1Params) (*CityBusAPIRealTimeNearStopUdp1OK, *CityBusAPIRealTimeNearStopUdp1Status299, error)
+	CityBusAPIRealTimeNearStopUDP1(params *CityBusAPIRealTimeNearStopUDP1Params, opts ...ClientOption) (*CityBusAPIRealTimeNearStopUdp1OK, *CityBusAPIRealTimeNearStopUdp1Status299, error)
 
-	CityBusAPIRoute(params *CityBusAPIRouteParams) (*CityBusAPIRouteOK, *CityBusAPIRouteStatus299, error)
+	CityBusAPIRoute(params *CityBusAPIRouteParams, opts ...ClientOption) (*CityBusAPIRouteOK, *CityBusAPIRouteStatus299, error)
 
-	CityBusAPIRouteFare(params *CityBusAPIRouteFareParams) (*CityBusAPIRouteFareOK, *CityBusAPIRouteFareStatus299, error)
+	CityBusAPIRouteFare(params *CityBusAPIRouteFareParams, opts ...ClientOption) (*CityBusAPIRouteFareOK, *CityBusAPIRouteFareStatus299, error)
 
-	CityBusAPIRouteFare1(params *CityBusAPIRouteFare1Params) (*CityBusAPIRouteFare1OK, *CityBusAPIRouteFare1Status299, error)
+	CityBusAPIRouteFare1(params *CityBusAPIRouteFare1Params, opts ...ClientOption) (*CityBusAPIRouteFare1OK, *CityBusAPIRouteFare1Status299, error)
 
-	CityBusAPIRoute1(params *CityBusAPIRoute1Params) (*CityBusAPIRoute1OK, *CityBusAPIRoute1Status299, error)
+	CityBusAPIRoute1(params *CityBusAPIRoute1Params, opts ...ClientOption) (*CityBusAPIRoute1OK, *CityBusAPIRoute1Status299, error)
 
-	CityBusAPIS2STravelTimeDetail(params *CityBusAPIS2STravelTimeDetailParams) (*CityBusAPIS2STravelTimeDetailOK, *CityBusAPIS2STravelTimeDetailStatus299, error)
+	CityBusAPIS2STravelTimeDetail(params *CityBusAPIS2STravelTimeDetailParams, opts ...ClientOption) (*CityBusAPIS2STravelTimeDetailOK, *CityBusAPIS2STravelTimeDetailStatus299, error)
 
-	CityBusAPISchedule(params *CityBusAPIScheduleParams) (*CityBusAPIScheduleOK, *CityBusAPIScheduleStatus299, error)
+	CityBusAPISchedule(params *CityBusAPIScheduleParams, opts ...ClientOption) (*CityBusAPIScheduleOK, *CityBusAPIScheduleStatus299, error)
 
-	CityBusAPISchedule1(params *CityBusAPISchedule1Params) (*CityBusAPISchedule1OK, *CityBusAPISchedule1Status299, error)
+	CityBusAPISchedule1(params *CityBusAPISchedule1Params, opts ...ClientOption) (*CityBusAPISchedule1OK, *CityBusAPISchedule1Status299, error)
 
-	CityBusAPIShape(params *CityBusAPIShapeParams) (*CityBusAPIShapeOK, *CityBusAPIShapeStatus299, error)
+	CityBusAPIShape(params *CityBusAPIShapeParams, opts ...ClientOption) (*CityBusAPIShapeOK, *CityBusAPIShapeStatus299, error)
 
-	CityBusAPIShape1(params *CityBusAPIShape1Params) (*CityBusAPIShape1OK, *CityBusAPIShape1Status299, error)
+	CityBusAPIShape1(params *CityBusAPIShape1Params, opts ...ClientOption) (*CityBusAPIShape1OK, *CityBusAPIShape1Status299, error)
 
-	CityBusAPIStation(params *CityBusAPIStationParams) (*CityBusAPIStationOK, *CityBusAPIStationStatus299, error)
+	CityBusAPIStation(params *CityBusAPIStationParams, opts ...ClientOption) (*CityBusAPIStationOK, *CityBusAPIStationStatus299, error)
 
-	CityBusAPIStationGroup(params *CityBusAPIStationGroupParams) (*CityBusAPIStationGroupOK, *CityBusAPIStationGroupStatus299, error)
+	CityBusAPIStationGroup(params *CityBusAPIStationGroupParams, opts ...ClientOption) (*CityBusAPIStationGroupOK, *CityBusAPIStationGroupStatus299, error)
 
-	CityBusAPIStop(params *CityBusAPIStopParams) (*CityBusAPIStopOK, *CityBusAPIStopStatus299, error)
+	CityBusAPIStop(params *CityBusAPIStopParams, opts ...ClientOption) (*CityBusAPIStopOK, *CityBusAPIStopStatus299, error)
 
-	CityBusAPIStopOfRoute(params *CityBusAPIStopOfRouteParams) (*CityBusAPIStopOfRouteOK, *CityBusAPIStopOfRouteStatus299, error)
+	CityBusAPIStopOfRoute(params *CityBusAPIStopOfRouteParams, opts ...ClientOption) (*CityBusAPIStopOfRouteOK, *CityBusAPIStopOfRouteStatus299, error)
 
-	CityBusAPIStopOfRoute1(params *CityBusAPIStopOfRoute1Params) (*CityBusAPIStopOfRoute1OK, *CityBusAPIStopOfRoute1Status299, error)
+	CityBusAPIStopOfRoute1(params *CityBusAPIStopOfRoute1Params, opts ...ClientOption) (*CityBusAPIStopOfRoute1OK, *CityBusAPIStopOfRoute1Status299, error)
 
-	CityBusAPIVehicle(params *CityBusAPIVehicleParams) (*CityBusAPIVehicleOK, *CityBusAPIVehicleStatus299, error)
+	CityBusAPIVehicle(params *CityBusAPIVehicleParams, opts ...ClientOption) (*CityBusAPIVehicleOK, *CityBusAPIVehicleStatus299, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
@@ -103,13 +106,12 @@ type ClientService interface {
 
   版本詳細資訊
 */
-func (a *Client) CityBusAPIDataVersion(params *CityBusAPIDataVersionParams) (*CityBusAPIDataVersionOK, *CityBusAPIDataVersionStatus299, error) {
+func (a *Client) CityBusAPIDataVersion(params *CityBusAPIDataVersionParams, opts ...ClientOption) (*CityBusAPIDataVersionOK, *CityBusAPIDataVersionStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewCityBusAPIDataVersionParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "CityBusApi_DataVersion",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/DataVersion/City/{City}",
@@ -120,7 +122,12 @@ func (a *Client) CityBusAPIDataVersion(params *CityBusAPIDataVersionParams) (*Ci
 		Reader:             &CityBusAPIDataVersionReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -140,13 +147,12 @@ func (a *Client) CityBusAPIDataVersion(params *CityBusAPIDataVersionParams) (*Ci
 
   市區公車之顯示用路線站序資料，僅台北市與新北市可查詢
 */
-func (a *Client) CityBusAPIDisplayStopOfRoute(params *CityBusAPIDisplayStopOfRouteParams) (*CityBusAPIDisplayStopOfRouteOK, *CityBusAPIDisplayStopOfRouteStatus299, error) {
+func (a *Client) CityBusAPIDisplayStopOfRoute(params *CityBusAPIDisplayStopOfRouteParams, opts ...ClientOption) (*CityBusAPIDisplayStopOfRouteOK, *CityBusAPIDisplayStopOfRouteStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewCityBusAPIDisplayStopOfRouteParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "CityBusApi_DisplayStopOfRoute",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/DisplayStopOfRoute/City/{City}",
@@ -157,7 +163,12 @@ func (a *Client) CityBusAPIDisplayStopOfRoute(params *CityBusAPIDisplayStopOfRou
 		Reader:             &CityBusAPIDisplayStopOfRouteReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -177,13 +188,12 @@ func (a *Client) CityBusAPIDisplayStopOfRoute(params *CityBusAPIDisplayStopOfRou
 
   市區公車之顯示用路線站序資料，僅台北市與新北市可查詢
 */
-func (a *Client) CityBusAPIDisplayStopOfRoute1(params *CityBusAPIDisplayStopOfRoute1Params) (*CityBusAPIDisplayStopOfRoute1OK, *CityBusAPIDisplayStopOfRoute1Status299, error) {
+func (a *Client) CityBusAPIDisplayStopOfRoute1(params *CityBusAPIDisplayStopOfRoute1Params, opts ...ClientOption) (*CityBusAPIDisplayStopOfRoute1OK, *CityBusAPIDisplayStopOfRoute1Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewCityBusAPIDisplayStopOfRoute1Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "CityBusApi_DisplayStopOfRoute_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/DisplayStopOfRoute/City/{City}/{RouteName}",
@@ -194,7 +204,12 @@ func (a *Client) CityBusAPIDisplayStopOfRoute1(params *CityBusAPIDisplayStopOfRo
 		Reader:             &CityBusAPIDisplayStopOfRoute1Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -216,13 +231,12 @@ func (a *Client) CityBusAPIDisplayStopOfRoute1(params *CityBusAPIDisplayStopOfRo
 - [部分縣市] 當 StopStatus = 1(尚未發車) 且 EstimateTime > 0 (有值) 的情形, 屬正常情形, 雖目前尚未發車, 但提供EstimateTime值為預計多久後開始發車之時間。
 - [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))
 */
-func (a *Client) CityBusAPIEstimatedTimeOfArrival(params *CityBusAPIEstimatedTimeOfArrivalParams) (*CityBusAPIEstimatedTimeOfArrivalOK, *CityBusAPIEstimatedTimeOfArrivalStatus299, error) {
+func (a *Client) CityBusAPIEstimatedTimeOfArrival(params *CityBusAPIEstimatedTimeOfArrivalParams, opts ...ClientOption) (*CityBusAPIEstimatedTimeOfArrivalOK, *CityBusAPIEstimatedTimeOfArrivalStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewCityBusAPIEstimatedTimeOfArrivalParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "CityBusApi_EstimatedTimeOfArrival",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/EstimatedTimeOfArrival/City/{City}",
@@ -233,7 +247,12 @@ func (a *Client) CityBusAPIEstimatedTimeOfArrival(params *CityBusAPIEstimatedTim
 		Reader:             &CityBusAPIEstimatedTimeOfArrivalReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -255,13 +274,12 @@ func (a *Client) CityBusAPIEstimatedTimeOfArrival(params *CityBusAPIEstimatedTim
 - [部分縣市] 當 StopStatus = 1(尚未發車) 且 EstimateTime > 0 (有值) 的情形, 屬正常情形, 雖目前尚未發車, 但提供EstimateTime值為預計多久後開始發車之時間。
 - [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))
 */
-func (a *Client) CityBusAPIEstimatedTimeOfArrival1(params *CityBusAPIEstimatedTimeOfArrival1Params) (*CityBusAPIEstimatedTimeOfArrival1OK, *CityBusAPIEstimatedTimeOfArrival1Status299, error) {
+func (a *Client) CityBusAPIEstimatedTimeOfArrival1(params *CityBusAPIEstimatedTimeOfArrival1Params, opts ...ClientOption) (*CityBusAPIEstimatedTimeOfArrival1OK, *CityBusAPIEstimatedTimeOfArrival1Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewCityBusAPIEstimatedTimeOfArrival1Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "CityBusApi_EstimatedTimeOfArrival_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/EstimatedTimeOfArrival/City/{City}/{RouteName}",
@@ -272,7 +290,12 @@ func (a *Client) CityBusAPIEstimatedTimeOfArrival1(params *CityBusAPIEstimatedTi
 		Reader:             &CityBusAPIEstimatedTimeOfArrival1Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -295,13 +318,12 @@ func (a *Client) CityBusAPIEstimatedTimeOfArrival1(params *CityBusAPIEstimatedTi
 - [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))
 - N1僅於該路線上有任一車輛離站時，來源端才會重新計算並發佈，因此使用者需自行處理時間遞減機制，或以EstimateTime-(收到資料時間-SrcTrasTime)(秒)作為實際預估抵達時間。
 */
-func (a *Client) CityBusAPIEstimatedTimeOfArrivalUDP(params *CityBusAPIEstimatedTimeOfArrivalUDPParams) (*CityBusAPIEstimatedTimeOfArrivalUDPOK, *CityBusAPIEstimatedTimeOfArrivalUDPStatus299, error) {
+func (a *Client) CityBusAPIEstimatedTimeOfArrivalUDP(params *CityBusAPIEstimatedTimeOfArrivalUDPParams, opts ...ClientOption) (*CityBusAPIEstimatedTimeOfArrivalUDPOK, *CityBusAPIEstimatedTimeOfArrivalUDPStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewCityBusAPIEstimatedTimeOfArrivalUDPParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "CityBusApi_EstimatedTimeOfArrival_UDP",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/EstimatedTimeOfArrival/Streaming/City/{City}",
@@ -312,7 +334,12 @@ func (a *Client) CityBusAPIEstimatedTimeOfArrivalUDP(params *CityBusAPIEstimated
 		Reader:             &CityBusAPIEstimatedTimeOfArrivalUDPReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -335,13 +362,12 @@ func (a *Client) CityBusAPIEstimatedTimeOfArrivalUDP(params *CityBusAPIEstimated
 - [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))
 - N1僅於該路線上有任一車輛離站時，來源端才會重新計算並發佈，因此使用者需自行處理時間遞減機制，或以EstimateTime-(收到資料時間-SrcTrasTime)(秒)作為實際預估抵達時間。
 */
-func (a *Client) CityBusAPIEstimatedTimeOfArrivalUDP1(params *CityBusAPIEstimatedTimeOfArrivalUDP1Params) (*CityBusAPIEstimatedTimeOfArrivalUdp1OK, *CityBusAPIEstimatedTimeOfArrivalUdp1Status299, error) {
+func (a *Client) CityBusAPIEstimatedTimeOfArrivalUDP1(params *CityBusAPIEstimatedTimeOfArrivalUDP1Params, opts ...ClientOption) (*CityBusAPIEstimatedTimeOfArrivalUdp1OK, *CityBusAPIEstimatedTimeOfArrivalUdp1Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewCityBusAPIEstimatedTimeOfArrivalUDP1Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "CityBusApi_EstimatedTimeOfArrival_UDP_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/EstimatedTimeOfArrival/Streaming/City/{City}/{RouteName}",
@@ -352,7 +378,12 @@ func (a *Client) CityBusAPIEstimatedTimeOfArrivalUDP1(params *CityBusAPIEstimate
 		Reader:             &CityBusAPIEstimatedTimeOfArrivalUDP1Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -372,13 +403,12 @@ func (a *Client) CityBusAPIEstimatedTimeOfArrivalUDP1(params *CityBusAPIEstimate
 
   市區公車之路線首末班車資料
 */
-func (a *Client) CityBusAPIFirstLastTripInfo(params *CityBusAPIFirstLastTripInfoParams) (*CityBusAPIFirstLastTripInfoOK, *CityBusAPIFirstLastTripInfoStatus299, error) {
+func (a *Client) CityBusAPIFirstLastTripInfo(params *CityBusAPIFirstLastTripInfoParams, opts ...ClientOption) (*CityBusAPIFirstLastTripInfoOK, *CityBusAPIFirstLastTripInfoStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewCityBusAPIFirstLastTripInfoParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "CityBusApi_FirstLastTripInfo",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/FirstLastTripInfo/City/{City}",
@@ -389,7 +419,12 @@ func (a *Client) CityBusAPIFirstLastTripInfo(params *CityBusAPIFirstLastTripInfo
 		Reader:             &CityBusAPIFirstLastTripInfoReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -409,13 +444,12 @@ func (a *Client) CityBusAPIFirstLastTripInfo(params *CityBusAPIFirstLastTripInfo
 
   市區公車之路線首末班車資料
 */
-func (a *Client) CityBusAPIFirstLastTripInfo1(params *CityBusAPIFirstLastTripInfo1Params) (*CityBusAPIFirstLastTripInfo1OK, *CityBusAPIFirstLastTripInfo1Status299, error) {
+func (a *Client) CityBusAPIFirstLastTripInfo1(params *CityBusAPIFirstLastTripInfo1Params, opts ...ClientOption) (*CityBusAPIFirstLastTripInfo1OK, *CityBusAPIFirstLastTripInfo1Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewCityBusAPIFirstLastTripInfo1Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "CityBusApi_FirstLastTripInfo_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/FirstLastTripInfo/City/{City}/{RouteName}",
@@ -426,7 +460,12 @@ func (a *Client) CityBusAPIFirstLastTripInfo1(params *CityBusAPIFirstLastTripInf
 		Reader:             &CityBusAPIFirstLastTripInfo1Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -446,13 +485,12 @@ func (a *Client) CityBusAPIFirstLastTripInfo1(params *CityBusAPIFirstLastTripInf
 
   市區公車最新消息資料
 */
-func (a *Client) CityBusAPINews(params *CityBusAPINewsParams) (*CityBusAPINewsOK, *CityBusAPINewsStatus299, error) {
+func (a *Client) CityBusAPINews(params *CityBusAPINewsParams, opts ...ClientOption) (*CityBusAPINewsOK, *CityBusAPINewsStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewCityBusAPINewsParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "CityBusApi_News",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/News/City/{City}",
@@ -463,7 +501,12 @@ func (a *Client) CityBusAPINews(params *CityBusAPINewsParams) (*CityBusAPINewsOK
 		Reader:             &CityBusAPINewsReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -483,13 +526,12 @@ func (a *Client) CityBusAPINews(params *CityBusAPINewsParams) (*CityBusAPINewsOK
 
   市區公車之營運業者資料
 */
-func (a *Client) CityBusAPIOperator(params *CityBusAPIOperatorParams) (*CityBusAPIOperatorOK, *CityBusAPIOperatorStatus299, error) {
+func (a *Client) CityBusAPIOperator(params *CityBusAPIOperatorParams, opts ...ClientOption) (*CityBusAPIOperatorOK, *CityBusAPIOperatorStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewCityBusAPIOperatorParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "CityBusApi_Operator",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/Operator/City/{City}",
@@ -500,7 +542,12 @@ func (a *Client) CityBusAPIOperator(params *CityBusAPIOperatorParams) (*CityBusA
 		Reader:             &CityBusAPIOperatorReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -521,13 +568,12 @@ func (a *Client) CityBusAPIOperator(params *CityBusAPIOperatorParams) (*CityBusA
   ### 市區公車之定時資料(A1) ###
 - [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))
 */
-func (a *Client) CityBusAPIRealTimeByFrequency(params *CityBusAPIRealTimeByFrequencyParams) (*CityBusAPIRealTimeByFrequencyOK, *CityBusAPIRealTimeByFrequencyStatus299, error) {
+func (a *Client) CityBusAPIRealTimeByFrequency(params *CityBusAPIRealTimeByFrequencyParams, opts ...ClientOption) (*CityBusAPIRealTimeByFrequencyOK, *CityBusAPIRealTimeByFrequencyStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewCityBusAPIRealTimeByFrequencyParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "CityBusApi_RealTimeByFrequency",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/RealTimeByFrequency/City/{City}",
@@ -538,7 +584,12 @@ func (a *Client) CityBusAPIRealTimeByFrequency(params *CityBusAPIRealTimeByFrequ
 		Reader:             &CityBusAPIRealTimeByFrequencyReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -559,13 +610,12 @@ func (a *Client) CityBusAPIRealTimeByFrequency(params *CityBusAPIRealTimeByFrequ
   ### 市區公車之定時資料(A1) ###
 - [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))
 */
-func (a *Client) CityBusAPIRealTimeByFrequency1(params *CityBusAPIRealTimeByFrequency1Params) (*CityBusAPIRealTimeByFrequency1OK, *CityBusAPIRealTimeByFrequency1Status299, error) {
+func (a *Client) CityBusAPIRealTimeByFrequency1(params *CityBusAPIRealTimeByFrequency1Params, opts ...ClientOption) (*CityBusAPIRealTimeByFrequency1OK, *CityBusAPIRealTimeByFrequency1Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewCityBusAPIRealTimeByFrequency1Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "CityBusApi_RealTimeByFrequency_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/RealTimeByFrequency/City/{City}/{RouteName}",
@@ -576,7 +626,12 @@ func (a *Client) CityBusAPIRealTimeByFrequency1(params *CityBusAPIRealTimeByFreq
 		Reader:             &CityBusAPIRealTimeByFrequency1Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -597,13 +652,12 @@ func (a *Client) CityBusAPIRealTimeByFrequency1(params *CityBusAPIRealTimeByFreq
   ### 市區公車之定時資料(A1) ###
 - [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))
 */
-func (a *Client) CityBusAPIRealTimeByFrequencyUDP(params *CityBusAPIRealTimeByFrequencyUDPParams) (*CityBusAPIRealTimeByFrequencyUDPOK, *CityBusAPIRealTimeByFrequencyUDPStatus299, error) {
+func (a *Client) CityBusAPIRealTimeByFrequencyUDP(params *CityBusAPIRealTimeByFrequencyUDPParams, opts ...ClientOption) (*CityBusAPIRealTimeByFrequencyUDPOK, *CityBusAPIRealTimeByFrequencyUDPStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewCityBusAPIRealTimeByFrequencyUDPParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "CityBusApi_RealTimeByFrequency_UDP",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/RealTimeByFrequency/Streaming/City/{City}",
@@ -614,7 +668,12 @@ func (a *Client) CityBusAPIRealTimeByFrequencyUDP(params *CityBusAPIRealTimeByFr
 		Reader:             &CityBusAPIRealTimeByFrequencyUDPReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -635,13 +694,12 @@ func (a *Client) CityBusAPIRealTimeByFrequencyUDP(params *CityBusAPIRealTimeByFr
   ### 市區公車之定時資料(A1) ###
 - [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))
 */
-func (a *Client) CityBusAPIRealTimeByFrequencyUDP1(params *CityBusAPIRealTimeByFrequencyUDP1Params) (*CityBusAPIRealTimeByFrequencyUdp1OK, *CityBusAPIRealTimeByFrequencyUdp1Status299, error) {
+func (a *Client) CityBusAPIRealTimeByFrequencyUDP1(params *CityBusAPIRealTimeByFrequencyUDP1Params, opts ...ClientOption) (*CityBusAPIRealTimeByFrequencyUdp1OK, *CityBusAPIRealTimeByFrequencyUdp1Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewCityBusAPIRealTimeByFrequencyUDP1Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "CityBusApi_RealTimeByFrequency_UDP_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/RealTimeByFrequency/Streaming/City/{City}/{RouteName}",
@@ -652,7 +710,12 @@ func (a *Client) CityBusAPIRealTimeByFrequencyUDP1(params *CityBusAPIRealTimeByF
 		Reader:             &CityBusAPIRealTimeByFrequencyUDP1Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -673,13 +736,12 @@ func (a *Client) CityBusAPIRealTimeByFrequencyUDP1(params *CityBusAPIRealTimeByF
   ### 市區公車之定點資料(A2) ###
 - [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))
 */
-func (a *Client) CityBusAPIRealTimeNearStop(params *CityBusAPIRealTimeNearStopParams) (*CityBusAPIRealTimeNearStopOK, *CityBusAPIRealTimeNearStopStatus299, error) {
+func (a *Client) CityBusAPIRealTimeNearStop(params *CityBusAPIRealTimeNearStopParams, opts ...ClientOption) (*CityBusAPIRealTimeNearStopOK, *CityBusAPIRealTimeNearStopStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewCityBusAPIRealTimeNearStopParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "CityBusApi_RealTimeNearStop",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/RealTimeNearStop/City/{City}",
@@ -690,7 +752,12 @@ func (a *Client) CityBusAPIRealTimeNearStop(params *CityBusAPIRealTimeNearStopPa
 		Reader:             &CityBusAPIRealTimeNearStopReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -711,13 +778,12 @@ func (a *Client) CityBusAPIRealTimeNearStop(params *CityBusAPIRealTimeNearStopPa
   ### 市區公車之定點資料(A2) ###
 - [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))
 */
-func (a *Client) CityBusAPIRealTimeNearStop1(params *CityBusAPIRealTimeNearStop1Params) (*CityBusAPIRealTimeNearStop1OK, *CityBusAPIRealTimeNearStop1Status299, error) {
+func (a *Client) CityBusAPIRealTimeNearStop1(params *CityBusAPIRealTimeNearStop1Params, opts ...ClientOption) (*CityBusAPIRealTimeNearStop1OK, *CityBusAPIRealTimeNearStop1Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewCityBusAPIRealTimeNearStop1Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "CityBusApi_RealTimeNearStop_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/RealTimeNearStop/City/{City}/{RouteName}",
@@ -728,7 +794,12 @@ func (a *Client) CityBusAPIRealTimeNearStop1(params *CityBusAPIRealTimeNearStop1
 		Reader:             &CityBusAPIRealTimeNearStop1Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -749,13 +820,12 @@ func (a *Client) CityBusAPIRealTimeNearStop1(params *CityBusAPIRealTimeNearStop1
   ### 市區公車之定點資料(A2) ###
 - [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))
 */
-func (a *Client) CityBusAPIRealTimeNearStopUDP(params *CityBusAPIRealTimeNearStopUDPParams) (*CityBusAPIRealTimeNearStopUDPOK, *CityBusAPIRealTimeNearStopUDPStatus299, error) {
+func (a *Client) CityBusAPIRealTimeNearStopUDP(params *CityBusAPIRealTimeNearStopUDPParams, opts ...ClientOption) (*CityBusAPIRealTimeNearStopUDPOK, *CityBusAPIRealTimeNearStopUDPStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewCityBusAPIRealTimeNearStopUDPParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "CityBusApi_RealTimeNearStop_UDP",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/RealTimeNearStop/Streaming/City/{City}",
@@ -766,7 +836,12 @@ func (a *Client) CityBusAPIRealTimeNearStopUDP(params *CityBusAPIRealTimeNearSto
 		Reader:             &CityBusAPIRealTimeNearStopUDPReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -787,13 +862,12 @@ func (a *Client) CityBusAPIRealTimeNearStopUDP(params *CityBusAPIRealTimeNearSto
   ### 市區公車之定點資料(A2) ###
 - [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))
 */
-func (a *Client) CityBusAPIRealTimeNearStopUDP1(params *CityBusAPIRealTimeNearStopUDP1Params) (*CityBusAPIRealTimeNearStopUdp1OK, *CityBusAPIRealTimeNearStopUdp1Status299, error) {
+func (a *Client) CityBusAPIRealTimeNearStopUDP1(params *CityBusAPIRealTimeNearStopUDP1Params, opts ...ClientOption) (*CityBusAPIRealTimeNearStopUdp1OK, *CityBusAPIRealTimeNearStopUdp1Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewCityBusAPIRealTimeNearStopUDP1Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "CityBusApi_RealTimeNearStop_UDP_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/RealTimeNearStop/Streaming/City/{City}/{RouteName}",
@@ -804,7 +878,12 @@ func (a *Client) CityBusAPIRealTimeNearStopUDP1(params *CityBusAPIRealTimeNearSt
 		Reader:             &CityBusAPIRealTimeNearStopUDP1Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -824,13 +903,12 @@ func (a *Client) CityBusAPIRealTimeNearStopUDP1(params *CityBusAPIRealTimeNearSt
 
   市區公車之路線資料
 */
-func (a *Client) CityBusAPIRoute(params *CityBusAPIRouteParams) (*CityBusAPIRouteOK, *CityBusAPIRouteStatus299, error) {
+func (a *Client) CityBusAPIRoute(params *CityBusAPIRouteParams, opts ...ClientOption) (*CityBusAPIRouteOK, *CityBusAPIRouteStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewCityBusAPIRouteParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "CityBusApi_Route",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/Route/City/{City}",
@@ -841,7 +919,12 @@ func (a *Client) CityBusAPIRoute(params *CityBusAPIRouteParams) (*CityBusAPIRout
 		Reader:             &CityBusAPIRouteReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -861,13 +944,12 @@ func (a *Client) CityBusAPIRoute(params *CityBusAPIRouteParams) (*CityBusAPIRout
 
   市區公車路線票價資料
 */
-func (a *Client) CityBusAPIRouteFare(params *CityBusAPIRouteFareParams) (*CityBusAPIRouteFareOK, *CityBusAPIRouteFareStatus299, error) {
+func (a *Client) CityBusAPIRouteFare(params *CityBusAPIRouteFareParams, opts ...ClientOption) (*CityBusAPIRouteFareOK, *CityBusAPIRouteFareStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewCityBusAPIRouteFareParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "CityBusApi_RouteFare",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/RouteFare/City/{City}",
@@ -878,7 +960,12 @@ func (a *Client) CityBusAPIRouteFare(params *CityBusAPIRouteFareParams) (*CityBu
 		Reader:             &CityBusAPIRouteFareReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -898,13 +985,12 @@ func (a *Client) CityBusAPIRouteFare(params *CityBusAPIRouteFareParams) (*CityBu
 
   市區公車路線票價資料
 */
-func (a *Client) CityBusAPIRouteFare1(params *CityBusAPIRouteFare1Params) (*CityBusAPIRouteFare1OK, *CityBusAPIRouteFare1Status299, error) {
+func (a *Client) CityBusAPIRouteFare1(params *CityBusAPIRouteFare1Params, opts ...ClientOption) (*CityBusAPIRouteFare1OK, *CityBusAPIRouteFare1Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewCityBusAPIRouteFare1Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "CityBusApi_RouteFare_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/RouteFare/City/{City}/{RouteName}",
@@ -915,7 +1001,12 @@ func (a *Client) CityBusAPIRouteFare1(params *CityBusAPIRouteFare1Params) (*City
 		Reader:             &CityBusAPIRouteFare1Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -935,13 +1026,12 @@ func (a *Client) CityBusAPIRouteFare1(params *CityBusAPIRouteFare1Params) (*City
 
   市區公車之路線資料
 */
-func (a *Client) CityBusAPIRoute1(params *CityBusAPIRoute1Params) (*CityBusAPIRoute1OK, *CityBusAPIRoute1Status299, error) {
+func (a *Client) CityBusAPIRoute1(params *CityBusAPIRoute1Params, opts ...ClientOption) (*CityBusAPIRoute1OK, *CityBusAPIRoute1Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewCityBusAPIRoute1Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "CityBusApi_Route_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/Route/City/{City}/{RouteName}",
@@ -952,7 +1042,12 @@ func (a *Client) CityBusAPIRoute1(params *CityBusAPIRoute1Params) (*CityBusAPIRo
 		Reader:             &CityBusAPIRoute1Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -972,13 +1067,12 @@ func (a *Client) CityBusAPIRoute1(params *CityBusAPIRoute1Params) (*CityBusAPIRo
 
   指定[縣市],[路線代碼]的市區公車站間旅行時間資料
 */
-func (a *Client) CityBusAPIS2STravelTimeDetail(params *CityBusAPIS2STravelTimeDetailParams) (*CityBusAPIS2STravelTimeDetailOK, *CityBusAPIS2STravelTimeDetailStatus299, error) {
+func (a *Client) CityBusAPIS2STravelTimeDetail(params *CityBusAPIS2STravelTimeDetailParams, opts ...ClientOption) (*CityBusAPIS2STravelTimeDetailOK, *CityBusAPIS2STravelTimeDetailStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewCityBusAPIS2STravelTimeDetailParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "CityBusApi_S2STravelTimeDetail",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/S2STravelTime/City/{City}/{RouteID}",
@@ -989,7 +1083,12 @@ func (a *Client) CityBusAPIS2STravelTimeDetail(params *CityBusAPIS2STravelTimeDe
 		Reader:             &CityBusAPIS2STravelTimeDetailReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -1009,13 +1108,12 @@ func (a *Client) CityBusAPIS2STravelTimeDetail(params *CityBusAPIS2STravelTimeDe
 
   市區公車之班表及班距資料。一般市區公車班次較多時會採用【班距】式時刻表；班次較少時會採用【班表】式時刻表
 */
-func (a *Client) CityBusAPISchedule(params *CityBusAPIScheduleParams) (*CityBusAPIScheduleOK, *CityBusAPIScheduleStatus299, error) {
+func (a *Client) CityBusAPISchedule(params *CityBusAPIScheduleParams, opts ...ClientOption) (*CityBusAPIScheduleOK, *CityBusAPIScheduleStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewCityBusAPIScheduleParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "CityBusApi_Schedule",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/Schedule/City/{City}",
@@ -1026,7 +1124,12 @@ func (a *Client) CityBusAPISchedule(params *CityBusAPIScheduleParams) (*CityBusA
 		Reader:             &CityBusAPIScheduleReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -1046,13 +1149,12 @@ func (a *Client) CityBusAPISchedule(params *CityBusAPIScheduleParams) (*CityBusA
 
   市區公車之預定班表及班距資料。一般市區公車班次較多時會採用【班距】式時刻表；班次較少時會採用【班表】式時刻表
 */
-func (a *Client) CityBusAPISchedule1(params *CityBusAPISchedule1Params) (*CityBusAPISchedule1OK, *CityBusAPISchedule1Status299, error) {
+func (a *Client) CityBusAPISchedule1(params *CityBusAPISchedule1Params, opts ...ClientOption) (*CityBusAPISchedule1OK, *CityBusAPISchedule1Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewCityBusAPISchedule1Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "CityBusApi_Schedule_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/Schedule/City/{City}/{RouteName}",
@@ -1063,7 +1165,12 @@ func (a *Client) CityBusAPISchedule1(params *CityBusAPISchedule1Params) (*CityBu
 		Reader:             &CityBusAPISchedule1Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -1083,13 +1190,12 @@ func (a *Client) CityBusAPISchedule1(params *CityBusAPISchedule1Params) (*CityBu
 
   市區公車之線型資料
 */
-func (a *Client) CityBusAPIShape(params *CityBusAPIShapeParams) (*CityBusAPIShapeOK, *CityBusAPIShapeStatus299, error) {
+func (a *Client) CityBusAPIShape(params *CityBusAPIShapeParams, opts ...ClientOption) (*CityBusAPIShapeOK, *CityBusAPIShapeStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewCityBusAPIShapeParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "CityBusApi_Shape",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/Shape/City/{City}",
@@ -1100,7 +1206,12 @@ func (a *Client) CityBusAPIShape(params *CityBusAPIShapeParams) (*CityBusAPIShap
 		Reader:             &CityBusAPIShapeReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -1120,13 +1231,12 @@ func (a *Client) CityBusAPIShape(params *CityBusAPIShapeParams) (*CityBusAPIShap
 
   市區公車之線型資料
 */
-func (a *Client) CityBusAPIShape1(params *CityBusAPIShape1Params) (*CityBusAPIShape1OK, *CityBusAPIShape1Status299, error) {
+func (a *Client) CityBusAPIShape1(params *CityBusAPIShape1Params, opts ...ClientOption) (*CityBusAPIShape1OK, *CityBusAPIShape1Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewCityBusAPIShape1Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "CityBusApi_Shape_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/Shape/City/{City}/{RouteName}",
@@ -1137,7 +1247,12 @@ func (a *Client) CityBusAPIShape1(params *CityBusAPIShape1Params) (*CityBusAPISh
 		Reader:             &CityBusAPIShape1Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -1157,13 +1272,12 @@ func (a *Client) CityBusAPIShape1(params *CityBusAPIShape1Params) (*CityBusAPISh
 
   市區公車之各站牌所屬的站位資料
 */
-func (a *Client) CityBusAPIStation(params *CityBusAPIStationParams) (*CityBusAPIStationOK, *CityBusAPIStationStatus299, error) {
+func (a *Client) CityBusAPIStation(params *CityBusAPIStationParams, opts ...ClientOption) (*CityBusAPIStationOK, *CityBusAPIStationStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewCityBusAPIStationParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "CityBusApi_Station",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/Station/City/{City}",
@@ -1174,7 +1288,12 @@ func (a *Client) CityBusAPIStation(params *CityBusAPIStationParams) (*CityBusAPI
 		Reader:             &CityBusAPIStationReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -1194,13 +1313,12 @@ func (a *Client) CityBusAPIStation(params *CityBusAPIStationParams) (*CityBusAPI
 
   市區公車之各站牌所屬的組站位資料
 */
-func (a *Client) CityBusAPIStationGroup(params *CityBusAPIStationGroupParams) (*CityBusAPIStationGroupOK, *CityBusAPIStationGroupStatus299, error) {
+func (a *Client) CityBusAPIStationGroup(params *CityBusAPIStationGroupParams, opts ...ClientOption) (*CityBusAPIStationGroupOK, *CityBusAPIStationGroupStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewCityBusAPIStationGroupParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "CityBusApi_StationGroup",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/StationGroup/City/{City}",
@@ -1211,7 +1329,12 @@ func (a *Client) CityBusAPIStationGroup(params *CityBusAPIStationGroupParams) (*
 		Reader:             &CityBusAPIStationGroupReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -1231,13 +1354,12 @@ func (a *Client) CityBusAPIStationGroup(params *CityBusAPIStationGroupParams) (*
 
   市區公車之站牌資料
 */
-func (a *Client) CityBusAPIStop(params *CityBusAPIStopParams) (*CityBusAPIStopOK, *CityBusAPIStopStatus299, error) {
+func (a *Client) CityBusAPIStop(params *CityBusAPIStopParams, opts ...ClientOption) (*CityBusAPIStopOK, *CityBusAPIStopStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewCityBusAPIStopParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "CityBusApi_Stop",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/Stop/City/{City}",
@@ -1248,7 +1370,12 @@ func (a *Client) CityBusAPIStop(params *CityBusAPIStopParams) (*CityBusAPIStopOK
 		Reader:             &CityBusAPIStopReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -1268,13 +1395,12 @@ func (a *Client) CityBusAPIStop(params *CityBusAPIStopParams) (*CityBusAPIStopOK
 
   市區公車之路線站序資料
 */
-func (a *Client) CityBusAPIStopOfRoute(params *CityBusAPIStopOfRouteParams) (*CityBusAPIStopOfRouteOK, *CityBusAPIStopOfRouteStatus299, error) {
+func (a *Client) CityBusAPIStopOfRoute(params *CityBusAPIStopOfRouteParams, opts ...ClientOption) (*CityBusAPIStopOfRouteOK, *CityBusAPIStopOfRouteStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewCityBusAPIStopOfRouteParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "CityBusApi_StopOfRoute",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/StopOfRoute/City/{City}",
@@ -1285,7 +1411,12 @@ func (a *Client) CityBusAPIStopOfRoute(params *CityBusAPIStopOfRouteParams) (*Ci
 		Reader:             &CityBusAPIStopOfRouteReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -1305,13 +1436,12 @@ func (a *Client) CityBusAPIStopOfRoute(params *CityBusAPIStopOfRouteParams) (*Ci
 
   市區公車之路線站序資料
 */
-func (a *Client) CityBusAPIStopOfRoute1(params *CityBusAPIStopOfRoute1Params) (*CityBusAPIStopOfRoute1OK, *CityBusAPIStopOfRoute1Status299, error) {
+func (a *Client) CityBusAPIStopOfRoute1(params *CityBusAPIStopOfRoute1Params, opts ...ClientOption) (*CityBusAPIStopOfRoute1OK, *CityBusAPIStopOfRoute1Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewCityBusAPIStopOfRoute1Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "CityBusApi_StopOfRoute_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/StopOfRoute/City/{City}/{RouteName}",
@@ -1322,7 +1452,12 @@ func (a *Client) CityBusAPIStopOfRoute1(params *CityBusAPIStopOfRoute1Params) (*
 		Reader:             &CityBusAPIStopOfRoute1Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -1342,13 +1477,12 @@ func (a *Client) CityBusAPIStopOfRoute1(params *CityBusAPIStopOfRoute1Params) (*
 
   市區公車之車輛資料
 */
-func (a *Client) CityBusAPIVehicle(params *CityBusAPIVehicleParams) (*CityBusAPIVehicleOK, *CityBusAPIVehicleStatus299, error) {
+func (a *Client) CityBusAPIVehicle(params *CityBusAPIVehicleParams, opts ...ClientOption) (*CityBusAPIVehicleOK, *CityBusAPIVehicleStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewCityBusAPIVehicleParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "CityBusApi_Vehicle",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/Vehicle/City/{City}",
@@ -1359,7 +1493,12 @@ func (a *Client) CityBusAPIVehicle(params *CityBusAPIVehicleParams) (*CityBusAPI
 		Reader:             &CityBusAPIVehicleReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, nil, err
 	}

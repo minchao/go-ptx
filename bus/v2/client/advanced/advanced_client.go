@@ -25,19 +25,22 @@ type Client struct {
 	formats   strfmt.Registry
 }
 
+// ClientOption is the option for Client methods
+type ClientOption func(*runtime.ClientOperation)
+
 // ClientService is the interface for Client methods
 type ClientService interface {
-	BusAPIEstimatedTimeOfArrivalNearBy(params *BusAPIEstimatedTimeOfArrivalNearByParams) (*BusAPIEstimatedTimeOfArrivalNearByOK, *BusAPIEstimatedTimeOfArrivalNearByStatus299, error)
+	BusAPIEstimatedTimeOfArrivalNearBy(params *BusAPIEstimatedTimeOfArrivalNearByParams, opts ...ClientOption) (*BusAPIEstimatedTimeOfArrivalNearByOK, *BusAPIEstimatedTimeOfArrivalNearByStatus299, error)
 
-	BusAPIRealTimeByFrequencyNearBy(params *BusAPIRealTimeByFrequencyNearByParams) (*BusAPIRealTimeByFrequencyNearByOK, *BusAPIRealTimeByFrequencyNearByStatus299, error)
+	BusAPIRealTimeByFrequencyNearBy(params *BusAPIRealTimeByFrequencyNearByParams, opts ...ClientOption) (*BusAPIRealTimeByFrequencyNearByOK, *BusAPIRealTimeByFrequencyNearByStatus299, error)
 
-	BusAPIRealTimeNearStopNearBy(params *BusAPIRealTimeNearStopNearByParams) (*BusAPIRealTimeNearStopNearByOK, *BusAPIRealTimeNearStopNearByStatus299, error)
+	BusAPIRealTimeNearStopNearBy(params *BusAPIRealTimeNearStopNearByParams, opts ...ClientOption) (*BusAPIRealTimeNearStopNearByOK, *BusAPIRealTimeNearStopNearByStatus299, error)
 
-	BusAPIRouteNearBy(params *BusAPIRouteNearByParams) (*BusAPIRouteNearByOK, *BusAPIRouteNearByStatus299, error)
+	BusAPIRouteNearBy(params *BusAPIRouteNearByParams, opts ...ClientOption) (*BusAPIRouteNearByOK, *BusAPIRouteNearByStatus299, error)
 
-	BusAPIStationNearBy(params *BusAPIStationNearByParams) (*BusAPIStationNearByOK, *BusAPIStationNearByStatus299, error)
+	BusAPIStationNearBy(params *BusAPIStationNearByParams, opts ...ClientOption) (*BusAPIStationNearByOK, *BusAPIStationNearByStatus299, error)
 
-	BusAPIStopNearBy(params *BusAPIStopNearByParams) (*BusAPIStopNearByOK, *BusAPIStopNearByStatus299, error)
+	BusAPIStopNearBy(params *BusAPIStopNearByParams, opts ...ClientOption) (*BusAPIStopNearByOK, *BusAPIStopNearByStatus299, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
@@ -47,13 +50,12 @@ type ClientService interface {
 
   取得指定[位置,範圍]的全臺公車預估到站資料(N1)
 */
-func (a *Client) BusAPIEstimatedTimeOfArrivalNearBy(params *BusAPIEstimatedTimeOfArrivalNearByParams) (*BusAPIEstimatedTimeOfArrivalNearByOK, *BusAPIEstimatedTimeOfArrivalNearByStatus299, error) {
+func (a *Client) BusAPIEstimatedTimeOfArrivalNearBy(params *BusAPIEstimatedTimeOfArrivalNearByParams, opts ...ClientOption) (*BusAPIEstimatedTimeOfArrivalNearByOK, *BusAPIEstimatedTimeOfArrivalNearByStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewBusAPIEstimatedTimeOfArrivalNearByParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "BusApi_EstimatedTimeOfArrival_NearBy",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/EstimatedTimeOfArrival/NearBy",
@@ -64,7 +66,12 @@ func (a *Client) BusAPIEstimatedTimeOfArrivalNearBy(params *BusAPIEstimatedTimeO
 		Reader:             &BusAPIEstimatedTimeOfArrivalNearByReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -84,13 +91,12 @@ func (a *Client) BusAPIEstimatedTimeOfArrivalNearBy(params *BusAPIEstimatedTimeO
 
   取得指定[位置,範圍]的全臺公車動態定時資料(A1)
 */
-func (a *Client) BusAPIRealTimeByFrequencyNearBy(params *BusAPIRealTimeByFrequencyNearByParams) (*BusAPIRealTimeByFrequencyNearByOK, *BusAPIRealTimeByFrequencyNearByStatus299, error) {
+func (a *Client) BusAPIRealTimeByFrequencyNearBy(params *BusAPIRealTimeByFrequencyNearByParams, opts ...ClientOption) (*BusAPIRealTimeByFrequencyNearByOK, *BusAPIRealTimeByFrequencyNearByStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewBusAPIRealTimeByFrequencyNearByParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "BusApi_RealTimeByFrequency_NearBy",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/RealTimeByFrequency/NearBy",
@@ -101,7 +107,12 @@ func (a *Client) BusAPIRealTimeByFrequencyNearBy(params *BusAPIRealTimeByFrequen
 		Reader:             &BusAPIRealTimeByFrequencyNearByReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -121,13 +132,12 @@ func (a *Client) BusAPIRealTimeByFrequencyNearBy(params *BusAPIRealTimeByFrequen
 
   取得指定[位置,範圍]的全臺公車動態定點資料(A2)
 */
-func (a *Client) BusAPIRealTimeNearStopNearBy(params *BusAPIRealTimeNearStopNearByParams) (*BusAPIRealTimeNearStopNearByOK, *BusAPIRealTimeNearStopNearByStatus299, error) {
+func (a *Client) BusAPIRealTimeNearStopNearBy(params *BusAPIRealTimeNearStopNearByParams, opts ...ClientOption) (*BusAPIRealTimeNearStopNearByOK, *BusAPIRealTimeNearStopNearByStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewBusAPIRealTimeNearStopNearByParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "BusApi_RealTimeNearStop_NearBy",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/RealTimeNearStop/NearBy",
@@ -138,7 +148,12 @@ func (a *Client) BusAPIRealTimeNearStopNearBy(params *BusAPIRealTimeNearStopNear
 		Reader:             &BusAPIRealTimeNearStopNearByReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -158,13 +173,12 @@ func (a *Client) BusAPIRealTimeNearStopNearBy(params *BusAPIRealTimeNearStopNear
 
   取得指定[位置,範圍]的全臺公車路線資料
 */
-func (a *Client) BusAPIRouteNearBy(params *BusAPIRouteNearByParams) (*BusAPIRouteNearByOK, *BusAPIRouteNearByStatus299, error) {
+func (a *Client) BusAPIRouteNearBy(params *BusAPIRouteNearByParams, opts ...ClientOption) (*BusAPIRouteNearByOK, *BusAPIRouteNearByStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewBusAPIRouteNearByParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "BusApi_Route_NearBy",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/Route/NearBy",
@@ -175,7 +189,12 @@ func (a *Client) BusAPIRouteNearBy(params *BusAPIRouteNearByParams) (*BusAPIRout
 		Reader:             &BusAPIRouteNearByReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -195,13 +214,12 @@ func (a *Client) BusAPIRouteNearBy(params *BusAPIRouteNearByParams) (*BusAPIRout
 
   取得指定[位置,範圍]的全臺公車站位資料
 */
-func (a *Client) BusAPIStationNearBy(params *BusAPIStationNearByParams) (*BusAPIStationNearByOK, *BusAPIStationNearByStatus299, error) {
+func (a *Client) BusAPIStationNearBy(params *BusAPIStationNearByParams, opts ...ClientOption) (*BusAPIStationNearByOK, *BusAPIStationNearByStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewBusAPIStationNearByParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "BusApi_Station_NearBy",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/Station/NearBy",
@@ -212,7 +230,12 @@ func (a *Client) BusAPIStationNearBy(params *BusAPIStationNearByParams) (*BusAPI
 		Reader:             &BusAPIStationNearByReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, nil, err
 	}
@@ -232,13 +255,12 @@ func (a *Client) BusAPIStationNearBy(params *BusAPIStationNearByParams) (*BusAPI
 
   取得指定[位置,範圍]的全臺公車站牌資料
 */
-func (a *Client) BusAPIStopNearBy(params *BusAPIStopNearByParams) (*BusAPIStopNearByOK, *BusAPIStopNearByStatus299, error) {
+func (a *Client) BusAPIStopNearBy(params *BusAPIStopNearByParams, opts ...ClientOption) (*BusAPIStopNearByOK, *BusAPIStopNearByStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewBusAPIStopNearByParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "BusApi_Stop_NearBy",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/Stop/NearBy",
@@ -249,7 +271,12 @@ func (a *Client) BusAPIStopNearBy(params *BusAPIStopNearByParams) (*BusAPIStopNe
 		Reader:             &BusAPIStopNearByReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, nil, err
 	}

@@ -54,7 +54,7 @@ type TRAAPIODFareStation1OK struct {
 }
 
 func (o *TRAAPIODFareStation1OK) Error() string {
-	return fmt.Sprintf("[GET /v2/Rail/TRA/ODFare][%d] tRAApiODFareStation1OK  %+v", 200, o.Payload)
+	return fmt.Sprintf("[GET /v2/Rail/TRA/ODFare/{OriginStationID}/to/{DestinationStationID}][%d] tRAApiODFareStation1OK  %+v", 200, o.Payload)
 }
 func (o *TRAAPIODFareStation1OK) GetPayload() []*models.PTXServiceDTORailSpecificationV2TRARailODFare {
 	return o.Payload
@@ -83,7 +83,7 @@ type TRAAPIODFareStation1NotModified struct {
 }
 
 func (o *TRAAPIODFareStation1NotModified) Error() string {
-	return fmt.Sprintf("[GET /v2/Rail/TRA/ODFare][%d] tRAApiODFareStation1NotModified ", 304)
+	return fmt.Sprintf("[GET /v2/Rail/TRA/ODFare/{OriginStationID}/to/{DestinationStationID}][%d] tRAApiODFareStation1NotModified ", 304)
 }
 
 func (o *TRAAPIODFareStation1NotModified) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {

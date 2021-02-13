@@ -98,18 +98,6 @@ type TRAAPIODFareStationParams struct {
 	*/
 	DollarTop *int64
 
-	/* DestinationStationID.
-
-	   迄點車站代碼
-	*/
-	DestinationStationID string
-
-	/* OriginStationID.
-
-	   起點車站代碼
-	*/
-	OriginStationID string
-
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
@@ -240,28 +228,6 @@ func (o *TRAAPIODFareStationParams) SetDollarTop(dollarTop *int64) {
 	o.DollarTop = dollarTop
 }
 
-// WithDestinationStationID adds the destinationStationID to the t r a Api o d fare station params
-func (o *TRAAPIODFareStationParams) WithDestinationStationID(destinationStationID string) *TRAAPIODFareStationParams {
-	o.SetDestinationStationID(destinationStationID)
-	return o
-}
-
-// SetDestinationStationID adds the destinationStationId to the t r a Api o d fare station params
-func (o *TRAAPIODFareStationParams) SetDestinationStationID(destinationStationID string) {
-	o.DestinationStationID = destinationStationID
-}
-
-// WithOriginStationID adds the originStationID to the t r a Api o d fare station params
-func (o *TRAAPIODFareStationParams) WithOriginStationID(originStationID string) *TRAAPIODFareStationParams {
-	o.SetOriginStationID(originStationID)
-	return o
-}
-
-// SetOriginStationID adds the originStationId to the t r a Api o d fare station params
-func (o *TRAAPIODFareStationParams) SetOriginStationID(originStationID string) {
-	o.OriginStationID = originStationID
-}
-
 // WriteToRequest writes these params to a swagger request
 func (o *TRAAPIODFareStationParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
 
@@ -363,16 +329,6 @@ func (o *TRAAPIODFareStationParams) WriteToRequest(r runtime.ClientRequest, reg 
 				return err
 			}
 		}
-	}
-
-	// path param DestinationStationID
-	if err := r.SetPathParam("DestinationStationID", o.DestinationStationID); err != nil {
-		return err
-	}
-
-	// path param OriginStationID
-	if err := r.SetPathParam("OriginStationID", o.OriginStationID); err != nil {
-		return err
 	}
 
 	if len(res) > 0 {

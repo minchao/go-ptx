@@ -25,11 +25,14 @@ type Client struct {
 	formats   strfmt.Registry
 }
 
+// ClientOption is the option for Client methods
+type ClientOption func(*runtime.ClientOperation)
+
 // ClientService is the interface for Client methods
 type ClientService interface {
-	BikeAPIAvailabilityAllCityNearBy(params *BikeAPIAvailabilityAllCityNearByParams) (*BikeAPIAvailabilityAllCityNearByOK, error)
+	BikeAPIAvailabilityAllCityNearBy(params *BikeAPIAvailabilityAllCityNearByParams, opts ...ClientOption) (*BikeAPIAvailabilityAllCityNearByOK, error)
 
-	BikeAPIStationAllCityNearBy(params *BikeAPIStationAllCityNearByParams) (*BikeAPIStationAllCityNearByOK, error)
+	BikeAPIStationAllCityNearBy(params *BikeAPIStationAllCityNearByParams, opts ...ClientOption) (*BikeAPIStationAllCityNearByOK, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
@@ -39,13 +42,12 @@ type ClientService interface {
 
   取得指定[位置,範圍]的全臺公共自行車即時車位資料
 */
-func (a *Client) BikeAPIAvailabilityAllCityNearBy(params *BikeAPIAvailabilityAllCityNearByParams) (*BikeAPIAvailabilityAllCityNearByOK, error) {
+func (a *Client) BikeAPIAvailabilityAllCityNearBy(params *BikeAPIAvailabilityAllCityNearByParams, opts ...ClientOption) (*BikeAPIAvailabilityAllCityNearByOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewBikeAPIAvailabilityAllCityNearByParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "BikeApi_Availability_AllCity_NearBy",
 		Method:             "GET",
 		PathPattern:        "/v2/Bike/Availability/NearBy",
@@ -56,7 +58,12 @@ func (a *Client) BikeAPIAvailabilityAllCityNearBy(params *BikeAPIAvailabilityAll
 		Reader:             &BikeAPIAvailabilityAllCityNearByReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -75,13 +82,12 @@ func (a *Client) BikeAPIAvailabilityAllCityNearBy(params *BikeAPIAvailabilityAll
 
   取得指定[位置,範圍]的全臺公共自行車租借站位資料
 */
-func (a *Client) BikeAPIStationAllCityNearBy(params *BikeAPIStationAllCityNearByParams) (*BikeAPIStationAllCityNearByOK, error) {
+func (a *Client) BikeAPIStationAllCityNearBy(params *BikeAPIStationAllCityNearByParams, opts ...ClientOption) (*BikeAPIStationAllCityNearByOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewBikeAPIStationAllCityNearByParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "BikeApi_Station_AllCity_NearBy",
 		Method:             "GET",
 		PathPattern:        "/v2/Bike/Station/NearBy",
@@ -92,7 +98,12 @@ func (a *Client) BikeAPIStationAllCityNearBy(params *BikeAPIStationAllCityNearBy
 		Reader:             &BikeAPIStationAllCityNearByReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}

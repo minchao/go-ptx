@@ -25,27 +25,30 @@ type Client struct {
 	formats   strfmt.Registry
 }
 
+// ClientOption is the option for Client methods
+type ClientOption func(*runtime.ClientOperation)
+
 // ClientService is the interface for Client methods
 type ClientService interface {
-	ShipAPIAuthority(params *ShipAPIAuthorityParams) (*ShipAPIAuthorityOK, error)
+	ShipAPIAuthority(params *ShipAPIAuthorityParams, opts ...ClientOption) (*ShipAPIAuthorityOK, error)
 
-	ShipAPIGeneralSchedule(params *ShipAPIGeneralScheduleParams) (*ShipAPIGeneralScheduleOK, error)
+	ShipAPIGeneralSchedule(params *ShipAPIGeneralScheduleParams, opts ...ClientOption) (*ShipAPIGeneralScheduleOK, error)
 
-	ShipAPIGeneralSchedule1(params *ShipAPIGeneralSchedule1Params) (*ShipAPIGeneralSchedule1OK, error)
+	ShipAPIGeneralSchedule1(params *ShipAPIGeneralSchedule1Params, opts ...ClientOption) (*ShipAPIGeneralSchedule1OK, error)
 
-	ShipAPILivePosition(params *ShipAPILivePositionParams) (*ShipAPILivePositionOK, error)
+	ShipAPILivePosition(params *ShipAPILivePositionParams, opts ...ClientOption) (*ShipAPILivePositionOK, error)
 
-	ShipAPIOperator(params *ShipAPIOperatorParams) (*ShipAPIOperatorOK, error)
+	ShipAPIOperator(params *ShipAPIOperatorParams, opts ...ClientOption) (*ShipAPIOperatorOK, error)
 
-	ShipAPIPort(params *ShipAPIPortParams) (*ShipAPIPortOK, error)
+	ShipAPIPort(params *ShipAPIPortParams, opts ...ClientOption) (*ShipAPIPortOK, error)
 
-	ShipAPIRoute(params *ShipAPIRouteParams) (*ShipAPIRouteOK, error)
+	ShipAPIRoute(params *ShipAPIRouteParams, opts ...ClientOption) (*ShipAPIRouteOK, error)
 
-	ShipAPIRouteFare(params *ShipAPIRouteFareParams) (*ShipAPIRouteFareOK, error)
+	ShipAPIRouteFare(params *ShipAPIRouteFareParams, opts ...ClientOption) (*ShipAPIRouteFareOK, error)
 
-	ShipAPIRouteFare1(params *ShipAPIRouteFare1Params) (*ShipAPIRouteFare1OK, error)
+	ShipAPIRouteFare1(params *ShipAPIRouteFare1Params, opts ...ClientOption) (*ShipAPIRouteFare1OK, error)
 
-	ShipAPIRoute1(params *ShipAPIRoute1Params) (*ShipAPIRoute1OK, error)
+	ShipAPIRoute1(params *ShipAPIRoute1Params, opts ...ClientOption) (*ShipAPIRoute1OK, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
@@ -53,13 +56,12 @@ type ClientService interface {
 /*
   ShipAPIAuthority 取得業管機關資料s
 */
-func (a *Client) ShipAPIAuthority(params *ShipAPIAuthorityParams) (*ShipAPIAuthorityOK, error) {
+func (a *Client) ShipAPIAuthority(params *ShipAPIAuthorityParams, opts ...ClientOption) (*ShipAPIAuthorityOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewShipAPIAuthorityParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "ShipApi Authority",
 		Method:             "GET",
 		PathPattern:        "/v3/Ship/Authority",
@@ -70,7 +72,12 @@ func (a *Client) ShipAPIAuthority(params *ShipAPIAuthorityParams) (*ShipAPIAutho
 		Reader:             &ShipAPIAuthorityReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -87,13 +94,12 @@ func (a *Client) ShipAPIAuthority(params *ShipAPIAuthorityParams) (*ShipAPIAutho
 /*
   ShipAPIGeneralSchedule 取得定期班表資料s
 */
-func (a *Client) ShipAPIGeneralSchedule(params *ShipAPIGeneralScheduleParams) (*ShipAPIGeneralScheduleOK, error) {
+func (a *Client) ShipAPIGeneralSchedule(params *ShipAPIGeneralScheduleParams, opts ...ClientOption) (*ShipAPIGeneralScheduleOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewShipAPIGeneralScheduleParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "ShipApi_GeneralSchedule",
 		Method:             "GET",
 		PathPattern:        "/v3/Ship/GeneralSchedule",
@@ -104,7 +110,12 @@ func (a *Client) ShipAPIGeneralSchedule(params *ShipAPIGeneralScheduleParams) (*
 		Reader:             &ShipAPIGeneralScheduleReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -121,13 +132,12 @@ func (a *Client) ShipAPIGeneralSchedule(params *ShipAPIGeneralScheduleParams) (*
 /*
   ShipAPIGeneralSchedule1 取得s 指定航線 定期班表資料
 */
-func (a *Client) ShipAPIGeneralSchedule1(params *ShipAPIGeneralSchedule1Params) (*ShipAPIGeneralSchedule1OK, error) {
+func (a *Client) ShipAPIGeneralSchedule1(params *ShipAPIGeneralSchedule1Params, opts ...ClientOption) (*ShipAPIGeneralSchedule1OK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewShipAPIGeneralSchedule1Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "ShipApi_GeneralSchedule_1",
 		Method:             "GET",
 		PathPattern:        "/v3/Ship/GeneralSchedule/{RouteID}",
@@ -138,7 +148,12 @@ func (a *Client) ShipAPIGeneralSchedule1(params *ShipAPIGeneralSchedule1Params) 
 		Reader:             &ShipAPIGeneralSchedule1Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -155,13 +170,12 @@ func (a *Client) ShipAPIGeneralSchedule1(params *ShipAPIGeneralSchedule1Params) 
 /*
   ShipAPILivePosition 取得航運船舶即時位置資料s
 */
-func (a *Client) ShipAPILivePosition(params *ShipAPILivePositionParams) (*ShipAPILivePositionOK, error) {
+func (a *Client) ShipAPILivePosition(params *ShipAPILivePositionParams, opts ...ClientOption) (*ShipAPILivePositionOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewShipAPILivePositionParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "ShipApi_LivePosition",
 		Method:             "GET",
 		PathPattern:        "/v3/Ship/LivePosition",
@@ -172,7 +186,12 @@ func (a *Client) ShipAPILivePosition(params *ShipAPILivePositionParams) (*ShipAP
 		Reader:             &ShipAPILivePositionReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -189,13 +208,12 @@ func (a *Client) ShipAPILivePosition(params *ShipAPILivePositionParams) (*ShipAP
 /*
   ShipAPIOperator 取得營運業者資料s
 */
-func (a *Client) ShipAPIOperator(params *ShipAPIOperatorParams) (*ShipAPIOperatorOK, error) {
+func (a *Client) ShipAPIOperator(params *ShipAPIOperatorParams, opts ...ClientOption) (*ShipAPIOperatorOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewShipAPIOperatorParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "ShipApi_Operator",
 		Method:             "GET",
 		PathPattern:        "/v3/Ship/Operator",
@@ -206,7 +224,12 @@ func (a *Client) ShipAPIOperator(params *ShipAPIOperatorParams) (*ShipAPIOperato
 		Reader:             &ShipAPIOperatorReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -223,13 +246,12 @@ func (a *Client) ShipAPIOperator(params *ShipAPIOperatorParams) (*ShipAPIOperato
 /*
   ShipAPIPort 取得港口資料s
 */
-func (a *Client) ShipAPIPort(params *ShipAPIPortParams) (*ShipAPIPortOK, error) {
+func (a *Client) ShipAPIPort(params *ShipAPIPortParams, opts ...ClientOption) (*ShipAPIPortOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewShipAPIPortParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "ShipApi_Port",
 		Method:             "GET",
 		PathPattern:        "/v3/Ship/Port",
@@ -240,7 +262,12 @@ func (a *Client) ShipAPIPort(params *ShipAPIPortParams) (*ShipAPIPortOK, error) 
 		Reader:             &ShipAPIPortReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -257,13 +284,12 @@ func (a *Client) ShipAPIPort(params *ShipAPIPortParams) (*ShipAPIPortOK, error) 
 /*
   ShipAPIRoute 取得航運路線資料s
 */
-func (a *Client) ShipAPIRoute(params *ShipAPIRouteParams) (*ShipAPIRouteOK, error) {
+func (a *Client) ShipAPIRoute(params *ShipAPIRouteParams, opts ...ClientOption) (*ShipAPIRouteOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewShipAPIRouteParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "ShipApi_Route",
 		Method:             "GET",
 		PathPattern:        "/v3/Ship/Route",
@@ -274,7 +300,12 @@ func (a *Client) ShipAPIRoute(params *ShipAPIRouteParams) (*ShipAPIRouteOK, erro
 		Reader:             &ShipAPIRouteReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -291,13 +322,12 @@ func (a *Client) ShipAPIRoute(params *ShipAPIRouteParams) (*ShipAPIRouteOK, erro
 /*
   ShipAPIRouteFare 取得航線票價資料s
 */
-func (a *Client) ShipAPIRouteFare(params *ShipAPIRouteFareParams) (*ShipAPIRouteFareOK, error) {
+func (a *Client) ShipAPIRouteFare(params *ShipAPIRouteFareParams, opts ...ClientOption) (*ShipAPIRouteFareOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewShipAPIRouteFareParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "ShipApi_RouteFare",
 		Method:             "GET",
 		PathPattern:        "/v3/Ship/RouteFare",
@@ -308,7 +338,12 @@ func (a *Client) ShipAPIRouteFare(params *ShipAPIRouteFareParams) (*ShipAPIRoute
 		Reader:             &ShipAPIRouteFareReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -325,13 +360,12 @@ func (a *Client) ShipAPIRouteFare(params *ShipAPIRouteFareParams) (*ShipAPIRoute
 /*
   ShipAPIRouteFare1 取得s 指定航線 票價資料
 */
-func (a *Client) ShipAPIRouteFare1(params *ShipAPIRouteFare1Params) (*ShipAPIRouteFare1OK, error) {
+func (a *Client) ShipAPIRouteFare1(params *ShipAPIRouteFare1Params, opts ...ClientOption) (*ShipAPIRouteFare1OK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewShipAPIRouteFare1Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "ShipApi_RouteFare_1",
 		Method:             "GET",
 		PathPattern:        "/v3/Ship/RouteFare/{RouteID}",
@@ -342,7 +376,12 @@ func (a *Client) ShipAPIRouteFare1(params *ShipAPIRouteFare1Params) (*ShipAPIRou
 		Reader:             &ShipAPIRouteFare1Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -359,13 +398,12 @@ func (a *Client) ShipAPIRouteFare1(params *ShipAPIRouteFare1Params) (*ShipAPIRou
 /*
   ShipAPIRoute1 取得s 指定航線 資料
 */
-func (a *Client) ShipAPIRoute1(params *ShipAPIRoute1Params) (*ShipAPIRoute1OK, error) {
+func (a *Client) ShipAPIRoute1(params *ShipAPIRoute1Params, opts ...ClientOption) (*ShipAPIRoute1OK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewShipAPIRoute1Params()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "ShipApi_Route_1",
 		Method:             "GET",
 		PathPattern:        "/v3/Ship/Route/{RouteID}",
@@ -376,7 +414,12 @@ func (a *Client) ShipAPIRoute1(params *ShipAPIRoute1Params) (*ShipAPIRoute1OK, e
 		Reader:             &ShipAPIRoute1Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}

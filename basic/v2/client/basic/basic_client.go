@@ -25,15 +25,18 @@ type Client struct {
 	formats   strfmt.Registry
 }
 
+// ClientOption is the option for Client methods
+type ClientOption func(*runtime.ClientOperation)
+
 // ClientService is the interface for Client methods
 type ClientService interface {
-	BasicAPIAuthority(params *BasicAPIAuthorityParams) (*BasicAPIAuthorityOK, error)
+	BasicAPIAuthority(params *BasicAPIAuthorityParams, opts ...ClientOption) (*BasicAPIAuthorityOK, error)
 
-	BasicAPIOperator(params *BasicAPIOperatorParams) (*BasicAPIOperatorOK, error)
+	BasicAPIOperator(params *BasicAPIOperatorParams, opts ...ClientOption) (*BasicAPIOperatorOK, error)
 
-	BasicAPIProvider(params *BasicAPIProviderParams) (*BasicAPIProviderOK, error)
+	BasicAPIProvider(params *BasicAPIProviderParams, opts ...ClientOption) (*BasicAPIProviderOK, error)
 
-	WebSiteAPINews(params *WebSiteAPINewsParams) (*WebSiteAPINewsOK, error)
+	WebSiteAPINews(params *WebSiteAPINewsParams, opts ...ClientOption) (*WebSiteAPINewsOK, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
@@ -41,13 +44,12 @@ type ClientService interface {
 /*
   BasicAPIAuthority 取得業管機關資料s
 */
-func (a *Client) BasicAPIAuthority(params *BasicAPIAuthorityParams) (*BasicAPIAuthorityOK, error) {
+func (a *Client) BasicAPIAuthority(params *BasicAPIAuthorityParams, opts ...ClientOption) (*BasicAPIAuthorityOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewBasicAPIAuthorityParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "BasicApi_Authority",
 		Method:             "GET",
 		PathPattern:        "/v2/Basic/Authority",
@@ -58,7 +60,12 @@ func (a *Client) BasicAPIAuthority(params *BasicAPIAuthorityParams) (*BasicAPIAu
 		Reader:             &BasicAPIAuthorityReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -75,13 +82,12 @@ func (a *Client) BasicAPIAuthority(params *BasicAPIAuthorityParams) (*BasicAPIAu
 /*
   BasicAPIOperator 取得營運業者資料s
 */
-func (a *Client) BasicAPIOperator(params *BasicAPIOperatorParams) (*BasicAPIOperatorOK, error) {
+func (a *Client) BasicAPIOperator(params *BasicAPIOperatorParams, opts ...ClientOption) (*BasicAPIOperatorOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewBasicAPIOperatorParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "BasicApi_Operator",
 		Method:             "GET",
 		PathPattern:        "/v2/Basic/Operator",
@@ -92,7 +98,12 @@ func (a *Client) BasicAPIOperator(params *BasicAPIOperatorParams) (*BasicAPIOper
 		Reader:             &BasicAPIOperatorReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -109,13 +120,12 @@ func (a *Client) BasicAPIOperator(params *BasicAPIOperatorParams) (*BasicAPIOper
 /*
   BasicAPIProvider 取得資料提供平台資料s
 */
-func (a *Client) BasicAPIProvider(params *BasicAPIProviderParams) (*BasicAPIProviderOK, error) {
+func (a *Client) BasicAPIProvider(params *BasicAPIProviderParams, opts ...ClientOption) (*BasicAPIProviderOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewBasicAPIProviderParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "BasicApi_Provider",
 		Method:             "GET",
 		PathPattern:        "/v2/Basic/Provider",
@@ -126,7 +136,12 @@ func (a *Client) BasicAPIProvider(params *BasicAPIProviderParams) (*BasicAPIProv
 		Reader:             &BasicAPIProviderReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}
@@ -143,13 +158,12 @@ func (a *Client) BasicAPIProvider(params *BasicAPIProviderParams) (*BasicAPIProv
 /*
   WebSiteAPINews 取得s p t x官網最新消息資料
 */
-func (a *Client) WebSiteAPINews(params *WebSiteAPINewsParams) (*WebSiteAPINewsOK, error) {
+func (a *Client) WebSiteAPINews(params *WebSiteAPINewsParams, opts ...ClientOption) (*WebSiteAPINewsOK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewWebSiteAPINewsParams()
 	}
-
-	result, err := a.transport.Submit(&runtime.ClientOperation{
+	op := &runtime.ClientOperation{
 		ID:                 "WebSiteApi_News",
 		Method:             "GET",
 		PathPattern:        "/v2/PTX/Web/News",
@@ -160,7 +174,12 @@ func (a *Client) WebSiteAPINews(params *WebSiteAPINewsParams) (*WebSiteAPINewsOK
 		Reader:             &WebSiteAPINewsReader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
-	})
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
 	if err != nil {
 		return nil, err
 	}

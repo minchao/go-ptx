@@ -44,17 +44,17 @@
               "Tainan"
             ],
             "x-enum": {
-              "Taichung": "臺中市",
-              "Hsinchu": "新竹市",
-              "MiaoliCounty": "苗栗縣",
-              "ChanghuaCounty": "彰化縣",
-              "NewTaipei": "新北市",
-              "PingtungCounty": "屏東縣",
-              "KinmenCounty": "金門縣",
-              "Taoyuan": "桃園市",
               "Taipei": "臺北市",
+              "MiaoliCounty": "苗栗縣",
+              "KinmenCounty": "金門縣",
+              "ChanghuaCounty": "彰化縣",
+              "PingtungCounty": "屏東縣",
+              "Hsinchu": "新竹市",
+              "NewTaipei": "新北市",
               "Kaohsiung": "高雄市",
-              "Tainan": "臺南市"
+              "Tainan": "臺南市",
+              "Taoyuan": "桃園市",
+              "Taichung": "臺中市"
             }
           },
           {
@@ -156,17 +156,17 @@
               "Tainan"
             ],
             "x-enum": {
-              "Taichung": "臺中市",
-              "Hsinchu": "新竹市",
-              "MiaoliCounty": "苗栗縣",
-              "ChanghuaCounty": "彰化縣",
-              "NewTaipei": "新北市",
-              "PingtungCounty": "屏東縣",
+              "Taipei": "臺北市",
+              "Tainan": "臺南市",
               "KinmenCounty": "金門縣",
               "Taoyuan": "桃園市",
-              "Taipei": "臺北市",
+              "Hsinchu": "新竹市",
+              "NewTaipei": "新北市",
+              "ChanghuaCounty": "彰化縣",
               "Kaohsiung": "高雄市",
-              "Tainan": "臺南市"
+              "PingtungCounty": "屏東縣",
+              "Taichung": "臺中市",
+              "MiaoliCounty": "苗栗縣"
             }
           },
           {
@@ -271,28 +271,28 @@
               "Tainan"
             ],
             "x-enum": {
-              "Taichung": "臺中市",
+              "NantouCounty": "南投縣",
+              "Tainan": "臺南市",
+              "Kaohsiung": "高雄市",
+              "PenghuCounty": "澎湖縣",
+              "Taipei": "臺北市",
+              "NewTaipei": "新北市",
+              "Chiayi": "嘉義市",
+              "TaitungCounty": "臺東縣",
+              "LienchiangCounty": "連江縣",
               "Keelung": "基隆市",
-              "Hsinchu": "新竹市",
+              "YilanCounty": "宜蘭縣",
+              "KinmenCounty": "金門縣",
+              "ChiayiCounty": "嘉義縣",
+              "YunlinCounty": "雲林縣",
               "HsinchuCounty": "新竹縣",
               "MiaoliCounty": "苗栗縣",
-              "ChanghuaCounty": "彰化縣",
-              "NewTaipei": "新北市",
-              "NantouCounty": "南投縣",
-              "YunlinCounty": "雲林縣",
-              "ChiayiCounty": "嘉義縣",
-              "Chiayi": "嘉義市",
               "PingtungCounty": "屏東縣",
-              "YilanCounty": "宜蘭縣",
-              "HualienCounty": "花蓮縣",
-              "TaitungCounty": "臺東縣",
-              "KinmenCounty": "金門縣",
-              "PenghuCounty": "澎湖縣",
-              "LienchiangCounty": "連江縣",
               "Taoyuan": "桃園市",
-              "Taipei": "臺北市",
-              "Kaohsiung": "高雄市",
-              "Tainan": "臺南市"
+              "ChanghuaCounty": "彰化縣",
+              "Taichung": "臺中市",
+              "HualienCounty": "花蓮縣",
+              "Hsinchu": "新竹市"
             }
           },
           {
