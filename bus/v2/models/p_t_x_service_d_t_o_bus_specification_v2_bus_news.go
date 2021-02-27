@@ -28,6 +28,21 @@ type PTXServiceDTOBusSpecificationV2BusNews struct {
 
 	// String
 	//
+	// 聯絡人/單位
+	ContactName string `json:"ContactName,omitempty"`
+
+	// String
+	//
+	// 聯絡電話
+	ContactPhone string `json:"ContactPhone,omitempty"`
+
+	// String
+	//
+	// 發布單位
+	Department string `json:"Department,omitempty"`
+
+	// String
+	//
 	// 內容描述
 	// Required: true
 	Description *string `json:"Description"`
@@ -43,10 +58,10 @@ type PTXServiceDTOBusSpecificationV2BusNews struct {
 	// Required: true
 	Language *string `json:"Language"`
 
-	// String
+	// integer
 	//
-	// 消息類別
-	NewsCategory string `json:"NewsCategory,omitempty"`
+	// 消息類別 : [1:'最新消息',2:'新聞稿',3:'營運資訊',4:'轉乘資訊',5:'活動訊息',6:'系統公告',7:'通阻資訊',99:'其他']
+	NewsCategory int32 `json:"NewsCategory,omitempty"`
 
 	// String
 	//
@@ -64,6 +79,11 @@ type PTXServiceDTOBusSpecificationV2BusNews struct {
 	// 消息公告日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Required: true
 	PublishTime *string `json:"PublishTime"`
+
+	// DateTime
+	//
+	// 來源端平台資料更新時間
+	SrcUpdateTime string `json:"SrcUpdateTime,omitempty"`
 
 	// DateTime
 	//

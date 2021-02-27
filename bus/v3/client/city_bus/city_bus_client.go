@@ -30,7 +30,7 @@ type ClientOption func(*runtime.ClientOperation)
 
 // ClientService is the interface for Client methods
 type ClientService interface {
-	CityBusAPIAlert(params *CityBusAPIAlertParams, opts ...ClientOption) (*CityBusAPIAlertOK, *CityBusAPIAlertStatus299, error)
+	CityBusAPIAlert1(params *CityBusAPIAlert1Params, opts ...ClientOption) (*CityBusAPIAlert1OK, *CityBusAPIAlert1Status299, error)
 
 	CityBusAPIDailyTimeTable(params *CityBusAPIDailyTimeTableParams, opts ...ClientOption) (*CityBusAPIDailyTimeTableOK, *CityBusAPIDailyTimeTableStatus299, error)
 
@@ -88,24 +88,24 @@ type ClientService interface {
 }
 
 /*
-  CityBusAPIAlert 取得指定s 縣市 的公車通阻資料
+  CityBusAPIAlert1 取得指定s 縣市 的公車通阻資料
 
   市區公車之公車通阻資料
 */
-func (a *Client) CityBusAPIAlert(params *CityBusAPIAlertParams, opts ...ClientOption) (*CityBusAPIAlertOK, *CityBusAPIAlertStatus299, error) {
+func (a *Client) CityBusAPIAlert1(params *CityBusAPIAlert1Params, opts ...ClientOption) (*CityBusAPIAlert1OK, *CityBusAPIAlert1Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewCityBusAPIAlertParams()
+		params = NewCityBusAPIAlert1Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "CityBusApi_Alert",
+		ID:                 "CityBusApi_Alert_1",
 		Method:             "GET",
 		PathPattern:        "/v3/Bus/Alert/City/{City}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &CityBusAPIAlertReader{formats: a.formats},
+		Reader:             &CityBusAPIAlert1Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -118,9 +118,9 @@ func (a *Client) CityBusAPIAlert(params *CityBusAPIAlertParams, opts ...ClientOp
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *CityBusAPIAlertOK:
+	case *CityBusAPIAlert1OK:
 		return value, nil, nil
-	case *CityBusAPIAlertStatus299:
+	case *CityBusAPIAlert1Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue

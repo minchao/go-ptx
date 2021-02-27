@@ -60,12 +60,6 @@ func NewCityBusAPIAlertParamsWithHTTPClient(client *http.Client) *CityBusAPIAler
 */
 type CityBusAPIAlertParams struct {
 
-	/* DollarCount.
-
-	   查詢數量
-	*/
-	DollarCount *bool
-
 	/* DollarFilter.
 
 	   過濾
@@ -180,17 +174,6 @@ func (o *CityBusAPIAlertParams) SetHTTPClient(client *http.Client) {
 	o.HTTPClient = client
 }
 
-// WithDollarCount adds the dollarCount to the city bus Api alert params
-func (o *CityBusAPIAlertParams) WithDollarCount(dollarCount *bool) *CityBusAPIAlertParams {
-	o.SetDollarCount(dollarCount)
-	return o
-}
-
-// SetDollarCount adds the dollarCount to the city bus Api alert params
-func (o *CityBusAPIAlertParams) SetDollarCount(dollarCount *bool) {
-	o.DollarCount = dollarCount
-}
-
 // WithDollarFilter adds the dollarFilter to the city bus Api alert params
 func (o *CityBusAPIAlertParams) WithDollarFilter(dollarFilter *string) *CityBusAPIAlertParams {
 	o.SetDollarFilter(dollarFilter)
@@ -286,23 +269,6 @@ func (o *CityBusAPIAlertParams) WriteToRequest(r runtime.ClientRequest, reg strf
 		return err
 	}
 	var res []error
-
-	if o.DollarCount != nil {
-
-		// query param $count
-		var qrDollarCount bool
-
-		if o.DollarCount != nil {
-			qrDollarCount = *o.DollarCount
-		}
-		qDollarCount := swag.FormatBool(qrDollarCount)
-		if qDollarCount != "" {
-
-			if err := r.SetQueryParam("$count", qDollarCount); err != nil {
-				return err
-			}
-		}
-	}
 
 	if o.DollarFilter != nil {
 

@@ -30,6 +30,8 @@ type ClientOption func(*runtime.ClientOperation)
 
 // ClientService is the interface for Client methods
 type ClientService interface {
+	InterCityBusAPIAlert(params *InterCityBusAPIAlertParams, opts ...ClientOption) (*InterCityBusAPIAlertOK, *InterCityBusAPIAlertStatus299, error)
+
 	InterCityBusAPIDataVersion(params *InterCityBusAPIDataVersionParams, opts ...ClientOption) (*InterCityBusAPIDataVersionOK, *InterCityBusAPIDataVersionStatus299, error)
 
 	InterCityBusAPIEstimatedTimeOfArrival(params *InterCityBusAPIEstimatedTimeOfArrivalParams, opts ...ClientOption) (*InterCityBusAPIEstimatedTimeOfArrivalOK, *InterCityBusAPIEstimatedTimeOfArrivalStatus299, error)
@@ -91,6 +93,47 @@ type ClientService interface {
 	InterCityBusAPIVehicle(params *InterCityBusAPIVehicleParams, opts ...ClientOption) (*InterCityBusAPIVehicleOK, *InterCityBusAPIVehicleStatus299, error)
 
 	SetTransport(transport runtime.ClientTransport)
+}
+
+/*
+  InterCityBusAPIAlert 取得公路客運之營運通阻資料s
+
+  公路客運之營運通阻資料
+*/
+func (a *Client) InterCityBusAPIAlert(params *InterCityBusAPIAlertParams, opts ...ClientOption) (*InterCityBusAPIAlertOK, *InterCityBusAPIAlertStatus299, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewInterCityBusAPIAlertParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "InterCityBusApi_Alert",
+		Method:             "GET",
+		PathPattern:        "/v2/Bus/Alert/InterCity",
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &InterCityBusAPIAlertReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, nil, err
+	}
+	switch value := result.(type) {
+	case *InterCityBusAPIAlertOK:
+		return value, nil, nil
+	case *InterCityBusAPIAlertStatus299:
+		return nil, value, nil
+	}
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for inter_city_bus: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 /*
