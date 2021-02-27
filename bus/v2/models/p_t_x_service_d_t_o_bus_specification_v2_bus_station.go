@@ -24,6 +24,11 @@ type PTXServiceDTOBusSpecificationV2BusStation struct {
 
 	// String
 	//
+	// 方位角，E:東行;W:西行;S:南行;N:北行;SE:東南行;NE:東北行;SW:西南行;NW:西北行
+	Bearing string `json:"Bearing,omitempty"`
+
+	// String
+	//
 	// 站位地址
 	StationAddress string `json:"StationAddress,omitempty"`
 

@@ -30,6 +30,8 @@ type ClientOption func(*runtime.ClientOperation)
 
 // ClientService is the interface for Client methods
 type ClientService interface {
+	CityBusAPIAlert(params *CityBusAPIAlertParams, opts ...ClientOption) (*CityBusAPIAlertOK, *CityBusAPIAlertStatus299, error)
+
 	CityBusAPIDataVersion(params *CityBusAPIDataVersionParams, opts ...ClientOption) (*CityBusAPIDataVersionOK, *CityBusAPIDataVersionStatus299, error)
 
 	CityBusAPIDisplayStopOfRoute(params *CityBusAPIDisplayStopOfRouteParams, opts ...ClientOption) (*CityBusAPIDisplayStopOfRouteOK, *CityBusAPIDisplayStopOfRouteStatus299, error)
@@ -99,6 +101,47 @@ type ClientService interface {
 	CityBusAPIVehicle(params *CityBusAPIVehicleParams, opts ...ClientOption) (*CityBusAPIVehicleOK, *CityBusAPIVehicleStatus299, error)
 
 	SetTransport(transport runtime.ClientTransport)
+}
+
+/*
+  CityBusAPIAlert 取得指定s 縣市 的市區公車營運通阻資料
+
+  市區公車營運通阻資料
+*/
+func (a *Client) CityBusAPIAlert(params *CityBusAPIAlertParams, opts ...ClientOption) (*CityBusAPIAlertOK, *CityBusAPIAlertStatus299, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewCityBusAPIAlertParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "CityBusApi_Alert",
+		Method:             "GET",
+		PathPattern:        "/v2/Bus/Alert/City/{City}",
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &CityBusAPIAlertReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, nil, err
+	}
+	switch value := result.(type) {
+	case *CityBusAPIAlertOK:
+		return value, nil, nil
+	case *CityBusAPIAlertStatus299:
+		return nil, value, nil
+	}
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for city_bus: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
 }
 
 /*

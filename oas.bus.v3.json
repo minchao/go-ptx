@@ -2004,7 +2004,7 @@
         ],
         "summary": "取得指定[縣市]的公車通阻資料",
         "description": "市區公車之公車通阻資料",
-        "operationId": "CityBusApi_Alert",
+        "operationId": "CityBusApi_Alert_1",
         "produces": [
           "application/json",
           "application/xml"

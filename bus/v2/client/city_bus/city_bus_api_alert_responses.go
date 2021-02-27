@@ -12,7 +12,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/minchao/go-ptx/bus/v3/models"
+	"github.com/minchao/go-ptx/bus/v2/models"
 )
 
 // CityBusAPIAlertReader is a Reader for the CityBusAPIAlert structure.
@@ -56,22 +56,20 @@ func NewCityBusAPIAlertOK() *CityBusAPIAlertOK {
 Success
 */
 type CityBusAPIAlertOK struct {
-	Payload *models.PTXServiceDTOBusSpecificationV3WrapperBusWrapperPTXServiceDTOBusSpecificationV3Alert
+	Payload []*models.PTXServiceDTOBusSpecificationV2BusAlert
 }
 
 func (o *CityBusAPIAlertOK) Error() string {
-	return fmt.Sprintf("[GET /v3/Bus/Alert/City/{City}][%d] cityBusApiAlertOK  %+v", 200, o.Payload)
+	return fmt.Sprintf("[GET /v2/Bus/Alert/City/{City}][%d] cityBusApiAlertOK  %+v", 200, o.Payload)
 }
-func (o *CityBusAPIAlertOK) GetPayload() *models.PTXServiceDTOBusSpecificationV3WrapperBusWrapperPTXServiceDTOBusSpecificationV3Alert {
+func (o *CityBusAPIAlertOK) GetPayload() []*models.PTXServiceDTOBusSpecificationV2BusAlert {
 	return o.Payload
 }
 
 func (o *CityBusAPIAlertOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.PTXServiceDTOBusSpecificationV3WrapperBusWrapperPTXServiceDTOBusSpecificationV3Alert)
-
 	// response payload
-	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 
@@ -92,7 +90,7 @@ type CityBusAPIAlertStatus299 struct {
 }
 
 func (o *CityBusAPIAlertStatus299) Error() string {
-	return fmt.Sprintf("[GET /v3/Bus/Alert/City/{City}][%d] cityBusApiAlertStatus299  %+v", 299, o.Payload)
+	return fmt.Sprintf("[GET /v2/Bus/Alert/City/{City}][%d] cityBusApiAlertStatus299  %+v", 299, o.Payload)
 }
 func (o *CityBusAPIAlertStatus299) GetPayload() *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth {
 	return o.Payload
@@ -123,7 +121,7 @@ type CityBusAPIAlertNotModified struct {
 }
 
 func (o *CityBusAPIAlertNotModified) Error() string {
-	return fmt.Sprintf("[GET /v3/Bus/Alert/City/{City}][%d] cityBusApiAlertNotModified ", 304)
+	return fmt.Sprintf("[GET /v2/Bus/Alert/City/{City}][%d] cityBusApiAlertNotModified ", 304)
 }
 
 func (o *CityBusAPIAlertNotModified) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
