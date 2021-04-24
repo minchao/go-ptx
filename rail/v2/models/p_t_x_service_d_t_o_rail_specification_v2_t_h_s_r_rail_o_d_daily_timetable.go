@@ -27,7 +27,7 @@ type PTXServiceDTORailSpecificationV2THSRRailODDailyTimetable struct {
 	// Required: true
 	DailyTrainInfo struct {
 		PTXServiceDTORailSpecificationV2THSRTimeInfoRailDailyTrainInfo
-	} `json:"DailyTrainInfo"`
+	} `json:"DailyTrainInfo" xml:"RailDailyTrainInfo"`
 
 	// RailStopTime
 	//
@@ -35,7 +35,7 @@ type PTXServiceDTORailSpecificationV2THSRRailODDailyTimetable struct {
 	// Required: true
 	DestinationStopTime struct {
 		PTXServiceDTORailSpecificationV2THSRRailStopTime
-	} `json:"DestinationStopTime"`
+	} `json:"DestinationStopTime" xml:"RailStopTime"`
 
 	// RailStopTime
 	//
@@ -43,13 +43,13 @@ type PTXServiceDTORailSpecificationV2THSRRailODDailyTimetable struct {
 	// Required: true
 	OriginStopTime struct {
 		PTXServiceDTORailSpecificationV2THSRRailStopTime
-	} `json:"OriginStopTime"`
+	} `json:"OriginStopTime" xml:"RailStopTime"`
 
 	// String
 	//
 	// 行駛日期(格式: yyyy:MM:dd)
 	// Required: true
-	TrainDate *string `json:"TrainDate"`
+	TrainDate *string `json:"TrainDate" xml:"String"`
 
 	// DateTime
 	//

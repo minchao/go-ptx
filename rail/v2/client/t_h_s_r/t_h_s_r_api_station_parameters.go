@@ -90,6 +90,12 @@ type THSRAPIStationParams struct {
 	*/
 	DollarSkip *string
 
+	/* DollarSpatialFilter.
+
+	   空間過濾
+	*/
+	DollarSpatialFilter *string
+
 	/* DollarTop.
 
 	   取前幾筆
@@ -217,6 +223,17 @@ func (o *THSRAPIStationParams) SetDollarSkip(dollarSkip *string) {
 	o.DollarSkip = dollarSkip
 }
 
+// WithDollarSpatialFilter adds the dollarSpatialFilter to the t h s r Api station params
+func (o *THSRAPIStationParams) WithDollarSpatialFilter(dollarSpatialFilter *string) *THSRAPIStationParams {
+	o.SetDollarSpatialFilter(dollarSpatialFilter)
+	return o
+}
+
+// SetDollarSpatialFilter adds the dollarSpatialFilter to the t h s r Api station params
+func (o *THSRAPIStationParams) SetDollarSpatialFilter(dollarSpatialFilter *string) {
+	o.DollarSpatialFilter = dollarSpatialFilter
+}
+
 // WithDollarTop adds the dollarTop to the t h s r Api station params
 func (o *THSRAPIStationParams) WithDollarTop(dollarTop *int64) *THSRAPIStationParams {
 	o.SetDollarTop(dollarTop)
@@ -309,6 +326,23 @@ func (o *THSRAPIStationParams) WriteToRequest(r runtime.ClientRequest, reg strfm
 		if qDollarSkip != "" {
 
 			if err := r.SetQueryParam("$skip", qDollarSkip); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.DollarSpatialFilter != nil {
+
+		// query param $spatialFilter
+		var qrDollarSpatialFilter string
+
+		if o.DollarSpatialFilter != nil {
+			qrDollarSpatialFilter = *o.DollarSpatialFilter
+		}
+		qDollarSpatialFilter := qrDollarSpatialFilter
+		if qDollarSpatialFilter != "" {
+
+			if err := r.SetQueryParam("$spatialFilter", qDollarSpatialFilter); err != nil {
 				return err
 			}
 		}

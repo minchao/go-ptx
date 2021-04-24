@@ -25,43 +25,43 @@ type PTXServiceDTORailSpecificationV2TRAServiceDay struct {
 	//
 	// 星期五是否營運 : [0:'否',1:'是']
 	// Required: true
-	Friday *int32 `json:"Friday"`
+	Friday *string `json:"Friday"`
 
 	// integer
 	//
 	// 星期一是否營運 : [0:'否',1:'是']
 	// Required: true
-	Monday *int32 `json:"Monday"`
+	Monday *string `json:"Monday"`
 
 	// integer
 	//
 	// 星期六是否營運 : [0:'否',1:'是']
 	// Required: true
-	Saturday *int32 `json:"Saturday"`
+	Saturday *string `json:"Saturday"`
 
 	// integer
 	//
 	// 星期日是否營運 : [0:'否',1:'是']
 	// Required: true
-	Sunday *int32 `json:"Sunday"`
+	Sunday *string `json:"Sunday"`
 
 	// integer
 	//
 	// 星期四是否營運 : [0:'否',1:'是']
 	// Required: true
-	Thursday *int32 `json:"Thursday"`
+	Thursday *string `json:"Thursday"`
 
 	// integer
 	//
 	// 星期二是否營運 : [0:'否',1:'是']
 	// Required: true
-	Tuesday *int32 `json:"Tuesday"`
+	Tuesday *string `json:"Tuesday"`
 
 	// integer
 	//
 	// 星期三是否營運 : [0:'否',1:'是']
 	// Required: true
-	Wednesday *int32 `json:"Wednesday"`
+	Wednesday *string `json:"Wednesday"`
 }
 
 // Validate validates this p t x service d t o rail specification v2 t r a service day

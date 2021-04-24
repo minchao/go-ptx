@@ -21,7 +21,7 @@ type PTXServiceDTORailSpecificationV3TRAStationExitExitMapURL struct {
 	// String
 	//
 	// 樓層
-	FloorLevel string `json:"FloorLevel,omitempty"`
+	FloorLevel string `json:"FloorLevel,omitempty" xml:"String,omitempty"`
 
 	// NameType
 	//
@@ -29,12 +29,12 @@ type PTXServiceDTORailSpecificationV3TRAStationExitExitMapURL struct {
 	// Required: true
 	MapName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"MapName"`
+	} `json:"MapName" xml:"NameType"`
 
 	// String
 	//
 	// 車站出入口簡圖網址
-	MapURL string `json:"MapURL,omitempty"`
+	MapURL string `json:"MapURL,omitempty" xml:"String,omitempty"`
 }
 
 // Validate validates this p t x service d t o rail specification v3 t r a station exit exit map URL

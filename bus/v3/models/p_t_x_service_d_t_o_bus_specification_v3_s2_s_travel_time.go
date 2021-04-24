@@ -24,29 +24,29 @@ type PTXServiceDTOBusSpecificationV3S2STravelTime struct {
 	//
 	// 路線代碼
 	// Required: true
-	RouteID *string `json:"RouteID"`
+	RouteID *string `json:"RouteID" xml:"String"`
 
 	// String
 	//
 	// 路線唯一識別代碼，規則為 {業管機關簡碼} + {RouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢
 	// Required: true
-	RouteUID *string `json:"RouteUID"`
+	RouteUID *string `json:"RouteUID" xml:"String"`
 
 	// String
 	//
 	// 附屬路線代碼
-	SubRouteID string `json:"SubRouteID,omitempty"`
+	SubRouteID string `json:"SubRouteID,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 附屬路線唯一識別代碼，規則為 {業管機關簡碼} + {SubRouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢
-	SubRouteUID string `json:"SubRouteUID,omitempty"`
+	SubRouteUID string `json:"SubRouteUID,omitempty" xml:"String,omitempty"`
 
 	// Array
 	//
 	// 站間運行時間資訊
 	// Required: true
-	TravelTimes []*PTXServiceDTOBusSpecificationV3S2STravelTimeTravelTime `json:"TravelTimes"`
+	TravelTimes []*PTXServiceDTOBusSpecificationV3S2STravelTimeTravelTime "json:\"TravelTimes\" xml:\"List`1\""
 }
 
 // Validate validates this p t x service d t o bus specification v3 s2 s travel time

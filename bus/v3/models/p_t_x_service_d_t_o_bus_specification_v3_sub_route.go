@@ -25,44 +25,44 @@ type PTXServiceDTOBusSpecificationV3SubRoute struct {
 	// 路線起站名稱
 	DepartureStopName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"DepartureStopName,omitempty"`
+	} `json:"DepartureStopName,omitempty" xml:"NameType,omitempty"`
 
 	// NameType
 	//
 	// 路線迄站名稱
 	DestinationStopName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"DestinationStopName,omitempty"`
+	} `json:"DestinationStopName,omitempty" xml:"NameType,omitempty"`
 
 	// integer
 	//
 	// 車輛去返程 : [0:'去程',1:'返程',2:'迴圈',255:'未知']
 	// Required: true
-	Direction *int32 `json:"Direction"`
+	Direction *string `json:"Direction"`
 
 	// Stop
 	//
 	// 終點站牌
 	EndStop struct {
 		PTXServiceDTOBusSpecificationV3SubRouteStop
-	} `json:"EndStop,omitempty"`
+	} `json:"EndStop,omitempty" xml:"Stop,omitempty"`
 
 	// String
 	//
 	// 車頭描述
-	HeadSign string `json:"HeadSign,omitempty"`
+	HeadSign string `json:"HeadSign,omitempty" xml:"String,omitempty"`
 
 	// Array
 	//
 	// 營運業者
 	// Required: true
-	Operators []*PTXServiceDTOBusSpecificationV3SubRouteOperator `json:"Operators"`
+	Operators []*PTXServiceDTOBusSpecificationV3SubRouteOperator "json:\"Operators\" xml:\"List`1\""
 
 	// String
 	//
 	// 機關定義路線代碼
 	// Required: true
-	RouteID *string `json:"RouteID"`
+	RouteID *string `json:"RouteID" xml:"String"`
 
 	// NameType
 	//
@@ -70,33 +70,33 @@ type PTXServiceDTOBusSpecificationV3SubRoute struct {
 	// Required: true
 	RouteName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"RouteName"`
+	} `json:"RouteName" xml:"NameType"`
 
 	// String
 	//
 	// 路線唯一識別代碼，規則為 {業管機關簡碼} + {RouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢
 	// Required: true
-	RouteUID *string `json:"RouteUID"`
+	RouteUID *string `json:"RouteUID" xml:"String"`
 
 	// Stop
 	//
 	// 起始站牌
 	StartStop struct {
 		PTXServiceDTOBusSpecificationV3SubRouteStop
-	} `json:"StartStop,omitempty"`
+	} `json:"StartStop,omitempty" xml:"Stop,omitempty"`
 
 	// String
 	//
 	// 地區既用中之附屬路線代碼(為原資料內碼)
 	// Required: true
-	SubRouteID *string `json:"SubRouteID"`
+	SubRouteID *string `json:"SubRouteID" xml:"String"`
 
 	// NameType
 	//
 	// 附屬路線長名稱
 	SubRouteLongName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"SubRouteLongName,omitempty"`
+	} `json:"SubRouteLongName,omitempty" xml:"NameType,omitempty"`
 
 	// NameType
 	//
@@ -104,13 +104,13 @@ type PTXServiceDTOBusSpecificationV3SubRoute struct {
 	// Required: true
 	SubRouteName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"SubRouteName"`
+	} `json:"SubRouteName" xml:"NameType"`
 
 	// String
 	//
 	// 附屬路線唯一識別代碼，規則為 {業管機關簡碼} + {SubRouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢
 	// Required: true
-	SubRouteUID *string `json:"SubRouteUID"`
+	SubRouteUID *string `json:"SubRouteUID" xml:"String"`
 }
 
 // Validate validates this p t x service d t o bus specification v3 sub route

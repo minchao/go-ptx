@@ -48,7 +48,7 @@ type PTXServiceDTORailSpecificationV2MetroSubClassServiceDay struct {
 	// String
 	//
 	// 營運日標籤
-	ServiceTag string `json:"ServiceTag,omitempty"`
+	ServiceTag string `json:"ServiceTag,omitempty" xml:"String,omitempty"`
 
 	// Boolean
 	//

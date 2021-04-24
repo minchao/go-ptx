@@ -28,12 +28,12 @@ type PTXServiceDTORailSpecificationV3TRATRAStationLiveBoardListStationLiveBoard 
 	// integer
 	//
 	// 行駛方向 : [0:'順行',1:'逆行']
-	Direction int32 `json:"Direction,omitempty"`
+	Direction string `json:"Direction,omitempty"`
 
 	// String
 	//
 	// 終點站代碼
-	EndingStationID string `json:"EndingStationID,omitempty"`
+	EndingStationID string `json:"EndingStationID,omitempty" xml:"String,omitempty"`
 
 	// NameType
 	//
@@ -41,33 +41,33 @@ type PTXServiceDTORailSpecificationV3TRATRAStationLiveBoardListStationLiveBoard 
 	// Required: true
 	EndingStationName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"EndingStationName"`
+	} `json:"EndingStationName" xml:"NameType"`
 
 	// String
 	//
 	// 停靠月台(00代表當時尚未確定停靠的月台，待確定好停靠的月台後，就會更新Platfrom。)
-	Platform string `json:"Platform,omitempty"`
+	Platform string `json:"Platform,omitempty" xml:"String,omitempty"`
 
 	// integer
 	//
 	// 列車狀態 : [0:'準點',1:'誤點',2:'取消']
-	RunningStatus int32 `json:"RunningStatus,omitempty"`
+	RunningStatus string `json:"RunningStatus,omitempty"`
 
 	// String
 	//
 	// 表訂到站時刻
-	ScheduleArrivalTime string `json:"ScheduleArrivalTime,omitempty"`
+	ScheduleArrivalTime string `json:"ScheduleArrivalTime,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 表定離站時刻
-	ScheduleDepartureTime string `json:"ScheduleDepartureTime,omitempty"`
+	ScheduleDepartureTime string `json:"ScheduleDepartureTime,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 車站代號
 	// Required: true
-	StationID *string `json:"StationID"`
+	StationID *string `json:"StationID" xml:"String"`
 
 	// NameType
 	//
@@ -75,23 +75,23 @@ type PTXServiceDTORailSpecificationV3TRATRAStationLiveBoardListStationLiveBoard 
 	// Required: true
 	StationName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"StationName"`
+	} `json:"StationName" xml:"NameType"`
 
 	// String
 	//
 	// 車次代碼
 	// Required: true
-	TrainNo *string `json:"TrainNo"`
+	TrainNo *string `json:"TrainNo" xml:"String"`
 
 	// String
 	//
 	// 車種簡碼 = ['1: 太魯閣', '2: 普悠瑪', '3: 自強', '4: 莒光', '5: 復興', '6: 區間', '7: 普快', '10: 區間快']
-	TrainTypeCode string `json:"TrainTypeCode,omitempty"`
+	TrainTypeCode string `json:"TrainTypeCode,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 車種代嗎
-	TrainTypeID string `json:"TrainTypeID,omitempty"`
+	TrainTypeID string `json:"TrainTypeID,omitempty" xml:"String,omitempty"`
 
 	// NameType
 	//
@@ -99,12 +99,12 @@ type PTXServiceDTORailSpecificationV3TRATRAStationLiveBoardListStationLiveBoard 
 	// Required: true
 	TrainTypeName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"TrainTypeName"`
+	} `json:"TrainTypeName" xml:"NameType"`
 
 	// integer
 	//
 	// 山海線類型 : [0:'不經山海線',1:'山線',2:'海線',3:'成追線']
-	TripLine int32 `json:"TripLine,omitempty"`
+	TripLine string `json:"TripLine,omitempty"`
 
 	// DateTime
 	//

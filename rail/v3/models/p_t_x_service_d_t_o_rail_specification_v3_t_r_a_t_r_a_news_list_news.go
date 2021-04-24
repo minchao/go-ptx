@@ -22,18 +22,18 @@ type PTXServiceDTORailSpecificationV3TRATRANewsListNews struct {
 	// String
 	//
 	// 附件網址連結
-	AttachmentURL string `json:"AttachmentURL,omitempty"`
+	AttachmentURL string `json:"AttachmentURL,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 發布單位
-	Department string `json:"Department,omitempty"`
+	Department string `json:"Department,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 內容描述
 	// Required: true
-	Description *string `json:"Description"`
+	Description *string `json:"Description" xml:"String"`
 
 	// DateTime
 	//
@@ -44,24 +44,24 @@ type PTXServiceDTORailSpecificationV3TRATRANewsListNews struct {
 	//
 	// 語系 : [1:'Zh_tw',2:'En_us',3:'Zh_cn',4:'Ja',5:'Ko',99:'Other']
 	// Required: true
-	Language *int32 `json:"Language"`
+	Language *string `json:"Language"`
 
 	// integer
 	//
 	// 消息類別 : [1:'最新消息',2:'新聞稿',3:'營運資訊',4:'轉乘資訊',5:'活動訊息',6:'系統公告',7:'新服務上架',8:'API修正',9:'來源異常',99:'其他']
 	// Required: true
-	NewsCategory *int32 `json:"NewsCategory"`
+	NewsCategory *string `json:"NewsCategory"`
 
 	// String
 	//
 	// 消息代碼
 	// Required: true
-	NewsID *string `json:"NewsID"`
+	NewsID *string `json:"NewsID" xml:"String"`
 
 	// String
 	//
 	// 消息網址連結
-	NewsURL string `json:"NewsURL,omitempty"`
+	NewsURL string `json:"NewsURL,omitempty" xml:"String,omitempty"`
 
 	// DateTime
 	//
@@ -78,7 +78,7 @@ type PTXServiceDTORailSpecificationV3TRATRANewsListNews struct {
 	//
 	// 消息標題
 	// Required: true
-	Title *string `json:"Title"`
+	Title *string `json:"Title" xml:"String"`
 
 	// DateTime
 	//

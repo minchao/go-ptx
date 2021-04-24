@@ -26,18 +26,18 @@ type PTXServiceDTORailSpecificationV2MetroFrequency struct {
 	//
 	// 班距頻率資訊
 	// Required: true
-	Headways []*PTXServiceDTORailSpecificationV2MetroSubClassHeadway `json:"Headways"`
+	Headways []*PTXServiceDTORailSpecificationV2MetroSubClassHeadway "json:\"Headways\" xml:\"List`1\""
 
 	// String
 	//
 	// 營運路線所屬之路線代碼
 	// Required: true
-	LineID *string `json:"LineID"`
+	LineID *string `json:"LineID" xml:"String"`
 
 	// String
 	//
 	// 營運路線所屬之路線編號
-	LineNo string `json:"LineNo,omitempty"`
+	LineNo string `json:"LineNo,omitempty" xml:"String,omitempty"`
 
 	// OperationTime
 	//
@@ -45,13 +45,13 @@ type PTXServiceDTORailSpecificationV2MetroFrequency struct {
 	// Required: true
 	OperationTime struct {
 		PTXServiceDTORailSpecificationV2MetroSubClassOperationTime
-	} `json:"OperationTime"`
+	} `json:"OperationTime" xml:"OperationTime"`
 
 	// String
 	//
 	// 營運路線代碼
 	// Required: true
-	RouteID *string `json:"RouteID"`
+	RouteID *string `json:"RouteID" xml:"String"`
 
 	// ServiceDay
 	//
@@ -59,7 +59,7 @@ type PTXServiceDTORailSpecificationV2MetroFrequency struct {
 	// Required: true
 	ServiceDay struct {
 		PTXServiceDTORailSpecificationV2MetroSubClassServiceDay
-	} `json:"ServiceDay"`
+	} `json:"ServiceDay" xml:"ServiceDay"`
 
 	// DateTime
 	//

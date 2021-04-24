@@ -22,27 +22,27 @@ type PTXServiceDTOBusSpecificationV2ScopeTrip struct {
 	// integer
 	//
 	// 影響方向 : [0:'去程',1:'返程',2:'迴圈',255:'未知']
-	Direction int32 `json:"Direction,omitempty"`
+	Direction int64 `json:"Direction,omitempty"`
 
 	// String
 	//
 	// 地區既用中之班次代碼(為原資料內碼)
-	RouteID string `json:"RouteID,omitempty"`
+	RouteID string `json:"RouteID,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 地區既用中之附屬班次代碼(為原資料內碼)
-	SubRouteID string `json:"SubRouteID,omitempty"`
+	SubRouteID string `json:"SubRouteID,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 首站發車時間(HH:mm)
-	TripDepTime string `json:"TripDepTime,omitempty"`
+	TripDepTime string `json:"TripDepTime,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 地區既用中之班次代碼(為原資料內碼)
-	TripID string `json:"TripID,omitempty"`
+	TripID string `json:"TripID,omitempty" xml:"String,omitempty"`
 }
 
 // Validate validates this p t x service d t o bus specification v2 scope trip

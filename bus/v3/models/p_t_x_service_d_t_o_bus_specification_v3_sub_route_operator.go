@@ -23,13 +23,13 @@ type PTXServiceDTOBusSpecificationV3SubRouteOperator struct {
 	//
 	// 平台代碼
 	// Required: true
-	OperatorCode *string `json:"OperatorCode"`
+	OperatorCode *string `json:"OperatorCode" xml:"String"`
 
 	// String
 	//
 	// 營運業者代碼
 	// Required: true
-	OperatorID *string `json:"OperatorID"`
+	OperatorID *string `json:"OperatorID" xml:"String"`
 
 	// NameType
 	//
@@ -37,13 +37,13 @@ type PTXServiceDTOBusSpecificationV3SubRouteOperator struct {
 	// Required: true
 	OperatorName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"OperatorName"`
+	} `json:"OperatorName" xml:"NameType"`
 
 	// String
 	//
 	// 營運業者編號[交通部票證資料系統定義]
 	// Required: true
-	OperatorNo *string `json:"OperatorNo"`
+	OperatorNo *string `json:"OperatorNo" xml:"String"`
 }
 
 // Validate validates this p t x service d t o bus specification v3 sub route operator

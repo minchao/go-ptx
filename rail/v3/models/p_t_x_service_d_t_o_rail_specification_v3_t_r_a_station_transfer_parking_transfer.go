@@ -25,7 +25,7 @@ type PTXServiceDTORailSpecificationV3TRAStationTransferParkingTransfer struct {
 	//
 	// 停車場代碼
 	// Required: true
-	CarParkID *string `json:"CarParkID"`
+	CarParkID *string `json:"CarParkID" xml:"String"`
 
 	// NameType
 	//
@@ -33,17 +33,17 @@ type PTXServiceDTORailSpecificationV3TRAStationTransferParkingTransfer struct {
 	// Required: true
 	CarParkName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"CarParkName"`
+	} `json:"CarParkName" xml:"NameType"`
 
 	// String
 	//
 	// 轉乘描述
-	Description string `json:"Description,omitempty"`
+	Description string `json:"Description,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 轉乘樓層
-	FloorLevel string `json:"FloorLevel,omitempty"`
+	FloorLevel string `json:"FloorLevel,omitempty" xml:"String,omitempty"`
 
 	// 是否為站內或站外轉乘
 	IsOnSiteTransfer bool `json:"IsOnSiteTransfer,omitempty"`
@@ -55,7 +55,7 @@ type PTXServiceDTORailSpecificationV3TRAStationTransferParkingTransfer struct {
 	//
 	// 運具種類代碼
 	// Required: true
-	Mode *string `json:"Mode"`
+	Mode *string `json:"Mode" xml:"String"`
 }
 
 // Validate validates this p t x service d t o rail specification v3 t r a station transfer parking transfer

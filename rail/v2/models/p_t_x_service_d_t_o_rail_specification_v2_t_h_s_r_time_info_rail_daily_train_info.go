@@ -25,44 +25,44 @@ type PTXServiceDTORailSpecificationV2THSRTimeInfoRailDailyTrainInfo struct {
 	//
 	// 行駛方向 : [0:'南下',1:'北上']
 	// Required: true
-	Direction *int32 `json:"Direction"`
+	Direction *string `json:"Direction"`
 
 	// String
 	//
 	// 列車終點車站代號
-	EndingStationID string `json:"EndingStationID,omitempty"`
+	EndingStationID string `json:"EndingStationID,omitempty" xml:"String,omitempty"`
 
 	// NameType
 	//
 	// 列車終點車站名稱
 	EndingStationName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"EndingStationName,omitempty"`
+	} `json:"EndingStationName,omitempty" xml:"NameType,omitempty"`
 
 	// NameType
 	//
 	// 附註說明
 	Note struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"Note,omitempty"`
+	} `json:"Note,omitempty" xml:"NameType,omitempty"`
 
 	// String
 	//
 	// 列車起點車站代號
-	StartingStationID string `json:"StartingStationID,omitempty"`
+	StartingStationID string `json:"StartingStationID,omitempty" xml:"String,omitempty"`
 
 	// NameType
 	//
 	// 列車起點車站名稱
 	StartingStationName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"StartingStationName,omitempty"`
+	} `json:"StartingStationName,omitempty" xml:"NameType,omitempty"`
 
 	// String
 	//
 	// 車次代碼
 	// Required: true
-	TrainNo *string `json:"TrainNo"`
+	TrainNo *string `json:"TrainNo" xml:"String"`
 }
 
 // Validate validates this p t x service d t o rail specification v2 t h s r time info rail daily train info

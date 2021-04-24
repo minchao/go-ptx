@@ -25,7 +25,7 @@ type PTXServiceDTORailSpecificationV2MetroSubClassTravelTime struct {
 	//
 	// 起站車站代號
 	// Required: true
-	FromStationID *string `json:"FromStationID"`
+	FromStationID *string `json:"FromStationID" xml:"String"`
 
 	// NameType
 	//
@@ -33,7 +33,7 @@ type PTXServiceDTORailSpecificationV2MetroSubClassTravelTime struct {
 	// Required: true
 	FromStationName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"FromStationName"`
+	} `json:"FromStationName" xml:"NameType"`
 
 	// Int32
 	//
@@ -54,7 +54,7 @@ type PTXServiceDTORailSpecificationV2MetroSubClassTravelTime struct {
 	//
 	// 迄站車站代號
 	// Required: true
-	ToStationID *string `json:"ToStationID"`
+	ToStationID *string `json:"ToStationID" xml:"String"`
 
 	// NameType
 	//
@@ -62,7 +62,7 @@ type PTXServiceDTORailSpecificationV2MetroSubClassTravelTime struct {
 	// Required: true
 	ToStationName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"ToStationName"`
+	} `json:"ToStationName" xml:"NameType"`
 }
 
 // Validate validates this p t x service d t o rail specification v2 metro sub class travel time

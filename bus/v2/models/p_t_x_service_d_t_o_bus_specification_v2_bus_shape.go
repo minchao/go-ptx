@@ -25,25 +25,25 @@ type PTXServiceDTOBusSpecificationV2BusShape struct {
 	//
 	// 去返程，若無值則表示來源尚無區分去返程 : [0:'去程',1:'返程',2:'迴圈',255:'未知']
 	// Required: true
-	Direction *int32 `json:"Direction"`
+	Direction *int64 `json:"Direction"`
 
 	// String
 	//
 	// 路線軌跡編碼(encoded polyline)
 	// Required: true
-	EncodedPolyline *string `json:"EncodedPolyline"`
+	EncodedPolyline *string `json:"EncodedPolyline" xml:"String"`
 
 	// String
 	//
 	// well-known text，為路線軌跡資料
 	// Required: true
-	Geometry *string `json:"Geometry"`
+	Geometry *string `json:"Geometry" xml:"String"`
 
 	// String
 	//
 	// 地區既用中之路線代碼(為原資料內碼)
 	// Required: true
-	RouteID *string `json:"RouteID"`
+	RouteID *string `json:"RouteID" xml:"String"`
 
 	// NameType
 	//
@@ -51,29 +51,31 @@ type PTXServiceDTOBusSpecificationV2BusShape struct {
 	// Required: true
 	RouteName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"RouteName"`
+	} `json:"RouteName" xml:"NameType"`
 
 	// String
 	//
 	// 路線唯一識別代碼，規則為 {業管機關簡碼} + {RouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢
 	// Required: true
-	RouteUID *string `json:"RouteUID"`
+	RouteUID *string `json:"RouteUID" xml:"String"`
 
 	// String
 	//
 	// 附屬路線唯一識別代碼，規則為 {業管機關簡碼} + {SubRouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢
-	SubRouteID string `json:"SubRouteID,omitempty"`
+	SubRouteID string `json:"SubRouteID,omitempty" xml:"String,omitempty"`
 
 	// NameType
 	//
 	// 附屬路線名稱
 	SubRouteName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"SubRouteName,omitempty"`
+	} `json:"SubRouteName,omitempty" xml:"NameType,omitempty"`
 
 	// String
+	//
+	// 附屬路線唯一識別代碼，規則為 {業管機關簡碼} + {SubRouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢
 	// Required: true
-	SubRouteUID *string `json:"SubRouteUID"`
+	SubRouteUID *string `json:"SubRouteUID" xml:"String"`
 
 	// DateTime
 	//

@@ -24,12 +24,12 @@ type PTXServiceDTORailSpecificationV3TRAStationTransferTaxiTransfer struct {
 	// String
 	//
 	// 轉乘描述
-	Description string `json:"Description,omitempty"`
+	Description string `json:"Description,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 轉乘樓層
-	FloorLevel string `json:"FloorLevel,omitempty"`
+	FloorLevel string `json:"FloorLevel,omitempty" xml:"String,omitempty"`
 
 	// 是否為站內或站外轉乘
 	IsOnSiteTransfer bool `json:"IsOnSiteTransfer,omitempty"`
@@ -41,12 +41,12 @@ type PTXServiceDTORailSpecificationV3TRAStationTransferTaxiTransfer struct {
 	//
 	// 運具種類代碼
 	// Required: true
-	Mode *string `json:"Mode"`
+	Mode *string `json:"Mode" xml:"String"`
 
 	// String
 	//
 	// 計程車招呼站代碼
-	TaxiStopID string `json:"TaxiStopID,omitempty"`
+	TaxiStopID string `json:"TaxiStopID,omitempty" xml:"String,omitempty"`
 
 	// NameType
 	//
@@ -54,7 +54,7 @@ type PTXServiceDTORailSpecificationV3TRAStationTransferTaxiTransfer struct {
 	// Required: true
 	TaxiStopName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"TaxiStopName"`
+	} `json:"TaxiStopName" xml:"NameType"`
 }
 
 // Validate validates this p t x service d t o rail specification v3 t r a station transfer taxi transfer

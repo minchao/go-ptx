@@ -32,18 +32,18 @@ type PTXServiceDTORailSpecificationV2MetroStationOfRoute struct {
 	//
 	// 營運路線所屬之路線代碼
 	// Required: true
-	LineID *string `json:"LineID"`
+	LineID *string `json:"LineID" xml:"String"`
 
 	// String
 	//
 	// 營運路線所屬之路線編號
-	LineNo string `json:"LineNo,omitempty"`
+	LineNo string `json:"LineNo,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 營運路線代碼
 	// Required: true
-	RouteID *string `json:"RouteID"`
+	RouteID *string `json:"RouteID" xml:"String"`
 
 	// NameType
 	//
@@ -51,7 +51,7 @@ type PTXServiceDTORailSpecificationV2MetroStationOfRoute struct {
 	// Required: true
 	RouteName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"RouteName"`
+	} `json:"RouteName" xml:"NameType"`
 
 	// DateTime
 	//
@@ -63,7 +63,7 @@ type PTXServiceDTORailSpecificationV2MetroStationOfRoute struct {
 	//
 	// 營運路線車站資訊
 	// Required: true
-	Stations []*PTXServiceDTORailSpecificationV2MetroSubClassStation `json:"Stations"`
+	Stations []*PTXServiceDTORailSpecificationV2MetroSubClassStation "json:\"Stations\" xml:\"List`1\""
 
 	// DateTime
 	//

@@ -22,12 +22,12 @@ type PTXServiceDTORailSpecificationV3TRACommonSpecialDay struct {
 	// String
 	//
 	// 不連續特殊日期
-	Dates string `json:"Dates,omitempty"`
+	Dates string `json:"Dates,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 特殊營運描述
-	Description string `json:"Description,omitempty"`
+	Description string `json:"Description,omitempty" xml:"String,omitempty"`
 
 	// DateTime
 	//
@@ -37,7 +37,7 @@ type PTXServiceDTORailSpecificationV3TRACommonSpecialDay struct {
 	// integer
 	//
 	// 營運服務狀態代碼 : [0:'停止營運',1:'正常營運',2:'加班營運']
-	ServiceStatus int32 `json:"ServiceStatus,omitempty"`
+	ServiceStatus string `json:"ServiceStatus,omitempty"`
 
 	// DateTime
 	//

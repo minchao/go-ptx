@@ -25,7 +25,7 @@ type PTXServiceDTOBusSpecificationV2BusVehicleInfo struct {
 	//
 	// 車牌號碼
 	// Required: true
-	PlateNumb *string `json:"PlateNumb"`
+	PlateNumb *string `json:"PlateNumb" xml:"String"`
 
 	// DateTime
 	//
@@ -37,7 +37,7 @@ type PTXServiceDTOBusSpecificationV2BusVehicleInfo struct {
 	//
 	// 車輛種類 : [0:'一般',1:'無障礙公車',2:'復康巴士',3:'小型巴士']
 	// Required: true
-	VehicleType *int32 `json:"VehicleType"`
+	VehicleType *int64 `json:"VehicleType"`
 }
 
 // Validate validates this p t x service d t o bus specification v2 bus vehicle info

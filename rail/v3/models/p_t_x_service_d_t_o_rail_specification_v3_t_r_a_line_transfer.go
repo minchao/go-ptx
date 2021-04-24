@@ -25,7 +25,7 @@ type PTXServiceDTORailSpecificationV3TRALineTransfer struct {
 	//
 	// 路線間轉乘(起)之路線代碼
 	// Required: true
-	FromLineID *string `json:"FromLineID"`
+	FromLineID *string `json:"FromLineID" xml:"String"`
 
 	// NameType
 	//
@@ -33,13 +33,13 @@ type PTXServiceDTORailSpecificationV3TRALineTransfer struct {
 	// Required: true
 	FromLineName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"FromLineName"`
+	} `json:"FromLineName" xml:"NameType"`
 
 	// String
 	//
 	// 路線間轉乘(起)之車站代碼
 	// Required: true
-	FromStationID *string `json:"FromStationID"`
+	FromStationID *string `json:"FromStationID" xml:"String"`
 
 	// NameType
 	//
@@ -47,7 +47,7 @@ type PTXServiceDTORailSpecificationV3TRALineTransfer struct {
 	// Required: true
 	FromStationName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"FromStationName"`
+	} `json:"FromStationName" xml:"NameType"`
 
 	// Double
 	//
@@ -59,7 +59,7 @@ type PTXServiceDTORailSpecificationV3TRALineTransfer struct {
 	//
 	// 路線間轉乘(迄)之路線代碼
 	// Required: true
-	ToLineID *string `json:"ToLineID"`
+	ToLineID *string `json:"ToLineID" xml:"String"`
 
 	// NameType
 	//
@@ -67,13 +67,13 @@ type PTXServiceDTORailSpecificationV3TRALineTransfer struct {
 	// Required: true
 	ToLineName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"ToLineName"`
+	} `json:"ToLineName" xml:"NameType"`
 
 	// String
 	//
 	// 路線間轉乘(迄)之車站代碼
 	// Required: true
-	ToStationID *string `json:"ToStationID"`
+	ToStationID *string `json:"ToStationID" xml:"String"`
 
 	// NameType
 	//
@@ -81,13 +81,13 @@ type PTXServiceDTORailSpecificationV3TRALineTransfer struct {
 	// Required: true
 	ToStationName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"ToStationName"`
+	} `json:"ToStationName" xml:"NameType"`
 
 	// String
 	//
 	// 轉乘方式文字描述
 	// Required: true
-	TransferDescription *string `json:"TransferDescription"`
+	TransferDescription *string `json:"TransferDescription" xml:"String"`
 }
 
 // Validate validates this p t x service d t o rail specification v3 t r a line transfer

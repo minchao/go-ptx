@@ -25,7 +25,7 @@ type PTXServiceDTORailSpecificationV2MetroSubClassHeadway struct {
 	//
 	// 結束時間
 	// Required: true
-	EndTime *string `json:"EndTime"`
+	EndTime *string `json:"EndTime" xml:"String"`
 
 	// Int32
 	//
@@ -43,13 +43,13 @@ type PTXServiceDTORailSpecificationV2MetroSubClassHeadway struct {
 	//
 	// 尖峰/離峰狀態(0:離峰, 1:尖峰)
 	// Required: true
-	PeakFlag *string `json:"PeakFlag"`
+	PeakFlag *string `json:"PeakFlag" xml:"String"`
 
 	// String
 	//
 	// 開始時間
 	// Required: true
-	StartTime *string `json:"StartTime"`
+	StartTime *string `json:"StartTime" xml:"String"`
 }
 
 // Validate validates this p t x service d t o rail specification v2 metro sub class headway

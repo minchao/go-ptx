@@ -26,7 +26,7 @@ type PTXServiceDTOBusSpecificationV3WrapperBusGWrapperPTXServiceDTOBusSpecificat
 	//
 	// 業管機關簡碼
 	// Required: true
-	AuthorityCode *string `json:"AuthorityCode"`
+	AuthorityCode *string `json:"AuthorityCode" xml:"String"`
 
 	// 資料總筆數
 	Count int64 `json:"Count,omitempty"`
@@ -45,13 +45,13 @@ type PTXServiceDTOBusSpecificationV3WrapperBusGWrapperPTXServiceDTOBusSpecificat
 	// String
 	//
 	// 公車定期營運班表名稱
-	ScheduleName string `json:"ScheduleName,omitempty"`
+	ScheduleName string `json:"ScheduleName,omitempty" xml:"String,omitempty"`
 
 	// Array
 	//
 	// 資料列表
 	// Required: true
-	Schedules []*PTXServiceDTOBusSpecificationV3Schedule `json:"Schedules"`
+	Schedules []*PTXServiceDTOBusSpecificationV3Schedule "json:\"Schedules\" xml:\"List`1\""
 
 	// Int32
 	//
@@ -80,7 +80,7 @@ type PTXServiceDTOBusSpecificationV3WrapperBusGWrapperPTXServiceDTOBusSpecificat
 	// String
 	//
 	// 時刻表適用情形說明
-	ValidityDesciption string `json:"ValidityDesciption,omitempty"`
+	ValidityDesciption string `json:"ValidityDesciption,omitempty" xml:"String,omitempty"`
 }
 
 // Validate validates this p t x service d t o bus specification v3 wrapper bus g wrapper p t x service d t o bus specification v3 schedule

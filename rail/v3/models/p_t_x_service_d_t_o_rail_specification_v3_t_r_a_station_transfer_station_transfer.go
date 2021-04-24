@@ -26,19 +26,19 @@ type PTXServiceDTORailSpecificationV3TRAStationTransferStationTransfer struct {
 	//
 	// 外部轉乘地圖簡圖連結資訊
 	// Required: true
-	ExteriorMapURLs []*PTXServiceDTORailSpecificationV3TRAStationTransferMapURL `json:"ExteriorMapURLs"`
+	ExteriorMapURLs []*PTXServiceDTORailSpecificationV3TRAStationTransferMapURL "json:\"ExteriorMapURLs\" xml:\"List`1\""
 
 	// Array
 	//
 	// 車站內部地圖簡圖連結資訊
 	// Required: true
-	InteriorMapURLs []*PTXServiceDTORailSpecificationV3TRAStationTransferMapURL `json:"InteriorMapURLs"`
+	InteriorMapURLs []*PTXServiceDTORailSpecificationV3TRAStationTransferMapURL "json:\"InteriorMapURLs\" xml:\"List`1\""
 
 	// String
 	//
 	// 車站代碼
 	// Required: true
-	StationID *string `json:"StationID"`
+	StationID *string `json:"StationID" xml:"String"`
 
 	// NameType
 	//
@@ -46,18 +46,18 @@ type PTXServiceDTORailSpecificationV3TRAStationTransferStationTransfer struct {
 	// Required: true
 	StationName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"StationName"`
+	} `json:"StationName" xml:"NameType"`
 
 	// String
 	//
 	// 轉乘文字描述
-	TransferDescription string `json:"TransferDescription,omitempty"`
+	TransferDescription string `json:"TransferDescription,omitempty" xml:"String,omitempty"`
 
 	// Array
 	//
 	// 跨運具轉乘資訊
 	// Required: true
-	Transfers []*PTXServiceDTORailSpecificationV3TRAStationTransferTransfer `json:"Transfers"`
+	Transfers []*PTXServiceDTORailSpecificationV3TRAStationTransferTransfer "json:\"Transfers\" xml:\"List`1\""
 }
 
 // Validate validates this p t x service d t o rail specification v3 t r a station transfer station transfer

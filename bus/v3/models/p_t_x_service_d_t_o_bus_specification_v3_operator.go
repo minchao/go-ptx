@@ -22,30 +22,30 @@ type PTXServiceDTOBusSpecificationV3Operator struct {
 	// String
 	//
 	// 營運業者票價查詢網站連結
-	FareURL string `json:"FareURL,omitempty"`
+	FareURL string `json:"FareURL,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 營運業者簡碼
 	// Required: true
-	OperatorCode *string `json:"OperatorCode"`
+	OperatorCode *string `json:"OperatorCode" xml:"String"`
 
 	// String
 	//
 	// 營運業者電子信箱
 	// Required: true
-	OperatorEmail *string `json:"OperatorEmail"`
+	OperatorEmail *string `json:"OperatorEmail" xml:"String"`
 
 	// String
 	//
 	// 營運業者代碼
 	// Required: true
-	OperatorID *string `json:"OperatorID"`
+	OperatorID *string `json:"OperatorID" xml:"String"`
 
 	// String
 	//
 	// 營運業者Logo網址
-	OperatorLogoURL string `json:"OperatorLogoURL,omitempty"`
+	OperatorLogoURL string `json:"OperatorLogoURL,omitempty" xml:"String,omitempty"`
 
 	// NameType
 	//
@@ -53,39 +53,39 @@ type PTXServiceDTOBusSpecificationV3Operator struct {
 	// Required: true
 	OperatorName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"OperatorName"`
+	} `json:"OperatorName" xml:"NameType"`
 
 	// String
 	//
 	// 營運業者編號[交通部票證資料系統定義]
-	OperatorNo string `json:"OperatorNo,omitempty"`
+	OperatorNo string `json:"OperatorNo,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 營運業者連絡電話
 	// Required: true
-	OperatorPhone *string `json:"OperatorPhone"`
+	OperatorPhone *string `json:"OperatorPhone" xml:"String"`
 
 	// String
 	//
 	// 營運業者網址鏈結
 	// Required: true
-	OperatorURL *string `json:"OperatorUrl"`
+	OperatorURL *string `json:"OperatorUrl" xml:"String"`
 
 	// String
 	//
 	// 訂票連絡電話
-	ReservationPhone string `json:"ReservationPhone,omitempty"`
+	ReservationPhone string `json:"ReservationPhone,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 訂票網址鏈結
-	ReservationURL string `json:"ReservationUrl,omitempty"`
+	ReservationURL string `json:"ReservationUrl,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 營運業者所屬業管子機關簡碼
-	SubAuthorityCode string `json:"SubAuthorityCode,omitempty"`
+	SubAuthorityCode string `json:"SubAuthorityCode,omitempty" xml:"String,omitempty"`
 }
 
 // Validate validates this p t x service d t o bus specification v3 operator

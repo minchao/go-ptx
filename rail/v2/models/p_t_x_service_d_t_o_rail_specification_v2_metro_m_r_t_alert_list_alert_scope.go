@@ -26,38 +26,38 @@ type PTXServiceDTORailSpecificationV2MetroMRTAlertListAlertScope struct {
 	//
 	// 受影響的路線區間
 	// Required: true
-	LineSections []*PTXServiceDTORailSpecificationV2MetroMRTAlertListAlertScopeLineSection `json:"LineSections"`
+	LineSections []*PTXServiceDTORailSpecificationV2MetroMRTAlertListAlertScopeLineSection `json:"LineSections" xml:"AlertScopeLineSection[]"`
 
 	// AlertScopeLine[]
 	//
 	// 受影響的實體路線
 	// Required: true
-	Lines []*PTXServiceDTORailSpecificationV2MetroMRTAlertListAlertScopeLine `json:"Lines"`
+	Lines []*PTXServiceDTORailSpecificationV2MetroMRTAlertListAlertScopeLine `json:"Lines" xml:"AlertScopeLine[]"`
 
 	// AlertScopeNetwork
 	//
 	// 受影響的路網
 	Network struct {
 		PTXServiceDTORailSpecificationV2MetroMRTAlertListAlertScopeNetwork
-	} `json:"Network,omitempty"`
+	} `json:"Network,omitempty" xml:"AlertScopeNetwork,omitempty"`
 
 	// AlertScopeRoute[]
 	//
 	// 受影響的營運路線
 	// Required: true
-	Routes []*PTXServiceDTORailSpecificationV2MetroMRTAlertListAlertScopeRoute `json:"Routes"`
+	Routes []*PTXServiceDTORailSpecificationV2MetroMRTAlertListAlertScopeRoute `json:"Routes" xml:"AlertScopeRoute[]"`
 
 	// AlertScopeStation[]
 	//
 	// 受影響的車站
 	// Required: true
-	Stations []*PTXServiceDTORailSpecificationV2MetroMRTAlertListAlertScopeStation `json:"Stations"`
+	Stations []*PTXServiceDTORailSpecificationV2MetroMRTAlertListAlertScopeStation `json:"Stations" xml:"AlertScopeStation[]"`
 
 	// AlertScopeTrain[]
 	//
 	// 受影響的車次
 	// Required: true
-	Trains []*PTXServiceDTORailSpecificationV2MetroMRTAlertListAlertScopeTrain `json:"Trains"`
+	Trains []*PTXServiceDTORailSpecificationV2MetroMRTAlertListAlertScopeTrain `json:"Trains" xml:"AlertScopeTrain[]"`
 }
 
 // Validate validates this p t x service d t o rail specification v2 metro m r t alert list alert scope

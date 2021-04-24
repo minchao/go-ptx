@@ -22,12 +22,12 @@ type PTXServiceDTORailSpecificationV2MetroMRTAlertListAlertScopeLine struct {
 	// String
 	//
 	// 實體路線代碼
-	LineID string `json:"LineID,omitempty"`
+	LineID string `json:"LineID,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 實體路線名稱
-	LineName string `json:"LineName,omitempty"`
+	LineName string `json:"LineName,omitempty" xml:"String,omitempty"`
 }
 
 // Validate validates this p t x service d t o rail specification v2 metro m r t alert list alert scope line

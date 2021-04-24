@@ -26,12 +26,12 @@ type PTXServiceDTOBusSpecificationV2N1Estimate struct {
 	// String
 	//
 	// 車輛車牌號碼
-	PlateNumb string `json:"PlateNumb,omitempty"`
+	PlateNumb string `json:"PlateNumb,omitempty" xml:"String,omitempty"`
 
 	// integer
 	//
 	// 車輛於該站之進離站狀態 : [0:'離站',1:'進站']
-	VehicleStopStatus int32 `json:"VehicleStopStatus,omitempty"`
+	VehicleStopStatus string `json:"VehicleStopStatus,omitempty"`
 }
 
 // Validate validates this p t x service d t o bus specification v2 n1 estimate

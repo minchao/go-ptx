@@ -24,7 +24,7 @@ type PTXAPIRailModelTRAODFareWrapperPTXServiceDTORailSpecificationV3TRAODFareODF
 	//
 	// 業管機關簡碼
 	// Required: true
-	AuthorityCode *string `json:"AuthorityCode"`
+	AuthorityCode *string `json:"AuthorityCode" xml:"String"`
 
 	// 資料總筆數
 	Count int64 `json:"Count,omitempty"`
@@ -32,18 +32,18 @@ type PTXAPIRailModelTRAODFareWrapperPTXServiceDTORailSpecificationV3TRAODFareODF
 	// String
 	//
 	// 有效起始日期
-	EffectiveDate string `json:"EffectiveDate,omitempty"`
+	EffectiveDate string `json:"EffectiveDate,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 有效終止日期
-	ExpireDate string `json:"ExpireDate,omitempty"`
+	ExpireDate string `json:"ExpireDate,omitempty" xml:"String,omitempty"`
 
 	// Array
 	//
 	// 資料(陣列)
 	// Required: true
-	ODFares []*PTXServiceDTORailSpecificationV3TRAODFareODFare `json:"ODFares"`
+	ODFares []*PTXServiceDTORailSpecificationV3TRAODFareODFare "json:\"ODFares\" xml:\"List`1\""
 
 	// Int32
 	//
@@ -60,7 +60,7 @@ type PTXAPIRailModelTRAODFareWrapperPTXServiceDTORailSpecificationV3TRAODFareODF
 	// String
 	//
 	// 資料版本
-	SrcVersion string `json:"SrcVersion,omitempty"`
+	SrcVersion string `json:"SrcVersion,omitempty" xml:"String,omitempty"`
 
 	// Int32
 	//

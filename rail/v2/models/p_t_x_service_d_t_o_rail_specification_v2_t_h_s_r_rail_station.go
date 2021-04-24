@@ -24,46 +24,46 @@ type PTXServiceDTORailSpecificationV2THSRRailStation struct {
 	// String
 	//
 	// 車站位置所屬縣市
-	LocationCity string `json:"LocationCity,omitempty"`
+	LocationCity string `json:"LocationCity,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 車站位置所屬縣市代碼
-	LocationCityCode string `json:"LocationCityCode,omitempty"`
+	LocationCityCode string `json:"LocationCityCode,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 車站位置所屬鄉鎮
-	LocationTown string `json:"LocationTown,omitempty"`
+	LocationTown string `json:"LocationTown,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 車站位置所屬鄉鎮代碼
-	LocationTownCode string `json:"LocationTownCode,omitempty"`
+	LocationTownCode string `json:"LocationTownCode,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 營運業者代碼
 	// Required: true
-	OperatorID *string `json:"OperatorID"`
+	OperatorID *string `json:"OperatorID" xml:"String"`
 
 	// String
 	//
 	// 車站地址
 	// Required: true
-	StationAddress *string `json:"StationAddress"`
+	StationAddress *string `json:"StationAddress" xml:"String"`
 
 	// String
 	//
 	// 車站簡碼(訂票系統用)
 	// Required: true
-	StationCode *string `json:"StationCode"`
+	StationCode *string `json:"StationCode" xml:"String"`
 
 	// String
 	//
 	// 車站代碼
 	// Required: true
-	StationID *string `json:"StationID"`
+	StationID *string `json:"StationID" xml:"String"`
 
 	// NameType
 	//
@@ -71,25 +71,25 @@ type PTXServiceDTORailSpecificationV2THSRRailStation struct {
 	// Required: true
 	StationName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"StationName"`
+	} `json:"StationName" xml:"NameType"`
 
 	// String
 	//
 	// 車站聯絡電話
-	StationPhone string `json:"StationPhone,omitempty"`
+	StationPhone string `json:"StationPhone,omitempty" xml:"String,omitempty"`
 
 	// PointType
 	//
 	// 車站位置
 	StationPosition struct {
 		PTXServiceDTORailSpecificationV2PointType
-	} `json:"StationPosition,omitempty"`
+	} `json:"StationPosition,omitempty" xml:"PointType,omitempty"`
 
 	// String
 	//
 	// 車站唯一識別代碼
 	// Required: true
-	StationUID *string `json:"StationUID"`
+	StationUID *string `json:"StationUID" xml:"String"`
 
 	// DateTime
 	//

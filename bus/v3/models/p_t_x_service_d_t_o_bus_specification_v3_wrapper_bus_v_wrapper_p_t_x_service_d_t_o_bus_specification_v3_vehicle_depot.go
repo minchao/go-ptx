@@ -26,7 +26,7 @@ type PTXServiceDTOBusSpecificationV3WrapperBusVWrapperPTXServiceDTOBusSpecificat
 	//
 	// 業管機關簡碼
 	// Required: true
-	AuthorityCode *string `json:"AuthorityCode"`
+	AuthorityCode *string `json:"AuthorityCode" xml:"String"`
 
 	// 資料總筆數
 	Count int64 `json:"Count,omitempty"`
@@ -59,7 +59,7 @@ type PTXServiceDTOBusSpecificationV3WrapperBusVWrapperPTXServiceDTOBusSpecificat
 	//
 	// 資料列表
 	// Required: true
-	VehicleDepots []*PTXServiceDTOBusSpecificationV3VehicleDepot `json:"VehicleDepots"`
+	VehicleDepots []*PTXServiceDTOBusSpecificationV3VehicleDepot "json:\"VehicleDepots\" xml:\"List`1\""
 
 	// Int32
 	//

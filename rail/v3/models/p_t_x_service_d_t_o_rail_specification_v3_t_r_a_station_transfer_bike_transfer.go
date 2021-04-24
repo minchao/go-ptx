@@ -24,12 +24,12 @@ type PTXServiceDTORailSpecificationV3TRAStationTransferBikeTransfer struct {
 	// String
 	//
 	// 轉乘描述
-	Description string `json:"Description,omitempty"`
+	Description string `json:"Description,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 轉乘樓層
-	FloorLevel string `json:"FloorLevel,omitempty"`
+	FloorLevel string `json:"FloorLevel,omitempty" xml:"String,omitempty"`
 
 	// 是否為站內或站外轉乘
 	IsOnSiteTransfer bool `json:"IsOnSiteTransfer,omitempty"`
@@ -41,13 +41,13 @@ type PTXServiceDTORailSpecificationV3TRAStationTransferBikeTransfer struct {
 	//
 	// 運具種類代碼
 	// Required: true
-	Mode *string `json:"Mode"`
+	Mode *string `json:"Mode" xml:"String"`
 
 	// String
 	//
 	// 公共自行車營運業者簡碼
 	// Required: true
-	OperatorCode *string `json:"OperatorCode"`
+	OperatorCode *string `json:"OperatorCode" xml:"String"`
 
 	// NameType
 	//
@@ -55,13 +55,13 @@ type PTXServiceDTORailSpecificationV3TRAStationTransferBikeTransfer struct {
 	// Required: true
 	OperatorName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"OperatorName"`
+	} `json:"OperatorName" xml:"NameType"`
 
 	// String
 	//
 	// 公共自行車租借站位代碼
 	// Required: true
-	StationID *string `json:"StationID"`
+	StationID *string `json:"StationID" xml:"String"`
 
 	// NameType
 	//
@@ -69,7 +69,7 @@ type PTXServiceDTORailSpecificationV3TRAStationTransferBikeTransfer struct {
 	// Required: true
 	StationName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"StationName"`
+	} `json:"StationName" xml:"NameType"`
 }
 
 // Validate validates this p t x service d t o rail specification v3 t r a station transfer bike transfer

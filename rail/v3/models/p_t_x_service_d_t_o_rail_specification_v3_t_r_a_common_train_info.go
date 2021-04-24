@@ -25,127 +25,127 @@ type PTXServiceDTORailSpecificationV3TRACommonTrainInfo struct {
 	//
 	// 是否人車同行班次(置於攜車袋之自行車各級列車均可乘車) : [0:'否',1:'是']
 	// Required: true
-	BikeFlag *int32 `json:"BikeFlag"`
+	BikeFlag *string `json:"BikeFlag"`
 
 	// integer
 	//
 	// 是否設有哺(集)乳室車廂 : [0:'否',1:'是']
 	// Required: true
-	BreastFeedFlag *int32 `json:"BreastFeedFlag"`
+	BreastFeedFlag *string `json:"BreastFeedFlag"`
 
 	// integer
 	//
 	// 是否提供小客車 : [0:'否',1:'是']
 	// Required: true
-	CarFlag *int32 `json:"CarFlag"`
+	CarFlag *string `json:"CarFlag"`
 
 	// integer
 	//
 	// 是否為每日行駛 : [0:'否',1:'是']
 	// Required: true
-	DailyFlag *int32 `json:"DailyFlag"`
+	DailyFlag *string `json:"DailyFlag"`
 
 	// integer
 	//
 	// 是否提供訂便當服務 : [0:'否',1:'是']
 	// Required: true
-	DiningFlag *int32 `json:"DiningFlag"`
+	DiningFlag *string `json:"DiningFlag"`
 
 	// integer
 	//
 	// 行駛方向 : [0:'順行',1:'逆行']
 	// Required: true
-	Direction *int32 `json:"Direction"`
+	Direction *string `json:"Direction"`
 
 	// String
 	//
 	// 列車終點車站代號
-	EndingStationID string `json:"EndingStationID,omitempty"`
+	EndingStationID string `json:"EndingStationID,omitempty" xml:"String,omitempty"`
 
 	// NameType
 	//
 	// 列車終點車站名稱
 	EndingStationName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"EndingStationName,omitempty"`
+	} `json:"EndingStationName,omitempty" xml:"NameType,omitempty"`
 
 	// integer
 	//
 	// 是否為加班車 : [0:'否',1:'是']
 	// Required: true
-	ExtraTrainFlag *int32 `json:"ExtraTrainFlag"`
+	ExtraTrainFlag *string `json:"ExtraTrainFlag"`
 
 	// String
 	//
 	// 附註說明
-	Note string `json:"Note,omitempty"`
+	Note string `json:"Note,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 跨夜車站代碼
-	OverNightStationID string `json:"OverNightStationID,omitempty"`
+	OverNightStationID string `json:"OverNightStationID,omitempty" xml:"String,omitempty"`
 
 	// integer
 	//
 	// 是否提供行李服務 : [0:'否',1:'是']
 	// Required: true
-	PackageServiceFlag *int32 `json:"PackageServiceFlag"`
+	PackageServiceFlag *string `json:"PackageServiceFlag"`
 
 	// String
 	//
 	// 營運路線代碼
-	RouteID string `json:"RouteID,omitempty"`
+	RouteID string `json:"RouteID,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 列車起點車站代號
-	StartingStationID string `json:"StartingStationID,omitempty"`
+	StartingStationID string `json:"StartingStationID,omitempty" xml:"String,omitempty"`
 
 	// NameType
 	//
 	// 列車起點車站名稱
 	StartingStationName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"StartingStationName,omitempty"`
+	} `json:"StartingStationName,omitempty" xml:"NameType,omitempty"`
 
 	// String
 	//
 	// 車次代碼
 	// Required: true
-	TrainNo *string `json:"TrainNo"`
+	TrainNo *string `json:"TrainNo" xml:"String"`
 
 	// String
 	//
 	// 車種簡碼 = ['1: 太魯閣', '2: 普悠瑪', '3: 自強', '4: 莒光', '5: 復興', '6: 區間', '7: 普快', '10: 區間快']
-	TrainTypeCode string `json:"TrainTypeCode,omitempty"`
+	TrainTypeCode string `json:"TrainTypeCode,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 車種代嗎
-	TrainTypeID string `json:"TrainTypeID,omitempty"`
+	TrainTypeID string `json:"TrainTypeID,omitempty" xml:"String,omitempty"`
 
 	// NameType
 	//
 	// 車種名稱
 	TrainTypeName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"TrainTypeName,omitempty"`
+	} `json:"TrainTypeName,omitempty" xml:"NameType,omitempty"`
 
 	// String
 	//
 	// 車次之目的地方向描述
-	TripHeadSign string `json:"TripHeadSign,omitempty"`
+	TripHeadSign string `json:"TripHeadSign,omitempty" xml:"String,omitempty"`
 
 	// integer
 	//
 	// 山海線類型 : [0:'不經山海線',1:'山線',2:'海線',3:'成追線']
-	TripLine int32 `json:"TripLine,omitempty"`
+	TripLine string `json:"TripLine,omitempty"`
 
 	// integer
 	//
 	// 是否設身障旅客專用座位車 : [0:'否',1:'是']
 	// Required: true
-	WheelChairFlag *int32 `json:"WheelChairFlag"`
+	WheelChairFlag *string `json:"WheelChairFlag"`
 }
 
 // Validate validates this p t x service d t o rail specification v3 t r a common train info

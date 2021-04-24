@@ -24,7 +24,7 @@ type PTXServiceDTORailSpecificationV3TRAODFareODFare struct {
 	//
 	// 迄點車站代碼
 	// Required: true
-	DestinationStationID *string `json:"DestinationStationID"`
+	DestinationStationID *string `json:"DestinationStationID" xml:"String"`
 
 	// NameType
 	//
@@ -32,24 +32,24 @@ type PTXServiceDTORailSpecificationV3TRAODFareODFare struct {
 	// Required: true
 	DestinationStationName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"DestinationStationName"`
+	} `json:"DestinationStationName" xml:"NameType"`
 
 	// integer
 	//
 	// 方向 : [0:'順行',1:'逆行']
-	Direction int32 `json:"Direction,omitempty"`
+	Direction string `json:"Direction,omitempty"`
 
 	// Array
 	//
 	// 票價
 	// Required: true
-	Fares []*PTXServiceDTORailSpecificationV3TRAODFareFare `json:"Fares"`
+	Fares []*PTXServiceDTORailSpecificationV3TRAODFareFare "json:\"Fares\" xml:\"List`1\""
 
 	// String
 	//
 	// 起點車站代碼
 	// Required: true
-	OriginStationID *string `json:"OriginStationID"`
+	OriginStationID *string `json:"OriginStationID" xml:"String"`
 
 	// NameType
 	//
@@ -57,7 +57,7 @@ type PTXServiceDTORailSpecificationV3TRAODFareODFare struct {
 	// Required: true
 	OriginStationName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"OriginStationName"`
+	} `json:"OriginStationName" xml:"NameType"`
 
 	// Int32
 	//

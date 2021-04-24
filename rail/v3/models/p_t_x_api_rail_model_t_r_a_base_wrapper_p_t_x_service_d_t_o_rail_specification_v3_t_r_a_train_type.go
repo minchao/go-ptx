@@ -24,7 +24,7 @@ type PTXAPIRailModelTRABaseWrapperPTXServiceDTORailSpecificationV3TRATrainType s
 	//
 	// 業管機關簡碼
 	// Required: true
-	AuthorityCode *string `json:"AuthorityCode"`
+	AuthorityCode *string `json:"AuthorityCode" xml:"String"`
 
 	// 資料總筆數
 	Count int64 `json:"Count,omitempty"`
@@ -45,7 +45,7 @@ type PTXAPIRailModelTRABaseWrapperPTXServiceDTORailSpecificationV3TRATrainType s
 	//
 	// 資料(陣列)
 	// Required: true
-	TrainTypes []*PTXServiceDTORailSpecificationV3TRATrainType `json:"TrainTypes"`
+	TrainTypes []*PTXServiceDTORailSpecificationV3TRATrainType "json:\"TrainTypes\" xml:\"List`1\""
 
 	// Int32
 	//

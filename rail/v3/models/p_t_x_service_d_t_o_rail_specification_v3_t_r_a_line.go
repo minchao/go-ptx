@@ -30,18 +30,18 @@ type PTXServiceDTORailSpecificationV3TRALine struct {
 	// String
 	//
 	// 路線顏色
-	LineColor string `json:"LineColor,omitempty"`
+	LineColor string `json:"LineColor,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 路線群組
-	LineGroup string `json:"LineGroup,omitempty"`
+	LineGroup string `json:"LineGroup,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 路線代碼
 	// Required: true
-	LineID *string `json:"LineID"`
+	LineID *string `json:"LineID" xml:"String"`
 
 	// NameType
 	//
@@ -49,13 +49,13 @@ type PTXServiceDTORailSpecificationV3TRALine struct {
 	// Required: true
 	LineName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"LineName"`
+	} `json:"LineName" xml:"NameType"`
 
 	// String
 	//
 	// 路線編號
 	// Required: true
-	LineNo *string `json:"LineNo"`
+	LineNo *string `json:"LineNo" xml:"String"`
 
 	// NameType
 	//
@@ -63,12 +63,12 @@ type PTXServiceDTORailSpecificationV3TRALine struct {
 	// Required: true
 	LineSectionName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"LineSectionName"`
+	} `json:"LineSectionName" xml:"NameType"`
 
 	// String
 	//
 	// 路線群組
-	LineURL string `json:"LineURL,omitempty"`
+	LineURL string `json:"LineURL,omitempty" xml:"String,omitempty"`
 }
 
 // Validate validates this p t x service d t o rail specification v3 t r a line

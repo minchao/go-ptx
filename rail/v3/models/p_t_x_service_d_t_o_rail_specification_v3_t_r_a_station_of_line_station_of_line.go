@@ -26,19 +26,19 @@ type PTXServiceDTORailSpecificationV3TRAStationOfLineStationOfLine struct {
 	//
 	// 路線代碼
 	// Required: true
-	LineID *string `json:"LineID"`
+	LineID *string `json:"LineID" xml:"String"`
 
 	// String
 	//
 	// 路線編號
 	// Required: true
-	LineNo *string `json:"LineNo"`
+	LineNo *string `json:"LineNo" xml:"String"`
 
 	// Array
 	//
 	// 路線車站資訊
 	// Required: true
-	Stations []*PTXServiceDTORailSpecificationV3TRAStationOfLineLineStation `json:"Stations"`
+	Stations []*PTXServiceDTORailSpecificationV3TRAStationOfLineLineStation "json:\"Stations\" xml:\"List`1\""
 }
 
 // Validate validates this p t x service d t o rail specification v3 t r a station of line station of line

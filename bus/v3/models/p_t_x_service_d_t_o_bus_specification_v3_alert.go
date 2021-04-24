@@ -23,22 +23,22 @@ type PTXServiceDTOBusSpecificationV3Alert struct {
 	//
 	// 通阻事件原單位發布代碼
 	// Required: true
-	AlertID *string `json:"AlertID"`
+	AlertID *string `json:"AlertID" xml:"String"`
 
 	// String
 	//
 	// 詳細描述網站連結
-	AlertURL string `json:"AlertURL,omitempty"`
+	AlertURL string `json:"AlertURL,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 事件描述
-	Description string `json:"Description,omitempty"`
+	Description string `json:"Description,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 影響方向
-	Direction string `json:"Direction,omitempty"`
+	Direction string `json:"Direction,omitempty" xml:"String,omitempty"`
 
 	// DateTime
 	//
@@ -56,7 +56,7 @@ type PTXServiceDTOBusSpecificationV3Alert struct {
 	// Required: true
 	Scope struct {
 		PTXServiceDTOBusSpecificationV3Scope
-	} `json:"Scope"`
+	} `json:"Scope" xml:"Scope"`
 
 	// DateTime
 	//
@@ -71,7 +71,7 @@ type PTXServiceDTOBusSpecificationV3Alert struct {
 	// String
 	//
 	// 通阻標題
-	Title string `json:"Title,omitempty"`
+	Title string `json:"Title,omitempty" xml:"String,omitempty"`
 }
 
 // Validate validates this p t x service d t o bus specification v3 alert

@@ -307,20 +307,37 @@
     }
   },
   "definitions": {
-    "PTX.Service.DTO.Shared.Specification.V2.Base.NameType": {
-      "title": "NameType",
-      "description": "名稱資料型別",
+    "PTX.API.Basic.Model.V2.BasicWrapper[PTX.Service.DTO.Shared.Specification.V2.Base.News]": {
+      "title": "NewsList",
+      "required": [
+        "Newses",
+        "UpdateInterval",
+        "UpdateTime"
+      ],
       "type": "object",
       "properties": {
-        "Zh_tw": {
-          "title": "String",
-          "description": "中文繁體名稱",
+        "UpdateTime": {
+          "title": "DateTime",
+          "description": "更新日期時間",
           "type": "string"
         },
-        "En": {
-          "title": "String",
-          "description": "英文名稱",
-          "type": "string"
+        "UpdateInterval": {
+          "format": "int32",
+          "title": "Int32",
+          "description": "資料更新週期(秒)",
+          "type": "integer"
+        },
+        "Newses": {
+          "title": "Array",
+          "description": "資料(陣列)",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V2.Base.News"
+          }
+        },
+        "Count": {
+          "format": "int64",
+          "type": "integer"
         }
       }
     },
@@ -376,6 +393,23 @@
         }
       }
     },
+    "PTX.Service.DTO.Shared.Specification.V2.Base.NameType": {
+      "title": "NameType",
+      "description": "名稱資料型別",
+      "type": "object",
+      "properties": {
+        "Zh_tw": {
+          "title": "String",
+          "description": "中文繁體名稱",
+          "type": "string"
+        },
+        "En": {
+          "title": "String",
+          "description": "英文名稱",
+          "type": "string"
+        }
+      }
+    },
     "PTX.Service.DTO.Shared.Specification.V2.Base.News": {
       "title": "News",
       "description": "業管機關資料型別",
@@ -408,10 +442,9 @@
           "type": "string"
         },
         "NewsCategory": {
-          "format": "int32",
           "title": "integer",
           "description": "消息類別 : [1:'最新消息',2:'新聞稿',3:'營運資訊',4:'轉乘資訊',5:'活動訊息',6:'系統公告',7:'新服務上架',8:'API修正',9:'來源異常',99:'其他']",
-          "type": "integer"
+          "type": "string"
         },
         "Description": {
           "title": "String",
@@ -447,40 +480,6 @@
           "title": "DateTime",
           "description": "消息更新時間",
           "type": "string"
-        }
-      }
-    },
-    "PTX.API.Basic.Model.V2.BasicWrapper[PTX.Service.DTO.Shared.Specification.V2.Base.News]": {
-      "title": "NewsList",
-      "required": [
-        "Newses",
-        "UpdateInterval",
-        "UpdateTime"
-      ],
-      "type": "object",
-      "properties": {
-        "UpdateTime": {
-          "title": "DateTime",
-          "description": "更新日期時間",
-          "type": "string"
-        },
-        "UpdateInterval": {
-          "format": "int32",
-          "title": "Int32",
-          "description": "資料更新週期(秒)",
-          "type": "integer"
-        },
-        "Newses": {
-          "title": "Array",
-          "description": "資料(陣列)",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V2.Base.News"
-          }
-        },
-        "Count": {
-          "format": "int64",
-          "type": "integer"
         }
       }
     },

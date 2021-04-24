@@ -28,19 +28,19 @@ type PTXServiceDTORailSpecificationV2THSRRailDailyTimetable struct {
 	// Required: true
 	DailyTrainInfo struct {
 		PTXServiceDTORailSpecificationV2THSRTimeInfoRailDailyTrainInfo
-	} `json:"DailyTrainInfo"`
+	} `json:"DailyTrainInfo" xml:"RailDailyTrainInfo"`
 
 	// Array
 	//
 	// 停靠時間資料
 	// Required: true
-	StopTimes []*PTXServiceDTORailSpecificationV2THSRRailStopTime `json:"StopTimes"`
+	StopTimes []*PTXServiceDTORailSpecificationV2THSRRailStopTime "json:\"StopTimes\" xml:\"List`1\""
 
 	// String
 	//
 	// 行駛日期(格式: yyyy:MM:dd)
 	// Required: true
-	TrainDate *string `json:"TrainDate"`
+	TrainDate *string `json:"TrainDate" xml:"String"`
 
 	// DateTime
 	//

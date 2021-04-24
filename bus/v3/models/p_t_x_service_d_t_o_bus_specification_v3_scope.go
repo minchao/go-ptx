@@ -24,22 +24,22 @@ type PTXServiceDTOBusSpecificationV3Scope struct {
 	// Array
 	//
 	// 路線資料
-	Routes []*PTXServiceDTOBusSpecificationV3ScopeRoute `json:"Routes"`
+	Routes []*PTXServiceDTOBusSpecificationV3ScopeRoute "json:\"Routes\" xml:\"List`1\""
 
 	// Array
 	//
 	// 站牌資料
-	Stops []*PTXServiceDTOBusSpecificationV3ScopeStop `json:"Stops"`
+	Stops []*PTXServiceDTOBusSpecificationV3ScopeStop "json:\"Stops\" xml:\"List`1\""
 
 	// Array
 	//
 	// 附屬路線資料
-	SubRoutes []*PTXServiceDTOBusSpecificationV3ScopeSubRoute `json:"SubRoutes"`
+	SubRoutes []*PTXServiceDTOBusSpecificationV3ScopeSubRoute "json:\"SubRoutes\" xml:\"List`1\""
 
 	// Array
 	//
 	// 班次代碼資料
-	TripIDs []*PTXServiceDTOBusSpecificationV3ScopeTrip `json:"TripIDs"`
+	TripIDs []*PTXServiceDTOBusSpecificationV3ScopeTrip "json:\"TripIDs\" xml:\"List`1\""
 }
 
 // Validate validates this p t x service d t o bus specification v3 scope

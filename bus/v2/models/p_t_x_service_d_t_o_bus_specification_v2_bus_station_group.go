@@ -25,7 +25,7 @@ type PTXServiceDTOBusSpecificationV2BusStationGroup struct {
 	//
 	// 組站位代碼
 	// Required: true
-	StationGroupID *string `json:"StationGroupID"`
+	StationGroupID *string `json:"StationGroupID" xml:"String"`
 
 	// NameType
 	//
@@ -33,7 +33,7 @@ type PTXServiceDTOBusSpecificationV2BusStationGroup struct {
 	// Required: true
 	StationGroupName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"StationGroupName"`
+	} `json:"StationGroupName" xml:"NameType"`
 
 	// PointType
 	//
@@ -41,13 +41,13 @@ type PTXServiceDTOBusSpecificationV2BusStationGroup struct {
 	// Required: true
 	StationGroupPosition struct {
 		PTXServiceDTOSharedSpecificationV2BasePointType
-	} `json:"StationGroupPosition"`
+	} `json:"StationGroupPosition" xml:"PointType"`
 
 	// String
 	//
 	// 組站位唯一識別代碼，規則為 {業管機關簡碼} + {StationGroupID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢
 	// Required: true
-	StationGroupUID *string `json:"StationGroupUID"`
+	StationGroupUID *string `json:"StationGroupUID" xml:"String"`
 
 	// DateTime
 	//

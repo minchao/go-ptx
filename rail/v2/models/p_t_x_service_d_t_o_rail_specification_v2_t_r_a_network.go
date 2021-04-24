@@ -26,49 +26,49 @@ type PTXServiceDTORailSpecificationV2TRANetwork struct {
 	//
 	// 臺鐵路線資訊
 	// Required: true
-	Lines []*PTXServiceDTORailSpecificationV2TRALineSimple `json:"Lines"`
+	Lines []*PTXServiceDTORailSpecificationV2TRALineSimple "json:\"Lines\" xml:\"List`1\""
 
 	// String
 	//
 	// 臺鐵路網代碼
 	// Required: true
-	NetworkID *string `json:"NetworkID"`
+	NetworkID *string `json:"NetworkID" xml:"String"`
 
 	// String
 	//
 	// 臺鐵路網圖網址URL
 	// Required: true
-	NetworkMapURL *string `json:"NetworkMapUrl"`
+	NetworkMapURL *string `json:"NetworkMapUrl" xml:"String"`
 
 	// String
 	//
 	// 臺鐵路網英文名稱
 	// Required: true
-	NetworkNameEn *string `json:"NetworkNameEn"`
+	NetworkNameEn *string `json:"NetworkNameEn" xml:"String"`
 
 	// String
 	//
 	// 臺鐵路網中文名稱
 	// Required: true
-	NetworkNameZh *string `json:"NetworkNameZh"`
+	NetworkNameZh *string `json:"NetworkNameZh" xml:"String"`
 
 	// String
 	//
 	// 營運業者代碼
 	// Required: true
-	OperatorID *string `json:"OperatorID"`
+	OperatorID *string `json:"OperatorID" xml:"String"`
 
 	// String
 	//
 	// 臺鐵路網英文名稱
 	// Required: true
-	OperatorNameEn *string `json:"OperatorNameEn"`
+	OperatorNameEn *string `json:"OperatorNameEn" xml:"String"`
 
 	// String
 	//
 	// 臺鐵路網中文名稱
 	// Required: true
-	OperatorNameZh *string `json:"OperatorNameZh"`
+	OperatorNameZh *string `json:"OperatorNameZh" xml:"String"`
 
 	// DateTime
 	//

@@ -24,7 +24,7 @@ type PTXAPIRailModelTraDailyStationWrapperPTXServiceDTORailSpecificationV3TRADai
 	//
 	// 業管機關簡碼
 	// Required: true
-	AuthorityCode *string `json:"AuthorityCode"`
+	AuthorityCode *string `json:"AuthorityCode" xml:"String"`
 
 	// 資料總筆數
 	Count int64 `json:"Count,omitempty"`
@@ -45,13 +45,13 @@ type PTXAPIRailModelTraDailyStationWrapperPTXServiceDTORailSpecificationV3TRADai
 	//
 	// 資料(陣列)
 	// Required: true
-	StationTimetables []*PTXServiceDTORailSpecificationV3TRADailyStationTimeTableStationTimetable `json:"StationTimetables"`
+	StationTimetables []*PTXServiceDTORailSpecificationV3TRADailyStationTimeTableStationTimetable "json:\"StationTimetables\" xml:\"List`1\""
 
 	// String
 	//
 	// 營運日說明(yyyy-MM-dd)
 	// Required: true
-	TrainDate *string `json:"TrainDate"`
+	TrainDate *string `json:"TrainDate" xml:"String"`
 
 	// Int32
 	//

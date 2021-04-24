@@ -23,12 +23,12 @@ type PTXServiceDTORailSpecificationV3TRAStationFacilityFacilityInfo struct {
 	//
 	// 位置描述
 	// Required: true
-	Description *string `json:"Description"`
+	Description *string `json:"Description" xml:"String"`
 
 	// String
 	//
 	// 樓層
-	FloorLevel string `json:"FloorLevel,omitempty"`
+	FloorLevel string `json:"FloorLevel,omitempty" xml:"String,omitempty"`
 }
 
 // Validate validates this p t x service d t o rail specification v3 t r a station facility facility info

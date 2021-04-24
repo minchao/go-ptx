@@ -32,7 +32,7 @@ type PTXServiceDTOBusSpecificationV2ServiceTime struct {
 	//
 	// 站間行駛時間資訊
 	// Required: true
-	S2STimes []*PTXServiceDTOBusSpecificationV2TravelTime `json:"S2STimes"`
+	S2STimes []*PTXServiceDTOBusSpecificationV2TravelTime "json:\"S2STimes\" xml:\"List`1\""
 
 	// Int32
 	//

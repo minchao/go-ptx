@@ -22,28 +22,28 @@ type PTXServiceDTOBusSpecificationV3Station struct {
 	// String
 	//
 	// 方位角，E:東行;W:西行;S:南行;N:北行;SE:東南行;NE:東北行;SW:西南行;NW:西北行
-	Bearing string `json:"Bearing,omitempty"`
+	Bearing string `json:"Bearing,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 站牌所在道路上之路名。
-	RoadName string `json:"RoadName,omitempty"`
+	RoadName string `json:"RoadName,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 站位地址
-	StationAddress string `json:"StationAddress,omitempty"`
+	StationAddress string `json:"StationAddress,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 站牌詳細說明描述
-	StationDescription string `json:"StationDescription,omitempty"`
+	StationDescription string `json:"StationDescription,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 站位代碼
 	// Required: true
-	StationID *string `json:"StationID"`
+	StationID *string `json:"StationID" xml:"String"`
 
 	// NameType
 	//
@@ -51,7 +51,7 @@ type PTXServiceDTOBusSpecificationV3Station struct {
 	// Required: true
 	StationName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"StationName"`
+	} `json:"StationName" xml:"NameType"`
 
 	// PointType
 	//
@@ -59,13 +59,13 @@ type PTXServiceDTOBusSpecificationV3Station struct {
 	// Required: true
 	StationPosition struct {
 		PTXServiceDTOSharedSpecificationV3BasePointType
-	} `json:"StationPosition"`
+	} `json:"StationPosition" xml:"PointType"`
 
 	// String
 	//
 	// 站位唯一識別代碼，規則為 {業管機關簡碼} + {StationID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢
 	// Required: true
-	StationUID *string `json:"StationUID"`
+	StationUID *string `json:"StationUID" xml:"String"`
 }
 
 // Validate validates this p t x service d t o bus specification v3 station

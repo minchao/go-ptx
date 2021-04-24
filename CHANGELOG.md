@@ -6,6 +6,19 @@
 
 ## [Unreleased]
 
+## [0.10.0] - 2021-04-24
+
+### Added
+- 臺中市公車新資料服務上架
+- 公車新資料服務上架
+
+### Changed
+- 公車站位資料服務內容更新
+- 公車 V2 API 函數名稱修改
+
+### Workaround
+- 修正公車 V2 多處 Direction 型別錯誤
+
 ## [0.9.0] - 2021-02-02
 
 ### Added
@@ -122,7 +135,8 @@
 ### Added
 - 首次發行，提供基本、航空、公車、軌道、自行車與觀光等 PTX API 用戶端程式庫。
 
-[Unreleased]: https://github.com/minchao/go-ptx/compare/v0.9.0...HEAD
+[Unreleased]: https://github.com/minchao/go-ptx/compare/v0.10.0...HEAD
+[0.10.0]: https://github.com/minchao/go-ptx/compare/v0.9.0...v0.10.0
 [0.9.0]: https://github.com/minchao/go-ptx/compare/v0.8.0...v0.9.0
 [0.8.0]: https://github.com/minchao/go-ptx/compare/v0.7.0...v0.8.0
 [0.7.0]: https://github.com/minchao/go-ptx/compare/v0.6.0...v0.7.0

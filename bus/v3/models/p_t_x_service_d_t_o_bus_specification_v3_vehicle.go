@@ -40,7 +40,7 @@ type PTXServiceDTOBusSpecificationV3Vehicle struct {
 	// String
 	//
 	// 車機代號
-	InBoxID string `json:"InBoxID,omitempty"`
+	InBoxID string `json:"InBoxID,omitempty" xml:"String,omitempty"`
 
 	// Boolean
 	//
@@ -64,19 +64,19 @@ type PTXServiceDTOBusSpecificationV3Vehicle struct {
 	//
 	// 營運業者簡碼
 	// Required: true
-	OperatorCode *string `json:"OperatorCode"`
+	OperatorCode *string `json:"OperatorCode" xml:"String"`
 
 	// String
 	//
 	// 營運業者代碼
 	// Required: true
-	OperatorID *string `json:"OperatorID"`
+	OperatorID *string `json:"OperatorID" xml:"String"`
 
 	// String
 	//
 	// 車牌號碼
 	// Required: true
-	PlateNumb *string `json:"PlateNumb"`
+	PlateNumb *string `json:"PlateNumb" xml:"String"`
 
 	// DateTime
 	//
@@ -87,13 +87,13 @@ type PTXServiceDTOBusSpecificationV3Vehicle struct {
 	//
 	// 車輛型別 : [1:'大型巴士',2:'中型巴士',3:'小型巴士',4:'雙層巴士',5:'雙節巴士',6:'計程車']
 	// Required: true
-	VehicleClass *int32 `json:"VehicleClass"`
+	VehicleClass *string `json:"VehicleClass"`
 
 	// integer
 	//
 	// 車輛種類 : [1:'一般',2:'復康巴士',3:'專車',4:'其他']
 	// Required: true
-	VehicleType *int32 `json:"VehicleType"`
+	VehicleType *string `json:"VehicleType"`
 }
 
 // Validate validates this p t x service d t o bus specification v3 vehicle

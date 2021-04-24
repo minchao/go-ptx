@@ -24,23 +24,23 @@ type PTXServiceDTORailSpecificationV3TRAStation struct {
 	// String
 	//
 	// 訂票車站代碼
-	ReservationCode string `json:"ReservationCode,omitempty"`
+	ReservationCode string `json:"ReservationCode,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 車站地址
-	StationAddress string `json:"StationAddress,omitempty"`
+	StationAddress string `json:"StationAddress,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 車站級別 = ['0: 特等', '1: 一等', '2: 二等', '3: 三等', '4: 簡易', '5: 招呼', '6: 號誌', 'A: 貨運', 'B: 基地', 'X: 非車']
-	StationClass string `json:"StationClass,omitempty"`
+	StationClass string `json:"StationClass,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 臺鐵車站代碼
 	// Required: true
-	StationID *string `json:"StationID"`
+	StationID *string `json:"StationID" xml:"String"`
 
 	// NameType
 	//
@@ -48,12 +48,12 @@ type PTXServiceDTORailSpecificationV3TRAStation struct {
 	// Required: true
 	StationName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"StationName"`
+	} `json:"StationName" xml:"NameType"`
 
 	// String
 	//
 	// 車站聯絡電話
-	StationPhone string `json:"StationPhone,omitempty"`
+	StationPhone string `json:"StationPhone,omitempty" xml:"String,omitempty"`
 
 	// PointType
 	//
@@ -61,18 +61,18 @@ type PTXServiceDTORailSpecificationV3TRAStation struct {
 	// Required: true
 	StationPosition struct {
 		PTXServiceDTOSharedSpecificationV3BasePointType
-	} `json:"StationPosition"`
+	} `json:"StationPosition" xml:"PointType"`
 
 	// String
 	//
 	// 臺鐵車站唯一識別代碼
 	// Required: true
-	StationUID *string `json:"StationUID"`
+	StationUID *string `json:"StationUID" xml:"String"`
 
 	// String
 	//
 	// 車站資訊說明網址
-	StationURL string `json:"StationURL,omitempty"`
+	StationURL string `json:"StationURL,omitempty" xml:"String,omitempty"`
 }
 
 // Validate validates this p t x service d t o rail specification v3 t r a station

@@ -23,14 +23,14 @@ type PTXServiceDTOBusSpecificationV2ScopeOperator struct {
 	// String
 	//
 	// 營運業者代碼 ,
-	OperatorID string `json:"OperatorID,omitempty"`
+	OperatorID string `json:"OperatorID,omitempty" xml:"String,omitempty"`
 
 	// NameType
 	//
 	// 營運業者名稱
 	OperatorName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"OperatorName,omitempty"`
+	} `json:"OperatorName,omitempty" xml:"NameType,omitempty"`
 }
 
 // Validate validates this p t x service d t o bus specification v2 scope operator

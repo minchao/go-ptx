@@ -28,7 +28,7 @@ type PTXServiceDTORailSpecificationV3TRATRATrainLiveBoardListTrainLiveBoard stru
 	// String
 	//
 	// 車站代號
-	StationID string `json:"StationID,omitempty"`
+	StationID string `json:"StationID,omitempty" xml:"String,omitempty"`
 
 	// NameType
 	//
@@ -36,27 +36,27 @@ type PTXServiceDTORailSpecificationV3TRATRATrainLiveBoardListTrainLiveBoard stru
 	// Required: true
 	StationName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"StationName"`
+	} `json:"StationName" xml:"NameType"`
 
 	// String
 	//
 	// 車次代碼
-	TrainNo string `json:"TrainNo,omitempty"`
+	TrainNo string `json:"TrainNo,omitempty" xml:"String,omitempty"`
 
 	// integer
 	//
 	// 列車目前所在之車站狀態 : [0:'進站中',1:'在站上',2:'已離站']
-	TrainStationStatus int32 `json:"TrainStationStatus,omitempty"`
+	TrainStationStatus string `json:"TrainStationStatus,omitempty"`
 
 	// String
 	//
 	// 車種簡碼 = ['1: 太魯閣', '2: 普悠瑪', '3: 自強', '4: 莒光', '5: 復興', '6: 區間', '7: 普快', '10: 區間快']
-	TrainTypeCode string `json:"TrainTypeCode,omitempty"`
+	TrainTypeCode string `json:"TrainTypeCode,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 車種代嗎
-	TrainTypeID string `json:"TrainTypeID,omitempty"`
+	TrainTypeID string `json:"TrainTypeID,omitempty" xml:"String,omitempty"`
 
 	// NameType
 	//
@@ -64,7 +64,7 @@ type PTXServiceDTORailSpecificationV3TRATRATrainLiveBoardListTrainLiveBoard stru
 	// Required: true
 	TrainTypeName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"TrainTypeName"`
+	} `json:"TrainTypeName" xml:"NameType"`
 
 	// DateTime
 	//

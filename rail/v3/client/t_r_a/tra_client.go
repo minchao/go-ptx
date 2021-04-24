@@ -835,7 +835,7 @@ func (a *Client) ODFareAPIControllerAPIControllerGet(params *ODFareAPIController
 		ID:                 "ODFareApiControllerApiController_Get",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/ODFare",
-		ProducesMediaTypes: []string{"application/json", "application/xml", "text/json", "text/plain"},
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,

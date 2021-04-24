@@ -23,30 +23,30 @@ type PTXServiceDTORailSpecificationV3TRADailyStationTimeTableStationTimetable st
 	// integer
 	//
 	// 行駛方向 : [0:'順行',1:'逆行']
-	Direction int32 `json:"Direction,omitempty"`
+	Direction string `json:"Direction,omitempty"`
 
 	// String
 	//
 	// 營運路線代碼
-	RouteID string `json:"RouteID,omitempty"`
+	RouteID string `json:"RouteID,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 車站代碼
-	StationID string `json:"StationID,omitempty"`
+	StationID string `json:"StationID,omitempty" xml:"String,omitempty"`
 
 	// NameType
 	//
 	// 車站名稱
 	StationName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"StationName,omitempty"`
+	} `json:"StationName,omitempty" xml:"NameType,omitempty"`
 
 	// Array
 	//
 	// 目的站車站名稱
 	// Required: true
-	TimeTables []*PTXServiceDTORailSpecificationV3TRADailyStationTimeTableTimeTable `json:"TimeTables"`
+	TimeTables []*PTXServiceDTORailSpecificationV3TRADailyStationTimeTableTimeTable "json:\"TimeTables\" xml:\"List`1\""
 }
 
 // Validate validates this p t x service d t o rail specification v3 t r a daily station time table station timetable

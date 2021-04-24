@@ -22,48 +22,48 @@ type PTXServiceDTOBusSpecificationV3Stop struct {
 	// String
 	//
 	// 方位角，E:東行;W:西行;S:南行;N:北行;SE:東南行;NE:東北行;SW:西南行;NW:西北行
-	Bearing string `json:"Bearing,omitempty"`
+	Bearing string `json:"Bearing,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 站牌權管所屬縣市之代碼(國際ISO 3166-2 三碼城市代碼)[若為公路/國道客運路線則為空值]
-	CityCode string `json:"CityCode,omitempty"`
+	CityCode string `json:"CityCode,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 路名
-	RoadName string `json:"RoadName,omitempty"`
+	RoadName string `json:"RoadName,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 站位代碼
-	StationID string `json:"StationID,omitempty"`
+	StationID string `json:"StationID,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 站位唯一識別代碼，規則為 {業管機關簡碼} + {StationID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢
-	StationUID string `json:"StationUID,omitempty"`
+	StationUID string `json:"StationUID,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 站牌地址
-	StopAddress string `json:"StopAddress,omitempty"`
+	StopAddress string `json:"StopAddress,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 站牌簡碼
-	StopCode string `json:"StopCode,omitempty"`
+	StopCode string `json:"StopCode,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 站牌詳細說明描述
-	StopDescription string `json:"StopDescription,omitempty"`
+	StopDescription string `json:"StopDescription,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 地區既用中之站牌代碼(為原資料內碼)
 	// Required: true
-	StopID *string `json:"StopID"`
+	StopID *string `json:"StopID" xml:"String"`
 
 	// NameType
 	//
@@ -71,7 +71,7 @@ type PTXServiceDTOBusSpecificationV3Stop struct {
 	// Required: true
 	StopName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"StopName"`
+	} `json:"StopName" xml:"NameType"`
 
 	// PointType
 	//
@@ -79,18 +79,18 @@ type PTXServiceDTOBusSpecificationV3Stop struct {
 	// Required: true
 	StopPosition struct {
 		PTXServiceDTOSharedSpecificationV3BasePointType
-	} `json:"StopPosition"`
+	} `json:"StopPosition" xml:"PointType"`
 
 	// String
 	//
 	// 站牌唯一識別代碼，規則為 {業管機關簡碼} + {StopID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢
 	// Required: true
-	StopUID *string `json:"StopUID"`
+	StopUID *string `json:"StopUID" xml:"String"`
 
 	// String
 	//
 	// 站牌資訊說明網址
-	StopURL string `json:"StopURL,omitempty"`
+	StopURL string `json:"StopURL,omitempty" xml:"String,omitempty"`
 }
 
 // Validate validates this p t x service d t o bus specification v3 stop

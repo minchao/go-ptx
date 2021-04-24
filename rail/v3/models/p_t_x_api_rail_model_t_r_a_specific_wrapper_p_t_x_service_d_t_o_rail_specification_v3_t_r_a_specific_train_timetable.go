@@ -24,7 +24,7 @@ type PTXAPIRailModelTRASpecificWrapperPTXServiceDTORailSpecificationV3TRASpecifi
 	//
 	// 業管機關簡碼
 	// Required: true
-	AuthorityCode *string `json:"AuthorityCode"`
+	AuthorityCode *string `json:"AuthorityCode" xml:"String"`
 
 	// 資料總筆數
 	Count int64 `json:"Count,omitempty"`
@@ -55,18 +55,18 @@ type PTXAPIRailModelTRASpecificWrapperPTXServiceDTORailSpecificationV3TRASpecifi
 	// String
 	//
 	// 來源版號
-	SrcVersion string `json:"SrcVersion,omitempty"`
+	SrcVersion string `json:"SrcVersion,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 定期性站別時刻表名稱
-	TimetableName string `json:"TimetableName,omitempty"`
+	TimetableName string `json:"TimetableName,omitempty" xml:"String,omitempty"`
 
 	// Array
 	//
 	// 資料(陣列)
 	// Required: true
-	TrainTimetables []*PTXServiceDTORailSpecificationV3TRASpecificTrainTimetable `json:"TrainTimetables"`
+	TrainTimetables []*PTXServiceDTORailSpecificationV3TRASpecificTrainTimetable "json:\"TrainTimetables\" xml:\"List`1\""
 
 	// Int32
 	//
@@ -83,7 +83,7 @@ type PTXAPIRailModelTRASpecificWrapperPTXServiceDTORailSpecificationV3TRASpecifi
 	// String
 	//
 	// 時刻表適用情形說明
-	ValidityDesciption string `json:"ValidityDesciption,omitempty"`
+	ValidityDesciption string `json:"ValidityDesciption,omitempty" xml:"String,omitempty"`
 }
 
 // Validate validates this p t x API rail model t r a specific wrapper p t x service d t o rail specification v3 t r a specific train timetable

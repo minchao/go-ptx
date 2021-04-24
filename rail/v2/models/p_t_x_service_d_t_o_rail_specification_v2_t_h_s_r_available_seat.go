@@ -26,19 +26,19 @@ type PTXServiceDTORailSpecificationV2THSRAvailableSeat struct {
 	//
 	// 方向 : [0:'南下',1:'北上']
 	// Required: true
-	Direction *int32 `json:"Direction"`
+	Direction *string `json:"Direction"`
 
 	// String
 	//
 	// 終點車站代碼
 	// Required: true
-	EndingStationCode *string `json:"EndingStationCode"`
+	EndingStationCode *string `json:"EndingStationCode" xml:"String"`
 
 	// String
 	//
 	// 終點車站簡碼(訂票系統用)
 	// Required: true
-	EndingStationID *string `json:"EndingStationID"`
+	EndingStationID *string `json:"EndingStationID" xml:"String"`
 
 	// NameType
 	//
@@ -46,19 +46,19 @@ type PTXServiceDTORailSpecificationV2THSRAvailableSeat struct {
 	// Required: true
 	EndingStationName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"EndingStationName"`
+	} `json:"EndingStationName" xml:"NameType"`
 
 	// String
 	//
 	// 起站車站簡碼(訂票系統用)
 	// Required: true
-	StartingStationCode *string `json:"StartingStationCode"`
+	StartingStationCode *string `json:"StartingStationCode" xml:"String"`
 
 	// String
 	//
 	// 起點車站代碼
 	// Required: true
-	StartingStationID *string `json:"StartingStationID"`
+	StartingStationID *string `json:"StartingStationID" xml:"String"`
 
 	// NameType
 	//
@@ -66,19 +66,19 @@ type PTXServiceDTORailSpecificationV2THSRAvailableSeat struct {
 	// Required: true
 	StartingStationName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"StartingStationName"`
+	} `json:"StartingStationName" xml:"NameType"`
 
 	// Array
 	//
 	// 車次停靠站點組合
 	// Required: true
-	StopStations []*PTXServiceDTORailSpecificationV2THSRStopStation `json:"StopStations"`
+	StopStations []*PTXServiceDTORailSpecificationV2THSRStopStation "json:\"StopStations\" xml:\"List`1\""
 
 	// String
 	//
 	// 車次號碼
 	// Required: true
-	TrainNo *string `json:"TrainNo"`
+	TrainNo *string `json:"TrainNo" xml:"String"`
 }
 
 // Validate validates this p t x service d t o rail specification v2 t h s r available seat

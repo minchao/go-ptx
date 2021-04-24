@@ -21,24 +21,24 @@ type PTXServiceDTOBusSpecificationV3NetworkLBSMapURL struct {
 	// String
 	//
 	// 路網圖網址URL(英文版)
-	En string `json:"En,omitempty"`
+	En string `json:"En,omitempty" xml:"String,omitempty"`
 
 	// PointType
 	//
 	// 適地性圖資貼放的位置
 	LBSLocation struct {
 		PTXServiceDTOSharedSpecificationV3BasePointType
-	} `json:"LBSLocation,omitempty"`
+	} `json:"LBSLocation,omitempty" xml:"PointType,omitempty"`
 
 	// String
 	//
 	// 路網圖
-	MapName string `json:"MapName,omitempty"`
+	MapName string `json:"MapName,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 路網圖網址URL(中文版)
-	ZhTw string `json:"Zh_tw,omitempty"`
+	ZhTw string `json:"Zh_tw,omitempty" xml:"String,omitempty"`
 }
 
 // Validate validates this p t x service d t o bus specification v3 network l b s map URL

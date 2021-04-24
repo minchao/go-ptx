@@ -26,19 +26,19 @@ type PTXServiceDTORailSpecificationV2MetroNetwork struct {
 	//
 	// 捷運路線資訊
 	// Required: true
-	Lines []*PTXServiceDTORailSpecificationV2MetroNetworkSubClassLine `json:"Lines"`
+	Lines []*PTXServiceDTORailSpecificationV2MetroNetworkSubClassLine "json:\"Lines\" xml:\"List`1\""
 
 	// String
 	//
 	// 捷運路網代碼
 	// Required: true
-	NetworkID *string `json:"NetworkID"`
+	NetworkID *string `json:"NetworkID" xml:"String"`
 
 	// String
 	//
 	// 捷運路網圖網址URL
 	// Required: true
-	NetworkMapURL *string `json:"NetworkMapURL"`
+	NetworkMapURL *string `json:"NetworkMapURL" xml:"String"`
 
 	// NameType
 	//
@@ -46,13 +46,13 @@ type PTXServiceDTORailSpecificationV2MetroNetwork struct {
 	// Required: true
 	NetworkName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"NetworkName"`
+	} `json:"NetworkName" xml:"NameType"`
 
 	// String
 	//
 	// 營運業者簡碼
 	// Required: true
-	OperatorCode *string `json:"OperatorCode"`
+	OperatorCode *string `json:"OperatorCode" xml:"String"`
 
 	// NameType
 	//
@@ -60,7 +60,7 @@ type PTXServiceDTORailSpecificationV2MetroNetwork struct {
 	// Required: true
 	OperatorName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"OperatorName"`
+	} `json:"OperatorName" xml:"NameType"`
 
 	// DateTime
 	//

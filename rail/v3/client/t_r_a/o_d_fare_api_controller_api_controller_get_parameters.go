@@ -58,6 +58,13 @@ func NewODFareAPIControllerAPIControllerGetParamsWithHTTPClient(client *http.Cli
    Typically these are written to a http.Request.
 */
 type ODFareAPIControllerAPIControllerGetParams struct {
+
+	/* DollarFormat.
+
+	   指定來源格式
+	*/
+	DollarFormat string
+
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
@@ -111,6 +118,17 @@ func (o *ODFareAPIControllerAPIControllerGetParams) SetHTTPClient(client *http.C
 	o.HTTPClient = client
 }
 
+// WithDollarFormat adds the dollarFormat to the o d fare Api controller Api controller get params
+func (o *ODFareAPIControllerAPIControllerGetParams) WithDollarFormat(dollarFormat string) *ODFareAPIControllerAPIControllerGetParams {
+	o.SetDollarFormat(dollarFormat)
+	return o
+}
+
+// SetDollarFormat adds the dollarFormat to the o d fare Api controller Api controller get params
+func (o *ODFareAPIControllerAPIControllerGetParams) SetDollarFormat(dollarFormat string) {
+	o.DollarFormat = dollarFormat
+}
+
 // WriteToRequest writes these params to a swagger request
 func (o *ODFareAPIControllerAPIControllerGetParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
 
@@ -118,6 +136,16 @@ func (o *ODFareAPIControllerAPIControllerGetParams) WriteToRequest(r runtime.Cli
 		return err
 	}
 	var res []error
+
+	// query param $format
+	qrDollarFormat := o.DollarFormat
+	qDollarFormat := qrDollarFormat
+	if qDollarFormat != "" {
+
+		if err := r.SetQueryParam("$format", qDollarFormat); err != nil {
+			return err
+		}
+	}
 
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)

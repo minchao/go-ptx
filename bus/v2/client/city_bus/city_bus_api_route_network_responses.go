@@ -12,7 +12,7 @@ import (
 	"github.com/go-openapi/runtime"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/minchao/go-ptx/bus/v3/models"
+	"github.com/minchao/go-ptx/bus/v2/models"
 )
 
 // CityBusAPIRouteNetworkReader is a Reader for the CityBusAPIRouteNetwork structure.
@@ -56,22 +56,20 @@ func NewCityBusAPIRouteNetworkOK() *CityBusAPIRouteNetworkOK {
 Success
 */
 type CityBusAPIRouteNetworkOK struct {
-	Payload *models.PTXServiceDTOBusSpecificationV3WrapperBusVWrapperPTXServiceDTOBusSpecificationV3RouteNetwork
+	Payload []*models.PTXServiceDTOBusSpecificationV2BusRouteNetwork
 }
 
 func (o *CityBusAPIRouteNetworkOK) Error() string {
-	return fmt.Sprintf("[GET /v3/Bus/RouteNetwork/City/{City}][%d] cityBusApiRouteNetworkOK  %+v", 200, o.Payload)
+	return fmt.Sprintf("[GET /v2/Bus/RouteNetwork/City/{City}][%d] cityBusApiRouteNetworkOK  %+v", 200, o.Payload)
 }
-func (o *CityBusAPIRouteNetworkOK) GetPayload() *models.PTXServiceDTOBusSpecificationV3WrapperBusVWrapperPTXServiceDTOBusSpecificationV3RouteNetwork {
+func (o *CityBusAPIRouteNetworkOK) GetPayload() []*models.PTXServiceDTOBusSpecificationV2BusRouteNetwork {
 	return o.Payload
 }
 
 func (o *CityBusAPIRouteNetworkOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.PTXServiceDTOBusSpecificationV3WrapperBusVWrapperPTXServiceDTOBusSpecificationV3RouteNetwork)
-
 	// response payload
-	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 
@@ -92,7 +90,7 @@ type CityBusAPIRouteNetworkStatus299 struct {
 }
 
 func (o *CityBusAPIRouteNetworkStatus299) Error() string {
-	return fmt.Sprintf("[GET /v3/Bus/RouteNetwork/City/{City}][%d] cityBusApiRouteNetworkStatus299  %+v", 299, o.Payload)
+	return fmt.Sprintf("[GET /v2/Bus/RouteNetwork/City/{City}][%d] cityBusApiRouteNetworkStatus299  %+v", 299, o.Payload)
 }
 func (o *CityBusAPIRouteNetworkStatus299) GetPayload() *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth {
 	return o.Payload
@@ -123,7 +121,7 @@ type CityBusAPIRouteNetworkNotModified struct {
 }
 
 func (o *CityBusAPIRouteNetworkNotModified) Error() string {
-	return fmt.Sprintf("[GET /v3/Bus/RouteNetwork/City/{City}][%d] cityBusApiRouteNetworkNotModified ", 304)
+	return fmt.Sprintf("[GET /v2/Bus/RouteNetwork/City/{City}][%d] cityBusApiRouteNetworkNotModified ", 304)
 }
 
 func (o *CityBusAPIRouteNetworkNotModified) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {

@@ -25,19 +25,19 @@ type PTXServiceDTORailSpecificationV2MetroMetroShape struct {
 	//
 	// 路線軌跡編碼(encoded polyline)
 	// Required: true
-	EncodedPolyline *string `json:"EncodedPolyline"`
+	EncodedPolyline *string `json:"EncodedPolyline" xml:"String"`
 
 	// String
 	//
 	// well-known text，為路線軌跡資料
 	// Required: true
-	Geometry *string `json:"Geometry"`
+	Geometry *string `json:"Geometry" xml:"String"`
 
 	// String
 	//
 	// 路線代碼
 	// Required: true
-	LineID *string `json:"LineID"`
+	LineID *string `json:"LineID" xml:"String"`
 
 	// NameType
 	//
@@ -45,12 +45,12 @@ type PTXServiceDTORailSpecificationV2MetroMetroShape struct {
 	// Required: true
 	LineName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"LineName"`
+	} `json:"LineName" xml:"NameType"`
 
 	// String
 	//
 	// 路線編號
-	LineNo string `json:"LineNo,omitempty"`
+	LineNo string `json:"LineNo,omitempty" xml:"String,omitempty"`
 
 	// DateTime
 	//

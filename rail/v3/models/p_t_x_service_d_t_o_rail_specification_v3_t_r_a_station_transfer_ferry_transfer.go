@@ -24,12 +24,12 @@ type PTXServiceDTORailSpecificationV3TRAStationTransferFerryTransfer struct {
 	// String
 	//
 	// 轉乘描述
-	Description string `json:"Description,omitempty"`
+	Description string `json:"Description,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 計程車招呼站代碼
-	FerryStationID string `json:"FerryStationID,omitempty"`
+	FerryStationID string `json:"FerryStationID,omitempty" xml:"String,omitempty"`
 
 	// NameType
 	//
@@ -37,12 +37,12 @@ type PTXServiceDTORailSpecificationV3TRAStationTransferFerryTransfer struct {
 	// Required: true
 	FerryStationName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"FerryStationName"`
+	} `json:"FerryStationName" xml:"NameType"`
 
 	// String
 	//
 	// 轉乘樓層
-	FloorLevel string `json:"FloorLevel,omitempty"`
+	FloorLevel string `json:"FloorLevel,omitempty" xml:"String,omitempty"`
 
 	// 是否為站內或站外轉乘
 	IsOnSiteTransfer bool `json:"IsOnSiteTransfer,omitempty"`
@@ -54,13 +54,13 @@ type PTXServiceDTORailSpecificationV3TRAStationTransferFerryTransfer struct {
 	//
 	// 運具種類代碼
 	// Required: true
-	Mode *string `json:"Mode"`
+	Mode *string `json:"Mode" xml:"String"`
 
 	// String
 	//
 	// 航運營運業者簡碼
 	// Required: true
-	OperatorCode *string `json:"OperatorCode"`
+	OperatorCode *string `json:"OperatorCode" xml:"String"`
 
 	// NameType
 	//
@@ -68,7 +68,7 @@ type PTXServiceDTORailSpecificationV3TRAStationTransferFerryTransfer struct {
 	// Required: true
 	OperatorName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"OperatorName"`
+	} `json:"OperatorName" xml:"NameType"`
 }
 
 // Validate validates this p t x service d t o rail specification v3 t r a station transfer ferry transfer

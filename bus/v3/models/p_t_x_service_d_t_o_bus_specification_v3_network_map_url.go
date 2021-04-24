@@ -23,7 +23,7 @@ type PTXServiceDTOBusSpecificationV3NetworkMapURL struct {
 	//
 	// 路網圖名稱
 	// Required: true
-	MapName *string `json:"MapName"`
+	MapName *string `json:"MapName" xml:"String"`
 
 	// NameType
 	//
@@ -31,7 +31,7 @@ type PTXServiceDTOBusSpecificationV3NetworkMapURL struct {
 	// Required: true
 	MapNameURL struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"MapNameURL"`
+	} `json:"MapNameURL" xml:"NameType"`
 }
 
 // Validate validates this p t x service d t o bus specification v3 network map URL

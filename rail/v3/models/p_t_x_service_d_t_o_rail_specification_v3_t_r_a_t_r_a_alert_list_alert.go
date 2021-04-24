@@ -23,28 +23,28 @@ type PTXServiceDTORailSpecificationV3TRATRAAlertListAlert struct {
 	//
 	// 通阻訊息代碼
 	// Required: true
-	AlertID *string `json:"AlertID"`
+	AlertID *string `json:"AlertID" xml:"String"`
 
 	// String
 	//
 	// 通阻訊息網址連結
-	AlertURL string `json:"AlertURL,omitempty"`
+	AlertURL string `json:"AlertURL,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 通阻訊息說明
 	// Required: true
-	Description *string `json:"Description"`
+	Description *string `json:"Description" xml:"String"`
 
 	// integer
 	//
 	// 影響方向 : [0:'南下',1:'北上',2:'雙向']
-	Direction int32 `json:"Direction,omitempty"`
+	Direction string `json:"Direction,omitempty"`
 
 	// String
 	//
 	// 影響說明
-	Effect string `json:"Effect,omitempty"`
+	Effect string `json:"Effect,omitempty" xml:"String,omitempty"`
 
 	// DateTime
 	//
@@ -54,7 +54,7 @@ type PTXServiceDTORailSpecificationV3TRATRAAlertListAlert struct {
 	// integer
 	//
 	// 影響等級程度 : [1:'重度',2:'中度',3:'輕度']
-	Level int32 `json:"Level,omitempty"`
+	Level string `json:"Level,omitempty"`
 
 	// DateTime
 	//
@@ -64,7 +64,7 @@ type PTXServiceDTORailSpecificationV3TRATRAAlertListAlert struct {
 	// String
 	//
 	// 影響原因
-	Reason string `json:"Reason,omitempty"`
+	Reason string `json:"Reason,omitempty" xml:"String,omitempty"`
 
 	// AlertScope
 	//
@@ -72,7 +72,7 @@ type PTXServiceDTORailSpecificationV3TRATRAAlertListAlert struct {
 	// Required: true
 	Scope struct {
 		PTXServiceDTORailSpecificationV3TRATRAAlertListAlertScope
-	} `json:"Scope"`
+	} `json:"Scope" xml:"AlertScope"`
 
 	// DateTime
 	//
@@ -83,13 +83,13 @@ type PTXServiceDTORailSpecificationV3TRATRAAlertListAlert struct {
 	//
 	// 營運狀況 : [0:'全線營運停止',1:'全線營運正常',2:'有異常狀況']
 	// Required: true
-	Status *int32 `json:"Status"`
+	Status *string `json:"Status"`
 
 	// String
 	//
 	// 通阻訊息標題
 	// Required: true
-	Title *string `json:"Title"`
+	Title *string `json:"Title" xml:"String"`
 
 	// DateTime
 	//

@@ -14,16 +14,16 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// PTXServiceDTOBusSpecificationV2SectionFareFare Fare
+// PTXServiceDTOBusSpecificationV2BusRouteFareFare Fare
 //
-// swagger:model PTX.Service.DTO.Bus.Specification.V2.SectionFare+Fare
-type PTXServiceDTOBusSpecificationV2SectionFareFare struct {
+// swagger:model PTX.Service.DTO.Bus.Specification.V2.BusRouteFare+Fare
+type PTXServiceDTOBusSpecificationV2BusRouteFareFare struct {
 
 	// integer
 	//
 	// 費率等級 : [1:'成人',2:'學生',3:'孩童',4:'敬老',5:'愛心',6:'愛心孩童',7:'愛心優待或愛心陪伴',8:'團體',9:'軍警',10:'由各運業者自行定義的半票']
 	// Required: true
-	FareClass *int32 `json:"FareClass"`
+	FareClass *string `json:"FareClass"`
 
 	// Int32
 	//
@@ -35,11 +35,11 @@ type PTXServiceDTOBusSpecificationV2SectionFareFare struct {
 	//
 	// 票種類型 : [1:'一般票',2:'來回票',3:'電子票證',4:'回數票',5:'定期票30天期',6:'定期票60天期',7:'早鳥票',8:'定期票90天期']
 	// Required: true
-	TicketType *int32 `json:"TicketType"`
+	TicketType *string `json:"TicketType"`
 }
 
-// Validate validates this p t x service d t o bus specification v2 section fare fare
-func (m *PTXServiceDTOBusSpecificationV2SectionFareFare) Validate(formats strfmt.Registry) error {
+// Validate validates this p t x service d t o bus specification v2 bus route fare fare
+func (m *PTXServiceDTOBusSpecificationV2BusRouteFareFare) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateFareClass(formats); err != nil {
@@ -60,7 +60,7 @@ func (m *PTXServiceDTOBusSpecificationV2SectionFareFare) Validate(formats strfmt
 	return nil
 }
 
-func (m *PTXServiceDTOBusSpecificationV2SectionFareFare) validateFareClass(formats strfmt.Registry) error {
+func (m *PTXServiceDTOBusSpecificationV2BusRouteFareFare) validateFareClass(formats strfmt.Registry) error {
 
 	if err := validate.Required("FareClass", "body", m.FareClass); err != nil {
 		return err
@@ -69,7 +69,7 @@ func (m *PTXServiceDTOBusSpecificationV2SectionFareFare) validateFareClass(forma
 	return nil
 }
 
-func (m *PTXServiceDTOBusSpecificationV2SectionFareFare) validatePrice(formats strfmt.Registry) error {
+func (m *PTXServiceDTOBusSpecificationV2BusRouteFareFare) validatePrice(formats strfmt.Registry) error {
 
 	if err := validate.Required("Price", "body", m.Price); err != nil {
 		return err
@@ -78,7 +78,7 @@ func (m *PTXServiceDTOBusSpecificationV2SectionFareFare) validatePrice(formats s
 	return nil
 }
 
-func (m *PTXServiceDTOBusSpecificationV2SectionFareFare) validateTicketType(formats strfmt.Registry) error {
+func (m *PTXServiceDTOBusSpecificationV2BusRouteFareFare) validateTicketType(formats strfmt.Registry) error {
 
 	if err := validate.Required("TicketType", "body", m.TicketType); err != nil {
 		return err
@@ -87,13 +87,13 @@ func (m *PTXServiceDTOBusSpecificationV2SectionFareFare) validateTicketType(form
 	return nil
 }
 
-// ContextValidate validates this p t x service d t o bus specification v2 section fare fare based on context it is used
-func (m *PTXServiceDTOBusSpecificationV2SectionFareFare) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+// ContextValidate validates this p t x service d t o bus specification v2 bus route fare fare based on context it is used
+func (m *PTXServiceDTOBusSpecificationV2BusRouteFareFare) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	return nil
 }
 
 // MarshalBinary interface implementation
-func (m *PTXServiceDTOBusSpecificationV2SectionFareFare) MarshalBinary() ([]byte, error) {
+func (m *PTXServiceDTOBusSpecificationV2BusRouteFareFare) MarshalBinary() ([]byte, error) {
 	if m == nil {
 		return nil, nil
 	}
@@ -101,8 +101,8 @@ func (m *PTXServiceDTOBusSpecificationV2SectionFareFare) MarshalBinary() ([]byte
 }
 
 // UnmarshalBinary interface implementation
-func (m *PTXServiceDTOBusSpecificationV2SectionFareFare) UnmarshalBinary(b []byte) error {
-	var res PTXServiceDTOBusSpecificationV2SectionFareFare
+func (m *PTXServiceDTOBusSpecificationV2BusRouteFareFare) UnmarshalBinary(b []byte) error {
+	var res PTXServiceDTOBusSpecificationV2BusRouteFareFare
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

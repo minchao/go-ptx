@@ -17,29 +17,37 @@ import (
 
 // PTXServiceDTOBusSpecificationV3RouteFareStageFareFareStage FareStage
 //
+// 票價內容
+//
 // swagger:model PTX.Service.DTO.Bus.Specification.V3.RouteFare+StageFare+FareStage
 type PTXServiceDTOBusSpecificationV3RouteFareStageFareFareStage struct {
 
 	// Array
-	DiscountPeriods []*PTXServiceDTOBusSpecificationV3RouteFareStageFareDiscountPeriod `json:"DiscountPeriods"`
+	//
+	// 優惠時段
+	DiscountPeriods []*PTXServiceDTOBusSpecificationV3RouteFareStageFareDiscountPeriod "json:\"DiscountPeriods\" xml:\"List`1\""
 
 	// integer
 	//
 	// 費率等級 : [1:'成人',2:'學生',3:'孩童',4:'敬老',5:'愛心',6:'愛心孩童',7:'愛心優待或愛心陪伴',8:'團體',9:'軍警',10:'由各運業者自行定義的半票']
-	FareClass int32 `json:"FareClass,omitempty"`
+	FareClass string `json:"FareClass,omitempty"`
 
 	// String
+	//
+	// 票價名稱
 	// Required: true
-	FareName *string `json:"FareName"`
+	FareName *string `json:"FareName" xml:"String"`
 
 	// String
-	Price string `json:"Price,omitempty"`
+	//
+	// 計費價格
+	Price string `json:"Price,omitempty" xml:"String,omitempty"`
 
 	// integer
 	//
 	// 票種類型 : [1:'一般票',2:'來回票',3:'電子票證',4:'回數票',5:'定期票30天期',6:'定期票60天期',7:'早鳥票',8:'定期票90天期']
 	// Required: true
-	TicketType *int32 `json:"TicketType"`
+	TicketType *string `json:"TicketType"`
 }
 
 // Validate validates this p t x service d t o bus specification v3 route fare stage fare fare stage

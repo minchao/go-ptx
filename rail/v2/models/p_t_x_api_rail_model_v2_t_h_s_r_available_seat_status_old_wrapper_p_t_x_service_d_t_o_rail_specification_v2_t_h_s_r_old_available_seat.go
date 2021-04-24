@@ -24,7 +24,7 @@ type PTXAPIRailModelV2THSRAvailableSeatStatusOldWrapperPTXServiceDTORailSpecific
 	//
 	// 對號座位狀態資訊(依高鐵規定若營運狀態有異常狀況時，剩餘座位資訊將停留在最後正常運行時間之狀態不做更新，實際資料請參考高鐵各車站現場對號座剩餘座位資訊看板)
 	// Required: true
-	AvailableSeats []*PTXServiceDTORailSpecificationV2THSROldAvailableSeat `json:"AvailableSeats"`
+	AvailableSeats []*PTXServiceDTORailSpecificationV2THSROldAvailableSeat "json:\"AvailableSeats\" xml:\"List`1\""
 
 	// 資料總筆數
 	Count int64 `json:"Count,omitempty"`

@@ -25,7 +25,7 @@ type PTXServiceDTOBusSpecificationV3DisplayStopOfRouteStop struct {
 	//
 	// 地區既用中之站牌代碼(為原資料內碼)
 	// Required: true
-	StopID *string `json:"StopID"`
+	StopID *string `json:"StopID" xml:"String"`
 
 	// NameType
 	//
@@ -33,7 +33,7 @@ type PTXServiceDTOBusSpecificationV3DisplayStopOfRouteStop struct {
 	// Required: true
 	StopName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"StopName"`
+	} `json:"StopName" xml:"NameType"`
 
 	// PointType
 	//
@@ -41,7 +41,7 @@ type PTXServiceDTOBusSpecificationV3DisplayStopOfRouteStop struct {
 	// Required: true
 	StopPosition struct {
 		PTXServiceDTOSharedSpecificationV3BasePointType
-	} `json:"StopPosition"`
+	} `json:"StopPosition" xml:"PointType"`
 
 	// Int32
 	//
@@ -53,7 +53,7 @@ type PTXServiceDTOBusSpecificationV3DisplayStopOfRouteStop struct {
 	//
 	// 站牌唯一識別代碼，規則為 {業管機關簡碼} + {StopID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢
 	// Required: true
-	StopUID *string `json:"StopUID"`
+	StopUID *string `json:"StopUID" xml:"String"`
 }
 
 // Validate validates this p t x service d t o bus specification v3 display stop of route stop

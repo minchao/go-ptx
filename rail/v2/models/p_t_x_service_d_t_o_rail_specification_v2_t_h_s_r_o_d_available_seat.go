@@ -25,19 +25,19 @@ type PTXServiceDTORailSpecificationV2THSRODAvailableSeat struct {
 	//
 	// 商務席剩餘座位狀態
 	// Required: true
-	BusinessSeatStatus *string `json:"BusinessSeatStatus"`
+	BusinessSeatStatus *string `json:"BusinessSeatStatus" xml:"String"`
 
 	// String
 	//
 	// 迄站車站簡碼(訂票系統用)
 	// Required: true
-	DestinationStationCode *string `json:"DestinationStationCode"`
+	DestinationStationCode *string `json:"DestinationStationCode" xml:"String"`
 
 	// String
 	//
 	// 迄點車站代碼
 	// Required: true
-	DestinationStationID *string `json:"DestinationStationID"`
+	DestinationStationID *string `json:"DestinationStationID" xml:"String"`
 
 	// NameType
 	//
@@ -45,7 +45,7 @@ type PTXServiceDTORailSpecificationV2THSRODAvailableSeat struct {
 	// Required: true
 	DestinationStationName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"DestinationStationName"`
+	} `json:"DestinationStationName" xml:"NameType"`
 
 	// Int32
 	//
@@ -57,13 +57,13 @@ type PTXServiceDTORailSpecificationV2THSRODAvailableSeat struct {
 	//
 	// 起站車站簡碼(訂票系統用)
 	// Required: true
-	OriginStationCode *string `json:"OriginStationCode"`
+	OriginStationCode *string `json:"OriginStationCode" xml:"String"`
 
 	// String
 	//
 	// 起點車站代碼
 	// Required: true
-	OriginStationID *string `json:"OriginStationID"`
+	OriginStationID *string `json:"OriginStationID" xml:"String"`
 
 	// NameType
 	//
@@ -71,19 +71,19 @@ type PTXServiceDTORailSpecificationV2THSRODAvailableSeat struct {
 	// Required: true
 	OriginStationName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"OriginStationName"`
+	} `json:"OriginStationName" xml:"NameType"`
 
 	// String
 	//
 	// 標準席剩餘座位狀態
 	// Required: true
-	StandardSeatStatus *string `json:"StandardSeatStatus"`
+	StandardSeatStatus *string `json:"StandardSeatStatus" xml:"String"`
 
 	// String
 	//
 	// 車次號碼
 	// Required: true
-	TrainNo *string `json:"TrainNo"`
+	TrainNo *string `json:"TrainNo" xml:"String"`
 }
 
 // Validate validates this p t x service d t o rail specification v2 t h s r o d available seat

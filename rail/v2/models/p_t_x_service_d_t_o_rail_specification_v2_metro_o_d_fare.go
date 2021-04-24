@@ -26,7 +26,7 @@ type PTXServiceDTORailSpecificationV2MetroODFare struct {
 	//
 	// 迄站車站代碼
 	// Required: true
-	DestinationStationID *string `json:"DestinationStationID"`
+	DestinationStationID *string `json:"DestinationStationID" xml:"String"`
 
 	// NameType
 	//
@@ -34,19 +34,19 @@ type PTXServiceDTORailSpecificationV2MetroODFare struct {
 	// Required: true
 	DestinationStationName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"DestinationStationName"`
+	} `json:"DestinationStationName" xml:"NameType"`
 
 	// Array
 	//
 	// 票價資訊
 	// Required: true
-	Fares []*PTXServiceDTORailSpecificationV2MetroSubClassFare `json:"Fares"`
+	Fares []*PTXServiceDTORailSpecificationV2MetroSubClassFare "json:\"Fares\" xml:\"List`1\""
 
 	// String
 	//
 	// 起站車站代碼
 	// Required: true
-	OriginStationID *string `json:"OriginStationID"`
+	OriginStationID *string `json:"OriginStationID" xml:"String"`
 
 	// NameType
 	//
@@ -54,7 +54,7 @@ type PTXServiceDTORailSpecificationV2MetroODFare struct {
 	// Required: true
 	OriginStationName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"OriginStationName"`
+	} `json:"OriginStationName" xml:"NameType"`
 
 	// DateTime
 	//

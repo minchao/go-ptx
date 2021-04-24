@@ -28,7 +28,7 @@ type PTXServiceDTORailSpecificationV2THSRGeneralTimetable struct {
 	// Required: true
 	GeneralTrainInfo struct {
 		PTXServiceDTORailSpecificationV2THSRRailGeneralTrainInfo
-	} `json:"GeneralTrainInfo"`
+	} `json:"GeneralTrainInfo" xml:"RailGeneralTrainInfo"`
 
 	// ServiceDay
 	//
@@ -36,7 +36,7 @@ type PTXServiceDTORailSpecificationV2THSRGeneralTimetable struct {
 	// Required: true
 	ServiceDay struct {
 		PTXServiceDTORailSpecificationV2THSRServiceDay
-	} `json:"ServiceDay"`
+	} `json:"ServiceDay" xml:"ServiceDay"`
 
 	// DateTime
 	//
@@ -48,7 +48,7 @@ type PTXServiceDTORailSpecificationV2THSRGeneralTimetable struct {
 	//
 	// 停靠時間資料
 	// Required: true
-	StopTimes []*PTXServiceDTORailSpecificationV2THSRRailStopTime `json:"StopTimes"`
+	StopTimes []*PTXServiceDTORailSpecificationV2THSRRailStopTime "json:\"StopTimes\" xml:\"List`1\""
 }
 
 // Validate validates this p t x service d t o rail specification v2 t h s r general timetable

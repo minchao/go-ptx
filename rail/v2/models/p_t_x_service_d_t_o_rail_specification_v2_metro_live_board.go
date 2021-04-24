@@ -25,13 +25,13 @@ type PTXServiceDTORailSpecificationV2MetroLiveBoard struct {
 	//
 	// 目的地車站代號
 	// Required: true
-	DestinationStaionID *string `json:"DestinationStaionID"`
+	DestinationStaionID *string `json:"DestinationStaionID" xml:"String"`
 
 	// String
 	//
 	// 目的地車站代號
 	// Required: true
-	DestinationStationID *string `json:"DestinationStationID"`
+	DestinationStationID *string `json:"DestinationStationID" xml:"String"`
 
 	// NameType
 	//
@@ -39,7 +39,7 @@ type PTXServiceDTORailSpecificationV2MetroLiveBoard struct {
 	// Required: true
 	DestinationStationName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"DestinationStationName"`
+	} `json:"DestinationStationName" xml:"NameType"`
 
 	// Int32
 	//
@@ -51,12 +51,12 @@ type PTXServiceDTORailSpecificationV2MetroLiveBoard struct {
 	//
 	// 路線代碼
 	// Required: true
-	LineID *string `json:"LineID"`
+	LineID *string `json:"LineID" xml:"String"`
 
 	// String
 	//
 	// 路線編號
-	LineNO string `json:"LineNO,omitempty"`
+	LineNO string `json:"LineNO,omitempty" xml:"String,omitempty"`
 
 	// NameType
 	//
@@ -64,7 +64,7 @@ type PTXServiceDTORailSpecificationV2MetroLiveBoard struct {
 	// Required: true
 	LineName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"LineName"`
+	} `json:"LineName" xml:"NameType"`
 
 	// DateTime
 	//
@@ -76,7 +76,7 @@ type PTXServiceDTORailSpecificationV2MetroLiveBoard struct {
 	//
 	// 所在車站代號
 	// Required: true
-	StationID *string `json:"StationID"`
+	StationID *string `json:"StationID" xml:"String"`
 
 	// NameType
 	//
@@ -84,13 +84,13 @@ type PTXServiceDTORailSpecificationV2MetroLiveBoard struct {
 	// Required: true
 	StationName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"StationName"`
+	} `json:"StationName" xml:"NameType"`
 
 	// String
 	//
 	// 下班車次方向描述
 	// Required: true
-	TripHeadSign *string `json:"TripHeadSign"`
+	TripHeadSign *string `json:"TripHeadSign" xml:"String"`
 
 	// DateTime
 	//

@@ -26,28 +26,28 @@ type PTXServiceDTOBusSpecificationV2BusSchedule struct {
 	//
 	// 去返程 : [0:'去程',1:'返程',2:'迴圈',255:'未知']
 	// Required: true
-	Direction *int32 `json:"Direction"`
+	Direction *int64 `json:"Direction"`
 
 	// Array
 	//
 	// 發車班距
-	Frequencys []*PTXServiceDTOBusSpecificationV2BusFrequency `json:"Frequencys"`
+	Frequencys []*PTXServiceDTOBusSpecificationV2BusFrequency "json:\"Frequencys\" xml:\"List`1\""
 
 	// String
 	//
 	// 營運業者簡碼
-	OperatorCode string `json:"OperatorCode,omitempty"`
+	OperatorCode string `json:"OperatorCode,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 營運業者代碼
-	OperatorID string `json:"OperatorID,omitempty"`
+	OperatorID string `json:"OperatorID,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 地區既用中之路線代碼(為原資料內碼)
 	// Required: true
-	RouteID *string `json:"RouteID"`
+	RouteID *string `json:"RouteID" xml:"String"`
 
 	// NameType
 	//
@@ -55,19 +55,19 @@ type PTXServiceDTOBusSpecificationV2BusSchedule struct {
 	// Required: true
 	RouteName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"RouteName"`
+	} `json:"RouteName" xml:"NameType"`
 
 	// String
 	//
 	// 路線唯一識別代碼，規則為 {業管機關簡碼} + {RouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢
 	// Required: true
-	RouteUID *string `json:"RouteUID"`
+	RouteUID *string `json:"RouteUID" xml:"String"`
 
 	// String
 	//
 	// 地區既用中之附屬路線代碼(為原資料內碼)
 	// Required: true
-	SubRouteID *string `json:"SubRouteID"`
+	SubRouteID *string `json:"SubRouteID" xml:"String"`
 
 	// NameType
 	//
@@ -75,18 +75,18 @@ type PTXServiceDTOBusSpecificationV2BusSchedule struct {
 	// Required: true
 	SubRouteName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"SubRouteName"`
+	} `json:"SubRouteName" xml:"NameType"`
 
 	// String
 	//
 	// 附屬路線唯一識別代碼，規則為 {業管機關簡碼} + {SubRouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢
 	// Required: true
-	SubRouteUID *string `json:"SubRouteUID"`
+	SubRouteUID *string `json:"SubRouteUID" xml:"String"`
 
 	// Array
 	//
 	// 預定班表
-	Timetables []*PTXServiceDTOBusSpecificationV2BusTimetable `json:"Timetables"`
+	Timetables []*PTXServiceDTOBusSpecificationV2BusTimetable "json:\"Timetables\" xml:\"List`1\""
 
 	// DateTime
 	//

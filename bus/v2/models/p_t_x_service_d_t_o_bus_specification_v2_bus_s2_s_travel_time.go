@@ -26,37 +26,37 @@ type PTXServiceDTOBusSpecificationV2BusS2STravelTime struct {
 	//
 	// 去返程 : [0:'去程',1:'返程',2:'迴圈',255:'未知']
 	// Required: true
-	Direction *int32 `json:"Direction"`
+	Direction *int64 `json:"Direction"`
 
 	// String
 	//
 	// 地區既用中之路線代碼(為原資料內碼)
 	// Required: true
-	RouteID *string `json:"RouteID"`
+	RouteID *string `json:"RouteID" xml:"String"`
 
 	// String
 	//
 	// 路線唯一識別代碼，規則為 {業管機關簡碼} + {RouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢
 	// Required: true
-	RouteUID *string `json:"RouteUID"`
+	RouteUID *string `json:"RouteUID" xml:"String"`
 
 	// String
 	//
 	// 地區既用中之附屬路線代碼(為原資料內碼)
 	// Required: true
-	SubRouteID *string `json:"SubRouteID"`
+	SubRouteID *string `json:"SubRouteID" xml:"String"`
 
 	// String
 	//
 	// 附屬路線唯一識別代碼，規則為 {業管機關簡碼} + {SubRouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢
 	// Required: true
-	SubRouteUID *string `json:"SubRouteUID"`
+	SubRouteUID *string `json:"SubRouteUID" xml:"String"`
 
 	// Array
 	//
 	// 旅行時間資訊
 	// Required: true
-	TravelTimes []*PTXServiceDTOBusSpecificationV2ServiceTime `json:"TravelTimes"`
+	TravelTimes []*PTXServiceDTOBusSpecificationV2ServiceTime "json:\"TravelTimes\" xml:\"List`1\""
 
 	// DateTime
 	//

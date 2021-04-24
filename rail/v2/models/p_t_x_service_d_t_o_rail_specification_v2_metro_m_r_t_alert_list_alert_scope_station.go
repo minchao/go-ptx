@@ -22,12 +22,12 @@ type PTXServiceDTORailSpecificationV2MetroMRTAlertListAlertScopeStation struct {
 	// String
 	//
 	// 車站代碼
-	StationID string `json:"StationID,omitempty"`
+	StationID string `json:"StationID,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 車站名稱
-	StationName string `json:"StationName,omitempty"`
+	StationName string `json:"StationName,omitempty" xml:"String,omitempty"`
 }
 
 // Validate validates this p t x service d t o rail specification v2 metro m r t alert list alert scope station

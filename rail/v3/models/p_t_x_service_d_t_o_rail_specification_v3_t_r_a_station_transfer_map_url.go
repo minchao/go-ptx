@@ -24,19 +24,19 @@ type PTXServiceDTORailSpecificationV3TRAStationTransferMapURL struct {
 	// String
 	//
 	// 樓層
-	FloorLevel string `json:"FloorLevel,omitempty"`
+	FloorLevel string `json:"FloorLevel,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 地圖名稱
 	// Required: true
-	MapName *string `json:"MapName"`
+	MapName *string `json:"MapName" xml:"String"`
 
 	// String
 	//
 	// 地圖簡圖連結
 	// Required: true
-	MapURL *string `json:"MapURL"`
+	MapURL *string `json:"MapURL" xml:"String"`
 }
 
 // Validate validates this p t x service d t o rail specification v3 t r a station transfer map URL

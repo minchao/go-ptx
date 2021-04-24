@@ -26,56 +26,61 @@ type PTXServiceDTOBusSpecificationV2BusRouteFare struct {
 	//
 	// 描述該路線計費方式 : [0:'段次計費',1:'起迄站間計費',2:'計費站區間計費']
 	// Required: true
-	FarePricingType *int32 `json:"FarePricingType"`
+	FarePricingType *string `json:"FarePricingType"`
 
 	// integer
 	//
 	// 該收費方式是否應用到所有附屬路線 : [0:'否',1:'是']
 	// Required: true
-	IsForAllSubRoutes *int32 `json:"IsForAllSubRoutes"`
+	IsForAllSubRoutes *string `json:"IsForAllSubRoutes"`
 
 	// integer
 	//
 	// 是否為免費公車 : [0:'否',1:'是']
 	// Required: true
-	IsFreeBus *int32 `json:"IsFreeBus"`
+	IsFreeBus *string `json:"IsFreeBus"`
+
+	// Array
+	//
+	// 起迄站間計費
+	ODFares []*PTXServiceDTOBusSpecificationV2BusODFare "json:\"ODFares\" xml:\"List`1\""
 
 	// String
 	//
 	// 營運業者代碼
 	// Required: true
-	OperatorID *string `json:"OperatorID"`
+	OperatorID *string `json:"OperatorID" xml:"String"`
 
 	// String
 	//
 	// 機關定義路線代號
 	// Required: true
-	RouteID *string `json:"RouteID"`
+	RouteID *string `json:"RouteID" xml:"String"`
 
 	// String
 	//
 	// 路線名稱
-	RouteName string `json:"RouteName,omitempty"`
+	RouteName string `json:"RouteName,omitempty" xml:"String,omitempty"`
 
 	// Array
 	//
 	// 段次計費
-	SectionFares []*PTXServiceDTOBusSpecificationV2SectionFare `json:"SectionFares"`
+	SectionFares []*PTXServiceDTOBusSpecificationV2SectionFare "json:\"SectionFares\" xml:\"List`1\""
 
 	// Array
 	//
 	// 計費站區間計費
-	StageFares []*PTXServiceDTOBusSpecificationV2BusStageFare `json:"StageFares"`
+	StageFares []*PTXServiceDTOBusSpecificationV2BusStageFare "json:\"StageFares\" xml:\"List`1\""
 
 	// String
 	//
 	// 機關定義附屬路線代碼
-	SubRouteID string `json:"SubRouteID,omitempty"`
+	SubRouteID string `json:"SubRouteID,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 附屬路線名稱
-	SubRouteName string `json:"SubRouteName,omitempty"`
+	SubRouteName string `json:"SubRouteName,omitempty" xml:"String,omitempty"`
 
 	// DateTime
 	//
@@ -97,6 +102,10 @@ func (m *PTXServiceDTOBusSpecificationV2BusRouteFare) Validate(formats strfmt.Re
 	}
 
 	if err := m.validateIsFreeBus(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateODFares(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -148,6 +157,30 @@ func (m *PTXServiceDTOBusSpecificationV2BusRouteFare) validateIsFreeBus(formats 
 
 	if err := validate.Required("IsFreeBus", "body", m.IsFreeBus); err != nil {
 		return err
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV2BusRouteFare) validateODFares(formats strfmt.Registry) error {
+	if swag.IsZero(m.ODFares) { // not required
+		return nil
+	}
+
+	for i := 0; i < len(m.ODFares); i++ {
+		if swag.IsZero(m.ODFares[i]) { // not required
+			continue
+		}
+
+		if m.ODFares[i] != nil {
+			if err := m.ODFares[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("ODFares" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
 	}
 
 	return nil
@@ -232,6 +265,10 @@ func (m *PTXServiceDTOBusSpecificationV2BusRouteFare) validateUpdateTime(formats
 func (m *PTXServiceDTOBusSpecificationV2BusRouteFare) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.contextValidateODFares(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.contextValidateSectionFares(ctx, formats); err != nil {
 		res = append(res, err)
 	}
@@ -243,6 +280,24 @@ func (m *PTXServiceDTOBusSpecificationV2BusRouteFare) ContextValidate(ctx contex
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV2BusRouteFare) contextValidateODFares(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.ODFares); i++ {
+
+		if m.ODFares[i] != nil {
+			if err := m.ODFares[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("ODFares" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
 	return nil
 }
 

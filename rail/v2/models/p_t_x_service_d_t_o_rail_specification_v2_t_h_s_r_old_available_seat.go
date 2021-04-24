@@ -26,19 +26,19 @@ type PTXServiceDTORailSpecificationV2THSROldAvailableSeat struct {
 	//
 	// 發車時間(格式: HH:mm)
 	// Required: true
-	DepartureTime *string `json:"DepartureTime"`
+	DepartureTime *string `json:"DepartureTime" xml:"String"`
 
 	// integer
 	//
 	// 方向 : [0:'南下',1:'北上']
 	// Required: true
-	Direction *int32 `json:"Direction"`
+	Direction *string `json:"Direction"`
 
 	// String
 	//
 	// 終點車站代碼
 	// Required: true
-	EndingStationID *string `json:"EndingStationID"`
+	EndingStationID *string `json:"EndingStationID" xml:"String"`
 
 	// NameType
 	//
@@ -46,7 +46,7 @@ type PTXServiceDTORailSpecificationV2THSROldAvailableSeat struct {
 	// Required: true
 	EndingStationName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"EndingStationName"`
+	} `json:"EndingStationName" xml:"NameType"`
 
 	// DateTime
 	//
@@ -58,7 +58,7 @@ type PTXServiceDTORailSpecificationV2THSROldAvailableSeat struct {
 	//
 	// 查詢車站代碼
 	// Required: true
-	StationID *string `json:"StationID"`
+	StationID *string `json:"StationID" xml:"String"`
 
 	// NameType
 	//
@@ -66,19 +66,19 @@ type PTXServiceDTORailSpecificationV2THSROldAvailableSeat struct {
 	// Required: true
 	StationName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"StationName"`
+	} `json:"StationName" xml:"NameType"`
 
 	// Array
 	//
 	// 車次停靠站點組合
 	// Required: true
-	StopStations []*PTXServiceDTORailSpecificationV2THSRStopStation `json:"StopStations"`
+	StopStations []*PTXServiceDTORailSpecificationV2THSRStopStation "json:\"StopStations\" xml:\"List`1\""
 
 	// String
 	//
 	// 車次號碼
 	// Required: true
-	TrainNo *string `json:"TrainNo"`
+	TrainNo *string `json:"TrainNo" xml:"String"`
 }
 
 // Validate validates this p t x service d t o rail specification v2 t h s r old available seat

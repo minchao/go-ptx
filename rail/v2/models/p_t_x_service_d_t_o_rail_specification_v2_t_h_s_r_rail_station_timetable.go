@@ -25,25 +25,25 @@ type PTXServiceDTORailSpecificationV2THSRRailStationTimetable struct {
 	//
 	// 到站時間(格式: HH:mm:ss)
 	// Required: true
-	ArrivalTime *string `json:"ArrivalTime"`
+	ArrivalTime *string `json:"ArrivalTime" xml:"String"`
 
 	// String
 	//
 	// 離站時間(格式: HH:mm:ss)
 	// Required: true
-	DepartureTime *string `json:"DepartureTime"`
+	DepartureTime *string `json:"DepartureTime" xml:"String"`
 
 	// integer
 	//
 	// 順逆行 : [0:'南下',1:'北上']
 	// Required: true
-	Direction *int32 `json:"Direction"`
+	Direction *string `json:"Direction"`
 
 	// String
 	//
 	// 終點車站代號
 	// Required: true
-	EndingStationID *string `json:"EndingStationID"`
+	EndingStationID *string `json:"EndingStationID" xml:"String"`
 
 	// NameType
 	//
@@ -51,13 +51,13 @@ type PTXServiceDTORailSpecificationV2THSRRailStationTimetable struct {
 	// Required: true
 	EndingStationName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"EndingStationName"`
+	} `json:"EndingStationName" xml:"NameType"`
 
 	// String
 	//
 	// 起點車站代號
 	// Required: true
-	StartingStationID *string `json:"StartingStationID"`
+	StartingStationID *string `json:"StartingStationID" xml:"String"`
 
 	// NameType
 	//
@@ -65,13 +65,13 @@ type PTXServiceDTORailSpecificationV2THSRRailStationTimetable struct {
 	// Required: true
 	StartingStationName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"StartingStationName"`
+	} `json:"StartingStationName" xml:"NameType"`
 
 	// String
 	//
 	// 車站代號
 	// Required: true
-	StationID *string `json:"StationID"`
+	StationID *string `json:"StationID" xml:"String"`
 
 	// NameType
 	//
@@ -79,19 +79,19 @@ type PTXServiceDTORailSpecificationV2THSRRailStationTimetable struct {
 	// Required: true
 	StationName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"StationName"`
+	} `json:"StationName" xml:"NameType"`
 
 	// String
 	//
 	// 時刻表日期(格式: yyyy-MM-dd)
 	// Required: true
-	TrainDate *string `json:"TrainDate"`
+	TrainDate *string `json:"TrainDate" xml:"String"`
 
 	// String
 	//
 	// 車次代號
 	// Required: true
-	TrainNo *string `json:"TrainNo"`
+	TrainNo *string `json:"TrainNo" xml:"String"`
 
 	// DateTime
 	//

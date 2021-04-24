@@ -25,28 +25,28 @@ type PTXServiceDTOBusSpecificationV2BusStopOfRoute struct {
 	// String
 	//
 	// 站牌權管所屬縣市(相當於市區公車API的City參數)[若為公路/國道客運路線則為空值]
-	City string `json:"City,omitempty"`
+	City string `json:"City,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 站牌權管所屬縣市之代碼(國際ISO 3166-2 三碼城市代碼)[若為公路/國道客運路線則為空值]
-	CityCode string `json:"CityCode,omitempty"`
+	CityCode string `json:"CityCode,omitempty" xml:"String,omitempty"`
 
 	// integer
 	//
 	// 去返程 : [0:'去程',1:'返程',2:'迴圈',255:'未知']
-	Direction int32 `json:"Direction,omitempty"`
+	Direction int64 `json:"Direction,omitempty"`
 
 	// Array
 	//
 	// 營運業者
-	Operators []*PTXServiceDTOBusSpecificationV2EmbeddedRouteOperator `json:"Operators"`
+	Operators []*PTXServiceDTOBusSpecificationV2EmbeddedRouteOperator "json:\"Operators\" xml:\"List`1\""
 
 	// String
 	//
 	// 地區既用中之路線代碼(為原資料內碼)
 	// Required: true
-	RouteID *string `json:"RouteID"`
+	RouteID *string `json:"RouteID" xml:"String"`
 
 	// NameType
 	//
@@ -54,25 +54,25 @@ type PTXServiceDTOBusSpecificationV2BusStopOfRoute struct {
 	// Required: true
 	RouteName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"RouteName"`
+	} `json:"RouteName" xml:"NameType"`
 
 	// String
 	//
 	// 路線唯一識別代碼，規則為 {業管機關簡碼} + {RouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢
 	// Required: true
-	RouteUID *string `json:"RouteUID"`
+	RouteUID *string `json:"RouteUID" xml:"String"`
 
 	// Array
 	//
 	// 所有經過站牌
 	// Required: true
-	Stops []*PTXServiceDTOBusSpecificationV2EmbeddedStop `json:"Stops"`
+	Stops []*PTXServiceDTOBusSpecificationV2EmbeddedStop "json:\"Stops\" xml:\"List`1\""
 
 	// String
 	//
 	// 地區既用中之附屬路線代碼(為原資料內碼)
 	// Required: true
-	SubRouteID *string `json:"SubRouteID"`
+	SubRouteID *string `json:"SubRouteID" xml:"String"`
 
 	// NameType
 	//
@@ -80,13 +80,13 @@ type PTXServiceDTOBusSpecificationV2BusStopOfRoute struct {
 	// Required: true
 	SubRouteName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"SubRouteName"`
+	} `json:"SubRouteName" xml:"NameType"`
 
 	// String
 	//
 	// 附屬路線唯一識別代碼，規則為 {業管機關簡碼} + {SubRouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢
 	// Required: true
-	SubRouteUID *string `json:"SubRouteUID"`
+	SubRouteUID *string `json:"SubRouteUID" xml:"String"`
 
 	// DateTime
 	//

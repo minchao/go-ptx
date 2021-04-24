@@ -26,7 +26,7 @@ type PTXServiceDTOBusSpecificationV2BusFrequency struct {
 	//
 	// 發車班距結束適用時間，格式為: HH:mm
 	// Required: true
-	EndTime *string `json:"EndTime"`
+	EndTime *string `json:"EndTime" xml:"String"`
 
 	// Int32
 	//
@@ -45,18 +45,18 @@ type PTXServiceDTOBusSpecificationV2BusFrequency struct {
 	// 週內營運日
 	ServiceDay struct {
 		PTXServiceDTOBusSpecificationV2EmbeddedServiceDay
-	} `json:"ServiceDay,omitempty"`
+	} `json:"ServiceDay,omitempty" xml:"ServiceDay,omitempty"`
 
 	// Array
 	//
 	// 特殊營運日
-	SpecialDays []*PTXServiceDTOBusSpecificationV2SpecialDay `json:"SpecialDays"`
+	SpecialDays []*PTXServiceDTOBusSpecificationV2SpecialDay "json:\"SpecialDays\" xml:\"List`1\""
 
 	// String
 	//
 	// 發車班距起始適用時間，格式為: HH:mm
 	// Required: true
-	StartTime *string `json:"StartTime"`
+	StartTime *string `json:"StartTime" xml:"String"`
 }
 
 // Validate validates this p t x service d t o bus specification v2 bus frequency

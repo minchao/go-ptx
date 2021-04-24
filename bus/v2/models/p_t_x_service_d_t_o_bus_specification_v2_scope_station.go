@@ -23,14 +23,14 @@ type PTXServiceDTOBusSpecificationV2ScopeStation struct {
 	// String
 	//
 	// 站位代碼
-	StationID string `json:"StationID,omitempty"`
+	StationID string `json:"StationID,omitempty" xml:"String,omitempty"`
 
 	// NameType
 	//
 	// 站位名稱
 	StationName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"StationName,omitempty"`
+	} `json:"StationName,omitempty" xml:"NameType,omitempty"`
 }
 
 // Validate validates this p t x service d t o bus specification v2 scope station

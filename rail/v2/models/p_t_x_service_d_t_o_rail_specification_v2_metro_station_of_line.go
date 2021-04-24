@@ -26,12 +26,12 @@ type PTXServiceDTORailSpecificationV2MetroStationOfLine struct {
 	//
 	// 路線代碼
 	// Required: true
-	LineID *string `json:"LineID"`
+	LineID *string `json:"LineID" xml:"String"`
 
 	// String
 	//
 	// 路線編號
-	LineNo string `json:"LineNo,omitempty"`
+	LineNo string `json:"LineNo,omitempty" xml:"String,omitempty"`
 
 	// DateTime
 	//
@@ -43,7 +43,7 @@ type PTXServiceDTORailSpecificationV2MetroStationOfLine struct {
 	//
 	// 路線車站資訊
 	// Required: true
-	Stations []*PTXServiceDTORailSpecificationV2MetroSubClassStation `json:"Stations"`
+	Stations []*PTXServiceDTORailSpecificationV2MetroSubClassStation "json:\"Stations\" xml:\"List`1\""
 
 	// DateTime
 	//

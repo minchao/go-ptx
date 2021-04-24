@@ -25,13 +25,13 @@ type PTXServiceDTORailSpecificationV3TRAShape struct {
 	//
 	// well-known text，為路線軌跡資料
 	// Required: true
-	Geometry *string `json:"Geometry"`
+	Geometry *string `json:"Geometry" xml:"String"`
 
 	// String
 	//
 	// 路線代碼
 	// Required: true
-	LineID *string `json:"LineID"`
+	LineID *string `json:"LineID" xml:"String"`
 
 	// NameType
 	//
@@ -39,13 +39,13 @@ type PTXServiceDTORailSpecificationV3TRAShape struct {
 	// Required: true
 	LineName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"LineName"`
+	} `json:"LineName" xml:"NameType"`
 
 	// String
 	//
 	// 路線編號
 	// Required: true
-	LineNo *string `json:"LineNo"`
+	LineNo *string `json:"LineNo" xml:"String"`
 
 	// DateTime
 	//

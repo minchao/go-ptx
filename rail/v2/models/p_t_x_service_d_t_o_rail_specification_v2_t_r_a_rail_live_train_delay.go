@@ -37,7 +37,7 @@ type PTXServiceDTORailSpecificationV2TRARailLiveTrainDelay struct {
 	//
 	// 最近通過車站代碼
 	// Required: true
-	StationID *string `json:"StationID"`
+	StationID *string `json:"StationID" xml:"String"`
 
 	// NameType
 	//
@@ -45,13 +45,13 @@ type PTXServiceDTORailSpecificationV2TRARailLiveTrainDelay struct {
 	// Required: true
 	StationName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"StationName"`
+	} `json:"StationName" xml:"NameType"`
 
 	// String
 	//
 	// 車次代碼
 	// Required: true
-	TrainNo *string `json:"TrainNo"`
+	TrainNo *string `json:"TrainNo" xml:"String"`
 
 	// DateTime
 	//

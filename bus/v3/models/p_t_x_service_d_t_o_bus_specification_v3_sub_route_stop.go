@@ -23,7 +23,7 @@ type PTXServiceDTOBusSpecificationV3SubRouteStop struct {
 	//
 	// 站牌代碼
 	// Required: true
-	StopID *string `json:"StopID"`
+	StopID *string `json:"StopID" xml:"String"`
 
 	// NameType
 	//
@@ -31,7 +31,7 @@ type PTXServiceDTOBusSpecificationV3SubRouteStop struct {
 	// Required: true
 	StopName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"StopName"`
+	} `json:"StopName" xml:"NameType"`
 }
 
 // Validate validates this p t x service d t o bus specification v3 sub route stop

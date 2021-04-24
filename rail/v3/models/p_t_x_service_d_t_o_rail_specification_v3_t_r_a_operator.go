@@ -24,23 +24,23 @@ type PTXServiceDTORailSpecificationV3TRAOperator struct {
 	// String
 	//
 	// 營運業者票價查詢網站連結
-	FareURL string `json:"FareURL,omitempty"`
+	FareURL string `json:"FareURL,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 營運業者簡碼
 	// Required: true
-	OperatorCode *string `json:"OperatorCode"`
+	OperatorCode *string `json:"OperatorCode" xml:"String"`
 
 	// String
 	//
 	// 營運業者電子信箱
-	OperatorEmail string `json:"OperatorEmail,omitempty"`
+	OperatorEmail string `json:"OperatorEmail,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 營運業者Logo網址
-	OperatorLogoURL string `json:"OperatorLogoURL,omitempty"`
+	OperatorLogoURL string `json:"OperatorLogoURL,omitempty" xml:"String,omitempty"`
 
 	// NameType
 	//
@@ -48,27 +48,27 @@ type PTXServiceDTORailSpecificationV3TRAOperator struct {
 	// Required: true
 	OperatorName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"OperatorName"`
+	} `json:"OperatorName" xml:"NameType"`
 
 	// String
 	//
 	// 營運業者連絡電話
-	OperatorPhone string `json:"OperatorPhone,omitempty"`
+	OperatorPhone string `json:"OperatorPhone,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 營運業者網址連結
-	OperatorURL string `json:"OperatorURL,omitempty"`
+	OperatorURL string `json:"OperatorURL,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 營運業者訂票電話
-	ReservationPhone string `json:"ReservationPhone,omitempty"`
+	ReservationPhone string `json:"ReservationPhone,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 營運業者訂票網站
-	ReservationURL string `json:"ReservationURL,omitempty"`
+	ReservationURL string `json:"ReservationURL,omitempty" xml:"String,omitempty"`
 }
 
 // Validate validates this p t x service d t o rail specification v3 t r a operator

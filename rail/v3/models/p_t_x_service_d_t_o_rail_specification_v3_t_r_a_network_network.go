@@ -26,13 +26,13 @@ type PTXServiceDTORailSpecificationV3TRANetworkNetwork struct {
 	//
 	// 臺鐵路線資訊
 	// Required: true
-	Lines []*PTXServiceDTORailSpecificationV3TRANetworkLine `json:"Lines"`
+	Lines []*PTXServiceDTORailSpecificationV3TRANetworkLine "json:\"Lines\" xml:\"List`1\""
 
 	// String
 	//
 	// 臺鐵路網代碼
 	// Required: true
-	NetworkID *string `json:"NetworkID"`
+	NetworkID *string `json:"NetworkID" xml:"String"`
 
 	// MapNameType
 	//
@@ -40,7 +40,7 @@ type PTXServiceDTORailSpecificationV3TRANetworkNetwork struct {
 	// Required: true
 	NetworkMapURL struct {
 		PTXServiceDTORailSpecificationV3TRANetworkMapNameType
-	} `json:"NetworkMapURL"`
+	} `json:"NetworkMapURL" xml:"MapNameType"`
 
 	// NameType
 	//
@@ -48,13 +48,13 @@ type PTXServiceDTORailSpecificationV3TRANetworkNetwork struct {
 	// Required: true
 	NetworkName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"NetworkName"`
+	} `json:"NetworkName" xml:"NameType"`
 
 	// String
 	//
 	// 營運業者代碼
 	// Required: true
-	OperatorCode *string `json:"OperatorCode"`
+	OperatorCode *string `json:"OperatorCode" xml:"String"`
 
 	// NameType
 	//
@@ -62,7 +62,7 @@ type PTXServiceDTORailSpecificationV3TRANetworkNetwork struct {
 	// Required: true
 	OperatorName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"OperatorName"`
+	} `json:"OperatorName" xml:"NameType"`
 }
 
 // Validate validates this p t x service d t o rail specification v3 t r a network network

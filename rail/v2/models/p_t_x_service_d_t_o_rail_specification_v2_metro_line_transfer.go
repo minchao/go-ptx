@@ -25,7 +25,7 @@ type PTXServiceDTORailSpecificationV2MetroLineTransfer struct {
 	//
 	// 路線間轉乘(起)之路線代碼
 	// Required: true
-	FromLineID *string `json:"FromLineID"`
+	FromLineID *string `json:"FromLineID" xml:"String"`
 
 	// NameType
 	//
@@ -33,18 +33,18 @@ type PTXServiceDTORailSpecificationV2MetroLineTransfer struct {
 	// Required: true
 	FromLineName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"FromLineName"`
+	} `json:"FromLineName" xml:"NameType"`
 
 	// String
 	//
 	// 路線間轉乘(起)之路線編號
-	FromLineNo string `json:"FromLineNo,omitempty"`
+	FromLineNo string `json:"FromLineNo,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 路線間轉乘(起)之車站代碼
 	// Required: true
-	FromStationID *string `json:"FromStationID"`
+	FromStationID *string `json:"FromStationID" xml:"String"`
 
 	// NameType
 	//
@@ -52,12 +52,12 @@ type PTXServiceDTORailSpecificationV2MetroLineTransfer struct {
 	// Required: true
 	FromStationName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"FromStationName"`
+	} `json:"FromStationName" xml:"NameType"`
 
 	// integer
 	//
 	// 是否為站內或站外轉乘 : [0:'站外',1:'站內']
-	IsOnSiteTransfer int32 `json:"IsOnSiteTransfer,omitempty"`
+	IsOnSiteTransfer string `json:"IsOnSiteTransfer,omitempty"`
 
 	// DateTime
 	//
@@ -69,7 +69,7 @@ type PTXServiceDTORailSpecificationV2MetroLineTransfer struct {
 	//
 	// 路線間轉乘(迄)之路線代碼
 	// Required: true
-	ToLineID *string `json:"ToLineID"`
+	ToLineID *string `json:"ToLineID" xml:"String"`
 
 	// NameType
 	//
@@ -77,19 +77,19 @@ type PTXServiceDTORailSpecificationV2MetroLineTransfer struct {
 	// Required: true
 	ToLineName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"ToLineName"`
+	} `json:"ToLineName" xml:"NameType"`
 
 	// String
 	//
 	// 路線間轉乘(迄)之路線編號
 	// Required: true
-	ToLineNo *string `json:"ToLineNo"`
+	ToLineNo *string `json:"ToLineNo" xml:"String"`
 
 	// String
 	//
 	// 路線間轉乘(迄)之車站代碼
 	// Required: true
-	ToStationID *string `json:"ToStationID"`
+	ToStationID *string `json:"ToStationID" xml:"String"`
 
 	// NameType
 	//
@@ -97,13 +97,13 @@ type PTXServiceDTORailSpecificationV2MetroLineTransfer struct {
 	// Required: true
 	ToStationName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"ToStationName"`
+	} `json:"ToStationName" xml:"NameType"`
 
 	// String
 	//
 	// 轉乘方式文字描述
 	// Required: true
-	TransferDescription *string `json:"TransferDescription"`
+	TransferDescription *string `json:"TransferDescription" xml:"String"`
 
 	// Int32
 	//

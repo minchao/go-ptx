@@ -16,20 +16,28 @@ import (
 
 // PTXServiceDTOBusSpecificationV3RouteFareStageFareStage Stage
 //
+// 計費站
+//
 // swagger:model PTX.Service.DTO.Bus.Specification.V3.RouteFare+StageFare+Stage
 type PTXServiceDTOBusSpecificationV3RouteFareStageFareStage struct {
 
 	// String
-	StopID string `json:"StopID,omitempty"`
+	//
+	// 計費訖點站牌代碼
+	StopID string `json:"StopID,omitempty" xml:"String,omitempty"`
 
 	// NameType
+	//
+	// 站牌名稱
 	StopName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"StopName,omitempty"`
+	} `json:"StopName,omitempty" xml:"NameType,omitempty"`
 
 	// String
+	//
+	// 站牌唯一識別代碼，規則為 {業管機關簡碼} + {StopID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢
 	// Required: true
-	StopUID *string `json:"StopUID"`
+	StopUID *string `json:"StopUID" xml:"String"`
 }
 
 // Validate validates this p t x service d t o bus specification v3 route fare stage fare stage

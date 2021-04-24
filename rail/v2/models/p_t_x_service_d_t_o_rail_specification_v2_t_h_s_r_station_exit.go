@@ -33,7 +33,7 @@ type PTXServiceDTORailSpecificationV2THSRStationExit struct {
 	//
 	// 出入口代碼
 	// Required: true
-	ExitID *string `json:"ExitID"`
+	ExitID *string `json:"ExitID" xml:"String"`
 
 	// NameType
 	//
@@ -41,7 +41,7 @@ type PTXServiceDTORailSpecificationV2THSRStationExit struct {
 	// Required: true
 	ExitName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"ExitName"`
+	} `json:"ExitName" xml:"NameType"`
 
 	// PointType
 	//
@@ -49,13 +49,13 @@ type PTXServiceDTORailSpecificationV2THSRStationExit struct {
 	// Required: true
 	ExitPosition struct {
 		PTXServiceDTOSharedSpecificationV2BasePointType
-	} `json:"ExitPosition"`
+	} `json:"ExitPosition" xml:"PointType"`
 
 	// String
 	//
 	// 地址描述
 	// Required: true
-	LocationDescription *string `json:"LocationDescription"`
+	LocationDescription *string `json:"LocationDescription" xml:"String"`
 
 	// DateTime
 	//
@@ -71,7 +71,7 @@ type PTXServiceDTORailSpecificationV2THSRStationExit struct {
 	//
 	// 車站代碼
 	// Required: true
-	StationID *string `json:"StationID"`
+	StationID *string `json:"StationID" xml:"String"`
 
 	// NameType
 	//
@@ -79,7 +79,7 @@ type PTXServiceDTORailSpecificationV2THSRStationExit struct {
 	// Required: true
 	StationName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"StationName"`
+	} `json:"StationName" xml:"NameType"`
 
 	// DateTime
 	//

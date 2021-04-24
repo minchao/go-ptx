@@ -31,13 +31,13 @@ type PTXServiceDTORailSpecificationV2MetroLine struct {
 	//
 	// 路線顏色
 	// Required: true
-	LineColor *string `json:"LineColor"`
+	LineColor *string `json:"LineColor" xml:"String"`
 
 	// String
 	//
 	// 路線代碼
 	// Required: true
-	LineID *string `json:"LineID"`
+	LineID *string `json:"LineID" xml:"String"`
 
 	// NameType
 	//
@@ -45,12 +45,12 @@ type PTXServiceDTORailSpecificationV2MetroLine struct {
 	// Required: true
 	LineName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"LineName"`
+	} `json:"LineName" xml:"NameType"`
 
 	// String
 	//
 	// 路線編號
-	LineNo string `json:"LineNo,omitempty"`
+	LineNo string `json:"LineNo,omitempty" xml:"String,omitempty"`
 
 	// NameType
 	//
@@ -58,7 +58,7 @@ type PTXServiceDTORailSpecificationV2MetroLine struct {
 	// Required: true
 	LineSectionName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"LineSectionName"`
+	} `json:"LineSectionName" xml:"NameType"`
 
 	// DateTime
 	//

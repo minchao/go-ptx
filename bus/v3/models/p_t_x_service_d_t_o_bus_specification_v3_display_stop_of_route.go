@@ -24,13 +24,13 @@ type PTXServiceDTOBusSpecificationV3DisplayStopOfRoute struct {
 	//
 	// 車輛去返程 : [0:'去程',1:'返程',2:'迴圈',255:'未知']
 	// Required: true
-	Direction *int32 `json:"Direction"`
+	Direction *string `json:"Direction"`
 
 	// String
 	//
 	// 地區既用中之路線代碼(為原資料內碼)
 	// Required: true
-	RouteID *string `json:"RouteID"`
+	RouteID *string `json:"RouteID" xml:"String"`
 
 	// NameType
 	//
@@ -38,19 +38,19 @@ type PTXServiceDTOBusSpecificationV3DisplayStopOfRoute struct {
 	// Required: true
 	RouteName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"RouteName"`
+	} `json:"RouteName" xml:"NameType"`
 
 	// String
 	//
 	// 路線唯一識別代碼，規則為 {業管機關簡碼} + {RouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢
 	// Required: true
-	RouteUID *string `json:"RouteUID"`
+	RouteUID *string `json:"RouteUID" xml:"String"`
 
 	// Array
 	//
 	// 路線站序資料
 	// Required: true
-	Stops []*PTXServiceDTOBusSpecificationV3DisplayStopOfRouteStop `json:"Stops"`
+	Stops []*PTXServiceDTOBusSpecificationV3DisplayStopOfRouteStop "json:\"Stops\" xml:\"List`1\""
 }
 
 // Validate validates this p t x service d t o bus specification v3 display stop of route

@@ -24,7 +24,7 @@ type PTXServiceDTORailSpecificationV3TRADailyTrainTimeTableTrainTimetable struct
 	//
 	// 停靠站資料
 	// Required: true
-	StopTimes []*PTXServiceDTORailSpecificationV3TRADailyTrainTimeTableStopTime `json:"StopTimes"`
+	StopTimes []*PTXServiceDTORailSpecificationV3TRADailyTrainTimeTableStopTime "json:\"StopTimes\" xml:\"List`1\""
 
 	// TrainInfo
 	//
@@ -32,7 +32,7 @@ type PTXServiceDTORailSpecificationV3TRADailyTrainTimeTableTrainTimetable struct
 	// Required: true
 	TrainInfo struct {
 		PTXServiceDTORailSpecificationV3TRADailyTrainTimeTableTrainInfo
-	} `json:"TrainInfo"`
+	} `json:"TrainInfo" xml:"TrainInfo"`
 }
 
 // Validate validates this p t x service d t o rail specification v3 t r a daily train time table train timetable

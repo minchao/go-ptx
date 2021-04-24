@@ -23,12 +23,12 @@ type PTXServiceDTOBusSpecificationV3StopOfRouteStop struct {
 	//
 	// 上下車站別 : [-1:'可下車',0:'可上下車',1:'可上車']
 	// Required: true
-	BoardingType *int32 `json:"BoardingType"`
+	BoardingType *string `json:"BoardingType"`
 
 	// String
 	//
 	// 累積行駛距離
-	CumulativeDistance string `json:"CumulativeDistance,omitempty"`
+	CumulativeDistance string `json:"CumulativeDistance,omitempty" xml:"String,omitempty"`
 
 	// Boolean
 	//
@@ -39,7 +39,7 @@ type PTXServiceDTOBusSpecificationV3StopOfRouteStop struct {
 	//
 	// 地區既用中之站牌代碼(為原資料內碼)
 	// Required: true
-	StopID *string `json:"StopID"`
+	StopID *string `json:"StopID" xml:"String"`
 
 	// NameType
 	//
@@ -47,7 +47,7 @@ type PTXServiceDTOBusSpecificationV3StopOfRouteStop struct {
 	// Required: true
 	StopName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"StopName"`
+	} `json:"StopName" xml:"NameType"`
 
 	// PointType
 	//
@@ -55,7 +55,7 @@ type PTXServiceDTOBusSpecificationV3StopOfRouteStop struct {
 	// Required: true
 	StopPosition struct {
 		PTXServiceDTOSharedSpecificationV3BasePointType
-	} `json:"StopPosition"`
+	} `json:"StopPosition" xml:"PointType"`
 
 	// Int32
 	//
@@ -67,7 +67,7 @@ type PTXServiceDTOBusSpecificationV3StopOfRouteStop struct {
 	//
 	// 站牌唯一識別代碼，規則為 {業管機關簡碼} + {StopID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢
 	// Required: true
-	StopUID *string `json:"StopUID"`
+	StopUID *string `json:"StopUID" xml:"String"`
 }
 
 // Validate validates this p t x service d t o bus specification v3 stop of route stop

@@ -25,31 +25,31 @@ type PTXServiceDTORailSpecificationV2THSRAlertInfo struct {
 	//
 	// 事件簡易描述
 	// Required: true
-	Description *string `json:"Description"`
+	Description *string `json:"Description" xml:"String"`
 
 	// String
 	//
 	// 運行方向
 	// Required: true
-	Direction *string `json:"Direction"`
+	Direction *string `json:"Direction" xml:"String"`
 
 	// String
 	//
 	// 影響區間
 	// Required: true
-	EffectedSection *string `json:"EffectedSection"`
+	EffectedSection *string `json:"EffectedSection" xml:"String"`
 
 	// String
 	//
 	// 影響狀態
 	// Required: true
-	Effects *string `json:"Effects"`
+	Effects *string `json:"Effects" xml:"String"`
 
 	// integer
 	//
 	// 動態事件影響等級(本資料僅作參考，實際資料請參考高鐵http://www.thsrc.com.tw/tw/Operation) : [1:'全線正常運行',2:'有異常狀況']
 	// Required: true
-	Level *int32 `json:"Level"`
+	Level *string `json:"Level"`
 
 	// DateTime
 	//
@@ -71,13 +71,13 @@ type PTXServiceDTORailSpecificationV2THSRAlertInfo struct {
 	//
 	// 營運狀態 = ['空白: 正常' or '▲: 其他的異常狀態' or 'X: 全線停止運行']
 	// Required: true
-	Status *string `json:"Status"`
+	Status *string `json:"Status" xml:"String"`
 
 	// String
 	//
 	// 標題
 	// Required: true
-	Title *string `json:"Title"`
+	Title *string `json:"Title" xml:"String"`
 
 	// DateTime
 	//

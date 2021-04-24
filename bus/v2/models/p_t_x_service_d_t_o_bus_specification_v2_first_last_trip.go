@@ -25,13 +25,13 @@ type PTXServiceDTOBusSpecificationV2FirstLastTrip struct {
 	//
 	// 頭班車發車時間(HH:mm)
 	// Required: true
-	FirstTripDepTime *string `json:"FirstTripDepTime"`
+	FirstTripDepTime *string `json:"FirstTripDepTime" xml:"String"`
 
 	// String
 	//
 	// 末班車發車時間(HH:mm)
 	// Required: true
-	LastTripDepTime *string `json:"LastTripDepTime"`
+	LastTripDepTime *string `json:"LastTripDepTime" xml:"String"`
 
 	// ServiceDay
 	//
@@ -39,7 +39,7 @@ type PTXServiceDTOBusSpecificationV2FirstLastTrip struct {
 	// Required: true
 	ServiceDay struct {
 		PTXServiceDTOBusSpecificationV2BusFirstLastTripInfoServiceDay
-	} `json:"ServiceDay"`
+	} `json:"ServiceDay" xml:"ServiceDay"`
 }
 
 // Validate validates this p t x service d t o bus specification v2 first last trip

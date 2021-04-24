@@ -26,13 +26,13 @@ type PTXServiceDTOBusSpecificationV2SectionFare struct {
 	//
 	// 緩衝區資訊
 	// Required: true
-	BufferZones []*PTXServiceDTOBusSpecificationV2SectionFareBufferZone `json:"BufferZones"`
+	BufferZones []*PTXServiceDTOBusSpecificationV2SectionFareBufferZone "json:\"BufferZones\" xml:\"List`1\""
 
 	// Array
 	//
 	// 每段收費資訊
 	// Required: true
-	Fares []*PTXServiceDTOBusSpecificationV2SectionFareFare `json:"Fares"`
+	Fares []*PTXServiceDTOBusSpecificationV2BusRouteFareFare "json:\"Fares\" xml:\"List`1\""
 }
 
 // Validate validates this p t x service d t o bus specification v2 section fare

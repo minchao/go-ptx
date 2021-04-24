@@ -22,64 +22,64 @@ type PTXServiceDTOBusSpecificationV2BusFirstLastTripInfoServiceDay struct {
 	// integer
 	//
 	// 國定假日後一日營運與否 : [0:'否',1:'是']
-	DayAfterNationalHoliday int32 `json:"DayAfterNationalHoliday,omitempty"`
+	DayAfterNationalHoliday string `json:"DayAfterNationalHoliday,omitempty"`
 
 	// integer
 	//
 	// 國定假日前一日營運與否 : [0:'否',1:'是']
-	DayBeforeNationalHoliday int32 `json:"DayBeforeNationalHoliday,omitempty"`
+	DayBeforeNationalHoliday string `json:"DayBeforeNationalHoliday,omitempty"`
 
 	// integer
 	//
 	// 星期五是否營運 : [0:'否',1:'是']
 	// Required: true
-	Friday *int32 `json:"Friday"`
+	Friday *string `json:"Friday"`
 
 	// integer
 	//
 	// 星期一是否營運 : [0:'否',1:'是']
 	// Required: true
-	Monday *int32 `json:"Monday"`
+	Monday *string `json:"Monday"`
 
 	// integer
 	//
 	// 國定假日營運與否 : [0:'否',1:'是']
-	NationalHolidays int32 `json:"NationalHolidays,omitempty"`
+	NationalHolidays string `json:"NationalHolidays,omitempty"`
 
 	// integer
 	//
 	// 星期六是否營運 : [0:'否',1:'是']
 	// Required: true
-	Saturday *int32 `json:"Saturday"`
+	Saturday *string `json:"Saturday"`
 
 	// integer
 	//
 	// 星期日是否營運 : [0:'否',1:'是']
 	// Required: true
-	Sunday *int32 `json:"Sunday"`
+	Sunday *string `json:"Sunday"`
 
 	// integer
 	//
 	// 星期四是否營運 : [0:'否',1:'是']
 	// Required: true
-	Thursday *int32 `json:"Thursday"`
+	Thursday *string `json:"Thursday"`
 
 	// integer
 	//
 	// 星期二是否營運 : [0:'否',1:'是']
 	// Required: true
-	Tuesday *int32 `json:"Tuesday"`
+	Tuesday *string `json:"Tuesday"`
 
 	// integer
 	//
 	// 颱風停止上班上課期間營運與否 : [0:'否',1:'是']
-	TyphoonDay int32 `json:"TyphoonDay,omitempty"`
+	TyphoonDay string `json:"TyphoonDay,omitempty"`
 
 	// integer
 	//
 	// 星期三是否營運 : [0:'否',1:'是']
 	// Required: true
-	Wednesday *int32 `json:"Wednesday"`
+	Wednesday *string `json:"Wednesday"`
 }
 
 // Validate validates this p t x service d t o bus specification v2 bus first last trip info service day

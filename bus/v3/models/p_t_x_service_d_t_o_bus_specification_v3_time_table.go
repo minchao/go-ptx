@@ -24,12 +24,12 @@ type PTXServiceDTOBusSpecificationV3TimeTable struct {
 	//
 	// 公車停靠時間資料
 	// Required: true
-	StopTimes []*PTXServiceDTOBusSpecificationV3StopTime `json:"StopTimes"`
+	StopTimes []*PTXServiceDTOBusSpecificationV3StopTime "json:\"StopTimes\" xml:\"List`1\""
 
 	// String
 	//
 	// 班次代碼，為無意義之編碼
-	TripID string `json:"TripID,omitempty"`
+	TripID string `json:"TripID,omitempty" xml:"String,omitempty"`
 }
 
 // Validate validates this p t x service d t o bus specification v3 time table

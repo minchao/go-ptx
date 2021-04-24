@@ -22,18 +22,18 @@ type PTXServiceDTORailSpecificationV3TRADailyTrainTimeTableStopTime struct {
 	// String
 	//
 	// 到站時間
-	ArrivalTime string `json:"ArrivalTime,omitempty"`
+	ArrivalTime string `json:"ArrivalTime,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 離站時間
-	DepartureTime string `json:"DepartureTime,omitempty"`
+	DepartureTime string `json:"DepartureTime,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 車站代碼
 	// Required: true
-	StationID *string `json:"StationID"`
+	StationID *string `json:"StationID" xml:"String"`
 
 	// NameType
 	//
@@ -41,7 +41,7 @@ type PTXServiceDTORailSpecificationV3TRADailyTrainTimeTableStopTime struct {
 	// Required: true
 	StationName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"StationName"`
+	} `json:"StationName" xml:"NameType"`
 
 	// Int32
 	//

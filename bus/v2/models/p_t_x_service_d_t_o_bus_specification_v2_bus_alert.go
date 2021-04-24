@@ -23,34 +23,34 @@ type PTXServiceDTOBusSpecificationV2BusAlert struct {
 	//
 	// 通阻事件原單位發布代碼
 	// Required: true
-	AlertID *string `json:"AlertID"`
+	AlertID *string `json:"AlertID" xml:"String"`
 
 	// String
 	//
 	// 詳細描述網站連結
-	AlertURL string `json:"AlertURL,omitempty"`
+	AlertURL string `json:"AlertURL,omitempty" xml:"String,omitempty"`
 
 	// integer
 	//
 	// 原因 : [1:'事故',2:'維護',3:'技術問題',4:'施工',5:'急救',6:'天災',7:'示威遊行',8:'維安',9:'假日',10:'罷工',254:'其他',255:'未知原因']
-	Cause int32 `json:"Cause,omitempty"`
+	Cause string `json:"Cause,omitempty"`
 
 	// String
 	//
 	// 發布單位
 	// Required: true
-	Department *string `json:"Department"`
+	Department *string `json:"Department" xml:"String"`
 
 	// String
 	//
 	// 事件描述
 	// Required: true
-	Description *string `json:"Description"`
+	Description *string `json:"Description" xml:"String"`
 
 	// integer
 	//
 	// 影響 : [1:'車輛改道',2:'服務班次增加',3:'服務班次減少',4:'服務班次取消',5:'服務班次改變',6:'站牌不停靠',7:'重大延遲',254:'其他影響',255:'未知影響']
-	Effect int32 `json:"Effect,omitempty"`
+	Effect string `json:"Effect,omitempty"`
 
 	// DateTime
 	//
@@ -68,7 +68,7 @@ type PTXServiceDTOBusSpecificationV2BusAlert struct {
 	// Required: true
 	Scope struct {
 		PTXServiceDTOBusSpecificationV2Scope
-	} `json:"Scope"`
+	} `json:"Scope" xml:"Scope"`
 
 	// DateTime
 	//
@@ -83,13 +83,13 @@ type PTXServiceDTOBusSpecificationV2BusAlert struct {
 	// integer
 	//
 	// 營運狀況 : [0:'全部營運停止',1:'全部營運正常',2:'有異常狀況']
-	Status int32 `json:"Status,omitempty"`
+	Status string `json:"Status,omitempty"`
 
 	// String
 	//
 	// 通阻標題
 	// Required: true
-	Title *string `json:"Title"`
+	Title *string `json:"Title" xml:"String"`
 
 	// DateTime
 	//

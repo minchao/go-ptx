@@ -20,17 +20,17 @@ type PTXServiceDTORailSpecificationV3TRANetworkMapNameType struct {
 	// String
 	//
 	// 臺鐵路網圖網址(英文版)
-	En string `json:"En,omitempty"`
+	En string `json:"En,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 路網圖名稱
-	MapName string `json:"MapName,omitempty"`
+	MapName string `json:"MapName,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 臺鐵路網圖網址(中文版)
-	ZhTw string `json:"Zh_tw,omitempty"`
+	ZhTw string `json:"Zh_tw,omitempty" xml:"String,omitempty"`
 }
 
 // Validate validates this p t x service d t o rail specification v3 t r a network map name type

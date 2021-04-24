@@ -25,49 +25,49 @@ type PTXServiceDTOBusSpecificationV2BusSubRoute struct {
 	//
 	// 去返程 : [0:'去程',1:'返程',2:'迴圈',255:'未知']
 	// Required: true
-	Direction *int32 `json:"Direction"`
+	Direction *int64 `json:"Direction"`
 
 	// String
 	//
 	// 平日第一班發車時間
-	FirstBusTime string `json:"FirstBusTime,omitempty"`
+	FirstBusTime string `json:"FirstBusTime,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 車頭描述
-	Headsign string `json:"Headsign,omitempty"`
+	Headsign string `json:"Headsign,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 車頭英文描述
-	HeadsignEn string `json:"HeadsignEn,omitempty"`
+	HeadsignEn string `json:"HeadsignEn,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 假日去程第一班發車時間
-	HolidayFirstBusTime string `json:"HolidayFirstBusTime,omitempty"`
+	HolidayFirstBusTime string `json:"HolidayFirstBusTime,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 假日返程第一班發車時間
-	HolidayLastBusTime string `json:"HolidayLastBusTime,omitempty"`
+	HolidayLastBusTime string `json:"HolidayLastBusTime,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 平日返程第一班發車時間
-	LastBusTime string `json:"LastBusTime,omitempty"`
+	LastBusTime string `json:"LastBusTime,omitempty" xml:"String,omitempty"`
 
 	// Array
 	//
 	// 營運業者代碼
 	// Required: true
-	OperatorIDs []string `json:"OperatorIDs"`
+	OperatorIDs []string "json:\"OperatorIDs\" xml:\"List`1\""
 
 	// String
 	//
 	// 地區既用中之附屬路線代碼(為原資料內碼)
 	// Required: true
-	SubRouteID *string `json:"SubRouteID"`
+	SubRouteID *string `json:"SubRouteID" xml:"String"`
 
 	// NameType
 	//
@@ -75,13 +75,13 @@ type PTXServiceDTOBusSpecificationV2BusSubRoute struct {
 	// Required: true
 	SubRouteName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"SubRouteName"`
+	} `json:"SubRouteName" xml:"NameType"`
 
 	// String
 	//
 	// 附屬路線唯一識別代碼，規則為 {業管機關簡碼} + {SubRouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢
 	// Required: true
-	SubRouteUID *string `json:"SubRouteUID"`
+	SubRouteUID *string `json:"SubRouteUID" xml:"String"`
 }
 
 // Validate validates this p t x service d t o bus specification v2 bus sub route

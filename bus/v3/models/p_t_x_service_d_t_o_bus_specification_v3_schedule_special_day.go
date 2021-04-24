@@ -25,25 +25,25 @@ type PTXServiceDTOBusSpecificationV3ScheduleSpecialDay struct {
 	// Required: true
 	DatePeriod struct {
 		PTXServiceDTOBusSpecificationV3ScheduleDatePeriod
-	} `json:"DatePeriod"`
+	} `json:"DatePeriod" xml:"DatePeriod"`
 
 	// Array
 	//
 	// 不連續特殊日期
 	// Required: true
-	Dates []string `json:"Dates"`
+	Dates []string "json:\"Dates\" xml:\"List`1\""
 
 	// String
 	//
 	// 特殊營運描述
 	// Required: true
-	Description *string `json:"Description"`
+	Description *string `json:"Description" xml:"String"`
 
 	// integer
 	//
 	// 營運服務狀態代碼0=停止營運, 1=正常營運 , 2=加班營運 : [0:'正常營運',1:'加班營運',2:'取消/停駛營運']
 	// Required: true
-	ServiceStatus *int32 `json:"ServiceStatus"`
+	ServiceStatus *string `json:"ServiceStatus"`
 }
 
 // Validate validates this p t x service d t o bus specification v3 schedule special day

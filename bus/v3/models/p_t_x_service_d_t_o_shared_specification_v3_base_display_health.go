@@ -26,26 +26,26 @@ type PTXServiceDTOSharedSpecificationV3BaseDisplayHealth struct {
 	// 本平台資料來源轉入狀態
 	Inbound struct {
 		PTXServiceDTOSharedSpecificationV3BaseInbound
-	} `json:"Inbound,omitempty"`
+	} `json:"Inbound,omitempty" xml:"Inbound,omitempty"`
 
 	// Outbound
 	//
 	// 本平台API狀態
 	Outbound struct {
 		PTXServiceDTOSharedSpecificationV3BaseOutbound
-	} `json:"Outbound,omitempty"`
+	} `json:"Outbound,omitempty" xml:"Outbound,omitempty"`
 
 	// String
 	//
 	// API服務代碼
 	// Required: true
-	ServiceID *string `json:"ServiceID"`
+	ServiceID *string `json:"ServiceID" xml:"String"`
 
 	// String
 	//
 	// API服務中文名稱
 	// Required: true
-	ServiceName *string `json:"ServiceName"`
+	ServiceName *string `json:"ServiceName" xml:"String"`
 }
 
 // Validate validates this p t x service d t o shared specification v3 base display health

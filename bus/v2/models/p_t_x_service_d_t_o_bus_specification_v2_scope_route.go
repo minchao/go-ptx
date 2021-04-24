@@ -23,19 +23,19 @@ type PTXServiceDTOBusSpecificationV2ScopeRoute struct {
 	// integer
 	//
 	// 影響方向 : [0:'去程',1:'返程',2:'迴圈',255:'未知']
-	Direction int32 `json:"Direction,omitempty"`
+	Direction int64 `json:"Direction,omitempty"`
 
 	// String
 	//
 	// 地區既用中之班次代碼(為原資料內碼)
-	RouteID string `json:"RouteID,omitempty"`
+	RouteID string `json:"RouteID,omitempty" xml:"String,omitempty"`
 
 	// NameType
 	//
 	// 路線名稱
 	RouteName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"RouteName,omitempty"`
+	} `json:"RouteName,omitempty" xml:"NameType,omitempty"`
 }
 
 // Validate validates this p t x service d t o bus specification v2 scope route

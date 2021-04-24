@@ -26,19 +26,19 @@ type PTXServiceDTOBusSpecificationV3RouteFareODFare struct {
 	// Required: true
 	DestinationStops struct {
 		PTXServiceDTOBusSpecificationV3RouteFareODFareOD
-	} `json:"DestinationStops"`
+	} `json:"DestinationStops" xml:"OD"`
 
 	// integer
 	//
 	// 方向性描述 : [0:'去程',1:'返程',2:'迴圈',255:'未知']
 	// Required: true
-	Direction *int32 `json:"Direction"`
+	Direction *string `json:"Direction"`
 
 	// Array
 	//
 	// 計費價格
 	// Required: true
-	Fares []*PTXServiceDTOBusSpecificationV3RouteFareODFareFareOD `json:"Fares"`
+	Fares []*PTXServiceDTOBusSpecificationV3RouteFareODFareFareOD "json:\"Fares\" xml:\"List`1\""
 
 	// OD
 	//
@@ -46,7 +46,7 @@ type PTXServiceDTOBusSpecificationV3RouteFareODFare struct {
 	// Required: true
 	OriginStops struct {
 		PTXServiceDTOBusSpecificationV3RouteFareODFareOD
-	} `json:"OriginStops"`
+	} `json:"OriginStops" xml:"OD"`
 }
 
 // Validate validates this p t x service d t o bus specification v3 route fare o d fare

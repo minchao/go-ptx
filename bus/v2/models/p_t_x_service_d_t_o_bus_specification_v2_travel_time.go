@@ -23,13 +23,13 @@ type PTXServiceDTOBusSpecificationV2TravelTime struct {
 	//
 	// 起始站位代碼
 	// Required: true
-	FromStationID *string `json:"FromStationID"`
+	FromStationID *string `json:"FromStationID" xml:"String"`
 
 	// String
 	//
 	// 起始站牌代碼
 	// Required: true
-	FromStopID *string `json:"FromStopID"`
+	FromStopID *string `json:"FromStopID" xml:"String"`
 
 	// Int32
 	//
@@ -41,13 +41,13 @@ type PTXServiceDTOBusSpecificationV2TravelTime struct {
 	//
 	// 終點站位代碼
 	// Required: true
-	ToStationID *string `json:"ToStationID"`
+	ToStationID *string `json:"ToStationID" xml:"String"`
 
 	// String
 	//
 	// 終點站牌代碼
 	// Required: true
-	ToStopID *string `json:"ToStopID"`
+	ToStopID *string `json:"ToStopID" xml:"String"`
 }
 
 // Validate validates this p t x service d t o bus specification v2 travel time

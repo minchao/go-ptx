@@ -25,107 +25,107 @@ type PTXServiceDTORailSpecificationV2TRATimeInfoRailGeneralTrainInfo struct {
 	//
 	// 是否人車同行班次(置於攜車袋之自行車各級列車均可乘車) : [0:'否',1:'是']
 	// Required: true
-	BikeFlag *int32 `json:"BikeFlag"`
+	BikeFlag *string `json:"BikeFlag"`
 
 	// integer
 	//
 	// 是否設有哺(集)乳室車廂 : [0:'否',1:'是']
 	// Required: true
-	BreastFeedingFlag *int32 `json:"BreastFeedingFlag"`
+	BreastFeedingFlag *string `json:"BreastFeedingFlag"`
 
 	// integer
 	//
 	// 是否為每日行駛 : [0:'否',1:'是']
 	// Required: true
-	DailyFlag *int32 `json:"DailyFlag"`
+	DailyFlag *string `json:"DailyFlag"`
 
 	// integer
 	//
 	// 是否提供訂便當服務 : [0:'否',1:'是']
 	// Required: true
-	DiningFlag *int32 `json:"DiningFlag"`
+	DiningFlag *string `json:"DiningFlag"`
 
 	// integer
 	//
 	// 順逆行 : [0:'順行',1:'逆行']
 	// Required: true
-	Direction *int32 `json:"Direction"`
+	Direction *string `json:"Direction"`
 
 	// String
 	//
 	// 列車終點車站代號
-	EndingStationID string `json:"EndingStationID,omitempty"`
+	EndingStationID string `json:"EndingStationID,omitempty" xml:"String,omitempty"`
 
 	// NameType
 	//
 	// 列車終點車站名稱
 	EndingStationName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"EndingStationName,omitempty"`
+	} `json:"EndingStationName,omitempty" xml:"NameType,omitempty"`
 
 	// NameType
 	//
 	// 附註說明
 	Note struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"Note,omitempty"`
+	} `json:"Note,omitempty" xml:"NameType,omitempty"`
 
 	// String
 	//
 	// 跨夜車站代碼
-	OverNightStationID string `json:"OverNightStationID,omitempty"`
+	OverNightStationID string `json:"OverNightStationID,omitempty" xml:"String,omitempty"`
 
 	// integer
 	//
 	// 是否提供行李服務 : [0:'否',1:'是']
 	// Required: true
-	PackageServiceFlag *int32 `json:"PackageServiceFlag"`
+	PackageServiceFlag *string `json:"PackageServiceFlag"`
 
 	// String
 	//
 	// 列車起點車站代號
-	StartingStationID string `json:"StartingStationID,omitempty"`
+	StartingStationID string `json:"StartingStationID,omitempty" xml:"String,omitempty"`
 
 	// NameType
 	//
 	// 列車起點車站名稱
 	StartingStationName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"StartingStationName,omitempty"`
+	} `json:"StartingStationName,omitempty" xml:"NameType,omitempty"`
 
 	// String
 	//
 	// 車次代碼
 	// Required: true
-	TrainNo *string `json:"TrainNo"`
+	TrainNo *string `json:"TrainNo" xml:"String"`
 
 	// String
 	//
 	// 列車車種簡碼
-	TrainTypeCode string `json:"TrainTypeCode,omitempty"`
+	TrainTypeCode string `json:"TrainTypeCode,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 列車車種代碼
-	TrainTypeID string `json:"TrainTypeID,omitempty"`
+	TrainTypeID string `json:"TrainTypeID,omitempty" xml:"String,omitempty"`
 
 	// NameType
 	//
 	// 列車車種名稱
 	TrainTypeName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"TrainTypeName,omitempty"`
+	} `json:"TrainTypeName,omitempty" xml:"NameType,omitempty"`
 
 	// integer
 	//
 	// 山海線類型 : [0:'不經山海線',1:'山線',2:'海線',3:'成追線']
-	TripLine int32 `json:"TripLine,omitempty"`
+	TripLine string `json:"TripLine,omitempty"`
 
 	// integer
 	//
 	// 是否設身障旅客專用座位車 : [0:'否',1:'是']
 	// Required: true
-	WheelchairFlag *int32 `json:"WheelchairFlag"`
+	WheelchairFlag *string `json:"WheelchairFlag"`
 }
 
 // Validate validates this p t x service d t o rail specification v2 t r a time info rail general train info

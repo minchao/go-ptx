@@ -34,7 +34,7 @@ type PTXServiceDTORailSpecificationV2MetroSubClassStation struct {
 	//
 	// 車站代碼
 	// Required: true
-	StationID *string `json:"StationID"`
+	StationID *string `json:"StationID" xml:"String"`
 
 	// NameType
 	//
@@ -42,7 +42,7 @@ type PTXServiceDTORailSpecificationV2MetroSubClassStation struct {
 	// Required: true
 	StationName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"StationName"`
+	} `json:"StationName" xml:"NameType"`
 }
 
 // Validate validates this p t x service d t o rail specification v2 metro sub class station

@@ -24,7 +24,7 @@ type PTXServiceDTOBusSpecificationV3VehicleDepot struct {
 	//
 	// 營業所代碼
 	// Required: true
-	DepotID *string `json:"DepotID"`
+	DepotID *string `json:"DepotID" xml:"String"`
 
 	// NameType
 	//
@@ -32,13 +32,13 @@ type PTXServiceDTOBusSpecificationV3VehicleDepot struct {
 	// Required: true
 	DepotName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"DepotName"`
+	} `json:"DepotName" xml:"NameType"`
 
 	// Array
 	//
 	// 車輛
 	// Required: true
-	Vehicles []*PTXServiceDTOBusSpecificationV3VehicleDepotVehicle `json:"Vehicles"`
+	Vehicles []*PTXServiceDTOBusSpecificationV3VehicleDepotVehicle "json:\"Vehicles\" xml:\"List`1\""
 }
 
 // Validate validates this p t x service d t o bus specification v3 vehicle depot

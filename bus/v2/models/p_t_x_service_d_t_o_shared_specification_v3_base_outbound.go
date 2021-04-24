@@ -30,13 +30,13 @@ type PTXServiceDTOSharedSpecificationV3BaseOutbound struct {
 	// String
 	//
 	// 檢核失敗原因
-	Reason string `json:"Reason,omitempty"`
+	Reason string `json:"Reason,omitempty" xml:"String,omitempty"`
 
 	// integer
 	//
 	// 檢核結果狀態 : [0:'失敗',1:'成功']
 	// Required: true
-	Status *int32 `json:"Status"`
+	Status *string `json:"Status"`
 }
 
 // Validate validates this p t x service d t o shared specification v3 base outbound

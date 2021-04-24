@@ -30,43 +30,43 @@ type PTXServiceDTORailSpecificationV2TRALine struct {
 	// String
 	//
 	// 路線顏色
-	LineColor string `json:"LineColor,omitempty"`
+	LineColor string `json:"LineColor,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 路線代碼
 	// Required: true
-	LineID *string `json:"LineID"`
+	LineID *string `json:"LineID" xml:"String"`
 
 	// String
 	//
 	// 路線英文名稱
 	// Required: true
-	LineNameEn *string `json:"LineNameEn"`
+	LineNameEn *string `json:"LineNameEn" xml:"String"`
 
 	// String
 	//
 	// 路線中文名稱
 	// Required: true
-	LineNameZh *string `json:"LineNameZh"`
+	LineNameZh *string `json:"LineNameZh" xml:"String"`
 
 	// String
 	//
 	// 路線編號
 	// Required: true
-	LineNo *string `json:"LineNo"`
+	LineNo *string `json:"LineNo" xml:"String"`
 
 	// String
 	//
 	// 路線區間英文名稱
 	// Required: true
-	LineSectionNameEn *string `json:"LineSectionNameEn"`
+	LineSectionNameEn *string `json:"LineSectionNameEn" xml:"String"`
 
 	// String
 	//
 	// 路線區間中文名稱
 	// Required: true
-	LineSectionNameZh *string `json:"LineSectionNameZh"`
+	LineSectionNameZh *string `json:"LineSectionNameZh" xml:"String"`
 
 	// DateTime
 	//

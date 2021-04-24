@@ -24,18 +24,18 @@ type PTXServiceDTORailSpecificationV3TRAStationTransferBusTransfer struct {
 	// String
 	//
 	// 轉乘描述
-	Description string `json:"Description,omitempty"`
+	Description string `json:"Description,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 轉乘公車開往方向
 	// Required: true
-	Destination *string `json:"Destination"`
+	Destination *string `json:"Destination" xml:"String"`
 
 	// String
 	//
 	// 轉乘樓層
-	FloorLevel string `json:"FloorLevel,omitempty"`
+	FloorLevel string `json:"FloorLevel,omitempty" xml:"String,omitempty"`
 
 	// 是否為站內或站外轉乘
 	IsOnSiteTransfer bool `json:"IsOnSiteTransfer,omitempty"`
@@ -47,13 +47,13 @@ type PTXServiceDTORailSpecificationV3TRAStationTransferBusTransfer struct {
 	//
 	// 運具種類代碼
 	// Required: true
-	Mode *string `json:"Mode"`
+	Mode *string `json:"Mode" xml:"String"`
 
 	// String
 	//
 	// 公車營運業者簡碼
 	// Required: true
-	OperatorCode *string `json:"OperatorCode"`
+	OperatorCode *string `json:"OperatorCode" xml:"String"`
 
 	// NameType
 	//
@@ -61,18 +61,18 @@ type PTXServiceDTORailSpecificationV3TRAStationTransferBusTransfer struct {
 	// Required: true
 	OperatorName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"OperatorName"`
+	} `json:"OperatorName" xml:"NameType"`
 
 	// String
 	//
 	// 轉乘公車所在月台
-	Platform string `json:"Platform,omitempty"`
+	Platform string `json:"Platform,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 轉乘公車路線代碼
 	// Required: true
-	RouteID *string `json:"RouteID"`
+	RouteID *string `json:"RouteID" xml:"String"`
 
 	// NameType
 	//
@@ -80,13 +80,13 @@ type PTXServiceDTORailSpecificationV3TRAStationTransferBusTransfer struct {
 	// Required: true
 	RouteName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"RouteName"`
+	} `json:"RouteName" xml:"NameType"`
 
 	// String
 	//
 	// 轉乘公車站牌代碼
 	// Required: true
-	StopID *string `json:"StopID"`
+	StopID *string `json:"StopID" xml:"String"`
 
 	// NameType
 	//
@@ -94,7 +94,7 @@ type PTXServiceDTORailSpecificationV3TRAStationTransferBusTransfer struct {
 	// Required: true
 	StopName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"StopName"`
+	} `json:"StopName" xml:"NameType"`
 }
 
 // Validate validates this p t x service d t o rail specification v3 t r a station transfer bus transfer

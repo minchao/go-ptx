@@ -51,7 +51,7 @@ type PTXServiceDTORailSpecificationV3TRAGeneralStationTimetableServiceDay struct
 	// String
 	//
 	// 服務日標籤
-	ServiceTag string `json:"ServiceTag,omitempty"`
+	ServiceTag string `json:"ServiceTag,omitempty" xml:"String,omitempty"`
 
 	// Boolean
 	//

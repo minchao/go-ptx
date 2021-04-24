@@ -29,7 +29,7 @@ type PTXServiceDTOBusSpecificationV3S2STravelTimeTravelTime struct {
 	//
 	// 起站站牌代碼
 	// Required: true
-	FromStopID *string `json:"FromStopID"`
+	FromStopID *string `json:"FromStopID" xml:"String"`
 
 	// Int32
 	//
@@ -53,7 +53,7 @@ type PTXServiceDTOBusSpecificationV3S2STravelTimeTravelTime struct {
 	//
 	// 迄站站牌代碼
 	// Required: true
-	ToStopID *string `json:"ToStopID"`
+	ToStopID *string `json:"ToStopID" xml:"String"`
 }
 
 // Validate validates this p t x service d t o bus specification v3 s2 s travel time travel time

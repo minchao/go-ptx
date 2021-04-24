@@ -23,24 +23,24 @@ type PTXServiceDTORailSpecificationV3TRAGeneralStationTimetableTimetable struct 
 	// String
 	//
 	// 到站時刻
-	ArrivalTime string `json:"ArrivalTime,omitempty"`
+	ArrivalTime string `json:"ArrivalTime,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 發車時刻
-	DepartureTime string `json:"DepartureTime,omitempty"`
+	DepartureTime string `json:"DepartureTime,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 目的站車站代號
-	DestinationStationID string `json:"DestinationStationID,omitempty"`
+	DestinationStationID string `json:"DestinationStationID,omitempty" xml:"String,omitempty"`
 
 	// NameType
 	//
 	// 目的站車站
 	DestinationStationName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"DestinationStationName,omitempty"`
+	} `json:"DestinationStationName,omitempty" xml:"NameType,omitempty"`
 
 	// Int32
 	//
@@ -50,24 +50,24 @@ type PTXServiceDTORailSpecificationV3TRAGeneralStationTimetableTimetable struct 
 	// String
 	//
 	// 車次代碼
-	TrainNo string `json:"TrainNo,omitempty"`
+	TrainNo string `json:"TrainNo,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 車種簡碼 = ['1: 太魯閣', '2: 普悠瑪', '3: 自強', '4: 莒光', '5: 復興', '6: 區間', '7: 普快', '10: 區間快']
-	TrainTypeCode string `json:"TrainTypeCode,omitempty"`
+	TrainTypeCode string `json:"TrainTypeCode,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 車種代嗎
-	TrainTypeID string `json:"TrainTypeID,omitempty"`
+	TrainTypeID string `json:"TrainTypeID,omitempty" xml:"String,omitempty"`
 
 	// NameType
 	//
 	// 車種名稱
 	TrainTypeName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"TrainTypeName,omitempty"`
+	} `json:"TrainTypeName,omitempty" xml:"NameType,omitempty"`
 }
 
 // Validate validates this p t x service d t o rail specification v3 t r a general station timetable timetable

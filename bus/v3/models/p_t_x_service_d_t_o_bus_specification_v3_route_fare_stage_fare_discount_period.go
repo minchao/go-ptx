@@ -16,22 +16,30 @@ import (
 
 // PTXServiceDTOBusSpecificationV3RouteFareStageFareDiscountPeriod DiscountPeriod
 //
+// 優惠時段
+//
 // swagger:model PTX.Service.DTO.Bus.Specification.V3.RouteFare+StageFare+DiscountPeriod
 type PTXServiceDTOBusSpecificationV3RouteFareStageFareDiscountPeriod struct {
 
 	// String
+	//
+	// 結束時間(HH:mm制)
 	// Required: true
-	EndTime *string `json:"EndTime"`
+	EndTime *string `json:"EndTime" xml:"String"`
 
 	// ServiceDay
+	//
+	// 營運日型態
 	// Required: true
 	ServiceDay struct {
 		PTXServiceDTOBusSpecificationV3RouteFareStageFareServiceDay
-	} `json:"ServiceDay"`
+	} `json:"ServiceDay" xml:"ServiceDay"`
 
 	// String
+	//
+	// 開始時間(HH:mm制)
 	// Required: true
-	StartTime *string `json:"StartTime"`
+	StartTime *string `json:"StartTime" xml:"String"`
 }
 
 // Validate validates this p t x service d t o bus specification v3 route fare stage fare discount period

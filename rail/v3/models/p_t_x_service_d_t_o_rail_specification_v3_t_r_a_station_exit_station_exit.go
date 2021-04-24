@@ -25,19 +25,19 @@ type PTXServiceDTORailSpecificationV3TRAStationExitStationExit struct {
 	// Array
 	//
 	// 車站出入口簡圖網址連結資訊
-	ExitMapURLs []*PTXServiceDTORailSpecificationV3TRAStationExitExitMapURL `json:"ExitMapURLs"`
+	ExitMapURLs []*PTXServiceDTORailSpecificationV3TRAStationExitExitMapURL "json:\"ExitMapURLs\" xml:\"List`1\""
 
 	// Array
 	//
 	// 車站出入口
 	// Required: true
-	Exits []*PTXServiceDTORailSpecificationV3TRAStationExitExit `json:"Exits"`
+	Exits []*PTXServiceDTORailSpecificationV3TRAStationExitExit "json:\"Exits\" xml:\"List`1\""
 
 	// String
 	//
 	// 出入口所屬車站代碼
 	// Required: true
-	StationID *string `json:"StationID"`
+	StationID *string `json:"StationID" xml:"String"`
 
 	// NameType
 	//
@@ -45,7 +45,7 @@ type PTXServiceDTORailSpecificationV3TRAStationExitStationExit struct {
 	// Required: true
 	StationName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"StationName"`
+	} `json:"StationName" xml:"NameType"`
 }
 
 // Validate validates this p t x service d t o rail specification v3 t r a station exit station exit

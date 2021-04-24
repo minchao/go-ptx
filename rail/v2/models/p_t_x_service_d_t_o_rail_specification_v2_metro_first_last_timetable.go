@@ -25,7 +25,7 @@ type PTXServiceDTORailSpecificationV2MetroFirstLastTimetable struct {
 	//
 	// 目的站車站代號
 	// Required: true
-	DestinationStaionID *string `json:"DestinationStaionID"`
+	DestinationStaionID *string `json:"DestinationStaionID" xml:"String"`
 
 	// NameType
 	//
@@ -33,30 +33,30 @@ type PTXServiceDTORailSpecificationV2MetroFirstLastTimetable struct {
 	// Required: true
 	DestinationStationName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"DestinationStationName"`
+	} `json:"DestinationStationName" xml:"NameType"`
 
 	// String
 	//
 	// 首班車時刻
 	// Required: true
-	FirstTrainTime *string `json:"FirstTrainTime"`
+	FirstTrainTime *string `json:"FirstTrainTime" xml:"String"`
 
 	// String
 	//
 	// 末班車時刻
 	// Required: true
-	LastTrainTime *string `json:"LastTrainTime"`
+	LastTrainTime *string `json:"LastTrainTime" xml:"String"`
 
 	// String
 	//
 	// 首末班車次之路線代碼
 	// Required: true
-	LineID *string `json:"LineID"`
+	LineID *string `json:"LineID" xml:"String"`
 
 	// String
 	//
 	// 首末班車次之路線代號
-	LineNo string `json:"LineNo,omitempty"`
+	LineNo string `json:"LineNo,omitempty" xml:"String,omitempty"`
 
 	// ServiceDay
 	//
@@ -64,7 +64,7 @@ type PTXServiceDTORailSpecificationV2MetroFirstLastTimetable struct {
 	// Required: true
 	ServiceDay struct {
 		PTXServiceDTORailSpecificationV2MetroSubClassServiceDay
-	} `json:"ServiceDay"`
+	} `json:"ServiceDay" xml:"ServiceDay"`
 
 	// DateTime
 	//
@@ -76,7 +76,7 @@ type PTXServiceDTORailSpecificationV2MetroFirstLastTimetable struct {
 	//
 	// 車站代號
 	// Required: true
-	StationID *string `json:"StationID"`
+	StationID *string `json:"StationID" xml:"String"`
 
 	// NameType
 	//
@@ -84,7 +84,7 @@ type PTXServiceDTORailSpecificationV2MetroFirstLastTimetable struct {
 	// Required: true
 	StationName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"StationName"`
+	} `json:"StationName" xml:"NameType"`
 
 	// 車種(0:不分車種, 1:普通車, 2:直達車)
 	TrainType int32 `json:"TrainType,omitempty"`
@@ -92,7 +92,7 @@ type PTXServiceDTORailSpecificationV2MetroFirstLastTimetable struct {
 	// String
 	//
 	// 首末班車次之目的地方向描述
-	TripHeadSign string `json:"TripHeadSign,omitempty"`
+	TripHeadSign string `json:"TripHeadSign,omitempty" xml:"String,omitempty"`
 
 	// DateTime
 	//

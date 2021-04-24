@@ -27,7 +27,7 @@ type PTXServiceDTORailSpecificationV2TRARailGeneralTimetable struct {
 	// Required: true
 	GeneralTimetable struct {
 		PTXServiceDTORailSpecificationV2TRAGeneralTimetable
-	} `json:"GeneralTimetable"`
+	} `json:"GeneralTimetable" xml:"GeneralTimetable"`
 
 	// DateTime
 	//

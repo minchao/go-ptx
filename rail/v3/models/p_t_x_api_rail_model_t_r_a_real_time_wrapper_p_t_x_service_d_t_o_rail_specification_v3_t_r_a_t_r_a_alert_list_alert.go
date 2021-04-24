@@ -24,13 +24,13 @@ type PTXAPIRailModelTRARealTimeWrapperPTXServiceDTORailSpecificationV3TRATRAAler
 	//
 	// 資料(陣列)
 	// Required: true
-	Alerts []*PTXServiceDTORailSpecificationV3TRATRAAlertListAlert `json:"Alerts"`
+	Alerts []*PTXServiceDTORailSpecificationV3TRATRAAlertListAlert "json:\"Alerts\" xml:\"List`1\""
 
 	// String
 	//
 	// 業管機關簡碼
 	// Required: true
-	AuthorityCode *string `json:"AuthorityCode"`
+	AuthorityCode *string `json:"AuthorityCode" xml:"String"`
 
 	// 資料總筆數
 	Count int64 `json:"Count,omitempty"`

@@ -24,7 +24,7 @@ type PTXAPIRailModelTRARealTimeWrapperPTXServiceDTORailSpecificationV3TRATRAStat
 	//
 	// 業管機關簡碼
 	// Required: true
-	AuthorityCode *string `json:"AuthorityCode"`
+	AuthorityCode *string `json:"AuthorityCode" xml:"String"`
 
 	// 資料總筆數
 	Count int64 `json:"Count,omitempty"`
@@ -45,7 +45,7 @@ type PTXAPIRailModelTRARealTimeWrapperPTXServiceDTORailSpecificationV3TRATRAStat
 	//
 	// 資料(陣列)
 	// Required: true
-	StationLiveBoards []*PTXServiceDTORailSpecificationV3TRATRAStationLiveBoardListStationLiveBoard `json:"StationLiveBoards"`
+	StationLiveBoards []*PTXServiceDTORailSpecificationV3TRATRAStationLiveBoardListStationLiveBoard "json:\"StationLiveBoards\" xml:\"List`1\""
 
 	// Int32
 	//

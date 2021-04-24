@@ -26,75 +26,75 @@ type PTXServiceDTOBusSpecificationV3RouteFare struct {
 	//
 	// 描述該路線計費方式 : [0:'段次計費',1:'起迄站間計費',2:'計費站區間計費']
 	// Required: true
-	FarePricingType *int32 `json:"FarePricingType"`
+	FarePricingType *string `json:"FarePricingType"`
 
 	// integer
 	//
 	// 該收費方式是否應用到所有附屬路線 : [0:'否',1:'是']
 	// Required: true
-	IsForAllSubRoutes *int32 `json:"IsForAllSubRoutes"`
+	IsForAllSubRoutes *string `json:"IsForAllSubRoutes"`
 
 	// integer
 	//
 	// 是否為免費公車 : [0:'否',1:'是']
 	// Required: true
-	IsFreeBus *int32 `json:"IsFreeBus"`
+	IsFreeBus *string `json:"IsFreeBus"`
 
 	// Array
 	//
 	// 起迄站間計費
-	ODFares []*PTXServiceDTOBusSpecificationV3RouteFareODFare `json:"ODFares"`
+	ODFares []*PTXServiceDTOBusSpecificationV3RouteFareODFare "json:\"ODFares\" xml:\"List`1\""
 
 	// String
 	//
 	// 營運業者代碼
-	OperatorID string `json:"OperatorID,omitempty"`
+	OperatorID string `json:"OperatorID,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 地區既用中之路線代碼(為原資料內碼)
 	// Required: true
-	RouteID *string `json:"RouteID"`
+	RouteID *string `json:"RouteID" xml:"String"`
 
 	// NameType
 	//
 	// 路線名稱
 	RouteName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"RouteName,omitempty"`
+	} `json:"RouteName,omitempty" xml:"NameType,omitempty"`
 
 	// String
 	//
 	// 路線唯一識別代碼，規則為 {業管機關簡碼} + {RouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢
 	// Required: true
-	RouteUID *string `json:"RouteUID"`
+	RouteUID *string `json:"RouteUID" xml:"String"`
 
 	// Array
 	//
 	// 段次計費
-	SectionFares []*PTXServiceDTOBusSpecificationV3RouteFareSectionFare `json:"SectionFares"`
+	SectionFares []*PTXServiceDTOBusSpecificationV3RouteFareSectionFare "json:\"SectionFares\" xml:\"List`1\""
 
 	// Array
 	//
 	// 計費站區間計費
-	StageFares []*PTXServiceDTOBusSpecificationV3RouteFareStageFare `json:"StageFares"`
+	StageFares []*PTXServiceDTOBusSpecificationV3RouteFareStageFare "json:\"StageFares\" xml:\"List`1\""
 
 	// String
 	//
 	// 地區既用中之附屬路線代碼(為原資料內碼)
-	SubRouteID string `json:"SubRouteID,omitempty"`
+	SubRouteID string `json:"SubRouteID,omitempty" xml:"String,omitempty"`
 
 	// NameType
 	//
 	// 附屬路線名稱
 	SubRouteName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"SubRouteName,omitempty"`
+	} `json:"SubRouteName,omitempty" xml:"NameType,omitempty"`
 
 	// String
 	//
 	// 附屬路線唯一識別代碼，規則為 {業管機關簡碼} + {SubRouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢
-	SubRouteUID string `json:"SubRouteUID,omitempty"`
+	SubRouteUID string `json:"SubRouteUID,omitempty" xml:"String,omitempty"`
 }
 
 // Validate validates this p t x service d t o bus specification v3 route fare

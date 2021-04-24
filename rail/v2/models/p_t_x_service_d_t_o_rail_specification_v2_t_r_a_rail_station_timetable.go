@@ -25,25 +25,25 @@ type PTXServiceDTORailSpecificationV2TRARailStationTimetable struct {
 	//
 	// 到站時間(格式: HH:mm:ss)
 	// Required: true
-	ArrivalTime *string `json:"ArrivalTime"`
+	ArrivalTime *string `json:"ArrivalTime" xml:"String"`
 
 	// String
 	//
 	// 離站時間(格式: HH:mm:ss)
 	// Required: true
-	DepartureTime *string `json:"DepartureTime"`
+	DepartureTime *string `json:"DepartureTime" xml:"String"`
 
 	// integer
 	//
 	// 順逆行 : [0:'順行',1:'逆行']
 	// Required: true
-	Direction *int32 `json:"Direction"`
+	Direction *string `json:"Direction"`
 
 	// String
 	//
 	// 終點車站代號
 	// Required: true
-	EndingStationID *string `json:"EndingStationID"`
+	EndingStationID *string `json:"EndingStationID" xml:"String"`
 
 	// NameType
 	//
@@ -51,13 +51,13 @@ type PTXServiceDTORailSpecificationV2TRARailStationTimetable struct {
 	// Required: true
 	EndingStationName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"EndingStationName"`
+	} `json:"EndingStationName" xml:"NameType"`
 
 	// String
 	//
 	// 起點車站代號
 	// Required: true
-	StartingStationID *string `json:"StartingStationID"`
+	StartingStationID *string `json:"StartingStationID" xml:"String"`
 
 	// NameType
 	//
@@ -65,13 +65,13 @@ type PTXServiceDTORailSpecificationV2TRARailStationTimetable struct {
 	// Required: true
 	StartingStationName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"StartingStationName"`
+	} `json:"StartingStationName" xml:"NameType"`
 
 	// String
 	//
 	// 車站代號
 	// Required: true
-	StationID *string `json:"StationID"`
+	StationID *string `json:"StationID" xml:"String"`
 
 	// NameType
 	//
@@ -79,41 +79,41 @@ type PTXServiceDTORailSpecificationV2TRARailStationTimetable struct {
 	// Required: true
 	StationName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"StationName"`
+	} `json:"StationName" xml:"NameType"`
 
 	// String
 	//
 	// 時刻表日期(格式: yyyy-MM-dd)
 	// Required: true
-	TrainDate *string `json:"TrainDate"`
+	TrainDate *string `json:"TrainDate" xml:"String"`
 
 	// String
 	//
 	// 車次代號
 	// Required: true
-	TrainNo *string `json:"TrainNo"`
+	TrainNo *string `json:"TrainNo" xml:"String"`
 
 	// String
 	//
 	// 列車車種簡碼
-	TrainTypeCode string `json:"TrainTypeCode,omitempty"`
+	TrainTypeCode string `json:"TrainTypeCode,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 列車車種代碼
-	TrainTypeID string `json:"TrainTypeID,omitempty"`
+	TrainTypeID string `json:"TrainTypeID,omitempty" xml:"String,omitempty"`
 
 	// NameType
 	//
 	// 列車車種名稱
 	TrainTypeName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"TrainTypeName,omitempty"`
+	} `json:"TrainTypeName,omitempty" xml:"NameType,omitempty"`
 
 	// integer
 	//
 	// 山海線類型 : [0:'不經山海線',1:'山線',2:'海線',3:'成追線']
-	TripLine int32 `json:"TripLine,omitempty"`
+	TripLine string `json:"TripLine,omitempty"`
 
 	// DateTime
 	//

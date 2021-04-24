@@ -26,7 +26,7 @@ type PTXServiceDTORailSpecificationV2MetroStationTimeTable struct {
 	//
 	// 目的站車站代號
 	// Required: true
-	DestinationStaionID *string `json:"DestinationStaionID"`
+	DestinationStaionID *string `json:"DestinationStaionID" xml:"String"`
 
 	// NameType
 	//
@@ -34,23 +34,23 @@ type PTXServiceDTORailSpecificationV2MetroStationTimeTable struct {
 	// Required: true
 	DestinationStationName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"DestinationStationName"`
+	} `json:"DestinationStationName" xml:"NameType"`
 
 	// integer
 	//
 	// 營運路線方向描述 : [0:'去程',1:'返程']
-	Direction int32 `json:"Direction,omitempty"`
+	Direction string `json:"Direction,omitempty"`
 
 	// String
 	//
 	// 路線代碼
 	// Required: true
-	LineID *string `json:"LineID"`
+	LineID *string `json:"LineID" xml:"String"`
 
 	// String
 	//
 	// 營運路線代碼
-	RouteID string `json:"RouteID,omitempty"`
+	RouteID string `json:"RouteID,omitempty" xml:"String,omitempty"`
 
 	// ServiceDay
 	//
@@ -58,12 +58,12 @@ type PTXServiceDTORailSpecificationV2MetroStationTimeTable struct {
 	// Required: true
 	ServiceDay struct {
 		PTXServiceDTORailSpecificationV2MetroSubClassServiceDay
-	} `json:"ServiceDay"`
+	} `json:"ServiceDay" xml:"ServiceDay"`
 
 	// Array
 	//
 	// 特定日期
-	SpecialDays []*PTXServiceDTORailSpecificationV2MetroSubClassSpecialDay `json:"SpecialDays"`
+	SpecialDays []*PTXServiceDTORailSpecificationV2MetroSubClassSpecialDay "json:\"SpecialDays\" xml:\"List`1\""
 
 	// DateTime
 	//
@@ -75,7 +75,7 @@ type PTXServiceDTORailSpecificationV2MetroStationTimeTable struct {
 	//
 	// 車站代碼
 	// Required: true
-	StationID *string `json:"StationID"`
+	StationID *string `json:"StationID" xml:"String"`
 
 	// NameType
 	//
@@ -83,13 +83,13 @@ type PTXServiceDTORailSpecificationV2MetroStationTimeTable struct {
 	// Required: true
 	StationName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"StationName"`
+	} `json:"StationName" xml:"NameType"`
 
 	// Array
 	//
 	// 車站發車時刻資訊
 	// Required: true
-	Timetables []*PTXServiceDTORailSpecificationV2MetroSubClassTimetable `json:"Timetables"`
+	Timetables []*PTXServiceDTORailSpecificationV2MetroSubClassTimetable "json:\"Timetables\" xml:\"List`1\""
 
 	// DateTime
 	//

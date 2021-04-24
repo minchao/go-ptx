@@ -16,74 +16,78 @@ import (
 
 // PTXServiceDTOBusSpecificationV3RouteFareStageFareServiceDay ServiceDay
 //
+// 服務日型態
+//
 // swagger:model PTX.Service.DTO.Bus.Specification.V3.RouteFare+StageFare+ServiceDay
 type PTXServiceDTOBusSpecificationV3RouteFareStageFareServiceDay struct {
 
 	// integer
 	//
-	// [0:'否',1:'是']
-	DayAfterHoliday int32 `json:"DayAfterHoliday,omitempty"`
+	// 假日後一日是否營運 : [0:'否',1:'是']
+	DayAfterHoliday string `json:"DayAfterHoliday,omitempty"`
 
 	// integer
 	//
-	// [0:'否',1:'是']
-	DayBeforeHoliday int32 `json:"DayBeforeHoliday,omitempty"`
+	// 假日前一日是否營運 : [0:'否',1:'是']
+	DayBeforeHoliday string `json:"DayBeforeHoliday,omitempty"`
 
 	// integer
 	//
-	// [0:'否',1:'是']
+	// 星期五是否營運 : [0:'否',1:'是']
 	// Required: true
-	Friday *int32 `json:"Friday"`
+	Friday *string `json:"Friday"`
 
 	// integer
 	//
-	// [0:'否',1:'是']
+	// 星期一是否營運 : [0:'否',1:'是']
 	// Required: true
-	Monday *int32 `json:"Monday"`
+	Monday *string `json:"Monday"`
 
 	// integer
 	//
-	// [0:'否',1:'是']
-	NationalHolidays int32 `json:"NationalHolidays,omitempty"`
+	// 國定假日是否營運 : [0:'否',1:'是']
+	NationalHolidays string `json:"NationalHolidays,omitempty"`
 
 	// integer
 	//
-	// [0:'否',1:'是']
+	// 星期六是否營運 : [0:'否',1:'是']
 	// Required: true
-	Saturday *int32 `json:"Saturday"`
+	Saturday *string `json:"Saturday"`
 
 	// String
+	//
+	// 服務日標籤
 	// Required: true
-	ServiceTag *string `json:"ServiceTag"`
+	ServiceTag *string `json:"ServiceTag" xml:"String"`
 
 	// integer
 	//
-	// [0:'否',1:'是']
+	// 星期日是否營運 : [0:'否',1:'是']
 	// Required: true
-	Sunday *int32 `json:"Sunday"`
+	Sunday *string `json:"Sunday"`
 
 	// integer
 	//
-	// [0:'否',1:'是']
+	// 星期四是否營運 : [0:'否',1:'是']
 	// Required: true
-	Thursday *int32 `json:"Thursday"`
+	Thursday *string `json:"Thursday"`
 
 	// integer
 	//
-	// [0:'否',1:'是']
+	// 星期二是否營運 : [0:'否',1:'是']
 	// Required: true
-	Tuesday *int32 `json:"Tuesday"`
+	Tuesday *string `json:"Tuesday"`
 
 	// integer
 	//
-	// [0:'否',1:'是']
-	TyphoonDay int32 `json:"TyphoonDay,omitempty"`
+	// 颱風停止上班上課期間是否營運 : [0:'否',1:'是']
+	TyphoonDay string `json:"TyphoonDay,omitempty"`
 
 	// integer
 	//
-	// [0:'否',1:'是']
+	// 星期三是否營運 : [0:'否',1:'是']
 	// Required: true
-	Wednesday *int32 `json:"Wednesday"`
+	Wednesday *string `json:"Wednesday"`
 }
 
 // Validate validates this p t x service d t o bus specification v3 route fare stage fare service day

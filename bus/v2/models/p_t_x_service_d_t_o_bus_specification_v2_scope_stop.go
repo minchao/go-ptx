@@ -23,19 +23,19 @@ type PTXServiceDTOBusSpecificationV2ScopeStop struct {
 	// String
 	//
 	// 站位代碼
-	StationID string `json:"StationID,omitempty"`
+	StationID string `json:"StationID,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 地區既用中之站牌代碼(為原資料內碼)
-	StopID string `json:"StopID,omitempty"`
+	StopID string `json:"StopID,omitempty" xml:"String,omitempty"`
 
 	// NameType
 	//
 	// 站牌名稱
 	StopName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"StopName,omitempty"`
+	} `json:"StopName,omitempty" xml:"NameType,omitempty"`
 }
 
 // Validate validates this p t x service d t o bus specification v2 scope stop

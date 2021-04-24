@@ -24,32 +24,32 @@ type PTXServiceDTOBusSpecificationV2Scope struct {
 	// Array
 	//
 	// 營運業者資料
-	Operators []*PTXServiceDTOBusSpecificationV2ScopeOperator `json:"Operators"`
+	Operators []*PTXServiceDTOBusSpecificationV2ScopeOperator "json:\"Operators\" xml:\"List`1\""
 
 	// Array
 	//
 	// 路線資料
-	Routes []*PTXServiceDTOBusSpecificationV2ScopeRoute `json:"Routes"`
+	Routes []*PTXServiceDTOBusSpecificationV2ScopeRoute "json:\"Routes\" xml:\"List`1\""
 
 	// Array
 	//
 	// 站位資料
-	Stations []*PTXServiceDTOBusSpecificationV2ScopeStation `json:"Stations"`
+	Stations []*PTXServiceDTOBusSpecificationV2ScopeStation "json:\"Stations\" xml:\"List`1\""
 
 	// Array
 	//
 	// 站牌資料
-	Stops []*PTXServiceDTOBusSpecificationV2ScopeStop `json:"Stops"`
+	Stops []*PTXServiceDTOBusSpecificationV2ScopeStop "json:\"Stops\" xml:\"List`1\""
 
 	// Array
 	//
 	// 附屬路線資料
-	SubRoutes []*PTXServiceDTOBusSpecificationV2ScopeSubRoute `json:"SubRoutes"`
+	SubRoutes []*PTXServiceDTOBusSpecificationV2ScopeSubRoute "json:\"SubRoutes\" xml:\"List`1\""
 
 	// Array
 	//
 	// 班次資料
-	Trips []*PTXServiceDTOBusSpecificationV2ScopeTrip `json:"Trips"`
+	Trips []*PTXServiceDTOBusSpecificationV2ScopeTrip "json:\"Trips\" xml:\"List`1\""
 }
 
 // Validate validates this p t x service d t o bus specification v2 scope

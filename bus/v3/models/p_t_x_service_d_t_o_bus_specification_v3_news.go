@@ -22,18 +22,18 @@ type PTXServiceDTOBusSpecificationV3News struct {
 	// String
 	//
 	// 相關網站連結
-	AttachmentURL string `json:"AttachmentURL,omitempty"`
+	AttachmentURL string `json:"AttachmentURL,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 發布單位
-	Department string `json:"Department,omitempty"`
+	Department string `json:"Department,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 內容描述
 	// Required: true
-	Description *string `json:"Description"`
+	Description *string `json:"Description" xml:"String"`
 
 	// DateTime
 	//
@@ -44,24 +44,24 @@ type PTXServiceDTOBusSpecificationV3News struct {
 	//
 	// 語系
 	// Required: true
-	Language *string `json:"Language"`
+	Language *string `json:"Language" xml:"String"`
 
 	// String
 	//
 	// 消息類別= ['1: 最新消息', '2: 新聞稿', '3: 營運資訊', '4: 轉乘資訊', '5: 活動訊息', '6: 系統公告', '99: 其他']
 	// Required: true
-	NewsCategory *string `json:"NewsCategory"`
+	NewsCategory *string `json:"NewsCategory" xml:"String"`
 
 	// String
 	//
 	// 最新消息原單位發布代碼
 	// Required: true
-	NewsID *string `json:"NewsID"`
+	NewsID *string `json:"NewsID" xml:"String"`
 
 	// String
 	//
 	// 報導網站連結
-	NewsURL string `json:"NewsURL,omitempty"`
+	NewsURL string `json:"NewsURL,omitempty" xml:"String,omitempty"`
 
 	// DateTime
 	//
@@ -83,7 +83,7 @@ type PTXServiceDTOBusSpecificationV3News struct {
 	//
 	// 消息標題
 	// Required: true
-	Title *string `json:"Title"`
+	Title *string `json:"Title" xml:"String"`
 }
 
 // Validate validates this p t x service d t o bus specification v3 news

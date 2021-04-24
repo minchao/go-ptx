@@ -60,7 +60,7 @@ type ClientService interface {
 
 	CityBusAPIRouteFare2(params *CityBusAPIRouteFare2Params, opts ...ClientOption) (*CityBusAPIRouteFare2OK, *CityBusAPIRouteFare2Status299, error)
 
-	CityBusAPIRouteNetwork(params *CityBusAPIRouteNetworkParams, opts ...ClientOption) (*CityBusAPIRouteNetworkOK, *CityBusAPIRouteNetworkStatus299, error)
+	CityBusAPIRouteNetwork2(params *CityBusAPIRouteNetwork2Params, opts ...ClientOption) (*CityBusAPIRouteNetwork2OK, *CityBusAPIRouteNetwork2Status299, error)
 
 	CityBusAPIRoute2(params *CityBusAPIRoute2Params, opts ...ClientOption) (*CityBusAPIRoute2OK, *CityBusAPIRoute2Status299, error)
 
@@ -689,22 +689,22 @@ func (a *Client) CityBusAPIRouteFare2(params *CityBusAPIRouteFare2Params, opts .
 }
 
 /*
-  CityBusAPIRouteNetwork 取得指定s 縣市 的市區公車路線網路拓撲資料
+  CityBusAPIRouteNetwork2 取得指定s 縣市 的市區公車路線網路拓撲資料
 */
-func (a *Client) CityBusAPIRouteNetwork(params *CityBusAPIRouteNetworkParams, opts ...ClientOption) (*CityBusAPIRouteNetworkOK, *CityBusAPIRouteNetworkStatus299, error) {
+func (a *Client) CityBusAPIRouteNetwork2(params *CityBusAPIRouteNetwork2Params, opts ...ClientOption) (*CityBusAPIRouteNetwork2OK, *CityBusAPIRouteNetwork2Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewCityBusAPIRouteNetworkParams()
+		params = NewCityBusAPIRouteNetwork2Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "CityBusApi_RouteNetwork",
+		ID:                 "CityBusApi_RouteNetwork_2",
 		Method:             "GET",
 		PathPattern:        "/v3/Bus/RouteNetwork/City/{City}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &CityBusAPIRouteNetworkReader{formats: a.formats},
+		Reader:             &CityBusAPIRouteNetwork2Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -717,9 +717,9 @@ func (a *Client) CityBusAPIRouteNetwork(params *CityBusAPIRouteNetworkParams, op
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *CityBusAPIRouteNetworkOK:
+	case *CityBusAPIRouteNetwork2OK:
 		return value, nil, nil
-	case *CityBusAPIRouteNetworkStatus299:
+	case *CityBusAPIRouteNetwork2Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue

@@ -23,23 +23,23 @@ type PTXServiceDTOBusSpecificationV3A2Data struct {
 	//
 	// 進站離站 : [0:'離站',1:'進站']
 	// Required: true
-	A2EventType *int32 `json:"A2EventType"`
+	A2EventType *string `json:"A2EventType"`
 
 	// integer
 	//
 	// 行車狀況 : [0:'正常',1:'車禍',2:'故障',3:'塞車',4:'緊急求援',5:'加油',90:'不明',91:'去回不明',98:'偏移路線',99:'非營運狀態',100:'客滿',101:'包車出租',255:'未知']
-	BusStatus int32 `json:"BusStatus,omitempty"`
+	BusStatus string `json:"BusStatus,omitempty"`
 
 	// integer
 	//
 	// 車輛去返程 : [0:'去程',1:'返程',2:'迴圈',255:'未知']
 	// Required: true
-	Direction *int32 `json:"Direction"`
+	Direction *string `json:"Direction"`
 
 	// integer
 	//
 	// 勤務狀態 : [0:'正常',1:'開始',2:'結束']
-	DutyStatus int32 `json:"DutyStatus,omitempty"`
+	DutyStatus string `json:"DutyStatus,omitempty"`
 
 	// DateTime
 	//
@@ -54,32 +54,32 @@ type PTXServiceDTOBusSpecificationV3A2Data struct {
 	// integer
 	//
 	// 資料型態種類 : [0:'未知',1:'定期',2:'非定期']
-	MessageType int32 `json:"MessageType,omitempty"`
+	MessageType string `json:"MessageType,omitempty"`
 
 	// String
 	//
 	// 營運業者簡碼
 	// Required: true
-	OperatorCode *string `json:"OperatorCode"`
+	OperatorCode *string `json:"OperatorCode" xml:"String"`
 
 	// String
 	//
 	// 營運業者代碼
 	// Required: true
-	OperatorID *string `json:"OperatorID"`
+	OperatorID *string `json:"OperatorID" xml:"String"`
 
 	// NameType
 	//
 	// 營運業者名稱
 	OperatorName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"OperatorName,omitempty"`
+	} `json:"OperatorName,omitempty" xml:"NameType,omitempty"`
 
 	// String
 	//
 	// 車牌號碼
 	// Required: true
-	PlateNumb *string `json:"PlateNumb"`
+	PlateNumb *string `json:"PlateNumb" xml:"String"`
 
 	// DateTime
 	//
@@ -91,54 +91,54 @@ type PTXServiceDTOBusSpecificationV3A2Data struct {
 	//
 	// 地區既用中之路線代碼(為原資料內碼)
 	// Required: true
-	RouteID *string `json:"RouteID"`
+	RouteID *string `json:"RouteID" xml:"String"`
 
 	// NameType
 	//
 	// 路線名稱
 	RouteName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"RouteName,omitempty"`
+	} `json:"RouteName,omitempty" xml:"NameType,omitempty"`
 
 	// String
 	//
 	// 路線唯一識別代碼，規則為 {業管機關簡碼} + {RouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢
-	RouteUID string `json:"RouteUID,omitempty"`
+	RouteUID string `json:"RouteUID,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 地區既用中之站牌代號(為原資料內碼)
 	// Required: true
-	StopID *string `json:"StopID"`
+	StopID *string `json:"StopID" xml:"String"`
 
 	// NameType
 	//
 	// 站牌名稱
 	StopName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"StopName,omitempty"`
+	} `json:"StopName,omitempty" xml:"NameType,omitempty"`
 
 	// String
 	//
 	// 站牌唯一識別代碼，規則為 {業管機關簡碼} + {StopID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢
-	StopUID string `json:"StopUID,omitempty"`
+	StopUID string `json:"StopUID,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 地區既用中之附屬路線代碼(為原資料內碼)
-	SubRouteID string `json:"SubRouteID,omitempty"`
+	SubRouteID string `json:"SubRouteID,omitempty" xml:"String,omitempty"`
 
 	// NameType
 	//
 	// 附屬路線名稱
 	SubRouteName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"SubRouteName,omitempty"`
+	} `json:"SubRouteName,omitempty" xml:"NameType,omitempty"`
 
 	// String
 	//
 	// 附屬路線唯一識別代碼，規則為 {業管機關簡碼} + {SubRouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢
-	SubRouteUID string `json:"SubRouteUID,omitempty"`
+	SubRouteUID string `json:"SubRouteUID,omitempty" xml:"String,omitempty"`
 
 	// DateTime
 	//
@@ -149,12 +149,12 @@ type PTXServiceDTOBusSpecificationV3A2Data struct {
 	// String
 	//
 	// 班次代碼
-	TripID string `json:"TripID,omitempty"`
+	TripID string `json:"TripID,omitempty" xml:"String,omitempty"`
 
 	// integer
 	//
 	// 車輛種類 : [1:'一般',2:'復康巴士',3:'專車',4:'其他']
-	VehicleType int32 `json:"VehicleType,omitempty"`
+	VehicleType string `json:"VehicleType,omitempty"`
 }
 
 // Validate validates this p t x service d t o bus specification v3 a2 data

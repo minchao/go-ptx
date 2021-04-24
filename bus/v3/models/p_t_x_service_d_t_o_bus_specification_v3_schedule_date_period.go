@@ -23,13 +23,13 @@ type PTXServiceDTOBusSpecificationV3ScheduleDatePeriod struct {
 	//
 	// 結束日期
 	// Required: true
-	EndDate *string `json:"EndDate"`
+	EndDate *string `json:"EndDate" xml:"String"`
 
 	// String
 	//
 	// 開始日期
 	// Required: true
-	StartDate *string `json:"StartDate"`
+	StartDate *string `json:"StartDate" xml:"String"`
 }
 
 // Validate validates this p t x service d t o bus specification v3 schedule date period

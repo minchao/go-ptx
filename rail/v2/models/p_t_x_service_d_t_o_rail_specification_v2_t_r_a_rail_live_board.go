@@ -31,13 +31,13 @@ type PTXServiceDTORailSpecificationV2TRARailLiveBoard struct {
 	//
 	// 順逆行 : [0:'順行',1:'逆行']
 	// Required: true
-	Direction *int32 `json:"Direction"`
+	Direction *string `json:"Direction"`
 
 	// String
 	//
 	// 車次終點車站代號
 	// Required: true
-	EndingStationID *string `json:"EndingStationID"`
+	EndingStationID *string `json:"EndingStationID" xml:"String"`
 
 	// NameType
 	//
@@ -45,19 +45,19 @@ type PTXServiceDTORailSpecificationV2TRARailLiveBoard struct {
 	// Required: true
 	EndingStationName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"EndingStationName"`
+	} `json:"EndingStationName" xml:"NameType"`
 
 	// String
 	//
 	// 表訂到站時間(格式: HH:mm:ss)
 	// Required: true
-	ScheduledArrivalTime *string `json:"ScheduledArrivalTime"`
+	ScheduledArrivalTime *string `json:"ScheduledArrivalTime" xml:"String"`
 
 	// String
 	//
 	// 表訂離站時間(格式: HH:mm:ss)
 	// Required: true
-	ScheduledDepartureTime *string `json:"ScheduledDepartureTime"`
+	ScheduledDepartureTime *string `json:"ScheduledDepartureTime" xml:"String"`
 
 	// DateTime
 	//
@@ -69,7 +69,7 @@ type PTXServiceDTORailSpecificationV2TRARailLiveBoard struct {
 	//
 	// 車站代碼
 	// Required: true
-	StationID *string `json:"StationID"`
+	StationID *string `json:"StationID" xml:"String"`
 
 	// NameType
 	//
@@ -77,35 +77,35 @@ type PTXServiceDTORailSpecificationV2TRARailLiveBoard struct {
 	// Required: true
 	StationName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"StationName"`
+	} `json:"StationName" xml:"NameType"`
 
 	// String
 	//
 	// 車次代碼
 	// Required: true
-	TrainNo *string `json:"TrainNo"`
+	TrainNo *string `json:"TrainNo" xml:"String"`
 
 	// String
 	//
 	// 列車車種簡碼
-	TrainTypeCode string `json:"TrainTypeCode,omitempty"`
+	TrainTypeCode string `json:"TrainTypeCode,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 列車車種代碼
-	TrainTypeID string `json:"TrainTypeID,omitempty"`
+	TrainTypeID string `json:"TrainTypeID,omitempty" xml:"String,omitempty"`
 
 	// NameType
 	//
 	// 列車車種名稱
 	TrainTypeName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"TrainTypeName,omitempty"`
+	} `json:"TrainTypeName,omitempty" xml:"NameType,omitempty"`
 
 	// integer
 	//
 	// 山海線類型 : [0:'不經山海線',1:'山線',2:'海線',3:'成追線']
-	TripLine int32 `json:"TripLine,omitempty"`
+	TripLine string `json:"TripLine,omitempty"`
 
 	// DateTime
 	//

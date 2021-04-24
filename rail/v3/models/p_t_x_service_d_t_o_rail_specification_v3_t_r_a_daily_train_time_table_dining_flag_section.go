@@ -24,7 +24,7 @@ type PTXServiceDTORailSpecificationV3TRADailyTrainTimeTableDiningFlagSection str
 	// Required: true
 	EndSection struct {
 		PTXServiceDTORailSpecificationV3TRADailyTrainTimeTableSectionAmong
-	} `json:"EndSection"`
+	} `json:"EndSection" xml:"SectionAmong"`
 
 	// SectionAmong
 	//
@@ -32,7 +32,7 @@ type PTXServiceDTORailSpecificationV3TRADailyTrainTimeTableDiningFlagSection str
 	// Required: true
 	StartSection struct {
 		PTXServiceDTORailSpecificationV3TRADailyTrainTimeTableSectionAmong
-	} `json:"StartSection"`
+	} `json:"StartSection" xml:"SectionAmong"`
 }
 
 // Validate validates this p t x service d t o rail specification v3 t r a daily train time table dining flag section

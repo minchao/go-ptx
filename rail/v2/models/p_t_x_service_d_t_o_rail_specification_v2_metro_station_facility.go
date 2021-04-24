@@ -26,19 +26,19 @@ type PTXServiceDTORailSpecificationV2MetroStationFacility struct {
 	//
 	// 飲水機位置資訊
 	// Required: true
-	DrinkingFountains []*PTXServiceDTORailSpecificationV2MetroDrinkingFountain `json:"DrinkingFountains"`
+	DrinkingFountains []*PTXServiceDTORailSpecificationV2MetroDrinkingFountain "json:\"DrinkingFountains\" xml:\"List`1\""
 
 	// Array
 	//
 	// 無障礙電梯位置資訊
 	// Required: true
-	Elevators []*PTXServiceDTORailSpecificationV2MetroElevator `json:"Elevators"`
+	Elevators []*PTXServiceDTORailSpecificationV2MetroElevator "json:\"Elevators\" xml:\"List`1\""
 
 	// Array
 	//
 	// 詢問處位置資訊
 	// Required: true
-	InformationSpots []*PTXServiceDTORailSpecificationV2MetroInformationSpot `json:"InformationSpots"`
+	InformationSpots []*PTXServiceDTORailSpecificationV2MetroInformationSpot "json:\"InformationSpots\" xml:\"List`1\""
 
 	// DateTime
 	//
@@ -50,7 +50,7 @@ type PTXServiceDTORailSpecificationV2MetroStationFacility struct {
 	//
 	// 車站代號
 	// Required: true
-	StationID *string `json:"StationID"`
+	StationID *string `json:"StationID" xml:"String"`
 
 	// NameType
 	//
@@ -58,13 +58,13 @@ type PTXServiceDTORailSpecificationV2MetroStationFacility struct {
 	// Required: true
 	StationName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"StationName"`
+	} `json:"StationName" xml:"NameType"`
 
 	// Array
 	//
 	// 廁所位置資訊
 	// Required: true
-	Toilets []*PTXServiceDTORailSpecificationV2MetroToilet `json:"Toilets"`
+	Toilets []*PTXServiceDTORailSpecificationV2MetroToilet "json:\"Toilets\" xml:\"List`1\""
 
 	// DateTime
 	//

@@ -60,12 +60,6 @@ func NewCityBusAPIRouteNetworkParamsWithHTTPClient(client *http.Client) *CityBus
 */
 type CityBusAPIRouteNetworkParams struct {
 
-	/* DollarCount.
-
-	   查詢數量
-	*/
-	DollarCount *bool
-
 	/* DollarFilter.
 
 	   過濾
@@ -106,7 +100,7 @@ type CityBusAPIRouteNetworkParams struct {
 
 	/* City.
 
-	   縣市
+	   欲查詢縣市
 	*/
 	City string
 
@@ -178,17 +172,6 @@ func (o *CityBusAPIRouteNetworkParams) WithHTTPClient(client *http.Client) *City
 // SetHTTPClient adds the HTTPClient to the city bus Api route network params
 func (o *CityBusAPIRouteNetworkParams) SetHTTPClient(client *http.Client) {
 	o.HTTPClient = client
-}
-
-// WithDollarCount adds the dollarCount to the city bus Api route network params
-func (o *CityBusAPIRouteNetworkParams) WithDollarCount(dollarCount *bool) *CityBusAPIRouteNetworkParams {
-	o.SetDollarCount(dollarCount)
-	return o
-}
-
-// SetDollarCount adds the dollarCount to the city bus Api route network params
-func (o *CityBusAPIRouteNetworkParams) SetDollarCount(dollarCount *bool) {
-	o.DollarCount = dollarCount
 }
 
 // WithDollarFilter adds the dollarFilter to the city bus Api route network params
@@ -286,23 +269,6 @@ func (o *CityBusAPIRouteNetworkParams) WriteToRequest(r runtime.ClientRequest, r
 		return err
 	}
 	var res []error
-
-	if o.DollarCount != nil {
-
-		// query param $count
-		var qrDollarCount bool
-
-		if o.DollarCount != nil {
-			qrDollarCount = *o.DollarCount
-		}
-		qDollarCount := swag.FormatBool(qrDollarCount)
-		if qDollarCount != "" {
-
-			if err := r.SetQueryParam("$count", qDollarCount); err != nil {
-				return err
-			}
-		}
-	}
 
 	if o.DollarFilter != nil {
 

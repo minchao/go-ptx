@@ -26,55 +26,55 @@ type PTXServiceDTORailSpecificationV3TRAStationTransferTransfer struct {
 	//
 	// 航空運具轉乘資訊
 	// Required: true
-	AirportTransfers []*PTXServiceDTORailSpecificationV3TRAStationTransferAirportTransfer `json:"AirportTransfers"`
+	AirportTransfers []*PTXServiceDTORailSpecificationV3TRAStationTransferAirportTransfer "json:\"AirportTransfers\" xml:\"List`1\""
 
 	// Array
 	//
 	// 公共自行車轉乘資訊
 	// Required: true
-	BikeTransfers []*PTXServiceDTORailSpecificationV3TRAStationTransferBikeTransfer `json:"BikeTransfers"`
+	BikeTransfers []*PTXServiceDTORailSpecificationV3TRAStationTransferBikeTransfer "json:\"BikeTransfers\" xml:\"List`1\""
 
 	// Array
 	//
 	// 公車運具轉乘資訊
 	// Required: true
-	BusTransfers []*PTXServiceDTORailSpecificationV3TRAStationTransferBusTransfer `json:"BusTransfers"`
+	BusTransfers []*PTXServiceDTORailSpecificationV3TRAStationTransferBusTransfer "json:\"BusTransfers\" xml:\"List`1\""
 
 	// String
 	//
 	// 出口代碼
 	// Required: true
-	ExitID *string `json:"ExitID"`
+	ExitID *string `json:"ExitID" xml:"String"`
 
 	// String
 	//
 	// 出口名稱
 	// Required: true
-	ExitName *string `json:"ExitName"`
+	ExitName *string `json:"ExitName" xml:"String"`
 
 	// Array
 	//
 	// 航運轉乘資訊
 	// Required: true
-	FerryTransfers []*PTXServiceDTORailSpecificationV3TRAStationTransferFerryTransfer `json:"FerryTransfers"`
+	FerryTransfers []*PTXServiceDTORailSpecificationV3TRAStationTransferFerryTransfer "json:\"FerryTransfers\" xml:\"List`1\""
 
 	// Array
 	//
 	// 停車場轉乘資訊
 	// Required: true
-	ParkingTransfers []*PTXServiceDTORailSpecificationV3TRAStationTransferParkingTransfer `json:"ParkingTransfers"`
+	ParkingTransfers []*PTXServiceDTORailSpecificationV3TRAStationTransferParkingTransfer "json:\"ParkingTransfers\" xml:\"List`1\""
 
 	// Array
 	//
 	// 軌道轉乘資訊
 	// Required: true
-	RailTransfers []*PTXServiceDTORailSpecificationV3TRAStationTransferRailTransfer `json:"RailTransfers"`
+	RailTransfers []*PTXServiceDTORailSpecificationV3TRAStationTransferRailTransfer "json:\"RailTransfers\" xml:\"List`1\""
 
 	// Array
 	//
 	// 計程車轉乘資訊
 	// Required: true
-	TaxiTransfers []*PTXServiceDTORailSpecificationV3TRAStationTransferTaxiTransfer `json:"TaxiTransfers"`
+	TaxiTransfers []*PTXServiceDTORailSpecificationV3TRAStationTransferTaxiTransfer "json:\"TaxiTransfers\" xml:\"List`1\""
 }
 
 // Validate validates this p t x service d t o rail specification v3 t r a station transfer transfer

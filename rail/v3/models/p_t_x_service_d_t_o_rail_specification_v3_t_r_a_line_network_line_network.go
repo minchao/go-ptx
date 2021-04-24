@@ -26,7 +26,7 @@ type PTXServiceDTORailSpecificationV3TRALineNetworkLineNetwork struct {
 	//
 	// 路線編號
 	// Required: true
-	LineID *string `json:"LineID"`
+	LineID *string `json:"LineID" xml:"String"`
 
 	// NameType
 	//
@@ -34,12 +34,12 @@ type PTXServiceDTORailSpecificationV3TRALineNetworkLineNetwork struct {
 	// Required: true
 	LineName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"LineName"`
+	} `json:"LineName" xml:"NameType"`
 
 	// Array
 	//
 	// 路線站點間線段資訊
-	LineSegments []*PTXServiceDTORailSpecificationV3TRALineNetworkLineSegment `json:"LineSegments"`
+	LineSegments []*PTXServiceDTORailSpecificationV3TRALineNetworkLineSegment "json:\"LineSegments\" xml:\"List`1\""
 }
 
 // Validate validates this p t x service d t o rail specification v3 t r a line network line network

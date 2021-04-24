@@ -23,13 +23,13 @@ type PTXServiceDTOBusSpecificationV3Network struct {
 	// Array
 	//
 	// 適地性路網圖資網址URL
-	LBSMapURLs []*PTXServiceDTOBusSpecificationV3NetworkLBSMapURL `json:"LBSMapURLs"`
+	LBSMapURLs []*PTXServiceDTOBusSpecificationV3NetworkLBSMapURL "json:\"LBSMapURLs\" xml:\"List`1\""
 
 	// String
 	//
 	// 公車路網代碼
 	// Required: true
-	NetworkID *string `json:"NetworkID"`
+	NetworkID *string `json:"NetworkID" xml:"String"`
 
 	// NetworkMapURL
 	//
@@ -37,7 +37,7 @@ type PTXServiceDTOBusSpecificationV3Network struct {
 	// Required: true
 	NetworkMapURL struct {
 		PTXServiceDTOBusSpecificationV3NetworkMapURL
-	} `json:"NetworkMapURL"`
+	} `json:"NetworkMapURL" xml:"NetworkMapURL"`
 
 	// NameType
 	//
@@ -45,7 +45,7 @@ type PTXServiceDTOBusSpecificationV3Network struct {
 	// Required: true
 	NetworkName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"NetworkName"`
+	} `json:"NetworkName" xml:"NameType"`
 }
 
 // Validate validates this p t x service d t o bus specification v3 network

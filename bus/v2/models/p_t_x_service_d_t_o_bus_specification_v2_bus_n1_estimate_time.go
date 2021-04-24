@@ -23,7 +23,7 @@ type PTXServiceDTOBusSpecificationV2BusN1EstimateTime struct {
 	// String
 	//
 	// 車輛目前所在站牌代碼
-	CurrentStop string `json:"CurrentStop,omitempty"`
+	CurrentStop string `json:"CurrentStop,omitempty" xml:"String,omitempty"`
 
 	// DateTime
 	//
@@ -33,13 +33,13 @@ type PTXServiceDTOBusSpecificationV2BusN1EstimateTime struct {
 	// String
 	//
 	// 車輛目的站牌代碼
-	DestinationStop string `json:"DestinationStop,omitempty"`
+	DestinationStop string `json:"DestinationStop,omitempty" xml:"String,omitempty"`
 
 	// integer
 	//
 	// 去返程(該方向指的是此車牌車輛目前所在路線的去返程方向，非指站站牌所在路線的去返程方向，使用時請加值業者多加注意) : [0:'去程',1:'返程',2:'迴圈',255:'未知']
 	// Required: true
-	Direction *int32 `json:"Direction"`
+	Direction *int64 `json:"Direction"`
 
 	// 到站時間預估(秒) [當StopStatus値為2~4或PlateNumb値為-1時，EstimateTime値為null; 當StopStatus値為1時， EstimateTime値多數為null，僅部分路線因有固定發車時間，故EstimateTime有値; 當StopStatus値為0時，EstimateTime有値。]
 	EstimateTime int32 `json:"EstimateTime,omitempty"`
@@ -48,7 +48,7 @@ type PTXServiceDTOBusSpecificationV2BusN1EstimateTime struct {
 	//
 	// 到站時間預估
 	// <span class="emphasis fas fa-pen" rel="目前僅桃園市、臺中市、高雄市提供"></span>
-	Estimates []*PTXServiceDTOBusSpecificationV2N1Estimate `json:"Estimates"`
+	Estimates []*PTXServiceDTOBusSpecificationV2N1Estimate "json:\"Estimates\" xml:\"List`1\""
 
 	// 是否為末班車
 	IsLastBus bool `json:"IsLastBus,omitempty"`
@@ -56,7 +56,7 @@ type PTXServiceDTOBusSpecificationV2BusN1EstimateTime struct {
 	// integer
 	//
 	// 資料型態種類 : [0:'未知',1:'定期',2:'非定期']
-	MessageType int32 `json:"MessageType,omitempty"`
+	MessageType string `json:"MessageType,omitempty"`
 
 	// DateTime
 	//
@@ -66,24 +66,24 @@ type PTXServiceDTOBusSpecificationV2BusN1EstimateTime struct {
 	// String
 	//
 	// 車牌號碼 [値為値為-1時，表示目前該站位無車輛行駛]
-	PlateNumb string `json:"PlateNumb,omitempty"`
+	PlateNumb string `json:"PlateNumb,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 地區既用中之路線代碼(為原資料內碼)
-	RouteID string `json:"RouteID,omitempty"`
+	RouteID string `json:"RouteID,omitempty" xml:"String,omitempty"`
 
 	// NameType
 	//
 	// 路線名稱
 	RouteName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"RouteName,omitempty"`
+	} `json:"RouteName,omitempty" xml:"NameType,omitempty"`
 
 	// String
 	//
 	// 路線唯一識別代碼，規則為 {業管機關代碼} + {RouteID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢
-	RouteUID string `json:"RouteUID,omitempty"`
+	RouteUID string `json:"RouteUID,omitempty" xml:"String,omitempty"`
 
 	// DateTime
 	//
@@ -106,14 +106,14 @@ type PTXServiceDTOBusSpecificationV2BusN1EstimateTime struct {
 	// String
 	//
 	// 地區既用中之站牌代碼(為原資料內碼)
-	StopID string `json:"StopID,omitempty"`
+	StopID string `json:"StopID,omitempty" xml:"String,omitempty"`
 
 	// NameType
 	//
 	// 站牌名
 	StopName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"StopName,omitempty"`
+	} `json:"StopName,omitempty" xml:"NameType,omitempty"`
 
 	// 路線經過站牌之順序
 	StopSequence int32 `json:"StopSequence,omitempty"`
@@ -121,29 +121,29 @@ type PTXServiceDTOBusSpecificationV2BusN1EstimateTime struct {
 	// integer
 	//
 	// 車輛狀態備註 : [0:'正常',1:'尚未發車',2:'交管不停靠',3:'末班車已過',4:'今日未營運']
-	StopStatus int32 `json:"StopStatus,omitempty"`
+	StopStatus string `json:"StopStatus,omitempty"`
 
 	// String
 	//
 	// 站牌唯一識別代碼，規則為 {業管機關簡碼} + {StopID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢
-	StopUID string `json:"StopUID,omitempty"`
+	StopUID string `json:"StopUID,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 地區既用中之子路線代碼(為原資料內碼)
-	SubRouteID string `json:"SubRouteID,omitempty"`
+	SubRouteID string `json:"SubRouteID,omitempty" xml:"String,omitempty"`
 
 	// NameType
 	//
 	// 子路線名稱
 	SubRouteName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"SubRouteName,omitempty"`
+	} `json:"SubRouteName,omitempty" xml:"NameType,omitempty"`
 
 	// String
 	//
 	// 子路線唯一識別代碼，規則為 {業管機關簡碼} + {SubRouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢
-	SubRouteUID string `json:"SubRouteUID,omitempty"`
+	SubRouteUID string `json:"SubRouteUID,omitempty" xml:"String,omitempty"`
 
 	// DateTime
 	//

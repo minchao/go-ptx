@@ -23,14 +23,14 @@ type PTXServiceDTOBusSpecificationV3ScopeSubRoute struct {
 	// String
 	//
 	// 地區既用中之附屬班次代碼(為原資料內碼)
-	SubRouteID string `json:"SubRouteID,omitempty"`
+	SubRouteID string `json:"SubRouteID,omitempty" xml:"String,omitempty"`
 
 	// NameType
 	//
 	// 附屬路線名稱
 	SubRouteName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"SubRouteName,omitempty"`
+	} `json:"SubRouteName,omitempty" xml:"NameType,omitempty"`
 }
 
 // Validate validates this p t x service d t o bus specification v3 scope sub route

@@ -26,31 +26,31 @@ type PTXServiceDTORailSpecificationV3TRAStationFacilityStationFacility struct {
 	//
 	// 飲水機位置資訊
 	// Required: true
-	DrinkingFountains []*PTXServiceDTORailSpecificationV3TRAStationFacilityFacilityInfo `json:"DrinkingFountains"`
+	DrinkingFountains []*PTXServiceDTORailSpecificationV3TRAStationFacilityFacilityInfo "json:\"DrinkingFountains\" xml:\"List`1\""
 
 	// Array
 	//
 	// 無障礙電梯位置資訊
 	// Required: true
-	Elevators []*PTXServiceDTORailSpecificationV3TRAStationFacilityFacilityInfo `json:"Elevators"`
+	Elevators []*PTXServiceDTORailSpecificationV3TRAStationFacilityFacilityInfo "json:\"Elevators\" xml:\"List`1\""
 
 	// Array
 	//
 	// 車站出入口
 	// Required: true
-	FacilityMapURLs []*PTXServiceDTORailSpecificationV3TRAStationFacilityFacilityMapURL `json:"FacilityMapURLs"`
+	FacilityMapURLs []*PTXServiceDTORailSpecificationV3TRAStationFacilityFacilityMapURL "json:\"FacilityMapURLs\" xml:\"List`1\""
 
 	// Array
 	//
 	// 詢問處位置資訊
 	// Required: true
-	InformationSpots []*PTXServiceDTORailSpecificationV3TRAStationFacilityFacilityInfo `json:"InformationSpots"`
+	InformationSpots []*PTXServiceDTORailSpecificationV3TRAStationFacilityFacilityInfo "json:\"InformationSpots\" xml:\"List`1\""
 
 	// String
 	//
 	// 車站代碼
 	// Required: true
-	StationID *string `json:"StationID"`
+	StationID *string `json:"StationID" xml:"String"`
 
 	// NameType
 	//
@@ -58,13 +58,13 @@ type PTXServiceDTORailSpecificationV3TRAStationFacilityStationFacility struct {
 	// Required: true
 	StationName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"StationName"`
+	} `json:"StationName" xml:"NameType"`
 
 	// Array
 	//
 	// 廁所位置資訊
 	// Required: true
-	Toilets []*PTXServiceDTORailSpecificationV3TRAStationFacilityFacilityInfo `json:"Toilets"`
+	Toilets []*PTXServiceDTORailSpecificationV3TRAStationFacilityFacilityInfo "json:\"Toilets\" xml:\"List`1\""
 }
 
 // Validate validates this p t x service d t o rail specification v3 t r a station facility station facility

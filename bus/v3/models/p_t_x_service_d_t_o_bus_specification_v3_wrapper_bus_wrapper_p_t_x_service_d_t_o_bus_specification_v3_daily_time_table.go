@@ -26,7 +26,7 @@ type PTXServiceDTOBusSpecificationV3WrapperBusWrapperPTXServiceDTOBusSpecificati
 	//
 	// 業管機關簡碼
 	// Required: true
-	AuthorityCode *string `json:"AuthorityCode"`
+	AuthorityCode *string `json:"AuthorityCode" xml:"String"`
 
 	// 資料總筆數
 	Count int64 `json:"Count,omitempty"`
@@ -35,7 +35,7 @@ type PTXServiceDTOBusSpecificationV3WrapperBusWrapperPTXServiceDTOBusSpecificati
 	//
 	// 資料列表
 	// Required: true
-	DailyTimeTables []*PTXServiceDTOBusSpecificationV3DailyTimeTable `json:"DailyTimeTables"`
+	DailyTimeTables []*PTXServiceDTOBusSpecificationV3DailyTimeTable "json:\"DailyTimeTables\" xml:\"List`1\""
 
 	// Int32
 	//

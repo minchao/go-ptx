@@ -23,13 +23,13 @@ type PTXServiceDTOBusSpecificationV3Depot struct {
 	//
 	// 營業所地址
 	// Required: true
-	DepotAddress *string `json:"DepotAddress"`
+	DepotAddress *string `json:"DepotAddress" xml:"String"`
 
 	// String
 	//
 	// 營業所代碼
 	// Required: true
-	DepotID *string `json:"DepotID"`
+	DepotID *string `json:"DepotID" xml:"String"`
 
 	// NameType
 	//
@@ -37,13 +37,13 @@ type PTXServiceDTOBusSpecificationV3Depot struct {
 	// Required: true
 	DepotName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"DepotName"`
+	} `json:"DepotName" xml:"NameType"`
 
 	// String
 	//
 	// 營業所電話
 	// Required: true
-	DepotPhone *string `json:"DepotPhone"`
+	DepotPhone *string `json:"DepotPhone" xml:"String"`
 
 	// PointType
 	//
@@ -51,13 +51,13 @@ type PTXServiceDTOBusSpecificationV3Depot struct {
 	// Required: true
 	DepotPosition struct {
 		PTXServiceDTOSharedSpecificationV3BasePointType
-	} `json:"DepotPosition"`
+	} `json:"DepotPosition" xml:"PointType"`
 
 	// String
 	//
 	// 營業所唯一識別代碼，規則為 {業管機關簡碼} + {DepotID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢
 	// Required: true
-	DepotUID *string `json:"DepotUID"`
+	DepotUID *string `json:"DepotUID" xml:"String"`
 }
 
 // Validate validates this p t x service d t o bus specification v3 depot

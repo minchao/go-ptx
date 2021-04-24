@@ -150,7 +150,7 @@ func (a *Client) InterCityBusAPIDataVersion(params *InterCityBusAPIDataVersionPa
 		ID:                 "InterCityBusApi_DataVersion",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/DataVersion/InterCity",
-		ProducesMediaTypes: []string{"application/json", "application/xml", "text/json", "text/plain"},
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,

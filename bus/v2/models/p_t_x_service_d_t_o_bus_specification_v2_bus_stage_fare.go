@@ -28,19 +28,19 @@ type PTXServiceDTOBusSpecificationV2BusStageFare struct {
 	// Required: true
 	DestinationStage struct {
 		PTXServiceDTOBusSpecificationV2BusStage
-	} `json:"DestinationStage"`
+	} `json:"DestinationStage" xml:"BusStage"`
 
 	// integer
 	//
 	// 方向性描述 : [0:'去程',1:'返程',2:'迴圈',255:'未知']
 	// Required: true
-	Direction *int32 `json:"Direction"`
+	Direction *int64 `json:"Direction"`
 
 	// Array
 	//
 	// 票價內容
 	// Required: true
-	Fares []*PTXServiceDTOBusSpecificationV2BusFare `json:"Fares"`
+	Fares []*PTXServiceDTOBusSpecificationV2BusFare "json:\"Fares\" xml:\"List`1\""
 
 	// BusStage
 	//
@@ -48,7 +48,7 @@ type PTXServiceDTOBusSpecificationV2BusStageFare struct {
 	// Required: true
 	OriginStage struct {
 		PTXServiceDTOBusSpecificationV2BusStage
-	} `json:"OriginStage"`
+	} `json:"OriginStage" xml:"BusStage"`
 }
 
 // Validate validates this p t x service d t o bus specification v2 bus stage fare

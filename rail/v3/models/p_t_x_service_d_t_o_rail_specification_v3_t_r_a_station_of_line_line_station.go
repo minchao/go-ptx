@@ -37,7 +37,7 @@ type PTXServiceDTORailSpecificationV3TRAStationOfLineLineStation struct {
 	//
 	// 車站代碼
 	// Required: true
-	StationID *string `json:"StationID"`
+	StationID *string `json:"StationID" xml:"String"`
 
 	// NameType
 	//
@@ -45,7 +45,7 @@ type PTXServiceDTORailSpecificationV3TRAStationOfLineLineStation struct {
 	// Required: true
 	StationName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"StationName"`
+	} `json:"StationName" xml:"NameType"`
 }
 
 // Validate validates this p t x service d t o rail specification v3 t r a station of line line station

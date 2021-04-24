@@ -20,12 +20,12 @@ type PTXServiceDTORailSpecificationV3TRATRAAlertListAlertScopeNetwork struct {
 	// String
 	//
 	// 路網代碼
-	NetworkID string `json:"NetworkID,omitempty"`
+	NetworkID string `json:"NetworkID,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 路網名稱
-	NetworkName string `json:"NetworkName,omitempty"`
+	NetworkName string `json:"NetworkName,omitempty" xml:"String,omitempty"`
 }
 
 // Validate validates this p t x service d t o rail specification v3 t r a t r a alert list alert scope network

@@ -26,12 +26,12 @@ type PTXServiceDTORailSpecificationV3TRAGeneralStationTimetableGeneralStationTim
 	//
 	// 行駛方向 : [0:'順行',1:'逆行']
 	// Required: true
-	Direction *int32 `json:"Direction"`
+	Direction *string `json:"Direction"`
 
 	// String
 	//
 	// 營運路線代碼
-	RouteID string `json:"RouteID,omitempty"`
+	RouteID string `json:"RouteID,omitempty" xml:"String,omitempty"`
 
 	// ServiceDay
 	//
@@ -39,26 +39,26 @@ type PTXServiceDTORailSpecificationV3TRAGeneralStationTimetableGeneralStationTim
 	// Required: true
 	ServiceDay struct {
 		PTXServiceDTORailSpecificationV3TRAGeneralStationTimetableServiceDay
-	} `json:"ServiceDay"`
+	} `json:"ServiceDay" xml:"ServiceDay"`
 
 	// String
 	//
 	// 車站代碼
 	// Required: true
-	StationID *string `json:"StationID"`
+	StationID *string `json:"StationID" xml:"String"`
 
 	// NameType
 	//
 	// 車站名稱
 	StationName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"StationName,omitempty"`
+	} `json:"StationName,omitempty" xml:"NameType,omitempty"`
 
 	// Array
 	//
 	// 車次停靠站資料
 	// Required: true
-	Timetables []*PTXServiceDTORailSpecificationV3TRAGeneralStationTimetableTimetable `json:"Timetables"`
+	Timetables []*PTXServiceDTORailSpecificationV3TRAGeneralStationTimetableTimetable "json:\"Timetables\" xml:\"List`1\""
 }
 
 // Validate validates this p t x service d t o rail specification v3 t r a general station timetable general station timetable
