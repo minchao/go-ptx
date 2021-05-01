@@ -177,7 +177,7 @@
           {
             "in": "query",
             "name": "$spatialFilter",
-            "description": "空間過濾",
+            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
             "type": "string"
           },
           {
@@ -290,7 +290,7 @@
           {
             "in": "query",
             "name": "$spatialFilter",
-            "description": "空間過濾",
+            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
             "type": "string"
           },
           {
@@ -726,7 +726,7 @@
           {
             "in": "query",
             "name": "$spatialFilter",
-            "description": "空間過濾",
+            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
             "type": "string"
           },
           {
@@ -1376,7 +1376,7 @@
           {
             "in": "query",
             "name": "$spatialFilter",
-            "description": "空間過濾",
+            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
             "type": "string"
           },
           {
@@ -1497,7 +1497,7 @@
           {
             "in": "query",
             "name": "$spatialFilter",
-            "description": "空間過濾",
+            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
             "type": "string"
           },
           {
@@ -9354,8 +9354,7 @@
   },
   "tags": [
     {
-      "name": "CityBus",
-      "description": "市區公車"
+      "name": "CityBus"
     }
   ]
 }
