@@ -95,7 +95,7 @@
           {
             "in": "query",
             "name": "$spatialFilter",
-            "description": "空間過濾",
+            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
             "type": "string"
           },
           {
@@ -234,7 +234,7 @@
           {
             "in": "query",
             "name": "$spatialFilter",
-            "description": "空間過濾",
+            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
             "type": "string"
           },
           {
@@ -902,7 +902,7 @@
           {
             "in": "query",
             "name": "$spatialFilter",
-            "description": "空間過濾",
+            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
             "type": "string"
           },
           {
@@ -1059,7 +1059,7 @@
           {
             "in": "query",
             "name": "$spatialFilter",
-            "description": "空間過濾",
+            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
             "type": "string"
           },
           {
@@ -2347,7 +2347,7 @@
           {
             "in": "query",
             "name": "$spatialFilter",
-            "description": "空間過濾",
+            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
             "type": "string"
           },
           {
@@ -2493,7 +2493,7 @@
           {
             "in": "query",
             "name": "$spatialFilter",
-            "description": "空間過濾",
+            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
             "type": "string"
           },
           {
@@ -3102,7 +3102,8 @@
               "KinmenCounty",
               "PenghuCounty",
               "Taoyuan",
-              "Taichung"
+              "Taichung",
+              "Kaohsiung"
             ],
             "x-enum": {
               "YilanCounty": "宜蘭縣",
@@ -3118,6 +3119,7 @@
               "NewTaipei": "新北市",
               "KinmenCounty": "金門縣",
               "Taichung": "臺中市",
+              "Kaohsiung": "高雄市",
               "Keelung": "基隆市",
               "NantouCounty": "南投縣",
               "MiaoliCounty": "苗栗縣",
@@ -3242,7 +3244,8 @@
               "KinmenCounty",
               "PenghuCounty",
               "Taoyuan",
-              "Taichung"
+              "Taichung",
+              "Kaohsiung"
             ],
             "x-enum": {
               "YilanCounty": "宜蘭縣",
@@ -3258,6 +3261,7 @@
               "NewTaipei": "新北市",
               "KinmenCounty": "金門縣",
               "Taichung": "臺中市",
+              "Kaohsiung": "高雄市",
               "Keelung": "基隆市",
               "NantouCounty": "南投縣",
               "MiaoliCounty": "苗栗縣",
@@ -3806,6 +3810,7 @@
             "enum": [
               "Taoyuan",
               "Taichung",
+              "Kaohsiung",
               "Hsinchu",
               "HsinchuCounty",
               "MiaoliCounty",
@@ -3825,7 +3830,6 @@
               "PingtungCounty": "屏東縣",
               "Taipei": "臺北市",
               "KinmenCounty": "金門縣",
-              "Kaohsiung": "高雄市",
               "MiaoliCounty": "苗栗縣",
               "PenghuCounty": "澎湖縣",
               "YunlinCounty": "雲林縣",
@@ -3837,6 +3841,7 @@
               "Taichung": "臺中市",
               "ChiayiCounty": "嘉義縣",
               "Taoyuan": "桃園市",
+              "Kaohsiung": "高雄市",
               "LienchiangCounty": "連江縣",
               "Tainan": "臺南市",
               "Keelung": "基隆市",
@@ -3943,6 +3948,7 @@
             "enum": [
               "Taoyuan",
               "Taichung",
+              "Kaohsiung",
               "Hsinchu",
               "HsinchuCounty",
               "MiaoliCounty",
@@ -3962,7 +3968,6 @@
               "PingtungCounty": "屏東縣",
               "Taipei": "臺北市",
               "KinmenCounty": "金門縣",
-              "Kaohsiung": "高雄市",
               "MiaoliCounty": "苗栗縣",
               "PenghuCounty": "澎湖縣",
               "YunlinCounty": "雲林縣",
@@ -3974,6 +3979,7 @@
               "Taichung": "臺中市",
               "ChiayiCounty": "嘉義縣",
               "Taoyuan": "桃園市",
+              "Kaohsiung": "高雄市",
               "LienchiangCounty": "連江縣",
               "Tainan": "臺南市",
               "Keelung": "基隆市",
@@ -4102,12 +4108,14 @@
               "TaitungCounty",
               "PenghuCounty",
               "Taichung",
+              "Kaohsiung",
               "Taoyuan"
             ],
             "x-enum": {
               "NantouCounty": "南投縣",
               "PingtungCounty": "屏東縣",
               "Chiayi": "嘉義市",
+              "Kaohsiung": "高雄市",
               "TaitungCounty": "臺東縣",
               "MiaoliCounty": "苗栗縣",
               "YilanCounty": "宜蘭縣",
@@ -4285,7 +4293,7 @@
           {
             "in": "query",
             "name": "$spatialFilter",
-            "description": "空間過濾",
+            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
             "type": "string"
           },
           {
@@ -4581,13 +4589,15 @@
               "HualienCounty",
               "TaitungCounty",
               "PenghuCounty",
-              "Taichung"
+              "Taichung",
+              "Kaohsiung"
             ],
             "x-enum": {
               "TaitungCounty": "臺東縣",
               "HsinchuCounty": "新竹縣",
               "ChanghuaCounty": "彰化縣",
               "HualienCounty": "花蓮縣",
+              "Kaohsiung": "高雄市",
               "PingtungCounty": "屏東縣",
               "YunlinCounty": "雲林縣",
               "Taichung": "臺中市",
@@ -5076,7 +5086,7 @@
           {
             "in": "query",
             "name": "$spatialFilter",
-            "description": "空間過濾",
+            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
             "type": "string"
           },
           {
@@ -5178,7 +5188,7 @@
           {
             "in": "query",
             "name": "$spatialFilter",
-            "description": "空間過濾",
+            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
             "type": "string"
           },
           {
@@ -5643,7 +5653,7 @@
           {
             "in": "query",
             "name": "$spatialFilter",
-            "description": "空間過濾",
+            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
             "type": "string"
           },
           {
@@ -5745,7 +5755,7 @@
           {
             "in": "query",
             "name": "$spatialFilter",
-            "description": "空間過濾",
+            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
             "type": "string"
           },
           {
@@ -6538,7 +6548,7 @@
           {
             "in": "query",
             "name": "$spatialFilter",
-            "description": "空間過濾",
+            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
             "type": "string"
           },
           {
@@ -6633,7 +6643,7 @@
           {
             "in": "query",
             "name": "$spatialFilter",
-            "description": "空間過濾",
+            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
             "type": "string"
           },
           {
@@ -7461,7 +7471,7 @@
           {
             "in": "query",
             "name": "$spatialFilter",
-            "description": "空間過濾",
+            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
             "type": "string"
           },
           {
@@ -7926,7 +7936,7 @@
           {
             "in": "query",
             "name": "$spatialFilter",
-            "description": "空間過濾(最大搜尋半徑為1000公尺)",
+            "description": "空間過濾(最大搜尋半徑為1000公尺)，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
             "required": true,
             "type": "string"
           },
@@ -8022,7 +8032,7 @@
           {
             "in": "query",
             "name": "$spatialFilter",
-            "description": "空間過濾(最大搜尋半徑為1000公尺)",
+            "description": "空間過濾(最大搜尋半徑為1000公尺)，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
             "required": true,
             "type": "string"
           },
@@ -8118,7 +8128,7 @@
           {
             "in": "query",
             "name": "$spatialFilter",
-            "description": "空間過濾(最大搜尋半徑為1000公尺)",
+            "description": "空間過濾(最大搜尋半徑為1000公尺)，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
             "required": true,
             "type": "string"
           },
@@ -8214,7 +8224,7 @@
           {
             "in": "query",
             "name": "$spatialFilter",
-            "description": "空間過濾(最大搜尋半徑為1000公尺)",
+            "description": "空間過濾(最大搜尋半徑為1000公尺)，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
             "required": true,
             "type": "string"
           },
@@ -8310,7 +8320,7 @@
           {
             "in": "query",
             "name": "$spatialFilter",
-            "description": "空間過濾(最大搜尋半徑為1000公尺)",
+            "description": "空間過濾(最大搜尋半徑為1000公尺)，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
             "required": true,
             "type": "string"
           },
@@ -8406,7 +8416,7 @@
           {
             "in": "query",
             "name": "$spatialFilter",
-            "description": "空間過濾(最大搜尋半徑為1000公尺)",
+            "description": "空間過濾(最大搜尋半徑為1000公尺)，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
             "required": true,
             "type": "string"
           },
@@ -12546,16 +12556,13 @@
   },
   "tags": [
     {
-      "name": "CityBus",
-      "description": "市區公車"
+      "name": "CityBus"
     },
     {
-      "name": "InterCityBus",
-      "description": "公路客運"
+      "name": "InterCityBus"
     },
     {
-      "name": "Advanced",
-      "description": "進階"
+      "name": "Advanced"
     }
   ]
 }
