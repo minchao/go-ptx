@@ -15,5 +15,5 @@ require (
 	github.com/mitchellh/mapstructure v1.4.1 // indirect
 	github.com/stretchr/testify v1.7.0
 	go.mongodb.org/mongo-driver v1.5.2 // indirect
-	golang.org/x/net v0.0.0-20210510120150-4163338589ed // indirect
+	golang.org/x/net v0.0.0-20210525063256-abc453219eb5 // indirect
 )
