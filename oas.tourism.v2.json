@@ -58,7 +58,7 @@
           {
             "in": "query",
             "name": "$spatialFilter",
-            "description": "空間過濾",
+            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
             "type": "string"
           },
           {
@@ -95,8 +95,8 @@
         "tags": [
           "Tourism"
         ],
-        "summary": "取得所有觀光景點資料",
-        "description": "取得所有觀光景點資料",
+        "summary": "取得指定[縣市]觀光景點資料",
+        "description": "取得指定[縣市]觀光景點資料",
         "operationId": "TourismApi_ScenicSpot_0",
         "produces": [
           "application/json",
@@ -106,6 +106,7 @@
           {
             "in": "path",
             "name": "City",
+            "description": "縣市名稱",
             "required": true,
             "type": "string",
             "enum": [
@@ -191,7 +192,7 @@
           {
             "in": "query",
             "name": "$spatialFilter",
-            "description": "空間過濾",
+            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
             "type": "string"
           },
           {
@@ -270,7 +271,7 @@
           {
             "in": "query",
             "name": "$spatialFilter",
-            "description": "空間過濾",
+            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
             "type": "string"
           },
           {
@@ -404,7 +405,7 @@
           {
             "in": "query",
             "name": "$spatialFilter",
-            "description": "空間過濾",
+            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
             "type": "string"
           },
           {
@@ -483,7 +484,7 @@
           {
             "in": "query",
             "name": "$spatialFilter",
-            "description": "空間過濾",
+            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
             "type": "string"
           },
           {
@@ -617,7 +618,7 @@
           {
             "in": "query",
             "name": "$spatialFilter",
-            "description": "空間過濾",
+            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
             "type": "string"
           },
           {
@@ -696,7 +697,7 @@
           {
             "in": "query",
             "name": "$spatialFilter",
-            "description": "空間過濾",
+            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
             "type": "string"
           },
           {
@@ -830,7 +831,7 @@
           {
             "in": "query",
             "name": "$spatialFilter",
-            "description": "空間過濾",
+            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
             "type": "string"
           },
           {
@@ -2053,13 +2054,22 @@
         "Zh_tw": {
           "title": "String",
           "description": "中文繁體名稱",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "En": {
           "title": "String",
           "description": "英文名稱",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         }
+      },
+      "xml": {
+        "name": "NameType"
       }
     },
     "PTX.Service.DTO.Shared.Specification.V2.Base.PointType": {
@@ -2067,21 +2077,238 @@
       "description": "座標資料型別",
       "type": "object",
       "properties": {
-        "PositionLat": {
-          "format": "double",
-          "description": "位置緯度(WGS84)",
-          "type": "number"
-        },
         "PositionLon": {
           "format": "double",
           "description": "位置經度(WGS84)",
           "type": "number"
         },
+        "PositionLat": {
+          "format": "double",
+          "description": "位置緯度(WGS84)",
+          "type": "number"
+        },
         "GeoHash": {
           "title": "String",
           "description": "地理空間編碼",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        }
+      },
+      "xml": {
+        "name": "PointType"
+      }
+    },
+    "PTX.Service.DTO.Tourism.Specification.V2.ActivityTourismInfo": {
+      "title": "ActivityTourismInfo",
+      "description": "取得觀光活動資料",
+      "required": [
+        "ID",
+        "SrcUpdateTime",
+        "UpdateTime"
+      ],
+      "type": "object",
+      "properties": {
+        "ID": {
+          "title": "String",
+          "description": "活動訊息代碼",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "Name": {
+          "title": "String",
+          "description": "活動名稱",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "Description": {
+          "title": "String",
+          "description": "活動簡述",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "Particpation": {
+          "title": "String",
+          "description": "活動參與對象",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "Location": {
+          "title": "String",
+          "description": "主要活動地點名稱",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "Address": {
+          "title": "String",
+          "description": "主要活動地點地址",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "Phone": {
+          "title": "String",
+          "description": "活動聯絡電話",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "Organizer": {
+          "title": "String",
+          "description": "活動主辦單位",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "StartTime": {
+          "format": "date-time",
+          "description": "活動開始時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "EndTime": {
+          "format": "date-time",
+          "description": "活動結束時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "Cycle": {
+          "title": "String",
+          "description": "週期性活動執行時間",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "NonCycle": {
+          "title": "String",
+          "description": "非週期性活動執行時間",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "WebsiteUrl": {
+          "title": "String",
+          "description": "活動網址",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "Picture": {
+          "title": "TourismPicture",
+          "description": "活動照片",
+          "allOf": [
+            {
+              "$ref": "#/definitions/PTX.Service.DTO.Tourism.Specification.V2.TourismPicture"
+            }
+          ],
+          "xml": {
+            "name": "TourismPicture"
+          }
+        },
+        "Position": {
+          "title": "PointType",
+          "description": "活動位置",
+          "allOf": [
+            {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V2.Base.PointType"
+            }
+          ],
+          "xml": {
+            "name": "PointType"
+          }
+        },
+        "Class1": {
+          "title": "String",
+          "description": "活動分類1",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "Class2": {
+          "title": "String",
+          "description": "活動分類2",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "MapUrl": {
+          "title": "String",
+          "description": "活動地圖/簡圖連結網址",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "TravelInfo": {
+          "title": "String",
+          "description": "交通資訊",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "ParkingInfo": {
+          "title": "String",
+          "description": "停車資訊",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "Charge": {
+          "title": "String",
+          "description": "費用標示",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "Remarks": {
+          "title": "String",
+          "description": "備註(其他活動相關事項)",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "City": {
+          "title": "String",
+          "description": "所屬縣市",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "SrcUpdateTime": {
+          "format": "date-time",
+          "description": "觀光局檔案更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "UpdateTime": {
+          "format": "date-time",
+          "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         }
+      },
+      "xml": {
+        "name": "ActivityTourismInfo"
       }
     },
     "PTX.Service.DTO.Tourism.Specification.V2.BusA1Data": {
@@ -2101,22 +2328,34 @@
         "PlateNumb": {
           "title": "String",
           "description": "車牌號碼",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "OperatorID": {
           "title": "String",
           "description": "營運業者代碼",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "RouteUID": {
           "title": "String",
           "description": "路線唯一識別代碼，規則為 {業管機關代碼} + {RouteID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "RouteID": {
           "title": "String",
           "description": "地區既用中之路線代碼(為原資料內碼)",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "TaiwanTripName": {
           "title": "NameType",
@@ -2125,17 +2364,26 @@
             {
               "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V2.Base.NameType"
             }
-          ]
+          ],
+          "xml": {
+            "name": "NameType"
+          }
         },
         "SubRouteUID": {
           "title": "String",
           "description": "子路線唯一識別代碼，規則為 {業管機關代碼} + {SubRouteID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "SubRouteID": {
           "title": "String",
           "description": "地區既用中之子路線代碼(為原資料內碼)",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "SubRouteName": {
           "title": "NameType",
@@ -2144,11 +2392,13 @@
             {
               "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V2.Base.NameType"
             }
-          ]
+          ],
+          "xml": {
+            "name": "NameType"
+          }
         },
         "Direction": {
-          "format": "int32",
-          "title": "integer",
+          "title": "Int32",
           "description": "去返程 : [0:'去程',1:'返程',2:'迴圈',255:'未知']",
           "type": "integer"
         },
@@ -2159,7 +2409,10 @@
             {
               "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V2.Base.PointType"
             }
-          ]
+          ],
+          "xml": {
+            "name": "PointType"
+          }
         },
         "Speed": {
           "format": "double",
@@ -2172,48 +2425,50 @@
           "type": "number"
         },
         "DutyStatus": {
-          "format": "int32",
-          "title": "integer",
+          "title": "Int32",
           "description": "勤務狀態 : [0:'正常',1:'開始',2:'結束']",
           "type": "integer"
         },
         "BusStatus": {
-          "format": "int32",
-          "title": "integer",
+          "title": "Int32",
           "description": "行車狀況 : [0:'正常',1:'車禍',2:'故障',3:'塞車',4:'緊急求援',5:'加油',90:'不明',91:'去回不明',98:'偏移路線',99:'非營運狀態',100:'客滿',101:'包車出租',255:'未知']",
           "type": "integer"
         },
         "MessageType": {
-          "format": "int32",
-          "title": "integer",
+          "title": "Int32",
           "description": "資料型態種類 : [0:'未知',1:'定期',2:'非定期']",
           "type": "integer"
         },
         "GPSTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "車機時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         },
         "TransTime": {
-          "title": "DateTime",
+          "format": "date-time",
           "description": "車機資料傳輸時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         },
         "SrcRecTime": {
-          "title": "DateTime",
+          "format": "date-time",
           "description": "來源端平台接收時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         },
         "SrcUpdateTime": {
-          "title": "DateTime",
+          "format": "date-time",
           "description": "來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         }
+      },
+      "xml": {
+        "name": "BusA1Data"
       }
     },
     "PTX.Service.DTO.Tourism.Specification.V2.BusA2Data": {
@@ -2230,22 +2485,34 @@
         "PlateNumb": {
           "title": "String",
           "description": "車牌號碼",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "OperatorID": {
           "title": "String",
           "description": "營運業者代碼",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "RouteUID": {
           "title": "String",
           "description": "路線唯一識別代碼，規則為 {業管機關代碼} + {RouteID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "RouteID": {
           "title": "String",
           "description": "地區既用中之路線代碼(為原資料內碼)",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "TaiwanTripName": {
           "title": "NameType",
@@ -2254,17 +2521,26 @@
             {
               "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V2.Base.NameType"
             }
-          ]
+          ],
+          "xml": {
+            "name": "NameType"
+          }
         },
         "SubRouteUID": {
           "title": "String",
           "description": "子路線唯一識別代碼，規則為 {業管機關代碼} + {SubRouteID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "SubRouteID": {
           "title": "String",
           "description": "地區既用中之子路線代碼(為原資料內碼)",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "SubRouteName": {
           "title": "NameType",
@@ -2273,23 +2549,31 @@
             {
               "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V2.Base.NameType"
             }
-          ]
+          ],
+          "xml": {
+            "name": "NameType"
+          }
         },
         "Direction": {
-          "format": "int32",
-          "title": "integer",
+          "title": "Int32",
           "description": "去返程 : [0:'去程',1:'返程',2:'迴圈',255:'未知']",
           "type": "integer"
         },
         "StopUID": {
           "title": "String",
           "description": "站牌唯一識別代碼，規則為 {平台代碼} + {StopID}，其中 {平台代碼} 可於Provider API中的ProviderCode欄位查詢",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "StopID": {
           "title": "String",
           "description": "地區既用中之站牌代號(為原資料內碼)",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "StopName": {
           "title": "NameType",
@@ -2298,354 +2582,128 @@
             {
               "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V2.Base.NameType"
             }
-          ]
+          ],
+          "xml": {
+            "name": "NameType"
+          }
         },
         "MessageType": {
-          "format": "int32",
-          "title": "integer",
+          "title": "Int32",
           "description": "資料型態種類 : [0:'未知',1:'定期',2:'非定期']",
           "type": "integer"
         },
         "DutyStatus": {
-          "format": "int32",
-          "title": "integer",
+          "title": "Int32",
           "description": "勤務狀態 : [0:'正常',1:'開始',2:'結束']",
           "type": "integer"
         },
         "BusStatus": {
-          "format": "int32",
-          "title": "integer",
+          "title": "Int32",
           "description": "行車狀況 : [0:'正常',1:'車禍',2:'故障',3:'塞車',4:'緊急求援',5:'加油',90:'不明',91:'去回不明',98:'偏移路線',99:'非營運狀態',100:'客滿',101:'包車出租',255:'未知']",
           "type": "integer"
         },
         "A2EventType": {
-          "format": "int32",
-          "title": "integer",
+          "title": "Int32",
           "description": "進站離站 : [0:'離站',1:'進站']",
           "type": "integer"
         },
         "GPSTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "車機時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         },
         "TransTime": {
-          "title": "DateTime",
+          "format": "date-time",
           "description": "車機資料傳輸時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         },
         "SrcRecTime": {
-          "title": "DateTime",
+          "format": "date-time",
           "description": "來源端平台接收時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         },
         "SrcUpdateTime": {
-          "title": "DateTime",
+          "format": "date-time",
           "description": "來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         }
+      },
+      "xml": {
+        "name": "BusA2Data"
       }
     },
-    "PTX.Service.DTO.Tourism.Specification.V2.TourismPicture": {
-      "title": "TourismPicture",
-      "description": "觀光照片資料型別",
-      "type": "object",
-      "properties": {
-        "PictureUrl1": {
-          "title": "String",
-          "description": "照片連結網址1",
-          "type": "string"
-        },
-        "PictureDescription1": {
-          "title": "String",
-          "description": "照片說明1",
-          "type": "string"
-        },
-        "PictureUrl2": {
-          "title": "String",
-          "description": "照片連結網址2",
-          "type": "string"
-        },
-        "PictureDescription2": {
-          "title": "String",
-          "description": "照片說明2",
-          "type": "string"
-        },
-        "PictureUrl3": {
-          "title": "String",
-          "description": "照片連結網址3",
-          "type": "string"
-        },
-        "PictureDescription3": {
-          "title": "String",
-          "description": "照片說明3",
-          "type": "string"
-        }
-      }
-    },
-    "PTX.Service.DTO.Tourism.Specification.V2.ActivityTourismInfo": {
-      "title": "ActivityTourismInfo",
-      "description": "取得觀光活動資料",
+    "PTX.Service.DTO.Tourism.Specification.V2.BusFrequency": {
+      "title": "BusFrequency",
+      "description": "發車班距資料",
       "required": [
-        "ID",
-        "SrcUpdateTime",
-        "UpdateTime"
+        "EndTime",
+        "MaxHeadwayMins",
+        "MinHeadwayMins",
+        "StartTime"
       ],
       "type": "object",
       "properties": {
-        "ID": {
-          "title": "String",
-          "description": "活動訊息代碼",
-          "type": "string"
-        },
-        "Name": {
-          "title": "String",
-          "description": "活動名稱",
-          "type": "string"
-        },
-        "Description": {
-          "title": "String",
-          "description": "活動簡述",
-          "type": "string"
-        },
-        "Particpation": {
-          "title": "String",
-          "description": "活動參與對象",
-          "type": "string"
-        },
-        "Location": {
-          "title": "String",
-          "description": "主要活動地點名稱",
-          "type": "string"
-        },
-        "Address": {
-          "title": "String",
-          "description": "主要活動地點地址",
-          "type": "string"
-        },
-        "Phone": {
-          "title": "String",
-          "description": "活動聯絡電話",
-          "type": "string"
-        },
-        "Organizer": {
-          "title": "String",
-          "description": "活動主辦單位",
-          "type": "string"
-        },
         "StartTime": {
-          "title": "DateTime",
-          "description": "活動開始時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
-          "type": "string"
+          "title": "String",
+          "description": "發車班距起始適用時間，格式為: HH:mm",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "EndTime": {
-          "title": "DateTime",
-          "description": "活動結束時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
-          "type": "string"
-        },
-        "Cycle": {
           "title": "String",
-          "description": "週期性活動執行時間",
-          "type": "string"
+          "description": "發車班距結束適用時間，格式為: HH:mm",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
-        "NonCycle": {
-          "title": "String",
-          "description": "非週期性活動執行時間",
-          "type": "string"
+        "MinHeadwayMins": {
+          "format": "int32",
+          "title": "Int32",
+          "description": "最小班距時間(分鐘)",
+          "type": "integer"
         },
-        "WebsiteUrl": {
-          "title": "String",
-          "description": "活動網址",
-          "type": "string"
+        "MaxHeadwayMins": {
+          "format": "int32",
+          "title": "Int32",
+          "description": "最大班距時間(分鐘)",
+          "type": "integer"
         },
-        "Picture": {
-          "title": "TourismPicture",
-          "description": "活動照片",
+        "ServiceDay": {
+          "title": "ServiceDay",
+          "description": "週內營運日",
           "allOf": [
             {
-              "$ref": "#/definitions/PTX.Service.DTO.Tourism.Specification.V2.TourismPicture"
+              "$ref": "#/definitions/PTX.Service.DTO.Tourism.Specification.V2.ServiceDay"
             }
-          ]
+          ],
+          "xml": {
+            "name": "ServiceDay"
+          }
         },
-        "Position": {
-          "title": "PointType",
-          "description": "活動位置",
-          "allOf": [
-            {
-              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V2.Base.PointType"
-            }
-          ]
-        },
-        "Class1": {
-          "title": "String",
-          "description": "活動分類1",
-          "type": "string"
-        },
-        "Class2": {
-          "title": "String",
-          "description": "活動分類2",
-          "type": "string"
-        },
-        "MapUrl": {
-          "title": "String",
-          "description": "活動地圖/簡圖連結網址",
-          "type": "string"
-        },
-        "TravelInfo": {
-          "title": "String",
-          "description": "交通資訊",
-          "type": "string"
-        },
-        "ParkingInfo": {
-          "title": "String",
-          "description": "停車資訊",
-          "type": "string"
-        },
-        "Charge": {
-          "title": "String",
-          "description": "費用標示",
-          "type": "string"
-        },
-        "Remarks": {
-          "title": "String",
-          "description": "備註(其他活動相關事項)",
-          "type": "string"
-        },
-        "City": {
-          "title": "String",
-          "description": "所屬縣市",
-          "type": "string"
-        },
-        "SrcUpdateTime": {
-          "title": "DateTime",
-          "description": "觀光局檔案更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
-          "type": "string"
-        },
-        "UpdateTime": {
-          "title": "DateTime",
-          "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
-          "type": "string"
+        "SpecialDays": {
+          "title": "Array",
+          "description": "特殊營運日",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PTX.Service.DTO.Tourism.Specification.V2.SpecialDay"
+          },
+          "xml": {
+            "name": "List`1"
+          }
         }
-      }
-    },
-    "PTX.Service.DTO.Tourism.Specification.V2.HotelTourismInfo": {
-      "title": "HotelTourismInfo",
-      "description": "取得觀光旅宿資料",
-      "required": [
-        "ID",
-        "SrcUpdateTime",
-        "UpdateTime"
-      ],
-      "type": "object",
-      "properties": {
-        "ID": {
-          "title": "String",
-          "description": "旅館民宿代碼",
-          "type": "string"
-        },
-        "Name": {
-          "title": "String",
-          "description": "旅館民宿名稱",
-          "type": "string"
-        },
-        "Description": {
-          "title": "String",
-          "description": "旅館民宿簡述",
-          "type": "string"
-        },
-        "Grade": {
-          "title": "String",
-          "description": "觀光旅館星級",
-          "type": "string"
-        },
-        "Address": {
-          "title": "String",
-          "description": "旅館民宿地址",
-          "type": "string"
-        },
-        "ZipCode": {
-          "title": "String",
-          "description": "郵遞區號",
-          "type": "string"
-        },
-        "Phone": {
-          "title": "String",
-          "description": "旅館民宿電話",
-          "type": "string"
-        },
-        "Fax": {
-          "title": "String",
-          "description": "旅館民宿傳真",
-          "type": "string"
-        },
-        "WebsiteUrl": {
-          "title": "String",
-          "description": "旅館民宿網站網址",
-          "type": "string"
-        },
-        "Picture": {
-          "title": "TourismPicture",
-          "description": "旅館民宿照片",
-          "allOf": [
-            {
-              "$ref": "#/definitions/PTX.Service.DTO.Tourism.Specification.V2.TourismPicture"
-            }
-          ]
-        },
-        "Position": {
-          "title": "PointType",
-          "description": "旅館民宿位置",
-          "allOf": [
-            {
-              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V2.Base.PointType"
-            }
-          ]
-        },
-        "Class": {
-          "title": "String",
-          "description": "旅館民宿分類",
-          "type": "string"
-        },
-        "MapUrl": {
-          "title": "String",
-          "description": "旅館民宿地點簡圖連結網址",
-          "type": "string"
-        },
-        "Spec": {
-          "title": "String",
-          "description": "房型、價目及數量說明",
-          "type": "string"
-        },
-        "ServiceInfo": {
-          "title": "String",
-          "description": "服務內容介紹",
-          "type": "string"
-        },
-        "ParkingInfo": {
-          "title": "String",
-          "description": "停車資訊",
-          "type": "string"
-        },
-        "City": {
-          "title": "String",
-          "description": "所屬縣市",
-          "type": "string"
-        },
-        "SrcUpdateTime": {
-          "title": "DateTime",
-          "description": "觀光局檔案更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
-          "type": "string"
-        },
-        "UpdateTime": {
-          "title": "DateTime",
-          "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
-          "type": "string"
-        }
+      },
+      "xml": {
+        "name": "BusFrequency"
       }
     },
     "PTX.Service.DTO.Tourism.Specification.V2.BusN1EstimateTime": {
@@ -2659,17 +2717,26 @@
         "PlateNumb": {
           "title": "String",
           "description": "車牌號碼",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "StopUID": {
           "title": "String",
           "description": "站牌唯一識別代碼，規則為 {業管機關代碼} + {StopID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "StopID": {
           "title": "String",
           "description": "地區既用中之站牌代碼(為原資料內碼)",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "StopName": {
           "title": "NameType",
@@ -2678,17 +2745,26 @@
             {
               "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V2.Base.NameType"
             }
-          ]
+          ],
+          "xml": {
+            "name": "NameType"
+          }
         },
         "RouteUID": {
           "title": "String",
           "description": "路線唯一識別代碼，規則為 {業管機關代碼} + {RouteID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "RouteID": {
           "title": "String",
           "description": "地區既用中之路線代碼(為原資料內碼)",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "TaiwanTripName": {
           "title": "NameType",
@@ -2697,17 +2773,26 @@
             {
               "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V2.Base.NameType"
             }
-          ]
+          ],
+          "xml": {
+            "name": "NameType"
+          }
         },
         "SubRouteUID": {
           "title": "String",
           "description": "子路線唯一識別代碼，規則為 {業管機關代碼} + {SubRouteID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "SubRouteID": {
           "title": "String",
           "description": "地區既用中之子路線代碼(為原資料內碼)",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "SubRouteName": {
           "title": "NameType",
@@ -2716,11 +2801,13 @@
             {
               "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V2.Base.NameType"
             }
-          ]
+          ],
+          "xml": {
+            "name": "NameType"
+          }
         },
         "Direction": {
-          "format": "int32",
-          "title": "integer",
+          "title": "Int32",
           "description": "去返程 : [0:'去程',1:'返程',2:'迴圈',255:'未知']",
           "type": "integer"
         },
@@ -2737,27 +2824,31 @@
         "CurrentStop": {
           "title": "String",
           "description": "車輛目前所在站牌代碼",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "DestinationStop": {
           "title": "String",
           "description": "車輛目的站牌代碼",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "StopStatus": {
-          "format": "int32",
-          "title": "integer",
+          "title": "Int32",
           "description": "車輛狀態備註 : [0:'正常',1:'尚未發車',2:'交管不停靠',3:'末班車已過',4:'今日未營運']",
           "type": "integer"
         },
         "MessageType": {
-          "format": "int32",
-          "title": "integer",
+          "title": "Int32",
           "description": "資料型態種類 : [0:'未知',1:'定期',2:'非定期']",
           "type": "integer"
         },
         "NextBusTime": {
-          "title": "DateTime",
+          "format": "date-time",
           "description": "下一班公車到達時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         },
@@ -2766,299 +2857,29 @@
           "type": "boolean"
         },
         "TransTime": {
-          "title": "DateTime",
+          "format": "date-time",
           "description": "車機資料傳輸時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         },
         "SrcRecTime": {
-          "title": "DateTime",
+          "format": "date-time",
           "description": "來源端平台接收時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         },
         "SrcUpdateTime": {
-          "title": "DateTime",
+          "format": "date-time",
           "description": "來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         }
-      }
-    },
-    "PTX.Service.DTO.Tourism.Specification.V2.BusTaiwanTripNews": {
-      "title": "BusTaiwanTripNews",
-      "description": "台灣好行最新消息資料",
-      "required": [
-        "Description",
-        "Language",
-        "NewsID",
-        "Title",
-        "UpdateTime"
-      ],
-      "type": "object",
-      "properties": {
-        "NewsID": {
-          "title": "String",
-          "description": "最新消息原單位發布代碼",
-          "type": "string"
-        },
-        "Language": {
-          "title": "String",
-          "description": "語系",
-          "type": "string"
-        },
-        "NewsCategory": {
-          "title": "String",
-          "description": "消息類別",
-          "type": "string"
-        },
-        "Title": {
-          "title": "String",
-          "description": "消息標題",
-          "type": "string"
-        },
-        "Description": {
-          "title": "String",
-          "description": "內容描述",
-          "type": "string"
-        },
-        "PublishTime": {
-          "title": "DateTime",
-          "description": "消息公告日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
-          "type": "string"
-        },
-        "StartTime": {
-          "title": "DateTime",
-          "description": "開始時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
-          "type": "string"
-        },
-        "EndTime": {
-          "title": "DateTime",
-          "description": "結束時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
-          "type": "string"
-        },
-        "UpdateTime": {
-          "title": "DateTime",
-          "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
-          "type": "string"
-        }
-      }
-    },
-    "PTX.Service.DTO.Tourism.Specification.V2.RestaurantTourismInfo": {
-      "title": "RestaurantTourismInfo",
-      "description": "取得觀光餐飲資料",
-      "required": [
-        "ID",
-        "SrcUpdateTime",
-        "UpdateTime"
-      ],
-      "type": "object",
-      "properties": {
-        "ID": {
-          "title": "String",
-          "description": "餐飲店家代碼",
-          "type": "string"
-        },
-        "Name": {
-          "title": "String",
-          "description": "餐飲店家名稱",
-          "type": "string"
-        },
-        "Description": {
-          "title": "String",
-          "description": "店家簡述",
-          "type": "string"
-        },
-        "Address": {
-          "title": "String",
-          "description": "店家地址",
-          "type": "string"
-        },
-        "ZipCode": {
-          "title": "String",
-          "description": "郵遞區號",
-          "type": "string"
-        },
-        "Phone": {
-          "title": "String",
-          "description": "預約電話",
-          "type": "string"
-        },
-        "OpenTime": {
-          "title": "String",
-          "description": "營業時間",
-          "type": "string"
-        },
-        "WebsiteUrl": {
-          "title": "String",
-          "description": "店家網站網址",
-          "type": "string"
-        },
-        "Picture": {
-          "title": "TourismPicture",
-          "description": "店家照片",
-          "allOf": [
-            {
-              "$ref": "#/definitions/PTX.Service.DTO.Tourism.Specification.V2.TourismPicture"
-            }
-          ]
-        },
-        "Position": {
-          "title": "PointType",
-          "description": "店家位置",
-          "allOf": [
-            {
-              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V2.Base.PointType"
-            }
-          ]
-        },
-        "Class": {
-          "title": "String",
-          "description": "店家分類",
-          "type": "string"
-        },
-        "MapUrl": {
-          "title": "String",
-          "description": "店家地圖/簡圖介紹網址",
-          "type": "string"
-        },
-        "ParkingInfo": {
-          "title": "String",
-          "description": "停車資訊",
-          "type": "string"
-        },
-        "City": {
-          "title": "String",
-          "description": "所屬縣市",
-          "type": "string"
-        },
-        "SrcUpdateTime": {
-          "title": "DateTime",
-          "description": "觀光局檔案更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
-          "type": "string"
-        },
-        "UpdateTime": {
-          "title": "DateTime",
-          "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
-          "type": "string"
-        }
-      }
-    },
-    "PTX.Service.DTO.Tourism.Specification.V2.RouteOperator": {
-      "title": "RouteOperator",
-      "description": "營運業者資訊",
-      "required": [
-        "OperatorCode",
-        "OperatorID",
-        "OperatorName",
-        "OperatorNo"
-      ],
-      "type": "object",
-      "properties": {
-        "OperatorID": {
-          "title": "String",
-          "description": "營運業者代碼",
-          "type": "string"
-        },
-        "OperatorName": {
-          "title": "NameType",
-          "description": "營運業者名稱",
-          "allOf": [
-            {
-              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V2.Base.NameType"
-            }
-          ]
-        },
-        "OperatorCode": {
-          "title": "String",
-          "description": "營運業者簡碼",
-          "type": "string"
-        },
-        "OperatorNo": {
-          "title": "String",
-          "description": "營運業者編號[交通部票證資料系統定義]",
-          "type": "string"
-        }
-      }
-    },
-    "PTX.Service.DTO.Tourism.Specification.V2.BusSubRoute": {
-      "title": "BusSubRoute",
-      "description": "附屬路線資料型別",
-      "required": [
-        "Direction",
-        "OperatorIDs",
-        "SubRouteID",
-        "SubRouteName",
-        "SubRouteUID"
-      ],
-      "type": "object",
-      "properties": {
-        "SubRouteUID": {
-          "title": "String",
-          "description": "附屬路線唯一識別代碼，規則為 {業管機關簡碼} + {SubRouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
-          "type": "string"
-        },
-        "SubRouteID": {
-          "title": "String",
-          "description": "地區既用中之附屬路線代碼(為原資料內碼)",
-          "type": "string"
-        },
-        "OperatorIDs": {
-          "title": "Array",
-          "description": "營運業者代碼",
-          "type": "array",
-          "items": {
-            "title": "String",
-            "type": "string"
-          }
-        },
-        "SubRouteName": {
-          "title": "NameType",
-          "description": "附屬路線名稱",
-          "allOf": [
-            {
-              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V2.Base.NameType"
-            }
-          ]
-        },
-        "Headsign": {
-          "title": "String",
-          "description": "車頭描述",
-          "type": "string"
-        },
-        "HeadsignEn": {
-          "title": "String",
-          "description": "車頭英文描述",
-          "type": "string"
-        },
-        "Direction": {
-          "format": "int32",
-          "title": "integer",
-          "description": "去返程 : [0:'去程',1:'返程',2:'迴圈',255:'未知']",
-          "type": "integer"
-        },
-        "FirstBusTime": {
-          "title": "String",
-          "description": "平日第一班發車時間",
-          "type": "string"
-        },
-        "LastBusTime": {
-          "title": "String",
-          "description": "平日返程第一班發車時間",
-          "type": "string"
-        },
-        "HolidayFirstBusTime": {
-          "title": "String",
-          "description": "假日去程第一班發車時間",
-          "type": "string"
-        },
-        "HolidayLastBusTime": {
-          "title": "String",
-          "description": "假日返程第一班發車時間",
-          "type": "string"
-        }
+      },
+      "xml": {
+        "name": "BusN1EstimateTime"
       }
     },
     "PTX.Service.DTO.Tourism.Specification.V2.BusRoute": {
@@ -3081,12 +2902,18 @@
         "RouteUID": {
           "title": "String",
           "description": "路線唯一識別代碼，規則為 {業管機關代碼} + {RouteID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "RouteID": {
           "title": "String",
           "description": "地區既用中之路線代碼(為原資料內碼)",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "HasSubRoutes": {
           "title": "Boolean",
@@ -3099,7 +2926,13 @@
           "type": "array",
           "items": {
             "title": "String",
-            "type": "string"
+            "type": "string",
+            "xml": {
+              "name": "String"
+            }
+          },
+          "xml": {
+            "name": "List`1"
           }
         },
         "Operators": {
@@ -3108,17 +2941,26 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/PTX.Service.DTO.Tourism.Specification.V2.RouteOperator"
+          },
+          "xml": {
+            "name": "List`1"
           }
         },
         "AuthorityID": {
           "title": "String",
           "description": "業管單位代碼",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "ProviderID": {
           "title": "String",
           "description": "資料提供平台代碼",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "SubRoutes": {
           "title": "Array",
@@ -3126,11 +2968,13 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/PTX.Service.DTO.Tourism.Specification.V2.BusSubRoute"
+          },
+          "xml": {
+            "name": "List`1"
           }
         },
         "BusRouteType": {
-          "format": "int32",
-          "title": "integer",
+          "title": "Int32",
           "description": "公車路線類別 : [11:'市區公車',12:'公路客運',13:'國道客運',14:'接駁車']",
           "type": "integer"
         },
@@ -3141,436 +2985,337 @@
             {
               "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V2.Base.NameType"
             }
-          ]
+          ],
+          "xml": {
+            "name": "NameType"
+          }
         },
         "DepartureStopNameZh": {
           "title": "String",
           "description": "起站中文名稱",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "DepartureStopNameEn": {
           "title": "String",
           "description": "起站英文名稱",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "DestinationStopNameZh": {
           "title": "String",
           "description": "終點站中文名稱",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "DestinationStopNameEn": {
           "title": "String",
           "description": "終點站英文名稱",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "TicketPriceDescriptionZh": {
           "title": "String",
           "description": "票價中文敘述",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "TicketPriceDescriptionEn": {
           "title": "String",
           "description": "票價英文敘述",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "FareBufferZoneDescriptionZh": {
           "title": "String",
           "description": "收費緩衝區中文敘述",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "FareBufferZoneDescriptionEn": {
           "title": "String",
           "description": "收費緩衝區英文敘述",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "RouteUrl": {
           "title": "String",
           "description": "路線資訊說明網址",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "LiveBusUrl": {
           "title": "String",
           "description": "路線公車動態資訊網址",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "RouteMapImageUrl": {
           "title": "String",
           "description": "路線簡圖網址",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "City": {
           "title": "String",
           "description": "路線權管所屬縣市(相當於市區公車API的City參數)[若為公路/國道客運路線則為空值]",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "CityCode": {
           "title": "String",
           "description": "路線權管所屬縣市之代碼(國際ISO 3166-2 三碼城市代碼)[若為公路/國道客運路線則為空值]",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         }
+      },
+      "xml": {
+        "name": "BusRoute"
       }
     },
-    "PTX.Service.DTO.Tourism.Specification.V2.BusTaiwanTripS2STravelTime+TravelTime": {
-      "title": "TravelTime",
+    "PTX.Service.DTO.Tourism.Specification.V2.BusSchedule": {
+      "title": "BusSchedule",
       "required": [
-        "Distance",
-        "FromStopID",
-        "RunTime",
-        "Sequence",
-        "StopTime",
-        "ToStopID"
-      ],
-      "type": "object",
-      "properties": {
-        "Sequence": {
-          "format": "int32",
-          "title": "Int32",
-          "description": "站間序號",
-          "type": "integer"
-        },
-        "FromStopID": {
-          "title": "String",
-          "description": "起站站牌代碼",
-          "type": "string"
-        },
-        "ToStopID": {
-          "title": "String",
-          "description": "迄站站牌代碼",
-          "type": "string"
-        },
-        "Distance": {
-          "format": "float",
-          "title": "Single",
-          "description": "站間距離",
-          "type": "number"
-        },
-        "RunTime": {
-          "format": "int32",
-          "title": "Int32",
-          "description": "站間預估行駛時間",
-          "type": "integer"
-        },
-        "StopTime": {
-          "format": "int32",
-          "title": "Int32",
-          "description": "起站停靠時間",
-          "type": "integer"
-        }
-      }
-    },
-    "PTX.Service.DTO.Tourism.Specification.V2.BusTaiwanTripS2STravelTime": {
-      "title": "BusTaiwanTripS2STravelTime",
-      "required": [
+        "Direction",
         "RouteID",
         "RouteUID",
-        "TravelTimes",
+        "SubRouteID",
+        "SubRouteName",
+        "SubRouteUID",
+        "TaiwanTripName",
         "UpdateTime"
       ],
       "type": "object",
       "properties": {
         "RouteUID": {
           "title": "String",
-          "description": "路線唯一識別代碼，規則為 {業管機關簡碼} + {RouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
-          "type": "string"
+          "description": "路線唯一識別代碼，規則為 {業管機關代碼} + {RouteID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "RouteID": {
           "title": "String",
-          "description": "路線代碼",
-          "type": "string"
+          "description": "地區既用中之路線代碼(為原資料內碼)",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "TaiwanTripName": {
+          "title": "NameType",
+          "description": "台灣好行路線名稱",
+          "allOf": [
+            {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V2.Base.NameType"
+            }
+          ],
+          "xml": {
+            "name": "NameType"
+          }
         },
         "SubRouteUID": {
           "title": "String",
-          "description": "附屬路線唯一識別代碼，規則為 {業管機關簡碼} + {SubRouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
-          "type": "string"
+          "description": "子路線唯一識別代碼，規則為 {業管機關代碼} + {SubRouteID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "SubRouteID": {
           "title": "String",
-          "description": "附屬路線代碼",
-          "type": "string"
+          "description": "地區既用中之子路線代碼(為原資料內碼)",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
-        "TravelTimes": {
+        "SubRouteName": {
+          "title": "NameType",
+          "description": "子路線名稱",
+          "allOf": [
+            {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V2.Base.NameType"
+            }
+          ],
+          "xml": {
+            "name": "NameType"
+          }
+        },
+        "Direction": {
+          "title": "Int32",
+          "description": "去返程 : [0:'去程',1:'返程',2:'迴圈',255:'未知']",
+          "type": "integer"
+        },
+        "Timetables": {
           "title": "Array",
-          "description": "站間運行時間資訊",
+          "description": "預定班表",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/PTX.Service.DTO.Tourism.Specification.V2.BusTaiwanTripS2STravelTime+TravelTime"
+            "$ref": "#/definitions/PTX.Service.DTO.Tourism.Specification.V2.BusTimetable"
+          },
+          "xml": {
+            "name": "List`1"
+          }
+        },
+        "Frequencys": {
+          "title": "Array",
+          "description": "發車班距",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PTX.Service.DTO.Tourism.Specification.V2.BusFrequency"
+          },
+          "xml": {
+            "name": "List`1"
           }
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         }
+      },
+      "xml": {
+        "name": "BusSchedule"
       }
     },
-    "PTX.Service.DTO.Tourism.Specification.V2.ScenicSpotTourismInfo": {
-      "title": "ScenicSpotTourismInfo",
-      "description": "取得觀光景點資料",
+    "PTX.Service.DTO.Tourism.Specification.V2.BusStopOfRoute": {
+      "title": "BusStopOfRoute",
+      "description": "路線與站牌對應資料",
       "required": [
-        "ID",
-        "SrcUpdateTime",
+        "Direction",
+        "KeyPattern",
+        "RouteID",
+        "RouteUID",
+        "Stops",
+        "SubRouteID",
+        "SubRouteName",
+        "SubRouteUID",
+        "TaiwanTripName",
         "UpdateTime"
       ],
       "type": "object",
       "properties": {
-        "ID": {
+        "RouteUID": {
           "title": "String",
-          "description": "景點代碼",
-          "type": "string"
-        },
-        "Name": {
-          "title": "String",
-          "description": "景點名稱",
-          "type": "string"
-        },
-        "DescriptionDetail": {
-          "title": "String",
-          "description": "景點特色詳細說明",
-          "type": "string"
-        },
-        "Description": {
-          "title": "String",
-          "description": "景點特色精簡說明",
-          "type": "string"
-        },
-        "Phone": {
-          "title": "String",
-          "description": "景點服務電話",
-          "type": "string"
-        },
-        "Address": {
-          "title": "String",
-          "description": "景點地址",
-          "type": "string"
-        },
-        "ZipCode": {
-          "title": "String",
-          "description": "郵遞區號",
-          "type": "string"
-        },
-        "TravelInfo": {
-          "title": "String",
-          "description": "交通資訊",
-          "type": "string"
-        },
-        "OpenTime": {
-          "title": "String",
-          "description": "開放時間",
-          "type": "string"
-        },
-        "Picture": {
-          "title": "TourismPicture",
-          "description": "景點照片",
-          "allOf": [
-            {
-              "$ref": "#/definitions/PTX.Service.DTO.Tourism.Specification.V2.TourismPicture"
-            }
-          ]
-        },
-        "MapUrl": {
-          "title": "String",
-          "description": "景點地圖/簡圖介紹網址",
-          "type": "string"
-        },
-        "Position": {
-          "title": "PointType",
-          "description": "景點位置",
-          "allOf": [
-            {
-              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V2.Base.PointType"
-            }
-          ]
-        },
-        "Class1": {
-          "title": "String",
-          "description": "景點分類1",
-          "type": "string"
-        },
-        "Class2": {
-          "title": "String",
-          "description": "景點分類2",
-          "type": "string"
-        },
-        "Class3": {
-          "title": "String",
-          "description": "景點分類3",
-          "type": "string"
-        },
-        "Level": {
-          "title": "String",
-          "description": "古蹟分級",
-          "type": "string"
-        },
-        "WebsiteUrl": {
-          "title": "String",
-          "description": "景點官方網站網址",
-          "type": "string"
-        },
-        "ParkingInfo": {
-          "title": "String",
-          "description": "停車資訊",
-          "type": "string"
-        },
-        "ParkingPosition": {
-          "title": "PointType",
-          "description": "景點主要停車場位置",
-          "allOf": [
-            {
-              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V2.Base.PointType"
-            }
-          ]
-        },
-        "TicketInfo": {
-          "title": "String",
-          "description": "票價資訊",
-          "type": "string"
-        },
-        "Remarks": {
-          "title": "String",
-          "description": "警告及注意事項",
-          "type": "string"
-        },
-        "Keyword": {
-          "title": "String",
-          "description": "常用搜尋關鍵字",
-          "type": "string"
-        },
-        "City": {
-          "title": "String",
-          "description": "所屬縣市",
-          "type": "string"
-        },
-        "SrcUpdateTime": {
-          "title": "DateTime",
-          "description": "觀光局檔案更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
-          "type": "string"
-        },
-        "UpdateTime": {
-          "title": "DateTime",
-          "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
-          "type": "string"
-        }
-      }
-    },
-    "PTX.Service.DTO.Tourism.Specification.V2.ServiceDay": {
-      "title": "ServiceDay",
-      "description": "週內營運日資料",
-      "required": [
-        "Friday",
-        "Monday",
-        "Saturday",
-        "Sunday",
-        "Thursday",
-        "Tuesday",
-        "Wednesday"
-      ],
-      "type": "object",
-      "properties": {
-        "Sunday": {
-          "format": "int32",
-          "title": "integer",
-          "description": "星期日是否營運 : [0:'否',1:'是']",
-          "type": "integer"
-        },
-        "Monday": {
-          "format": "int32",
-          "title": "integer",
-          "description": "星期一是否營運 : [0:'否',1:'是']",
-          "type": "integer"
-        },
-        "Tuesday": {
-          "format": "int32",
-          "title": "integer",
-          "description": "星期二是否營運 : [0:'否',1:'是']",
-          "type": "integer"
-        },
-        "Wednesday": {
-          "format": "int32",
-          "title": "integer",
-          "description": "星期三是否營運 : [0:'否',1:'是']",
-          "type": "integer"
-        },
-        "Thursday": {
-          "format": "int32",
-          "title": "integer",
-          "description": "星期四是否營運 : [0:'否',1:'是']",
-          "type": "integer"
-        },
-        "Friday": {
-          "format": "int32",
-          "title": "integer",
-          "description": "星期五是否營運 : [0:'否',1:'是']",
-          "type": "integer"
-        },
-        "Saturday": {
-          "format": "int32",
-          "title": "integer",
-          "description": "星期六是否營運 : [0:'否',1:'是']",
-          "type": "integer"
-        },
-        "NationalHolidays": {
-          "format": "int32",
-          "title": "integer",
-          "description": "國定假日是否營運 : [0:'否',1:'是']",
-          "type": "integer"
-        }
-      }
-    },
-    "PTX.Service.DTO.Tourism.Specification.V2.DatePeriod": {
-      "title": "DatePeriod",
-      "type": "object",
-      "properties": {
-        "StartDate": {
-          "title": "String",
-          "description": "營運起始日(格式: yyyy-MM-dd)",
-          "type": "string"
-        },
-        "EndDate": {
-          "title": "String",
-          "description": "營運結束日(格式: yyyy-MM-dd)",
-          "type": "string"
-        }
-      }
-    },
-    "PTX.Service.DTO.Tourism.Specification.V2.SpecialDay": {
-      "title": "SpecialDay",
-      "description": "特殊營運日資料",
-      "type": "object",
-      "properties": {
-        "Dates": {
-          "title": "Array",
-          "description": "不連續特殊日期",
-          "type": "array",
-          "items": {
-            "title": "String",
-            "type": "string"
+          "description": "路線唯一識別代碼，規則為 {業管機關代碼} + {RouteID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢",
+          "type": "string",
+          "xml": {
+            "name": "String"
           }
         },
-        "DatePeriod": {
-          "title": "DatePeriod",
-          "description": "連續特殊日期",
+        "RouteID": {
+          "title": "String",
+          "description": "地區既用中之路線代碼(為原資料內碼)",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "TaiwanTripName": {
+          "title": "NameType",
+          "description": "台灣好行路線名稱",
           "allOf": [
             {
-              "$ref": "#/definitions/PTX.Service.DTO.Tourism.Specification.V2.DatePeriod"
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V2.Base.NameType"
             }
-          ]
+          ],
+          "xml": {
+            "name": "NameType"
+          }
         },
-        "ServiceStatus": {
-          "format": "int32",
-          "title": "integer",
-          "description": "營運服務狀態代碼 : [0:'正常營運',1:'加班營運',2:'取消/停駛營運']",
+        "KeyPattern": {
+          "title": "Boolean",
+          "description": "是否為主路線",
+          "type": "boolean"
+        },
+        "SubRouteUID": {
+          "title": "String",
+          "description": "子路線唯一識別代碼，規則為 {業管機關代碼} + {SubRouteID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "SubRouteID": {
+          "title": "String",
+          "description": "地區既用中之子路線代碼(為原資料內碼)",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "SubRouteName": {
+          "title": "NameType",
+          "description": "子路線名稱",
+          "allOf": [
+            {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V2.Base.NameType"
+            }
+          ],
+          "xml": {
+            "name": "NameType"
+          }
+        },
+        "Direction": {
+          "title": "Int32",
+          "description": "去返程 : [0:'去程',1:'返程',2:'迴圈',255:'未知']",
           "type": "integer"
         },
-        "Description": {
-          "title": "String",
-          "description": "特殊營運描述",
+        "Stops": {
+          "title": "Array",
+          "description": "所有經過站牌",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PTX.Service.DTO.Tourism.Specification.V2.Stop"
+          },
+          "xml": {
+            "name": "List`1"
+          }
+        },
+        "UpdateTime": {
+          "format": "date-time",
+          "title": "DateTime",
+          "description": "資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         }
+      },
+      "xml": {
+        "name": "BusStopOfRoute"
       }
     },
     "PTX.Service.DTO.Tourism.Specification.V2.BusStopTime": {
@@ -3595,12 +3340,18 @@
         "StopUID": {
           "title": "String",
           "description": "站牌唯一識別代碼，規則為 {業管機關代碼} + {StopID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "StopID": {
           "title": "String",
           "description": "地區既用中之站牌代碼(為原資料內碼)",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "StopName": {
           "title": "NameType",
@@ -3609,191 +3360,347 @@
             {
               "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V2.Base.NameType"
             }
-          ]
+          ],
+          "xml": {
+            "name": "NameType"
+          }
         },
         "ArrivalTime": {
           "title": "String",
           "description": "到站時間，格式為:HH:mm",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "DepartureTime": {
           "title": "String",
           "description": "離站時間，格式為:HH:mm",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         }
+      },
+      "xml": {
+        "name": "BusStopTime"
       }
     },
-    "PTX.Service.DTO.Tourism.Specification.V2.BusTimetable": {
-      "title": "BusTimetable",
-      "description": "班次資料",
+    "PTX.Service.DTO.Tourism.Specification.V2.BusSubRoute": {
+      "title": "BusSubRoute",
+      "description": "附屬路線資料型別",
       "required": [
-        "StopTimes"
+        "Direction",
+        "OperatorIDs",
+        "SubRouteID",
+        "SubRouteName",
+        "SubRouteUID"
       ],
       "type": "object",
       "properties": {
-        "TripID": {
+        "SubRouteUID": {
           "title": "String",
-          "description": "班次代碼，為無意義之編碼",
-          "type": "string"
+          "description": "附屬路線唯一識別代碼，規則為 {業管機關簡碼} + {SubRouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
-        "ServiceDay": {
-          "title": "ServiceDay",
-          "description": "週內營運日",
+        "SubRouteID": {
+          "title": "String",
+          "description": "地區既用中之附屬路線代碼(為原資料內碼)",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "OperatorIDs": {
+          "title": "Array",
+          "description": "營運業者代碼",
+          "type": "array",
+          "items": {
+            "title": "String",
+            "type": "string",
+            "xml": {
+              "name": "String"
+            }
+          },
+          "xml": {
+            "name": "List`1"
+          }
+        },
+        "SubRouteName": {
+          "title": "NameType",
+          "description": "附屬路線名稱",
           "allOf": [
             {
-              "$ref": "#/definitions/PTX.Service.DTO.Tourism.Specification.V2.ServiceDay"
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V2.Base.NameType"
             }
-          ]
-        },
-        "SpecialDays": {
-          "title": "Array",
-          "description": "特殊營運日",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/PTX.Service.DTO.Tourism.Specification.V2.SpecialDay"
+          ],
+          "xml": {
+            "name": "NameType"
           }
         },
-        "StopTimes": {
-          "title": "Array",
-          "description": "公車停靠時間資料",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/PTX.Service.DTO.Tourism.Specification.V2.BusStopTime"
+        "Headsign": {
+          "title": "String",
+          "description": "車頭描述",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "HeadsignEn": {
+          "title": "String",
+          "description": "車頭英文描述",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "Direction": {
+          "title": "Int32",
+          "description": "去返程 : [0:'去程',1:'返程',2:'迴圈',255:'未知']",
+          "type": "integer"
+        },
+        "FirstBusTime": {
+          "title": "String",
+          "description": "平日第一班發車時間",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "LastBusTime": {
+          "title": "String",
+          "description": "平日返程第一班發車時間",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "HolidayFirstBusTime": {
+          "title": "String",
+          "description": "假日去程第一班發車時間",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "HolidayLastBusTime": {
+          "title": "String",
+          "description": "假日返程第一班發車時間",
+          "type": "string",
+          "xml": {
+            "name": "String"
           }
         }
+      },
+      "xml": {
+        "name": "BusSubRoute"
       }
     },
-    "PTX.Service.DTO.Tourism.Specification.V2.BusFrequency": {
-      "title": "BusFrequency",
-      "description": "發車班距資料",
+    "PTX.Service.DTO.Tourism.Specification.V2.BusTaiwanTripNews": {
+      "title": "BusTaiwanTripNews",
+      "description": "台灣好行最新消息資料",
       "required": [
-        "EndTime",
-        "MaxHeadwayMins",
-        "MinHeadwayMins",
-        "StartTime"
+        "Description",
+        "Language",
+        "NewsID",
+        "Title",
+        "UpdateTime"
       ],
       "type": "object",
       "properties": {
-        "StartTime": {
+        "NewsID": {
           "title": "String",
-          "description": "發車班距起始適用時間，格式為: HH:mm",
+          "description": "最新消息原單位發布代碼",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "Language": {
+          "title": "String",
+          "description": "語系",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "NewsCategory": {
+          "title": "String",
+          "description": "消息類別",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "Title": {
+          "title": "String",
+          "description": "消息標題",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "Description": {
+          "title": "String",
+          "description": "內容描述",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "PublishTime": {
+          "format": "date-time",
+          "description": "消息公告日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "StartTime": {
+          "format": "date-time",
+          "description": "開始時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         },
         "EndTime": {
-          "title": "String",
-          "description": "發車班距結束適用時間，格式為: HH:mm",
+          "format": "date-time",
+          "description": "結束時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         },
-        "MinHeadwayMins": {
-          "format": "int32",
-          "title": "Int32",
-          "description": "最小班距時間(分鐘)",
-          "type": "integer"
+        "SrcUpdateTime": {
+          "format": "date-time",
+          "description": "來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
         },
-        "MaxHeadwayMins": {
-          "format": "int32",
-          "title": "Int32",
-          "description": "最大班距時間(分鐘)",
-          "type": "integer"
-        },
-        "ServiceDay": {
-          "title": "ServiceDay",
-          "description": "週內營運日",
-          "allOf": [
-            {
-              "$ref": "#/definitions/PTX.Service.DTO.Tourism.Specification.V2.ServiceDay"
-            }
-          ]
-        },
-        "SpecialDays": {
-          "title": "Array",
-          "description": "特殊營運日",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/PTX.Service.DTO.Tourism.Specification.V2.SpecialDay"
-          }
+        "UpdateTime": {
+          "format": "date-time",
+          "title": "DateTime",
+          "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
         }
+      },
+      "xml": {
+        "name": "BusTaiwanTripNews"
       }
     },
-    "PTX.Service.DTO.Tourism.Specification.V2.BusSchedule": {
-      "title": "BusSchedule",
+    "PTX.Service.DTO.Tourism.Specification.V2.BusTaiwanTripS2STravelTime": {
+      "title": "BusTaiwanTripS2STravelTime",
       "required": [
-        "Direction",
         "RouteID",
         "RouteUID",
-        "SubRouteID",
-        "SubRouteName",
-        "SubRouteUID",
-        "TaiwanTripName",
+        "TravelTimes",
         "UpdateTime"
       ],
       "type": "object",
       "properties": {
         "RouteUID": {
           "title": "String",
-          "description": "路線唯一識別代碼，規則為 {業管機關代碼} + {RouteID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢",
-          "type": "string"
+          "description": "路線唯一識別代碼，規則為 {業管機關簡碼} + {RouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "RouteID": {
           "title": "String",
-          "description": "地區既用中之路線代碼(為原資料內碼)",
-          "type": "string"
-        },
-        "TaiwanTripName": {
-          "title": "NameType",
-          "description": "台灣好行路線名稱",
-          "allOf": [
-            {
-              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V2.Base.NameType"
-            }
-          ]
+          "description": "路線代碼",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "SubRouteUID": {
           "title": "String",
-          "description": "子路線唯一識別代碼，規則為 {業管機關代碼} + {SubRouteID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢",
-          "type": "string"
+          "description": "附屬路線唯一識別代碼，規則為 {業管機關簡碼} + {SubRouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "SubRouteID": {
           "title": "String",
-          "description": "地區既用中之子路線代碼(為原資料內碼)",
-          "type": "string"
-        },
-        "SubRouteName": {
-          "title": "NameType",
-          "description": "子路線名稱",
-          "allOf": [
-            {
-              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V2.Base.NameType"
-            }
-          ]
-        },
-        "Direction": {
-          "format": "int32",
-          "title": "integer",
-          "description": "去返程 : [0:'去程',1:'返程',2:'迴圈',255:'未知']",
-          "type": "integer"
-        },
-        "Timetables": {
-          "title": "Array",
-          "description": "預定班表",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/PTX.Service.DTO.Tourism.Specification.V2.BusTimetable"
+          "description": "附屬路線代碼",
+          "type": "string",
+          "xml": {
+            "name": "String"
           }
         },
-        "Frequencys": {
+        "TravelTimes": {
           "title": "Array",
-          "description": "發車班距",
+          "description": "站間運行時間資訊",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/PTX.Service.DTO.Tourism.Specification.V2.BusFrequency"
+            "$ref": "#/definitions/PTX.Service.DTO.Tourism.Specification.V2.BusTaiwanTripS2STravelTime+TravelTime"
+          },
+          "xml": {
+            "name": "List`1"
           }
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         }
+      },
+      "xml": {
+        "name": "BusTaiwanTripS2STravelTime"
+      }
+    },
+    "PTX.Service.DTO.Tourism.Specification.V2.BusTaiwanTripS2STravelTime+TravelTime": {
+      "title": "TravelTime",
+      "required": [
+        "Distance",
+        "FromStopID",
+        "RunTime",
+        "Sequence",
+        "StopTime",
+        "ToStopID"
+      ],
+      "type": "object",
+      "properties": {
+        "Sequence": {
+          "format": "int32",
+          "title": "Int32",
+          "description": "站間序號",
+          "type": "integer"
+        },
+        "FromStopID": {
+          "title": "String",
+          "description": "起站站牌代碼",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "ToStopID": {
+          "title": "String",
+          "description": "迄站站牌代碼",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "Distance": {
+          "format": "float",
+          "title": "Single",
+          "description": "站間距離",
+          "type": "number"
+        },
+        "RunTime": {
+          "format": "int32",
+          "title": "Int32",
+          "description": "站間預估行駛時間",
+          "type": "integer"
+        },
+        "StopTime": {
+          "format": "int32",
+          "title": "Int32",
+          "description": "起站停靠時間",
+          "type": "integer"
+        }
+      },
+      "xml": {
+        "name": "TravelTime"
       }
     },
     "PTX.Service.DTO.Tourism.Specification.V2.BusTaiwanTripShape": {
@@ -3812,12 +3719,18 @@
         "RouteUID": {
           "title": "String",
           "description": "路線唯一識別代碼，規則為 {業管機關簡碼} + {RouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "RouteID": {
           "title": "String",
           "description": "地區既用中之路線代碼(為原資料內碼)",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "TaiwanTripName": {
           "title": "NameType",
@@ -3826,29 +3739,818 @@
             {
               "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V2.Base.NameType"
             }
-          ]
+          ],
+          "xml": {
+            "name": "NameType"
+          }
         },
         "Direction": {
-          "format": "int32",
-          "title": "integer",
+          "title": "Int32",
           "description": "去返程，若無值則表示來源尚無區分去返程 : [0:'去程',1:'返程',2:'迴圈',255:'未知']",
           "type": "integer"
         },
         "Geometry": {
           "title": "String",
           "description": "well-known text，為路線軌跡資料",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "SrcUpdateTime": {
-          "title": "DateTime",
+          "format": "date-time",
           "description": "來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         }
+      },
+      "xml": {
+        "name": "BusTaiwanTripShape"
+      }
+    },
+    "PTX.Service.DTO.Tourism.Specification.V2.BusTimetable": {
+      "title": "BusTimetable",
+      "description": "班次資料",
+      "required": [
+        "StopTimes"
+      ],
+      "type": "object",
+      "properties": {
+        "TripID": {
+          "title": "String",
+          "description": "班次代碼，為無意義之編碼",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "ServiceDay": {
+          "title": "ServiceDay",
+          "description": "週內營運日",
+          "allOf": [
+            {
+              "$ref": "#/definitions/PTX.Service.DTO.Tourism.Specification.V2.ServiceDay"
+            }
+          ],
+          "xml": {
+            "name": "ServiceDay"
+          }
+        },
+        "SpecialDays": {
+          "title": "Array",
+          "description": "特殊營運日",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PTX.Service.DTO.Tourism.Specification.V2.SpecialDay"
+          },
+          "xml": {
+            "name": "List`1"
+          }
+        },
+        "StopTimes": {
+          "title": "Array",
+          "description": "公車停靠時間資料",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PTX.Service.DTO.Tourism.Specification.V2.BusStopTime"
+          },
+          "xml": {
+            "name": "List`1"
+          }
+        }
+      },
+      "xml": {
+        "name": "BusTimetable"
+      }
+    },
+    "PTX.Service.DTO.Tourism.Specification.V2.DatePeriod": {
+      "title": "DatePeriod",
+      "type": "object",
+      "properties": {
+        "StartDate": {
+          "title": "String",
+          "description": "營運起始日(格式: yyyy-MM-dd)",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "EndDate": {
+          "title": "String",
+          "description": "營運結束日(格式: yyyy-MM-dd)",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        }
+      },
+      "xml": {
+        "name": "DatePeriod"
+      }
+    },
+    "PTX.Service.DTO.Tourism.Specification.V2.HotelTourismInfo": {
+      "title": "HotelTourismInfo",
+      "description": "取得觀光旅宿資料",
+      "required": [
+        "ID",
+        "SrcUpdateTime",
+        "UpdateTime"
+      ],
+      "type": "object",
+      "properties": {
+        "ID": {
+          "title": "String",
+          "description": "旅館民宿代碼",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "Name": {
+          "title": "String",
+          "description": "旅館民宿名稱",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "Description": {
+          "title": "String",
+          "description": "旅館民宿簡述",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "Grade": {
+          "title": "String",
+          "description": "觀光旅館星級",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "Address": {
+          "title": "String",
+          "description": "旅館民宿地址",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "ZipCode": {
+          "title": "String",
+          "description": "郵遞區號",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "Phone": {
+          "title": "String",
+          "description": "旅館民宿電話",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "Fax": {
+          "title": "String",
+          "description": "旅館民宿傳真",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "WebsiteUrl": {
+          "title": "String",
+          "description": "旅館民宿網站網址",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "Picture": {
+          "title": "TourismPicture",
+          "description": "旅館民宿照片",
+          "allOf": [
+            {
+              "$ref": "#/definitions/PTX.Service.DTO.Tourism.Specification.V2.TourismPicture"
+            }
+          ],
+          "xml": {
+            "name": "TourismPicture"
+          }
+        },
+        "Position": {
+          "title": "PointType",
+          "description": "旅館民宿位置",
+          "allOf": [
+            {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V2.Base.PointType"
+            }
+          ],
+          "xml": {
+            "name": "PointType"
+          }
+        },
+        "Class": {
+          "title": "String",
+          "description": "旅館民宿分類",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "MapUrl": {
+          "title": "String",
+          "description": "旅館民宿地點簡圖連結網址",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "Spec": {
+          "title": "String",
+          "description": "房型、價目及數量說明",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "ServiceInfo": {
+          "title": "String",
+          "description": "服務內容介紹",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "ParkingInfo": {
+          "title": "String",
+          "description": "停車資訊",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "City": {
+          "title": "String",
+          "description": "所屬縣市",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "SrcUpdateTime": {
+          "format": "date-time",
+          "title": "DateTime",
+          "description": "觀光局檔案更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "UpdateTime": {
+          "format": "date-time",
+          "title": "DateTime",
+          "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        }
+      },
+      "xml": {
+        "name": "HotelTourismInfo"
+      }
+    },
+    "PTX.Service.DTO.Tourism.Specification.V2.RestaurantTourismInfo": {
+      "title": "RestaurantTourismInfo",
+      "description": "取得觀光餐飲資料",
+      "required": [
+        "ID",
+        "SrcUpdateTime",
+        "UpdateTime"
+      ],
+      "type": "object",
+      "properties": {
+        "ID": {
+          "title": "String",
+          "description": "餐飲店家代碼",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "Name": {
+          "title": "String",
+          "description": "餐飲店家名稱",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "Description": {
+          "title": "String",
+          "description": "店家簡述",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "Address": {
+          "title": "String",
+          "description": "店家地址",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "ZipCode": {
+          "title": "String",
+          "description": "郵遞區號",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "Phone": {
+          "title": "String",
+          "description": "預約電話",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "OpenTime": {
+          "title": "String",
+          "description": "營業時間",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "WebsiteUrl": {
+          "title": "String",
+          "description": "店家網站網址",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "Picture": {
+          "title": "TourismPicture",
+          "description": "店家照片",
+          "allOf": [
+            {
+              "$ref": "#/definitions/PTX.Service.DTO.Tourism.Specification.V2.TourismPicture"
+            }
+          ],
+          "xml": {
+            "name": "TourismPicture"
+          }
+        },
+        "Position": {
+          "title": "PointType",
+          "description": "店家位置",
+          "allOf": [
+            {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V2.Base.PointType"
+            }
+          ],
+          "xml": {
+            "name": "PointType"
+          }
+        },
+        "Class": {
+          "title": "String",
+          "description": "店家分類",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "MapUrl": {
+          "title": "String",
+          "description": "店家地圖/簡圖介紹網址",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "ParkingInfo": {
+          "title": "String",
+          "description": "停車資訊",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "City": {
+          "title": "String",
+          "description": "所屬縣市",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "SrcUpdateTime": {
+          "format": "date-time",
+          "description": "觀光局檔案更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "UpdateTime": {
+          "format": "date-time",
+          "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        }
+      },
+      "xml": {
+        "name": "RestaurantTourismInfo"
+      }
+    },
+    "PTX.Service.DTO.Tourism.Specification.V2.RouteOperator": {
+      "title": "RouteOperator",
+      "description": "營運業者資訊",
+      "required": [
+        "OperatorCode",
+        "OperatorID",
+        "OperatorName",
+        "OperatorNo"
+      ],
+      "type": "object",
+      "properties": {
+        "OperatorID": {
+          "title": "String",
+          "description": "營運業者代碼",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "OperatorName": {
+          "title": "NameType",
+          "description": "營運業者名稱",
+          "allOf": [
+            {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V2.Base.NameType"
+            }
+          ],
+          "xml": {
+            "name": "NameType"
+          }
+        },
+        "OperatorCode": {
+          "title": "String",
+          "description": "營運業者簡碼",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "OperatorNo": {
+          "title": "String",
+          "description": "營運業者編號[交通部票證資料系統定義]",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        }
+      },
+      "xml": {
+        "name": "RouteOperator"
+      }
+    },
+    "PTX.Service.DTO.Tourism.Specification.V2.ScenicSpotTourismInfo": {
+      "title": "ScenicSpotTourismInfo",
+      "description": "取得觀光景點資料",
+      "required": [
+        "ID",
+        "SrcUpdateTime",
+        "UpdateTime"
+      ],
+      "type": "object",
+      "properties": {
+        "ID": {
+          "title": "String",
+          "description": "景點代碼",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "Name": {
+          "title": "String",
+          "description": "景點名稱",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "DescriptionDetail": {
+          "title": "String",
+          "description": "景點特色詳細說明",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "Description": {
+          "title": "String",
+          "description": "景點特色精簡說明",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "Phone": {
+          "title": "String",
+          "description": "景點服務電話",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "Address": {
+          "title": "String",
+          "description": "景點地址",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "ZipCode": {
+          "title": "String",
+          "description": "郵遞區號",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "TravelInfo": {
+          "title": "String",
+          "description": "交通資訊",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "OpenTime": {
+          "title": "String",
+          "description": "開放時間",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "Picture": {
+          "title": "TourismPicture",
+          "description": "景點照片",
+          "allOf": [
+            {
+              "$ref": "#/definitions/PTX.Service.DTO.Tourism.Specification.V2.TourismPicture"
+            }
+          ],
+          "xml": {
+            "name": "TourismPicture"
+          }
+        },
+        "MapUrl": {
+          "title": "String",
+          "description": "景點地圖/簡圖介紹網址",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "Position": {
+          "title": "PointType",
+          "description": "景點位置",
+          "allOf": [
+            {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V2.Base.PointType"
+            }
+          ],
+          "xml": {
+            "name": "PointType"
+          }
+        },
+        "Class1": {
+          "title": "String",
+          "description": "景點分類1",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "Class2": {
+          "title": "String",
+          "description": "景點分類2",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "Class3": {
+          "title": "String",
+          "description": "景點分類3",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "Level": {
+          "title": "String",
+          "description": "古蹟分級",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "WebsiteUrl": {
+          "title": "String",
+          "description": "景點官方網站網址",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "ParkingInfo": {
+          "title": "String",
+          "description": "停車資訊",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "ParkingPosition": {
+          "title": "PointType",
+          "description": "景點主要停車場位置",
+          "allOf": [
+            {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V2.Base.PointType"
+            }
+          ],
+          "xml": {
+            "name": "PointType"
+          }
+        },
+        "TicketInfo": {
+          "title": "String",
+          "description": "票價資訊",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "Remarks": {
+          "title": "String",
+          "description": "警告及注意事項",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "Keyword": {
+          "title": "String",
+          "description": "常用搜尋關鍵字",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "City": {
+          "title": "String",
+          "description": "所屬縣市",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "SrcUpdateTime": {
+          "format": "date-time",
+          "title": "DateTime",
+          "description": "觀光局檔案更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "UpdateTime": {
+          "format": "date-time",
+          "title": "DateTime",
+          "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        }
+      },
+      "xml": {
+        "name": "ScenicSpotTourismInfo"
+      }
+    },
+    "PTX.Service.DTO.Tourism.Specification.V2.ServiceDay": {
+      "title": "ServiceDay",
+      "description": "週內營運日資料",
+      "required": [
+        "Friday",
+        "Monday",
+        "Saturday",
+        "Sunday",
+        "Thursday",
+        "Tuesday",
+        "Wednesday"
+      ],
+      "type": "object",
+      "properties": {
+        "Sunday": {
+          "title": "Int32",
+          "description": "星期日是否營運 : [0:'否',1:'是']",
+          "type": "integer"
+        },
+        "Monday": {
+          "title": "Int32",
+          "description": "星期一是否營運 : [0:'否',1:'是']",
+          "type": "integer"
+        },
+        "Tuesday": {
+          "title": "Int32",
+          "description": "星期二是否營運 : [0:'否',1:'是']",
+          "type": "integer"
+        },
+        "Wednesday": {
+          "title": "Int32",
+          "description": "星期三是否營運 : [0:'否',1:'是']",
+          "type": "integer"
+        },
+        "Thursday": {
+          "title": "Int32",
+          "description": "星期四是否營運 : [0:'否',1:'是']",
+          "type": "integer"
+        },
+        "Friday": {
+          "title": "Int32",
+          "description": "星期五是否營運 : [0:'否',1:'是']",
+          "type": "integer"
+        },
+        "Saturday": {
+          "title": "Int32",
+          "description": "星期六是否營運 : [0:'否',1:'是']",
+          "type": "integer"
+        },
+        "NationalHolidays": {
+          "title": "Int32",
+          "description": "國定假日是否營運 : [0:'否',1:'是']",
+          "type": "integer"
+        }
+      },
+      "xml": {
+        "name": "ServiceDay"
+      }
+    },
+    "PTX.Service.DTO.Tourism.Specification.V2.SpecialDay": {
+      "title": "SpecialDay",
+      "description": "特殊營運日資料",
+      "type": "object",
+      "properties": {
+        "Dates": {
+          "title": "Array",
+          "description": "不連續特殊日期",
+          "type": "array",
+          "items": {
+            "title": "String",
+            "type": "string",
+            "xml": {
+              "name": "String"
+            }
+          },
+          "xml": {
+            "name": "List`1"
+          }
+        },
+        "DatePeriod": {
+          "title": "DatePeriod",
+          "description": "連續特殊日期",
+          "allOf": [
+            {
+              "$ref": "#/definitions/PTX.Service.DTO.Tourism.Specification.V2.DatePeriod"
+            }
+          ],
+          "xml": {
+            "name": "DatePeriod"
+          }
+        },
+        "ServiceStatus": {
+          "title": "Int32",
+          "description": "營運服務狀態代碼 : [0:'正常營運',1:'加班營運',2:'取消/停駛營運']",
+          "type": "integer"
+        },
+        "Description": {
+          "title": "String",
+          "description": "特殊營運描述",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        }
+      },
+      "xml": {
+        "name": "SpecialDay"
       }
     },
     "PTX.Service.DTO.Tourism.Specification.V2.Stop": {
@@ -3867,12 +4569,18 @@
         "StopUID": {
           "title": "String",
           "description": "站牌唯一識別代碼，規則為 {業管機關簡碼} + {StopID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "StopID": {
           "title": "String",
           "description": "地區既用中之站牌代碼(為原資料內碼)",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "StopName": {
           "title": "NameType",
@@ -3881,11 +4589,13 @@
             {
               "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V2.Base.NameType"
             }
-          ]
+          ],
+          "xml": {
+            "name": "NameType"
+          }
         },
         "StopBoarding": {
-          "format": "int32",
-          "title": "integer",
+          "title": "Int32",
           "description": "上下車站別 : [-1:'可下車',0:'可上下車',1:'可上車']",
           "type": "integer"
         },
@@ -3902,104 +4612,96 @@
             {
               "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V2.Base.PointType"
             }
-          ]
+          ],
+          "xml": {
+            "name": "PointType"
+          }
         },
         "StationID": {
           "title": "String",
           "description": "站牌所屬的站位ID",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "StationGroupID": {
           "title": "String",
           "description": "站牌所屬的組站位ID",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "LocationCityCode": {
           "title": "String",
           "description": "站牌位置縣市之代碼(國際ISO 3166-2 三碼城市代碼)[若為公路/國道客運路線則為空值]",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         }
+      },
+      "xml": {
+        "name": "Stop"
       }
     },
-    "PTX.Service.DTO.Tourism.Specification.V2.BusStopOfRoute": {
-      "title": "BusStopOfRoute",
-      "description": "路線與站牌對應資料",
-      "required": [
-        "Direction",
-        "KeyPattern",
-        "RouteID",
-        "RouteUID",
-        "Stops",
-        "SubRouteID",
-        "SubRouteName",
-        "SubRouteUID",
-        "TaiwanTripName",
-        "UpdateTime"
-      ],
+    "PTX.Service.DTO.Tourism.Specification.V2.TourismPicture": {
+      "title": "TourismPicture",
+      "description": "觀光照片資料型別",
       "type": "object",
       "properties": {
-        "RouteUID": {
+        "PictureUrl1": {
           "title": "String",
-          "description": "路線唯一識別代碼，規則為 {業管機關代碼} + {RouteID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢",
-          "type": "string"
-        },
-        "RouteID": {
-          "title": "String",
-          "description": "地區既用中之路線代碼(為原資料內碼)",
-          "type": "string"
-        },
-        "TaiwanTripName": {
-          "title": "NameType",
-          "description": "台灣好行路線名稱",
-          "allOf": [
-            {
-              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V2.Base.NameType"
-            }
-          ]
-        },
-        "KeyPattern": {
-          "title": "Boolean",
-          "description": "是否為主路線",
-          "type": "boolean"
-        },
-        "SubRouteUID": {
-          "title": "String",
-          "description": "子路線唯一識別代碼，規則為 {業管機關代碼} + {SubRouteID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢",
-          "type": "string"
-        },
-        "SubRouteID": {
-          "title": "String",
-          "description": "地區既用中之子路線代碼(為原資料內碼)",
-          "type": "string"
-        },
-        "SubRouteName": {
-          "title": "NameType",
-          "description": "子路線名稱",
-          "allOf": [
-            {
-              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V2.Base.NameType"
-            }
-          ]
-        },
-        "Direction": {
-          "format": "int32",
-          "title": "integer",
-          "description": "去返程 : [0:'去程',1:'返程',2:'迴圈',255:'未知']",
-          "type": "integer"
-        },
-        "Stops": {
-          "title": "Array",
-          "description": "所有經過站牌",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/PTX.Service.DTO.Tourism.Specification.V2.Stop"
+          "description": "照片連結網址1",
+          "type": "string",
+          "xml": {
+            "name": "String"
           }
         },
-        "UpdateTime": {
-          "title": "DateTime",
-          "description": "資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
-          "type": "string"
+        "PictureDescription1": {
+          "title": "String",
+          "description": "照片說明1",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "PictureUrl2": {
+          "title": "String",
+          "description": "照片連結網址2",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "PictureDescription2": {
+          "title": "String",
+          "description": "照片說明2",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "PictureUrl3": {
+          "title": "String",
+          "description": "照片連結網址3",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "PictureDescription3": {
+          "title": "String",
+          "description": "照片說明3",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         }
+      },
+      "xml": {
+        "name": "TourismPicture"
       }
     }
   },

@@ -40,15 +40,15 @@ type PTXServiceDTOBusSpecificationV3Alert struct {
 	// 影響方向
 	Direction string `json:"Direction,omitempty" xml:"String,omitempty"`
 
-	// DateTime
-	//
 	// 結束日期時間
-	EndTime string `json:"EndTime,omitempty"`
+	// Format: date-time
+	EndTime strfmt.DateTime `json:"EndTime,omitempty"`
 
 	// DateTime
 	//
 	// 消息公告日期時間
-	PublishTime string `json:"PublishTime,omitempty"`
+	// Format: date-time
+	PublishTime strfmt.DateTime `json:"PublishTime,omitempty"`
 
 	// Scope
 	//
@@ -61,12 +61,12 @@ type PTXServiceDTOBusSpecificationV3Alert struct {
 	// DateTime
 	//
 	// [來源端平臺]此筆資料最後更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
-	SrcUpdateTime string `json:"SrcUpdateTime,omitempty"`
+	// Format: date-time
+	SrcUpdateTime strfmt.DateTime `json:"SrcUpdateTime,omitempty"`
 
-	// DateTime
-	//
 	// 開始日期時間
-	StartTime string `json:"StartTime,omitempty"`
+	// Format: date-time
+	StartTime strfmt.DateTime `json:"StartTime,omitempty"`
 
 	// String
 	//
@@ -82,7 +82,23 @@ func (m *PTXServiceDTOBusSpecificationV3Alert) Validate(formats strfmt.Registry)
 		res = append(res, err)
 	}
 
+	if err := m.validateEndTime(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validatePublishTime(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateScope(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateSrcUpdateTime(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateStartTime(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -101,7 +117,55 @@ func (m *PTXServiceDTOBusSpecificationV3Alert) validateAlertID(formats strfmt.Re
 	return nil
 }
 
+func (m *PTXServiceDTOBusSpecificationV3Alert) validateEndTime(formats strfmt.Registry) error {
+	if swag.IsZero(m.EndTime) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("EndTime", "body", "date-time", m.EndTime.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV3Alert) validatePublishTime(formats strfmt.Registry) error {
+	if swag.IsZero(m.PublishTime) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("PublishTime", "body", "date-time", m.PublishTime.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *PTXServiceDTOBusSpecificationV3Alert) validateScope(formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV3Alert) validateSrcUpdateTime(formats strfmt.Registry) error {
+	if swag.IsZero(m.SrcUpdateTime) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("SrcUpdateTime", "body", "date-time", m.SrcUpdateTime.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV3Alert) validateStartTime(formats strfmt.Registry) error {
+	if swag.IsZero(m.StartTime) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("StartTime", "body", "date-time", m.StartTime.String(), formats); err != nil {
+		return err
+	}
 
 	return nil
 }

@@ -19,11 +19,11 @@ import (
 // swagger:model PTX.Service.DTO.Bus.Specification.V3.StopOfRoute+Stop
 type PTXServiceDTOBusSpecificationV3StopOfRouteStop struct {
 
-	// integer
+	// Int32
 	//
 	// 上下車站別 : [-1:'可下車',0:'可上下車',1:'可上車']
 	// Required: true
-	BoardingType *string `json:"BoardingType"`
+	BoardingType *int64 `json:"BoardingType"`
 
 	// String
 	//

@@ -43,10 +43,10 @@ type PTXServiceDTORailSpecificationV3TRATRATrainLiveBoardListTrainLiveBoard stru
 	// 車次代碼
 	TrainNo string `json:"TrainNo,omitempty" xml:"String,omitempty"`
 
-	// integer
+	// Int32
 	//
 	// 列車目前所在之車站狀態 : [0:'進站中',1:'在站上',2:'已離站']
-	TrainStationStatus string `json:"TrainStationStatus,omitempty"`
+	TrainStationStatus int64 `json:"TrainStationStatus,omitempty"`
 
 	// String
 	//
@@ -70,7 +70,8 @@ type PTXServiceDTORailSpecificationV3TRATRATrainLiveBoardListTrainLiveBoard stru
 	//
 	// 本筆位置資料之更新日期時間
 	// Required: true
-	UpdateTime *string `json:"UpdateTime"`
+	// Format: date-time
+	UpdateTime *strfmt.DateTime `json:"UpdateTime"`
 }
 
 // Validate validates this p t x service d t o rail specification v3 t r a t r a train live board list train live board
@@ -121,6 +122,10 @@ func (m *PTXServiceDTORailSpecificationV3TRATRATrainLiveBoardListTrainLiveBoard)
 func (m *PTXServiceDTORailSpecificationV3TRATRATrainLiveBoardListTrainLiveBoard) validateUpdateTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
+		return err
+	}
+
+	if err := validate.FormatOf("UpdateTime", "body", "date-time", m.UpdateTime.String(), formats); err != nil {
 		return err
 	}
 

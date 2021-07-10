@@ -21,41 +21,41 @@ import (
 // swagger:model PTX.Service.DTO.Rail.Specification.V3.TRA.Common.TrainInfo
 type PTXServiceDTORailSpecificationV3TRACommonTrainInfo struct {
 
-	// integer
+	// Int32
 	//
 	// 是否人車同行班次(置於攜車袋之自行車各級列車均可乘車) : [0:'否',1:'是']
 	// Required: true
-	BikeFlag *string `json:"BikeFlag"`
+	BikeFlag *int64 `json:"BikeFlag"`
 
-	// integer
+	// Int32
 	//
 	// 是否設有哺(集)乳室車廂 : [0:'否',1:'是']
 	// Required: true
-	BreastFeedFlag *string `json:"BreastFeedFlag"`
+	BreastFeedFlag *int64 `json:"BreastFeedFlag"`
 
-	// integer
+	// Int32
 	//
 	// 是否提供小客車 : [0:'否',1:'是']
 	// Required: true
-	CarFlag *string `json:"CarFlag"`
+	CarFlag *int64 `json:"CarFlag"`
 
-	// integer
+	// Int32
 	//
 	// 是否為每日行駛 : [0:'否',1:'是']
 	// Required: true
-	DailyFlag *string `json:"DailyFlag"`
+	DailyFlag *int64 `json:"DailyFlag"`
 
-	// integer
+	// Int32
 	//
 	// 是否提供訂便當服務 : [0:'否',1:'是']
 	// Required: true
-	DiningFlag *string `json:"DiningFlag"`
+	DiningFlag *int64 `json:"DiningFlag"`
 
-	// integer
+	// Int32
 	//
 	// 行駛方向 : [0:'順行',1:'逆行']
 	// Required: true
-	Direction *string `json:"Direction"`
+	Direction *int64 `json:"Direction"`
 
 	// String
 	//
@@ -69,11 +69,11 @@ type PTXServiceDTORailSpecificationV3TRACommonTrainInfo struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
 	} `json:"EndingStationName,omitempty" xml:"NameType,omitempty"`
 
-	// integer
+	// Int32
 	//
 	// 是否為加班車 : [0:'否',1:'是']
 	// Required: true
-	ExtraTrainFlag *string `json:"ExtraTrainFlag"`
+	ExtraTrainFlag *int64 `json:"ExtraTrainFlag"`
 
 	// String
 	//
@@ -85,11 +85,11 @@ type PTXServiceDTORailSpecificationV3TRACommonTrainInfo struct {
 	// 跨夜車站代碼
 	OverNightStationID string `json:"OverNightStationID,omitempty" xml:"String,omitempty"`
 
-	// integer
+	// Int32
 	//
 	// 是否提供行李服務 : [0:'否',1:'是']
 	// Required: true
-	PackageServiceFlag *string `json:"PackageServiceFlag"`
+	PackageServiceFlag *int64 `json:"PackageServiceFlag"`
 
 	// String
 	//
@@ -136,16 +136,16 @@ type PTXServiceDTORailSpecificationV3TRACommonTrainInfo struct {
 	// 車次之目的地方向描述
 	TripHeadSign string `json:"TripHeadSign,omitempty" xml:"String,omitempty"`
 
-	// integer
+	// Int32
 	//
 	// 山海線類型 : [0:'不經山海線',1:'山線',2:'海線',3:'成追線']
-	TripLine string `json:"TripLine,omitempty"`
+	TripLine int64 `json:"TripLine,omitempty"`
 
-	// integer
+	// Int32
 	//
 	// 是否設身障旅客專用座位車 : [0:'否',1:'是']
 	// Required: true
-	WheelChairFlag *string `json:"WheelChairFlag"`
+	WheelChairFlag *int64 `json:"WheelChairFlag"`
 }
 
 // Validate validates this p t x service d t o rail specification v3 t r a common train info

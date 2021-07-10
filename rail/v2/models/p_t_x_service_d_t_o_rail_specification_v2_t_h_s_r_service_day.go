@@ -21,47 +21,47 @@ import (
 // swagger:model PTX.Service.DTO.Rail.Specification.V2.THSR.ServiceDay
 type PTXServiceDTORailSpecificationV2THSRServiceDay struct {
 
-	// integer
+	// Int32
 	//
 	// 星期五是否營運 : [0:'否',1:'是']
 	// Required: true
-	Friday *string `json:"Friday"`
+	Friday *int64 `json:"Friday"`
 
-	// integer
+	// Int32
 	//
 	// 星期一是否營運 : [0:'否',1:'是']
 	// Required: true
-	Monday *string `json:"Monday"`
+	Monday *int64 `json:"Monday"`
 
-	// integer
+	// Int32
 	//
 	// 星期六是否營運 : [0:'否',1:'是']
 	// Required: true
-	Saturday *string `json:"Saturday"`
+	Saturday *int64 `json:"Saturday"`
 
-	// integer
+	// Int32
 	//
 	// 星期日是否營運 : [0:'否',1:'是']
 	// Required: true
-	Sunday *string `json:"Sunday"`
+	Sunday *int64 `json:"Sunday"`
 
-	// integer
+	// Int32
 	//
 	// 星期四是否營運 : [0:'否',1:'是']
 	// Required: true
-	Thursday *string `json:"Thursday"`
+	Thursday *int64 `json:"Thursday"`
 
-	// integer
+	// Int32
 	//
 	// 星期二是否營運 : [0:'否',1:'是']
 	// Required: true
-	Tuesday *string `json:"Tuesday"`
+	Tuesday *int64 `json:"Tuesday"`
 
-	// integer
+	// Int32
 	//
 	// 星期三是否營運 : [0:'否',1:'是']
 	// Required: true
-	Wednesday *string `json:"Wednesday"`
+	Wednesday *int64 `json:"Wednesday"`
 }
 
 // Validate validates this p t x service d t o rail specification v2 t h s r service day

@@ -24,139 +24,139 @@ type PTXServiceDTOTourismSpecificationV2ActivityTourismInfo struct {
 	// String
 	//
 	// 主要活動地點地址
-	Address string `json:"Address,omitempty"`
+	Address string `json:"Address,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 費用標示
-	Charge string `json:"Charge,omitempty"`
+	Charge string `json:"Charge,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 所屬縣市
-	City string `json:"City,omitempty"`
+	City string `json:"City,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 活動分類1
-	Class1 string `json:"Class1,omitempty"`
+	Class1 string `json:"Class1,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 活動分類2
-	Class2 string `json:"Class2,omitempty"`
+	Class2 string `json:"Class2,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 週期性活動執行時間
-	Cycle string `json:"Cycle,omitempty"`
+	Cycle string `json:"Cycle,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 活動簡述
-	Description string `json:"Description,omitempty"`
+	Description string `json:"Description,omitempty" xml:"String,omitempty"`
 
-	// DateTime
-	//
 	// 活動結束時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
-	EndTime string `json:"EndTime,omitempty"`
+	// Format: date-time
+	EndTime strfmt.DateTime `json:"EndTime,omitempty"`
 
 	// String
 	//
 	// 活動訊息代碼
 	// Required: true
-	ID *string `json:"ID"`
+	ID *string `json:"ID" xml:"String"`
 
 	// String
 	//
 	// 主要活動地點名稱
-	Location string `json:"Location,omitempty"`
+	Location string `json:"Location,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 活動地圖/簡圖連結網址
-	MapURL string `json:"MapUrl,omitempty"`
+	MapURL string `json:"MapUrl,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 活動名稱
-	Name string `json:"Name,omitempty"`
+	Name string `json:"Name,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 非週期性活動執行時間
-	NonCycle string `json:"NonCycle,omitempty"`
+	NonCycle string `json:"NonCycle,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 活動主辦單位
-	Organizer string `json:"Organizer,omitempty"`
+	Organizer string `json:"Organizer,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 停車資訊
-	ParkingInfo string `json:"ParkingInfo,omitempty"`
+	ParkingInfo string `json:"ParkingInfo,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 活動參與對象
-	Particpation string `json:"Particpation,omitempty"`
+	Particpation string `json:"Particpation,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 活動聯絡電話
-	Phone string `json:"Phone,omitempty"`
+	Phone string `json:"Phone,omitempty" xml:"String,omitempty"`
 
 	// TourismPicture
 	//
 	// 活動照片
 	Picture struct {
 		PTXServiceDTOTourismSpecificationV2TourismPicture
-	} `json:"Picture,omitempty"`
+	} `json:"Picture,omitempty" xml:"TourismPicture,omitempty"`
 
 	// PointType
 	//
 	// 活動位置
 	Position struct {
 		PTXServiceDTOSharedSpecificationV2BasePointType
-	} `json:"Position,omitempty"`
+	} `json:"Position,omitempty" xml:"PointType,omitempty"`
 
 	// String
 	//
 	// 備註(其他活動相關事項)
-	Remarks string `json:"Remarks,omitempty"`
+	Remarks string `json:"Remarks,omitempty" xml:"String,omitempty"`
 
-	// DateTime
-	//
 	// 觀光局檔案更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Required: true
-	SrcUpdateTime *string `json:"SrcUpdateTime"`
+	// Format: date-time
+	SrcUpdateTime *strfmt.DateTime `json:"SrcUpdateTime"`
 
-	// DateTime
-	//
 	// 活動開始時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
-	StartTime string `json:"StartTime,omitempty"`
+	// Format: date-time
+	StartTime strfmt.DateTime `json:"StartTime,omitempty"`
 
 	// String
 	//
 	// 交通資訊
-	TravelInfo string `json:"TravelInfo,omitempty"`
+	TravelInfo string `json:"TravelInfo,omitempty" xml:"String,omitempty"`
 
-	// DateTime
-	//
 	// 本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Required: true
-	UpdateTime *string `json:"UpdateTime"`
+	// Format: date-time
+	UpdateTime *strfmt.DateTime `json:"UpdateTime"`
 
 	// String
 	//
 	// 活動網址
-	WebsiteURL string `json:"WebsiteUrl,omitempty"`
+	WebsiteURL string `json:"WebsiteUrl,omitempty" xml:"String,omitempty"`
 }
 
 // Validate validates this p t x service d t o tourism specification v2 activity tourism info
 func (m *PTXServiceDTOTourismSpecificationV2ActivityTourismInfo) Validate(formats strfmt.Registry) error {
 	var res []error
+
+	if err := m.validateEndTime(formats); err != nil {
+		res = append(res, err)
+	}
 
 	if err := m.validateID(formats); err != nil {
 		res = append(res, err)
@@ -174,6 +174,10 @@ func (m *PTXServiceDTOTourismSpecificationV2ActivityTourismInfo) Validate(format
 		res = append(res, err)
 	}
 
+	if err := m.validateStartTime(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateUpdateTime(formats); err != nil {
 		res = append(res, err)
 	}
@@ -181,6 +185,18 @@ func (m *PTXServiceDTOTourismSpecificationV2ActivityTourismInfo) Validate(format
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *PTXServiceDTOTourismSpecificationV2ActivityTourismInfo) validateEndTime(formats strfmt.Registry) error {
+	if swag.IsZero(m.EndTime) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("EndTime", "body", "date-time", m.EndTime.String(), formats); err != nil {
+		return err
+	}
+
 	return nil
 }
 
@@ -215,12 +231,32 @@ func (m *PTXServiceDTOTourismSpecificationV2ActivityTourismInfo) validateSrcUpda
 		return err
 	}
 
+	if err := validate.FormatOf("SrcUpdateTime", "body", "date-time", m.SrcUpdateTime.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTOTourismSpecificationV2ActivityTourismInfo) validateStartTime(formats strfmt.Registry) error {
+	if swag.IsZero(m.StartTime) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("StartTime", "body", "date-time", m.StartTime.String(), formats); err != nil {
+		return err
+	}
+
 	return nil
 }
 
 func (m *PTXServiceDTOTourismSpecificationV2ActivityTourismInfo) validateUpdateTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
+		return err
+	}
+
+	if err := validate.FormatOf("UpdateTime", "body", "date-time", m.UpdateTime.String(), formats); err != nil {
 		return err
 	}
 

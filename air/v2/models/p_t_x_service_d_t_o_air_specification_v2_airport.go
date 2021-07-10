@@ -24,65 +24,66 @@ type PTXServiceDTOAirSpecificationV2Airport struct {
 	// String
 	//
 	// 機場地址
-	AirportAddress string `json:"AirportAddress,omitempty"`
+	AirportAddress string `json:"AirportAddress,omitempty" xml:"String,omitempty"`
 
 	// NameType
 	//
 	// 機場所屬城市
 	AirportCityName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"AirportCityName,omitempty"`
+	} `json:"AirportCityName,omitempty" xml:"NameType,omitempty"`
 
 	// String
 	//
 	// 機場IATA國際代碼
-	AirportIATA string `json:"AirportIATA,omitempty"`
+	AirportIATA string `json:"AirportIATA,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 機場ICAO國際代碼
-	AirportICAO string `json:"AirportICAO,omitempty"`
+	AirportICAO string `json:"AirportICAO,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 機場IATA國際代碼
 	// Required: true
-	AirportID *string `json:"AirportID"`
+	AirportID *string `json:"AirportID" xml:"String"`
 
 	// NameType
 	//
 	// 機場中文名稱
 	AirportName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"AirportName,omitempty"`
+	} `json:"AirportName,omitempty" xml:"NameType,omitempty"`
 
 	// String
 	//
 	// 機場國籍
-	AirportNationality string `json:"AirportNationality,omitempty"`
+	AirportNationality string `json:"AirportNationality,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 機場聯繫電話
-	AirportPhone string `json:"AirportPhone,omitempty"`
+	AirportPhone string `json:"AirportPhone,omitempty" xml:"String,omitempty"`
 
 	// PointType
 	//
 	// 機場位置
 	AirportPosition struct {
 		PTXServiceDTOSharedSpecificationV2BasePointType
-	} `json:"AirportPosition,omitempty"`
+	} `json:"AirportPosition,omitempty" xml:"PointType,omitempty"`
 
 	// String
 	//
 	// 業管機關代碼(流水號)
-	AuthorityID string `json:"AuthorityID,omitempty"`
+	AuthorityID string `json:"AuthorityID,omitempty" xml:"String,omitempty"`
 
 	// DateTime
 	//
 	// 資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Required: true
-	UpdateTime *string `json:"UpdateTime"`
+	// Format: date-time
+	UpdateTime *strfmt.DateTime `json:"UpdateTime"`
 
 	// Int32
 	//
@@ -161,6 +162,10 @@ func (m *PTXServiceDTOAirSpecificationV2Airport) validateAirportPosition(formats
 func (m *PTXServiceDTOAirSpecificationV2Airport) validateUpdateTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
+		return err
+	}
+
+	if err := validate.FormatOf("UpdateTime", "body", "date-time", m.UpdateTime.String(), formats); err != nil {
 		return err
 	}
 

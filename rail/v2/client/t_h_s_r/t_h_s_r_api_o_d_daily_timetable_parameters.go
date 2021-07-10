@@ -113,8 +113,10 @@ type THSRAPIODDailyTimetableParams struct {
 	/* TrainDate.
 
 	   欲查詢的日期(格式: yyyy-MM-dd)
+
+	   Format: date-time
 	*/
-	TrainDate string
+	TrainDate strfmt.DateTime
 
 	timeout    time.Duration
 	Context    context.Context
@@ -269,13 +271,13 @@ func (o *THSRAPIODDailyTimetableParams) SetOriginStationID(originStationID strin
 }
 
 // WithTrainDate adds the trainDate to the t h s r Api o d daily timetable params
-func (o *THSRAPIODDailyTimetableParams) WithTrainDate(trainDate string) *THSRAPIODDailyTimetableParams {
+func (o *THSRAPIODDailyTimetableParams) WithTrainDate(trainDate strfmt.DateTime) *THSRAPIODDailyTimetableParams {
 	o.SetTrainDate(trainDate)
 	return o
 }
 
 // SetTrainDate adds the trainDate to the t h s r Api o d daily timetable params
-func (o *THSRAPIODDailyTimetableParams) SetTrainDate(trainDate string) {
+func (o *THSRAPIODDailyTimetableParams) SetTrainDate(trainDate strfmt.DateTime) {
 	o.TrainDate = trainDate
 }
 
@@ -393,7 +395,7 @@ func (o *THSRAPIODDailyTimetableParams) WriteToRequest(r runtime.ClientRequest, 
 	}
 
 	// path param TrainDate
-	if err := r.SetPathParam("TrainDate", o.TrainDate); err != nil {
+	if err := r.SetPathParam("TrainDate", o.TrainDate.String()); err != nil {
 		return err
 	}
 

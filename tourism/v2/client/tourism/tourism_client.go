@@ -1002,9 +1002,9 @@ func (a *Client) TourismAPIScenicSpot(params *TourismAPIScenicSpotParams, opts .
 }
 
 /*
-  TourismAPIScenicSpot0 取得所有觀光景點資料s
+  TourismAPIScenicSpot0 取得指定s 縣市 觀光景點資料
 
-  取得所有觀光景點資料
+  取得指定[縣市]觀光景點資料
 */
 func (a *Client) TourismAPIScenicSpot0(params *TourismAPIScenicSpot0Params, opts ...ClientOption) (*TourismAPIScenicSpot0OK, error) {
 	// TODO: Validate the params before sending

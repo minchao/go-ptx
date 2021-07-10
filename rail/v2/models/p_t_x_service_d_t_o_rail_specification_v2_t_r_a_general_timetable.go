@@ -38,10 +38,9 @@ type PTXServiceDTORailSpecificationV2TRAGeneralTimetable struct {
 		PTXServiceDTORailSpecificationV2TRAServiceDay
 	} `json:"ServiceDay" xml:"ServiceDay"`
 
-	// DateTime
-	//
 	// 來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
-	SrcUpdateTime string `json:"SrcUpdateTime,omitempty"`
+	// Format: date-time
+	SrcUpdateTime strfmt.DateTime `json:"SrcUpdateTime,omitempty"`
 
 	// Array
 	//
@@ -62,6 +61,10 @@ func (m *PTXServiceDTORailSpecificationV2TRAGeneralTimetable) Validate(formats s
 		res = append(res, err)
 	}
 
+	if err := m.validateSrcUpdateTime(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateStopTimes(formats); err != nil {
 		res = append(res, err)
 	}
@@ -78,6 +81,18 @@ func (m *PTXServiceDTORailSpecificationV2TRAGeneralTimetable) validateGeneralTra
 }
 
 func (m *PTXServiceDTORailSpecificationV2TRAGeneralTimetable) validateServiceDay(formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV2TRAGeneralTimetable) validateSrcUpdateTime(formats strfmt.Registry) error {
+	if swag.IsZero(m.SrcUpdateTime) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("SrcUpdateTime", "body", "date-time", m.SrcUpdateTime.String(), formats); err != nil {
+		return err
+	}
 
 	return nil
 }

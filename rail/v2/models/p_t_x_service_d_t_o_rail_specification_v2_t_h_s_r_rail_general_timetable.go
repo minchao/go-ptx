@@ -44,7 +44,8 @@ type PTXServiceDTORailSpecificationV2THSRRailGeneralTimetable struct {
 	// DateTime
 	//
 	// 發布時間(格式: yyyy-MM-dd)
-	UpdateTime string `json:"UpdateTime,omitempty"`
+	// Format: date-time
+	UpdateTime strfmt.DateTime `json:"UpdateTime,omitempty"`
 
 	// Int32
 	//
@@ -66,6 +67,10 @@ func (m *PTXServiceDTORailSpecificationV2THSRRailGeneralTimetable) Validate(form
 	}
 
 	if err := m.validateGeneralTimetable(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateUpdateTime(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -98,6 +103,18 @@ func (m *PTXServiceDTORailSpecificationV2THSRRailGeneralTimetable) validateExpir
 }
 
 func (m *PTXServiceDTORailSpecificationV2THSRRailGeneralTimetable) validateGeneralTimetable(formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV2THSRRailGeneralTimetable) validateUpdateTime(formats strfmt.Registry) error {
+	if swag.IsZero(m.UpdateTime) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("UpdateTime", "body", "date-time", m.UpdateTime.String(), formats); err != nil {
+		return err
+	}
 
 	return nil
 }

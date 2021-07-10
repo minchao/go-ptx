@@ -8,8 +8,10 @@ package models
 import (
 	"context"
 
+	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
+	"github.com/go-openapi/validate"
 )
 
 // PTXServiceDTORailSpecificationV3TRACommonSpecialDay SpecialDay
@@ -29,24 +31,59 @@ type PTXServiceDTORailSpecificationV3TRACommonSpecialDay struct {
 	// 特殊營運描述
 	Description string `json:"Description,omitempty" xml:"String,omitempty"`
 
-	// DateTime
-	//
 	// 結束日期
-	EndDate string `json:"EndDate,omitempty"`
+	// Format: date-time
+	EndDate strfmt.DateTime `json:"EndDate,omitempty"`
 
-	// integer
+	// Int32
 	//
 	// 營運服務狀態代碼 : [0:'停止營運',1:'正常營運',2:'加班營運']
-	ServiceStatus string `json:"ServiceStatus,omitempty"`
+	ServiceStatus int64 `json:"ServiceStatus,omitempty"`
 
-	// DateTime
-	//
 	// 開始日期
-	StartDate string `json:"StartDate,omitempty"`
+	// Format: date-time
+	StartDate strfmt.DateTime `json:"StartDate,omitempty"`
 }
 
 // Validate validates this p t x service d t o rail specification v3 t r a common special day
 func (m *PTXServiceDTORailSpecificationV3TRACommonSpecialDay) Validate(formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.validateEndDate(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateStartDate(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV3TRACommonSpecialDay) validateEndDate(formats strfmt.Registry) error {
+	if swag.IsZero(m.EndDate) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("EndDate", "body", "date-time", m.EndDate.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV3TRACommonSpecialDay) validateStartDate(formats strfmt.Registry) error {
+	if swag.IsZero(m.StartDate) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("StartDate", "body", "date-time", m.StartDate.String(), formats); err != nil {
+		return err
+	}
+
 	return nil
 }
 

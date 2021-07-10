@@ -3083,14 +3083,14 @@
           }
         },
         "Direction": {
-          "title": "integer",
+          "title": "Int32",
           "description": "車輛去返程 : [0:'去程',1:'返程',2:'迴圈',255:'未知']",
-          "type": "string"
+          "type": "integer"
         },
         "MessageType": {
-          "title": "integer",
+          "title": "Int32",
           "description": "資料型態種類 : [0:'未知',1:'定期',2:'非定期']",
-          "type": "string"
+          "type": "integer"
         },
         "BusPosition": {
           "title": "PointType",
@@ -3117,36 +3117,38 @@
           "type": "number"
         },
         "DutyStatus": {
-          "title": "integer",
+          "title": "Int32",
           "description": "勤務狀態 : [0:'正常',1:'開始',2:'結束']",
-          "type": "string"
+          "type": "integer"
         },
         "BusStatus": {
-          "title": "integer",
+          "title": "Int32",
           "description": "行車狀況 : [0:'正常',1:'車禍',2:'故障',3:'塞車',4:'緊急求援',5:'加油',90:'不明',91:'去回不明',98:'偏移路線',99:'非營運狀態',100:'客滿',101:'包車出租',255:'未知']",
-          "type": "string"
+          "type": "integer"
         },
         "VehicleType": {
-          "title": "integer",
+          "title": "Int32",
           "description": "車輛種類 : [1:'一般',2:'復康巴士',3:'專車',4:'其他']",
-          "type": "string"
+          "type": "integer"
         },
         "GPSTime": {
-          "title": "DateTime",
+          "format": "date-time",
           "description": "車機系統紀錄時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         },
         "GPSTransTime": {
-          "title": "DateTime",
+          "format": "date-time",
           "description": "車機系統傳送日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         },
         "RecTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "來源端平台接收時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         },
         "TransTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "來源端平台資料傳出時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -3272,9 +3274,9 @@
           }
         },
         "Direction": {
-          "title": "integer",
+          "title": "Int32",
           "description": "車輛去返程 : [0:'去程',1:'返程',2:'迴圈',255:'未知']",
-          "type": "string"
+          "type": "integer"
         },
         "StopUID": {
           "title": "String",
@@ -3305,46 +3307,48 @@
           }
         },
         "MessageType": {
-          "title": "integer",
+          "title": "Int32",
           "description": "資料型態種類 : [0:'未知',1:'定期',2:'非定期']",
-          "type": "string"
+          "type": "integer"
         },
         "A2EventType": {
-          "title": "integer",
+          "title": "Int32",
           "description": "進站離站 : [0:'離站',1:'進站']",
-          "type": "string"
+          "type": "integer"
         },
         "VehicleType": {
-          "title": "integer",
+          "title": "Int32",
           "description": "車輛種類 : [1:'一般',2:'復康巴士',3:'專車',4:'其他']",
-          "type": "string"
+          "type": "integer"
         },
         "DutyStatus": {
-          "title": "integer",
+          "title": "Int32",
           "description": "勤務狀態 : [0:'正常',1:'開始',2:'結束']",
-          "type": "string"
+          "type": "integer"
         },
         "BusStatus": {
-          "title": "integer",
+          "title": "Int32",
           "description": "行車狀況 : [0:'正常',1:'車禍',2:'故障',3:'塞車',4:'緊急求援',5:'加油',90:'不明',91:'去回不明',98:'偏移路線',99:'非營運狀態',100:'客滿',101:'包車出租',255:'未知']",
-          "type": "string"
+          "type": "integer"
         },
         "GPSTime": {
-          "title": "DateTime",
+          "format": "date-time",
           "description": "車機系統紀錄時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         },
         "GPSTransTime": {
-          "title": "DateTime",
+          "format": "date-time",
           "description": "車機系統傳送日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         },
         "RecTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "來源端平台接收時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         },
         "TransTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "來源端平台資料傳出時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -3415,21 +3419,23 @@
           }
         },
         "PublishTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "消息公告日期時間",
           "type": "string"
         },
         "StartTime": {
-          "title": "DateTime",
+          "format": "date-time",
           "description": "開始日期時間",
           "type": "string"
         },
         "EndTime": {
-          "title": "DateTime",
+          "format": "date-time",
           "description": "結束日期時間",
           "type": "string"
         },
         "SrcUpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "[來源端平臺]此筆資料最後更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -3455,6 +3461,7 @@
       "type": "object",
       "properties": {
         "Date": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "適用日期",
           "type": "string"
@@ -3532,9 +3539,9 @@
           }
         },
         "Direction": {
-          "title": "integer",
+          "title": "Int32",
           "description": "去返程 : [0:'去程',1:'返程',2:'迴圈',255:'未知']",
-          "type": "string"
+          "type": "integer"
         },
         "Timetables": {
           "title": "Array",
@@ -3665,9 +3672,9 @@
           }
         },
         "Direction": {
-          "title": "integer",
+          "title": "Int32",
           "description": "車輛去返程 : [0:'去程',1:'返程',2:'迴圈',255:'未知']",
-          "type": "string"
+          "type": "integer"
         },
         "Stops": {
           "title": "Array",
@@ -3825,9 +3832,9 @@
           }
         },
         "Direction": {
-          "title": "integer",
+          "title": "Int32",
           "description": "車輛去返程 : [0:'去程',1:'返程',2:'迴圈',255:'未知']",
-          "type": "string"
+          "type": "integer"
         },
         "FirstLastTrips": {
           "title": "Array",
@@ -4032,9 +4039,9 @@
           }
         },
         "Direction": {
-          "title": "integer",
+          "title": "Int32",
           "description": "車輛去返程(該方向指的是此公車運具目前所在路線的去返程方向，非指站牌所在路線的去返程方向，使用時請加值業者多加注意) : [0:'去程',1:'返程',2:'迴圈',255:'未知']",
-          "type": "string"
+          "type": "integer"
         },
         "DestinationStopID": {
           "title": "String",
@@ -4118,9 +4125,9 @@
           }
         },
         "StopStatus": {
-          "title": "integer",
+          "title": "Int32",
           "description": "車輛狀態備註 : [0:'正常',1:'尚未發車',2:'交管不停靠',3:'末班車已過',4:'今日未營運']",
-          "type": "string"
+          "type": "integer"
         },
         "StopCountDown": {
           "format": "int32",
@@ -4128,16 +4135,18 @@
           "type": "integer"
         },
         "DataTime": {
-          "title": "DateTime",
+          "format": "date-time",
           "description": "系統演算該筆預估到站資料的時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         },
         "RecTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "來源端平台接收時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         },
         "TransTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "來源端平台資料傳出時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -4359,21 +4368,23 @@
           }
         },
         "PublishTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "消息公告日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         },
         "StartTime": {
-          "title": "DateTime",
+          "format": "date-time",
           "description": "開始時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         },
         "EndTime": {
-          "title": "DateTime",
+          "format": "date-time",
           "description": "結束時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         },
         "SrcUpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "[來源端平臺]此筆資料最後更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -4585,9 +4596,9 @@
           }
         },
         "RouteType": {
-          "title": "integer",
+          "title": "Int32",
           "description": "公車路線類別 : [11:'市區公車',12:'公路客運',13:'國道客運']",
-          "type": "string"
+          "type": "integer"
         },
         "ServiceType": {
           "title": "ServiceType",
@@ -4882,19 +4893,19 @@
           }
         },
         "FarePricingType": {
-          "title": "integer",
+          "title": "Int32",
           "description": "描述該路線計費方式 : [0:'段次計費',1:'起迄站間計費',2:'計費站區間計費']",
-          "type": "string"
+          "type": "integer"
         },
         "IsFreeBus": {
-          "title": "integer",
+          "title": "Int32",
           "description": "是否為免費公車 : [0:'否',1:'是']",
-          "type": "string"
+          "type": "integer"
         },
         "IsForAllSubRoutes": {
-          "title": "integer",
+          "title": "Int32",
           "description": "該收費方式是否應用到所有附屬路線 : [0:'否',1:'是']",
-          "type": "string"
+          "type": "integer"
         },
         "SectionFares": {
           "title": "Array",
@@ -4945,9 +4956,9 @@
       "type": "object",
       "properties": {
         "Direction": {
-          "title": "integer",
+          "title": "Int32",
           "description": "方向性描述 : [0:'去程',1:'返程',2:'迴圈',255:'未知']",
-          "type": "string"
+          "type": "integer"
         },
         "OriginStops": {
           "title": "OD",
@@ -4999,14 +5010,14 @@
       "type": "object",
       "properties": {
         "TicketType": {
-          "title": "integer",
+          "title": "Int32",
           "description": "票種類型 : [1:'一般票',2:'來回票',3:'電子票證',4:'回數票',5:'定期票30天期',6:'定期票60天期',7:'早鳥票',8:'定期票90天期']",
-          "type": "string"
+          "type": "integer"
         },
         "FareClass": {
-          "title": "integer",
+          "title": "Int32",
           "description": "費率等級 : [1:'成人',2:'學生',3:'孩童',4:'敬老',5:'愛心',6:'愛心孩童',7:'愛心優待或愛心陪伴',8:'團體',9:'軍警',10:'由各運業者自行定義的半票']",
-          "type": "string"
+          "type": "integer"
         },
         "Price": {
           "title": "String",
@@ -5124,9 +5135,9 @@
           }
         },
         "Direction": {
-          "title": "integer",
+          "title": "Int32",
           "description": "方向性描述 : [0:'去程',1:'返程',2:'迴圈',255:'未知']",
-          "type": "string"
+          "type": "integer"
         },
         "FareBufferZoneOrigin": {
           "title": "FareBufferZone",
@@ -5216,14 +5227,14 @@
       "type": "object",
       "properties": {
         "TicketType": {
-          "title": "integer",
+          "title": "Int32",
           "description": "票種類型 : [1:'一般票',2:'來回票',3:'電子票證',4:'回數票',5:'定期票30天期',6:'定期票60天期',7:'早鳥票',8:'定期票90天期']",
-          "type": "string"
+          "type": "integer"
         },
         "FareClass": {
-          "title": "integer",
+          "title": "Int32",
           "description": "費率等級 : [1:'成人',2:'學生',3:'孩童',4:'敬老',5:'愛心',6:'愛心孩童',7:'愛心優待或愛心陪伴',8:'團體',9:'軍警',10:'由各運業者自行定義的半票']",
-          "type": "string"
+          "type": "integer"
         },
         "Price": {
           "title": "String",
@@ -5249,9 +5260,9 @@
       "type": "object",
       "properties": {
         "Direction": {
-          "title": "integer",
+          "title": "Int32",
           "description": "方向性描述 : [0:'去程',1:'返程',2:'迴圈',255:'未知']",
-          "type": "string"
+          "type": "integer"
         },
         "OriginStage": {
           "title": "Stage",
@@ -5354,14 +5365,14 @@
           }
         },
         "TicketType": {
-          "title": "integer",
+          "title": "Int32",
           "description": "票種類型 : [1:'一般票',2:'來回票',3:'電子票證',4:'回數票',5:'定期票30天期',6:'定期票60天期',7:'早鳥票',8:'定期票90天期']",
-          "type": "string"
+          "type": "integer"
         },
         "FareClass": {
-          "title": "integer",
+          "title": "Int32",
           "description": "費率等級 : [1:'成人',2:'學生',3:'孩童',4:'敬老',5:'愛心',6:'愛心孩童',7:'愛心優待或愛心陪伴',8:'團體',9:'軍警',10:'由各運業者自行定義的半票']",
-          "type": "string"
+          "type": "integer"
         },
         "DiscountPeriods": {
           "title": "Array",
@@ -5411,59 +5422,59 @@
           }
         },
         "Sunday": {
-          "title": "integer",
+          "title": "Int32",
           "description": "星期日是否營運 : [0:'否',1:'是']",
-          "type": "string"
+          "type": "integer"
         },
         "Monday": {
-          "title": "integer",
+          "title": "Int32",
           "description": "星期一是否營運 : [0:'否',1:'是']",
-          "type": "string"
+          "type": "integer"
         },
         "Tuesday": {
-          "title": "integer",
+          "title": "Int32",
           "description": "星期二是否營運 : [0:'否',1:'是']",
-          "type": "string"
+          "type": "integer"
         },
         "Wednesday": {
-          "title": "integer",
+          "title": "Int32",
           "description": "星期三是否營運 : [0:'否',1:'是']",
-          "type": "string"
+          "type": "integer"
         },
         "Thursday": {
-          "title": "integer",
+          "title": "Int32",
           "description": "星期四是否營運 : [0:'否',1:'是']",
-          "type": "string"
+          "type": "integer"
         },
         "Friday": {
-          "title": "integer",
+          "title": "Int32",
           "description": "星期五是否營運 : [0:'否',1:'是']",
-          "type": "string"
+          "type": "integer"
         },
         "Saturday": {
-          "title": "integer",
+          "title": "Int32",
           "description": "星期六是否營運 : [0:'否',1:'是']",
-          "type": "string"
+          "type": "integer"
         },
         "NationalHolidays": {
-          "title": "integer",
+          "title": "Int32",
           "description": "國定假日是否營運 : [0:'否',1:'是']",
-          "type": "string"
+          "type": "integer"
         },
         "DayBeforeHoliday": {
-          "title": "integer",
+          "title": "Int32",
           "description": "假日前一日是否營運 : [0:'否',1:'是']",
-          "type": "string"
+          "type": "integer"
         },
         "DayAfterHoliday": {
-          "title": "integer",
+          "title": "Int32",
           "description": "假日後一日是否營運 : [0:'否',1:'是']",
-          "type": "string"
+          "type": "integer"
         },
         "TyphoonDay": {
-          "title": "integer",
+          "title": "Int32",
           "description": "颱風停止上班上課期間是否營運 : [0:'否',1:'是']",
-          "type": "string"
+          "type": "integer"
         }
       },
       "xml": {
@@ -5809,9 +5820,9 @@
           }
         },
         "Direction": {
-          "title": "integer",
+          "title": "Int32",
           "description": "去返程 : [0:'去程',1:'返程',2:'迴圈',255:'未知']",
-          "type": "string"
+          "type": "integer"
         },
         "ScheduleURL": {
           "title": "String",
@@ -5879,59 +5890,59 @@
           }
         },
         "Monday": {
-          "title": "integer",
+          "title": "Int32",
           "description": "星期一營運與否 : [0:'否',1:'是']",
-          "type": "string"
+          "type": "integer"
         },
         "Tuesday": {
-          "title": "integer",
+          "title": "Int32",
           "description": "星期二營運與否 : [0:'否',1:'是']",
-          "type": "string"
+          "type": "integer"
         },
         "Wednesday": {
-          "title": "integer",
+          "title": "Int32",
           "description": "星期三營運與否 : [0:'否',1:'是']",
-          "type": "string"
+          "type": "integer"
         },
         "Thursday": {
-          "title": "integer",
+          "title": "Int32",
           "description": "星期四營運與否 : [0:'否',1:'是']",
-          "type": "string"
+          "type": "integer"
         },
         "Friday": {
-          "title": "integer",
+          "title": "Int32",
           "description": "星期五營運與否 : [0:'否',1:'是']",
-          "type": "string"
+          "type": "integer"
         },
         "Saturday": {
-          "title": "integer",
+          "title": "Int32",
           "description": "星期六營運與否 : [0:'否',1:'是']",
-          "type": "string"
+          "type": "integer"
         },
         "Sunday": {
-          "title": "integer",
+          "title": "Int32",
           "description": "星期日營運與否 : [0:'否',1:'是']",
-          "type": "string"
+          "type": "integer"
         },
         "NationalHolidays": {
-          "title": "integer",
+          "title": "Int32",
           "description": "國定假日營運與否 : [0:'否',1:'是']",
-          "type": "string"
+          "type": "integer"
         },
         "DayBeforeHoliday": {
-          "title": "integer",
+          "title": "Int32",
           "description": "國定假日前一日營運與否 : [0:'否',1:'是']",
-          "type": "string"
+          "type": "integer"
         },
         "DayAfterHoliday": {
-          "title": "integer",
+          "title": "Int32",
           "description": "國定假日後一日營運與否 : [0:'否',1:'是']",
-          "type": "string"
+          "type": "integer"
         },
         "TyphoonDay": {
-          "title": "integer",
+          "title": "Int32",
           "description": "颱風停止上班上課期間營運與否 : [0:'否',1:'是']",
-          "type": "string"
+          "type": "integer"
         }
       },
       "xml": {
@@ -5976,9 +5987,9 @@
           }
         },
         "ServiceStatus": {
-          "title": "integer",
+          "title": "Int32",
           "description": "營運服務狀態代碼0=停止營運, 1=正常營運 , 2=加班營運 : [0:'正常營運',1:'加班營運',2:'取消/停駛營運']",
-          "type": "string"
+          "type": "integer"
         },
         "Description": {
           "title": "String",
@@ -6445,9 +6456,9 @@
           }
         },
         "Direction": {
-          "title": "integer",
+          "title": "Int32",
           "description": "車輛去返程 : [0:'去程',1:'返程',2:'迴圈',255:'未知']",
-          "type": "string"
+          "type": "integer"
         },
         "Geometry": {
           "title": "String",
@@ -6755,9 +6766,9 @@
           }
         },
         "Direction": {
-          "title": "integer",
+          "title": "Int32",
           "description": "車輛去返程 : [0:'去程',1:'返程',2:'迴圈',255:'未知']",
-          "type": "string"
+          "type": "integer"
         },
         "Stops": {
           "title": "Array",
@@ -6868,9 +6879,9 @@
           }
         },
         "BoardingType": {
-          "title": "integer",
+          "title": "Int32",
           "description": "上下車站別 : [-1:'可下車',0:'可上下車',1:'可上車']",
-          "type": "string"
+          "type": "integer"
         },
         "StopSequence": {
           "format": "int32",
@@ -7068,9 +7079,9 @@
           }
         },
         "Direction": {
-          "title": "integer",
+          "title": "Int32",
           "description": "車輛去返程 : [0:'去程',1:'返程',2:'迴圈',255:'未知']",
-          "type": "string"
+          "type": "integer"
         },
         "HeadSign": {
           "title": "String",
@@ -7290,14 +7301,14 @@
           }
         },
         "VehicleClass": {
-          "title": "integer",
+          "title": "Int32",
           "description": "車輛型別 : [1:'大型巴士',2:'中型巴士',3:'小型巴士',4:'雙層巴士',5:'雙節巴士',6:'計程車']",
-          "type": "string"
+          "type": "integer"
         },
         "VehicleType": {
-          "title": "integer",
+          "title": "Int32",
           "description": "車輛種類 : [1:'一般',2:'復康巴士',3:'專車',4:'其他']",
-          "type": "string"
+          "type": "integer"
         },
         "CardReaderLayout": {
           "format": "int32",
@@ -7339,7 +7350,7 @@
           }
         },
         "PurchaseTime": {
-          "title": "DateTime",
+          "format": "date-time",
           "description": "購入時間",
           "type": "string"
         }
@@ -7504,12 +7515,13 @@
       "type": "object",
       "properties": {
         "EffectiveDate": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "有效起始日期",
           "type": "string"
         },
         "ExpireDate": {
-          "title": "DateTime",
+          "format": "date-time",
           "description": "有效終止日期",
           "type": "string"
         },
@@ -7530,6 +7542,7 @@
           }
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "[平臺]資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -7541,6 +7554,7 @@
           "type": "integer"
         },
         "SrcUpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "[來源端平臺]資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -7578,7 +7592,7 @@
       },
       "xml": {
         "name": "BusGWrapperOfSchedule",
-        "namespace": "http://www.w3.org/2001/XMLSchema-instance"
+        "namespace": "https://ptx.transportdata.tw/standard/schema/"
       }
     },
     "PTX.Service.DTO.Bus.Specification.V3.Wrapper.BusVWrapper[PTX.Service.DTO.Bus.Specification.V3.Depot]": {
@@ -7602,6 +7616,7 @@
           "type": "integer"
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "[平臺]資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -7613,6 +7628,7 @@
           "type": "integer"
         },
         "SrcUpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "[來源端平臺]資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -7650,7 +7666,7 @@
       },
       "xml": {
         "name": "BusVWrapperOfDepot",
-        "namespace": "http://www.w3.org/2001/XMLSchema-instance"
+        "namespace": "https://ptx.transportdata.tw/standard/schema/"
       }
     },
     "PTX.Service.DTO.Bus.Specification.V3.Wrapper.BusVWrapper[PTX.Service.DTO.Bus.Specification.V3.DisplayStopOfRoute]": {
@@ -7674,6 +7690,7 @@
           "type": "integer"
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "[平臺]資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -7685,6 +7702,7 @@
           "type": "integer"
         },
         "SrcUpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "[來源端平臺]資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -7722,7 +7740,7 @@
       },
       "xml": {
         "name": "BusVWrapperOfDisplayStopOfRoute",
-        "namespace": "http://www.w3.org/2001/XMLSchema-instance"
+        "namespace": "https://ptx.transportdata.tw/standard/schema/"
       }
     },
     "PTX.Service.DTO.Bus.Specification.V3.Wrapper.BusVWrapper[PTX.Service.DTO.Bus.Specification.V3.FirstLastTripInfo]": {
@@ -7746,6 +7764,7 @@
           "type": "integer"
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "[平臺]資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -7757,6 +7776,7 @@
           "type": "integer"
         },
         "SrcUpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "[來源端平臺]資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -7794,7 +7814,7 @@
       },
       "xml": {
         "name": "BusVWrapperOfFirstLastTripInfo",
-        "namespace": "http://www.w3.org/2001/XMLSchema-instance"
+        "namespace": "https://ptx.transportdata.tw/standard/schema/"
       }
     },
     "PTX.Service.DTO.Bus.Specification.V3.Wrapper.BusVWrapper[PTX.Service.DTO.Bus.Specification.V3.Network]": {
@@ -7818,6 +7838,7 @@
           "type": "integer"
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "[平臺]資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -7829,6 +7850,7 @@
           "type": "integer"
         },
         "SrcUpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "[來源端平臺]資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -7866,7 +7888,7 @@
       },
       "xml": {
         "name": "BusVWrapperOfNetwork",
-        "namespace": "http://www.w3.org/2001/XMLSchema-instance"
+        "namespace": "https://ptx.transportdata.tw/standard/schema/"
       }
     },
     "PTX.Service.DTO.Bus.Specification.V3.Wrapper.BusVWrapper[PTX.Service.DTO.Bus.Specification.V3.Operator]": {
@@ -7890,6 +7912,7 @@
           "type": "integer"
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "[平臺]資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -7901,6 +7924,7 @@
           "type": "integer"
         },
         "SrcUpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "[來源端平臺]資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -7938,7 +7962,7 @@
       },
       "xml": {
         "name": "BusVWrapperOfOperator",
-        "namespace": "http://www.w3.org/2001/XMLSchema-instance"
+        "namespace": "https://ptx.transportdata.tw/standard/schema/"
       }
     },
     "PTX.Service.DTO.Bus.Specification.V3.Wrapper.BusVWrapper[PTX.Service.DTO.Bus.Specification.V3.Route]": {
@@ -7962,6 +7986,7 @@
           "type": "integer"
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "[平臺]資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -7973,6 +7998,7 @@
           "type": "integer"
         },
         "SrcUpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "[來源端平臺]資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -8010,7 +8036,7 @@
       },
       "xml": {
         "name": "BusVWrapperOfRoute",
-        "namespace": "http://www.w3.org/2001/XMLSchema-instance"
+        "namespace": "https://ptx.transportdata.tw/standard/schema/"
       }
     },
     "PTX.Service.DTO.Bus.Specification.V3.Wrapper.BusVWrapper[PTX.Service.DTO.Bus.Specification.V3.RouteNetwork]": {
@@ -8034,6 +8060,7 @@
           "type": "integer"
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "[平臺]資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -8045,6 +8072,7 @@
           "type": "integer"
         },
         "SrcUpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "[來源端平臺]資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -8082,7 +8110,7 @@
       },
       "xml": {
         "name": "BusVWrapperOfRouteNetwork",
-        "namespace": "http://www.w3.org/2001/XMLSchema-instance"
+        "namespace": "https://ptx.transportdata.tw/standard/schema/"
       }
     },
     "PTX.Service.DTO.Bus.Specification.V3.Wrapper.BusVWrapper[PTX.Service.DTO.Bus.Specification.V3.S2STravelTime]": {
@@ -8106,6 +8134,7 @@
           "type": "integer"
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "[平臺]資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -8117,6 +8146,7 @@
           "type": "integer"
         },
         "SrcUpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "[來源端平臺]資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -8154,7 +8184,7 @@
       },
       "xml": {
         "name": "BusVWrapperOfS2STravelTime",
-        "namespace": "http://www.w3.org/2001/XMLSchema-instance"
+        "namespace": "https://ptx.transportdata.tw/standard/schema/"
       }
     },
     "PTX.Service.DTO.Bus.Specification.V3.Wrapper.BusVWrapper[PTX.Service.DTO.Bus.Specification.V3.Shape]": {
@@ -8178,6 +8208,7 @@
           "type": "integer"
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "[平臺]資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -8189,6 +8220,7 @@
           "type": "integer"
         },
         "SrcUpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "[來源端平臺]資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -8226,7 +8258,7 @@
       },
       "xml": {
         "name": "BusVWrapperOfShape",
-        "namespace": "http://www.w3.org/2001/XMLSchema-instance"
+        "namespace": "https://ptx.transportdata.tw/standard/schema/"
       }
     },
     "PTX.Service.DTO.Bus.Specification.V3.Wrapper.BusVWrapper[PTX.Service.DTO.Bus.Specification.V3.Station]": {
@@ -8250,6 +8282,7 @@
           "type": "integer"
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "[平臺]資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -8261,6 +8294,7 @@
           "type": "integer"
         },
         "SrcUpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "[來源端平臺]資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -8298,7 +8332,7 @@
       },
       "xml": {
         "name": "BusVWrapperOfStation",
-        "namespace": "http://www.w3.org/2001/XMLSchema-instance"
+        "namespace": "https://ptx.transportdata.tw/standard/schema/"
       }
     },
     "PTX.Service.DTO.Bus.Specification.V3.Wrapper.BusVWrapper[PTX.Service.DTO.Bus.Specification.V3.Stop]": {
@@ -8322,6 +8356,7 @@
           "type": "integer"
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "[平臺]資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -8333,6 +8368,7 @@
           "type": "integer"
         },
         "SrcUpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "[來源端平臺]資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -8370,7 +8406,7 @@
       },
       "xml": {
         "name": "BusVWrapperOfStop",
-        "namespace": "http://www.w3.org/2001/XMLSchema-instance"
+        "namespace": "https://ptx.transportdata.tw/standard/schema/"
       }
     },
     "PTX.Service.DTO.Bus.Specification.V3.Wrapper.BusVWrapper[PTX.Service.DTO.Bus.Specification.V3.StopOfRoute]": {
@@ -8394,6 +8430,7 @@
           "type": "integer"
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "[平臺]資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -8405,6 +8442,7 @@
           "type": "integer"
         },
         "SrcUpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "[來源端平臺]資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -8442,7 +8480,7 @@
       },
       "xml": {
         "name": "BusVWrapperOfStopOfRoute",
-        "namespace": "http://www.w3.org/2001/XMLSchema-instance"
+        "namespace": "https://ptx.transportdata.tw/standard/schema/"
       }
     },
     "PTX.Service.DTO.Bus.Specification.V3.Wrapper.BusVWrapper[PTX.Service.DTO.Bus.Specification.V3.SubRoute]": {
@@ -8466,6 +8504,7 @@
           "type": "integer"
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "[平臺]資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -8477,6 +8516,7 @@
           "type": "integer"
         },
         "SrcUpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "[來源端平臺]資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -8514,7 +8554,7 @@
       },
       "xml": {
         "name": "BusVWrapperOfSubRoute",
-        "namespace": "http://www.w3.org/2001/XMLSchema-instance"
+        "namespace": "https://ptx.transportdata.tw/standard/schema/"
       }
     },
     "PTX.Service.DTO.Bus.Specification.V3.Wrapper.BusVWrapper[PTX.Service.DTO.Bus.Specification.V3.Vehicle]": {
@@ -8538,6 +8578,7 @@
           "type": "integer"
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "[平臺]資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -8549,6 +8590,7 @@
           "type": "integer"
         },
         "SrcUpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "[來源端平臺]資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -8586,7 +8628,7 @@
       },
       "xml": {
         "name": "BusVWrapperOfVehicle",
-        "namespace": "http://www.w3.org/2001/XMLSchema-instance"
+        "namespace": "https://ptx.transportdata.tw/standard/schema/"
       }
     },
     "PTX.Service.DTO.Bus.Specification.V3.Wrapper.BusVWrapper[PTX.Service.DTO.Bus.Specification.V3.VehicleDepot]": {
@@ -8610,6 +8652,7 @@
           "type": "integer"
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "[平臺]資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -8621,6 +8664,7 @@
           "type": "integer"
         },
         "SrcUpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "[來源端平臺]資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -8658,7 +8702,7 @@
       },
       "xml": {
         "name": "BusVWrapperOfVehicleDepot",
-        "namespace": "http://www.w3.org/2001/XMLSchema-instance"
+        "namespace": "https://ptx.transportdata.tw/standard/schema/"
       }
     },
     "PTX.Service.DTO.Bus.Specification.V3.Wrapper.BusVWrapper[PTX.Service.DTO.Bus.Specification.V3.VehicleRoute]": {
@@ -8682,6 +8726,7 @@
           "type": "integer"
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "[平臺]資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -8693,6 +8738,7 @@
           "type": "integer"
         },
         "SrcUpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "[來源端平臺]資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -8730,7 +8776,7 @@
       },
       "xml": {
         "name": "BusVWrapperOfVehicleRoute",
-        "namespace": "http://www.w3.org/2001/XMLSchema-instance"
+        "namespace": "https://ptx.transportdata.tw/standard/schema/"
       }
     },
     "PTX.Service.DTO.Bus.Specification.V3.Wrapper.BusWrapper[PTX.Service.DTO.Bus.Specification.V3.A1Data]": {
@@ -8747,6 +8793,7 @@
       "type": "object",
       "properties": {
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "[平臺]資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -8758,6 +8805,7 @@
           "type": "integer"
         },
         "SrcUpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "[來源端平臺]資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -8795,7 +8843,7 @@
       },
       "xml": {
         "name": "BusWrapperOfA1Data",
-        "namespace": "http://www.w3.org/2001/XMLSchema-instance"
+        "namespace": "https://ptx.transportdata.tw/standard/schema/"
       }
     },
     "PTX.Service.DTO.Bus.Specification.V3.Wrapper.BusWrapper[PTX.Service.DTO.Bus.Specification.V3.A2Data]": {
@@ -8812,6 +8860,7 @@
       "type": "object",
       "properties": {
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "[平臺]資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -8823,6 +8872,7 @@
           "type": "integer"
         },
         "SrcUpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "[來源端平臺]資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -8860,7 +8910,7 @@
       },
       "xml": {
         "name": "BusWrapperOfA2Data",
-        "namespace": "http://www.w3.org/2001/XMLSchema-instance"
+        "namespace": "https://ptx.transportdata.tw/standard/schema/"
       }
     },
     "PTX.Service.DTO.Bus.Specification.V3.Wrapper.BusWrapper[PTX.Service.DTO.Bus.Specification.V3.Alert]": {
@@ -8877,6 +8927,7 @@
       "type": "object",
       "properties": {
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "[平臺]資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -8888,6 +8939,7 @@
           "type": "integer"
         },
         "SrcUpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "[來源端平臺]資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -8925,7 +8977,7 @@
       },
       "xml": {
         "name": "BusWrapperOfAlert",
-        "namespace": "http://www.w3.org/2001/XMLSchema-instance"
+        "namespace": "https://ptx.transportdata.tw/standard/schema/"
       }
     },
     "PTX.Service.DTO.Bus.Specification.V3.Wrapper.BusWrapper[PTX.Service.DTO.Bus.Specification.V3.DailyTimeTable]": {
@@ -8942,6 +8994,7 @@
       "type": "object",
       "properties": {
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "[平臺]資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -8953,6 +9006,7 @@
           "type": "integer"
         },
         "SrcUpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "[來源端平臺]資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -8990,7 +9044,7 @@
       },
       "xml": {
         "name": "BusWrapperOfDailyTimeTable",
-        "namespace": "http://www.w3.org/2001/XMLSchema-instance"
+        "namespace": "https://ptx.transportdata.tw/standard/schema/"
       }
     },
     "PTX.Service.DTO.Bus.Specification.V3.Wrapper.BusWrapper[PTX.Service.DTO.Bus.Specification.V3.N1Data]": {
@@ -9007,6 +9061,7 @@
       "type": "object",
       "properties": {
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "[平臺]資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -9018,6 +9073,7 @@
           "type": "integer"
         },
         "SrcUpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "[來源端平臺]資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -9055,7 +9111,7 @@
       },
       "xml": {
         "name": "BusWrapperOfN1Data",
-        "namespace": "http://www.w3.org/2001/XMLSchema-instance"
+        "namespace": "https://ptx.transportdata.tw/standard/schema/"
       }
     },
     "PTX.Service.DTO.Bus.Specification.V3.Wrapper.BusWrapper[PTX.Service.DTO.Bus.Specification.V3.News]": {
@@ -9072,6 +9128,7 @@
       "type": "object",
       "properties": {
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "[平臺]資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -9083,6 +9140,7 @@
           "type": "integer"
         },
         "SrcUpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "[來源端平臺]資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -9120,7 +9178,7 @@
       },
       "xml": {
         "name": "BusWrapperOfNews",
-        "namespace": "http://www.w3.org/2001/XMLSchema-instance"
+        "namespace": "https://ptx.transportdata.tw/standard/schema/"
       }
     },
     "PTX.Service.DTO.Bus.Specification.V3.Wrapper.BusWrapper[PTX.Service.DTO.Bus.Specification.V3.RouteFare]": {
@@ -9137,6 +9195,7 @@
       "type": "object",
       "properties": {
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "[平臺]資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -9148,6 +9207,7 @@
           "type": "integer"
         },
         "SrcUpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "[來源端平臺]資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -9185,7 +9245,7 @@
       },
       "xml": {
         "name": "BusWrapperOfRouteFare",
-        "namespace": "http://www.w3.org/2001/XMLSchema-instance"
+        "namespace": "https://ptx.transportdata.tw/standard/schema/"
       }
     },
     "PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth": {
@@ -9252,14 +9312,15 @@
       "type": "object",
       "properties": {
         "CheckTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "檢核時間",
           "type": "string"
         },
         "Status": {
-          "title": "integer",
+          "title": "Int32",
           "description": "檢核結果狀態 : [0:'失敗',1:'成功']",
-          "type": "string"
+          "type": "integer"
         },
         "Reason": {
           "title": "String",
@@ -9309,14 +9370,15 @@
       "type": "object",
       "properties": {
         "CheckTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "檢核時間",
           "type": "string"
         },
         "Status": {
-          "title": "integer",
+          "title": "Int32",
           "description": "檢核結果狀態 : [0:'失敗',1:'成功']",
-          "type": "string"
+          "type": "integer"
         },
         "Reason": {
           "title": "String",
@@ -9336,14 +9398,14 @@
       "description": "座標資料型別",
       "type": "object",
       "properties": {
-        "PositionLat": {
-          "format": "double",
-          "description": "位置緯度(WGS84)",
-          "type": "number"
-        },
         "PositionLon": {
           "format": "double",
           "description": "位置經度(WGS84)",
+          "type": "number"
+        },
+        "PositionLat": {
+          "format": "double",
+          "description": "位置緯度(WGS84)",
           "type": "number"
         }
       },
@@ -9354,7 +9416,8 @@
   },
   "tags": [
     {
-      "name": "CityBus"
+      "name": "CityBus",
+      "description": "市區公車"
     }
   ]
 }

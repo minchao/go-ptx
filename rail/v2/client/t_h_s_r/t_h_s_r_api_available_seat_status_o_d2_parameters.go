@@ -119,8 +119,10 @@ type THSRAPIAvailableSeatStatusOD2Params struct {
 	/* TrainDate.
 
 	   欲查詢車次的日期(格式: yyyy-MM-dd)
+
+	   Format: date-time
 	*/
-	TrainDate string
+	TrainDate strfmt.DateTime
 
 	/* TrainNo.
 
@@ -292,13 +294,13 @@ func (o *THSRAPIAvailableSeatStatusOD2Params) SetOriginStationID(originStationID
 }
 
 // WithTrainDate adds the trainDate to the t h s r Api available seat status o d 2 params
-func (o *THSRAPIAvailableSeatStatusOD2Params) WithTrainDate(trainDate string) *THSRAPIAvailableSeatStatusOD2Params {
+func (o *THSRAPIAvailableSeatStatusOD2Params) WithTrainDate(trainDate strfmt.DateTime) *THSRAPIAvailableSeatStatusOD2Params {
 	o.SetTrainDate(trainDate)
 	return o
 }
 
 // SetTrainDate adds the trainDate to the t h s r Api available seat status o d 2 params
-func (o *THSRAPIAvailableSeatStatusOD2Params) SetTrainDate(trainDate string) {
+func (o *THSRAPIAvailableSeatStatusOD2Params) SetTrainDate(trainDate strfmt.DateTime) {
 	o.TrainDate = trainDate
 }
 
@@ -444,7 +446,7 @@ func (o *THSRAPIAvailableSeatStatusOD2Params) WriteToRequest(r runtime.ClientReq
 	}
 
 	// path param TrainDate
-	if err := r.SetPathParam("TrainDate", o.TrainDate); err != nil {
+	if err := r.SetPathParam("TrainDate", o.TrainDate.String()); err != nil {
 		return err
 	}
 

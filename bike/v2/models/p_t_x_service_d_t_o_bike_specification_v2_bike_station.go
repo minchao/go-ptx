@@ -24,64 +24,68 @@ type PTXServiceDTOBikeSpecificationV2BikeStation struct {
 	// String
 	//
 	// 業管單位代碼
-	AuthorityID string `json:"AuthorityID,omitempty"`
+	AuthorityID string `json:"AuthorityID,omitempty" xml:"String,omitempty"`
 
 	// Int32
 	//
 	// 可容納之自行車總數
 	BikesCapacity int32 `json:"BikesCapacity,omitempty"`
 
-	// DateTime
-	//
 	// 來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
-	SrcUpdateTime string `json:"SrcUpdateTime,omitempty"`
+	// Format: date-time
+	SrcUpdateTime strfmt.DateTime `json:"SrcUpdateTime,omitempty"`
 
 	// NameType
 	//
 	// 站點地址
 	StationAddress struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"StationAddress,omitempty"`
+	} `json:"StationAddress,omitempty" xml:"NameType,omitempty"`
 
 	// String
 	//
 	// 站點代碼
-	StationID string `json:"StationID,omitempty"`
+	StationID string `json:"StationID,omitempty" xml:"String,omitempty"`
 
 	// NameType
 	//
 	// 站點名稱
 	StationName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"StationName,omitempty"`
+	} `json:"StationName,omitempty" xml:"NameType,omitempty"`
 
 	// PointType
 	//
 	// 站點位置
 	StationPosition struct {
 		PTXServiceDTOSharedSpecificationV2BasePointType
-	} `json:"StationPosition,omitempty"`
+	} `json:"StationPosition,omitempty" xml:"PointType,omitempty"`
 
 	// String
 	//
 	// 站點唯一識別代碼，規則為 {業管機關代碼} + {StationID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢
-	StationUID string `json:"StationUID,omitempty"`
+	StationUID string `json:"StationUID,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 站點描述
-	StopDescription string `json:"StopDescription,omitempty"`
+	StopDescription string `json:"StopDescription,omitempty" xml:"String,omitempty"`
 
 	// DateTime
 	//
 	// 資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Required: true
-	UpdateTime *string `json:"UpdateTime"`
+	// Format: date-time
+	UpdateTime *strfmt.DateTime `json:"UpdateTime"`
 }
 
 // Validate validates this p t x service d t o bike specification v2 bike station
 func (m *PTXServiceDTOBikeSpecificationV2BikeStation) Validate(formats strfmt.Registry) error {
 	var res []error
+
+	if err := m.validateSrcUpdateTime(formats); err != nil {
+		res = append(res, err)
+	}
 
 	if err := m.validateStationAddress(formats); err != nil {
 		res = append(res, err)
@@ -102,6 +106,18 @@ func (m *PTXServiceDTOBikeSpecificationV2BikeStation) Validate(formats strfmt.Re
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *PTXServiceDTOBikeSpecificationV2BikeStation) validateSrcUpdateTime(formats strfmt.Registry) error {
+	if swag.IsZero(m.SrcUpdateTime) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("SrcUpdateTime", "body", "date-time", m.SrcUpdateTime.String(), formats); err != nil {
+		return err
+	}
+
 	return nil
 }
 
@@ -132,6 +148,10 @@ func (m *PTXServiceDTOBikeSpecificationV2BikeStation) validateStationPosition(fo
 func (m *PTXServiceDTOBikeSpecificationV2BikeStation) validateUpdateTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
+		return err
+	}
+
+	if err := validate.FormatOf("UpdateTime", "body", "date-time", m.UpdateTime.String(), formats); err != nil {
 		return err
 	}
 

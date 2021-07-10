@@ -30,10 +30,10 @@ type PTXServiceDTOBusSpecificationV2BusAlert struct {
 	// 詳細描述網站連結
 	AlertURL string `json:"AlertURL,omitempty" xml:"String,omitempty"`
 
-	// integer
+	// Int32
 	//
 	// 原因 : [1:'事故',2:'維護',3:'技術問題',4:'施工',5:'急救',6:'天災',7:'示威遊行',8:'維安',9:'假日',10:'罷工',254:'其他',255:'未知原因']
-	Cause string `json:"Cause,omitempty"`
+	Cause int64 `json:"Cause,omitempty"`
 
 	// String
 	//
@@ -47,20 +47,18 @@ type PTXServiceDTOBusSpecificationV2BusAlert struct {
 	// Required: true
 	Description *string `json:"Description" xml:"String"`
 
-	// integer
+	// Int32
 	//
 	// 影響 : [1:'車輛改道',2:'服務班次增加',3:'服務班次減少',4:'服務班次取消',5:'服務班次改變',6:'站牌不停靠',7:'重大延遲',254:'其他影響',255:'未知影響']
-	Effect string `json:"Effect,omitempty"`
+	Effect int64 `json:"Effect,omitempty"`
 
-	// DateTime
-	//
 	// 結束日期時間
-	EndTime string `json:"EndTime,omitempty"`
+	// Format: date-time
+	EndTime strfmt.DateTime `json:"EndTime,omitempty"`
 
-	// DateTime
-	//
 	// 消息公告日期時間
-	PublishTime string `json:"PublishTime,omitempty"`
+	// Format: date-time
+	PublishTime strfmt.DateTime `json:"PublishTime,omitempty"`
 
 	// Scope
 	//
@@ -73,17 +71,17 @@ type PTXServiceDTOBusSpecificationV2BusAlert struct {
 	// DateTime
 	//
 	// [來源端平臺]此筆資料最後更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
-	SrcUpdateTime string `json:"SrcUpdateTime,omitempty"`
+	// Format: date-time
+	SrcUpdateTime strfmt.DateTime `json:"SrcUpdateTime,omitempty"`
 
-	// DateTime
-	//
 	// 開始日期時間
-	StartTime string `json:"StartTime,omitempty"`
+	// Format: date-time
+	StartTime strfmt.DateTime `json:"StartTime,omitempty"`
 
-	// integer
+	// Int32
 	//
 	// 營運狀況 : [0:'全部營運停止',1:'全部營運正常',2:'有異常狀況']
-	Status string `json:"Status,omitempty"`
+	Status int64 `json:"Status,omitempty"`
 
 	// String
 	//
@@ -94,7 +92,8 @@ type PTXServiceDTOBusSpecificationV2BusAlert struct {
 	// DateTime
 	//
 	// 本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
-	UpdateTime string `json:"UpdateTime,omitempty"`
+	// Format: date-time
+	UpdateTime strfmt.DateTime `json:"UpdateTime,omitempty"`
 }
 
 // Validate validates this p t x service d t o bus specification v2 bus alert
@@ -113,11 +112,31 @@ func (m *PTXServiceDTOBusSpecificationV2BusAlert) Validate(formats strfmt.Regist
 		res = append(res, err)
 	}
 
+	if err := m.validateEndTime(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validatePublishTime(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateScope(formats); err != nil {
 		res = append(res, err)
 	}
 
+	if err := m.validateSrcUpdateTime(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateStartTime(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateTitle(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateUpdateTime(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -154,7 +173,55 @@ func (m *PTXServiceDTOBusSpecificationV2BusAlert) validateDescription(formats st
 	return nil
 }
 
+func (m *PTXServiceDTOBusSpecificationV2BusAlert) validateEndTime(formats strfmt.Registry) error {
+	if swag.IsZero(m.EndTime) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("EndTime", "body", "date-time", m.EndTime.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV2BusAlert) validatePublishTime(formats strfmt.Registry) error {
+	if swag.IsZero(m.PublishTime) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("PublishTime", "body", "date-time", m.PublishTime.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *PTXServiceDTOBusSpecificationV2BusAlert) validateScope(formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV2BusAlert) validateSrcUpdateTime(formats strfmt.Registry) error {
+	if swag.IsZero(m.SrcUpdateTime) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("SrcUpdateTime", "body", "date-time", m.SrcUpdateTime.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV2BusAlert) validateStartTime(formats strfmt.Registry) error {
+	if swag.IsZero(m.StartTime) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("StartTime", "body", "date-time", m.StartTime.String(), formats); err != nil {
+		return err
+	}
 
 	return nil
 }
@@ -162,6 +229,18 @@ func (m *PTXServiceDTOBusSpecificationV2BusAlert) validateScope(formats strfmt.R
 func (m *PTXServiceDTOBusSpecificationV2BusAlert) validateTitle(formats strfmt.Registry) error {
 
 	if err := validate.Required("Title", "body", m.Title); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV2BusAlert) validateUpdateTime(formats strfmt.Registry) error {
+	if swag.IsZero(m.UpdateTime) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("UpdateTime", "body", "date-time", m.UpdateTime.String(), formats); err != nil {
 		return err
 	}
 

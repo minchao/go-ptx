@@ -23,7 +23,7 @@ type PTXServiceDTOAirSpecificationV2METAR struct {
 	//
 	// 機場代碼(IATA)
 	// Required: true
-	AirportID *string `json:"AirportID"`
+	AirportID *string `json:"AirportID" xml:"String"`
 
 	// NameType
 	//
@@ -31,13 +31,13 @@ type PTXServiceDTOAirSpecificationV2METAR struct {
 	// Required: true
 	AirportName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"AirportName"`
+	} `json:"AirportName" xml:"NameType"`
 
 	// String
 	//
 	// 雲冪(含單位)
 	// Required: true
-	Ceiling *string `json:"Ceiling"`
+	Ceiling *string `json:"Ceiling" xml:"String"`
 
 	// NameType
 	//
@@ -45,7 +45,7 @@ type PTXServiceDTOAirSpecificationV2METAR struct {
 	// Required: true
 	CityName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"CityName"`
+	} `json:"CityName" xml:"NameType"`
 
 	// NameType
 	//
@@ -53,31 +53,32 @@ type PTXServiceDTOAirSpecificationV2METAR struct {
 	// Required: true
 	CountryName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"CountryName"`
+	} `json:"CountryName" xml:"NameType"`
 
 	// String
 	//
 	// 機場天氣報告(METAR/SPECI)
 	// Required: true
-	MetarText *string `json:"MetarText"`
+	MetarText *string `json:"MetarText" xml:"String"`
 
 	// String
 	//
 	// 機場天氣報告時間(地方時)
 	// Required: true
-	MetarTime *string `json:"MetarTime"`
+	MetarTime *string `json:"MetarTime" xml:"String"`
 
 	// DateTime
 	//
 	// 觀測時間
 	// Required: true
-	ObservationTime *string `json:"ObservationTime"`
+	// Format: date-time
+	ObservationTime *strfmt.DateTime `json:"ObservationTime"`
 
 	// String
 	//
 	// 機場氣象觀測站代碼(ICAO)
 	// Required: true
-	StationID *string `json:"StationID"`
+	StationID *string `json:"StationID" xml:"String"`
 
 	// PointType
 	//
@@ -85,25 +86,26 @@ type PTXServiceDTOAirSpecificationV2METAR struct {
 	// Required: true
 	StationPosition struct {
 		PTXServiceDTOSharedSpecificationV2BasePointType
-	} `json:"StationPosition"`
+	} `json:"StationPosition" xml:"PointType"`
 
 	// String
 	//
 	// 溫度(含單位)
 	// Required: true
-	Temperature *string `json:"Temperature"`
+	Temperature *string `json:"Temperature" xml:"String"`
 
 	// DateTime
 	//
 	// 本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Required: true
-	UpdateTime *string `json:"UpdateTime"`
+	// Format: date-time
+	UpdateTime *strfmt.DateTime `json:"UpdateTime"`
 
 	// String
 	//
 	// 盛行能見度(含單位，9999以10公里以上表示)
 	// Required: true
-	Visibility *string `json:"Visibility"`
+	Visibility *string `json:"Visibility" xml:"String"`
 
 	// NameType
 	//
@@ -111,19 +113,19 @@ type PTXServiceDTOAirSpecificationV2METAR struct {
 	// Required: true
 	WeatherDescription struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"WeatherDescription"`
+	} `json:"WeatherDescription" xml:"NameType"`
 
 	// String
 	//
 	// 風向(含單位)
 	// Required: true
-	WindDirection *string `json:"WindDirection"`
+	WindDirection *string `json:"WindDirection" xml:"String"`
 
 	// String
 	//
 	// 風速(含單位)
 	// Required: true
-	WindSpeed *string `json:"WindSpeed"`
+	WindSpeed *string `json:"WindSpeed" xml:"String"`
 }
 
 // Validate validates this p t x service d t o air specification v2 m e t a r
@@ -257,6 +259,10 @@ func (m *PTXServiceDTOAirSpecificationV2METAR) validateObservationTime(formats s
 		return err
 	}
 
+	if err := validate.FormatOf("ObservationTime", "body", "date-time", m.ObservationTime.String(), formats); err != nil {
+		return err
+	}
+
 	return nil
 }
 
@@ -286,6 +292,10 @@ func (m *PTXServiceDTOAirSpecificationV2METAR) validateTemperature(formats strfm
 func (m *PTXServiceDTOAirSpecificationV2METAR) validateUpdateTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
+		return err
+	}
+
+	if err := validate.FormatOf("UpdateTime", "body", "date-time", m.UpdateTime.String(), formats); err != nil {
 		return err
 	}
 

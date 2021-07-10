@@ -58,7 +58,7 @@
           {
             "in": "query",
             "name": "$spatialFilter",
-            "description": "空間過濾",
+            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
             "type": "string"
           },
           {
@@ -100,9 +100,7 @@
         "operationId": "AirApi_Airport_1",
         "produces": [
           "application/json",
-          "application/xml",
-          "text/plain",
-          "text/json"
+          "application/xml"
         ],
         "parameters": [
           {
@@ -144,9 +142,7 @@
         "operationId": "AirApi_Airline",
         "produces": [
           "application/json",
-          "application/xml",
-          "text/plain",
-          "text/json"
+          "application/xml"
         ],
         "parameters": [
           {
@@ -945,7 +941,7 @@
           {
             "in": "query",
             "name": "$spatialFilter",
-            "description": "空間過濾",
+            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
             "type": "string"
           },
           {
@@ -1031,7 +1027,7 @@
           {
             "in": "query",
             "name": "$spatialFilter",
-            "description": "空間過濾",
+            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
             "type": "string"
           },
           {
@@ -1209,23 +1205,6 @@
     }
   },
   "definitions": {
-    "PTX.Service.DTO.Shared.Specification.V2.Base.NameType": {
-      "title": "NameType",
-      "description": "名稱資料型別",
-      "type": "object",
-      "properties": {
-        "Zh_tw": {
-          "title": "String",
-          "description": "中文繁體名稱",
-          "type": "string"
-        },
-        "En": {
-          "title": "String",
-          "description": "英文名稱",
-          "type": "string"
-        }
-      }
-    },
     "PTX.Service.DTO.Air.Specification.V2.Airline": {
       "title": "Airline",
       "description": "航空公司資料",
@@ -1239,7 +1218,10 @@
         "AirlineID": {
           "title": "String",
           "description": "航空公司IATA國際代碼",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "AirlineName": {
           "title": "NameType",
@@ -1248,7 +1230,10 @@
             {
               "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V2.Base.NameType"
             }
-          ]
+          ],
+          "xml": {
+            "name": "NameType"
+          }
         },
         "AirlineNameAlias": {
           "title": "NameType",
@@ -1257,39 +1242,61 @@
             {
               "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V2.Base.NameType"
             }
-          ]
+          ],
+          "xml": {
+            "name": "NameType"
+          }
         },
         "AirlineIATA": {
           "title": "String",
           "description": "航空公司IATA國際代碼",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "AirlineICAO": {
           "title": "String",
           "description": "航空公司ICAO國際代碼",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "AirlineEmail": {
           "title": "String",
           "description": "航空公司電子信箱",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "AirlineAddress": {
           "title": "String",
           "description": "航空公司地址",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "AirlinePhone": {
           "title": "String",
           "description": "航空公司聯繫電話",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "AirlineNationality": {
           "title": "String",
           "description": "航空公司國籍",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -1300,28 +1307,9 @@
           "description": "資料版本編號",
           "type": "integer"
         }
-      }
-    },
-    "PTX.Service.DTO.Shared.Specification.V2.Base.PointType": {
-      "title": "PointType",
-      "description": "座標資料型別",
-      "type": "object",
-      "properties": {
-        "PositionLat": {
-          "format": "double",
-          "description": "位置緯度(WGS84)",
-          "type": "number"
-        },
-        "PositionLon": {
-          "format": "double",
-          "description": "位置經度(WGS84)",
-          "type": "number"
-        },
-        "GeoHash": {
-          "title": "String",
-          "description": "地理空間編碼",
-          "type": "string"
-        }
+      },
+      "xml": {
+        "name": "Airline"
       }
     },
     "PTX.Service.DTO.Air.Specification.V2.Airport": {
@@ -1337,7 +1325,10 @@
         "AirportID": {
           "title": "String",
           "description": "機場IATA國際代碼",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "AirportName": {
           "title": "NameType",
@@ -1346,17 +1337,26 @@
             {
               "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V2.Base.NameType"
             }
-          ]
+          ],
+          "xml": {
+            "name": "NameType"
+          }
         },
         "AirportIATA": {
           "title": "String",
           "description": "機場IATA國際代碼",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "AirportICAO": {
           "title": "String",
           "description": "機場ICAO國際代碼",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "AirportPosition": {
           "title": "PointType",
@@ -1365,7 +1365,10 @@
             {
               "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V2.Base.PointType"
             }
-          ]
+          ],
+          "xml": {
+            "name": "PointType"
+          }
         },
         "AirportCityName": {
           "title": "NameType",
@@ -1374,29 +1377,45 @@
             {
               "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V2.Base.NameType"
             }
-          ]
+          ],
+          "xml": {
+            "name": "NameType"
+          }
         },
         "AirportAddress": {
           "title": "String",
           "description": "機場地址",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "AirportPhone": {
           "title": "String",
           "description": "機場聯繫電話",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "AirportNationality": {
           "title": "String",
           "description": "機場國籍",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "AuthorityID": {
           "title": "String",
           "description": "業管機關代碼(流水號)",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -1407,238 +1426,9 @@
           "description": "資料版本編號",
           "type": "integer"
         }
-      }
-    },
-    "PTX.Service.DTO.Air.Specification.V2.FIDSDeparture": {
-      "title": "FIDSDeparture",
-      "description": "出發航班顯示資料",
-      "required": [
-        "AirlineID",
-        "ArrivalAirportID",
-        "DepartureAirportID",
-        "FlightDate",
-        "FlightNumber",
-        "UpdateTime"
-      ],
-      "type": "object",
-      "properties": {
-        "FlightDate": {
-          "title": "DateTime",
-          "description": "航班日期(ISO8601格式:yyyy-MM-dd)",
-          "type": "string"
-        },
-        "FlightNumber": {
-          "title": "String",
-          "description": "航機班號(不包含航空公司的AirlineID，僅有班號數字)",
-          "type": "string"
-        },
-        "AirRouteType": {
-          "format": "int32",
-          "title": "integer",
-          "description": "航線種類(目前民航局與桃機的FIDS系統都尚未提供此欄位資料) : [-2:'特殊',1:'國際',2:'國內',3:'兩岸',4:'國際包機',5:'國內包機',6:'兩岸包機']",
-          "type": "integer"
-        },
-        "AirlineID": {
-          "title": "String",
-          "description": "航空公司IATA國際代碼",
-          "type": "string"
-        },
-        "DepartureAirportID": {
-          "title": "String",
-          "description": "起點機場IATA國際代碼",
-          "type": "string"
-        },
-        "ArrivalAirportID": {
-          "title": "String",
-          "description": "目的地機場IATA國際代碼",
-          "type": "string"
-        },
-        "ScheduleDepartureTime": {
-          "title": "DateTime",
-          "description": "表訂出發時間(ISO8601格式:yyyy-MM-ddTHH:mm)",
-          "type": "string"
-        },
-        "ActualDepartureTime": {
-          "title": "DateTime",
-          "description": "實際出發時間(ISO8601格式:yyyy-MM-ddTHH:mm)",
-          "type": "string"
-        },
-        "EstimatedDepartureTime": {
-          "title": "DateTime",
-          "description": "預估出發時間(ISO8601格式:yyyy-MM-ddTHH:mm)",
-          "type": "string"
-        },
-        "DepartureRemark": {
-          "title": "String",
-          "description": "航班屬性狀態, ,為該機場觀點的狀態",
-          "type": "string"
-        },
-        "DepartureRemarkEn": {
-          "title": "String",
-          "description": "航班屬性狀態(英文)",
-          "type": "string"
-        },
-        "Terminal": {
-          "title": "String",
-          "description": "航廈",
-          "type": "string"
-        },
-        "Gate": {
-          "title": "String",
-          "description": "登機門(僅客機提供)",
-          "type": "string"
-        },
-        "Apron": {
-          "title": "String",
-          "description": "停機坪(僅貨機提供)",
-          "type": "string"
-        },
-        "CodeShare": {
-          "title": "String",
-          "description": "航班共用班號",
-          "type": "string"
-        },
-        "IsCargo": {
-          "title": "Boolean",
-          "description": "是否為貨機",
-          "type": "boolean"
-        },
-        "AcType": {
-          "title": "String",
-          "description": "航空器型號",
-          "type": "string"
-        },
-        "BaggageClaim": {
-          "title": "String",
-          "description": "行李轉盤(到站FIDS可能有「行李轉盤」資訊, 離站FIDS不會有, 貨機則無此資訊)",
-          "type": "string"
-        },
-        "CheckCounter": {
-          "title": "String",
-          "description": "報到櫃檯(離站FIDS可能有「報到櫃台」資訊, 到站FIDS不會有, 貨機則無此資訊)",
-          "type": "string"
-        },
-        "UpdateTime": {
-          "title": "DateTime",
-          "description": "資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
-          "type": "string"
-        }
-      }
-    },
-    "PTX.Service.DTO.Air.Specification.V2.FIDSArrival": {
-      "title": "FIDSArrival",
-      "description": "抵達航班顯示資料",
-      "required": [
-        "AirlineID",
-        "ArrivalAirportID",
-        "DepartureAirportID",
-        "FlightDate",
-        "FlightNumber",
-        "UpdateTime"
-      ],
-      "type": "object",
-      "properties": {
-        "FlightDate": {
-          "title": "DateTime",
-          "description": "航班日期(ISO8601格式:yyyy-MM-dd)",
-          "type": "string"
-        },
-        "FlightNumber": {
-          "title": "String",
-          "description": "航機班號(不包含航空公司的AirlineID，僅有班號數字)",
-          "type": "string"
-        },
-        "AirRouteType": {
-          "format": "int32",
-          "title": "integer",
-          "description": "航線種類(目前民航局與桃機的FIDS系統都尚未提供此欄位資料) : [-2:'特殊',1:'國際',2:'國內',3:'兩岸',4:'國際包機',5:'國內包機',6:'兩岸包機']",
-          "type": "integer"
-        },
-        "AirlineID": {
-          "title": "String",
-          "description": "航空公司IATA國際代碼",
-          "type": "string"
-        },
-        "DepartureAirportID": {
-          "title": "String",
-          "description": "起點機場IATA國際代碼",
-          "type": "string"
-        },
-        "ArrivalAirportID": {
-          "title": "String",
-          "description": "目的地機場IATA國際代碼",
-          "type": "string"
-        },
-        "ScheduleArrivalTime": {
-          "title": "DateTime",
-          "description": "表訂抵達時間(ISO8601格式:yyyy-MM-ddTHH:mm)",
-          "type": "string"
-        },
-        "ActualArrivalTime": {
-          "title": "DateTime",
-          "description": "實際抵達時間(ISO8601格式:yyyy-MM-ddTHH:mm)",
-          "type": "string"
-        },
-        "EstimatedArrivalTime": {
-          "title": "DateTime",
-          "description": "預估抵達時間(ISO8601格式:yyyy-MM-ddTHH:mm)",
-          "type": "string"
-        },
-        "ArrivalRemark": {
-          "title": "String",
-          "description": "航班屬性狀態,為該機場觀點的狀態",
-          "type": "string"
-        },
-        "ArrivalRemarkEn": {
-          "title": "String",
-          "description": "航班屬性狀態(英文)",
-          "type": "string"
-        },
-        "Terminal": {
-          "title": "String",
-          "description": "航廈",
-          "type": "string"
-        },
-        "Gate": {
-          "title": "String",
-          "description": "登機門(僅客機提供)",
-          "type": "string"
-        },
-        "Apron": {
-          "title": "String",
-          "description": "停機坪(僅貨機提供)",
-          "type": "string"
-        },
-        "CodeShare": {
-          "title": "String",
-          "description": "航班共用班號",
-          "type": "string"
-        },
-        "IsCargo": {
-          "title": "Boolean",
-          "description": "是否為貨機",
-          "type": "boolean"
-        },
-        "AcType": {
-          "title": "String",
-          "description": "航空器型號",
-          "type": "string"
-        },
-        "BaggageClaim": {
-          "title": "String",
-          "description": "行李轉盤(到站FIDS可能有「行李轉盤」資訊, 離站FIDS不會有, 貨機則無此資訊)",
-          "type": "string"
-        },
-        "CheckCounter": {
-          "title": "String",
-          "description": "報到櫃檯(離站FIDS可能有「報到櫃台」資訊, 到站FIDS不會有, 貨機則無此資訊)",
-          "type": "string"
-        },
-        "UpdateTime": {
-          "title": "DateTime",
-          "description": "資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
-          "type": "string"
-        }
+      },
+      "xml": {
+        "name": "Airport"
       }
     },
     "PTX.Service.DTO.Air.Specification.V2.Airport_FIDS": {
@@ -1653,7 +1443,10 @@
         "AirportID": {
           "title": "String",
           "description": "機場IATA國際代碼",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "FIDSDeparture": {
           "title": "Array",
@@ -1661,6 +1454,9 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/PTX.Service.DTO.Air.Specification.V2.FIDSDeparture"
+          },
+          "xml": {
+            "name": "List`1"
           }
         },
         "FIDSArrival": {
@@ -1669,13 +1465,50 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/PTX.Service.DTO.Air.Specification.V2.FIDSArrival"
+          },
+          "xml": {
+            "name": "List`1"
           }
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         }
+      },
+      "xml": {
+        "name": "Airport_FIDS"
+      }
+    },
+    "PTX.Service.DTO.Air.Specification.V2.CodeShare": {
+      "title": "CodeShare",
+      "description": "共用班號",
+      "required": [
+        "AirlineID",
+        "FlightNumber"
+      ],
+      "type": "object",
+      "properties": {
+        "AirlineID": {
+          "title": "String",
+          "description": "航空公司IATA國際代碼",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "FlightNumber": {
+          "title": "String",
+          "description": "航機班號(不包含航空公司的AirlineID，僅有班號數字)",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        }
+      },
+      "xml": {
+        "name": "CodeShare"
       }
     },
     "PTX.Service.DTO.Air.Specification.V2.FIDS": {
@@ -1692,140 +1525,196 @@
       "type": "object",
       "properties": {
         "FlightDate": {
-          "title": "DateTime",
+          "format": "date-time",
           "description": "航班日期(ISO8601格式:yyyy-MM-dd)",
           "type": "string"
         },
         "FlightNumber": {
           "title": "String",
           "description": "航機班號(不包含航空公司的AirlineID，僅有班號數字)",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "AirRouteType": {
-          "format": "int32",
-          "title": "integer",
+          "title": "Int32",
           "description": "航線種類 : [-2:'特殊',1:'國際',2:'國內',3:'兩岸',4:'國際包機',5:'國內包機',6:'兩岸包機']",
           "type": "integer"
         },
         "AirlineID": {
           "title": "String",
           "description": "航空公司IATA國際代碼",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "DepartureAirportID": {
           "title": "String",
           "description": "起點機場IATA國際代碼",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "ArrivalAirportID": {
           "title": "String",
           "description": "目的地機場IATA國際代碼",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "ScheduleDepartureTime": {
-          "title": "DateTime",
+          "format": "date-time",
           "description": "表訂出發時間(ISO8601格式:yyyy-MM-ddTHH:mm)",
           "type": "string"
         },
         "ActualDepartureTime": {
-          "title": "DateTime",
+          "format": "date-time",
           "description": "實際出發時間(ISO8601格式:yyyy-MM-ddTHH:mm)",
           "type": "string"
         },
         "EstimatedDepartureTime": {
-          "title": "DateTime",
+          "format": "date-time",
           "description": "預估出發時間(ISO8601格式:yyyy-MM-ddTHH:mm)",
           "type": "string"
         },
         "ScheduleArrivalTime": {
-          "title": "DateTime",
+          "format": "date-time",
           "description": "表訂抵達時間(ISO8601格式:yyyy-MM-ddTHH:mm)",
           "type": "string"
         },
         "ActualArrivalTime": {
-          "title": "DateTime",
+          "format": "date-time",
           "description": "實際抵達時間(ISO8601格式:yyyy-MM-ddTHH:mm)",
           "type": "string"
         },
         "EstimatedArrivalTime": {
-          "title": "DateTime",
+          "format": "date-time",
           "description": "預估抵達時間(ISO8601格式:yyyy-MM-ddTHH:mm)",
           "type": "string"
         },
         "DepartureRemark": {
           "title": "String",
           "description": "航班屬性狀態,為第三方觀點的狀態(資料來源:民航局)",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "DepartureRemarkEn": {
           "title": "String",
           "description": "航班屬性狀態(英文)",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "ArrivalRemark": {
           "title": "String",
           "description": "航班屬性狀態,為該機場觀點的狀態",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "ArrivalRemarkEn": {
           "title": "String",
           "description": "航班屬性狀態(英文)",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "FlightStatus": {
           "title": "String",
           "description": "航班運行狀態,以航班的角度的狀態",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "FlightStatusEn": {
           "title": "String",
           "description": "航班運行狀態(英文)",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "FlightStatusPC": {
           "title": "String",
           "description": "航班運行狀態百分比(國內線)",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "FlightRemark": {
           "title": "String",
           "description": "航班屬性",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "ArrivalTerminal": {
           "title": "String",
           "description": "抵達航廈",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "DepartureTerminal": {
           "title": "String",
           "description": "出發航廈",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "ArrivalGate": {
           "title": "String",
           "description": "抵達登機門(僅客機提供)",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "DepartureGate": {
           "title": "String",
           "description": "出發登機門(僅客機提供)",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "ArrivalApron": {
           "title": "String",
           "description": "抵達停機坪(僅貨機提供)",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "DepartureApron": {
           "title": "String",
           "description": "出發停機坪(僅貨機提供)",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "CodeShare": {
           "title": "String",
           "description": "航班共用班號",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "IsCargo": {
           "title": "Boolean",
@@ -1835,44 +1724,352 @@
         "AcType": {
           "title": "String",
           "description": "航空器型號",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "BaggageClaim": {
           "title": "String",
           "description": "行李轉盤",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "CheckCounter": {
           "title": "String",
           "description": "報到櫃檯",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         }
+      },
+      "xml": {
+        "name": "FIDS"
       }
     },
-    "PTX.Service.DTO.Air.Specification.V2.CodeShare": {
-      "title": "CodeShare",
-      "description": "共用班號",
+    "PTX.Service.DTO.Air.Specification.V2.FIDSArrival": {
+      "title": "FIDSArrival",
+      "description": "抵達航班顯示資料",
       "required": [
         "AirlineID",
-        "FlightNumber"
+        "ArrivalAirportID",
+        "DepartureAirportID",
+        "FlightDate",
+        "FlightNumber",
+        "UpdateTime"
       ],
       "type": "object",
       "properties": {
-        "AirlineID": {
-          "title": "String",
-          "description": "航空公司IATA國際代碼",
+        "FlightDate": {
+          "format": "date-time",
+          "description": "航班日期(ISO8601格式:yyyy-MM-dd)",
           "type": "string"
         },
         "FlightNumber": {
           "title": "String",
           "description": "航機班號(不包含航空公司的AirlineID，僅有班號數字)",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "AirRouteType": {
+          "title": "Int32",
+          "description": "航線種類(目前民航局與桃機的FIDS系統都尚未提供此欄位資料) : [-2:'特殊',1:'國際',2:'國內',3:'兩岸',4:'國際包機',5:'國內包機',6:'兩岸包機']",
+          "type": "integer"
+        },
+        "AirlineID": {
+          "title": "String",
+          "description": "航空公司IATA國際代碼",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "DepartureAirportID": {
+          "title": "String",
+          "description": "起點機場IATA國際代碼",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "ArrivalAirportID": {
+          "title": "String",
+          "description": "目的地機場IATA國際代碼",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "ScheduleArrivalTime": {
+          "format": "date-time",
+          "description": "表訂抵達時間(ISO8601格式:yyyy-MM-ddTHH:mm)",
+          "type": "string"
+        },
+        "ActualArrivalTime": {
+          "format": "date-time",
+          "description": "實際抵達時間(ISO8601格式:yyyy-MM-ddTHH:mm)",
+          "type": "string"
+        },
+        "EstimatedArrivalTime": {
+          "format": "date-time",
+          "description": "預估抵達時間(ISO8601格式:yyyy-MM-ddTHH:mm)",
+          "type": "string"
+        },
+        "ArrivalRemark": {
+          "title": "String",
+          "description": "航班屬性狀態,為該機場觀點的狀態",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "ArrivalRemarkEn": {
+          "title": "String",
+          "description": "航班屬性狀態(英文)",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "Terminal": {
+          "title": "String",
+          "description": "航廈",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "Gate": {
+          "title": "String",
+          "description": "登機門(僅客機提供)",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "Apron": {
+          "title": "String",
+          "description": "停機坪(僅貨機提供)",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "CodeShare": {
+          "title": "String",
+          "description": "航班共用班號",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "IsCargo": {
+          "title": "Boolean",
+          "description": "是否為貨機",
+          "type": "boolean"
+        },
+        "AcType": {
+          "title": "String",
+          "description": "航空器型號",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "BaggageClaim": {
+          "title": "String",
+          "description": "行李轉盤(到站FIDS可能有「行李轉盤」資訊, 離站FIDS不會有, 貨機則無此資訊)",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "CheckCounter": {
+          "title": "String",
+          "description": "報到櫃檯(離站FIDS可能有「報到櫃台」資訊, 到站FIDS不會有, 貨機則無此資訊)",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "UpdateTime": {
+          "format": "date-time",
+          "title": "DateTime",
+          "description": "資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         }
+      },
+      "xml": {
+        "name": "FIDSArrival"
+      }
+    },
+    "PTX.Service.DTO.Air.Specification.V2.FIDSDeparture": {
+      "title": "FIDSDeparture",
+      "description": "出發航班顯示資料",
+      "required": [
+        "AirlineID",
+        "ArrivalAirportID",
+        "DepartureAirportID",
+        "FlightDate",
+        "FlightNumber",
+        "UpdateTime"
+      ],
+      "type": "object",
+      "properties": {
+        "FlightDate": {
+          "format": "date-time",
+          "description": "航班日期(ISO8601格式:yyyy-MM-dd)",
+          "type": "string"
+        },
+        "FlightNumber": {
+          "title": "String",
+          "description": "航機班號(不包含航空公司的AirlineID，僅有班號數字)",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "AirRouteType": {
+          "title": "Int32",
+          "description": "航線種類(目前民航局與桃機的FIDS系統都尚未提供此欄位資料) : [-2:'特殊',1:'國際',2:'國內',3:'兩岸',4:'國際包機',5:'國內包機',6:'兩岸包機']",
+          "type": "integer"
+        },
+        "AirlineID": {
+          "title": "String",
+          "description": "航空公司IATA國際代碼",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "DepartureAirportID": {
+          "title": "String",
+          "description": "起點機場IATA國際代碼",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "ArrivalAirportID": {
+          "title": "String",
+          "description": "目的地機場IATA國際代碼",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "ScheduleDepartureTime": {
+          "format": "date-time",
+          "description": "表訂出發時間(ISO8601格式:yyyy-MM-ddTHH:mm)",
+          "type": "string"
+        },
+        "ActualDepartureTime": {
+          "format": "date-time",
+          "description": "實際出發時間(ISO8601格式:yyyy-MM-ddTHH:mm)",
+          "type": "string"
+        },
+        "EstimatedDepartureTime": {
+          "format": "date-time",
+          "description": "預估出發時間(ISO8601格式:yyyy-MM-ddTHH:mm)",
+          "type": "string"
+        },
+        "DepartureRemark": {
+          "title": "String",
+          "description": "航班屬性狀態, ,為該機場觀點的狀態",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "DepartureRemarkEn": {
+          "title": "String",
+          "description": "航班屬性狀態(英文)",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "Terminal": {
+          "title": "String",
+          "description": "航廈",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "Gate": {
+          "title": "String",
+          "description": "登機門(僅客機提供)",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "Apron": {
+          "title": "String",
+          "description": "停機坪(僅貨機提供)",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "CodeShare": {
+          "title": "String",
+          "description": "航班共用班號",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "IsCargo": {
+          "title": "Boolean",
+          "description": "是否為貨機",
+          "type": "boolean"
+        },
+        "AcType": {
+          "title": "String",
+          "description": "航空器型號",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "BaggageClaim": {
+          "title": "String",
+          "description": "行李轉盤(到站FIDS可能有「行李轉盤」資訊, 離站FIDS不會有, 貨機則無此資訊)",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "CheckCounter": {
+          "title": "String",
+          "description": "報到櫃檯(離站FIDS可能有「報到櫃台」資訊, 到站FIDS不會有, 貨機則無此資訊)",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "UpdateTime": {
+          "format": "date-time",
+          "title": "DateTime",
+          "description": "資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        }
+      },
+      "xml": {
+        "name": "FIDSDeparture"
       }
     },
     "PTX.Service.DTO.Air.Specification.V2.GeneralFlightSchedule": {
@@ -1902,14 +2099,19 @@
         "AirlineID": {
           "title": "String",
           "description": "航空公司IATA國際代碼",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "ScheduleStartDate": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "班表開始日期(ISO8601格式:yyyy-MM-dd)",
           "type": "string"
         },
         "ScheduleEndDate": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "班表結束日期(ISO8601格式:yyyy-MM-dd)",
           "type": "string"
@@ -1917,17 +2119,26 @@
         "FlightNumber": {
           "title": "String",
           "description": "班機號碼(包含航空公司的AirlineID，結構為AirlineID加上3~4碼航機班號數字；若班號僅有兩碼，其結構會加上0補足三碼，\"AirlineID + 0 + 兩碼班號\")",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "DepartureAirportID": {
           "title": "String",
           "description": "起點機場IATA國際代碼",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "DepartureTime": {
           "title": "String",
           "description": "起點機場出發時間 (格式: HH:mm 當地時間，跨日以+1 表示)",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "CodeShare": {
           "title": "Array",
@@ -1935,17 +2146,26 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/PTX.Service.DTO.Air.Specification.V2.CodeShare"
+          },
+          "xml": {
+            "name": "List`1"
           }
         },
         "ArrivalAirportID": {
           "title": "String",
           "description": "目的地機場IATA國際代碼",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "ArrivalTime": {
           "title": "String",
           "description": "終點機場抵達時間 (格式: HH:mm 當地時間，跨日以+1 表示)",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "Monday": {
           "title": "Boolean",
@@ -1985,9 +2205,13 @@
         "Terminal": {
           "title": "String",
           "description": "航廈",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -1998,6 +2222,9 @@
           "description": "資料版本編號",
           "type": "integer"
         }
+      },
+      "xml": {
+        "name": "GeneralFlightSchedule"
       }
     },
     "PTX.Service.DTO.Air.Specification.V2.METAR": {
@@ -2025,12 +2252,18 @@
         "AirportID": {
           "title": "String",
           "description": "機場代碼(IATA)",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "StationID": {
           "title": "String",
           "description": "機場氣象觀測站代碼(ICAO)",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "CountryName": {
           "title": "NameType",
@@ -2039,7 +2272,10 @@
             {
               "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V2.Base.NameType"
             }
-          ]
+          ],
+          "xml": {
+            "name": "NameType"
+          }
         },
         "CityName": {
           "title": "NameType",
@@ -2048,7 +2284,10 @@
             {
               "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V2.Base.NameType"
             }
-          ]
+          ],
+          "xml": {
+            "name": "NameType"
+          }
         },
         "AirportName": {
           "title": "NameType",
@@ -2057,7 +2296,10 @@
             {
               "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V2.Base.NameType"
             }
-          ]
+          ],
+          "xml": {
+            "name": "NameType"
+          }
         },
         "StationPosition": {
           "title": "PointType",
@@ -2066,9 +2308,13 @@
             {
               "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V2.Base.PointType"
             }
-          ]
+          ],
+          "xml": {
+            "name": "PointType"
+          }
         },
         "ObservationTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "觀測時間",
           "type": "string"
@@ -2076,37 +2322,58 @@
         "MetarText": {
           "title": "String",
           "description": "機場天氣報告(METAR/SPECI)",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "MetarTime": {
           "title": "String",
           "description": "機場天氣報告時間(地方時)",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "WindDirection": {
           "title": "String",
           "description": "風向(含單位)",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "WindSpeed": {
           "title": "String",
           "description": "風速(含單位)",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "Visibility": {
           "title": "String",
           "description": "盛行能見度(含單位，9999以10公里以上表示)",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "Ceiling": {
           "title": "String",
           "description": "雲冪(含單位)",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "Temperature": {
           "title": "String",
           "description": "溫度(含單位)",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "WeatherDescription": {
           "title": "NameType",
@@ -2115,13 +2382,74 @@
             {
               "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V2.Base.NameType"
             }
-          ]
+          ],
+          "xml": {
+            "name": "NameType"
+          }
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         }
+      },
+      "xml": {
+        "name": "METAR"
+      }
+    },
+    "PTX.Service.DTO.Shared.Specification.V2.Base.NameType": {
+      "title": "NameType",
+      "description": "名稱資料型別",
+      "type": "object",
+      "properties": {
+        "Zh_tw": {
+          "title": "String",
+          "description": "中文繁體名稱",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "En": {
+          "title": "String",
+          "description": "英文名稱",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        }
+      },
+      "xml": {
+        "name": "NameType"
+      }
+    },
+    "PTX.Service.DTO.Shared.Specification.V2.Base.PointType": {
+      "title": "PointType",
+      "description": "座標資料型別",
+      "type": "object",
+      "properties": {
+        "PositionLon": {
+          "format": "double",
+          "description": "位置經度(WGS84)",
+          "type": "number"
+        },
+        "PositionLat": {
+          "format": "double",
+          "description": "位置緯度(WGS84)",
+          "type": "number"
+        },
+        "GeoHash": {
+          "title": "String",
+          "description": "地理空間編碼",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        }
+      },
+      "xml": {
+        "name": "PointType"
       }
     }
   },

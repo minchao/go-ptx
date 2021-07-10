@@ -34,10 +34,9 @@ type PTXAPIRailModelV2THSRODAvailableSeatStatusWrapperPTXServiceDTORailSpecifica
 	// 來源平台更新週期(秒)
 	SrcUpdateInterval int32 `json:"SrcUpdateInterval,omitempty"`
 
-	// DateTime
-	//
 	// 來源平台更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
-	SrcUpdateTime string `json:"SrcUpdateTime,omitempty"`
+	// Format: date-time
+	SrcUpdateTime strfmt.DateTime `json:"SrcUpdateTime,omitempty"`
 
 	// String
 	//
@@ -49,10 +48,9 @@ type PTXAPIRailModelV2THSRODAvailableSeatStatusWrapperPTXServiceDTORailSpecifica
 	// PTX平台更新調期(秒)
 	UpdateInterval int32 `json:"UpdateInterval,omitempty"`
 
-	// DateTime
-	//
 	// PTX平台更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
-	UpdateTime string `json:"UpdateTime,omitempty"`
+	// Format: date-time
+	UpdateTime strfmt.DateTime `json:"UpdateTime,omitempty"`
 }
 
 // Validate validates this p t x API rail model v2 t h s r o d available seat status wrapper p t x service d t o rail specification v2 t h s r o d available seat
@@ -60,6 +58,14 @@ func (m *PTXAPIRailModelV2THSRODAvailableSeatStatusWrapperPTXServiceDTORailSpeci
 	var res []error
 
 	if err := m.validateAvailableSeats(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateSrcUpdateTime(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateUpdateTime(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -89,6 +95,30 @@ func (m *PTXAPIRailModelV2THSRODAvailableSeatStatusWrapperPTXServiceDTORailSpeci
 			}
 		}
 
+	}
+
+	return nil
+}
+
+func (m *PTXAPIRailModelV2THSRODAvailableSeatStatusWrapperPTXServiceDTORailSpecificationV2THSRODAvailableSeat) validateSrcUpdateTime(formats strfmt.Registry) error {
+	if swag.IsZero(m.SrcUpdateTime) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("SrcUpdateTime", "body", "date-time", m.SrcUpdateTime.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *PTXAPIRailModelV2THSRODAvailableSeatStatusWrapperPTXServiceDTORailSpecificationV2THSRODAvailableSeat) validateUpdateTime(formats strfmt.Registry) error {
+	if swag.IsZero(m.UpdateTime) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("UpdateTime", "body", "date-time", m.UpdateTime.String(), formats); err != nil {
+		return err
 	}
 
 	return nil

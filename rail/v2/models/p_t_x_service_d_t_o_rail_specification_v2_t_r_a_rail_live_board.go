@@ -27,11 +27,11 @@ type PTXServiceDTORailSpecificationV2TRARailLiveBoard struct {
 	// Required: true
 	DelayTime *int32 `json:"DelayTime"`
 
-	// integer
+	// Int32
 	//
 	// 順逆行 : [0:'順行',1:'逆行']
 	// Required: true
-	Direction *string `json:"Direction"`
+	Direction *int64 `json:"Direction"`
 
 	// String
 	//
@@ -63,7 +63,8 @@ type PTXServiceDTORailSpecificationV2TRARailLiveBoard struct {
 	//
 	// 來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Required: true
-	SrcUpdateTime *string `json:"SrcUpdateTime"`
+	// Format: date-time
+	SrcUpdateTime *strfmt.DateTime `json:"SrcUpdateTime"`
 
 	// String
 	//
@@ -102,16 +103,17 @@ type PTXServiceDTORailSpecificationV2TRARailLiveBoard struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
 	} `json:"TrainTypeName,omitempty" xml:"NameType,omitempty"`
 
-	// integer
+	// Int32
 	//
 	// 山海線類型 : [0:'不經山海線',1:'山線',2:'海線',3:'成追線']
-	TripLine string `json:"TripLine,omitempty"`
+	TripLine int64 `json:"TripLine,omitempty"`
 
 	// DateTime
 	//
 	// 本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Required: true
-	UpdateTime *string `json:"UpdateTime"`
+	// Format: date-time
+	UpdateTime *strfmt.DateTime `json:"UpdateTime"`
 }
 
 // Validate validates this p t x service d t o rail specification v2 t r a rail live board
@@ -228,6 +230,10 @@ func (m *PTXServiceDTORailSpecificationV2TRARailLiveBoard) validateSrcUpdateTime
 		return err
 	}
 
+	if err := validate.FormatOf("SrcUpdateTime", "body", "date-time", m.SrcUpdateTime.String(), formats); err != nil {
+		return err
+	}
+
 	return nil
 }
 
@@ -265,6 +271,10 @@ func (m *PTXServiceDTORailSpecificationV2TRARailLiveBoard) validateTrainTypeName
 func (m *PTXServiceDTORailSpecificationV2TRARailLiveBoard) validateUpdateTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
+		return err
+	}
+
+	if err := validate.FormatOf("UpdateTime", "body", "date-time", m.UpdateTime.String(), formats); err != nil {
 		return err
 	}
 

@@ -32,7 +32,7 @@ type PTXServiceDTOBusSpecificationV2BusStopOfRoute struct {
 	// 站牌權管所屬縣市之代碼(國際ISO 3166-2 三碼城市代碼)[若為公路/國道客運路線則為空值]
 	CityCode string `json:"CityCode,omitempty" xml:"String,omitempty"`
 
-	// integer
+	// Int32
 	//
 	// 去返程 : [0:'去程',1:'返程',2:'迴圈',255:'未知']
 	Direction int64 `json:"Direction,omitempty"`
@@ -92,7 +92,8 @@ type PTXServiceDTOBusSpecificationV2BusStopOfRoute struct {
 	//
 	// 資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Required: true
-	UpdateTime *string `json:"UpdateTime"`
+	// Format: date-time
+	UpdateTime *strfmt.DateTime `json:"UpdateTime"`
 
 	// Int32
 	//
@@ -249,6 +250,10 @@ func (m *PTXServiceDTOBusSpecificationV2BusStopOfRoute) validateSubRouteUID(form
 func (m *PTXServiceDTOBusSpecificationV2BusStopOfRoute) validateUpdateTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
+		return err
+	}
+
+	if err := validate.FormatOf("UpdateTime", "body", "date-time", m.UpdateTime.String(), formats); err != nil {
 		return err
 	}
 

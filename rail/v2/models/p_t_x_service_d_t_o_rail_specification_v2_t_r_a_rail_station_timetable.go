@@ -33,11 +33,11 @@ type PTXServiceDTORailSpecificationV2TRARailStationTimetable struct {
 	// Required: true
 	DepartureTime *string `json:"DepartureTime" xml:"String"`
 
-	// integer
+	// Int32
 	//
 	// 順逆行 : [0:'順行',1:'逆行']
 	// Required: true
-	Direction *string `json:"Direction"`
+	Direction *int64 `json:"Direction"`
 
 	// String
 	//
@@ -110,16 +110,17 @@ type PTXServiceDTORailSpecificationV2TRARailStationTimetable struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
 	} `json:"TrainTypeName,omitempty" xml:"NameType,omitempty"`
 
-	// integer
+	// Int32
 	//
 	// 山海線類型 : [0:'不經山海線',1:'山線',2:'海線',3:'成追線']
-	TripLine string `json:"TripLine,omitempty"`
+	TripLine int64 `json:"TripLine,omitempty"`
 
 	// DateTime
 	//
 	// 本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Required: true
-	UpdateTime *string `json:"UpdateTime"`
+	// Format: date-time
+	UpdateTime *strfmt.DateTime `json:"UpdateTime"`
 
 	// Int32
 	//
@@ -292,6 +293,10 @@ func (m *PTXServiceDTORailSpecificationV2TRARailStationTimetable) validateTrainT
 func (m *PTXServiceDTORailSpecificationV2TRARailStationTimetable) validateUpdateTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
+		return err
+	}
+
+	if err := validate.FormatOf("UpdateTime", "body", "date-time", m.UpdateTime.String(), formats); err != nil {
 		return err
 	}
 

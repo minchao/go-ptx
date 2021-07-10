@@ -37,10 +37,10 @@ type PTXServiceDTOBusSpecificationV2EmbeddedStop struct {
 	// 站牌所屬的站位ID
 	StationID string `json:"StationID,omitempty" xml:"String,omitempty"`
 
-	// integer
+	// Int32
 	//
 	// 上下車站別 : [-1:'可下車',0:'可上下車',1:'可上車']
-	StopBoarding string `json:"StopBoarding,omitempty"`
+	StopBoarding int64 `json:"StopBoarding,omitempty"`
 
 	// String
 	//

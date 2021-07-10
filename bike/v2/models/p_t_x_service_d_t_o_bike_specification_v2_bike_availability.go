@@ -31,36 +31,40 @@ type PTXServiceDTOBikeSpecificationV2BikeAvailability struct {
 	// 可歸還車數
 	AvailableReturnBikes int32 `json:"AvailableReturnBikes,omitempty"`
 
-	// integer
+	// Int32
 	//
 	// 服務狀態 : [0:'停止營運',1:'正常營運']
-	ServiceAvailable int32 `json:"ServiceAvailable,omitempty"`
+	ServiceAvailable int64 `json:"ServiceAvailable,omitempty"`
 
-	// DateTime
-	//
 	// 來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
-	SrcUpdateTime string `json:"SrcUpdateTime,omitempty"`
+	// Format: date-time
+	SrcUpdateTime strfmt.DateTime `json:"SrcUpdateTime,omitempty"`
 
 	// String
 	//
 	// 站點代碼
-	StationID string `json:"StationID,omitempty"`
+	StationID string `json:"StationID,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 站點唯一識別代碼，規則為 {業管機關代碼} + {StationID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢
-	StationUID string `json:"StationUID,omitempty"`
+	StationUID string `json:"StationUID,omitempty" xml:"String,omitempty"`
 
 	// DateTime
 	//
 	// 資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Required: true
-	UpdateTime *string `json:"UpdateTime"`
+	// Format: date-time
+	UpdateTime *strfmt.DateTime `json:"UpdateTime"`
 }
 
 // Validate validates this p t x service d t o bike specification v2 bike availability
 func (m *PTXServiceDTOBikeSpecificationV2BikeAvailability) Validate(formats strfmt.Registry) error {
 	var res []error
+
+	if err := m.validateSrcUpdateTime(formats); err != nil {
+		res = append(res, err)
+	}
 
 	if err := m.validateUpdateTime(formats); err != nil {
 		res = append(res, err)
@@ -72,9 +76,25 @@ func (m *PTXServiceDTOBikeSpecificationV2BikeAvailability) Validate(formats strf
 	return nil
 }
 
+func (m *PTXServiceDTOBikeSpecificationV2BikeAvailability) validateSrcUpdateTime(formats strfmt.Registry) error {
+	if swag.IsZero(m.SrcUpdateTime) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("SrcUpdateTime", "body", "date-time", m.SrcUpdateTime.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *PTXServiceDTOBikeSpecificationV2BikeAvailability) validateUpdateTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
+		return err
+	}
+
+	if err := validate.FormatOf("UpdateTime", "body", "date-time", m.UpdateTime.String(), formats); err != nil {
 		return err
 	}
 

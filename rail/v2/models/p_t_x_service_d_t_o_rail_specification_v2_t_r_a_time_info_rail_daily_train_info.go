@@ -21,35 +21,35 @@ import (
 // swagger:model PTX.Service.DTO.Rail.Specification.V2.TRA.TimeInfo.RailDailyTrainInfo
 type PTXServiceDTORailSpecificationV2TRATimeInfoRailDailyTrainInfo struct {
 
-	// integer
+	// Int32
 	//
 	// 是否人車同行班次(置於攜車袋之自行車各級列車均可乘車) : [0:'否',1:'是']
 	// Required: true
-	BikeFlag *string `json:"BikeFlag"`
+	BikeFlag *int64 `json:"BikeFlag"`
 
-	// integer
+	// Int32
 	//
 	// 是否設有哺(集)乳室車廂 : [0:'否',1:'是']
 	// Required: true
-	BreastFeedingFlag *string `json:"BreastFeedingFlag"`
+	BreastFeedingFlag *int64 `json:"BreastFeedingFlag"`
 
-	// integer
+	// Int32
 	//
 	// 是否為每日行駛 : [0:'否',1:'是']
 	// Required: true
-	DailyFlag *string `json:"DailyFlag"`
+	DailyFlag *int64 `json:"DailyFlag"`
 
-	// integer
+	// Int32
 	//
 	// 是否提供訂便當服務 : [0:'否',1:'是']
 	// Required: true
-	DiningFlag *string `json:"DiningFlag"`
+	DiningFlag *int64 `json:"DiningFlag"`
 
-	// integer
+	// Int32
 	//
 	// 順逆行 : [0:'順行',1:'逆行']
 	// Required: true
-	Direction *string `json:"Direction"`
+	Direction *int64 `json:"Direction"`
 
 	// String
 	//
@@ -75,11 +75,11 @@ type PTXServiceDTORailSpecificationV2TRATimeInfoRailDailyTrainInfo struct {
 	// 跨夜車站代碼
 	OverNightStationID string `json:"OverNightStationID,omitempty" xml:"String,omitempty"`
 
-	// integer
+	// Int32
 	//
 	// 是否提供行李服務 : [0:'否',1:'是']
 	// Required: true
-	PackageServiceFlag *string `json:"PackageServiceFlag"`
+	PackageServiceFlag *int64 `json:"PackageServiceFlag"`
 
 	// Boolean
 	//
@@ -127,16 +127,16 @@ type PTXServiceDTORailSpecificationV2TRATimeInfoRailDailyTrainInfo struct {
 	// 車次車頭文字描述(通用以"往"+ 迄站中文站名")
 	TripHeadsign string `json:"TripHeadsign,omitempty" xml:"String,omitempty"`
 
-	// integer
+	// Int32
 	//
 	// 山海線類型 : [0:'不經山海線',1:'山線',2:'海線',3:'成追線']
-	TripLine string `json:"TripLine,omitempty"`
+	TripLine int64 `json:"TripLine,omitempty"`
 
-	// integer
+	// Int32
 	//
 	// 是否設身障旅客專用座位車 : [0:'否',1:'是']
 	// Required: true
-	WheelchairFlag *string `json:"WheelchairFlag"`
+	WheelchairFlag *int64 `json:"WheelchairFlag"`
 }
 
 // Validate validates this p t x service d t o rail specification v2 t r a time info rail daily train info

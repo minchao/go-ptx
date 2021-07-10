@@ -45,27 +45,26 @@ type PTXServiceDTORailSpecificationV2THSRAlertInfo struct {
 	// Required: true
 	Effects *string `json:"Effects" xml:"String"`
 
-	// integer
+	// Int32
 	//
 	// 動態事件影響等級(本資料僅作參考，實際資料請參考高鐵http://www.thsrc.com.tw/tw/Operation) : [1:'全線正常運行',2:'有異常狀況']
 	// Required: true
-	Level *string `json:"Level"`
+	Level *int64 `json:"Level"`
 
-	// DateTime
-	//
 	// 發生日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
-	OccuredTime string `json:"OccuredTime,omitempty"`
+	// Format: date-time
+	OccuredTime strfmt.DateTime `json:"OccuredTime,omitempty"`
 
-	// DateTime
-	//
 	// 訊息發布日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
-	PublishTime string `json:"PublishTime,omitempty"`
+	// Format: date-time
+	PublishTime strfmt.DateTime `json:"PublishTime,omitempty"`
 
 	// DateTime
 	//
 	// 來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Required: true
-	SrcUpdateTime *string `json:"SrcUpdateTime"`
+	// Format: date-time
+	SrcUpdateTime *strfmt.DateTime `json:"SrcUpdateTime"`
 
 	// String
 	//
@@ -83,7 +82,8 @@ type PTXServiceDTORailSpecificationV2THSRAlertInfo struct {
 	//
 	// 本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Required: true
-	UpdateTime *string `json:"UpdateTime"`
+	// Format: date-time
+	UpdateTime *strfmt.DateTime `json:"UpdateTime"`
 }
 
 // Validate validates this p t x service d t o rail specification v2 t h s r alert info
@@ -107,6 +107,14 @@ func (m *PTXServiceDTORailSpecificationV2THSRAlertInfo) Validate(formats strfmt.
 	}
 
 	if err := m.validateLevel(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateOccuredTime(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validatePublishTime(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -177,9 +185,37 @@ func (m *PTXServiceDTORailSpecificationV2THSRAlertInfo) validateLevel(formats st
 	return nil
 }
 
+func (m *PTXServiceDTORailSpecificationV2THSRAlertInfo) validateOccuredTime(formats strfmt.Registry) error {
+	if swag.IsZero(m.OccuredTime) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("OccuredTime", "body", "date-time", m.OccuredTime.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV2THSRAlertInfo) validatePublishTime(formats strfmt.Registry) error {
+	if swag.IsZero(m.PublishTime) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("PublishTime", "body", "date-time", m.PublishTime.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *PTXServiceDTORailSpecificationV2THSRAlertInfo) validateSrcUpdateTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("SrcUpdateTime", "body", m.SrcUpdateTime); err != nil {
+		return err
+	}
+
+	if err := validate.FormatOf("SrcUpdateTime", "body", "date-time", m.SrcUpdateTime.String(), formats); err != nil {
 		return err
 	}
 
@@ -207,6 +243,10 @@ func (m *PTXServiceDTORailSpecificationV2THSRAlertInfo) validateTitle(formats st
 func (m *PTXServiceDTORailSpecificationV2THSRAlertInfo) validateUpdateTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
+		return err
+	}
+
+	if err := validate.FormatOf("UpdateTime", "body", "date-time", m.UpdateTime.String(), formats); err != nil {
 		return err
 	}
 

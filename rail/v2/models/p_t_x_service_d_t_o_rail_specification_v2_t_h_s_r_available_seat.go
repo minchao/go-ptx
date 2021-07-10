@@ -22,11 +22,11 @@ import (
 // swagger:model PTX.Service.DTO.Rail.Specification.V2.THSR.AvailableSeat
 type PTXServiceDTORailSpecificationV2THSRAvailableSeat struct {
 
-	// integer
+	// Int32
 	//
 	// 方向 : [0:'南下',1:'北上']
 	// Required: true
-	Direction *string `json:"Direction"`
+	Direction *int64 `json:"Direction"`
 
 	// String
 	//

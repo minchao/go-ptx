@@ -24,173 +24,175 @@ type PTXServiceDTOAirSpecificationV2FIDS struct {
 	// String
 	//
 	// 航空器型號
-	AcType string `json:"AcType,omitempty"`
+	AcType string `json:"AcType,omitempty" xml:"String,omitempty"`
 
-	// DateTime
-	//
 	// 實際抵達時間(ISO8601格式:yyyy-MM-ddTHH:mm)
-	ActualArrivalTime string `json:"ActualArrivalTime,omitempty"`
+	// Format: date-time
+	ActualArrivalTime strfmt.DateTime `json:"ActualArrivalTime,omitempty"`
 
-	// DateTime
-	//
 	// 實際出發時間(ISO8601格式:yyyy-MM-ddTHH:mm)
-	ActualDepartureTime string `json:"ActualDepartureTime,omitempty"`
+	// Format: date-time
+	ActualDepartureTime strfmt.DateTime `json:"ActualDepartureTime,omitempty"`
 
-	// integer
+	// Int32
 	//
 	// 航線種類 : [-2:'特殊',1:'國際',2:'國內',3:'兩岸',4:'國際包機',5:'國內包機',6:'兩岸包機']
-	AirRouteType int32 `json:"AirRouteType,omitempty"`
+	AirRouteType int64 `json:"AirRouteType,omitempty"`
 
 	// String
 	//
 	// 航空公司IATA國際代碼
 	// Required: true
-	AirlineID *string `json:"AirlineID"`
+	AirlineID *string `json:"AirlineID" xml:"String"`
 
 	// String
 	//
 	// 目的地機場IATA國際代碼
 	// Required: true
-	ArrivalAirportID *string `json:"ArrivalAirportID"`
+	ArrivalAirportID *string `json:"ArrivalAirportID" xml:"String"`
 
 	// String
 	//
 	// 抵達停機坪(僅貨機提供)
-	ArrivalApron string `json:"ArrivalApron,omitempty"`
+	ArrivalApron string `json:"ArrivalApron,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 抵達登機門(僅客機提供)
-	ArrivalGate string `json:"ArrivalGate,omitempty"`
+	ArrivalGate string `json:"ArrivalGate,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 航班屬性狀態,為該機場觀點的狀態
-	ArrivalRemark string `json:"ArrivalRemark,omitempty"`
+	ArrivalRemark string `json:"ArrivalRemark,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 航班屬性狀態(英文)
-	ArrivalRemarkEn string `json:"ArrivalRemarkEn,omitempty"`
+	ArrivalRemarkEn string `json:"ArrivalRemarkEn,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 抵達航廈
-	ArrivalTerminal string `json:"ArrivalTerminal,omitempty"`
+	ArrivalTerminal string `json:"ArrivalTerminal,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 行李轉盤
-	BaggageClaim string `json:"BaggageClaim,omitempty"`
+	BaggageClaim string `json:"BaggageClaim,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 報到櫃檯
-	CheckCounter string `json:"CheckCounter,omitempty"`
+	CheckCounter string `json:"CheckCounter,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 航班共用班號
-	CodeShare string `json:"CodeShare,omitempty"`
+	CodeShare string `json:"CodeShare,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 起點機場IATA國際代碼
 	// Required: true
-	DepartureAirportID *string `json:"DepartureAirportID"`
+	DepartureAirportID *string `json:"DepartureAirportID" xml:"String"`
 
 	// String
 	//
 	// 出發停機坪(僅貨機提供)
-	DepartureApron string `json:"DepartureApron,omitempty"`
+	DepartureApron string `json:"DepartureApron,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 出發登機門(僅客機提供)
-	DepartureGate string `json:"DepartureGate,omitempty"`
+	DepartureGate string `json:"DepartureGate,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 航班屬性狀態,為第三方觀點的狀態(資料來源:民航局)
-	DepartureRemark string `json:"DepartureRemark,omitempty"`
+	DepartureRemark string `json:"DepartureRemark,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 航班屬性狀態(英文)
-	DepartureRemarkEn string `json:"DepartureRemarkEn,omitempty"`
+	DepartureRemarkEn string `json:"DepartureRemarkEn,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 出發航廈
-	DepartureTerminal string `json:"DepartureTerminal,omitempty"`
+	DepartureTerminal string `json:"DepartureTerminal,omitempty" xml:"String,omitempty"`
 
-	// DateTime
-	//
 	// 預估抵達時間(ISO8601格式:yyyy-MM-ddTHH:mm)
-	EstimatedArrivalTime string `json:"EstimatedArrivalTime,omitempty"`
+	// Format: date-time
+	EstimatedArrivalTime strfmt.DateTime `json:"EstimatedArrivalTime,omitempty"`
 
-	// DateTime
-	//
 	// 預估出發時間(ISO8601格式:yyyy-MM-ddTHH:mm)
-	EstimatedDepartureTime string `json:"EstimatedDepartureTime,omitempty"`
+	// Format: date-time
+	EstimatedDepartureTime strfmt.DateTime `json:"EstimatedDepartureTime,omitempty"`
 
-	// DateTime
-	//
 	// 航班日期(ISO8601格式:yyyy-MM-dd)
 	// Required: true
-	FlightDate *string `json:"FlightDate"`
+	// Format: date-time
+	FlightDate *strfmt.DateTime `json:"FlightDate"`
 
 	// String
 	//
 	// 航機班號(不包含航空公司的AirlineID，僅有班號數字)
 	// Required: true
-	FlightNumber *string `json:"FlightNumber"`
+	FlightNumber *string `json:"FlightNumber" xml:"String"`
 
 	// String
 	//
 	// 航班屬性
-	FlightRemark string `json:"FlightRemark,omitempty"`
+	FlightRemark string `json:"FlightRemark,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 航班運行狀態,以航班的角度的狀態
-	FlightStatus string `json:"FlightStatus,omitempty"`
+	FlightStatus string `json:"FlightStatus,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 航班運行狀態(英文)
-	FlightStatusEn string `json:"FlightStatusEn,omitempty"`
+	FlightStatusEn string `json:"FlightStatusEn,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 航班運行狀態百分比(國內線)
-	FlightStatusPC string `json:"FlightStatusPC,omitempty"`
+	FlightStatusPC string `json:"FlightStatusPC,omitempty" xml:"String,omitempty"`
 
 	// Boolean
 	//
 	// 是否為貨機
 	IsCargo bool `json:"IsCargo,omitempty"`
 
-	// DateTime
-	//
 	// 表訂抵達時間(ISO8601格式:yyyy-MM-ddTHH:mm)
-	ScheduleArrivalTime string `json:"ScheduleArrivalTime,omitempty"`
+	// Format: date-time
+	ScheduleArrivalTime strfmt.DateTime `json:"ScheduleArrivalTime,omitempty"`
 
-	// DateTime
-	//
 	// 表訂出發時間(ISO8601格式:yyyy-MM-ddTHH:mm)
-	ScheduleDepartureTime string `json:"ScheduleDepartureTime,omitempty"`
+	// Format: date-time
+	ScheduleDepartureTime strfmt.DateTime `json:"ScheduleDepartureTime,omitempty"`
 
 	// DateTime
 	//
 	// 資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Required: true
-	UpdateTime *string `json:"UpdateTime"`
+	// Format: date-time
+	UpdateTime *strfmt.DateTime `json:"UpdateTime"`
 }
 
 // Validate validates this p t x service d t o air specification v2 f ID s
 func (m *PTXServiceDTOAirSpecificationV2FIDS) Validate(formats strfmt.Registry) error {
 	var res []error
+
+	if err := m.validateActualArrivalTime(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateActualDepartureTime(formats); err != nil {
+		res = append(res, err)
+	}
 
 	if err := m.validateAirlineID(formats); err != nil {
 		res = append(res, err)
@@ -204,11 +206,27 @@ func (m *PTXServiceDTOAirSpecificationV2FIDS) Validate(formats strfmt.Registry) 
 		res = append(res, err)
 	}
 
+	if err := m.validateEstimatedArrivalTime(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateEstimatedDepartureTime(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateFlightDate(formats); err != nil {
 		res = append(res, err)
 	}
 
 	if err := m.validateFlightNumber(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateScheduleArrivalTime(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateScheduleDepartureTime(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -219,6 +237,30 @@ func (m *PTXServiceDTOAirSpecificationV2FIDS) Validate(formats strfmt.Registry) 
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *PTXServiceDTOAirSpecificationV2FIDS) validateActualArrivalTime(formats strfmt.Registry) error {
+	if swag.IsZero(m.ActualArrivalTime) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("ActualArrivalTime", "body", "date-time", m.ActualArrivalTime.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTOAirSpecificationV2FIDS) validateActualDepartureTime(formats strfmt.Registry) error {
+	if swag.IsZero(m.ActualDepartureTime) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("ActualDepartureTime", "body", "date-time", m.ActualDepartureTime.String(), formats); err != nil {
+		return err
+	}
+
 	return nil
 }
 
@@ -249,9 +291,37 @@ func (m *PTXServiceDTOAirSpecificationV2FIDS) validateDepartureAirportID(formats
 	return nil
 }
 
+func (m *PTXServiceDTOAirSpecificationV2FIDS) validateEstimatedArrivalTime(formats strfmt.Registry) error {
+	if swag.IsZero(m.EstimatedArrivalTime) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("EstimatedArrivalTime", "body", "date-time", m.EstimatedArrivalTime.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTOAirSpecificationV2FIDS) validateEstimatedDepartureTime(formats strfmt.Registry) error {
+	if swag.IsZero(m.EstimatedDepartureTime) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("EstimatedDepartureTime", "body", "date-time", m.EstimatedDepartureTime.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *PTXServiceDTOAirSpecificationV2FIDS) validateFlightDate(formats strfmt.Registry) error {
 
 	if err := validate.Required("FlightDate", "body", m.FlightDate); err != nil {
+		return err
+	}
+
+	if err := validate.FormatOf("FlightDate", "body", "date-time", m.FlightDate.String(), formats); err != nil {
 		return err
 	}
 
@@ -267,9 +337,37 @@ func (m *PTXServiceDTOAirSpecificationV2FIDS) validateFlightNumber(formats strfm
 	return nil
 }
 
+func (m *PTXServiceDTOAirSpecificationV2FIDS) validateScheduleArrivalTime(formats strfmt.Registry) error {
+	if swag.IsZero(m.ScheduleArrivalTime) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("ScheduleArrivalTime", "body", "date-time", m.ScheduleArrivalTime.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTOAirSpecificationV2FIDS) validateScheduleDepartureTime(formats strfmt.Registry) error {
+	if swag.IsZero(m.ScheduleDepartureTime) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("ScheduleDepartureTime", "body", "date-time", m.ScheduleDepartureTime.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *PTXServiceDTOAirSpecificationV2FIDS) validateUpdateTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
+		return err
+	}
+
+	if err := validate.FormatOf("UpdateTime", "body", "date-time", m.UpdateTime.String(), formats); err != nil {
 		return err
 	}
 

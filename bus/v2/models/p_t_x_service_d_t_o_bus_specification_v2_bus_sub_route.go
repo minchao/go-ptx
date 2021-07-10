@@ -21,7 +21,7 @@ import (
 // swagger:model PTX.Service.DTO.Bus.Specification.V2.BusSubRoute
 type PTXServiceDTOBusSpecificationV2BusSubRoute struct {
 
-	// integer
+	// Int32
 	//
 	// 去返程 : [0:'去程',1:'返程',2:'迴圈',255:'未知']
 	// Required: true

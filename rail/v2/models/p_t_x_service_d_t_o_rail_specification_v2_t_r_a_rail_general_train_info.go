@@ -21,35 +21,35 @@ import (
 // swagger:model PTX.Service.DTO.Rail.Specification.V2.TRA.RailGeneralTrainInfo
 type PTXServiceDTORailSpecificationV2TRARailGeneralTrainInfo struct {
 
-	// integer
+	// Int32
 	//
 	// 是否人車同行班次(置於攜車袋之自行車各級列車均可乘車) : [0:'否',1:'是']
 	// Required: true
-	BikeFlag *string `json:"BikeFlag"`
+	BikeFlag *int64 `json:"BikeFlag"`
 
-	// integer
+	// Int32
 	//
 	// 是否設有哺(集)乳室車廂 : [0:'否',1:'是']
 	// Required: true
-	BreastFeedingFlag *string `json:"BreastFeedingFlag"`
+	BreastFeedingFlag *int64 `json:"BreastFeedingFlag"`
 
-	// integer
+	// Int32
 	//
 	// 是否為每日行駛 : [0:'否',1:'是']
 	// Required: true
-	DailyFlag *string `json:"DailyFlag"`
+	DailyFlag *int64 `json:"DailyFlag"`
 
-	// integer
+	// Int32
 	//
 	// 是否提供訂便當服務 : [0:'否',1:'是']
 	// Required: true
-	DiningFlag *string `json:"DiningFlag"`
+	DiningFlag *int64 `json:"DiningFlag"`
 
-	// integer
+	// Int32
 	//
 	// 順逆行 : [0:'順行',1:'逆行']
 	// Required: true
-	Direction *string `json:"Direction"`
+	Direction *int64 `json:"Direction"`
 
 	// String
 	//
@@ -75,11 +75,11 @@ type PTXServiceDTORailSpecificationV2TRARailGeneralTrainInfo struct {
 	// 跨夜車站代碼
 	OverNightStationID string `json:"OverNightStationID,omitempty" xml:"String,omitempty"`
 
-	// integer
+	// Int32
 	//
 	// 是否提供行李服務 : [0:'否',1:'是']
 	// Required: true
-	PackageServiceFlag *string `json:"PackageServiceFlag"`
+	PackageServiceFlag *int64 `json:"PackageServiceFlag"`
 
 	// String
 	//
@@ -116,16 +116,17 @@ type PTXServiceDTORailSpecificationV2TRARailGeneralTrainInfo struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
 	} `json:"TrainTypeName,omitempty" xml:"NameType,omitempty"`
 
-	// integer
+	// Int32
 	//
 	// 山海線類型 : [0:'不經山海線',1:'山線',2:'海線',3:'成追線']
-	TripLine string `json:"TripLine,omitempty"`
+	TripLine int64 `json:"TripLine,omitempty"`
 
 	// DateTime
 	//
 	// 資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Required: true
-	UpdateTime *string `json:"UpdateTime"`
+	// Format: date-time
+	UpdateTime *strfmt.DateTime `json:"UpdateTime"`
 
 	// Int32
 	//
@@ -133,11 +134,11 @@ type PTXServiceDTORailSpecificationV2TRARailGeneralTrainInfo struct {
 	// Required: true
 	VersionID *int32 `json:"VersionID"`
 
-	// integer
+	// Int32
 	//
 	// 是否設身障旅客專用座位車 : [0:'否',1:'是']
 	// Required: true
-	WheelchairFlag *string `json:"WheelchairFlag"`
+	WheelchairFlag *int64 `json:"WheelchairFlag"`
 }
 
 // Validate validates this p t x service d t o rail specification v2 t r a rail general train info
@@ -304,6 +305,10 @@ func (m *PTXServiceDTORailSpecificationV2TRARailGeneralTrainInfo) validateTrainT
 func (m *PTXServiceDTORailSpecificationV2TRARailGeneralTrainInfo) validateUpdateTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
+		return err
+	}
+
+	if err := validate.FormatOf("UpdateTime", "body", "date-time", m.UpdateTime.String(), formats); err != nil {
 		return err
 	}
 

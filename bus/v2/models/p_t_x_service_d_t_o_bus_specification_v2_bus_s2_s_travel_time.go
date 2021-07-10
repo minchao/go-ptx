@@ -22,7 +22,7 @@ import (
 // swagger:model PTX.Service.DTO.Bus.Specification.V2.BusS2STravelTime
 type PTXServiceDTOBusSpecificationV2BusS2STravelTime struct {
 
-	// integer
+	// Int32
 	//
 	// 去返程 : [0:'去程',1:'返程',2:'迴圈',255:'未知']
 	// Required: true
@@ -62,7 +62,8 @@ type PTXServiceDTOBusSpecificationV2BusS2STravelTime struct {
 	//
 	// 資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Required: true
-	UpdateTime *string `json:"UpdateTime"`
+	// Format: date-time
+	UpdateTime *strfmt.DateTime `json:"UpdateTime"`
 }
 
 // Validate validates this p t x service d t o bus specification v2 bus s2 s travel time
@@ -176,6 +177,10 @@ func (m *PTXServiceDTOBusSpecificationV2BusS2STravelTime) validateTravelTimes(fo
 func (m *PTXServiceDTOBusSpecificationV2BusS2STravelTime) validateUpdateTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
+		return err
+	}
+
+	if err := validate.FormatOf("UpdateTime", "body", "date-time", m.UpdateTime.String(), formats); err != nil {
 		return err
 	}
 

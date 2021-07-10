@@ -21,7 +21,7 @@ import (
 // swagger:model PTX.Service.DTO.Bus.Specification.V2.BusShape
 type PTXServiceDTOBusSpecificationV2BusShape struct {
 
-	// integer
+	// Int32
 	//
 	// 去返程，若無值則表示來源尚無區分去返程 : [0:'去程',1:'返程',2:'迴圈',255:'未知']
 	// Required: true
@@ -81,7 +81,8 @@ type PTXServiceDTOBusSpecificationV2BusShape struct {
 	//
 	// 資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Required: true
-	UpdateTime *string `json:"UpdateTime"`
+	// Format: date-time
+	UpdateTime *strfmt.DateTime `json:"UpdateTime"`
 
 	// Int32
 	//
@@ -210,6 +211,10 @@ func (m *PTXServiceDTOBusSpecificationV2BusShape) validateSubRouteUID(formats st
 func (m *PTXServiceDTOBusSpecificationV2BusShape) validateUpdateTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
+		return err
+	}
+
+	if err := validate.FormatOf("UpdateTime", "body", "date-time", m.UpdateTime.String(), formats); err != nil {
 		return err
 	}
 

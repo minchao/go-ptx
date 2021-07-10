@@ -43,7 +43,8 @@ type PTXServiceDTORailSpecificationV2MetroS2STravelTime struct {
 	//
 	// 來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Required: true
-	SrcUpdateTime *string `json:"SrcUpdateTime"`
+	// Format: date-time
+	SrcUpdateTime *strfmt.DateTime `json:"SrcUpdateTime"`
 
 	// 車種(0:不分車種, 1:普通車, 2:直達車)
 	TrainType int32 `json:"TrainType,omitempty"`
@@ -58,7 +59,8 @@ type PTXServiceDTORailSpecificationV2MetroS2STravelTime struct {
 	//
 	// 本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Required: true
-	UpdateTime *string `json:"UpdateTime"`
+	// Format: date-time
+	UpdateTime *strfmt.DateTime `json:"UpdateTime"`
 
 	// Int32
 	//
@@ -125,6 +127,10 @@ func (m *PTXServiceDTORailSpecificationV2MetroS2STravelTime) validateSrcUpdateTi
 		return err
 	}
 
+	if err := validate.FormatOf("SrcUpdateTime", "body", "date-time", m.SrcUpdateTime.String(), formats); err != nil {
+		return err
+	}
+
 	return nil
 }
 
@@ -156,6 +162,10 @@ func (m *PTXServiceDTORailSpecificationV2MetroS2STravelTime) validateTravelTimes
 func (m *PTXServiceDTORailSpecificationV2MetroS2STravelTime) validateUpdateTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
+		return err
+	}
+
+	if err := validate.FormatOf("UpdateTime", "body", "date-time", m.UpdateTime.String(), formats); err != nil {
 		return err
 	}
 

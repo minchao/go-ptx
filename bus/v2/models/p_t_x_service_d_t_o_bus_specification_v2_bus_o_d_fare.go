@@ -30,7 +30,7 @@ type PTXServiceDTOBusSpecificationV2BusODFare struct {
 		PTXServiceDTOBusSpecificationV2BusRouteFareStop
 	} `json:"DestinationStop" xml:"Stop"`
 
-	// integer
+	// Int32
 	//
 	// 方向性描述 : [0:'去程',1:'返程',2:'迴圈',255:'未知']
 	// Required: true

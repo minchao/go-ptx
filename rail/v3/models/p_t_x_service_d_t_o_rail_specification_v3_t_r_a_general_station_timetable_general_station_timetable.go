@@ -22,11 +22,11 @@ import (
 // swagger:model PTX.Service.DTO.Rail.Specification.V3.TRA.GeneralStationTimetable.GeneralStationTimetable
 type PTXServiceDTORailSpecificationV3TRAGeneralStationTimetableGeneralStationTimetable struct {
 
-	// integer
+	// Int32
 	//
 	// 行駛方向 : [0:'順行',1:'逆行']
 	// Required: true
-	Direction *string `json:"Direction"`
+	Direction *int64 `json:"Direction"`
 
 	// String
 	//

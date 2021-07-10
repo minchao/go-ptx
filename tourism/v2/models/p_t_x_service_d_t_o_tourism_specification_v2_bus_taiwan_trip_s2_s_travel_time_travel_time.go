@@ -29,7 +29,7 @@ type PTXServiceDTOTourismSpecificationV2BusTaiwanTripS2STravelTimeTravelTime str
 	//
 	// 起站站牌代碼
 	// Required: true
-	FromStopID *string `json:"FromStopID"`
+	FromStopID *string `json:"FromStopID" xml:"String"`
 
 	// Int32
 	//
@@ -53,7 +53,7 @@ type PTXServiceDTOTourismSpecificationV2BusTaiwanTripS2STravelTimeTravelTime str
 	//
 	// 迄站站牌代碼
 	// Required: true
-	ToStopID *string `json:"ToStopID"`
+	ToStopID *string `json:"ToStopID" xml:"String"`
 }
 
 // Validate validates this p t x service d t o tourism specification v2 bus taiwan trip s2 s travel time travel time

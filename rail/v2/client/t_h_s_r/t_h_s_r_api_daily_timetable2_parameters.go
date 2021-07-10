@@ -101,8 +101,10 @@ type THSRAPIDailyTimetable2Params struct {
 	/* TrainDate.
 
 	   欲查詢的日期(格式: yyyy-MM-dd)
+
+	   Format: date-time
 	*/
-	TrainDate string
+	TrainDate strfmt.DateTime
 
 	timeout    time.Duration
 	Context    context.Context
@@ -235,13 +237,13 @@ func (o *THSRAPIDailyTimetable2Params) SetDollarTop(dollarTop *int64) {
 }
 
 // WithTrainDate adds the trainDate to the t h s r Api daily timetable 2 params
-func (o *THSRAPIDailyTimetable2Params) WithTrainDate(trainDate string) *THSRAPIDailyTimetable2Params {
+func (o *THSRAPIDailyTimetable2Params) WithTrainDate(trainDate strfmt.DateTime) *THSRAPIDailyTimetable2Params {
 	o.SetTrainDate(trainDate)
 	return o
 }
 
 // SetTrainDate adds the trainDate to the t h s r Api daily timetable 2 params
-func (o *THSRAPIDailyTimetable2Params) SetTrainDate(trainDate string) {
+func (o *THSRAPIDailyTimetable2Params) SetTrainDate(trainDate strfmt.DateTime) {
 	o.TrainDate = trainDate
 }
 
@@ -349,7 +351,7 @@ func (o *THSRAPIDailyTimetable2Params) WriteToRequest(r runtime.ClientRequest, r
 	}
 
 	// path param TrainDate
-	if err := r.SetPathParam("TrainDate", o.TrainDate); err != nil {
+	if err := r.SetPathParam("TrainDate", o.TrainDate.String()); err != nil {
 		return err
 	}
 

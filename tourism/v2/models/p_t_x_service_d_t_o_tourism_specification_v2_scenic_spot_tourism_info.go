@@ -24,136 +24,138 @@ type PTXServiceDTOTourismSpecificationV2ScenicSpotTourismInfo struct {
 	// String
 	//
 	// 景點地址
-	Address string `json:"Address,omitempty"`
+	Address string `json:"Address,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 所屬縣市
-	City string `json:"City,omitempty"`
+	City string `json:"City,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 景點分類1
-	Class1 string `json:"Class1,omitempty"`
+	Class1 string `json:"Class1,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 景點分類2
-	Class2 string `json:"Class2,omitempty"`
+	Class2 string `json:"Class2,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 景點分類3
-	Class3 string `json:"Class3,omitempty"`
+	Class3 string `json:"Class3,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 景點特色精簡說明
-	Description string `json:"Description,omitempty"`
+	Description string `json:"Description,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 景點特色詳細說明
-	DescriptionDetail string `json:"DescriptionDetail,omitempty"`
+	DescriptionDetail string `json:"DescriptionDetail,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 景點代碼
 	// Required: true
-	ID *string `json:"ID"`
+	ID *string `json:"ID" xml:"String"`
 
 	// String
 	//
 	// 常用搜尋關鍵字
-	Keyword string `json:"Keyword,omitempty"`
+	Keyword string `json:"Keyword,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 古蹟分級
-	Level string `json:"Level,omitempty"`
+	Level string `json:"Level,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 景點地圖/簡圖介紹網址
-	MapURL string `json:"MapUrl,omitempty"`
+	MapURL string `json:"MapUrl,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 景點名稱
-	Name string `json:"Name,omitempty"`
+	Name string `json:"Name,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 開放時間
-	OpenTime string `json:"OpenTime,omitempty"`
+	OpenTime string `json:"OpenTime,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 停車資訊
-	ParkingInfo string `json:"ParkingInfo,omitempty"`
+	ParkingInfo string `json:"ParkingInfo,omitempty" xml:"String,omitempty"`
 
 	// PointType
 	//
 	// 景點主要停車場位置
 	ParkingPosition struct {
 		PTXServiceDTOSharedSpecificationV2BasePointType
-	} `json:"ParkingPosition,omitempty"`
+	} `json:"ParkingPosition,omitempty" xml:"PointType,omitempty"`
 
 	// String
 	//
 	// 景點服務電話
-	Phone string `json:"Phone,omitempty"`
+	Phone string `json:"Phone,omitempty" xml:"String,omitempty"`
 
 	// TourismPicture
 	//
 	// 景點照片
 	Picture struct {
 		PTXServiceDTOTourismSpecificationV2TourismPicture
-	} `json:"Picture,omitempty"`
+	} `json:"Picture,omitempty" xml:"TourismPicture,omitempty"`
 
 	// PointType
 	//
 	// 景點位置
 	Position struct {
 		PTXServiceDTOSharedSpecificationV2BasePointType
-	} `json:"Position,omitempty"`
+	} `json:"Position,omitempty" xml:"PointType,omitempty"`
 
 	// String
 	//
 	// 警告及注意事項
-	Remarks string `json:"Remarks,omitempty"`
+	Remarks string `json:"Remarks,omitempty" xml:"String,omitempty"`
 
 	// DateTime
 	//
 	// 觀光局檔案更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Required: true
-	SrcUpdateTime *string `json:"SrcUpdateTime"`
+	// Format: date-time
+	SrcUpdateTime *strfmt.DateTime `json:"SrcUpdateTime"`
 
 	// String
 	//
 	// 票價資訊
-	TicketInfo string `json:"TicketInfo,omitempty"`
+	TicketInfo string `json:"TicketInfo,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 交通資訊
-	TravelInfo string `json:"TravelInfo,omitempty"`
+	TravelInfo string `json:"TravelInfo,omitempty" xml:"String,omitempty"`
 
 	// DateTime
 	//
 	// 本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Required: true
-	UpdateTime *string `json:"UpdateTime"`
+	// Format: date-time
+	UpdateTime *strfmt.DateTime `json:"UpdateTime"`
 
 	// String
 	//
 	// 景點官方網站網址
-	WebsiteURL string `json:"WebsiteUrl,omitempty"`
+	WebsiteURL string `json:"WebsiteUrl,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 郵遞區號
-	ZipCode string `json:"ZipCode,omitempty"`
+	ZipCode string `json:"ZipCode,omitempty" xml:"String,omitempty"`
 }
 
 // Validate validates this p t x service d t o tourism specification v2 scenic spot tourism info
@@ -229,12 +231,20 @@ func (m *PTXServiceDTOTourismSpecificationV2ScenicSpotTourismInfo) validateSrcUp
 		return err
 	}
 
+	if err := validate.FormatOf("SrcUpdateTime", "body", "date-time", m.SrcUpdateTime.String(), formats); err != nil {
+		return err
+	}
+
 	return nil
 }
 
 func (m *PTXServiceDTOTourismSpecificationV2ScenicSpotTourismInfo) validateUpdateTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
+		return err
+	}
+
+	if err := validate.FormatOf("UpdateTime", "body", "date-time", m.UpdateTime.String(), formats); err != nil {
 		return err
 	}
 

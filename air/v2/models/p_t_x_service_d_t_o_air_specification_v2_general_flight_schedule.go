@@ -26,42 +26,42 @@ type PTXServiceDTOAirSpecificationV2GeneralFlightSchedule struct {
 	//
 	// 航空公司IATA國際代碼
 	// Required: true
-	AirlineID *string `json:"AirlineID"`
+	AirlineID *string `json:"AirlineID" xml:"String"`
 
 	// String
 	//
 	// 目的地機場IATA國際代碼
 	// Required: true
-	ArrivalAirportID *string `json:"ArrivalAirportID"`
+	ArrivalAirportID *string `json:"ArrivalAirportID" xml:"String"`
 
 	// String
 	//
 	// 終點機場抵達時間 (格式: HH:mm 當地時間，跨日以+1 表示)
 	// Required: true
-	ArrivalTime *string `json:"ArrivalTime"`
+	ArrivalTime *string `json:"ArrivalTime" xml:"String"`
 
 	// Array
 	//
 	// 共用班號
-	CodeShare []*PTXServiceDTOAirSpecificationV2CodeShare `json:"CodeShare"`
+	CodeShare []*PTXServiceDTOAirSpecificationV2CodeShare "json:\"CodeShare\" xml:\"List`1\""
 
 	// String
 	//
 	// 起點機場IATA國際代碼
 	// Required: true
-	DepartureAirportID *string `json:"DepartureAirportID"`
+	DepartureAirportID *string `json:"DepartureAirportID" xml:"String"`
 
 	// String
 	//
 	// 起點機場出發時間 (格式: HH:mm 當地時間，跨日以+1 表示)
 	// Required: true
-	DepartureTime *string `json:"DepartureTime"`
+	DepartureTime *string `json:"DepartureTime" xml:"String"`
 
 	// String
 	//
 	// 班機號碼(包含航空公司的AirlineID，結構為AirlineID加上3~4碼航機班號數字；若班號僅有兩碼，其結構會加上0補足三碼，"AirlineID + 0 + 兩碼班號")
 	// Required: true
-	FlightNumber *string `json:"FlightNumber"`
+	FlightNumber *string `json:"FlightNumber" xml:"String"`
 
 	// Boolean
 	//
@@ -85,13 +85,15 @@ type PTXServiceDTOAirSpecificationV2GeneralFlightSchedule struct {
 	//
 	// 班表結束日期(ISO8601格式:yyyy-MM-dd)
 	// Required: true
-	ScheduleEndDate *string `json:"ScheduleEndDate"`
+	// Format: date-time
+	ScheduleEndDate *strfmt.DateTime `json:"ScheduleEndDate"`
 
 	// DateTime
 	//
 	// 班表開始日期(ISO8601格式:yyyy-MM-dd)
 	// Required: true
-	ScheduleStartDate *string `json:"ScheduleStartDate"`
+	// Format: date-time
+	ScheduleStartDate *strfmt.DateTime `json:"ScheduleStartDate"`
 
 	// Boolean
 	//
@@ -102,7 +104,7 @@ type PTXServiceDTOAirSpecificationV2GeneralFlightSchedule struct {
 	// String
 	//
 	// 航廈
-	Terminal string `json:"Terminal,omitempty"`
+	Terminal string `json:"Terminal,omitempty" xml:"String,omitempty"`
 
 	// Boolean
 	//
@@ -120,7 +122,8 @@ type PTXServiceDTOAirSpecificationV2GeneralFlightSchedule struct {
 	//
 	// 資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Required: true
-	UpdateTime *string `json:"UpdateTime"`
+	// Format: date-time
+	UpdateTime *strfmt.DateTime `json:"UpdateTime"`
 
 	// Int32
 	//
@@ -328,12 +331,20 @@ func (m *PTXServiceDTOAirSpecificationV2GeneralFlightSchedule) validateScheduleE
 		return err
 	}
 
+	if err := validate.FormatOf("ScheduleEndDate", "body", "date-time", m.ScheduleEndDate.String(), formats); err != nil {
+		return err
+	}
+
 	return nil
 }
 
 func (m *PTXServiceDTOAirSpecificationV2GeneralFlightSchedule) validateScheduleStartDate(formats strfmt.Registry) error {
 
 	if err := validate.Required("ScheduleStartDate", "body", m.ScheduleStartDate); err != nil {
+		return err
+	}
+
+	if err := validate.FormatOf("ScheduleStartDate", "body", "date-time", m.ScheduleStartDate.String(), formats); err != nil {
 		return err
 	}
 
@@ -370,6 +381,10 @@ func (m *PTXServiceDTOAirSpecificationV2GeneralFlightSchedule) validateTuesday(f
 func (m *PTXServiceDTOAirSpecificationV2GeneralFlightSchedule) validateUpdateTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
+		return err
+	}
+
+	if err := validate.FormatOf("UpdateTime", "body", "date-time", m.UpdateTime.String(), formats); err != nil {
 		return err
 	}
 

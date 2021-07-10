@@ -24,35 +24,36 @@ type PTXServiceDTOTourismSpecificationV2BusTaiwanTripS2STravelTime struct {
 	//
 	// 路線代碼
 	// Required: true
-	RouteID *string `json:"RouteID"`
+	RouteID *string `json:"RouteID" xml:"String"`
 
 	// String
 	//
 	// 路線唯一識別代碼，規則為 {業管機關簡碼} + {RouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢
 	// Required: true
-	RouteUID *string `json:"RouteUID"`
+	RouteUID *string `json:"RouteUID" xml:"String"`
 
 	// String
 	//
 	// 附屬路線代碼
-	SubRouteID string `json:"SubRouteID,omitempty"`
+	SubRouteID string `json:"SubRouteID,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 附屬路線唯一識別代碼，規則為 {業管機關簡碼} + {SubRouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢
-	SubRouteUID string `json:"SubRouteUID,omitempty"`
+	SubRouteUID string `json:"SubRouteUID,omitempty" xml:"String,omitempty"`
 
 	// Array
 	//
 	// 站間運行時間資訊
 	// Required: true
-	TravelTimes []*PTXServiceDTOTourismSpecificationV2BusTaiwanTripS2STravelTimeTravelTime `json:"TravelTimes"`
+	TravelTimes []*PTXServiceDTOTourismSpecificationV2BusTaiwanTripS2STravelTimeTravelTime "json:\"TravelTimes\" xml:\"List`1\""
 
 	// DateTime
 	//
 	// 資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Required: true
-	UpdateTime *string `json:"UpdateTime"`
+	// Format: date-time
+	UpdateTime *strfmt.DateTime `json:"UpdateTime"`
 }
 
 // Validate validates this p t x service d t o tourism specification v2 bus taiwan trip s2 s travel time
@@ -127,6 +128,10 @@ func (m *PTXServiceDTOTourismSpecificationV2BusTaiwanTripS2STravelTime) validate
 func (m *PTXServiceDTOTourismSpecificationV2BusTaiwanTripS2STravelTime) validateUpdateTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
+		return err
+	}
+
+	if err := validate.FormatOf("UpdateTime", "body", "date-time", m.UpdateTime.String(), formats); err != nil {
 		return err
 	}
 

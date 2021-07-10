@@ -39,11 +39,11 @@ type PTXServiceDTOBusSpecificationV3ScheduleSpecialDay struct {
 	// Required: true
 	Description *string `json:"Description" xml:"String"`
 
-	// integer
+	// Int32
 	//
 	// 營運服務狀態代碼0=停止營運, 1=正常營運 , 2=加班營運 : [0:'正常營運',1:'加班營運',2:'取消/停駛營運']
 	// Required: true
-	ServiceStatus *string `json:"ServiceStatus"`
+	ServiceStatus *int64 `json:"ServiceStatus"`
 }
 
 // Validate validates this p t x service d t o bus specification v3 schedule special day

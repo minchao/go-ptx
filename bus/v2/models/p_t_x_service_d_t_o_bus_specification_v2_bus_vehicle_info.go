@@ -31,9 +31,10 @@ type PTXServiceDTOBusSpecificationV2BusVehicleInfo struct {
 	//
 	// 資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Required: true
-	UpdateTime *string `json:"UpdateTime"`
+	// Format: date-time
+	UpdateTime *strfmt.DateTime `json:"UpdateTime"`
 
-	// integer
+	// Int32
 	//
 	// 車輛種類 : [0:'一般',1:'無障礙公車',2:'復康巴士',3:'小型巴士']
 	// Required: true
@@ -74,6 +75,10 @@ func (m *PTXServiceDTOBusSpecificationV2BusVehicleInfo) validatePlateNumb(format
 func (m *PTXServiceDTOBusSpecificationV2BusVehicleInfo) validateUpdateTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
+		return err
+	}
+
+	if err := validate.FormatOf("UpdateTime", "body", "date-time", m.UpdateTime.String(), formats); err != nil {
 		return err
 	}
 

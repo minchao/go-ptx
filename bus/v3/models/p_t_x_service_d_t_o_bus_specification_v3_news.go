@@ -35,10 +35,9 @@ type PTXServiceDTOBusSpecificationV3News struct {
 	// Required: true
 	Description *string `json:"Description" xml:"String"`
 
-	// DateTime
-	//
 	// 結束時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
-	EndTime string `json:"EndTime,omitempty"`
+	// Format: date-time
+	EndTime strfmt.DateTime `json:"EndTime,omitempty"`
 
 	// String
 	//
@@ -67,17 +66,18 @@ type PTXServiceDTOBusSpecificationV3News struct {
 	//
 	// 消息公告日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Required: true
-	PublishTime *string `json:"PublishTime"`
+	// Format: date-time
+	PublishTime *strfmt.DateTime `json:"PublishTime"`
 
 	// DateTime
 	//
 	// [來源端平臺]此筆資料最後更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
-	SrcUpdateTime string `json:"SrcUpdateTime,omitempty"`
+	// Format: date-time
+	SrcUpdateTime strfmt.DateTime `json:"SrcUpdateTime,omitempty"`
 
-	// DateTime
-	//
 	// 開始時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
-	StartTime string `json:"StartTime,omitempty"`
+	// Format: date-time
+	StartTime strfmt.DateTime `json:"StartTime,omitempty"`
 
 	// String
 	//
@@ -91,6 +91,10 @@ func (m *PTXServiceDTOBusSpecificationV3News) Validate(formats strfmt.Registry) 
 	var res []error
 
 	if err := m.validateDescription(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateEndTime(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -110,6 +114,14 @@ func (m *PTXServiceDTOBusSpecificationV3News) Validate(formats strfmt.Registry) 
 		res = append(res, err)
 	}
 
+	if err := m.validateSrcUpdateTime(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateStartTime(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateTitle(formats); err != nil {
 		res = append(res, err)
 	}
@@ -123,6 +135,18 @@ func (m *PTXServiceDTOBusSpecificationV3News) Validate(formats strfmt.Registry) 
 func (m *PTXServiceDTOBusSpecificationV3News) validateDescription(formats strfmt.Registry) error {
 
 	if err := validate.Required("Description", "body", m.Description); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV3News) validateEndTime(formats strfmt.Registry) error {
+	if swag.IsZero(m.EndTime) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("EndTime", "body", "date-time", m.EndTime.String(), formats); err != nil {
 		return err
 	}
 
@@ -159,6 +183,34 @@ func (m *PTXServiceDTOBusSpecificationV3News) validateNewsID(formats strfmt.Regi
 func (m *PTXServiceDTOBusSpecificationV3News) validatePublishTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("PublishTime", "body", m.PublishTime); err != nil {
+		return err
+	}
+
+	if err := validate.FormatOf("PublishTime", "body", "date-time", m.PublishTime.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV3News) validateSrcUpdateTime(formats strfmt.Registry) error {
+	if swag.IsZero(m.SrcUpdateTime) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("SrcUpdateTime", "body", "date-time", m.SrcUpdateTime.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV3News) validateStartTime(formats strfmt.Registry) error {
+	if swag.IsZero(m.StartTime) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("StartTime", "body", "date-time", m.StartTime.String(), formats); err != nil {
 		return err
 	}
 

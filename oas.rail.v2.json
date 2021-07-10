@@ -347,7 +347,7 @@
           {
             "in": "query",
             "name": "$spatialFilter",
-            "description": "空間過濾",
+            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
             "type": "string"
           },
           {
@@ -723,7 +723,7 @@
           {
             "in": "query",
             "name": "$spatialFilter",
-            "description": "空間過濾",
+            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
             "type": "string"
           },
           {
@@ -1338,10 +1338,12 @@
             "required": true,
             "type": "string",
             "enum": [
-              "KRTC"
+              "KRTC",
+              "KLRT"
             ],
             "x-enum": {
               "KRTC": "高雄捷運",
+              "KLRT": "高雄輕軌",
               "TRTC": "臺北捷運",
               "TYMC": "桃園捷運"
             }
@@ -1829,7 +1831,7 @@
           {
             "in": "query",
             "name": "$spatialFilter",
-            "description": "空間過濾",
+            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
             "type": "string"
           },
           {
@@ -2345,7 +2347,8 @@
             "name": "TrainDate",
             "description": "欲查詢車次的日期(格式: yyyy-MM-dd)",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "format": "date-time"
           },
           {
             "in": "query",
@@ -2432,7 +2435,8 @@
             "name": "TrainDate",
             "description": "欲查詢車次的日期(格式: yyyy-MM-dd)",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "format": "date-time"
           },
           {
             "in": "query",
@@ -2665,7 +2669,8 @@
             "name": "TrainDate",
             "description": "欲查詢的日期(格式: yyyy-MM-dd)",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "format": "date-time"
           },
           {
             "in": "query",
@@ -2752,7 +2757,8 @@
             "name": "TrainDate",
             "description": "欲查詢的日期(格式: yyyy-MM-dd)",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "format": "date-time"
           },
           {
             "in": "query",
@@ -2837,7 +2843,8 @@
             "in": "path",
             "name": "TrainDate",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "format": "date-time"
           },
           {
             "in": "query",
@@ -2931,7 +2938,8 @@
             "name": "TrainDate",
             "description": "欲查詢的日期(格式: yyyy-MM-dd)",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "format": "date-time"
           },
           {
             "in": "query",
@@ -3424,7 +3432,7 @@
           {
             "in": "query",
             "name": "$spatialFilter",
-            "description": "空間過濾",
+            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
             "type": "string"
           },
           {
@@ -3553,7 +3561,8 @@
             "name": "TrainDate",
             "description": "欲查詢車次的日期(格式: yyyy-MM-dd)",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "format": "date-time"
           },
           {
             "in": "query",
@@ -3639,7 +3648,8 @@
             "name": "TrainDate",
             "description": "欲查詢車次的日期(格式: yyyy-MM-dd)",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "format": "date-time"
           },
           {
             "in": "query",
@@ -3739,7 +3749,8 @@
             "name": "TrainDate",
             "description": "欲查詢車次的日期(格式: yyyy-MM-dd)",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "format": "date-time"
           },
           {
             "in": "query",
@@ -3839,7 +3850,8 @@
             "name": "TrainDate",
             "description": "欲查詢車次的日期(格式: yyyy-MM-dd)",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "format": "date-time"
           },
           {
             "in": "path",
@@ -4034,7 +4046,7 @@
           {
             "in": "query",
             "name": "$spatialFilter",
-            "description": "空間過濾",
+            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
             "type": "string"
           },
           {
@@ -4995,7 +5007,8 @@
             "name": "TrainDate",
             "description": "欲查詢車次的日期(格式: yyyy-MM-dd)",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "format": "date-time"
           },
           {
             "in": "query",
@@ -5082,7 +5095,8 @@
             "name": "TrainDate",
             "description": "欲查詢車次的日期(格式: yyyy-MM-dd)",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "format": "date-time"
           },
           {
             "in": "query",
@@ -5315,7 +5329,8 @@
             "name": "TrainDate",
             "description": "欲查詢的日期(格式: yyyy-MM-dd)",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "format": "date-time"
           },
           {
             "in": "query",
@@ -5402,7 +5417,8 @@
             "name": "TrainDate",
             "description": "欲查詢的日期(格式: yyyy-MM-dd)",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "format": "date-time"
           },
           {
             "in": "query",
@@ -5489,7 +5505,8 @@
             "name": "TrainDate",
             "description": "時刻表日期(格式: yyyy-MM-dd)",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "format": "date-time"
           },
           {
             "in": "query",
@@ -5583,7 +5600,8 @@
             "name": "TrainDate",
             "description": "欲查詢的日期(格式: yyyy-MM-dd)",
             "required": true,
-            "type": "string"
+            "type": "string",
+            "format": "date-time"
           },
           {
             "in": "query",
@@ -5886,7 +5904,7 @@
       "type": "object",
       "properties": {
         "UpdateTime": {
-          "title": "DateTime",
+          "format": "date-time",
           "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         },
@@ -5897,6 +5915,7 @@
           "type": "integer"
         },
         "SrcUpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -5934,7 +5953,7 @@
       },
       "xml": {
         "name": "MRTRealTimeWrapperOfAlert",
-        "namespace": "http://www.w3.org/2001/XMLSchema-instance"
+        "namespace": "https://ptx.transportdata.tw/standard/schema/"
       }
     },
     "PTX.API.Rail.Model.MRTRealTimeWrapper[PTX.Service.DTO.Rail.Specification.V2.Metro.MRTNewsList.News]": {
@@ -5950,7 +5969,7 @@
       "type": "object",
       "properties": {
         "UpdateTime": {
-          "title": "DateTime",
+          "format": "date-time",
           "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         },
@@ -5961,6 +5980,7 @@
           "type": "integer"
         },
         "SrcUpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -5998,7 +6018,7 @@
       },
       "xml": {
         "name": "MRTRealTimeWrapperOfNews",
-        "namespace": "http://www.w3.org/2001/XMLSchema-instance"
+        "namespace": "https://ptx.transportdata.tw/standard/schema/"
       }
     },
     "PTX.API.Rail.Model.V2THSRAvailableSeatStatusOldWrapper[PTX.Service.DTO.Rail.Specification.V2.THSR.Old.AvailableSeat]": {
@@ -6009,7 +6029,7 @@
       "type": "object",
       "properties": {
         "UpdateTime": {
-          "title": "DateTime",
+          "format": "date-time",
           "description": "更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         },
@@ -6032,7 +6052,7 @@
       },
       "xml": {
         "name": "V2THSRAvailableSeatStatusOldWrapperOfAvailableSeat",
-        "namespace": "http://www.w3.org/2001/XMLSchema-instance"
+        "namespace": "https://ptx.transportdata.tw/standard/schema/"
       }
     },
     "PTX.API.Rail.Model.V2THSRAvailableSeatStatusWrapper[PTX.Service.DTO.Rail.Specification.V2.THSR.AvailableSeat]": {
@@ -6043,12 +6063,12 @@
       "type": "object",
       "properties": {
         "UpdateTime": {
-          "title": "DateTime",
+          "format": "date-time",
           "description": "PTX平台更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         },
         "SrcUpdateTime": {
-          "title": "DateTime",
+          "format": "date-time",
           "description": "來源平台更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         },
@@ -6079,7 +6099,7 @@
       },
       "xml": {
         "name": "V2THSRAvailableSeatStatusWrapperOfAvailableSeat",
-        "namespace": "http://www.w3.org/2001/XMLSchema-instance"
+        "namespace": "https://ptx.transportdata.tw/standard/schema/"
       }
     },
     "PTX.API.Rail.Model.V2THSRODAvailableSeatStatusWrapper[PTX.Service.DTO.Rail.Specification.V2.THSR.OD.AvailableSeat]": {
@@ -6090,7 +6110,7 @@
       "type": "object",
       "properties": {
         "UpdateTime": {
-          "title": "DateTime",
+          "format": "date-time",
           "description": "PTX平台更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         },
@@ -6101,7 +6121,7 @@
           "type": "integer"
         },
         "SrcUpdateTime": {
-          "title": "DateTime",
+          "format": "date-time",
           "description": "來源平台更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         },
@@ -6138,7 +6158,7 @@
       },
       "xml": {
         "name": "V2THSRODAvailableSeatStatusWrapperOfAvailableSeat",
-        "namespace": "http://www.w3.org/2001/XMLSchema-instance"
+        "namespace": "https://ptx.transportdata.tw/standard/schema/"
       }
     },
     "PTX.Service.DTO.Rail.Specification.V2.Metro.Alert": {
@@ -6178,9 +6198,9 @@
           }
         },
         "Status": {
-          "title": "integer",
+          "title": "Int32",
           "description": "營運狀況 : [0:'全線營運停止',1:'全線營運正常',2:'有異常狀況']",
-          "type": "string"
+          "type": "integer"
         },
         "Scope": {
           "title": "AlertScope",
@@ -6195,14 +6215,14 @@
           }
         },
         "Direction": {
-          "title": "integer",
+          "title": "Int32",
           "description": "影響方向 : [0:'去程',1:'返程']",
-          "type": "string"
+          "type": "integer"
         },
         "Level": {
-          "title": "integer",
+          "title": "Int32",
           "description": "影響等級程度 : [1:'重度',2:'中度',3:'輕度']",
-          "type": "string"
+          "type": "integer"
         },
         "Effect": {
           "title": "String",
@@ -6229,21 +6249,22 @@
           }
         },
         "StartTime": {
-          "title": "DateTime",
+          "format": "date-time",
           "description": "訊息起始日期時間",
           "type": "string"
         },
         "EndTime": {
-          "title": "DateTime",
+          "format": "date-time",
           "description": "訊息結束日期時間",
           "type": "string"
         },
         "PublishTime": {
-          "title": "DateTime",
+          "format": "date-time",
           "description": "消息發佈日期時間",
           "type": "string"
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "消息更新日期時間",
           "type": "string"
@@ -6429,11 +6450,13 @@
           }
         },
         "SrcUpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -6529,11 +6552,13 @@
           }
         },
         "SrcUpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -6648,11 +6673,13 @@
           "type": "boolean"
         },
         "SrcUpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -6786,9 +6813,9 @@
           }
         },
         "IsOnSiteTransfer": {
-          "title": "integer",
+          "title": "Int32",
           "description": "是否為站內或站外轉乘 : [0:'站外',1:'站內']",
-          "type": "string"
+          "type": "integer"
         },
         "TransferTime": {
           "format": "int32",
@@ -6805,11 +6832,13 @@
           }
         },
         "SrcUpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -6934,11 +6963,13 @@
           "type": "integer"
         },
         "SrcUpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -6989,6 +7020,7 @@
           }
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -7291,9 +7323,9 @@
           }
         },
         "Language": {
-          "title": "integer",
+          "title": "Int32",
           "description": "語系 : [1:'Zh_tw',2:'En_us',3:'Zh_cn',4:'Ja',5:'Ko',99:'Other']",
-          "type": "string"
+          "type": "integer"
         },
         "Department": {
           "title": "String",
@@ -7312,9 +7344,9 @@
           }
         },
         "NewsCategory": {
-          "title": "integer",
+          "title": "Int32",
           "description": "消息類別 : [1:'最新消息',2:'新聞稿',3:'營運資訊',4:'轉乘資訊',5:'活動訊息',6:'系統公告',7:'新服務上架',8:'API修正',9:'來源異常',99:'其他']",
-          "type": "string"
+          "type": "integer"
         },
         "Description": {
           "title": "String",
@@ -7341,21 +7373,23 @@
           }
         },
         "StartTime": {
-          "title": "DateTime",
+          "format": "date-time",
           "description": "消息起始日期時間",
           "type": "string"
         },
         "EndTime": {
-          "title": "DateTime",
+          "format": "date-time",
           "description": "消息結束日期時間",
           "type": "string"
         },
         "PublishTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "消息發佈日期時間",
           "type": "string"
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "本筆資料之更新日期時間",
           "type": "string"
@@ -7441,11 +7475,13 @@
           }
         },
         "SrcUpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -7572,11 +7608,13 @@
           "type": "number"
         },
         "SrcUpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -7716,11 +7754,13 @@
           "type": "number"
         },
         "SrcUpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -7790,11 +7830,13 @@
           }
         },
         "SrcUpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -7867,11 +7909,13 @@
           "type": "boolean"
         },
         "SrcUpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -8024,11 +8068,13 @@
           "type": "boolean"
         },
         "SrcUpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -8125,11 +8171,13 @@
           }
         },
         "SrcUpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -8185,11 +8233,13 @@
           }
         },
         "SrcUpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -8274,11 +8324,13 @@
           }
         },
         "SrcUpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -8348,9 +8400,9 @@
           }
         },
         "Direction": {
-          "title": "integer",
+          "title": "Int32",
           "description": "營運路線方向描述 : [0:'去程',1:'返程']",
-          "type": "string"
+          "type": "integer"
         },
         "DestinationStaionID": {
           "title": "String",
@@ -8407,11 +8459,13 @@
           }
         },
         "SrcUpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -8638,11 +8692,13 @@
       "type": "object",
       "properties": {
         "SaterDate": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "開始時間",
           "type": "string"
         },
         "EndDate": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "結束時間",
           "type": "string"
@@ -8867,14 +8923,14 @@
       "description": "座標資料型別",
       "type": "object",
       "properties": {
-        "PositionLat": {
-          "format": "double",
-          "description": "位置緯度(WGS84)",
-          "type": "number"
-        },
         "PositionLon": {
           "format": "double",
           "description": "位置經度(WGS84)",
+          "type": "number"
+        },
+        "PositionLat": {
+          "format": "double",
+          "description": "位置緯度(WGS84)",
           "type": "number"
         },
         "GeoHash": {
@@ -8907,9 +8963,9 @@
       "type": "object",
       "properties": {
         "Level": {
-          "title": "integer",
+          "title": "Int32",
           "description": "動態事件影響等級(本資料僅作參考，實際資料請參考高鐵http://www.thsrc.com.tw/tw/Operation) : [1:'全線正常運行',2:'有異常狀況']",
-          "type": "string"
+          "type": "integer"
         },
         "Status": {
           "title": "String",
@@ -8960,21 +9016,23 @@
           }
         },
         "OccuredTime": {
-          "title": "DateTime",
+          "format": "date-time",
           "description": "發生日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         },
         "PublishTime": {
-          "title": "DateTime",
+          "format": "date-time",
           "description": "訊息發布日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         },
         "SrcUpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -9009,9 +9067,9 @@
           }
         },
         "Direction": {
-          "title": "integer",
+          "title": "Int32",
           "description": "方向 : [0:'南下',1:'北上']",
-          "type": "string"
+          "type": "integer"
         },
         "StartingStationID": {
           "title": "String",
@@ -9132,6 +9190,7 @@
           }
         },
         "SrcUpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -9221,21 +9280,24 @@
           }
         },
         "StartTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "開始時間",
           "type": "string"
         },
         "EndTime": {
-          "title": "DateTime",
+          "format": "date-time",
           "description": "結束時間",
           "type": "string"
         },
         "PublishTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "消息發布日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -9378,9 +9440,9 @@
           }
         },
         "Direction": {
-          "title": "integer",
+          "title": "Int32",
           "description": "方向 : [0:'南下',1:'北上']",
-          "type": "string"
+          "type": "integer"
         },
         "StationID": {
           "title": "String",
@@ -9442,6 +9504,7 @@
           }
         },
         "SrcUpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "來源平台更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -9495,6 +9558,7 @@
           }
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -9530,9 +9594,9 @@
           }
         },
         "Direction": {
-          "title": "integer",
+          "title": "Int32",
           "description": "行駛方向 : [0:'南下',1:'北上']",
-          "type": "string"
+          "type": "integer"
         },
         "StartingStationID": {
           "title": "String",
@@ -9587,6 +9651,7 @@
           }
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -9614,6 +9679,7 @@
       "type": "object",
       "properties": {
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "發布時間(格式: yyyy-MM-dd)",
           "type": "string"
@@ -9675,9 +9741,9 @@
           }
         },
         "Direction": {
-          "title": "integer",
+          "title": "Int32",
           "description": "行駛方向 : [0:'南下',1:'北上']",
-          "type": "string"
+          "type": "integer"
         },
         "StartingStationID": {
           "title": "String",
@@ -9794,6 +9860,7 @@
           }
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -9866,9 +9933,9 @@
           }
         },
         "Direction": {
-          "title": "integer",
+          "title": "Int32",
           "description": "行駛方向 : [0:'南下',1:'北上']",
-          "type": "string"
+          "type": "integer"
         },
         "Fares": {
           "title": "Array",
@@ -9882,11 +9949,13 @@
           }
         },
         "SrcUpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -9978,6 +10047,7 @@
           }
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -10094,9 +10164,9 @@
           }
         },
         "Direction": {
-          "title": "integer",
+          "title": "Int32",
           "description": "順逆行 : [0:'南下',1:'北上']",
-          "type": "string"
+          "type": "integer"
         },
         "StartingStationID": {
           "title": "String",
@@ -10155,6 +10225,7 @@
           }
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -10243,39 +10314,39 @@
       "type": "object",
       "properties": {
         "Monday": {
-          "title": "integer",
+          "title": "Int32",
           "description": "星期一是否營運 : [0:'否',1:'是']",
-          "type": "string"
+          "type": "integer"
         },
         "Tuesday": {
-          "title": "integer",
+          "title": "Int32",
           "description": "星期二是否營運 : [0:'否',1:'是']",
-          "type": "string"
+          "type": "integer"
         },
         "Wednesday": {
-          "title": "integer",
+          "title": "Int32",
           "description": "星期三是否營運 : [0:'否',1:'是']",
-          "type": "string"
+          "type": "integer"
         },
         "Thursday": {
-          "title": "integer",
+          "title": "Int32",
           "description": "星期四是否營運 : [0:'否',1:'是']",
-          "type": "string"
+          "type": "integer"
         },
         "Friday": {
-          "title": "integer",
+          "title": "Int32",
           "description": "星期五是否營運 : [0:'否',1:'是']",
-          "type": "string"
+          "type": "integer"
         },
         "Saturday": {
-          "title": "integer",
+          "title": "Int32",
           "description": "星期六是否營運 : [0:'否',1:'是']",
-          "type": "string"
+          "type": "integer"
         },
         "Sunday": {
-          "title": "integer",
+          "title": "Int32",
           "description": "星期日是否營運 : [0:'否',1:'是']",
-          "type": "string"
+          "type": "integer"
         }
       },
       "xml": {
@@ -10373,11 +10444,13 @@
           "type": "boolean"
         },
         "SrcUpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -10518,6 +10591,7 @@
           }
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -10561,9 +10635,9 @@
           }
         },
         "Direction": {
-          "title": "integer",
+          "title": "Int32",
           "description": "行駛方向 : [0:'南下',1:'北上']",
-          "type": "string"
+          "type": "integer"
         },
         "StartingStationID": {
           "title": "String",
@@ -10668,7 +10742,7 @@
           }
         },
         "SrcUpdateTime": {
-          "title": "DateTime",
+          "format": "date-time",
           "description": "來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         }
@@ -10754,6 +10828,7 @@
           "type": "boolean"
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -10921,6 +10996,7 @@
           }
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -10974,6 +11050,7 @@
           }
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -11019,9 +11096,9 @@
           }
         },
         "Direction": {
-          "title": "integer",
+          "title": "Int32",
           "description": "順逆行 : [0:'順行',1:'逆行']",
-          "type": "string"
+          "type": "integer"
         },
         "StartingStationID": {
           "title": "String",
@@ -11100,9 +11177,9 @@
           }
         },
         "TripLine": {
-          "title": "integer",
+          "title": "Int32",
           "description": "山海線類型 : [0:'不經山海線',1:'山線',2:'海線',3:'成追線']",
-          "type": "string"
+          "type": "integer"
         },
         "OverNightStationID": {
           "title": "String",
@@ -11113,39 +11190,39 @@
           }
         },
         "WheelchairFlag": {
-          "title": "integer",
+          "title": "Int32",
           "description": "是否設身障旅客專用座位車 : [0:'否',1:'是']",
-          "type": "string"
+          "type": "integer"
         },
         "PackageServiceFlag": {
-          "title": "integer",
+          "title": "Int32",
           "description": "是否提供行李服務 : [0:'否',1:'是']",
-          "type": "string"
+          "type": "integer"
         },
         "DiningFlag": {
-          "title": "integer",
+          "title": "Int32",
           "description": "是否提供訂便當服務 : [0:'否',1:'是']",
-          "type": "string"
+          "type": "integer"
         },
         "BikeFlag": {
-          "title": "integer",
+          "title": "Int32",
           "description": "是否人車同行班次(置於攜車袋之自行車各級列車均可乘車) : [0:'否',1:'是']",
-          "type": "string"
+          "type": "integer"
         },
         "BreastFeedingFlag": {
-          "title": "integer",
+          "title": "Int32",
           "description": "是否設有哺(集)乳室車廂 : [0:'否',1:'是']",
-          "type": "string"
+          "type": "integer"
         },
         "DailyFlag": {
-          "title": "integer",
+          "title": "Int32",
           "description": "是否每日行駛 : [0:'否',1:'是']",
-          "type": "string"
+          "type": "integer"
         },
         "ServiceAddedFlag": {
-          "title": "integer",
+          "title": "Int32",
           "description": "是否為加班車 : [0:'否',1:'是']",
-          "type": "string"
+          "type": "integer"
         },
         "Note": {
           "title": "NameType",
@@ -11160,6 +11237,7 @@
           }
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -11185,6 +11263,7 @@
       "type": "object",
       "properties": {
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "資料更新日期(格式: yyyy-MM-dd)",
           "type": "string"
@@ -11238,9 +11317,9 @@
           }
         },
         "Direction": {
-          "title": "integer",
+          "title": "Int32",
           "description": "順逆行 : [0:'順行',1:'逆行']",
-          "type": "string"
+          "type": "integer"
         },
         "StartingStationID": {
           "title": "String",
@@ -11311,9 +11390,9 @@
           }
         },
         "TripLine": {
-          "title": "integer",
+          "title": "Int32",
           "description": "山海線類型 : [0:'不經山海線',1:'山線',2:'海線',3:'成追線']",
-          "type": "string"
+          "type": "integer"
         },
         "OverNightStationID": {
           "title": "String",
@@ -11324,34 +11403,34 @@
           }
         },
         "WheelchairFlag": {
-          "title": "integer",
+          "title": "Int32",
           "description": "是否設身障旅客專用座位車 : [0:'否',1:'是']",
-          "type": "string"
+          "type": "integer"
         },
         "PackageServiceFlag": {
-          "title": "integer",
+          "title": "Int32",
           "description": "是否提供行李服務 : [0:'否',1:'是']",
-          "type": "string"
+          "type": "integer"
         },
         "DiningFlag": {
-          "title": "integer",
+          "title": "Int32",
           "description": "是否提供訂便當服務 : [0:'否',1:'是']",
-          "type": "string"
+          "type": "integer"
         },
         "BikeFlag": {
-          "title": "integer",
+          "title": "Int32",
           "description": "是否人車同行班次(置於攜車袋之自行車各級列車均可乘車) : [0:'否',1:'是']",
-          "type": "string"
+          "type": "integer"
         },
         "BreastFeedingFlag": {
-          "title": "integer",
+          "title": "Int32",
           "description": "是否設有哺(集)乳室車廂 : [0:'否',1:'是']",
-          "type": "string"
+          "type": "integer"
         },
         "DailyFlag": {
-          "title": "integer",
+          "title": "Int32",
           "description": "是否為每日行駛 : [0:'否',1:'是']",
-          "type": "string"
+          "type": "integer"
         },
         "Note": {
           "title": "NameType",
@@ -11366,6 +11445,7 @@
           }
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -11428,9 +11508,9 @@
           }
         },
         "Direction": {
-          "title": "integer",
+          "title": "Int32",
           "description": "順逆行 : [0:'順行',1:'逆行']",
-          "type": "string"
+          "type": "integer"
         },
         "TrainTypeID": {
           "title": "String",
@@ -11461,9 +11541,9 @@
           }
         },
         "TripLine": {
-          "title": "integer",
+          "title": "Int32",
           "description": "山海線類型 : [0:'不經山海線',1:'山線',2:'海線',3:'成追線']",
-          "type": "string"
+          "type": "integer"
         },
         "EndingStationID": {
           "title": "String",
@@ -11508,11 +11588,13 @@
           "type": "integer"
         },
         "SrcUpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -11570,11 +11652,13 @@
           "type": "integer"
         },
         "SrcUpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -11642,6 +11726,7 @@
           }
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -11713,9 +11798,9 @@
           }
         },
         "Direction": {
-          "title": "integer",
+          "title": "Int32",
           "description": "順逆行 : [0:'順行',1:'逆行']",
-          "type": "string"
+          "type": "integer"
         },
         "Fares": {
           "title": "Array",
@@ -11729,6 +11814,7 @@
           }
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -11827,6 +11913,7 @@
           }
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -11943,14 +12030,14 @@
           }
         },
         "Direction": {
-          "title": "integer",
+          "title": "Int32",
           "description": "順逆行 : [0:'順行',1:'逆行']",
-          "type": "string"
+          "type": "integer"
         },
         "TripLine": {
-          "title": "integer",
+          "title": "Int32",
           "description": "山海線類型 : [0:'不經山海線',1:'山線',2:'海線',3:'成追線']",
-          "type": "string"
+          "type": "integer"
         },
         "TrainTypeID": {
           "title": "String",
@@ -12037,6 +12124,7 @@
           }
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -12126,39 +12214,39 @@
       "type": "object",
       "properties": {
         "Monday": {
-          "title": "integer",
+          "title": "Int32",
           "description": "星期一是否營運 : [0:'否',1:'是']",
-          "type": "string"
+          "type": "integer"
         },
         "Tuesday": {
-          "title": "integer",
+          "title": "Int32",
           "description": "星期二是否營運 : [0:'否',1:'是']",
-          "type": "string"
+          "type": "integer"
         },
         "Wednesday": {
-          "title": "integer",
+          "title": "Int32",
           "description": "星期三是否營運 : [0:'否',1:'是']",
-          "type": "string"
+          "type": "integer"
         },
         "Thursday": {
-          "title": "integer",
+          "title": "Int32",
           "description": "星期四是否營運 : [0:'否',1:'是']",
-          "type": "string"
+          "type": "integer"
         },
         "Friday": {
-          "title": "integer",
+          "title": "Int32",
           "description": "星期五是否營運 : [0:'否',1:'是']",
-          "type": "string"
+          "type": "integer"
         },
         "Saturday": {
-          "title": "integer",
+          "title": "Int32",
           "description": "星期六是否營運 : [0:'否',1:'是']",
-          "type": "string"
+          "type": "integer"
         },
         "Sunday": {
-          "title": "integer",
+          "title": "Int32",
           "description": "星期日是否營運 : [0:'否',1:'是']",
-          "type": "string"
+          "type": "integer"
         }
       },
       "xml": {
@@ -12204,6 +12292,7 @@
           }
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -12238,9 +12327,9 @@
           }
         },
         "Direction": {
-          "title": "integer",
+          "title": "Int32",
           "description": "順逆行 : [0:'順行',1:'逆行']",
-          "type": "string"
+          "type": "integer"
         },
         "StartingStationID": {
           "title": "String",
@@ -12319,9 +12408,9 @@
           }
         },
         "TripLine": {
-          "title": "integer",
+          "title": "Int32",
           "description": "山海線類型 : [0:'不經山海線',1:'山線',2:'海線',3:'成追線']",
-          "type": "string"
+          "type": "integer"
         },
         "OverNightStationID": {
           "title": "String",
@@ -12332,34 +12421,34 @@
           }
         },
         "WheelchairFlag": {
-          "title": "integer",
+          "title": "Int32",
           "description": "是否設身障旅客專用座位車 : [0:'否',1:'是']",
-          "type": "string"
+          "type": "integer"
         },
         "PackageServiceFlag": {
-          "title": "integer",
+          "title": "Int32",
           "description": "是否提供行李服務 : [0:'否',1:'是']",
-          "type": "string"
+          "type": "integer"
         },
         "DiningFlag": {
-          "title": "integer",
+          "title": "Int32",
           "description": "是否提供訂便當服務 : [0:'否',1:'是']",
-          "type": "string"
+          "type": "integer"
         },
         "BikeFlag": {
-          "title": "integer",
+          "title": "Int32",
           "description": "是否人車同行班次(置於攜車袋之自行車各級列車均可乘車) : [0:'否',1:'是']",
-          "type": "string"
+          "type": "integer"
         },
         "BreastFeedingFlag": {
-          "title": "integer",
+          "title": "Int32",
           "description": "是否設有哺(集)乳室車廂 : [0:'否',1:'是']",
-          "type": "string"
+          "type": "integer"
         },
         "DailyFlag": {
-          "title": "integer",
+          "title": "Int32",
           "description": "是否為每日行駛 : [0:'否',1:'是']",
-          "type": "string"
+          "type": "integer"
         },
         "ServiceAddedFlag": {
           "title": "Boolean",
@@ -12407,9 +12496,9 @@
           }
         },
         "Direction": {
-          "title": "integer",
+          "title": "Int32",
           "description": "順逆行 : [0:'順行',1:'逆行']",
-          "type": "string"
+          "type": "integer"
         },
         "StartingStationID": {
           "title": "String",
@@ -12480,9 +12569,9 @@
           }
         },
         "TripLine": {
-          "title": "integer",
+          "title": "Int32",
           "description": "山海線類型 : [0:'不經山海線',1:'山線',2:'海線',3:'成追線']",
-          "type": "string"
+          "type": "integer"
         },
         "OverNightStationID": {
           "title": "String",
@@ -12493,34 +12582,34 @@
           }
         },
         "WheelchairFlag": {
-          "title": "integer",
+          "title": "Int32",
           "description": "是否設身障旅客專用座位車 : [0:'否',1:'是']",
-          "type": "string"
+          "type": "integer"
         },
         "PackageServiceFlag": {
-          "title": "integer",
+          "title": "Int32",
           "description": "是否提供行李服務 : [0:'否',1:'是']",
-          "type": "string"
+          "type": "integer"
         },
         "DiningFlag": {
-          "title": "integer",
+          "title": "Int32",
           "description": "是否提供訂便當服務 : [0:'否',1:'是']",
-          "type": "string"
+          "type": "integer"
         },
         "BikeFlag": {
-          "title": "integer",
+          "title": "Int32",
           "description": "是否人車同行班次(置於攜車袋之自行車各級列車均可乘車) : [0:'否',1:'是']",
-          "type": "string"
+          "type": "integer"
         },
         "BreastFeedingFlag": {
-          "title": "integer",
+          "title": "Int32",
           "description": "是否設有哺(集)乳室車廂 : [0:'否',1:'是']",
-          "type": "string"
+          "type": "integer"
         },
         "DailyFlag": {
-          "title": "integer",
+          "title": "Int32",
           "description": "是否為每日行駛 : [0:'否',1:'是']",
-          "type": "string"
+          "type": "integer"
         },
         "Note": {
           "title": "NameType",
@@ -12580,6 +12669,7 @@
           }
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -12637,6 +12727,7 @@
           }
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -12826,6 +12917,7 @@
           }
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"

@@ -28,11 +28,11 @@ type PTXServiceDTORailSpecificationV2THSROldAvailableSeat struct {
 	// Required: true
 	DepartureTime *string `json:"DepartureTime" xml:"String"`
 
-	// integer
+	// Int32
 	//
 	// 方向 : [0:'南下',1:'北上']
 	// Required: true
-	Direction *string `json:"Direction"`
+	Direction *int64 `json:"Direction"`
 
 	// String
 	//
@@ -52,7 +52,8 @@ type PTXServiceDTORailSpecificationV2THSROldAvailableSeat struct {
 	//
 	// 來源平台更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Required: true
-	SrcUpdateTime *string `json:"SrcUpdateTime"`
+	// Format: date-time
+	SrcUpdateTime *strfmt.DateTime `json:"SrcUpdateTime"`
 
 	// String
 	//
@@ -162,6 +163,10 @@ func (m *PTXServiceDTORailSpecificationV2THSROldAvailableSeat) validateEndingSta
 func (m *PTXServiceDTORailSpecificationV2THSROldAvailableSeat) validateSrcUpdateTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("SrcUpdateTime", "body", m.SrcUpdateTime); err != nil {
+		return err
+	}
+
+	if err := validate.FormatOf("SrcUpdateTime", "body", "date-time", m.SrcUpdateTime.String(), formats); err != nil {
 		return err
 	}
 

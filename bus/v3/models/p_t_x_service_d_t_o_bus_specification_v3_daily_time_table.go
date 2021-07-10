@@ -26,13 +26,14 @@ type PTXServiceDTOBusSpecificationV3DailyTimeTable struct {
 	//
 	// 適用日期
 	// Required: true
-	Date *string `json:"Date"`
+	// Format: date-time
+	Date *strfmt.DateTime `json:"Date"`
 
-	// integer
+	// Int32
 	//
 	// 去返程 : [0:'去程',1:'返程',2:'迴圈',255:'未知']
 	// Required: true
-	Direction *string `json:"Direction"`
+	Direction *int64 `json:"Direction"`
 
 	// String
 	//
@@ -143,6 +144,10 @@ func (m *PTXServiceDTOBusSpecificationV3DailyTimeTable) Validate(formats strfmt.
 func (m *PTXServiceDTOBusSpecificationV3DailyTimeTable) validateDate(formats strfmt.Registry) error {
 
 	if err := validate.Required("Date", "body", m.Date); err != nil {
+		return err
+	}
+
+	if err := validate.FormatOf("Date", "body", "date-time", m.Date.String(), formats); err != nil {
 		return err
 	}
 
