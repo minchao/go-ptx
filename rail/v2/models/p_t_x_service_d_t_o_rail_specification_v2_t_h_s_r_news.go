@@ -33,11 +33,10 @@ type PTXServiceDTORailSpecificationV2THSRNews struct {
 	// Required: true
 	Description *string `json:"Description" xml:"String"`
 
-	// DateTime
-	//
 	// 結束時間
 	// Required: true
-	EndTime *string `json:"EndTime"`
+	// Format: date-time
+	EndTime *strfmt.DateTime `json:"EndTime"`
 
 	// String
 	//
@@ -68,13 +67,15 @@ type PTXServiceDTORailSpecificationV2THSRNews struct {
 	//
 	// 消息發布日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Required: true
-	PublishTime *string `json:"PublishTime"`
+	// Format: date-time
+	PublishTime *strfmt.DateTime `json:"PublishTime"`
 
 	// DateTime
 	//
 	// 開始時間
 	// Required: true
-	StartTime *string `json:"StartTime"`
+	// Format: date-time
+	StartTime *strfmt.DateTime `json:"StartTime"`
 
 	// String
 	//
@@ -86,7 +87,8 @@ type PTXServiceDTORailSpecificationV2THSRNews struct {
 	//
 	// 本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Required: true
-	UpdateTime *string `json:"UpdateTime"`
+	// Format: date-time
+	UpdateTime *strfmt.DateTime `json:"UpdateTime"`
 }
 
 // Validate validates this p t x service d t o rail specification v2 t h s r news
@@ -167,6 +169,10 @@ func (m *PTXServiceDTORailSpecificationV2THSRNews) validateEndTime(formats strfm
 		return err
 	}
 
+	if err := validate.FormatOf("EndTime", "body", "date-time", m.EndTime.String(), formats); err != nil {
+		return err
+	}
+
 	return nil
 }
 
@@ -216,12 +222,20 @@ func (m *PTXServiceDTORailSpecificationV2THSRNews) validatePublishTime(formats s
 		return err
 	}
 
+	if err := validate.FormatOf("PublishTime", "body", "date-time", m.PublishTime.String(), formats); err != nil {
+		return err
+	}
+
 	return nil
 }
 
 func (m *PTXServiceDTORailSpecificationV2THSRNews) validateStartTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("StartTime", "body", m.StartTime); err != nil {
+		return err
+	}
+
+	if err := validate.FormatOf("StartTime", "body", "date-time", m.StartTime.String(), formats); err != nil {
 		return err
 	}
 
@@ -240,6 +254,10 @@ func (m *PTXServiceDTORailSpecificationV2THSRNews) validateTitle(formats strfmt.
 func (m *PTXServiceDTORailSpecificationV2THSRNews) validateUpdateTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
+		return err
+	}
+
+	if err := validate.FormatOf("UpdateTime", "body", "date-time", m.UpdateTime.String(), formats); err != nil {
 		return err
 	}
 

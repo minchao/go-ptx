@@ -19,11 +19,11 @@ import (
 // swagger:model PTX.Service.DTO.Bus.Specification.V3.RouteFare+ODFare+FareOD
 type PTXServiceDTOBusSpecificationV3RouteFareODFareFareOD struct {
 
-	// integer
+	// Int32
 	//
 	// 費率等級 : [1:'成人',2:'學生',3:'孩童',4:'敬老',5:'愛心',6:'愛心孩童',7:'愛心優待或愛心陪伴',8:'團體',9:'軍警',10:'由各運業者自行定義的半票']
 	// Required: true
-	FareClass *string `json:"FareClass"`
+	FareClass *int64 `json:"FareClass"`
 
 	// String
 	//
@@ -31,11 +31,11 @@ type PTXServiceDTOBusSpecificationV3RouteFareODFareFareOD struct {
 	// Required: true
 	Price *string `json:"Price" xml:"String"`
 
-	// integer
+	// Int32
 	//
 	// 票種類型 : [1:'一般票',2:'來回票',3:'電子票證',4:'回數票',5:'定期票30天期',6:'定期票60天期',7:'早鳥票',8:'定期票90天期']
 	// Required: true
-	TicketType *string `json:"TicketType"`
+	TicketType *int64 `json:"TicketType"`
 }
 
 // Validate validates this p t x service d t o bus specification v3 route fare o d fare fare o d

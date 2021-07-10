@@ -45,7 +45,8 @@ type PTXAPIRailModelTRABaseWrapperPTXServiceDTORailSpecificationV3TRAOperator st
 	//
 	// 來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Required: true
-	SrcUpdateTime *string `json:"SrcUpdateTime"`
+	// Format: date-time
+	SrcUpdateTime *strfmt.DateTime `json:"SrcUpdateTime"`
 
 	// Int32
 	//
@@ -53,11 +54,10 @@ type PTXAPIRailModelTRABaseWrapperPTXServiceDTORailSpecificationV3TRAOperator st
 	// Required: true
 	UpdateInterval *int32 `json:"UpdateInterval"`
 
-	// DateTime
-	//
 	// 本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Required: true
-	UpdateTime *string `json:"UpdateTime"`
+	// Format: date-time
+	UpdateTime *strfmt.DateTime `json:"UpdateTime"`
 }
 
 // Validate validates this p t x API rail model t r a base wrapper p t x service d t o rail specification v3 t r a operator
@@ -143,6 +143,10 @@ func (m *PTXAPIRailModelTRABaseWrapperPTXServiceDTORailSpecificationV3TRAOperato
 		return err
 	}
 
+	if err := validate.FormatOf("SrcUpdateTime", "body", "date-time", m.SrcUpdateTime.String(), formats); err != nil {
+		return err
+	}
+
 	return nil
 }
 
@@ -158,6 +162,10 @@ func (m *PTXAPIRailModelTRABaseWrapperPTXServiceDTORailSpecificationV3TRAOperato
 func (m *PTXAPIRailModelTRABaseWrapperPTXServiceDTORailSpecificationV3TRAOperator) validateUpdateTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
+		return err
+	}
+
+	if err := validate.FormatOf("UpdateTime", "body", "date-time", m.UpdateTime.String(), formats); err != nil {
 		return err
 	}
 

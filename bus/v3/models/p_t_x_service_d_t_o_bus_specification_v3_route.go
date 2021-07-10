@@ -115,11 +115,11 @@ type PTXServiceDTOBusSpecificationV3Route struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
 	} `json:"RouteName" xml:"NameType"`
 
-	// integer
+	// Int32
 	//
 	// 公車路線類別 : [11:'市區公車',12:'公路客運',13:'國道客運']
 	// Required: true
-	RouteType *string `json:"RouteType"`
+	RouteType *int64 `json:"RouteType"`
 
 	// String
 	//

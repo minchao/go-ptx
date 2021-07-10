@@ -25,13 +25,15 @@ type PTXServiceDTOBusSpecificationV2BusVersion struct {
 	//
 	// 此資料版本最後檢查更新之日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Required: true
-	UpdateCheckTime *string `json:"UpdateCheckTime"`
+	// Format: date-time
+	UpdateCheckTime *strfmt.DateTime `json:"UpdateCheckTime"`
 
 	// DateTime
 	//
 	// 資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Required: true
-	UpdateTime *string `json:"UpdateTime"`
+	// Format: date-time
+	UpdateTime *strfmt.DateTime `json:"UpdateTime"`
 
 	// Int32
 	//
@@ -68,12 +70,20 @@ func (m *PTXServiceDTOBusSpecificationV2BusVersion) validateUpdateCheckTime(form
 		return err
 	}
 
+	if err := validate.FormatOf("UpdateCheckTime", "body", "date-time", m.UpdateCheckTime.String(), formats); err != nil {
+		return err
+	}
+
 	return nil
 }
 
 func (m *PTXServiceDTOBusSpecificationV2BusVersion) validateUpdateTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
+		return err
+	}
+
+	if err := validate.FormatOf("UpdateTime", "body", "date-time", m.UpdateTime.String(), formats); err != nil {
 		return err
 	}
 

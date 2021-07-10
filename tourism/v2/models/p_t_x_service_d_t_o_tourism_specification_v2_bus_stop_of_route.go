@@ -22,11 +22,11 @@ import (
 // swagger:model PTX.Service.DTO.Tourism.Specification.V2.BusStopOfRoute
 type PTXServiceDTOTourismSpecificationV2BusStopOfRoute struct {
 
-	// integer
+	// Int32
 	//
 	// 去返程 : [0:'去程',1:'返程',2:'迴圈',255:'未知']
 	// Required: true
-	Direction *int32 `json:"Direction"`
+	Direction *int64 `json:"Direction"`
 
 	// Boolean
 	//
@@ -38,25 +38,25 @@ type PTXServiceDTOTourismSpecificationV2BusStopOfRoute struct {
 	//
 	// 地區既用中之路線代碼(為原資料內碼)
 	// Required: true
-	RouteID *string `json:"RouteID"`
+	RouteID *string `json:"RouteID" xml:"String"`
 
 	// String
 	//
 	// 路線唯一識別代碼，規則為 {業管機關代碼} + {RouteID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢
 	// Required: true
-	RouteUID *string `json:"RouteUID"`
+	RouteUID *string `json:"RouteUID" xml:"String"`
 
 	// Array
 	//
 	// 所有經過站牌
 	// Required: true
-	Stops []*PTXServiceDTOTourismSpecificationV2Stop `json:"Stops"`
+	Stops []*PTXServiceDTOTourismSpecificationV2Stop "json:\"Stops\" xml:\"List`1\""
 
 	// String
 	//
 	// 地區既用中之子路線代碼(為原資料內碼)
 	// Required: true
-	SubRouteID *string `json:"SubRouteID"`
+	SubRouteID *string `json:"SubRouteID" xml:"String"`
 
 	// NameType
 	//
@@ -64,13 +64,13 @@ type PTXServiceDTOTourismSpecificationV2BusStopOfRoute struct {
 	// Required: true
 	SubRouteName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"SubRouteName"`
+	} `json:"SubRouteName" xml:"NameType"`
 
 	// String
 	//
 	// 子路線唯一識別代碼，規則為 {業管機關代碼} + {SubRouteID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢
 	// Required: true
-	SubRouteUID *string `json:"SubRouteUID"`
+	SubRouteUID *string `json:"SubRouteUID" xml:"String"`
 
 	// NameType
 	//
@@ -78,13 +78,14 @@ type PTXServiceDTOTourismSpecificationV2BusStopOfRoute struct {
 	// Required: true
 	TaiwanTripName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"TaiwanTripName"`
+	} `json:"TaiwanTripName" xml:"NameType"`
 
 	// DateTime
 	//
 	// 資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Required: true
-	UpdateTime *string `json:"UpdateTime"`
+	// Format: date-time
+	UpdateTime *strfmt.DateTime `json:"UpdateTime"`
 }
 
 // Validate validates this p t x service d t o tourism specification v2 bus stop of route
@@ -229,6 +230,10 @@ func (m *PTXServiceDTOTourismSpecificationV2BusStopOfRoute) validateTaiwanTripNa
 func (m *PTXServiceDTOTourismSpecificationV2BusStopOfRoute) validateUpdateTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
+		return err
+	}
+
+	if err := validate.FormatOf("UpdateTime", "body", "date-time", m.UpdateTime.String(), formats); err != nil {
 		return err
 	}
 

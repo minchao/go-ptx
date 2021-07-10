@@ -21,52 +21,52 @@ import (
 // swagger:model PTX.Service.DTO.Bus.Specification.V2.Embedded.ServiceDay
 type PTXServiceDTOBusSpecificationV2EmbeddedServiceDay struct {
 
-	// integer
+	// Int32
 	//
 	// 星期五是否營運 : [0:'否',1:'是']
 	// Required: true
-	Friday *string `json:"Friday"`
+	Friday *int64 `json:"Friday"`
 
-	// integer
+	// Int32
 	//
 	// 星期一是否營運 : [0:'否',1:'是']
 	// Required: true
-	Monday *string `json:"Monday"`
+	Monday *int64 `json:"Monday"`
 
-	// integer
+	// Int32
 	//
 	// 國定假日營運與否 : [0:'否',1:'是']
-	NationalHolidays string `json:"NationalHolidays,omitempty"`
+	NationalHolidays int64 `json:"NationalHolidays,omitempty"`
 
-	// integer
+	// Int32
 	//
 	// 星期六是否營運 : [0:'否',1:'是']
 	// Required: true
-	Saturday *string `json:"Saturday"`
+	Saturday *int64 `json:"Saturday"`
 
-	// integer
+	// Int32
 	//
 	// 星期日是否營運 : [0:'否',1:'是']
 	// Required: true
-	Sunday *string `json:"Sunday"`
+	Sunday *int64 `json:"Sunday"`
 
-	// integer
+	// Int32
 	//
 	// 星期四是否營運 : [0:'否',1:'是']
 	// Required: true
-	Thursday *string `json:"Thursday"`
+	Thursday *int64 `json:"Thursday"`
 
-	// integer
+	// Int32
 	//
 	// 星期二是否營運 : [0:'否',1:'是']
 	// Required: true
-	Tuesday *string `json:"Tuesday"`
+	Tuesday *int64 `json:"Tuesday"`
 
-	// integer
+	// Int32
 	//
 	// 星期三是否營運 : [0:'否',1:'是']
 	// Required: true
-	Wednesday *string `json:"Wednesday"`
+	Wednesday *int64 `json:"Wednesday"`
 }
 
 // Validate validates this p t x service d t o bus specification v2 embedded service day

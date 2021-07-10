@@ -34,7 +34,6 @@
               "Taichung",
               "Hsinchu",
               "MiaoliCounty",
-              "ChanghuaCounty",
               "NewTaipei",
               "PingtungCounty",
               "KinmenCounty",
@@ -91,7 +90,7 @@
           {
             "in": "query",
             "name": "$spatialFilter",
-            "description": "空間過濾",
+            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
             "type": "string"
           },
           {
@@ -146,7 +145,6 @@
               "Taichung",
               "Hsinchu",
               "MiaoliCounty",
-              "ChanghuaCounty",
               "NewTaipei",
               "PingtungCounty",
               "KinmenCounty",
@@ -158,13 +156,13 @@
             "x-enum": {
               "NewTaipei": "新北市",
               "MiaoliCounty": "苗栗縣",
-              "ChanghuaCounty": "彰化縣",
               "Kaohsiung": "高雄市",
               "Tainan": "臺南市",
               "KinmenCounty": "金門縣",
               "PingtungCounty": "屏東縣",
               "Taoyuan": "桃園市",
               "Taipei": "臺北市",
+              "ChanghuaCounty": "彰化縣",
               "Taichung": "臺中市",
               "Hsinchu": "新竹市"
             }
@@ -402,7 +400,7 @@
           {
             "in": "query",
             "name": "$spatialFilter",
-            "description": "空間過濾(最大搜尋半徑為1000公尺)",
+            "description": "空間過濾(最大搜尋半徑為1000公尺)，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
             "required": true,
             "type": "string"
           },
@@ -482,7 +480,7 @@
           {
             "in": "query",
             "name": "$spatialFilter",
-            "description": "空間過濾(最大搜尋半徑為1000公尺)",
+            "description": "空間過濾(最大搜尋半徑為1000公尺)，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
             "required": true,
             "type": "string"
           },
@@ -528,16 +526,21 @@
         "StationUID": {
           "title": "String",
           "description": "站點唯一識別代碼，規則為 {業管機關代碼} + {StationID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "StationID": {
           "title": "String",
           "description": "站點代碼",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "ServiceAvailable": {
-          "format": "int32",
-          "title": "integer",
+          "title": "Int32",
           "description": "服務狀態 : [0:'停止營運',1:'正常營運']",
           "type": "integer"
         },
@@ -554,15 +557,19 @@
           "type": "integer"
         },
         "SrcUpdateTime": {
-          "title": "DateTime",
+          "format": "date-time",
           "description": "來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         }
+      },
+      "xml": {
+        "name": "BikeAvailability"
       }
     },
     "PTX.Service.DTO.Bike.Specification.V2.BikeShape": {
@@ -580,47 +587,74 @@
         "RouteName": {
           "title": "String",
           "description": "路線名稱",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "AuthorityName": {
           "title": "String",
           "description": "業管機關名稱（可能包含多個業管機關）",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "CityCode": {
           "title": "String",
           "description": "路線所在縣市代碼",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "City": {
           "title": "String",
           "description": "路線所在縣市名稱",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "Town": {
           "title": "String",
           "description": "路線所在鄉鎮名稱（可能包含多個鄉鎮）",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "RoadSectionStart": {
           "title": "String",
           "description": "路線起點描述",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "RoadSectionEnd": {
           "title": "String",
           "description": "路線迄點描述",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "Direction": {
           "title": "String",
           "description": "自行車道車行方向",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "CyclingType": {
           "title": "String",
           "description": "自行車道類型",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "CyclingLength": {
           "format": "double",
@@ -630,9 +664,13 @@
         "FinishedTime": {
           "title": "String",
           "description": "自行車道完工日期時間",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -640,52 +678,22 @@
         "Geometry": {
           "title": "String",
           "description": "well-known text，為路線軌跡資料",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "EncodedPolyline": {
           "title": "String",
           "description": "路線軌跡編碼(encoded polyline)",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         }
-      }
-    },
-    "PTX.Service.DTO.Shared.Specification.V2.Base.NameType": {
-      "title": "NameType",
-      "description": "名稱資料型別",
-      "type": "object",
-      "properties": {
-        "Zh_tw": {
-          "title": "String",
-          "description": "中文繁體名稱",
-          "type": "string"
-        },
-        "En": {
-          "title": "String",
-          "description": "英文名稱",
-          "type": "string"
-        }
-      }
-    },
-    "PTX.Service.DTO.Shared.Specification.V2.Base.PointType": {
-      "title": "PointType",
-      "description": "座標資料型別",
-      "type": "object",
-      "properties": {
-        "PositionLat": {
-          "format": "double",
-          "description": "位置緯度(WGS84)",
-          "type": "number"
-        },
-        "PositionLon": {
-          "format": "double",
-          "description": "位置經度(WGS84)",
-          "type": "number"
-        },
-        "GeoHash": {
-          "title": "String",
-          "description": "地理空間編碼",
-          "type": "string"
-        }
+      },
+      "xml": {
+        "name": "BikeShape"
       }
     },
     "PTX.Service.DTO.Bike.Specification.V2.BikeStation": {
@@ -699,17 +707,26 @@
         "StationUID": {
           "title": "String",
           "description": "站點唯一識別代碼，規則為 {業管機關代碼} + {StationID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "StationID": {
           "title": "String",
           "description": "站點代碼",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "AuthorityID": {
           "title": "String",
           "description": "業管單位代碼",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "StationName": {
           "title": "NameType",
@@ -718,7 +735,10 @@
             {
               "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V2.Base.NameType"
             }
-          ]
+          ],
+          "xml": {
+            "name": "NameType"
+          }
         },
         "StationPosition": {
           "title": "PointType",
@@ -727,7 +747,10 @@
             {
               "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V2.Base.PointType"
             }
-          ]
+          ],
+          "xml": {
+            "name": "PointType"
+          }
         },
         "StationAddress": {
           "title": "NameType",
@@ -736,12 +759,18 @@
             {
               "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V2.Base.NameType"
             }
-          ]
+          ],
+          "xml": {
+            "name": "NameType"
+          }
         },
         "StopDescription": {
           "title": "String",
           "description": "站點描述",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "BikesCapacity": {
           "format": "int32",
@@ -750,15 +779,73 @@
           "type": "integer"
         },
         "SrcUpdateTime": {
-          "title": "DateTime",
+          "format": "date-time",
           "description": "來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         }
+      },
+      "xml": {
+        "name": "BikeStation"
+      }
+    },
+    "PTX.Service.DTO.Shared.Specification.V2.Base.NameType": {
+      "title": "NameType",
+      "description": "名稱資料型別",
+      "type": "object",
+      "properties": {
+        "Zh_tw": {
+          "title": "String",
+          "description": "中文繁體名稱",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "En": {
+          "title": "String",
+          "description": "英文名稱",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        }
+      },
+      "xml": {
+        "name": "NameType"
+      }
+    },
+    "PTX.Service.DTO.Shared.Specification.V2.Base.PointType": {
+      "title": "PointType",
+      "description": "座標資料型別",
+      "type": "object",
+      "properties": {
+        "PositionLon": {
+          "format": "double",
+          "description": "位置經度(WGS84)",
+          "type": "number"
+        },
+        "PositionLat": {
+          "format": "double",
+          "description": "位置緯度(WGS84)",
+          "type": "number"
+        },
+        "GeoHash": {
+          "title": "String",
+          "description": "地理空間編碼",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        }
+      },
+      "xml": {
+        "name": "PointType"
       }
     }
   },

@@ -102,7 +102,9 @@ type THSRAPIStationTimetableParams struct {
 	StationID string
 
 	// TrainDate.
-	TrainDate string
+	//
+	// Format: date-time
+	TrainDate strfmt.DateTime
 
 	timeout    time.Duration
 	Context    context.Context
@@ -246,13 +248,13 @@ func (o *THSRAPIStationTimetableParams) SetStationID(stationID string) {
 }
 
 // WithTrainDate adds the trainDate to the t h s r Api station timetable params
-func (o *THSRAPIStationTimetableParams) WithTrainDate(trainDate string) *THSRAPIStationTimetableParams {
+func (o *THSRAPIStationTimetableParams) WithTrainDate(trainDate strfmt.DateTime) *THSRAPIStationTimetableParams {
 	o.SetTrainDate(trainDate)
 	return o
 }
 
 // SetTrainDate adds the trainDate to the t h s r Api station timetable params
-func (o *THSRAPIStationTimetableParams) SetTrainDate(trainDate string) {
+func (o *THSRAPIStationTimetableParams) SetTrainDate(trainDate strfmt.DateTime) {
 	o.TrainDate = trainDate
 }
 
@@ -365,7 +367,7 @@ func (o *THSRAPIStationTimetableParams) WriteToRequest(r runtime.ClientRequest, 
 	}
 
 	// path param TrainDate
-	if err := r.SetPathParam("TrainDate", o.TrainDate); err != nil {
+	if err := r.SetPathParam("TrainDate", o.TrainDate.String()); err != nil {
 		return err
 	}
 

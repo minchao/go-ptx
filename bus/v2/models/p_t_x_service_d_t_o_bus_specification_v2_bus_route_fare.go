@@ -22,23 +22,23 @@ import (
 // swagger:model PTX.Service.DTO.Bus.Specification.V2.BusRouteFare
 type PTXServiceDTOBusSpecificationV2BusRouteFare struct {
 
-	// integer
+	// Int32
 	//
 	// 描述該路線計費方式 : [0:'段次計費',1:'起迄站間計費',2:'計費站區間計費']
 	// Required: true
-	FarePricingType *string `json:"FarePricingType"`
+	FarePricingType *int64 `json:"FarePricingType"`
 
-	// integer
+	// Int32
 	//
 	// 該收費方式是否應用到所有附屬路線 : [0:'否',1:'是']
 	// Required: true
-	IsForAllSubRoutes *string `json:"IsForAllSubRoutes"`
+	IsForAllSubRoutes *int64 `json:"IsForAllSubRoutes"`
 
-	// integer
+	// Int32
 	//
 	// 是否為免費公車 : [0:'否',1:'是']
 	// Required: true
-	IsFreeBus *string `json:"IsFreeBus"`
+	IsFreeBus *int64 `json:"IsFreeBus"`
 
 	// Array
 	//
@@ -86,7 +86,8 @@ type PTXServiceDTOBusSpecificationV2BusRouteFare struct {
 	//
 	// 本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Required: true
-	UpdateTime *string `json:"UpdateTime"`
+	// Format: date-time
+	UpdateTime *strfmt.DateTime `json:"UpdateTime"`
 }
 
 // Validate validates this p t x service d t o bus specification v2 bus route fare
@@ -255,6 +256,10 @@ func (m *PTXServiceDTOBusSpecificationV2BusRouteFare) validateStageFares(formats
 func (m *PTXServiceDTOBusSpecificationV2BusRouteFare) validateUpdateTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
+		return err
+	}
+
+	if err := validate.FormatOf("UpdateTime", "body", "date-time", m.UpdateTime.String(), formats); err != nil {
 		return err
 	}
 

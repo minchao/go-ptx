@@ -21,11 +21,11 @@ import (
 // swagger:model PTX.Service.DTO.Rail.Specification.V2.THSR.RailGeneralTrainInfo
 type PTXServiceDTORailSpecificationV2THSRRailGeneralTrainInfo struct {
 
-	// integer
+	// Int32
 	//
 	// 行駛方向 : [0:'南下',1:'北上']
 	// Required: true
-	Direction *string `json:"Direction"`
+	Direction *int64 `json:"Direction"`
 
 	// String
 	//

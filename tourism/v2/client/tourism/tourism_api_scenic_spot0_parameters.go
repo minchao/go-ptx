@@ -92,7 +92,7 @@ type TourismAPIScenicSpot0Params struct {
 
 	/* DollarSpatialFilter.
 
-	   空間過濾
+	   空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)
 	*/
 	DollarSpatialFilter *string
 
@@ -104,7 +104,10 @@ type TourismAPIScenicSpot0Params struct {
 	*/
 	DollarTop *int64
 
-	// City.
+	/* City.
+
+	   縣市名稱
+	*/
 	City string
 
 	timeout    time.Duration

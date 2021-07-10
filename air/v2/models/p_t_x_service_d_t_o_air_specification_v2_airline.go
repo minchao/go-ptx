@@ -24,58 +24,59 @@ type PTXServiceDTOAirSpecificationV2Airline struct {
 	// String
 	//
 	// 航空公司地址
-	AirlineAddress string `json:"AirlineAddress,omitempty"`
+	AirlineAddress string `json:"AirlineAddress,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 航空公司電子信箱
-	AirlineEmail string `json:"AirlineEmail,omitempty"`
+	AirlineEmail string `json:"AirlineEmail,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 航空公司IATA國際代碼
-	AirlineIATA string `json:"AirlineIATA,omitempty"`
+	AirlineIATA string `json:"AirlineIATA,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 航空公司ICAO國際代碼
-	AirlineICAO string `json:"AirlineICAO,omitempty"`
+	AirlineICAO string `json:"AirlineICAO,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 航空公司IATA國際代碼
 	// Required: true
-	AirlineID *string `json:"AirlineID"`
+	AirlineID *string `json:"AirlineID" xml:"String"`
 
 	// NameType
 	//
 	// 航空公司名稱
 	AirlineName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"AirlineName,omitempty"`
+	} `json:"AirlineName,omitempty" xml:"NameType,omitempty"`
 
 	// NameType
 	//
 	// 航空公司簡稱
 	AirlineNameAlias struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"AirlineNameAlias,omitempty"`
+	} `json:"AirlineNameAlias,omitempty" xml:"NameType,omitempty"`
 
 	// String
 	//
 	// 航空公司國籍
-	AirlineNationality string `json:"AirlineNationality,omitempty"`
+	AirlineNationality string `json:"AirlineNationality,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 航空公司聯繫電話
-	AirlinePhone string `json:"AirlinePhone,omitempty"`
+	AirlinePhone string `json:"AirlinePhone,omitempty" xml:"String,omitempty"`
 
 	// DateTime
 	//
 	// 資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Required: true
-	UpdateTime *string `json:"UpdateTime"`
+	// Format: date-time
+	UpdateTime *strfmt.DateTime `json:"UpdateTime"`
 
 	// Int32
 	//
@@ -142,6 +143,10 @@ func (m *PTXServiceDTOAirSpecificationV2Airline) validateAirlineNameAlias(format
 func (m *PTXServiceDTOAirSpecificationV2Airline) validateUpdateTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
+		return err
+	}
+
+	if err := validate.FormatOf("UpdateTime", "body", "date-time", m.UpdateTime.String(), formats); err != nil {
 		return err
 	}
 

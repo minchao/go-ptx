@@ -28,7 +28,7 @@ type PTXServiceDTOBusSpecificationV2BusRoute struct {
 	// Required: true
 	AuthorityID *string `json:"AuthorityID" xml:"String"`
 
-	// integer
+	// Int32
 	//
 	// 公車路線類別 : [11:'市區公車',12:'公路客運',13:'國道客運',14:'接駁車']
 	// Required: true
@@ -136,7 +136,8 @@ type PTXServiceDTOBusSpecificationV2BusRoute struct {
 	//
 	// 資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Required: true
-	UpdateTime *string `json:"UpdateTime"`
+	// Format: date-time
+	UpdateTime *strfmt.DateTime `json:"UpdateTime"`
 
 	// Int32
 	//
@@ -310,6 +311,10 @@ func (m *PTXServiceDTOBusSpecificationV2BusRoute) validateSubRoutes(formats strf
 func (m *PTXServiceDTOBusSpecificationV2BusRoute) validateUpdateTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
+		return err
+	}
+
+	if err := validate.FormatOf("UpdateTime", "body", "date-time", m.UpdateTime.String(), formats); err != nil {
 		return err
 	}
 

@@ -31,13 +31,15 @@ type PTXServiceDTORailSpecificationV2MetroSubClassSpecialDay struct {
 	//
 	// 結束時間
 	// Required: true
-	EndDate *string `json:"EndDate"`
+	// Format: date-time
+	EndDate *strfmt.DateTime `json:"EndDate"`
 
 	// DateTime
 	//
 	// 開始時間
 	// Required: true
-	SaterDate *string `json:"SaterDate"`
+	// Format: date-time
+	SaterDate *strfmt.DateTime `json:"SaterDate"`
 }
 
 // Validate validates this p t x service d t o rail specification v2 metro sub class special day
@@ -77,12 +79,20 @@ func (m *PTXServiceDTORailSpecificationV2MetroSubClassSpecialDay) validateEndDat
 		return err
 	}
 
+	if err := validate.FormatOf("EndDate", "body", "date-time", m.EndDate.String(), formats); err != nil {
+		return err
+	}
+
 	return nil
 }
 
 func (m *PTXServiceDTORailSpecificationV2MetroSubClassSpecialDay) validateSaterDate(formats strfmt.Registry) error {
 
 	if err := validate.Required("SaterDate", "body", m.SaterDate); err != nil {
+		return err
+	}
+
+	if err := validate.FormatOf("SaterDate", "body", "date-time", m.SaterDate.String(), formats); err != nil {
 		return err
 	}
 

@@ -28,11 +28,11 @@ type PTXServiceDTOBusSpecificationV3RouteFareStageFare struct {
 		PTXServiceDTOBusSpecificationV3RouteFareStageFareStage
 	} `json:"DestinationStage" xml:"Stage"`
 
-	// integer
+	// Int32
 	//
 	// 方向性描述 : [0:'去程',1:'返程',2:'迴圈',255:'未知']
 	// Required: true
-	Direction *string `json:"Direction"`
+	Direction *int64 `json:"Direction"`
 
 	// Array
 	//

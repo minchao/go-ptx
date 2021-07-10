@@ -21,38 +21,38 @@ import (
 // swagger:model PTX.Service.DTO.Bus.Specification.V3.RouteFare+StageFare+ServiceDay
 type PTXServiceDTOBusSpecificationV3RouteFareStageFareServiceDay struct {
 
-	// integer
+	// Int32
 	//
 	// 假日後一日是否營運 : [0:'否',1:'是']
-	DayAfterHoliday string `json:"DayAfterHoliday,omitempty"`
+	DayAfterHoliday int64 `json:"DayAfterHoliday,omitempty"`
 
-	// integer
+	// Int32
 	//
 	// 假日前一日是否營運 : [0:'否',1:'是']
-	DayBeforeHoliday string `json:"DayBeforeHoliday,omitempty"`
+	DayBeforeHoliday int64 `json:"DayBeforeHoliday,omitempty"`
 
-	// integer
+	// Int32
 	//
 	// 星期五是否營運 : [0:'否',1:'是']
 	// Required: true
-	Friday *string `json:"Friday"`
+	Friday *int64 `json:"Friday"`
 
-	// integer
+	// Int32
 	//
 	// 星期一是否營運 : [0:'否',1:'是']
 	// Required: true
-	Monday *string `json:"Monday"`
+	Monday *int64 `json:"Monday"`
 
-	// integer
+	// Int32
 	//
 	// 國定假日是否營運 : [0:'否',1:'是']
-	NationalHolidays string `json:"NationalHolidays,omitempty"`
+	NationalHolidays int64 `json:"NationalHolidays,omitempty"`
 
-	// integer
+	// Int32
 	//
 	// 星期六是否營運 : [0:'否',1:'是']
 	// Required: true
-	Saturday *string `json:"Saturday"`
+	Saturday *int64 `json:"Saturday"`
 
 	// String
 	//
@@ -60,34 +60,34 @@ type PTXServiceDTOBusSpecificationV3RouteFareStageFareServiceDay struct {
 	// Required: true
 	ServiceTag *string `json:"ServiceTag" xml:"String"`
 
-	// integer
+	// Int32
 	//
 	// 星期日是否營運 : [0:'否',1:'是']
 	// Required: true
-	Sunday *string `json:"Sunday"`
+	Sunday *int64 `json:"Sunday"`
 
-	// integer
+	// Int32
 	//
 	// 星期四是否營運 : [0:'否',1:'是']
 	// Required: true
-	Thursday *string `json:"Thursday"`
+	Thursday *int64 `json:"Thursday"`
 
-	// integer
+	// Int32
 	//
 	// 星期二是否營運 : [0:'否',1:'是']
 	// Required: true
-	Tuesday *string `json:"Tuesday"`
+	Tuesday *int64 `json:"Tuesday"`
 
-	// integer
+	// Int32
 	//
 	// 颱風停止上班上課期間是否營運 : [0:'否',1:'是']
-	TyphoonDay string `json:"TyphoonDay,omitempty"`
+	TyphoonDay int64 `json:"TyphoonDay,omitempty"`
 
-	// integer
+	// Int32
 	//
 	// 星期三是否營運 : [0:'否',1:'是']
 	// Required: true
-	Wednesday *string `json:"Wednesday"`
+	Wednesday *int64 `json:"Wednesday"`
 }
 
 // Validate validates this p t x service d t o bus specification v3 route fare stage fare service day

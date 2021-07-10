@@ -17,65 +17,65 @@ import (
 // swagger:model PTX.Service.DTO.Bus.Specification.V3.Schedule+ServiceDay
 type PTXServiceDTOBusSpecificationV3ScheduleServiceDay struct {
 
-	// integer
+	// Int32
 	//
 	// 國定假日後一日營運與否 : [0:'否',1:'是']
-	DayAfterHoliday string `json:"DayAfterHoliday,omitempty"`
+	DayAfterHoliday int64 `json:"DayAfterHoliday,omitempty"`
 
-	// integer
+	// Int32
 	//
 	// 國定假日前一日營運與否 : [0:'否',1:'是']
-	DayBeforeHoliday string `json:"DayBeforeHoliday,omitempty"`
+	DayBeforeHoliday int64 `json:"DayBeforeHoliday,omitempty"`
 
-	// integer
+	// Int32
 	//
 	// 星期五營運與否 : [0:'否',1:'是']
-	Friday string `json:"Friday,omitempty"`
+	Friday int64 `json:"Friday,omitempty"`
 
-	// integer
+	// Int32
 	//
 	// 星期一營運與否 : [0:'否',1:'是']
-	Monday string `json:"Monday,omitempty"`
+	Monday int64 `json:"Monday,omitempty"`
 
-	// integer
+	// Int32
 	//
 	// 國定假日營運與否 : [0:'否',1:'是']
-	NationalHolidays string `json:"NationalHolidays,omitempty"`
+	NationalHolidays int64 `json:"NationalHolidays,omitempty"`
 
-	// integer
+	// Int32
 	//
 	// 星期六營運與否 : [0:'否',1:'是']
-	Saturday string `json:"Saturday,omitempty"`
+	Saturday int64 `json:"Saturday,omitempty"`
 
 	// String
 	//
 	// 服務日標籤
 	ServiceTag string `json:"ServiceTag,omitempty" xml:"String,omitempty"`
 
-	// integer
+	// Int32
 	//
 	// 星期日營運與否 : [0:'否',1:'是']
-	Sunday string `json:"Sunday,omitempty"`
+	Sunday int64 `json:"Sunday,omitempty"`
 
-	// integer
+	// Int32
 	//
 	// 星期四營運與否 : [0:'否',1:'是']
-	Thursday string `json:"Thursday,omitempty"`
+	Thursday int64 `json:"Thursday,omitempty"`
 
-	// integer
+	// Int32
 	//
 	// 星期二營運與否 : [0:'否',1:'是']
-	Tuesday string `json:"Tuesday,omitempty"`
+	Tuesday int64 `json:"Tuesday,omitempty"`
 
-	// integer
+	// Int32
 	//
 	// 颱風停止上班上課期間營運與否 : [0:'否',1:'是']
-	TyphoonDay string `json:"TyphoonDay,omitempty"`
+	TyphoonDay int64 `json:"TyphoonDay,omitempty"`
 
-	// integer
+	// Int32
 	//
 	// 星期三營運與否 : [0:'否',1:'是']
-	Wednesday string `json:"Wednesday,omitempty"`
+	Wednesday int64 `json:"Wednesday,omitempty"`
 }
 
 // Validate validates this p t x service d t o bus specification v3 schedule service day

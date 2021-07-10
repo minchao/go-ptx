@@ -33,38 +33,36 @@ type PTXServiceDTOBusSpecificationV3A1Data struct {
 		PTXServiceDTOSharedSpecificationV3BasePointType
 	} `json:"BusPosition" xml:"PointType"`
 
-	// integer
+	// Int32
 	//
 	// 行車狀況 : [0:'正常',1:'車禍',2:'故障',3:'塞車',4:'緊急求援',5:'加油',90:'不明',91:'去回不明',98:'偏移路線',99:'非營運狀態',100:'客滿',101:'包車出租',255:'未知']
 	// Required: true
-	BusStatus *string `json:"BusStatus"`
+	BusStatus *int64 `json:"BusStatus"`
 
-	// integer
+	// Int32
 	//
 	// 車輛去返程 : [0:'去程',1:'返程',2:'迴圈',255:'未知']
 	// Required: true
-	Direction *string `json:"Direction"`
+	Direction *int64 `json:"Direction"`
 
-	// integer
+	// Int32
 	//
 	// 勤務狀態 : [0:'正常',1:'開始',2:'結束']
 	// Required: true
-	DutyStatus *string `json:"DutyStatus"`
+	DutyStatus *int64 `json:"DutyStatus"`
 
-	// DateTime
-	//
 	// 車機系統紀錄時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
-	GPSTime string `json:"GPSTime,omitempty"`
+	// Format: date-time
+	GPSTime strfmt.DateTime `json:"GPSTime,omitempty"`
 
-	// DateTime
-	//
 	// 車機系統傳送日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
-	GPSTransTime string `json:"GPSTransTime,omitempty"`
+	// Format: date-time
+	GPSTransTime strfmt.DateTime `json:"GPSTransTime,omitempty"`
 
-	// integer
+	// Int32
 	//
 	// 資料型態種類 : [0:'未知',1:'定期',2:'非定期']
-	MessageType string `json:"MessageType,omitempty"`
+	MessageType int64 `json:"MessageType,omitempty"`
 
 	// String
 	//
@@ -95,7 +93,8 @@ type PTXServiceDTOBusSpecificationV3A1Data struct {
 	//
 	// 來源端平台接收時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Required: true
-	RecTime *string `json:"RecTime"`
+	// Format: date-time
+	RecTime *strfmt.DateTime `json:"RecTime"`
 
 	// String
 	//
@@ -142,17 +141,18 @@ type PTXServiceDTOBusSpecificationV3A1Data struct {
 	//
 	// 來源端平台資料傳出時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Required: true
-	TransTime *string `json:"TransTime"`
+	// Format: date-time
+	TransTime *strfmt.DateTime `json:"TransTime"`
 
 	// String
 	//
 	// 班次代碼
 	TripID string `json:"TripID,omitempty" xml:"String,omitempty"`
 
-	// integer
+	// Int32
 	//
 	// 車輛種類 : [1:'一般',2:'復康巴士',3:'專車',4:'其他']
-	VehicleType string `json:"VehicleType,omitempty"`
+	VehicleType int64 `json:"VehicleType,omitempty"`
 }
 
 // Validate validates this p t x service d t o bus specification v3 a1 data
@@ -176,6 +176,14 @@ func (m *PTXServiceDTOBusSpecificationV3A1Data) Validate(formats strfmt.Registry
 	}
 
 	if err := m.validateDutyStatus(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateGPSTime(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateGPSTransTime(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -266,6 +274,30 @@ func (m *PTXServiceDTOBusSpecificationV3A1Data) validateDutyStatus(formats strfm
 	return nil
 }
 
+func (m *PTXServiceDTOBusSpecificationV3A1Data) validateGPSTime(formats strfmt.Registry) error {
+	if swag.IsZero(m.GPSTime) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("GPSTime", "body", "date-time", m.GPSTime.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV3A1Data) validateGPSTransTime(formats strfmt.Registry) error {
+	if swag.IsZero(m.GPSTransTime) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("GPSTransTime", "body", "date-time", m.GPSTransTime.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *PTXServiceDTOBusSpecificationV3A1Data) validateOperatorCode(formats strfmt.Registry) error {
 
 	if err := validate.Required("OperatorCode", "body", m.OperatorCode); err != nil {
@@ -304,6 +336,10 @@ func (m *PTXServiceDTOBusSpecificationV3A1Data) validatePlateNumb(formats strfmt
 func (m *PTXServiceDTOBusSpecificationV3A1Data) validateRecTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("RecTime", "body", m.RecTime); err != nil {
+		return err
+	}
+
+	if err := validate.FormatOf("RecTime", "body", "date-time", m.RecTime.String(), formats); err != nil {
 		return err
 	}
 
@@ -347,6 +383,10 @@ func (m *PTXServiceDTOBusSpecificationV3A1Data) validateSubRouteName(formats str
 func (m *PTXServiceDTOBusSpecificationV3A1Data) validateTransTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("TransTime", "body", m.TransTime); err != nil {
+		return err
+	}
+
+	if err := validate.FormatOf("TransTime", "body", "date-time", m.TransTime.String(), formats); err != nil {
 		return err
 	}
 

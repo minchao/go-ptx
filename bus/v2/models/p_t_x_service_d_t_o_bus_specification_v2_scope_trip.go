@@ -19,7 +19,7 @@ import (
 // swagger:model PTX.Service.DTO.Bus.Specification.V2.Scope+Trip
 type PTXServiceDTOBusSpecificationV2ScopeTrip struct {
 
-	// integer
+	// Int32
 	//
 	// 影響方向 : [0:'去程',1:'返程',2:'迴圈',255:'未知']
 	Direction int64 `json:"Direction,omitempty"`

@@ -35,22 +35,21 @@ type PTXServiceDTORailSpecificationV3TRATRANewsListNews struct {
 	// Required: true
 	Description *string `json:"Description" xml:"String"`
 
-	// DateTime
-	//
 	// 消息結束日期時間
-	EndTime string `json:"EndTime,omitempty"`
+	// Format: date-time
+	EndTime strfmt.DateTime `json:"EndTime,omitempty"`
 
-	// integer
+	// Int32
 	//
 	// 語系 : [1:'Zh_tw',2:'En_us',3:'Zh_cn',4:'Ja',5:'Ko',99:'Other']
 	// Required: true
-	Language *string `json:"Language"`
+	Language *int64 `json:"Language"`
 
-	// integer
+	// Int32
 	//
 	// 消息類別 : [1:'最新消息',2:'新聞稿',3:'營運資訊',4:'轉乘資訊',5:'活動訊息',6:'系統公告',7:'新服務上架',8:'API修正',9:'來源異常',99:'其他']
 	// Required: true
-	NewsCategory *string `json:"NewsCategory"`
+	NewsCategory *int64 `json:"NewsCategory"`
 
 	// String
 	//
@@ -67,12 +66,12 @@ type PTXServiceDTORailSpecificationV3TRATRANewsListNews struct {
 	//
 	// 消息發佈日期時間
 	// Required: true
-	PublishTime *string `json:"PublishTime"`
+	// Format: date-time
+	PublishTime *strfmt.DateTime `json:"PublishTime"`
 
-	// DateTime
-	//
 	// 消息起始日期時間
-	StartTime string `json:"StartTime,omitempty"`
+	// Format: date-time
+	StartTime strfmt.DateTime `json:"StartTime,omitempty"`
 
 	// String
 	//
@@ -84,7 +83,8 @@ type PTXServiceDTORailSpecificationV3TRATRANewsListNews struct {
 	//
 	// 本筆資料之更新日期時間
 	// Required: true
-	UpdateTime *string `json:"UpdateTime"`
+	// Format: date-time
+	UpdateTime *strfmt.DateTime `json:"UpdateTime"`
 }
 
 // Validate validates this p t x service d t o rail specification v3 t r a t r a news list news
@@ -92,6 +92,10 @@ func (m *PTXServiceDTORailSpecificationV3TRATRANewsListNews) Validate(formats st
 	var res []error
 
 	if err := m.validateDescription(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateEndTime(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -108,6 +112,10 @@ func (m *PTXServiceDTORailSpecificationV3TRATRANewsListNews) Validate(formats st
 	}
 
 	if err := m.validatePublishTime(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateStartTime(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -128,6 +136,18 @@ func (m *PTXServiceDTORailSpecificationV3TRATRANewsListNews) Validate(formats st
 func (m *PTXServiceDTORailSpecificationV3TRATRANewsListNews) validateDescription(formats strfmt.Registry) error {
 
 	if err := validate.Required("Description", "body", m.Description); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV3TRATRANewsListNews) validateEndTime(formats strfmt.Registry) error {
+	if swag.IsZero(m.EndTime) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("EndTime", "body", "date-time", m.EndTime.String(), formats); err != nil {
 		return err
 	}
 
@@ -167,6 +187,22 @@ func (m *PTXServiceDTORailSpecificationV3TRATRANewsListNews) validatePublishTime
 		return err
 	}
 
+	if err := validate.FormatOf("PublishTime", "body", "date-time", m.PublishTime.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV3TRATRANewsListNews) validateStartTime(formats strfmt.Registry) error {
+	if swag.IsZero(m.StartTime) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("StartTime", "body", "date-time", m.StartTime.String(), formats); err != nil {
+		return err
+	}
+
 	return nil
 }
 
@@ -182,6 +218,10 @@ func (m *PTXServiceDTORailSpecificationV3TRATRANewsListNews) validateTitle(forma
 func (m *PTXServiceDTORailSpecificationV3TRATRANewsListNews) validateUpdateTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
+		return err
+	}
+
+	if err := validate.FormatOf("UpdateTime", "body", "date-time", m.UpdateTime.String(), formats); err != nil {
 		return err
 	}
 

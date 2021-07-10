@@ -70,7 +70,8 @@ type PTXServiceDTORailSpecificationV2MetroLiveBoard struct {
 	//
 	// 來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Required: true
-	SrcUpdateTime *string `json:"SrcUpdateTime"`
+	// Format: date-time
+	SrcUpdateTime *strfmt.DateTime `json:"SrcUpdateTime"`
 
 	// String
 	//
@@ -96,7 +97,8 @@ type PTXServiceDTORailSpecificationV2MetroLiveBoard struct {
 	//
 	// 本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Required: true
-	UpdateTime *string `json:"UpdateTime"`
+	// Format: date-time
+	UpdateTime *strfmt.DateTime `json:"UpdateTime"`
 }
 
 // Validate validates this p t x service d t o rail specification v2 metro live board
@@ -205,6 +207,10 @@ func (m *PTXServiceDTORailSpecificationV2MetroLiveBoard) validateSrcUpdateTime(f
 		return err
 	}
 
+	if err := validate.FormatOf("SrcUpdateTime", "body", "date-time", m.SrcUpdateTime.String(), formats); err != nil {
+		return err
+	}
+
 	return nil
 }
 
@@ -234,6 +240,10 @@ func (m *PTXServiceDTORailSpecificationV2MetroLiveBoard) validateTripHeadSign(fo
 func (m *PTXServiceDTORailSpecificationV2MetroLiveBoard) validateUpdateTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
+		return err
+	}
+
+	if err := validate.FormatOf("UpdateTime", "body", "date-time", m.UpdateTime.String(), formats); err != nil {
 		return err
 	}
 

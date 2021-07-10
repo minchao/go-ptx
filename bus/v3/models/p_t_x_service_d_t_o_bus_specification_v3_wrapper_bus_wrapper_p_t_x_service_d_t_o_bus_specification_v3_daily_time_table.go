@@ -47,7 +47,8 @@ type PTXServiceDTOBusSpecificationV3WrapperBusWrapperPTXServiceDTOBusSpecificati
 	//
 	// [來源端平臺]資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Required: true
-	SrcUpdateTime *string `json:"SrcUpdateTime"`
+	// Format: date-time
+	SrcUpdateTime *strfmt.DateTime `json:"SrcUpdateTime"`
 
 	// Int32
 	//
@@ -59,7 +60,8 @@ type PTXServiceDTOBusSpecificationV3WrapperBusWrapperPTXServiceDTOBusSpecificati
 	//
 	// [平臺]資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Required: true
-	UpdateTime *string `json:"UpdateTime"`
+	// Format: date-time
+	UpdateTime *strfmt.DateTime `json:"UpdateTime"`
 }
 
 // Validate validates this p t x service d t o bus specification v3 wrapper bus wrapper p t x service d t o bus specification v3 daily time table
@@ -145,6 +147,10 @@ func (m *PTXServiceDTOBusSpecificationV3WrapperBusWrapperPTXServiceDTOBusSpecifi
 		return err
 	}
 
+	if err := validate.FormatOf("SrcUpdateTime", "body", "date-time", m.SrcUpdateTime.String(), formats); err != nil {
+		return err
+	}
+
 	return nil
 }
 
@@ -160,6 +166,10 @@ func (m *PTXServiceDTOBusSpecificationV3WrapperBusWrapperPTXServiceDTOBusSpecifi
 func (m *PTXServiceDTOBusSpecificationV3WrapperBusWrapperPTXServiceDTOBusSpecificationV3DailyTimeTable) validateUpdateTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
+		return err
+	}
+
+	if err := validate.FormatOf("UpdateTime", "body", "date-time", m.UpdateTime.String(), formats); err != nil {
 		return err
 	}
 

@@ -61,7 +61,8 @@ type PTXServiceDTORailSpecificationV2THSRStationExit struct {
 	//
 	// 來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Required: true
-	SrcUpdateTime *string `json:"SrcUpdateTime"`
+	// Format: date-time
+	SrcUpdateTime *strfmt.DateTime `json:"SrcUpdateTime"`
 
 	// 是否有樓梯
 	// Required: true
@@ -85,7 +86,8 @@ type PTXServiceDTORailSpecificationV2THSRStationExit struct {
 	//
 	// 本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Required: true
-	UpdateTime *string `json:"UpdateTime"`
+	// Format: date-time
+	UpdateTime *strfmt.DateTime `json:"UpdateTime"`
 }
 
 // Validate validates this p t x service d t o rail specification v2 t h s r station exit
@@ -194,6 +196,10 @@ func (m *PTXServiceDTORailSpecificationV2THSRStationExit) validateSrcUpdateTime(
 		return err
 	}
 
+	if err := validate.FormatOf("SrcUpdateTime", "body", "date-time", m.SrcUpdateTime.String(), formats); err != nil {
+		return err
+	}
+
 	return nil
 }
 
@@ -223,6 +229,10 @@ func (m *PTXServiceDTORailSpecificationV2THSRStationExit) validateStationName(fo
 func (m *PTXServiceDTORailSpecificationV2THSRStationExit) validateUpdateTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
+		return err
+	}
+
+	if err := validate.FormatOf("UpdateTime", "body", "date-time", m.UpdateTime.String(), formats); err != nil {
 		return err
 	}
 

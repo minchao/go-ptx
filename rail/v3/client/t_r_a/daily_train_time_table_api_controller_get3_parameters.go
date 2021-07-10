@@ -119,8 +119,10 @@ type DailyTrainTimeTableAPIControllerGet3Params struct {
 	/* TrainDate.
 
 	   欲查詢的日期(格式: yyyy-MM-dd)
+
+	   Format: date-time
 	*/
-	TrainDate string
+	TrainDate strfmt.DateTime
 
 	timeout    time.Duration
 	Context    context.Context
@@ -286,13 +288,13 @@ func (o *DailyTrainTimeTableAPIControllerGet3Params) SetOriginStationID(originSt
 }
 
 // WithTrainDate adds the trainDate to the daily train time table Api controller get 3 params
-func (o *DailyTrainTimeTableAPIControllerGet3Params) WithTrainDate(trainDate string) *DailyTrainTimeTableAPIControllerGet3Params {
+func (o *DailyTrainTimeTableAPIControllerGet3Params) WithTrainDate(trainDate strfmt.DateTime) *DailyTrainTimeTableAPIControllerGet3Params {
 	o.SetTrainDate(trainDate)
 	return o
 }
 
 // SetTrainDate adds the trainDate to the daily train time table Api controller get 3 params
-func (o *DailyTrainTimeTableAPIControllerGet3Params) SetTrainDate(trainDate string) {
+func (o *DailyTrainTimeTableAPIControllerGet3Params) SetTrainDate(trainDate strfmt.DateTime) {
 	o.TrainDate = trainDate
 }
 
@@ -427,7 +429,7 @@ func (o *DailyTrainTimeTableAPIControllerGet3Params) WriteToRequest(r runtime.Cl
 	}
 
 	// path param TrainDate
-	if err := r.SetPathParam("TrainDate", o.TrainDate); err != nil {
+	if err := r.SetPathParam("TrainDate", o.TrainDate.String()); err != nil {
 		return err
 	}
 

@@ -25,17 +25,16 @@ type PTXServiceDTOBusSpecificationV2BusN1EstimateTime struct {
 	// 車輛目前所在站牌代碼
 	CurrentStop string `json:"CurrentStop,omitempty" xml:"String,omitempty"`
 
-	// DateTime
-	//
 	// 系統演算該筆預估到站資料的時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)[目前僅公總提供此欄位資訊]
-	DataTime string `json:"DataTime,omitempty"`
+	// Format: date-time
+	DataTime strfmt.DateTime `json:"DataTime,omitempty"`
 
 	// String
 	//
 	// 車輛目的站牌代碼
 	DestinationStop string `json:"DestinationStop,omitempty" xml:"String,omitempty"`
 
-	// integer
+	// Int32
 	//
 	// 去返程(該方向指的是此車牌車輛目前所在路線的去返程方向，非指站站牌所在路線的去返程方向，使用時請加值業者多加注意) : [0:'去程',1:'返程',2:'迴圈',255:'未知']
 	// Required: true
@@ -53,15 +52,14 @@ type PTXServiceDTOBusSpecificationV2BusN1EstimateTime struct {
 	// 是否為末班車
 	IsLastBus bool `json:"IsLastBus,omitempty"`
 
-	// integer
+	// Int32
 	//
 	// 資料型態種類 : [0:'未知',1:'定期',2:'非定期']
-	MessageType string `json:"MessageType,omitempty"`
+	MessageType int64 `json:"MessageType,omitempty"`
 
-	// DateTime
-	//
 	// 下一班公車到達時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
-	NextBusTime string `json:"NextBusTime,omitempty"`
+	// Format: date-time
+	NextBusTime strfmt.DateTime `json:"NextBusTime,omitempty"`
 
 	// String
 	//
@@ -85,20 +83,17 @@ type PTXServiceDTOBusSpecificationV2BusN1EstimateTime struct {
 	// 路線唯一識別代碼，規則為 {業管機關代碼} + {RouteID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢
 	RouteUID string `json:"RouteUID,omitempty" xml:"String,omitempty"`
 
-	// DateTime
-	//
 	// 來源端平台接收時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz))[該欄位在N1資料中無意義]
-	SrcRecTime string `json:"SrcRecTime,omitempty"`
+	// Format: date-time
+	SrcRecTime strfmt.DateTime `json:"SrcRecTime,omitempty"`
 
-	// DateTime
-	//
 	// 來源端平台資料傳出時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)[公總使用動態即時推播故有提供此欄位, 而非公總系統因使用整包資料更新, 故沒有提供此欄位]
-	SrcTransTime string `json:"SrcTransTime,omitempty"`
+	// Format: date-time
+	SrcTransTime strfmt.DateTime `json:"SrcTransTime,omitempty"`
 
-	// DateTime
-	//
 	// 來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)[公總使用動態即時推播故沒有提供此欄位, 而非公總系統因提供整包資料更新, 故有提供此欄]
-	SrcUpdateTime string `json:"SrcUpdateTime,omitempty"`
+	// Format: date-time
+	SrcUpdateTime strfmt.DateTime `json:"SrcUpdateTime,omitempty"`
 
 	// 車輛距離本站站數
 	StopCountDown int32 `json:"StopCountDown,omitempty"`
@@ -118,10 +113,10 @@ type PTXServiceDTOBusSpecificationV2BusN1EstimateTime struct {
 	// 路線經過站牌之順序
 	StopSequence int32 `json:"StopSequence,omitempty"`
 
-	// integer
+	// Int32
 	//
 	// 車輛狀態備註 : [0:'正常',1:'尚未發車',2:'交管不停靠',3:'末班車已過',4:'今日未營運']
-	StopStatus string `json:"StopStatus,omitempty"`
+	StopStatus int64 `json:"StopStatus,omitempty"`
 
 	// String
 	//
@@ -145,21 +140,25 @@ type PTXServiceDTOBusSpecificationV2BusN1EstimateTime struct {
 	// 子路線唯一識別代碼，規則為 {業管機關簡碼} + {SubRouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢
 	SubRouteUID string `json:"SubRouteUID,omitempty" xml:"String,omitempty"`
 
-	// DateTime
-	//
 	// 車機資料傳輸時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz))[該欄位在N1資料中無意義]
-	TransTime string `json:"TransTime,omitempty"`
+	// Format: date-time
+	TransTime strfmt.DateTime `json:"TransTime,omitempty"`
 
 	// DateTime
 	//
 	// 本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Required: true
-	UpdateTime *string `json:"UpdateTime"`
+	// Format: date-time
+	UpdateTime *strfmt.DateTime `json:"UpdateTime"`
 }
 
 // Validate validates this p t x service d t o bus specification v2 bus n1 estimate time
 func (m *PTXServiceDTOBusSpecificationV2BusN1EstimateTime) Validate(formats strfmt.Registry) error {
 	var res []error
+
+	if err := m.validateDataTime(formats); err != nil {
+		res = append(res, err)
+	}
 
 	if err := m.validateDirection(formats); err != nil {
 		res = append(res, err)
@@ -169,7 +168,23 @@ func (m *PTXServiceDTOBusSpecificationV2BusN1EstimateTime) Validate(formats strf
 		res = append(res, err)
 	}
 
+	if err := m.validateNextBusTime(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateRouteName(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateSrcRecTime(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateSrcTransTime(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateSrcUpdateTime(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -181,6 +196,10 @@ func (m *PTXServiceDTOBusSpecificationV2BusN1EstimateTime) Validate(formats strf
 		res = append(res, err)
 	}
 
+	if err := m.validateTransTime(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateUpdateTime(formats); err != nil {
 		res = append(res, err)
 	}
@@ -188,6 +207,18 @@ func (m *PTXServiceDTOBusSpecificationV2BusN1EstimateTime) Validate(formats strf
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV2BusN1EstimateTime) validateDataTime(formats strfmt.Registry) error {
+	if swag.IsZero(m.DataTime) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("DataTime", "body", "date-time", m.DataTime.String(), formats); err != nil {
+		return err
+	}
+
 	return nil
 }
 
@@ -224,9 +255,57 @@ func (m *PTXServiceDTOBusSpecificationV2BusN1EstimateTime) validateEstimates(for
 	return nil
 }
 
+func (m *PTXServiceDTOBusSpecificationV2BusN1EstimateTime) validateNextBusTime(formats strfmt.Registry) error {
+	if swag.IsZero(m.NextBusTime) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("NextBusTime", "body", "date-time", m.NextBusTime.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *PTXServiceDTOBusSpecificationV2BusN1EstimateTime) validateRouteName(formats strfmt.Registry) error {
 	if swag.IsZero(m.RouteName) { // not required
 		return nil
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV2BusN1EstimateTime) validateSrcRecTime(formats strfmt.Registry) error {
+	if swag.IsZero(m.SrcRecTime) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("SrcRecTime", "body", "date-time", m.SrcRecTime.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV2BusN1EstimateTime) validateSrcTransTime(formats strfmt.Registry) error {
+	if swag.IsZero(m.SrcTransTime) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("SrcTransTime", "body", "date-time", m.SrcTransTime.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV2BusN1EstimateTime) validateSrcUpdateTime(formats strfmt.Registry) error {
+	if swag.IsZero(m.SrcUpdateTime) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("SrcUpdateTime", "body", "date-time", m.SrcUpdateTime.String(), formats); err != nil {
+		return err
 	}
 
 	return nil
@@ -248,9 +327,25 @@ func (m *PTXServiceDTOBusSpecificationV2BusN1EstimateTime) validateSubRouteName(
 	return nil
 }
 
+func (m *PTXServiceDTOBusSpecificationV2BusN1EstimateTime) validateTransTime(formats strfmt.Registry) error {
+	if swag.IsZero(m.TransTime) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("TransTime", "body", "date-time", m.TransTime.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *PTXServiceDTOBusSpecificationV2BusN1EstimateTime) validateUpdateTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
+		return err
+	}
+
+	if err := validate.FormatOf("UpdateTime", "body", "date-time", m.UpdateTime.String(), formats); err != nil {
 		return err
 	}
 

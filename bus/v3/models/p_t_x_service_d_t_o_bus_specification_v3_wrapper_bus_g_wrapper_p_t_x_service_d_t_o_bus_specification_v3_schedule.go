@@ -35,12 +35,12 @@ type PTXServiceDTOBusSpecificationV3WrapperBusGWrapperPTXServiceDTOBusSpecificat
 	//
 	// 有效起始日期
 	// Required: true
-	EffectiveDate *string `json:"EffectiveDate"`
+	// Format: date-time
+	EffectiveDate *strfmt.DateTime `json:"EffectiveDate"`
 
-	// DateTime
-	//
 	// 有效終止日期
-	ExpireDate string `json:"ExpireDate,omitempty"`
+	// Format: date-time
+	ExpireDate strfmt.DateTime `json:"ExpireDate,omitempty"`
 
 	// String
 	//
@@ -63,7 +63,8 @@ type PTXServiceDTOBusSpecificationV3WrapperBusGWrapperPTXServiceDTOBusSpecificat
 	//
 	// [來源端平臺]資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Required: true
-	SrcUpdateTime *string `json:"SrcUpdateTime"`
+	// Format: date-time
+	SrcUpdateTime *strfmt.DateTime `json:"SrcUpdateTime"`
 
 	// Int32
 	//
@@ -75,7 +76,8 @@ type PTXServiceDTOBusSpecificationV3WrapperBusGWrapperPTXServiceDTOBusSpecificat
 	//
 	// [平臺]資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Required: true
-	UpdateTime *string `json:"UpdateTime"`
+	// Format: date-time
+	UpdateTime *strfmt.DateTime `json:"UpdateTime"`
 
 	// String
 	//
@@ -92,6 +94,10 @@ func (m *PTXServiceDTOBusSpecificationV3WrapperBusGWrapperPTXServiceDTOBusSpecif
 	}
 
 	if err := m.validateEffectiveDate(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateExpireDate(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -133,6 +139,22 @@ func (m *PTXServiceDTOBusSpecificationV3WrapperBusGWrapperPTXServiceDTOBusSpecif
 func (m *PTXServiceDTOBusSpecificationV3WrapperBusGWrapperPTXServiceDTOBusSpecificationV3Schedule) validateEffectiveDate(formats strfmt.Registry) error {
 
 	if err := validate.Required("EffectiveDate", "body", m.EffectiveDate); err != nil {
+		return err
+	}
+
+	if err := validate.FormatOf("EffectiveDate", "body", "date-time", m.EffectiveDate.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV3WrapperBusGWrapperPTXServiceDTOBusSpecificationV3Schedule) validateExpireDate(formats strfmt.Registry) error {
+	if swag.IsZero(m.ExpireDate) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("ExpireDate", "body", "date-time", m.ExpireDate.String(), formats); err != nil {
 		return err
 	}
 
@@ -179,6 +201,10 @@ func (m *PTXServiceDTOBusSpecificationV3WrapperBusGWrapperPTXServiceDTOBusSpecif
 		return err
 	}
 
+	if err := validate.FormatOf("SrcUpdateTime", "body", "date-time", m.SrcUpdateTime.String(), formats); err != nil {
+		return err
+	}
+
 	return nil
 }
 
@@ -194,6 +220,10 @@ func (m *PTXServiceDTOBusSpecificationV3WrapperBusGWrapperPTXServiceDTOBusSpecif
 func (m *PTXServiceDTOBusSpecificationV3WrapperBusGWrapperPTXServiceDTOBusSpecificationV3Schedule) validateUpdateTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
+		return err
+	}
+
+	if err := validate.FormatOf("UpdateTime", "body", "date-time", m.UpdateTime.String(), formats); err != nil {
 		return err
 	}
 

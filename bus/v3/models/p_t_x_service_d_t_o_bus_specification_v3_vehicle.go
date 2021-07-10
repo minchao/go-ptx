@@ -78,22 +78,21 @@ type PTXServiceDTOBusSpecificationV3Vehicle struct {
 	// Required: true
 	PlateNumb *string `json:"PlateNumb" xml:"String"`
 
-	// DateTime
-	//
 	// 購入時間
-	PurchaseTime string `json:"PurchaseTime,omitempty"`
+	// Format: date-time
+	PurchaseTime strfmt.DateTime `json:"PurchaseTime,omitempty"`
 
-	// integer
+	// Int32
 	//
 	// 車輛型別 : [1:'大型巴士',2:'中型巴士',3:'小型巴士',4:'雙層巴士',5:'雙節巴士',6:'計程車']
 	// Required: true
-	VehicleClass *string `json:"VehicleClass"`
+	VehicleClass *int64 `json:"VehicleClass"`
 
-	// integer
+	// Int32
 	//
 	// 車輛種類 : [1:'一般',2:'復康巴士',3:'專車',4:'其他']
 	// Required: true
-	VehicleType *string `json:"VehicleType"`
+	VehicleType *int64 `json:"VehicleType"`
 }
 
 // Validate validates this p t x service d t o bus specification v3 vehicle
@@ -133,6 +132,10 @@ func (m *PTXServiceDTOBusSpecificationV3Vehicle) Validate(formats strfmt.Registr
 	}
 
 	if err := m.validatePlateNumb(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validatePurchaseTime(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -225,6 +228,18 @@ func (m *PTXServiceDTOBusSpecificationV3Vehicle) validateOperatorID(formats strf
 func (m *PTXServiceDTOBusSpecificationV3Vehicle) validatePlateNumb(formats strfmt.Registry) error {
 
 	if err := validate.Required("PlateNumb", "body", m.PlateNumb); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTOBusSpecificationV3Vehicle) validatePurchaseTime(formats strfmt.Registry) error {
+	if swag.IsZero(m.PurchaseTime) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("PurchaseTime", "body", "date-time", m.PurchaseTime.String(), formats); err != nil {
 		return err
 	}
 

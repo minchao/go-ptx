@@ -37,10 +37,10 @@ type PTXServiceDTOBusSpecificationV2SpecialDay struct {
 	// 特殊營運描述
 	Description string `json:"Description,omitempty" xml:"String,omitempty"`
 
-	// integer
+	// Int32
 	//
 	// 營運服務狀態代碼 : [0:'正常營運',1:'加班營運',2:'取消/停駛營運']
-	ServiceStatus string `json:"ServiceStatus,omitempty"`
+	ServiceStatus int64 `json:"ServiceStatus,omitempty"`
 }
 
 // Validate validates this p t x service d t o bus specification v2 special day

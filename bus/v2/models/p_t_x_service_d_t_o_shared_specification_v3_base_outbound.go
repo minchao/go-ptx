@@ -25,18 +25,19 @@ type PTXServiceDTOSharedSpecificationV3BaseOutbound struct {
 	//
 	// 檢核時間
 	// Required: true
-	CheckTime *string `json:"CheckTime"`
+	// Format: date-time
+	CheckTime *strfmt.DateTime `json:"CheckTime"`
 
 	// String
 	//
 	// 檢核失敗原因
 	Reason string `json:"Reason,omitempty" xml:"String,omitempty"`
 
-	// integer
+	// Int32
 	//
 	// 檢核結果狀態 : [0:'失敗',1:'成功']
 	// Required: true
-	Status *string `json:"Status"`
+	Status *int64 `json:"Status"`
 }
 
 // Validate validates this p t x service d t o shared specification v3 base outbound
@@ -60,6 +61,10 @@ func (m *PTXServiceDTOSharedSpecificationV3BaseOutbound) Validate(formats strfmt
 func (m *PTXServiceDTOSharedSpecificationV3BaseOutbound) validateCheckTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("CheckTime", "body", m.CheckTime); err != nil {
+		return err
+	}
+
+	if err := validate.FormatOf("CheckTime", "body", "date-time", m.CheckTime.String(), formats); err != nil {
 		return err
 	}
 

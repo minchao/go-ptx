@@ -101,8 +101,10 @@ type THSRAPIDailyTrainInfo3Params struct {
 	/* TrainDate.
 
 	   欲查詢車次的日期(格式: yyyy-MM-dd)
+
+	   Format: date-time
 	*/
-	TrainDate string
+	TrainDate strfmt.DateTime
 
 	/* TrainNo.
 
@@ -241,13 +243,13 @@ func (o *THSRAPIDailyTrainInfo3Params) SetDollarTop(dollarTop *int64) {
 }
 
 // WithTrainDate adds the trainDate to the t h s r Api daily train info 3 params
-func (o *THSRAPIDailyTrainInfo3Params) WithTrainDate(trainDate string) *THSRAPIDailyTrainInfo3Params {
+func (o *THSRAPIDailyTrainInfo3Params) WithTrainDate(trainDate strfmt.DateTime) *THSRAPIDailyTrainInfo3Params {
 	o.SetTrainDate(trainDate)
 	return o
 }
 
 // SetTrainDate adds the trainDate to the t h s r Api daily train info 3 params
-func (o *THSRAPIDailyTrainInfo3Params) SetTrainDate(trainDate string) {
+func (o *THSRAPIDailyTrainInfo3Params) SetTrainDate(trainDate strfmt.DateTime) {
 	o.TrainDate = trainDate
 }
 
@@ -366,7 +368,7 @@ func (o *THSRAPIDailyTrainInfo3Params) WriteToRequest(r runtime.ClientRequest, r
 	}
 
 	// path param TrainDate
-	if err := r.SetPathParam("TrainDate", o.TrainDate); err != nil {
+	if err := r.SetPathParam("TrainDate", o.TrainDate.String()); err != nil {
 		return err
 	}
 

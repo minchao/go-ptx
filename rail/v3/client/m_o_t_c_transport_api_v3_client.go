@@ -10,6 +10,7 @@ import (
 	httptransport "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
+	"github.com/minchao/go-ptx/rail/v3/client/a_f_r"
 	"github.com/minchao/go-ptx/rail/v3/client/t_r_a"
 )
 
@@ -55,6 +56,7 @@ func New(transport runtime.ClientTransport, formats strfmt.Registry) *MOTCTransp
 
 	cli := new(MOTCTransportAPIV3)
 	cli.Transport = transport
+	cli.Afr = a_f_r.New(transport, formats)
 	cli.Tra = t_r_a.New(transport, formats)
 	return cli
 }
@@ -100,6 +102,8 @@ func (cfg *TransportConfig) WithSchemes(schemes []string) *TransportConfig {
 
 // MOTCTransportAPIV3 is a client for m o t c transport API v3
 type MOTCTransportAPIV3 struct {
+	Afr a_f_r.ClientService
+
 	Tra t_r_a.ClientService
 
 	Transport runtime.ClientTransport
@@ -108,5 +112,6 @@ type MOTCTransportAPIV3 struct {
 // SetTransport changes the transport on the client and all its subresources
 func (c *MOTCTransportAPIV3) SetTransport(transport runtime.ClientTransport) {
 	c.Transport = transport
+	c.Afr.SetTransport(transport)
 	c.Tra.SetTransport(transport)
 }

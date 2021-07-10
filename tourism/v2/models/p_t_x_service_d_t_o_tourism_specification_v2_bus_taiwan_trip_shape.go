@@ -21,48 +21,48 @@ import (
 // swagger:model PTX.Service.DTO.Tourism.Specification.V2.BusTaiwanTripShape
 type PTXServiceDTOTourismSpecificationV2BusTaiwanTripShape struct {
 
-	// integer
+	// Int32
 	//
 	// 去返程，若無值則表示來源尚無區分去返程 : [0:'去程',1:'返程',2:'迴圈',255:'未知']
 	// Required: true
-	Direction *int32 `json:"Direction"`
+	Direction *int64 `json:"Direction"`
 
 	// String
 	//
 	// well-known text，為路線軌跡資料
 	// Required: true
-	Geometry *string `json:"Geometry"`
+	Geometry *string `json:"Geometry" xml:"String"`
 
 	// String
 	//
 	// 地區既用中之路線代碼(為原資料內碼)
 	// Required: true
-	RouteID *string `json:"RouteID"`
+	RouteID *string `json:"RouteID" xml:"String"`
 
 	// String
 	//
 	// 路線唯一識別代碼，規則為 {業管機關簡碼} + {RouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢
 	// Required: true
-	RouteUID *string `json:"RouteUID"`
+	RouteUID *string `json:"RouteUID" xml:"String"`
 
-	// DateTime
-	//
 	// 來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Required: true
-	SrcUpdateTime *string `json:"SrcUpdateTime"`
+	// Format: date-time
+	SrcUpdateTime *strfmt.DateTime `json:"SrcUpdateTime"`
 
 	// NameType
 	//
 	// 台灣好行路線名稱
 	TaiwanTripName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"TaiwanTripName,omitempty"`
+	} `json:"TaiwanTripName,omitempty" xml:"NameType,omitempty"`
 
 	// DateTime
 	//
 	// 資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Required: true
-	UpdateTime *string `json:"UpdateTime"`
+	// Format: date-time
+	UpdateTime *strfmt.DateTime `json:"UpdateTime"`
 }
 
 // Validate validates this p t x service d t o tourism specification v2 bus taiwan trip shape
@@ -145,6 +145,10 @@ func (m *PTXServiceDTOTourismSpecificationV2BusTaiwanTripShape) validateSrcUpdat
 		return err
 	}
 
+	if err := validate.FormatOf("SrcUpdateTime", "body", "date-time", m.SrcUpdateTime.String(), formats); err != nil {
+		return err
+	}
+
 	return nil
 }
 
@@ -159,6 +163,10 @@ func (m *PTXServiceDTOTourismSpecificationV2BusTaiwanTripShape) validateTaiwanTr
 func (m *PTXServiceDTOTourismSpecificationV2BusTaiwanTripShape) validateUpdateTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
+		return err
+	}
+
+	if err := validate.FormatOf("UpdateTime", "body", "date-time", m.UpdateTime.String(), formats); err != nil {
 		return err
 	}
 

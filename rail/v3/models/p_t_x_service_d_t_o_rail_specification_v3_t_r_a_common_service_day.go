@@ -21,76 +21,76 @@ import (
 // swagger:model PTX.Service.DTO.Rail.Specification.V3.TRA.Common.ServiceDay
 type PTXServiceDTORailSpecificationV3TRACommonServiceDay struct {
 
-	// integer
+	// Int32
 	//
 	// 假日後一日是否營運 : [0:'否',1:'是']
 	// Required: true
-	DayAfterHoliday *string `json:"DayAfterHoliday"`
+	DayAfterHoliday *int64 `json:"DayAfterHoliday"`
 
-	// integer
+	// Int32
 	//
 	// 假日前一日是否營運 : [0:'否',1:'是']
 	// Required: true
-	DayBeforeHoliday *string `json:"DayBeforeHoliday"`
+	DayBeforeHoliday *int64 `json:"DayBeforeHoliday"`
 
-	// integer
+	// Int32
 	//
 	// 星期五是否營運 : [0:'否',1:'是']
 	// Required: true
-	Friday *string `json:"Friday"`
+	Friday *int64 `json:"Friday"`
 
-	// integer
+	// Int32
 	//
 	// 星期一是否營運 : [0:'否',1:'是']
 	// Required: true
-	Monday *string `json:"Monday"`
+	Monday *int64 `json:"Monday"`
 
-	// integer
+	// Int32
 	//
 	// 國定假日是否營運 : [0:'否',1:'是']
 	// Required: true
-	NationalHolidays *string `json:"NationalHolidays"`
+	NationalHolidays *int64 `json:"NationalHolidays"`
 
-	// integer
+	// Int32
 	//
 	// 星期六是否營運 : [0:'否',1:'是']
 	// Required: true
-	Saturday *string `json:"Saturday"`
+	Saturday *int64 `json:"Saturday"`
 
 	// String
 	//
 	// 服務日標籤
 	ServiceTag string `json:"ServiceTag,omitempty" xml:"String,omitempty"`
 
-	// integer
+	// Int32
 	//
 	// 星期日是否營運 : [0:'否',1:'是']
 	// Required: true
-	Sunday *string `json:"Sunday"`
+	Sunday *int64 `json:"Sunday"`
 
-	// integer
+	// Int32
 	//
 	// 星期四是否營運 : [0:'否',1:'是']
 	// Required: true
-	Thursday *string `json:"Thursday"`
+	Thursday *int64 `json:"Thursday"`
 
-	// integer
+	// Int32
 	//
 	// 星期二是否營運 : [0:'否',1:'是']
 	// Required: true
-	Tuesday *string `json:"Tuesday"`
+	Tuesday *int64 `json:"Tuesday"`
 
-	// integer
+	// Int32
 	//
 	// 颱風停止上班上課期間營運營運 : [0:'否',1:'是']
 	// Required: true
-	TyphoonDay *string `json:"TyphoonDay"`
+	TyphoonDay *int64 `json:"TyphoonDay"`
 
-	// integer
+	// Int32
 	//
 	// 星期三是否營運 : [0:'否',1:'是']
 	// Required: true
-	Wednesday *string `json:"Wednesday"`
+	Wednesday *int64 `json:"Wednesday"`
 }
 
 // Validate validates this p t x service d t o rail specification v3 t r a common service day

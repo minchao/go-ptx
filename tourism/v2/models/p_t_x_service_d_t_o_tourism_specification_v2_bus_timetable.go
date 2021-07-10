@@ -27,23 +27,23 @@ type PTXServiceDTOTourismSpecificationV2BusTimetable struct {
 	// 週內營運日
 	ServiceDay struct {
 		PTXServiceDTOTourismSpecificationV2ServiceDay
-	} `json:"ServiceDay,omitempty"`
+	} `json:"ServiceDay,omitempty" xml:"ServiceDay,omitempty"`
 
 	// Array
 	//
 	// 特殊營運日
-	SpecialDays []*PTXServiceDTOTourismSpecificationV2SpecialDay `json:"SpecialDays"`
+	SpecialDays []*PTXServiceDTOTourismSpecificationV2SpecialDay "json:\"SpecialDays\" xml:\"List`1\""
 
 	// Array
 	//
 	// 公車停靠時間資料
 	// Required: true
-	StopTimes []*PTXServiceDTOTourismSpecificationV2BusStopTime `json:"StopTimes"`
+	StopTimes []*PTXServiceDTOTourismSpecificationV2BusStopTime "json:\"StopTimes\" xml:\"List`1\""
 
 	// String
 	//
 	// 班次代碼，為無意義之編碼
-	TripID string `json:"TripID,omitempty"`
+	TripID string `json:"TripID,omitempty" xml:"String,omitempty"`
 }
 
 // Validate validates this p t x service d t o tourism specification v2 bus timetable

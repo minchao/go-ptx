@@ -53,7 +53,8 @@ type PTXServiceDTOBusSpecificationV2BusStationGroup struct {
 	//
 	// 資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Required: true
-	UpdateTime *string `json:"UpdateTime"`
+	// Format: date-time
+	UpdateTime *strfmt.DateTime `json:"UpdateTime"`
 
 	// Int32
 	//
@@ -127,6 +128,10 @@ func (m *PTXServiceDTOBusSpecificationV2BusStationGroup) validateStationGroupUID
 func (m *PTXServiceDTOBusSpecificationV2BusStationGroup) validateUpdateTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
+		return err
+	}
+
+	if err := validate.FormatOf("UpdateTime", "body", "date-time", m.UpdateTime.String(), formats); err != nil {
 		return err
 	}
 

@@ -33,12 +33,12 @@ type PTXAPIRailModelTRAGeneralTrainWrapperPTXServiceDTORailSpecificationV3TRAGen
 	//
 	// 有效起始日期
 	// Required: true
-	EffectiveDate *string `json:"EffectiveDate"`
+	// Format: date-time
+	EffectiveDate *strfmt.DateTime `json:"EffectiveDate"`
 
-	// DateTime
-	//
 	// 有效終止日期
-	ExpireDate string `json:"ExpireDate,omitempty"`
+	// Format: date-time
+	ExpireDate strfmt.DateTime `json:"ExpireDate,omitempty"`
 
 	// Int32
 	//
@@ -50,7 +50,8 @@ type PTXAPIRailModelTRAGeneralTrainWrapperPTXServiceDTORailSpecificationV3TRAGen
 	//
 	// 來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Required: true
-	SrcUpdateTime *string `json:"SrcUpdateTime"`
+	// Format: date-time
+	SrcUpdateTime *strfmt.DateTime `json:"SrcUpdateTime"`
 
 	// String
 	//
@@ -74,11 +75,10 @@ type PTXAPIRailModelTRAGeneralTrainWrapperPTXServiceDTORailSpecificationV3TRAGen
 	// Required: true
 	UpdateInterval *int32 `json:"UpdateInterval"`
 
-	// DateTime
-	//
 	// 本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Required: true
-	UpdateTime *string `json:"UpdateTime"`
+	// Format: date-time
+	UpdateTime *strfmt.DateTime `json:"UpdateTime"`
 
 	// String
 	//
@@ -95,6 +95,10 @@ func (m *PTXAPIRailModelTRAGeneralTrainWrapperPTXServiceDTORailSpecificationV3TR
 	}
 
 	if err := m.validateEffectiveDate(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateExpireDate(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -139,6 +143,22 @@ func (m *PTXAPIRailModelTRAGeneralTrainWrapperPTXServiceDTORailSpecificationV3TR
 		return err
 	}
 
+	if err := validate.FormatOf("EffectiveDate", "body", "date-time", m.EffectiveDate.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *PTXAPIRailModelTRAGeneralTrainWrapperPTXServiceDTORailSpecificationV3TRAGeneralTrainTimetable) validateExpireDate(formats strfmt.Registry) error {
+	if swag.IsZero(m.ExpireDate) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("ExpireDate", "body", "date-time", m.ExpireDate.String(), formats); err != nil {
+		return err
+	}
+
 	return nil
 }
 
@@ -154,6 +174,10 @@ func (m *PTXAPIRailModelTRAGeneralTrainWrapperPTXServiceDTORailSpecificationV3TR
 func (m *PTXAPIRailModelTRAGeneralTrainWrapperPTXServiceDTORailSpecificationV3TRAGeneralTrainTimetable) validateSrcUpdateTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("SrcUpdateTime", "body", m.SrcUpdateTime); err != nil {
+		return err
+	}
+
+	if err := validate.FormatOf("SrcUpdateTime", "body", "date-time", m.SrcUpdateTime.String(), formats); err != nil {
 		return err
 	}
 
@@ -197,6 +221,10 @@ func (m *PTXAPIRailModelTRAGeneralTrainWrapperPTXServiceDTORailSpecificationV3TR
 func (m *PTXAPIRailModelTRAGeneralTrainWrapperPTXServiceDTORailSpecificationV3TRAGeneralTrainTimetable) validateUpdateTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
+		return err
+	}
+
+	if err := validate.FormatOf("UpdateTime", "body", "date-time", m.UpdateTime.String(), formats); err != nil {
 		return err
 	}
 

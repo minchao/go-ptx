@@ -57,7 +57,8 @@ type PTXServiceDTORailSpecificationV2TRATRAShape struct {
 	//
 	// 資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Required: true
-	UpdateTime *string `json:"UpdateTime"`
+	// Format: date-time
+	UpdateTime *strfmt.DateTime `json:"UpdateTime"`
 }
 
 // Validate validates this p t x service d t o rail specification v2 t r a t r a shape
@@ -138,6 +139,10 @@ func (m *PTXServiceDTORailSpecificationV2TRATRAShape) validateLineNo(formats str
 func (m *PTXServiceDTORailSpecificationV2TRATRAShape) validateUpdateTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
+		return err
+	}
+
+	if err := validate.FormatOf("UpdateTime", "body", "date-time", m.UpdateTime.String(), formats); err != nil {
 		return err
 	}
 

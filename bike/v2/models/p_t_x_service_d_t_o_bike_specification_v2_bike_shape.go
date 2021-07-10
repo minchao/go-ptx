@@ -22,19 +22,19 @@ type PTXServiceDTOBikeSpecificationV2BikeShape struct {
 	// String
 	//
 	// 業管機關名稱（可能包含多個業管機關）
-	AuthorityName string `json:"AuthorityName,omitempty"`
+	AuthorityName string `json:"AuthorityName,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 路線所在縣市名稱
 	// Required: true
-	City *string `json:"City"`
+	City *string `json:"City" xml:"String"`
 
 	// String
 	//
 	// 路線所在縣市代碼
 	// Required: true
-	CityCode *string `json:"CityCode"`
+	CityCode *string `json:"CityCode" xml:"String"`
 
 	// 自行車道長度
 	CyclingLength float64 `json:"CyclingLength,omitempty"`
@@ -42,56 +42,57 @@ type PTXServiceDTOBikeSpecificationV2BikeShape struct {
 	// String
 	//
 	// 自行車道類型
-	CyclingType string `json:"CyclingType,omitempty"`
+	CyclingType string `json:"CyclingType,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 自行車道車行方向
-	Direction string `json:"Direction,omitempty"`
+	Direction string `json:"Direction,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 路線軌跡編碼(encoded polyline)
 	// Required: true
-	EncodedPolyline *string `json:"EncodedPolyline"`
+	EncodedPolyline *string `json:"EncodedPolyline" xml:"String"`
 
 	// String
 	//
 	// 自行車道完工日期時間
-	FinishedTime string `json:"FinishedTime,omitempty"`
+	FinishedTime string `json:"FinishedTime,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// well-known text，為路線軌跡資料
 	// Required: true
-	Geometry *string `json:"Geometry"`
+	Geometry *string `json:"Geometry" xml:"String"`
 
 	// String
 	//
 	// 路線迄點描述
-	RoadSectionEnd string `json:"RoadSectionEnd,omitempty"`
+	RoadSectionEnd string `json:"RoadSectionEnd,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 路線起點描述
-	RoadSectionStart string `json:"RoadSectionStart,omitempty"`
+	RoadSectionStart string `json:"RoadSectionStart,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 路線名稱
 	// Required: true
-	RouteName *string `json:"RouteName"`
+	RouteName *string `json:"RouteName" xml:"String"`
 
 	// String
 	//
 	// 路線所在鄉鎮名稱（可能包含多個鄉鎮）
-	Town string `json:"Town,omitempty"`
+	Town string `json:"Town,omitempty" xml:"String,omitempty"`
 
 	// DateTime
 	//
 	// 資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Required: true
-	UpdateTime *string `json:"UpdateTime"`
+	// Format: date-time
+	UpdateTime *strfmt.DateTime `json:"UpdateTime"`
 }
 
 // Validate validates this p t x service d t o bike specification v2 bike shape
@@ -176,6 +177,10 @@ func (m *PTXServiceDTOBikeSpecificationV2BikeShape) validateRouteName(formats st
 func (m *PTXServiceDTOBikeSpecificationV2BikeShape) validateUpdateTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
+		return err
+	}
+
+	if err := validate.FormatOf("UpdateTime", "body", "date-time", m.UpdateTime.String(), formats); err != nil {
 		return err
 	}
 

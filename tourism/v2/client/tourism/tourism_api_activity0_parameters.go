@@ -92,7 +92,7 @@ type TourismAPIActivity0Params struct {
 
 	/* DollarSpatialFilter.
 
-	   空間過濾
+	   空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)
 	*/
 	DollarSpatialFilter *string
 

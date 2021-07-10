@@ -34,11 +34,11 @@ type PTXServiceDTOBusSpecificationV3SubRoute struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
 	} `json:"DestinationStopName,omitempty" xml:"NameType,omitempty"`
 
-	// integer
+	// Int32
 	//
 	// 車輛去返程 : [0:'去程',1:'返程',2:'迴圈',255:'未知']
 	// Required: true
-	Direction *string `json:"Direction"`
+	Direction *int64 `json:"Direction"`
 
 	// Stop
 	//

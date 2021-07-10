@@ -29,10 +29,9 @@ type PTXAPIRailModelV2THSRAvailableSeatStatusOldWrapperPTXServiceDTORailSpecific
 	// 資料總筆數
 	Count int64 `json:"Count,omitempty"`
 
-	// DateTime
-	//
 	// 更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
-	UpdateTime string `json:"UpdateTime,omitempty"`
+	// Format: date-time
+	UpdateTime strfmt.DateTime `json:"UpdateTime,omitempty"`
 }
 
 // Validate validates this p t x API rail model v2 t h s r available seat status old wrapper p t x service d t o rail specification v2 t h s r old available seat
@@ -40,6 +39,10 @@ func (m *PTXAPIRailModelV2THSRAvailableSeatStatusOldWrapperPTXServiceDTORailSpec
 	var res []error
 
 	if err := m.validateAvailableSeats(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateUpdateTime(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -69,6 +72,18 @@ func (m *PTXAPIRailModelV2THSRAvailableSeatStatusOldWrapperPTXServiceDTORailSpec
 			}
 		}
 
+	}
+
+	return nil
+}
+
+func (m *PTXAPIRailModelV2THSRAvailableSeatStatusOldWrapperPTXServiceDTORailSpecificationV2THSROldAvailableSeat) validateUpdateTime(formats strfmt.Registry) error {
+	if swag.IsZero(m.UpdateTime) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("UpdateTime", "body", "date-time", m.UpdateTime.String(), formats); err != nil {
+		return err
 	}
 
 	return nil

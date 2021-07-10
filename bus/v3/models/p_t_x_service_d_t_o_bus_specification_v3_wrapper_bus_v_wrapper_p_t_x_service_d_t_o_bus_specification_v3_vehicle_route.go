@@ -41,7 +41,8 @@ type PTXServiceDTOBusSpecificationV3WrapperBusVWrapperPTXServiceDTOBusSpecificat
 	//
 	// [來源端平臺]資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Required: true
-	SrcUpdateTime *string `json:"SrcUpdateTime"`
+	// Format: date-time
+	SrcUpdateTime *strfmt.DateTime `json:"SrcUpdateTime"`
 
 	// Int32
 	//
@@ -53,7 +54,8 @@ type PTXServiceDTOBusSpecificationV3WrapperBusVWrapperPTXServiceDTOBusSpecificat
 	//
 	// [平臺]資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Required: true
-	UpdateTime *string `json:"UpdateTime"`
+	// Format: date-time
+	UpdateTime *strfmt.DateTime `json:"UpdateTime"`
 
 	// Array
 	//
@@ -130,6 +132,10 @@ func (m *PTXServiceDTOBusSpecificationV3WrapperBusVWrapperPTXServiceDTOBusSpecif
 		return err
 	}
 
+	if err := validate.FormatOf("SrcUpdateTime", "body", "date-time", m.SrcUpdateTime.String(), formats); err != nil {
+		return err
+	}
+
 	return nil
 }
 
@@ -145,6 +151,10 @@ func (m *PTXServiceDTOBusSpecificationV3WrapperBusVWrapperPTXServiceDTOBusSpecif
 func (m *PTXServiceDTOBusSpecificationV3WrapperBusVWrapperPTXServiceDTOBusSpecificationV3VehicleRoute) validateUpdateTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
+		return err
+	}
+
+	if err := validate.FormatOf("UpdateTime", "body", "date-time", m.UpdateTime.String(), formats); err != nil {
 		return err
 	}
 

@@ -24,7 +24,7 @@ type PTXServiceDTOBusSpecificationV2SectionFareBufferZone struct {
 	// 收費緩衝區描述
 	BufferZoneDescription string `json:"BufferZoneDescription,omitempty" xml:"String,omitempty"`
 
-	// integer
+	// Int32
 	//
 	// 方向性描述 : [0:'去程',1:'返程',2:'迴圈',255:'未知']
 	// Required: true

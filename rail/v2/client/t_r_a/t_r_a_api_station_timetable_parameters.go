@@ -107,8 +107,10 @@ type TRAAPIStationTimetableParams struct {
 	/* TrainDate.
 
 	   時刻表日期(格式: yyyy-MM-dd)
+
+	   Format: date-time
 	*/
-	TrainDate string
+	TrainDate strfmt.DateTime
 
 	timeout    time.Duration
 	Context    context.Context
@@ -252,13 +254,13 @@ func (o *TRAAPIStationTimetableParams) SetStationID(stationID string) {
 }
 
 // WithTrainDate adds the trainDate to the t r a Api station timetable params
-func (o *TRAAPIStationTimetableParams) WithTrainDate(trainDate string) *TRAAPIStationTimetableParams {
+func (o *TRAAPIStationTimetableParams) WithTrainDate(trainDate strfmt.DateTime) *TRAAPIStationTimetableParams {
 	o.SetTrainDate(trainDate)
 	return o
 }
 
 // SetTrainDate adds the trainDate to the t r a Api station timetable params
-func (o *TRAAPIStationTimetableParams) SetTrainDate(trainDate string) {
+func (o *TRAAPIStationTimetableParams) SetTrainDate(trainDate strfmt.DateTime) {
 	o.TrainDate = trainDate
 }
 
@@ -371,7 +373,7 @@ func (o *TRAAPIStationTimetableParams) WriteToRequest(r runtime.ClientRequest, r
 	}
 
 	// path param TrainDate
-	if err := r.SetPathParam("TrainDate", o.TrainDate); err != nil {
+	if err := r.SetPathParam("TrainDate", o.TrainDate.String()); err != nil {
 		return err
 	}
 

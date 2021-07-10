@@ -22,12 +22,12 @@ type PTXServiceDTOSharedSpecificationV2BaseNameType struct {
 	// String
 	//
 	// 英文名稱
-	En string `json:"En,omitempty"`
+	En string `json:"En,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 中文繁體名稱
-	ZhTw string `json:"Zh_tw,omitempty"`
+	ZhTw string `json:"Zh_tw,omitempty" xml:"String,omitempty"`
 }
 
 // Validate validates this p t x service d t o shared specification v2 base name type

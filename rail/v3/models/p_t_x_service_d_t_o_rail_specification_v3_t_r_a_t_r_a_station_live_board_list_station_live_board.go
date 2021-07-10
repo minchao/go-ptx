@@ -25,10 +25,10 @@ type PTXServiceDTORailSpecificationV3TRATRAStationLiveBoardListStationLiveBoard 
 	// Required: true
 	DelayTime *int32 `json:"DelayTime"`
 
-	// integer
+	// Int32
 	//
 	// 行駛方向 : [0:'順行',1:'逆行']
-	Direction string `json:"Direction,omitempty"`
+	Direction int64 `json:"Direction,omitempty"`
 
 	// String
 	//
@@ -48,10 +48,10 @@ type PTXServiceDTORailSpecificationV3TRATRAStationLiveBoardListStationLiveBoard 
 	// 停靠月台(00代表當時尚未確定停靠的月台，待確定好停靠的月台後，就會更新Platfrom。)
 	Platform string `json:"Platform,omitempty" xml:"String,omitempty"`
 
-	// integer
+	// Int32
 	//
 	// 列車狀態 : [0:'準點',1:'誤點',2:'取消']
-	RunningStatus string `json:"RunningStatus,omitempty"`
+	RunningStatus int64 `json:"RunningStatus,omitempty"`
 
 	// String
 	//
@@ -101,16 +101,17 @@ type PTXServiceDTORailSpecificationV3TRATRAStationLiveBoardListStationLiveBoard 
 		PTXServiceDTOSharedSpecificationV3BaseNameType
 	} `json:"TrainTypeName" xml:"NameType"`
 
-	// integer
+	// Int32
 	//
 	// 山海線類型 : [0:'不經山海線',1:'山線',2:'海線',3:'成追線']
-	TripLine string `json:"TripLine,omitempty"`
+	TripLine int64 `json:"TripLine,omitempty"`
 
 	// DateTime
 	//
 	// 本筆資料之更新日期時間
 	// Required: true
-	UpdateTime *string `json:"UpdateTime"`
+	// Format: date-time
+	UpdateTime *strfmt.DateTime `json:"UpdateTime"`
 }
 
 // Validate validates this p t x service d t o rail specification v3 t r a t r a station live board list station live board
@@ -196,6 +197,10 @@ func (m *PTXServiceDTORailSpecificationV3TRATRAStationLiveBoardListStationLiveBo
 func (m *PTXServiceDTORailSpecificationV3TRATRAStationLiveBoardListStationLiveBoard) validateUpdateTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
+		return err
+	}
+
+	if err := validate.FormatOf("UpdateTime", "body", "date-time", m.UpdateTime.String(), formats); err != nil {
 		return err
 	}
 

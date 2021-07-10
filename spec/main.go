@@ -21,15 +21,6 @@ func main() {
 		{
 			Filename: "oas.bus.v2.json",
 			URL:      "https://ptx.transportdata.tw/MOTC/v2/Bus/api-docs/oas",
-			Pipeline: []Step{
-				fixBusV2BusA1DataDirectionProperty,
-				fixBusV2BusRouteBusRouteTypeProperty,
-				fixBusV2BusVehicleInfoVehicleTypeProperty,
-				fixBusV2DirectionProperty,
-				fixBusV2SectionFareBufferZoneDirectionProperty,
-				fixBusV2BusN1EstimateTimeDirectionProperty,
-				fixBusV2BusShapeDirectionProperty,
-			},
 		},
 		{
 			Filename: "oas.bus.v3.json",
@@ -96,81 +87,4 @@ func writeFile(filename string, data []byte) {
 	enc.SetIndent("", "  ")
 	_ = enc.Encode(v)
 	_ = ioutil.WriteFile(filename, bf.Bytes(), 0644)
-}
-
-func fixBusV2BusA1DataDirectionProperty(data []byte) []byte {
-	return bytes.Replace(
-		data,
-		[]byte(`"description": "去返程 : [0:'去程',1:'返程',2:'迴圈',255:'未知']",
-          "type": "string"`),
-		[]byte(`"description": "去返程 : [0:'去程',1:'返程',2:'迴圈',255:'未知']",
-          "type": "integer"`),
-		-1,
-	)
-}
-
-func fixBusV2BusRouteBusRouteTypeProperty(data []byte) []byte {
-	return bytes.Replace(
-		data,
-		[]byte(`"description": "公車路線類別 : [11:'市區公車',12:'公路客運',13:'國道客運',14:'接駁車']",
-          "type": "string"`),
-		[]byte(`"description": "公車路線類別 : [11:'市區公車',12:'公路客運',13:'國道客運',14:'接駁車']",
-          "type": "integer"`),
-		-1,
-	)
-}
-
-func fixBusV2BusVehicleInfoVehicleTypeProperty(data []byte) []byte {
-	return bytes.Replace(
-		data,
-		[]byte(`"description": "車輛種類 : [0:'一般',1:'無障礙公車',2:'復康巴士',3:'小型巴士']",
-          "type": "string"`),
-		[]byte(`"description": "車輛種類 : [0:'一般',1:'無障礙公車',2:'復康巴士',3:'小型巴士']",
-          "type": "integer"`),
-		-1,
-	)
-}
-
-func fixBusV2DirectionProperty(data []byte) []byte {
-	return bytes.Replace(
-		data,
-		[]byte(`"description": "影響方向 : [0:'去程',1:'返程',2:'迴圈',255:'未知']",
-          "type": "string"`),
-		[]byte(`"description": "影響方向 : [0:'去程',1:'返程',2:'迴圈',255:'未知']",
-          "type": "integer"`),
-		-1,
-	)
-}
-
-func fixBusV2SectionFareBufferZoneDirectionProperty(data []byte) []byte {
-	return bytes.Replace(
-		data,
-		[]byte(`"description": "方向性描述 : [0:'去程',1:'返程',2:'迴圈',255:'未知']",
-          "type": "string"`),
-		[]byte(`"description": "方向性描述 : [0:'去程',1:'返程',2:'迴圈',255:'未知']",
-          "type": "integer"`),
-		-1,
-	)
-}
-
-func fixBusV2BusN1EstimateTimeDirectionProperty(data []byte) []byte {
-	return bytes.Replace(
-		data,
-		[]byte(`"description": "去返程(該方向指的是此車牌車輛目前所在路線的去返程方向，非指站站牌所在路線的去返程方向，使用時請加值業者多加注意) : [0:'去程',1:'返程',2:'迴圈',255:'未知']",
-          "type": "string"`),
-		[]byte(`"description": "去返程(該方向指的是此車牌車輛目前所在路線的去返程方向，非指站站牌所在路線的去返程方向，使用時請加值業者多加注意) : [0:'去程',1:'返程',2:'迴圈',255:'未知']",
-          "type": "integer"`),
-		-1,
-	)
-}
-
-func fixBusV2BusShapeDirectionProperty(data []byte) []byte {
-	return bytes.Replace(
-		data,
-		[]byte(`"description": "去返程，若無值則表示來源尚無區分去返程 : [0:'去程',1:'返程',2:'迴圈',255:'未知']",
-          "type": "string"`),
-		[]byte(`"description": "去返程，若無值則表示來源尚無區分去返程 : [0:'去程',1:'返程',2:'迴圈',255:'未知']",
-          "type": "integer"`),
-		-1,
-	)
 }

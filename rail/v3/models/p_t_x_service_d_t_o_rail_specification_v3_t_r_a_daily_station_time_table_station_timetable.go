@@ -20,10 +20,10 @@ import (
 // swagger:model PTX.Service.DTO.Rail.Specification.V3.TRA.DailyStationTimeTable.StationTimetable
 type PTXServiceDTORailSpecificationV3TRADailyStationTimeTableStationTimetable struct {
 
-	// integer
+	// Int32
 	//
 	// 行駛方向 : [0:'順行',1:'逆行']
-	Direction string `json:"Direction,omitempty"`
+	Direction int64 `json:"Direction,omitempty"`
 
 	// String
 	//

@@ -34,10 +34,10 @@ type PTXServiceDTORailSpecificationV3TRAODFareODFare struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
 	} `json:"DestinationStationName" xml:"NameType"`
 
-	// integer
+	// Int32
 	//
 	// 方向 : [0:'順行',1:'逆行']
-	Direction string `json:"Direction,omitempty"`
+	Direction int64 `json:"Direction,omitempty"`
 
 	// Array
 	//

@@ -36,30 +36,28 @@ type PTXServiceDTORailSpecificationV3TRATRAAlertListAlert struct {
 	// Required: true
 	Description *string `json:"Description" xml:"String"`
 
-	// integer
+	// Int32
 	//
 	// 影響方向 : [0:'南下',1:'北上',2:'雙向']
-	Direction string `json:"Direction,omitempty"`
+	Direction int64 `json:"Direction,omitempty"`
 
 	// String
 	//
 	// 影響說明
 	Effect string `json:"Effect,omitempty" xml:"String,omitempty"`
 
-	// DateTime
-	//
 	// 訊息結束日期時間
-	EndTime string `json:"EndTime,omitempty"`
+	// Format: date-time
+	EndTime strfmt.DateTime `json:"EndTime,omitempty"`
 
-	// integer
+	// Int32
 	//
 	// 影響等級程度 : [1:'重度',2:'中度',3:'輕度']
-	Level string `json:"Level,omitempty"`
+	Level int64 `json:"Level,omitempty"`
 
-	// DateTime
-	//
 	// 消息發佈日期時間
-	PublishTime string `json:"PublishTime,omitempty"`
+	// Format: date-time
+	PublishTime strfmt.DateTime `json:"PublishTime,omitempty"`
 
 	// String
 	//
@@ -74,16 +72,15 @@ type PTXServiceDTORailSpecificationV3TRATRAAlertListAlert struct {
 		PTXServiceDTORailSpecificationV3TRATRAAlertListAlertScope
 	} `json:"Scope" xml:"AlertScope"`
 
-	// DateTime
-	//
 	// 訊息起始日期時間
-	StartTime string `json:"StartTime,omitempty"`
+	// Format: date-time
+	StartTime strfmt.DateTime `json:"StartTime,omitempty"`
 
-	// integer
+	// Int32
 	//
 	// 營運狀況 : [0:'全線營運停止',1:'全線營運正常',2:'有異常狀況']
 	// Required: true
-	Status *string `json:"Status"`
+	Status *int64 `json:"Status"`
 
 	// String
 	//
@@ -95,7 +92,8 @@ type PTXServiceDTORailSpecificationV3TRATRAAlertListAlert struct {
 	//
 	// 消息更新日期時間
 	// Required: true
-	UpdateTime *string `json:"UpdateTime"`
+	// Format: date-time
+	UpdateTime *strfmt.DateTime `json:"UpdateTime"`
 }
 
 // Validate validates this p t x service d t o rail specification v3 t r a t r a alert list alert
@@ -110,7 +108,19 @@ func (m *PTXServiceDTORailSpecificationV3TRATRAAlertListAlert) Validate(formats 
 		res = append(res, err)
 	}
 
+	if err := m.validateEndTime(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validatePublishTime(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateScope(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateStartTime(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -150,7 +160,43 @@ func (m *PTXServiceDTORailSpecificationV3TRATRAAlertListAlert) validateDescripti
 	return nil
 }
 
+func (m *PTXServiceDTORailSpecificationV3TRATRAAlertListAlert) validateEndTime(formats strfmt.Registry) error {
+	if swag.IsZero(m.EndTime) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("EndTime", "body", "date-time", m.EndTime.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV3TRATRAAlertListAlert) validatePublishTime(formats strfmt.Registry) error {
+	if swag.IsZero(m.PublishTime) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("PublishTime", "body", "date-time", m.PublishTime.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *PTXServiceDTORailSpecificationV3TRATRAAlertListAlert) validateScope(formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV3TRATRAAlertListAlert) validateStartTime(formats strfmt.Registry) error {
+	if swag.IsZero(m.StartTime) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("StartTime", "body", "date-time", m.StartTime.String(), formats); err != nil {
+		return err
+	}
 
 	return nil
 }
@@ -176,6 +222,10 @@ func (m *PTXServiceDTORailSpecificationV3TRATRAAlertListAlert) validateTitle(for
 func (m *PTXServiceDTORailSpecificationV3TRATRAAlertListAlert) validateUpdateTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
+		return err
+	}
+
+	if err := validate.FormatOf("UpdateTime", "body", "date-time", m.UpdateTime.String(), formats); err != nil {
 		return err
 	}
 

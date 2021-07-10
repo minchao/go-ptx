@@ -26,23 +26,24 @@ type PTXServiceDTOAirSpecificationV2AirportFIDS struct {
 	//
 	// 機場IATA國際代碼
 	// Required: true
-	AirportID *string `json:"AirportID"`
+	AirportID *string `json:"AirportID" xml:"String"`
 
 	// Array
 	//
 	// 抵達航班顯示資料
-	FIDSArrival []*PTXServiceDTOAirSpecificationV2FIDSArrival `json:"FIDSArrival"`
+	FIDSArrival []*PTXServiceDTOAirSpecificationV2FIDSArrival "json:\"FIDSArrival\" xml:\"List`1\""
 
 	// Array
 	//
 	// 出發航班顯示資料
-	FIDSDeparture []*PTXServiceDTOAirSpecificationV2FIDSDeparture `json:"FIDSDeparture"`
+	FIDSDeparture []*PTXServiceDTOAirSpecificationV2FIDSDeparture "json:\"FIDSDeparture\" xml:\"List`1\""
 
 	// DateTime
 	//
 	// 資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Required: true
-	UpdateTime *string `json:"UpdateTime"`
+	// Format: date-time
+	UpdateTime *strfmt.DateTime `json:"UpdateTime"`
 }
 
 // Validate validates this p t x service d t o air specification v2 airport f ID s
@@ -131,6 +132,10 @@ func (m *PTXServiceDTOAirSpecificationV2AirportFIDS) validateFIDSDeparture(forma
 func (m *PTXServiceDTOAirSpecificationV2AirportFIDS) validateUpdateTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
+		return err
+	}
+
+	if err := validate.FormatOf("UpdateTime", "body", "date-time", m.UpdateTime.String(), formats); err != nil {
 		return err
 	}
 
