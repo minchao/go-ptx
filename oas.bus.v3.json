@@ -1215,7 +1215,7 @@
           "CityBus"
         ],
         "summary": "取得指定[縣市]的市區公車每日營運時刻表",
-        "operationId": "CityBusApi_DailyTimeTable",
+        "operationId": "CityBusApi_DailyTimeTable_2",
         "produces": [
           "application/json",
           "application/xml"

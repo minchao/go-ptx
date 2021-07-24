@@ -25,18 +25,18 @@ type PTXServiceDTOSharedSpecificationV2BaseAuthority struct {
 	//
 	// 業管機關簡碼
 	// Required: true
-	AuthorityCode *string `json:"AuthorityCode"`
+	AuthorityCode *string `json:"AuthorityCode" xml:"String"`
 
 	// String
 	//
 	// 業管機關電子信箱
-	AuthorityEmail string `json:"AuthorityEmail,omitempty"`
+	AuthorityEmail string `json:"AuthorityEmail,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 業管機關代碼
 	// Required: true
-	AuthorityID *string `json:"AuthorityID"`
+	AuthorityID *string `json:"AuthorityID" xml:"String"`
 
 	// NameType
 	//
@@ -44,23 +44,24 @@ type PTXServiceDTOSharedSpecificationV2BaseAuthority struct {
 	// Required: true
 	AuthorityName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"AuthorityName"`
+	} `json:"AuthorityName" xml:"NameType"`
 
 	// String
 	//
 	// 業管機關連絡電話
-	AuthorityPhone string `json:"AuthorityPhone,omitempty"`
+	AuthorityPhone string `json:"AuthorityPhone,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 業管機關網址鏈結
-	AuthorityURL string `json:"AuthorityUrl,omitempty"`
+	AuthorityURL string `json:"AuthorityUrl,omitempty" xml:"String,omitempty"`
 
 	// DateTime
 	//
 	// 資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Required: true
-	UpdateTime *string `json:"UpdateTime"`
+	// Format: date-time
+	UpdateTime *strfmt.DateTime `json:"UpdateTime"`
 }
 
 // Validate validates this p t x service d t o shared specification v2 base authority
@@ -115,6 +116,10 @@ func (m *PTXServiceDTOSharedSpecificationV2BaseAuthority) validateAuthorityName(
 func (m *PTXServiceDTOSharedSpecificationV2BaseAuthority) validateUpdateTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
+		return err
+	}
+
+	if err := validate.FormatOf("UpdateTime", "body", "date-time", m.UpdateTime.String(), formats); err != nil {
 		return err
 	}
 

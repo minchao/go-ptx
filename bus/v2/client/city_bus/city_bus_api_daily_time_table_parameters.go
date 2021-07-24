@@ -60,12 +60,6 @@ func NewCityBusAPIDailyTimeTableParamsWithHTTPClient(client *http.Client) *CityB
 */
 type CityBusAPIDailyTimeTableParams struct {
 
-	/* DollarCount.
-
-	   查詢數量
-	*/
-	DollarCount *bool
-
 	/* DollarFilter.
 
 	   過濾
@@ -106,7 +100,7 @@ type CityBusAPIDailyTimeTableParams struct {
 
 	/* City.
 
-	   縣市
+	   欲查詢縣市
 	*/
 	City string
 
@@ -178,17 +172,6 @@ func (o *CityBusAPIDailyTimeTableParams) WithHTTPClient(client *http.Client) *Ci
 // SetHTTPClient adds the HTTPClient to the city bus Api daily time table params
 func (o *CityBusAPIDailyTimeTableParams) SetHTTPClient(client *http.Client) {
 	o.HTTPClient = client
-}
-
-// WithDollarCount adds the dollarCount to the city bus Api daily time table params
-func (o *CityBusAPIDailyTimeTableParams) WithDollarCount(dollarCount *bool) *CityBusAPIDailyTimeTableParams {
-	o.SetDollarCount(dollarCount)
-	return o
-}
-
-// SetDollarCount adds the dollarCount to the city bus Api daily time table params
-func (o *CityBusAPIDailyTimeTableParams) SetDollarCount(dollarCount *bool) {
-	o.DollarCount = dollarCount
 }
 
 // WithDollarFilter adds the dollarFilter to the city bus Api daily time table params
@@ -286,23 +269,6 @@ func (o *CityBusAPIDailyTimeTableParams) WriteToRequest(r runtime.ClientRequest,
 		return err
 	}
 	var res []error
-
-	if o.DollarCount != nil {
-
-		// query param $count
-		var qrDollarCount bool
-
-		if o.DollarCount != nil {
-			qrDollarCount = *o.DollarCount
-		}
-		qDollarCount := swag.FormatBool(qrDollarCount)
-		if qDollarCount != "" {
-
-			if err := r.SetQueryParam("$count", qDollarCount); err != nil {
-				return err
-			}
-		}
-	}
 
 	if o.DollarFilter != nil {
 

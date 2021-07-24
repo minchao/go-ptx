@@ -317,6 +317,7 @@
       "type": "object",
       "properties": {
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "更新日期時間",
           "type": "string"
@@ -333,12 +334,19 @@
           "type": "array",
           "items": {
             "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V2.Base.News"
+          },
+          "xml": {
+            "name": "List`1"
           }
         },
         "Count": {
           "format": "int64",
           "type": "integer"
         }
+      },
+      "xml": {
+        "name": "BasicWrapperOfNews",
+        "namespace": "https://ptx.transportdata.tw/standard/schema/"
       }
     },
     "PTX.Service.DTO.Shared.Specification.V2.Base.Authority": {
@@ -355,7 +363,10 @@
         "AuthorityID": {
           "title": "String",
           "description": "業管機關代碼",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "AuthorityName": {
           "title": "NameType",
@@ -364,33 +375,52 @@
             {
               "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V2.Base.NameType"
             }
-          ]
+          ],
+          "xml": {
+            "name": "NameType"
+          }
         },
         "AuthorityPhone": {
           "title": "String",
           "description": "業管機關連絡電話",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "AuthorityEmail": {
           "title": "String",
           "description": "業管機關電子信箱",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "AuthorityUrl": {
           "title": "String",
           "description": "業管機關網址鏈結",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "AuthorityCode": {
           "title": "String",
           "description": "業管機關簡碼",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         }
+      },
+      "xml": {
+        "name": "Authority"
       }
     },
     "PTX.Service.DTO.Shared.Specification.V2.Base.NameType": {
@@ -401,13 +431,22 @@
         "Zh_tw": {
           "title": "String",
           "description": "中文繁體名稱",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "En": {
           "title": "String",
           "description": "英文名稱",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         }
+      },
+      "xml": {
+        "name": "NameType"
       }
     },
     "PTX.Service.DTO.Shared.Specification.V2.Base.News": {
@@ -429,58 +468,80 @@
         "Language": {
           "title": "String",
           "description": "語系",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "Department": {
           "title": "String",
           "description": "發布單位",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "Title": {
           "title": "String",
           "description": "消息標題",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "NewsCategory": {
-          "title": "integer",
+          "title": "Int32",
           "description": "消息類別 : [1:'最新消息',2:'新聞稿',3:'營運資訊',4:'轉乘資訊',5:'活動訊息',6:'系統公告',7:'新服務上架',8:'API修正',9:'來源異常',99:'其他']",
-          "type": "string"
+          "type": "integer"
         },
         "Description": {
           "title": "String",
           "description": "內容描述",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "NewsURL": {
           "title": "String",
           "description": "報導網站連結",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "AttachmentURL": {
           "title": "String",
           "description": "相關網站連結",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "PublishTime": {
-          "title": "DateTime",
+          "format": "date-time",
           "description": "消息公告日期時間",
           "type": "string"
         },
         "StartTime": {
-          "title": "DateTime",
+          "format": "date-time",
           "description": "開始時間",
           "type": "string"
         },
         "EndTime": {
-          "title": "DateTime",
+          "format": "date-time",
           "description": "結束時間",
           "type": "string"
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "消息更新時間",
           "type": "string"
         }
+      },
+      "xml": {
+        "name": "News"
       }
     },
     "PTX.Service.DTO.Shared.Specification.V2.Base.Operator": {
@@ -500,12 +561,18 @@
         "ProviderID": {
           "title": "String",
           "description": "資料提供平台代碼",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "OperatorID": {
           "title": "String",
           "description": "營運業者代碼",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "OperatorName": {
           "title": "NameType",
@@ -514,58 +581,92 @@
             {
               "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V2.Base.NameType"
             }
-          ]
+          ],
+          "xml": {
+            "name": "NameType"
+          }
         },
         "OperatorPhone": {
           "title": "String",
           "description": "營運業者連絡電話",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "OperatorEmail": {
           "title": "String",
           "description": "營運業者電子信箱",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "OperatorUrl": {
           "title": "String",
           "description": "營運業者網址鏈結",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "ReservationUrl": {
           "title": "String",
           "description": "訂票網址鏈結",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "ReservationPhone": {
           "title": "String",
           "description": "訂票連絡電話",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "OperatorCode": {
           "title": "String",
           "description": "營運業者簡碼",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "AuthorityCode": {
           "title": "String",
           "description": "營運業者業管機關簡碼(對於於公路客運/國道客運而言為THB)",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "SubAuthorityCode": {
           "title": "String",
           "description": "營運業者所屬業管子機關簡碼(對於公路客運/國道客運路線而言為區監理所如THB-VO10-1..等)",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "OperatorNo": {
           "title": "String",
           "description": "營運業者編號[交通部票證資料系統定義]",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         }
+      },
+      "xml": {
+        "name": "Operator"
       }
     },
     "PTX.Service.DTO.Shared.Specification.V2.Base.Provider": {
@@ -582,7 +683,10 @@
         "ProviderID": {
           "title": "String",
           "description": "資料提供平台代碼",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "ProviderName": {
           "title": "NameType",
@@ -591,24 +695,37 @@
             {
               "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V2.Base.NameType"
             }
-          ]
+          ],
+          "xml": {
+            "name": "NameType"
+          }
         },
         "ProviderPhone": {
           "title": "String",
           "description": "資料提供平台連絡電話",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "ProviderEmail": {
           "title": "String",
           "description": "資料提供平台電子信箱",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "ProviderUrl": {
           "title": "String",
           "description": "資料提供平台網址鏈結",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         },
         "UpdateTime": {
+          "format": "date-time",
           "title": "DateTime",
           "description": "資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
@@ -616,8 +733,14 @@
         "ProviderCode": {
           "title": "String",
           "description": "資料提供平台簡碼",
-          "type": "string"
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
         }
+      },
+      "xml": {
+        "name": "Provider"
       }
     }
   },

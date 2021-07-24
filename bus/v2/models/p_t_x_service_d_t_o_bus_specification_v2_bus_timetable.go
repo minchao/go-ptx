@@ -42,7 +42,7 @@ type PTXServiceDTOBusSpecificationV2BusTimetable struct {
 
 	// String
 	//
-	// 班次代碼，為無意義之編碼
+	// 班次代碼
 	TripID string `json:"TripID,omitempty" xml:"String,omitempty"`
 }
 
