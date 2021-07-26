@@ -25,18 +25,18 @@ type PTXServiceDTOSharedSpecificationV2BaseProvider struct {
 	//
 	// 資料提供平台簡碼
 	// Required: true
-	ProviderCode *string `json:"ProviderCode"`
+	ProviderCode *string `json:"ProviderCode" xml:"String"`
 
 	// String
 	//
 	// 資料提供平台電子信箱
-	ProviderEmail string `json:"ProviderEmail,omitempty"`
+	ProviderEmail string `json:"ProviderEmail,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 資料提供平台代碼
 	// Required: true
-	ProviderID *string `json:"ProviderID"`
+	ProviderID *string `json:"ProviderID" xml:"String"`
 
 	// NameType
 	//
@@ -44,23 +44,24 @@ type PTXServiceDTOSharedSpecificationV2BaseProvider struct {
 	// Required: true
 	ProviderName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"ProviderName"`
+	} `json:"ProviderName" xml:"NameType"`
 
 	// String
 	//
 	// 資料提供平台連絡電話
-	ProviderPhone string `json:"ProviderPhone,omitempty"`
+	ProviderPhone string `json:"ProviderPhone,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 資料提供平台網址鏈結
-	ProviderURL string `json:"ProviderUrl,omitempty"`
+	ProviderURL string `json:"ProviderUrl,omitempty" xml:"String,omitempty"`
 
 	// DateTime
 	//
 	// 資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Required: true
-	UpdateTime *string `json:"UpdateTime"`
+	// Format: date-time
+	UpdateTime *strfmt.DateTime `json:"UpdateTime"`
 }
 
 // Validate validates this p t x service d t o shared specification v2 base provider
@@ -115,6 +116,10 @@ func (m *PTXServiceDTOSharedSpecificationV2BaseProvider) validateProviderName(fo
 func (m *PTXServiceDTOSharedSpecificationV2BaseProvider) validateUpdateTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
+		return err
+	}
+
+	if err := validate.FormatOf("UpdateTime", "body", "date-time", m.UpdateTime.String(), formats); err != nil {
 		return err
 	}
 

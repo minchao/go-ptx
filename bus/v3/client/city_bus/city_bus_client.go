@@ -32,7 +32,7 @@ type ClientOption func(*runtime.ClientOperation)
 type ClientService interface {
 	CityBusAPIAlert1(params *CityBusAPIAlert1Params, opts ...ClientOption) (*CityBusAPIAlert1OK, *CityBusAPIAlert1Status299, error)
 
-	CityBusAPIDailyTimeTable(params *CityBusAPIDailyTimeTableParams, opts ...ClientOption) (*CityBusAPIDailyTimeTableOK, *CityBusAPIDailyTimeTableStatus299, error)
+	CityBusAPIDailyTimeTable2(params *CityBusAPIDailyTimeTable2Params, opts ...ClientOption) (*CityBusAPIDailyTimeTable2OK, *CityBusAPIDailyTimeTable2Status299, error)
 
 	CityBusAPIDepot(params *CityBusAPIDepotParams, opts ...ClientOption) (*CityBusAPIDepotOK, *CityBusAPIDepotStatus299, error)
 
@@ -129,22 +129,22 @@ func (a *Client) CityBusAPIAlert1(params *CityBusAPIAlert1Params, opts ...Client
 }
 
 /*
-  CityBusAPIDailyTimeTable 取得指定s 縣市 的市區公車每日營運時刻表
+  CityBusAPIDailyTimeTable2 取得指定s 縣市 的市區公車每日營運時刻表
 */
-func (a *Client) CityBusAPIDailyTimeTable(params *CityBusAPIDailyTimeTableParams, opts ...ClientOption) (*CityBusAPIDailyTimeTableOK, *CityBusAPIDailyTimeTableStatus299, error) {
+func (a *Client) CityBusAPIDailyTimeTable2(params *CityBusAPIDailyTimeTable2Params, opts ...ClientOption) (*CityBusAPIDailyTimeTable2OK, *CityBusAPIDailyTimeTable2Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewCityBusAPIDailyTimeTableParams()
+		params = NewCityBusAPIDailyTimeTable2Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "CityBusApi_DailyTimeTable",
+		ID:                 "CityBusApi_DailyTimeTable_2",
 		Method:             "GET",
 		PathPattern:        "/v3/Bus/DailyTimeTable/City/{City}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &CityBusAPIDailyTimeTableReader{formats: a.formats},
+		Reader:             &CityBusAPIDailyTimeTable2Reader{formats: a.formats},
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -157,9 +157,9 @@ func (a *Client) CityBusAPIDailyTimeTable(params *CityBusAPIDailyTimeTableParams
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *CityBusAPIDailyTimeTableOK:
+	case *CityBusAPIDailyTimeTable2OK:
 		return value, nil, nil
-	case *CityBusAPIDailyTimeTableStatus299:
+	case *CityBusAPIDailyTimeTable2Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue

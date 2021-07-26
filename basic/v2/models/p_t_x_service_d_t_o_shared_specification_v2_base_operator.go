@@ -25,24 +25,24 @@ type PTXServiceDTOSharedSpecificationV2BaseOperator struct {
 	//
 	// 營運業者業管機關簡碼(對於於公路客運/國道客運而言為THB)
 	// Required: true
-	AuthorityCode *string `json:"AuthorityCode"`
+	AuthorityCode *string `json:"AuthorityCode" xml:"String"`
 
 	// String
 	//
 	// 營運業者簡碼
 	// Required: true
-	OperatorCode *string `json:"OperatorCode"`
+	OperatorCode *string `json:"OperatorCode" xml:"String"`
 
 	// String
 	//
 	// 營運業者電子信箱
-	OperatorEmail string `json:"OperatorEmail,omitempty"`
+	OperatorEmail string `json:"OperatorEmail,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 營運業者代碼
 	// Required: true
-	OperatorID *string `json:"OperatorID"`
+	OperatorID *string `json:"OperatorID" xml:"String"`
 
 	// NameType
 	//
@@ -50,50 +50,51 @@ type PTXServiceDTOSharedSpecificationV2BaseOperator struct {
 	// Required: true
 	OperatorName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
-	} `json:"OperatorName"`
+	} `json:"OperatorName" xml:"NameType"`
 
 	// String
 	//
 	// 營運業者編號[交通部票證資料系統定義]
 	// Required: true
-	OperatorNo *string `json:"OperatorNo"`
+	OperatorNo *string `json:"OperatorNo" xml:"String"`
 
 	// String
 	//
 	// 營運業者連絡電話
-	OperatorPhone string `json:"OperatorPhone,omitempty"`
+	OperatorPhone string `json:"OperatorPhone,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 營運業者網址鏈結
-	OperatorURL string `json:"OperatorUrl,omitempty"`
+	OperatorURL string `json:"OperatorUrl,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 資料提供平台代碼
 	// Required: true
-	ProviderID *string `json:"ProviderID"`
+	ProviderID *string `json:"ProviderID" xml:"String"`
 
 	// String
 	//
 	// 訂票連絡電話
-	ReservationPhone string `json:"ReservationPhone,omitempty"`
+	ReservationPhone string `json:"ReservationPhone,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 訂票網址鏈結
-	ReservationURL string `json:"ReservationUrl,omitempty"`
+	ReservationURL string `json:"ReservationUrl,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 營運業者所屬業管子機關簡碼(對於公路客運/國道客運路線而言為區監理所如THB-VO10-1..等)
-	SubAuthorityCode string `json:"SubAuthorityCode,omitempty"`
+	SubAuthorityCode string `json:"SubAuthorityCode,omitempty" xml:"String,omitempty"`
 
 	// DateTime
 	//
 	// 資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Required: true
-	UpdateTime *string `json:"UpdateTime"`
+	// Format: date-time
+	UpdateTime *strfmt.DateTime `json:"UpdateTime"`
 }
 
 // Validate validates this p t x service d t o shared specification v2 base operator
@@ -187,6 +188,10 @@ func (m *PTXServiceDTOSharedSpecificationV2BaseOperator) validateProviderID(form
 func (m *PTXServiceDTOSharedSpecificationV2BaseOperator) validateUpdateTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
+		return err
+	}
+
+	if err := validate.FormatOf("UpdateTime", "body", "date-time", m.UpdateTime.String(), formats); err != nil {
 		return err
 	}
 

@@ -27,7 +27,7 @@ type PTXAPIBasicModelV2BasicWrapperPTXServiceDTOSharedSpecificationV2BaseNews st
 	//
 	// 資料(陣列)
 	// Required: true
-	Newses []*PTXServiceDTOSharedSpecificationV2BaseNews `json:"Newses"`
+	Newses []*PTXServiceDTOSharedSpecificationV2BaseNews "json:\"Newses\" xml:\"List`1\""
 
 	// Int32
 	//
@@ -39,7 +39,8 @@ type PTXAPIBasicModelV2BasicWrapperPTXServiceDTOSharedSpecificationV2BaseNews st
 	//
 	// 更新日期時間
 	// Required: true
-	UpdateTime *string `json:"UpdateTime"`
+	// Format: date-time
+	UpdateTime *strfmt.DateTime `json:"UpdateTime"`
 }
 
 // Validate validates this p t x API basic model v2 basic wrapper p t x service d t o shared specification v2 base news
@@ -101,6 +102,10 @@ func (m *PTXAPIBasicModelV2BasicWrapperPTXServiceDTOSharedSpecificationV2BaseNew
 func (m *PTXAPIBasicModelV2BasicWrapperPTXServiceDTOSharedSpecificationV2BaseNews) validateUpdateTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
+		return err
+	}
+
+	if err := validate.FormatOf("UpdateTime", "body", "date-time", m.UpdateTime.String(), formats); err != nil {
 		return err
 	}
 

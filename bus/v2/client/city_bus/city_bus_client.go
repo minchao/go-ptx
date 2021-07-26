@@ -32,6 +32,14 @@ type ClientOption func(*runtime.ClientOperation)
 type ClientService interface {
 	CityBusAPIAlert(params *CityBusAPIAlertParams, opts ...ClientOption) (*CityBusAPIAlertOK, *CityBusAPIAlertStatus299, error)
 
+	CityBusAPIDailyStopTimeTable(params *CityBusAPIDailyStopTimeTableParams, opts ...ClientOption) (*CityBusAPIDailyStopTimeTableOK, *CityBusAPIDailyStopTimeTableStatus299, error)
+
+	CityBusAPIDailyStopTimeTable1(params *CityBusAPIDailyStopTimeTable1Params, opts ...ClientOption) (*CityBusAPIDailyStopTimeTable1OK, *CityBusAPIDailyStopTimeTable1Status299, error)
+
+	CityBusAPIDailyTimeTable(params *CityBusAPIDailyTimeTableParams, opts ...ClientOption) (*CityBusAPIDailyTimeTableOK, *CityBusAPIDailyTimeTableStatus299, error)
+
+	CityBusAPIDailyTimeTable1(params *CityBusAPIDailyTimeTable1Params, opts ...ClientOption) (*CityBusAPIDailyTimeTable1OK, *CityBusAPIDailyTimeTable1Status299, error)
+
 	CityBusAPIDataVersion(params *CityBusAPIDataVersionParams, opts ...ClientOption) (*CityBusAPIDataVersionOK, *CityBusAPIDataVersionStatus299, error)
 
 	CityBusAPIDisplayStopOfRoute(params *CityBusAPIDisplayStopOfRouteParams, opts ...ClientOption) (*CityBusAPIDisplayStopOfRouteOK, *CityBusAPIDisplayStopOfRouteStatus299, error)
@@ -149,6 +157,170 @@ func (a *Client) CityBusAPIAlert(params *CityBusAPIAlertParams, opts ...ClientOp
 }
 
 /*
+  CityBusAPIDailyStopTimeTable 取得指定s 縣市 的市區公車每日站別時刻表資料
+
+  市區公車每日站別時刻表資料
+*/
+func (a *Client) CityBusAPIDailyStopTimeTable(params *CityBusAPIDailyStopTimeTableParams, opts ...ClientOption) (*CityBusAPIDailyStopTimeTableOK, *CityBusAPIDailyStopTimeTableStatus299, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewCityBusAPIDailyStopTimeTableParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "CityBusApi_DailyStopTimeTable",
+		Method:             "GET",
+		PathPattern:        "/v2/Bus/DailyStopTimeTable/City/{City}",
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &CityBusAPIDailyStopTimeTableReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, nil, err
+	}
+	switch value := result.(type) {
+	case *CityBusAPIDailyStopTimeTableOK:
+		return value, nil, nil
+	case *CityBusAPIDailyStopTimeTableStatus299:
+		return nil, value, nil
+	}
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for city_bus: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  CityBusAPIDailyStopTimeTable1 取得指定s 縣市 路線名稱 的市區公車每日站別時刻表資料
+
+  市區公車每日站別時刻表資料
+*/
+func (a *Client) CityBusAPIDailyStopTimeTable1(params *CityBusAPIDailyStopTimeTable1Params, opts ...ClientOption) (*CityBusAPIDailyStopTimeTable1OK, *CityBusAPIDailyStopTimeTable1Status299, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewCityBusAPIDailyStopTimeTable1Params()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "CityBusApi_DailyStopTimeTable_1",
+		Method:             "GET",
+		PathPattern:        "/v2/Bus/DailyStopTimeTable/City/{City}/{RouteName}",
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &CityBusAPIDailyStopTimeTable1Reader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, nil, err
+	}
+	switch value := result.(type) {
+	case *CityBusAPIDailyStopTimeTable1OK:
+		return value, nil, nil
+	case *CityBusAPIDailyStopTimeTable1Status299:
+		return nil, value, nil
+	}
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for city_bus: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  CityBusAPIDailyTimeTable 取得指定s 縣市 的市區公車每日營運時刻表資料
+
+  市區公車每日營運時刻表資料
+*/
+func (a *Client) CityBusAPIDailyTimeTable(params *CityBusAPIDailyTimeTableParams, opts ...ClientOption) (*CityBusAPIDailyTimeTableOK, *CityBusAPIDailyTimeTableStatus299, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewCityBusAPIDailyTimeTableParams()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "CityBusApi_DailyTimeTable",
+		Method:             "GET",
+		PathPattern:        "/v2/Bus/DailyTimeTable/City/{City}",
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &CityBusAPIDailyTimeTableReader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, nil, err
+	}
+	switch value := result.(type) {
+	case *CityBusAPIDailyTimeTableOK:
+		return value, nil, nil
+	case *CityBusAPIDailyTimeTableStatus299:
+		return nil, value, nil
+	}
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for city_bus: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  CityBusAPIDailyTimeTable1 取得指定s 縣市 路線名稱 的市區公車每日營運時刻表資料
+
+  市區公車之每日營運時刻表資料
+*/
+func (a *Client) CityBusAPIDailyTimeTable1(params *CityBusAPIDailyTimeTable1Params, opts ...ClientOption) (*CityBusAPIDailyTimeTable1OK, *CityBusAPIDailyTimeTable1Status299, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewCityBusAPIDailyTimeTable1Params()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "CityBusApi_DailyTimeTable_1",
+		Method:             "GET",
+		PathPattern:        "/v2/Bus/DailyTimeTable/City/{City}/{RouteName}",
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &CityBusAPIDailyTimeTable1Reader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, nil, err
+	}
+	switch value := result.(type) {
+	case *CityBusAPIDailyTimeTable1OK:
+		return value, nil, nil
+	case *CityBusAPIDailyTimeTable1Status299:
+		return nil, value, nil
+	}
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for city_bus: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
   CityBusAPIDataVersion 取得指定s 縣市 目前資料的最新版本資訊
 
   版本詳細資訊
@@ -233,7 +405,7 @@ func (a *Client) CityBusAPIDisplayStopOfRoute(params *CityBusAPIDisplayStopOfRou
 /*
   CityBusAPIDisplayStopOfRoute1 取得指定s 縣市 路線名稱 的市區公車顯示用路線站序資料
 
-  市區公車之顯示用路線站序資料，僅台北市與新北市可查詢
+  市區公車之顯示用路線站序資料
 */
 func (a *Client) CityBusAPIDisplayStopOfRoute1(params *CityBusAPIDisplayStopOfRoute1Params, opts ...ClientOption) (*CityBusAPIDisplayStopOfRoute1OK, *CityBusAPIDisplayStopOfRoute1Status299, error) {
 	// TODO: Validate the params before sending
