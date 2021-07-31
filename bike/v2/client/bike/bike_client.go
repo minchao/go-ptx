@@ -30,11 +30,11 @@ type ClientOption func(*runtime.ClientOperation)
 
 // ClientService is the interface for Client methods
 type ClientService interface {
-	BikeAPIAvailability(params *BikeAPIAvailabilityParams, opts ...ClientOption) (*BikeAPIAvailabilityOK, error)
+	BikeAPIAvailability(params *BikeAPIAvailabilityParams, opts ...ClientOption) (*BikeAPIAvailabilityOK, *BikeAPIAvailabilityStatus299, error)
 
-	BikeAPIStation(params *BikeAPIStationParams, opts ...ClientOption) (*BikeAPIStationOK, error)
+	BikeAPIStation(params *BikeAPIStationParams, opts ...ClientOption) (*BikeAPIStationOK, *BikeAPIStationStatus299, error)
 
-	CyclingAPIShape(params *CyclingAPIShapeParams, opts ...ClientOption) (*CyclingAPIShapeOK, error)
+	CyclingAPIShape(params *CyclingAPIShapeParams, opts ...ClientOption) (*CyclingAPIShapeOK, *CyclingAPIShapeStatus299, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
@@ -44,7 +44,7 @@ type ClientService interface {
 
   取得動態指定[縣市]的公共自行車即時車位資料
 */
-func (a *Client) BikeAPIAvailability(params *BikeAPIAvailabilityParams, opts ...ClientOption) (*BikeAPIAvailabilityOK, error) {
+func (a *Client) BikeAPIAvailability(params *BikeAPIAvailabilityParams, opts ...ClientOption) (*BikeAPIAvailabilityOK, *BikeAPIAvailabilityStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewBikeAPIAvailabilityParams()
@@ -67,15 +67,16 @@ func (a *Client) BikeAPIAvailability(params *BikeAPIAvailabilityParams, opts ...
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*BikeAPIAvailabilityOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *BikeAPIAvailabilityOK:
+		return value, nil, nil
+	case *BikeAPIAvailabilityStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for BikeApi_Availability: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for bike: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -84,7 +85,7 @@ func (a *Client) BikeAPIAvailability(params *BikeAPIAvailabilityParams, opts ...
 
   取得指定[縣市]的公共自行車租借站位資料
 */
-func (a *Client) BikeAPIStation(params *BikeAPIStationParams, opts ...ClientOption) (*BikeAPIStationOK, error) {
+func (a *Client) BikeAPIStation(params *BikeAPIStationParams, opts ...ClientOption) (*BikeAPIStationOK, *BikeAPIStationStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewBikeAPIStationParams()
@@ -107,15 +108,16 @@ func (a *Client) BikeAPIStation(params *BikeAPIStationParams, opts ...ClientOpti
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*BikeAPIStationOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *BikeAPIStationOK:
+		return value, nil, nil
+	case *BikeAPIStationStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for BikeApi_Station: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for bike: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -124,7 +126,7 @@ func (a *Client) BikeAPIStation(params *BikeAPIStationParams, opts ...ClientOpti
 
   取得指定縣市之自行車道路網圖資
 */
-func (a *Client) CyclingAPIShape(params *CyclingAPIShapeParams, opts ...ClientOption) (*CyclingAPIShapeOK, error) {
+func (a *Client) CyclingAPIShape(params *CyclingAPIShapeParams, opts ...ClientOption) (*CyclingAPIShapeOK, *CyclingAPIShapeStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewCyclingAPIShapeParams()
@@ -147,15 +149,16 @@ func (a *Client) CyclingAPIShape(params *CyclingAPIShapeParams, opts ...ClientOp
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*CyclingAPIShapeOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *CyclingAPIShapeOK:
+		return value, nil, nil
+	case *CyclingAPIShapeStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for CyclingApi_Shape: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for bike: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 

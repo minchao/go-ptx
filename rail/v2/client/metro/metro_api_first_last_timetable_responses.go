@@ -29,6 +29,12 @@ func (o *MetroAPIFirstLastTimetableReader) ReadResponse(response runtime.ClientR
 			return nil, err
 		}
 		return result, nil
+	case 299:
+		result := NewMetroAPIFirstLastTimetableStatus299()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return result, nil
 	case 304:
 		result := NewMetroAPIFirstLastTimetableNotModified()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -64,6 +70,38 @@ func (o *MetroAPIFirstLastTimetableOK) readResponse(response runtime.ClientRespo
 
 	// response payload
 	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewMetroAPIFirstLastTimetableStatus299 creates a MetroAPIFirstLastTimetableStatus299 with default headers values
+func NewMetroAPIFirstLastTimetableStatus299() *MetroAPIFirstLastTimetableStatus299 {
+	return &MetroAPIFirstLastTimetableStatus299{}
+}
+
+/* MetroAPIFirstLastTimetableStatus299 describes a response with status code 299, with default header values.
+
+加入參數'?health=true'即可查詢此API服務的健康狀態
+*/
+type MetroAPIFirstLastTimetableStatus299 struct {
+	Payload *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth
+}
+
+func (o *MetroAPIFirstLastTimetableStatus299) Error() string {
+	return fmt.Sprintf("[GET /v2/Rail/Metro/FirstLastTimetable/{Operator}][%d] metroApiFirstLastTimetableStatus299  %+v", 299, o.Payload)
+}
+func (o *MetroAPIFirstLastTimetableStatus299) GetPayload() *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth {
+	return o.Payload
+}
+
+func (o *MetroAPIFirstLastTimetableStatus299) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	o.Payload = new(models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth)
+
+	// response payload
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

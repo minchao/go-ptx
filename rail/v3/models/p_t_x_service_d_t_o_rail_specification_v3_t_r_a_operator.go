@@ -16,7 +16,7 @@ import (
 
 // PTXServiceDTORailSpecificationV3TRAOperator Operator
 //
-// 台鐵者營運業者基本資料
+// 營運業者基本資料
 //
 // swagger:model PTX.Service.DTO.Rail.Specification.V3.TRA.Operator
 type PTXServiceDTORailSpecificationV3TRAOperator struct {

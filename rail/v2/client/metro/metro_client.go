@@ -30,41 +30,41 @@ type ClientOption func(*runtime.ClientOperation)
 
 // ClientService is the interface for Client methods
 type ClientService interface {
-	MetroAPIAlert(params *MetroAPIAlertParams, opts ...ClientOption) (*MetroAPIAlertOK, error)
+	MetroAPIAlert(params *MetroAPIAlertParams, opts ...ClientOption) (*MetroAPIAlertOK, *MetroAPIAlertStatus299, error)
 
-	MetroAPIFirstLastTimetable(params *MetroAPIFirstLastTimetableParams, opts ...ClientOption) (*MetroAPIFirstLastTimetableOK, error)
+	MetroAPIFirstLastTimetable(params *MetroAPIFirstLastTimetableParams, opts ...ClientOption) (*MetroAPIFirstLastTimetableOK, *MetroAPIFirstLastTimetableStatus299, error)
 
-	MetroAPIFrequency(params *MetroAPIFrequencyParams, opts ...ClientOption) (*MetroAPIFrequencyOK, error)
+	MetroAPIFrequency(params *MetroAPIFrequencyParams, opts ...ClientOption) (*MetroAPIFrequencyOK, *MetroAPIFrequencyStatus299, error)
 
-	MetroAPILine(params *MetroAPILineParams, opts ...ClientOption) (*MetroAPILineOK, error)
+	MetroAPILine(params *MetroAPILineParams, opts ...ClientOption) (*MetroAPILineOK, *MetroAPILineStatus299, error)
 
-	MetroAPILineTransfer(params *MetroAPILineTransferParams, opts ...ClientOption) (*MetroAPILineTransferOK, error)
+	MetroAPILineTransfer(params *MetroAPILineTransferParams, opts ...ClientOption) (*MetroAPILineTransferOK, *MetroAPILineTransferStatus299, error)
 
-	MetroAPILiveBoard(params *MetroAPILiveBoardParams, opts ...ClientOption) (*MetroAPILiveBoardOK, error)
+	MetroAPILiveBoard(params *MetroAPILiveBoardParams, opts ...ClientOption) (*MetroAPILiveBoardOK, *MetroAPILiveBoardStatus299, error)
 
-	MetroAPINetwork(params *MetroAPINetworkParams, opts ...ClientOption) (*MetroAPINetworkOK, error)
+	MetroAPINetwork(params *MetroAPINetworkParams, opts ...ClientOption) (*MetroAPINetworkOK, *MetroAPINetworkStatus299, error)
 
-	MetroAPINews(params *MetroAPINewsParams, opts ...ClientOption) (*MetroAPINewsOK, error)
+	MetroAPINews(params *MetroAPINewsParams, opts ...ClientOption) (*MetroAPINewsOK, *MetroAPINewsStatus299, error)
 
-	MetroAPIODFare(params *MetroAPIODFareParams, opts ...ClientOption) (*MetroAPIODFareOK, error)
+	MetroAPIODFare(params *MetroAPIODFareParams, opts ...ClientOption) (*MetroAPIODFareOK, *MetroAPIODFareStatus299, error)
 
-	MetroAPIRoute(params *MetroAPIRouteParams, opts ...ClientOption) (*MetroAPIRouteOK, error)
+	MetroAPIRoute(params *MetroAPIRouteParams, opts ...ClientOption) (*MetroAPIRouteOK, *MetroAPIRouteStatus299, error)
 
-	MetroAPIS2STravelTime(params *MetroAPIS2STravelTimeParams, opts ...ClientOption) (*MetroAPIS2STravelTimeOK, error)
+	MetroAPIS2STravelTime(params *MetroAPIS2STravelTimeParams, opts ...ClientOption) (*MetroAPIS2STravelTimeOK, *MetroAPIS2STravelTimeStatus299, error)
 
-	MetroAPIShape(params *MetroAPIShapeParams, opts ...ClientOption) (*MetroAPIShapeOK, error)
+	MetroAPIShape(params *MetroAPIShapeParams, opts ...ClientOption) (*MetroAPIShapeOK, *MetroAPIShapeStatus299, error)
 
-	MetroAPIStation(params *MetroAPIStationParams, opts ...ClientOption) (*MetroAPIStationOK, error)
+	MetroAPIStation(params *MetroAPIStationParams, opts ...ClientOption) (*MetroAPIStationOK, *MetroAPIStationStatus299, error)
 
-	MetroAPIStationExit(params *MetroAPIStationExitParams, opts ...ClientOption) (*MetroAPIStationExitOK, error)
+	MetroAPIStationExit(params *MetroAPIStationExitParams, opts ...ClientOption) (*MetroAPIStationExitOK, *MetroAPIStationExitStatus299, error)
 
-	MetroAPIStationFacility(params *MetroAPIStationFacilityParams, opts ...ClientOption) (*MetroAPIStationFacilityOK, error)
+	MetroAPIStationFacility(params *MetroAPIStationFacilityParams, opts ...ClientOption) (*MetroAPIStationFacilityOK, *MetroAPIStationFacilityStatus299, error)
 
-	MetroAPIStationOfLine(params *MetroAPIStationOfLineParams, opts ...ClientOption) (*MetroAPIStationOfLineOK, error)
+	MetroAPIStationOfLine(params *MetroAPIStationOfLineParams, opts ...ClientOption) (*MetroAPIStationOfLineOK, *MetroAPIStationOfLineStatus299, error)
 
-	MetroAPIStationOfRoute(params *MetroAPIStationOfRouteParams, opts ...ClientOption) (*MetroAPIStationOfRouteOK, error)
+	MetroAPIStationOfRoute(params *MetroAPIStationOfRouteParams, opts ...ClientOption) (*MetroAPIStationOfRouteOK, *MetroAPIStationOfRouteStatus299, error)
 
-	MetroAPIStationTimeTable(params *MetroAPIStationTimeTableParams, opts ...ClientOption) (*MetroAPIStationTimeTableOK, error)
+	MetroAPIStationTimeTable(params *MetroAPIStationTimeTableParams, opts ...ClientOption) (*MetroAPIStationTimeTableOK, *MetroAPIStationTimeTableStatus299, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
@@ -74,7 +74,7 @@ type ClientService interface {
 
   取得營運通阻資料
 */
-func (a *Client) MetroAPIAlert(params *MetroAPIAlertParams, opts ...ClientOption) (*MetroAPIAlertOK, error) {
+func (a *Client) MetroAPIAlert(params *MetroAPIAlertParams, opts ...ClientOption) (*MetroAPIAlertOK, *MetroAPIAlertStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewMetroAPIAlertParams()
@@ -97,15 +97,16 @@ func (a *Client) MetroAPIAlert(params *MetroAPIAlertParams, opts ...ClientOption
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*MetroAPIAlertOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *MetroAPIAlertOK:
+		return value, nil, nil
+	case *MetroAPIAlertStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for MetroApi_Alert: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for metro: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -114,7 +115,7 @@ func (a *Client) MetroAPIAlert(params *MetroAPIAlertParams, opts ...ClientOption
 
   取得捷運首末班車時刻表資料
 */
-func (a *Client) MetroAPIFirstLastTimetable(params *MetroAPIFirstLastTimetableParams, opts ...ClientOption) (*MetroAPIFirstLastTimetableOK, error) {
+func (a *Client) MetroAPIFirstLastTimetable(params *MetroAPIFirstLastTimetableParams, opts ...ClientOption) (*MetroAPIFirstLastTimetableOK, *MetroAPIFirstLastTimetableStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewMetroAPIFirstLastTimetableParams()
@@ -137,15 +138,16 @@ func (a *Client) MetroAPIFirstLastTimetable(params *MetroAPIFirstLastTimetablePa
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*MetroAPIFirstLastTimetableOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *MetroAPIFirstLastTimetableOK:
+		return value, nil, nil
+	case *MetroAPIFirstLastTimetableStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for MetroApi_FirstLastTimetable: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for metro: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -154,7 +156,7 @@ func (a *Client) MetroAPIFirstLastTimetable(params *MetroAPIFirstLastTimetablePa
 
   取得捷運路線發車班距頻率資料
 */
-func (a *Client) MetroAPIFrequency(params *MetroAPIFrequencyParams, opts ...ClientOption) (*MetroAPIFrequencyOK, error) {
+func (a *Client) MetroAPIFrequency(params *MetroAPIFrequencyParams, opts ...ClientOption) (*MetroAPIFrequencyOK, *MetroAPIFrequencyStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewMetroAPIFrequencyParams()
@@ -177,15 +179,16 @@ func (a *Client) MetroAPIFrequency(params *MetroAPIFrequencyParams, opts ...Clie
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*MetroAPIFrequencyOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *MetroAPIFrequencyOK:
+		return value, nil, nil
+	case *MetroAPIFrequencyStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for MetroApi_Frequency: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for metro: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -194,7 +197,7 @@ func (a *Client) MetroAPIFrequency(params *MetroAPIFrequencyParams, opts ...Clie
 
   取得捷運路線基本資料
 */
-func (a *Client) MetroAPILine(params *MetroAPILineParams, opts ...ClientOption) (*MetroAPILineOK, error) {
+func (a *Client) MetroAPILine(params *MetroAPILineParams, opts ...ClientOption) (*MetroAPILineOK, *MetroAPILineStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewMetroAPILineParams()
@@ -217,15 +220,16 @@ func (a *Client) MetroAPILine(params *MetroAPILineParams, opts ...ClientOption) 
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*MetroAPILineOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *MetroAPILineOK:
+		return value, nil, nil
+	case *MetroAPILineStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for MetroApi_Line: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for metro: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -234,7 +238,7 @@ func (a *Client) MetroAPILine(params *MetroAPILineParams, opts ...ClientOption) 
 
   取得捷運路線站間轉乘基本資料
 */
-func (a *Client) MetroAPILineTransfer(params *MetroAPILineTransferParams, opts ...ClientOption) (*MetroAPILineTransferOK, error) {
+func (a *Client) MetroAPILineTransfer(params *MetroAPILineTransferParams, opts ...ClientOption) (*MetroAPILineTransferOK, *MetroAPILineTransferStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewMetroAPILineTransferParams()
@@ -257,15 +261,16 @@ func (a *Client) MetroAPILineTransfer(params *MetroAPILineTransferParams, opts .
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*MetroAPILineTransferOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *MetroAPILineTransferOK:
+		return value, nil, nil
+	case *MetroAPILineTransferStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for MetroApi_LineTransfer: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for metro: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -274,7 +279,7 @@ func (a *Client) MetroAPILineTransfer(params *MetroAPILineTransferParams, opts .
 
   取得捷運車站別列車即時到離站電子看板資訊
 */
-func (a *Client) MetroAPILiveBoard(params *MetroAPILiveBoardParams, opts ...ClientOption) (*MetroAPILiveBoardOK, error) {
+func (a *Client) MetroAPILiveBoard(params *MetroAPILiveBoardParams, opts ...ClientOption) (*MetroAPILiveBoardOK, *MetroAPILiveBoardStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewMetroAPILiveBoardParams()
@@ -297,15 +302,16 @@ func (a *Client) MetroAPILiveBoard(params *MetroAPILiveBoardParams, opts ...Clie
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*MetroAPILiveBoardOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *MetroAPILiveBoardOK:
+		return value, nil, nil
+	case *MetroAPILiveBoardStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for MetroApi_LiveBoard: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for metro: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -314,7 +320,7 @@ func (a *Client) MetroAPILiveBoard(params *MetroAPILiveBoardParams, opts ...Clie
 
   取得捷運路網資料
 */
-func (a *Client) MetroAPINetwork(params *MetroAPINetworkParams, opts ...ClientOption) (*MetroAPINetworkOK, error) {
+func (a *Client) MetroAPINetwork(params *MetroAPINetworkParams, opts ...ClientOption) (*MetroAPINetworkOK, *MetroAPINetworkStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewMetroAPINetworkParams()
@@ -337,15 +343,16 @@ func (a *Client) MetroAPINetwork(params *MetroAPINetworkParams, opts ...ClientOp
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*MetroAPINetworkOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *MetroAPINetworkOK:
+		return value, nil, nil
+	case *MetroAPINetworkStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for MetroApi_Network: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for metro: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -354,7 +361,7 @@ func (a *Client) MetroAPINetwork(params *MetroAPINetworkParams, opts ...ClientOp
 
   取得最新消息
 */
-func (a *Client) MetroAPINews(params *MetroAPINewsParams, opts ...ClientOption) (*MetroAPINewsOK, error) {
+func (a *Client) MetroAPINews(params *MetroAPINewsParams, opts ...ClientOption) (*MetroAPINewsOK, *MetroAPINewsStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewMetroAPINewsParams()
@@ -377,15 +384,16 @@ func (a *Client) MetroAPINews(params *MetroAPINewsParams, opts ...ClientOption) 
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*MetroAPINewsOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *MetroAPINewsOK:
+		return value, nil, nil
+	case *MetroAPINewsStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for MetroApi_News: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for metro: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -394,7 +402,7 @@ func (a *Client) MetroAPINews(params *MetroAPINewsParams, opts ...ClientOption) 
 
   取得捷運起迄站間票價資料
 */
-func (a *Client) MetroAPIODFare(params *MetroAPIODFareParams, opts ...ClientOption) (*MetroAPIODFareOK, error) {
+func (a *Client) MetroAPIODFare(params *MetroAPIODFareParams, opts ...ClientOption) (*MetroAPIODFareOK, *MetroAPIODFareStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewMetroAPIODFareParams()
@@ -417,15 +425,16 @@ func (a *Client) MetroAPIODFare(params *MetroAPIODFareParams, opts ...ClientOpti
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*MetroAPIODFareOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *MetroAPIODFareOK:
+		return value, nil, nil
+	case *MetroAPIODFareStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for MetroApi_ODFare: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for metro: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -434,7 +443,7 @@ func (a *Client) MetroAPIODFare(params *MetroAPIODFareParams, opts ...ClientOpti
 
   取得捷運營運路線基本資料
 */
-func (a *Client) MetroAPIRoute(params *MetroAPIRouteParams, opts ...ClientOption) (*MetroAPIRouteOK, error) {
+func (a *Client) MetroAPIRoute(params *MetroAPIRouteParams, opts ...ClientOption) (*MetroAPIRouteOK, *MetroAPIRouteStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewMetroAPIRouteParams()
@@ -457,15 +466,16 @@ func (a *Client) MetroAPIRoute(params *MetroAPIRouteParams, opts ...ClientOption
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*MetroAPIRouteOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *MetroAPIRouteOK:
+		return value, nil, nil
+	case *MetroAPIRouteStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for MetroApi_Route: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for metro: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -474,7 +484,7 @@ func (a *Client) MetroAPIRoute(params *MetroAPIRouteParams, opts ...ClientOption
 
   取得捷運列車站間運行時間資料
 */
-func (a *Client) MetroAPIS2STravelTime(params *MetroAPIS2STravelTimeParams, opts ...ClientOption) (*MetroAPIS2STravelTimeOK, error) {
+func (a *Client) MetroAPIS2STravelTime(params *MetroAPIS2STravelTimeParams, opts ...ClientOption) (*MetroAPIS2STravelTimeOK, *MetroAPIS2STravelTimeStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewMetroAPIS2STravelTimeParams()
@@ -497,15 +507,16 @@ func (a *Client) MetroAPIS2STravelTime(params *MetroAPIS2STravelTimeParams, opts
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*MetroAPIS2STravelTimeOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *MetroAPIS2STravelTimeOK:
+		return value, nil, nil
+	case *MetroAPIS2STravelTimeStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for MetroApi_S2STravelTime: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for metro: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -514,7 +525,7 @@ func (a *Client) MetroAPIS2STravelTime(params *MetroAPIS2STravelTimeParams, opts
 
   取得指定營運業者之軌道路網實體路線圖資資料
 */
-func (a *Client) MetroAPIShape(params *MetroAPIShapeParams, opts ...ClientOption) (*MetroAPIShapeOK, error) {
+func (a *Client) MetroAPIShape(params *MetroAPIShapeParams, opts ...ClientOption) (*MetroAPIShapeOK, *MetroAPIShapeStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewMetroAPIShapeParams()
@@ -537,15 +548,16 @@ func (a *Client) MetroAPIShape(params *MetroAPIShapeParams, opts ...ClientOption
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*MetroAPIShapeOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *MetroAPIShapeOK:
+		return value, nil, nil
+	case *MetroAPIShapeStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for MetroApi_Shape: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for metro: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -554,7 +566,7 @@ func (a *Client) MetroAPIShape(params *MetroAPIShapeParams, opts ...ClientOption
 
   取得捷運車站基本資料
 */
-func (a *Client) MetroAPIStation(params *MetroAPIStationParams, opts ...ClientOption) (*MetroAPIStationOK, error) {
+func (a *Client) MetroAPIStation(params *MetroAPIStationParams, opts ...ClientOption) (*MetroAPIStationOK, *MetroAPIStationStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewMetroAPIStationParams()
@@ -577,15 +589,16 @@ func (a *Client) MetroAPIStation(params *MetroAPIStationParams, opts ...ClientOp
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*MetroAPIStationOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *MetroAPIStationOK:
+		return value, nil, nil
+	case *MetroAPIStationStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for MetroApi_Station: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for metro: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -594,7 +607,7 @@ func (a *Client) MetroAPIStation(params *MetroAPIStationParams, opts ...ClientOp
 
   取得捷運車站出入口基本資料
 */
-func (a *Client) MetroAPIStationExit(params *MetroAPIStationExitParams, opts ...ClientOption) (*MetroAPIStationExitOK, error) {
+func (a *Client) MetroAPIStationExit(params *MetroAPIStationExitParams, opts ...ClientOption) (*MetroAPIStationExitOK, *MetroAPIStationExitStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewMetroAPIStationExitParams()
@@ -617,15 +630,16 @@ func (a *Client) MetroAPIStationExit(params *MetroAPIStationExitParams, opts ...
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*MetroAPIStationExitOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *MetroAPIStationExitOK:
+		return value, nil, nil
+	case *MetroAPIStationExitStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for MetroApi_StationExit: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for metro: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -634,7 +648,7 @@ func (a *Client) MetroAPIStationExit(params *MetroAPIStationExitParams, opts ...
 
   取得捷運車站設施資料
 */
-func (a *Client) MetroAPIStationFacility(params *MetroAPIStationFacilityParams, opts ...ClientOption) (*MetroAPIStationFacilityOK, error) {
+func (a *Client) MetroAPIStationFacility(params *MetroAPIStationFacilityParams, opts ...ClientOption) (*MetroAPIStationFacilityOK, *MetroAPIStationFacilityStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewMetroAPIStationFacilityParams()
@@ -657,15 +671,16 @@ func (a *Client) MetroAPIStationFacility(params *MetroAPIStationFacilityParams, 
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*MetroAPIStationFacilityOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *MetroAPIStationFacilityOK:
+		return value, nil, nil
+	case *MetroAPIStationFacilityStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for MetroApi_StationFacility: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for metro: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -674,7 +689,7 @@ func (a *Client) MetroAPIStationFacility(params *MetroAPIStationFacilityParams, 
 
   取得捷運路線車站基本資料
 */
-func (a *Client) MetroAPIStationOfLine(params *MetroAPIStationOfLineParams, opts ...ClientOption) (*MetroAPIStationOfLineOK, error) {
+func (a *Client) MetroAPIStationOfLine(params *MetroAPIStationOfLineParams, opts ...ClientOption) (*MetroAPIStationOfLineOK, *MetroAPIStationOfLineStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewMetroAPIStationOfLineParams()
@@ -697,15 +712,16 @@ func (a *Client) MetroAPIStationOfLine(params *MetroAPIStationOfLineParams, opts
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*MetroAPIStationOfLineOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *MetroAPIStationOfLineOK:
+		return value, nil, nil
+	case *MetroAPIStationOfLineStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for MetroApi_StationOfLine: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for metro: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -714,7 +730,7 @@ func (a *Client) MetroAPIStationOfLine(params *MetroAPIStationOfLineParams, opts
 
   取得捷運營運路線車站基本資料
 */
-func (a *Client) MetroAPIStationOfRoute(params *MetroAPIStationOfRouteParams, opts ...ClientOption) (*MetroAPIStationOfRouteOK, error) {
+func (a *Client) MetroAPIStationOfRoute(params *MetroAPIStationOfRouteParams, opts ...ClientOption) (*MetroAPIStationOfRouteOK, *MetroAPIStationOfRouteStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewMetroAPIStationOfRouteParams()
@@ -737,15 +753,16 @@ func (a *Client) MetroAPIStationOfRoute(params *MetroAPIStationOfRouteParams, op
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*MetroAPIStationOfRouteOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *MetroAPIStationOfRouteOK:
+		return value, nil, nil
+	case *MetroAPIStationOfRouteStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for MetroApi_StationOfRoute: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for metro: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -757,7 +774,7 @@ func (a *Client) MetroAPIStationOfRoute(params *MetroAPIStationOfRouteParams, op
 ## 使用注意事項
 臺北捷運目前無提供文湖線站別時刻表，建議您可使用［取得捷運路線發車班距頻率資料］取得文湖線列車相關資訊。
 */
-func (a *Client) MetroAPIStationTimeTable(params *MetroAPIStationTimeTableParams, opts ...ClientOption) (*MetroAPIStationTimeTableOK, error) {
+func (a *Client) MetroAPIStationTimeTable(params *MetroAPIStationTimeTableParams, opts ...ClientOption) (*MetroAPIStationTimeTableOK, *MetroAPIStationTimeTableStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewMetroAPIStationTimeTableParams()
@@ -780,15 +797,16 @@ func (a *Client) MetroAPIStationTimeTable(params *MetroAPIStationTimeTableParams
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*MetroAPIStationTimeTableOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *MetroAPIStationTimeTableOK:
+		return value, nil, nil
+	case *MetroAPIStationTimeTableStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for MetroApi_StationTimeTable: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for metro: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 

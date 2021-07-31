@@ -16,7 +16,7 @@ import (
 
 // PTXServiceDTORailSpecificationV3TRACommonTrainInfo TrainInfo
 //
-// 臺鐵車次定期資料型別(時刻表用)
+// 車次定期資料型別(時刻表用)
 //
 // swagger:model PTX.Service.DTO.Rail.Specification.V3.TRA.Common.TrainInfo
 type PTXServiceDTORailSpecificationV3TRACommonTrainInfo struct {

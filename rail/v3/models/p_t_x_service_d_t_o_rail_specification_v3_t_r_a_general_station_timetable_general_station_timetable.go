@@ -17,7 +17,7 @@ import (
 
 // PTXServiceDTORailSpecificationV3TRAGeneralStationTimetableGeneralStationTimetable GeneralStationTimetable
 //
-// 台鐵車站站別時刻表資料型別
+// 車站站別時刻表資料型別
 //
 // swagger:model PTX.Service.DTO.Rail.Specification.V3.TRA.GeneralStationTimetable.GeneralStationTimetable
 type PTXServiceDTORailSpecificationV3TRAGeneralStationTimetableGeneralStationTimetable struct {

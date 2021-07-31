@@ -106,6 +106,12 @@ type THSRAPIStationTimetableParams struct {
 	// Format: date-time
 	TrainDate strfmt.DateTime
 
+	/* Health.
+
+	   加入參數'?health=true'即可查詢此API服務的健康狀態
+	*/
+	Health *string
+
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
@@ -258,6 +264,17 @@ func (o *THSRAPIStationTimetableParams) SetTrainDate(trainDate strfmt.DateTime) 
 	o.TrainDate = trainDate
 }
 
+// WithHealth adds the health to the t h s r Api station timetable params
+func (o *THSRAPIStationTimetableParams) WithHealth(health *string) *THSRAPIStationTimetableParams {
+	o.SetHealth(health)
+	return o
+}
+
+// SetHealth adds the health to the t h s r Api station timetable params
+func (o *THSRAPIStationTimetableParams) SetHealth(health *string) {
+	o.Health = health
+}
+
 // WriteToRequest writes these params to a swagger request
 func (o *THSRAPIStationTimetableParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
 
@@ -369,6 +386,23 @@ func (o *THSRAPIStationTimetableParams) WriteToRequest(r runtime.ClientRequest, 
 	// path param TrainDate
 	if err := r.SetPathParam("TrainDate", o.TrainDate.String()); err != nil {
 		return err
+	}
+
+	if o.Health != nil {
+
+		// query param health
+		var qrHealth string
+
+		if o.Health != nil {
+			qrHealth = *o.Health
+		}
+		qHealth := qrHealth
+		if qHealth != "" {
+
+			if err := r.SetQueryParam("health", qHealth); err != nil {
+				return err
+			}
+		}
 	}
 
 	if len(res) > 0 {

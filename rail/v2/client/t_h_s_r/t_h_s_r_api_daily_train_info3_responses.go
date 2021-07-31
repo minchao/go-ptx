@@ -29,6 +29,12 @@ func (o *THSRAPIDailyTrainInfo3Reader) ReadResponse(response runtime.ClientRespo
 			return nil, err
 		}
 		return result, nil
+	case 299:
+		result := NewTHSRAPIDailyTrainInfo3Status299()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return result, nil
 	case 304:
 		result := NewTHSRAPIDailyTrainInfo3NotModified()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -64,6 +70,38 @@ func (o *THSRAPIDailyTrainInfo3OK) readResponse(response runtime.ClientResponse,
 
 	// response payload
 	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewTHSRAPIDailyTrainInfo3Status299 creates a THSRAPIDailyTrainInfo3Status299 with default headers values
+func NewTHSRAPIDailyTrainInfo3Status299() *THSRAPIDailyTrainInfo3Status299 {
+	return &THSRAPIDailyTrainInfo3Status299{}
+}
+
+/* THSRAPIDailyTrainInfo3Status299 describes a response with status code 299, with default header values.
+
+加入參數'?health=true'即可查詢此API服務的健康狀態
+*/
+type THSRAPIDailyTrainInfo3Status299 struct {
+	Payload *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth
+}
+
+func (o *THSRAPIDailyTrainInfo3Status299) Error() string {
+	return fmt.Sprintf("[GET /v2/Rail/THSR/DailyTrainInfo/TrainNo/{TrainNo}/TrainDate/{TrainDate}][%d] tHSRApiDailyTrainInfo3Status299  %+v", 299, o.Payload)
+}
+func (o *THSRAPIDailyTrainInfo3Status299) GetPayload() *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth {
+	return o.Payload
+}
+
+func (o *THSRAPIDailyTrainInfo3Status299) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	o.Payload = new(models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth)
+
+	// response payload
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

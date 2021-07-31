@@ -16,7 +16,7 @@ import (
 
 // PTXServiceDTORailSpecificationV3TRAStation Station
 //
-// 台鐵車站資料
+// 車站資料
 //
 // swagger:model PTX.Service.DTO.Rail.Specification.V3.TRA.Station
 type PTXServiceDTORailSpecificationV3TRAStation struct {
@@ -38,7 +38,7 @@ type PTXServiceDTORailSpecificationV3TRAStation struct {
 
 	// String
 	//
-	// 臺鐵車站代碼
+	// 車站代碼
 	// Required: true
 	StationID *string `json:"StationID" xml:"String"`
 
@@ -65,7 +65,7 @@ type PTXServiceDTORailSpecificationV3TRAStation struct {
 
 	// String
 	//
-	// 臺鐵車站唯一識別代碼
+	// 車站唯一識別代碼
 	// Required: true
 	StationUID *string `json:"StationUID" xml:"String"`
 

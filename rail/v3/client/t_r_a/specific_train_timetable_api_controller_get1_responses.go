@@ -29,6 +29,12 @@ func (o *SpecificTrainTimetableAPIControllerGet1Reader) ReadResponse(response ru
 			return nil, err
 		}
 		return result, nil
+	case 299:
+		result := NewSpecificTrainTimetableAPIControllerGet1Status299()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return result, nil
 	case 304:
 		result := NewSpecificTrainTimetableAPIControllerGet1NotModified()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -63,6 +69,38 @@ func (o *SpecificTrainTimetableAPIControllerGet1OK) GetPayload() *models.PTXAPIR
 func (o *SpecificTrainTimetableAPIControllerGet1OK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	o.Payload = new(models.PTXAPIRailModelTRASpecificWrapperPTXServiceDTORailSpecificationV3TRASpecificTrainTimetable)
+
+	// response payload
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewSpecificTrainTimetableAPIControllerGet1Status299 creates a SpecificTrainTimetableAPIControllerGet1Status299 with default headers values
+func NewSpecificTrainTimetableAPIControllerGet1Status299() *SpecificTrainTimetableAPIControllerGet1Status299 {
+	return &SpecificTrainTimetableAPIControllerGet1Status299{}
+}
+
+/* SpecificTrainTimetableAPIControllerGet1Status299 describes a response with status code 299, with default header values.
+
+加入參數'?health=true'即可查詢此API服務的健康狀態
+*/
+type SpecificTrainTimetableAPIControllerGet1Status299 struct {
+	Payload *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth
+}
+
+func (o *SpecificTrainTimetableAPIControllerGet1Status299) Error() string {
+	return fmt.Sprintf("[GET /v3/Rail/TRA/SpecificTrainTimetable/TrainNo/{TrainNo}][%d] specificTrainTimetableApiControllerGet1Status299  %+v", 299, o.Payload)
+}
+func (o *SpecificTrainTimetableAPIControllerGet1Status299) GetPayload() *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth {
+	return o.Payload
+}
+
+func (o *SpecificTrainTimetableAPIControllerGet1Status299) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	o.Payload = new(models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

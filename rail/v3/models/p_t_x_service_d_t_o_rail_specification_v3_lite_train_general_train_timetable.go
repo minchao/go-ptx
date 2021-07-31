@@ -27,21 +27,21 @@ type PTXServiceDTORailSpecificationV3LiteTrainGeneralTrainTimetable struct {
 	// 營運日型態
 	// Required: true
 	ServiceDay struct {
-		PTXServiceDTORailSpecificationV3LiteTrainCommonServiceDay
+		PTXServiceDTORailSpecificationV3TRACommonServiceDay
 	} `json:"ServiceDay" xml:"ServiceDay"`
 
 	// Array
 	//
 	// 停靠時間資料
 	// Required: true
-	StopTimes []*PTXServiceDTORailSpecificationV3LiteTrainCommonStopTime "json:\"StopTimes\" xml:\"List`1\""
+	StopTimes []*PTXServiceDTORailSpecificationV3TRACommonStopTime "json:\"StopTimes\" xml:\"List`1\""
 
 	// TrainInfo
 	//
 	// 定期車次資料
 	// Required: true
 	TrainInfo struct {
-		PTXServiceDTORailSpecificationV3LiteTrainCommonTrainInfo
+		PTXServiceDTORailSpecificationV3TRACommonTrainInfo
 	} `json:"TrainInfo" xml:"TrainInfo"`
 }
 

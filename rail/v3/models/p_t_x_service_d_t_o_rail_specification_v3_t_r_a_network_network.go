@@ -17,26 +17,26 @@ import (
 
 // PTXServiceDTORailSpecificationV3TRANetworkNetwork Network
 //
-// 臺鐵路網資料
+// 路網資料
 //
 // swagger:model PTX.Service.DTO.Rail.Specification.V3.TRA.Network.Network
 type PTXServiceDTORailSpecificationV3TRANetworkNetwork struct {
 
 	// Array
 	//
-	// 臺鐵路線資訊
+	// 路線資訊
 	// Required: true
 	Lines []*PTXServiceDTORailSpecificationV3TRANetworkLine "json:\"Lines\" xml:\"List`1\""
 
 	// String
 	//
-	// 臺鐵路網代碼
+	// 路網代碼
 	// Required: true
 	NetworkID *string `json:"NetworkID" xml:"String"`
 
 	// MapNameType
 	//
-	// 臺鐵路網圖網址URL
+	// 路網圖網址URL
 	// Required: true
 	NetworkMapURL struct {
 		PTXServiceDTORailSpecificationV3TRANetworkMapNameType
@@ -44,7 +44,7 @@ type PTXServiceDTORailSpecificationV3TRANetworkNetwork struct {
 
 	// NameType
 	//
-	// 臺鐵路網名稱
+	// 路網名稱
 	// Required: true
 	NetworkName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType

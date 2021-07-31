@@ -40,7 +40,8 @@
               "Taoyuan",
               "Taipei",
               "Kaohsiung",
-              "Tainan"
+              "Tainan",
+              "Chiayi"
             ],
             "x-enum": {
               "Tainan": "臺南市",
@@ -49,6 +50,7 @@
               "Taipei": "臺北市",
               "Taoyuan": "桃園市",
               "Hsinchu": "新竹市",
+              "Chiayi": "嘉義市",
               "NewTaipei": "新北市",
               "Kaohsiung": "高雄市",
               "MiaoliCounty": "苗栗縣",
@@ -95,6 +97,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -118,6 +130,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -151,11 +169,13 @@
               "Taoyuan",
               "Taipei",
               "Kaohsiung",
-              "Tainan"
+              "Tainan",
+              "Chiayi"
             ],
             "x-enum": {
               "NewTaipei": "新北市",
               "MiaoliCounty": "苗栗縣",
+              "Chiayi": "嘉義市",
               "Kaohsiung": "高雄市",
               "Tainan": "臺南市",
               "KinmenCounty": "金門縣",
@@ -200,6 +220,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -223,6 +253,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -287,8 +323,8 @@
               "NantouCounty": "南投縣",
               "Chiayi": "嘉義市",
               "Taichung": "臺中市",
-              "ChiayiCounty": "嘉義縣",
               "NewTaipei": "新北市",
+              "ChiayiCounty": "嘉義縣",
               "Kaohsiung": "高雄市",
               "YilanCounty": "宜蘭縣"
             }
@@ -326,6 +362,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -349,6 +395,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -406,6 +458,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -429,6 +491,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -486,6 +554,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -509,6 +587,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -541,7 +625,17 @@
         },
         "ServiceAvailable": {
           "title": "Int32",
-          "description": "服務狀態 : [0:'停止營運',1:'正常營運']",
+          "description": "服務狀態 : [0:'停止營運',1:'正常營運',2:'暫停營運']",
+          "type": "integer"
+        },
+        "ServiceStatus": {
+          "title": "Int32",
+          "description": "服務狀態 : [0:'停止營運',1:'正常營運',2:'暫停營運']",
+          "type": "integer"
+        },
+        "ServiceType": {
+          "title": "Int32",
+          "description": "服務類型 : [1:'YouBike1.0',2:'YouBike2.0']",
           "type": "integer"
         },
         "AvailableRentBikes": {
@@ -778,6 +872,11 @@
           "description": "可容納之自行車總數",
           "type": "integer"
         },
+        "ServiceType": {
+          "title": "Int32",
+          "description": "服務類型 : [1:'YouBike1.0',2:'YouBike2.0']",
+          "type": "integer"
+        },
         "SrcUpdateTime": {
           "format": "date-time",
           "description": "來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
@@ -846,6 +945,126 @@
       },
       "xml": {
         "name": "PointType"
+      }
+    },
+    "PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth": {
+      "title": "DisplayHealth",
+      "description": "API服務健康狀態",
+      "required": [
+        "ServiceID",
+        "ServiceName"
+      ],
+      "type": "object",
+      "properties": {
+        "ServiceID": {
+          "title": "String",
+          "description": "API服務代碼",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "ServiceName": {
+          "title": "String",
+          "description": "API服務中文名稱",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "Inbound": {
+          "title": "Inbound",
+          "description": "本平台資料來源轉入狀態",
+          "allOf": [
+            {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.Inbound"
+            }
+          ],
+          "xml": {
+            "name": "Inbound"
+          }
+        },
+        "Outbound": {
+          "title": "Outbound",
+          "description": "本平台API狀態",
+          "allOf": [
+            {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.Outbound"
+            }
+          ],
+          "xml": {
+            "name": "Outbound"
+          }
+        }
+      },
+      "xml": {
+        "name": "DisplayHealth"
+      }
+    },
+    "PTX.Service.DTO.Shared.Specification.V3.Base.Inbound": {
+      "title": "Inbound",
+      "description": "本平台資料來源轉入狀態",
+      "required": [
+        "CheckTime",
+        "Status"
+      ],
+      "type": "object",
+      "properties": {
+        "CheckTime": {
+          "format": "date-time",
+          "title": "DateTime",
+          "description": "檢核時間",
+          "type": "string"
+        },
+        "Status": {
+          "title": "Int32",
+          "description": "檢核結果狀態 : [0:'失敗',1:'成功']",
+          "type": "integer"
+        },
+        "Reason": {
+          "title": "String",
+          "description": "檢核失敗原因",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        }
+      },
+      "xml": {
+        "name": "Inbound"
+      }
+    },
+    "PTX.Service.DTO.Shared.Specification.V3.Base.Outbound": {
+      "title": "Outbound",
+      "description": "本平台API狀態",
+      "required": [
+        "CheckTime",
+        "Status"
+      ],
+      "type": "object",
+      "properties": {
+        "CheckTime": {
+          "format": "date-time",
+          "title": "DateTime",
+          "description": "檢核時間",
+          "type": "string"
+        },
+        "Status": {
+          "title": "Int32",
+          "description": "檢核結果狀態 : [0:'失敗',1:'成功']",
+          "type": "integer"
+        },
+        "Reason": {
+          "title": "String",
+          "description": "檢核失敗原因",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        }
+      },
+      "xml": {
+        "name": "Outbound"
       }
     }
   },

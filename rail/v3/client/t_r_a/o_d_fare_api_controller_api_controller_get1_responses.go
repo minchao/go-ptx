@@ -29,6 +29,12 @@ func (o *ODFareAPIControllerAPIControllerGet1Reader) ReadResponse(response runti
 			return nil, err
 		}
 		return result, nil
+	case 299:
+		result := NewODFareAPIControllerAPIControllerGet1Status299()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return result, nil
 	case 304:
 		result := NewODFareAPIControllerAPIControllerGet1NotModified()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -63,6 +69,38 @@ func (o *ODFareAPIControllerAPIControllerGet1OK) GetPayload() *models.PTXAPIRail
 func (o *ODFareAPIControllerAPIControllerGet1OK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	o.Payload = new(models.PTXAPIRailModelTRAODFareWrapperPTXServiceDTORailSpecificationV3TRAODFareODFare)
+
+	// response payload
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewODFareAPIControllerAPIControllerGet1Status299 creates a ODFareAPIControllerAPIControllerGet1Status299 with default headers values
+func NewODFareAPIControllerAPIControllerGet1Status299() *ODFareAPIControllerAPIControllerGet1Status299 {
+	return &ODFareAPIControllerAPIControllerGet1Status299{}
+}
+
+/* ODFareAPIControllerAPIControllerGet1Status299 describes a response with status code 299, with default header values.
+
+加入參數'?health=true'即可查詢此API服務的健康狀態
+*/
+type ODFareAPIControllerAPIControllerGet1Status299 struct {
+	Payload *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth
+}
+
+func (o *ODFareAPIControllerAPIControllerGet1Status299) Error() string {
+	return fmt.Sprintf("[GET /v3/Rail/TRA/ODFare/{OriginStationID}/to/{DestinationStationID}][%d] oDFareApiControllerApiControllerGet1Status299  %+v", 299, o.Payload)
+}
+func (o *ODFareAPIControllerAPIControllerGet1Status299) GetPayload() *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth {
+	return o.Payload
+}
+
+func (o *ODFareAPIControllerAPIControllerGet1Status299) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	o.Payload = new(models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

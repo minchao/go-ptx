@@ -17,7 +17,7 @@ import (
 
 // PTXServiceDTORailSpecificationV3TRAStationExitStationExit StationExit
 //
-// 台鐵車站出入口資料
+// 車站出入口資料
 //
 // swagger:model PTX.Service.DTO.Rail.Specification.V3.TRA.StationExit.StationExit
 type PTXServiceDTORailSpecificationV3TRAStationExitStationExit struct {

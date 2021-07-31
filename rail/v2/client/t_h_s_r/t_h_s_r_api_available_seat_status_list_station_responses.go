@@ -29,6 +29,12 @@ func (o *THSRAPIAvailableSeatStatusListStationReader) ReadResponse(response runt
 			return nil, err
 		}
 		return result, nil
+	case 299:
+		result := NewTHSRAPIAvailableSeatStatusListStationStatus299()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return result, nil
 	case 304:
 		result := NewTHSRAPIAvailableSeatStatusListStationNotModified()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -63,6 +69,38 @@ func (o *THSRAPIAvailableSeatStatusListStationOK) GetPayload() *models.PTXAPIRai
 func (o *THSRAPIAvailableSeatStatusListStationOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	o.Payload = new(models.PTXAPIRailModelV2THSRAvailableSeatStatusOldWrapperPTXServiceDTORailSpecificationV2THSROldAvailableSeat)
+
+	// response payload
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewTHSRAPIAvailableSeatStatusListStationStatus299 creates a THSRAPIAvailableSeatStatusListStationStatus299 with default headers values
+func NewTHSRAPIAvailableSeatStatusListStationStatus299() *THSRAPIAvailableSeatStatusListStationStatus299 {
+	return &THSRAPIAvailableSeatStatusListStationStatus299{}
+}
+
+/* THSRAPIAvailableSeatStatusListStationStatus299 describes a response with status code 299, with default header values.
+
+加入參數'?health=true'即可查詢此API服務的健康狀態
+*/
+type THSRAPIAvailableSeatStatusListStationStatus299 struct {
+	Payload *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth
+}
+
+func (o *THSRAPIAvailableSeatStatusListStationStatus299) Error() string {
+	return fmt.Sprintf("[GET /v2/Rail/THSR/AvailableSeatStatusList][%d] tHSRApiAvailableSeatStatusListStationStatus299  %+v", 299, o.Payload)
+}
+func (o *THSRAPIAvailableSeatStatusListStationStatus299) GetPayload() *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth {
+	return o.Payload
+}
+
+func (o *THSRAPIAvailableSeatStatusListStationStatus299) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	o.Payload = new(models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

@@ -104,6 +104,12 @@ type MetroAPIFirstLastTimetableParams struct {
 	*/
 	Operator string
 
+	/* Health.
+
+	   加入參數'?health=true'即可查詢此API服務的健康狀態
+	*/
+	Health *string
+
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
@@ -245,6 +251,17 @@ func (o *MetroAPIFirstLastTimetableParams) SetOperator(operator string) {
 	o.Operator = operator
 }
 
+// WithHealth adds the health to the metro Api first last timetable params
+func (o *MetroAPIFirstLastTimetableParams) WithHealth(health *string) *MetroAPIFirstLastTimetableParams {
+	o.SetHealth(health)
+	return o
+}
+
+// SetHealth adds the health to the metro Api first last timetable params
+func (o *MetroAPIFirstLastTimetableParams) SetHealth(health *string) {
+	o.Health = health
+}
+
 // WriteToRequest writes these params to a swagger request
 func (o *MetroAPIFirstLastTimetableParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
 
@@ -351,6 +368,23 @@ func (o *MetroAPIFirstLastTimetableParams) WriteToRequest(r runtime.ClientReques
 	// path param Operator
 	if err := r.SetPathParam("Operator", o.Operator); err != nil {
 		return err
+	}
+
+	if o.Health != nil {
+
+		// query param health
+		var qrHealth string
+
+		if o.Health != nil {
+			qrHealth = *o.Health
+		}
+		qHealth := qrHealth
+		if qHealth != "" {
+
+			if err := r.SetQueryParam("health", qHealth); err != nil {
+				return err
+			}
+		}
 	}
 
 	if len(res) > 0 {

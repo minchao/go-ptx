@@ -110,6 +110,12 @@ type MetroAPIStationExitParams struct {
 	*/
 	Operator string
 
+	/* Health.
+
+	   加入參數'?health=true'即可查詢此API服務的健康狀態
+	*/
+	Health *string
+
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
@@ -262,6 +268,17 @@ func (o *MetroAPIStationExitParams) SetOperator(operator string) {
 	o.Operator = operator
 }
 
+// WithHealth adds the health to the metro Api station exit params
+func (o *MetroAPIStationExitParams) WithHealth(health *string) *MetroAPIStationExitParams {
+	o.SetHealth(health)
+	return o
+}
+
+// SetHealth adds the health to the metro Api station exit params
+func (o *MetroAPIStationExitParams) SetHealth(health *string) {
+	o.Health = health
+}
+
 // WriteToRequest writes these params to a swagger request
 func (o *MetroAPIStationExitParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
 
@@ -385,6 +402,23 @@ func (o *MetroAPIStationExitParams) WriteToRequest(r runtime.ClientRequest, reg 
 	// path param Operator
 	if err := r.SetPathParam("Operator", o.Operator); err != nil {
 		return err
+	}
+
+	if o.Health != nil {
+
+		// query param health
+		var qrHealth string
+
+		if o.Health != nil {
+			qrHealth = *o.Health
+		}
+		qHealth := qrHealth
+		if qHealth != "" {
+
+			if err := r.SetQueryParam("health", qHealth); err != nil {
+				return err
+			}
+		}
 	}
 
 	if len(res) > 0 {

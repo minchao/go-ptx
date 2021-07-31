@@ -16,7 +16,7 @@ import (
 
 // PTXServiceDTORailSpecificationV3TRALineTransfer LineTransfer
 //
-// 台鐵路線站間轉乘基本資料
+// 路線站間轉乘基本資料
 //
 // swagger:model PTX.Service.DTO.Rail.Specification.V3.TRA.LineTransfer
 type PTXServiceDTORailSpecificationV3TRALineTransfer struct {

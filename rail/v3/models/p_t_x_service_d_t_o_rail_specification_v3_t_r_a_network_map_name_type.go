@@ -19,7 +19,7 @@ type PTXServiceDTORailSpecificationV3TRANetworkMapNameType struct {
 
 	// String
 	//
-	// 臺鐵路網圖網址(英文版)
+	// 路網圖網址(英文版)
 	En string `json:"En,omitempty" xml:"String,omitempty"`
 
 	// String
@@ -29,7 +29,7 @@ type PTXServiceDTORailSpecificationV3TRANetworkMapNameType struct {
 
 	// String
 	//
-	// 臺鐵路網圖網址(中文版)
+	// 路網圖網址(中文版)
 	ZhTw string `json:"Zh_tw,omitempty" xml:"String,omitempty"`
 }
 

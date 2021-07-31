@@ -29,6 +29,12 @@ func (o *LiteTrainODFare1Reader) ReadResponse(response runtime.ClientResponse, c
 			return nil, err
 		}
 		return result, nil
+	case 299:
+		result := NewLiteTrainODFare1Status299()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return result, nil
 	case 304:
 		result := NewLiteTrainODFare1NotModified()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -63,6 +69,38 @@ func (o *LiteTrainODFare1OK) GetPayload() *models.PTXAPIRailModelLiteTrainODFare
 func (o *LiteTrainODFare1OK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	o.Payload = new(models.PTXAPIRailModelLiteTrainODFareWrapperPTXServiceDTORailSpecificationV3LiteTrainODFareODFare)
+
+	// response payload
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewLiteTrainODFare1Status299 creates a LiteTrainODFare1Status299 with default headers values
+func NewLiteTrainODFare1Status299() *LiteTrainODFare1Status299 {
+	return &LiteTrainODFare1Status299{}
+}
+
+/* LiteTrainODFare1Status299 describes a response with status code 299, with default header values.
+
+加入參數'?health=true'即可查詢此API服務的健康狀態
+*/
+type LiteTrainODFare1Status299 struct {
+	Payload *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth
+}
+
+func (o *LiteTrainODFare1Status299) Error() string {
+	return fmt.Sprintf("[GET /v3/Rail/AFR/ODFare/{OriginStationID}/to/{DestinationStationID}][%d] liteTrainODFare1Status299  %+v", 299, o.Payload)
+}
+func (o *LiteTrainODFare1Status299) GetPayload() *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth {
+	return o.Payload
+}
+
+func (o *LiteTrainODFare1Status299) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	o.Payload = new(models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

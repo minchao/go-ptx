@@ -29,6 +29,12 @@ func (o *LiteTrainStationOfLineReader) ReadResponse(response runtime.ClientRespo
 			return nil, err
 		}
 		return result, nil
+	case 299:
+		result := NewLiteTrainStationOfLineStatus299()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return result, nil
 	case 304:
 		result := NewLiteTrainStationOfLineNotModified()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -63,6 +69,38 @@ func (o *LiteTrainStationOfLineOK) GetPayload() *models.PTXAPIRailModelLiteTrain
 func (o *LiteTrainStationOfLineOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	o.Payload = new(models.PTXAPIRailModelLiteTrainBaseWrapperPTXServiceDTORailSpecificationV3LiteTrainStationOfLineStationOfLine)
+
+	// response payload
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewLiteTrainStationOfLineStatus299 creates a LiteTrainStationOfLineStatus299 with default headers values
+func NewLiteTrainStationOfLineStatus299() *LiteTrainStationOfLineStatus299 {
+	return &LiteTrainStationOfLineStatus299{}
+}
+
+/* LiteTrainStationOfLineStatus299 describes a response with status code 299, with default header values.
+
+加入參數'?health=true'即可查詢此API服務的健康狀態
+*/
+type LiteTrainStationOfLineStatus299 struct {
+	Payload *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth
+}
+
+func (o *LiteTrainStationOfLineStatus299) Error() string {
+	return fmt.Sprintf("[GET /v3/Rail/AFR/StationOfLine][%d] liteTrainStationOfLineStatus299  %+v", 299, o.Payload)
+}
+func (o *LiteTrainStationOfLineStatus299) GetPayload() *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth {
+	return o.Payload
+}
+
+func (o *LiteTrainStationOfLineStatus299) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	o.Payload = new(models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

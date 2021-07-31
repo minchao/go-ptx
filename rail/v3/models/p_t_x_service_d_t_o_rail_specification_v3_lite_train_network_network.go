@@ -24,27 +24,27 @@ type PTXServiceDTORailSpecificationV3LiteTrainNetworkNetwork struct {
 
 	// Array
 	//
-	// 小火車路線資訊
+	// 路線資訊
 	// Required: true
-	Lines []*PTXServiceDTORailSpecificationV3LiteTrainNetworkLine "json:\"Lines\" xml:\"List`1\""
+	Lines []*PTXServiceDTORailSpecificationV3TRANetworkLine "json:\"Lines\" xml:\"List`1\""
 
 	// String
 	//
-	// 小火車路網代碼
+	// 路網代碼
 	// Required: true
 	NetworkID *string `json:"NetworkID" xml:"String"`
 
 	// MapNameType
 	//
-	// 小火車路網圖網址URL
+	// 路網圖網址URL
 	// Required: true
 	NetworkMapURL struct {
-		PTXServiceDTORailSpecificationV3LiteTrainNetworkMapNameType
+		PTXServiceDTORailSpecificationV3TRANetworkMapNameType
 	} `json:"NetworkMapURL" xml:"MapNameType"`
 
 	// NameType
 	//
-	// 小火車路網名稱
+	// 路網名稱
 	// Required: true
 	NetworkName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType

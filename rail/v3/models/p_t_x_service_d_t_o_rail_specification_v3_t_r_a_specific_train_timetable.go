@@ -17,7 +17,7 @@ import (
 
 // PTXServiceDTORailSpecificationV3TRASpecificTrainTimetable SpecificTrainTimetable
 //
-// 台鐵特殊車次時刻表資料型別
+// 特殊車次時刻表資料型別
 //
 // swagger:model PTX.Service.DTO.Rail.Specification.V3.TRA.SpecificTrainTimetable
 type PTXServiceDTORailSpecificationV3TRASpecificTrainTimetable struct {

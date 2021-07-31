@@ -29,6 +29,12 @@ func (o *TRAAPIODFareStationReader) ReadResponse(response runtime.ClientResponse
 			return nil, err
 		}
 		return result, nil
+	case 299:
+		result := NewTRAAPIODFareStationStatus299()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return result, nil
 	case 304:
 		result := NewTRAAPIODFareStationNotModified()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -64,6 +70,38 @@ func (o *TRAAPIODFareStationOK) readResponse(response runtime.ClientResponse, co
 
 	// response payload
 	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewTRAAPIODFareStationStatus299 creates a TRAAPIODFareStationStatus299 with default headers values
+func NewTRAAPIODFareStationStatus299() *TRAAPIODFareStationStatus299 {
+	return &TRAAPIODFareStationStatus299{}
+}
+
+/* TRAAPIODFareStationStatus299 describes a response with status code 299, with default header values.
+
+加入參數'?health=true'即可查詢此API服務的健康狀態
+*/
+type TRAAPIODFareStationStatus299 struct {
+	Payload *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth
+}
+
+func (o *TRAAPIODFareStationStatus299) Error() string {
+	return fmt.Sprintf("[GET /v2/Rail/TRA/ODFare][%d] tRAApiODFareStationStatus299  %+v", 299, o.Payload)
+}
+func (o *TRAAPIODFareStationStatus299) GetPayload() *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth {
+	return o.Payload
+}
+
+func (o *TRAAPIODFareStationStatus299) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	o.Payload = new(models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth)
+
+	// response payload
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

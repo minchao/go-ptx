@@ -29,6 +29,12 @@ func (o *MetroAPINewsReader) ReadResponse(response runtime.ClientResponse, consu
 			return nil, err
 		}
 		return result, nil
+	case 299:
+		result := NewMetroAPINewsStatus299()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return result, nil
 	case 304:
 		result := NewMetroAPINewsNotModified()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -63,6 +69,38 @@ func (o *MetroAPINewsOK) GetPayload() *models.PTXAPIRailModelMRTRealTimeWrapperP
 func (o *MetroAPINewsOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	o.Payload = new(models.PTXAPIRailModelMRTRealTimeWrapperPTXServiceDTORailSpecificationV2MetroMRTNewsListNews)
+
+	// response payload
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewMetroAPINewsStatus299 creates a MetroAPINewsStatus299 with default headers values
+func NewMetroAPINewsStatus299() *MetroAPINewsStatus299 {
+	return &MetroAPINewsStatus299{}
+}
+
+/* MetroAPINewsStatus299 describes a response with status code 299, with default header values.
+
+加入參數'?health=true'即可查詢此API服務的健康狀態
+*/
+type MetroAPINewsStatus299 struct {
+	Payload *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth
+}
+
+func (o *MetroAPINewsStatus299) Error() string {
+	return fmt.Sprintf("[GET /v2/Rail/Metro/News/{Operator}][%d] metroApiNewsStatus299  %+v", 299, o.Payload)
+}
+func (o *MetroAPINewsStatus299) GetPayload() *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth {
+	return o.Payload
+}
+
+func (o *MetroAPINewsStatus299) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	o.Payload = new(models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

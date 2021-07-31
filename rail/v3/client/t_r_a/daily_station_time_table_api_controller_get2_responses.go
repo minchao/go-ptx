@@ -29,6 +29,12 @@ func (o *DailyStationTimeTableAPIControllerGet2Reader) ReadResponse(response run
 			return nil, err
 		}
 		return result, nil
+	case 299:
+		result := NewDailyStationTimeTableAPIControllerGet2Status299()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return result, nil
 	case 304:
 		result := NewDailyStationTimeTableAPIControllerGet2NotModified()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -63,6 +69,38 @@ func (o *DailyStationTimeTableAPIControllerGet2OK) GetPayload() *models.PTXAPIRa
 func (o *DailyStationTimeTableAPIControllerGet2OK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	o.Payload = new(models.PTXAPIRailModelTraDailyStationWrapperPTXServiceDTORailSpecificationV3TRADailyStationTimeTableStationTimetable)
+
+	// response payload
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewDailyStationTimeTableAPIControllerGet2Status299 creates a DailyStationTimeTableAPIControllerGet2Status299 with default headers values
+func NewDailyStationTimeTableAPIControllerGet2Status299() *DailyStationTimeTableAPIControllerGet2Status299 {
+	return &DailyStationTimeTableAPIControllerGet2Status299{}
+}
+
+/* DailyStationTimeTableAPIControllerGet2Status299 describes a response with status code 299, with default header values.
+
+加入參數'?health=true'即可查詢此API服務的健康狀態
+*/
+type DailyStationTimeTableAPIControllerGet2Status299 struct {
+	Payload *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth
+}
+
+func (o *DailyStationTimeTableAPIControllerGet2Status299) Error() string {
+	return fmt.Sprintf("[GET /v3/Rail/TRA/DailyStationTimetable/TrainDate/{TrainDate}][%d] dailyStationTimeTableApiControllerGet2Status299  %+v", 299, o.Payload)
+}
+func (o *DailyStationTimeTableAPIControllerGet2Status299) GetPayload() *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth {
+	return o.Payload
+}
+
+func (o *DailyStationTimeTableAPIControllerGet2Status299) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	o.Payload = new(models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

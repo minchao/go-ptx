@@ -30,31 +30,31 @@ type ClientOption func(*runtime.ClientOperation)
 
 // ClientService is the interface for Client methods
 type ClientService interface {
-	LiteTrainGeneralTrainTimetable(params *LiteTrainGeneralTrainTimetableParams, opts ...ClientOption) (*LiteTrainGeneralTrainTimetableOK, error)
+	LiteTrainGeneralTrainTimetable(params *LiteTrainGeneralTrainTimetableParams, opts ...ClientOption) (*LiteTrainGeneralTrainTimetableOK, *LiteTrainGeneralTrainTimetableStatus299, error)
 
-	LiteTrainGeneralTrainTimetable1(params *LiteTrainGeneralTrainTimetable1Params, opts ...ClientOption) (*LiteTrainGeneralTrainTimetable1OK, error)
+	LiteTrainGeneralTrainTimetable1(params *LiteTrainGeneralTrainTimetable1Params, opts ...ClientOption) (*LiteTrainGeneralTrainTimetable1OK, *LiteTrainGeneralTrainTimetable1Status299, error)
 
-	LiteTrainLine(params *LiteTrainLineParams, opts ...ClientOption) (*LiteTrainLineOK, error)
+	LiteTrainLine(params *LiteTrainLineParams, opts ...ClientOption) (*LiteTrainLineOK, *LiteTrainLineStatus299, error)
 
-	LiteTrainNetwork(params *LiteTrainNetworkParams, opts ...ClientOption) (*LiteTrainNetworkOK, error)
+	LiteTrainNetwork(params *LiteTrainNetworkParams, opts ...ClientOption) (*LiteTrainNetworkOK, *LiteTrainNetworkStatus299, error)
 
-	LiteTrainNews(params *LiteTrainNewsParams, opts ...ClientOption) (*LiteTrainNewsOK, error)
+	LiteTrainNews(params *LiteTrainNewsParams, opts ...ClientOption) (*LiteTrainNewsOK, *LiteTrainNewsStatus299, error)
 
-	LiteTrainODFare(params *LiteTrainODFareParams, opts ...ClientOption) (*LiteTrainODFareOK, error)
+	LiteTrainODFare(params *LiteTrainODFareParams, opts ...ClientOption) (*LiteTrainODFareOK, *LiteTrainODFareStatus299, error)
 
-	LiteTrainODFare1(params *LiteTrainODFare1Params, opts ...ClientOption) (*LiteTrainODFare1OK, error)
+	LiteTrainODFare1(params *LiteTrainODFare1Params, opts ...ClientOption) (*LiteTrainODFare1OK, *LiteTrainODFare1Status299, error)
 
-	LiteTrainOperator(params *LiteTrainOperatorParams, opts ...ClientOption) (*LiteTrainOperatorOK, error)
+	LiteTrainOperator(params *LiteTrainOperatorParams, opts ...ClientOption) (*LiteTrainOperatorOK, *LiteTrainOperatorStatus299, error)
 
-	LiteTrainRoute(params *LiteTrainRouteParams, opts ...ClientOption) (*LiteTrainRouteOK, error)
+	LiteTrainRoute(params *LiteTrainRouteParams, opts ...ClientOption) (*LiteTrainRouteOK, *LiteTrainRouteStatus299, error)
 
-	LiteTrainStation(params *LiteTrainStationParams, opts ...ClientOption) (*LiteTrainStationOK, error)
+	LiteTrainStation(params *LiteTrainStationParams, opts ...ClientOption) (*LiteTrainStationOK, *LiteTrainStationStatus299, error)
 
-	LiteTrainStationOfLine(params *LiteTrainStationOfLineParams, opts ...ClientOption) (*LiteTrainStationOfLineOK, error)
+	LiteTrainStationOfLine(params *LiteTrainStationOfLineParams, opts ...ClientOption) (*LiteTrainStationOfLineOK, *LiteTrainStationOfLineStatus299, error)
 
-	LiteTrainStationOfRoute(params *LiteTrainStationOfRouteParams, opts ...ClientOption) (*LiteTrainStationOfRouteOK, error)
+	LiteTrainStationOfRoute(params *LiteTrainStationOfRouteParams, opts ...ClientOption) (*LiteTrainStationOfRouteOK, *LiteTrainStationOfRouteStatus299, error)
 
-	LiteTrainTrainType(params *LiteTrainTrainTypeParams, opts ...ClientOption) (*LiteTrainTrainTypeOK, error)
+	LiteTrainTrainType(params *LiteTrainTrainTypeParams, opts ...ClientOption) (*LiteTrainTrainTypeOK, *LiteTrainTrainTypeStatus299, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
@@ -64,7 +64,7 @@ type ClientService interface {
 
   取得所有車次的定期時刻表資料
 */
-func (a *Client) LiteTrainGeneralTrainTimetable(params *LiteTrainGeneralTrainTimetableParams, opts ...ClientOption) (*LiteTrainGeneralTrainTimetableOK, error) {
+func (a *Client) LiteTrainGeneralTrainTimetable(params *LiteTrainGeneralTrainTimetableParams, opts ...ClientOption) (*LiteTrainGeneralTrainTimetableOK, *LiteTrainGeneralTrainTimetableStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewLiteTrainGeneralTrainTimetableParams()
@@ -87,15 +87,16 @@ func (a *Client) LiteTrainGeneralTrainTimetable(params *LiteTrainGeneralTrainTim
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*LiteTrainGeneralTrainTimetableOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *LiteTrainGeneralTrainTimetableOK:
+		return value, nil, nil
+	case *LiteTrainGeneralTrainTimetableStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for LiteTrain_GeneralTrainTimetable: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for a_f_r: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -104,7 +105,7 @@ func (a *Client) LiteTrainGeneralTrainTimetable(params *LiteTrainGeneralTrainTim
 
   取得指定[車次]的定期時刻表資料
 */
-func (a *Client) LiteTrainGeneralTrainTimetable1(params *LiteTrainGeneralTrainTimetable1Params, opts ...ClientOption) (*LiteTrainGeneralTrainTimetable1OK, error) {
+func (a *Client) LiteTrainGeneralTrainTimetable1(params *LiteTrainGeneralTrainTimetable1Params, opts ...ClientOption) (*LiteTrainGeneralTrainTimetable1OK, *LiteTrainGeneralTrainTimetable1Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewLiteTrainGeneralTrainTimetable1Params()
@@ -127,15 +128,16 @@ func (a *Client) LiteTrainGeneralTrainTimetable1(params *LiteTrainGeneralTrainTi
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*LiteTrainGeneralTrainTimetable1OK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *LiteTrainGeneralTrainTimetable1OK:
+		return value, nil, nil
+	case *LiteTrainGeneralTrainTimetable1Status299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for LiteTrain_GeneralTrainTimetable_1: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for a_f_r: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -144,7 +146,7 @@ func (a *Client) LiteTrainGeneralTrainTimetable1(params *LiteTrainGeneralTrainTi
 
   取得路線基本資料
 */
-func (a *Client) LiteTrainLine(params *LiteTrainLineParams, opts ...ClientOption) (*LiteTrainLineOK, error) {
+func (a *Client) LiteTrainLine(params *LiteTrainLineParams, opts ...ClientOption) (*LiteTrainLineOK, *LiteTrainLineStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewLiteTrainLineParams()
@@ -167,24 +169,25 @@ func (a *Client) LiteTrainLine(params *LiteTrainLineParams, opts ...ClientOption
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*LiteTrainLineOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *LiteTrainLineOK:
+		return value, nil, nil
+	case *LiteTrainLineStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for LiteTrain_Line: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for a_f_r: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
 /*
-  LiteTrainNetwork 取得小火車路網資料s
+  LiteTrainNetwork 取得路網資料s
 
-  取得小火車路網資料
+  取得路網資料
 */
-func (a *Client) LiteTrainNetwork(params *LiteTrainNetworkParams, opts ...ClientOption) (*LiteTrainNetworkOK, error) {
+func (a *Client) LiteTrainNetwork(params *LiteTrainNetworkParams, opts ...ClientOption) (*LiteTrainNetworkOK, *LiteTrainNetworkStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewLiteTrainNetworkParams()
@@ -207,15 +210,16 @@ func (a *Client) LiteTrainNetwork(params *LiteTrainNetworkParams, opts ...Client
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*LiteTrainNetworkOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *LiteTrainNetworkOK:
+		return value, nil, nil
+	case *LiteTrainNetworkStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for LiteTrain_Network: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for a_f_r: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -224,7 +228,7 @@ func (a *Client) LiteTrainNetwork(params *LiteTrainNetworkParams, opts ...Client
 
   取得最新消息
 */
-func (a *Client) LiteTrainNews(params *LiteTrainNewsParams, opts ...ClientOption) (*LiteTrainNewsOK, error) {
+func (a *Client) LiteTrainNews(params *LiteTrainNewsParams, opts ...ClientOption) (*LiteTrainNewsOK, *LiteTrainNewsStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewLiteTrainNewsParams()
@@ -247,15 +251,16 @@ func (a *Client) LiteTrainNews(params *LiteTrainNewsParams, opts ...ClientOption
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*LiteTrainNewsOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *LiteTrainNewsOK:
+		return value, nil, nil
+	case *LiteTrainNewsStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for LiteTrain_News: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for a_f_r: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -264,7 +269,7 @@ func (a *Client) LiteTrainNews(params *LiteTrainNewsParams, opts ...ClientOption
 
   取得所有票價資料
 */
-func (a *Client) LiteTrainODFare(params *LiteTrainODFareParams, opts ...ClientOption) (*LiteTrainODFareOK, error) {
+func (a *Client) LiteTrainODFare(params *LiteTrainODFareParams, opts ...ClientOption) (*LiteTrainODFareOK, *LiteTrainODFareStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewLiteTrainODFareParams()
@@ -287,15 +292,16 @@ func (a *Client) LiteTrainODFare(params *LiteTrainODFareParams, opts ...ClientOp
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*LiteTrainODFareOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *LiteTrainODFareOK:
+		return value, nil, nil
+	case *LiteTrainODFareStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for LiteTrain_ODFare: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for a_f_r: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -304,7 +310,7 @@ func (a *Client) LiteTrainODFare(params *LiteTrainODFareParams, opts ...ClientOp
 
   取得指定起迄站間票價資料
 */
-func (a *Client) LiteTrainODFare1(params *LiteTrainODFare1Params, opts ...ClientOption) (*LiteTrainODFare1OK, error) {
+func (a *Client) LiteTrainODFare1(params *LiteTrainODFare1Params, opts ...ClientOption) (*LiteTrainODFare1OK, *LiteTrainODFare1Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewLiteTrainODFare1Params()
@@ -327,24 +333,25 @@ func (a *Client) LiteTrainODFare1(params *LiteTrainODFare1Params, opts ...Client
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*LiteTrainODFare1OK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *LiteTrainODFare1OK:
+		return value, nil, nil
+	case *LiteTrainODFare1Status299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for LiteTrain_ODFare_1: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for a_f_r: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
 /*
-  LiteTrainOperator 取得小火車營運業者基本資料s
+  LiteTrainOperator 取得營運業者基本資料s
 
-  取得小火車營運業者基本資料
+  取得營運業者基本資料
 */
-func (a *Client) LiteTrainOperator(params *LiteTrainOperatorParams, opts ...ClientOption) (*LiteTrainOperatorOK, error) {
+func (a *Client) LiteTrainOperator(params *LiteTrainOperatorParams, opts ...ClientOption) (*LiteTrainOperatorOK, *LiteTrainOperatorStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewLiteTrainOperatorParams()
@@ -367,15 +374,16 @@ func (a *Client) LiteTrainOperator(params *LiteTrainOperatorParams, opts ...Clie
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*LiteTrainOperatorOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *LiteTrainOperatorOK:
+		return value, nil, nil
+	case *LiteTrainOperatorStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for LiteTrain_Operator: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for a_f_r: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -384,7 +392,7 @@ func (a *Client) LiteTrainOperator(params *LiteTrainOperatorParams, opts ...Clie
 
   取得營運路線基本資料
 */
-func (a *Client) LiteTrainRoute(params *LiteTrainRouteParams, opts ...ClientOption) (*LiteTrainRouteOK, error) {
+func (a *Client) LiteTrainRoute(params *LiteTrainRouteParams, opts ...ClientOption) (*LiteTrainRouteOK, *LiteTrainRouteStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewLiteTrainRouteParams()
@@ -407,15 +415,16 @@ func (a *Client) LiteTrainRoute(params *LiteTrainRouteParams, opts ...ClientOpti
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*LiteTrainRouteOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *LiteTrainRouteOK:
+		return value, nil, nil
+	case *LiteTrainRouteStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for LiteTrain_Route: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for a_f_r: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -424,7 +433,7 @@ func (a *Client) LiteTrainRoute(params *LiteTrainRouteParams, opts ...ClientOpti
 
   取得車站基本資料
 */
-func (a *Client) LiteTrainStation(params *LiteTrainStationParams, opts ...ClientOption) (*LiteTrainStationOK, error) {
+func (a *Client) LiteTrainStation(params *LiteTrainStationParams, opts ...ClientOption) (*LiteTrainStationOK, *LiteTrainStationStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewLiteTrainStationParams()
@@ -447,15 +456,16 @@ func (a *Client) LiteTrainStation(params *LiteTrainStationParams, opts ...Client
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*LiteTrainStationOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *LiteTrainStationOK:
+		return value, nil, nil
+	case *LiteTrainStationStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for LiteTrain_Station: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for a_f_r: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -464,7 +474,7 @@ func (a *Client) LiteTrainStation(params *LiteTrainStationParams, opts ...Client
 
   取得路線車站基本資料
 */
-func (a *Client) LiteTrainStationOfLine(params *LiteTrainStationOfLineParams, opts ...ClientOption) (*LiteTrainStationOfLineOK, error) {
+func (a *Client) LiteTrainStationOfLine(params *LiteTrainStationOfLineParams, opts ...ClientOption) (*LiteTrainStationOfLineOK, *LiteTrainStationOfLineStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewLiteTrainStationOfLineParams()
@@ -487,15 +497,16 @@ func (a *Client) LiteTrainStationOfLine(params *LiteTrainStationOfLineParams, op
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*LiteTrainStationOfLineOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *LiteTrainStationOfLineOK:
+		return value, nil, nil
+	case *LiteTrainStationOfLineStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for LiteTrain_StationOfLine: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for a_f_r: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -504,7 +515,7 @@ func (a *Client) LiteTrainStationOfLine(params *LiteTrainStationOfLineParams, op
 
   取得營運路線車站基本資料
 */
-func (a *Client) LiteTrainStationOfRoute(params *LiteTrainStationOfRouteParams, opts ...ClientOption) (*LiteTrainStationOfRouteOK, error) {
+func (a *Client) LiteTrainStationOfRoute(params *LiteTrainStationOfRouteParams, opts ...ClientOption) (*LiteTrainStationOfRouteOK, *LiteTrainStationOfRouteStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewLiteTrainStationOfRouteParams()
@@ -527,15 +538,16 @@ func (a *Client) LiteTrainStationOfRoute(params *LiteTrainStationOfRouteParams, 
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*LiteTrainStationOfRouteOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *LiteTrainStationOfRouteOK:
+		return value, nil, nil
+	case *LiteTrainStationOfRouteStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for LiteTrain_StationOfRoute: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for a_f_r: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -544,7 +556,7 @@ func (a *Client) LiteTrainStationOfRoute(params *LiteTrainStationOfRouteParams, 
 
   取得所有列車車種資料
 */
-func (a *Client) LiteTrainTrainType(params *LiteTrainTrainTypeParams, opts ...ClientOption) (*LiteTrainTrainTypeOK, error) {
+func (a *Client) LiteTrainTrainType(params *LiteTrainTrainTypeParams, opts ...ClientOption) (*LiteTrainTrainTypeOK, *LiteTrainTrainTypeStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewLiteTrainTrainTypeParams()
@@ -567,15 +579,16 @@ func (a *Client) LiteTrainTrainType(params *LiteTrainTrainTypeParams, opts ...Cl
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*LiteTrainTrainTypeOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *LiteTrainTrainTypeOK:
+		return value, nil, nil
+	case *LiteTrainTrainTypeStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for LiteTrain_TrainType: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for a_f_r: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 

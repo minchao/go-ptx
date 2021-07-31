@@ -16,7 +16,7 @@ import (
 
 // PTXServiceDTORailSpecificationV3TRACommonServiceDay ServiceDay
 //
-// 台鐵服務日型態
+// 服務日型態
 //
 // swagger:model PTX.Service.DTO.Rail.Specification.V3.TRA.Common.ServiceDay
 type PTXServiceDTORailSpecificationV3TRACommonServiceDay struct {

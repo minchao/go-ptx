@@ -33,8 +33,18 @@ type PTXServiceDTOBikeSpecificationV2BikeAvailability struct {
 
 	// Int32
 	//
-	// 服務狀態 : [0:'停止營運',1:'正常營運']
+	// 服務狀態 : [0:'停止營運',1:'正常營運',2:'暫停營運']
 	ServiceAvailable int64 `json:"ServiceAvailable,omitempty"`
+
+	// Int32
+	//
+	// 服務狀態 : [0:'停止營運',1:'正常營運',2:'暫停營運']
+	ServiceStatus int64 `json:"ServiceStatus,omitempty"`
+
+	// Int32
+	//
+	// 服務類型 : [1:'YouBike1.0',2:'YouBike2.0']
+	ServiceType int64 `json:"ServiceType,omitempty"`
 
 	// 來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Format: date-time

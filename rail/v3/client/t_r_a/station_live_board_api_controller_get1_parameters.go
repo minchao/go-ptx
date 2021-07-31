@@ -110,6 +110,12 @@ type StationLiveBoardAPIControllerGet1Params struct {
 	*/
 	StationID string
 
+	/* Health.
+
+	   加入參數'?health=true'即可查詢此API服務的健康狀態
+	*/
+	Health *string
+
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
@@ -262,6 +268,17 @@ func (o *StationLiveBoardAPIControllerGet1Params) SetStationID(stationID string)
 	o.StationID = stationID
 }
 
+// WithHealth adds the health to the station live board Api controller get 1 params
+func (o *StationLiveBoardAPIControllerGet1Params) WithHealth(health *string) *StationLiveBoardAPIControllerGet1Params {
+	o.SetHealth(health)
+	return o
+}
+
+// SetHealth adds the health to the station live board Api controller get 1 params
+func (o *StationLiveBoardAPIControllerGet1Params) SetHealth(health *string) {
+	o.Health = health
+}
+
 // WriteToRequest writes these params to a swagger request
 func (o *StationLiveBoardAPIControllerGet1Params) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
 
@@ -385,6 +402,23 @@ func (o *StationLiveBoardAPIControllerGet1Params) WriteToRequest(r runtime.Clien
 	// path param StationID
 	if err := r.SetPathParam("StationID", o.StationID); err != nil {
 		return err
+	}
+
+	if o.Health != nil {
+
+		// query param health
+		var qrHealth string
+
+		if o.Health != nil {
+			qrHealth = *o.Health
+		}
+		qHealth := qrHealth
+		if qHealth != "" {
+
+			if err := r.SetQueryParam("health", qHealth); err != nil {
+				return err
+			}
+		}
 	}
 
 	if len(res) > 0 {

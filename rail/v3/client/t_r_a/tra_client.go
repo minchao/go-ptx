@@ -30,73 +30,73 @@ type ClientOption func(*runtime.ClientOperation)
 
 // ClientService is the interface for Client methods
 type ClientService interface {
-	AlertAPIControllerGet(params *AlertAPIControllerGetParams, opts ...ClientOption) (*AlertAPIControllerGetOK, error)
+	AlertAPIControllerGet(params *AlertAPIControllerGetParams, opts ...ClientOption) (*AlertAPIControllerGetOK, *AlertAPIControllerGetStatus299, error)
 
-	DailyStationTimeTableAPIControllerGet(params *DailyStationTimeTableAPIControllerGetParams, opts ...ClientOption) (*DailyStationTimeTableAPIControllerGetOK, error)
+	DailyStationTimeTableAPIControllerGet(params *DailyStationTimeTableAPIControllerGetParams, opts ...ClientOption) (*DailyStationTimeTableAPIControllerGetOK, *DailyStationTimeTableAPIControllerGetStatus299, error)
 
-	DailyStationTimeTableAPIControllerGet1(params *DailyStationTimeTableAPIControllerGet1Params, opts ...ClientOption) (*DailyStationTimeTableAPIControllerGet1OK, error)
+	DailyStationTimeTableAPIControllerGet1(params *DailyStationTimeTableAPIControllerGet1Params, opts ...ClientOption) (*DailyStationTimeTableAPIControllerGet1OK, *DailyStationTimeTableAPIControllerGet1Status299, error)
 
-	DailyStationTimeTableAPIControllerGet2(params *DailyStationTimeTableAPIControllerGet2Params, opts ...ClientOption) (*DailyStationTimeTableAPIControllerGet2OK, error)
+	DailyStationTimeTableAPIControllerGet2(params *DailyStationTimeTableAPIControllerGet2Params, opts ...ClientOption) (*DailyStationTimeTableAPIControllerGet2OK, *DailyStationTimeTableAPIControllerGet2Status299, error)
 
-	DailyTrainTimeTableAPIControllerGet(params *DailyTrainTimeTableAPIControllerGetParams, opts ...ClientOption) (*DailyTrainTimeTableAPIControllerGetOK, error)
+	DailyTrainTimeTableAPIControllerGet(params *DailyTrainTimeTableAPIControllerGetParams, opts ...ClientOption) (*DailyTrainTimeTableAPIControllerGetOK, *DailyTrainTimeTableAPIControllerGetStatus299, error)
 
-	DailyTrainTimeTableAPIControllerGet1(params *DailyTrainTimeTableAPIControllerGet1Params, opts ...ClientOption) (*DailyTrainTimeTableAPIControllerGet1OK, error)
+	DailyTrainTimeTableAPIControllerGet1(params *DailyTrainTimeTableAPIControllerGet1Params, opts ...ClientOption) (*DailyTrainTimeTableAPIControllerGet1OK, *DailyTrainTimeTableAPIControllerGet1Status299, error)
 
-	DailyTrainTimeTableAPIControllerGet2(params *DailyTrainTimeTableAPIControllerGet2Params, opts ...ClientOption) (*DailyTrainTimeTableAPIControllerGet2OK, error)
+	DailyTrainTimeTableAPIControllerGet2(params *DailyTrainTimeTableAPIControllerGet2Params, opts ...ClientOption) (*DailyTrainTimeTableAPIControllerGet2OK, *DailyTrainTimeTableAPIControllerGet2Status299, error)
 
-	DailyTrainTimeTableAPIControllerGet3(params *DailyTrainTimeTableAPIControllerGet3Params, opts ...ClientOption) (*DailyTrainTimeTableAPIControllerGet3OK, error)
+	DailyTrainTimeTableAPIControllerGet3(params *DailyTrainTimeTableAPIControllerGet3Params, opts ...ClientOption) (*DailyTrainTimeTableAPIControllerGet3OK, *DailyTrainTimeTableAPIControllerGet3Status299, error)
 
-	DailyTrainTimeTableAPIControllerGet4(params *DailyTrainTimeTableAPIControllerGet4Params, opts ...ClientOption) (*DailyTrainTimeTableAPIControllerGet4OK, error)
+	DailyTrainTimeTableAPIControllerGet4(params *DailyTrainTimeTableAPIControllerGet4Params, opts ...ClientOption) (*DailyTrainTimeTableAPIControllerGet4OK, *DailyTrainTimeTableAPIControllerGet4Status299, error)
 
-	GeneralStationTimetableAPIControllerGet(params *GeneralStationTimetableAPIControllerGetParams, opts ...ClientOption) (*GeneralStationTimetableAPIControllerGetOK, error)
+	GeneralStationTimetableAPIControllerGet(params *GeneralStationTimetableAPIControllerGetParams, opts ...ClientOption) (*GeneralStationTimetableAPIControllerGetOK, *GeneralStationTimetableAPIControllerGetStatus299, error)
 
-	GeneralStationTimetableAPIControllerGet1(params *GeneralStationTimetableAPIControllerGet1Params, opts ...ClientOption) (*GeneralStationTimetableAPIControllerGet1OK, error)
+	GeneralStationTimetableAPIControllerGet1(params *GeneralStationTimetableAPIControllerGet1Params, opts ...ClientOption) (*GeneralStationTimetableAPIControllerGet1OK, *GeneralStationTimetableAPIControllerGet1Status299, error)
 
-	GeneralTrainTimetableAPIControllerGet(params *GeneralTrainTimetableAPIControllerGetParams, opts ...ClientOption) (*GeneralTrainTimetableAPIControllerGetOK, error)
+	GeneralTrainTimetableAPIControllerGet(params *GeneralTrainTimetableAPIControllerGetParams, opts ...ClientOption) (*GeneralTrainTimetableAPIControllerGetOK, *GeneralTrainTimetableAPIControllerGetStatus299, error)
 
-	GeneralTrainTimetableAPIControllerGet1(params *GeneralTrainTimetableAPIControllerGet1Params, opts ...ClientOption) (*GeneralTrainTimetableAPIControllerGet1OK, error)
+	GeneralTrainTimetableAPIControllerGet1(params *GeneralTrainTimetableAPIControllerGet1Params, opts ...ClientOption) (*GeneralTrainTimetableAPIControllerGet1OK, *GeneralTrainTimetableAPIControllerGet1Status299, error)
 
-	LineAPIControllerGet(params *LineAPIControllerGetParams, opts ...ClientOption) (*LineAPIControllerGetOK, error)
+	LineAPIControllerGet(params *LineAPIControllerGetParams, opts ...ClientOption) (*LineAPIControllerGetOK, *LineAPIControllerGetStatus299, error)
 
-	LineNetworkAPIControllerGet(params *LineNetworkAPIControllerGetParams, opts ...ClientOption) (*LineNetworkAPIControllerGetOK, error)
+	LineNetworkAPIControllerGet(params *LineNetworkAPIControllerGetParams, opts ...ClientOption) (*LineNetworkAPIControllerGetOK, *LineNetworkAPIControllerGetStatus299, error)
 
-	LineTransferAPIControllerGet(params *LineTransferAPIControllerGetParams, opts ...ClientOption) (*LineTransferAPIControllerGetOK, error)
+	LineTransferAPIControllerGet(params *LineTransferAPIControllerGetParams, opts ...ClientOption) (*LineTransferAPIControllerGetOK, *LineTransferAPIControllerGetStatus299, error)
 
-	NetworkAPIControllerGet(params *NetworkAPIControllerGetParams, opts ...ClientOption) (*NetworkAPIControllerGetOK, error)
+	NetworkAPIControllerGet(params *NetworkAPIControllerGetParams, opts ...ClientOption) (*NetworkAPIControllerGetOK, *NetworkAPIControllerGetStatus299, error)
 
-	NewsAPIControllerGet(params *NewsAPIControllerGetParams, opts ...ClientOption) (*NewsAPIControllerGetOK, error)
+	NewsAPIControllerGet(params *NewsAPIControllerGetParams, opts ...ClientOption) (*NewsAPIControllerGetOK, *NewsAPIControllerGetStatus299, error)
 
-	ODFareAPIControllerAPIControllerGet(params *ODFareAPIControllerAPIControllerGetParams, opts ...ClientOption) (*ODFareAPIControllerAPIControllerGetOK, error)
+	ODFareAPIControllerAPIControllerGet(params *ODFareAPIControllerAPIControllerGetParams, opts ...ClientOption) (*ODFareAPIControllerAPIControllerGetOK, *ODFareAPIControllerAPIControllerGetStatus299, error)
 
-	ODFareAPIControllerAPIControllerGet1(params *ODFareAPIControllerAPIControllerGet1Params, opts ...ClientOption) (*ODFareAPIControllerAPIControllerGet1OK, error)
+	ODFareAPIControllerAPIControllerGet1(params *ODFareAPIControllerAPIControllerGet1Params, opts ...ClientOption) (*ODFareAPIControllerAPIControllerGet1OK, *ODFareAPIControllerAPIControllerGet1Status299, error)
 
-	OperatorAPIControllerGet(params *OperatorAPIControllerGetParams, opts ...ClientOption) (*OperatorAPIControllerGetOK, error)
+	OperatorAPIControllerGet(params *OperatorAPIControllerGetParams, opts ...ClientOption) (*OperatorAPIControllerGetOK, *OperatorAPIControllerGetStatus299, error)
 
-	ShapeAPIControllerGet(params *ShapeAPIControllerGetParams, opts ...ClientOption) (*ShapeAPIControllerGetOK, error)
+	ShapeAPIControllerGet(params *ShapeAPIControllerGetParams, opts ...ClientOption) (*ShapeAPIControllerGetOK, *ShapeAPIControllerGetStatus299, error)
 
-	SpecificTrainTimetableAPIControllerGet(params *SpecificTrainTimetableAPIControllerGetParams, opts ...ClientOption) (*SpecificTrainTimetableAPIControllerGetOK, error)
+	SpecificTrainTimetableAPIControllerGet(params *SpecificTrainTimetableAPIControllerGetParams, opts ...ClientOption) (*SpecificTrainTimetableAPIControllerGetOK, *SpecificTrainTimetableAPIControllerGetStatus299, error)
 
-	SpecificTrainTimetableAPIControllerGet1(params *SpecificTrainTimetableAPIControllerGet1Params, opts ...ClientOption) (*SpecificTrainTimetableAPIControllerGet1OK, error)
+	SpecificTrainTimetableAPIControllerGet1(params *SpecificTrainTimetableAPIControllerGet1Params, opts ...ClientOption) (*SpecificTrainTimetableAPIControllerGet1OK, *SpecificTrainTimetableAPIControllerGet1Status299, error)
 
-	StationAPIControllerGet(params *StationAPIControllerGetParams, opts ...ClientOption) (*StationAPIControllerGetOK, error)
+	StationAPIControllerGet(params *StationAPIControllerGetParams, opts ...ClientOption) (*StationAPIControllerGetOK, *StationAPIControllerGetStatus299, error)
 
-	StationExitAPIControllerGet(params *StationExitAPIControllerGetParams, opts ...ClientOption) (*StationExitAPIControllerGetOK, error)
+	StationExitAPIControllerGet(params *StationExitAPIControllerGetParams, opts ...ClientOption) (*StationExitAPIControllerGetOK, *StationExitAPIControllerGetStatus299, error)
 
-	StationFacilityAPIControllerGet(params *StationFacilityAPIControllerGetParams, opts ...ClientOption) (*StationFacilityAPIControllerGetOK, error)
+	StationFacilityAPIControllerGet(params *StationFacilityAPIControllerGetParams, opts ...ClientOption) (*StationFacilityAPIControllerGetOK, *StationFacilityAPIControllerGetStatus299, error)
 
-	StationLiveBoardAPIControllerGet(params *StationLiveBoardAPIControllerGetParams, opts ...ClientOption) (*StationLiveBoardAPIControllerGetOK, error)
+	StationLiveBoardAPIControllerGet(params *StationLiveBoardAPIControllerGetParams, opts ...ClientOption) (*StationLiveBoardAPIControllerGetOK, *StationLiveBoardAPIControllerGetStatus299, error)
 
-	StationLiveBoardAPIControllerGet1(params *StationLiveBoardAPIControllerGet1Params, opts ...ClientOption) (*StationLiveBoardAPIControllerGet1OK, error)
+	StationLiveBoardAPIControllerGet1(params *StationLiveBoardAPIControllerGet1Params, opts ...ClientOption) (*StationLiveBoardAPIControllerGet1OK, *StationLiveBoardAPIControllerGet1Status299, error)
 
-	StationOfLineAPIControllerGet(params *StationOfLineAPIControllerGetParams, opts ...ClientOption) (*StationOfLineAPIControllerGetOK, error)
+	StationOfLineAPIControllerGet(params *StationOfLineAPIControllerGetParams, opts ...ClientOption) (*StationOfLineAPIControllerGetOK, *StationOfLineAPIControllerGetStatus299, error)
 
-	StationTransferAPIControllerGet(params *StationTransferAPIControllerGetParams, opts ...ClientOption) (*StationTransferAPIControllerGetOK, error)
+	StationTransferAPIControllerGet(params *StationTransferAPIControllerGetParams, opts ...ClientOption) (*StationTransferAPIControllerGetOK, *StationTransferAPIControllerGetStatus299, error)
 
-	TrainLiveBoardAPIControllerGet(params *TrainLiveBoardAPIControllerGetParams, opts ...ClientOption) (*TrainLiveBoardAPIControllerGetOK, error)
+	TrainLiveBoardAPIControllerGet(params *TrainLiveBoardAPIControllerGetParams, opts ...ClientOption) (*TrainLiveBoardAPIControllerGetOK, *TrainLiveBoardAPIControllerGetStatus299, error)
 
-	TrainLiveBoardAPIControllerGet1(params *TrainLiveBoardAPIControllerGet1Params, opts ...ClientOption) (*TrainLiveBoardAPIControllerGet1OK, error)
+	TrainLiveBoardAPIControllerGet1(params *TrainLiveBoardAPIControllerGet1Params, opts ...ClientOption) (*TrainLiveBoardAPIControllerGet1OK, *TrainLiveBoardAPIControllerGet1Status299, error)
 
-	TrainTypeAPIControllerGet(params *TrainTypeAPIControllerGetParams, opts ...ClientOption) (*TrainTypeAPIControllerGetOK, error)
+	TrainTypeAPIControllerGet(params *TrainTypeAPIControllerGetParams, opts ...ClientOption) (*TrainTypeAPIControllerGetOK, *TrainTypeAPIControllerGetStatus299, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
@@ -106,7 +106,7 @@ type ClientService interface {
 
   取得營運通阻資料
 */
-func (a *Client) AlertAPIControllerGet(params *AlertAPIControllerGetParams, opts ...ClientOption) (*AlertAPIControllerGetOK, error) {
+func (a *Client) AlertAPIControllerGet(params *AlertAPIControllerGetParams, opts ...ClientOption) (*AlertAPIControllerGetOK, *AlertAPIControllerGetStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewAlertAPIControllerGetParams()
@@ -129,15 +129,16 @@ func (a *Client) AlertAPIControllerGet(params *AlertAPIControllerGetParams, opts
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*AlertAPIControllerGetOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *AlertAPIControllerGetOK:
+		return value, nil, nil
+	case *AlertAPIControllerGetStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for AlertApiController_Get: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_r_a: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -146,7 +147,7 @@ func (a *Client) AlertAPIControllerGet(params *AlertAPIControllerGetParams, opts
 
   取得當天各站站別時刻表資料
 */
-func (a *Client) DailyStationTimeTableAPIControllerGet(params *DailyStationTimeTableAPIControllerGetParams, opts ...ClientOption) (*DailyStationTimeTableAPIControllerGetOK, error) {
+func (a *Client) DailyStationTimeTableAPIControllerGet(params *DailyStationTimeTableAPIControllerGetParams, opts ...ClientOption) (*DailyStationTimeTableAPIControllerGetOK, *DailyStationTimeTableAPIControllerGetStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDailyStationTimeTableAPIControllerGetParams()
@@ -169,15 +170,16 @@ func (a *Client) DailyStationTimeTableAPIControllerGet(params *DailyStationTimeT
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*DailyStationTimeTableAPIControllerGetOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *DailyStationTimeTableAPIControllerGetOK:
+		return value, nil, nil
+	case *DailyStationTimeTableAPIControllerGetStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for DailyStationTimeTableApiController_Get: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_r_a: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -186,7 +188,7 @@ func (a *Client) DailyStationTimeTableAPIControllerGet(params *DailyStationTimeT
 
   取得當天指定[車站]的時刻表資料
 */
-func (a *Client) DailyStationTimeTableAPIControllerGet1(params *DailyStationTimeTableAPIControllerGet1Params, opts ...ClientOption) (*DailyStationTimeTableAPIControllerGet1OK, error) {
+func (a *Client) DailyStationTimeTableAPIControllerGet1(params *DailyStationTimeTableAPIControllerGet1Params, opts ...ClientOption) (*DailyStationTimeTableAPIControllerGet1OK, *DailyStationTimeTableAPIControllerGet1Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDailyStationTimeTableAPIControllerGet1Params()
@@ -209,15 +211,16 @@ func (a *Client) DailyStationTimeTableAPIControllerGet1(params *DailyStationTime
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*DailyStationTimeTableAPIControllerGet1OK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *DailyStationTimeTableAPIControllerGet1OK:
+		return value, nil, nil
+	case *DailyStationTimeTableAPIControllerGet1Status299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for DailyStationTimeTableApiController_Get_1: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_r_a: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -226,7 +229,7 @@ func (a *Client) DailyStationTimeTableAPIControllerGet1(params *DailyStationTime
 
   取得各站每日站別時刻表資料
 */
-func (a *Client) DailyStationTimeTableAPIControllerGet2(params *DailyStationTimeTableAPIControllerGet2Params, opts ...ClientOption) (*DailyStationTimeTableAPIControllerGet2OK, error) {
+func (a *Client) DailyStationTimeTableAPIControllerGet2(params *DailyStationTimeTableAPIControllerGet2Params, opts ...ClientOption) (*DailyStationTimeTableAPIControllerGet2OK, *DailyStationTimeTableAPIControllerGet2Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDailyStationTimeTableAPIControllerGet2Params()
@@ -249,15 +252,16 @@ func (a *Client) DailyStationTimeTableAPIControllerGet2(params *DailyStationTime
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*DailyStationTimeTableAPIControllerGet2OK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *DailyStationTimeTableAPIControllerGet2OK:
+		return value, nil, nil
+	case *DailyStationTimeTableAPIControllerGet2Status299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for DailyStationTimeTableApiController_Get_2: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_r_a: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -266,7 +270,7 @@ func (a *Client) DailyStationTimeTableAPIControllerGet2(params *DailyStationTime
 
   取得當天車次時刻表資料
 */
-func (a *Client) DailyTrainTimeTableAPIControllerGet(params *DailyTrainTimeTableAPIControllerGetParams, opts ...ClientOption) (*DailyTrainTimeTableAPIControllerGetOK, error) {
+func (a *Client) DailyTrainTimeTableAPIControllerGet(params *DailyTrainTimeTableAPIControllerGetParams, opts ...ClientOption) (*DailyTrainTimeTableAPIControllerGetOK, *DailyTrainTimeTableAPIControllerGetStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDailyTrainTimeTableAPIControllerGetParams()
@@ -289,15 +293,16 @@ func (a *Client) DailyTrainTimeTableAPIControllerGet(params *DailyTrainTimeTable
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*DailyTrainTimeTableAPIControllerGetOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *DailyTrainTimeTableAPIControllerGetOK:
+		return value, nil, nil
+	case *DailyTrainTimeTableAPIControllerGetStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for DailyTrainTimeTableApiController_Get: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_r_a: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -306,7 +311,7 @@ func (a *Client) DailyTrainTimeTableAPIControllerGet(params *DailyTrainTimeTable
 
   取得當天指定[車次]的時刻表資料
 */
-func (a *Client) DailyTrainTimeTableAPIControllerGet1(params *DailyTrainTimeTableAPIControllerGet1Params, opts ...ClientOption) (*DailyTrainTimeTableAPIControllerGet1OK, error) {
+func (a *Client) DailyTrainTimeTableAPIControllerGet1(params *DailyTrainTimeTableAPIControllerGet1Params, opts ...ClientOption) (*DailyTrainTimeTableAPIControllerGet1OK, *DailyTrainTimeTableAPIControllerGet1Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDailyTrainTimeTableAPIControllerGet1Params()
@@ -329,15 +334,16 @@ func (a *Client) DailyTrainTimeTableAPIControllerGet1(params *DailyTrainTimeTabl
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*DailyTrainTimeTableAPIControllerGet1OK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *DailyTrainTimeTableAPIControllerGet1OK:
+		return value, nil, nil
+	case *DailyTrainTimeTableAPIControllerGet1Status299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for DailyTrainTimeTableApiController_Get_1: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_r_a: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -346,7 +352,7 @@ func (a *Client) DailyTrainTimeTableAPIControllerGet1(params *DailyTrainTimeTabl
 
   取得指定[日期]所有車次的時刻表資料(台鐵提供近60天每日時刻表)
 */
-func (a *Client) DailyTrainTimeTableAPIControllerGet2(params *DailyTrainTimeTableAPIControllerGet2Params, opts ...ClientOption) (*DailyTrainTimeTableAPIControllerGet2OK, error) {
+func (a *Client) DailyTrainTimeTableAPIControllerGet2(params *DailyTrainTimeTableAPIControllerGet2Params, opts ...ClientOption) (*DailyTrainTimeTableAPIControllerGet2OK, *DailyTrainTimeTableAPIControllerGet2Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDailyTrainTimeTableAPIControllerGet2Params()
@@ -369,15 +375,16 @@ func (a *Client) DailyTrainTimeTableAPIControllerGet2(params *DailyTrainTimeTabl
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*DailyTrainTimeTableAPIControllerGet2OK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *DailyTrainTimeTableAPIControllerGet2OK:
+		return value, nil, nil
+	case *DailyTrainTimeTableAPIControllerGet2Status299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for DailyTrainTimeTableApiController_Get_2: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_r_a: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -386,7 +393,7 @@ func (a *Client) DailyTrainTimeTableAPIControllerGet2(params *DailyTrainTimeTabl
 
   取得指定[日期],[起迄站間]之站間時刻表資料(僅列出查詢的停靠站)
 */
-func (a *Client) DailyTrainTimeTableAPIControllerGet3(params *DailyTrainTimeTableAPIControllerGet3Params, opts ...ClientOption) (*DailyTrainTimeTableAPIControllerGet3OK, error) {
+func (a *Client) DailyTrainTimeTableAPIControllerGet3(params *DailyTrainTimeTableAPIControllerGet3Params, opts ...ClientOption) (*DailyTrainTimeTableAPIControllerGet3OK, *DailyTrainTimeTableAPIControllerGet3Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDailyTrainTimeTableAPIControllerGet3Params()
@@ -409,15 +416,16 @@ func (a *Client) DailyTrainTimeTableAPIControllerGet3(params *DailyTrainTimeTabl
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*DailyTrainTimeTableAPIControllerGet3OK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *DailyTrainTimeTableAPIControllerGet3OK:
+		return value, nil, nil
+	case *DailyTrainTimeTableAPIControllerGet3Status299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for DailyTrainTimeTableApiController_Get_3: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_r_a: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -426,7 +434,7 @@ func (a *Client) DailyTrainTimeTableAPIControllerGet3(params *DailyTrainTimeTabl
 
   取得指定[日期],[起迄站間]之站間時刻表資料
 */
-func (a *Client) DailyTrainTimeTableAPIControllerGet4(params *DailyTrainTimeTableAPIControllerGet4Params, opts ...ClientOption) (*DailyTrainTimeTableAPIControllerGet4OK, error) {
+func (a *Client) DailyTrainTimeTableAPIControllerGet4(params *DailyTrainTimeTableAPIControllerGet4Params, opts ...ClientOption) (*DailyTrainTimeTableAPIControllerGet4OK, *DailyTrainTimeTableAPIControllerGet4Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewDailyTrainTimeTableAPIControllerGet4Params()
@@ -449,15 +457,16 @@ func (a *Client) DailyTrainTimeTableAPIControllerGet4(params *DailyTrainTimeTabl
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*DailyTrainTimeTableAPIControllerGet4OK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *DailyTrainTimeTableAPIControllerGet4OK:
+		return value, nil, nil
+	case *DailyTrainTimeTableAPIControllerGet4Status299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for DailyTrainTimeTableApiController_Get_4: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_r_a: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -466,7 +475,7 @@ func (a *Client) DailyTrainTimeTableAPIControllerGet4(params *DailyTrainTimeTabl
 
   取得各站的定期站別時刻表資料
 */
-func (a *Client) GeneralStationTimetableAPIControllerGet(params *GeneralStationTimetableAPIControllerGetParams, opts ...ClientOption) (*GeneralStationTimetableAPIControllerGetOK, error) {
+func (a *Client) GeneralStationTimetableAPIControllerGet(params *GeneralStationTimetableAPIControllerGetParams, opts ...ClientOption) (*GeneralStationTimetableAPIControllerGetOK, *GeneralStationTimetableAPIControllerGetStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGeneralStationTimetableAPIControllerGetParams()
@@ -489,15 +498,16 @@ func (a *Client) GeneralStationTimetableAPIControllerGet(params *GeneralStationT
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*GeneralStationTimetableAPIControllerGetOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *GeneralStationTimetableAPIControllerGetOK:
+		return value, nil, nil
+	case *GeneralStationTimetableAPIControllerGetStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for GeneralStationTimetableApiController_Get: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_r_a: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -506,7 +516,7 @@ func (a *Client) GeneralStationTimetableAPIControllerGet(params *GeneralStationT
 
   取得指定[車站]的定期站別時刻表資料
 */
-func (a *Client) GeneralStationTimetableAPIControllerGet1(params *GeneralStationTimetableAPIControllerGet1Params, opts ...ClientOption) (*GeneralStationTimetableAPIControllerGet1OK, error) {
+func (a *Client) GeneralStationTimetableAPIControllerGet1(params *GeneralStationTimetableAPIControllerGet1Params, opts ...ClientOption) (*GeneralStationTimetableAPIControllerGet1OK, *GeneralStationTimetableAPIControllerGet1Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGeneralStationTimetableAPIControllerGet1Params()
@@ -529,15 +539,16 @@ func (a *Client) GeneralStationTimetableAPIControllerGet1(params *GeneralStation
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*GeneralStationTimetableAPIControllerGet1OK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *GeneralStationTimetableAPIControllerGet1OK:
+		return value, nil, nil
+	case *GeneralStationTimetableAPIControllerGet1Status299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for GeneralStationTimetableApiController_Get_1: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_r_a: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -546,7 +557,7 @@ func (a *Client) GeneralStationTimetableAPIControllerGet1(params *GeneralStation
 
   取得所有車次的定期時刻表資料
 */
-func (a *Client) GeneralTrainTimetableAPIControllerGet(params *GeneralTrainTimetableAPIControllerGetParams, opts ...ClientOption) (*GeneralTrainTimetableAPIControllerGetOK, error) {
+func (a *Client) GeneralTrainTimetableAPIControllerGet(params *GeneralTrainTimetableAPIControllerGetParams, opts ...ClientOption) (*GeneralTrainTimetableAPIControllerGetOK, *GeneralTrainTimetableAPIControllerGetStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGeneralTrainTimetableAPIControllerGetParams()
@@ -569,15 +580,16 @@ func (a *Client) GeneralTrainTimetableAPIControllerGet(params *GeneralTrainTimet
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*GeneralTrainTimetableAPIControllerGetOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *GeneralTrainTimetableAPIControllerGetOK:
+		return value, nil, nil
+	case *GeneralTrainTimetableAPIControllerGetStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for GeneralTrainTimetableApiController_Get: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_r_a: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -586,7 +598,7 @@ func (a *Client) GeneralTrainTimetableAPIControllerGet(params *GeneralTrainTimet
 
   取得指定[車次]的定期時刻表資料
 */
-func (a *Client) GeneralTrainTimetableAPIControllerGet1(params *GeneralTrainTimetableAPIControllerGet1Params, opts ...ClientOption) (*GeneralTrainTimetableAPIControllerGet1OK, error) {
+func (a *Client) GeneralTrainTimetableAPIControllerGet1(params *GeneralTrainTimetableAPIControllerGet1Params, opts ...ClientOption) (*GeneralTrainTimetableAPIControllerGet1OK, *GeneralTrainTimetableAPIControllerGet1Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewGeneralTrainTimetableAPIControllerGet1Params()
@@ -609,15 +621,16 @@ func (a *Client) GeneralTrainTimetableAPIControllerGet1(params *GeneralTrainTime
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*GeneralTrainTimetableAPIControllerGet1OK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *GeneralTrainTimetableAPIControllerGet1OK:
+		return value, nil, nil
+	case *GeneralTrainTimetableAPIControllerGet1Status299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for GeneralTrainTimetableApiController_Get_1: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_r_a: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -626,7 +639,7 @@ func (a *Client) GeneralTrainTimetableAPIControllerGet1(params *GeneralTrainTime
 
   取得路線基本資料
 */
-func (a *Client) LineAPIControllerGet(params *LineAPIControllerGetParams, opts ...ClientOption) (*LineAPIControllerGetOK, error) {
+func (a *Client) LineAPIControllerGet(params *LineAPIControllerGetParams, opts ...ClientOption) (*LineAPIControllerGetOK, *LineAPIControllerGetStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewLineAPIControllerGetParams()
@@ -649,15 +662,16 @@ func (a *Client) LineAPIControllerGet(params *LineAPIControllerGetParams, opts .
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*LineAPIControllerGetOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *LineAPIControllerGetOK:
+		return value, nil, nil
+	case *LineAPIControllerGetStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for LineApiController_Get: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_r_a: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -666,7 +680,7 @@ func (a *Client) LineAPIControllerGet(params *LineAPIControllerGetParams, opts .
 
   取得路線網路拓撲基本資料
 */
-func (a *Client) LineNetworkAPIControllerGet(params *LineNetworkAPIControllerGetParams, opts ...ClientOption) (*LineNetworkAPIControllerGetOK, error) {
+func (a *Client) LineNetworkAPIControllerGet(params *LineNetworkAPIControllerGetParams, opts ...ClientOption) (*LineNetworkAPIControllerGetOK, *LineNetworkAPIControllerGetStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewLineNetworkAPIControllerGetParams()
@@ -689,15 +703,16 @@ func (a *Client) LineNetworkAPIControllerGet(params *LineNetworkAPIControllerGet
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*LineNetworkAPIControllerGetOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *LineNetworkAPIControllerGetOK:
+		return value, nil, nil
+	case *LineNetworkAPIControllerGetStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for LineNetworkApiController_Get: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_r_a: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -706,7 +721,7 @@ func (a *Client) LineNetworkAPIControllerGet(params *LineNetworkAPIControllerGet
 
   取得內部路線轉乘資料
 */
-func (a *Client) LineTransferAPIControllerGet(params *LineTransferAPIControllerGetParams, opts ...ClientOption) (*LineTransferAPIControllerGetOK, error) {
+func (a *Client) LineTransferAPIControllerGet(params *LineTransferAPIControllerGetParams, opts ...ClientOption) (*LineTransferAPIControllerGetOK, *LineTransferAPIControllerGetStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewLineTransferAPIControllerGetParams()
@@ -729,15 +744,16 @@ func (a *Client) LineTransferAPIControllerGet(params *LineTransferAPIControllerG
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*LineTransferAPIControllerGetOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *LineTransferAPIControllerGetOK:
+		return value, nil, nil
+	case *LineTransferAPIControllerGetStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for LineTransferApiController_Get: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_r_a: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -746,7 +762,7 @@ func (a *Client) LineTransferAPIControllerGet(params *LineTransferAPIControllerG
 
   取得臺鐵路網資料
 */
-func (a *Client) NetworkAPIControllerGet(params *NetworkAPIControllerGetParams, opts ...ClientOption) (*NetworkAPIControllerGetOK, error) {
+func (a *Client) NetworkAPIControllerGet(params *NetworkAPIControllerGetParams, opts ...ClientOption) (*NetworkAPIControllerGetOK, *NetworkAPIControllerGetStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewNetworkAPIControllerGetParams()
@@ -769,15 +785,16 @@ func (a *Client) NetworkAPIControllerGet(params *NetworkAPIControllerGetParams, 
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*NetworkAPIControllerGetOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *NetworkAPIControllerGetOK:
+		return value, nil, nil
+	case *NetworkAPIControllerGetStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for NetworkApiController_Get: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_r_a: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -786,7 +803,7 @@ func (a *Client) NetworkAPIControllerGet(params *NetworkAPIControllerGetParams, 
 
   取得最新消息
 */
-func (a *Client) NewsAPIControllerGet(params *NewsAPIControllerGetParams, opts ...ClientOption) (*NewsAPIControllerGetOK, error) {
+func (a *Client) NewsAPIControllerGet(params *NewsAPIControllerGetParams, opts ...ClientOption) (*NewsAPIControllerGetOK, *NewsAPIControllerGetStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewNewsAPIControllerGetParams()
@@ -809,15 +826,16 @@ func (a *Client) NewsAPIControllerGet(params *NewsAPIControllerGetParams, opts .
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*NewsAPIControllerGetOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *NewsAPIControllerGetOK:
+		return value, nil, nil
+	case *NewsAPIControllerGetStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for NewsApiController_Get: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_r_a: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -826,7 +844,7 @@ func (a *Client) NewsAPIControllerGet(params *NewsAPIControllerGetParams, opts .
 
   取得Gzip壓縮檔
 */
-func (a *Client) ODFareAPIControllerAPIControllerGet(params *ODFareAPIControllerAPIControllerGetParams, opts ...ClientOption) (*ODFareAPIControllerAPIControllerGetOK, error) {
+func (a *Client) ODFareAPIControllerAPIControllerGet(params *ODFareAPIControllerAPIControllerGetParams, opts ...ClientOption) (*ODFareAPIControllerAPIControllerGetOK, *ODFareAPIControllerAPIControllerGetStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewODFareAPIControllerAPIControllerGetParams()
@@ -849,15 +867,16 @@ func (a *Client) ODFareAPIControllerAPIControllerGet(params *ODFareAPIController
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*ODFareAPIControllerAPIControllerGetOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *ODFareAPIControllerAPIControllerGetOK:
+		return value, nil, nil
+	case *ODFareAPIControllerAPIControllerGetStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for ODFareApiControllerApiController_Get: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_r_a: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -866,7 +885,7 @@ func (a *Client) ODFareAPIControllerAPIControllerGet(params *ODFareAPIController
 
   取得指定起迄站間票價資料
 */
-func (a *Client) ODFareAPIControllerAPIControllerGet1(params *ODFareAPIControllerAPIControllerGet1Params, opts ...ClientOption) (*ODFareAPIControllerAPIControllerGet1OK, error) {
+func (a *Client) ODFareAPIControllerAPIControllerGet1(params *ODFareAPIControllerAPIControllerGet1Params, opts ...ClientOption) (*ODFareAPIControllerAPIControllerGet1OK, *ODFareAPIControllerAPIControllerGet1Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewODFareAPIControllerAPIControllerGet1Params()
@@ -889,15 +908,16 @@ func (a *Client) ODFareAPIControllerAPIControllerGet1(params *ODFareAPIControlle
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*ODFareAPIControllerAPIControllerGet1OK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *ODFareAPIControllerAPIControllerGet1OK:
+		return value, nil, nil
+	case *ODFareAPIControllerAPIControllerGet1Status299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for ODFareApiControllerApiController_Get_1: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_r_a: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -906,7 +926,7 @@ func (a *Client) ODFareAPIControllerAPIControllerGet1(params *ODFareAPIControlle
 
   取得台鐵營運業者基本資料
 */
-func (a *Client) OperatorAPIControllerGet(params *OperatorAPIControllerGetParams, opts ...ClientOption) (*OperatorAPIControllerGetOK, error) {
+func (a *Client) OperatorAPIControllerGet(params *OperatorAPIControllerGetParams, opts ...ClientOption) (*OperatorAPIControllerGetOK, *OperatorAPIControllerGetStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewOperatorAPIControllerGetParams()
@@ -929,15 +949,16 @@ func (a *Client) OperatorAPIControllerGet(params *OperatorAPIControllerGetParams
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*OperatorAPIControllerGetOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *OperatorAPIControllerGetOK:
+		return value, nil, nil
+	case *OperatorAPIControllerGetStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for OperatorApiController_Get: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_r_a: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -946,7 +967,7 @@ func (a *Client) OperatorAPIControllerGet(params *OperatorAPIControllerGetParams
 
   取得線型基本資料
 */
-func (a *Client) ShapeAPIControllerGet(params *ShapeAPIControllerGetParams, opts ...ClientOption) (*ShapeAPIControllerGetOK, error) {
+func (a *Client) ShapeAPIControllerGet(params *ShapeAPIControllerGetParams, opts ...ClientOption) (*ShapeAPIControllerGetOK, *ShapeAPIControllerGetStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewShapeAPIControllerGetParams()
@@ -969,15 +990,16 @@ func (a *Client) ShapeAPIControllerGet(params *ShapeAPIControllerGetParams, opts
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*ShapeAPIControllerGetOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *ShapeAPIControllerGetOK:
+		return value, nil, nil
+	case *ShapeAPIControllerGetStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for ShapeApiController_Get: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_r_a: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -986,7 +1008,7 @@ func (a *Client) ShapeAPIControllerGet(params *ShapeAPIControllerGetParams, opts
 
   取得所有特殊車次時刻表資料
 */
-func (a *Client) SpecificTrainTimetableAPIControllerGet(params *SpecificTrainTimetableAPIControllerGetParams, opts ...ClientOption) (*SpecificTrainTimetableAPIControllerGetOK, error) {
+func (a *Client) SpecificTrainTimetableAPIControllerGet(params *SpecificTrainTimetableAPIControllerGetParams, opts ...ClientOption) (*SpecificTrainTimetableAPIControllerGetOK, *SpecificTrainTimetableAPIControllerGetStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewSpecificTrainTimetableAPIControllerGetParams()
@@ -1009,15 +1031,16 @@ func (a *Client) SpecificTrainTimetableAPIControllerGet(params *SpecificTrainTim
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*SpecificTrainTimetableAPIControllerGetOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *SpecificTrainTimetableAPIControllerGetOK:
+		return value, nil, nil
+	case *SpecificTrainTimetableAPIControllerGetStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for SpecificTrainTimetableApiController_Get: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_r_a: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -1026,7 +1049,7 @@ func (a *Client) SpecificTrainTimetableAPIControllerGet(params *SpecificTrainTim
 
   取得指定[車次]的特殊車次時刻表資料
 */
-func (a *Client) SpecificTrainTimetableAPIControllerGet1(params *SpecificTrainTimetableAPIControllerGet1Params, opts ...ClientOption) (*SpecificTrainTimetableAPIControllerGet1OK, error) {
+func (a *Client) SpecificTrainTimetableAPIControllerGet1(params *SpecificTrainTimetableAPIControllerGet1Params, opts ...ClientOption) (*SpecificTrainTimetableAPIControllerGet1OK, *SpecificTrainTimetableAPIControllerGet1Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewSpecificTrainTimetableAPIControllerGet1Params()
@@ -1049,15 +1072,16 @@ func (a *Client) SpecificTrainTimetableAPIControllerGet1(params *SpecificTrainTi
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*SpecificTrainTimetableAPIControllerGet1OK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *SpecificTrainTimetableAPIControllerGet1OK:
+		return value, nil, nil
+	case *SpecificTrainTimetableAPIControllerGet1Status299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for SpecificTrainTimetableApiController_Get_1: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_r_a: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -1066,7 +1090,7 @@ func (a *Client) SpecificTrainTimetableAPIControllerGet1(params *SpecificTrainTi
 
   取得車站基本資料
 */
-func (a *Client) StationAPIControllerGet(params *StationAPIControllerGetParams, opts ...ClientOption) (*StationAPIControllerGetOK, error) {
+func (a *Client) StationAPIControllerGet(params *StationAPIControllerGetParams, opts ...ClientOption) (*StationAPIControllerGetOK, *StationAPIControllerGetStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewStationAPIControllerGetParams()
@@ -1089,15 +1113,16 @@ func (a *Client) StationAPIControllerGet(params *StationAPIControllerGetParams, 
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*StationAPIControllerGetOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *StationAPIControllerGetOK:
+		return value, nil, nil
+	case *StationAPIControllerGetStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for StationApiController_Get: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_r_a: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -1106,7 +1131,7 @@ func (a *Client) StationAPIControllerGet(params *StationAPIControllerGetParams, 
 
   取得車站出入口基本資料
 */
-func (a *Client) StationExitAPIControllerGet(params *StationExitAPIControllerGetParams, opts ...ClientOption) (*StationExitAPIControllerGetOK, error) {
+func (a *Client) StationExitAPIControllerGet(params *StationExitAPIControllerGetParams, opts ...ClientOption) (*StationExitAPIControllerGetOK, *StationExitAPIControllerGetStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewStationExitAPIControllerGetParams()
@@ -1129,15 +1154,16 @@ func (a *Client) StationExitAPIControllerGet(params *StationExitAPIControllerGet
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*StationExitAPIControllerGetOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *StationExitAPIControllerGetOK:
+		return value, nil, nil
+	case *StationExitAPIControllerGetStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for StationExitApiController_Get: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_r_a: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -1146,7 +1172,7 @@ func (a *Client) StationExitAPIControllerGet(params *StationExitAPIControllerGet
 
   取得車站設施資料
 */
-func (a *Client) StationFacilityAPIControllerGet(params *StationFacilityAPIControllerGetParams, opts ...ClientOption) (*StationFacilityAPIControllerGetOK, error) {
+func (a *Client) StationFacilityAPIControllerGet(params *StationFacilityAPIControllerGetParams, opts ...ClientOption) (*StationFacilityAPIControllerGetOK, *StationFacilityAPIControllerGetStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewStationFacilityAPIControllerGetParams()
@@ -1169,15 +1195,16 @@ func (a *Client) StationFacilityAPIControllerGet(params *StationFacilityAPIContr
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*StationFacilityAPIControllerGetOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *StationFacilityAPIControllerGetOK:
+		return value, nil, nil
+	case *StationFacilityAPIControllerGetStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for StationFacilityApiController_Get: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_r_a: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -1186,7 +1213,7 @@ func (a *Client) StationFacilityAPIControllerGet(params *StationFacilityAPIContr
 
   取得列車即時到離站資料
 */
-func (a *Client) StationLiveBoardAPIControllerGet(params *StationLiveBoardAPIControllerGetParams, opts ...ClientOption) (*StationLiveBoardAPIControllerGetOK, error) {
+func (a *Client) StationLiveBoardAPIControllerGet(params *StationLiveBoardAPIControllerGetParams, opts ...ClientOption) (*StationLiveBoardAPIControllerGetOK, *StationLiveBoardAPIControllerGetStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewStationLiveBoardAPIControllerGetParams()
@@ -1209,15 +1236,16 @@ func (a *Client) StationLiveBoardAPIControllerGet(params *StationLiveBoardAPICon
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*StationLiveBoardAPIControllerGetOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *StationLiveBoardAPIControllerGetOK:
+		return value, nil, nil
+	case *StationLiveBoardAPIControllerGetStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for StationLiveBoardApiController_Get: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_r_a: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -1226,7 +1254,7 @@ func (a *Client) StationLiveBoardAPIControllerGet(params *StationLiveBoardAPICon
 
   取得指定[車站]的列車即時到離站資料
 */
-func (a *Client) StationLiveBoardAPIControllerGet1(params *StationLiveBoardAPIControllerGet1Params, opts ...ClientOption) (*StationLiveBoardAPIControllerGet1OK, error) {
+func (a *Client) StationLiveBoardAPIControllerGet1(params *StationLiveBoardAPIControllerGet1Params, opts ...ClientOption) (*StationLiveBoardAPIControllerGet1OK, *StationLiveBoardAPIControllerGet1Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewStationLiveBoardAPIControllerGet1Params()
@@ -1249,15 +1277,16 @@ func (a *Client) StationLiveBoardAPIControllerGet1(params *StationLiveBoardAPICo
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*StationLiveBoardAPIControllerGet1OK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *StationLiveBoardAPIControllerGet1OK:
+		return value, nil, nil
+	case *StationLiveBoardAPIControllerGet1Status299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for StationLiveBoardApiController_Get_1: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_r_a: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -1266,7 +1295,7 @@ func (a *Client) StationLiveBoardAPIControllerGet1(params *StationLiveBoardAPICo
 
   取得路線車站基本資料
 */
-func (a *Client) StationOfLineAPIControllerGet(params *StationOfLineAPIControllerGetParams, opts ...ClientOption) (*StationOfLineAPIControllerGetOK, error) {
+func (a *Client) StationOfLineAPIControllerGet(params *StationOfLineAPIControllerGetParams, opts ...ClientOption) (*StationOfLineAPIControllerGetOK, *StationOfLineAPIControllerGetStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewStationOfLineAPIControllerGetParams()
@@ -1289,15 +1318,16 @@ func (a *Client) StationOfLineAPIControllerGet(params *StationOfLineAPIControlle
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*StationOfLineAPIControllerGetOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *StationOfLineAPIControllerGetOK:
+		return value, nil, nil
+	case *StationOfLineAPIControllerGetStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for StationOfLineApiController_Get: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_r_a: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -1306,7 +1336,7 @@ func (a *Client) StationOfLineAPIControllerGet(params *StationOfLineAPIControlle
 
   取得車站跨運具轉乘資訊
 */
-func (a *Client) StationTransferAPIControllerGet(params *StationTransferAPIControllerGetParams, opts ...ClientOption) (*StationTransferAPIControllerGetOK, error) {
+func (a *Client) StationTransferAPIControllerGet(params *StationTransferAPIControllerGetParams, opts ...ClientOption) (*StationTransferAPIControllerGetOK, *StationTransferAPIControllerGetStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewStationTransferAPIControllerGetParams()
@@ -1329,15 +1359,16 @@ func (a *Client) StationTransferAPIControllerGet(params *StationTransferAPIContr
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*StationTransferAPIControllerGetOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *StationTransferAPIControllerGetOK:
+		return value, nil, nil
+	case *StationTransferAPIControllerGetStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for StationTransferApiController_Get: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_r_a: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -1352,7 +1383,7 @@ func (a *Client) StationTransferAPIControllerGet(params *StationTransferAPIContr
 3.  提供所有經過站資料是為確保車次的準誤點資料都會是最新的 (尤其是東部幹線普悠瑪、太魯閣車次，因停靠站少，更新頻率低的話會使呈現的準誤點時間誤差過大)。
 4.  基於上述原因，本項資料並非僅提供列車停靠站資料，因為這樣提供方式會使列車位置資訊更狹隘，例如:只知道離開台北站，不曉得經過哪一站了，故請加值者使用時多加注意。
 */
-func (a *Client) TrainLiveBoardAPIControllerGet(params *TrainLiveBoardAPIControllerGetParams, opts ...ClientOption) (*TrainLiveBoardAPIControllerGetOK, error) {
+func (a *Client) TrainLiveBoardAPIControllerGet(params *TrainLiveBoardAPIControllerGetParams, opts ...ClientOption) (*TrainLiveBoardAPIControllerGetOK, *TrainLiveBoardAPIControllerGetStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTrainLiveBoardAPIControllerGetParams()
@@ -1375,15 +1406,16 @@ func (a *Client) TrainLiveBoardAPIControllerGet(params *TrainLiveBoardAPIControl
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*TrainLiveBoardAPIControllerGetOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *TrainLiveBoardAPIControllerGetOK:
+		return value, nil, nil
+	case *TrainLiveBoardAPIControllerGetStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for TrainLiveBoardApiController_Get: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_r_a: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -1398,7 +1430,7 @@ func (a *Client) TrainLiveBoardAPIControllerGet(params *TrainLiveBoardAPIControl
 3.  提供所有經過站資料是為確保車次的準誤點資料都會是最新的 (尤其是東部幹線普悠瑪、太魯閣車次，因停靠站少，更新頻率低的話會使呈現的準誤點時間誤差過大)。
 4.  基於上述原因，本項資料並非僅提供列車停靠站資料，因為這樣提供方式會使列車位置資訊更狹隘，例如:只知道離開台北站，不曉得經過哪一站了，故請加值者使用時多加注意。
 */
-func (a *Client) TrainLiveBoardAPIControllerGet1(params *TrainLiveBoardAPIControllerGet1Params, opts ...ClientOption) (*TrainLiveBoardAPIControllerGet1OK, error) {
+func (a *Client) TrainLiveBoardAPIControllerGet1(params *TrainLiveBoardAPIControllerGet1Params, opts ...ClientOption) (*TrainLiveBoardAPIControllerGet1OK, *TrainLiveBoardAPIControllerGet1Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTrainLiveBoardAPIControllerGet1Params()
@@ -1421,15 +1453,16 @@ func (a *Client) TrainLiveBoardAPIControllerGet1(params *TrainLiveBoardAPIContro
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*TrainLiveBoardAPIControllerGet1OK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *TrainLiveBoardAPIControllerGet1OK:
+		return value, nil, nil
+	case *TrainLiveBoardAPIControllerGet1Status299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for TrainLiveBoardApiController_Get_1: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_r_a: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -1438,7 +1471,7 @@ func (a *Client) TrainLiveBoardAPIControllerGet1(params *TrainLiveBoardAPIContro
 
   取得所有列車車種資料
 */
-func (a *Client) TrainTypeAPIControllerGet(params *TrainTypeAPIControllerGetParams, opts ...ClientOption) (*TrainTypeAPIControllerGetOK, error) {
+func (a *Client) TrainTypeAPIControllerGet(params *TrainTypeAPIControllerGetParams, opts ...ClientOption) (*TrainTypeAPIControllerGetOK, *TrainTypeAPIControllerGetStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTrainTypeAPIControllerGetParams()
@@ -1461,15 +1494,16 @@ func (a *Client) TrainTypeAPIControllerGet(params *TrainTypeAPIControllerGetPara
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*TrainTypeAPIControllerGetOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *TrainTypeAPIControllerGetOK:
+		return value, nil, nil
+	case *TrainTypeAPIControllerGetStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for TrainTypeApiController_Get: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_r_a: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 

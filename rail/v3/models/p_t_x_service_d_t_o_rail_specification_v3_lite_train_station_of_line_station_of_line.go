@@ -38,7 +38,7 @@ type PTXServiceDTORailSpecificationV3LiteTrainStationOfLineStationOfLine struct 
 	//
 	// 路線車站資訊
 	// Required: true
-	Stations []*PTXServiceDTORailSpecificationV3LiteTrainStationOfLineLineStation "json:\"Stations\" xml:\"List`1\""
+	Stations []*PTXServiceDTORailSpecificationV3TRAStationOfLineLineStation "json:\"Stations\" xml:\"List`1\""
 }
 
 // Validate validates this p t x service d t o rail specification v3 lite train station of line station of line

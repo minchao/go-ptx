@@ -29,6 +29,12 @@ func (o *LiteTrainTrainTypeReader) ReadResponse(response runtime.ClientResponse,
 			return nil, err
 		}
 		return result, nil
+	case 299:
+		result := NewLiteTrainTrainTypeStatus299()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return result, nil
 	case 304:
 		result := NewLiteTrainTrainTypeNotModified()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -63,6 +69,38 @@ func (o *LiteTrainTrainTypeOK) GetPayload() *models.PTXAPIRailModelLiteTrainBase
 func (o *LiteTrainTrainTypeOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	o.Payload = new(models.PTXAPIRailModelLiteTrainBaseWrapperPTXServiceDTORailSpecificationV3LiteTrainTrainType)
+
+	// response payload
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewLiteTrainTrainTypeStatus299 creates a LiteTrainTrainTypeStatus299 with default headers values
+func NewLiteTrainTrainTypeStatus299() *LiteTrainTrainTypeStatus299 {
+	return &LiteTrainTrainTypeStatus299{}
+}
+
+/* LiteTrainTrainTypeStatus299 describes a response with status code 299, with default header values.
+
+加入參數'?health=true'即可查詢此API服務的健康狀態
+*/
+type LiteTrainTrainTypeStatus299 struct {
+	Payload *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth
+}
+
+func (o *LiteTrainTrainTypeStatus299) Error() string {
+	return fmt.Sprintf("[GET /v3/Rail/AFR/TrainType][%d] liteTrainTrainTypeStatus299  %+v", 299, o.Payload)
+}
+func (o *LiteTrainTrainTypeStatus299) GetPayload() *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth {
+	return o.Payload
+}
+
+func (o *LiteTrainTrainTypeStatus299) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	o.Payload = new(models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

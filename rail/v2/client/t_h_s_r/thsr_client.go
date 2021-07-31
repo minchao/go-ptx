@@ -30,57 +30,57 @@ type ClientOption func(*runtime.ClientOperation)
 
 // ClientService is the interface for Client methods
 type ClientService interface {
-	THSRAPIAlertInfo(params *THSRAPIAlertInfoParams, opts ...ClientOption) (*THSRAPIAlertInfoOK, error)
+	THSRAPIAlertInfo(params *THSRAPIAlertInfoParams, opts ...ClientOption) (*THSRAPIAlertInfoOK, *THSRAPIAlertInfoStatus299, error)
 
-	THSRAPIAvailableSeatStatus(params *THSRAPIAvailableSeatStatusParams, opts ...ClientOption) (*THSRAPIAvailableSeatStatusOK, error)
+	THSRAPIAvailableSeatStatus(params *THSRAPIAvailableSeatStatusParams, opts ...ClientOption) (*THSRAPIAvailableSeatStatusOK, *THSRAPIAvailableSeatStatusStatus299, error)
 
-	THSRAPIAvailableSeatStatusListStation(params *THSRAPIAvailableSeatStatusListStationParams, opts ...ClientOption) (*THSRAPIAvailableSeatStatusListStationOK, error)
+	THSRAPIAvailableSeatStatusListStation(params *THSRAPIAvailableSeatStatusListStationParams, opts ...ClientOption) (*THSRAPIAvailableSeatStatusListStationOK, *THSRAPIAvailableSeatStatusListStationStatus299, error)
 
-	THSRAPIAvailableSeatStatusListStation1(params *THSRAPIAvailableSeatStatusListStation1Params, opts ...ClientOption) (*THSRAPIAvailableSeatStatusListStation1OK, error)
+	THSRAPIAvailableSeatStatusListStation1(params *THSRAPIAvailableSeatStatusListStation1Params, opts ...ClientOption) (*THSRAPIAvailableSeatStatusListStation1OK, *THSRAPIAvailableSeatStatusListStation1Status299, error)
 
-	THSRAPIAvailableSeatStatus1(params *THSRAPIAvailableSeatStatus1Params, opts ...ClientOption) (*THSRAPIAvailableSeatStatus1OK, error)
+	THSRAPIAvailableSeatStatus1(params *THSRAPIAvailableSeatStatus1Params, opts ...ClientOption) (*THSRAPIAvailableSeatStatus1OK, *THSRAPIAvailableSeatStatus1Status299, error)
 
-	THSRAPIAvailableSeatStatusOD(params *THSRAPIAvailableSeatStatusODParams, opts ...ClientOption) (*THSRAPIAvailableSeatStatusODOK, error)
+	THSRAPIAvailableSeatStatusOD(params *THSRAPIAvailableSeatStatusODParams, opts ...ClientOption) (*THSRAPIAvailableSeatStatusODOK, *THSRAPIAvailableSeatStatusODStatus299, error)
 
-	THSRAPIAvailableSeatStatusOD1(params *THSRAPIAvailableSeatStatusOD1Params, opts ...ClientOption) (*THSRAPIAvailableSeatStatusOD1OK, error)
+	THSRAPIAvailableSeatStatusOD1(params *THSRAPIAvailableSeatStatusOD1Params, opts ...ClientOption) (*THSRAPIAvailableSeatStatusOD1OK, *THSRAPIAvailableSeatStatusOD1Status299, error)
 
-	THSRAPIAvailableSeatStatusOD2(params *THSRAPIAvailableSeatStatusOD2Params, opts ...ClientOption) (*THSRAPIAvailableSeatStatusOD2OK, error)
+	THSRAPIAvailableSeatStatusOD2(params *THSRAPIAvailableSeatStatusOD2Params, opts ...ClientOption) (*THSRAPIAvailableSeatStatusOD2OK, *THSRAPIAvailableSeatStatusOD2Status299, error)
 
-	THSRAPIDailyTimetable(params *THSRAPIDailyTimetableParams, opts ...ClientOption) (*THSRAPIDailyTimetableOK, error)
+	THSRAPIDailyTimetable(params *THSRAPIDailyTimetableParams, opts ...ClientOption) (*THSRAPIDailyTimetableOK, *THSRAPIDailyTimetableStatus299, error)
 
-	THSRAPIDailyTimetable1(params *THSRAPIDailyTimetable1Params, opts ...ClientOption) (*THSRAPIDailyTimetable1OK, error)
+	THSRAPIDailyTimetable1(params *THSRAPIDailyTimetable1Params, opts ...ClientOption) (*THSRAPIDailyTimetable1OK, *THSRAPIDailyTimetable1Status299, error)
 
-	THSRAPIDailyTimetable2(params *THSRAPIDailyTimetable2Params, opts ...ClientOption) (*THSRAPIDailyTimetable2OK, error)
+	THSRAPIDailyTimetable2(params *THSRAPIDailyTimetable2Params, opts ...ClientOption) (*THSRAPIDailyTimetable2OK, *THSRAPIDailyTimetable2Status299, error)
 
-	THSRAPIDailyTimetable3(params *THSRAPIDailyTimetable3Params, opts ...ClientOption) (*THSRAPIDailyTimetable3OK, error)
+	THSRAPIDailyTimetable3(params *THSRAPIDailyTimetable3Params, opts ...ClientOption) (*THSRAPIDailyTimetable3OK, *THSRAPIDailyTimetable3Status299, error)
 
-	THSRAPIDailyTrainInfo(params *THSRAPIDailyTrainInfoParams, opts ...ClientOption) (*THSRAPIDailyTrainInfoOK, error)
+	THSRAPIDailyTrainInfo(params *THSRAPIDailyTrainInfoParams, opts ...ClientOption) (*THSRAPIDailyTrainInfoOK, *THSRAPIDailyTrainInfoStatus299, error)
 
-	THSRAPIDailyTrainInfo1(params *THSRAPIDailyTrainInfo1Params, opts ...ClientOption) (*THSRAPIDailyTrainInfo1OK, error)
+	THSRAPIDailyTrainInfo1(params *THSRAPIDailyTrainInfo1Params, opts ...ClientOption) (*THSRAPIDailyTrainInfo1OK, *THSRAPIDailyTrainInfo1Status299, error)
 
-	THSRAPIDailyTrainInfo2(params *THSRAPIDailyTrainInfo2Params, opts ...ClientOption) (*THSRAPIDailyTrainInfo2OK, error)
+	THSRAPIDailyTrainInfo2(params *THSRAPIDailyTrainInfo2Params, opts ...ClientOption) (*THSRAPIDailyTrainInfo2OK, *THSRAPIDailyTrainInfo2Status299, error)
 
-	THSRAPIDailyTrainInfo3(params *THSRAPIDailyTrainInfo3Params, opts ...ClientOption) (*THSRAPIDailyTrainInfo3OK, error)
+	THSRAPIDailyTrainInfo3(params *THSRAPIDailyTrainInfo3Params, opts ...ClientOption) (*THSRAPIDailyTrainInfo3OK, *THSRAPIDailyTrainInfo3Status299, error)
 
-	THSRAPIGeneralTimetable(params *THSRAPIGeneralTimetableParams, opts ...ClientOption) (*THSRAPIGeneralTimetableOK, error)
+	THSRAPIGeneralTimetable(params *THSRAPIGeneralTimetableParams, opts ...ClientOption) (*THSRAPIGeneralTimetableOK, *THSRAPIGeneralTimetableStatus299, error)
 
-	THSRAPIGeneralTimetable1(params *THSRAPIGeneralTimetable1Params, opts ...ClientOption) (*THSRAPIGeneralTimetable1OK, error)
+	THSRAPIGeneralTimetable1(params *THSRAPIGeneralTimetable1Params, opts ...ClientOption) (*THSRAPIGeneralTimetable1OK, *THSRAPIGeneralTimetable1Status299, error)
 
-	THSRAPINews(params *THSRAPINewsParams, opts ...ClientOption) (*THSRAPINewsOK, error)
+	THSRAPINews(params *THSRAPINewsParams, opts ...ClientOption) (*THSRAPINewsOK, *THSRAPINewsStatus299, error)
 
-	THSRAPIODDailyTimetable(params *THSRAPIODDailyTimetableParams, opts ...ClientOption) (*THSRAPIODDailyTimetableOK, error)
+	THSRAPIODDailyTimetable(params *THSRAPIODDailyTimetableParams, opts ...ClientOption) (*THSRAPIODDailyTimetableOK, *THSRAPIODDailyTimetableStatus299, error)
 
-	THSRAPIODFare(params *THSRAPIODFareParams, opts ...ClientOption) (*THSRAPIODFareOK, error)
+	THSRAPIODFare(params *THSRAPIODFareParams, opts ...ClientOption) (*THSRAPIODFareOK, *THSRAPIODFareStatus299, error)
 
-	THSRAPIODFare1(params *THSRAPIODFare1Params, opts ...ClientOption) (*THSRAPIODFare1OK, error)
+	THSRAPIODFare1(params *THSRAPIODFare1Params, opts ...ClientOption) (*THSRAPIODFare1OK, *THSRAPIODFare1Status299, error)
 
-	THSRAPIShape(params *THSRAPIShapeParams, opts ...ClientOption) (*THSRAPIShapeOK, error)
+	THSRAPIShape(params *THSRAPIShapeParams, opts ...ClientOption) (*THSRAPIShapeOK, *THSRAPIShapeStatus299, error)
 
-	THSRAPIStation(params *THSRAPIStationParams, opts ...ClientOption) (*THSRAPIStationOK, error)
+	THSRAPIStation(params *THSRAPIStationParams, opts ...ClientOption) (*THSRAPIStationOK, *THSRAPIStationStatus299, error)
 
-	THSRAPIStationExit(params *THSRAPIStationExitParams, opts ...ClientOption) (*THSRAPIStationExitOK, error)
+	THSRAPIStationExit(params *THSRAPIStationExitParams, opts ...ClientOption) (*THSRAPIStationExitOK, *THSRAPIStationExitStatus299, error)
 
-	THSRAPIStationTimetable(params *THSRAPIStationTimetableParams, opts ...ClientOption) (*THSRAPIStationTimetableOK, error)
+	THSRAPIStationTimetable(params *THSRAPIStationTimetableParams, opts ...ClientOption) (*THSRAPIStationTimetableOK, *THSRAPIStationTimetableStatus299, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
@@ -90,7 +90,7 @@ type ClientService interface {
 
   取得即時通阻事件資料
 */
-func (a *Client) THSRAPIAlertInfo(params *THSRAPIAlertInfoParams, opts ...ClientOption) (*THSRAPIAlertInfoOK, error) {
+func (a *Client) THSRAPIAlertInfo(params *THSRAPIAlertInfoParams, opts ...ClientOption) (*THSRAPIAlertInfoOK, *THSRAPIAlertInfoStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTHSRAPIAlertInfoParams()
@@ -113,15 +113,16 @@ func (a *Client) THSRAPIAlertInfo(params *THSRAPIAlertInfoParams, opts ...Client
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*THSRAPIAlertInfoOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *THSRAPIAlertInfoOK:
+		return value, nil, nil
+	case *THSRAPIAlertInfoStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for THSRApi_AlertInfo: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_h_s_r: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -132,7 +133,7 @@ func (a *Client) THSRAPIAlertInfo(params *THSRAPIAlertInfoParams, opts ...Client
 - (更新頻率為10分鐘)
 - **(本服務尚在測試中,穩定度及更新頻率將持續優化)**
 */
-func (a *Client) THSRAPIAvailableSeatStatus(params *THSRAPIAvailableSeatStatusParams, opts ...ClientOption) (*THSRAPIAvailableSeatStatusOK, error) {
+func (a *Client) THSRAPIAvailableSeatStatus(params *THSRAPIAvailableSeatStatusParams, opts ...ClientOption) (*THSRAPIAvailableSeatStatusOK, *THSRAPIAvailableSeatStatusStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTHSRAPIAvailableSeatStatusParams()
@@ -155,15 +156,16 @@ func (a *Client) THSRAPIAvailableSeatStatus(params *THSRAPIAvailableSeatStatusPa
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*THSRAPIAvailableSeatStatusOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *THSRAPIAvailableSeatStatusOK:
+		return value, nil, nil
+	case *THSRAPIAvailableSeatStatusStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for THSRApi_AvailableSeatStatus: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_h_s_r: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -172,7 +174,7 @@ func (a *Client) THSRAPIAvailableSeatStatus(params *THSRAPIAvailableSeatStatusPa
 
   取得動態對號座剩餘座位資訊看板資料
 */
-func (a *Client) THSRAPIAvailableSeatStatusListStation(params *THSRAPIAvailableSeatStatusListStationParams, opts ...ClientOption) (*THSRAPIAvailableSeatStatusListStationOK, error) {
+func (a *Client) THSRAPIAvailableSeatStatusListStation(params *THSRAPIAvailableSeatStatusListStationParams, opts ...ClientOption) (*THSRAPIAvailableSeatStatusListStationOK, *THSRAPIAvailableSeatStatusListStationStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTHSRAPIAvailableSeatStatusListStationParams()
@@ -195,15 +197,16 @@ func (a *Client) THSRAPIAvailableSeatStatusListStation(params *THSRAPIAvailableS
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*THSRAPIAvailableSeatStatusListStationOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *THSRAPIAvailableSeatStatusListStationOK:
+		return value, nil, nil
+	case *THSRAPIAvailableSeatStatusListStationStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for THSRApi_AvailableSeatStatusList_Station: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_h_s_r: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -212,7 +215,7 @@ func (a *Client) THSRAPIAvailableSeatStatusListStation(params *THSRAPIAvailableS
 
   取得動態指定[車站]的對號座剩餘座位資訊看板資料
 */
-func (a *Client) THSRAPIAvailableSeatStatusListStation1(params *THSRAPIAvailableSeatStatusListStation1Params, opts ...ClientOption) (*THSRAPIAvailableSeatStatusListStation1OK, error) {
+func (a *Client) THSRAPIAvailableSeatStatusListStation1(params *THSRAPIAvailableSeatStatusListStation1Params, opts ...ClientOption) (*THSRAPIAvailableSeatStatusListStation1OK, *THSRAPIAvailableSeatStatusListStation1Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTHSRAPIAvailableSeatStatusListStation1Params()
@@ -235,15 +238,16 @@ func (a *Client) THSRAPIAvailableSeatStatusListStation1(params *THSRAPIAvailable
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*THSRAPIAvailableSeatStatusListStation1OK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *THSRAPIAvailableSeatStatusListStation1OK:
+		return value, nil, nil
+	case *THSRAPIAvailableSeatStatusListStation1Status299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for THSRApi_AvailableSeatStatusList_Station_1: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_h_s_r: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -254,7 +258,7 @@ func (a *Client) THSRAPIAvailableSeatStatusListStation1(params *THSRAPIAvailable
 - (更新頻率為每日的10、16、22時)
 - **(本服務尚在測試中,穩定度及更新頻率將持續優化)**
 */
-func (a *Client) THSRAPIAvailableSeatStatus1(params *THSRAPIAvailableSeatStatus1Params, opts ...ClientOption) (*THSRAPIAvailableSeatStatus1OK, error) {
+func (a *Client) THSRAPIAvailableSeatStatus1(params *THSRAPIAvailableSeatStatus1Params, opts ...ClientOption) (*THSRAPIAvailableSeatStatus1OK, *THSRAPIAvailableSeatStatus1Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTHSRAPIAvailableSeatStatus1Params()
@@ -277,15 +281,16 @@ func (a *Client) THSRAPIAvailableSeatStatus1(params *THSRAPIAvailableSeatStatus1
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*THSRAPIAvailableSeatStatus1OK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *THSRAPIAvailableSeatStatus1OK:
+		return value, nil, nil
+	case *THSRAPIAvailableSeatStatus1Status299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for THSRApi_AvailableSeatStatus_1: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_h_s_r: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -297,7 +302,7 @@ func (a *Client) THSRAPIAvailableSeatStatus1(params *THSRAPIAvailableSeatStatus1
 - 當日後27日(D+1~D+27)之更新頻率為每日的10、16、22時
 - **(本服務尚在測試中,穩定度及更新頻率將持續優化)**
 */
-func (a *Client) THSRAPIAvailableSeatStatusOD(params *THSRAPIAvailableSeatStatusODParams, opts ...ClientOption) (*THSRAPIAvailableSeatStatusODOK, error) {
+func (a *Client) THSRAPIAvailableSeatStatusOD(params *THSRAPIAvailableSeatStatusODParams, opts ...ClientOption) (*THSRAPIAvailableSeatStatusODOK, *THSRAPIAvailableSeatStatusODStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTHSRAPIAvailableSeatStatusODParams()
@@ -320,15 +325,16 @@ func (a *Client) THSRAPIAvailableSeatStatusOD(params *THSRAPIAvailableSeatStatus
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*THSRAPIAvailableSeatStatusODOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *THSRAPIAvailableSeatStatusODOK:
+		return value, nil, nil
+	case *THSRAPIAvailableSeatStatusODStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for THSRApi_AvailableSeatStatus_OD: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_h_s_r: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -340,7 +346,7 @@ func (a *Client) THSRAPIAvailableSeatStatusOD(params *THSRAPIAvailableSeatStatus
 - 當日後27日(D+1~D+27)之更新頻率為每日的10、16、22時
 - **(本服務尚在測試中,穩定度及更新頻率將持續優化)**
 */
-func (a *Client) THSRAPIAvailableSeatStatusOD1(params *THSRAPIAvailableSeatStatusOD1Params, opts ...ClientOption) (*THSRAPIAvailableSeatStatusOD1OK, error) {
+func (a *Client) THSRAPIAvailableSeatStatusOD1(params *THSRAPIAvailableSeatStatusOD1Params, opts ...ClientOption) (*THSRAPIAvailableSeatStatusOD1OK, *THSRAPIAvailableSeatStatusOD1Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTHSRAPIAvailableSeatStatusOD1Params()
@@ -363,15 +369,16 @@ func (a *Client) THSRAPIAvailableSeatStatusOD1(params *THSRAPIAvailableSeatStatu
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*THSRAPIAvailableSeatStatusOD1OK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *THSRAPIAvailableSeatStatusOD1OK:
+		return value, nil, nil
+	case *THSRAPIAvailableSeatStatusOD1Status299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for THSRApi_AvailableSeatStatus_OD_1: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_h_s_r: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -383,7 +390,7 @@ func (a *Client) THSRAPIAvailableSeatStatusOD1(params *THSRAPIAvailableSeatStatu
 - 當日後27日(D+1~D+27)之更新頻率為每日的10、16、22時
 - **(本服務尚在測試中,穩定度及更新頻率將持續優化)**
 */
-func (a *Client) THSRAPIAvailableSeatStatusOD2(params *THSRAPIAvailableSeatStatusOD2Params, opts ...ClientOption) (*THSRAPIAvailableSeatStatusOD2OK, error) {
+func (a *Client) THSRAPIAvailableSeatStatusOD2(params *THSRAPIAvailableSeatStatusOD2Params, opts ...ClientOption) (*THSRAPIAvailableSeatStatusOD2OK, *THSRAPIAvailableSeatStatusOD2Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTHSRAPIAvailableSeatStatusOD2Params()
@@ -406,15 +413,16 @@ func (a *Client) THSRAPIAvailableSeatStatusOD2(params *THSRAPIAvailableSeatStatu
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*THSRAPIAvailableSeatStatusOD2OK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *THSRAPIAvailableSeatStatusOD2OK:
+		return value, nil, nil
+	case *THSRAPIAvailableSeatStatusOD2Status299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for THSRApi_AvailableSeatStatus_OD_2: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_h_s_r: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -423,7 +431,7 @@ func (a *Client) THSRAPIAvailableSeatStatusOD2(params *THSRAPIAvailableSeatStatu
 
   取得當天所有車次的時刻表資料
 */
-func (a *Client) THSRAPIDailyTimetable(params *THSRAPIDailyTimetableParams, opts ...ClientOption) (*THSRAPIDailyTimetableOK, error) {
+func (a *Client) THSRAPIDailyTimetable(params *THSRAPIDailyTimetableParams, opts ...ClientOption) (*THSRAPIDailyTimetableOK, *THSRAPIDailyTimetableStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTHSRAPIDailyTimetableParams()
@@ -446,15 +454,16 @@ func (a *Client) THSRAPIDailyTimetable(params *THSRAPIDailyTimetableParams, opts
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*THSRAPIDailyTimetableOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *THSRAPIDailyTimetableOK:
+		return value, nil, nil
+	case *THSRAPIDailyTimetableStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for THSRApi_DailyTimetable: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_h_s_r: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -463,7 +472,7 @@ func (a *Client) THSRAPIDailyTimetable(params *THSRAPIDailyTimetableParams, opts
 
   取得當天指定[車次]的時刻表資料
 */
-func (a *Client) THSRAPIDailyTimetable1(params *THSRAPIDailyTimetable1Params, opts ...ClientOption) (*THSRAPIDailyTimetable1OK, error) {
+func (a *Client) THSRAPIDailyTimetable1(params *THSRAPIDailyTimetable1Params, opts ...ClientOption) (*THSRAPIDailyTimetable1OK, *THSRAPIDailyTimetable1Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTHSRAPIDailyTimetable1Params()
@@ -486,15 +495,16 @@ func (a *Client) THSRAPIDailyTimetable1(params *THSRAPIDailyTimetable1Params, op
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*THSRAPIDailyTimetable1OK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *THSRAPIDailyTimetable1OK:
+		return value, nil, nil
+	case *THSRAPIDailyTimetable1Status299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for THSRApi_DailyTimetable_1: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_h_s_r: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -503,7 +513,7 @@ func (a *Client) THSRAPIDailyTimetable1(params *THSRAPIDailyTimetable1Params, op
 
   取得指定[日期]所有車次的時刻表資料(高鐵提供近28天每日時刻表)
 */
-func (a *Client) THSRAPIDailyTimetable2(params *THSRAPIDailyTimetable2Params, opts ...ClientOption) (*THSRAPIDailyTimetable2OK, error) {
+func (a *Client) THSRAPIDailyTimetable2(params *THSRAPIDailyTimetable2Params, opts ...ClientOption) (*THSRAPIDailyTimetable2OK, *THSRAPIDailyTimetable2Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTHSRAPIDailyTimetable2Params()
@@ -526,15 +536,16 @@ func (a *Client) THSRAPIDailyTimetable2(params *THSRAPIDailyTimetable2Params, op
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*THSRAPIDailyTimetable2OK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *THSRAPIDailyTimetable2OK:
+		return value, nil, nil
+	case *THSRAPIDailyTimetable2Status299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for THSRApi_DailyTimetable_2: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_h_s_r: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -543,7 +554,7 @@ func (a *Client) THSRAPIDailyTimetable2(params *THSRAPIDailyTimetable2Params, op
 
   取得指定[日期],[車次]的時刻表資料(高鐵提供近28天每日時刻表)
 */
-func (a *Client) THSRAPIDailyTimetable3(params *THSRAPIDailyTimetable3Params, opts ...ClientOption) (*THSRAPIDailyTimetable3OK, error) {
+func (a *Client) THSRAPIDailyTimetable3(params *THSRAPIDailyTimetable3Params, opts ...ClientOption) (*THSRAPIDailyTimetable3OK, *THSRAPIDailyTimetable3Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTHSRAPIDailyTimetable3Params()
@@ -566,15 +577,16 @@ func (a *Client) THSRAPIDailyTimetable3(params *THSRAPIDailyTimetable3Params, op
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*THSRAPIDailyTimetable3OK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *THSRAPIDailyTimetable3OK:
+		return value, nil, nil
+	case *THSRAPIDailyTimetable3Status299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for THSRApi_DailyTimetable_3: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_h_s_r: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -583,7 +595,7 @@ func (a *Client) THSRAPIDailyTimetable3(params *THSRAPIDailyTimetable3Params, op
 
   取得當天所有車次的車次資料
 */
-func (a *Client) THSRAPIDailyTrainInfo(params *THSRAPIDailyTrainInfoParams, opts ...ClientOption) (*THSRAPIDailyTrainInfoOK, error) {
+func (a *Client) THSRAPIDailyTrainInfo(params *THSRAPIDailyTrainInfoParams, opts ...ClientOption) (*THSRAPIDailyTrainInfoOK, *THSRAPIDailyTrainInfoStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTHSRAPIDailyTrainInfoParams()
@@ -606,15 +618,16 @@ func (a *Client) THSRAPIDailyTrainInfo(params *THSRAPIDailyTrainInfoParams, opts
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*THSRAPIDailyTrainInfoOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *THSRAPIDailyTrainInfoOK:
+		return value, nil, nil
+	case *THSRAPIDailyTrainInfoStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for THSRApi_DailyTrainInfo: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_h_s_r: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -623,7 +636,7 @@ func (a *Client) THSRAPIDailyTrainInfo(params *THSRAPIDailyTrainInfoParams, opts
 
   取得當天指定[車次]的車次資料
 */
-func (a *Client) THSRAPIDailyTrainInfo1(params *THSRAPIDailyTrainInfo1Params, opts ...ClientOption) (*THSRAPIDailyTrainInfo1OK, error) {
+func (a *Client) THSRAPIDailyTrainInfo1(params *THSRAPIDailyTrainInfo1Params, opts ...ClientOption) (*THSRAPIDailyTrainInfo1OK, *THSRAPIDailyTrainInfo1Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTHSRAPIDailyTrainInfo1Params()
@@ -646,15 +659,16 @@ func (a *Client) THSRAPIDailyTrainInfo1(params *THSRAPIDailyTrainInfo1Params, op
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*THSRAPIDailyTrainInfo1OK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *THSRAPIDailyTrainInfo1OK:
+		return value, nil, nil
+	case *THSRAPIDailyTrainInfo1Status299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for THSRApi_DailyTrainInfo_1: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_h_s_r: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -663,7 +677,7 @@ func (a *Client) THSRAPIDailyTrainInfo1(params *THSRAPIDailyTrainInfo1Params, op
 
   取得指定[日期]所有車次的車次資料(高鐵提供近28天每日時刻表)
 */
-func (a *Client) THSRAPIDailyTrainInfo2(params *THSRAPIDailyTrainInfo2Params, opts ...ClientOption) (*THSRAPIDailyTrainInfo2OK, error) {
+func (a *Client) THSRAPIDailyTrainInfo2(params *THSRAPIDailyTrainInfo2Params, opts ...ClientOption) (*THSRAPIDailyTrainInfo2OK, *THSRAPIDailyTrainInfo2Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTHSRAPIDailyTrainInfo2Params()
@@ -686,15 +700,16 @@ func (a *Client) THSRAPIDailyTrainInfo2(params *THSRAPIDailyTrainInfo2Params, op
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*THSRAPIDailyTrainInfo2OK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *THSRAPIDailyTrainInfo2OK:
+		return value, nil, nil
+	case *THSRAPIDailyTrainInfo2Status299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for THSRApi_DailyTrainInfo_2: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_h_s_r: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -703,7 +718,7 @@ func (a *Client) THSRAPIDailyTrainInfo2(params *THSRAPIDailyTrainInfo2Params, op
 
   取得指定[日期],[車次]的車次資料(高鐵提供近28天每日時刻表)
 */
-func (a *Client) THSRAPIDailyTrainInfo3(params *THSRAPIDailyTrainInfo3Params, opts ...ClientOption) (*THSRAPIDailyTrainInfo3OK, error) {
+func (a *Client) THSRAPIDailyTrainInfo3(params *THSRAPIDailyTrainInfo3Params, opts ...ClientOption) (*THSRAPIDailyTrainInfo3OK, *THSRAPIDailyTrainInfo3Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTHSRAPIDailyTrainInfo3Params()
@@ -726,15 +741,16 @@ func (a *Client) THSRAPIDailyTrainInfo3(params *THSRAPIDailyTrainInfo3Params, op
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*THSRAPIDailyTrainInfo3OK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *THSRAPIDailyTrainInfo3OK:
+		return value, nil, nil
+	case *THSRAPIDailyTrainInfo3Status299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for THSRApi_DailyTrainInfo_3: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_h_s_r: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -743,7 +759,7 @@ func (a *Client) THSRAPIDailyTrainInfo3(params *THSRAPIDailyTrainInfo3Params, op
 
   取得所有車次的定期時刻表資料
 */
-func (a *Client) THSRAPIGeneralTimetable(params *THSRAPIGeneralTimetableParams, opts ...ClientOption) (*THSRAPIGeneralTimetableOK, error) {
+func (a *Client) THSRAPIGeneralTimetable(params *THSRAPIGeneralTimetableParams, opts ...ClientOption) (*THSRAPIGeneralTimetableOK, *THSRAPIGeneralTimetableStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTHSRAPIGeneralTimetableParams()
@@ -766,15 +782,16 @@ func (a *Client) THSRAPIGeneralTimetable(params *THSRAPIGeneralTimetableParams, 
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*THSRAPIGeneralTimetableOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *THSRAPIGeneralTimetableOK:
+		return value, nil, nil
+	case *THSRAPIGeneralTimetableStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for THSRApi_GeneralTimetable: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_h_s_r: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -783,7 +800,7 @@ func (a *Client) THSRAPIGeneralTimetable(params *THSRAPIGeneralTimetableParams, 
 
   取得指定[車次]的定期時刻表資料
 */
-func (a *Client) THSRAPIGeneralTimetable1(params *THSRAPIGeneralTimetable1Params, opts ...ClientOption) (*THSRAPIGeneralTimetable1OK, error) {
+func (a *Client) THSRAPIGeneralTimetable1(params *THSRAPIGeneralTimetable1Params, opts ...ClientOption) (*THSRAPIGeneralTimetable1OK, *THSRAPIGeneralTimetable1Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTHSRAPIGeneralTimetable1Params()
@@ -806,15 +823,16 @@ func (a *Client) THSRAPIGeneralTimetable1(params *THSRAPIGeneralTimetable1Params
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*THSRAPIGeneralTimetable1OK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *THSRAPIGeneralTimetable1OK:
+		return value, nil, nil
+	case *THSRAPIGeneralTimetable1Status299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for THSRApi_GeneralTimetable_1: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_h_s_r: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -823,7 +841,7 @@ func (a *Client) THSRAPIGeneralTimetable1(params *THSRAPIGeneralTimetable1Params
 
   取得高鐵最新消息資料
 */
-func (a *Client) THSRAPINews(params *THSRAPINewsParams, opts ...ClientOption) (*THSRAPINewsOK, error) {
+func (a *Client) THSRAPINews(params *THSRAPINewsParams, opts ...ClientOption) (*THSRAPINewsOK, *THSRAPINewsStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTHSRAPINewsParams()
@@ -846,15 +864,16 @@ func (a *Client) THSRAPINews(params *THSRAPINewsParams, opts ...ClientOption) (*
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*THSRAPINewsOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *THSRAPINewsOK:
+		return value, nil, nil
+	case *THSRAPINewsStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for THSRApi_News: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_h_s_r: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -863,7 +882,7 @@ func (a *Client) THSRAPINews(params *THSRAPINewsParams, opts ...ClientOption) (*
 
   取得指定[日期],[起迄站間]之時刻表資料
 */
-func (a *Client) THSRAPIODDailyTimetable(params *THSRAPIODDailyTimetableParams, opts ...ClientOption) (*THSRAPIODDailyTimetableOK, error) {
+func (a *Client) THSRAPIODDailyTimetable(params *THSRAPIODDailyTimetableParams, opts ...ClientOption) (*THSRAPIODDailyTimetableOK, *THSRAPIODDailyTimetableStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTHSRAPIODDailyTimetableParams()
@@ -886,15 +905,16 @@ func (a *Client) THSRAPIODDailyTimetable(params *THSRAPIODDailyTimetableParams, 
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*THSRAPIODDailyTimetableOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *THSRAPIODDailyTimetableOK:
+		return value, nil, nil
+	case *THSRAPIODDailyTimetableStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for THSRApi_ODDailyTimetable: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_h_s_r: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -903,7 +923,7 @@ func (a *Client) THSRAPIODDailyTimetable(params *THSRAPIODDailyTimetableParams, 
 
   取得票價資料
 */
-func (a *Client) THSRAPIODFare(params *THSRAPIODFareParams, opts ...ClientOption) (*THSRAPIODFareOK, error) {
+func (a *Client) THSRAPIODFare(params *THSRAPIODFareParams, opts ...ClientOption) (*THSRAPIODFareOK, *THSRAPIODFareStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTHSRAPIODFareParams()
@@ -926,15 +946,16 @@ func (a *Client) THSRAPIODFare(params *THSRAPIODFareParams, opts ...ClientOption
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*THSRAPIODFareOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *THSRAPIODFareOK:
+		return value, nil, nil
+	case *THSRAPIODFareStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for THSRApi_ODFare: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_h_s_r: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -943,7 +964,7 @@ func (a *Client) THSRAPIODFare(params *THSRAPIODFareParams, opts ...ClientOption
 
   取得指定[起訖站間]之票價資料
 */
-func (a *Client) THSRAPIODFare1(params *THSRAPIODFare1Params, opts ...ClientOption) (*THSRAPIODFare1OK, error) {
+func (a *Client) THSRAPIODFare1(params *THSRAPIODFare1Params, opts ...ClientOption) (*THSRAPIODFare1OK, *THSRAPIODFare1Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTHSRAPIODFare1Params()
@@ -966,15 +987,16 @@ func (a *Client) THSRAPIODFare1(params *THSRAPIODFare1Params, opts ...ClientOpti
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*THSRAPIODFare1OK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *THSRAPIODFare1OK:
+		return value, nil, nil
+	case *THSRAPIODFare1Status299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for THSRApi_ODFare_1: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_h_s_r: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -983,7 +1005,7 @@ func (a *Client) THSRAPIODFare1(params *THSRAPIODFare1Params, opts ...ClientOpti
 
   取得軌道路網實體路線圖資資料
 */
-func (a *Client) THSRAPIShape(params *THSRAPIShapeParams, opts ...ClientOption) (*THSRAPIShapeOK, error) {
+func (a *Client) THSRAPIShape(params *THSRAPIShapeParams, opts ...ClientOption) (*THSRAPIShapeOK, *THSRAPIShapeStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTHSRAPIShapeParams()
@@ -1006,15 +1028,16 @@ func (a *Client) THSRAPIShape(params *THSRAPIShapeParams, opts ...ClientOption) 
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*THSRAPIShapeOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *THSRAPIShapeOK:
+		return value, nil, nil
+	case *THSRAPIShapeStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for THSRApi_Shape: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_h_s_r: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -1023,7 +1046,7 @@ func (a *Client) THSRAPIShape(params *THSRAPIShapeParams, opts ...ClientOption) 
 
   取得車站基本資料
 */
-func (a *Client) THSRAPIStation(params *THSRAPIStationParams, opts ...ClientOption) (*THSRAPIStationOK, error) {
+func (a *Client) THSRAPIStation(params *THSRAPIStationParams, opts ...ClientOption) (*THSRAPIStationOK, *THSRAPIStationStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTHSRAPIStationParams()
@@ -1046,15 +1069,16 @@ func (a *Client) THSRAPIStation(params *THSRAPIStationParams, opts ...ClientOpti
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*THSRAPIStationOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *THSRAPIStationOK:
+		return value, nil, nil
+	case *THSRAPIStationStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for THSRApi_Station: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_h_s_r: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -1063,7 +1087,7 @@ func (a *Client) THSRAPIStation(params *THSRAPIStationParams, opts ...ClientOpti
 
   取得車站出入口基本資料
 */
-func (a *Client) THSRAPIStationExit(params *THSRAPIStationExitParams, opts ...ClientOption) (*THSRAPIStationExitOK, error) {
+func (a *Client) THSRAPIStationExit(params *THSRAPIStationExitParams, opts ...ClientOption) (*THSRAPIStationExitOK, *THSRAPIStationExitStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTHSRAPIStationExitParams()
@@ -1086,15 +1110,16 @@ func (a *Client) THSRAPIStationExit(params *THSRAPIStationExitParams, opts ...Cl
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*THSRAPIStationExitOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *THSRAPIStationExitOK:
+		return value, nil, nil
+	case *THSRAPIStationExitStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for THSRApi_StationExit: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_h_s_r: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -1103,7 +1128,7 @@ func (a *Client) THSRAPIStationExit(params *THSRAPIStationExitParams, opts ...Cl
 
   取得指定[日期],[車站]的站別時刻表資料
 */
-func (a *Client) THSRAPIStationTimetable(params *THSRAPIStationTimetableParams, opts ...ClientOption) (*THSRAPIStationTimetableOK, error) {
+func (a *Client) THSRAPIStationTimetable(params *THSRAPIStationTimetableParams, opts ...ClientOption) (*THSRAPIStationTimetableOK, *THSRAPIStationTimetableStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTHSRAPIStationTimetableParams()
@@ -1126,15 +1151,16 @@ func (a *Client) THSRAPIStationTimetable(params *THSRAPIStationTimetableParams, 
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*THSRAPIStationTimetableOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *THSRAPIStationTimetableOK:
+		return value, nil, nil
+	case *THSRAPIStationTimetableStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for THSRApi_StationTimetable: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_h_s_r: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 

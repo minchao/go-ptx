@@ -29,6 +29,12 @@ func (o *StationFacilityAPIControllerGetReader) ReadResponse(response runtime.Cl
 			return nil, err
 		}
 		return result, nil
+	case 299:
+		result := NewStationFacilityAPIControllerGetStatus299()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return result, nil
 	case 304:
 		result := NewStationFacilityAPIControllerGetNotModified()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -63,6 +69,38 @@ func (o *StationFacilityAPIControllerGetOK) GetPayload() *models.PTXAPIRailModel
 func (o *StationFacilityAPIControllerGetOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	o.Payload = new(models.PTXAPIRailModelTRABaseWrapperPTXServiceDTORailSpecificationV3TRAStationFacilityStationFacility)
+
+	// response payload
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewStationFacilityAPIControllerGetStatus299 creates a StationFacilityAPIControllerGetStatus299 with default headers values
+func NewStationFacilityAPIControllerGetStatus299() *StationFacilityAPIControllerGetStatus299 {
+	return &StationFacilityAPIControllerGetStatus299{}
+}
+
+/* StationFacilityAPIControllerGetStatus299 describes a response with status code 299, with default header values.
+
+加入參數'?health=true'即可查詢此API服務的健康狀態
+*/
+type StationFacilityAPIControllerGetStatus299 struct {
+	Payload *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth
+}
+
+func (o *StationFacilityAPIControllerGetStatus299) Error() string {
+	return fmt.Sprintf("[GET /v3/Rail/TRA/StationFacility][%d] stationFacilityApiControllerGetStatus299  %+v", 299, o.Payload)
+}
+func (o *StationFacilityAPIControllerGetStatus299) GetPayload() *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth {
+	return o.Payload
+}
+
+func (o *StationFacilityAPIControllerGetStatus299) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	o.Payload = new(models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

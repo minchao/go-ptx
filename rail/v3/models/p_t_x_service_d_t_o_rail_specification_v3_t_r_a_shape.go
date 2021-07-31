@@ -16,7 +16,7 @@ import (
 
 // PTXServiceDTORailSpecificationV3TRAShape Shape
 //
-// 臺鐵線型資料
+// 線型資料
 //
 // swagger:model PTX.Service.DTO.Rail.Specification.V3.TRA.Shape
 type PTXServiceDTORailSpecificationV3TRAShape struct {

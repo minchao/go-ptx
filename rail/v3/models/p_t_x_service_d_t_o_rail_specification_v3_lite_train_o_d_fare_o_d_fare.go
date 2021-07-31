@@ -43,7 +43,7 @@ type PTXServiceDTORailSpecificationV3LiteTrainODFareODFare struct {
 	//
 	// 票價
 	// Required: true
-	Fares []*PTXServiceDTORailSpecificationV3LiteTrainODFareFare "json:\"Fares\" xml:\"List`1\""
+	Fares []*PTXServiceDTORailSpecificationV3TRAODFareFare "json:\"Fares\" xml:\"List`1\""
 
 	// String
 	//

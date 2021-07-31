@@ -30,55 +30,55 @@ type ClientOption func(*runtime.ClientOperation)
 
 // ClientService is the interface for Client methods
 type ClientService interface {
-	TRAAPIDailyTimetable(params *TRAAPIDailyTimetableParams, opts ...ClientOption) (*TRAAPIDailyTimetableOK, error)
+	TRAAPIDailyTimetable(params *TRAAPIDailyTimetableParams, opts ...ClientOption) (*TRAAPIDailyTimetableOK, *TRAAPIDailyTimetableStatus299, error)
 
-	TRAAPIDailyTimetable1(params *TRAAPIDailyTimetable1Params, opts ...ClientOption) (*TRAAPIDailyTimetable1OK, error)
+	TRAAPIDailyTimetable1(params *TRAAPIDailyTimetable1Params, opts ...ClientOption) (*TRAAPIDailyTimetable1OK, *TRAAPIDailyTimetable1Status299, error)
 
-	TRAAPIDailyTimetable2(params *TRAAPIDailyTimetable2Params, opts ...ClientOption) (*TRAAPIDailyTimetable2OK, error)
+	TRAAPIDailyTimetable2(params *TRAAPIDailyTimetable2Params, opts ...ClientOption) (*TRAAPIDailyTimetable2OK, *TRAAPIDailyTimetable2Status299, error)
 
-	TRAAPIDailyTimetable3(params *TRAAPIDailyTimetable3Params, opts ...ClientOption) (*TRAAPIDailyTimetable3OK, error)
+	TRAAPIDailyTimetable3(params *TRAAPIDailyTimetable3Params, opts ...ClientOption) (*TRAAPIDailyTimetable3OK, *TRAAPIDailyTimetable3Status299, error)
 
-	TRAAPIDailyTrainInfo(params *TRAAPIDailyTrainInfoParams, opts ...ClientOption) (*TRAAPIDailyTrainInfoOK, error)
+	TRAAPIDailyTrainInfo(params *TRAAPIDailyTrainInfoParams, opts ...ClientOption) (*TRAAPIDailyTrainInfoOK, *TRAAPIDailyTrainInfoStatus299, error)
 
-	TRAAPIDailyTrainInfo1(params *TRAAPIDailyTrainInfo1Params, opts ...ClientOption) (*TRAAPIDailyTrainInfo1OK, error)
+	TRAAPIDailyTrainInfo1(params *TRAAPIDailyTrainInfo1Params, opts ...ClientOption) (*TRAAPIDailyTrainInfo1OK, *TRAAPIDailyTrainInfo1Status299, error)
 
-	TRAAPIDailyTrainInfo2(params *TRAAPIDailyTrainInfo2Params, opts ...ClientOption) (*TRAAPIDailyTrainInfo2OK, error)
+	TRAAPIDailyTrainInfo2(params *TRAAPIDailyTrainInfo2Params, opts ...ClientOption) (*TRAAPIDailyTrainInfo2OK, *TRAAPIDailyTrainInfo2Status299, error)
 
-	TRAAPIDailyTrainInfo3(params *TRAAPIDailyTrainInfo3Params, opts ...ClientOption) (*TRAAPIDailyTrainInfo3OK, error)
+	TRAAPIDailyTrainInfo3(params *TRAAPIDailyTrainInfo3Params, opts ...ClientOption) (*TRAAPIDailyTrainInfo3OK, *TRAAPIDailyTrainInfo3Status299, error)
 
-	TRAAPIGeneralTimetable(params *TRAAPIGeneralTimetableParams, opts ...ClientOption) (*TRAAPIGeneralTimetableOK, error)
+	TRAAPIGeneralTimetable(params *TRAAPIGeneralTimetableParams, opts ...ClientOption) (*TRAAPIGeneralTimetableOK, *TRAAPIGeneralTimetableStatus299, error)
 
-	TRAAPIGeneralTimetable1(params *TRAAPIGeneralTimetable1Params, opts ...ClientOption) (*TRAAPIGeneralTimetable1OK, error)
+	TRAAPIGeneralTimetable1(params *TRAAPIGeneralTimetable1Params, opts ...ClientOption) (*TRAAPIGeneralTimetable1OK, *TRAAPIGeneralTimetable1Status299, error)
 
-	TRAAPIGeneralTrainInfo(params *TRAAPIGeneralTrainInfoParams, opts ...ClientOption) (*TRAAPIGeneralTrainInfoOK, error)
+	TRAAPIGeneralTrainInfo(params *TRAAPIGeneralTrainInfoParams, opts ...ClientOption) (*TRAAPIGeneralTrainInfoOK, *TRAAPIGeneralTrainInfoStatus299, error)
 
-	TRAAPIGeneralTrainInfo1(params *TRAAPIGeneralTrainInfo1Params, opts ...ClientOption) (*TRAAPIGeneralTrainInfo1OK, error)
+	TRAAPIGeneralTrainInfo1(params *TRAAPIGeneralTrainInfo1Params, opts ...ClientOption) (*TRAAPIGeneralTrainInfo1OK, *TRAAPIGeneralTrainInfo1Status299, error)
 
-	TRAAPILine(params *TRAAPILineParams, opts ...ClientOption) (*TRAAPILineOK, error)
+	TRAAPILine(params *TRAAPILineParams, opts ...ClientOption) (*TRAAPILineOK, *TRAAPILineStatus299, error)
 
-	TRAAPILiveBoard(params *TRAAPILiveBoardParams, opts ...ClientOption) (*TRAAPILiveBoardOK, error)
+	TRAAPILiveBoard(params *TRAAPILiveBoardParams, opts ...ClientOption) (*TRAAPILiveBoardOK, *TRAAPILiveBoardStatus299, error)
 
-	TRAAPILiveBoard1(params *TRAAPILiveBoard1Params, opts ...ClientOption) (*TRAAPILiveBoard1OK, error)
+	TRAAPILiveBoard1(params *TRAAPILiveBoard1Params, opts ...ClientOption) (*TRAAPILiveBoard1OK, *TRAAPILiveBoard1Status299, error)
 
-	TRAAPILiveTrainDelay(params *TRAAPILiveTrainDelayParams, opts ...ClientOption) (*TRAAPILiveTrainDelayOK, error)
+	TRAAPILiveTrainDelay(params *TRAAPILiveTrainDelayParams, opts ...ClientOption) (*TRAAPILiveTrainDelayOK, *TRAAPILiveTrainDelayStatus299, error)
 
-	TRAAPINetwork(params *TRAAPINetworkParams, opts ...ClientOption) (*TRAAPINetworkOK, error)
+	TRAAPINetwork(params *TRAAPINetworkParams, opts ...ClientOption) (*TRAAPINetworkOK, *TRAAPINetworkStatus299, error)
 
-	TRAAPIODDailyTimetable(params *TRAAPIODDailyTimetableParams, opts ...ClientOption) (*TRAAPIODDailyTimetableOK, error)
+	TRAAPIODDailyTimetable(params *TRAAPIODDailyTimetableParams, opts ...ClientOption) (*TRAAPIODDailyTimetableOK, *TRAAPIODDailyTimetableStatus299, error)
 
-	TRAAPIODFareStation(params *TRAAPIODFareStationParams, opts ...ClientOption) (*TRAAPIODFareStationOK, error)
+	TRAAPIODFareStation(params *TRAAPIODFareStationParams, opts ...ClientOption) (*TRAAPIODFareStationOK, *TRAAPIODFareStationStatus299, error)
 
-	TRAAPIODFareStation1(params *TRAAPIODFareStation1Params, opts ...ClientOption) (*TRAAPIODFareStation1OK, error)
+	TRAAPIODFareStation1(params *TRAAPIODFareStation1Params, opts ...ClientOption) (*TRAAPIODFareStation1OK, *TRAAPIODFareStation1Status299, error)
 
-	TRAAPIShape(params *TRAAPIShapeParams, opts ...ClientOption) (*TRAAPIShapeOK, error)
+	TRAAPIShape(params *TRAAPIShapeParams, opts ...ClientOption) (*TRAAPIShapeOK, *TRAAPIShapeStatus299, error)
 
-	TRAAPIStation(params *TRAAPIStationParams, opts ...ClientOption) (*TRAAPIStationOK, error)
+	TRAAPIStation(params *TRAAPIStationParams, opts ...ClientOption) (*TRAAPIStationOK, *TRAAPIStationStatus299, error)
 
-	TRAAPIStationOfLine(params *TRAAPIStationOfLineParams, opts ...ClientOption) (*TRAAPIStationOfLineOK, error)
+	TRAAPIStationOfLine(params *TRAAPIStationOfLineParams, opts ...ClientOption) (*TRAAPIStationOfLineOK, *TRAAPIStationOfLineStatus299, error)
 
-	TRAAPIStationTimetable(params *TRAAPIStationTimetableParams, opts ...ClientOption) (*TRAAPIStationTimetableOK, error)
+	TRAAPIStationTimetable(params *TRAAPIStationTimetableParams, opts ...ClientOption) (*TRAAPIStationTimetableOK, *TRAAPIStationTimetableStatus299, error)
 
-	TRAAPITrainType(params *TRAAPITrainTypeParams, opts ...ClientOption) (*TRAAPITrainTypeOK, error)
+	TRAAPITrainType(params *TRAAPITrainTypeParams, opts ...ClientOption) (*TRAAPITrainTypeOK, *TRAAPITrainTypeStatus299, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
@@ -88,7 +88,7 @@ type ClientService interface {
 
   取得當天所有車次的時刻表資料
 */
-func (a *Client) TRAAPIDailyTimetable(params *TRAAPIDailyTimetableParams, opts ...ClientOption) (*TRAAPIDailyTimetableOK, error) {
+func (a *Client) TRAAPIDailyTimetable(params *TRAAPIDailyTimetableParams, opts ...ClientOption) (*TRAAPIDailyTimetableOK, *TRAAPIDailyTimetableStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTRAAPIDailyTimetableParams()
@@ -111,15 +111,16 @@ func (a *Client) TRAAPIDailyTimetable(params *TRAAPIDailyTimetableParams, opts .
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*TRAAPIDailyTimetableOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *TRAAPIDailyTimetableOK:
+		return value, nil, nil
+	case *TRAAPIDailyTimetableStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for TRAApi_DailyTimetable: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_r_a: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -128,7 +129,7 @@ func (a *Client) TRAAPIDailyTimetable(params *TRAAPIDailyTimetableParams, opts .
 
   取得當天指定[車次]的時刻表資料
 */
-func (a *Client) TRAAPIDailyTimetable1(params *TRAAPIDailyTimetable1Params, opts ...ClientOption) (*TRAAPIDailyTimetable1OK, error) {
+func (a *Client) TRAAPIDailyTimetable1(params *TRAAPIDailyTimetable1Params, opts ...ClientOption) (*TRAAPIDailyTimetable1OK, *TRAAPIDailyTimetable1Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTRAAPIDailyTimetable1Params()
@@ -151,15 +152,16 @@ func (a *Client) TRAAPIDailyTimetable1(params *TRAAPIDailyTimetable1Params, opts
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*TRAAPIDailyTimetable1OK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *TRAAPIDailyTimetable1OK:
+		return value, nil, nil
+	case *TRAAPIDailyTimetable1Status299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for TRAApi_DailyTimetable_1: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_r_a: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -168,7 +170,7 @@ func (a *Client) TRAAPIDailyTimetable1(params *TRAAPIDailyTimetable1Params, opts
 
   取得指定[日期]所有車次的時刻表資料(台鐵提供近60天每日時刻表)
 */
-func (a *Client) TRAAPIDailyTimetable2(params *TRAAPIDailyTimetable2Params, opts ...ClientOption) (*TRAAPIDailyTimetable2OK, error) {
+func (a *Client) TRAAPIDailyTimetable2(params *TRAAPIDailyTimetable2Params, opts ...ClientOption) (*TRAAPIDailyTimetable2OK, *TRAAPIDailyTimetable2Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTRAAPIDailyTimetable2Params()
@@ -191,15 +193,16 @@ func (a *Client) TRAAPIDailyTimetable2(params *TRAAPIDailyTimetable2Params, opts
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*TRAAPIDailyTimetable2OK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *TRAAPIDailyTimetable2OK:
+		return value, nil, nil
+	case *TRAAPIDailyTimetable2Status299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for TRAApi_DailyTimetable_2: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_r_a: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -208,7 +211,7 @@ func (a *Client) TRAAPIDailyTimetable2(params *TRAAPIDailyTimetable2Params, opts
 
   取得指定[日期],[車次]的時刻表資料(台鐵提供近60天每日時刻表)
 */
-func (a *Client) TRAAPIDailyTimetable3(params *TRAAPIDailyTimetable3Params, opts ...ClientOption) (*TRAAPIDailyTimetable3OK, error) {
+func (a *Client) TRAAPIDailyTimetable3(params *TRAAPIDailyTimetable3Params, opts ...ClientOption) (*TRAAPIDailyTimetable3OK, *TRAAPIDailyTimetable3Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTRAAPIDailyTimetable3Params()
@@ -231,15 +234,16 @@ func (a *Client) TRAAPIDailyTimetable3(params *TRAAPIDailyTimetable3Params, opts
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*TRAAPIDailyTimetable3OK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *TRAAPIDailyTimetable3OK:
+		return value, nil, nil
+	case *TRAAPIDailyTimetable3Status299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for TRAApi_DailyTimetable_3: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_r_a: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -248,7 +252,7 @@ func (a *Client) TRAAPIDailyTimetable3(params *TRAAPIDailyTimetable3Params, opts
 
   取得當天所有車次的車次資料
 */
-func (a *Client) TRAAPIDailyTrainInfo(params *TRAAPIDailyTrainInfoParams, opts ...ClientOption) (*TRAAPIDailyTrainInfoOK, error) {
+func (a *Client) TRAAPIDailyTrainInfo(params *TRAAPIDailyTrainInfoParams, opts ...ClientOption) (*TRAAPIDailyTrainInfoOK, *TRAAPIDailyTrainInfoStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTRAAPIDailyTrainInfoParams()
@@ -271,15 +275,16 @@ func (a *Client) TRAAPIDailyTrainInfo(params *TRAAPIDailyTrainInfoParams, opts .
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*TRAAPIDailyTrainInfoOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *TRAAPIDailyTrainInfoOK:
+		return value, nil, nil
+	case *TRAAPIDailyTrainInfoStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for TRAApi_DailyTrainInfo: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_r_a: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -288,7 +293,7 @@ func (a *Client) TRAAPIDailyTrainInfo(params *TRAAPIDailyTrainInfoParams, opts .
 
   取得當天指定[車次]的車次資料
 */
-func (a *Client) TRAAPIDailyTrainInfo1(params *TRAAPIDailyTrainInfo1Params, opts ...ClientOption) (*TRAAPIDailyTrainInfo1OK, error) {
+func (a *Client) TRAAPIDailyTrainInfo1(params *TRAAPIDailyTrainInfo1Params, opts ...ClientOption) (*TRAAPIDailyTrainInfo1OK, *TRAAPIDailyTrainInfo1Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTRAAPIDailyTrainInfo1Params()
@@ -311,15 +316,16 @@ func (a *Client) TRAAPIDailyTrainInfo1(params *TRAAPIDailyTrainInfo1Params, opts
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*TRAAPIDailyTrainInfo1OK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *TRAAPIDailyTrainInfo1OK:
+		return value, nil, nil
+	case *TRAAPIDailyTrainInfo1Status299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for TRAApi_DailyTrainInfo_1: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_r_a: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -328,7 +334,7 @@ func (a *Client) TRAAPIDailyTrainInfo1(params *TRAAPIDailyTrainInfo1Params, opts
 
   取得指定[日期]所有車次的車次資料(台鐵提供近60天每日時刻表)
 */
-func (a *Client) TRAAPIDailyTrainInfo2(params *TRAAPIDailyTrainInfo2Params, opts ...ClientOption) (*TRAAPIDailyTrainInfo2OK, error) {
+func (a *Client) TRAAPIDailyTrainInfo2(params *TRAAPIDailyTrainInfo2Params, opts ...ClientOption) (*TRAAPIDailyTrainInfo2OK, *TRAAPIDailyTrainInfo2Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTRAAPIDailyTrainInfo2Params()
@@ -351,15 +357,16 @@ func (a *Client) TRAAPIDailyTrainInfo2(params *TRAAPIDailyTrainInfo2Params, opts
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*TRAAPIDailyTrainInfo2OK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *TRAAPIDailyTrainInfo2OK:
+		return value, nil, nil
+	case *TRAAPIDailyTrainInfo2Status299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for TRAApi_DailyTrainInfo_2: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_r_a: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -368,7 +375,7 @@ func (a *Client) TRAAPIDailyTrainInfo2(params *TRAAPIDailyTrainInfo2Params, opts
 
   取得指定[日期]與[車次]的車次資料(台鐵提供近60天每日時刻表)
 */
-func (a *Client) TRAAPIDailyTrainInfo3(params *TRAAPIDailyTrainInfo3Params, opts ...ClientOption) (*TRAAPIDailyTrainInfo3OK, error) {
+func (a *Client) TRAAPIDailyTrainInfo3(params *TRAAPIDailyTrainInfo3Params, opts ...ClientOption) (*TRAAPIDailyTrainInfo3OK, *TRAAPIDailyTrainInfo3Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTRAAPIDailyTrainInfo3Params()
@@ -391,15 +398,16 @@ func (a *Client) TRAAPIDailyTrainInfo3(params *TRAAPIDailyTrainInfo3Params, opts
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*TRAAPIDailyTrainInfo3OK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *TRAAPIDailyTrainInfo3OK:
+		return value, nil, nil
+	case *TRAAPIDailyTrainInfo3Status299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for TRAApi_DailyTrainInfo_3: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_r_a: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -408,7 +416,7 @@ func (a *Client) TRAAPIDailyTrainInfo3(params *TRAAPIDailyTrainInfo3Params, opts
 
   取得所有車次的定期時刻表資料
 */
-func (a *Client) TRAAPIGeneralTimetable(params *TRAAPIGeneralTimetableParams, opts ...ClientOption) (*TRAAPIGeneralTimetableOK, error) {
+func (a *Client) TRAAPIGeneralTimetable(params *TRAAPIGeneralTimetableParams, opts ...ClientOption) (*TRAAPIGeneralTimetableOK, *TRAAPIGeneralTimetableStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTRAAPIGeneralTimetableParams()
@@ -431,15 +439,16 @@ func (a *Client) TRAAPIGeneralTimetable(params *TRAAPIGeneralTimetableParams, op
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*TRAAPIGeneralTimetableOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *TRAAPIGeneralTimetableOK:
+		return value, nil, nil
+	case *TRAAPIGeneralTimetableStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for TRAApi_GeneralTimetable: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_r_a: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -448,7 +457,7 @@ func (a *Client) TRAAPIGeneralTimetable(params *TRAAPIGeneralTimetableParams, op
 
   取得指定[車次]的定期時刻表資料
 */
-func (a *Client) TRAAPIGeneralTimetable1(params *TRAAPIGeneralTimetable1Params, opts ...ClientOption) (*TRAAPIGeneralTimetable1OK, error) {
+func (a *Client) TRAAPIGeneralTimetable1(params *TRAAPIGeneralTimetable1Params, opts ...ClientOption) (*TRAAPIGeneralTimetable1OK, *TRAAPIGeneralTimetable1Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTRAAPIGeneralTimetable1Params()
@@ -471,15 +480,16 @@ func (a *Client) TRAAPIGeneralTimetable1(params *TRAAPIGeneralTimetable1Params, 
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*TRAAPIGeneralTimetable1OK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *TRAAPIGeneralTimetable1OK:
+		return value, nil, nil
+	case *TRAAPIGeneralTimetable1Status299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for TRAApi_GeneralTimetable_1: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_r_a: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -488,7 +498,7 @@ func (a *Client) TRAAPIGeneralTimetable1(params *TRAAPIGeneralTimetable1Params, 
 
   取得所有車次的定期車次資料
 */
-func (a *Client) TRAAPIGeneralTrainInfo(params *TRAAPIGeneralTrainInfoParams, opts ...ClientOption) (*TRAAPIGeneralTrainInfoOK, error) {
+func (a *Client) TRAAPIGeneralTrainInfo(params *TRAAPIGeneralTrainInfoParams, opts ...ClientOption) (*TRAAPIGeneralTrainInfoOK, *TRAAPIGeneralTrainInfoStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTRAAPIGeneralTrainInfoParams()
@@ -511,15 +521,16 @@ func (a *Client) TRAAPIGeneralTrainInfo(params *TRAAPIGeneralTrainInfoParams, op
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*TRAAPIGeneralTrainInfoOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *TRAAPIGeneralTrainInfoOK:
+		return value, nil, nil
+	case *TRAAPIGeneralTrainInfoStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for TRAApi_GeneralTrainInfo: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_r_a: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -528,7 +539,7 @@ func (a *Client) TRAAPIGeneralTrainInfo(params *TRAAPIGeneralTrainInfoParams, op
 
   取得指定[車次]的定期車次資料
 */
-func (a *Client) TRAAPIGeneralTrainInfo1(params *TRAAPIGeneralTrainInfo1Params, opts ...ClientOption) (*TRAAPIGeneralTrainInfo1OK, error) {
+func (a *Client) TRAAPIGeneralTrainInfo1(params *TRAAPIGeneralTrainInfo1Params, opts ...ClientOption) (*TRAAPIGeneralTrainInfo1OK, *TRAAPIGeneralTrainInfo1Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTRAAPIGeneralTrainInfo1Params()
@@ -551,15 +562,16 @@ func (a *Client) TRAAPIGeneralTrainInfo1(params *TRAAPIGeneralTrainInfo1Params, 
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*TRAAPIGeneralTrainInfo1OK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *TRAAPIGeneralTrainInfo1OK:
+		return value, nil, nil
+	case *TRAAPIGeneralTrainInfo1Status299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for TRAApi_GeneralTrainInfo_1: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_r_a: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -568,7 +580,7 @@ func (a *Client) TRAAPIGeneralTrainInfo1(params *TRAAPIGeneralTrainInfo1Params, 
 
   取得路線基本資料
 */
-func (a *Client) TRAAPILine(params *TRAAPILineParams, opts ...ClientOption) (*TRAAPILineOK, error) {
+func (a *Client) TRAAPILine(params *TRAAPILineParams, opts ...ClientOption) (*TRAAPILineOK, *TRAAPILineStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTRAAPILineParams()
@@ -591,15 +603,16 @@ func (a *Client) TRAAPILine(params *TRAAPILineParams, opts ...ClientOption) (*TR
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*TRAAPILineOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *TRAAPILineOK:
+		return value, nil, nil
+	case *TRAAPILineStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for TRAApi_Line: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_r_a: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -608,7 +621,7 @@ func (a *Client) TRAAPILine(params *TRAAPILineParams, opts ...ClientOption) (*TR
 
   取得車站別列車即時到離站電子看板(動態前後30分鐘的車次)。更新頻率：2分鐘。此資料已過濾離站車次資訊
 */
-func (a *Client) TRAAPILiveBoard(params *TRAAPILiveBoardParams, opts ...ClientOption) (*TRAAPILiveBoardOK, error) {
+func (a *Client) TRAAPILiveBoard(params *TRAAPILiveBoardParams, opts ...ClientOption) (*TRAAPILiveBoardOK, *TRAAPILiveBoardStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTRAAPILiveBoardParams()
@@ -631,15 +644,16 @@ func (a *Client) TRAAPILiveBoard(params *TRAAPILiveBoardParams, opts ...ClientOp
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*TRAAPILiveBoardOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *TRAAPILiveBoardOK:
+		return value, nil, nil
+	case *TRAAPILiveBoardStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for TRAApi_LiveBoard: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_r_a: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -648,7 +662,7 @@ func (a *Client) TRAAPILiveBoard(params *TRAAPILiveBoardParams, opts ...ClientOp
 
   取得指定[車站]列車即時到離站電子看板(動態前後30分鐘的車次)。更新頻率：2分鐘。此資料已過濾離站車次資訊
 */
-func (a *Client) TRAAPILiveBoard1(params *TRAAPILiveBoard1Params, opts ...ClientOption) (*TRAAPILiveBoard1OK, error) {
+func (a *Client) TRAAPILiveBoard1(params *TRAAPILiveBoard1Params, opts ...ClientOption) (*TRAAPILiveBoard1OK, *TRAAPILiveBoard1Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTRAAPILiveBoard1Params()
@@ -671,15 +685,16 @@ func (a *Client) TRAAPILiveBoard1(params *TRAAPILiveBoard1Params, opts ...Client
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*TRAAPILiveBoard1OK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *TRAAPILiveBoard1OK:
+		return value, nil, nil
+	case *TRAAPILiveBoard1Status299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for TRAApi_LiveBoard_1: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_r_a: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -688,7 +703,7 @@ func (a *Client) TRAAPILiveBoard1(params *TRAAPILiveBoard1Params, opts ...Client
 
   取得列車即時準點/延誤時間資料。更新頻率：2分鐘
 */
-func (a *Client) TRAAPILiveTrainDelay(params *TRAAPILiveTrainDelayParams, opts ...ClientOption) (*TRAAPILiveTrainDelayOK, error) {
+func (a *Client) TRAAPILiveTrainDelay(params *TRAAPILiveTrainDelayParams, opts ...ClientOption) (*TRAAPILiveTrainDelayOK, *TRAAPILiveTrainDelayStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTRAAPILiveTrainDelayParams()
@@ -711,15 +726,16 @@ func (a *Client) TRAAPILiveTrainDelay(params *TRAAPILiveTrainDelayParams, opts .
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*TRAAPILiveTrainDelayOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *TRAAPILiveTrainDelayOK:
+		return value, nil, nil
+	case *TRAAPILiveTrainDelayStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for TRAApi_LiveTrainDelay: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_r_a: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -728,7 +744,7 @@ func (a *Client) TRAAPILiveTrainDelay(params *TRAAPILiveTrainDelayParams, opts .
 
   取得臺鐵路網資料
 */
-func (a *Client) TRAAPINetwork(params *TRAAPINetworkParams, opts ...ClientOption) (*TRAAPINetworkOK, error) {
+func (a *Client) TRAAPINetwork(params *TRAAPINetworkParams, opts ...ClientOption) (*TRAAPINetworkOK, *TRAAPINetworkStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTRAAPINetworkParams()
@@ -751,15 +767,16 @@ func (a *Client) TRAAPINetwork(params *TRAAPINetworkParams, opts ...ClientOption
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*TRAAPINetworkOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *TRAAPINetworkOK:
+		return value, nil, nil
+	case *TRAAPINetworkStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for TRAApi_Network: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_r_a: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -768,7 +785,7 @@ func (a *Client) TRAAPINetwork(params *TRAAPINetworkParams, opts ...ClientOption
 
   取得指定[日期],[起迄站間]之站間時刻表資料
 */
-func (a *Client) TRAAPIODDailyTimetable(params *TRAAPIODDailyTimetableParams, opts ...ClientOption) (*TRAAPIODDailyTimetableOK, error) {
+func (a *Client) TRAAPIODDailyTimetable(params *TRAAPIODDailyTimetableParams, opts ...ClientOption) (*TRAAPIODDailyTimetableOK, *TRAAPIODDailyTimetableStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTRAAPIODDailyTimetableParams()
@@ -791,15 +808,16 @@ func (a *Client) TRAAPIODDailyTimetable(params *TRAAPIODDailyTimetableParams, op
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*TRAAPIODDailyTimetableOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *TRAAPIODDailyTimetableOK:
+		return value, nil, nil
+	case *TRAAPIODDailyTimetableStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for TRAApi_ODDailyTimetable: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_r_a: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -808,7 +826,7 @@ func (a *Client) TRAAPIODDailyTimetable(params *TRAAPIODDailyTimetableParams, op
 
   取得票價資料
 */
-func (a *Client) TRAAPIODFareStation(params *TRAAPIODFareStationParams, opts ...ClientOption) (*TRAAPIODFareStationOK, error) {
+func (a *Client) TRAAPIODFareStation(params *TRAAPIODFareStationParams, opts ...ClientOption) (*TRAAPIODFareStationOK, *TRAAPIODFareStationStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTRAAPIODFareStationParams()
@@ -831,15 +849,16 @@ func (a *Client) TRAAPIODFareStation(params *TRAAPIODFareStationParams, opts ...
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*TRAAPIODFareStationOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *TRAAPIODFareStationOK:
+		return value, nil, nil
+	case *TRAAPIODFareStationStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for TRAApi_ODFareStation: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_r_a: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -848,7 +867,7 @@ func (a *Client) TRAAPIODFareStation(params *TRAAPIODFareStationParams, opts ...
 
   取得指定[起訖站間]之票價資料
 */
-func (a *Client) TRAAPIODFareStation1(params *TRAAPIODFareStation1Params, opts ...ClientOption) (*TRAAPIODFareStation1OK, error) {
+func (a *Client) TRAAPIODFareStation1(params *TRAAPIODFareStation1Params, opts ...ClientOption) (*TRAAPIODFareStation1OK, *TRAAPIODFareStation1Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTRAAPIODFareStation1Params()
@@ -871,15 +890,16 @@ func (a *Client) TRAAPIODFareStation1(params *TRAAPIODFareStation1Params, opts .
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*TRAAPIODFareStation1OK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *TRAAPIODFareStation1OK:
+		return value, nil, nil
+	case *TRAAPIODFareStation1Status299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for TRAApi_ODFareStation_1: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_r_a: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -888,7 +908,7 @@ func (a *Client) TRAAPIODFareStation1(params *TRAAPIODFareStation1Params, opts .
 
   取得軌道路網實體路線圖資資料
 */
-func (a *Client) TRAAPIShape(params *TRAAPIShapeParams, opts ...ClientOption) (*TRAAPIShapeOK, error) {
+func (a *Client) TRAAPIShape(params *TRAAPIShapeParams, opts ...ClientOption) (*TRAAPIShapeOK, *TRAAPIShapeStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTRAAPIShapeParams()
@@ -911,15 +931,16 @@ func (a *Client) TRAAPIShape(params *TRAAPIShapeParams, opts ...ClientOption) (*
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*TRAAPIShapeOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *TRAAPIShapeOK:
+		return value, nil, nil
+	case *TRAAPIShapeStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for TRAApi_Shape: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_r_a: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -928,7 +949,7 @@ func (a *Client) TRAAPIShape(params *TRAAPIShapeParams, opts ...ClientOption) (*
 
   取得車站基本資料
 */
-func (a *Client) TRAAPIStation(params *TRAAPIStationParams, opts ...ClientOption) (*TRAAPIStationOK, error) {
+func (a *Client) TRAAPIStation(params *TRAAPIStationParams, opts ...ClientOption) (*TRAAPIStationOK, *TRAAPIStationStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTRAAPIStationParams()
@@ -951,15 +972,16 @@ func (a *Client) TRAAPIStation(params *TRAAPIStationParams, opts ...ClientOption
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*TRAAPIStationOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *TRAAPIStationOK:
+		return value, nil, nil
+	case *TRAAPIStationStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for TRAApi_Station: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_r_a: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -968,7 +990,7 @@ func (a *Client) TRAAPIStation(params *TRAAPIStationParams, opts ...ClientOption
 
   取得路線車站基本資料
 */
-func (a *Client) TRAAPIStationOfLine(params *TRAAPIStationOfLineParams, opts ...ClientOption) (*TRAAPIStationOfLineOK, error) {
+func (a *Client) TRAAPIStationOfLine(params *TRAAPIStationOfLineParams, opts ...ClientOption) (*TRAAPIStationOfLineOK, *TRAAPIStationOfLineStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTRAAPIStationOfLineParams()
@@ -991,15 +1013,16 @@ func (a *Client) TRAAPIStationOfLine(params *TRAAPIStationOfLineParams, opts ...
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*TRAAPIStationOfLineOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *TRAAPIStationOfLineOK:
+		return value, nil, nil
+	case *TRAAPIStationOfLineStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for TRAApi_StationOfLine: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_r_a: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -1008,7 +1031,7 @@ func (a *Client) TRAAPIStationOfLine(params *TRAAPIStationOfLineParams, opts ...
 
   取得指定[日期],[車站]的站別時刻表資料
 */
-func (a *Client) TRAAPIStationTimetable(params *TRAAPIStationTimetableParams, opts ...ClientOption) (*TRAAPIStationTimetableOK, error) {
+func (a *Client) TRAAPIStationTimetable(params *TRAAPIStationTimetableParams, opts ...ClientOption) (*TRAAPIStationTimetableOK, *TRAAPIStationTimetableStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTRAAPIStationTimetableParams()
@@ -1031,15 +1054,16 @@ func (a *Client) TRAAPIStationTimetable(params *TRAAPIStationTimetableParams, op
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*TRAAPIStationTimetableOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *TRAAPIStationTimetableOK:
+		return value, nil, nil
+	case *TRAAPIStationTimetableStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for TRAApi_StationTimetable: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_r_a: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -1048,7 +1072,7 @@ func (a *Client) TRAAPIStationTimetable(params *TRAAPIStationTimetableParams, op
 
   取得所有列車車種資料
 */
-func (a *Client) TRAAPITrainType(params *TRAAPITrainTypeParams, opts ...ClientOption) (*TRAAPITrainTypeOK, error) {
+func (a *Client) TRAAPITrainType(params *TRAAPITrainTypeParams, opts ...ClientOption) (*TRAAPITrainTypeOK, *TRAAPITrainTypeStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTRAAPITrainTypeParams()
@@ -1071,15 +1095,16 @@ func (a *Client) TRAAPITrainType(params *TRAAPITrainTypeParams, opts ...ClientOp
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*TRAAPITrainTypeOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *TRAAPITrainTypeOK:
+		return value, nil, nil
+	case *TRAAPITrainTypeStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for TRAApi_TrainType: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for t_r_a: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 

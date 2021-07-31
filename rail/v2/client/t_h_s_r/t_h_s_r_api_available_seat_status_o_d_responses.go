@@ -29,6 +29,12 @@ func (o *THSRAPIAvailableSeatStatusODReader) ReadResponse(response runtime.Clien
 			return nil, err
 		}
 		return result, nil
+	case 299:
+		result := NewTHSRAPIAvailableSeatStatusODStatus299()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return result, nil
 	case 304:
 		result := NewTHSRAPIAvailableSeatStatusODNotModified()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -63,6 +69,38 @@ func (o *THSRAPIAvailableSeatStatusODOK) GetPayload() *models.PTXAPIRailModelV2T
 func (o *THSRAPIAvailableSeatStatusODOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	o.Payload = new(models.PTXAPIRailModelV2THSRODAvailableSeatStatusWrapperPTXServiceDTORailSpecificationV2THSRODAvailableSeat)
+
+	// response payload
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewTHSRAPIAvailableSeatStatusODStatus299 creates a THSRAPIAvailableSeatStatusODStatus299 with default headers values
+func NewTHSRAPIAvailableSeatStatusODStatus299() *THSRAPIAvailableSeatStatusODStatus299 {
+	return &THSRAPIAvailableSeatStatusODStatus299{}
+}
+
+/* THSRAPIAvailableSeatStatusODStatus299 describes a response with status code 299, with default header values.
+
+加入參數'?health=true'即可查詢此API服務的健康狀態
+*/
+type THSRAPIAvailableSeatStatusODStatus299 struct {
+	Payload *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth
+}
+
+func (o *THSRAPIAvailableSeatStatusODStatus299) Error() string {
+	return fmt.Sprintf("[GET /v2/Rail/THSR/AvailableSeatStatus/Train/OD/TrainDate/{TrainDate}][%d] tHSRApiAvailableSeatStatusODStatus299  %+v", 299, o.Payload)
+}
+func (o *THSRAPIAvailableSeatStatusODStatus299) GetPayload() *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth {
+	return o.Payload
+}
+
+func (o *THSRAPIAvailableSeatStatusODStatus299) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	o.Payload = new(models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

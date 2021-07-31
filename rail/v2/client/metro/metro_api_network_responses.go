@@ -29,6 +29,12 @@ func (o *MetroAPINetworkReader) ReadResponse(response runtime.ClientResponse, co
 			return nil, err
 		}
 		return result, nil
+	case 299:
+		result := NewMetroAPINetworkStatus299()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return result, nil
 	case 304:
 		result := NewMetroAPINetworkNotModified()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -64,6 +70,38 @@ func (o *MetroAPINetworkOK) readResponse(response runtime.ClientResponse, consum
 
 	// response payload
 	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewMetroAPINetworkStatus299 creates a MetroAPINetworkStatus299 with default headers values
+func NewMetroAPINetworkStatus299() *MetroAPINetworkStatus299 {
+	return &MetroAPINetworkStatus299{}
+}
+
+/* MetroAPINetworkStatus299 describes a response with status code 299, with default header values.
+
+加入參數'?health=true'即可查詢此API服務的健康狀態
+*/
+type MetroAPINetworkStatus299 struct {
+	Payload *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth
+}
+
+func (o *MetroAPINetworkStatus299) Error() string {
+	return fmt.Sprintf("[GET /v2/Rail/Metro/Network/{Operator}][%d] metroApiNetworkStatus299  %+v", 299, o.Payload)
+}
+func (o *MetroAPINetworkStatus299) GetPayload() *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth {
+	return o.Payload
+}
+
+func (o *MetroAPINetworkStatus299) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	o.Payload = new(models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth)
+
+	// response payload
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

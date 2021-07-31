@@ -29,6 +29,12 @@ func (o *TRAAPIStationOfLineReader) ReadResponse(response runtime.ClientResponse
 			return nil, err
 		}
 		return result, nil
+	case 299:
+		result := NewTRAAPIStationOfLineStatus299()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return result, nil
 	case 304:
 		result := NewTRAAPIStationOfLineNotModified()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -64,6 +70,38 @@ func (o *TRAAPIStationOfLineOK) readResponse(response runtime.ClientResponse, co
 
 	// response payload
 	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewTRAAPIStationOfLineStatus299 creates a TRAAPIStationOfLineStatus299 with default headers values
+func NewTRAAPIStationOfLineStatus299() *TRAAPIStationOfLineStatus299 {
+	return &TRAAPIStationOfLineStatus299{}
+}
+
+/* TRAAPIStationOfLineStatus299 describes a response with status code 299, with default header values.
+
+加入參數'?health=true'即可查詢此API服務的健康狀態
+*/
+type TRAAPIStationOfLineStatus299 struct {
+	Payload *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth
+}
+
+func (o *TRAAPIStationOfLineStatus299) Error() string {
+	return fmt.Sprintf("[GET /v2/Rail/TRA/StationOfLine][%d] tRAApiStationOfLineStatus299  %+v", 299, o.Payload)
+}
+func (o *TRAAPIStationOfLineStatus299) GetPayload() *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth {
+	return o.Payload
+}
+
+func (o *TRAAPIStationOfLineStatus299) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	o.Payload = new(models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth)
+
+	// response payload
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

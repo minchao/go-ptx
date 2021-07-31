@@ -29,6 +29,12 @@ func (o *TRAAPIGeneralTrainInfoReader) ReadResponse(response runtime.ClientRespo
 			return nil, err
 		}
 		return result, nil
+	case 299:
+		result := NewTRAAPIGeneralTrainInfoStatus299()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return result, nil
 	case 304:
 		result := NewTRAAPIGeneralTrainInfoNotModified()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -64,6 +70,38 @@ func (o *TRAAPIGeneralTrainInfoOK) readResponse(response runtime.ClientResponse,
 
 	// response payload
 	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewTRAAPIGeneralTrainInfoStatus299 creates a TRAAPIGeneralTrainInfoStatus299 with default headers values
+func NewTRAAPIGeneralTrainInfoStatus299() *TRAAPIGeneralTrainInfoStatus299 {
+	return &TRAAPIGeneralTrainInfoStatus299{}
+}
+
+/* TRAAPIGeneralTrainInfoStatus299 describes a response with status code 299, with default header values.
+
+加入參數'?health=true'即可查詢此API服務的健康狀態
+*/
+type TRAAPIGeneralTrainInfoStatus299 struct {
+	Payload *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth
+}
+
+func (o *TRAAPIGeneralTrainInfoStatus299) Error() string {
+	return fmt.Sprintf("[GET /v2/Rail/TRA/GeneralTrainInfo][%d] tRAApiGeneralTrainInfoStatus299  %+v", 299, o.Payload)
+}
+func (o *TRAAPIGeneralTrainInfoStatus299) GetPayload() *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth {
+	return o.Payload
+}
+
+func (o *TRAAPIGeneralTrainInfoStatus299) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	o.Payload = new(models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth)
+
+	// response payload
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

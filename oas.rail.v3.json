@@ -67,6 +67,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -86,6 +96,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -152,6 +168,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -171,6 +197,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -231,6 +263,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -250,6 +292,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -310,6 +358,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -329,6 +387,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -389,6 +453,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -408,6 +482,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -468,6 +548,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -487,6 +577,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -547,6 +643,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -566,6 +672,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -585,6 +697,16 @@
         "parameters": [
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -596,6 +718,12 @@
             "description": "Gzipped Attachment Response",
             "schema": {
               "$ref": "#/definitions/PTX.API.Rail.Model.TRAODFareWrapper[PTX.Service.DTO.Rail.Specification.V3.TRA.ODFare.ODFare]"
+            }
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
             }
           }
         }
@@ -671,6 +799,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -690,6 +828,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -750,6 +894,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -769,6 +923,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -836,6 +996,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -855,6 +1025,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -915,6 +1091,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -934,6 +1120,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -1001,6 +1193,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -1020,6 +1222,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -1080,6 +1288,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -1099,6 +1317,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -1166,6 +1390,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -1185,6 +1419,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -1245,6 +1485,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -1264,6 +1514,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -1331,6 +1587,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -1350,6 +1616,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -1418,6 +1690,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -1437,6 +1719,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -1519,6 +1807,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -1538,6 +1836,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -1620,6 +1924,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -1639,6 +1953,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -1699,6 +2019,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -1718,6 +2048,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -1785,6 +2121,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -1804,6 +2150,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -1872,6 +2224,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -1891,6 +2253,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -1951,6 +2319,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -1970,6 +2348,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -2037,6 +2421,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -2056,6 +2450,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -2116,6 +2516,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -2135,6 +2545,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -2202,6 +2618,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -2221,6 +2647,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -2281,6 +2713,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -2300,6 +2742,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -2360,6 +2808,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -2379,6 +2837,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -2439,6 +2903,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -2458,6 +2932,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -2518,6 +2998,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -2537,6 +3027,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -2597,6 +3093,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -2616,6 +3122,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -2676,6 +3188,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -2695,6 +3217,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -2755,6 +3283,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -2774,6 +3312,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -2783,8 +3327,8 @@
         "tags": [
           "AFR"
         ],
-        "summary": "取得小火車路網資料",
-        "description": "取得小火車路網資料",
+        "summary": "取得路網資料",
+        "description": "取得路網資料",
         "operationId": "LiteTrain_Network",
         "produces": [
           "application/json",
@@ -2834,6 +3378,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -2853,6 +3407,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -2919,6 +3479,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -2938,6 +3508,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -2998,6 +3574,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -3017,6 +3603,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -3026,8 +3618,8 @@
         "tags": [
           "AFR"
         ],
-        "summary": "取得小火車營運業者基本資料",
-        "description": "取得小火車營運業者基本資料",
+        "summary": "取得營運業者基本資料",
+        "description": "取得營運業者基本資料",
         "operationId": "LiteTrain_Operator",
         "produces": [
           "application/json",
@@ -3077,6 +3669,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -3096,6 +3698,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -3156,6 +3764,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -3175,6 +3793,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -3242,6 +3866,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -3261,6 +3895,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -3321,6 +3961,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -3340,6 +3990,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -3414,6 +4070,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -3433,6 +4099,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -3493,6 +4165,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -3512,6 +4194,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -3572,6 +4260,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -3591,6 +4289,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -3651,6 +4355,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -3670,6 +4384,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -3730,6 +4450,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -3749,6 +4479,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -3809,6 +4545,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -3823,11 +4569,17 @@
           "200": {
             "description": "Success",
             "schema": {
-              "$ref": "#/definitions/PTX.API.Rail.Model.LiteTrainRealTimeWrapper[PTX.Service.DTO.Rail.Specification.V3.LiteTrain.LiteTrainNewsList.News]"
+              "$ref": "#/definitions/PTX.API.Rail.Model.LiteTrainRealTimeWrapper[PTX.Service.DTO.Rail.Specification.V3.TRA.TRANewsList.News]"
             }
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -4544,7 +5296,7 @@
         "namespace": "https://ptx.transportdata.tw/standard/schema/"
       }
     },
-    "PTX.API.Rail.Model.LiteTrainRealTimeWrapper[PTX.Service.DTO.Rail.Specification.V3.LiteTrain.LiteTrainNewsList.News]": {
+    "PTX.API.Rail.Model.LiteTrainRealTimeWrapper[PTX.Service.DTO.Rail.Specification.V3.TRA.TRANewsList.News]": {
       "title": "LiteTrainNewsList",
       "required": [
         "AuthorityCode",
@@ -4592,7 +5344,7 @@
           "description": "資料(陣列)",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V3.LiteTrain.LiteTrainNewsList.News"
+            "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V3.TRA.TRANewsList.News"
           },
           "xml": {
             "name": "List`1"
@@ -6188,331 +6940,6 @@
         "namespace": "https://ptx.transportdata.tw/standard/schema/"
       }
     },
-    "PTX.Service.DTO.Rail.Specification.V3.LiteTrain.Common.ServiceDay": {
-      "title": "ServiceDay",
-      "description": "小火車服務日型態",
-      "required": [
-        "DayAfterHoliday",
-        "DayBeforeHoliday",
-        "Friday",
-        "Monday",
-        "NationalHolidays",
-        "Saturday",
-        "Sunday",
-        "Thursday",
-        "Tuesday",
-        "TyphoonDay",
-        "Wednesday"
-      ],
-      "type": "object",
-      "properties": {
-        "ServiceTag": {
-          "title": "String",
-          "description": "服務日標籤",
-          "type": "string",
-          "xml": {
-            "name": "String"
-          }
-        },
-        "Monday": {
-          "title": "Int32",
-          "description": "星期一是否營運 : [0:'否',1:'是']",
-          "type": "integer"
-        },
-        "Tuesday": {
-          "title": "Int32",
-          "description": "星期二是否營運 : [0:'否',1:'是']",
-          "type": "integer"
-        },
-        "Wednesday": {
-          "title": "Int32",
-          "description": "星期三是否營運 : [0:'否',1:'是']",
-          "type": "integer"
-        },
-        "Thursday": {
-          "title": "Int32",
-          "description": "星期四是否營運 : [0:'否',1:'是']",
-          "type": "integer"
-        },
-        "Friday": {
-          "title": "Int32",
-          "description": "星期五是否營運 : [0:'否',1:'是']",
-          "type": "integer"
-        },
-        "Saturday": {
-          "title": "Int32",
-          "description": "星期六是否營運 : [0:'否',1:'是']",
-          "type": "integer"
-        },
-        "Sunday": {
-          "title": "Int32",
-          "description": "星期日是否營運 : [0:'否',1:'是']",
-          "type": "integer"
-        },
-        "NationalHolidays": {
-          "title": "Int32",
-          "description": "國定假日是否營運 : [0:'否',1:'是']",
-          "type": "integer"
-        },
-        "DayBeforeHoliday": {
-          "title": "Int32",
-          "description": "假日前一日是否營運 : [0:'否',1:'是']",
-          "type": "integer"
-        },
-        "DayAfterHoliday": {
-          "title": "Int32",
-          "description": "假日後一日是否營運 : [0:'否',1:'是']",
-          "type": "integer"
-        },
-        "TyphoonDay": {
-          "title": "Int32",
-          "description": "颱風停止上班上課期間營運營運 : [0:'否',1:'是']",
-          "type": "integer"
-        }
-      },
-      "xml": {
-        "name": "ServiceDay"
-      }
-    },
-    "PTX.Service.DTO.Rail.Specification.V3.LiteTrain.Common.StopTime": {
-      "title": "StopTime",
-      "description": "小火車停靠時間資料",
-      "required": [
-        "ArrivalTime",
-        "DepartureTime",
-        "StationID",
-        "StationName",
-        "StopSequence"
-      ],
-      "type": "object",
-      "properties": {
-        "StopSequence": {
-          "format": "int32",
-          "title": "Int32",
-          "description": "停靠站序(由1開始)",
-          "type": "integer"
-        },
-        "StationID": {
-          "title": "String",
-          "description": "車站代碼",
-          "type": "string",
-          "xml": {
-            "name": "String"
-          }
-        },
-        "StationName": {
-          "title": "NameType",
-          "description": "車站名稱",
-          "allOf": [
-            {
-              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.NameType"
-            }
-          ],
-          "xml": {
-            "name": "NameType"
-          }
-        },
-        "ArrivalTime": {
-          "title": "String",
-          "description": "到站時間(格式: HH:mm)",
-          "type": "string",
-          "xml": {
-            "name": "String"
-          }
-        },
-        "DepartureTime": {
-          "title": "String",
-          "description": "離站時間(格式: HH:mm)",
-          "type": "string",
-          "xml": {
-            "name": "String"
-          }
-        }
-      },
-      "xml": {
-        "name": "StopTime"
-      }
-    },
-    "PTX.Service.DTO.Rail.Specification.V3.LiteTrain.Common.TrainInfo": {
-      "title": "TrainInfo",
-      "description": "小火車車次定期資料型別(時刻表用)",
-      "required": [
-        "BikeFlag",
-        "BreastFeedFlag",
-        "CarFlag",
-        "DailyFlag",
-        "DiningFlag",
-        "Direction",
-        "ExtraTrainFlag",
-        "PackageServiceFlag",
-        "TrainNo",
-        "WheelChairFlag"
-      ],
-      "type": "object",
-      "properties": {
-        "TrainNo": {
-          "title": "String",
-          "description": "車次代碼",
-          "type": "string",
-          "xml": {
-            "name": "String"
-          }
-        },
-        "RouteID": {
-          "title": "String",
-          "description": "營運路線代碼",
-          "type": "string",
-          "xml": {
-            "name": "String"
-          }
-        },
-        "Direction": {
-          "title": "Int32",
-          "description": "行駛方向 : [0:'順行',1:'逆行']",
-          "type": "integer"
-        },
-        "TrainTypeID": {
-          "title": "String",
-          "description": "車種代嗎",
-          "type": "string",
-          "xml": {
-            "name": "String"
-          }
-        },
-        "TrainTypeCode": {
-          "title": "String",
-          "description": "車種簡碼 = ['1: 太魯閣', '2: 普悠瑪', '3: 自強', '4: 莒光', '5: 復興', '6: 區間', '7: 普快', '10: 區間快']",
-          "type": "string",
-          "xml": {
-            "name": "String"
-          }
-        },
-        "TrainTypeName": {
-          "title": "NameType",
-          "description": "車種名稱",
-          "allOf": [
-            {
-              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.NameType"
-            }
-          ],
-          "xml": {
-            "name": "NameType"
-          }
-        },
-        "TripHeadSign": {
-          "title": "String",
-          "description": "車次之目的地方向描述",
-          "type": "string",
-          "xml": {
-            "name": "String"
-          }
-        },
-        "StartingStationID": {
-          "title": "String",
-          "description": "列車起點車站代號",
-          "type": "string",
-          "xml": {
-            "name": "String"
-          }
-        },
-        "StartingStationName": {
-          "title": "NameType",
-          "description": "列車起點車站名稱",
-          "allOf": [
-            {
-              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.NameType"
-            }
-          ],
-          "xml": {
-            "name": "NameType"
-          }
-        },
-        "EndingStationID": {
-          "title": "String",
-          "description": "列車終點車站代號",
-          "type": "string",
-          "xml": {
-            "name": "String"
-          }
-        },
-        "EndingStationName": {
-          "title": "NameType",
-          "description": "列車終點車站名稱",
-          "allOf": [
-            {
-              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.NameType"
-            }
-          ],
-          "xml": {
-            "name": "NameType"
-          }
-        },
-        "OverNightStationID": {
-          "title": "String",
-          "description": "跨夜車站代碼",
-          "type": "string",
-          "xml": {
-            "name": "String"
-          }
-        },
-        "TripLine": {
-          "title": "Int32",
-          "description": "山海線類型 : [0:'不經山海線',1:'山線',2:'海線',3:'成追線']",
-          "type": "integer"
-        },
-        "WheelChairFlag": {
-          "title": "Int32",
-          "description": "是否設身障旅客專用座位車 : [0:'否',1:'是']",
-          "type": "integer"
-        },
-        "PackageServiceFlag": {
-          "title": "Int32",
-          "description": "是否提供行李服務 : [0:'否',1:'是']",
-          "type": "integer"
-        },
-        "DiningFlag": {
-          "title": "Int32",
-          "description": "是否提供訂便當服務 : [0:'否',1:'是']",
-          "type": "integer"
-        },
-        "BreastFeedFlag": {
-          "title": "Int32",
-          "description": "是否設有哺(集)乳室車廂 : [0:'否',1:'是']",
-          "type": "integer"
-        },
-        "BikeFlag": {
-          "title": "Int32",
-          "description": "是否人車同行班次(置於攜車袋之自行車各級列車均可乘車) : [0:'否',1:'是']",
-          "type": "integer"
-        },
-        "CarFlag": {
-          "title": "Int32",
-          "description": "是否提供小客車 : [0:'否',1:'是']",
-          "type": "integer"
-        },
-        "DailyFlag": {
-          "title": "Int32",
-          "description": "是否為每日行駛 : [0:'否',1:'是']",
-          "type": "integer"
-        },
-        "ExtraTrainFlag": {
-          "title": "Int32",
-          "description": "是否為加班車 : [0:'否',1:'是']",
-          "type": "integer"
-        },
-        "Note": {
-          "title": "String",
-          "description": "附註說明",
-          "type": "string",
-          "xml": {
-            "name": "String"
-          }
-        }
-      },
-      "xml": {
-        "name": "TrainInfo"
-      }
-    },
     "PTX.Service.DTO.Rail.Specification.V3.LiteTrain.GeneralTrainTimetable": {
       "title": "GeneralTrainTimetable",
       "description": "小火車定期時刻表資料型別",
@@ -6528,7 +6955,7 @@
           "description": "定期車次資料",
           "allOf": [
             {
-              "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V3.LiteTrain.Common.TrainInfo"
+              "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V3.TRA.Common.TrainInfo"
             }
           ],
           "xml": {
@@ -6540,7 +6967,7 @@
           "description": "停靠時間資料",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V3.LiteTrain.Common.StopTime"
+            "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V3.TRA.Common.StopTime"
           },
           "xml": {
             "name": "List`1"
@@ -6551,7 +6978,7 @@
           "description": "營運日型態",
           "allOf": [
             {
-              "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V3.LiteTrain.Common.ServiceDay"
+              "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V3.TRA.Common.ServiceDay"
             }
           ],
           "xml": {
@@ -6649,167 +7076,6 @@
         "name": "Line"
       }
     },
-    "PTX.Service.DTO.Rail.Specification.V3.LiteTrain.LiteTrainNewsList.News": {
-      "title": "News",
-      "required": [
-        "Description",
-        "Language",
-        "NewsCategory",
-        "NewsID",
-        "PublishTime",
-        "Title",
-        "UpdateTime"
-      ],
-      "type": "object",
-      "properties": {
-        "NewsID": {
-          "title": "String",
-          "description": "消息代碼",
-          "type": "string",
-          "xml": {
-            "name": "String"
-          }
-        },
-        "Language": {
-          "title": "Int32",
-          "description": "語系 : [1:'Zh_tw',2:'En_us',3:'Zh_cn',4:'Ja',5:'Ko',99:'Other']",
-          "type": "integer"
-        },
-        "Department": {
-          "title": "String",
-          "description": "發布單位",
-          "type": "string",
-          "xml": {
-            "name": "String"
-          }
-        },
-        "Title": {
-          "title": "String",
-          "description": "消息標題",
-          "type": "string",
-          "xml": {
-            "name": "String"
-          }
-        },
-        "NewsCategory": {
-          "title": "Int32",
-          "description": "消息類別 : [1:'最新消息',2:'新聞稿',3:'營運資訊',4:'轉乘資訊',5:'活動訊息',6:'系統公告',7:'新服務上架',8:'API修正',9:'來源異常',99:'其他']",
-          "type": "integer"
-        },
-        "Description": {
-          "title": "String",
-          "description": "內容描述",
-          "type": "string",
-          "xml": {
-            "name": "String"
-          }
-        },
-        "NewsURL": {
-          "title": "String",
-          "description": "消息網址連結",
-          "type": "string",
-          "xml": {
-            "name": "String"
-          }
-        },
-        "AttachmentURL": {
-          "title": "String",
-          "description": "附件網址連結",
-          "type": "string",
-          "xml": {
-            "name": "String"
-          }
-        },
-        "StartTime": {
-          "format": "date-time",
-          "description": "消息起始日期時間",
-          "type": "string"
-        },
-        "EndTime": {
-          "format": "date-time",
-          "description": "消息結束日期時間",
-          "type": "string"
-        },
-        "PublishTime": {
-          "format": "date-time",
-          "title": "DateTime",
-          "description": "消息發佈日期時間",
-          "type": "string"
-        },
-        "UpdateTime": {
-          "format": "date-time",
-          "title": "DateTime",
-          "description": "本筆資料之更新日期時間",
-          "type": "string"
-        }
-      },
-      "xml": {
-        "name": "News"
-      }
-    },
-    "PTX.Service.DTO.Rail.Specification.V3.LiteTrain.Network.Line": {
-      "title": "Line",
-      "description": "路線基本資料",
-      "required": [
-        "LineID",
-        "LineNo"
-      ],
-      "type": "object",
-      "properties": {
-        "LineNo": {
-          "title": "String",
-          "description": "路線編號",
-          "type": "string",
-          "xml": {
-            "name": "String"
-          }
-        },
-        "LineID": {
-          "title": "String",
-          "description": "路線代碼",
-          "type": "string",
-          "xml": {
-            "name": "String"
-          }
-        }
-      },
-      "xml": {
-        "name": "Line"
-      }
-    },
-    "PTX.Service.DTO.Rail.Specification.V3.LiteTrain.Network.MapNameType": {
-      "title": "MapNameType",
-      "type": "object",
-      "properties": {
-        "MapName": {
-          "title": "String",
-          "description": "路網圖名稱",
-          "type": "string",
-          "xml": {
-            "name": "String"
-          }
-        },
-        "Zh_tw": {
-          "title": "String",
-          "description": "小火車路網圖網址(中文版)",
-          "type": "string",
-          "xml": {
-            "name": "String"
-          }
-        },
-        "En": {
-          "title": "String",
-          "description": "小火車路網圖網址(英文版)",
-          "type": "string",
-          "xml": {
-            "name": "String"
-          }
-        }
-      },
-      "xml": {
-        "name": "MapNameType"
-      }
-    },
     "PTX.Service.DTO.Rail.Specification.V3.LiteTrain.Network.Network": {
       "title": "Network",
       "description": "小火車路網資料",
@@ -6825,7 +7091,7 @@
       "properties": {
         "NetworkID": {
           "title": "String",
-          "description": "小火車路網代碼",
+          "description": "路網代碼",
           "type": "string",
           "xml": {
             "name": "String"
@@ -6833,7 +7099,7 @@
         },
         "NetworkName": {
           "title": "NameType",
-          "description": "小火車路網名稱",
+          "description": "路網名稱",
           "allOf": [
             {
               "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.NameType"
@@ -6865,10 +7131,10 @@
         },
         "NetworkMapURL": {
           "title": "MapNameType",
-          "description": "小火車路網圖網址URL",
+          "description": "路網圖網址URL",
           "allOf": [
             {
-              "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V3.LiteTrain.Network.MapNameType"
+              "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V3.TRA.Network.MapNameType"
             }
           ],
           "xml": {
@@ -6877,10 +7143,10 @@
         },
         "Lines": {
           "title": "Array",
-          "description": "小火車路線資訊",
+          "description": "路線資訊",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V3.LiteTrain.Network.Line"
+            "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V3.TRA.Network.Line"
           },
           "xml": {
             "name": "List`1"
@@ -6889,45 +7155,6 @@
       },
       "xml": {
         "name": "Network"
-      }
-    },
-    "PTX.Service.DTO.Rail.Specification.V3.LiteTrain.ODFare.Fare": {
-      "title": "Fare",
-      "required": [
-        "CabinClass",
-        "FareClass",
-        "Price",
-        "TicketType"
-      ],
-      "type": "object",
-      "properties": {
-        "TicketType": {
-          "format": "int32",
-          "title": "Int32",
-          "description": "票種類型 = ['1: 一般票', '2: 來回票', '3: 電子票證', '4: 回數票', '5: 定期票(30天期)', '6: 定期票(60天期)', '7: 早鳥票']",
-          "type": "integer"
-        },
-        "FareClass": {
-          "format": "int32",
-          "title": "Int32",
-          "description": "費率等級 = ['1: 成人', '2: 學生', '3: 孩童', '4: 敬老', '5: 愛心', '6: 愛心孩童', '7: 愛心優待/愛心陪伴', '8: 團體', '9: 軍警']",
-          "type": "integer"
-        },
-        "CabinClass": {
-          "format": "int32",
-          "title": "Int32",
-          "description": "艙等 = ['1: 標準座車廂', '2: 商務座車廂', '3: 自由座車廂']",
-          "type": "integer"
-        },
-        "Price": {
-          "format": "int32",
-          "title": "Int32",
-          "description": "計費價格(新台幣)",
-          "type": "integer"
-        }
-      },
-      "xml": {
-        "name": "Fare"
       }
     },
     "PTX.Service.DTO.Rail.Specification.V3.LiteTrain.ODFare.ODFare": {
@@ -6998,7 +7225,7 @@
           "description": "票價",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V3.LiteTrain.ODFare.Fare"
+            "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V3.TRA.ODFare.Fare"
           },
           "xml": {
             "name": "List`1"
@@ -7233,6 +7460,7 @@
       "title": "Station",
       "description": "小火車車站資料",
       "required": [
+        "StationClass",
         "StationID",
         "StationName",
         "StationPosition",
@@ -7240,9 +7468,17 @@
       ],
       "type": "object",
       "properties": {
+        "StationClass": {
+          "title": "String",
+          "description": "車站級別 = ['0: 特等', '1: 一等', '2: 二等', '3: 三等', '4: 簡易', '5: 招呼', '6: 號誌', '7:其他']",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
         "StationUID": {
           "title": "String",
-          "description": "小火車車站唯一識別代碼",
+          "description": "車站唯一識別代碼",
           "type": "string",
           "xml": {
             "name": "String"
@@ -7250,7 +7486,7 @@
         },
         "StationID": {
           "title": "String",
-          "description": "小火車車站代碼",
+          "description": "車站代碼",
           "type": "string",
           "xml": {
             "name": "String"
@@ -7304,14 +7540,6 @@
             "name": "String"
           }
         },
-        "StationClass": {
-          "title": "String",
-          "description": "車站級別 = ['0: 特等', '1: 一等', '2: 二等', '3: 三等', '4: 簡易', '5: 招呼', '6: 號誌', '7:其他']",
-          "type": "string",
-          "xml": {
-            "name": "String"
-          }
-        },
         "StationURL": {
           "title": "String",
           "description": "車站資訊說明網址",
@@ -7323,54 +7551,6 @@
       },
       "xml": {
         "name": "Station"
-      }
-    },
-    "PTX.Service.DTO.Rail.Specification.V3.LiteTrain.StationOfLine.LineStation": {
-      "title": "LineStation",
-      "description": "路線車站資訊",
-      "required": [
-        "CumulativeDistance",
-        "Sequence",
-        "StationID",
-        "StationName"
-      ],
-      "type": "object",
-      "properties": {
-        "Sequence": {
-          "format": "int32",
-          "title": "Int32",
-          "description": "站序",
-          "type": "integer"
-        },
-        "StationID": {
-          "title": "String",
-          "description": "車站代碼",
-          "type": "string",
-          "xml": {
-            "name": "String"
-          }
-        },
-        "StationName": {
-          "title": "NameType",
-          "description": "車站名稱",
-          "allOf": [
-            {
-              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.NameType"
-            }
-          ],
-          "xml": {
-            "name": "NameType"
-          }
-        },
-        "CumulativeDistance": {
-          "format": "float",
-          "title": "Single",
-          "description": "已累積之里程距離(公里)",
-          "type": "number"
-        }
-      },
-      "xml": {
-        "name": "LineStation"
       }
     },
     "PTX.Service.DTO.Rail.Specification.V3.LiteTrain.StationOfLine.StationOfLine": {
@@ -7404,7 +7584,7 @@
           "description": "路線車站資訊",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V3.LiteTrain.StationOfLine.LineStation"
+            "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V3.TRA.StationOfLine.LineStation"
           },
           "xml": {
             "name": "List`1"
@@ -7544,17 +7724,17 @@
       ],
       "type": "object",
       "properties": {
-        "TrainTypeID": {
+        "TrainTypeCode": {
           "title": "String",
-          "description": "列車車種代碼",
+          "description": "車種簡碼 = ['1: 中興號', '2: 區間', '3: 主題式列車', '5: 阿里山號', '6: 祝客', '7: 祝客(祝山線)', '8: 檜木車廂']",
           "type": "string",
           "xml": {
             "name": "String"
           }
         },
-        "TrainTypeCode": {
+        "TrainTypeID": {
           "title": "String",
-          "description": "車種簡碼 = ['1: 中興號', '2: 區間', '3: 主題式列車', '5: 阿里山號', '6: 祝客', '7: 祝客(祝山線)', '8: 檜木車廂']",
+          "description": "列車車種代碼",
           "type": "string",
           "xml": {
             "name": "String"
@@ -7579,7 +7759,7 @@
     },
     "PTX.Service.DTO.Rail.Specification.V3.TRA.Common.ServiceDay": {
       "title": "ServiceDay",
-      "description": "台鐵服務日型態",
+      "description": "服務日型態",
       "required": [
         "DayAfterHoliday",
         "DayBeforeHoliday",
@@ -7665,7 +7845,7 @@
     },
     "PTX.Service.DTO.Rail.Specification.V3.TRA.Common.SpecialDay": {
       "title": "SpecialDay",
-      "description": "台鐵特定日期",
+      "description": "特定日期",
       "type": "object",
       "properties": {
         "Dates": {
@@ -7706,7 +7886,7 @@
     },
     "PTX.Service.DTO.Rail.Specification.V3.TRA.Common.StopTime": {
       "title": "StopTime",
-      "description": "台鐵停靠時間資料",
+      "description": "停靠時間資料",
       "required": [
         "ArrivalTime",
         "DepartureTime",
@@ -7765,7 +7945,7 @@
     },
     "PTX.Service.DTO.Rail.Specification.V3.TRA.Common.TrainInfo": {
       "title": "TrainInfo",
-      "description": "臺鐵車次定期資料型別(時刻表用)",
+      "description": "車次定期資料型別(時刻表用)",
       "required": [
         "BikeFlag",
         "BreastFeedFlag",
@@ -8442,7 +8622,7 @@
     },
     "PTX.Service.DTO.Rail.Specification.V3.TRA.GeneralStationTimetable.GeneralStationTimetable": {
       "title": "GeneralStationTimetable",
-      "description": "台鐵車站站別時刻表資料型別",
+      "description": "車站站別時刻表資料型別",
       "required": [
         "Direction",
         "ServiceDay",
@@ -8680,7 +8860,7 @@
     },
     "PTX.Service.DTO.Rail.Specification.V3.TRA.GeneralTrainTimetable": {
       "title": "GeneralTrainTimetable",
-      "description": "台鐵定期時刻表資料型別",
+      "description": "定期時刻表資料型別",
       "required": [
         "ServiceDay",
         "StopTimes",
@@ -8929,7 +9109,7 @@
     },
     "PTX.Service.DTO.Rail.Specification.V3.TRA.LineTransfer": {
       "title": "LineTransfer",
-      "description": "台鐵路線站間轉乘基本資料",
+      "description": "路線站間轉乘基本資料",
       "required": [
         "FromLineID",
         "FromLineName",
@@ -9087,7 +9267,7 @@
         },
         "Zh_tw": {
           "title": "String",
-          "description": "臺鐵路網圖網址(中文版)",
+          "description": "路網圖網址(中文版)",
           "type": "string",
           "xml": {
             "name": "String"
@@ -9095,7 +9275,7 @@
         },
         "En": {
           "title": "String",
-          "description": "臺鐵路網圖網址(英文版)",
+          "description": "路網圖網址(英文版)",
           "type": "string",
           "xml": {
             "name": "String"
@@ -9108,7 +9288,7 @@
     },
     "PTX.Service.DTO.Rail.Specification.V3.TRA.Network.Network": {
       "title": "Network",
-      "description": "臺鐵路網資料",
+      "description": "路網資料",
       "required": [
         "Lines",
         "NetworkID",
@@ -9121,7 +9301,7 @@
       "properties": {
         "NetworkID": {
           "title": "String",
-          "description": "臺鐵路網代碼",
+          "description": "路網代碼",
           "type": "string",
           "xml": {
             "name": "String"
@@ -9129,7 +9309,7 @@
         },
         "NetworkName": {
           "title": "NameType",
-          "description": "臺鐵路網名稱",
+          "description": "路網名稱",
           "allOf": [
             {
               "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.NameType"
@@ -9161,7 +9341,7 @@
         },
         "NetworkMapURL": {
           "title": "MapNameType",
-          "description": "臺鐵路網圖網址URL",
+          "description": "路網圖網址URL",
           "allOf": [
             {
               "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V3.TRA.Network.MapNameType"
@@ -9173,7 +9353,7 @@
         },
         "Lines": {
           "title": "Array",
-          "description": "臺鐵路線資訊",
+          "description": "路線資訊",
           "type": "array",
           "items": {
             "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V3.TRA.Network.Line"
@@ -9312,7 +9492,7 @@
     },
     "PTX.Service.DTO.Rail.Specification.V3.TRA.Operator": {
       "title": "Operator",
-      "description": "台鐵者營運業者基本資料",
+      "description": "營運業者基本資料",
       "required": [
         "OperatorCode",
         "OperatorName"
@@ -9402,7 +9582,7 @@
     },
     "PTX.Service.DTO.Rail.Specification.V3.TRA.Shape": {
       "title": "Shape",
-      "description": "臺鐵線型資料",
+      "description": "線型資料",
       "required": [
         "Geometry",
         "LineID",
@@ -9461,7 +9641,7 @@
     },
     "PTX.Service.DTO.Rail.Specification.V3.TRA.SpecificTrainTimetable": {
       "title": "SpecificTrainTimetable",
-      "description": "台鐵特殊車次時刻表資料型別",
+      "description": "特殊車次時刻表資料型別",
       "required": [
         "SpecialDay",
         "StopTimes",
@@ -9511,7 +9691,7 @@
     },
     "PTX.Service.DTO.Rail.Specification.V3.TRA.Station": {
       "title": "Station",
-      "description": "台鐵車站資料",
+      "description": "車站資料",
       "required": [
         "StationID",
         "StationName",
@@ -9522,7 +9702,7 @@
       "properties": {
         "StationUID": {
           "title": "String",
-          "description": "臺鐵車站唯一識別代碼",
+          "description": "車站唯一識別代碼",
           "type": "string",
           "xml": {
             "name": "String"
@@ -9530,7 +9710,7 @@
         },
         "StationID": {
           "title": "String",
-          "description": "臺鐵車站代碼",
+          "description": "車站代碼",
           "type": "string",
           "xml": {
             "name": "String"
@@ -9735,7 +9915,7 @@
     },
     "PTX.Service.DTO.Rail.Specification.V3.TRA.StationExit.StationExit": {
       "title": "StationExit",
-      "description": "台鐵車站出入口資料",
+      "description": "車站出入口資料",
       "required": [
         "Exits",
         "StationID",
@@ -11269,7 +11449,7 @@
     },
     "PTX.Service.DTO.Rail.Specification.V3.TRA.TrainType": {
       "title": "TrainType",
-      "description": "臺鐵列車車種資料",
+      "description": "列車車種資料",
       "required": [
         "TrainTypeCode",
         "TrainTypeID",
@@ -11641,6 +11821,93 @@
         "name": "TrainLiveBoard"
       }
     },
+    "PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth": {
+      "title": "DisplayHealth",
+      "description": "API服務健康狀態",
+      "required": [
+        "ServiceID",
+        "ServiceName"
+      ],
+      "type": "object",
+      "properties": {
+        "ServiceID": {
+          "title": "String",
+          "description": "API服務代碼",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "ServiceName": {
+          "title": "String",
+          "description": "API服務中文名稱",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "Inbound": {
+          "title": "Inbound",
+          "description": "本平台資料來源轉入狀態",
+          "allOf": [
+            {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.Inbound"
+            }
+          ],
+          "xml": {
+            "name": "Inbound"
+          }
+        },
+        "Outbound": {
+          "title": "Outbound",
+          "description": "本平台API狀態",
+          "allOf": [
+            {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.Outbound"
+            }
+          ],
+          "xml": {
+            "name": "Outbound"
+          }
+        }
+      },
+      "xml": {
+        "name": "DisplayHealth"
+      }
+    },
+    "PTX.Service.DTO.Shared.Specification.V3.Base.Inbound": {
+      "title": "Inbound",
+      "description": "本平台資料來源轉入狀態",
+      "required": [
+        "CheckTime",
+        "Status"
+      ],
+      "type": "object",
+      "properties": {
+        "CheckTime": {
+          "format": "date-time",
+          "title": "DateTime",
+          "description": "檢核時間",
+          "type": "string"
+        },
+        "Status": {
+          "title": "Int32",
+          "description": "檢核結果狀態 : [0:'失敗',1:'成功']",
+          "type": "integer"
+        },
+        "Reason": {
+          "title": "String",
+          "description": "檢核失敗原因",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        }
+      },
+      "xml": {
+        "name": "Inbound"
+      }
+    },
     "PTX.Service.DTO.Shared.Specification.V3.Base.NameType": {
       "title": "NameType",
       "type": "object",
@@ -11664,6 +11931,39 @@
       },
       "xml": {
         "name": "NameType"
+      }
+    },
+    "PTX.Service.DTO.Shared.Specification.V3.Base.Outbound": {
+      "title": "Outbound",
+      "description": "本平台API狀態",
+      "required": [
+        "CheckTime",
+        "Status"
+      ],
+      "type": "object",
+      "properties": {
+        "CheckTime": {
+          "format": "date-time",
+          "title": "DateTime",
+          "description": "檢核時間",
+          "type": "string"
+        },
+        "Status": {
+          "title": "Int32",
+          "description": "檢核結果狀態 : [0:'失敗',1:'成功']",
+          "type": "integer"
+        },
+        "Reason": {
+          "title": "String",
+          "description": "檢核失敗原因",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        }
+      },
+      "xml": {
+        "name": "Outbound"
       }
     },
     "PTX.Service.DTO.Shared.Specification.V3.Base.PointType": {
@@ -11694,7 +11994,7 @@
     },
     {
       "name": "AFR",
-      "description": "阿里山小火車"
+      "description": "阿里山林業鐵路"
     }
   ]
 }

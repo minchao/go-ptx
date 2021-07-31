@@ -29,6 +29,12 @@ func (o *LiteTrainStationReader) ReadResponse(response runtime.ClientResponse, c
 			return nil, err
 		}
 		return result, nil
+	case 299:
+		result := NewLiteTrainStationStatus299()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return result, nil
 	case 304:
 		result := NewLiteTrainStationNotModified()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -63,6 +69,38 @@ func (o *LiteTrainStationOK) GetPayload() *models.PTXAPIRailModelLiteTrainBaseWr
 func (o *LiteTrainStationOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	o.Payload = new(models.PTXAPIRailModelLiteTrainBaseWrapperPTXServiceDTORailSpecificationV3LiteTrainStation)
+
+	// response payload
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewLiteTrainStationStatus299 creates a LiteTrainStationStatus299 with default headers values
+func NewLiteTrainStationStatus299() *LiteTrainStationStatus299 {
+	return &LiteTrainStationStatus299{}
+}
+
+/* LiteTrainStationStatus299 describes a response with status code 299, with default header values.
+
+加入參數'?health=true'即可查詢此API服務的健康狀態
+*/
+type LiteTrainStationStatus299 struct {
+	Payload *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth
+}
+
+func (o *LiteTrainStationStatus299) Error() string {
+	return fmt.Sprintf("[GET /v3/Rail/AFR/Station][%d] liteTrainStationStatus299  %+v", 299, o.Payload)
+}
+func (o *LiteTrainStationStatus299) GetPayload() *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth {
+	return o.Payload
+}
+
+func (o *LiteTrainStationStatus299) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	o.Payload = new(models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

@@ -29,6 +29,12 @@ func (o *LiteTrainRouteReader) ReadResponse(response runtime.ClientResponse, con
 			return nil, err
 		}
 		return result, nil
+	case 299:
+		result := NewLiteTrainRouteStatus299()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return result, nil
 	case 304:
 		result := NewLiteTrainRouteNotModified()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -63,6 +69,38 @@ func (o *LiteTrainRouteOK) GetPayload() *models.PTXAPIRailModelLiteTrainBaseWrap
 func (o *LiteTrainRouteOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	o.Payload = new(models.PTXAPIRailModelLiteTrainBaseWrapperPTXServiceDTORailSpecificationV3LiteTrainRoute)
+
+	// response payload
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewLiteTrainRouteStatus299 creates a LiteTrainRouteStatus299 with default headers values
+func NewLiteTrainRouteStatus299() *LiteTrainRouteStatus299 {
+	return &LiteTrainRouteStatus299{}
+}
+
+/* LiteTrainRouteStatus299 describes a response with status code 299, with default header values.
+
+加入參數'?health=true'即可查詢此API服務的健康狀態
+*/
+type LiteTrainRouteStatus299 struct {
+	Payload *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth
+}
+
+func (o *LiteTrainRouteStatus299) Error() string {
+	return fmt.Sprintf("[GET /v3/Rail/AFR/Route][%d] liteTrainRouteStatus299  %+v", 299, o.Payload)
+}
+func (o *LiteTrainRouteStatus299) GetPayload() *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth {
+	return o.Payload
+}
+
+func (o *LiteTrainRouteStatus299) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	o.Payload = new(models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

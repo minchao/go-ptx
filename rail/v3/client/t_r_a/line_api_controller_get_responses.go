@@ -29,6 +29,12 @@ func (o *LineAPIControllerGetReader) ReadResponse(response runtime.ClientRespons
 			return nil, err
 		}
 		return result, nil
+	case 299:
+		result := NewLineAPIControllerGetStatus299()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return result, nil
 	case 304:
 		result := NewLineAPIControllerGetNotModified()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -63,6 +69,38 @@ func (o *LineAPIControllerGetOK) GetPayload() *models.PTXAPIRailModelTRABaseWrap
 func (o *LineAPIControllerGetOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	o.Payload = new(models.PTXAPIRailModelTRABaseWrapperPTXServiceDTORailSpecificationV3TRALine)
+
+	// response payload
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewLineAPIControllerGetStatus299 creates a LineAPIControllerGetStatus299 with default headers values
+func NewLineAPIControllerGetStatus299() *LineAPIControllerGetStatus299 {
+	return &LineAPIControllerGetStatus299{}
+}
+
+/* LineAPIControllerGetStatus299 describes a response with status code 299, with default header values.
+
+加入參數'?health=true'即可查詢此API服務的健康狀態
+*/
+type LineAPIControllerGetStatus299 struct {
+	Payload *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth
+}
+
+func (o *LineAPIControllerGetStatus299) Error() string {
+	return fmt.Sprintf("[GET /v3/Rail/TRA/Line][%d] lineApiControllerGetStatus299  %+v", 299, o.Payload)
+}
+func (o *LineAPIControllerGetStatus299) GetPayload() *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth {
+	return o.Payload
+}
+
+func (o *LineAPIControllerGetStatus299) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	o.Payload = new(models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

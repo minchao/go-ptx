@@ -98,6 +98,12 @@ type THSRAPIDailyTimetableParams struct {
 	*/
 	DollarTop *int64
 
+	/* Health.
+
+	   加入參數'?health=true'即可查詢此API服務的健康狀態
+	*/
+	Health *string
+
 	timeout    time.Duration
 	Context    context.Context
 	HTTPClient *http.Client
@@ -228,6 +234,17 @@ func (o *THSRAPIDailyTimetableParams) SetDollarTop(dollarTop *int64) {
 	o.DollarTop = dollarTop
 }
 
+// WithHealth adds the health to the t h s r Api daily timetable params
+func (o *THSRAPIDailyTimetableParams) WithHealth(health *string) *THSRAPIDailyTimetableParams {
+	o.SetHealth(health)
+	return o
+}
+
+// SetHealth adds the health to the t h s r Api daily timetable params
+func (o *THSRAPIDailyTimetableParams) SetHealth(health *string) {
+	o.Health = health
+}
+
 // WriteToRequest writes these params to a swagger request
 func (o *THSRAPIDailyTimetableParams) WriteToRequest(r runtime.ClientRequest, reg strfmt.Registry) error {
 
@@ -326,6 +343,23 @@ func (o *THSRAPIDailyTimetableParams) WriteToRequest(r runtime.ClientRequest, re
 		if qDollarTop != "" {
 
 			if err := r.SetQueryParam("$top", qDollarTop); err != nil {
+				return err
+			}
+		}
+	}
+
+	if o.Health != nil {
+
+		// query param health
+		var qrHealth string
+
+		if o.Health != nil {
+			qrHealth = *o.Health
+		}
+		qHealth := qrHealth
+		if qHealth != "" {
+
+			if err := r.SetQueryParam("health", qHealth); err != nil {
 				return err
 			}
 		}

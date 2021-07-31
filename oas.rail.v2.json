@@ -56,6 +56,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -79,6 +89,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -111,8 +127,1119 @@
             ],
             "x-enum": {
               "KRTC": "高雄捷運",
-              "TYMC": "桃園捷運",
               "TRTCMG": "貓空纜車",
+              "TRTC": "臺北捷運",
+              "TMRT": "臺中捷運",
+              "TYMC": "桃園捷運"
+            }
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "title": "Array",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.Metro.Network"
+              }
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Rail/Metro/Line/{Operator}": {
+      "get": {
+        "tags": [
+          "Metro"
+        ],
+        "summary": "取得捷運路線基本資料",
+        "description": "取得捷運路線基本資料",
+        "operationId": "MetroApi_Line",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "Operator",
+            "description": "欲查詢縣市",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "TRTC",
+              "KRTC",
+              "TYMC",
+              "KLRT",
+              "NTDLRT",
+              "TRTCMG",
+              "TMRT"
+            ],
+            "x-enum": {
+              "KLRT": "高雄輕軌",
+              "KRTC": "高雄捷運",
+              "TRTC": "臺北捷運",
+              "TMRT": "臺中捷運",
+              "TRTCMG": "貓空纜車",
+              "TYMC": "桃園捷運",
+              "NTDLRT": "淡海輕軌"
+            }
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "title": "Array",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.Metro.Line"
+              }
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Rail/Metro/Station/{Operator}": {
+      "get": {
+        "tags": [
+          "Metro"
+        ],
+        "summary": "取得捷運車站基本資料",
+        "description": "取得捷運車站基本資料",
+        "operationId": "MetroApi_Station",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "Operator",
+            "description": "欲查詢縣市",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "TRTC",
+              "KRTC",
+              "TYMC",
+              "KLRT",
+              "NTDLRT",
+              "TRTCMG",
+              "TMRT"
+            ],
+            "x-enum": {
+              "TYMC": "桃園捷運",
+              "TRTC": "臺北捷運",
+              "NTDLRT": "淡海輕軌",
+              "KLRT": "高雄輕軌",
+              "TMRT": "臺中捷運",
+              "TRTCMG": "貓空纜車",
+              "KRTC": "高雄捷運"
+            }
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$spatialFilter",
+            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "title": "Array",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.Metro.Station"
+              }
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Rail/Metro/StationOfLine/{Operator}": {
+      "get": {
+        "tags": [
+          "Metro"
+        ],
+        "summary": "取得捷運路線車站基本資料",
+        "description": "取得捷運路線車站基本資料",
+        "operationId": "MetroApi_StationOfLine",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "Operator",
+            "description": "欲查詢縣市",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "TRTC",
+              "KRTC",
+              "TYMC",
+              "KLRT",
+              "NTDLRT",
+              "TRTCMG",
+              "TMRT"
+            ],
+            "x-enum": {
+              "KRTC": "高雄捷運",
+              "TYMC": "桃園捷運",
+              "KLRT": "高雄輕軌",
+              "TMRT": "臺中捷運",
+              "TRTCMG": "貓空纜車",
+              "NTDLRT": "淡海輕軌",
+              "TRTC": "臺北捷運"
+            }
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "title": "Array",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.Metro.StationOfLine"
+              }
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Rail/Metro/LineTransfer/{Operator}": {
+      "get": {
+        "tags": [
+          "Metro"
+        ],
+        "summary": "取得捷運路線站間轉乘基本資料",
+        "description": "取得捷運路線站間轉乘基本資料",
+        "operationId": "MetroApi_LineTransfer",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "Operator",
+            "description": "欲查詢縣市",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "TRTC",
+              "KRTC"
+            ],
+            "x-enum": {
+              "TYMC": "桃園捷運",
+              "KRTC": "高雄捷運",
+              "TRTC": "臺北捷運"
+            }
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "title": "Array",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.Metro.LineTransfer"
+              }
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Rail/Metro/StationFacility/{Operator}": {
+      "get": {
+        "tags": [
+          "Metro"
+        ],
+        "summary": "取得捷運車站設施資料",
+        "description": "取得捷運車站設施資料",
+        "operationId": "MetroApi_StationFacility",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "Operator",
+            "description": "欲查詢縣市",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "TYMC"
+            ],
+            "x-enum": {
+              "KRTC": "高雄捷運",
+              "TRTC": "臺北捷運",
+              "TYMC": "桃園捷運"
+            }
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "title": "Array",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.Metro.StationFacility"
+              }
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Rail/Metro/StationExit/{Operator}": {
+      "get": {
+        "tags": [
+          "Metro"
+        ],
+        "summary": "取得捷運車站出入口基本資料",
+        "description": "取得捷運車站出入口基本資料",
+        "operationId": "MetroApi_StationExit",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "Operator",
+            "description": "欲查詢縣市",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "TRTC",
+              "KRTC",
+              "TYMC",
+              "TRTCMG",
+              "TMRT"
+            ],
+            "x-enum": {
+              "TRTCMG": "貓空纜車",
+              "TRTC": "臺北捷運",
+              "TMRT": "臺中捷運",
+              "KLRT": "高雄輕軌",
+              "KRTC": "高雄捷運",
+              "TYMC": "桃園捷運"
+            }
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$spatialFilter",
+            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "title": "Array",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.Metro.StationExit"
+              }
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Rail/Metro/Route/{Operator}": {
+      "get": {
+        "tags": [
+          "Metro"
+        ],
+        "summary": "取得捷運營運路線基本資料",
+        "description": "取得捷運營運路線基本資料",
+        "operationId": "MetroApi_Route",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "Operator",
+            "description": "欲查詢縣市",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "TRTC",
+              "KRTC",
+              "TYMC",
+              "NTDLRT",
+              "TMRT"
+            ],
+            "x-enum": {
+              "TMRT": "臺中捷運",
+              "TRTC": "臺北捷運",
+              "KRTC": "高雄捷運",
+              "TYMC": "桃園捷運",
+              "NTDLRT": "淡海輕軌"
+            }
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "title": "Array",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.Metro.Route"
+              }
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Rail/Metro/StationOfRoute/{Operator}": {
+      "get": {
+        "tags": [
+          "Metro"
+        ],
+        "summary": "取得捷運營運路線車站基本資料",
+        "description": "取得捷運營運路線車站基本資料",
+        "operationId": "MetroApi_StationOfRoute",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "Operator",
+            "description": "欲查詢縣市",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "TRTC",
+              "KRTC",
+              "TYMC",
+              "NTDLRT",
+              "TMRT"
+            ],
+            "x-enum": {
+              "NTDLRT": "淡海輕軌",
+              "TYMC": "桃園捷運",
+              "KRTC": "高雄捷運",
+              "TRTC": "臺北捷運",
+              "TMRT": "臺中捷運"
+            }
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "title": "Array",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.Metro.StationOfRoute"
+              }
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Rail/Metro/FirstLastTimetable/{Operator}": {
+      "get": {
+        "tags": [
+          "Metro"
+        ],
+        "summary": "取得捷運首末班車時刻表資料",
+        "description": "取得捷運首末班車時刻表資料",
+        "operationId": "MetroApi_FirstLastTimetable",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "Operator",
+            "description": "欲查詢縣市",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "TRTC",
+              "KRTC",
+              "TYMC",
+              "KLRT",
+              "TMRT"
+            ],
+            "x-enum": {
+              "TRTC": "臺北捷運",
+              "TYMC": "桃園捷運",
+              "KLRT": "高雄輕軌",
+              "KRTC": "高雄捷運",
+              "TMRT": "臺中捷運"
+            }
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "title": "Array",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.Metro.FirstLastTimetable"
+              }
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Rail/Metro/Frequency/{Operator}": {
+      "get": {
+        "tags": [
+          "Metro"
+        ],
+        "summary": "取得捷運路線發車班距頻率資料",
+        "description": "取得捷運路線發車班距頻率資料",
+        "operationId": "MetroApi_Frequency",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "Operator",
+            "description": "欲查詢縣市",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "TRTC",
+              "TYMC",
+              "TMRT"
+            ],
+            "x-enum": {
+              "KRTC": "高雄捷運",
+              "TYMC": "桃園捷運",
               "TMRT": "臺中捷運",
               "TRTC": "臺北捷運"
             }
@@ -150,6 +1277,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -167,24 +1304,30 @@
               "title": "Array",
               "type": "array",
               "items": {
-                "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.Metro.Network"
+                "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.Metro.Frequency"
               }
             }
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
     },
-    "/v2/Rail/Metro/Line/{Operator}": {
+    "/v2/Rail/Metro/S2STravelTime/{Operator}": {
       "get": {
         "tags": [
           "Metro"
         ],
-        "summary": "取得捷運路線基本資料",
-        "description": "取得捷運路線基本資料",
-        "operationId": "MetroApi_Line",
+        "summary": "取得捷運列車站間運行時間資料",
+        "description": "取得捷運列車站間運行時間資料",
+        "operationId": "MetroApi_S2STravelTime",
         "produces": [
           "application/json",
           "application/xml"
@@ -200,220 +1343,12 @@
               "TRTC",
               "KRTC",
               "TYMC",
-              "KLRT",
-              "NTDLRT",
-              "TRTCMG",
-              "TMRT"
+              "KLRT"
             ],
             "x-enum": {
-              "KRTC": "高雄捷運",
-              "TMRT": "臺中捷運",
+              "KLRT": "高雄輕軌",
+              "TRTC": "臺北捷運",
               "TYMC": "桃園捷運",
-              "TRTC": "臺北捷運",
-              "KLRT": "高雄輕軌",
-              "NTDLRT": "淡海輕軌",
-              "TRTCMG": "貓空纜車"
-            }
-          },
-          {
-            "in": "query",
-            "name": "$select",
-            "description": "挑選",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$filter",
-            "description": "過濾",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$orderby",
-            "description": "排序",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$top",
-            "description": "取前幾筆",
-            "type": "integer",
-            "default": 30
-          },
-          {
-            "in": "query",
-            "name": "$skip",
-            "description": "跳過前幾筆",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$format",
-            "description": "指定來源格式",
-            "required": true,
-            "type": "string",
-            "enum": [
-              "JSON",
-              "XML"
-            ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "schema": {
-              "title": "Array",
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.Metro.Line"
-              }
-            }
-          },
-          "304": {
-            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
-          }
-        }
-      }
-    },
-    "/v2/Rail/Metro/Station/{Operator}": {
-      "get": {
-        "tags": [
-          "Metro"
-        ],
-        "summary": "取得捷運車站基本資料",
-        "description": "取得捷運車站基本資料",
-        "operationId": "MetroApi_Station",
-        "produces": [
-          "application/json",
-          "application/xml"
-        ],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "Operator",
-            "description": "欲查詢縣市",
-            "required": true,
-            "type": "string",
-            "enum": [
-              "TRTC",
-              "KRTC",
-              "TYMC",
-              "KLRT",
-              "NTDLRT",
-              "TRTCMG",
-              "TMRT"
-            ],
-            "x-enum": {
-              "TRTCMG": "貓空纜車",
-              "TRTC": "臺北捷運",
-              "NTDLRT": "淡海輕軌",
-              "KLRT": "高雄輕軌",
-              "KRTC": "高雄捷運",
-              "TMRT": "臺中捷運",
-              "TYMC": "桃園捷運"
-            }
-          },
-          {
-            "in": "query",
-            "name": "$select",
-            "description": "挑選",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$filter",
-            "description": "過濾",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$orderby",
-            "description": "排序",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$top",
-            "description": "取前幾筆",
-            "type": "integer",
-            "default": 30
-          },
-          {
-            "in": "query",
-            "name": "$skip",
-            "description": "跳過前幾筆",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$spatialFilter",
-            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$format",
-            "description": "指定來源格式",
-            "required": true,
-            "type": "string",
-            "enum": [
-              "JSON",
-              "XML"
-            ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "schema": {
-              "title": "Array",
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.Metro.Station"
-              }
-            }
-          },
-          "304": {
-            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
-          }
-        }
-      }
-    },
-    "/v2/Rail/Metro/StationOfLine/{Operator}": {
-      "get": {
-        "tags": [
-          "Metro"
-        ],
-        "summary": "取得捷運路線車站基本資料",
-        "description": "取得捷運路線車站基本資料",
-        "operationId": "MetroApi_StationOfLine",
-        "produces": [
-          "application/json",
-          "application/xml"
-        ],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "Operator",
-            "description": "欲查詢縣市",
-            "required": true,
-            "type": "string",
-            "enum": [
-              "TRTC",
-              "KRTC",
-              "TYMC",
-              "KLRT",
-              "NTDLRT",
-              "TRTCMG",
-              "TMRT"
-            ],
-            "x-enum": {
-              "NTDLRT": "淡海輕軌",
-              "TMRT": "臺中捷運",
-              "TRTCMG": "貓空纜車",
-              "TYMC": "桃園捷運",
-              "KLRT": "高雄輕軌",
-              "TRTC": "臺北捷運",
               "KRTC": "高雄捷運"
             }
           },
@@ -450,92 +1385,13 @@
           },
           {
             "in": "query",
-            "name": "$format",
-            "description": "指定來源格式",
-            "required": true,
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "type": "string",
             "enum": [
-              "JSON",
-              "XML"
+              "true",
+              "false"
             ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "schema": {
-              "title": "Array",
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.Metro.StationOfLine"
-              }
-            }
-          },
-          "304": {
-            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
-          }
-        }
-      }
-    },
-    "/v2/Rail/Metro/LineTransfer/{Operator}": {
-      "get": {
-        "tags": [
-          "Metro"
-        ],
-        "summary": "取得捷運路線站間轉乘基本資料",
-        "description": "取得捷運路線站間轉乘基本資料",
-        "operationId": "MetroApi_LineTransfer",
-        "produces": [
-          "application/json",
-          "application/xml"
-        ],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "Operator",
-            "description": "欲查詢縣市",
-            "required": true,
-            "type": "string",
-            "enum": [
-              "TRTC",
-              "KRTC"
-            ],
-            "x-enum": {
-              "TYMC": "桃園捷運",
-              "TRTC": "臺北捷運",
-              "KRTC": "高雄捷運"
-            }
-          },
-          {
-            "in": "query",
-            "name": "$select",
-            "description": "挑選",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$filter",
-            "description": "過濾",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$orderby",
-            "description": "排序",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$top",
-            "description": "取前幾筆",
-            "type": "integer",
-            "default": 30
-          },
-          {
-            "in": "query",
-            "name": "$skip",
-            "description": "跳過前幾筆",
-            "type": "string"
           },
           {
             "in": "query",
@@ -556,112 +1412,30 @@
               "title": "Array",
               "type": "array",
               "items": {
-                "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.Metro.LineTransfer"
+                "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.Metro.S2STravelTime"
               }
             }
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
-          }
-        }
-      }
-    },
-    "/v2/Rail/Metro/StationFacility/{Operator}": {
-      "get": {
-        "tags": [
-          "Metro"
-        ],
-        "summary": "取得捷運車站設施資料",
-        "description": "取得捷運車站設施資料",
-        "operationId": "MetroApi_StationFacility",
-        "produces": [
-          "application/json",
-          "application/xml"
-        ],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "Operator",
-            "description": "欲查詢縣市",
-            "required": true,
-            "type": "string",
-            "enum": [
-              "TYMC"
-            ],
-            "x-enum": {
-              "TRTC": "臺北捷運",
-              "KRTC": "高雄捷運",
-              "TYMC": "桃園捷運"
-            }
           },
-          {
-            "in": "query",
-            "name": "$select",
-            "description": "挑選",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$filter",
-            "description": "過濾",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$orderby",
-            "description": "排序",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$top",
-            "description": "取前幾筆",
-            "type": "integer",
-            "default": 30
-          },
-          {
-            "in": "query",
-            "name": "$skip",
-            "description": "跳過前幾筆",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$format",
-            "description": "指定來源格式",
-            "required": true,
-            "type": "string",
-            "enum": [
-              "JSON",
-              "XML"
-            ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
-              "title": "Array",
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.Metro.StationFacility"
-              }
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
             }
-          },
-          "304": {
-            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           }
         }
       }
     },
-    "/v2/Rail/Metro/StationExit/{Operator}": {
+    "/v2/Rail/Metro/ODFare/{Operator}": {
       "get": {
         "tags": [
           "Metro"
         ],
-        "summary": "取得捷運車站出入口基本資料",
-        "description": "取得捷運車站出入口基本資料",
-        "operationId": "MetroApi_StationExit",
+        "summary": "取得捷運起迄站間票價資料",
+        "description": "取得捷運起迄站間票價資料",
+        "operationId": "MetroApi_ODFare",
         "produces": [
           "application/json",
           "application/xml"
@@ -677,208 +1451,17 @@
               "TRTC",
               "KRTC",
               "TYMC",
+              "KLRT",
+              "NTDLRT",
               "TRTCMG",
               "TMRT"
             ],
             "x-enum": {
               "TRTCMG": "貓空纜車",
-              "KRTC": "高雄捷運",
-              "TMRT": "臺中捷運",
-              "TYMC": "桃園捷運",
-              "TRTC": "臺北捷運",
-              "KLRT": "高雄輕軌"
-            }
-          },
-          {
-            "in": "query",
-            "name": "$select",
-            "description": "挑選",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$filter",
-            "description": "過濾",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$orderby",
-            "description": "排序",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$top",
-            "description": "取前幾筆",
-            "type": "integer",
-            "default": 30
-          },
-          {
-            "in": "query",
-            "name": "$skip",
-            "description": "跳過前幾筆",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$spatialFilter",
-            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$format",
-            "description": "指定來源格式",
-            "required": true,
-            "type": "string",
-            "enum": [
-              "JSON",
-              "XML"
-            ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "schema": {
-              "title": "Array",
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.Metro.StationExit"
-              }
-            }
-          },
-          "304": {
-            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
-          }
-        }
-      }
-    },
-    "/v2/Rail/Metro/Route/{Operator}": {
-      "get": {
-        "tags": [
-          "Metro"
-        ],
-        "summary": "取得捷運營運路線基本資料",
-        "description": "取得捷運營運路線基本資料",
-        "operationId": "MetroApi_Route",
-        "produces": [
-          "application/json",
-          "application/xml"
-        ],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "Operator",
-            "description": "欲查詢縣市",
-            "required": true,
-            "type": "string",
-            "enum": [
-              "TRTC",
-              "KRTC",
-              "TYMC",
-              "NTDLRT",
-              "TMRT"
-            ],
-            "x-enum": {
-              "TYMC": "桃園捷運",
-              "NTDLRT": "淡海輕軌",
-              "TRTC": "臺北捷運",
-              "TMRT": "臺中捷運",
-              "KRTC": "高雄捷運"
-            }
-          },
-          {
-            "in": "query",
-            "name": "$select",
-            "description": "挑選",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$filter",
-            "description": "過濾",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$orderby",
-            "description": "排序",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$top",
-            "description": "取前幾筆",
-            "type": "integer",
-            "default": 30
-          },
-          {
-            "in": "query",
-            "name": "$skip",
-            "description": "跳過前幾筆",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$format",
-            "description": "指定來源格式",
-            "required": true,
-            "type": "string",
-            "enum": [
-              "JSON",
-              "XML"
-            ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "schema": {
-              "title": "Array",
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.Metro.Route"
-              }
-            }
-          },
-          "304": {
-            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
-          }
-        }
-      }
-    },
-    "/v2/Rail/Metro/StationOfRoute/{Operator}": {
-      "get": {
-        "tags": [
-          "Metro"
-        ],
-        "summary": "取得捷運營運路線車站基本資料",
-        "description": "取得捷運營運路線車站基本資料",
-        "operationId": "MetroApi_StationOfRoute",
-        "produces": [
-          "application/json",
-          "application/xml"
-        ],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "Operator",
-            "description": "欲查詢縣市",
-            "required": true,
-            "type": "string",
-            "enum": [
-              "TRTC",
-              "KRTC",
-              "TYMC",
-              "NTDLRT",
-              "TMRT"
-            ],
-            "x-enum": {
-              "TMRT": "臺中捷運",
               "TRTC": "臺北捷運",
               "TYMC": "桃園捷運",
+              "TMRT": "臺中捷運",
+              "KLRT": "高雄輕軌",
               "KRTC": "高雄捷運",
               "NTDLRT": "淡海輕軌"
             }
@@ -916,378 +1499,13 @@
           },
           {
             "in": "query",
-            "name": "$format",
-            "description": "指定來源格式",
-            "required": true,
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "type": "string",
             "enum": [
-              "JSON",
-              "XML"
+              "true",
+              "false"
             ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "schema": {
-              "title": "Array",
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.Metro.StationOfRoute"
-              }
-            }
-          },
-          "304": {
-            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
-          }
-        }
-      }
-    },
-    "/v2/Rail/Metro/FirstLastTimetable/{Operator}": {
-      "get": {
-        "tags": [
-          "Metro"
-        ],
-        "summary": "取得捷運首末班車時刻表資料",
-        "description": "取得捷運首末班車時刻表資料",
-        "operationId": "MetroApi_FirstLastTimetable",
-        "produces": [
-          "application/json",
-          "application/xml"
-        ],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "Operator",
-            "description": "欲查詢縣市",
-            "required": true,
-            "type": "string",
-            "enum": [
-              "TRTC",
-              "KRTC",
-              "TYMC",
-              "KLRT",
-              "TMRT"
-            ],
-            "x-enum": {
-              "TYMC": "桃園捷運",
-              "KRTC": "高雄捷運",
-              "TRTC": "臺北捷運",
-              "KLRT": "高雄輕軌",
-              "TMRT": "臺中捷運"
-            }
-          },
-          {
-            "in": "query",
-            "name": "$select",
-            "description": "挑選",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$filter",
-            "description": "過濾",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$orderby",
-            "description": "排序",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$top",
-            "description": "取前幾筆",
-            "type": "integer",
-            "default": 30
-          },
-          {
-            "in": "query",
-            "name": "$skip",
-            "description": "跳過前幾筆",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$format",
-            "description": "指定來源格式",
-            "required": true,
-            "type": "string",
-            "enum": [
-              "JSON",
-              "XML"
-            ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "schema": {
-              "title": "Array",
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.Metro.FirstLastTimetable"
-              }
-            }
-          },
-          "304": {
-            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
-          }
-        }
-      }
-    },
-    "/v2/Rail/Metro/Frequency/{Operator}": {
-      "get": {
-        "tags": [
-          "Metro"
-        ],
-        "summary": "取得捷運路線發車班距頻率資料",
-        "description": "取得捷運路線發車班距頻率資料",
-        "operationId": "MetroApi_Frequency",
-        "produces": [
-          "application/json",
-          "application/xml"
-        ],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "Operator",
-            "description": "欲查詢縣市",
-            "required": true,
-            "type": "string",
-            "enum": [
-              "TRTC",
-              "TYMC",
-              "TMRT"
-            ],
-            "x-enum": {
-              "TRTC": "臺北捷運",
-              "KRTC": "高雄捷運",
-              "TMRT": "臺中捷運",
-              "TYMC": "桃園捷運"
-            }
-          },
-          {
-            "in": "query",
-            "name": "$select",
-            "description": "挑選",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$filter",
-            "description": "過濾",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$orderby",
-            "description": "排序",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$top",
-            "description": "取前幾筆",
-            "type": "integer",
-            "default": 30
-          },
-          {
-            "in": "query",
-            "name": "$skip",
-            "description": "跳過前幾筆",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$format",
-            "description": "指定來源格式",
-            "required": true,
-            "type": "string",
-            "enum": [
-              "JSON",
-              "XML"
-            ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "schema": {
-              "title": "Array",
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.Metro.Frequency"
-              }
-            }
-          },
-          "304": {
-            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
-          }
-        }
-      }
-    },
-    "/v2/Rail/Metro/S2STravelTime/{Operator}": {
-      "get": {
-        "tags": [
-          "Metro"
-        ],
-        "summary": "取得捷運列車站間運行時間資料",
-        "description": "取得捷運列車站間運行時間資料",
-        "operationId": "MetroApi_S2STravelTime",
-        "produces": [
-          "application/json",
-          "application/xml"
-        ],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "Operator",
-            "description": "欲查詢縣市",
-            "required": true,
-            "type": "string",
-            "enum": [
-              "TRTC",
-              "KRTC",
-              "TYMC",
-              "KLRT"
-            ],
-            "x-enum": {
-              "TRTC": "臺北捷運",
-              "KLRT": "高雄輕軌",
-              "TYMC": "桃園捷運",
-              "KRTC": "高雄捷運"
-            }
-          },
-          {
-            "in": "query",
-            "name": "$select",
-            "description": "挑選",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$filter",
-            "description": "過濾",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$orderby",
-            "description": "排序",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$top",
-            "description": "取前幾筆",
-            "type": "integer",
-            "default": 30
-          },
-          {
-            "in": "query",
-            "name": "$skip",
-            "description": "跳過前幾筆",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$format",
-            "description": "指定來源格式",
-            "required": true,
-            "type": "string",
-            "enum": [
-              "JSON",
-              "XML"
-            ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "schema": {
-              "title": "Array",
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.Metro.S2STravelTime"
-              }
-            }
-          },
-          "304": {
-            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
-          }
-        }
-      }
-    },
-    "/v2/Rail/Metro/ODFare/{Operator}": {
-      "get": {
-        "tags": [
-          "Metro"
-        ],
-        "summary": "取得捷運起迄站間票價資料",
-        "description": "取得捷運起迄站間票價資料",
-        "operationId": "MetroApi_ODFare",
-        "produces": [
-          "application/json",
-          "application/xml"
-        ],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "Operator",
-            "description": "欲查詢縣市",
-            "required": true,
-            "type": "string",
-            "enum": [
-              "TRTC",
-              "KRTC",
-              "TYMC",
-              "KLRT",
-              "NTDLRT",
-              "TRTCMG",
-              "TMRT"
-            ],
-            "x-enum": {
-              "TRTC": "臺北捷運",
-              "NTDLRT": "淡海輕軌",
-              "TRTCMG": "貓空纜車",
-              "KLRT": "高雄輕軌",
-              "TMRT": "臺中捷運",
-              "TYMC": "桃園捷運",
-              "KRTC": "高雄捷運"
-            }
-          },
-          {
-            "in": "query",
-            "name": "$select",
-            "description": "挑選",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$filter",
-            "description": "過濾",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$orderby",
-            "description": "排序",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$top",
-            "description": "取前幾筆",
-            "type": "integer",
-            "default": 30
-          },
-          {
-            "in": "query",
-            "name": "$skip",
-            "description": "跳過前幾筆",
-            "type": "string"
           },
           {
             "in": "query",
@@ -1314,6 +1532,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -1342,10 +1566,10 @@
               "KLRT"
             ],
             "x-enum": {
-              "KRTC": "高雄捷運",
-              "KLRT": "高雄輕軌",
               "TRTC": "臺北捷運",
-              "TYMC": "桃園捷運"
+              "TYMC": "桃園捷運",
+              "KLRT": "高雄輕軌",
+              "KRTC": "高雄捷運"
             }
           },
           {
@@ -1381,6 +1605,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -1404,6 +1638,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -1434,9 +1674,117 @@
               "KLRT"
             ],
             "x-enum": {
+              "TRTC": "臺北捷運",
               "KRTC": "高雄捷運",
               "TYMC": "桃園捷運",
-              "KLRT": "高雄輕軌",
+              "KLRT": "高雄輕軌"
+            }
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "title": "Array",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.Metro.StationTimeTable"
+              }
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Rail/Metro/Shape/{Operator}": {
+      "get": {
+        "tags": [
+          "Metro"
+        ],
+        "summary": "取得指定營運業者之軌道路網實體路線圖資資料",
+        "description": "取得指定營運業者之軌道路網實體路線圖資資料",
+        "operationId": "MetroApi_Shape",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "Operator",
+            "description": "",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "TRTC",
+              "KRTC",
+              "TYMC",
+              "NTDLRT"
+            ],
+            "x-enum": {
+              "NTDLRT": "淡海輕軌",
+              "TYMC": "桃園捷運",
+              "KRTC": "高雄捷運",
               "TRTC": "臺北捷運"
             }
           },
@@ -1473,95 +1821,13 @@
           },
           {
             "in": "query",
-            "name": "$format",
-            "description": "指定來源格式",
-            "required": true,
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "type": "string",
             "enum": [
-              "JSON",
-              "XML"
+              "true",
+              "false"
             ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "schema": {
-              "title": "Array",
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.Metro.StationTimeTable"
-              }
-            }
-          },
-          "304": {
-            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
-          }
-        }
-      }
-    },
-    "/v2/Rail/Metro/Shape/{Operator}": {
-      "get": {
-        "tags": [
-          "Metro"
-        ],
-        "summary": "取得指定營運業者之軌道路網實體路線圖資資料",
-        "description": "取得指定營運業者之軌道路網實體路線圖資資料",
-        "operationId": "MetroApi_Shape",
-        "produces": [
-          "application/json",
-          "application/xml"
-        ],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "Operator",
-            "description": "",
-            "required": true,
-            "type": "string",
-            "enum": [
-              "TRTC",
-              "KRTC",
-              "TYMC",
-              "NTDLRT"
-            ],
-            "x-enum": {
-              "TRTC": "臺北捷運",
-              "NTDLRT": "淡海輕軌",
-              "TYMC": "桃園捷運",
-              "KRTC": "高雄捷運"
-            }
-          },
-          {
-            "in": "query",
-            "name": "$select",
-            "description": "挑選",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$filter",
-            "description": "過濾",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$orderby",
-            "description": "排序",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$top",
-            "description": "取前幾筆",
-            "type": "integer",
-            "default": 30
-          },
-          {
-            "in": "query",
-            "name": "$skip",
-            "description": "跳過前幾筆",
-            "type": "string"
           },
           {
             "in": "query",
@@ -1588,6 +1854,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -1614,11 +1886,13 @@
             "enum": [
               "TYMC",
               "KRTC",
-              "KLRT"
+              "KLRT",
+              "TRTC"
             ],
             "x-enum": {
-              "TYMC": "桃園捷運",
               "KRTC": "高雄捷運",
+              "TYMC": "桃園捷運",
+              "TRTC": "臺北捷運",
               "KLRT": "高雄輕軌"
             }
           },
@@ -1665,6 +1939,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -1684,6 +1968,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -1710,11 +2000,13 @@
             "enum": [
               "TYMC",
               "KRTC",
-              "KLRT"
+              "KLRT",
+              "TRTC"
             ],
             "x-enum": {
-              "TYMC": "桃園捷運",
               "KLRT": "高雄輕軌",
+              "TRTC": "臺北捷運",
+              "TYMC": "桃園捷運",
               "KRTC": "高雄捷運"
             }
           },
@@ -1761,6 +2053,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -1780,6 +2082,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -1836,6 +2144,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -1859,6 +2177,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -1909,6 +2233,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -1932,6 +2266,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -1996,6 +2336,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -2019,6 +2369,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -2069,6 +2425,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -2092,6 +2458,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -2149,6 +2521,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -2172,6 +2554,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -2222,6 +2610,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -2245,6 +2643,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -2302,6 +2706,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -2325,6 +2739,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -2383,6 +2803,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -2406,6 +2836,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -2471,6 +2907,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -2494,6 +2940,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -2544,6 +2996,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -2567,6 +3029,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -2624,6 +3092,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -2647,6 +3125,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -2705,6 +3189,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -2728,6 +3222,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -2793,6 +3293,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -2816,6 +3326,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -2879,6 +3395,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -2902,6 +3428,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -2974,6 +3506,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -2997,6 +3539,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -3047,6 +3595,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -3070,6 +3628,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -3120,6 +3684,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -3143,6 +3717,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -3193,6 +3773,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -3216,6 +3806,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -3276,6 +3872,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -3295,6 +3901,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -3362,6 +3974,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -3381,6 +4003,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -3437,6 +4065,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -3460,6 +4098,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -3520,6 +4164,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -3539,6 +4193,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -3607,6 +4267,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -3626,6 +4296,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -3694,6 +4370,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -3713,6 +4399,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -3795,6 +4487,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -3814,6 +4516,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -3903,6 +4611,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -3922,6 +4640,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -3972,6 +4696,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -3995,6 +4729,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -4051,6 +4791,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -4074,6 +4824,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -4124,6 +4880,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -4147,6 +4913,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -4197,6 +4969,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -4220,6 +5002,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -4270,6 +5058,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -4293,6 +5091,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -4343,6 +5147,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -4366,6 +5180,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -4416,6 +5236,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -4439,6 +5269,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -4503,6 +5339,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -4526,6 +5372,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -4576,6 +5428,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -4599,6 +5461,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -4656,6 +5524,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -4679,6 +5557,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -4729,6 +5613,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -4752,6 +5646,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -4809,6 +5709,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -4832,6 +5742,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -4882,6 +5798,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -4905,6 +5831,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -4962,6 +5894,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -4985,6 +5927,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -5043,6 +5991,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -5066,6 +6024,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -5131,6 +6095,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -5154,6 +6128,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -5204,6 +6184,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -5227,6 +6217,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -5284,6 +6280,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -5307,6 +6313,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -5365,6 +6377,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -5388,6 +6410,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -5453,6 +6481,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -5476,6 +6514,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -5541,6 +6585,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -5564,6 +6618,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -5636,6 +6696,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -5659,6 +6729,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -5709,6 +6785,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -5732,6 +6818,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -5789,6 +6881,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -5812,6 +6914,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -5862,6 +6970,16 @@
           },
           {
             "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
             "name": "$format",
             "description": "指定來源格式",
             "required": true,
@@ -5885,6 +7003,12 @@
           },
           "304": {
             "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
           }
         }
       }
@@ -12953,6 +14077,126 @@
       },
       "xml": {
         "name": "PointType"
+      }
+    },
+    "PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth": {
+      "title": "DisplayHealth",
+      "description": "API服務健康狀態",
+      "required": [
+        "ServiceID",
+        "ServiceName"
+      ],
+      "type": "object",
+      "properties": {
+        "ServiceID": {
+          "title": "String",
+          "description": "API服務代碼",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "ServiceName": {
+          "title": "String",
+          "description": "API服務中文名稱",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "Inbound": {
+          "title": "Inbound",
+          "description": "本平台資料來源轉入狀態",
+          "allOf": [
+            {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.Inbound"
+            }
+          ],
+          "xml": {
+            "name": "Inbound"
+          }
+        },
+        "Outbound": {
+          "title": "Outbound",
+          "description": "本平台API狀態",
+          "allOf": [
+            {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.Outbound"
+            }
+          ],
+          "xml": {
+            "name": "Outbound"
+          }
+        }
+      },
+      "xml": {
+        "name": "DisplayHealth"
+      }
+    },
+    "PTX.Service.DTO.Shared.Specification.V3.Base.Inbound": {
+      "title": "Inbound",
+      "description": "本平台資料來源轉入狀態",
+      "required": [
+        "CheckTime",
+        "Status"
+      ],
+      "type": "object",
+      "properties": {
+        "CheckTime": {
+          "format": "date-time",
+          "title": "DateTime",
+          "description": "檢核時間",
+          "type": "string"
+        },
+        "Status": {
+          "title": "Int32",
+          "description": "檢核結果狀態 : [0:'失敗',1:'成功']",
+          "type": "integer"
+        },
+        "Reason": {
+          "title": "String",
+          "description": "檢核失敗原因",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        }
+      },
+      "xml": {
+        "name": "Inbound"
+      }
+    },
+    "PTX.Service.DTO.Shared.Specification.V3.Base.Outbound": {
+      "title": "Outbound",
+      "description": "本平台API狀態",
+      "required": [
+        "CheckTime",
+        "Status"
+      ],
+      "type": "object",
+      "properties": {
+        "CheckTime": {
+          "format": "date-time",
+          "title": "DateTime",
+          "description": "檢核時間",
+          "type": "string"
+        },
+        "Status": {
+          "title": "Int32",
+          "description": "檢核結果狀態 : [0:'失敗',1:'成功']",
+          "type": "integer"
+        },
+        "Reason": {
+          "title": "String",
+          "description": "檢核失敗原因",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        }
+      },
+      "xml": {
+        "name": "Outbound"
       }
     }
   },

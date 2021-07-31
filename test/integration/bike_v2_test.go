@@ -21,7 +21,7 @@ func TestBikeV2_Station(t *testing.T) {
 	params := bike.NewBikeAPIStationParams().
 		WithDollarFormat("JSON").
 		WithCity("Taipei")
-	result, err := bikeV2Client.Bike.BikeAPIStation(params)
+	result, _, err := bikeV2Client.Bike.BikeAPIStation(params)
 	require.NoError(t, err)
 	if len(result.Payload) == 0 {
 		t.Fatal("Bike.BikeAPIStation return no data")

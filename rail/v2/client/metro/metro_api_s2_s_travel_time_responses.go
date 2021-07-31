@@ -29,6 +29,12 @@ func (o *MetroAPIS2STravelTimeReader) ReadResponse(response runtime.ClientRespon
 			return nil, err
 		}
 		return result, nil
+	case 299:
+		result := NewMetroAPIS2STravelTimeStatus299()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return result, nil
 	case 304:
 		result := NewMetroAPIS2STravelTimeNotModified()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -64,6 +70,38 @@ func (o *MetroAPIS2STravelTimeOK) readResponse(response runtime.ClientResponse, 
 
 	// response payload
 	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewMetroAPIS2STravelTimeStatus299 creates a MetroAPIS2STravelTimeStatus299 with default headers values
+func NewMetroAPIS2STravelTimeStatus299() *MetroAPIS2STravelTimeStatus299 {
+	return &MetroAPIS2STravelTimeStatus299{}
+}
+
+/* MetroAPIS2STravelTimeStatus299 describes a response with status code 299, with default header values.
+
+加入參數'?health=true'即可查詢此API服務的健康狀態
+*/
+type MetroAPIS2STravelTimeStatus299 struct {
+	Payload *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth
+}
+
+func (o *MetroAPIS2STravelTimeStatus299) Error() string {
+	return fmt.Sprintf("[GET /v2/Rail/Metro/S2STravelTime/{Operator}][%d] metroApiS2STravelTimeStatus299  %+v", 299, o.Payload)
+}
+func (o *MetroAPIS2STravelTimeStatus299) GetPayload() *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth {
+	return o.Payload
+}
+
+func (o *MetroAPIS2STravelTimeStatus299) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	o.Payload = new(models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth)
+
+	// response payload
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

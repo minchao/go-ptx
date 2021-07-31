@@ -6,6 +6,18 @@
 
 ## [Unreleased]
 
+## [0.12.0] - 2021-07-31
+
+### Added
+- 捷運、公共自行車V2版資料服務上架。
+
+### Changed
+- 阿里山小火車、公共自行車、公車資料服務更新。
+- 自行車及軌道 API 新增 status 299 回應。
+
+### Fixed
+- 桃園公車資料服務內容更新。
+
 ## [0.11.0] - 2021-07-10
 
 ### Added
@@ -147,7 +159,8 @@
 ### Added
 - 首次發行，提供基本、航空、公車、軌道、自行車與觀光等 PTX API 用戶端程式庫。
 
-[Unreleased]: https://github.com/minchao/go-ptx/compare/v0.11.0...HEAD
+[Unreleased]: https://github.com/minchao/go-ptx/compare/v0.12.0...HEAD
+[0.12.0]: https://github.com/minchao/go-ptx/compare/v0.11.0...v0.12.0
 [0.11.0]: https://github.com/minchao/go-ptx/compare/v0.10.0...v0.11.0
 [0.10.0]: https://github.com/minchao/go-ptx/compare/v0.9.0...v0.10.0
 [0.9.0]: https://github.com/minchao/go-ptx/compare/v0.8.0...v0.9.0

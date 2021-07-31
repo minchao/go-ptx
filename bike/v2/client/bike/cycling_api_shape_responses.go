@@ -29,6 +29,12 @@ func (o *CyclingAPIShapeReader) ReadResponse(response runtime.ClientResponse, co
 			return nil, err
 		}
 		return result, nil
+	case 299:
+		result := NewCyclingAPIShapeStatus299()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return result, nil
 	case 304:
 		result := NewCyclingAPIShapeNotModified()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -64,6 +70,38 @@ func (o *CyclingAPIShapeOK) readResponse(response runtime.ClientResponse, consum
 
 	// response payload
 	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewCyclingAPIShapeStatus299 creates a CyclingAPIShapeStatus299 with default headers values
+func NewCyclingAPIShapeStatus299() *CyclingAPIShapeStatus299 {
+	return &CyclingAPIShapeStatus299{}
+}
+
+/* CyclingAPIShapeStatus299 describes a response with status code 299, with default header values.
+
+加入參數'?health=true'即可查詢此API服務的健康狀態
+*/
+type CyclingAPIShapeStatus299 struct {
+	Payload *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth
+}
+
+func (o *CyclingAPIShapeStatus299) Error() string {
+	return fmt.Sprintf("[GET /v2/Cycling/Shape/{City}][%d] cyclingApiShapeStatus299  %+v", 299, o.Payload)
+}
+func (o *CyclingAPIShapeStatus299) GetPayload() *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth {
+	return o.Payload
+}
+
+func (o *CyclingAPIShapeStatus299) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	o.Payload = new(models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth)
+
+	// response payload
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

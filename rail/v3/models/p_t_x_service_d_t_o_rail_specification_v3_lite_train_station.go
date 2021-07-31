@@ -34,11 +34,12 @@ type PTXServiceDTORailSpecificationV3LiteTrainStation struct {
 	// String
 	//
 	// 車站級別 = ['0: 特等', '1: 一等', '2: 二等', '3: 三等', '4: 簡易', '5: 招呼', '6: 號誌', '7:其他']
-	StationClass string `json:"StationClass,omitempty" xml:"String,omitempty"`
+	// Required: true
+	StationClass *string `json:"StationClass" xml:"String"`
 
 	// String
 	//
-	// 小火車車站代碼
+	// 車站代碼
 	// Required: true
 	StationID *string `json:"StationID" xml:"String"`
 
@@ -65,7 +66,7 @@ type PTXServiceDTORailSpecificationV3LiteTrainStation struct {
 
 	// String
 	//
-	// 小火車車站唯一識別代碼
+	// 車站唯一識別代碼
 	// Required: true
 	StationUID *string `json:"StationUID" xml:"String"`
 
@@ -78,6 +79,10 @@ type PTXServiceDTORailSpecificationV3LiteTrainStation struct {
 // Validate validates this p t x service d t o rail specification v3 lite train station
 func (m *PTXServiceDTORailSpecificationV3LiteTrainStation) Validate(formats strfmt.Registry) error {
 	var res []error
+
+	if err := m.validateStationClass(formats); err != nil {
+		res = append(res, err)
+	}
 
 	if err := m.validateStationID(formats); err != nil {
 		res = append(res, err)
@@ -98,6 +103,15 @@ func (m *PTXServiceDTORailSpecificationV3LiteTrainStation) Validate(formats strf
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV3LiteTrainStation) validateStationClass(formats strfmt.Registry) error {
+
+	if err := validate.Required("StationClass", "body", m.StationClass); err != nil {
+		return err
+	}
+
 	return nil
 }
 

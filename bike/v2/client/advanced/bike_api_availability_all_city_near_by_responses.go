@@ -29,6 +29,12 @@ func (o *BikeAPIAvailabilityAllCityNearByReader) ReadResponse(response runtime.C
 			return nil, err
 		}
 		return result, nil
+	case 299:
+		result := NewBikeAPIAvailabilityAllCityNearByStatus299()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return result, nil
 	case 304:
 		result := NewBikeAPIAvailabilityAllCityNearByNotModified()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -64,6 +70,38 @@ func (o *BikeAPIAvailabilityAllCityNearByOK) readResponse(response runtime.Clien
 
 	// response payload
 	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewBikeAPIAvailabilityAllCityNearByStatus299 creates a BikeAPIAvailabilityAllCityNearByStatus299 with default headers values
+func NewBikeAPIAvailabilityAllCityNearByStatus299() *BikeAPIAvailabilityAllCityNearByStatus299 {
+	return &BikeAPIAvailabilityAllCityNearByStatus299{}
+}
+
+/* BikeAPIAvailabilityAllCityNearByStatus299 describes a response with status code 299, with default header values.
+
+加入參數'?health=true'即可查詢此API服務的健康狀態
+*/
+type BikeAPIAvailabilityAllCityNearByStatus299 struct {
+	Payload *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth
+}
+
+func (o *BikeAPIAvailabilityAllCityNearByStatus299) Error() string {
+	return fmt.Sprintf("[GET /v2/Bike/Availability/NearBy][%d] bikeApiAvailabilityAllCityNearByStatus299  %+v", 299, o.Payload)
+}
+func (o *BikeAPIAvailabilityAllCityNearByStatus299) GetPayload() *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth {
+	return o.Payload
+}
+
+func (o *BikeAPIAvailabilityAllCityNearByStatus299) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	o.Payload = new(models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth)
+
+	// response payload
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

@@ -16,7 +16,7 @@ import (
 
 // PTXServiceDTORailSpecificationV3TRACommonStopTime StopTime
 //
-// 台鐵停靠時間資料
+// 停靠時間資料
 //
 // swagger:model PTX.Service.DTO.Rail.Specification.V3.TRA.Common.StopTime
 type PTXServiceDTORailSpecificationV3TRACommonStopTime struct {

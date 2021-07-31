@@ -30,9 +30,9 @@ type ClientOption func(*runtime.ClientOperation)
 
 // ClientService is the interface for Client methods
 type ClientService interface {
-	BikeAPIAvailabilityAllCityNearBy(params *BikeAPIAvailabilityAllCityNearByParams, opts ...ClientOption) (*BikeAPIAvailabilityAllCityNearByOK, error)
+	BikeAPIAvailabilityAllCityNearBy(params *BikeAPIAvailabilityAllCityNearByParams, opts ...ClientOption) (*BikeAPIAvailabilityAllCityNearByOK, *BikeAPIAvailabilityAllCityNearByStatus299, error)
 
-	BikeAPIStationAllCityNearBy(params *BikeAPIStationAllCityNearByParams, opts ...ClientOption) (*BikeAPIStationAllCityNearByOK, error)
+	BikeAPIStationAllCityNearBy(params *BikeAPIStationAllCityNearByParams, opts ...ClientOption) (*BikeAPIStationAllCityNearByOK, *BikeAPIStationAllCityNearByStatus299, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
@@ -42,7 +42,7 @@ type ClientService interface {
 
   取得指定[位置,範圍]的全臺公共自行車即時車位資料
 */
-func (a *Client) BikeAPIAvailabilityAllCityNearBy(params *BikeAPIAvailabilityAllCityNearByParams, opts ...ClientOption) (*BikeAPIAvailabilityAllCityNearByOK, error) {
+func (a *Client) BikeAPIAvailabilityAllCityNearBy(params *BikeAPIAvailabilityAllCityNearByParams, opts ...ClientOption) (*BikeAPIAvailabilityAllCityNearByOK, *BikeAPIAvailabilityAllCityNearByStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewBikeAPIAvailabilityAllCityNearByParams()
@@ -65,15 +65,16 @@ func (a *Client) BikeAPIAvailabilityAllCityNearBy(params *BikeAPIAvailabilityAll
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*BikeAPIAvailabilityAllCityNearByOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *BikeAPIAvailabilityAllCityNearByOK:
+		return value, nil, nil
+	case *BikeAPIAvailabilityAllCityNearByStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for BikeApi_Availability_AllCity_NearBy: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for advanced: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -82,7 +83,7 @@ func (a *Client) BikeAPIAvailabilityAllCityNearBy(params *BikeAPIAvailabilityAll
 
   取得指定[位置,範圍]的全臺公共自行車租借站位資料
 */
-func (a *Client) BikeAPIStationAllCityNearBy(params *BikeAPIStationAllCityNearByParams, opts ...ClientOption) (*BikeAPIStationAllCityNearByOK, error) {
+func (a *Client) BikeAPIStationAllCityNearBy(params *BikeAPIStationAllCityNearByParams, opts ...ClientOption) (*BikeAPIStationAllCityNearByOK, *BikeAPIStationAllCityNearByStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewBikeAPIStationAllCityNearByParams()
@@ -105,15 +106,16 @@ func (a *Client) BikeAPIStationAllCityNearBy(params *BikeAPIStationAllCityNearBy
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*BikeAPIStationAllCityNearByOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *BikeAPIStationAllCityNearByOK:
+		return value, nil, nil
+	case *BikeAPIStationAllCityNearByStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for BikeApi_Station_AllCity_NearBy: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for advanced: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 

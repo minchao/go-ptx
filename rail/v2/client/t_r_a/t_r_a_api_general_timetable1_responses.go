@@ -29,6 +29,12 @@ func (o *TRAAPIGeneralTimetable1Reader) ReadResponse(response runtime.ClientResp
 			return nil, err
 		}
 		return result, nil
+	case 299:
+		result := NewTRAAPIGeneralTimetable1Status299()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return result, nil
 	case 304:
 		result := NewTRAAPIGeneralTimetable1NotModified()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -64,6 +70,38 @@ func (o *TRAAPIGeneralTimetable1OK) readResponse(response runtime.ClientResponse
 
 	// response payload
 	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewTRAAPIGeneralTimetable1Status299 creates a TRAAPIGeneralTimetable1Status299 with default headers values
+func NewTRAAPIGeneralTimetable1Status299() *TRAAPIGeneralTimetable1Status299 {
+	return &TRAAPIGeneralTimetable1Status299{}
+}
+
+/* TRAAPIGeneralTimetable1Status299 describes a response with status code 299, with default header values.
+
+加入參數'?health=true'即可查詢此API服務的健康狀態
+*/
+type TRAAPIGeneralTimetable1Status299 struct {
+	Payload *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth
+}
+
+func (o *TRAAPIGeneralTimetable1Status299) Error() string {
+	return fmt.Sprintf("[GET /v2/Rail/TRA/GeneralTimetable/TrainNo/{TrainNo}][%d] tRAApiGeneralTimetable1Status299  %+v", 299, o.Payload)
+}
+func (o *TRAAPIGeneralTimetable1Status299) GetPayload() *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth {
+	return o.Payload
+}
+
+func (o *TRAAPIGeneralTimetable1Status299) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	o.Payload = new(models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth)
+
+	// response payload
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

@@ -16,7 +16,7 @@ import (
 
 // PTXServiceDTORailSpecificationV3TRATrainType TrainType
 //
-// 臺鐵列車車種資料
+// 列車車種資料
 //
 // swagger:model PTX.Service.DTO.Rail.Specification.V3.TRA.TrainType
 type PTXServiceDTORailSpecificationV3TRATrainType struct {
