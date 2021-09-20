@@ -6,6 +6,18 @@
 
 ## [Unreleased]
 
+## [0.13.0] - 2021-09-20
+
+### Added
+- 捷運V2版資料服務上架。
+
+### Changed
+- 公總及代管縣市市區公車資料服務內容更新。
+- 自行車資料服務內容更新。
+- 高雄捷運、高雄輕軌資料服務預計資料結構統一調整。
+- 捷運V2版淡海輕軌時刻表資料服務更新。
+- 航空及觀光 API 新增 status 299 回應。
+
 ## [0.12.0] - 2021-07-31
 
 ### Added
@@ -159,7 +171,8 @@
 ### Added
 - 首次發行，提供基本、航空、公車、軌道、自行車與觀光等 PTX API 用戶端程式庫。
 
-[Unreleased]: https://github.com/minchao/go-ptx/compare/v0.12.0...HEAD
+[Unreleased]: https://github.com/minchao/go-ptx/compare/v0.13.0...HEAD
+[0.13.0]: https://github.com/minchao/go-ptx/compare/v0.12.0...v0.13.0
 [0.12.0]: https://github.com/minchao/go-ptx/compare/v0.11.0...v0.12.0
 [0.11.0]: https://github.com/minchao/go-ptx/compare/v0.10.0...v0.11.0
 [0.10.0]: https://github.com/minchao/go-ptx/compare/v0.9.0...v0.10.0
