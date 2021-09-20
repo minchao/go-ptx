@@ -48,6 +48,8 @@ type ClientService interface {
 
 	DailyTrainTimeTableAPIControllerGet4(params *DailyTrainTimeTableAPIControllerGet4Params, opts ...ClientOption) (*DailyTrainTimeTableAPIControllerGet4OK, *DailyTrainTimeTableAPIControllerGet4Status299, error)
 
+	DailyTrainTimeTableAPIControllerGet5(params *DailyTrainTimeTableAPIControllerGet5Params, opts ...ClientOption) (*DailyTrainTimeTableAPIControllerGet5OK, *DailyTrainTimeTableAPIControllerGet5Status299, error)
+
 	GeneralStationTimetableAPIControllerGet(params *GeneralStationTimetableAPIControllerGetParams, opts ...ClientOption) (*GeneralStationTimetableAPIControllerGetOK, *GeneralStationTimetableAPIControllerGetStatus299, error)
 
 	GeneralStationTimetableAPIControllerGet1(params *GeneralStationTimetableAPIControllerGet1Params, opts ...ClientOption) (*GeneralStationTimetableAPIControllerGet1OK, *GeneralStationTimetableAPIControllerGet1Status299, error)
@@ -348,9 +350,9 @@ func (a *Client) DailyTrainTimeTableAPIControllerGet1(params *DailyTrainTimeTabl
 }
 
 /*
-  DailyTrainTimeTableAPIControllerGet2 取得指定s 日期 所有車次的時刻表資料
+  DailyTrainTimeTableAPIControllerGet2 取得臺鐵每日時刻表所有供應的日期資料s
 
-  取得指定[日期]所有車次的時刻表資料(台鐵提供近60天每日時刻表)
+  取得臺鐵每日時刻表所有供應的日期資料
 */
 func (a *Client) DailyTrainTimeTableAPIControllerGet2(params *DailyTrainTimeTableAPIControllerGet2Params, opts ...ClientOption) (*DailyTrainTimeTableAPIControllerGet2OK, *DailyTrainTimeTableAPIControllerGet2Status299, error) {
 	// TODO: Validate the params before sending
@@ -360,7 +362,7 @@ func (a *Client) DailyTrainTimeTableAPIControllerGet2(params *DailyTrainTimeTabl
 	op := &runtime.ClientOperation{
 		ID:                 "DailyTrainTimeTableApiController_Get_2",
 		Method:             "GET",
-		PathPattern:        "/v3/Rail/TRA/DailyTrainTimetable/TrainDate/{TrainDate}",
+		PathPattern:        "/v3/Rail/TRA/DailyTrainTimetable/TrainDates",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
@@ -389,9 +391,9 @@ func (a *Client) DailyTrainTimeTableAPIControllerGet2(params *DailyTrainTimeTabl
 }
 
 /*
-  DailyTrainTimeTableAPIControllerGet3 取得指定s 日期 起迄站間 之站間時刻表資料 僅列出查詢的停靠站
+  DailyTrainTimeTableAPIControllerGet3 取得指定s 日期 所有車次的時刻表資料
 
-  取得指定[日期],[起迄站間]之站間時刻表資料(僅列出查詢的停靠站)
+  取得指定[日期]所有車次的時刻表資料(台鐵提供近60天每日時刻表)
 */
 func (a *Client) DailyTrainTimeTableAPIControllerGet3(params *DailyTrainTimeTableAPIControllerGet3Params, opts ...ClientOption) (*DailyTrainTimeTableAPIControllerGet3OK, *DailyTrainTimeTableAPIControllerGet3Status299, error) {
 	// TODO: Validate the params before sending
@@ -401,7 +403,7 @@ func (a *Client) DailyTrainTimeTableAPIControllerGet3(params *DailyTrainTimeTabl
 	op := &runtime.ClientOperation{
 		ID:                 "DailyTrainTimeTableApiController_Get_3",
 		Method:             "GET",
-		PathPattern:        "/v3/Rail/TRA/DailyTrainTimetable/OD/{OriginStationID}/to/{DestinationStationID}/{TrainDate}",
+		PathPattern:        "/v3/Rail/TRA/DailyTrainTimetable/TrainDate/{TrainDate}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
@@ -430,9 +432,9 @@ func (a *Client) DailyTrainTimeTableAPIControllerGet3(params *DailyTrainTimeTabl
 }
 
 /*
-  DailyTrainTimeTableAPIControllerGet4 取得指定s 日期 起迄站間 之站間時刻表資料
+  DailyTrainTimeTableAPIControllerGet4 取得指定s 日期 起迄站間 之站間時刻表資料 僅列出查詢的停靠站
 
-  取得指定[日期],[起迄站間]之站間時刻表資料
+  取得指定[日期],[起迄站間]之站間時刻表資料(僅列出查詢的停靠站)
 */
 func (a *Client) DailyTrainTimeTableAPIControllerGet4(params *DailyTrainTimeTableAPIControllerGet4Params, opts ...ClientOption) (*DailyTrainTimeTableAPIControllerGet4OK, *DailyTrainTimeTableAPIControllerGet4Status299, error) {
 	// TODO: Validate the params before sending
@@ -442,7 +444,7 @@ func (a *Client) DailyTrainTimeTableAPIControllerGet4(params *DailyTrainTimeTabl
 	op := &runtime.ClientOperation{
 		ID:                 "DailyTrainTimeTableApiController_Get_4",
 		Method:             "GET",
-		PathPattern:        "/v3/Rail/TRA/DailyTrainTimetable/OD/Inclusive/{OriginStationID}/to/{DestinationStationID}/{TrainDate}",
+		PathPattern:        "/v3/Rail/TRA/DailyTrainTimetable/OD/{OriginStationID}/to/{DestinationStationID}/{TrainDate}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
@@ -463,6 +465,47 @@ func (a *Client) DailyTrainTimeTableAPIControllerGet4(params *DailyTrainTimeTabl
 	case *DailyTrainTimeTableAPIControllerGet4OK:
 		return value, nil, nil
 	case *DailyTrainTimeTableAPIControllerGet4Status299:
+		return nil, value, nil
+	}
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for t_r_a: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  DailyTrainTimeTableAPIControllerGet5 取得指定s 日期 起迄站間 之站間時刻表資料
+
+  取得指定[日期],[起迄站間]之站間時刻表資料
+*/
+func (a *Client) DailyTrainTimeTableAPIControllerGet5(params *DailyTrainTimeTableAPIControllerGet5Params, opts ...ClientOption) (*DailyTrainTimeTableAPIControllerGet5OK, *DailyTrainTimeTableAPIControllerGet5Status299, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewDailyTrainTimeTableAPIControllerGet5Params()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "DailyTrainTimeTableApiController_Get_5",
+		Method:             "GET",
+		PathPattern:        "/v3/Rail/TRA/DailyTrainTimetable/OD/Inclusive/{OriginStationID}/to/{DestinationStationID}/{TrainDate}",
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &DailyTrainTimeTableAPIControllerGet5Reader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, nil, err
+	}
+	switch value := result.(type) {
+	case *DailyTrainTimeTableAPIControllerGet5OK:
+		return value, nil, nil
+	case *DailyTrainTimeTableAPIControllerGet5Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue

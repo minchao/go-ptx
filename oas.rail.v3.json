@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "title": "MOTC Transport API V3",
-    "description": "本平臺提供涵蓋全國尺度之公車、臺鐵、高鐵、捷運、航空、自行車等公共運輸旅運資料服務API，歡迎各產政學單位介接使用。\n                                                    <br><span class=swagger-description-indicatation>利用本平臺開放資料進行各項應用服務開發時，請考量不同特性使用者(如:性別/身心障礙/老幼等)的需求，並歡迎回饋寶貴意見。</span>\n                                                    <br><br>資料使用葵花寶典:[請點我](https://motc-ptx-api-documentation.gitbook.io/motc-ptx-api-documentation/)\n                                                    <br>資料服務開發實作參考手冊:[請點我](https://docs.google.com/viewer?url=https://github.com/ptxmotc/PTX_Web/blob/master/Swagger%E6%9C%8D%E5%8B%99%E8%AA%AA%E6%98%8E%E4%B8%8A%E5%82%B3%E5%8F%83%E8%80%83%E6%AA%94%E6%A1%88/%E5%85%AC%E5%85%B1%E9%81%8B%E8%BC%B8%E6%95%B4%E5%90%88%E8%B3%87%E8%A8%8A%E5%B9%B3%E5%8F%B0%E8%B3%87%E6%96%99%E6%9C%8D%E5%8B%99%E9%96%8B%E7%99%BC%E5%AF%A6%E4%BD%9C.pdf?raw=true)\n                                                    <br>API URI Convention文件說明:[請點我](https://docs.google.com/viewer?url=https://github.com/ptxmotc/PTX_Web/blob/master/Swagger%E6%9C%8D%E5%8B%99%E8%AA%AA%E6%98%8E%E4%B8%8A%E5%82%B3%E5%8F%83%E8%80%83%E6%AA%94%E6%A1%88/API_URI_Convention%E6%96%87%E4%BB%B6_v1.pdf?raw=true)<br>資料文本OAS描述:[請點我](https://ptx.transportdata.tw/MOTC/v3/Rail/api-docs/oas)",
+    "description": "本平臺提供涵蓋全國尺度之公車、臺鐵、高鐵、捷運、航空、自行車等公共運輸旅運資料服務API，歡迎各產政學單位介接使用。\n                                                    <br><span class=swagger-description-indicatation>利用本平臺開放資料進行各項應用服務開發時，請考量不同特性使用者(如:性別/身心障礙/老幼等)的需求，並歡迎回饋寶貴意見。</span>\n                                                    <br><br>資料使用葵花寶典:[請點我](https://motc-ptx-api-documentation.gitbook.io/motc-ptx-api-documentation/)\n                                                    <br>資料服務開發實作參考手冊:[請點我](https://docs.google.com/viewer?url=https://github.com/ptxmotc/PTX_Web/blob/master/Swagger%E6%9C%8D%E5%8B%99%E8%AA%AA%E6%98%8E%E4%B8%8A%E5%82%B3%E5%8F%83%E8%80%83%E6%AA%94%E6%A1%88/%E5%85%AC%E5%85%B1%E9%81%8B%E8%BC%B8%E6%95%B4%E5%90%88%E8%B3%87%E8%A8%8A%E5%B9%B3%E5%8F%B0%E8%B3%87%E6%96%99%E6%9C%8D%E5%8B%99%E9%96%8B%E7%99%BC%E5%AF%A6%E4%BD%9C.pdf?raw=true)\n                                                    <br>API URI Convention文件說明:[請點我](https://docs.google.com/viewer?url=https://github.com/ptxmotc/PTX_Web/blob/master/Swagger%E6%9C%8D%E5%8B%99%E8%AA%AA%E6%98%8E%E4%B8%8A%E5%82%B3%E5%8F%83%E8%80%83%E6%AA%94%E6%A1%88/API_URI_Convention%E6%96%87%E4%BB%B6_v1.pdf?raw=true)<br>資料文本OAS描述:[請點我](http://192.168.201.165:30300/v3/Rail/api-docs/oas)",
     "version": "v3"
   },
   "host": "ptx.transportdata.tw",
@@ -1626,6 +1626,57 @@
         }
       }
     },
+    "/v3/Rail/TRA/DailyTrainTimetable/TrainDates": {
+      "get": {
+        "tags": [
+          "TRA"
+        ],
+        "summary": "取得臺鐵每日時刻表所有供應的日期資料",
+        "description": "取得臺鐵每日時刻表所有供應的日期資料",
+        "operationId": "DailyTrainTimeTableApiController_Get_2",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/PTX.API.Rail.Model.TrainDateList"
+            }
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
     "/v3/Rail/TRA/DailyTrainTimetable/TrainDate/{TrainDate}": {
       "get": {
         "tags": [
@@ -1633,7 +1684,7 @@
         ],
         "summary": "取得指定[日期]所有車次的時刻表資料",
         "description": "取得指定[日期]所有車次的時刻表資料(台鐵提供近60天每日時刻表)",
-        "operationId": "DailyTrainTimeTableApiController_Get_2",
+        "operationId": "DailyTrainTimeTableApiController_Get_3",
         "produces": [
           "application/json",
           "application/xml"
@@ -1736,7 +1787,7 @@
         ],
         "summary": "取得指定[日期],[起迄站間]之站間時刻表資料(僅列出查詢的停靠站)",
         "description": "取得指定[日期],[起迄站間]之站間時刻表資料(僅列出查詢的停靠站)",
-        "operationId": "DailyTrainTimeTableApiController_Get_3",
+        "operationId": "DailyTrainTimeTableApiController_Get_4",
         "produces": [
           "application/json",
           "application/xml"
@@ -1853,7 +1904,7 @@
         ],
         "summary": "取得指定[日期],[起迄站間]之站間時刻表資料",
         "description": "取得指定[日期],[起迄站間]之站間時刻表資料",
-        "operationId": "DailyTrainTimeTableApiController_Get_4",
+        "operationId": "DailyTrainTimeTableApiController_Get_5",
         "produces": [
           "application/json",
           "application/xml"
@@ -6490,6 +6541,81 @@
         "namespace": "https://ptx.transportdata.tw/standard/schema/"
       }
     },
+    "PTX.API.Rail.Model.TrainDateList": {
+      "title": "TrainDateList",
+      "required": [
+        "AuthorityCode",
+        "Count",
+        "EndDate",
+        "StartDate",
+        "TrainDates",
+        "UpdateInterval",
+        "UpdateTime"
+      ],
+      "type": "object",
+      "properties": {
+        "UpdateTime": {
+          "format": "date-time",
+          "title": "DateTime",
+          "description": "[平臺]資料更新日期時間(ISO8601格式: yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "UpdateInterval": {
+          "format": "int32",
+          "title": "Int32",
+          "description": "[平臺]資料更新週期(秒)",
+          "type": "integer"
+        },
+        "AuthorityCode": {
+          "title": "String",
+          "description": "業管機關簡碼",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "StartDate": {
+          "title": "String",
+          "description": "每日時刻表供應起始日期(格式: yyyy-MM-dd)",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "EndDate": {
+          "title": "String",
+          "description": "每日時刻表供應最終日期(格式: yyyy-MM-dd)",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "TrainDates": {
+          "title": "Array",
+          "description": "每日時刻表供應日期清單資料",
+          "type": "array",
+          "items": {
+            "title": "String",
+            "type": "string",
+            "xml": {
+              "name": "String"
+            }
+          },
+          "xml": {
+            "name": "List`1"
+          }
+        },
+        "Count": {
+          "format": "int64",
+          "title": "Int64",
+          "description": "資料總筆數",
+          "type": "integer"
+        }
+      },
+      "xml": {
+        "name": "TrainDateList"
+      }
+    },
     "PTX.API.Rail.Model.TRAODFareWrapper[PTX.Service.DTO.Rail.Specification.V3.TRA.ODFare.ODFare]": {
       "title": "TRAODFareList",
       "required": [
@@ -11082,7 +11208,6 @@
       "required": [
         "AlertID",
         "Description",
-        "Scope",
         "Status",
         "Title",
         "UpdateTime"
@@ -11192,13 +11317,6 @@
     },
     "PTX.Service.DTO.Rail.Specification.V3.TRA.TRAAlertList.AlertScope": {
       "title": "AlertScope",
-      "required": [
-        "Lines",
-        "LineSections",
-        "Routes",
-        "Stations",
-        "Trains"
-      ],
       "type": "object",
       "properties": {
         "NetworkList": {

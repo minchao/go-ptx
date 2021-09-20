@@ -104,12 +104,6 @@ type CityBusAPIFirstLastTripInfo1Params struct {
 	*/
 	City string
 
-	/* RouteName.
-
-	   繁體中文路線名稱，如'307'
-	*/
-	RouteName string
-
 	/* Health.
 
 	   加入參數'?health=true'即可查詢此API服務的健康狀態
@@ -257,17 +251,6 @@ func (o *CityBusAPIFirstLastTripInfo1Params) SetCity(city string) {
 	o.City = city
 }
 
-// WithRouteName adds the routeName to the city bus Api first last trip info 1 params
-func (o *CityBusAPIFirstLastTripInfo1Params) WithRouteName(routeName string) *CityBusAPIFirstLastTripInfo1Params {
-	o.SetRouteName(routeName)
-	return o
-}
-
-// SetRouteName adds the routeName to the city bus Api first last trip info 1 params
-func (o *CityBusAPIFirstLastTripInfo1Params) SetRouteName(routeName string) {
-	o.RouteName = routeName
-}
-
 // WithHealth adds the health to the city bus Api first last trip info 1 params
 func (o *CityBusAPIFirstLastTripInfo1Params) WithHealth(health *string) *CityBusAPIFirstLastTripInfo1Params {
 	o.SetHealth(health)
@@ -384,11 +367,6 @@ func (o *CityBusAPIFirstLastTripInfo1Params) WriteToRequest(r runtime.ClientRequ
 
 	// path param City
 	if err := r.SetPathParam("City", o.City); err != nil {
-		return err
-	}
-
-	// path param RouteName
-	if err := r.SetPathParam("RouteName", o.RouteName); err != nil {
 		return err
 	}
 

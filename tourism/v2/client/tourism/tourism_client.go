@@ -30,53 +30,53 @@ type ClientOption func(*runtime.ClientOperation)
 
 // ClientService is the interface for Client methods
 type ClientService interface {
-	TaiwanTripBusAPIEstimatedTimeOfArrival(params *TaiwanTripBusAPIEstimatedTimeOfArrivalParams, opts ...ClientOption) (*TaiwanTripBusAPIEstimatedTimeOfArrivalOK, error)
+	TaiwanTripBusAPIEstimatedTimeOfArrival(params *TaiwanTripBusAPIEstimatedTimeOfArrivalParams, opts ...ClientOption) (*TaiwanTripBusAPIEstimatedTimeOfArrivalOK, *TaiwanTripBusAPIEstimatedTimeOfArrivalStatus299, error)
 
-	TaiwanTripBusAPIEstimatedTimeOfArrival1(params *TaiwanTripBusAPIEstimatedTimeOfArrival1Params, opts ...ClientOption) (*TaiwanTripBusAPIEstimatedTimeOfArrival1OK, error)
+	TaiwanTripBusAPIEstimatedTimeOfArrival1(params *TaiwanTripBusAPIEstimatedTimeOfArrival1Params, opts ...ClientOption) (*TaiwanTripBusAPIEstimatedTimeOfArrival1OK, *TaiwanTripBusAPIEstimatedTimeOfArrival1Status299, error)
 
-	TaiwanTripBusAPINews(params *TaiwanTripBusAPINewsParams, opts ...ClientOption) (*TaiwanTripBusAPINewsOK, error)
+	TaiwanTripBusAPINews(params *TaiwanTripBusAPINewsParams, opts ...ClientOption) (*TaiwanTripBusAPINewsOK, *TaiwanTripBusAPINewsStatus299, error)
 
-	TaiwanTripBusAPIRealTimeByFrequency(params *TaiwanTripBusAPIRealTimeByFrequencyParams, opts ...ClientOption) (*TaiwanTripBusAPIRealTimeByFrequencyOK, error)
+	TaiwanTripBusAPIRealTimeByFrequency(params *TaiwanTripBusAPIRealTimeByFrequencyParams, opts ...ClientOption) (*TaiwanTripBusAPIRealTimeByFrequencyOK, *TaiwanTripBusAPIRealTimeByFrequencyStatus299, error)
 
-	TaiwanTripBusAPIRealTimeByFrequency1(params *TaiwanTripBusAPIRealTimeByFrequency1Params, opts ...ClientOption) (*TaiwanTripBusAPIRealTimeByFrequency1OK, error)
+	TaiwanTripBusAPIRealTimeByFrequency1(params *TaiwanTripBusAPIRealTimeByFrequency1Params, opts ...ClientOption) (*TaiwanTripBusAPIRealTimeByFrequency1OK, *TaiwanTripBusAPIRealTimeByFrequency1Status299, error)
 
-	TaiwanTripBusAPIRealTimeNearStop(params *TaiwanTripBusAPIRealTimeNearStopParams, opts ...ClientOption) (*TaiwanTripBusAPIRealTimeNearStopOK, error)
+	TaiwanTripBusAPIRealTimeNearStop(params *TaiwanTripBusAPIRealTimeNearStopParams, opts ...ClientOption) (*TaiwanTripBusAPIRealTimeNearStopOK, *TaiwanTripBusAPIRealTimeNearStopStatus299, error)
 
-	TaiwanTripBusAPIRealTimeNearStop1(params *TaiwanTripBusAPIRealTimeNearStop1Params, opts ...ClientOption) (*TaiwanTripBusAPIRealTimeNearStop1OK, error)
+	TaiwanTripBusAPIRealTimeNearStop1(params *TaiwanTripBusAPIRealTimeNearStop1Params, opts ...ClientOption) (*TaiwanTripBusAPIRealTimeNearStop1OK, *TaiwanTripBusAPIRealTimeNearStop1Status299, error)
 
-	TaiwanTripBusAPIRoute(params *TaiwanTripBusAPIRouteParams, opts ...ClientOption) (*TaiwanTripBusAPIRouteOK, error)
+	TaiwanTripBusAPIRoute(params *TaiwanTripBusAPIRouteParams, opts ...ClientOption) (*TaiwanTripBusAPIRouteOK, *TaiwanTripBusAPIRouteStatus299, error)
 
-	TaiwanTripBusAPIRoute1(params *TaiwanTripBusAPIRoute1Params, opts ...ClientOption) (*TaiwanTripBusAPIRoute1OK, error)
+	TaiwanTripBusAPIRoute1(params *TaiwanTripBusAPIRoute1Params, opts ...ClientOption) (*TaiwanTripBusAPIRoute1OK, *TaiwanTripBusAPIRoute1Status299, error)
 
-	TaiwanTripBusAPIS2TravelTime(params *TaiwanTripBusAPIS2TravelTimeParams, opts ...ClientOption) (*TaiwanTripBusAPIS2TravelTimeOK, error)
+	TaiwanTripBusAPIS2TravelTime(params *TaiwanTripBusAPIS2TravelTimeParams, opts ...ClientOption) (*TaiwanTripBusAPIS2TravelTimeOK, *TaiwanTripBusAPIS2TravelTimeStatus299, error)
 
-	TaiwanTripBusAPISchedule(params *TaiwanTripBusAPIScheduleParams, opts ...ClientOption) (*TaiwanTripBusAPIScheduleOK, error)
+	TaiwanTripBusAPISchedule(params *TaiwanTripBusAPIScheduleParams, opts ...ClientOption) (*TaiwanTripBusAPIScheduleOK, *TaiwanTripBusAPIScheduleStatus299, error)
 
-	TaiwanTripBusAPISchedule1(params *TaiwanTripBusAPISchedule1Params, opts ...ClientOption) (*TaiwanTripBusAPISchedule1OK, error)
+	TaiwanTripBusAPISchedule1(params *TaiwanTripBusAPISchedule1Params, opts ...ClientOption) (*TaiwanTripBusAPISchedule1OK, *TaiwanTripBusAPISchedule1Status299, error)
 
-	TaiwanTripBusAPIShape(params *TaiwanTripBusAPIShapeParams, opts ...ClientOption) (*TaiwanTripBusAPIShapeOK, error)
+	TaiwanTripBusAPIShape(params *TaiwanTripBusAPIShapeParams, opts ...ClientOption) (*TaiwanTripBusAPIShapeOK, *TaiwanTripBusAPIShapeStatus299, error)
 
-	TaiwanTripBusAPIShape1(params *TaiwanTripBusAPIShape1Params, opts ...ClientOption) (*TaiwanTripBusAPIShape1OK, error)
+	TaiwanTripBusAPIShape1(params *TaiwanTripBusAPIShape1Params, opts ...ClientOption) (*TaiwanTripBusAPIShape1OK, *TaiwanTripBusAPIShape1Status299, error)
 
-	TaiwanTripBusAPIStopOfRoute(params *TaiwanTripBusAPIStopOfRouteParams, opts ...ClientOption) (*TaiwanTripBusAPIStopOfRouteOK, error)
+	TaiwanTripBusAPIStopOfRoute(params *TaiwanTripBusAPIStopOfRouteParams, opts ...ClientOption) (*TaiwanTripBusAPIStopOfRouteOK, *TaiwanTripBusAPIStopOfRouteStatus299, error)
 
-	TaiwanTripBusAPIStopOfRoute1(params *TaiwanTripBusAPIStopOfRoute1Params, opts ...ClientOption) (*TaiwanTripBusAPIStopOfRoute1OK, error)
+	TaiwanTripBusAPIStopOfRoute1(params *TaiwanTripBusAPIStopOfRoute1Params, opts ...ClientOption) (*TaiwanTripBusAPIStopOfRoute1OK, *TaiwanTripBusAPIStopOfRoute1Status299, error)
 
-	TourismAPIActivity(params *TourismAPIActivityParams, opts ...ClientOption) (*TourismAPIActivityOK, error)
+	TourismAPIActivity(params *TourismAPIActivityParams, opts ...ClientOption) (*TourismAPIActivityOK, *TourismAPIActivityStatus299, error)
 
-	TourismAPIActivity0(params *TourismAPIActivity0Params, opts ...ClientOption) (*TourismAPIActivity0OK, error)
+	TourismAPIActivity0(params *TourismAPIActivity0Params, opts ...ClientOption) (*TourismAPIActivity0OK, *TourismAPIActivity0Status299, error)
 
-	TourismAPIHotel(params *TourismAPIHotelParams, opts ...ClientOption) (*TourismAPIHotelOK, error)
+	TourismAPIHotel(params *TourismAPIHotelParams, opts ...ClientOption) (*TourismAPIHotelOK, *TourismAPIHotelStatus299, error)
 
-	TourismAPIHotel0(params *TourismAPIHotel0Params, opts ...ClientOption) (*TourismAPIHotel0OK, error)
+	TourismAPIHotel0(params *TourismAPIHotel0Params, opts ...ClientOption) (*TourismAPIHotel0OK, *TourismAPIHotel0Status299, error)
 
-	TourismAPIRestaurant(params *TourismAPIRestaurantParams, opts ...ClientOption) (*TourismAPIRestaurantOK, error)
+	TourismAPIRestaurant(params *TourismAPIRestaurantParams, opts ...ClientOption) (*TourismAPIRestaurantOK, *TourismAPIRestaurantStatus299, error)
 
-	TourismAPIRestaurant0(params *TourismAPIRestaurant0Params, opts ...ClientOption) (*TourismAPIRestaurant0OK, error)
+	TourismAPIRestaurant0(params *TourismAPIRestaurant0Params, opts ...ClientOption) (*TourismAPIRestaurant0OK, *TourismAPIRestaurant0Status299, error)
 
-	TourismAPIScenicSpot(params *TourismAPIScenicSpotParams, opts ...ClientOption) (*TourismAPIScenicSpotOK, error)
+	TourismAPIScenicSpot(params *TourismAPIScenicSpotParams, opts ...ClientOption) (*TourismAPIScenicSpotOK, *TourismAPIScenicSpotStatus299, error)
 
-	TourismAPIScenicSpot0(params *TourismAPIScenicSpot0Params, opts ...ClientOption) (*TourismAPIScenicSpot0OK, error)
+	TourismAPIScenicSpot0(params *TourismAPIScenicSpot0Params, opts ...ClientOption) (*TourismAPIScenicSpot0OK, *TourismAPIScenicSpot0Status299, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
@@ -86,7 +86,7 @@ type ClientService interface {
 
   取得台灣好行公車的預估到站資料(N1)
 */
-func (a *Client) TaiwanTripBusAPIEstimatedTimeOfArrival(params *TaiwanTripBusAPIEstimatedTimeOfArrivalParams, opts ...ClientOption) (*TaiwanTripBusAPIEstimatedTimeOfArrivalOK, error) {
+func (a *Client) TaiwanTripBusAPIEstimatedTimeOfArrival(params *TaiwanTripBusAPIEstimatedTimeOfArrivalParams, opts ...ClientOption) (*TaiwanTripBusAPIEstimatedTimeOfArrivalOK, *TaiwanTripBusAPIEstimatedTimeOfArrivalStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTaiwanTripBusAPIEstimatedTimeOfArrivalParams()
@@ -109,15 +109,16 @@ func (a *Client) TaiwanTripBusAPIEstimatedTimeOfArrival(params *TaiwanTripBusAPI
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*TaiwanTripBusAPIEstimatedTimeOfArrivalOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *TaiwanTripBusAPIEstimatedTimeOfArrivalOK:
+		return value, nil, nil
+	case *TaiwanTripBusAPIEstimatedTimeOfArrivalStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for TaiwanTripBusApi_EstimatedTimeOfArrival: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for tourism: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -126,7 +127,7 @@ func (a *Client) TaiwanTripBusAPIEstimatedTimeOfArrival(params *TaiwanTripBusAPI
 
   取得指定[路線名稱]的台灣好行公車的預估到站資料(N1)
 */
-func (a *Client) TaiwanTripBusAPIEstimatedTimeOfArrival1(params *TaiwanTripBusAPIEstimatedTimeOfArrival1Params, opts ...ClientOption) (*TaiwanTripBusAPIEstimatedTimeOfArrival1OK, error) {
+func (a *Client) TaiwanTripBusAPIEstimatedTimeOfArrival1(params *TaiwanTripBusAPIEstimatedTimeOfArrival1Params, opts ...ClientOption) (*TaiwanTripBusAPIEstimatedTimeOfArrival1OK, *TaiwanTripBusAPIEstimatedTimeOfArrival1Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTaiwanTripBusAPIEstimatedTimeOfArrival1Params()
@@ -149,15 +150,16 @@ func (a *Client) TaiwanTripBusAPIEstimatedTimeOfArrival1(params *TaiwanTripBusAP
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*TaiwanTripBusAPIEstimatedTimeOfArrival1OK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *TaiwanTripBusAPIEstimatedTimeOfArrival1OK:
+		return value, nil, nil
+	case *TaiwanTripBusAPIEstimatedTimeOfArrival1Status299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for TaiwanTripBusApi_EstimatedTimeOfArrival_1: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for tourism: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -166,7 +168,7 @@ func (a *Client) TaiwanTripBusAPIEstimatedTimeOfArrival1(params *TaiwanTripBusAP
 
   取得台灣好行公車之最新消息
 */
-func (a *Client) TaiwanTripBusAPINews(params *TaiwanTripBusAPINewsParams, opts ...ClientOption) (*TaiwanTripBusAPINewsOK, error) {
+func (a *Client) TaiwanTripBusAPINews(params *TaiwanTripBusAPINewsParams, opts ...ClientOption) (*TaiwanTripBusAPINewsOK, *TaiwanTripBusAPINewsStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTaiwanTripBusAPINewsParams()
@@ -189,15 +191,16 @@ func (a *Client) TaiwanTripBusAPINews(params *TaiwanTripBusAPINewsParams, opts .
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*TaiwanTripBusAPINewsOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *TaiwanTripBusAPINewsOK:
+		return value, nil, nil
+	case *TaiwanTripBusAPINewsStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for TaiwanTripBusApi_News: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for tourism: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -206,7 +209,7 @@ func (a *Client) TaiwanTripBusAPINews(params *TaiwanTripBusAPINewsParams, opts .
 
   取得台灣好行公車的動態定時資料(A1)
 */
-func (a *Client) TaiwanTripBusAPIRealTimeByFrequency(params *TaiwanTripBusAPIRealTimeByFrequencyParams, opts ...ClientOption) (*TaiwanTripBusAPIRealTimeByFrequencyOK, error) {
+func (a *Client) TaiwanTripBusAPIRealTimeByFrequency(params *TaiwanTripBusAPIRealTimeByFrequencyParams, opts ...ClientOption) (*TaiwanTripBusAPIRealTimeByFrequencyOK, *TaiwanTripBusAPIRealTimeByFrequencyStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTaiwanTripBusAPIRealTimeByFrequencyParams()
@@ -229,15 +232,16 @@ func (a *Client) TaiwanTripBusAPIRealTimeByFrequency(params *TaiwanTripBusAPIRea
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*TaiwanTripBusAPIRealTimeByFrequencyOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *TaiwanTripBusAPIRealTimeByFrequencyOK:
+		return value, nil, nil
+	case *TaiwanTripBusAPIRealTimeByFrequencyStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for TaiwanTripBusApi_RealTimeByFrequency: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for tourism: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -246,7 +250,7 @@ func (a *Client) TaiwanTripBusAPIRealTimeByFrequency(params *TaiwanTripBusAPIRea
 
   取得指定[路線名稱]的台灣好行公車的動態定時資料(A1)
 */
-func (a *Client) TaiwanTripBusAPIRealTimeByFrequency1(params *TaiwanTripBusAPIRealTimeByFrequency1Params, opts ...ClientOption) (*TaiwanTripBusAPIRealTimeByFrequency1OK, error) {
+func (a *Client) TaiwanTripBusAPIRealTimeByFrequency1(params *TaiwanTripBusAPIRealTimeByFrequency1Params, opts ...ClientOption) (*TaiwanTripBusAPIRealTimeByFrequency1OK, *TaiwanTripBusAPIRealTimeByFrequency1Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTaiwanTripBusAPIRealTimeByFrequency1Params()
@@ -269,15 +273,16 @@ func (a *Client) TaiwanTripBusAPIRealTimeByFrequency1(params *TaiwanTripBusAPIRe
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*TaiwanTripBusAPIRealTimeByFrequency1OK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *TaiwanTripBusAPIRealTimeByFrequency1OK:
+		return value, nil, nil
+	case *TaiwanTripBusAPIRealTimeByFrequency1Status299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for TaiwanTripBusApi_RealTimeByFrequency_1: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for tourism: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -286,7 +291,7 @@ func (a *Client) TaiwanTripBusAPIRealTimeByFrequency1(params *TaiwanTripBusAPIRe
 
   取得台灣好行公車的動態定點資料(A2)
 */
-func (a *Client) TaiwanTripBusAPIRealTimeNearStop(params *TaiwanTripBusAPIRealTimeNearStopParams, opts ...ClientOption) (*TaiwanTripBusAPIRealTimeNearStopOK, error) {
+func (a *Client) TaiwanTripBusAPIRealTimeNearStop(params *TaiwanTripBusAPIRealTimeNearStopParams, opts ...ClientOption) (*TaiwanTripBusAPIRealTimeNearStopOK, *TaiwanTripBusAPIRealTimeNearStopStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTaiwanTripBusAPIRealTimeNearStopParams()
@@ -309,15 +314,16 @@ func (a *Client) TaiwanTripBusAPIRealTimeNearStop(params *TaiwanTripBusAPIRealTi
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*TaiwanTripBusAPIRealTimeNearStopOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *TaiwanTripBusAPIRealTimeNearStopOK:
+		return value, nil, nil
+	case *TaiwanTripBusAPIRealTimeNearStopStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for TaiwanTripBusApi_RealTimeNearStop: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for tourism: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -326,7 +332,7 @@ func (a *Client) TaiwanTripBusAPIRealTimeNearStop(params *TaiwanTripBusAPIRealTi
 
   取得指定[路線名稱]的台灣好行公車的動態定點資料(A2)
 */
-func (a *Client) TaiwanTripBusAPIRealTimeNearStop1(params *TaiwanTripBusAPIRealTimeNearStop1Params, opts ...ClientOption) (*TaiwanTripBusAPIRealTimeNearStop1OK, error) {
+func (a *Client) TaiwanTripBusAPIRealTimeNearStop1(params *TaiwanTripBusAPIRealTimeNearStop1Params, opts ...ClientOption) (*TaiwanTripBusAPIRealTimeNearStop1OK, *TaiwanTripBusAPIRealTimeNearStop1Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTaiwanTripBusAPIRealTimeNearStop1Params()
@@ -349,15 +355,16 @@ func (a *Client) TaiwanTripBusAPIRealTimeNearStop1(params *TaiwanTripBusAPIRealT
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*TaiwanTripBusAPIRealTimeNearStop1OK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *TaiwanTripBusAPIRealTimeNearStop1OK:
+		return value, nil, nil
+	case *TaiwanTripBusAPIRealTimeNearStop1Status299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for TaiwanTripBusApi_RealTimeNearStop_1: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for tourism: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -366,7 +373,7 @@ func (a *Client) TaiwanTripBusAPIRealTimeNearStop1(params *TaiwanTripBusAPIRealT
 
   取得台灣好行公車路線資料
 */
-func (a *Client) TaiwanTripBusAPIRoute(params *TaiwanTripBusAPIRouteParams, opts ...ClientOption) (*TaiwanTripBusAPIRouteOK, error) {
+func (a *Client) TaiwanTripBusAPIRoute(params *TaiwanTripBusAPIRouteParams, opts ...ClientOption) (*TaiwanTripBusAPIRouteOK, *TaiwanTripBusAPIRouteStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTaiwanTripBusAPIRouteParams()
@@ -389,15 +396,16 @@ func (a *Client) TaiwanTripBusAPIRoute(params *TaiwanTripBusAPIRouteParams, opts
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*TaiwanTripBusAPIRouteOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *TaiwanTripBusAPIRouteOK:
+		return value, nil, nil
+	case *TaiwanTripBusAPIRouteStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for TaiwanTripBusApi_Route: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for tourism: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -406,7 +414,7 @@ func (a *Client) TaiwanTripBusAPIRoute(params *TaiwanTripBusAPIRouteParams, opts
 
   取得指定[路線名稱]的台灣好行公車路線資料
 */
-func (a *Client) TaiwanTripBusAPIRoute1(params *TaiwanTripBusAPIRoute1Params, opts ...ClientOption) (*TaiwanTripBusAPIRoute1OK, error) {
+func (a *Client) TaiwanTripBusAPIRoute1(params *TaiwanTripBusAPIRoute1Params, opts ...ClientOption) (*TaiwanTripBusAPIRoute1OK, *TaiwanTripBusAPIRoute1Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTaiwanTripBusAPIRoute1Params()
@@ -429,15 +437,16 @@ func (a *Client) TaiwanTripBusAPIRoute1(params *TaiwanTripBusAPIRoute1Params, op
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*TaiwanTripBusAPIRoute1OK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *TaiwanTripBusAPIRoute1OK:
+		return value, nil, nil
+	case *TaiwanTripBusAPIRoute1Status299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for TaiwanTripBusApi_Route_1: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for tourism: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -446,7 +455,7 @@ func (a *Client) TaiwanTripBusAPIRoute1(params *TaiwanTripBusAPIRoute1Params, op
 
   取得台灣好行公車路線站間旅行時間基本資料
 */
-func (a *Client) TaiwanTripBusAPIS2TravelTime(params *TaiwanTripBusAPIS2TravelTimeParams, opts ...ClientOption) (*TaiwanTripBusAPIS2TravelTimeOK, error) {
+func (a *Client) TaiwanTripBusAPIS2TravelTime(params *TaiwanTripBusAPIS2TravelTimeParams, opts ...ClientOption) (*TaiwanTripBusAPIS2TravelTimeOK, *TaiwanTripBusAPIS2TravelTimeStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTaiwanTripBusAPIS2TravelTimeParams()
@@ -469,15 +478,16 @@ func (a *Client) TaiwanTripBusAPIS2TravelTime(params *TaiwanTripBusAPIS2TravelTi
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*TaiwanTripBusAPIS2TravelTimeOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *TaiwanTripBusAPIS2TravelTimeOK:
+		return value, nil, nil
+	case *TaiwanTripBusAPIS2TravelTimeStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for TaiwanTripBusApi_S2TravelTime: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for tourism: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -486,7 +496,7 @@ func (a *Client) TaiwanTripBusAPIS2TravelTime(params *TaiwanTripBusAPIS2TravelTi
 
   取得台灣好行公車路線班表資料
 */
-func (a *Client) TaiwanTripBusAPISchedule(params *TaiwanTripBusAPIScheduleParams, opts ...ClientOption) (*TaiwanTripBusAPIScheduleOK, error) {
+func (a *Client) TaiwanTripBusAPISchedule(params *TaiwanTripBusAPIScheduleParams, opts ...ClientOption) (*TaiwanTripBusAPIScheduleOK, *TaiwanTripBusAPIScheduleStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTaiwanTripBusAPIScheduleParams()
@@ -509,15 +519,16 @@ func (a *Client) TaiwanTripBusAPISchedule(params *TaiwanTripBusAPIScheduleParams
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*TaiwanTripBusAPIScheduleOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *TaiwanTripBusAPIScheduleOK:
+		return value, nil, nil
+	case *TaiwanTripBusAPIScheduleStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for TaiwanTripBusApi_Schedule: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for tourism: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -526,7 +537,7 @@ func (a *Client) TaiwanTripBusAPISchedule(params *TaiwanTripBusAPIScheduleParams
 
   取得指定[路線名稱]的台灣好行公車路線班表資料
 */
-func (a *Client) TaiwanTripBusAPISchedule1(params *TaiwanTripBusAPISchedule1Params, opts ...ClientOption) (*TaiwanTripBusAPISchedule1OK, error) {
+func (a *Client) TaiwanTripBusAPISchedule1(params *TaiwanTripBusAPISchedule1Params, opts ...ClientOption) (*TaiwanTripBusAPISchedule1OK, *TaiwanTripBusAPISchedule1Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTaiwanTripBusAPISchedule1Params()
@@ -549,15 +560,16 @@ func (a *Client) TaiwanTripBusAPISchedule1(params *TaiwanTripBusAPISchedule1Para
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*TaiwanTripBusAPISchedule1OK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *TaiwanTripBusAPISchedule1OK:
+		return value, nil, nil
+	case *TaiwanTripBusAPISchedule1Status299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for TaiwanTripBusApi_Schedule_1: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for tourism: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -566,7 +578,7 @@ func (a *Client) TaiwanTripBusAPISchedule1(params *TaiwanTripBusAPISchedule1Para
 
   取得台灣好行公車線型資料
 */
-func (a *Client) TaiwanTripBusAPIShape(params *TaiwanTripBusAPIShapeParams, opts ...ClientOption) (*TaiwanTripBusAPIShapeOK, error) {
+func (a *Client) TaiwanTripBusAPIShape(params *TaiwanTripBusAPIShapeParams, opts ...ClientOption) (*TaiwanTripBusAPIShapeOK, *TaiwanTripBusAPIShapeStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTaiwanTripBusAPIShapeParams()
@@ -589,15 +601,16 @@ func (a *Client) TaiwanTripBusAPIShape(params *TaiwanTripBusAPIShapeParams, opts
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*TaiwanTripBusAPIShapeOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *TaiwanTripBusAPIShapeOK:
+		return value, nil, nil
+	case *TaiwanTripBusAPIShapeStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for TaiwanTripBusApi_Shape: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for tourism: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -606,7 +619,7 @@ func (a *Client) TaiwanTripBusAPIShape(params *TaiwanTripBusAPIShapeParams, opts
 
   取得指定[路線名稱]的台灣好行公車線型資料
 */
-func (a *Client) TaiwanTripBusAPIShape1(params *TaiwanTripBusAPIShape1Params, opts ...ClientOption) (*TaiwanTripBusAPIShape1OK, error) {
+func (a *Client) TaiwanTripBusAPIShape1(params *TaiwanTripBusAPIShape1Params, opts ...ClientOption) (*TaiwanTripBusAPIShape1OK, *TaiwanTripBusAPIShape1Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTaiwanTripBusAPIShape1Params()
@@ -629,15 +642,16 @@ func (a *Client) TaiwanTripBusAPIShape1(params *TaiwanTripBusAPIShape1Params, op
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*TaiwanTripBusAPIShape1OK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *TaiwanTripBusAPIShape1OK:
+		return value, nil, nil
+	case *TaiwanTripBusAPIShape1Status299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for TaiwanTripBusApi_Shape_1: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for tourism: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -646,7 +660,7 @@ func (a *Client) TaiwanTripBusAPIShape1(params *TaiwanTripBusAPIShape1Params, op
 
   取得台灣好行公車路線與站牌資料
 */
-func (a *Client) TaiwanTripBusAPIStopOfRoute(params *TaiwanTripBusAPIStopOfRouteParams, opts ...ClientOption) (*TaiwanTripBusAPIStopOfRouteOK, error) {
+func (a *Client) TaiwanTripBusAPIStopOfRoute(params *TaiwanTripBusAPIStopOfRouteParams, opts ...ClientOption) (*TaiwanTripBusAPIStopOfRouteOK, *TaiwanTripBusAPIStopOfRouteStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTaiwanTripBusAPIStopOfRouteParams()
@@ -669,15 +683,16 @@ func (a *Client) TaiwanTripBusAPIStopOfRoute(params *TaiwanTripBusAPIStopOfRoute
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*TaiwanTripBusAPIStopOfRouteOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *TaiwanTripBusAPIStopOfRouteOK:
+		return value, nil, nil
+	case *TaiwanTripBusAPIStopOfRouteStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for TaiwanTripBusApi_StopOfRoute: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for tourism: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -686,7 +701,7 @@ func (a *Client) TaiwanTripBusAPIStopOfRoute(params *TaiwanTripBusAPIStopOfRoute
 
   取得指定[路線名稱]的台灣好行公車路線與站牌資料
 */
-func (a *Client) TaiwanTripBusAPIStopOfRoute1(params *TaiwanTripBusAPIStopOfRoute1Params, opts ...ClientOption) (*TaiwanTripBusAPIStopOfRoute1OK, error) {
+func (a *Client) TaiwanTripBusAPIStopOfRoute1(params *TaiwanTripBusAPIStopOfRoute1Params, opts ...ClientOption) (*TaiwanTripBusAPIStopOfRoute1OK, *TaiwanTripBusAPIStopOfRoute1Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTaiwanTripBusAPIStopOfRoute1Params()
@@ -709,15 +724,16 @@ func (a *Client) TaiwanTripBusAPIStopOfRoute1(params *TaiwanTripBusAPIStopOfRout
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*TaiwanTripBusAPIStopOfRoute1OK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *TaiwanTripBusAPIStopOfRoute1OK:
+		return value, nil, nil
+	case *TaiwanTripBusAPIStopOfRoute1Status299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for TaiwanTripBusApi_StopOfRoute_1: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for tourism: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -726,7 +742,7 @@ func (a *Client) TaiwanTripBusAPIStopOfRoute1(params *TaiwanTripBusAPIStopOfRout
 
   取得所有觀光活動資料
 */
-func (a *Client) TourismAPIActivity(params *TourismAPIActivityParams, opts ...ClientOption) (*TourismAPIActivityOK, error) {
+func (a *Client) TourismAPIActivity(params *TourismAPIActivityParams, opts ...ClientOption) (*TourismAPIActivityOK, *TourismAPIActivityStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTourismAPIActivityParams()
@@ -749,15 +765,16 @@ func (a *Client) TourismAPIActivity(params *TourismAPIActivityParams, opts ...Cl
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*TourismAPIActivityOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *TourismAPIActivityOK:
+		return value, nil, nil
+	case *TourismAPIActivityStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for TourismApi_Activity: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for tourism: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -766,7 +783,7 @@ func (a *Client) TourismAPIActivity(params *TourismAPIActivityParams, opts ...Cl
 
   取得指定[縣市]觀光活動資料
 */
-func (a *Client) TourismAPIActivity0(params *TourismAPIActivity0Params, opts ...ClientOption) (*TourismAPIActivity0OK, error) {
+func (a *Client) TourismAPIActivity0(params *TourismAPIActivity0Params, opts ...ClientOption) (*TourismAPIActivity0OK, *TourismAPIActivity0Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTourismAPIActivity0Params()
@@ -789,15 +806,16 @@ func (a *Client) TourismAPIActivity0(params *TourismAPIActivity0Params, opts ...
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*TourismAPIActivity0OK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *TourismAPIActivity0OK:
+		return value, nil, nil
+	case *TourismAPIActivity0Status299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for TourismApi_Activity_0: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for tourism: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -806,7 +824,7 @@ func (a *Client) TourismAPIActivity0(params *TourismAPIActivity0Params, opts ...
 
   取得所有觀光旅宿資料
 */
-func (a *Client) TourismAPIHotel(params *TourismAPIHotelParams, opts ...ClientOption) (*TourismAPIHotelOK, error) {
+func (a *Client) TourismAPIHotel(params *TourismAPIHotelParams, opts ...ClientOption) (*TourismAPIHotelOK, *TourismAPIHotelStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTourismAPIHotelParams()
@@ -829,15 +847,16 @@ func (a *Client) TourismAPIHotel(params *TourismAPIHotelParams, opts ...ClientOp
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*TourismAPIHotelOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *TourismAPIHotelOK:
+		return value, nil, nil
+	case *TourismAPIHotelStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for TourismApi_Hotel: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for tourism: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -846,7 +865,7 @@ func (a *Client) TourismAPIHotel(params *TourismAPIHotelParams, opts ...ClientOp
 
   取得指定[縣市]觀光旅宿資料
 */
-func (a *Client) TourismAPIHotel0(params *TourismAPIHotel0Params, opts ...ClientOption) (*TourismAPIHotel0OK, error) {
+func (a *Client) TourismAPIHotel0(params *TourismAPIHotel0Params, opts ...ClientOption) (*TourismAPIHotel0OK, *TourismAPIHotel0Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTourismAPIHotel0Params()
@@ -869,15 +888,16 @@ func (a *Client) TourismAPIHotel0(params *TourismAPIHotel0Params, opts ...Client
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*TourismAPIHotel0OK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *TourismAPIHotel0OK:
+		return value, nil, nil
+	case *TourismAPIHotel0Status299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for TourismApi_Hotel_0: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for tourism: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -886,7 +906,7 @@ func (a *Client) TourismAPIHotel0(params *TourismAPIHotel0Params, opts ...Client
 
   取得所有觀光餐飲資料
 */
-func (a *Client) TourismAPIRestaurant(params *TourismAPIRestaurantParams, opts ...ClientOption) (*TourismAPIRestaurantOK, error) {
+func (a *Client) TourismAPIRestaurant(params *TourismAPIRestaurantParams, opts ...ClientOption) (*TourismAPIRestaurantOK, *TourismAPIRestaurantStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTourismAPIRestaurantParams()
@@ -909,15 +929,16 @@ func (a *Client) TourismAPIRestaurant(params *TourismAPIRestaurantParams, opts .
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*TourismAPIRestaurantOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *TourismAPIRestaurantOK:
+		return value, nil, nil
+	case *TourismAPIRestaurantStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for TourismApi_Restaurant: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for tourism: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -926,7 +947,7 @@ func (a *Client) TourismAPIRestaurant(params *TourismAPIRestaurantParams, opts .
 
   取得指定[縣市]觀光餐飲資料
 */
-func (a *Client) TourismAPIRestaurant0(params *TourismAPIRestaurant0Params, opts ...ClientOption) (*TourismAPIRestaurant0OK, error) {
+func (a *Client) TourismAPIRestaurant0(params *TourismAPIRestaurant0Params, opts ...ClientOption) (*TourismAPIRestaurant0OK, *TourismAPIRestaurant0Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTourismAPIRestaurant0Params()
@@ -949,15 +970,16 @@ func (a *Client) TourismAPIRestaurant0(params *TourismAPIRestaurant0Params, opts
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*TourismAPIRestaurant0OK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *TourismAPIRestaurant0OK:
+		return value, nil, nil
+	case *TourismAPIRestaurant0Status299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for TourismApi_Restaurant_0: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for tourism: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -966,7 +988,7 @@ func (a *Client) TourismAPIRestaurant0(params *TourismAPIRestaurant0Params, opts
 
   取得所有觀光景點資料
 */
-func (a *Client) TourismAPIScenicSpot(params *TourismAPIScenicSpotParams, opts ...ClientOption) (*TourismAPIScenicSpotOK, error) {
+func (a *Client) TourismAPIScenicSpot(params *TourismAPIScenicSpotParams, opts ...ClientOption) (*TourismAPIScenicSpotOK, *TourismAPIScenicSpotStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTourismAPIScenicSpotParams()
@@ -989,15 +1011,16 @@ func (a *Client) TourismAPIScenicSpot(params *TourismAPIScenicSpotParams, opts .
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*TourismAPIScenicSpotOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *TourismAPIScenicSpotOK:
+		return value, nil, nil
+	case *TourismAPIScenicSpotStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for TourismApi_ScenicSpot: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for tourism: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -1006,7 +1029,7 @@ func (a *Client) TourismAPIScenicSpot(params *TourismAPIScenicSpotParams, opts .
 
   取得指定[縣市]觀光景點資料
 */
-func (a *Client) TourismAPIScenicSpot0(params *TourismAPIScenicSpot0Params, opts ...ClientOption) (*TourismAPIScenicSpot0OK, error) {
+func (a *Client) TourismAPIScenicSpot0(params *TourismAPIScenicSpot0Params, opts ...ClientOption) (*TourismAPIScenicSpot0OK, *TourismAPIScenicSpot0Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewTourismAPIScenicSpot0Params()
@@ -1029,15 +1052,16 @@ func (a *Client) TourismAPIScenicSpot0(params *TourismAPIScenicSpot0Params, opts
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*TourismAPIScenicSpot0OK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *TourismAPIScenicSpot0OK:
+		return value, nil, nil
+	case *TourismAPIScenicSpot0Status299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for TourismApi_ScenicSpot_0: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for tourism: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 

@@ -29,6 +29,12 @@ func (o *TaiwanTripBusAPIRealTimeByFrequencyReader) ReadResponse(response runtim
 			return nil, err
 		}
 		return result, nil
+	case 299:
+		result := NewTaiwanTripBusAPIRealTimeByFrequencyStatus299()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return result, nil
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -58,6 +64,38 @@ func (o *TaiwanTripBusAPIRealTimeByFrequencyOK) readResponse(response runtime.Cl
 
 	// response payload
 	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewTaiwanTripBusAPIRealTimeByFrequencyStatus299 creates a TaiwanTripBusAPIRealTimeByFrequencyStatus299 with default headers values
+func NewTaiwanTripBusAPIRealTimeByFrequencyStatus299() *TaiwanTripBusAPIRealTimeByFrequencyStatus299 {
+	return &TaiwanTripBusAPIRealTimeByFrequencyStatus299{}
+}
+
+/* TaiwanTripBusAPIRealTimeByFrequencyStatus299 describes a response with status code 299, with default header values.
+
+加入參數'?health=true'即可查詢此API服務的健康狀態
+*/
+type TaiwanTripBusAPIRealTimeByFrequencyStatus299 struct {
+	Payload *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth
+}
+
+func (o *TaiwanTripBusAPIRealTimeByFrequencyStatus299) Error() string {
+	return fmt.Sprintf("[GET /v2/Tourism/Bus/RealTimeByFrequency/TaiwanTrip][%d] taiwanTripBusApiRealTimeByFrequencyStatus299  %+v", 299, o.Payload)
+}
+func (o *TaiwanTripBusAPIRealTimeByFrequencyStatus299) GetPayload() *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth {
+	return o.Payload
+}
+
+func (o *TaiwanTripBusAPIRealTimeByFrequencyStatus299) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	o.Payload = new(models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth)
+
+	// response payload
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

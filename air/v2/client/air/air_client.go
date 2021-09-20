@@ -30,37 +30,37 @@ type ClientOption func(*runtime.ClientOperation)
 
 // ClientService is the interface for Client methods
 type ClientService interface {
-	AirAPIAirline(params *AirAPIAirlineParams, opts ...ClientOption) (*AirAPIAirlineOK, error)
+	AirAPIAirline(params *AirAPIAirlineParams, opts ...ClientOption) (*AirAPIAirlineOK, *AirAPIAirlineStatus299, error)
 
-	AirAPIAirline1(params *AirAPIAirline1Params, opts ...ClientOption) (*AirAPIAirline1OK, error)
+	AirAPIAirline1(params *AirAPIAirline1Params, opts ...ClientOption) (*AirAPIAirline1OK, *AirAPIAirline1Status299, error)
 
-	AirAPIAirport(params *AirAPIAirportParams, opts ...ClientOption) (*AirAPIAirportOK, error)
+	AirAPIAirport(params *AirAPIAirportParams, opts ...ClientOption) (*AirAPIAirportOK, *AirAPIAirportStatus299, error)
 
-	AirAPIAirport1(params *AirAPIAirport1Params, opts ...ClientOption) (*AirAPIAirport1OK, error)
+	AirAPIAirport1(params *AirAPIAirport1Params, opts ...ClientOption) (*AirAPIAirport1OK, *AirAPIAirport1Status299, error)
 
-	AirAPIArrival(params *AirAPIArrivalParams, opts ...ClientOption) (*AirAPIArrivalOK, error)
+	AirAPIArrival(params *AirAPIArrivalParams, opts ...ClientOption) (*AirAPIArrivalOK, *AirAPIArrivalStatus299, error)
 
-	AirAPIArrival1(params *AirAPIArrival1Params, opts ...ClientOption) (*AirAPIArrival1OK, error)
+	AirAPIArrival1(params *AirAPIArrival1Params, opts ...ClientOption) (*AirAPIArrival1OK, *AirAPIArrival1Status299, error)
 
-	AirAPIDeparture(params *AirAPIDepartureParams, opts ...ClientOption) (*AirAPIDepartureOK, error)
+	AirAPIDeparture(params *AirAPIDepartureParams, opts ...ClientOption) (*AirAPIDepartureOK, *AirAPIDepartureStatus299, error)
 
-	AirAPIDeparture1(params *AirAPIDeparture1Params, opts ...ClientOption) (*AirAPIDeparture1OK, error)
+	AirAPIDeparture1(params *AirAPIDeparture1Params, opts ...ClientOption) (*AirAPIDeparture1OK, *AirAPIDeparture1Status299, error)
 
-	AirAPIDomestic(params *AirAPIDomesticParams, opts ...ClientOption) (*AirAPIDomesticOK, error)
+	AirAPIDomestic(params *AirAPIDomesticParams, opts ...ClientOption) (*AirAPIDomesticOK, *AirAPIDomesticStatus299, error)
 
-	AirAPIFIDS(params *AirAPIFIDSParams, opts ...ClientOption) (*AirAPIFIDSOK, error)
+	AirAPIFIDS(params *AirAPIFIDSParams, opts ...ClientOption) (*AirAPIFIDSOK, *AirAPIFIDSStatus299, error)
 
-	AirAPIFIDS1(params *AirAPIFIDS1Params, opts ...ClientOption) (*AirAPIFIDS1OK, error)
+	AirAPIFIDS1(params *AirAPIFIDS1Params, opts ...ClientOption) (*AirAPIFIDS1OK, *AirAPIFIDS1Status299, error)
 
-	AirAPIFlight(params *AirAPIFlightParams, opts ...ClientOption) (*AirAPIFlightOK, error)
+	AirAPIFlight(params *AirAPIFlightParams, opts ...ClientOption) (*AirAPIFlightOK, *AirAPIFlightStatus299, error)
 
-	AirAPIFlight1(params *AirAPIFlight1Params, opts ...ClientOption) (*AirAPIFlight1OK, error)
+	AirAPIFlight1(params *AirAPIFlight1Params, opts ...ClientOption) (*AirAPIFlight1OK, *AirAPIFlight1Status299, error)
 
-	AirAPIInternational(params *AirAPIInternationalParams, opts ...ClientOption) (*AirAPIInternationalOK, error)
+	AirAPIInternational(params *AirAPIInternationalParams, opts ...ClientOption) (*AirAPIInternationalOK, *AirAPIInternationalStatus299, error)
 
-	AirAPIMETAR(params *AirAPIMETARParams, opts ...ClientOption) (*AirAPIMETAROK, error)
+	AirAPIMETAR(params *AirAPIMETARParams, opts ...ClientOption) (*AirAPIMETAROK, *AirAPIMETARStatus299, error)
 
-	AirAPIMETAR1(params *AirAPIMETAR1Params, opts ...ClientOption) (*AirAPIMETAR1OK, error)
+	AirAPIMETAR1(params *AirAPIMETAR1Params, opts ...ClientOption) (*AirAPIMETAR1OK, *AirAPIMETAR1Status299, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
@@ -70,7 +70,7 @@ type ClientService interface {
 
   取得指定[航空公司]資料
 */
-func (a *Client) AirAPIAirline(params *AirAPIAirlineParams, opts ...ClientOption) (*AirAPIAirlineOK, error) {
+func (a *Client) AirAPIAirline(params *AirAPIAirlineParams, opts ...ClientOption) (*AirAPIAirlineOK, *AirAPIAirlineStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewAirAPIAirlineParams()
@@ -93,15 +93,16 @@ func (a *Client) AirAPIAirline(params *AirAPIAirlineParams, opts ...ClientOption
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*AirAPIAirlineOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *AirAPIAirlineOK:
+		return value, nil, nil
+	case *AirAPIAirlineStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for AirApi_Airline: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for air: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -110,7 +111,7 @@ func (a *Client) AirAPIAirline(params *AirAPIAirlineParams, opts ...ClientOption
 
   取得所有航空公司資料
 */
-func (a *Client) AirAPIAirline1(params *AirAPIAirline1Params, opts ...ClientOption) (*AirAPIAirline1OK, error) {
+func (a *Client) AirAPIAirline1(params *AirAPIAirline1Params, opts ...ClientOption) (*AirAPIAirline1OK, *AirAPIAirline1Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewAirAPIAirline1Params()
@@ -133,15 +134,16 @@ func (a *Client) AirAPIAirline1(params *AirAPIAirline1Params, opts ...ClientOpti
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*AirAPIAirline1OK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *AirAPIAirline1OK:
+		return value, nil, nil
+	case *AirAPIAirline1Status299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for AirApi_Airline_1: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for air: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -150,7 +152,7 @@ func (a *Client) AirAPIAirline1(params *AirAPIAirline1Params, opts ...ClientOpti
 
   取得所有機場資料
 */
-func (a *Client) AirAPIAirport(params *AirAPIAirportParams, opts ...ClientOption) (*AirAPIAirportOK, error) {
+func (a *Client) AirAPIAirport(params *AirAPIAirportParams, opts ...ClientOption) (*AirAPIAirportOK, *AirAPIAirportStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewAirAPIAirportParams()
@@ -173,15 +175,16 @@ func (a *Client) AirAPIAirport(params *AirAPIAirportParams, opts ...ClientOption
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*AirAPIAirportOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *AirAPIAirportOK:
+		return value, nil, nil
+	case *AirAPIAirportStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for AirApi_Airport: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for air: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -190,7 +193,7 @@ func (a *Client) AirAPIAirport(params *AirAPIAirportParams, opts ...ClientOption
 
   取得指定[機場]資料
 */
-func (a *Client) AirAPIAirport1(params *AirAPIAirport1Params, opts ...ClientOption) (*AirAPIAirport1OK, error) {
+func (a *Client) AirAPIAirport1(params *AirAPIAirport1Params, opts ...ClientOption) (*AirAPIAirport1OK, *AirAPIAirport1Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewAirAPIAirport1Params()
@@ -213,15 +216,16 @@ func (a *Client) AirAPIAirport1(params *AirAPIAirport1Params, opts ...ClientOpti
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*AirAPIAirport1OK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *AirAPIAirport1OK:
+		return value, nil, nil
+	case *AirAPIAirport1Status299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for AirApi_Airport_1: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for air: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -230,7 +234,7 @@ func (a *Client) AirAPIAirport1(params *AirAPIAirport1Params, opts ...ClientOpti
 
   取得機場的即時入境航班
 */
-func (a *Client) AirAPIArrival(params *AirAPIArrivalParams, opts ...ClientOption) (*AirAPIArrivalOK, error) {
+func (a *Client) AirAPIArrival(params *AirAPIArrivalParams, opts ...ClientOption) (*AirAPIArrivalOK, *AirAPIArrivalStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewAirAPIArrivalParams()
@@ -253,15 +257,16 @@ func (a *Client) AirAPIArrival(params *AirAPIArrivalParams, opts ...ClientOption
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*AirAPIArrivalOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *AirAPIArrivalOK:
+		return value, nil, nil
+	case *AirAPIArrivalStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for AirApi_Arrival: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for air: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -270,7 +275,7 @@ func (a *Client) AirAPIArrival(params *AirAPIArrivalParams, opts ...ClientOption
 
   取得[指定機場]的即時入境航班
 */
-func (a *Client) AirAPIArrival1(params *AirAPIArrival1Params, opts ...ClientOption) (*AirAPIArrival1OK, error) {
+func (a *Client) AirAPIArrival1(params *AirAPIArrival1Params, opts ...ClientOption) (*AirAPIArrival1OK, *AirAPIArrival1Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewAirAPIArrival1Params()
@@ -293,15 +298,16 @@ func (a *Client) AirAPIArrival1(params *AirAPIArrival1Params, opts ...ClientOpti
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*AirAPIArrival1OK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *AirAPIArrival1OK:
+		return value, nil, nil
+	case *AirAPIArrival1Status299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for AirApi_Arrival_1: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for air: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -310,7 +316,7 @@ func (a *Client) AirAPIArrival1(params *AirAPIArrival1Params, opts ...ClientOpti
 
   取得機場的即時出境航班
 */
-func (a *Client) AirAPIDeparture(params *AirAPIDepartureParams, opts ...ClientOption) (*AirAPIDepartureOK, error) {
+func (a *Client) AirAPIDeparture(params *AirAPIDepartureParams, opts ...ClientOption) (*AirAPIDepartureOK, *AirAPIDepartureStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewAirAPIDepartureParams()
@@ -333,15 +339,16 @@ func (a *Client) AirAPIDeparture(params *AirAPIDepartureParams, opts ...ClientOp
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*AirAPIDepartureOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *AirAPIDepartureOK:
+		return value, nil, nil
+	case *AirAPIDepartureStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for AirApi_Departure: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for air: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -350,7 +357,7 @@ func (a *Client) AirAPIDeparture(params *AirAPIDepartureParams, opts ...ClientOp
 
   取得指定的[機場即時出境航班]
 */
-func (a *Client) AirAPIDeparture1(params *AirAPIDeparture1Params, opts ...ClientOption) (*AirAPIDeparture1OK, error) {
+func (a *Client) AirAPIDeparture1(params *AirAPIDeparture1Params, opts ...ClientOption) (*AirAPIDeparture1OK, *AirAPIDeparture1Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewAirAPIDeparture1Params()
@@ -373,22 +380,23 @@ func (a *Client) AirAPIDeparture1(params *AirAPIDeparture1Params, opts ...Client
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*AirAPIDeparture1OK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *AirAPIDeparture1OK:
+		return value, nil, nil
+	case *AirAPIDeparture1Status299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for AirApi_Departure_1: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for air: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
 /*
   AirAPIDomestic 取得國內航空定期時刻表s
 */
-func (a *Client) AirAPIDomestic(params *AirAPIDomesticParams, opts ...ClientOption) (*AirAPIDomesticOK, error) {
+func (a *Client) AirAPIDomestic(params *AirAPIDomesticParams, opts ...ClientOption) (*AirAPIDomesticOK, *AirAPIDomesticStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewAirAPIDomesticParams()
@@ -411,15 +419,16 @@ func (a *Client) AirAPIDomestic(params *AirAPIDomesticParams, opts ...ClientOpti
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*AirAPIDomesticOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *AirAPIDomesticOK:
+		return value, nil, nil
+	case *AirAPIDomesticStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for AirApi_Domestic: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for air: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -428,7 +437,7 @@ func (a *Client) AirAPIDomestic(params *AirAPIDomesticParams, opts ...ClientOpti
 
   取得即時航班資料
 */
-func (a *Client) AirAPIFIDS(params *AirAPIFIDSParams, opts ...ClientOption) (*AirAPIFIDSOK, error) {
+func (a *Client) AirAPIFIDS(params *AirAPIFIDSParams, opts ...ClientOption) (*AirAPIFIDSOK, *AirAPIFIDSStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewAirAPIFIDSParams()
@@ -451,15 +460,16 @@ func (a *Client) AirAPIFIDS(params *AirAPIFIDSParams, opts ...ClientOption) (*Ai
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*AirAPIFIDSOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *AirAPIFIDSOK:
+		return value, nil, nil
+	case *AirAPIFIDSStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for AirApi_FIDS: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for air: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -468,7 +478,7 @@ func (a *Client) AirAPIFIDS(params *AirAPIFIDSParams, opts ...ClientOption) (*Ai
 
   取得指定[機場的即時航班]資料
 */
-func (a *Client) AirAPIFIDS1(params *AirAPIFIDS1Params, opts ...ClientOption) (*AirAPIFIDS1OK, error) {
+func (a *Client) AirAPIFIDS1(params *AirAPIFIDS1Params, opts ...ClientOption) (*AirAPIFIDS1OK, *AirAPIFIDS1Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewAirAPIFIDS1Params()
@@ -491,15 +501,16 @@ func (a *Client) AirAPIFIDS1(params *AirAPIFIDS1Params, opts ...ClientOption) (*
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*AirAPIFIDS1OK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *AirAPIFIDS1OK:
+		return value, nil, nil
+	case *AirAPIFIDS1Status299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for AirApi_FIDS_1: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for air: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -508,7 +519,7 @@ func (a *Client) AirAPIFIDS1(params *AirAPIFIDS1Params, opts ...ClientOption) (*
 
   取得即時航班資料
 */
-func (a *Client) AirAPIFlight(params *AirAPIFlightParams, opts ...ClientOption) (*AirAPIFlightOK, error) {
+func (a *Client) AirAPIFlight(params *AirAPIFlightParams, opts ...ClientOption) (*AirAPIFlightOK, *AirAPIFlightStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewAirAPIFlightParams()
@@ -531,22 +542,23 @@ func (a *Client) AirAPIFlight(params *AirAPIFlightParams, opts ...ClientOption) 
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*AirAPIFlightOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *AirAPIFlightOK:
+		return value, nil, nil
+	case *AirAPIFlightStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for AirApi_Flight: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for air: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
 /*
   AirAPIFlight1 取得指定s 即時航班 資料
 */
-func (a *Client) AirAPIFlight1(params *AirAPIFlight1Params, opts ...ClientOption) (*AirAPIFlight1OK, error) {
+func (a *Client) AirAPIFlight1(params *AirAPIFlight1Params, opts ...ClientOption) (*AirAPIFlight1OK, *AirAPIFlight1Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewAirAPIFlight1Params()
@@ -569,22 +581,23 @@ func (a *Client) AirAPIFlight1(params *AirAPIFlight1Params, opts ...ClientOption
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*AirAPIFlight1OK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *AirAPIFlight1OK:
+		return value, nil, nil
+	case *AirAPIFlight1Status299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for AirApi_Flight_1: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for air: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
 /*
   AirAPIInternational 取得國際航空定期時刻表s
 */
-func (a *Client) AirAPIInternational(params *AirAPIInternationalParams, opts ...ClientOption) (*AirAPIInternationalOK, error) {
+func (a *Client) AirAPIInternational(params *AirAPIInternationalParams, opts ...ClientOption) (*AirAPIInternationalOK, *AirAPIInternationalStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewAirAPIInternationalParams()
@@ -607,15 +620,16 @@ func (a *Client) AirAPIInternational(params *AirAPIInternationalParams, opts ...
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*AirAPIInternationalOK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *AirAPIInternationalOK:
+		return value, nil, nil
+	case *AirAPIInternationalStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for AirApi_International: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for air: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -632,7 +646,7 @@ func (a *Client) AirAPIInternational(params *AirAPIInternationalParams, opts ...
 <br />RCYU:花蓮機場    RCFN:臺東機場
 <br />RCLY:蘭嶼機場    RCGI:綠島機場
 */
-func (a *Client) AirAPIMETAR(params *AirAPIMETARParams, opts ...ClientOption) (*AirAPIMETAROK, error) {
+func (a *Client) AirAPIMETAR(params *AirAPIMETARParams, opts ...ClientOption) (*AirAPIMETAROK, *AirAPIMETARStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewAirAPIMETARParams()
@@ -655,15 +669,16 @@ func (a *Client) AirAPIMETAR(params *AirAPIMETARParams, opts ...ClientOption) (*
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*AirAPIMETAROK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *AirAPIMETAROK:
+		return value, nil, nil
+	case *AirAPIMETARStatus299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for AirApi_METAR: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for air: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
@@ -672,7 +687,7 @@ func (a *Client) AirAPIMETAR(params *AirAPIMETARParams, opts ...ClientOption) (*
 
   取得指定[國內機場]氣象資訊觀測資料
 */
-func (a *Client) AirAPIMETAR1(params *AirAPIMETAR1Params, opts ...ClientOption) (*AirAPIMETAR1OK, error) {
+func (a *Client) AirAPIMETAR1(params *AirAPIMETAR1Params, opts ...ClientOption) (*AirAPIMETAR1OK, *AirAPIMETAR1Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewAirAPIMETAR1Params()
@@ -695,15 +710,16 @@ func (a *Client) AirAPIMETAR1(params *AirAPIMETAR1Params, opts ...ClientOption) 
 
 	result, err := a.transport.Submit(op)
 	if err != nil {
-		return nil, err
+		return nil, nil, err
 	}
-	success, ok := result.(*AirAPIMETAR1OK)
-	if ok {
-		return success, nil
+	switch value := result.(type) {
+	case *AirAPIMETAR1OK:
+		return value, nil, nil
+	case *AirAPIMETAR1Status299:
+		return nil, value, nil
 	}
-	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for AirApi_METAR_1: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for air: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 

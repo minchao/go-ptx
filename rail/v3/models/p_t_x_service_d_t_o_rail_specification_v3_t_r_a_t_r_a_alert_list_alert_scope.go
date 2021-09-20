@@ -12,7 +12,6 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
-	"github.com/go-openapi/validate"
 )
 
 // PTXServiceDTORailSpecificationV3TRATRAAlertListAlertScope AlertScope
@@ -23,13 +22,11 @@ type PTXServiceDTORailSpecificationV3TRATRAAlertListAlertScope struct {
 	// AlertScopeLineSection[]
 	//
 	// 受影響的路線區間
-	// Required: true
 	LineSections []*PTXServiceDTORailSpecificationV3TRATRAAlertListAlertScopeLineSection `json:"LineSections" xml:"AlertScopeLineSection[]"`
 
 	// AlertScopeLine[]
 	//
 	// 受影響的實體路線
-	// Required: true
 	Lines []*PTXServiceDTORailSpecificationV3TRATRAAlertListAlertScopeLine `json:"Lines" xml:"AlertScopeLine[]"`
 
 	// AlertScopeNetwork
@@ -42,19 +39,16 @@ type PTXServiceDTORailSpecificationV3TRATRAAlertListAlertScope struct {
 	// AlertScopeRoute[]
 	//
 	// 受影響的營運路線
-	// Required: true
 	Routes []*PTXServiceDTORailSpecificationV3TRATRAAlertListAlertScopeRoute `json:"Routes" xml:"AlertScopeRoute[]"`
 
 	// AlertScopeStation[]
 	//
 	// 受影響的車站
-	// Required: true
 	Stations []*PTXServiceDTORailSpecificationV3TRATRAAlertListAlertScopeStation `json:"Stations" xml:"AlertScopeStation[]"`
 
 	// AlertScopeTrain[]
 	//
 	// 受影響的車次
-	// Required: true
 	Trains []*PTXServiceDTORailSpecificationV3TRATRAAlertListAlertScopeTrain `json:"Trains" xml:"AlertScopeTrain[]"`
 }
 
@@ -93,9 +87,8 @@ func (m *PTXServiceDTORailSpecificationV3TRATRAAlertListAlertScope) Validate(for
 }
 
 func (m *PTXServiceDTORailSpecificationV3TRATRAAlertListAlertScope) validateLineSections(formats strfmt.Registry) error {
-
-	if err := validate.Required("LineSections", "body", m.LineSections); err != nil {
-		return err
+	if swag.IsZero(m.LineSections) { // not required
+		return nil
 	}
 
 	for i := 0; i < len(m.LineSections); i++ {
@@ -118,9 +111,8 @@ func (m *PTXServiceDTORailSpecificationV3TRATRAAlertListAlertScope) validateLine
 }
 
 func (m *PTXServiceDTORailSpecificationV3TRATRAAlertListAlertScope) validateLines(formats strfmt.Registry) error {
-
-	if err := validate.Required("Lines", "body", m.Lines); err != nil {
-		return err
+	if swag.IsZero(m.Lines) { // not required
+		return nil
 	}
 
 	for i := 0; i < len(m.Lines); i++ {
@@ -151,9 +143,8 @@ func (m *PTXServiceDTORailSpecificationV3TRATRAAlertListAlertScope) validateNetw
 }
 
 func (m *PTXServiceDTORailSpecificationV3TRATRAAlertListAlertScope) validateRoutes(formats strfmt.Registry) error {
-
-	if err := validate.Required("Routes", "body", m.Routes); err != nil {
-		return err
+	if swag.IsZero(m.Routes) { // not required
+		return nil
 	}
 
 	for i := 0; i < len(m.Routes); i++ {
@@ -176,9 +167,8 @@ func (m *PTXServiceDTORailSpecificationV3TRATRAAlertListAlertScope) validateRout
 }
 
 func (m *PTXServiceDTORailSpecificationV3TRATRAAlertListAlertScope) validateStations(formats strfmt.Registry) error {
-
-	if err := validate.Required("Stations", "body", m.Stations); err != nil {
-		return err
+	if swag.IsZero(m.Stations) { // not required
+		return nil
 	}
 
 	for i := 0; i < len(m.Stations); i++ {
@@ -201,9 +191,8 @@ func (m *PTXServiceDTORailSpecificationV3TRATRAAlertListAlertScope) validateStat
 }
 
 func (m *PTXServiceDTORailSpecificationV3TRATRAAlertListAlertScope) validateTrains(formats strfmt.Registry) error {
-
-	if err := validate.Required("Trains", "body", m.Trains); err != nil {
-		return err
+	if swag.IsZero(m.Trains) { // not required
+		return nil
 	}
 
 	for i := 0; i < len(m.Trains); i++ {

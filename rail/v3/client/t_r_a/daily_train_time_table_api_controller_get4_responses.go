@@ -60,7 +60,7 @@ type DailyTrainTimeTableAPIControllerGet4OK struct {
 }
 
 func (o *DailyTrainTimeTableAPIControllerGet4OK) Error() string {
-	return fmt.Sprintf("[GET /v3/Rail/TRA/DailyTrainTimetable/OD/Inclusive/{OriginStationID}/to/{DestinationStationID}/{TrainDate}][%d] dailyTrainTimeTableApiControllerGet4OK  %+v", 200, o.Payload)
+	return fmt.Sprintf("[GET /v3/Rail/TRA/DailyTrainTimetable/OD/{OriginStationID}/to/{DestinationStationID}/{TrainDate}][%d] dailyTrainTimeTableApiControllerGet4OK  %+v", 200, o.Payload)
 }
 func (o *DailyTrainTimeTableAPIControllerGet4OK) GetPayload() *models.PTXAPIRailModelTraDailyTrainWrapperPTXServiceDTORailSpecificationV3TRADailyTrainTimeTableTrainTimetable {
 	return o.Payload
@@ -92,7 +92,7 @@ type DailyTrainTimeTableAPIControllerGet4Status299 struct {
 }
 
 func (o *DailyTrainTimeTableAPIControllerGet4Status299) Error() string {
-	return fmt.Sprintf("[GET /v3/Rail/TRA/DailyTrainTimetable/OD/Inclusive/{OriginStationID}/to/{DestinationStationID}/{TrainDate}][%d] dailyTrainTimeTableApiControllerGet4Status299  %+v", 299, o.Payload)
+	return fmt.Sprintf("[GET /v3/Rail/TRA/DailyTrainTimetable/OD/{OriginStationID}/to/{DestinationStationID}/{TrainDate}][%d] dailyTrainTimeTableApiControllerGet4Status299  %+v", 299, o.Payload)
 }
 func (o *DailyTrainTimeTableAPIControllerGet4Status299) GetPayload() *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth {
 	return o.Payload
@@ -123,7 +123,7 @@ type DailyTrainTimeTableAPIControllerGet4NotModified struct {
 }
 
 func (o *DailyTrainTimeTableAPIControllerGet4NotModified) Error() string {
-	return fmt.Sprintf("[GET /v3/Rail/TRA/DailyTrainTimetable/OD/Inclusive/{OriginStationID}/to/{DestinationStationID}/{TrainDate}][%d] dailyTrainTimeTableApiControllerGet4NotModified ", 304)
+	return fmt.Sprintf("[GET /v3/Rail/TRA/DailyTrainTimetable/OD/{OriginStationID}/to/{DestinationStationID}/{TrainDate}][%d] dailyTrainTimeTableApiControllerGet4NotModified ", 304)
 }
 
 func (o *DailyTrainTimeTableAPIControllerGet4NotModified) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {

@@ -34,11 +34,6 @@ type PTXServiceDTOBikeSpecificationV2BikeAvailability struct {
 	// Int32
 	//
 	// 服務狀態 : [0:'停止營運',1:'正常營運',2:'暫停營運']
-	ServiceAvailable int64 `json:"ServiceAvailable,omitempty"`
-
-	// Int32
-	//
-	// 服務狀態 : [0:'停止營運',1:'正常營運',2:'暫停營運']
 	ServiceStatus int64 `json:"ServiceStatus,omitempty"`
 
 	// Int32

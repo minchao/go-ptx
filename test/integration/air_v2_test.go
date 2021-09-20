@@ -20,7 +20,7 @@ func init() {
 func TestAirV2_Airport(t *testing.T) {
 	params := air.NewAirAPIAirportParams().
 		WithDollarFormat("JSON")
-	result, err := airV2Client.Air.AirAPIAirport(params)
+	result, _, err := airV2Client.Air.AirAPIAirport(params)
 	require.NoError(t, err)
 	if len(result.Payload) == 0 {
 		t.Fatal("Air.AirAPIAirport return no data")

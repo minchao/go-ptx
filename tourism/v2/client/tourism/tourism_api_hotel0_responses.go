@@ -29,6 +29,12 @@ func (o *TourismAPIHotel0Reader) ReadResponse(response runtime.ClientResponse, c
 			return nil, err
 		}
 		return result, nil
+	case 299:
+		result := NewTourismAPIHotel0Status299()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return result, nil
 	case 304:
 		result := NewTourismAPIHotel0NotModified()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -64,6 +70,38 @@ func (o *TourismAPIHotel0OK) readResponse(response runtime.ClientResponse, consu
 
 	// response payload
 	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewTourismAPIHotel0Status299 creates a TourismAPIHotel0Status299 with default headers values
+func NewTourismAPIHotel0Status299() *TourismAPIHotel0Status299 {
+	return &TourismAPIHotel0Status299{}
+}
+
+/* TourismAPIHotel0Status299 describes a response with status code 299, with default header values.
+
+加入參數'?health=true'即可查詢此API服務的健康狀態
+*/
+type TourismAPIHotel0Status299 struct {
+	Payload *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth
+}
+
+func (o *TourismAPIHotel0Status299) Error() string {
+	return fmt.Sprintf("[GET /v2/Tourism/Hotel/{City}][%d] tourismApiHotel0Status299  %+v", 299, o.Payload)
+}
+func (o *TourismAPIHotel0Status299) GetPayload() *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth {
+	return o.Payload
+}
+
+func (o *TourismAPIHotel0Status299) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	o.Payload = new(models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth)
+
+	// response payload
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

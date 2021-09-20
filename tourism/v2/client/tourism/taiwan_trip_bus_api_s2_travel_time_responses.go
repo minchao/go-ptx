@@ -29,6 +29,12 @@ func (o *TaiwanTripBusAPIS2TravelTimeReader) ReadResponse(response runtime.Clien
 			return nil, err
 		}
 		return result, nil
+	case 299:
+		result := NewTaiwanTripBusAPIS2TravelTimeStatus299()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return result, nil
 	case 304:
 		result := NewTaiwanTripBusAPIS2TravelTimeNotModified()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -64,6 +70,38 @@ func (o *TaiwanTripBusAPIS2TravelTimeOK) readResponse(response runtime.ClientRes
 
 	// response payload
 	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewTaiwanTripBusAPIS2TravelTimeStatus299 creates a TaiwanTripBusAPIS2TravelTimeStatus299 with default headers values
+func NewTaiwanTripBusAPIS2TravelTimeStatus299() *TaiwanTripBusAPIS2TravelTimeStatus299 {
+	return &TaiwanTripBusAPIS2TravelTimeStatus299{}
+}
+
+/* TaiwanTripBusAPIS2TravelTimeStatus299 describes a response with status code 299, with default header values.
+
+加入參數'?health=true'即可查詢此API服務的健康狀態
+*/
+type TaiwanTripBusAPIS2TravelTimeStatus299 struct {
+	Payload *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth
+}
+
+func (o *TaiwanTripBusAPIS2TravelTimeStatus299) Error() string {
+	return fmt.Sprintf("[GET /v2/Tourism/Bus/S2TravelTime/TaiwanTrip][%d] taiwanTripBusApiS2TravelTimeStatus299  %+v", 299, o.Payload)
+}
+func (o *TaiwanTripBusAPIS2TravelTimeStatus299) GetPayload() *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth {
+	return o.Payload
+}
+
+func (o *TaiwanTripBusAPIS2TravelTimeStatus299) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	o.Payload = new(models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth)
+
+	// response payload
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

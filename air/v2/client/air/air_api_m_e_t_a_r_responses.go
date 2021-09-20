@@ -29,6 +29,12 @@ func (o *AirAPIMETARReader) ReadResponse(response runtime.ClientResponse, consum
 			return nil, err
 		}
 		return result, nil
+	case 299:
+		result := NewAirAPIMETARStatus299()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return result, nil
 	case 304:
 		result := NewAirAPIMETARNotModified()
 		if err := result.readResponse(response, consumer, o.formats); err != nil {
@@ -64,6 +70,38 @@ func (o *AirAPIMETAROK) readResponse(response runtime.ClientResponse, consumer r
 
 	// response payload
 	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewAirAPIMETARStatus299 creates a AirAPIMETARStatus299 with default headers values
+func NewAirAPIMETARStatus299() *AirAPIMETARStatus299 {
+	return &AirAPIMETARStatus299{}
+}
+
+/* AirAPIMETARStatus299 describes a response with status code 299, with default header values.
+
+加入參數'?health=true'即可查詢此API服務的健康狀態
+*/
+type AirAPIMETARStatus299 struct {
+	Payload *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth
+}
+
+func (o *AirAPIMETARStatus299) Error() string {
+	return fmt.Sprintf("[GET /v2/Air/METAR/Airport][%d] airApiMETARStatus299  %+v", 299, o.Payload)
+}
+func (o *AirAPIMETARStatus299) GetPayload() *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth {
+	return o.Payload
+}
+
+func (o *AirAPIMETARStatus299) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	o.Payload = new(models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth)
+
+	// response payload
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

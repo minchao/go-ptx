@@ -29,6 +29,12 @@ func (o *TaiwanTripBusAPIStopOfRouteReader) ReadResponse(response runtime.Client
 			return nil, err
 		}
 		return result, nil
+	case 299:
+		result := NewTaiwanTripBusAPIStopOfRouteStatus299()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return result, nil
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -58,6 +64,38 @@ func (o *TaiwanTripBusAPIStopOfRouteOK) readResponse(response runtime.ClientResp
 
 	// response payload
 	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewTaiwanTripBusAPIStopOfRouteStatus299 creates a TaiwanTripBusAPIStopOfRouteStatus299 with default headers values
+func NewTaiwanTripBusAPIStopOfRouteStatus299() *TaiwanTripBusAPIStopOfRouteStatus299 {
+	return &TaiwanTripBusAPIStopOfRouteStatus299{}
+}
+
+/* TaiwanTripBusAPIStopOfRouteStatus299 describes a response with status code 299, with default header values.
+
+加入參數'?health=true'即可查詢此API服務的健康狀態
+*/
+type TaiwanTripBusAPIStopOfRouteStatus299 struct {
+	Payload *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth
+}
+
+func (o *TaiwanTripBusAPIStopOfRouteStatus299) Error() string {
+	return fmt.Sprintf("[GET /v2/Tourism/Bus/StopOfRoute/TaiwanTrip][%d] taiwanTripBusApiStopOfRouteStatus299  %+v", 299, o.Payload)
+}
+func (o *TaiwanTripBusAPIStopOfRouteStatus299) GetPayload() *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth {
+	return o.Payload
+}
+
+func (o *TaiwanTripBusAPIStopOfRouteStatus299) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	o.Payload = new(models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth)
+
+	// response payload
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

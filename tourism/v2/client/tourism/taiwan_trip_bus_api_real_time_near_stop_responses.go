@@ -29,6 +29,12 @@ func (o *TaiwanTripBusAPIRealTimeNearStopReader) ReadResponse(response runtime.C
 			return nil, err
 		}
 		return result, nil
+	case 299:
+		result := NewTaiwanTripBusAPIRealTimeNearStopStatus299()
+		if err := result.readResponse(response, consumer, o.formats); err != nil {
+			return nil, err
+		}
+		return result, nil
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -58,6 +64,38 @@ func (o *TaiwanTripBusAPIRealTimeNearStopOK) readResponse(response runtime.Clien
 
 	// response payload
 	if err := consumer.Consume(response.Body(), &o.Payload); err != nil && err != io.EOF {
+		return err
+	}
+
+	return nil
+}
+
+// NewTaiwanTripBusAPIRealTimeNearStopStatus299 creates a TaiwanTripBusAPIRealTimeNearStopStatus299 with default headers values
+func NewTaiwanTripBusAPIRealTimeNearStopStatus299() *TaiwanTripBusAPIRealTimeNearStopStatus299 {
+	return &TaiwanTripBusAPIRealTimeNearStopStatus299{}
+}
+
+/* TaiwanTripBusAPIRealTimeNearStopStatus299 describes a response with status code 299, with default header values.
+
+加入參數'?health=true'即可查詢此API服務的健康狀態
+*/
+type TaiwanTripBusAPIRealTimeNearStopStatus299 struct {
+	Payload *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth
+}
+
+func (o *TaiwanTripBusAPIRealTimeNearStopStatus299) Error() string {
+	return fmt.Sprintf("[GET /v2/Tourism/Bus/RealTimeNearStop/TaiwanTrip][%d] taiwanTripBusApiRealTimeNearStopStatus299  %+v", 299, o.Payload)
+}
+func (o *TaiwanTripBusAPIRealTimeNearStopStatus299) GetPayload() *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth {
+	return o.Payload
+}
+
+func (o *TaiwanTripBusAPIRealTimeNearStopStatus299) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
+
+	o.Payload = new(models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth)
+
+	// response payload
+	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
 

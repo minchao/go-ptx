@@ -67,10 +67,9 @@ type PTXServiceDTORailSpecificationV3TRATRAAlertListAlert struct {
 	// AlertScope
 	//
 	// 影響範圍
-	// Required: true
 	Scope struct {
 		PTXServiceDTORailSpecificationV3TRATRAAlertListAlertScope
-	} `json:"Scope" xml:"AlertScope"`
+	} `json:"Scope,omitempty" xml:"AlertScope,omitempty"`
 
 	// 訊息起始日期時間
 	// Format: date-time
@@ -185,6 +184,9 @@ func (m *PTXServiceDTORailSpecificationV3TRATRAAlertListAlert) validatePublishTi
 }
 
 func (m *PTXServiceDTORailSpecificationV3TRATRAAlertListAlert) validateScope(formats strfmt.Registry) error {
+	if swag.IsZero(m.Scope) { // not required
+		return nil
+	}
 
 	return nil
 }

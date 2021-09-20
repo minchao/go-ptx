@@ -104,21 +104,9 @@ type DailyTrainTimeTableAPIControllerGet3Params struct {
 	*/
 	DollarTop *int64
 
-	/* DestinationStationID.
-
-	   迄點車站代碼
-	*/
-	DestinationStationID string
-
-	/* OriginStationID.
-
-	   起點車站代碼
-	*/
-	OriginStationID string
-
 	/* TrainDate.
 
-	   欲查詢的日期(格式: yyyy-MM-dd)
+	   欲查詢車次的日期(格式: yyyy-MM-dd)
 
 	   Format: date-time
 	*/
@@ -271,28 +259,6 @@ func (o *DailyTrainTimeTableAPIControllerGet3Params) SetDollarTop(dollarTop *int
 	o.DollarTop = dollarTop
 }
 
-// WithDestinationStationID adds the destinationStationID to the daily train time table Api controller get 3 params
-func (o *DailyTrainTimeTableAPIControllerGet3Params) WithDestinationStationID(destinationStationID string) *DailyTrainTimeTableAPIControllerGet3Params {
-	o.SetDestinationStationID(destinationStationID)
-	return o
-}
-
-// SetDestinationStationID adds the destinationStationId to the daily train time table Api controller get 3 params
-func (o *DailyTrainTimeTableAPIControllerGet3Params) SetDestinationStationID(destinationStationID string) {
-	o.DestinationStationID = destinationStationID
-}
-
-// WithOriginStationID adds the originStationID to the daily train time table Api controller get 3 params
-func (o *DailyTrainTimeTableAPIControllerGet3Params) WithOriginStationID(originStationID string) *DailyTrainTimeTableAPIControllerGet3Params {
-	o.SetOriginStationID(originStationID)
-	return o
-}
-
-// SetOriginStationID adds the originStationId to the daily train time table Api controller get 3 params
-func (o *DailyTrainTimeTableAPIControllerGet3Params) SetOriginStationID(originStationID string) {
-	o.OriginStationID = originStationID
-}
-
 // WithTrainDate adds the trainDate to the daily train time table Api controller get 3 params
 func (o *DailyTrainTimeTableAPIControllerGet3Params) WithTrainDate(trainDate strfmt.DateTime) *DailyTrainTimeTableAPIControllerGet3Params {
 	o.SetTrainDate(trainDate)
@@ -433,16 +399,6 @@ func (o *DailyTrainTimeTableAPIControllerGet3Params) WriteToRequest(r runtime.Cl
 				return err
 			}
 		}
-	}
-
-	// path param DestinationStationID
-	if err := r.SetPathParam("DestinationStationID", o.DestinationStationID); err != nil {
-		return err
-	}
-
-	// path param OriginStationID
-	if err := r.SetPathParam("OriginStationID", o.OriginStationID); err != nil {
-		return err
 	}
 
 	// path param TrainDate

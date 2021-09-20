@@ -60,7 +60,7 @@ type CityBusAPIDailyTimeTable1OK struct {
 }
 
 func (o *CityBusAPIDailyTimeTable1OK) Error() string {
-	return fmt.Sprintf("[GET /v2/Bus/DailyTimeTable/City/{City}/{RouteName}][%d] cityBusApiDailyTimeTable1OK  %+v", 200, o.Payload)
+	return fmt.Sprintf("[GET /v2/Bus/DailyTimeTable/City/{City}][%d] cityBusApiDailyTimeTable1OK  %+v", 200, o.Payload)
 }
 func (o *CityBusAPIDailyTimeTable1OK) GetPayload() []*models.PTXServiceDTOBusSpecificationV2BusDailyTimeTable {
 	return o.Payload
@@ -90,7 +90,7 @@ type CityBusAPIDailyTimeTable1Status299 struct {
 }
 
 func (o *CityBusAPIDailyTimeTable1Status299) Error() string {
-	return fmt.Sprintf("[GET /v2/Bus/DailyTimeTable/City/{City}/{RouteName}][%d] cityBusApiDailyTimeTable1Status299  %+v", 299, o.Payload)
+	return fmt.Sprintf("[GET /v2/Bus/DailyTimeTable/City/{City}][%d] cityBusApiDailyTimeTable1Status299  %+v", 299, o.Payload)
 }
 func (o *CityBusAPIDailyTimeTable1Status299) GetPayload() *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth {
 	return o.Payload
@@ -121,7 +121,7 @@ type CityBusAPIDailyTimeTable1NotModified struct {
 }
 
 func (o *CityBusAPIDailyTimeTable1NotModified) Error() string {
-	return fmt.Sprintf("[GET /v2/Bus/DailyTimeTable/City/{City}/{RouteName}][%d] cityBusApiDailyTimeTable1NotModified ", 304)
+	return fmt.Sprintf("[GET /v2/Bus/DailyTimeTable/City/{City}][%d] cityBusApiDailyTimeTable1NotModified ", 304)
 }
 
 func (o *CityBusAPIDailyTimeTable1NotModified) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
