@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "title": "MOTC Transport API V2",
-    "description": "本平臺提供涵蓋全國尺度之公車、臺鐵、高鐵、捷運、航空、自行車等公共運輸旅運資料服務API，歡迎各產政學單位介接使用。\n                                                    <br><span class=swagger-description-indicatation>利用本平臺開放資料進行各項應用服務開發時，請考量不同特性使用者(如:性別/身心障礙/老幼等)的需求，並歡迎回饋寶貴意見。</span>\n                                                    <br><br>資料使用葵花寶典:[請點我](https://motc-ptx-api-documentation.gitbook.io/motc-ptx-api-documentation/)\n                                                    <br>資料服務開發實作參考手冊:[請點我](https://docs.google.com/viewer?url=https://github.com/ptxmotc/PTX_Web/blob/master/Swagger%E6%9C%8D%E5%8B%99%E8%AA%AA%E6%98%8E%E4%B8%8A%E5%82%B3%E5%8F%83%E8%80%83%E6%AA%94%E6%A1%88/%E5%85%AC%E5%85%B1%E9%81%8B%E8%BC%B8%E6%95%B4%E5%90%88%E8%B3%87%E8%A8%8A%E5%B9%B3%E5%8F%B0%E8%B3%87%E6%96%99%E6%9C%8D%E5%8B%99%E9%96%8B%E7%99%BC%E5%AF%A6%E4%BD%9C.pdf?raw=true)\n                                                    <br>API URI Convention文件說明:[請點我](https://docs.google.com/viewer?url=https://github.com/ptxmotc/PTX_Web/blob/master/Swagger%E6%9C%8D%E5%8B%99%E8%AA%AA%E6%98%8E%E4%B8%8A%E5%82%B3%E5%8F%83%E8%80%83%E6%AA%94%E6%A1%88/API_URI_Convention%E6%96%87%E4%BB%B6_v1.pdf?raw=true)<br>資料文本OAS描述:[請點我](http://192.168.201.165:30300/v2/Rail/api-docs/oas)",
+    "description": "本平臺提供涵蓋全國尺度之公車、臺鐵、高鐵、捷運、航空、自行車等公共運輸旅運資料服務API，歡迎各產政學單位介接使用。\n                                                    <br><span class=swagger-description-indicatation>利用本平臺開放資料進行各項應用服務開發時，請考量不同特性使用者(如:性別/身心障礙/老幼等)的需求，並歡迎回饋寶貴意見。</span>\n                                                    <br><br>資料使用葵花寶典:[請點我](https://motc-ptx-api-documentation.gitbook.io/motc-ptx-api-documentation/)\n                                                    <br>資料服務開發實作參考手冊:[請點我](https://docs.google.com/viewer?url=https://github.com/ptxmotc/PTX_Web/blob/master/Swagger%E6%9C%8D%E5%8B%99%E8%AA%AA%E6%98%8E%E4%B8%8A%E5%82%B3%E5%8F%83%E8%80%83%E6%AA%94%E6%A1%88/%E5%85%AC%E5%85%B1%E9%81%8B%E8%BC%B8%E6%95%B4%E5%90%88%E8%B3%87%E8%A8%8A%E5%B9%B3%E5%8F%B0%E8%B3%87%E6%96%99%E6%9C%8D%E5%8B%99%E9%96%8B%E7%99%BC%E5%AF%A6%E4%BD%9C.pdf?raw=true)\n                                                    <br>API URI Convention文件說明:[請點我](https://docs.google.com/viewer?url=https://github.com/ptxmotc/PTX_Web/blob/master/Swagger%E6%9C%8D%E5%8B%99%E8%AA%AA%E6%98%8E%E4%B8%8A%E5%82%B3%E5%8F%83%E8%80%83%E6%AA%94%E6%A1%88/API_URI_Convention%E6%96%87%E4%BB%B6_v1.pdf?raw=true)<br>資料文本OAS描述:[請點我](https://ptx.transportdata.tw/MOTC/v2/Rail/api-docs/oas)",
     "version": "v2"
   },
   "host": "ptx.transportdata.tw",
@@ -238,13 +238,13 @@
               "TMRT"
             ],
             "x-enum": {
-              "KLRT": "高雄輕軌",
-              "KRTC": "高雄捷運",
-              "TRTC": "臺北捷運",
               "TMRT": "臺中捷運",
               "TRTCMG": "貓空纜車",
               "TYMC": "桃園捷運",
-              "NTDLRT": "淡海輕軌"
+              "NTDLRT": "淡海輕軌",
+              "KLRT": "高雄輕軌",
+              "KRTC": "高雄捷運",
+              "TRTC": "臺北捷運"
             }
           },
           {
@@ -353,12 +353,12 @@
             ],
             "x-enum": {
               "TYMC": "桃園捷運",
-              "TRTC": "臺北捷運",
               "NTDLRT": "淡海輕軌",
               "KLRT": "高雄輕軌",
               "TMRT": "臺中捷運",
+              "KRTC": "高雄捷運",
               "TRTCMG": "貓空纜車",
-              "KRTC": "高雄捷運"
+              "TRTC": "臺北捷運"
             }
           },
           {
@@ -472,9 +472,9 @@
               "TMRT"
             ],
             "x-enum": {
+              "KLRT": "高雄輕軌",
               "KRTC": "高雄捷運",
               "TYMC": "桃園捷運",
-              "KLRT": "高雄輕軌",
               "TMRT": "臺中捷運",
               "TRTCMG": "貓空纜車",
               "NTDLRT": "淡海輕軌",
@@ -581,8 +581,8 @@
               "KRTC"
             ],
             "x-enum": {
-              "TYMC": "桃園捷運",
               "KRTC": "高雄捷運",
+              "TYMC": "桃園捷運",
               "TRTC": "臺北捷運"
             }
           },
@@ -795,10 +795,10 @@
             "x-enum": {
               "TRTCMG": "貓空纜車",
               "TRTC": "臺北捷運",
-              "TMRT": "臺中捷運",
               "KLRT": "高雄輕軌",
               "KRTC": "高雄捷運",
-              "TYMC": "桃園捷運"
+              "TYMC": "桃園捷運",
+              "TMRT": "臺中捷運"
             }
           },
           {
@@ -1020,10 +1020,10 @@
               "TMRT"
             ],
             "x-enum": {
-              "NTDLRT": "淡海輕軌",
-              "TYMC": "桃園捷運",
               "KRTC": "高雄捷運",
               "TRTC": "臺北捷運",
+              "NTDLRT": "淡海輕軌",
+              "TYMC": "桃園捷運",
               "TMRT": "臺中捷運"
             }
           },
@@ -1132,8 +1132,8 @@
             "x-enum": {
               "TRTC": "臺北捷運",
               "TYMC": "桃園捷運",
-              "KLRT": "高雄輕軌",
               "KRTC": "高雄捷運",
+              "KLRT": "高雄輕軌",
               "TMRT": "臺中捷運"
             }
           },
@@ -1238,8 +1238,8 @@
               "TMRT"
             ],
             "x-enum": {
-              "KRTC": "高雄捷運",
               "TYMC": "桃園捷運",
+              "KRTC": "高雄捷運",
               "TMRT": "臺中捷運",
               "TRTC": "臺北捷運"
             }
@@ -1347,9 +1347,9 @@
             ],
             "x-enum": {
               "KLRT": "高雄輕軌",
-              "TRTC": "臺北捷運",
               "TYMC": "桃園捷運",
-              "KRTC": "高雄捷運"
+              "KRTC": "高雄捷運",
+              "TRTC": "臺北捷運"
             }
           },
           {
@@ -1457,12 +1457,12 @@
               "TMRT"
             ],
             "x-enum": {
-              "TRTCMG": "貓空纜車",
-              "TRTC": "臺北捷運",
               "TYMC": "桃園捷運",
-              "TMRT": "臺中捷運",
               "KLRT": "高雄輕軌",
               "KRTC": "高雄捷運",
+              "TRTCMG": "貓空纜車",
+              "TRTC": "臺北捷運",
+              "TMRT": "臺中捷運",
               "NTDLRT": "淡海輕軌"
             }
           },
@@ -1675,10 +1675,10 @@
               "NTDLRT"
             ],
             "x-enum": {
-              "TRTC": "臺北捷運",
               "KRTC": "高雄捷運",
-              "NTDLRT": "淡海輕軌",
               "TYMC": "桃園捷運",
+              "TRTC": "臺北捷運",
+              "NTDLRT": "淡海輕軌",
               "KLRT": "高雄輕軌"
             }
           },
@@ -1892,10 +1892,10 @@
               "TRTC"
             ],
             "x-enum": {
-              "KRTC": "高雄捷運",
-              "TYMC": "桃園捷運",
               "TRTC": "臺北捷運",
-              "KLRT": "高雄輕軌"
+              "KLRT": "高雄輕軌",
+              "KRTC": "高雄捷運",
+              "TYMC": "桃園捷運"
             }
           },
           {

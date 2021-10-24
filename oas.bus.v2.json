@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "title": "MOTC Transport API V2",
-    "description": "本平臺提供涵蓋全國尺度之公車、臺鐵、高鐵、捷運、航空、自行車等公共運輸旅運資料服務API，歡迎各產政學單位介接使用。\n                                                    <br><span class=swagger-description-indicatation>利用本平臺開放資料進行各項應用服務開發時，請考量不同特性使用者(如:性別/身心障礙/老幼等)的需求，並歡迎回饋寶貴意見。</span>\n                                                    <br><br>資料使用葵花寶典:[請點我](https://motc-ptx-api-documentation.gitbook.io/motc-ptx-api-documentation/)\n                                                    <br>資料服務開發實作參考手冊:[請點我](https://docs.google.com/viewer?url=https://github.com/ptxmotc/PTX_Web/blob/master/Swagger%E6%9C%8D%E5%8B%99%E8%AA%AA%E6%98%8E%E4%B8%8A%E5%82%B3%E5%8F%83%E8%80%83%E6%AA%94%E6%A1%88/%E5%85%AC%E5%85%B1%E9%81%8B%E8%BC%B8%E6%95%B4%E5%90%88%E8%B3%87%E8%A8%8A%E5%B9%B3%E5%8F%B0%E8%B3%87%E6%96%99%E6%9C%8D%E5%8B%99%E9%96%8B%E7%99%BC%E5%AF%A6%E4%BD%9C.pdf?raw=true)\n                                                    <br>API URI Convention文件說明:[請點我](https://docs.google.com/viewer?url=https://github.com/ptxmotc/PTX_Web/blob/master/Swagger%E6%9C%8D%E5%8B%99%E8%AA%AA%E6%98%8E%E4%B8%8A%E5%82%B3%E5%8F%83%E8%80%83%E6%AA%94%E6%A1%88/API_URI_Convention%E6%96%87%E4%BB%B6_v1.pdf?raw=true)<br>資料文本OAS描述:[請點我](http://192.168.201.165:30200/v2/Bus/api-docs/oas)",
+    "description": "本平臺提供涵蓋全國尺度之公車、臺鐵、高鐵、捷運、航空、自行車等公共運輸旅運資料服務API，歡迎各產政學單位介接使用。\n                                                    <br><span class=swagger-description-indicatation>利用本平臺開放資料進行各項應用服務開發時，請考量不同特性使用者(如:性別/身心障礙/老幼等)的需求，並歡迎回饋寶貴意見。</span>\n                                                    <br><br>資料使用葵花寶典:[請點我](https://motc-ptx-api-documentation.gitbook.io/motc-ptx-api-documentation/)\n                                                    <br>資料服務開發實作參考手冊:[請點我](https://docs.google.com/viewer?url=https://github.com/ptxmotc/PTX_Web/blob/master/Swagger%E6%9C%8D%E5%8B%99%E8%AA%AA%E6%98%8E%E4%B8%8A%E5%82%B3%E5%8F%83%E8%80%83%E6%AA%94%E6%A1%88/%E5%85%AC%E5%85%B1%E9%81%8B%E8%BC%B8%E6%95%B4%E5%90%88%E8%B3%87%E8%A8%8A%E5%B9%B3%E5%8F%B0%E8%B3%87%E6%96%99%E6%9C%8D%E5%8B%99%E9%96%8B%E7%99%BC%E5%AF%A6%E4%BD%9C.pdf?raw=true)\n                                                    <br>API URI Convention文件說明:[請點我](https://docs.google.com/viewer?url=https://github.com/ptxmotc/PTX_Web/blob/master/Swagger%E6%9C%8D%E5%8B%99%E8%AA%AA%E6%98%8E%E4%B8%8A%E5%82%B3%E5%8F%83%E8%80%83%E6%AA%94%E6%A1%88/API_URI_Convention%E6%96%87%E4%BB%B6_v1.pdf?raw=true)<br>資料文本OAS描述:[請點我](https://ptx.transportdata.tw/MOTC/v2/Bus/api-docs/oas)",
     "version": "v2"
   },
   "host": "ptx.transportdata.tw",
@@ -48,12 +48,12 @@
             "x-enum": {
               "TaitungCounty": "臺東縣",
               "MiaoliCounty": "苗栗縣",
-              "ChiayiCounty": "嘉義縣",
-              "Chiayi": "嘉義市",
               "YilanCounty": "宜蘭縣",
               "PenghuCounty": "澎湖縣",
               "NantouCounty": "南投縣",
               "HualienCounty": "花蓮縣",
+              "ChiayiCounty": "嘉義縣",
+              "Chiayi": "嘉義市",
               "PingtungCounty": "屏東縣",
               "YunlinCounty": "雲林縣",
               "Hsinchu": "新竹市",
@@ -180,12 +180,12 @@
             "x-enum": {
               "TaitungCounty": "臺東縣",
               "MiaoliCounty": "苗栗縣",
-              "ChiayiCounty": "嘉義縣",
-              "Chiayi": "嘉義市",
               "YilanCounty": "宜蘭縣",
               "PenghuCounty": "澎湖縣",
               "NantouCounty": "南投縣",
               "HualienCounty": "花蓮縣",
+              "ChiayiCounty": "嘉義縣",
+              "Chiayi": "嘉義市",
               "PingtungCounty": "屏東縣",
               "YunlinCounty": "雲林縣",
               "Hsinchu": "新竹市",
@@ -319,14 +319,14 @@
             "x-enum": {
               "ChiayiCounty": "嘉義縣",
               "PingtungCounty": "屏東縣",
-              "PenghuCounty": "澎湖縣",
-              "HualienCounty": "花蓮縣",
               "NantouCounty": "南投縣",
               "Hsinchu": "新竹市",
-              "HsinchuCounty": "新竹縣",
               "Chiayi": "嘉義市",
-              "TaitungCounty": "臺東縣",
               "ChanghuaCounty": "彰化縣",
+              "PenghuCounty": "澎湖縣",
+              "HualienCounty": "花蓮縣",
+              "HsinchuCounty": "新竹縣",
+              "TaitungCounty": "臺東縣",
               "MiaoliCounty": "苗栗縣",
               "YunlinCounty": "雲林縣",
               "YilanCounty": "宜蘭縣"
@@ -445,14 +445,14 @@
             "x-enum": {
               "ChiayiCounty": "嘉義縣",
               "PingtungCounty": "屏東縣",
-              "PenghuCounty": "澎湖縣",
-              "HualienCounty": "花蓮縣",
               "NantouCounty": "南投縣",
               "Hsinchu": "新竹市",
-              "HsinchuCounty": "新竹縣",
               "Chiayi": "嘉義市",
-              "TaitungCounty": "臺東縣",
               "ChanghuaCounty": "彰化縣",
+              "PenghuCounty": "澎湖縣",
+              "HualienCounty": "花蓮縣",
+              "HsinchuCounty": "新竹縣",
+              "TaitungCounty": "臺東縣",
               "MiaoliCounty": "苗栗縣",
               "YunlinCounty": "雲林縣",
               "YilanCounty": "宜蘭縣"
@@ -576,18 +576,18 @@
               "PenghuCounty"
             ],
             "x-enum": {
+              "NantouCounty": "南投縣",
+              "YunlinCounty": "雲林縣",
+              "ChanghuaCounty": "彰化縣",
+              "MiaoliCounty": "苗栗縣",
               "TaitungCounty": "臺東縣",
               "Chiayi": "嘉義市",
               "HsinchuCounty": "新竹縣",
-              "NantouCounty": "南投縣",
               "ChiayiCounty": "嘉義縣",
-              "YunlinCounty": "雲林縣",
-              "ChanghuaCounty": "彰化縣",
               "PingtungCounty": "屏東縣",
               "HualienCounty": "花蓮縣",
               "Hsinchu": "新竹市",
               "YilanCounty": "宜蘭縣",
-              "MiaoliCounty": "苗栗縣",
               "PenghuCounty": "澎湖縣"
             }
           },
@@ -702,18 +702,18 @@
               "PenghuCounty"
             ],
             "x-enum": {
+              "NantouCounty": "南投縣",
+              "YunlinCounty": "雲林縣",
+              "ChanghuaCounty": "彰化縣",
+              "MiaoliCounty": "苗栗縣",
               "TaitungCounty": "臺東縣",
               "Chiayi": "嘉義市",
               "HsinchuCounty": "新竹縣",
-              "NantouCounty": "南投縣",
               "ChiayiCounty": "嘉義縣",
-              "YunlinCounty": "雲林縣",
-              "ChanghuaCounty": "彰化縣",
               "PingtungCounty": "屏東縣",
               "HualienCounty": "花蓮縣",
               "Hsinchu": "新竹市",
               "YilanCounty": "宜蘭縣",
-              "MiaoliCounty": "苗栗縣",
               "PenghuCounty": "澎湖縣"
             }
           },
@@ -807,7 +807,7 @@
         ],
         "summary": "取得指定[縣市]的公車動態定時資料(A1)[批次更新]",
         "description": "### 市區公車之定時資料(A1) ###\r\n- [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))",
-        "operationId": "CityBusApi_RealTimeByFrequency_2",
+        "operationId": "CityBusApi_RealTimeByFrequency",
         "produces": [
           "application/json",
           "application/xml"
@@ -849,22 +849,22 @@
               "YunlinCounty": "雲林縣",
               "Hsinchu": "新竹市",
               "Keelung": "基隆市",
-              "NantouCounty": "南投縣",
               "TaitungCounty": "臺東縣",
               "Taoyuan": "桃園市",
-              "Taichung": "臺中市",
               "YilanCounty": "宜蘭縣",
+              "Chiayi": "嘉義市",
+              "ChiayiCounty": "嘉義縣",
+              "HualienCounty": "花蓮縣",
+              "PingtungCounty": "屏東縣",
+              "PenghuCounty": "澎湖縣",
+              "NantouCounty": "南投縣",
+              "Taichung": "臺中市",
               "KinmenCounty": "金門縣",
               "Taipei": "臺北市",
               "Kaohsiung": "高雄市",
-              "Chiayi": "嘉義市",
-              "ChiayiCounty": "嘉義縣",
               "HsinchuCounty": "新竹縣",
-              "HualienCounty": "花蓮縣",
               "ChanghuaCounty": "彰化縣",
               "MiaoliCounty": "苗栗縣",
-              "PingtungCounty": "屏東縣",
-              "PenghuCounty": "澎湖縣",
               "Tainan": "臺南市"
             }
           },
@@ -957,7 +957,7 @@
         ],
         "summary": "取得指定[縣市],[路線名稱]的公車動態定時資料(A1)[批次更新]",
         "description": "### 市區公車之定時資料(A1) ###\r\n- [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))",
-        "operationId": "CityBusApi_RealTimeByFrequency_3",
+        "operationId": "CityBusApi_RealTimeByFrequency_1",
         "produces": [
           "application/json",
           "application/xml"
@@ -999,22 +999,22 @@
               "YunlinCounty": "雲林縣",
               "Hsinchu": "新竹市",
               "Keelung": "基隆市",
-              "NantouCounty": "南投縣",
               "TaitungCounty": "臺東縣",
               "Taoyuan": "桃園市",
-              "Taichung": "臺中市",
               "YilanCounty": "宜蘭縣",
+              "Chiayi": "嘉義市",
+              "ChiayiCounty": "嘉義縣",
+              "HualienCounty": "花蓮縣",
+              "PingtungCounty": "屏東縣",
+              "PenghuCounty": "澎湖縣",
+              "NantouCounty": "南投縣",
+              "Taichung": "臺中市",
               "KinmenCounty": "金門縣",
               "Taipei": "臺北市",
               "Kaohsiung": "高雄市",
-              "Chiayi": "嘉義市",
-              "ChiayiCounty": "嘉義縣",
               "HsinchuCounty": "新竹縣",
-              "HualienCounty": "花蓮縣",
               "ChanghuaCounty": "彰化縣",
               "MiaoliCounty": "苗栗縣",
-              "PingtungCounty": "屏東縣",
-              "PenghuCounty": "澎湖縣",
               "Tainan": "臺南市"
             }
           },
@@ -1114,7 +1114,7 @@
         ],
         "summary": "取得指定[縣市]的公車動態定點資料(A2)[批次更新]",
         "description": "### 市區公車之定點資料(A2) ###\r\n- [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))",
-        "operationId": "CityBusApi_RealTimeNearStop_2",
+        "operationId": "CityBusApi_RealTimeNearStop",
         "produces": [
           "application/json",
           "application/xml"
@@ -1151,27 +1151,27 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "Taipei": "臺北市",
               "MiaoliCounty": "苗栗縣",
-              "NantouCounty": "南投縣",
               "Tainan": "臺南市",
-              "Keelung": "基隆市",
-              "HsinchuCounty": "新竹縣",
-              "ChiayiCounty": "嘉義縣",
               "Chiayi": "嘉義市",
-              "KinmenCounty": "金門縣",
               "ChanghuaCounty": "彰化縣",
-              "YunlinCounty": "雲林縣",
               "Kaohsiung": "高雄市",
               "PingtungCounty": "屏東縣",
-              "PenghuCounty": "澎湖縣",
-              "TaitungCounty": "臺東縣",
-              "NewTaipei": "新北市",
-              "Taichung": "臺中市",
               "HualienCounty": "花蓮縣",
               "YilanCounty": "宜蘭縣",
               "Taoyuan": "桃園市",
               "Hsinchu": "新竹市",
+              "Taipei": "臺北市",
+              "NantouCounty": "南投縣",
+              "Keelung": "基隆市",
+              "HsinchuCounty": "新竹縣",
+              "ChiayiCounty": "嘉義縣",
+              "KinmenCounty": "金門縣",
+              "YunlinCounty": "雲林縣",
+              "PenghuCounty": "澎湖縣",
+              "TaitungCounty": "臺東縣",
+              "NewTaipei": "新北市",
+              "Taichung": "臺中市",
               "LienchiangCounty": "連江縣"
             }
           },
@@ -1258,7 +1258,7 @@
         ],
         "summary": "取得指定[縣市],[路線名稱]的公車動態定點資料(A2)[批次更新]",
         "description": "### 市區公車之定點資料(A2) ###\r\n- [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))",
-        "operationId": "CityBusApi_RealTimeNearStop_3",
+        "operationId": "CityBusApi_RealTimeNearStop_1",
         "produces": [
           "application/json",
           "application/xml"
@@ -1295,27 +1295,27 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "Taipei": "臺北市",
               "MiaoliCounty": "苗栗縣",
-              "NantouCounty": "南投縣",
               "Tainan": "臺南市",
-              "Keelung": "基隆市",
-              "HsinchuCounty": "新竹縣",
-              "ChiayiCounty": "嘉義縣",
               "Chiayi": "嘉義市",
-              "KinmenCounty": "金門縣",
               "ChanghuaCounty": "彰化縣",
-              "YunlinCounty": "雲林縣",
               "Kaohsiung": "高雄市",
               "PingtungCounty": "屏東縣",
-              "PenghuCounty": "澎湖縣",
-              "TaitungCounty": "臺東縣",
-              "NewTaipei": "新北市",
-              "Taichung": "臺中市",
               "HualienCounty": "花蓮縣",
               "YilanCounty": "宜蘭縣",
               "Taoyuan": "桃園市",
               "Hsinchu": "新竹市",
+              "Taipei": "臺北市",
+              "NantouCounty": "南投縣",
+              "Keelung": "基隆市",
+              "HsinchuCounty": "新竹縣",
+              "ChiayiCounty": "嘉義縣",
+              "KinmenCounty": "金門縣",
+              "YunlinCounty": "雲林縣",
+              "PenghuCounty": "澎湖縣",
+              "TaitungCounty": "臺東縣",
+              "NewTaipei": "新北市",
+              "Taichung": "臺中市",
               "LienchiangCounty": "連江縣"
             }
           },
@@ -1409,7 +1409,7 @@
         ],
         "summary": "取得指定[縣市]的公車預估到站資料(N1)[批次更新]",
         "description": " ### 市區公車之預估到站資料(N1) ###\r\n- [部分縣市] 當 StopStatus = 1(尚未發車) 且 EstimateTime > 0 (有值) 的情形, 屬正常情形, 雖目前尚未發車, 但提供EstimateTime值為預計多久後開始發車之時間。\r\n- [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))",
-        "operationId": "CityBusApi_EstimatedTimeOfArrival_2",
+        "operationId": "CityBusApi_EstimatedTimeOfArrival",
         "produces": [
           "application/json",
           "application/xml"
@@ -1450,23 +1450,23 @@
               "Taipei": "臺北市",
               "YilanCounty": "宜蘭縣",
               "LienchiangCounty": "連江縣",
-              "HsinchuCounty": "新竹縣",
-              "ChiayiCounty": "嘉義縣",
               "Hsinchu": "新竹市",
               "Chiayi": "嘉義市",
-              "Taoyuan": "桃園市",
-              "Keelung": "基隆市",
               "MiaoliCounty": "苗栗縣",
-              "Kaohsiung": "高雄市",
-              "KinmenCounty": "金門縣",
-              "HualienCounty": "花蓮縣",
-              "NantouCounty": "南投縣",
-              "NewTaipei": "新北市",
               "TaitungCounty": "臺東縣",
               "YunlinCounty": "雲林縣",
               "Tainan": "臺南市",
               "Taichung": "臺中市",
               "ChanghuaCounty": "彰化縣",
+              "HsinchuCounty": "新竹縣",
+              "ChiayiCounty": "嘉義縣",
+              "Taoyuan": "桃園市",
+              "Keelung": "基隆市",
+              "Kaohsiung": "高雄市",
+              "KinmenCounty": "金門縣",
+              "HualienCounty": "花蓮縣",
+              "NantouCounty": "南投縣",
+              "NewTaipei": "新北市",
               "PingtungCounty": "屏東縣"
             }
           },
@@ -1553,7 +1553,7 @@
         ],
         "summary": "取得指定[縣市],[路線名稱]的公車預估到站資料(N1)[批次更新]",
         "description": " ### 市區公車之預估到站資料(N1) ###\r\n- [部分縣市] 當 StopStatus = 1(尚未發車) 且 EstimateTime > 0 (有值) 的情形, 屬正常情形, 雖目前尚未發車, 但提供EstimateTime值為預計多久後開始發車之時間。\r\n- [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))",
-        "operationId": "CityBusApi_EstimatedTimeOfArrival_3",
+        "operationId": "CityBusApi_EstimatedTimeOfArrival_1",
         "produces": [
           "application/json",
           "application/xml"
@@ -1594,23 +1594,23 @@
               "Taipei": "臺北市",
               "YilanCounty": "宜蘭縣",
               "LienchiangCounty": "連江縣",
-              "HsinchuCounty": "新竹縣",
-              "ChiayiCounty": "嘉義縣",
               "Hsinchu": "新竹市",
               "Chiayi": "嘉義市",
-              "Taoyuan": "桃園市",
-              "Keelung": "基隆市",
               "MiaoliCounty": "苗栗縣",
-              "Kaohsiung": "高雄市",
-              "KinmenCounty": "金門縣",
-              "HualienCounty": "花蓮縣",
-              "NantouCounty": "南投縣",
-              "NewTaipei": "新北市",
               "TaitungCounty": "臺東縣",
               "YunlinCounty": "雲林縣",
               "Tainan": "臺南市",
               "Taichung": "臺中市",
               "ChanghuaCounty": "彰化縣",
+              "HsinchuCounty": "新竹縣",
+              "ChiayiCounty": "嘉義縣",
+              "Taoyuan": "桃園市",
+              "Keelung": "基隆市",
+              "Kaohsiung": "高雄市",
+              "KinmenCounty": "金門縣",
+              "HualienCounty": "花蓮縣",
+              "NantouCounty": "南投縣",
+              "NewTaipei": "新北市",
               "PingtungCounty": "屏東縣"
             }
           },
@@ -1741,28 +1741,28 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "Keelung": "基隆市",
               "PenghuCounty": "澎湖縣",
               "Chiayi": "嘉義市",
-              "Taichung": "臺中市",
               "PingtungCounty": "屏東縣",
-              "HsinchuCounty": "新竹縣",
-              "TaitungCounty": "臺東縣",
               "MiaoliCounty": "苗栗縣",
               "NewTaipei": "新北市",
-              "Taoyuan": "桃園市",
               "Hsinchu": "新竹市",
               "HualienCounty": "花蓮縣",
-              "KinmenCounty": "金門縣",
-              "YilanCounty": "宜蘭縣",
               "NantouCounty": "南投縣",
               "Taipei": "臺北市",
               "YunlinCounty": "雲林縣",
               "LienchiangCounty": "連江縣",
               "ChanghuaCounty": "彰化縣",
+              "ChiayiCounty": "嘉義縣",
+              "Keelung": "基隆市",
+              "Taichung": "臺中市",
+              "HsinchuCounty": "新竹縣",
+              "TaitungCounty": "臺東縣",
+              "Taoyuan": "桃園市",
+              "KinmenCounty": "金門縣",
+              "YilanCounty": "宜蘭縣",
               "Kaohsiung": "高雄市",
-              "Tainan": "臺南市",
-              "ChiayiCounty": "嘉義縣"
+              "Tainan": "臺南市"
             }
           },
           {
@@ -1813,7 +1813,7 @@
         ],
         "summary": "取得指定[縣市]的市區公車營運業者資料",
         "description": "市區公車之營運業者資料",
-        "operationId": "CityBusApi_Operator_1",
+        "operationId": "CityBusApi_Operator",
         "produces": [
           "application/json",
           "application/xml"
@@ -1852,25 +1852,25 @@
             "x-enum": {
               "HualienCounty": "花蓮縣",
               "Keelung": "基隆市",
-              "NewTaipei": "新北市",
               "KinmenCounty": "金門縣",
               "Taipei": "臺北市",
               "LienchiangCounty": "連江縣",
-              "ChanghuaCounty": "彰化縣",
-              "YunlinCounty": "雲林縣",
-              "Chiayi": "嘉義市",
-              "Taoyuan": "桃園市",
               "NantouCounty": "南投縣",
-              "Kaohsiung": "高雄市",
               "TaitungCounty": "臺東縣",
-              "ChiayiCounty": "嘉義縣",
-              "Taichung": "臺中市",
               "PingtungCounty": "屏東縣",
               "Tainan": "臺南市",
               "Hsinchu": "新竹市",
               "PenghuCounty": "澎湖縣",
               "MiaoliCounty": "苗栗縣",
               "YilanCounty": "宜蘭縣",
+              "NewTaipei": "新北市",
+              "ChanghuaCounty": "彰化縣",
+              "YunlinCounty": "雲林縣",
+              "Chiayi": "嘉義市",
+              "Taoyuan": "桃園市",
+              "Kaohsiung": "高雄市",
+              "ChiayiCounty": "嘉義縣",
+              "Taichung": "臺中市",
               "HsinchuCounty": "新竹縣"
             }
           },
@@ -1957,7 +1957,7 @@
         ],
         "summary": "取得指定[縣市]的市區公車路線資料",
         "description": "市區公車之路線資料",
-        "operationId": "CityBusApi_Route_1",
+        "operationId": "CityBusApi_Route",
         "produces": [
           "application/json",
           "application/xml"
@@ -1994,28 +1994,28 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "Tainan": "臺南市",
-              "PingtungCounty": "屏東縣",
               "Taoyuan": "桃園市",
               "TaitungCounty": "臺東縣",
+              "PenghuCounty": "澎湖縣",
+              "YilanCounty": "宜蘭縣",
+              "HsinchuCounty": "新竹縣",
+              "ChanghuaCounty": "彰化縣",
+              "Keelung": "基隆市",
+              "YunlinCounty": "雲林縣",
+              "MiaoliCounty": "苗栗縣",
+              "NantouCounty": "南投縣",
+              "LienchiangCounty": "連江縣",
+              "ChiayiCounty": "嘉義縣",
+              "Tainan": "臺南市",
+              "PingtungCounty": "屏東縣",
               "Taipei": "臺北市",
               "Hsinchu": "新竹市",
               "KinmenCounty": "金門縣",
-              "PenghuCounty": "澎湖縣",
-              "YilanCounty": "宜蘭縣",
               "Kaohsiung": "高雄市",
-              "HsinchuCounty": "新竹縣",
-              "ChanghuaCounty": "彰化縣",
               "Taichung": "臺中市",
               "HualienCounty": "花蓮縣",
-              "Keelung": "基隆市",
-              "MiaoliCounty": "苗栗縣",
-              "YunlinCounty": "雲林縣",
-              "NantouCounty": "南投縣",
               "NewTaipei": "新北市",
-              "Chiayi": "嘉義市",
-              "LienchiangCounty": "連江縣",
-              "ChiayiCounty": "嘉義縣"
+              "Chiayi": "嘉義市"
             }
           },
           {
@@ -2101,7 +2101,7 @@
         ],
         "summary": "取得指定[縣市],[路線名稱]的路線資料",
         "description": "市區公車之路線資料",
-        "operationId": "CityBusApi_Route_2",
+        "operationId": "CityBusApi_Route_1",
         "produces": [
           "application/json",
           "application/xml"
@@ -2138,28 +2138,28 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "Tainan": "臺南市",
-              "PingtungCounty": "屏東縣",
               "Taoyuan": "桃園市",
               "TaitungCounty": "臺東縣",
+              "PenghuCounty": "澎湖縣",
+              "YilanCounty": "宜蘭縣",
+              "HsinchuCounty": "新竹縣",
+              "ChanghuaCounty": "彰化縣",
+              "Keelung": "基隆市",
+              "YunlinCounty": "雲林縣",
+              "MiaoliCounty": "苗栗縣",
+              "NantouCounty": "南投縣",
+              "LienchiangCounty": "連江縣",
+              "ChiayiCounty": "嘉義縣",
+              "Tainan": "臺南市",
+              "PingtungCounty": "屏東縣",
               "Taipei": "臺北市",
               "Hsinchu": "新竹市",
               "KinmenCounty": "金門縣",
-              "PenghuCounty": "澎湖縣",
-              "YilanCounty": "宜蘭縣",
               "Kaohsiung": "高雄市",
-              "HsinchuCounty": "新竹縣",
-              "ChanghuaCounty": "彰化縣",
               "Taichung": "臺中市",
               "HualienCounty": "花蓮縣",
-              "Keelung": "基隆市",
-              "MiaoliCounty": "苗栗縣",
-              "YunlinCounty": "雲林縣",
-              "NantouCounty": "南投縣",
               "NewTaipei": "新北市",
-              "Chiayi": "嘉義市",
-              "LienchiangCounty": "連江縣",
-              "ChiayiCounty": "嘉義縣"
+              "Chiayi": "嘉義市"
             }
           },
           {
@@ -2252,7 +2252,7 @@
         ],
         "summary": "取得指定[縣市]的市區公車站牌資料",
         "description": "市區公車之站牌資料",
-        "operationId": "CityBusApi_Stop_1",
+        "operationId": "CityBusApi_Stop",
         "produces": [
           "application/json",
           "application/xml"
@@ -2289,25 +2289,25 @@
               "Taipei"
             ],
             "x-enum": {
-              "HualienCounty": "花蓮縣",
               "NewTaipei": "新北市",
               "YunlinCounty": "雲林縣",
               "NantouCounty": "南投縣",
               "TaitungCounty": "臺東縣",
-              "Chiayi": "嘉義市",
               "MiaoliCounty": "苗栗縣",
               "HsinchuCounty": "新竹縣",
               "Taipei": "臺北市",
               "LienchiangCounty": "連江縣",
+              "PenghuCounty": "澎湖縣",
+              "Kaohsiung": "高雄市",
+              "ChiayiCounty": "嘉義縣",
+              "HualienCounty": "花蓮縣",
+              "Chiayi": "嘉義市",
               "Hsinchu": "新竹市",
               "KinmenCounty": "金門縣",
               "Keelung": "基隆市",
               "ChanghuaCounty": "彰化縣",
-              "PenghuCounty": "澎湖縣",
-              "Kaohsiung": "高雄市",
               "PingtungCounty": "屏東縣",
               "Taoyuan": "桃園市",
-              "ChiayiCounty": "嘉義縣",
               "Tainan": "臺南市",
               "Taichung": "臺中市",
               "YilanCounty": "宜蘭縣"
@@ -2402,7 +2402,7 @@
         ],
         "summary": "取得指定[縣市]的市區公車站位資料",
         "description": "市區公車之各站牌所屬的站位資料",
-        "operationId": "CityBusApi_Station_1",
+        "operationId": "CityBusApi_Station",
         "produces": [
           "application/json",
           "application/xml"
@@ -2439,23 +2439,23 @@
             "x-enum": {
               "KinmenCounty": "金門縣",
               "ChiayiCounty": "嘉義縣",
-              "Taoyuan": "桃園市",
-              "PingtungCounty": "屏東縣",
               "Tainan": "臺南市",
-              "ChanghuaCounty": "彰化縣",
-              "PenghuCounty": "澎湖縣",
               "NewTaipei": "新北市",
-              "TaitungCounty": "臺東縣",
-              "HualienCounty": "花蓮縣",
               "YunlinCounty": "雲林縣",
               "NantouCounty": "南投縣",
+              "Taipei": "臺北市",
+              "YilanCounty": "宜蘭縣",
+              "Taoyuan": "桃園市",
+              "PingtungCounty": "屏東縣",
+              "ChanghuaCounty": "彰化縣",
+              "PenghuCounty": "澎湖縣",
+              "TaitungCounty": "臺東縣",
+              "HualienCounty": "花蓮縣",
               "Hsinchu": "新竹市",
               "MiaoliCounty": "苗栗縣",
-              "Taipei": "臺北市",
               "Chiayi": "嘉義市",
               "Taichung": "臺中市",
               "HsinchuCounty": "新竹縣",
-              "YilanCounty": "宜蘭縣",
               "Kaohsiung": "高雄市"
             }
           },
@@ -2548,7 +2548,7 @@
         ],
         "summary": "取得指定[縣市]的市區公車顯示用路線站序資料",
         "description": "市區公車之顯示用路線站序資料",
-        "operationId": "CityBusApi_DisplayStopOfRoute_1",
+        "operationId": "CityBusApi_DisplayStopOfRoute",
         "produces": [
           "application/json",
           "application/xml"
@@ -2568,10 +2568,10 @@
               "Taichung"
             ],
             "x-enum": {
-              "NewTaipei": "新北市",
               "Taichung": "臺中市",
               "Taipei": "臺北市",
               "Taoyuan": "桃園市",
+              "NewTaipei": "新北市",
               "Tainan": "臺南市"
             }
           },
@@ -2658,7 +2658,7 @@
         ],
         "summary": "取得指定[縣市],[路線名稱]的市區公車顯示用路線站序資料",
         "description": "市區公車之顯示用路線站序資料",
-        "operationId": "CityBusApi_DisplayStopOfRoute_2",
+        "operationId": "CityBusApi_DisplayStopOfRoute_1",
         "produces": [
           "application/json",
           "application/xml"
@@ -2678,10 +2678,10 @@
               "Taichung"
             ],
             "x-enum": {
-              "NewTaipei": "新北市",
               "Taichung": "臺中市",
               "Taipei": "臺北市",
               "Taoyuan": "桃園市",
+              "NewTaipei": "新北市",
               "Tainan": "臺南市"
             }
           },
@@ -2775,7 +2775,7 @@
         ],
         "summary": "取得指定[縣市]的市區公車路線站序資料",
         "description": "市區公車之路線站序資料",
-        "operationId": "CityBusApi_StopOfRoute_1",
+        "operationId": "CityBusApi_StopOfRoute",
         "produces": [
           "application/json",
           "application/xml"
@@ -2818,21 +2818,21 @@
               "YunlinCounty": "雲林縣",
               "NantouCounty": "南投縣",
               "HualienCounty": "花蓮縣",
-              "TaitungCounty": "臺東縣",
-              "NewTaipei": "新北市",
               "Taichung": "臺中市",
-              "LienchiangCounty": "連江縣",
               "HsinchuCounty": "新竹縣",
-              "Taoyuan": "桃園市",
               "YilanCounty": "宜蘭縣",
               "Kaohsiung": "高雄市",
               "KinmenCounty": "金門縣",
               "MiaoliCounty": "苗栗縣",
-              "PingtungCounty": "屏東縣",
               "ChiayiCounty": "嘉義縣",
+              "Chiayi": "嘉義市",
+              "TaitungCounty": "臺東縣",
+              "NewTaipei": "新北市",
+              "LienchiangCounty": "連江縣",
+              "Taoyuan": "桃園市",
+              "PingtungCounty": "屏東縣",
               "Taipei": "臺北市",
               "ChanghuaCounty": "彰化縣",
-              "Chiayi": "嘉義市",
               "PenghuCounty": "澎湖縣"
             }
           },
@@ -2919,7 +2919,7 @@
         ],
         "summary": "取得指定[縣市],[路線名稱]的市區公車路線站序資料",
         "description": "市區公車之路線站序資料",
-        "operationId": "CityBusApi_StopOfRoute_2",
+        "operationId": "CityBusApi_StopOfRoute_1",
         "produces": [
           "application/json",
           "application/xml"
@@ -2962,21 +2962,21 @@
               "YunlinCounty": "雲林縣",
               "NantouCounty": "南投縣",
               "HualienCounty": "花蓮縣",
-              "TaitungCounty": "臺東縣",
-              "NewTaipei": "新北市",
               "Taichung": "臺中市",
-              "LienchiangCounty": "連江縣",
               "HsinchuCounty": "新竹縣",
-              "Taoyuan": "桃園市",
               "YilanCounty": "宜蘭縣",
               "Kaohsiung": "高雄市",
               "KinmenCounty": "金門縣",
               "MiaoliCounty": "苗栗縣",
-              "PingtungCounty": "屏東縣",
               "ChiayiCounty": "嘉義縣",
+              "Chiayi": "嘉義市",
+              "TaitungCounty": "臺東縣",
+              "NewTaipei": "新北市",
+              "LienchiangCounty": "連江縣",
+              "Taoyuan": "桃園市",
+              "PingtungCounty": "屏東縣",
               "Taipei": "臺北市",
               "ChanghuaCounty": "彰化縣",
-              "Chiayi": "嘉義市",
               "PenghuCounty": "澎湖縣"
             }
           },
@@ -3070,7 +3070,7 @@
         ],
         "summary": "取得指定[縣市]的市區公車路線班表資料",
         "description": "市區公車之班表及班距資料。一般市區公車班次較多時會採用【班距】式時刻表；班次較少時會採用【班表】式時刻表",
-        "operationId": "CityBusApi_Schedule_1",
+        "operationId": "CityBusApi_Schedule",
         "produces": [
           "application/json",
           "application/xml"
@@ -3107,26 +3107,26 @@
             ],
             "x-enum": {
               "PenghuCounty": "澎湖縣",
+              "PingtungCounty": "屏東縣",
+              "Taoyuan": "桃園市",
+              "TaitungCounty": "臺東縣",
+              "HsinchuCounty": "新竹縣",
+              "ChiayiCounty": "嘉義縣",
+              "Kaohsiung": "高雄市",
+              "NewTaipei": "新北市",
+              "Taichung": "臺中市",
+              "YunlinCounty": "雲林縣",
               "Tainan": "臺南市",
               "MiaoliCounty": "苗栗縣",
               "YilanCounty": "宜蘭縣",
               "NantouCounty": "南投縣",
               "Chiayi": "嘉義市",
-              "PingtungCounty": "屏東縣",
               "Hsinchu": "新竹市",
-              "Taoyuan": "桃園市",
               "KinmenCounty": "金門縣",
               "HualienCounty": "花蓮縣",
-              "TaitungCounty": "臺東縣",
-              "HsinchuCounty": "新竹縣",
               "Keelung": "基隆市",
-              "ChiayiCounty": "嘉義縣",
               "Taipei": "臺北市",
-              "Kaohsiung": "高雄市",
-              "ChanghuaCounty": "彰化縣",
-              "NewTaipei": "新北市",
-              "Taichung": "臺中市",
-              "YunlinCounty": "雲林縣"
+              "ChanghuaCounty": "彰化縣"
             }
           },
           {
@@ -3212,7 +3212,7 @@
         ],
         "summary": "取得指定[縣市],[路線名稱]的市區公車路線班表資料",
         "description": "市區公車之預定班表及班距資料。一般市區公車班次較多時會採用【班距】式時刻表；班次較少時會採用【班表】式時刻表",
-        "operationId": "CityBusApi_Schedule_2",
+        "operationId": "CityBusApi_Schedule_1",
         "produces": [
           "application/json",
           "application/xml"
@@ -3249,26 +3249,26 @@
             ],
             "x-enum": {
               "PenghuCounty": "澎湖縣",
+              "PingtungCounty": "屏東縣",
+              "Taoyuan": "桃園市",
+              "TaitungCounty": "臺東縣",
+              "HsinchuCounty": "新竹縣",
+              "ChiayiCounty": "嘉義縣",
+              "Kaohsiung": "高雄市",
+              "NewTaipei": "新北市",
+              "Taichung": "臺中市",
+              "YunlinCounty": "雲林縣",
               "Tainan": "臺南市",
               "MiaoliCounty": "苗栗縣",
               "YilanCounty": "宜蘭縣",
               "NantouCounty": "南投縣",
               "Chiayi": "嘉義市",
-              "PingtungCounty": "屏東縣",
               "Hsinchu": "新竹市",
-              "Taoyuan": "桃園市",
               "KinmenCounty": "金門縣",
               "HualienCounty": "花蓮縣",
-              "TaitungCounty": "臺東縣",
-              "HsinchuCounty": "新竹縣",
               "Keelung": "基隆市",
-              "ChiayiCounty": "嘉義縣",
               "Taipei": "臺北市",
-              "Kaohsiung": "高雄市",
-              "ChanghuaCounty": "彰化縣",
-              "NewTaipei": "新北市",
-              "Taichung": "臺中市",
-              "YunlinCounty": "雲林縣"
+              "ChanghuaCounty": "彰化縣"
             }
           },
           {
@@ -3361,7 +3361,7 @@
         ],
         "summary": "取得指定[縣市]的市區公車車輛資料",
         "description": "市區公車之車輛資料",
-        "operationId": "CityBusApi_Vehicle_1",
+        "operationId": "CityBusApi_Vehicle",
         "produces": [
           "application/json",
           "application/xml"
@@ -3399,26 +3399,26 @@
             "x-enum": {
               "ChiayiCounty": "嘉義縣",
               "HualienCounty": "花蓮縣",
-              "Chiayi": "嘉義市",
               "NewTaipei": "新北市",
               "Tainan": "臺南市",
-              "Kaohsiung": "高雄市",
               "NantouCounty": "南投縣",
               "YilanCounty": "宜蘭縣",
+              "KinmenCounty": "金門縣",
+              "Taoyuan": "桃園市",
+              "PenghuCounty": "澎湖縣",
+              "YunlinCounty": "雲林縣",
+              "PingtungCounty": "屏東縣",
+              "MiaoliCounty": "苗栗縣",
+              "Chiayi": "嘉義市",
+              "Kaohsiung": "高雄市",
               "Keelung": "基隆市",
               "Taipei": "臺北市",
               "Hsinchu": "新竹市",
               "HsinchuCounty": "新竹縣",
               "Taichung": "臺中市",
-              "KinmenCounty": "金門縣",
-              "Taoyuan": "桃園市",
-              "PenghuCounty": "澎湖縣",
-              "YunlinCounty": "雲林縣",
               "ChanghuaCounty": "彰化縣",
-              "PingtungCounty": "屏東縣",
               "LienchiangCounty": "連江縣",
-              "TaitungCounty": "臺東縣",
-              "MiaoliCounty": "苗栗縣"
+              "TaitungCounty": "臺東縣"
             }
           },
           {
@@ -3504,7 +3504,7 @@
         ],
         "summary": "取得指定[縣市]的市區公車線型資料",
         "description": "市區公車之線型資料",
-        "operationId": "CityBusApi_Shape_1",
+        "operationId": "CityBusApi_Shape",
         "produces": [
           "application/json",
           "application/xml"
@@ -3541,26 +3541,26 @@
             ],
             "x-enum": {
               "Chiayi": "嘉義市",
-              "YilanCounty": "宜蘭縣",
-              "Taipei": "臺北市",
               "Hsinchu": "新竹市",
               "PingtungCounty": "屏東縣",
               "Keelung": "基隆市",
               "TaitungCounty": "臺東縣",
-              "Taichung": "臺中市",
               "Taoyuan": "桃園市",
-              "NewTaipei": "新北市",
-              "NantouCounty": "南投縣",
-              "MiaoliCounty": "苗栗縣",
-              "Tainan": "臺南市",
-              "PenghuCounty": "澎湖縣",
               "HsinchuCounty": "新竹縣",
               "Kaohsiung": "高雄市",
               "ChiayiCounty": "嘉義縣",
               "KinmenCounty": "金門縣",
               "HualienCounty": "花蓮縣",
               "ChanghuaCounty": "彰化縣",
-              "YunlinCounty": "雲林縣"
+              "YunlinCounty": "雲林縣",
+              "YilanCounty": "宜蘭縣",
+              "Taipei": "臺北市",
+              "Taichung": "臺中市",
+              "NewTaipei": "新北市",
+              "NantouCounty": "南投縣",
+              "MiaoliCounty": "苗栗縣",
+              "Tainan": "臺南市",
+              "PenghuCounty": "澎湖縣"
             }
           },
           {
@@ -3646,7 +3646,7 @@
         ],
         "summary": "取得指定[縣市],[路線名稱]的市區公車線型資料",
         "description": "市區公車之線型資料",
-        "operationId": "CityBusApi_Shape_2",
+        "operationId": "CityBusApi_Shape_1",
         "produces": [
           "application/json",
           "application/xml"
@@ -3683,26 +3683,26 @@
             ],
             "x-enum": {
               "Chiayi": "嘉義市",
-              "YilanCounty": "宜蘭縣",
-              "Taipei": "臺北市",
               "Hsinchu": "新竹市",
               "PingtungCounty": "屏東縣",
               "Keelung": "基隆市",
               "TaitungCounty": "臺東縣",
-              "Taichung": "臺中市",
               "Taoyuan": "桃園市",
-              "NewTaipei": "新北市",
-              "NantouCounty": "南投縣",
-              "MiaoliCounty": "苗栗縣",
-              "Tainan": "臺南市",
-              "PenghuCounty": "澎湖縣",
               "HsinchuCounty": "新竹縣",
               "Kaohsiung": "高雄市",
               "ChiayiCounty": "嘉義縣",
               "KinmenCounty": "金門縣",
               "HualienCounty": "花蓮縣",
               "ChanghuaCounty": "彰化縣",
-              "YunlinCounty": "雲林縣"
+              "YunlinCounty": "雲林縣",
+              "YilanCounty": "宜蘭縣",
+              "Taipei": "臺北市",
+              "Taichung": "臺中市",
+              "NewTaipei": "新北市",
+              "NantouCounty": "南投縣",
+              "MiaoliCounty": "苗栗縣",
+              "Tainan": "臺南市",
+              "PenghuCounty": "澎湖縣"
             }
           },
           {
@@ -3795,7 +3795,7 @@
         ],
         "summary": "取得指定[縣市]的市區公車路線票價資料",
         "description": "市區公車路線票價資料",
-        "operationId": "CityBusApi_RouteFare_1",
+        "operationId": "CityBusApi_RouteFare",
         "produces": [
           "application/json",
           "application/xml"
@@ -3826,26 +3826,26 @@
               "KinmenCounty"
             ],
             "x-enum": {
-              "KinmenCounty": "金門縣",
               "Chiayi": "嘉義市",
               "HsinchuCounty": "新竹縣",
-              "TaitungCounty": "臺東縣",
               "PenghuCounty": "澎湖縣",
               "Tainan": "臺南市",
-              "NewTaipei": "新北市",
               "PingtungCounty": "屏東縣",
               "Hsinchu": "新竹市",
-              "YunlinCounty": "雲林縣",
-              "Kaohsiung": "高雄市",
               "HualienCounty": "花蓮縣",
+              "Kaohsiung": "高雄市",
               "Keelung": "基隆市",
+              "Taichung": "臺中市",
+              "Taipei": "臺北市",
+              "MiaoliCounty": "苗栗縣",
+              "KinmenCounty": "金門縣",
+              "TaitungCounty": "臺東縣",
+              "NewTaipei": "新北市",
+              "YunlinCounty": "雲林縣",
               "YilanCounty": "宜蘭縣",
               "ChanghuaCounty": "彰化縣",
               "Taoyuan": "桃園市",
-              "Taichung": "臺中市",
               "LienchiangCounty": "連江縣",
-              "Taipei": "臺北市",
-              "MiaoliCounty": "苗栗縣",
               "ChiayiCounty": "嘉義縣",
               "NantouCounty": "南投縣"
             }
@@ -3933,7 +3933,7 @@
         ],
         "summary": "取得指定[縣市],[路線名稱]的的市區公車路線票價資料",
         "description": "市區公車路線票價資料",
-        "operationId": "CityBusApi_RouteFare_2",
+        "operationId": "CityBusApi_RouteFare_1",
         "produces": [
           "application/json",
           "application/xml"
@@ -3964,26 +3964,26 @@
               "KinmenCounty"
             ],
             "x-enum": {
-              "KinmenCounty": "金門縣",
               "Chiayi": "嘉義市",
               "HsinchuCounty": "新竹縣",
-              "TaitungCounty": "臺東縣",
               "PenghuCounty": "澎湖縣",
               "Tainan": "臺南市",
-              "NewTaipei": "新北市",
               "PingtungCounty": "屏東縣",
               "Hsinchu": "新竹市",
-              "YunlinCounty": "雲林縣",
-              "Kaohsiung": "高雄市",
               "HualienCounty": "花蓮縣",
+              "Kaohsiung": "高雄市",
               "Keelung": "基隆市",
+              "Taichung": "臺中市",
+              "Taipei": "臺北市",
+              "MiaoliCounty": "苗栗縣",
+              "KinmenCounty": "金門縣",
+              "TaitungCounty": "臺東縣",
+              "NewTaipei": "新北市",
+              "YunlinCounty": "雲林縣",
               "YilanCounty": "宜蘭縣",
               "ChanghuaCounty": "彰化縣",
               "Taoyuan": "桃園市",
-              "Taichung": "臺中市",
               "LienchiangCounty": "連江縣",
-              "Taipei": "臺北市",
-              "MiaoliCounty": "苗栗縣",
               "ChiayiCounty": "嘉義縣",
               "NantouCounty": "南投縣"
             }
@@ -4078,7 +4078,7 @@
         ],
         "summary": "取得指定[縣市]的市區公車最新消息資料",
         "description": "市區公車最新消息資料",
-        "operationId": "CityBusApi_News_1",
+        "operationId": "CityBusApi_News",
         "produces": [
           "application/json",
           "application/xml"
@@ -4117,24 +4117,24 @@
               "Taichung": "臺中市",
               "Kaohsiung": "高雄市",
               "PenghuCounty": "澎湖縣",
-              "Taoyuan": "桃園市",
               "NewTaipei": "新北市",
               "HsinchuCounty": "新竹縣",
               "YilanCounty": "宜蘭縣",
-              "Taipei": "臺北市",
-              "Keelung": "基隆市",
               "Tainan": "臺南市",
               "YunlinCounty": "雲林縣",
+              "Hsinchu": "新竹市",
+              "PingtungCounty": "屏東縣",
+              "MiaoliCounty": "苗栗縣",
+              "HualienCounty": "花蓮縣",
+              "Taoyuan": "桃園市",
+              "Taipei": "臺北市",
+              "Keelung": "基隆市",
               "ChanghuaCounty": "彰化縣",
               "KinmenCounty": "金門縣",
-              "Hsinchu": "新竹市",
               "Chiayi": "嘉義市",
               "NantouCounty": "南投縣",
               "ChiayiCounty": "嘉義縣",
-              "TaitungCounty": "臺東縣",
-              "PingtungCounty": "屏東縣",
-              "MiaoliCounty": "苗栗縣",
-              "HualienCounty": "花蓮縣"
+              "TaitungCounty": "臺東縣"
             }
           },
           {
@@ -4249,18 +4249,18 @@
             ],
             "x-enum": {
               "NantouCounty": "南投縣",
+              "ChanghuaCounty": "彰化縣",
+              "YunlinCounty": "雲林縣",
+              "PenghuCounty": "澎湖縣",
+              "HsinchuCounty": "新竹縣",
+              "Hsinchu": "新竹市",
+              "PingtungCounty": "屏東縣",
               "YilanCounty": "宜蘭縣",
               "TaitungCounty": "臺東縣",
               "HualienCounty": "花蓮縣",
-              "ChanghuaCounty": "彰化縣",
-              "YunlinCounty": "雲林縣",
               "Chiayi": "嘉義市",
               "ChiayiCounty": "嘉義縣",
-              "PenghuCounty": "澎湖縣",
-              "MiaoliCounty": "苗栗縣",
-              "HsinchuCounty": "新竹縣",
-              "Hsinchu": "新竹市",
-              "PingtungCounty": "屏東縣"
+              "MiaoliCounty": "苗栗縣"
             }
           },
           {
@@ -4352,7 +4352,7 @@
         ],
         "summary": "取得指定[縣市]的市區公車路線首末班車資料",
         "description": "市區公車之路線首末班車資料",
-        "operationId": "CityBusApi_FirstLastTripInfo_1",
+        "operationId": "CityBusApi_FirstLastTripInfo",
         "produces": [
           "application/json",
           "application/xml"
@@ -4458,7 +4458,7 @@
         ],
         "summary": "取得指定[縣市],[路線名稱]的路線首末班車資料",
         "description": "市區公車之路線首末班車資料",
-        "operationId": "CityBusApi_FirstLastTripInfo_2",
+        "operationId": "CityBusApi_FirstLastTripInfo_1",
         "produces": [
           "application/json",
           "application/xml"
@@ -4571,7 +4571,7 @@
         ],
         "summary": "取得指定[縣市]的市區公車營運通阻資料",
         "description": "市區公車營運通阻資料",
-        "operationId": "CityBusApi_Alert_1",
+        "operationId": "CityBusApi_Alert",
         "produces": [
           "application/json",
           "application/xml"
@@ -4602,20 +4602,20 @@
               "Taoyuan"
             ],
             "x-enum": {
-              "Kaohsiung": "高雄市",
-              "Chiayi": "嘉義市",
-              "TaitungCounty": "臺東縣",
               "YilanCounty": "宜蘭縣",
+              "TaitungCounty": "臺東縣",
               "ChiayiCounty": "嘉義縣",
-              "ChanghuaCounty": "彰化縣",
               "PenghuCounty": "澎湖縣",
               "MiaoliCounty": "苗栗縣",
-              "Taichung": "臺中市",
               "Taoyuan": "桃園市",
               "Hsinchu": "新竹市",
-              "PingtungCounty": "屏東縣",
               "NantouCounty": "南投縣",
               "HsinchuCounty": "新竹縣",
+              "Kaohsiung": "高雄市",
+              "Chiayi": "嘉義市",
+              "ChanghuaCounty": "彰化縣",
+              "Taichung": "臺中市",
+              "PingtungCounty": "屏東縣",
               "YunlinCounty": "雲林縣",
               "HualienCounty": "花蓮縣"
             }
@@ -4703,7 +4703,7 @@
         ],
         "summary": "取得指定[縣市]的市區公車路線網路拓撲資料",
         "description": "市區公車路線網路拓撲資料",
-        "operationId": "CityBusApi_RouteNetwork_1",
+        "operationId": "CityBusApi_RouteNetwork",
         "produces": [
           "application/json",
           "application/xml"
@@ -4805,7 +4805,7 @@
         ],
         "summary": "取得指定[縣市],[路線名稱]的市區公車顯示用路線站序資料",
         "description": "市區公車之顯示用路線站序資料",
-        "operationId": "CityBusApi_RouteNetwork_2",
+        "operationId": "CityBusApi_RouteNetwork_1",
         "produces": [
           "application/json",
           "application/xml"
@@ -4943,25 +4943,25 @@
             ],
             "x-enum": {
               "Kaohsiung": "高雄市",
-              "KinmenCounty": "金門縣",
               "HsinchuCounty": "新竹縣",
               "Taoyuan": "桃園市",
-              "TaitungCounty": "臺東縣",
               "ChiayiCounty": "嘉義縣",
               "Keelung": "基隆市",
+              "HualienCounty": "花蓮縣",
+              "PingtungCounty": "屏東縣",
+              "Hsinchu": "新竹市",
+              "YilanCounty": "宜蘭縣",
+              "KinmenCounty": "金門縣",
+              "TaitungCounty": "臺東縣",
               "NewTaipei": "新北市",
               "Chiayi": "嘉義市",
-              "HualienCounty": "花蓮縣",
               "ChanghuaCounty": "彰化縣",
-              "PingtungCounty": "屏東縣",
               "Taichung": "臺中市",
               "YunlinCounty": "雲林縣",
               "Taipei": "臺北市",
               "NantouCounty": "南投縣",
               "LienchiangCounty": "連江縣",
-              "Hsinchu": "新竹市",
               "PenghuCounty": "澎湖縣",
-              "YilanCounty": "宜蘭縣",
               "MiaoliCounty": "苗栗縣",
               "Tainan": "臺南市"
             }
@@ -7906,7 +7906,7 @@
         ],
         "summary": "取得指定[縣市]的市區公車每日營運時刻表資料",
         "description": "市區公車每日營運時刻表資料",
-        "operationId": "CityBusApi_DailyTimeTable_1",
+        "operationId": "CityBusApi_DailyTimeTable",
         "produces": [
           "application/json",
           "application/xml"
@@ -8010,7 +8010,7 @@
         ],
         "summary": "取得指定[縣市],[路線名稱]的市區公車每日營運時刻表資料",
         "description": "市區公車之每日營運時刻表資料",
-        "operationId": "CityBusApi_DailyTimeTable_2",
+        "operationId": "CityBusApi_DailyTimeTable_1",
         "produces": [
           "application/json",
           "application/xml"
@@ -8886,6 +8886,5098 @@
               "type": "array",
               "items": {
                 "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusN1EstimateTime"
+              }
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Bus/RealTimeByFrequency/City/{City}/OperatorNo/{OperatorNo}": {
+      "get": {
+        "tags": [
+          "Advanced"
+        ],
+        "summary": "取得指定[縣市],[業者編號]的市區公車動態定時資料(A1)",
+        "operationId": "CityBusApi_RealTimeByFrequency_ByOperator",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "City",
+            "description": "欲查詢縣市",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "Taipei",
+              "NewTaipei",
+              "Taoyuan",
+              "Taichung",
+              "Tainan",
+              "Kaohsiung",
+              "Keelung",
+              "Hsinchu",
+              "HsinchuCounty",
+              "MiaoliCounty",
+              "ChanghuaCounty",
+              "NantouCounty",
+              "YunlinCounty",
+              "ChiayiCounty",
+              "Chiayi",
+              "PingtungCounty",
+              "YilanCounty",
+              "HualienCounty",
+              "TaitungCounty",
+              "KinmenCounty",
+              "PenghuCounty",
+              "LienchiangCounty"
+            ],
+            "x-enum": {
+              "Taipei": "臺北市",
+              "ChanghuaCounty": "彰化縣",
+              "TaitungCounty": "臺東縣",
+              "HualienCounty": "花蓮縣",
+              "YilanCounty": "宜蘭縣",
+              "ChiayiCounty": "嘉義縣",
+              "Hsinchu": "新竹市",
+              "HsinchuCounty": "新竹縣",
+              "LienchiangCounty": "連江縣",
+              "Tainan": "臺南市",
+              "NantouCounty": "南投縣",
+              "PingtungCounty": "屏東縣",
+              "Kaohsiung": "高雄市",
+              "PenghuCounty": "澎湖縣",
+              "MiaoliCounty": "苗栗縣",
+              "Taichung": "臺中市",
+              "Taoyuan": "桃園市",
+              "YunlinCounty": "雲林縣",
+              "KinmenCounty": "金門縣",
+              "Keelung": "基隆市",
+              "NewTaipei": "新北市",
+              "Chiayi": "嘉義市"
+            }
+          },
+          {
+            "in": "path",
+            "name": "OperatorNo",
+            "description": "欲查詢營運業者編號",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$spatialFilter",
+            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "title": "Array",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusA1Data"
+              }
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Bus/RealTimeNearStop/City/{City}/OperatorNo/{OperatorNo}": {
+      "get": {
+        "tags": [
+          "Advanced"
+        ],
+        "summary": "取得指定[縣市],[業者編號]的市區公車動態定點資料(A2)",
+        "operationId": "CityBusApi_RealTimeNearStop_ByOperator",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "City",
+            "description": "欲查詢縣市",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "Taipei",
+              "NewTaipei",
+              "Taoyuan",
+              "Taichung",
+              "Tainan",
+              "Kaohsiung",
+              "Keelung",
+              "Hsinchu",
+              "HsinchuCounty",
+              "MiaoliCounty",
+              "ChanghuaCounty",
+              "NantouCounty",
+              "YunlinCounty",
+              "ChiayiCounty",
+              "Chiayi",
+              "PingtungCounty",
+              "YilanCounty",
+              "HualienCounty",
+              "TaitungCounty",
+              "KinmenCounty",
+              "PenghuCounty",
+              "LienchiangCounty"
+            ],
+            "x-enum": {
+              "MiaoliCounty": "苗栗縣",
+              "NewTaipei": "新北市",
+              "PingtungCounty": "屏東縣",
+              "YilanCounty": "宜蘭縣",
+              "NantouCounty": "南投縣",
+              "Taipei": "臺北市",
+              "Kaohsiung": "高雄市",
+              "TaitungCounty": "臺東縣",
+              "ChanghuaCounty": "彰化縣",
+              "PenghuCounty": "澎湖縣",
+              "Taichung": "臺中市",
+              "YunlinCounty": "雲林縣",
+              "KinmenCounty": "金門縣",
+              "Tainan": "臺南市",
+              "ChiayiCounty": "嘉義縣",
+              "HualienCounty": "花蓮縣",
+              "Keelung": "基隆市",
+              "Taoyuan": "桃園市",
+              "Hsinchu": "新竹市",
+              "LienchiangCounty": "連江縣",
+              "HsinchuCounty": "新竹縣",
+              "Chiayi": "嘉義市"
+            }
+          },
+          {
+            "in": "path",
+            "name": "OperatorNo",
+            "description": "欲查詢營運業者編號",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "title": "Array",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusA2Data"
+              }
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Bus/Route/City/{City}/OperatorNo/{OperatorNo}": {
+      "get": {
+        "tags": [
+          "Advanced"
+        ],
+        "summary": "取得指定[縣市],[業者編號]的市區公車路線資料",
+        "operationId": "CityBusApi_Route_ByOperator",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "City",
+            "description": "欲查詢縣市",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "Taipei",
+              "NewTaipei",
+              "Taoyuan",
+              "Taichung",
+              "Tainan",
+              "Kaohsiung",
+              "Keelung",
+              "Hsinchu",
+              "HsinchuCounty",
+              "MiaoliCounty",
+              "ChanghuaCounty",
+              "NantouCounty",
+              "YunlinCounty",
+              "ChiayiCounty",
+              "Chiayi",
+              "PingtungCounty",
+              "YilanCounty",
+              "HualienCounty",
+              "TaitungCounty",
+              "KinmenCounty",
+              "PenghuCounty",
+              "LienchiangCounty"
+            ],
+            "x-enum": {
+              "NewTaipei": "新北市",
+              "MiaoliCounty": "苗栗縣",
+              "Hsinchu": "新竹市",
+              "PenghuCounty": "澎湖縣",
+              "KinmenCounty": "金門縣",
+              "Taipei": "臺北市",
+              "Keelung": "基隆市",
+              "TaitungCounty": "臺東縣",
+              "Kaohsiung": "高雄市",
+              "PingtungCounty": "屏東縣",
+              "Tainan": "臺南市",
+              "NantouCounty": "南投縣",
+              "Taichung": "臺中市",
+              "YunlinCounty": "雲林縣",
+              "HualienCounty": "花蓮縣",
+              "Taoyuan": "桃園市",
+              "LienchiangCounty": "連江縣",
+              "YilanCounty": "宜蘭縣",
+              "HsinchuCounty": "新竹縣",
+              "ChiayiCounty": "嘉義縣",
+              "Chiayi": "嘉義市",
+              "ChanghuaCounty": "彰化縣"
+            }
+          },
+          {
+            "in": "path",
+            "name": "OperatorNo",
+            "description": "欲查詢營運業者編號",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "title": "Array",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusRoute"
+              }
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Bus/Stop/City/{City}/OperatorNo/{OperatorNo}": {
+      "get": {
+        "tags": [
+          "Advanced"
+        ],
+        "summary": "取得指定[縣市],[業者編號]的市區公車站牌資料",
+        "operationId": "CityBusApi_Stop_ByOperator",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "City",
+            "description": "欲查詢縣市",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "Taipei",
+              "NewTaipei",
+              "Taoyuan",
+              "Taichung",
+              "Tainan",
+              "Kaohsiung",
+              "Keelung",
+              "Hsinchu",
+              "HsinchuCounty",
+              "MiaoliCounty",
+              "ChanghuaCounty",
+              "NantouCounty",
+              "YunlinCounty",
+              "ChiayiCounty",
+              "Chiayi",
+              "PingtungCounty",
+              "YilanCounty",
+              "HualienCounty",
+              "TaitungCounty",
+              "KinmenCounty",
+              "PenghuCounty",
+              "LienchiangCounty"
+            ],
+            "x-enum": {
+              "TaitungCounty": "臺東縣",
+              "HsinchuCounty": "新竹縣",
+              "Keelung": "基隆市",
+              "Taoyuan": "桃園市",
+              "ChanghuaCounty": "彰化縣",
+              "Taipei": "臺北市",
+              "HualienCounty": "花蓮縣",
+              "PingtungCounty": "屏東縣",
+              "YilanCounty": "宜蘭縣",
+              "Taichung": "臺中市",
+              "YunlinCounty": "雲林縣",
+              "Chiayi": "嘉義市",
+              "LienchiangCounty": "連江縣",
+              "ChiayiCounty": "嘉義縣",
+              "KinmenCounty": "金門縣",
+              "Hsinchu": "新竹市",
+              "Kaohsiung": "高雄市",
+              "PenghuCounty": "澎湖縣",
+              "NewTaipei": "新北市",
+              "MiaoliCounty": "苗栗縣",
+              "Tainan": "臺南市",
+              "NantouCounty": "南投縣"
+            }
+          },
+          {
+            "in": "path",
+            "name": "OperatorNo",
+            "description": "欲查詢營運業者編號",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$spatialFilter",
+            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "title": "Array",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusStop"
+              }
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Bus/Station/City/{City}/OperatorNo/{OperatorNo}": {
+      "get": {
+        "tags": [
+          "Advanced"
+        ],
+        "summary": "取得指定[縣市],[業者編號]的市區公車站位資料",
+        "operationId": "CityBusApi_Station_ByOperator",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "City",
+            "description": "欲查詢縣市",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "Taipei",
+              "NewTaipei",
+              "Taoyuan",
+              "Taichung",
+              "Tainan",
+              "Kaohsiung",
+              "Keelung",
+              "Hsinchu",
+              "HsinchuCounty",
+              "MiaoliCounty",
+              "ChanghuaCounty",
+              "NantouCounty",
+              "YunlinCounty",
+              "ChiayiCounty",
+              "Chiayi",
+              "PingtungCounty",
+              "YilanCounty",
+              "HualienCounty",
+              "TaitungCounty",
+              "KinmenCounty",
+              "PenghuCounty",
+              "LienchiangCounty"
+            ],
+            "x-enum": {
+              "TaitungCounty": "臺東縣",
+              "YunlinCounty": "雲林縣",
+              "Hsinchu": "新竹市",
+              "Tainan": "臺南市",
+              "ChiayiCounty": "嘉義縣",
+              "PenghuCounty": "澎湖縣",
+              "Chiayi": "嘉義市",
+              "KinmenCounty": "金門縣",
+              "Keelung": "基隆市",
+              "Taipei": "臺北市",
+              "HsinchuCounty": "新竹縣",
+              "Taichung": "臺中市",
+              "Taoyuan": "桃園市",
+              "HualienCounty": "花蓮縣",
+              "MiaoliCounty": "苗栗縣",
+              "PingtungCounty": "屏東縣",
+              "YilanCounty": "宜蘭縣",
+              "NewTaipei": "新北市",
+              "NantouCounty": "南投縣",
+              "LienchiangCounty": "連江縣",
+              "Kaohsiung": "高雄市",
+              "ChanghuaCounty": "彰化縣"
+            }
+          },
+          {
+            "in": "path",
+            "name": "OperatorNo",
+            "description": "欲查詢營運業者編號",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$spatialFilter",
+            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "title": "Array",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusStation"
+              }
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Bus/StopOfRoute/City/{City}/OperatorNo/{OperatorNo}": {
+      "get": {
+        "tags": [
+          "Advanced"
+        ],
+        "summary": "取得指定[縣市],[業者編號]的市區公車路線站序資料",
+        "operationId": "CityBusApi_StopOfRoute_ByOperator",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "City",
+            "description": "欲查詢縣市",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "Taipei",
+              "NewTaipei",
+              "Taoyuan",
+              "Taichung",
+              "Tainan",
+              "Kaohsiung",
+              "Keelung",
+              "Hsinchu",
+              "HsinchuCounty",
+              "MiaoliCounty",
+              "ChanghuaCounty",
+              "NantouCounty",
+              "YunlinCounty",
+              "ChiayiCounty",
+              "Chiayi",
+              "PingtungCounty",
+              "YilanCounty",
+              "HualienCounty",
+              "TaitungCounty",
+              "KinmenCounty",
+              "PenghuCounty",
+              "LienchiangCounty"
+            ],
+            "x-enum": {
+              "HualienCounty": "花蓮縣",
+              "Taoyuan": "桃園市",
+              "Tainan": "臺南市",
+              "NantouCounty": "南投縣",
+              "HsinchuCounty": "新竹縣",
+              "Chiayi": "嘉義市",
+              "ChiayiCounty": "嘉義縣",
+              "PenghuCounty": "澎湖縣",
+              "MiaoliCounty": "苗栗縣",
+              "LienchiangCounty": "連江縣",
+              "Keelung": "基隆市",
+              "ChanghuaCounty": "彰化縣",
+              "YunlinCounty": "雲林縣",
+              "KinmenCounty": "金門縣",
+              "Hsinchu": "新竹市",
+              "Taipei": "臺北市",
+              "TaitungCounty": "臺東縣",
+              "NewTaipei": "新北市",
+              "Kaohsiung": "高雄市",
+              "YilanCounty": "宜蘭縣",
+              "PingtungCounty": "屏東縣",
+              "Taichung": "臺中市"
+            }
+          },
+          {
+            "in": "path",
+            "name": "OperatorNo",
+            "description": "欲查詢營運業者編號",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "title": "Array",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusStopOfRoute"
+              }
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Bus/Schedule/City/{City}/OperatorNo/{OperatorNo}": {
+      "get": {
+        "tags": [
+          "Advanced"
+        ],
+        "summary": "取得指定[縣市],[業者編號]的市區公車班表資料",
+        "operationId": "CityBusApi_Schedule_ByOperator",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "City",
+            "description": "欲查詢縣市",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "Taipei",
+              "NewTaipei",
+              "Taoyuan",
+              "Taichung",
+              "Tainan",
+              "Kaohsiung",
+              "Keelung",
+              "Hsinchu",
+              "HsinchuCounty",
+              "MiaoliCounty",
+              "ChanghuaCounty",
+              "NantouCounty",
+              "YunlinCounty",
+              "ChiayiCounty",
+              "Chiayi",
+              "PingtungCounty",
+              "YilanCounty",
+              "HualienCounty",
+              "TaitungCounty",
+              "KinmenCounty",
+              "PenghuCounty",
+              "LienchiangCounty"
+            ],
+            "x-enum": {
+              "Taoyuan": "桃園市",
+              "Hsinchu": "新竹市",
+              "TaitungCounty": "臺東縣",
+              "Tainan": "臺南市",
+              "NantouCounty": "南投縣",
+              "Taipei": "臺北市",
+              "PenghuCounty": "澎湖縣",
+              "KinmenCounty": "金門縣",
+              "ChanghuaCounty": "彰化縣",
+              "MiaoliCounty": "苗栗縣",
+              "LienchiangCounty": "連江縣",
+              "Taichung": "臺中市",
+              "ChiayiCounty": "嘉義縣",
+              "Keelung": "基隆市",
+              "Kaohsiung": "高雄市",
+              "PingtungCounty": "屏東縣",
+              "NewTaipei": "新北市",
+              "HualienCounty": "花蓮縣",
+              "HsinchuCounty": "新竹縣",
+              "YunlinCounty": "雲林縣",
+              "YilanCounty": "宜蘭縣",
+              "Chiayi": "嘉義市"
+            }
+          },
+          {
+            "in": "path",
+            "name": "OperatorNo",
+            "description": "欲查詢營運業者編號",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "title": "Array",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusSchedule"
+              }
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Bus/Shape/City/{City}/OperatorNo/{OperatorNo}": {
+      "get": {
+        "tags": [
+          "Advanced"
+        ],
+        "summary": "取得指定[縣市],[業者編號]的市區公車線型資料",
+        "operationId": "CityBusApi_Shape_ByOperator",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "City",
+            "description": "欲查詢縣市",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "Taipei",
+              "NewTaipei",
+              "Taoyuan",
+              "Taichung",
+              "Tainan",
+              "Kaohsiung",
+              "Keelung",
+              "Hsinchu",
+              "HsinchuCounty",
+              "MiaoliCounty",
+              "ChanghuaCounty",
+              "NantouCounty",
+              "YunlinCounty",
+              "ChiayiCounty",
+              "Chiayi",
+              "PingtungCounty",
+              "YilanCounty",
+              "HualienCounty",
+              "TaitungCounty",
+              "KinmenCounty",
+              "PenghuCounty",
+              "LienchiangCounty"
+            ],
+            "x-enum": {
+              "PingtungCounty": "屏東縣",
+              "Taichung": "臺中市",
+              "Taipei": "臺北市",
+              "YilanCounty": "宜蘭縣",
+              "Taoyuan": "桃園市",
+              "Kaohsiung": "高雄市",
+              "Chiayi": "嘉義市",
+              "Hsinchu": "新竹市",
+              "MiaoliCounty": "苗栗縣",
+              "TaitungCounty": "臺東縣",
+              "HsinchuCounty": "新竹縣",
+              "Tainan": "臺南市",
+              "ChiayiCounty": "嘉義縣",
+              "KinmenCounty": "金門縣",
+              "LienchiangCounty": "連江縣",
+              "YunlinCounty": "雲林縣",
+              "ChanghuaCounty": "彰化縣",
+              "NewTaipei": "新北市",
+              "NantouCounty": "南投縣",
+              "PenghuCounty": "澎湖縣",
+              "HualienCounty": "花蓮縣",
+              "Keelung": "基隆市"
+            }
+          },
+          {
+            "in": "path",
+            "name": "OperatorNo",
+            "description": "欲查詢營運業者編號",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "title": "Array",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusShape"
+              }
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Bus/RouteFare/City/{City}/OperatorNo/{OperatorNo}": {
+      "get": {
+        "tags": [
+          "Advanced"
+        ],
+        "summary": "取得指定[縣市],[業者編號]的市區公車路線票價資料",
+        "operationId": "CityBusApi_RouteFare_ByOperator",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "City",
+            "description": "欲查詢縣市",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "Taoyuan",
+              "Taichung",
+              "Kaohsiung",
+              "Hsinchu",
+              "HsinchuCounty",
+              "MiaoliCounty",
+              "ChanghuaCounty",
+              "NantouCounty",
+              "YunlinCounty",
+              "ChiayiCounty",
+              "Chiayi",
+              "PingtungCounty",
+              "YilanCounty",
+              "HualienCounty",
+              "TaitungCounty",
+              "KinmenCounty"
+            ],
+            "x-enum": {
+              "ChiayiCounty": "嘉義縣",
+              "Tainan": "臺南市",
+              "Hsinchu": "新竹市",
+              "Kaohsiung": "高雄市",
+              "Taipei": "臺北市",
+              "Taichung": "臺中市",
+              "ChanghuaCounty": "彰化縣",
+              "NewTaipei": "新北市",
+              "HsinchuCounty": "新竹縣",
+              "YilanCounty": "宜蘭縣",
+              "LienchiangCounty": "連江縣",
+              "HualienCounty": "花蓮縣",
+              "Taoyuan": "桃園市",
+              "NantouCounty": "南投縣",
+              "MiaoliCounty": "苗栗縣",
+              "Chiayi": "嘉義市",
+              "KinmenCounty": "金門縣",
+              "PingtungCounty": "屏東縣",
+              "YunlinCounty": "雲林縣",
+              "PenghuCounty": "澎湖縣",
+              "TaitungCounty": "臺東縣",
+              "Keelung": "基隆市"
+            }
+          },
+          {
+            "in": "path",
+            "name": "OperatorNo",
+            "description": "欲查詢營運業者編號",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "title": "Array",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusRouteFare"
+              }
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Bus/RealTimeByFrequency/OperatorNo/{OperatorNo}": {
+      "get": {
+        "tags": [
+          "Advanced"
+        ],
+        "summary": "取得指定[業者編號]的全臺公車動態定時資料(A1)",
+        "operationId": "BusApi_RealTimeByFrequency_ByOperator",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "OperatorNo",
+            "description": "欲查詢營運業者編號",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$spatialFilter",
+            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "title": "Array",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusA1Data"
+              }
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Bus/RealTimeNearStop/OperatorNo/{OperatorNo}": {
+      "get": {
+        "tags": [
+          "Advanced"
+        ],
+        "summary": "取得指定[業者編號]的全臺公車動態定點資料(A2)",
+        "operationId": "BusApi_RealTimeNearStop_ByOperator",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "OperatorNo",
+            "description": "欲查詢營運業者編號",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "title": "Array",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusA2Data"
+              }
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Bus/Route/OperatorNo/{OperatorNo}": {
+      "get": {
+        "tags": [
+          "Advanced"
+        ],
+        "summary": "取得指定[業者編號]的全臺公車路線資料",
+        "operationId": "BusApi_Route_ByOperator",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "OperatorNo",
+            "description": "欲查詢營運業者編號",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "title": "Array",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusRoute"
+              }
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Bus/Stop/OperatorNo/{OperatorNo}": {
+      "get": {
+        "tags": [
+          "Advanced"
+        ],
+        "summary": "取得指定[業者編號]的全臺公車站牌資料",
+        "operationId": "BusApi_Stop_ByOperator",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "OperatorNo",
+            "description": "欲查詢營運業者編號",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$spatialFilter",
+            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "title": "Array",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusStop"
+              }
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Bus/Station/OperatorNo/{OperatorNo}": {
+      "get": {
+        "tags": [
+          "Advanced"
+        ],
+        "summary": "取得指定[業者編號]的全臺公車站位資料",
+        "operationId": "BusApi_Station_ByOperator",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "OperatorNo",
+            "description": "欲查詢營運業者編號",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$spatialFilter",
+            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "title": "Array",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusStation"
+              }
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Bus/StopOfRouteOperatorNo/{OperatorNo}": {
+      "get": {
+        "tags": [
+          "Advanced"
+        ],
+        "summary": "取得指定[業者編號]的全臺公車路線站序資料",
+        "operationId": "BusApi_StopOfRoute_ByOperator",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "OperatorNo",
+            "description": "欲查詢營運業者編號",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "title": "Array",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusStopOfRoute"
+              }
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Bus/Schedule/OperatorNo/{OperatorNo}": {
+      "get": {
+        "tags": [
+          "Advanced"
+        ],
+        "summary": "取得指定[業者編號]的全臺公車班表資料",
+        "operationId": "BusApi_Schedule_ByOperator",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "OperatorNo",
+            "description": "欲查詢營運業者編號",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "title": "Array",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusSchedule"
+              }
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Bus/Shape/OperatorNo/{OperatorNo}": {
+      "get": {
+        "tags": [
+          "Advanced"
+        ],
+        "summary": "取得指定[業者編號]的全臺公車線型資料",
+        "operationId": "BusApi_Shape_ByOperator",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "OperatorNo",
+            "description": "欲查詢營運業者編號",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "title": "Array",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusShape"
+              }
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Bus/RouteFare/OperatorNo/{OperatorNo}": {
+      "get": {
+        "tags": [
+          "Advanced"
+        ],
+        "summary": "取得指定[業者編號]的全臺公車路線票價資料",
+        "operationId": "BusApi_RouteFare_ByOperator",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "OperatorNo",
+            "description": "欲查詢營運業者編號",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "title": "Array",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusRouteFare"
+              }
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Bus/RealTimeByFrequency/City/{City}/PassThrough/Station/{StationID}": {
+      "get": {
+        "tags": [
+          "Advanced"
+        ],
+        "summary": "取得指定[縣市],[站位]的市區公車動態定時資料(A1)",
+        "operationId": "CityBusApi_RealTimeByFrequency_ByStation",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "City",
+            "description": "欲查詢縣市",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "Taipei",
+              "NewTaipei",
+              "Taoyuan",
+              "Taichung",
+              "Tainan",
+              "Kaohsiung",
+              "Keelung",
+              "Hsinchu",
+              "HsinchuCounty",
+              "MiaoliCounty",
+              "ChanghuaCounty",
+              "NantouCounty",
+              "YunlinCounty",
+              "ChiayiCounty",
+              "Chiayi",
+              "PingtungCounty",
+              "YilanCounty",
+              "HualienCounty",
+              "TaitungCounty",
+              "KinmenCounty",
+              "PenghuCounty",
+              "LienchiangCounty"
+            ],
+            "x-enum": {
+              "KinmenCounty": "金門縣",
+              "ChiayiCounty": "嘉義縣",
+              "MiaoliCounty": "苗栗縣",
+              "Taichung": "臺中市",
+              "ChanghuaCounty": "彰化縣",
+              "Kaohsiung": "高雄市",
+              "HsinchuCounty": "新竹縣",
+              "YunlinCounty": "雲林縣",
+              "Chiayi": "嘉義市",
+              "YilanCounty": "宜蘭縣",
+              "HualienCounty": "花蓮縣",
+              "Taipei": "臺北市",
+              "Tainan": "臺南市",
+              "TaitungCounty": "臺東縣",
+              "Hsinchu": "新竹市",
+              "Taoyuan": "桃園市",
+              "LienchiangCounty": "連江縣",
+              "PenghuCounty": "澎湖縣",
+              "NantouCounty": "南投縣",
+              "Keelung": "基隆市",
+              "PingtungCounty": "屏東縣",
+              "NewTaipei": "新北市"
+            }
+          },
+          {
+            "in": "path",
+            "name": "StationID",
+            "description": "欲查詢站位代碼",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$spatialFilter",
+            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "title": "Array",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusA1Data"
+              }
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Bus/RealTimeNearStop/City/{City}/PassThrough/Station/{StationID}": {
+      "get": {
+        "tags": [
+          "Advanced"
+        ],
+        "summary": "取得指定[縣市],[站位]的市區公車動態定點資料(A2)",
+        "operationId": "CityBusApi_RealTimeNearStop_ByStation",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "City",
+            "description": "欲查詢縣市",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "Taipei",
+              "NewTaipei",
+              "Taoyuan",
+              "Taichung",
+              "Tainan",
+              "Kaohsiung",
+              "Keelung",
+              "Hsinchu",
+              "HsinchuCounty",
+              "MiaoliCounty",
+              "ChanghuaCounty",
+              "NantouCounty",
+              "YunlinCounty",
+              "ChiayiCounty",
+              "Chiayi",
+              "PingtungCounty",
+              "YilanCounty",
+              "HualienCounty",
+              "TaitungCounty",
+              "KinmenCounty",
+              "PenghuCounty",
+              "LienchiangCounty"
+            ],
+            "x-enum": {
+              "YilanCounty": "宜蘭縣",
+              "NewTaipei": "新北市",
+              "HualienCounty": "花蓮縣",
+              "NantouCounty": "南投縣",
+              "Taichung": "臺中市",
+              "Hsinchu": "新竹市",
+              "Kaohsiung": "高雄市",
+              "LienchiangCounty": "連江縣",
+              "Taoyuan": "桃園市",
+              "KinmenCounty": "金門縣",
+              "YunlinCounty": "雲林縣",
+              "Tainan": "臺南市",
+              "PenghuCounty": "澎湖縣",
+              "TaitungCounty": "臺東縣",
+              "Taipei": "臺北市",
+              "PingtungCounty": "屏東縣",
+              "HsinchuCounty": "新竹縣",
+              "ChiayiCounty": "嘉義縣",
+              "Chiayi": "嘉義市",
+              "Keelung": "基隆市",
+              "ChanghuaCounty": "彰化縣",
+              "MiaoliCounty": "苗栗縣"
+            }
+          },
+          {
+            "in": "path",
+            "name": "StationID",
+            "description": "欲查詢站位代碼",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "title": "Array",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusA2Data"
+              }
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Bus/EstimatedTimeOfArrival/City/{City}/PassThrough/Station/{StationID}": {
+      "get": {
+        "tags": [
+          "Advanced"
+        ],
+        "summary": "取得指定[縣市],[站位]的市區公車預估到站資料(N1)",
+        "operationId": "CityBusApi_EstimatedTimeOfArrival_ByStation",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "City",
+            "description": "欲查詢縣市",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "Taipei",
+              "NewTaipei",
+              "Taoyuan",
+              "Taichung",
+              "Tainan",
+              "Kaohsiung",
+              "Keelung",
+              "Hsinchu",
+              "HsinchuCounty",
+              "MiaoliCounty",
+              "ChanghuaCounty",
+              "NantouCounty",
+              "YunlinCounty",
+              "ChiayiCounty",
+              "Chiayi",
+              "PingtungCounty",
+              "YilanCounty",
+              "HualienCounty",
+              "TaitungCounty",
+              "KinmenCounty",
+              "PenghuCounty",
+              "LienchiangCounty"
+            ],
+            "x-enum": {
+              "Hsinchu": "新竹市",
+              "ChanghuaCounty": "彰化縣",
+              "LienchiangCounty": "連江縣",
+              "Kaohsiung": "高雄市",
+              "PenghuCounty": "澎湖縣",
+              "NewTaipei": "新北市",
+              "Tainan": "臺南市",
+              "PingtungCounty": "屏東縣",
+              "Taichung": "臺中市",
+              "Taipei": "臺北市",
+              "YunlinCounty": "雲林縣",
+              "HsinchuCounty": "新竹縣",
+              "Keelung": "基隆市",
+              "MiaoliCounty": "苗栗縣",
+              "KinmenCounty": "金門縣",
+              "ChiayiCounty": "嘉義縣",
+              "YilanCounty": "宜蘭縣",
+              "TaitungCounty": "臺東縣",
+              "Chiayi": "嘉義市",
+              "HualienCounty": "花蓮縣",
+              "Taoyuan": "桃園市",
+              "NantouCounty": "南投縣"
+            }
+          },
+          {
+            "in": "path",
+            "name": "StationID",
+            "description": "欲查詢站位代碼",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "title": "Array",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusN1EstimateTime"
+              }
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Bus/Route/City/{City}/PassThrough/Station/{StationID}": {
+      "get": {
+        "tags": [
+          "Advanced"
+        ],
+        "summary": "取得指定[縣市],[站位]的市區公車路線資料",
+        "operationId": "CityBusApi_Route_ByStation",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "City",
+            "description": "欲查詢縣市",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "Taipei",
+              "NewTaipei",
+              "Taoyuan",
+              "Taichung",
+              "Tainan",
+              "Kaohsiung",
+              "Keelung",
+              "Hsinchu",
+              "HsinchuCounty",
+              "MiaoliCounty",
+              "ChanghuaCounty",
+              "NantouCounty",
+              "YunlinCounty",
+              "ChiayiCounty",
+              "Chiayi",
+              "PingtungCounty",
+              "YilanCounty",
+              "HualienCounty",
+              "TaitungCounty",
+              "KinmenCounty",
+              "PenghuCounty",
+              "LienchiangCounty"
+            ],
+            "x-enum": {
+              "NewTaipei": "新北市",
+              "MiaoliCounty": "苗栗縣",
+              "Hsinchu": "新竹市",
+              "PenghuCounty": "澎湖縣",
+              "KinmenCounty": "金門縣",
+              "Taipei": "臺北市",
+              "Keelung": "基隆市",
+              "TaitungCounty": "臺東縣",
+              "Kaohsiung": "高雄市",
+              "PingtungCounty": "屏東縣",
+              "Tainan": "臺南市",
+              "NantouCounty": "南投縣",
+              "Taichung": "臺中市",
+              "YunlinCounty": "雲林縣",
+              "HualienCounty": "花蓮縣",
+              "Taoyuan": "桃園市",
+              "LienchiangCounty": "連江縣",
+              "YilanCounty": "宜蘭縣",
+              "HsinchuCounty": "新竹縣",
+              "ChiayiCounty": "嘉義縣",
+              "Chiayi": "嘉義市",
+              "ChanghuaCounty": "彰化縣"
+            }
+          },
+          {
+            "in": "path",
+            "name": "StationID",
+            "description": "欲查詢站位代碼",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "title": "Array",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusRoute"
+              }
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Bus/Stop/City/{City}/PassThrough/Station/{StationID}": {
+      "get": {
+        "tags": [
+          "Advanced"
+        ],
+        "summary": "取得指定[縣市],[站位]的市區公車站牌資料",
+        "operationId": "CityBusApi_Stop_ByStation",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "City",
+            "description": "欲查詢縣市",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "Taipei",
+              "NewTaipei",
+              "Taoyuan",
+              "Taichung",
+              "Tainan",
+              "Kaohsiung",
+              "Keelung",
+              "Hsinchu",
+              "HsinchuCounty",
+              "MiaoliCounty",
+              "ChanghuaCounty",
+              "NantouCounty",
+              "YunlinCounty",
+              "ChiayiCounty",
+              "Chiayi",
+              "PingtungCounty",
+              "YilanCounty",
+              "HualienCounty",
+              "TaitungCounty",
+              "KinmenCounty",
+              "PenghuCounty",
+              "LienchiangCounty"
+            ],
+            "x-enum": {
+              "TaitungCounty": "臺東縣",
+              "HsinchuCounty": "新竹縣",
+              "Keelung": "基隆市",
+              "Taoyuan": "桃園市",
+              "ChanghuaCounty": "彰化縣",
+              "Taipei": "臺北市",
+              "HualienCounty": "花蓮縣",
+              "PingtungCounty": "屏東縣",
+              "YilanCounty": "宜蘭縣",
+              "Taichung": "臺中市",
+              "YunlinCounty": "雲林縣",
+              "Chiayi": "嘉義市",
+              "LienchiangCounty": "連江縣",
+              "ChiayiCounty": "嘉義縣",
+              "KinmenCounty": "金門縣",
+              "Hsinchu": "新竹市",
+              "Kaohsiung": "高雄市",
+              "PenghuCounty": "澎湖縣",
+              "NewTaipei": "新北市",
+              "MiaoliCounty": "苗栗縣",
+              "Tainan": "臺南市",
+              "NantouCounty": "南投縣"
+            }
+          },
+          {
+            "in": "path",
+            "name": "StationID",
+            "description": "欲查詢站位代碼",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$spatialFilter",
+            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "title": "Array",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusStop"
+              }
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Bus/StopOfRoute/City/{City}/PassThrough/Station/{StationID}": {
+      "get": {
+        "tags": [
+          "Advanced"
+        ],
+        "summary": "取得指定[縣市],[站位]的市區公車路線站序資料",
+        "operationId": "CityBusApi_StopOfRoute_ByStation",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "City",
+            "description": "欲查詢縣市",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "Taipei",
+              "NewTaipei",
+              "Taoyuan",
+              "Taichung",
+              "Tainan",
+              "Kaohsiung",
+              "Keelung",
+              "Hsinchu",
+              "HsinchuCounty",
+              "MiaoliCounty",
+              "ChanghuaCounty",
+              "NantouCounty",
+              "YunlinCounty",
+              "ChiayiCounty",
+              "Chiayi",
+              "PingtungCounty",
+              "YilanCounty",
+              "HualienCounty",
+              "TaitungCounty",
+              "KinmenCounty",
+              "PenghuCounty",
+              "LienchiangCounty"
+            ],
+            "x-enum": {
+              "HualienCounty": "花蓮縣",
+              "Taoyuan": "桃園市",
+              "Tainan": "臺南市",
+              "NantouCounty": "南投縣",
+              "HsinchuCounty": "新竹縣",
+              "Chiayi": "嘉義市",
+              "ChiayiCounty": "嘉義縣",
+              "PenghuCounty": "澎湖縣",
+              "MiaoliCounty": "苗栗縣",
+              "LienchiangCounty": "連江縣",
+              "Keelung": "基隆市",
+              "ChanghuaCounty": "彰化縣",
+              "YunlinCounty": "雲林縣",
+              "KinmenCounty": "金門縣",
+              "Hsinchu": "新竹市",
+              "Taipei": "臺北市",
+              "TaitungCounty": "臺東縣",
+              "NewTaipei": "新北市",
+              "Kaohsiung": "高雄市",
+              "YilanCounty": "宜蘭縣",
+              "PingtungCounty": "屏東縣",
+              "Taichung": "臺中市"
+            }
+          },
+          {
+            "in": "path",
+            "name": "StationID",
+            "description": "欲查詢站位代碼",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "title": "Array",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusStopOfRoute"
+              }
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Bus/Schedule/City/{City}/PassThrough/Station/{StationID}": {
+      "get": {
+        "tags": [
+          "Advanced"
+        ],
+        "summary": "取得指定[縣市],[站位]的市區公車路線班表資料",
+        "operationId": "CityBusApi_Schedule_ByStation",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "City",
+            "description": "欲查詢縣市",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "Taipei",
+              "NewTaipei",
+              "Taoyuan",
+              "Taichung",
+              "Tainan",
+              "Kaohsiung",
+              "Keelung",
+              "Hsinchu",
+              "HsinchuCounty",
+              "MiaoliCounty",
+              "ChanghuaCounty",
+              "NantouCounty",
+              "YunlinCounty",
+              "ChiayiCounty",
+              "Chiayi",
+              "PingtungCounty",
+              "YilanCounty",
+              "HualienCounty",
+              "TaitungCounty",
+              "KinmenCounty",
+              "PenghuCounty",
+              "LienchiangCounty"
+            ],
+            "x-enum": {
+              "Taoyuan": "桃園市",
+              "Hsinchu": "新竹市",
+              "TaitungCounty": "臺東縣",
+              "Tainan": "臺南市",
+              "NantouCounty": "南投縣",
+              "Taipei": "臺北市",
+              "PenghuCounty": "澎湖縣",
+              "KinmenCounty": "金門縣",
+              "ChanghuaCounty": "彰化縣",
+              "MiaoliCounty": "苗栗縣",
+              "LienchiangCounty": "連江縣",
+              "Taichung": "臺中市",
+              "ChiayiCounty": "嘉義縣",
+              "Keelung": "基隆市",
+              "Kaohsiung": "高雄市",
+              "PingtungCounty": "屏東縣",
+              "NewTaipei": "新北市",
+              "HualienCounty": "花蓮縣",
+              "HsinchuCounty": "新竹縣",
+              "YunlinCounty": "雲林縣",
+              "YilanCounty": "宜蘭縣",
+              "Chiayi": "嘉義市"
+            }
+          },
+          {
+            "in": "path",
+            "name": "StationID",
+            "description": "欲查詢站位代碼",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "title": "Array",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusSchedule"
+              }
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Bus/Shape/City/{City}/PassThrough/Station/{StationID}": {
+      "get": {
+        "tags": [
+          "Advanced"
+        ],
+        "summary": "取得指定[縣市],[站位]的市區公車路線線型資料",
+        "operationId": "CityBusApi_Shape_ByStation",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "City",
+            "description": "欲查詢縣市",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "Taipei",
+              "NewTaipei",
+              "Taoyuan",
+              "Taichung",
+              "Tainan",
+              "Kaohsiung",
+              "Keelung",
+              "Hsinchu",
+              "HsinchuCounty",
+              "MiaoliCounty",
+              "ChanghuaCounty",
+              "NantouCounty",
+              "YunlinCounty",
+              "ChiayiCounty",
+              "Chiayi",
+              "PingtungCounty",
+              "YilanCounty",
+              "HualienCounty",
+              "TaitungCounty",
+              "KinmenCounty",
+              "PenghuCounty",
+              "LienchiangCounty"
+            ],
+            "x-enum": {
+              "PingtungCounty": "屏東縣",
+              "Taichung": "臺中市",
+              "Taipei": "臺北市",
+              "YilanCounty": "宜蘭縣",
+              "Taoyuan": "桃園市",
+              "Kaohsiung": "高雄市",
+              "Chiayi": "嘉義市",
+              "Hsinchu": "新竹市",
+              "MiaoliCounty": "苗栗縣",
+              "TaitungCounty": "臺東縣",
+              "HsinchuCounty": "新竹縣",
+              "Tainan": "臺南市",
+              "ChiayiCounty": "嘉義縣",
+              "KinmenCounty": "金門縣",
+              "LienchiangCounty": "連江縣",
+              "YunlinCounty": "雲林縣",
+              "ChanghuaCounty": "彰化縣",
+              "NewTaipei": "新北市",
+              "NantouCounty": "南投縣",
+              "PenghuCounty": "澎湖縣",
+              "HualienCounty": "花蓮縣",
+              "Keelung": "基隆市"
+            }
+          },
+          {
+            "in": "path",
+            "name": "StationID",
+            "description": "欲查詢站位代碼",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "title": "Array",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusShape"
+              }
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Bus/RealTimeByFrequency/InterCity/OperatorNo/{OperatorNo}": {
+      "get": {
+        "tags": [
+          "Advanced"
+        ],
+        "summary": "取得指定[業者編號]的公路客運動態定時資料(A1)",
+        "operationId": "InterCityBusApi_RealTimeByFrequency_ByOperator",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "OperatorNo",
+            "description": "欲查詢營運業者編號",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$spatialFilter",
+            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "title": "Array",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusA1Data"
+              }
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Bus/RealTimeNearStop/InterCity/OperatorNo/{OperatorNo}": {
+      "get": {
+        "tags": [
+          "Advanced"
+        ],
+        "summary": "取得指定[業者編號]的公路客運動態定點資料(A2)",
+        "operationId": "InterCityBusApi_RealTimeNearStop_ByOperator",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "OperatorNo",
+            "description": "欲查詢營運業者編號",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "title": "Array",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusA2Data"
+              }
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Bus/Route/InterCity/OperatorNo/{OperatorNo}": {
+      "get": {
+        "tags": [
+          "Advanced"
+        ],
+        "summary": "取得指定[業者編號]的公路客運路線資料",
+        "operationId": "InterCityBusApi_Route_ByOperator",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "OperatorNo",
+            "description": "欲查詢營運業者編號",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "title": "Array",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusRoute"
+              }
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Bus/Stop/InterCity/OperatorNo/{OperatorNo}": {
+      "get": {
+        "tags": [
+          "Advanced"
+        ],
+        "summary": "取得指定[業者編號]的公路客運站牌資料",
+        "operationId": "InterCityBusApi_Stop_ByOperator",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "OperatorNo",
+            "description": "欲查詢營運業者編號",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$spatialFilter",
+            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "title": "Array",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusStop"
+              }
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Bus/Station/InterCity/OperatorNo/{OperatorNo}": {
+      "get": {
+        "tags": [
+          "Advanced"
+        ],
+        "summary": "取得指定[業者編號]的公路客運站位資料",
+        "operationId": "InterCityBusApi_Station_ByOperator",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "OperatorNo",
+            "description": "欲查詢營運業者編號",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$spatialFilter",
+            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "title": "Array",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusStation"
+              }
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Bus/StopOfRoute/InterCity/OperatorNo/{OperatorNo}": {
+      "get": {
+        "tags": [
+          "Advanced"
+        ],
+        "summary": "取得指定[業者編號]的公路客運路線站序資料",
+        "operationId": "InterCityBusApi_StopOfRoute_ByOperator",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "OperatorNo",
+            "description": "欲查詢營運業者編號",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "title": "Array",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusStopOfRoute"
+              }
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Bus/Schedule/InterCity/OperatorNo/{OperatorNo}": {
+      "get": {
+        "tags": [
+          "Advanced"
+        ],
+        "summary": "取得指定[業者編號]的公路客運班表資料",
+        "operationId": "InterCityBusApi_Schedule_ByOperator",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "OperatorNo",
+            "description": "欲查詢營運業者編號",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "title": "Array",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusSchedule"
+              }
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Bus/Shape/InterCity/OperatorNo/{OperatorNo}": {
+      "get": {
+        "tags": [
+          "Advanced"
+        ],
+        "summary": "取得指定[業者編號]的公路客運線型資料",
+        "operationId": "InterCityBusApi_Shape_ByOperator",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "OperatorNo",
+            "description": "欲查詢營運業者編號",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "title": "Array",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusShape"
+              }
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Bus/RouteFare/InterCity/OperatorNo/{OperatorNo}": {
+      "get": {
+        "tags": [
+          "Advanced"
+        ],
+        "summary": "取得指定[業者編號]的公路客運路線票價資料",
+        "operationId": "InterCityBusApi_RouteFare_ByOperator",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "OperatorNo",
+            "description": "欲查詢營運業者編號",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "title": "Array",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusRouteFare"
+              }
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Bus/RealTimeByFrequency/InterCity/PassThrough/Station/{StationID}": {
+      "get": {
+        "tags": [
+          "Advanced"
+        ],
+        "summary": "取得指定[站位]的公路客運動態定時資料(A1)",
+        "operationId": "InterCityBusApi_RealTimeByFrequency_ByStation",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "StationID",
+            "description": "欲查詢站位代碼",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$spatialFilter",
+            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "title": "Array",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusA1Data"
+              }
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Bus/RealTimeNearStop/InterCity/PassThrough/Station/{StationID}": {
+      "get": {
+        "tags": [
+          "Advanced"
+        ],
+        "summary": "取得指定[站位]的公路客運動態定點資料(A2)",
+        "operationId": "InterCityBusApi_RealTimeNearStop_ByStation",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "StationID",
+            "description": "欲查詢站位代碼",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "title": "Array",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusA2Data"
+              }
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Bus/EstimatedTimeOfArrival/InterCity/PassThrough/Station/{StationID}": {
+      "get": {
+        "tags": [
+          "Advanced"
+        ],
+        "summary": "取得指定[站位]的公路客運預估到站資料(N1)",
+        "operationId": "InterCityBusApi_EstimatedTimeOfArrival_ByStation",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "StationID",
+            "description": "欲查詢站位代碼",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "title": "Array",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusN1EstimateTime"
+              }
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Bus/Route/InterCity/PassThrough/Station/{StationID}": {
+      "get": {
+        "tags": [
+          "Advanced"
+        ],
+        "summary": "取得指定[站位]的公路客運路線資料",
+        "operationId": "InterCityBusApi_Route_ByStation",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "StationID",
+            "description": "欲查詢站位代碼",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "title": "Array",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusRoute"
+              }
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Bus/Stop/InterCity/PassThrough/Station/{StationID}": {
+      "get": {
+        "tags": [
+          "Advanced"
+        ],
+        "summary": "取得指定[站位]的公路客運站牌資料",
+        "operationId": "InterCityBusApi_Stop_ByStation",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "StationID",
+            "description": "欲查詢站位代碼",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$spatialFilter",
+            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "title": "Array",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusStop"
+              }
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Bus/StopOfRoute/InterCity/PassThrough/Station/{StationID}": {
+      "get": {
+        "tags": [
+          "Advanced"
+        ],
+        "summary": "取得指定[站位]的公路客運路線站序資料",
+        "operationId": "InterCityBusApi_StopOfRoute_ByStation",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "StationID",
+            "description": "欲查詢站位代碼",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "title": "Array",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusStopOfRoute"
+              }
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Bus/Schedule/InterCity/PassThrough/Station/{StationID}": {
+      "get": {
+        "tags": [
+          "Advanced"
+        ],
+        "summary": "取得指定[站位]的公路客運路線班表資料",
+        "operationId": "InterCityBusApi_Schedule_ByStation",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "StationID",
+            "description": "欲查詢站位代碼",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "title": "Array",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusSchedule"
+              }
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v2/Bus/Shape/InterCity/PassThrough/Station/{StationID}": {
+      "get": {
+        "tags": [
+          "Advanced"
+        ],
+        "summary": "取得指定[站位]的公路客運線型資料",
+        "operationId": "InterCityBusApi_Shape_ByStation",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "StationID",
+            "description": "欲查詢站位代碼",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "title": "Array",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusShape"
               }
             }
           },

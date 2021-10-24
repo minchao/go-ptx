@@ -60,7 +60,7 @@ type CityBusAPIFirstLastTripInfo1OK struct {
 }
 
 func (o *CityBusAPIFirstLastTripInfo1OK) Error() string {
-	return fmt.Sprintf("[GET /v2/Bus/FirstLastTripInfo/City/{City}][%d] cityBusApiFirstLastTripInfo1OK  %+v", 200, o.Payload)
+	return fmt.Sprintf("[GET /v2/Bus/FirstLastTripInfo/City/{City}/{RouteName}][%d] cityBusApiFirstLastTripInfo1OK  %+v", 200, o.Payload)
 }
 func (o *CityBusAPIFirstLastTripInfo1OK) GetPayload() []*models.PTXServiceDTOBusSpecificationV2BusFirstLastTripInfo {
 	return o.Payload
@@ -90,7 +90,7 @@ type CityBusAPIFirstLastTripInfo1Status299 struct {
 }
 
 func (o *CityBusAPIFirstLastTripInfo1Status299) Error() string {
-	return fmt.Sprintf("[GET /v2/Bus/FirstLastTripInfo/City/{City}][%d] cityBusApiFirstLastTripInfo1Status299  %+v", 299, o.Payload)
+	return fmt.Sprintf("[GET /v2/Bus/FirstLastTripInfo/City/{City}/{RouteName}][%d] cityBusApiFirstLastTripInfo1Status299  %+v", 299, o.Payload)
 }
 func (o *CityBusAPIFirstLastTripInfo1Status299) GetPayload() *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth {
 	return o.Payload
@@ -121,7 +121,7 @@ type CityBusAPIFirstLastTripInfo1NotModified struct {
 }
 
 func (o *CityBusAPIFirstLastTripInfo1NotModified) Error() string {
-	return fmt.Sprintf("[GET /v2/Bus/FirstLastTripInfo/City/{City}][%d] cityBusApiFirstLastTripInfo1NotModified ", 304)
+	return fmt.Sprintf("[GET /v2/Bus/FirstLastTripInfo/City/{City}/{RouteName}][%d] cityBusApiFirstLastTripInfo1NotModified ", 304)
 }
 
 func (o *CityBusAPIFirstLastTripInfo1NotModified) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {

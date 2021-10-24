@@ -24,7 +24,7 @@ type PTXAPIShipModelShipLiveWrapperPTXServiceDTOShipSpecificationV3LivePosition 
 	//
 	// 業管機關簡碼
 	// Required: true
-	AuthorityCode *string `json:"AuthorityCode"`
+	AuthorityCode *string `json:"AuthorityCode" xml:"String"`
 
 	// 資料總筆數<span class="emphasis fas fa-pen" rel="與來源Inbound XML不同，為提供資料的總筆數  [該欄位由本平台自動產製]"></span>
 	Count int64 `json:"Count,omitempty"`
@@ -33,7 +33,7 @@ type PTXAPIShipModelShipLiveWrapperPTXServiceDTOShipSpecificationV3LivePosition 
 	//
 	// 資料(陣列)
 	// Required: true
-	LivePositions []*PTXServiceDTOShipSpecificationV3LivePosition `json:"LivePositions"`
+	LivePositions []*PTXServiceDTOShipSpecificationV3LivePosition "json:\"LivePositions\" xml:\"List`1\""
 
 	// Int32
 	//
@@ -41,11 +41,10 @@ type PTXAPIShipModelShipLiveWrapperPTXServiceDTOShipSpecificationV3LivePosition 
 	// Required: true
 	SrcUpdateInterval *int32 `json:"SrcUpdateInterval"`
 
-	// DateTime
-	//
 	// [來源端平臺]資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)<span class="emphasis fas fa-pen" rel="為來源Inbound XML中的UpdateTime [該欄位由本平台自動產製]"></span>
 	// Required: true
-	SrcUpdateTime *string `json:"SrcUpdateTime"`
+	// Format: date-time
+	SrcUpdateTime *strfmt.DateTime `json:"SrcUpdateTime"`
 
 	// Int32
 	//
@@ -53,11 +52,10 @@ type PTXAPIShipModelShipLiveWrapperPTXServiceDTOShipSpecificationV3LivePosition 
 	// Required: true
 	UpdateInterval *int32 `json:"UpdateInterval"`
 
-	// DateTime
-	//
 	// [平臺]資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)<span class="emphasis fas fa-pen" rel="與來源Inbound XML不同，為中心端處理完後提供資料的更新時間"></span>
 	// Required: true
-	UpdateTime *string `json:"UpdateTime"`
+	// Format: date-time
+	UpdateTime *strfmt.DateTime `json:"UpdateTime"`
 }
 
 // Validate validates this p t x API ship model ship live wrapper p t x service d t o ship specification v3 live position
@@ -143,6 +141,10 @@ func (m *PTXAPIShipModelShipLiveWrapperPTXServiceDTOShipSpecificationV3LivePosit
 		return err
 	}
 
+	if err := validate.FormatOf("SrcUpdateTime", "body", "date-time", m.SrcUpdateTime.String(), formats); err != nil {
+		return err
+	}
+
 	return nil
 }
 
@@ -158,6 +160,10 @@ func (m *PTXAPIShipModelShipLiveWrapperPTXServiceDTOShipSpecificationV3LivePosit
 func (m *PTXAPIShipModelShipLiveWrapperPTXServiceDTOShipSpecificationV3LivePosition) validateUpdateTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
+		return err
+	}
+
+	if err := validate.FormatOf("UpdateTime", "body", "date-time", m.UpdateTime.String(), formats); err != nil {
 		return err
 	}
 

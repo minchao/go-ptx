@@ -21,59 +21,59 @@ type PTXServiceDTOShipSpecificationV3Operator struct {
 	// String
 	//
 	// 統一編號
-	BAN string `json:"BAN,omitempty"`
+	BusinessAdminstrationNo string `json:"BusinessAdminstrationNo,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 營運業者票價網址連結
-	FareURL string `json:"FareURL,omitempty"`
+	FareURL string `json:"FareURL,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 營運業者地址
-	OperatorAddress string `json:"OperatorAddress,omitempty"`
+	OperatorAddress string `json:"OperatorAddress,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 營運業者電子信箱
-	OperatorEmail string `json:"OperatorEmail,omitempty"`
+	OperatorEmail string `json:"OperatorEmail,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 營運業者代碼
-	OperatorID string `json:"OperatorID,omitempty"`
+	OperatorID string `json:"OperatorID,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 營運業者Logo網址
-	OperatorLogoURL string `json:"OperatorLogoURL,omitempty"`
+	OperatorLogoURL string `json:"OperatorLogoURL,omitempty" xml:"String,omitempty"`
 
 	// NameType
 	//
 	// 營運業者名稱
 	OperatorName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"OperatorName,omitempty"`
+	} `json:"OperatorName,omitempty" xml:"NameType,omitempty"`
 
 	// String
 	//
 	// 營運業者連絡電話
-	OperatorPhone string `json:"OperatorPhone,omitempty"`
+	OperatorPhone string `json:"OperatorPhone,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 營運業者網址連結
-	OperatorURL string `json:"OperatorURL,omitempty"`
+	OperatorURL string `json:"OperatorURL,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 營運業者訂票電話
-	ReservationPhone string `json:"ReservationPhone,omitempty"`
+	ReservationPhone string `json:"ReservationPhone,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 營運業者訂票網站
-	ReservationURL string `json:"ReservationURL,omitempty"`
+	ReservationURL string `json:"ReservationURL,omitempty" xml:"String,omitempty"`
 }
 
 // Validate validates this p t x service d t o ship specification v3 operator

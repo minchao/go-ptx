@@ -11,6 +11,7 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
+	"github.com/go-openapi/validate"
 )
 
 // PTXServiceDTOShipSpecificationV3Stoptime Stoptime
@@ -21,41 +22,67 @@ type PTXServiceDTOShipSpecificationV3Stoptime struct {
 	// String
 	//
 	// 港口進港時間
-	ArrivalTime string `json:"ArrivalTime,omitempty"`
+	// Required: true
+	ArrivalTime *string `json:"ArrivalTime" xml:"String"`
 
 	// String
 	//
 	// 港口離港時間
-	DepartureTime string `json:"DepartureTime,omitempty"`
+	// Required: true
+	DepartureTime *string `json:"DepartureTime" xml:"String"`
 
 	// String
 	//
 	// 停靠港口代碼
-	PortID string `json:"PortID,omitempty"`
+	// Required: true
+	PortID *string `json:"PortID" xml:"String"`
 
 	// NameType
 	//
 	// 港口名稱
+	// Required: true
 	PortName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"PortName,omitempty"`
+	} `json:"PortName" xml:"NameType"`
 
 	// Int32
 	//
 	// 航線停靠站序
-	StopSequence int32 `json:"StopSequence,omitempty"`
+	// Required: true
+	StopSequence *int32 `json:"StopSequence"`
 
 	// Int32
 	//
 	// 預估航行時間
-	TravelTime int32 `json:"TravelTime,omitempty"`
+	// Required: true
+	TravelTime *int32 `json:"TravelTime"`
 }
 
 // Validate validates this p t x service d t o ship specification v3 stoptime
 func (m *PTXServiceDTOShipSpecificationV3Stoptime) Validate(formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.validateArrivalTime(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateDepartureTime(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validatePortID(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validatePortName(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateStopSequence(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateTravelTime(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -65,9 +92,51 @@ func (m *PTXServiceDTOShipSpecificationV3Stoptime) Validate(formats strfmt.Regis
 	return nil
 }
 
+func (m *PTXServiceDTOShipSpecificationV3Stoptime) validateArrivalTime(formats strfmt.Registry) error {
+
+	if err := validate.Required("ArrivalTime", "body", m.ArrivalTime); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTOShipSpecificationV3Stoptime) validateDepartureTime(formats strfmt.Registry) error {
+
+	if err := validate.Required("DepartureTime", "body", m.DepartureTime); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTOShipSpecificationV3Stoptime) validatePortID(formats strfmt.Registry) error {
+
+	if err := validate.Required("PortID", "body", m.PortID); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *PTXServiceDTOShipSpecificationV3Stoptime) validatePortName(formats strfmt.Registry) error {
-	if swag.IsZero(m.PortName) { // not required
-		return nil
+
+	return nil
+}
+
+func (m *PTXServiceDTOShipSpecificationV3Stoptime) validateStopSequence(formats strfmt.Registry) error {
+
+	if err := validate.Required("StopSequence", "body", m.StopSequence); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTOShipSpecificationV3Stoptime) validateTravelTime(formats strfmt.Registry) error {
+
+	if err := validate.Required("TravelTime", "body", m.TravelTime); err != nil {
+		return err
 	}
 
 	return nil

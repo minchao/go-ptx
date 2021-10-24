@@ -12,6 +12,7 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
+	"github.com/go-openapi/validate"
 )
 
 // PTXServiceDTOShipSpecificationV3Timetable Timetable
@@ -19,31 +20,28 @@ import (
 // swagger:model PTX.Service.DTO.Ship.Specification.V3.Timetable
 type PTXServiceDTOShipSpecificationV3Timetable struct {
 
-	// ServiceDay
-	ServiceDay struct {
-		PTXServiceDTOShipSpecificationV3ServiceDay
-	} `json:"ServiceDay,omitempty"`
-
 	// Array
 	//
 	// 航線停靠資料
-	Stoptimes []*PTXServiceDTOShipSpecificationV3Stoptime `json:"Stoptimes"`
+	// Required: true
+	Stoptimes []*PTXServiceDTOShipSpecificationV3Stoptime "json:\"Stoptimes\" xml:\"List`1\""
 
 	// String
 	//
 	// 班次代碼
-	TripID string `json:"TripID,omitempty"`
+	// Required: true
+	TripID *string `json:"TripID" xml:"String"`
 }
 
 // Validate validates this p t x service d t o ship specification v3 timetable
 func (m *PTXServiceDTOShipSpecificationV3Timetable) Validate(formats strfmt.Registry) error {
 	var res []error
 
-	if err := m.validateServiceDay(formats); err != nil {
+	if err := m.validateStoptimes(formats); err != nil {
 		res = append(res, err)
 	}
 
-	if err := m.validateStoptimes(formats); err != nil {
+	if err := m.validateTripID(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -53,17 +51,10 @@ func (m *PTXServiceDTOShipSpecificationV3Timetable) Validate(formats strfmt.Regi
 	return nil
 }
 
-func (m *PTXServiceDTOShipSpecificationV3Timetable) validateServiceDay(formats strfmt.Registry) error {
-	if swag.IsZero(m.ServiceDay) { // not required
-		return nil
-	}
-
-	return nil
-}
-
 func (m *PTXServiceDTOShipSpecificationV3Timetable) validateStoptimes(formats strfmt.Registry) error {
-	if swag.IsZero(m.Stoptimes) { // not required
-		return nil
+
+	if err := validate.Required("Stoptimes", "body", m.Stoptimes); err != nil {
+		return err
 	}
 
 	for i := 0; i < len(m.Stoptimes); i++ {
@@ -85,13 +76,18 @@ func (m *PTXServiceDTOShipSpecificationV3Timetable) validateStoptimes(formats st
 	return nil
 }
 
+func (m *PTXServiceDTOShipSpecificationV3Timetable) validateTripID(formats strfmt.Registry) error {
+
+	if err := validate.Required("TripID", "body", m.TripID); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 // ContextValidate validate this p t x service d t o ship specification v3 timetable based on the context it is used
 func (m *PTXServiceDTOShipSpecificationV3Timetable) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
-
-	if err := m.contextValidateServiceDay(ctx, formats); err != nil {
-		res = append(res, err)
-	}
 
 	if err := m.contextValidateStoptimes(ctx, formats); err != nil {
 		res = append(res, err)
@@ -100,11 +96,6 @@ func (m *PTXServiceDTOShipSpecificationV3Timetable) ContextValidate(ctx context.
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
-	return nil
-}
-
-func (m *PTXServiceDTOShipSpecificationV3Timetable) contextValidateServiceDay(ctx context.Context, formats strfmt.Registry) error {
-
 	return nil
 }
 

@@ -23,41 +23,41 @@ type PTXServiceDTOShipSpecificationV3Port struct {
 	//
 	// 港口所屬城市
 	// Required: true
-	City *string `json:"City"`
+	City *string `json:"City" xml:"String"`
 
 	// String
 	//
 	// 城市簡碼
 	// Required: true
-	CityCode *string `json:"CityCode"`
+	CityCode *string `json:"CityCode" xml:"String"`
 
 	// String
 	//
 	// 港口所屬國家
 	// Required: true
-	Country *string `json:"Country"`
+	Country *string `json:"Country" xml:"String"`
 
 	// String
 	//
 	// 國家簡碼
 	// Required: true
-	CountryCode *string `json:"CountryCode"`
+	CountryCode *string `json:"CountryCode" xml:"String"`
 
 	// String
 	//
 	// 港口地址
-	PortAddress string `json:"PortAddress,omitempty"`
+	PortAddress string `json:"PortAddress,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 港口簡碼
-	PortCode string `json:"PortCode,omitempty"`
+	PortCode string `json:"PortCode,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 港口代碼
 	// Required: true
-	PortID *string `json:"PortID"`
+	PortID *string `json:"PortID" xml:"String"`
 
 	// NameType
 	//
@@ -65,12 +65,12 @@ type PTXServiceDTOShipSpecificationV3Port struct {
 	// Required: true
 	PortName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"PortName"`
+	} `json:"PortName" xml:"NameType"`
 
 	// String
 	//
 	// 港口聯繫電話
-	PortPhone string `json:"PortPhone,omitempty"`
+	PortPhone string `json:"PortPhone,omitempty" xml:"String,omitempty"`
 
 	// PointType
 	//
@@ -78,12 +78,12 @@ type PTXServiceDTOShipSpecificationV3Port struct {
 	// Required: true
 	PortPosition struct {
 		PTXServiceDTOShipSpecificationV3PointType
-	} `json:"PortPosition"`
+	} `json:"PortPosition" xml:"PointType"`
 
 	// String
 	//
 	// 港口官網網址
-	PortURL string `json:"PortURL,omitempty"`
+	PortURL string `json:"PortURL,omitempty" xml:"String,omitempty"`
 }
 
 // Validate validates this p t x service d t o ship specification v3 port

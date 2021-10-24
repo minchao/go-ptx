@@ -8,8 +8,10 @@ package models
 import (
 	"context"
 
+	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
+	"github.com/go-openapi/validate"
 )
 
 // PTXServiceDTOShipSpecificationV3Operators Operators
@@ -20,11 +22,30 @@ type PTXServiceDTOShipSpecificationV3Operators struct {
 	// String
 	//
 	// 營運業者代碼
-	OperatorID string `json:"OperatorID,omitempty"`
+	// Required: true
+	OperatorID *string `json:"OperatorID" xml:"String"`
 }
 
 // Validate validates this p t x service d t o ship specification v3 operators
 func (m *PTXServiceDTOShipSpecificationV3Operators) Validate(formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.validateOperatorID(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTOShipSpecificationV3Operators) validateOperatorID(formats strfmt.Registry) error {
+
+	if err := validate.Required("OperatorID", "body", m.OperatorID); err != nil {
+		return err
+	}
+
 	return nil
 }
 

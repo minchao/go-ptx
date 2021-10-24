@@ -28,19 +28,20 @@ type PTXServiceDTOShipSpecificationV3LivePosition struct {
 	//
 	// GPS 記錄時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Required: true
-	GPSTime *string `json:"GPSTime"`
+	// Format: date-time
+	GPSTime *strfmt.DateTime `json:"GPSTime"`
 
 	// String
 	//
 	// AIS 船舶編號
 	// Required: true
-	MMSI *string `json:"MMSI"`
+	MMSI *string `json:"MMSI" xml:"String"`
 
-	// integer
+	// Int32
 	//
 	// 航行狀態 : [0:'under way using engine',1:'at anchor',2:'not under command',3:'restricted maneuverability',4:'constrained by her draught',5:'moored',6:'aground',7:'engaged in fishing',8:'under way sailing',9:'reserved for future amendment of navigational status for ships carrying DG, HS, or MP, or IMO hazard or pollutant category C, high speed craft (HSC)',10:'reserved for future amendment of navigational status for ships carrying dangerous goods (DG), harmful substances (HS) or marine pollutants (MP), or IMO hazard or pollutant category A, wing in ground (WIG)',11:'power-driven vessel towing astern (regional use)',12:'power-driven vessel pushing ahead or towing alongside (regional use)',13:'reserved for future use',14:'AIS-SART (active), MOB-AIS, EPIRB-AIS',15:'undefined = default (also used by AIS-SART, MOB-AIS and EPIRB-AIS under test)']
 	// Required: true
-	NAVSTAT *int32 `json:"NAVSTAT"`
+	NAVSTAT *int64 `json:"NAVSTAT"`
 
 	// Single
 	//
@@ -51,14 +52,14 @@ type PTXServiceDTOShipSpecificationV3LivePosition struct {
 	//
 	// 船舶代碼
 	// Required: true
-	VesselID *string `json:"VesselID"`
+	VesselID *string `json:"VesselID" xml:"String"`
 
 	// NameType
 	//
 	// 船舶名稱
 	VesselName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"VesselName,omitempty"`
+	} `json:"VesselName,omitempty" xml:"NameType,omitempty"`
 
 	// PointType
 	//
@@ -66,12 +67,12 @@ type PTXServiceDTOShipSpecificationV3LivePosition struct {
 	// Required: true
 	VesselPosition struct {
 		PTXServiceDTOShipSpecificationV3PointType
-	} `json:"VesselPosition"`
+	} `json:"VesselPosition" xml:"PointType"`
 
-	// integer
+	// Int32
 	//
 	// 船舶種類 : [0:'N/A',20:'WIG',30:'Vessel-Fishing',31:'not under command',32:'Vessel-Tow>200m,breadth>25m',33:'Vessel-Dredge,Underwater OP',34:'Vessel-Diving OP',35:'Vessel-Military OP',36:'Vessel-Sailing',37:'Vessel-Pleasure craft',40:'HSC',50:'Pilot vessel',51:'Search & rescue vessel',52:'Tug',53:'Port tender',54:'Anti-pollution vessel',55:'Law enforcement vessel',58:'Medical transport',59:'Resolution 18(Mob-83)',60:'Passenger ship',70:'Cargo ship',80:'Tanker',90:'Other',101:'Undefined']
-	VesselType int32 `json:"VesselType,omitempty"`
+	VesselType int64 `json:"VesselType,omitempty"`
 }
 
 // Validate validates this p t x service d t o ship specification v3 live position
@@ -111,6 +112,10 @@ func (m *PTXServiceDTOShipSpecificationV3LivePosition) Validate(formats strfmt.R
 func (m *PTXServiceDTOShipSpecificationV3LivePosition) validateGPSTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("GPSTime", "body", m.GPSTime); err != nil {
+		return err
+	}
+
+	if err := validate.FormatOf("GPSTime", "body", "date-time", m.GPSTime.String(), formats); err != nil {
 		return err
 	}
 

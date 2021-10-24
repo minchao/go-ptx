@@ -23,15 +23,24 @@ type PTXAPIShipModelShipWrapperPTXServiceDTOSharedSpecificationV3BaseAuthority s
 	// Array
 	//
 	// 資料(陣列)
-	Authorities []*PTXServiceDTOSharedSpecificationV3BaseAuthority `json:"Authorities"`
+	Authorities []*PTXServiceDTOSharedSpecificationV3BaseAuthority "json:\"Authorities\" xml:\"List`1\""
 
 	// String
 	//
 	// 業管機關簡碼
-	AuthorityCode string `json:"AuthorityCode,omitempty"`
+	AuthorityCode string `json:"AuthorityCode,omitempty" xml:"String,omitempty"`
 
 	// 資料總筆數<span class="emphasis fas fa-pen" rel="與來源Inbound XML不同，為提供資料的總筆數[該欄位由本平台自動產製]"></span>
 	Count int64 `json:"Count,omitempty"`
+
+	// [來源端平臺]資料更新週期(秒)['-1: 不定期更新']<span class="emphasis fas fa-pen" rel="為來源Inbound XML中的UpdateInterval [該欄位由本平台自動產製]"></span>
+	// Required: true
+	SrcUpdateInterval *int32 `json:"SrcUpdateInterval"`
+
+	// [來源端平臺]資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)<span class="emphasis fas fa-pen" rel="為來源Inbound XML中的UpdateTime [該欄位由本平台自動產製]"></span>
+	// Required: true
+	// Format: date-time
+	SrcUpdateTime *strfmt.DateTime `json:"SrcUpdateTime"`
 
 	// Int32
 	//
@@ -39,13 +48,10 @@ type PTXAPIShipModelShipWrapperPTXServiceDTOSharedSpecificationV3BaseAuthority s
 	// Required: true
 	UpdateInterval *int32 `json:"UpdateInterval"`
 
-	// DateTime
-	//
 	// XML更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
-	UpdateTime string `json:"UpdateTime,omitempty"`
+	// Format: date-time
+	UpdateTime strfmt.DateTime `json:"UpdateTime,omitempty"`
 
-	// Int32
-	//
 	// 資料版本編號<span class="emphasis fas fa-pen" rel="與來源Inbound XML不同，為提供資料的版本編號[該欄位由本平台自動產製]"></span>
 	// Required: true
 	VersionID *int32 `json:"VersionID"`
@@ -59,7 +65,19 @@ func (m *PTXAPIShipModelShipWrapperPTXServiceDTOSharedSpecificationV3BaseAuthori
 		res = append(res, err)
 	}
 
+	if err := m.validateSrcUpdateInterval(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateSrcUpdateTime(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateUpdateInterval(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateUpdateTime(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -97,9 +115,43 @@ func (m *PTXAPIShipModelShipWrapperPTXServiceDTOSharedSpecificationV3BaseAuthori
 	return nil
 }
 
+func (m *PTXAPIShipModelShipWrapperPTXServiceDTOSharedSpecificationV3BaseAuthority) validateSrcUpdateInterval(formats strfmt.Registry) error {
+
+	if err := validate.Required("SrcUpdateInterval", "body", m.SrcUpdateInterval); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *PTXAPIShipModelShipWrapperPTXServiceDTOSharedSpecificationV3BaseAuthority) validateSrcUpdateTime(formats strfmt.Registry) error {
+
+	if err := validate.Required("SrcUpdateTime", "body", m.SrcUpdateTime); err != nil {
+		return err
+	}
+
+	if err := validate.FormatOf("SrcUpdateTime", "body", "date-time", m.SrcUpdateTime.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *PTXAPIShipModelShipWrapperPTXServiceDTOSharedSpecificationV3BaseAuthority) validateUpdateInterval(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateInterval", "body", m.UpdateInterval); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *PTXAPIShipModelShipWrapperPTXServiceDTOSharedSpecificationV3BaseAuthority) validateUpdateTime(formats strfmt.Registry) error {
+	if swag.IsZero(m.UpdateTime) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("UpdateTime", "body", "date-time", m.UpdateTime.String(), formats); err != nil {
 		return err
 	}
 

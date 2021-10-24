@@ -60,7 +60,7 @@ type CityBusAPIRoute1OK struct {
 }
 
 func (o *CityBusAPIRoute1OK) Error() string {
-	return fmt.Sprintf("[GET /v2/Bus/Route/City/{City}][%d] cityBusApiRoute1OK  %+v", 200, o.Payload)
+	return fmt.Sprintf("[GET /v2/Bus/Route/City/{City}/{RouteName}][%d] cityBusApiRoute1OK  %+v", 200, o.Payload)
 }
 func (o *CityBusAPIRoute1OK) GetPayload() []*models.PTXServiceDTOBusSpecificationV2BusRoute {
 	return o.Payload
@@ -90,7 +90,7 @@ type CityBusAPIRoute1Status299 struct {
 }
 
 func (o *CityBusAPIRoute1Status299) Error() string {
-	return fmt.Sprintf("[GET /v2/Bus/Route/City/{City}][%d] cityBusApiRoute1Status299  %+v", 299, o.Payload)
+	return fmt.Sprintf("[GET /v2/Bus/Route/City/{City}/{RouteName}][%d] cityBusApiRoute1Status299  %+v", 299, o.Payload)
 }
 func (o *CityBusAPIRoute1Status299) GetPayload() *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth {
 	return o.Payload
@@ -121,7 +121,7 @@ type CityBusAPIRoute1NotModified struct {
 }
 
 func (o *CityBusAPIRoute1NotModified) Error() string {
-	return fmt.Sprintf("[GET /v2/Bus/Route/City/{City}][%d] cityBusApiRoute1NotModified ", 304)
+	return fmt.Sprintf("[GET /v2/Bus/Route/City/{City}/{RouteName}][%d] cityBusApiRoute1NotModified ", 304)
 }
 
 func (o *CityBusAPIRoute1NotModified) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {

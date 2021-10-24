@@ -6,7 +6,7 @@ import (
 	"github.com/stretchr/testify/require"
 
 	"github.com/minchao/go-ptx/ship/v3/client"
-	"github.com/minchao/go-ptx/ship/v3/client/ship"
+	"github.com/minchao/go-ptx/ship/v3/client/ship_basic"
 )
 
 var (
@@ -18,9 +18,9 @@ func init() {
 }
 
 func TestShipV3_ShipAPIPort(t *testing.T) {
-	params := ship.NewShipAPIPortParams().
+	params := ship_basic.NewShipBasicPortParams().
 		WithDollarFormat("JSON")
-	result, err := shipV3Client.Ship.ShipAPIPort(params)
+	result, _, err := shipV3Client.ShipBasic.ShipBasicPort(params)
 	require.NoError(t, err)
 	if len(result.Payload.Ports) == 0 {
 		t.Fatal("Ship.ShipAPIPort return no data")

@@ -12,6 +12,7 @@ import (
 	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
+	"github.com/go-openapi/validate"
 )
 
 // PTXServiceDTOShipSpecificationV3Route Route
@@ -22,78 +23,115 @@ type PTXServiceDTOShipSpecificationV3Route struct {
 	// String
 	//
 	// 航線描述
-	Description string `json:"Description,omitempty"`
+	// Required: true
+	Description *string `json:"Description" xml:"String"`
 
 	// String
 	//
 	// 航線迄點港口代碼
-	EndPortID string `json:"EndPortID,omitempty"`
+	// Required: true
+	EndPortID *string `json:"EndPortID" xml:"String"`
 
 	// String
 	//
 	// 航線迄點港口名稱
-	EndPortName string `json:"EndPortName,omitempty"`
+	// Required: true
+	EndPortName *string `json:"EndPortName" xml:"String"`
 
 	// Array
 	//
 	// 營運業者
-	Operators []*PTXServiceDTOShipSpecificationV3Operators `json:"Operators"`
+	// Required: true
+	Operators []*PTXServiceDTOShipSpecificationV3Operators "json:\"Operators\" xml:\"List`1\""
 
 	// Single
 	//
 	// 航線哩程
-	RouteDistance float32 `json:"RouteDistance,omitempty"`
+	// Required: true
+	RouteDistance *float32 `json:"RouteDistance"`
 
 	// String
 	//
 	// 航線代碼
-	RouteID string `json:"RouteID,omitempty"`
+	// Required: true
+	RouteID *string `json:"RouteID" xml:"String"`
 
 	// String
 	//
 	// 航運路線簡圖網址
-	RouteMapURL string `json:"RouteMapURL,omitempty"`
+	RouteMapURL string `json:"RouteMapURL,omitempty" xml:"String,omitempty"`
 
 	// NameType
 	//
 	// 航線名稱
+	// Required: true
 	RouteName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"RouteName,omitempty"`
+	} `json:"RouteName" xml:"NameType"`
 
-	// integer
+	// Int32
 	//
-	// 航線種類 : [1:'國內航線',2:'離島航線',3:'兩岸航線',4:'其他']
-	RouteType int32 `json:"RouteType,omitempty"`
+	// 航線種類 : [1:'國內航線(渡輪、藍色公路)',2:'離島航線',3:'兩岸航線',4:'小三通航線',254:'其他']
+	// Required: true
+	RouteType *int64 `json:"RouteType"`
 
 	// String
 	//
 	// 航線起點港口代碼
-	StartPortID string `json:"StartPortID,omitempty"`
+	// Required: true
+	StartPortID *string `json:"StartPortID" xml:"String"`
 
 	// String
 	//
 	// 航線起點港口名稱
-	StartPortName string `json:"StartPortName,omitempty"`
+	// Required: true
+	StartPortName *string `json:"StartPortName" xml:"String"`
 
 	// NameType
 	//
 	// 票價描述
+	// Required: true
 	TicketPriceDescription struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"TicketPriceDescription,omitempty"`
+	} `json:"TicketPriceDescription" xml:"NameType"`
+
+	// Array
+	//
+	// 船舶資訊
+	Vessels []*PTXServiceDTOShipSpecificationV3Vessels "json:\"Vessels\" xml:\"List`1\""
 
 	// String
 	//
 	// 氣象預報連結
-	WeatherURL string `json:"WeatherURL,omitempty"`
+	// Required: true
+	WeatherURL *string `json:"WeatherURL" xml:"String"`
 }
 
 // Validate validates this p t x service d t o ship specification v3 route
 func (m *PTXServiceDTOShipSpecificationV3Route) Validate(formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.validateDescription(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateEndPortID(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateEndPortName(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateOperators(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateRouteDistance(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateRouteID(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -101,7 +139,27 @@ func (m *PTXServiceDTOShipSpecificationV3Route) Validate(formats strfmt.Registry
 		res = append(res, err)
 	}
 
+	if err := m.validateRouteType(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateStartPortID(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateStartPortName(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateTicketPriceDescription(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateVessels(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateWeatherURL(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -111,9 +169,37 @@ func (m *PTXServiceDTOShipSpecificationV3Route) Validate(formats strfmt.Registry
 	return nil
 }
 
+func (m *PTXServiceDTOShipSpecificationV3Route) validateDescription(formats strfmt.Registry) error {
+
+	if err := validate.Required("Description", "body", m.Description); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTOShipSpecificationV3Route) validateEndPortID(formats strfmt.Registry) error {
+
+	if err := validate.Required("EndPortID", "body", m.EndPortID); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTOShipSpecificationV3Route) validateEndPortName(formats strfmt.Registry) error {
+
+	if err := validate.Required("EndPortName", "body", m.EndPortName); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *PTXServiceDTOShipSpecificationV3Route) validateOperators(formats strfmt.Registry) error {
-	if swag.IsZero(m.Operators) { // not required
-		return nil
+
+	if err := validate.Required("Operators", "body", m.Operators); err != nil {
+		return err
 	}
 
 	for i := 0; i < len(m.Operators); i++ {
@@ -135,17 +221,89 @@ func (m *PTXServiceDTOShipSpecificationV3Route) validateOperators(formats strfmt
 	return nil
 }
 
+func (m *PTXServiceDTOShipSpecificationV3Route) validateRouteDistance(formats strfmt.Registry) error {
+
+	if err := validate.Required("RouteDistance", "body", m.RouteDistance); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTOShipSpecificationV3Route) validateRouteID(formats strfmt.Registry) error {
+
+	if err := validate.Required("RouteID", "body", m.RouteID); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *PTXServiceDTOShipSpecificationV3Route) validateRouteName(formats strfmt.Registry) error {
-	if swag.IsZero(m.RouteName) { // not required
-		return nil
+
+	return nil
+}
+
+func (m *PTXServiceDTOShipSpecificationV3Route) validateRouteType(formats strfmt.Registry) error {
+
+	if err := validate.Required("RouteType", "body", m.RouteType); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTOShipSpecificationV3Route) validateStartPortID(formats strfmt.Registry) error {
+
+	if err := validate.Required("StartPortID", "body", m.StartPortID); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTOShipSpecificationV3Route) validateStartPortName(formats strfmt.Registry) error {
+
+	if err := validate.Required("StartPortName", "body", m.StartPortName); err != nil {
+		return err
 	}
 
 	return nil
 }
 
 func (m *PTXServiceDTOShipSpecificationV3Route) validateTicketPriceDescription(formats strfmt.Registry) error {
-	if swag.IsZero(m.TicketPriceDescription) { // not required
+
+	return nil
+}
+
+func (m *PTXServiceDTOShipSpecificationV3Route) validateVessels(formats strfmt.Registry) error {
+	if swag.IsZero(m.Vessels) { // not required
 		return nil
+	}
+
+	for i := 0; i < len(m.Vessels); i++ {
+		if swag.IsZero(m.Vessels[i]) { // not required
+			continue
+		}
+
+		if m.Vessels[i] != nil {
+			if err := m.Vessels[i].Validate(formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("Vessels" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTOShipSpecificationV3Route) validateWeatherURL(formats strfmt.Registry) error {
+
+	if err := validate.Required("WeatherURL", "body", m.WeatherURL); err != nil {
+		return err
 	}
 
 	return nil
@@ -164,6 +322,10 @@ func (m *PTXServiceDTOShipSpecificationV3Route) ContextValidate(ctx context.Cont
 	}
 
 	if err := m.contextValidateTicketPriceDescription(ctx, formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.contextValidateVessels(ctx, formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -197,6 +359,24 @@ func (m *PTXServiceDTOShipSpecificationV3Route) contextValidateRouteName(ctx con
 }
 
 func (m *PTXServiceDTOShipSpecificationV3Route) contextValidateTicketPriceDescription(ctx context.Context, formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTOShipSpecificationV3Route) contextValidateVessels(ctx context.Context, formats strfmt.Registry) error {
+
+	for i := 0; i < len(m.Vessels); i++ {
+
+		if m.Vessels[i] != nil {
+			if err := m.Vessels[i].ContextValidate(ctx, formats); err != nil {
+				if ve, ok := err.(*errors.Validation); ok {
+					return ve.ValidateName("Vessels" + "." + strconv.Itoa(i))
+				}
+				return err
+			}
+		}
+
+	}
 
 	return nil
 }

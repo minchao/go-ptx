@@ -10,7 +10,10 @@ import (
 	httptransport "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/minchao/go-ptx/ship/v3/client/ship"
+	"github.com/minchao/go-ptx/ship/v3/client/domestic_ship"
+	"github.com/minchao/go-ptx/ship/v3/client/international_ship"
+	"github.com/minchao/go-ptx/ship/v3/client/ship_basic"
+	"github.com/minchao/go-ptx/ship/v3/client/ship_by_route_type"
 )
 
 // Default m o t c transport API v3 HTTP client.
@@ -55,7 +58,10 @@ func New(transport runtime.ClientTransport, formats strfmt.Registry) *MOTCTransp
 
 	cli := new(MOTCTransportAPIV3)
 	cli.Transport = transport
-	cli.Ship = ship.New(transport, formats)
+	cli.DomesticShip = domestic_ship.New(transport, formats)
+	cli.InternationalShip = international_ship.New(transport, formats)
+	cli.ShipBasic = ship_basic.New(transport, formats)
+	cli.ShipByRouteType = ship_by_route_type.New(transport, formats)
 	return cli
 }
 
@@ -100,7 +106,13 @@ func (cfg *TransportConfig) WithSchemes(schemes []string) *TransportConfig {
 
 // MOTCTransportAPIV3 is a client for m o t c transport API v3
 type MOTCTransportAPIV3 struct {
-	Ship ship.ClientService
+	DomesticShip domestic_ship.ClientService
+
+	InternationalShip international_ship.ClientService
+
+	ShipBasic ship_basic.ClientService
+
+	ShipByRouteType ship_by_route_type.ClientService
 
 	Transport runtime.ClientTransport
 }
@@ -108,5 +120,8 @@ type MOTCTransportAPIV3 struct {
 // SetTransport changes the transport on the client and all its subresources
 func (c *MOTCTransportAPIV3) SetTransport(transport runtime.ClientTransport) {
 	c.Transport = transport
-	c.Ship.SetTransport(transport)
+	c.DomesticShip.SetTransport(transport)
+	c.InternationalShip.SetTransport(transport)
+	c.ShipBasic.SetTransport(transport)
+	c.ShipByRouteType.SetTransport(transport)
 }

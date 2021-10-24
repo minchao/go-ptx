@@ -25,19 +25,19 @@ type PTXServiceDTOSharedSpecificationV3BaseAuthority struct {
 	//
 	// 業管機關地址
 	// Required: true
-	AuthorityAddress *string `json:"AuthorityAddress"`
+	AuthorityAddress *string `json:"AuthorityAddress" xml:"String"`
 
 	// String
 	//
 	// 業管機關簡碼
 	// Required: true
-	AuthorityCode *string `json:"AuthorityCode"`
+	AuthorityCode *string `json:"AuthorityCode" xml:"String"`
 
 	// String
 	//
 	// 業管機關電子信箱
 	// Required: true
-	AuthorityEmail *string `json:"AuthorityEmail"`
+	AuthorityEmail *string `json:"AuthorityEmail" xml:"String"`
 
 	// NameType
 	//
@@ -45,35 +45,36 @@ type PTXServiceDTOSharedSpecificationV3BaseAuthority struct {
 	// Required: true
 	AuthorityName struct {
 		PTXServiceDTOSharedSpecificationV3BaseNameType
-	} `json:"AuthorityName"`
+	} `json:"AuthorityName" xml:"NameType"`
 
 	// String
 	//
 	// 業管機關識別代碼(可參閱: https://oid.nat.gov.tw/OIDWeb/)
 	// Required: true
-	AuthorityOID *string `json:"AuthorityOID"`
+	AuthorityOID *string `json:"AuthorityOID" xml:"String"`
 
 	// String
 	//
 	// 業管機關連絡電話
 	// Required: true
-	AuthorityPhone *string `json:"AuthorityPhone"`
+	AuthorityPhone *string `json:"AuthorityPhone" xml:"String"`
 
 	// String
 	//
 	// 業管機關官網網址
-	AuthorityURL string `json:"AuthorityUrl,omitempty"`
+	AuthorityURL string `json:"AuthorityUrl,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
 	// 業管機關Logo網址
-	LogoURL string `json:"LogoURL,omitempty"`
+	LogoURL string `json:"LogoURL,omitempty" xml:"String,omitempty"`
 
 	// DateTime
 	//
 	// 資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Required: true
-	UpdateTime *string `json:"UpdateTime"`
+	// Format: date-time
+	UpdateTime *strfmt.DateTime `json:"UpdateTime"`
 }
 
 // Validate validates this p t x service d t o shared specification v3 base authority
@@ -167,6 +168,10 @@ func (m *PTXServiceDTOSharedSpecificationV3BaseAuthority) validateAuthorityPhone
 func (m *PTXServiceDTOSharedSpecificationV3BaseAuthority) validateUpdateTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
+		return err
+	}
+
+	if err := validate.FormatOf("UpdateTime", "body", "date-time", m.UpdateTime.String(), formats); err != nil {
 		return err
 	}
 
