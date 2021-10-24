@@ -3,4 +3,4 @@ linters:
   enable:
     - gofmt
     - goimports
-    - golint
+    - revive
