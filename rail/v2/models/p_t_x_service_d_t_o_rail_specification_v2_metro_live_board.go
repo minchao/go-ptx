@@ -41,11 +41,8 @@ type PTXServiceDTORailSpecificationV2MetroLiveBoard struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
 	} `json:"DestinationStationName" xml:"NameType"`
 
-	// Int32
-	//
 	// 下班車次抵達時間預估(分)
-	// Required: true
-	EstimateTime *int32 `json:"EstimateTime"`
+	EstimateTime int32 `json:"EstimateTime,omitempty"`
 
 	// String
 	//
@@ -65,6 +62,12 @@ type PTXServiceDTORailSpecificationV2MetroLiveBoard struct {
 	LineName struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
 	} `json:"LineName" xml:"NameType"`
+
+	// Int32
+	//
+	// 車次營運服務狀態(0: 正常, 1: 尚未發車, 2: 交管不停靠, 3: 末班車已過, 4: 今日未營運)
+	// Required: true
+	ServiceStatus *int32 `json:"ServiceStatus"`
 
 	// DateTime
 	//
@@ -117,15 +120,15 @@ func (m *PTXServiceDTORailSpecificationV2MetroLiveBoard) Validate(formats strfmt
 		res = append(res, err)
 	}
 
-	if err := m.validateEstimateTime(formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.validateLineID(formats); err != nil {
 		res = append(res, err)
 	}
 
 	if err := m.validateLineName(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateServiceStatus(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -178,15 +181,6 @@ func (m *PTXServiceDTORailSpecificationV2MetroLiveBoard) validateDestinationStat
 	return nil
 }
 
-func (m *PTXServiceDTORailSpecificationV2MetroLiveBoard) validateEstimateTime(formats strfmt.Registry) error {
-
-	if err := validate.Required("EstimateTime", "body", m.EstimateTime); err != nil {
-		return err
-	}
-
-	return nil
-}
-
 func (m *PTXServiceDTORailSpecificationV2MetroLiveBoard) validateLineID(formats strfmt.Registry) error {
 
 	if err := validate.Required("LineID", "body", m.LineID); err != nil {
@@ -197,6 +191,15 @@ func (m *PTXServiceDTORailSpecificationV2MetroLiveBoard) validateLineID(formats 
 }
 
 func (m *PTXServiceDTORailSpecificationV2MetroLiveBoard) validateLineName(formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV2MetroLiveBoard) validateServiceStatus(formats strfmt.Registry) error {
+
+	if err := validate.Required("ServiceStatus", "body", m.ServiceStatus); err != nil {
+		return err
+	}
 
 	return nil
 }

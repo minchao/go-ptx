@@ -704,13 +704,6 @@
               "true",
               "false"
             ]
-          },
-          {
-            "in": "query",
-            "name": "$format",
-            "description": "指定來源格式",
-            "required": true,
-            "type": "string"
           }
         ],
         "responses": {
@@ -3453,7 +3446,7 @@
           "200": {
             "description": "Success",
             "schema": {
-              "$ref": "#/definitions/PTX.API.Rail.Model.LiteTrainBaseWrapper[PTX.Service.DTO.Rail.Specification.V3.LiteTrain.Network.Network]"
+              "$ref": "#/definitions/PTX.API.Rail.Model.LiteTrain.LiteTrainBaseWrapper[PTX.Service.DTO.Rail.Specification.V3.LiteTrain.Network.Network]"
             }
           },
           "304": {
@@ -3554,7 +3547,7 @@
           "200": {
             "description": "Success",
             "schema": {
-              "$ref": "#/definitions/PTX.API.Rail.Model.LiteTrainBaseWrapper[PTX.Service.DTO.Rail.Specification.V3.LiteTrain.Station]"
+              "$ref": "#/definitions/PTX.API.Rail.Model.LiteTrain.LiteTrainBaseWrapper[PTX.Service.DTO.Rail.Specification.V3.LiteTrain.Station]"
             }
           },
           "304": {
@@ -3649,7 +3642,7 @@
           "200": {
             "description": "Success",
             "schema": {
-              "$ref": "#/definitions/PTX.API.Rail.Model.LiteTrainBaseWrapper[PTX.Service.DTO.Rail.Specification.V3.LiteTrain.Line]"
+              "$ref": "#/definitions/PTX.API.Rail.Model.LiteTrain.LiteTrainBaseWrapper[PTX.Service.DTO.Rail.Specification.V3.LiteTrain.Line]"
             }
           },
           "304": {
@@ -3744,7 +3737,7 @@
           "200": {
             "description": "Success",
             "schema": {
-              "$ref": "#/definitions/PTX.API.Rail.Model.LiteTrainBaseWrapper[PTX.Service.DTO.Rail.Specification.V3.LiteTrain.Operator]"
+              "$ref": "#/definitions/PTX.API.Rail.Model.LiteTrain.LiteTrainBaseWrapper[PTX.Service.DTO.Rail.Specification.V3.LiteTrain.Operator]"
             }
           },
           "304": {
@@ -3839,7 +3832,7 @@
           "200": {
             "description": "Success",
             "schema": {
-              "$ref": "#/definitions/PTX.API.Rail.Model.LiteTrainGeneralTrainWrapper[PTX.Service.DTO.Rail.Specification.V3.LiteTrain.GeneralTrainTimetable]"
+              "$ref": "#/definitions/PTX.API.Rail.Model.LiteTrain.LiteTrainGeneralTrainWrapper[PTX.Service.DTO.Rail.Specification.V3.LiteTrain.GeneralTrainTimetable]"
             }
           },
           "304": {
@@ -3941,7 +3934,7 @@
           "200": {
             "description": "Success",
             "schema": {
-              "$ref": "#/definitions/PTX.API.Rail.Model.LiteTrainGeneralTrainWrapper[PTX.Service.DTO.Rail.Specification.V3.LiteTrain.GeneralTrainTimetable]"
+              "$ref": "#/definitions/PTX.API.Rail.Model.LiteTrain.LiteTrainGeneralTrainWrapper[PTX.Service.DTO.Rail.Specification.V3.LiteTrain.GeneralTrainTimetable]"
             }
           },
           "304": {
@@ -4036,7 +4029,7 @@
           "200": {
             "description": "Success",
             "schema": {
-              "$ref": "#/definitions/PTX.API.Rail.Model.LiteTrainODFareWrapper[PTX.Service.DTO.Rail.Specification.V3.LiteTrain.ODFare.ODFare]"
+              "$ref": "#/definitions/PTX.API.Rail.Model.LiteTrain.LiteTrainODFareWrapper[PTX.Service.DTO.Rail.Specification.V3.LiteTrain.ODFare.ODFare]"
             }
           },
           "304": {
@@ -4145,7 +4138,7 @@
           "200": {
             "description": "Success",
             "schema": {
-              "$ref": "#/definitions/PTX.API.Rail.Model.LiteTrainODFareWrapper[PTX.Service.DTO.Rail.Specification.V3.LiteTrain.ODFare.ODFare]"
+              "$ref": "#/definitions/PTX.API.Rail.Model.LiteTrain.LiteTrainODFareWrapper[PTX.Service.DTO.Rail.Specification.V3.LiteTrain.ODFare.ODFare]"
             }
           },
           "304": {
@@ -4240,7 +4233,7 @@
           "200": {
             "description": "Success",
             "schema": {
-              "$ref": "#/definitions/PTX.API.Rail.Model.LiteTrainBaseWrapper[PTX.Service.DTO.Rail.Specification.V3.LiteTrain.Route]"
+              "$ref": "#/definitions/PTX.API.Rail.Model.LiteTrain.LiteTrainBaseWrapper[PTX.Service.DTO.Rail.Specification.V3.LiteTrain.Route]"
             }
           },
           "304": {
@@ -4335,7 +4328,7 @@
           "200": {
             "description": "Success",
             "schema": {
-              "$ref": "#/definitions/PTX.API.Rail.Model.LiteTrainBaseWrapper[PTX.Service.DTO.Rail.Specification.V3.LiteTrain.StationOfLine.StationOfLine]"
+              "$ref": "#/definitions/PTX.API.Rail.Model.LiteTrain.LiteTrainBaseWrapper[PTX.Service.DTO.Rail.Specification.V3.LiteTrain.StationOfLine.StationOfLine]"
             }
           },
           "304": {
@@ -4430,7 +4423,7 @@
           "200": {
             "description": "Success",
             "schema": {
-              "$ref": "#/definitions/PTX.API.Rail.Model.LiteTrainBaseWrapper[PTX.Service.DTO.Rail.Specification.V3.LiteTrain.TrainType]"
+              "$ref": "#/definitions/PTX.API.Rail.Model.LiteTrain.LiteTrainBaseWrapper[PTX.Service.DTO.Rail.Specification.V3.LiteTrain.TrainType]"
             }
           },
           "304": {
@@ -4525,7 +4518,7 @@
           "200": {
             "description": "Success",
             "schema": {
-              "$ref": "#/definitions/PTX.API.Rail.Model.LiteTrainBaseWrapper[PTX.Service.DTO.Rail.Specification.V3.LiteTrain.StationOfRoute.StationOfRoute]"
+              "$ref": "#/definitions/PTX.API.Rail.Model.LiteTrain.LiteTrainBaseWrapper[PTX.Service.DTO.Rail.Specification.V3.LiteTrain.StationOfRoute.StationOfRoute]"
             }
           },
           "304": {
@@ -4620,7 +4613,7 @@
           "200": {
             "description": "Success",
             "schema": {
-              "$ref": "#/definitions/PTX.API.Rail.Model.LiteTrainRealTimeWrapper[PTX.Service.DTO.Rail.Specification.V3.TRA.TRANewsList.News]"
+              "$ref": "#/definitions/PTX.API.Rail.Model.LiteTrain.LiteTrainRealTimeWrapper[PTX.Service.DTO.Rail.Specification.V3.TRA.TRANewsList.News]"
             }
           },
           "304": {
@@ -4637,7 +4630,7 @@
     }
   },
   "definitions": {
-    "PTX.API.Rail.Model.LiteTrainBaseWrapper[PTX.Service.DTO.Rail.Specification.V3.LiteTrain.Line]": {
+    "PTX.API.Rail.Model.LiteTrain.LiteTrainBaseWrapper[PTX.Service.DTO.Rail.Specification.V3.LiteTrain.Line]": {
       "title": "LiteTrainLineList",
       "required": [
         "AuthorityCode",
@@ -4702,7 +4695,7 @@
         "namespace": "https://ptx.transportdata.tw/standard/schema/"
       }
     },
-    "PTX.API.Rail.Model.LiteTrainBaseWrapper[PTX.Service.DTO.Rail.Specification.V3.LiteTrain.Network.Network]": {
+    "PTX.API.Rail.Model.LiteTrain.LiteTrainBaseWrapper[PTX.Service.DTO.Rail.Specification.V3.LiteTrain.Network.Network]": {
       "title": "LiteTrainNetworkList",
       "required": [
         "AuthorityCode",
@@ -4767,7 +4760,7 @@
         "namespace": "https://ptx.transportdata.tw/standard/schema/"
       }
     },
-    "PTX.API.Rail.Model.LiteTrainBaseWrapper[PTX.Service.DTO.Rail.Specification.V3.LiteTrain.Operator]": {
+    "PTX.API.Rail.Model.LiteTrain.LiteTrainBaseWrapper[PTX.Service.DTO.Rail.Specification.V3.LiteTrain.Operator]": {
       "title": "LiteTrainOperatorList",
       "required": [
         "AuthorityCode",
@@ -4832,7 +4825,7 @@
         "namespace": "https://ptx.transportdata.tw/standard/schema/"
       }
     },
-    "PTX.API.Rail.Model.LiteTrainBaseWrapper[PTX.Service.DTO.Rail.Specification.V3.LiteTrain.Route]": {
+    "PTX.API.Rail.Model.LiteTrain.LiteTrainBaseWrapper[PTX.Service.DTO.Rail.Specification.V3.LiteTrain.Route]": {
       "title": "LiteTrainRouteList",
       "required": [
         "AuthorityCode",
@@ -4897,7 +4890,7 @@
         "namespace": "https://ptx.transportdata.tw/standard/schema/"
       }
     },
-    "PTX.API.Rail.Model.LiteTrainBaseWrapper[PTX.Service.DTO.Rail.Specification.V3.LiteTrain.Station]": {
+    "PTX.API.Rail.Model.LiteTrain.LiteTrainBaseWrapper[PTX.Service.DTO.Rail.Specification.V3.LiteTrain.Station]": {
       "title": "LiteTrainStationList",
       "required": [
         "AuthorityCode",
@@ -4962,7 +4955,7 @@
         "namespace": "https://ptx.transportdata.tw/standard/schema/"
       }
     },
-    "PTX.API.Rail.Model.LiteTrainBaseWrapper[PTX.Service.DTO.Rail.Specification.V3.LiteTrain.StationOfLine.StationOfLine]": {
+    "PTX.API.Rail.Model.LiteTrain.LiteTrainBaseWrapper[PTX.Service.DTO.Rail.Specification.V3.LiteTrain.StationOfLine.StationOfLine]": {
       "title": "LiteTrainStationOfLineList",
       "required": [
         "AuthorityCode",
@@ -5027,7 +5020,7 @@
         "namespace": "https://ptx.transportdata.tw/standard/schema/"
       }
     },
-    "PTX.API.Rail.Model.LiteTrainBaseWrapper[PTX.Service.DTO.Rail.Specification.V3.LiteTrain.StationOfRoute.StationOfRoute]": {
+    "PTX.API.Rail.Model.LiteTrain.LiteTrainBaseWrapper[PTX.Service.DTO.Rail.Specification.V3.LiteTrain.StationOfRoute.StationOfRoute]": {
       "title": "LiteTrainStationOfRouteList",
       "required": [
         "AuthorityCode",
@@ -5092,7 +5085,7 @@
         "namespace": "https://ptx.transportdata.tw/standard/schema/"
       }
     },
-    "PTX.API.Rail.Model.LiteTrainBaseWrapper[PTX.Service.DTO.Rail.Specification.V3.LiteTrain.TrainType]": {
+    "PTX.API.Rail.Model.LiteTrain.LiteTrainBaseWrapper[PTX.Service.DTO.Rail.Specification.V3.LiteTrain.TrainType]": {
       "title": "LiteTrainTrainTypeList",
       "required": [
         "AuthorityCode",
@@ -5157,7 +5150,7 @@
         "namespace": "https://ptx.transportdata.tw/standard/schema/"
       }
     },
-    "PTX.API.Rail.Model.LiteTrainGeneralTrainWrapper[PTX.Service.DTO.Rail.Specification.V3.LiteTrain.GeneralTrainTimetable]": {
+    "PTX.API.Rail.Model.LiteTrain.LiteTrainGeneralTrainWrapper[PTX.Service.DTO.Rail.Specification.V3.LiteTrain.GeneralTrainTimetable]": {
       "title": "LiteTrainGeneralTrainTimetableList",
       "required": [
         "AuthorityCode",
@@ -5258,7 +5251,7 @@
         "namespace": "https://ptx.transportdata.tw/standard/schema/"
       }
     },
-    "PTX.API.Rail.Model.LiteTrainODFareWrapper[PTX.Service.DTO.Rail.Specification.V3.LiteTrain.ODFare.ODFare]": {
+    "PTX.API.Rail.Model.LiteTrain.LiteTrainODFareWrapper[PTX.Service.DTO.Rail.Specification.V3.LiteTrain.ODFare.ODFare]": {
       "title": "LiteTrainODFareList",
       "required": [
         "AuthorityCode",
@@ -5347,7 +5340,7 @@
         "namespace": "https://ptx.transportdata.tw/standard/schema/"
       }
     },
-    "PTX.API.Rail.Model.LiteTrainRealTimeWrapper[PTX.Service.DTO.Rail.Specification.V3.TRA.TRANewsList.News]": {
+    "PTX.API.Rail.Model.LiteTrain.LiteTrainRealTimeWrapper[PTX.Service.DTO.Rail.Specification.V3.TRA.TRANewsList.News]": {
       "title": "LiteTrainNewsList",
       "required": [
         "AuthorityCode",

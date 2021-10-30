@@ -56,19 +56,19 @@ func NewLiteTrainGeneralTrainTimetable1OK() *LiteTrainGeneralTrainTimetable1OK {
 Success
 */
 type LiteTrainGeneralTrainTimetable1OK struct {
-	Payload *models.PTXAPIRailModelLiteTrainGeneralTrainWrapperPTXServiceDTORailSpecificationV3LiteTrainGeneralTrainTimetable
+	Payload *models.PTXAPIRailModelLiteTrainLiteTrainGeneralTrainWrapperPTXServiceDTORailSpecificationV3LiteTrainGeneralTrainTimetable
 }
 
 func (o *LiteTrainGeneralTrainTimetable1OK) Error() string {
 	return fmt.Sprintf("[GET /v3/Rail/AFR/GeneralTrainTimetable/TrainNo/{TrainNo}][%d] liteTrainGeneralTrainTimetable1OK  %+v", 200, o.Payload)
 }
-func (o *LiteTrainGeneralTrainTimetable1OK) GetPayload() *models.PTXAPIRailModelLiteTrainGeneralTrainWrapperPTXServiceDTORailSpecificationV3LiteTrainGeneralTrainTimetable {
+func (o *LiteTrainGeneralTrainTimetable1OK) GetPayload() *models.PTXAPIRailModelLiteTrainLiteTrainGeneralTrainWrapperPTXServiceDTORailSpecificationV3LiteTrainGeneralTrainTimetable {
 	return o.Payload
 }
 
 func (o *LiteTrainGeneralTrainTimetable1OK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.PTXAPIRailModelLiteTrainGeneralTrainWrapperPTXServiceDTORailSpecificationV3LiteTrainGeneralTrainTimetable)
+	o.Payload = new(models.PTXAPIRailModelLiteTrainLiteTrainGeneralTrainWrapperPTXServiceDTORailSpecificationV3LiteTrainGeneralTrainTimetable)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

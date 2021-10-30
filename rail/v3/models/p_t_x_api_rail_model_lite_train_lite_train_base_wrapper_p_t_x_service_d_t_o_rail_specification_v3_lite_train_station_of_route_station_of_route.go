@@ -15,10 +15,10 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// PTXAPIRailModelLiteTrainBaseWrapperPTXServiceDTORailSpecificationV3LiteTrainStationOfRouteStationOfRoute LiteTrainStationOfRouteList
+// PTXAPIRailModelLiteTrainLiteTrainBaseWrapperPTXServiceDTORailSpecificationV3LiteTrainStationOfRouteStationOfRoute LiteTrainStationOfRouteList
 //
-// swagger:model PTX.API.Rail.Model.LiteTrainBaseWrapper[PTX.Service.DTO.Rail.Specification.V3.LiteTrain.StationOfRoute.StationOfRoute]
-type PTXAPIRailModelLiteTrainBaseWrapperPTXServiceDTORailSpecificationV3LiteTrainStationOfRouteStationOfRoute struct {
+// swagger:model PTX.API.Rail.Model.LiteTrain.LiteTrainBaseWrapper[PTX.Service.DTO.Rail.Specification.V3.LiteTrain.StationOfRoute.StationOfRoute]
+type PTXAPIRailModelLiteTrainLiteTrainBaseWrapperPTXServiceDTORailSpecificationV3LiteTrainStationOfRouteStationOfRoute struct {
 
 	// String
 	//
@@ -60,8 +60,8 @@ type PTXAPIRailModelLiteTrainBaseWrapperPTXServiceDTORailSpecificationV3LiteTrai
 	UpdateTime *strfmt.DateTime `json:"UpdateTime"`
 }
 
-// Validate validates this p t x API rail model lite train base wrapper p t x service d t o rail specification v3 lite train station of route station of route
-func (m *PTXAPIRailModelLiteTrainBaseWrapperPTXServiceDTORailSpecificationV3LiteTrainStationOfRouteStationOfRoute) Validate(formats strfmt.Registry) error {
+// Validate validates this p t x API rail model lite train lite train base wrapper p t x service d t o rail specification v3 lite train station of route station of route
+func (m *PTXAPIRailModelLiteTrainLiteTrainBaseWrapperPTXServiceDTORailSpecificationV3LiteTrainStationOfRouteStationOfRoute) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateAuthorityCode(formats); err != nil {
@@ -94,7 +94,7 @@ func (m *PTXAPIRailModelLiteTrainBaseWrapperPTXServiceDTORailSpecificationV3Lite
 	return nil
 }
 
-func (m *PTXAPIRailModelLiteTrainBaseWrapperPTXServiceDTORailSpecificationV3LiteTrainStationOfRouteStationOfRoute) validateAuthorityCode(formats strfmt.Registry) error {
+func (m *PTXAPIRailModelLiteTrainLiteTrainBaseWrapperPTXServiceDTORailSpecificationV3LiteTrainStationOfRouteStationOfRoute) validateAuthorityCode(formats strfmt.Registry) error {
 
 	if err := validate.Required("AuthorityCode", "body", m.AuthorityCode); err != nil {
 		return err
@@ -103,7 +103,7 @@ func (m *PTXAPIRailModelLiteTrainBaseWrapperPTXServiceDTORailSpecificationV3Lite
 	return nil
 }
 
-func (m *PTXAPIRailModelLiteTrainBaseWrapperPTXServiceDTORailSpecificationV3LiteTrainStationOfRouteStationOfRoute) validateSrcUpdateInterval(formats strfmt.Registry) error {
+func (m *PTXAPIRailModelLiteTrainLiteTrainBaseWrapperPTXServiceDTORailSpecificationV3LiteTrainStationOfRouteStationOfRoute) validateSrcUpdateInterval(formats strfmt.Registry) error {
 
 	if err := validate.Required("SrcUpdateInterval", "body", m.SrcUpdateInterval); err != nil {
 		return err
@@ -112,7 +112,7 @@ func (m *PTXAPIRailModelLiteTrainBaseWrapperPTXServiceDTORailSpecificationV3Lite
 	return nil
 }
 
-func (m *PTXAPIRailModelLiteTrainBaseWrapperPTXServiceDTORailSpecificationV3LiteTrainStationOfRouteStationOfRoute) validateSrcUpdateTime(formats strfmt.Registry) error {
+func (m *PTXAPIRailModelLiteTrainLiteTrainBaseWrapperPTXServiceDTORailSpecificationV3LiteTrainStationOfRouteStationOfRoute) validateSrcUpdateTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("SrcUpdateTime", "body", m.SrcUpdateTime); err != nil {
 		return err
@@ -125,7 +125,7 @@ func (m *PTXAPIRailModelLiteTrainBaseWrapperPTXServiceDTORailSpecificationV3Lite
 	return nil
 }
 
-func (m *PTXAPIRailModelLiteTrainBaseWrapperPTXServiceDTORailSpecificationV3LiteTrainStationOfRouteStationOfRoute) validateStationOfRoutes(formats strfmt.Registry) error {
+func (m *PTXAPIRailModelLiteTrainLiteTrainBaseWrapperPTXServiceDTORailSpecificationV3LiteTrainStationOfRouteStationOfRoute) validateStationOfRoutes(formats strfmt.Registry) error {
 
 	if err := validate.Required("StationOfRoutes", "body", m.StationOfRoutes); err != nil {
 		return err
@@ -150,7 +150,7 @@ func (m *PTXAPIRailModelLiteTrainBaseWrapperPTXServiceDTORailSpecificationV3Lite
 	return nil
 }
 
-func (m *PTXAPIRailModelLiteTrainBaseWrapperPTXServiceDTORailSpecificationV3LiteTrainStationOfRouteStationOfRoute) validateUpdateInterval(formats strfmt.Registry) error {
+func (m *PTXAPIRailModelLiteTrainLiteTrainBaseWrapperPTXServiceDTORailSpecificationV3LiteTrainStationOfRouteStationOfRoute) validateUpdateInterval(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateInterval", "body", m.UpdateInterval); err != nil {
 		return err
@@ -159,7 +159,7 @@ func (m *PTXAPIRailModelLiteTrainBaseWrapperPTXServiceDTORailSpecificationV3Lite
 	return nil
 }
 
-func (m *PTXAPIRailModelLiteTrainBaseWrapperPTXServiceDTORailSpecificationV3LiteTrainStationOfRouteStationOfRoute) validateUpdateTime(formats strfmt.Registry) error {
+func (m *PTXAPIRailModelLiteTrainLiteTrainBaseWrapperPTXServiceDTORailSpecificationV3LiteTrainStationOfRouteStationOfRoute) validateUpdateTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
 		return err
@@ -172,8 +172,8 @@ func (m *PTXAPIRailModelLiteTrainBaseWrapperPTXServiceDTORailSpecificationV3Lite
 	return nil
 }
 
-// ContextValidate validate this p t x API rail model lite train base wrapper p t x service d t o rail specification v3 lite train station of route station of route based on the context it is used
-func (m *PTXAPIRailModelLiteTrainBaseWrapperPTXServiceDTORailSpecificationV3LiteTrainStationOfRouteStationOfRoute) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+// ContextValidate validate this p t x API rail model lite train lite train base wrapper p t x service d t o rail specification v3 lite train station of route station of route based on the context it is used
+func (m *PTXAPIRailModelLiteTrainLiteTrainBaseWrapperPTXServiceDTORailSpecificationV3LiteTrainStationOfRouteStationOfRoute) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.contextValidateStationOfRoutes(ctx, formats); err != nil {
@@ -186,7 +186,7 @@ func (m *PTXAPIRailModelLiteTrainBaseWrapperPTXServiceDTORailSpecificationV3Lite
 	return nil
 }
 
-func (m *PTXAPIRailModelLiteTrainBaseWrapperPTXServiceDTORailSpecificationV3LiteTrainStationOfRouteStationOfRoute) contextValidateStationOfRoutes(ctx context.Context, formats strfmt.Registry) error {
+func (m *PTXAPIRailModelLiteTrainLiteTrainBaseWrapperPTXServiceDTORailSpecificationV3LiteTrainStationOfRouteStationOfRoute) contextValidateStationOfRoutes(ctx context.Context, formats strfmt.Registry) error {
 
 	for i := 0; i < len(m.StationOfRoutes); i++ {
 
@@ -205,7 +205,7 @@ func (m *PTXAPIRailModelLiteTrainBaseWrapperPTXServiceDTORailSpecificationV3Lite
 }
 
 // MarshalBinary interface implementation
-func (m *PTXAPIRailModelLiteTrainBaseWrapperPTXServiceDTORailSpecificationV3LiteTrainStationOfRouteStationOfRoute) MarshalBinary() ([]byte, error) {
+func (m *PTXAPIRailModelLiteTrainLiteTrainBaseWrapperPTXServiceDTORailSpecificationV3LiteTrainStationOfRouteStationOfRoute) MarshalBinary() ([]byte, error) {
 	if m == nil {
 		return nil, nil
 	}
@@ -213,8 +213,8 @@ func (m *PTXAPIRailModelLiteTrainBaseWrapperPTXServiceDTORailSpecificationV3Lite
 }
 
 // UnmarshalBinary interface implementation
-func (m *PTXAPIRailModelLiteTrainBaseWrapperPTXServiceDTORailSpecificationV3LiteTrainStationOfRouteStationOfRoute) UnmarshalBinary(b []byte) error {
-	var res PTXAPIRailModelLiteTrainBaseWrapperPTXServiceDTORailSpecificationV3LiteTrainStationOfRouteStationOfRoute
+func (m *PTXAPIRailModelLiteTrainLiteTrainBaseWrapperPTXServiceDTORailSpecificationV3LiteTrainStationOfRouteStationOfRoute) UnmarshalBinary(b []byte) error {
+	var res PTXAPIRailModelLiteTrainLiteTrainBaseWrapperPTXServiceDTORailSpecificationV3LiteTrainStationOfRouteStationOfRoute
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

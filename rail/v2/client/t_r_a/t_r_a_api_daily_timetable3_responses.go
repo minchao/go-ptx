@@ -60,7 +60,7 @@ type TRAAPIDailyTimetable3OK struct {
 }
 
 func (o *TRAAPIDailyTimetable3OK) Error() string {
-	return fmt.Sprintf("[GET /v2/Rail/TRA/DailyTimetable/TrainNo/{TrainNo}/TrainDate/{TrainDate}][%d] tRAApiDailyTimetable3OK  %+v", 200, o.Payload)
+	return fmt.Sprintf("[GET /v2/Rail/TRA/DailyTimetable/TrainDate/{TrainDate}][%d] tRAApiDailyTimetable3OK  %+v", 200, o.Payload)
 }
 func (o *TRAAPIDailyTimetable3OK) GetPayload() []*models.PTXServiceDTORailSpecificationV2TRARailDailyTimetable {
 	return o.Payload
@@ -90,7 +90,7 @@ type TRAAPIDailyTimetable3Status299 struct {
 }
 
 func (o *TRAAPIDailyTimetable3Status299) Error() string {
-	return fmt.Sprintf("[GET /v2/Rail/TRA/DailyTimetable/TrainNo/{TrainNo}/TrainDate/{TrainDate}][%d] tRAApiDailyTimetable3Status299  %+v", 299, o.Payload)
+	return fmt.Sprintf("[GET /v2/Rail/TRA/DailyTimetable/TrainDate/{TrainDate}][%d] tRAApiDailyTimetable3Status299  %+v", 299, o.Payload)
 }
 func (o *TRAAPIDailyTimetable3Status299) GetPayload() *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth {
 	return o.Payload
@@ -121,7 +121,7 @@ type TRAAPIDailyTimetable3NotModified struct {
 }
 
 func (o *TRAAPIDailyTimetable3NotModified) Error() string {
-	return fmt.Sprintf("[GET /v2/Rail/TRA/DailyTimetable/TrainNo/{TrainNo}/TrainDate/{TrainDate}][%d] tRAApiDailyTimetable3NotModified ", 304)
+	return fmt.Sprintf("[GET /v2/Rail/TRA/DailyTimetable/TrainDate/{TrainDate}][%d] tRAApiDailyTimetable3NotModified ", 304)
 }
 
 func (o *TRAAPIDailyTimetable3NotModified) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {

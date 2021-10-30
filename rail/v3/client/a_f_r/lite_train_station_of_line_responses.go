@@ -56,19 +56,19 @@ func NewLiteTrainStationOfLineOK() *LiteTrainStationOfLineOK {
 Success
 */
 type LiteTrainStationOfLineOK struct {
-	Payload *models.PTXAPIRailModelLiteTrainBaseWrapperPTXServiceDTORailSpecificationV3LiteTrainStationOfLineStationOfLine
+	Payload *models.PTXAPIRailModelLiteTrainLiteTrainBaseWrapperPTXServiceDTORailSpecificationV3LiteTrainStationOfLineStationOfLine
 }
 
 func (o *LiteTrainStationOfLineOK) Error() string {
 	return fmt.Sprintf("[GET /v3/Rail/AFR/StationOfLine][%d] liteTrainStationOfLineOK  %+v", 200, o.Payload)
 }
-func (o *LiteTrainStationOfLineOK) GetPayload() *models.PTXAPIRailModelLiteTrainBaseWrapperPTXServiceDTORailSpecificationV3LiteTrainStationOfLineStationOfLine {
+func (o *LiteTrainStationOfLineOK) GetPayload() *models.PTXAPIRailModelLiteTrainLiteTrainBaseWrapperPTXServiceDTORailSpecificationV3LiteTrainStationOfLineStationOfLine {
 	return o.Payload
 }
 
 func (o *LiteTrainStationOfLineOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.PTXAPIRailModelLiteTrainBaseWrapperPTXServiceDTORailSpecificationV3LiteTrainStationOfLineStationOfLine)
+	o.Payload = new(models.PTXAPIRailModelLiteTrainLiteTrainBaseWrapperPTXServiceDTORailSpecificationV3LiteTrainStationOfLineStationOfLine)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

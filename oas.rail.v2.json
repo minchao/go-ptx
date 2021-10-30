@@ -126,11 +126,11 @@
               "TMRT"
             ],
             "x-enum": {
-              "KRTC": "高雄捷運",
-              "TRTCMG": "貓空纜車",
-              "TRTC": "臺北捷運",
               "TMRT": "臺中捷運",
-              "TYMC": "桃園捷運"
+              "TRTC": "臺北捷運",
+              "KRTC": "高雄捷運",
+              "TYMC": "桃園捷運",
+              "TRTCMG": "貓空纜車"
             }
           },
           {
@@ -238,13 +238,13 @@
               "TMRT"
             ],
             "x-enum": {
-              "TMRT": "臺中捷運",
-              "TRTCMG": "貓空纜車",
               "TYMC": "桃園捷運",
-              "NTDLRT": "淡海輕軌",
               "KLRT": "高雄輕軌",
               "KRTC": "高雄捷運",
-              "TRTC": "臺北捷運"
+              "NTDLRT": "淡海輕軌",
+              "TRTC": "臺北捷運",
+              "TRTCMG": "貓空纜車",
+              "TMRT": "臺中捷運"
             }
           },
           {
@@ -352,13 +352,13 @@
               "TMRT"
             ],
             "x-enum": {
-              "TYMC": "桃園捷運",
-              "NTDLRT": "淡海輕軌",
               "KLRT": "高雄輕軌",
+              "NTDLRT": "淡海輕軌",
               "TMRT": "臺中捷運",
               "KRTC": "高雄捷運",
-              "TRTCMG": "貓空纜車",
-              "TRTC": "臺北捷運"
+              "TYMC": "桃園捷運",
+              "TRTC": "臺北捷運",
+              "TRTCMG": "貓空纜車"
             }
           },
           {
@@ -472,13 +472,13 @@
               "TMRT"
             ],
             "x-enum": {
-              "KLRT": "高雄輕軌",
-              "KRTC": "高雄捷運",
-              "TYMC": "桃園捷運",
               "TMRT": "臺中捷運",
-              "TRTCMG": "貓空纜車",
               "NTDLRT": "淡海輕軌",
-              "TRTC": "臺北捷運"
+              "TYMC": "桃園捷運",
+              "KLRT": "高雄輕軌",
+              "TRTC": "臺北捷運",
+              "KRTC": "高雄捷運",
+              "TRTCMG": "貓空纜車"
             }
           },
           {
@@ -581,9 +581,9 @@
               "KRTC"
             ],
             "x-enum": {
+              "TRTC": "臺北捷運",
               "KRTC": "高雄捷運",
-              "TYMC": "桃園捷運",
-              "TRTC": "臺北捷運"
+              "TYMC": "桃園捷運"
             }
           },
           {
@@ -685,8 +685,8 @@
               "TYMC"
             ],
             "x-enum": {
-              "KRTC": "高雄捷運",
               "TRTC": "臺北捷運",
+              "KRTC": "高雄捷運",
               "TYMC": "桃園捷運"
             }
           },
@@ -793,12 +793,12 @@
               "TMRT"
             ],
             "x-enum": {
-              "TRTCMG": "貓空纜車",
-              "TRTC": "臺北捷運",
-              "KLRT": "高雄輕軌",
-              "KRTC": "高雄捷運",
               "TYMC": "桃園捷運",
-              "TMRT": "臺中捷運"
+              "KRTC": "高雄捷運",
+              "TRTCMG": "貓空纜車",
+              "TMRT": "臺中捷運",
+              "TRTC": "臺北捷運",
+              "KLRT": "高雄輕軌"
             }
           },
           {
@@ -910,11 +910,11 @@
               "TMRT"
             ],
             "x-enum": {
-              "TMRT": "臺中捷運",
-              "TRTC": "臺北捷運",
-              "KRTC": "高雄捷運",
               "TYMC": "桃園捷運",
-              "NTDLRT": "淡海輕軌"
+              "KRTC": "高雄捷運",
+              "TMRT": "臺中捷運",
+              "NTDLRT": "淡海輕軌",
+              "TRTC": "臺北捷運"
             }
           },
           {
@@ -1020,11 +1020,11 @@
               "TMRT"
             ],
             "x-enum": {
-              "KRTC": "高雄捷運",
-              "TRTC": "臺北捷運",
-              "NTDLRT": "淡海輕軌",
               "TYMC": "桃園捷運",
-              "TMRT": "臺中捷運"
+              "TRTC": "臺北捷運",
+              "KRTC": "高雄捷運",
+              "TMRT": "臺中捷運",
+              "NTDLRT": "淡海輕軌"
             }
           },
           {
@@ -1130,11 +1130,11 @@
               "TMRT"
             ],
             "x-enum": {
-              "TRTC": "臺北捷運",
-              "TYMC": "桃園捷運",
-              "KRTC": "高雄捷運",
               "KLRT": "高雄輕軌",
-              "TMRT": "臺中捷運"
+              "KRTC": "高雄捷運",
+              "TRTC": "臺北捷運",
+              "TMRT": "臺中捷運",
+              "TYMC": "桃園捷運"
             }
           },
           {
@@ -1238,10 +1238,10 @@
               "TMRT"
             ],
             "x-enum": {
-              "TYMC": "桃園捷運",
-              "KRTC": "高雄捷運",
               "TMRT": "臺中捷運",
-              "TRTC": "臺北捷運"
+              "TRTC": "臺北捷運",
+              "KRTC": "高雄捷運",
+              "TYMC": "桃園捷運"
             }
           },
           {
@@ -1343,13 +1343,15 @@
               "TRTC",
               "KRTC",
               "TYMC",
-              "KLRT"
+              "KLRT",
+              "TMRT"
             ],
             "x-enum": {
-              "KLRT": "高雄輕軌",
-              "TYMC": "桃園捷運",
               "KRTC": "高雄捷運",
-              "TRTC": "臺北捷運"
+              "TRTC": "臺北捷運",
+              "TMRT": "臺中捷運",
+              "KLRT": "高雄輕軌",
+              "TYMC": "桃園捷運"
             }
           },
           {
@@ -1457,13 +1459,13 @@
               "TMRT"
             ],
             "x-enum": {
-              "TYMC": "桃園捷運",
               "KLRT": "高雄輕軌",
+              "TYMC": "桃園捷運",
+              "NTDLRT": "淡海輕軌",
               "KRTC": "高雄捷運",
               "TRTCMG": "貓空纜車",
               "TRTC": "臺北捷運",
-              "TMRT": "臺中捷運",
-              "NTDLRT": "淡海輕軌"
+              "TMRT": "臺中捷運"
             }
           },
           {
@@ -1566,9 +1568,9 @@
               "KLRT"
             ],
             "x-enum": {
-              "TRTC": "臺北捷運",
               "TYMC": "桃園捷運",
               "KLRT": "高雄輕軌",
+              "TRTC": "臺北捷運",
               "KRTC": "高雄捷運"
             }
           },
@@ -1677,9 +1679,9 @@
             "x-enum": {
               "KRTC": "高雄捷運",
               "TYMC": "桃園捷運",
-              "TRTC": "臺北捷運",
               "NTDLRT": "淡海輕軌",
-              "KLRT": "高雄輕軌"
+              "KLRT": "高雄輕軌",
+              "TRTC": "臺北捷運"
             }
           },
           {
@@ -1781,13 +1783,17 @@
               "TRTC",
               "KRTC",
               "TYMC",
-              "NTDLRT"
+              "NTDLRT",
+              "TMRT",
+              "KLRT"
             ],
             "x-enum": {
               "NTDLRT": "淡海輕軌",
-              "TYMC": "桃園捷運",
+              "TMRT": "臺中捷運",
               "KRTC": "高雄捷運",
-              "TRTC": "臺北捷運"
+              "TYMC": "桃園捷運",
+              "TRTC": "臺北捷運",
+              "KLRT": "高雄輕軌"
             }
           },
           {
@@ -1892,10 +1898,10 @@
               "TRTC"
             ],
             "x-enum": {
-              "TRTC": "臺北捷運",
               "KLRT": "高雄輕軌",
-              "KRTC": "高雄捷運",
-              "TYMC": "桃園捷運"
+              "TRTC": "臺北捷運",
+              "TYMC": "桃園捷運",
+              "KRTC": "高雄捷運"
             }
           },
           {
@@ -2006,10 +2012,10 @@
               "TRTC"
             ],
             "x-enum": {
-              "KLRT": "高雄輕軌",
-              "TRTC": "臺北捷運",
               "TYMC": "桃園捷運",
-              "KRTC": "高雄捷運"
+              "TRTC": "臺北捷運",
+              "KRTC": "高雄捷運",
+              "KLRT": "高雄輕軌"
             }
           },
           {
@@ -3137,6 +3143,57 @@
         }
       }
     },
+    "/v2/Rail/THSR/DailyTimetable/TrainDates": {
+      "get": {
+        "tags": [
+          "THSR"
+        ],
+        "summary": "取得高鐵每日時刻表所有供應的日期資料",
+        "description": "取得高鐵每日時刻表所有供應的日期資料",
+        "operationId": "THSRApi_DailyTimetable_2",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.THSR.TrainDateList"
+            }
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
     "/v2/Rail/THSR/DailyTimetable/TrainDate/{TrainDate}": {
       "get": {
         "tags": [
@@ -3144,7 +3201,7 @@
         ],
         "summary": "取得指定[日期]所有車次的時刻表資料",
         "description": "取得指定[日期]所有車次的時刻表資料(高鐵提供近28天每日時刻表)",
-        "operationId": "THSRApi_DailyTimetable_2",
+        "operationId": "THSRApi_DailyTimetable_3",
         "produces": [
           "application/json",
           "application/xml"
@@ -3241,7 +3298,7 @@
         ],
         "summary": "取得指定[日期],[車次]的時刻表資料",
         "description": "取得指定[日期],[車次]的時刻表資料(高鐵提供近28天每日時刻表)",
-        "operationId": "THSRApi_DailyTimetable_3",
+        "operationId": "THSRApi_DailyTimetable_4",
         "produces": [
           "application/json",
           "application/xml"
@@ -6325,6 +6382,57 @@
         }
       }
     },
+    "/v2/Rail/TRA/DailyTimetable/TrainDates": {
+      "get": {
+        "tags": [
+          "TRA"
+        ],
+        "summary": "取得台鐵每日時刻表所有供應的日期資料",
+        "description": "取得台鐵每日時刻表所有供應的日期資料",
+        "operationId": "TRAApi_DailyTimetable_2",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.TRA.TrainDateList"
+            }
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
     "/v2/Rail/TRA/DailyTimetable/TrainDate/{TrainDate}": {
       "get": {
         "tags": [
@@ -6332,7 +6440,7 @@
         ],
         "summary": "取得指定[日期]所有車次的時刻表資料",
         "description": "取得指定[日期]所有車次的時刻表資料(台鐵提供近60天每日時刻表)",
-        "operationId": "TRAApi_DailyTimetable_2",
+        "operationId": "TRAApi_DailyTimetable_3",
         "produces": [
           "application/json",
           "application/xml"
@@ -6429,7 +6537,7 @@
         ],
         "summary": "取得指定[日期],[車次]的時刻表資料",
         "description": "取得指定[日期],[車次]的時刻表資料(台鐵提供近60天每日時刻表)",
-        "operationId": "TRAApi_DailyTimetable_3",
+        "operationId": "TRAApi_DailyTimetable_4",
         "produces": [
           "application/json",
           "application/xml"
@@ -7987,9 +8095,9 @@
         "DestinationStaionID",
         "DestinationStationID",
         "DestinationStationName",
-        "EstimateTime",
         "LineID",
         "LineName",
+        "ServiceStatus",
         "SrcUpdateTime",
         "StationID",
         "StationName",
@@ -8082,9 +8190,14 @@
             "name": "NameType"
           }
         },
-        "EstimateTime": {
+        "ServiceStatus": {
           "format": "int32",
           "title": "Int32",
+          "description": "車次營運服務狀態(0: 正常, 1: 尚未發車, 2: 交管不停靠, 3: 末班車已過, 4: 今日未營運)",
+          "type": "integer"
+        },
+        "EstimateTime": {
+          "format": "int32",
           "description": "下班車次抵達時間預估(分)",
           "type": "integer"
         },
@@ -8471,7 +8584,7 @@
         },
         "NewsCategory": {
           "title": "Int32",
-          "description": "消息類別 : [1:'最新消息',2:'新聞稿',3:'營運資訊',4:'轉乘資訊',5:'活動訊息',6:'系統公告',7:'新服務上架',8:'API修正',9:'來源異常',99:'其他']",
+          "description": "消息類別 : [1:'最新消息',2:'新聞稿',3:'營運資訊',4:'轉乘資訊',5:'活動訊息',6:'系統公告',7:'新服務上架',8:'API修正',9:'來源異常',10:'資料更新',99:'其他']",
           "type": "integer"
         },
         "Description": {
@@ -10623,7 +10736,7 @@
           "description": "車次停靠站點組合",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.THSR.StopStation"
+            "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.THSR.Old.StopStation"
           },
           "xml": {
             "name": "List`1"
@@ -10638,6 +10751,74 @@
       },
       "xml": {
         "name": "AvailableSeat"
+      }
+    },
+    "PTX.Service.DTO.Rail.Specification.V2.THSR.Old.StopStation": {
+      "title": "StopStation",
+      "description": "車次停靠站點組合",
+      "required": [
+        "BusinessSeatStatus",
+        "StandardSeatStatus",
+        "StationCode",
+        "StationID",
+        "StationName",
+        "StopSequence"
+      ],
+      "type": "object",
+      "properties": {
+        "StopSequence": {
+          "format": "int32",
+          "title": "Int32",
+          "description": "跑法站序",
+          "type": "integer"
+        },
+        "StationID": {
+          "title": "String",
+          "description": "車站代碼",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "StationCode": {
+          "title": "String",
+          "description": "車站簡碼(訂票系統用)",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "StationName": {
+          "title": "NameType",
+          "description": "車站名稱",
+          "allOf": [
+            {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V2.Base.NameType"
+            }
+          ],
+          "xml": {
+            "name": "NameType"
+          }
+        },
+        "StandardSeatStatus": {
+          "title": "String",
+          "description": "標準席剩餘座位狀態 = ['O: 尚有座位' or 'L: 座位有限' or 'X: 已無座位']",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "BusinessSeatStatus": {
+          "title": "String",
+          "description": "商務席剩餘座位狀態 =  ['O: 尚有座位' or 'L: 座位有限' or 'X: 已無座位']",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        }
+      },
+      "xml": {
+        "name": "StopStation"
       }
     },
     "PTX.Service.DTO.Rail.Specification.V2.THSR.RailDailyTimetable": {
@@ -11820,6 +12001,59 @@
       },
       "xml": {
         "name": "RailDailyTrainInfo"
+      }
+    },
+    "PTX.Service.DTO.Rail.Specification.V2.THSR.TrainDateList": {
+      "title": "TrainDateList",
+      "description": "高鐵每日時刻表供應日期資料型別",
+      "required": [
+        "EndDate",
+        "StartDate",
+        "TrainDates",
+        "UpdateTime"
+      ],
+      "type": "object",
+      "properties": {
+        "StartDate": {
+          "title": "String",
+          "description": "每日時刻表供應起始日期(格式: yyyy-MM-dd)",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "EndDate": {
+          "title": "String",
+          "description": "每日時刻表供應最終日期(格式: yyyy-MM-dd)",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "TrainDates": {
+          "title": "Array",
+          "description": "每日時刻表供應日期清單資料",
+          "type": "array",
+          "items": {
+            "title": "String",
+            "type": "string",
+            "xml": {
+              "name": "String"
+            }
+          },
+          "xml": {
+            "name": "List`1"
+          }
+        },
+        "UpdateTime": {
+          "format": "date-time",
+          "title": "DateTime",
+          "description": "資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        }
+      },
+      "xml": {
+        "name": "TrainDateList"
       }
     },
     "PTX.Service.DTO.Rail.Specification.V2.TRA.GeneralTimetable": {
@@ -13752,6 +13986,59 @@
       },
       "xml": {
         "name": "RailGeneralTrainInfo"
+      }
+    },
+    "PTX.Service.DTO.Rail.Specification.V2.TRA.TrainDateList": {
+      "title": "TrainDateList",
+      "description": "臺鐵每日時刻表供應日期資料型別",
+      "required": [
+        "EndDate",
+        "StartDate",
+        "TrainDates",
+        "UpdateTime"
+      ],
+      "type": "object",
+      "properties": {
+        "StartDate": {
+          "title": "String",
+          "description": "每日時刻表供應起始日期(格式: yyyy-MM-dd)",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "EndDate": {
+          "title": "String",
+          "description": "每日時刻表供應最終日期(格式: yyyy-MM-dd)",
+          "type": "string",
+          "xml": {
+            "name": "String"
+          }
+        },
+        "TrainDates": {
+          "title": "Array",
+          "description": "每日時刻表供應日期清單資料",
+          "type": "array",
+          "items": {
+            "title": "String",
+            "type": "string",
+            "xml": {
+              "name": "String"
+            }
+          },
+          "xml": {
+            "name": "List`1"
+          }
+        },
+        "UpdateTime": {
+          "format": "date-time",
+          "title": "DateTime",
+          "description": "資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        }
+      },
+      "xml": {
+        "name": "TrainDateList"
       }
     },
     "PTX.Service.DTO.Rail.Specification.V2.TRA.TrainType": {
