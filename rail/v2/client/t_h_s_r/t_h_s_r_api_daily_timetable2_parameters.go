@@ -14,7 +14,6 @@ import (
 	"github.com/go-openapi/runtime"
 	cr "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
-	"github.com/go-openapi/swag"
 )
 
 // NewTHSRAPIDailyTimetable2Params creates a new THSRAPIDailyTimetable2Params object,
@@ -60,51 +59,11 @@ func NewTHSRAPIDailyTimetable2ParamsWithHTTPClient(client *http.Client) *THSRAPI
 */
 type THSRAPIDailyTimetable2Params struct {
 
-	/* DollarFilter.
-
-	   過濾
-	*/
-	DollarFilter *string
-
 	/* DollarFormat.
 
 	   指定來源格式
 	*/
 	DollarFormat string
-
-	/* DollarOrderby.
-
-	   排序
-	*/
-	DollarOrderby *string
-
-	/* DollarSelect.
-
-	   挑選
-	*/
-	DollarSelect *string
-
-	/* DollarSkip.
-
-	   跳過前幾筆
-	*/
-	DollarSkip *string
-
-	/* DollarTop.
-
-	   取前幾筆
-
-	   Default: 30
-	*/
-	DollarTop *int64
-
-	/* TrainDate.
-
-	   欲查詢的日期(格式: yyyy-MM-dd)
-
-	   Format: date-time
-	*/
-	TrainDate strfmt.DateTime
 
 	/* Health.
 
@@ -129,18 +88,7 @@ func (o *THSRAPIDailyTimetable2Params) WithDefaults() *THSRAPIDailyTimetable2Par
 //
 // All values with no default are reset to their zero value.
 func (o *THSRAPIDailyTimetable2Params) SetDefaults() {
-	var (
-		dollarTopDefault = int64(30)
-	)
-
-	val := THSRAPIDailyTimetable2Params{
-		DollarTop: &dollarTopDefault,
-	}
-
-	val.timeout = o.timeout
-	val.Context = o.Context
-	val.HTTPClient = o.HTTPClient
-	*o = val
+	// no default values defined for this parameter
 }
 
 // WithTimeout adds the timeout to the t h s r Api daily timetable 2 params
@@ -176,17 +124,6 @@ func (o *THSRAPIDailyTimetable2Params) SetHTTPClient(client *http.Client) {
 	o.HTTPClient = client
 }
 
-// WithDollarFilter adds the dollarFilter to the t h s r Api daily timetable 2 params
-func (o *THSRAPIDailyTimetable2Params) WithDollarFilter(dollarFilter *string) *THSRAPIDailyTimetable2Params {
-	o.SetDollarFilter(dollarFilter)
-	return o
-}
-
-// SetDollarFilter adds the dollarFilter to the t h s r Api daily timetable 2 params
-func (o *THSRAPIDailyTimetable2Params) SetDollarFilter(dollarFilter *string) {
-	o.DollarFilter = dollarFilter
-}
-
 // WithDollarFormat adds the dollarFormat to the t h s r Api daily timetable 2 params
 func (o *THSRAPIDailyTimetable2Params) WithDollarFormat(dollarFormat string) *THSRAPIDailyTimetable2Params {
 	o.SetDollarFormat(dollarFormat)
@@ -196,61 +133,6 @@ func (o *THSRAPIDailyTimetable2Params) WithDollarFormat(dollarFormat string) *TH
 // SetDollarFormat adds the dollarFormat to the t h s r Api daily timetable 2 params
 func (o *THSRAPIDailyTimetable2Params) SetDollarFormat(dollarFormat string) {
 	o.DollarFormat = dollarFormat
-}
-
-// WithDollarOrderby adds the dollarOrderby to the t h s r Api daily timetable 2 params
-func (o *THSRAPIDailyTimetable2Params) WithDollarOrderby(dollarOrderby *string) *THSRAPIDailyTimetable2Params {
-	o.SetDollarOrderby(dollarOrderby)
-	return o
-}
-
-// SetDollarOrderby adds the dollarOrderby to the t h s r Api daily timetable 2 params
-func (o *THSRAPIDailyTimetable2Params) SetDollarOrderby(dollarOrderby *string) {
-	o.DollarOrderby = dollarOrderby
-}
-
-// WithDollarSelect adds the dollarSelect to the t h s r Api daily timetable 2 params
-func (o *THSRAPIDailyTimetable2Params) WithDollarSelect(dollarSelect *string) *THSRAPIDailyTimetable2Params {
-	o.SetDollarSelect(dollarSelect)
-	return o
-}
-
-// SetDollarSelect adds the dollarSelect to the t h s r Api daily timetable 2 params
-func (o *THSRAPIDailyTimetable2Params) SetDollarSelect(dollarSelect *string) {
-	o.DollarSelect = dollarSelect
-}
-
-// WithDollarSkip adds the dollarSkip to the t h s r Api daily timetable 2 params
-func (o *THSRAPIDailyTimetable2Params) WithDollarSkip(dollarSkip *string) *THSRAPIDailyTimetable2Params {
-	o.SetDollarSkip(dollarSkip)
-	return o
-}
-
-// SetDollarSkip adds the dollarSkip to the t h s r Api daily timetable 2 params
-func (o *THSRAPIDailyTimetable2Params) SetDollarSkip(dollarSkip *string) {
-	o.DollarSkip = dollarSkip
-}
-
-// WithDollarTop adds the dollarTop to the t h s r Api daily timetable 2 params
-func (o *THSRAPIDailyTimetable2Params) WithDollarTop(dollarTop *int64) *THSRAPIDailyTimetable2Params {
-	o.SetDollarTop(dollarTop)
-	return o
-}
-
-// SetDollarTop adds the dollarTop to the t h s r Api daily timetable 2 params
-func (o *THSRAPIDailyTimetable2Params) SetDollarTop(dollarTop *int64) {
-	o.DollarTop = dollarTop
-}
-
-// WithTrainDate adds the trainDate to the t h s r Api daily timetable 2 params
-func (o *THSRAPIDailyTimetable2Params) WithTrainDate(trainDate strfmt.DateTime) *THSRAPIDailyTimetable2Params {
-	o.SetTrainDate(trainDate)
-	return o
-}
-
-// SetTrainDate adds the trainDate to the t h s r Api daily timetable 2 params
-func (o *THSRAPIDailyTimetable2Params) SetTrainDate(trainDate strfmt.DateTime) {
-	o.TrainDate = trainDate
 }
 
 // WithHealth adds the health to the t h s r Api daily timetable 2 params
@@ -272,23 +154,6 @@ func (o *THSRAPIDailyTimetable2Params) WriteToRequest(r runtime.ClientRequest, r
 	}
 	var res []error
 
-	if o.DollarFilter != nil {
-
-		// query param $filter
-		var qrDollarFilter string
-
-		if o.DollarFilter != nil {
-			qrDollarFilter = *o.DollarFilter
-		}
-		qDollarFilter := qrDollarFilter
-		if qDollarFilter != "" {
-
-			if err := r.SetQueryParam("$filter", qDollarFilter); err != nil {
-				return err
-			}
-		}
-	}
-
 	// query param $format
 	qrDollarFormat := o.DollarFormat
 	qDollarFormat := qrDollarFormat
@@ -297,79 +162,6 @@ func (o *THSRAPIDailyTimetable2Params) WriteToRequest(r runtime.ClientRequest, r
 		if err := r.SetQueryParam("$format", qDollarFormat); err != nil {
 			return err
 		}
-	}
-
-	if o.DollarOrderby != nil {
-
-		// query param $orderby
-		var qrDollarOrderby string
-
-		if o.DollarOrderby != nil {
-			qrDollarOrderby = *o.DollarOrderby
-		}
-		qDollarOrderby := qrDollarOrderby
-		if qDollarOrderby != "" {
-
-			if err := r.SetQueryParam("$orderby", qDollarOrderby); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.DollarSelect != nil {
-
-		// query param $select
-		var qrDollarSelect string
-
-		if o.DollarSelect != nil {
-			qrDollarSelect = *o.DollarSelect
-		}
-		qDollarSelect := qrDollarSelect
-		if qDollarSelect != "" {
-
-			if err := r.SetQueryParam("$select", qDollarSelect); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.DollarSkip != nil {
-
-		// query param $skip
-		var qrDollarSkip string
-
-		if o.DollarSkip != nil {
-			qrDollarSkip = *o.DollarSkip
-		}
-		qDollarSkip := qrDollarSkip
-		if qDollarSkip != "" {
-
-			if err := r.SetQueryParam("$skip", qDollarSkip); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.DollarTop != nil {
-
-		// query param $top
-		var qrDollarTop int64
-
-		if o.DollarTop != nil {
-			qrDollarTop = *o.DollarTop
-		}
-		qDollarTop := swag.FormatInt64(qrDollarTop)
-		if qDollarTop != "" {
-
-			if err := r.SetQueryParam("$top", qDollarTop); err != nil {
-				return err
-			}
-		}
-	}
-
-	// path param TrainDate
-	if err := r.SetPathParam("TrainDate", o.TrainDate.String()); err != nil {
-		return err
 	}
 
 	if o.Health != nil {

@@ -15,10 +15,10 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// PTXAPIRailModelLiteTrainRealTimeWrapperPTXServiceDTORailSpecificationV3TRATRANewsListNews LiteTrainNewsList
+// PTXAPIRailModelLiteTrainLiteTrainRealTimeWrapperPTXServiceDTORailSpecificationV3TRATRANewsListNews LiteTrainNewsList
 //
-// swagger:model PTX.API.Rail.Model.LiteTrainRealTimeWrapper[PTX.Service.DTO.Rail.Specification.V3.TRA.TRANewsList.News]
-type PTXAPIRailModelLiteTrainRealTimeWrapperPTXServiceDTORailSpecificationV3TRATRANewsListNews struct {
+// swagger:model PTX.API.Rail.Model.LiteTrain.LiteTrainRealTimeWrapper[PTX.Service.DTO.Rail.Specification.V3.TRA.TRANewsList.News]
+type PTXAPIRailModelLiteTrainLiteTrainRealTimeWrapperPTXServiceDTORailSpecificationV3TRATRANewsListNews struct {
 
 	// String
 	//
@@ -60,8 +60,8 @@ type PTXAPIRailModelLiteTrainRealTimeWrapperPTXServiceDTORailSpecificationV3TRAT
 	UpdateTime *strfmt.DateTime `json:"UpdateTime"`
 }
 
-// Validate validates this p t x API rail model lite train real time wrapper p t x service d t o rail specification v3 t r a t r a news list news
-func (m *PTXAPIRailModelLiteTrainRealTimeWrapperPTXServiceDTORailSpecificationV3TRATRANewsListNews) Validate(formats strfmt.Registry) error {
+// Validate validates this p t x API rail model lite train lite train real time wrapper p t x service d t o rail specification v3 t r a t r a news list news
+func (m *PTXAPIRailModelLiteTrainLiteTrainRealTimeWrapperPTXServiceDTORailSpecificationV3TRATRANewsListNews) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateAuthorityCode(formats); err != nil {
@@ -94,7 +94,7 @@ func (m *PTXAPIRailModelLiteTrainRealTimeWrapperPTXServiceDTORailSpecificationV3
 	return nil
 }
 
-func (m *PTXAPIRailModelLiteTrainRealTimeWrapperPTXServiceDTORailSpecificationV3TRATRANewsListNews) validateAuthorityCode(formats strfmt.Registry) error {
+func (m *PTXAPIRailModelLiteTrainLiteTrainRealTimeWrapperPTXServiceDTORailSpecificationV3TRATRANewsListNews) validateAuthorityCode(formats strfmt.Registry) error {
 
 	if err := validate.Required("AuthorityCode", "body", m.AuthorityCode); err != nil {
 		return err
@@ -103,7 +103,7 @@ func (m *PTXAPIRailModelLiteTrainRealTimeWrapperPTXServiceDTORailSpecificationV3
 	return nil
 }
 
-func (m *PTXAPIRailModelLiteTrainRealTimeWrapperPTXServiceDTORailSpecificationV3TRATRANewsListNews) validateNewses(formats strfmt.Registry) error {
+func (m *PTXAPIRailModelLiteTrainLiteTrainRealTimeWrapperPTXServiceDTORailSpecificationV3TRATRANewsListNews) validateNewses(formats strfmt.Registry) error {
 
 	if err := validate.Required("Newses", "body", m.Newses); err != nil {
 		return err
@@ -128,7 +128,7 @@ func (m *PTXAPIRailModelLiteTrainRealTimeWrapperPTXServiceDTORailSpecificationV3
 	return nil
 }
 
-func (m *PTXAPIRailModelLiteTrainRealTimeWrapperPTXServiceDTORailSpecificationV3TRATRANewsListNews) validateSrcUpdateInterval(formats strfmt.Registry) error {
+func (m *PTXAPIRailModelLiteTrainLiteTrainRealTimeWrapperPTXServiceDTORailSpecificationV3TRATRANewsListNews) validateSrcUpdateInterval(formats strfmt.Registry) error {
 
 	if err := validate.Required("SrcUpdateInterval", "body", m.SrcUpdateInterval); err != nil {
 		return err
@@ -137,7 +137,7 @@ func (m *PTXAPIRailModelLiteTrainRealTimeWrapperPTXServiceDTORailSpecificationV3
 	return nil
 }
 
-func (m *PTXAPIRailModelLiteTrainRealTimeWrapperPTXServiceDTORailSpecificationV3TRATRANewsListNews) validateSrcUpdateTime(formats strfmt.Registry) error {
+func (m *PTXAPIRailModelLiteTrainLiteTrainRealTimeWrapperPTXServiceDTORailSpecificationV3TRATRANewsListNews) validateSrcUpdateTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("SrcUpdateTime", "body", m.SrcUpdateTime); err != nil {
 		return err
@@ -150,7 +150,7 @@ func (m *PTXAPIRailModelLiteTrainRealTimeWrapperPTXServiceDTORailSpecificationV3
 	return nil
 }
 
-func (m *PTXAPIRailModelLiteTrainRealTimeWrapperPTXServiceDTORailSpecificationV3TRATRANewsListNews) validateUpdateInterval(formats strfmt.Registry) error {
+func (m *PTXAPIRailModelLiteTrainLiteTrainRealTimeWrapperPTXServiceDTORailSpecificationV3TRATRANewsListNews) validateUpdateInterval(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateInterval", "body", m.UpdateInterval); err != nil {
 		return err
@@ -159,7 +159,7 @@ func (m *PTXAPIRailModelLiteTrainRealTimeWrapperPTXServiceDTORailSpecificationV3
 	return nil
 }
 
-func (m *PTXAPIRailModelLiteTrainRealTimeWrapperPTXServiceDTORailSpecificationV3TRATRANewsListNews) validateUpdateTime(formats strfmt.Registry) error {
+func (m *PTXAPIRailModelLiteTrainLiteTrainRealTimeWrapperPTXServiceDTORailSpecificationV3TRATRANewsListNews) validateUpdateTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
 		return err
@@ -172,8 +172,8 @@ func (m *PTXAPIRailModelLiteTrainRealTimeWrapperPTXServiceDTORailSpecificationV3
 	return nil
 }
 
-// ContextValidate validate this p t x API rail model lite train real time wrapper p t x service d t o rail specification v3 t r a t r a news list news based on the context it is used
-func (m *PTXAPIRailModelLiteTrainRealTimeWrapperPTXServiceDTORailSpecificationV3TRATRANewsListNews) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+// ContextValidate validate this p t x API rail model lite train lite train real time wrapper p t x service d t o rail specification v3 t r a t r a news list news based on the context it is used
+func (m *PTXAPIRailModelLiteTrainLiteTrainRealTimeWrapperPTXServiceDTORailSpecificationV3TRATRANewsListNews) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.contextValidateNewses(ctx, formats); err != nil {
@@ -186,7 +186,7 @@ func (m *PTXAPIRailModelLiteTrainRealTimeWrapperPTXServiceDTORailSpecificationV3
 	return nil
 }
 
-func (m *PTXAPIRailModelLiteTrainRealTimeWrapperPTXServiceDTORailSpecificationV3TRATRANewsListNews) contextValidateNewses(ctx context.Context, formats strfmt.Registry) error {
+func (m *PTXAPIRailModelLiteTrainLiteTrainRealTimeWrapperPTXServiceDTORailSpecificationV3TRATRANewsListNews) contextValidateNewses(ctx context.Context, formats strfmt.Registry) error {
 
 	for i := 0; i < len(m.Newses); i++ {
 
@@ -205,7 +205,7 @@ func (m *PTXAPIRailModelLiteTrainRealTimeWrapperPTXServiceDTORailSpecificationV3
 }
 
 // MarshalBinary interface implementation
-func (m *PTXAPIRailModelLiteTrainRealTimeWrapperPTXServiceDTORailSpecificationV3TRATRANewsListNews) MarshalBinary() ([]byte, error) {
+func (m *PTXAPIRailModelLiteTrainLiteTrainRealTimeWrapperPTXServiceDTORailSpecificationV3TRATRANewsListNews) MarshalBinary() ([]byte, error) {
 	if m == nil {
 		return nil, nil
 	}
@@ -213,8 +213,8 @@ func (m *PTXAPIRailModelLiteTrainRealTimeWrapperPTXServiceDTORailSpecificationV3
 }
 
 // UnmarshalBinary interface implementation
-func (m *PTXAPIRailModelLiteTrainRealTimeWrapperPTXServiceDTORailSpecificationV3TRATRANewsListNews) UnmarshalBinary(b []byte) error {
-	var res PTXAPIRailModelLiteTrainRealTimeWrapperPTXServiceDTORailSpecificationV3TRATRANewsListNews
+func (m *PTXAPIRailModelLiteTrainLiteTrainRealTimeWrapperPTXServiceDTORailSpecificationV3TRATRANewsListNews) UnmarshalBinary(b []byte) error {
+	var res PTXAPIRailModelLiteTrainLiteTrainRealTimeWrapperPTXServiceDTORailSpecificationV3TRATRANewsListNews
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

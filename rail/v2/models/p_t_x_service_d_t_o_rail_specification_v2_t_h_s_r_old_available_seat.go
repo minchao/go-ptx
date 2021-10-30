@@ -73,7 +73,7 @@ type PTXServiceDTORailSpecificationV2THSROldAvailableSeat struct {
 	//
 	// 車次停靠站點組合
 	// Required: true
-	StopStations []*PTXServiceDTORailSpecificationV2THSRStopStation "json:\"StopStations\" xml:\"List`1\""
+	StopStations []*PTXServiceDTORailSpecificationV2THSROldStopStation "json:\"StopStations\" xml:\"List`1\""
 
 	// String
 	//

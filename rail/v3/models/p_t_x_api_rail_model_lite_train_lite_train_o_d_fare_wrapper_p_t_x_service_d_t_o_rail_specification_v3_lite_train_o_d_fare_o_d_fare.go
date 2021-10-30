@@ -15,10 +15,10 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// PTXAPIRailModelLiteTrainODFareWrapperPTXServiceDTORailSpecificationV3LiteTrainODFareODFare LiteTrainODFareList
+// PTXAPIRailModelLiteTrainLiteTrainODFareWrapperPTXServiceDTORailSpecificationV3LiteTrainODFareODFare LiteTrainODFareList
 //
-// swagger:model PTX.API.Rail.Model.LiteTrainODFareWrapper[PTX.Service.DTO.Rail.Specification.V3.LiteTrain.ODFare.ODFare]
-type PTXAPIRailModelLiteTrainODFareWrapperPTXServiceDTORailSpecificationV3LiteTrainODFareODFare struct {
+// swagger:model PTX.API.Rail.Model.LiteTrain.LiteTrainODFareWrapper[PTX.Service.DTO.Rail.Specification.V3.LiteTrain.ODFare.ODFare]
+type PTXAPIRailModelLiteTrainLiteTrainODFareWrapperPTXServiceDTORailSpecificationV3LiteTrainODFareODFare struct {
 
 	// String
 	//
@@ -75,8 +75,8 @@ type PTXAPIRailModelLiteTrainODFareWrapperPTXServiceDTORailSpecificationV3LiteTr
 	UpdateTime *strfmt.DateTime `json:"UpdateTime"`
 }
 
-// Validate validates this p t x API rail model lite train o d fare wrapper p t x service d t o rail specification v3 lite train o d fare o d fare
-func (m *PTXAPIRailModelLiteTrainODFareWrapperPTXServiceDTORailSpecificationV3LiteTrainODFareODFare) Validate(formats strfmt.Registry) error {
+// Validate validates this p t x API rail model lite train lite train o d fare wrapper p t x service d t o rail specification v3 lite train o d fare o d fare
+func (m *PTXAPIRailModelLiteTrainLiteTrainODFareWrapperPTXServiceDTORailSpecificationV3LiteTrainODFareODFare) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateAuthorityCode(formats); err != nil {
@@ -109,7 +109,7 @@ func (m *PTXAPIRailModelLiteTrainODFareWrapperPTXServiceDTORailSpecificationV3Li
 	return nil
 }
 
-func (m *PTXAPIRailModelLiteTrainODFareWrapperPTXServiceDTORailSpecificationV3LiteTrainODFareODFare) validateAuthorityCode(formats strfmt.Registry) error {
+func (m *PTXAPIRailModelLiteTrainLiteTrainODFareWrapperPTXServiceDTORailSpecificationV3LiteTrainODFareODFare) validateAuthorityCode(formats strfmt.Registry) error {
 
 	if err := validate.Required("AuthorityCode", "body", m.AuthorityCode); err != nil {
 		return err
@@ -118,7 +118,7 @@ func (m *PTXAPIRailModelLiteTrainODFareWrapperPTXServiceDTORailSpecificationV3Li
 	return nil
 }
 
-func (m *PTXAPIRailModelLiteTrainODFareWrapperPTXServiceDTORailSpecificationV3LiteTrainODFareODFare) validateODFares(formats strfmt.Registry) error {
+func (m *PTXAPIRailModelLiteTrainLiteTrainODFareWrapperPTXServiceDTORailSpecificationV3LiteTrainODFareODFare) validateODFares(formats strfmt.Registry) error {
 
 	if err := validate.Required("ODFares", "body", m.ODFares); err != nil {
 		return err
@@ -143,7 +143,7 @@ func (m *PTXAPIRailModelLiteTrainODFareWrapperPTXServiceDTORailSpecificationV3Li
 	return nil
 }
 
-func (m *PTXAPIRailModelLiteTrainODFareWrapperPTXServiceDTORailSpecificationV3LiteTrainODFareODFare) validateSrcUpdateInterval(formats strfmt.Registry) error {
+func (m *PTXAPIRailModelLiteTrainLiteTrainODFareWrapperPTXServiceDTORailSpecificationV3LiteTrainODFareODFare) validateSrcUpdateInterval(formats strfmt.Registry) error {
 
 	if err := validate.Required("SrcUpdateInterval", "body", m.SrcUpdateInterval); err != nil {
 		return err
@@ -152,7 +152,7 @@ func (m *PTXAPIRailModelLiteTrainODFareWrapperPTXServiceDTORailSpecificationV3Li
 	return nil
 }
 
-func (m *PTXAPIRailModelLiteTrainODFareWrapperPTXServiceDTORailSpecificationV3LiteTrainODFareODFare) validateSrcUpdateTime(formats strfmt.Registry) error {
+func (m *PTXAPIRailModelLiteTrainLiteTrainODFareWrapperPTXServiceDTORailSpecificationV3LiteTrainODFareODFare) validateSrcUpdateTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("SrcUpdateTime", "body", m.SrcUpdateTime); err != nil {
 		return err
@@ -165,7 +165,7 @@ func (m *PTXAPIRailModelLiteTrainODFareWrapperPTXServiceDTORailSpecificationV3Li
 	return nil
 }
 
-func (m *PTXAPIRailModelLiteTrainODFareWrapperPTXServiceDTORailSpecificationV3LiteTrainODFareODFare) validateUpdateInterval(formats strfmt.Registry) error {
+func (m *PTXAPIRailModelLiteTrainLiteTrainODFareWrapperPTXServiceDTORailSpecificationV3LiteTrainODFareODFare) validateUpdateInterval(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateInterval", "body", m.UpdateInterval); err != nil {
 		return err
@@ -174,7 +174,7 @@ func (m *PTXAPIRailModelLiteTrainODFareWrapperPTXServiceDTORailSpecificationV3Li
 	return nil
 }
 
-func (m *PTXAPIRailModelLiteTrainODFareWrapperPTXServiceDTORailSpecificationV3LiteTrainODFareODFare) validateUpdateTime(formats strfmt.Registry) error {
+func (m *PTXAPIRailModelLiteTrainLiteTrainODFareWrapperPTXServiceDTORailSpecificationV3LiteTrainODFareODFare) validateUpdateTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
 		return err
@@ -187,8 +187,8 @@ func (m *PTXAPIRailModelLiteTrainODFareWrapperPTXServiceDTORailSpecificationV3Li
 	return nil
 }
 
-// ContextValidate validate this p t x API rail model lite train o d fare wrapper p t x service d t o rail specification v3 lite train o d fare o d fare based on the context it is used
-func (m *PTXAPIRailModelLiteTrainODFareWrapperPTXServiceDTORailSpecificationV3LiteTrainODFareODFare) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+// ContextValidate validate this p t x API rail model lite train lite train o d fare wrapper p t x service d t o rail specification v3 lite train o d fare o d fare based on the context it is used
+func (m *PTXAPIRailModelLiteTrainLiteTrainODFareWrapperPTXServiceDTORailSpecificationV3LiteTrainODFareODFare) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.contextValidateODFares(ctx, formats); err != nil {
@@ -201,7 +201,7 @@ func (m *PTXAPIRailModelLiteTrainODFareWrapperPTXServiceDTORailSpecificationV3Li
 	return nil
 }
 
-func (m *PTXAPIRailModelLiteTrainODFareWrapperPTXServiceDTORailSpecificationV3LiteTrainODFareODFare) contextValidateODFares(ctx context.Context, formats strfmt.Registry) error {
+func (m *PTXAPIRailModelLiteTrainLiteTrainODFareWrapperPTXServiceDTORailSpecificationV3LiteTrainODFareODFare) contextValidateODFares(ctx context.Context, formats strfmt.Registry) error {
 
 	for i := 0; i < len(m.ODFares); i++ {
 
@@ -220,7 +220,7 @@ func (m *PTXAPIRailModelLiteTrainODFareWrapperPTXServiceDTORailSpecificationV3Li
 }
 
 // MarshalBinary interface implementation
-func (m *PTXAPIRailModelLiteTrainODFareWrapperPTXServiceDTORailSpecificationV3LiteTrainODFareODFare) MarshalBinary() ([]byte, error) {
+func (m *PTXAPIRailModelLiteTrainLiteTrainODFareWrapperPTXServiceDTORailSpecificationV3LiteTrainODFareODFare) MarshalBinary() ([]byte, error) {
 	if m == nil {
 		return nil, nil
 	}
@@ -228,8 +228,8 @@ func (m *PTXAPIRailModelLiteTrainODFareWrapperPTXServiceDTORailSpecificationV3Li
 }
 
 // UnmarshalBinary interface implementation
-func (m *PTXAPIRailModelLiteTrainODFareWrapperPTXServiceDTORailSpecificationV3LiteTrainODFareODFare) UnmarshalBinary(b []byte) error {
-	var res PTXAPIRailModelLiteTrainODFareWrapperPTXServiceDTORailSpecificationV3LiteTrainODFareODFare
+func (m *PTXAPIRailModelLiteTrainLiteTrainODFareWrapperPTXServiceDTORailSpecificationV3LiteTrainODFareODFare) UnmarshalBinary(b []byte) error {
+	var res PTXAPIRailModelLiteTrainLiteTrainODFareWrapperPTXServiceDTORailSpecificationV3LiteTrainODFareODFare
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

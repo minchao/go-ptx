@@ -46,7 +46,7 @@ type PTXServiceDTORailSpecificationV2MetroMRTNewsListNews struct {
 
 	// Int32
 	//
-	// 消息類別 : [1:'最新消息',2:'新聞稿',3:'營運資訊',4:'轉乘資訊',5:'活動訊息',6:'系統公告',7:'新服務上架',8:'API修正',9:'來源異常',99:'其他']
+	// 消息類別 : [1:'最新消息',2:'新聞稿',3:'營運資訊',4:'轉乘資訊',5:'活動訊息',6:'系統公告',7:'新服務上架',8:'API修正',9:'來源異常',10:'資料更新',99:'其他']
 	// Required: true
 	NewsCategory *int64 `json:"NewsCategory"`
 

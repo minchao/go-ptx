@@ -56,19 +56,19 @@ func NewLiteTrainNewsOK() *LiteTrainNewsOK {
 Success
 */
 type LiteTrainNewsOK struct {
-	Payload *models.PTXAPIRailModelLiteTrainRealTimeWrapperPTXServiceDTORailSpecificationV3TRATRANewsListNews
+	Payload *models.PTXAPIRailModelLiteTrainLiteTrainRealTimeWrapperPTXServiceDTORailSpecificationV3TRATRANewsListNews
 }
 
 func (o *LiteTrainNewsOK) Error() string {
 	return fmt.Sprintf("[GET /v3/Rail/AFR/News][%d] liteTrainNewsOK  %+v", 200, o.Payload)
 }
-func (o *LiteTrainNewsOK) GetPayload() *models.PTXAPIRailModelLiteTrainRealTimeWrapperPTXServiceDTORailSpecificationV3TRATRANewsListNews {
+func (o *LiteTrainNewsOK) GetPayload() *models.PTXAPIRailModelLiteTrainLiteTrainRealTimeWrapperPTXServiceDTORailSpecificationV3TRATRANewsListNews {
 	return o.Payload
 }
 
 func (o *LiteTrainNewsOK) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
-	o.Payload = new(models.PTXAPIRailModelLiteTrainRealTimeWrapperPTXServiceDTORailSpecificationV3TRATRANewsListNews)
+	o.Payload = new(models.PTXAPIRailModelLiteTrainLiteTrainRealTimeWrapperPTXServiceDTORailSpecificationV3TRATRANewsListNews)
 
 	// response payload
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {

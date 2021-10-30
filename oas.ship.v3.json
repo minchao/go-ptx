@@ -11,13 +11,469 @@
     "https"
   ],
   "paths": {
-    "/v3/Ship/Basic/Port": {
+    "/v3/Ship/DailySchedule/RouteType/{RouteType}": {
       "get": {
         "tags": [
-          "ShipBasic"
+          "ShipByRouteType"
         ],
-        "summary": "取得港口資料",
-        "operationId": "Ship_Basic_Port",
+        "summary": "取得指定[航線類別]的全臺航運之每日班表資料",
+        "operationId": "Ship_RouteType_DailySchedule",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "RouteType",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "Internal",
+              "OutlyingIslands",
+              "Bilateral",
+              "MiniThreeLinks",
+              "Other"
+            ],
+            "x-enum": {
+              "MiniThreeLinks": "小三通航線",
+              "Bilateral": "兩岸航線",
+              "Internal": "國內航線(渡輪、藍色公路)",
+              "Other": "其他",
+              "OutlyingIslands": "離島航線"
+            }
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$count",
+            "description": "查詢數量",
+            "type": "boolean",
+            "enum": [
+              true,
+              false
+            ]
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/PTX.API.Ship.Model.ShipFlatWrapper[PTX.Service.DTO.Ship.Specification.V3.DailyScheduleFlat]"
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v3/Ship/Route/RouteType/{RouteType}": {
+      "get": {
+        "tags": [
+          "ShipByRouteType"
+        ],
+        "summary": "取得指定[航線類別]的全臺航運之航線資料",
+        "operationId": "Ship_RouteType_Route",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "RouteType",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "Internal",
+              "OutlyingIslands",
+              "Bilateral",
+              "MiniThreeLinks",
+              "Other"
+            ],
+            "x-enum": {
+              "OutlyingIslands": "離島航線",
+              "Bilateral": "兩岸航線",
+              "Other": "其他",
+              "Internal": "國內航線(渡輪、藍色公路)",
+              "MiniThreeLinks": "小三通航線"
+            }
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$count",
+            "description": "查詢數量",
+            "type": "boolean",
+            "enum": [
+              true,
+              false
+            ]
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/PTX.API.Ship.Model.ShipFlatWrapper[PTX.Service.DTO.Ship.Specification.V3.RouteFlat]"
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v3/Ship/SpecificSchedule/RouteType/{RouteType}": {
+      "get": {
+        "tags": [
+          "ShipByRouteType"
+        ],
+        "summary": "取得指定[航線類別]的全臺航運之特殊班表資料",
+        "operationId": "Ship_RouteType_SpecificSchedule",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "RouteType",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "Internal",
+              "OutlyingIslands",
+              "Bilateral",
+              "MiniThreeLinks",
+              "Other"
+            ],
+            "x-enum": {
+              "MiniThreeLinks": "小三通航線",
+              "Other": "其他",
+              "OutlyingIslands": "離島航線",
+              "Bilateral": "兩岸航線",
+              "Internal": "國內航線(渡輪、藍色公路)"
+            }
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$count",
+            "description": "查詢數量",
+            "type": "boolean",
+            "enum": [
+              true,
+              false
+            ]
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/PTX.API.Ship.Model.ShipFlatWrapper[PTX.Service.DTO.Ship.Specification.V3.SpecificScheduleFlat]"
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v3/Ship/StopOfRoute/RouteType/{RouteType}": {
+      "get": {
+        "tags": [
+          "ShipByRouteType"
+        ],
+        "summary": "取得指定[航線類別]之航線靠港順序資料",
+        "operationId": "Ship_RouteType_StopOfRoute",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "RouteType",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "Internal",
+              "OutlyingIslands",
+              "Bilateral",
+              "MiniThreeLinks",
+              "Other"
+            ],
+            "x-enum": {
+              "OutlyingIslands": "離島航線",
+              "Other": "其他",
+              "Internal": "國內航線(渡輪、藍色公路)",
+              "MiniThreeLinks": "小三通航線",
+              "Bilateral": "兩岸航線"
+            }
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$count",
+            "description": "查詢數量",
+            "type": "boolean",
+            "enum": [
+              true,
+              false
+            ]
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/PTX.API.Ship.Model.ShipFlatWrapper[PTX.Service.DTO.Ship.Specification.V3.StopOfRouteFlat]"
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v3/Ship/Alert/International": {
+      "get": {
+        "tags": [
+          "InternationalShip"
+        ],
+        "summary": "取得國際航運之營運通阻資料",
+        "operationId": "Ship_International_Alert",
         "produces": [
           "application/json",
           "application/xml"
@@ -90,7 +546,484 @@
           "200": {
             "description": "Success",
             "schema": {
-              "$ref": "#/definitions/PTX.API.Ship.Model.ShipWrapper[PTX.Service.DTO.Ship.Specification.V3.Port]"
+              "$ref": "#/definitions/PTX.API.Ship.Model.ShipLiveWrapper[PTX.Service.DTO.Ship.Specification.V3.Alert]"
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v3/Ship/Basic/Authority": {
+      "get": {
+        "tags": [
+          "ShipBasic"
+        ],
+        "summary": "取得業管機關資料",
+        "operationId": "Ship_Basic_Authority",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$count",
+            "description": "查詢數量",
+            "type": "boolean",
+            "enum": [
+              true,
+              false
+            ]
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/PTX.API.Ship.Model.ShipWrapper[PTX.Service.DTO.Shared.Specification.V3.Base.Authority]"
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v3/Ship/DailySchedule/International": {
+      "get": {
+        "tags": [
+          "InternationalShip"
+        ],
+        "summary": "取得國際航運之每日班表資料",
+        "operationId": "Ship_International_DailySchedule",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$count",
+            "description": "查詢數量",
+            "type": "boolean",
+            "enum": [
+              true,
+              false
+            ]
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/PTX.API.Ship.Model.ShipWrapper[PTX.Service.DTO.Ship.Specification.V3.DailySchedule]"
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v3/Ship/DailySchedule/International/{RouteID}": {
+      "get": {
+        "tags": [
+          "InternationalShip"
+        ],
+        "summary": "取得國際航運指定[航線]航運之每日班表資料",
+        "operationId": "Ship_International_DailySchedule_1",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "RouteID",
+            "description": "指定航運路線代碼",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$count",
+            "description": "查詢數量",
+            "type": "boolean",
+            "enum": [
+              true,
+              false
+            ]
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/PTX.API.Ship.Model.ShipWrapper[PTX.Service.DTO.Ship.Specification.V3.DailySchedule]"
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v3/Ship/LivePosition/International": {
+      "get": {
+        "tags": [
+          "InternationalShip"
+        ],
+        "summary": "取得國際航運之船舶即時位置資料",
+        "operationId": "Ship_International_LivePosition",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$count",
+            "description": "查詢數量",
+            "type": "boolean",
+            "enum": [
+              true,
+              false
+            ]
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/PTX.API.Ship.Model.ShipLiveWrapper[PTX.Service.DTO.Ship.Specification.V3.LivePosition]"
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v3/Ship/News/International": {
+      "get": {
+        "tags": [
+          "InternationalShip"
+        ],
+        "summary": "取得國際航運之最新消息資料",
+        "operationId": "Ship_International_News",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$count",
+            "description": "查詢數量",
+            "type": "boolean",
+            "enum": [
+              true,
+              false
+            ]
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/PTX.API.Ship.Model.ShipLiveWrapper[PTX.Service.DTO.Ship.Specification.V3.News]"
             }
           },
           "304": {
@@ -199,6 +1132,100 @@
         }
       }
     },
+    "/v3/Ship/Basic/Port": {
+      "get": {
+        "tags": [
+          "ShipBasic"
+        ],
+        "summary": "取得港口資料",
+        "operationId": "Ship_Basic_Port",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$count",
+            "description": "查詢數量",
+            "type": "boolean",
+            "enum": [
+              true,
+              false
+            ]
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/PTX.API.Ship.Model.ShipWrapper[PTX.Service.DTO.Ship.Specification.V3.Port]"
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
     "/v3/Ship/Route/International": {
       "get": {
         "tags": [
@@ -279,6 +1306,201 @@
             "description": "Success",
             "schema": {
               "$ref": "#/definitions/PTX.API.Ship.Model.ShipWrapper[PTX.Service.DTO.Ship.Specification.V3.Route]"
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v3/Ship/SpecificSchedule/International": {
+      "get": {
+        "tags": [
+          "InternationalShip"
+        ],
+        "summary": "取得國際航運之特殊班表資料",
+        "operationId": "Ship_International_SpecificSchedule",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$count",
+            "description": "查詢數量",
+            "type": "boolean",
+            "enum": [
+              true,
+              false
+            ]
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/PTX.API.Ship.Model.ShipWrapper[PTX.Service.DTO.Ship.Specification.V3.SpecificSchedule]"
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v3/Ship/SpecificSchedule/International/{RouteID}": {
+      "get": {
+        "tags": [
+          "InternationalShip"
+        ],
+        "summary": "取得國際航運指定[航線]航運之特殊班表資料",
+        "operationId": "Ship_International_SpecificSchedule_1",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "RouteID",
+            "description": "指定航運路線代碼",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$count",
+            "description": "查詢數量",
+            "type": "boolean",
+            "enum": [
+              true,
+              false
+            ]
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/PTX.API.Ship.Model.ShipWrapper[PTX.Service.DTO.Ship.Specification.V3.SpecificSchedule]"
             }
           },
           "304": {
@@ -481,18 +1703,25 @@
         }
       }
     },
-    "/v3/Ship/Basic/Authority": {
+    "/v3/Ship/DailySchedule/RouteID/{RouteID}": {
       "get": {
         "tags": [
-          "ShipBasic"
+          "ShipByRouteType"
         ],
-        "summary": "取得業管機關資料",
-        "operationId": "Ship_Basic_Authority",
+        "summary": "取得指定[航線]的全臺航運之每日班表資料",
+        "operationId": "Ship_RouteType_DailySchedule2",
         "produces": [
           "application/json",
           "application/xml"
         ],
         "parameters": [
+          {
+            "in": "path",
+            "name": "RouteID",
+            "description": "指定航運路線代碼",
+            "required": true,
+            "type": "string"
+          },
           {
             "in": "query",
             "name": "$select",
@@ -560,7 +1789,7 @@
           "200": {
             "description": "Success",
             "schema": {
-              "$ref": "#/definitions/PTX.API.Ship.Model.ShipWrapper[PTX.Service.DTO.Shared.Specification.V3.Base.Authority]"
+              "$ref": "#/definitions/PTX.API.Ship.Model.ShipFlatWrapper[PTX.Service.DTO.Ship.Specification.V3.DailyScheduleFlat]"
             }
           },
           "304": {
@@ -575,18 +1804,25 @@
         }
       }
     },
-    "/v3/Ship/LivePosition/International": {
+    "/v3/Ship/SpecificSchedule/RouteID/{RouteID}": {
       "get": {
         "tags": [
-          "InternationalShip"
+          "ShipByRouteType"
         ],
-        "summary": "取得國際航運之船舶即時位置資料",
-        "operationId": "Ship_International_LivePosition",
+        "summary": "取得指定[航線]的全臺航運之特殊班表資料",
+        "operationId": "Ship_RouteType_SpecificSchedule2",
         "produces": [
           "application/json",
           "application/xml"
         ],
         "parameters": [
+          {
+            "in": "path",
+            "name": "RouteID",
+            "description": "指定航運路線代碼",
+            "required": true,
+            "type": "string"
+          },
           {
             "in": "query",
             "name": "$select",
@@ -654,7 +1890,7 @@
           "200": {
             "description": "Success",
             "schema": {
-              "$ref": "#/definitions/PTX.API.Ship.Model.ShipLiveWrapper[PTX.Service.DTO.Ship.Specification.V3.LivePosition]"
+              "$ref": "#/definitions/PTX.API.Ship.Model.ShipFlatWrapper[PTX.Service.DTO.Ship.Specification.V3.SpecificScheduleFlat]"
             }
           },
           "304": {
@@ -669,13 +1905,13 @@
         }
       }
     },
-    "/v3/Ship/Operator/Domestic/City/{City}": {
+    "/v3/Ship/Alert/Domestic/City/{City}": {
       "get": {
         "tags": [
           "DomesticShip"
         ],
-        "summary": "取得指定[縣市]之航運營運業者資料",
-        "operationId": "Ship_Domestic_Operator",
+        "summary": "取得指定[縣市]之營運通阻資料",
+        "operationId": "Ship_Domestic_Alert",
         "produces": [
           "application/json",
           "application/xml"
@@ -698,381 +1934,15 @@
               "Kaohsiung"
             ],
             "x-enum": {
-              "NantouCounty": "南投縣",
-              "KinmenCounty": "金門縣",
-              "Kaohsiung": "高雄市",
-              "TaitungCounty": "臺東縣",
-              "LienchiangCounty": "連江縣",
-              "NewTaipei": "新北市",
-              "PenghuCounty": "澎湖縣",
               "PingtungCounty": "屏東縣",
-              "Taipei": "臺北市"
-            }
-          },
-          {
-            "in": "query",
-            "name": "$select",
-            "description": "挑選",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$filter",
-            "description": "過濾",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$orderby",
-            "description": "排序",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$top",
-            "description": "取前幾筆",
-            "type": "integer",
-            "default": 30
-          },
-          {
-            "in": "query",
-            "name": "$skip",
-            "description": "跳過前幾筆",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$count",
-            "description": "查詢數量",
-            "type": "boolean",
-            "enum": [
-              true,
-              false
-            ]
-          },
-          {
-            "in": "query",
-            "name": "health",
-            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
-            "type": "string",
-            "enum": [
-              "true",
-              "false"
-            ]
-          },
-          {
-            "in": "query",
-            "name": "$format",
-            "description": "指定來源格式",
-            "required": true,
-            "type": "string",
-            "enum": [
-              "JSON",
-              "XML"
-            ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "schema": {
-              "$ref": "#/definitions/PTX.API.Ship.Model.ShipWrapper[PTX.Service.DTO.Ship.Specification.V3.Operator]"
-            }
-          },
-          "304": {
-            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
-          },
-          "299": {
-            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
-            "schema": {
-              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
-            }
-          }
-        }
-      }
-    },
-    "/v3/Ship/Route/Domestic/City/{City}": {
-      "get": {
-        "tags": [
-          "DomesticShip"
-        ],
-        "summary": "取得指定[縣市]之航線資料",
-        "operationId": "Ship_Domestic_Route",
-        "produces": [
-          "application/json",
-          "application/xml"
-        ],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "City",
-            "required": true,
-            "type": "string",
-            "enum": [
-              "NewTaipei",
-              "NantouCounty",
-              "PingtungCounty",
-              "TaitungCounty",
-              "KinmenCounty",
-              "PenghuCounty",
-              "LienchiangCounty",
-              "Taipei",
-              "Kaohsiung"
-            ],
-            "x-enum": {
-              "NewTaipei": "新北市",
-              "PingtungCounty": "屏東縣",
-              "LienchiangCounty": "連江縣",
-              "TaitungCounty": "臺東縣",
               "Taipei": "臺北市",
               "KinmenCounty": "金門縣",
-              "NantouCounty": "南投縣",
-              "PenghuCounty": "澎湖縣",
-              "Kaohsiung": "高雄市"
-            }
-          },
-          {
-            "in": "query",
-            "name": "$select",
-            "description": "挑選",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$filter",
-            "description": "過濾",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$orderby",
-            "description": "排序",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$top",
-            "description": "取前幾筆",
-            "type": "integer",
-            "default": 30
-          },
-          {
-            "in": "query",
-            "name": "$skip",
-            "description": "跳過前幾筆",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$count",
-            "description": "查詢數量",
-            "type": "boolean",
-            "enum": [
-              true,
-              false
-            ]
-          },
-          {
-            "in": "query",
-            "name": "health",
-            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
-            "type": "string",
-            "enum": [
-              "true",
-              "false"
-            ]
-          },
-          {
-            "in": "query",
-            "name": "$format",
-            "description": "指定來源格式",
-            "required": true,
-            "type": "string",
-            "enum": [
-              "JSON",
-              "XML"
-            ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "schema": {
-              "$ref": "#/definitions/PTX.API.Ship.Model.ShipWrapper[PTX.Service.DTO.Ship.Specification.V3.Route]"
-            }
-          },
-          "304": {
-            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
-          },
-          "299": {
-            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
-            "schema": {
-              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
-            }
-          }
-        }
-      }
-    },
-    "/v3/Ship/StopOfRoute/Domestic/City/{City}": {
-      "get": {
-        "tags": [
-          "DomesticShip"
-        ],
-        "summary": "取得指定[縣市]之航線靠港順序資料",
-        "operationId": "Ship_Domestic_StopOfRoute",
-        "produces": [
-          "application/json",
-          "application/xml"
-        ],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "City",
-            "required": true,
-            "type": "string",
-            "enum": [
-              "NewTaipei",
-              "NantouCounty",
-              "PingtungCounty",
-              "TaitungCounty",
-              "KinmenCounty",
-              "PenghuCounty",
-              "LienchiangCounty",
-              "Taipei",
-              "Kaohsiung"
-            ],
-            "x-enum": {
-              "Kaohsiung": "高雄市",
-              "KinmenCounty": "金門縣",
-              "TaitungCounty": "臺東縣",
               "NewTaipei": "新北市",
-              "Taipei": "臺北市",
-              "PingtungCounty": "屏東縣",
-              "LienchiangCounty": "連江縣",
               "NantouCounty": "南投縣",
-              "PenghuCounty": "澎湖縣"
-            }
-          },
-          {
-            "in": "query",
-            "name": "$select",
-            "description": "挑選",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$filter",
-            "description": "過濾",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$orderby",
-            "description": "排序",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$top",
-            "description": "取前幾筆",
-            "type": "integer",
-            "default": 30
-          },
-          {
-            "in": "query",
-            "name": "$skip",
-            "description": "跳過前幾筆",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$count",
-            "description": "查詢數量",
-            "type": "boolean",
-            "enum": [
-              true,
-              false
-            ]
-          },
-          {
-            "in": "query",
-            "name": "health",
-            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
-            "type": "string",
-            "enum": [
-              "true",
-              "false"
-            ]
-          },
-          {
-            "in": "query",
-            "name": "$format",
-            "description": "指定來源格式",
-            "required": true,
-            "type": "string",
-            "enum": [
-              "JSON",
-              "XML"
-            ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "schema": {
-              "$ref": "#/definitions/PTX.API.Ship.Model.ShipWrapper[PTX.Service.DTO.Ship.Specification.V3.StopOfRoute]"
-            }
-          },
-          "304": {
-            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
-          },
-          "299": {
-            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
-            "schema": {
-              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
-            }
-          }
-        }
-      }
-    },
-    "/v3/Ship/Vessel/Domestic/City/{City}": {
-      "get": {
-        "tags": [
-          "DomesticShip"
-        ],
-        "summary": "取得指定[縣市]之船舶資料",
-        "operationId": "Ship_Domestic_Vessel",
-        "produces": [
-          "application/json",
-          "application/xml"
-        ],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "City",
-            "required": true,
-            "type": "string",
-            "enum": [
-              "NewTaipei",
-              "NantouCounty",
-              "PingtungCounty",
-              "TaitungCounty",
-              "KinmenCounty",
-              "PenghuCounty",
-              "LienchiangCounty",
-              "Taipei",
-              "Kaohsiung"
-            ],
-            "x-enum": {
-              "PingtungCounty": "屏東縣",
-              "PenghuCounty": "澎湖縣",
-              "NewTaipei": "新北市",
               "Kaohsiung": "高雄市",
-              "TaitungCounty": "臺東縣",
-              "NantouCounty": "南投縣",
-              "Taipei": "臺北市",
               "LienchiangCounty": "連江縣",
-              "KinmenCounty": "金門縣"
+              "PenghuCounty": "澎湖縣",
+              "TaitungCounty": "臺東縣"
             }
           },
           {
@@ -1142,7 +2012,7 @@
           "200": {
             "description": "Success",
             "schema": {
-              "$ref": "#/definitions/PTX.API.Ship.Model.ShipWrapper[PTX.Service.DTO.Ship.Specification.V3.Vessel]"
+              "$ref": "#/definitions/PTX.API.Ship.Model.ShipLiveWrapper[PTX.Service.DTO.Ship.Specification.V3.Alert]"
             }
           },
           "304": {
@@ -1408,6 +2278,372 @@
         }
       }
     },
+    "/v3/Ship/News/Domestic/City/{City}": {
+      "get": {
+        "tags": [
+          "DomesticShip"
+        ],
+        "summary": "取得指定[縣市]之最新消息資料",
+        "operationId": "Ship_Domestic_News",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "City",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "NewTaipei",
+              "NantouCounty",
+              "PingtungCounty",
+              "TaitungCounty",
+              "KinmenCounty",
+              "PenghuCounty",
+              "LienchiangCounty",
+              "Taipei",
+              "Kaohsiung"
+            ],
+            "x-enum": {
+              "Taipei": "臺北市",
+              "Kaohsiung": "高雄市",
+              "TaitungCounty": "臺東縣",
+              "NewTaipei": "新北市",
+              "PenghuCounty": "澎湖縣",
+              "LienchiangCounty": "連江縣",
+              "KinmenCounty": "金門縣",
+              "PingtungCounty": "屏東縣",
+              "NantouCounty": "南投縣"
+            }
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$count",
+            "description": "查詢數量",
+            "type": "boolean",
+            "enum": [
+              true,
+              false
+            ]
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/PTX.API.Ship.Model.ShipLiveWrapper[PTX.Service.DTO.Ship.Specification.V3.News]"
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v3/Ship/Operator/Domestic/City/{City}": {
+      "get": {
+        "tags": [
+          "DomesticShip"
+        ],
+        "summary": "取得指定[縣市]之航運營運業者資料",
+        "operationId": "Ship_Domestic_Operator",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "City",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "NewTaipei",
+              "NantouCounty",
+              "PingtungCounty",
+              "TaitungCounty",
+              "KinmenCounty",
+              "PenghuCounty",
+              "LienchiangCounty",
+              "Taipei",
+              "Kaohsiung"
+            ],
+            "x-enum": {
+              "Taipei": "臺北市",
+              "KinmenCounty": "金門縣",
+              "Kaohsiung": "高雄市",
+              "NantouCounty": "南投縣",
+              "TaitungCounty": "臺東縣",
+              "LienchiangCounty": "連江縣",
+              "NewTaipei": "新北市",
+              "PenghuCounty": "澎湖縣",
+              "PingtungCounty": "屏東縣"
+            }
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$count",
+            "description": "查詢數量",
+            "type": "boolean",
+            "enum": [
+              true,
+              false
+            ]
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/PTX.API.Ship.Model.ShipWrapper[PTX.Service.DTO.Ship.Specification.V3.Operator]"
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v3/Ship/Route/Domestic/City/{City}": {
+      "get": {
+        "tags": [
+          "DomesticShip"
+        ],
+        "summary": "取得指定[縣市]之航線資料",
+        "operationId": "Ship_Domestic_Route",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "City",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "NewTaipei",
+              "NantouCounty",
+              "PingtungCounty",
+              "TaitungCounty",
+              "KinmenCounty",
+              "PenghuCounty",
+              "LienchiangCounty",
+              "Taipei",
+              "Kaohsiung"
+            ],
+            "x-enum": {
+              "LienchiangCounty": "連江縣",
+              "TaitungCounty": "臺東縣",
+              "Taipei": "臺北市",
+              "KinmenCounty": "金門縣",
+              "Kaohsiung": "高雄市",
+              "NewTaipei": "新北市",
+              "PingtungCounty": "屏東縣",
+              "NantouCounty": "南投縣",
+              "PenghuCounty": "澎湖縣"
+            }
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$count",
+            "description": "查詢數量",
+            "type": "boolean",
+            "enum": [
+              true,
+              false
+            ]
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/PTX.API.Ship.Model.ShipWrapper[PTX.Service.DTO.Ship.Specification.V3.Route]"
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
     "/v3/Ship/SpecificSchedule/Domestic/City/{City}": {
       "get": {
         "tags": [
@@ -1437,15 +2673,15 @@
               "Kaohsiung"
             ],
             "x-enum": {
-              "KinmenCounty": "金門縣",
               "PingtungCounty": "屏東縣",
+              "PenghuCounty": "澎湖縣",
+              "TaitungCounty": "臺東縣",
+              "LienchiangCounty": "連江縣",
+              "KinmenCounty": "金門縣",
               "NantouCounty": "南投縣",
               "NewTaipei": "新北市",
               "Taipei": "臺北市",
-              "Kaohsiung": "高雄市",
-              "PenghuCounty": "澎湖縣",
-              "TaitungCounty": "臺東縣",
-              "LienchiangCounty": "連江縣"
+              "Kaohsiung": "高雄市"
             }
           },
           {
@@ -1559,15 +2795,15 @@
               "Kaohsiung"
             ],
             "x-enum": {
-              "KinmenCounty": "金門縣",
               "PingtungCounty": "屏東縣",
+              "PenghuCounty": "澎湖縣",
+              "TaitungCounty": "臺東縣",
+              "LienchiangCounty": "連江縣",
+              "KinmenCounty": "金門縣",
               "NantouCounty": "南投縣",
               "NewTaipei": "新北市",
               "Taipei": "臺北市",
-              "Kaohsiung": "高雄市",
-              "PenghuCounty": "澎湖縣",
-              "TaitungCounty": "臺東縣",
-              "LienchiangCounty": "連江縣"
+              "Kaohsiung": "高雄市"
             }
           },
           {
@@ -1659,13 +2895,13 @@
         }
       }
     },
-    "/v3/Ship/Alert/Domestic/City/{City}": {
+    "/v3/Ship/StopOfRoute/Domestic/City/{City}": {
       "get": {
         "tags": [
           "DomesticShip"
         ],
-        "summary": "取得指定[縣市]之營運通阻資料",
-        "operationId": "Ship_Domestic_Alert",
+        "summary": "取得指定[縣市]之航線靠港順序資料",
+        "operationId": "Ship_Domestic_StopOfRoute",
         "produces": [
           "application/json",
           "application/xml"
@@ -1688,15 +2924,15 @@
               "Kaohsiung"
             ],
             "x-enum": {
-              "PingtungCounty": "屏東縣",
-              "Taipei": "臺北市",
-              "KinmenCounty": "金門縣",
-              "NewTaipei": "新北市",
-              "NantouCounty": "南投縣",
               "Kaohsiung": "高雄市",
+              "KinmenCounty": "金門縣",
+              "TaitungCounty": "臺東縣",
+              "NewTaipei": "新北市",
+              "Taipei": "臺北市",
+              "PingtungCounty": "屏東縣",
               "LienchiangCounty": "連江縣",
-              "PenghuCounty": "澎湖縣",
-              "TaitungCounty": "臺東縣"
+              "NantouCounty": "南投縣",
+              "PenghuCounty": "澎湖縣"
             }
           },
           {
@@ -1766,7 +3002,7 @@
           "200": {
             "description": "Success",
             "schema": {
-              "$ref": "#/definitions/PTX.API.Ship.Model.ShipLiveWrapper[PTX.Service.DTO.Ship.Specification.V3.Alert]"
+              "$ref": "#/definitions/PTX.API.Ship.Model.ShipWrapper[PTX.Service.DTO.Ship.Specification.V3.StopOfRoute]"
             }
           },
           "304": {
@@ -1781,13 +3017,13 @@
         }
       }
     },
-    "/v3/Ship/News/Domestic/City/{City}": {
+    "/v3/Ship/Vessel/Domestic/City/{City}": {
       "get": {
         "tags": [
           "DomesticShip"
         ],
-        "summary": "取得指定[縣市]之最新消息資料",
-        "operationId": "Ship_Domestic_News",
+        "summary": "取得指定[縣市]之船舶資料",
+        "operationId": "Ship_Domestic_Vessel",
         "produces": [
           "application/json",
           "application/xml"
@@ -1810,15 +3046,15 @@
               "Kaohsiung"
             ],
             "x-enum": {
+              "Taipei": "臺北市",
               "PenghuCounty": "澎湖縣",
               "LienchiangCounty": "連江縣",
-              "Kaohsiung": "高雄市",
               "KinmenCounty": "金門縣",
               "PingtungCounty": "屏東縣",
-              "NantouCounty": "南投縣",
-              "Taipei": "臺北市",
+              "NewTaipei": "新北市",
+              "Kaohsiung": "高雄市",
               "TaitungCounty": "臺東縣",
-              "NewTaipei": "新北市"
+              "NantouCounty": "南投縣"
             }
           },
           {
@@ -1888,1243 +3124,7 @@
           "200": {
             "description": "Success",
             "schema": {
-              "$ref": "#/definitions/PTX.API.Ship.Model.ShipLiveWrapper[PTX.Service.DTO.Ship.Specification.V3.News]"
-            }
-          },
-          "304": {
-            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
-          },
-          "299": {
-            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
-            "schema": {
-              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
-            }
-          }
-        }
-      }
-    },
-    "/v3/Ship/DailySchedule/International": {
-      "get": {
-        "tags": [
-          "InternationalShip"
-        ],
-        "summary": "取得國際航運之每日班表資料",
-        "operationId": "Ship_International_DailySchedule",
-        "produces": [
-          "application/json",
-          "application/xml"
-        ],
-        "parameters": [
-          {
-            "in": "query",
-            "name": "$select",
-            "description": "挑選",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$filter",
-            "description": "過濾",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$orderby",
-            "description": "排序",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$top",
-            "description": "取前幾筆",
-            "type": "integer",
-            "default": 30
-          },
-          {
-            "in": "query",
-            "name": "$skip",
-            "description": "跳過前幾筆",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$count",
-            "description": "查詢數量",
-            "type": "boolean",
-            "enum": [
-              true,
-              false
-            ]
-          },
-          {
-            "in": "query",
-            "name": "health",
-            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
-            "type": "string",
-            "enum": [
-              "true",
-              "false"
-            ]
-          },
-          {
-            "in": "query",
-            "name": "$format",
-            "description": "指定來源格式",
-            "required": true,
-            "type": "string",
-            "enum": [
-              "JSON",
-              "XML"
-            ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "schema": {
-              "$ref": "#/definitions/PTX.API.Ship.Model.ShipWrapper[PTX.Service.DTO.Ship.Specification.V3.DailySchedule]"
-            }
-          },
-          "304": {
-            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
-          },
-          "299": {
-            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
-            "schema": {
-              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
-            }
-          }
-        }
-      }
-    },
-    "/v3/Ship/DailySchedule/International/{RouteID}": {
-      "get": {
-        "tags": [
-          "InternationalShip"
-        ],
-        "summary": "取得國際航運指定[航線]航運之每日班表資料",
-        "operationId": "Ship_International_DailySchedule_1",
-        "produces": [
-          "application/json",
-          "application/xml"
-        ],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "RouteID",
-            "description": "指定航運路線代碼",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$select",
-            "description": "挑選",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$filter",
-            "description": "過濾",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$orderby",
-            "description": "排序",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$top",
-            "description": "取前幾筆",
-            "type": "integer",
-            "default": 30
-          },
-          {
-            "in": "query",
-            "name": "$skip",
-            "description": "跳過前幾筆",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$count",
-            "description": "查詢數量",
-            "type": "boolean",
-            "enum": [
-              true,
-              false
-            ]
-          },
-          {
-            "in": "query",
-            "name": "health",
-            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
-            "type": "string",
-            "enum": [
-              "true",
-              "false"
-            ]
-          },
-          {
-            "in": "query",
-            "name": "$format",
-            "description": "指定來源格式",
-            "required": true,
-            "type": "string",
-            "enum": [
-              "JSON",
-              "XML"
-            ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "schema": {
-              "$ref": "#/definitions/PTX.API.Ship.Model.ShipWrapper[PTX.Service.DTO.Ship.Specification.V3.DailySchedule]"
-            }
-          },
-          "304": {
-            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
-          },
-          "299": {
-            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
-            "schema": {
-              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
-            }
-          }
-        }
-      }
-    },
-    "/v3/Ship/SpecificSchedule/International": {
-      "get": {
-        "tags": [
-          "InternationalShip"
-        ],
-        "summary": "取得國際航運之特殊班表資料",
-        "operationId": "Ship_International_SpecificSchedule",
-        "produces": [
-          "application/json",
-          "application/xml"
-        ],
-        "parameters": [
-          {
-            "in": "query",
-            "name": "$select",
-            "description": "挑選",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$filter",
-            "description": "過濾",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$orderby",
-            "description": "排序",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$top",
-            "description": "取前幾筆",
-            "type": "integer",
-            "default": 30
-          },
-          {
-            "in": "query",
-            "name": "$skip",
-            "description": "跳過前幾筆",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$count",
-            "description": "查詢數量",
-            "type": "boolean",
-            "enum": [
-              true,
-              false
-            ]
-          },
-          {
-            "in": "query",
-            "name": "health",
-            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
-            "type": "string",
-            "enum": [
-              "true",
-              "false"
-            ]
-          },
-          {
-            "in": "query",
-            "name": "$format",
-            "description": "指定來源格式",
-            "required": true,
-            "type": "string",
-            "enum": [
-              "JSON",
-              "XML"
-            ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "schema": {
-              "$ref": "#/definitions/PTX.API.Ship.Model.ShipWrapper[PTX.Service.DTO.Ship.Specification.V3.SpecificSchedule]"
-            }
-          },
-          "304": {
-            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
-          },
-          "299": {
-            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
-            "schema": {
-              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
-            }
-          }
-        }
-      }
-    },
-    "/v3/Ship/SpecificSchedule/International/{RouteID}": {
-      "get": {
-        "tags": [
-          "InternationalShip"
-        ],
-        "summary": "取得國際航運指定[航線]航運之特殊班表資料",
-        "operationId": "Ship_International_SpecificSchedule_1",
-        "produces": [
-          "application/json",
-          "application/xml"
-        ],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "RouteID",
-            "description": "指定航運路線代碼",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$select",
-            "description": "挑選",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$filter",
-            "description": "過濾",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$orderby",
-            "description": "排序",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$top",
-            "description": "取前幾筆",
-            "type": "integer",
-            "default": 30
-          },
-          {
-            "in": "query",
-            "name": "$skip",
-            "description": "跳過前幾筆",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$count",
-            "description": "查詢數量",
-            "type": "boolean",
-            "enum": [
-              true,
-              false
-            ]
-          },
-          {
-            "in": "query",
-            "name": "health",
-            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
-            "type": "string",
-            "enum": [
-              "true",
-              "false"
-            ]
-          },
-          {
-            "in": "query",
-            "name": "$format",
-            "description": "指定來源格式",
-            "required": true,
-            "type": "string",
-            "enum": [
-              "JSON",
-              "XML"
-            ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "schema": {
-              "$ref": "#/definitions/PTX.API.Ship.Model.ShipWrapper[PTX.Service.DTO.Ship.Specification.V3.SpecificSchedule]"
-            }
-          },
-          "304": {
-            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
-          },
-          "299": {
-            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
-            "schema": {
-              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
-            }
-          }
-        }
-      }
-    },
-    "/v3/Ship/Alert/International": {
-      "get": {
-        "tags": [
-          "InternationalShip"
-        ],
-        "summary": "取得國際航運之營運通阻資料",
-        "operationId": "Ship_International_Alert",
-        "produces": [
-          "application/json",
-          "application/xml"
-        ],
-        "parameters": [
-          {
-            "in": "query",
-            "name": "$select",
-            "description": "挑選",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$filter",
-            "description": "過濾",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$orderby",
-            "description": "排序",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$top",
-            "description": "取前幾筆",
-            "type": "integer",
-            "default": 30
-          },
-          {
-            "in": "query",
-            "name": "$skip",
-            "description": "跳過前幾筆",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$count",
-            "description": "查詢數量",
-            "type": "boolean",
-            "enum": [
-              true,
-              false
-            ]
-          },
-          {
-            "in": "query",
-            "name": "health",
-            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
-            "type": "string",
-            "enum": [
-              "true",
-              "false"
-            ]
-          },
-          {
-            "in": "query",
-            "name": "$format",
-            "description": "指定來源格式",
-            "required": true,
-            "type": "string",
-            "enum": [
-              "JSON",
-              "XML"
-            ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "schema": {
-              "$ref": "#/definitions/PTX.API.Ship.Model.ShipLiveWrapper[PTX.Service.DTO.Ship.Specification.V3.Alert]"
-            }
-          },
-          "304": {
-            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
-          },
-          "299": {
-            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
-            "schema": {
-              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
-            }
-          }
-        }
-      }
-    },
-    "/v3/Ship/News/International": {
-      "get": {
-        "tags": [
-          "InternationalShip"
-        ],
-        "summary": "取得國際航運之最新消息資料",
-        "operationId": "Ship_International_News",
-        "produces": [
-          "application/json",
-          "application/xml"
-        ],
-        "parameters": [
-          {
-            "in": "query",
-            "name": "$select",
-            "description": "挑選",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$filter",
-            "description": "過濾",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$orderby",
-            "description": "排序",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$top",
-            "description": "取前幾筆",
-            "type": "integer",
-            "default": 30
-          },
-          {
-            "in": "query",
-            "name": "$skip",
-            "description": "跳過前幾筆",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$count",
-            "description": "查詢數量",
-            "type": "boolean",
-            "enum": [
-              true,
-              false
-            ]
-          },
-          {
-            "in": "query",
-            "name": "health",
-            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
-            "type": "string",
-            "enum": [
-              "true",
-              "false"
-            ]
-          },
-          {
-            "in": "query",
-            "name": "$format",
-            "description": "指定來源格式",
-            "required": true,
-            "type": "string",
-            "enum": [
-              "JSON",
-              "XML"
-            ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "schema": {
-              "$ref": "#/definitions/PTX.API.Ship.Model.ShipLiveWrapper[PTX.Service.DTO.Ship.Specification.V3.News]"
-            }
-          },
-          "304": {
-            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
-          },
-          "299": {
-            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
-            "schema": {
-              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
-            }
-          }
-        }
-      }
-    },
-    "/v3/Ship/Route/RouteType/{RouteType}": {
-      "get": {
-        "tags": [
-          "ShipByRouteType"
-        ],
-        "summary": "取得指定[航線類別]的全臺航運之航線資料",
-        "operationId": "Ship_RouteType_Route",
-        "produces": [
-          "application/json",
-          "application/xml"
-        ],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "RouteType",
-            "required": true,
-            "type": "string",
-            "enum": [
-              "Internal",
-              "OutlyingIslands",
-              "Bilateral",
-              "MiniThreeLinks",
-              "Other"
-            ],
-            "x-enum": {
-              "Other": "其他",
-              "Bilateral": "兩岸航線",
-              "Internal": "國內航線(渡輪、藍色公路)",
-              "MiniThreeLinks": "小三通航線",
-              "OutlyingIslands": "離島航線"
-            }
-          },
-          {
-            "in": "query",
-            "name": "$select",
-            "description": "挑選",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$filter",
-            "description": "過濾",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$orderby",
-            "description": "排序",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$top",
-            "description": "取前幾筆",
-            "type": "integer",
-            "default": 30
-          },
-          {
-            "in": "query",
-            "name": "$skip",
-            "description": "跳過前幾筆",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$count",
-            "description": "查詢數量",
-            "type": "boolean",
-            "enum": [
-              true,
-              false
-            ]
-          },
-          {
-            "in": "query",
-            "name": "health",
-            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
-            "type": "string",
-            "enum": [
-              "true",
-              "false"
-            ]
-          },
-          {
-            "in": "query",
-            "name": "$format",
-            "description": "指定來源格式",
-            "required": true,
-            "type": "string",
-            "enum": [
-              "JSON",
-              "XML"
-            ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "schema": {
-              "$ref": "#/definitions/PTX.API.Ship.Model.ShipFlatWrapper[PTX.Service.DTO.Ship.Specification.V3.RouteFlat]"
-            }
-          },
-          "304": {
-            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
-          },
-          "299": {
-            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
-            "schema": {
-              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
-            }
-          }
-        }
-      }
-    },
-    "/v3/Ship/StopOfRoute/RouteType/{RouteType}": {
-      "get": {
-        "tags": [
-          "ShipByRouteType"
-        ],
-        "summary": "取得指定[航線類別]之航線靠港順序資料",
-        "operationId": "Ship_RouteType_StopOfRoute",
-        "produces": [
-          "application/json",
-          "application/xml"
-        ],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "RouteType",
-            "required": true,
-            "type": "string",
-            "enum": [
-              "Internal",
-              "OutlyingIslands",
-              "Bilateral",
-              "MiniThreeLinks",
-              "Other"
-            ],
-            "x-enum": {
-              "Internal": "國內航線(渡輪、藍色公路)",
-              "OutlyingIslands": "離島航線",
-              "MiniThreeLinks": "小三通航線",
-              "Bilateral": "兩岸航線",
-              "Other": "其他"
-            }
-          },
-          {
-            "in": "query",
-            "name": "$select",
-            "description": "挑選",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$filter",
-            "description": "過濾",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$orderby",
-            "description": "排序",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$top",
-            "description": "取前幾筆",
-            "type": "integer",
-            "default": 30
-          },
-          {
-            "in": "query",
-            "name": "$skip",
-            "description": "跳過前幾筆",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$count",
-            "description": "查詢數量",
-            "type": "boolean",
-            "enum": [
-              true,
-              false
-            ]
-          },
-          {
-            "in": "query",
-            "name": "health",
-            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
-            "type": "string",
-            "enum": [
-              "true",
-              "false"
-            ]
-          },
-          {
-            "in": "query",
-            "name": "$format",
-            "description": "指定來源格式",
-            "required": true,
-            "type": "string",
-            "enum": [
-              "JSON",
-              "XML"
-            ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "schema": {
-              "$ref": "#/definitions/PTX.API.Ship.Model.ShipFlatWrapper[PTX.Service.DTO.Ship.Specification.V3.StopOfRouteFlat]"
-            }
-          },
-          "304": {
-            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
-          },
-          "299": {
-            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
-            "schema": {
-              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
-            }
-          }
-        }
-      }
-    },
-    "/v3/Ship/DailySchedule/RouteType/{RouteType}": {
-      "get": {
-        "tags": [
-          "ShipByRouteType"
-        ],
-        "summary": "取得指定[航線類別]的全臺航運之每日班表資料",
-        "operationId": "Ship_RouteType_DailySchedule",
-        "produces": [
-          "application/json",
-          "application/xml"
-        ],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "RouteType",
-            "required": true,
-            "type": "string",
-            "enum": [
-              "Internal",
-              "OutlyingIslands",
-              "Bilateral",
-              "MiniThreeLinks",
-              "Other"
-            ],
-            "x-enum": {
-              "MiniThreeLinks": "小三通航線",
-              "Bilateral": "兩岸航線",
-              "Internal": "國內航線(渡輪、藍色公路)",
-              "Other": "其他",
-              "OutlyingIslands": "離島航線"
-            }
-          },
-          {
-            "in": "query",
-            "name": "$select",
-            "description": "挑選",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$filter",
-            "description": "過濾",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$orderby",
-            "description": "排序",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$top",
-            "description": "取前幾筆",
-            "type": "integer",
-            "default": 30
-          },
-          {
-            "in": "query",
-            "name": "$skip",
-            "description": "跳過前幾筆",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$count",
-            "description": "查詢數量",
-            "type": "boolean",
-            "enum": [
-              true,
-              false
-            ]
-          },
-          {
-            "in": "query",
-            "name": "health",
-            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
-            "type": "string",
-            "enum": [
-              "true",
-              "false"
-            ]
-          },
-          {
-            "in": "query",
-            "name": "$format",
-            "description": "指定來源格式",
-            "required": true,
-            "type": "string",
-            "enum": [
-              "JSON",
-              "XML"
-            ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "schema": {
-              "$ref": "#/definitions/PTX.API.Ship.Model.ShipFlatWrapper[PTX.Service.DTO.Ship.Specification.V3.DailyScheduleFlat]"
-            }
-          },
-          "304": {
-            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
-          },
-          "299": {
-            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
-            "schema": {
-              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
-            }
-          }
-        }
-      }
-    },
-    "/v3/Ship/DailySchedule/RouteID/{RouteID}": {
-      "get": {
-        "tags": [
-          "ShipByRouteType"
-        ],
-        "summary": "取得指定[航線]的全臺航運之每日班表資料",
-        "operationId": "Ship_RouteType_DailySchedule2",
-        "produces": [
-          "application/json",
-          "application/xml"
-        ],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "RouteID",
-            "description": "指定航運路線代碼",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$select",
-            "description": "挑選",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$filter",
-            "description": "過濾",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$orderby",
-            "description": "排序",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$top",
-            "description": "取前幾筆",
-            "type": "integer",
-            "default": 30
-          },
-          {
-            "in": "query",
-            "name": "$skip",
-            "description": "跳過前幾筆",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$count",
-            "description": "查詢數量",
-            "type": "boolean",
-            "enum": [
-              true,
-              false
-            ]
-          },
-          {
-            "in": "query",
-            "name": "health",
-            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
-            "type": "string",
-            "enum": [
-              "true",
-              "false"
-            ]
-          },
-          {
-            "in": "query",
-            "name": "$format",
-            "description": "指定來源格式",
-            "required": true,
-            "type": "string",
-            "enum": [
-              "JSON",
-              "XML"
-            ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "schema": {
-              "$ref": "#/definitions/PTX.API.Ship.Model.ShipFlatWrapper[PTX.Service.DTO.Ship.Specification.V3.DailyScheduleFlat]"
-            }
-          },
-          "304": {
-            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
-          },
-          "299": {
-            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
-            "schema": {
-              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
-            }
-          }
-        }
-      }
-    },
-    "/v3/Ship/SpecificSchedule/RouteType/{RouteType}": {
-      "get": {
-        "tags": [
-          "ShipByRouteType"
-        ],
-        "summary": "取得指定[航線類別]的全臺航運之特殊班表資料",
-        "operationId": "Ship_RouteType_SpecificSchedule",
-        "produces": [
-          "application/json",
-          "application/xml"
-        ],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "RouteType",
-            "required": true,
-            "type": "string",
-            "enum": [
-              "Internal",
-              "OutlyingIslands",
-              "Bilateral",
-              "MiniThreeLinks",
-              "Other"
-            ],
-            "x-enum": {
-              "MiniThreeLinks": "小三通航線",
-              "Other": "其他",
-              "OutlyingIslands": "離島航線",
-              "Bilateral": "兩岸航線",
-              "Internal": "國內航線(渡輪、藍色公路)"
-            }
-          },
-          {
-            "in": "query",
-            "name": "$select",
-            "description": "挑選",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$filter",
-            "description": "過濾",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$orderby",
-            "description": "排序",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$top",
-            "description": "取前幾筆",
-            "type": "integer",
-            "default": 30
-          },
-          {
-            "in": "query",
-            "name": "$skip",
-            "description": "跳過前幾筆",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$count",
-            "description": "查詢數量",
-            "type": "boolean",
-            "enum": [
-              true,
-              false
-            ]
-          },
-          {
-            "in": "query",
-            "name": "health",
-            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
-            "type": "string",
-            "enum": [
-              "true",
-              "false"
-            ]
-          },
-          {
-            "in": "query",
-            "name": "$format",
-            "description": "指定來源格式",
-            "required": true,
-            "type": "string",
-            "enum": [
-              "JSON",
-              "XML"
-            ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "schema": {
-              "$ref": "#/definitions/PTX.API.Ship.Model.ShipFlatWrapper[PTX.Service.DTO.Ship.Specification.V3.SpecificScheduleFlat]"
-            }
-          },
-          "304": {
-            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
-          },
-          "299": {
-            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
-            "schema": {
-              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
-            }
-          }
-        }
-      }
-    },
-    "/v3/Ship/SpecificSchedule/RouteID/{RouteID}": {
-      "get": {
-        "tags": [
-          "ShipByRouteType"
-        ],
-        "summary": "取得指定[航線]的全臺航運之特殊班表資料",
-        "operationId": "Ship_RouteType_SpecificSchedule2",
-        "produces": [
-          "application/json",
-          "application/xml"
-        ],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "RouteID",
-            "description": "指定航運路線代碼",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$select",
-            "description": "挑選",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$filter",
-            "description": "過濾",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$orderby",
-            "description": "排序",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$top",
-            "description": "取前幾筆",
-            "type": "integer",
-            "default": 30
-          },
-          {
-            "in": "query",
-            "name": "$skip",
-            "description": "跳過前幾筆",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$count",
-            "description": "查詢數量",
-            "type": "boolean",
-            "enum": [
-              true,
-              false
-            ]
-          },
-          {
-            "in": "query",
-            "name": "health",
-            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
-            "type": "string",
-            "enum": [
-              "true",
-              "false"
-            ]
-          },
-          {
-            "in": "query",
-            "name": "$format",
-            "description": "指定來源格式",
-            "required": true,
-            "type": "string",
-            "enum": [
-              "JSON",
-              "XML"
-            ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "schema": {
-              "$ref": "#/definitions/PTX.API.Ship.Model.ShipFlatWrapper[PTX.Service.DTO.Ship.Specification.V3.SpecificScheduleFlat]"
+              "$ref": "#/definitions/PTX.API.Ship.Model.ShipWrapper[PTX.Service.DTO.Ship.Specification.V3.Vessel]"
             }
           },
           "304": {
@@ -6385,20 +6385,20 @@
   },
   "tags": [
     {
-      "name": "ShipByRouteType",
-      "description": "路線別航運"
-    },
-    {
-      "name": "InternationalShip",
-      "description": "國際航運"
-    },
-    {
       "name": "ShipBasic",
       "description": "基礎API"
     },
     {
       "name": "DomesticShip",
       "description": "國內航運"
+    },
+    {
+      "name": "InternationalShip",
+      "description": "國際航運"
+    },
+    {
+      "name": "ShipByRouteType",
+      "description": "路線別航運"
     }
   ]
 }

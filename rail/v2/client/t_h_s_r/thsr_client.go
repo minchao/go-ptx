@@ -54,6 +54,8 @@ type ClientService interface {
 
 	THSRAPIDailyTimetable3(params *THSRAPIDailyTimetable3Params, opts ...ClientOption) (*THSRAPIDailyTimetable3OK, *THSRAPIDailyTimetable3Status299, error)
 
+	THSRAPIDailyTimetable4(params *THSRAPIDailyTimetable4Params, opts ...ClientOption) (*THSRAPIDailyTimetable4OK, *THSRAPIDailyTimetable4Status299, error)
+
 	THSRAPIDailyTrainInfo(params *THSRAPIDailyTrainInfoParams, opts ...ClientOption) (*THSRAPIDailyTrainInfoOK, *THSRAPIDailyTrainInfoStatus299, error)
 
 	THSRAPIDailyTrainInfo1(params *THSRAPIDailyTrainInfo1Params, opts ...ClientOption) (*THSRAPIDailyTrainInfo1OK, *THSRAPIDailyTrainInfo1Status299, error)
@@ -509,9 +511,9 @@ func (a *Client) THSRAPIDailyTimetable1(params *THSRAPIDailyTimetable1Params, op
 }
 
 /*
-  THSRAPIDailyTimetable2 取得指定s 日期 所有車次的時刻表資料
+  THSRAPIDailyTimetable2 取得高鐵每日時刻表所有供應的日期資料s
 
-  取得指定[日期]所有車次的時刻表資料(高鐵提供近28天每日時刻表)
+  取得高鐵每日時刻表所有供應的日期資料
 */
 func (a *Client) THSRAPIDailyTimetable2(params *THSRAPIDailyTimetable2Params, opts ...ClientOption) (*THSRAPIDailyTimetable2OK, *THSRAPIDailyTimetable2Status299, error) {
 	// TODO: Validate the params before sending
@@ -521,7 +523,7 @@ func (a *Client) THSRAPIDailyTimetable2(params *THSRAPIDailyTimetable2Params, op
 	op := &runtime.ClientOperation{
 		ID:                 "THSRApi_DailyTimetable_2",
 		Method:             "GET",
-		PathPattern:        "/v2/Rail/THSR/DailyTimetable/TrainDate/{TrainDate}",
+		PathPattern:        "/v2/Rail/THSR/DailyTimetable/TrainDates",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
@@ -550,9 +552,9 @@ func (a *Client) THSRAPIDailyTimetable2(params *THSRAPIDailyTimetable2Params, op
 }
 
 /*
-  THSRAPIDailyTimetable3 取得指定s 日期 車次 的時刻表資料
+  THSRAPIDailyTimetable3 取得指定s 日期 所有車次的時刻表資料
 
-  取得指定[日期],[車次]的時刻表資料(高鐵提供近28天每日時刻表)
+  取得指定[日期]所有車次的時刻表資料(高鐵提供近28天每日時刻表)
 */
 func (a *Client) THSRAPIDailyTimetable3(params *THSRAPIDailyTimetable3Params, opts ...ClientOption) (*THSRAPIDailyTimetable3OK, *THSRAPIDailyTimetable3Status299, error) {
 	// TODO: Validate the params before sending
@@ -562,7 +564,7 @@ func (a *Client) THSRAPIDailyTimetable3(params *THSRAPIDailyTimetable3Params, op
 	op := &runtime.ClientOperation{
 		ID:                 "THSRApi_DailyTimetable_3",
 		Method:             "GET",
-		PathPattern:        "/v2/Rail/THSR/DailyTimetable/TrainNo/{TrainNo}/TrainDate/{TrainDate}",
+		PathPattern:        "/v2/Rail/THSR/DailyTimetable/TrainDate/{TrainDate}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
@@ -583,6 +585,47 @@ func (a *Client) THSRAPIDailyTimetable3(params *THSRAPIDailyTimetable3Params, op
 	case *THSRAPIDailyTimetable3OK:
 		return value, nil, nil
 	case *THSRAPIDailyTimetable3Status299:
+		return nil, value, nil
+	}
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for t_h_s_r: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  THSRAPIDailyTimetable4 取得指定s 日期 車次 的時刻表資料
+
+  取得指定[日期],[車次]的時刻表資料(高鐵提供近28天每日時刻表)
+*/
+func (a *Client) THSRAPIDailyTimetable4(params *THSRAPIDailyTimetable4Params, opts ...ClientOption) (*THSRAPIDailyTimetable4OK, *THSRAPIDailyTimetable4Status299, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewTHSRAPIDailyTimetable4Params()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "THSRApi_DailyTimetable_4",
+		Method:             "GET",
+		PathPattern:        "/v2/Rail/THSR/DailyTimetable/TrainNo/{TrainNo}/TrainDate/{TrainDate}",
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &THSRAPIDailyTimetable4Reader{formats: a.formats},
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, nil, err
+	}
+	switch value := result.(type) {
+	case *THSRAPIDailyTimetable4OK:
+		return value, nil, nil
+	case *THSRAPIDailyTimetable4Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue

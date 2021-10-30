@@ -106,12 +106,6 @@ type TRAAPIDailyTimetable3Params struct {
 	*/
 	TrainDate strfmt.DateTime
 
-	/* TrainNo.
-
-	   欲查詢車次的代碼
-	*/
-	TrainNo string
-
 	/* Health.
 
 	   加入參數'?health=true'即可查詢此API服務的健康狀態
@@ -259,17 +253,6 @@ func (o *TRAAPIDailyTimetable3Params) SetTrainDate(trainDate strfmt.DateTime) {
 	o.TrainDate = trainDate
 }
 
-// WithTrainNo adds the trainNo to the t r a Api daily timetable 3 params
-func (o *TRAAPIDailyTimetable3Params) WithTrainNo(trainNo string) *TRAAPIDailyTimetable3Params {
-	o.SetTrainNo(trainNo)
-	return o
-}
-
-// SetTrainNo adds the trainNo to the t r a Api daily timetable 3 params
-func (o *TRAAPIDailyTimetable3Params) SetTrainNo(trainNo string) {
-	o.TrainNo = trainNo
-}
-
 // WithHealth adds the health to the t r a Api daily timetable 3 params
 func (o *TRAAPIDailyTimetable3Params) WithHealth(health *string) *TRAAPIDailyTimetable3Params {
 	o.SetHealth(health)
@@ -386,11 +369,6 @@ func (o *TRAAPIDailyTimetable3Params) WriteToRequest(r runtime.ClientRequest, re
 
 	// path param TrainDate
 	if err := r.SetPathParam("TrainDate", o.TrainDate.String()); err != nil {
-		return err
-	}
-
-	// path param TrainNo
-	if err := r.SetPathParam("TrainNo", o.TrainNo); err != nil {
 		return err
 	}
 

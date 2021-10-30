@@ -15,10 +15,10 @@ import (
 	"github.com/go-openapi/validate"
 )
 
-// PTXAPIRailModelLiteTrainGeneralTrainWrapperPTXServiceDTORailSpecificationV3LiteTrainGeneralTrainTimetable LiteTrainGeneralTrainTimetableList
+// PTXAPIRailModelLiteTrainLiteTrainGeneralTrainWrapperPTXServiceDTORailSpecificationV3LiteTrainGeneralTrainTimetable LiteTrainGeneralTrainTimetableList
 //
-// swagger:model PTX.API.Rail.Model.LiteTrainGeneralTrainWrapper[PTX.Service.DTO.Rail.Specification.V3.LiteTrain.GeneralTrainTimetable]
-type PTXAPIRailModelLiteTrainGeneralTrainWrapperPTXServiceDTORailSpecificationV3LiteTrainGeneralTrainTimetable struct {
+// swagger:model PTX.API.Rail.Model.LiteTrain.LiteTrainGeneralTrainWrapper[PTX.Service.DTO.Rail.Specification.V3.LiteTrain.GeneralTrainTimetable]
+type PTXAPIRailModelLiteTrainLiteTrainGeneralTrainWrapperPTXServiceDTORailSpecificationV3LiteTrainGeneralTrainTimetable struct {
 
 	// String
 	//
@@ -86,8 +86,8 @@ type PTXAPIRailModelLiteTrainGeneralTrainWrapperPTXServiceDTORailSpecificationV3
 	ValidityDesciption string `json:"ValidityDesciption,omitempty" xml:"String,omitempty"`
 }
 
-// Validate validates this p t x API rail model lite train general train wrapper p t x service d t o rail specification v3 lite train general train timetable
-func (m *PTXAPIRailModelLiteTrainGeneralTrainWrapperPTXServiceDTORailSpecificationV3LiteTrainGeneralTrainTimetable) Validate(formats strfmt.Registry) error {
+// Validate validates this p t x API rail model lite train lite train general train wrapper p t x service d t o rail specification v3 lite train general train timetable
+func (m *PTXAPIRailModelLiteTrainLiteTrainGeneralTrainWrapperPTXServiceDTORailSpecificationV3LiteTrainGeneralTrainTimetable) Validate(formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.validateAuthorityCode(formats); err != nil {
@@ -128,7 +128,7 @@ func (m *PTXAPIRailModelLiteTrainGeneralTrainWrapperPTXServiceDTORailSpecificati
 	return nil
 }
 
-func (m *PTXAPIRailModelLiteTrainGeneralTrainWrapperPTXServiceDTORailSpecificationV3LiteTrainGeneralTrainTimetable) validateAuthorityCode(formats strfmt.Registry) error {
+func (m *PTXAPIRailModelLiteTrainLiteTrainGeneralTrainWrapperPTXServiceDTORailSpecificationV3LiteTrainGeneralTrainTimetable) validateAuthorityCode(formats strfmt.Registry) error {
 
 	if err := validate.Required("AuthorityCode", "body", m.AuthorityCode); err != nil {
 		return err
@@ -137,7 +137,7 @@ func (m *PTXAPIRailModelLiteTrainGeneralTrainWrapperPTXServiceDTORailSpecificati
 	return nil
 }
 
-func (m *PTXAPIRailModelLiteTrainGeneralTrainWrapperPTXServiceDTORailSpecificationV3LiteTrainGeneralTrainTimetable) validateEffectiveDate(formats strfmt.Registry) error {
+func (m *PTXAPIRailModelLiteTrainLiteTrainGeneralTrainWrapperPTXServiceDTORailSpecificationV3LiteTrainGeneralTrainTimetable) validateEffectiveDate(formats strfmt.Registry) error {
 
 	if err := validate.Required("EffectiveDate", "body", m.EffectiveDate); err != nil {
 		return err
@@ -150,7 +150,7 @@ func (m *PTXAPIRailModelLiteTrainGeneralTrainWrapperPTXServiceDTORailSpecificati
 	return nil
 }
 
-func (m *PTXAPIRailModelLiteTrainGeneralTrainWrapperPTXServiceDTORailSpecificationV3LiteTrainGeneralTrainTimetable) validateExpireDate(formats strfmt.Registry) error {
+func (m *PTXAPIRailModelLiteTrainLiteTrainGeneralTrainWrapperPTXServiceDTORailSpecificationV3LiteTrainGeneralTrainTimetable) validateExpireDate(formats strfmt.Registry) error {
 	if swag.IsZero(m.ExpireDate) { // not required
 		return nil
 	}
@@ -162,7 +162,7 @@ func (m *PTXAPIRailModelLiteTrainGeneralTrainWrapperPTXServiceDTORailSpecificati
 	return nil
 }
 
-func (m *PTXAPIRailModelLiteTrainGeneralTrainWrapperPTXServiceDTORailSpecificationV3LiteTrainGeneralTrainTimetable) validateSrcUpdateInterval(formats strfmt.Registry) error {
+func (m *PTXAPIRailModelLiteTrainLiteTrainGeneralTrainWrapperPTXServiceDTORailSpecificationV3LiteTrainGeneralTrainTimetable) validateSrcUpdateInterval(formats strfmt.Registry) error {
 
 	if err := validate.Required("SrcUpdateInterval", "body", m.SrcUpdateInterval); err != nil {
 		return err
@@ -171,7 +171,7 @@ func (m *PTXAPIRailModelLiteTrainGeneralTrainWrapperPTXServiceDTORailSpecificati
 	return nil
 }
 
-func (m *PTXAPIRailModelLiteTrainGeneralTrainWrapperPTXServiceDTORailSpecificationV3LiteTrainGeneralTrainTimetable) validateSrcUpdateTime(formats strfmt.Registry) error {
+func (m *PTXAPIRailModelLiteTrainLiteTrainGeneralTrainWrapperPTXServiceDTORailSpecificationV3LiteTrainGeneralTrainTimetable) validateSrcUpdateTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("SrcUpdateTime", "body", m.SrcUpdateTime); err != nil {
 		return err
@@ -184,7 +184,7 @@ func (m *PTXAPIRailModelLiteTrainGeneralTrainWrapperPTXServiceDTORailSpecificati
 	return nil
 }
 
-func (m *PTXAPIRailModelLiteTrainGeneralTrainWrapperPTXServiceDTORailSpecificationV3LiteTrainGeneralTrainTimetable) validateTrainTimetables(formats strfmt.Registry) error {
+func (m *PTXAPIRailModelLiteTrainLiteTrainGeneralTrainWrapperPTXServiceDTORailSpecificationV3LiteTrainGeneralTrainTimetable) validateTrainTimetables(formats strfmt.Registry) error {
 
 	if err := validate.Required("TrainTimetables", "body", m.TrainTimetables); err != nil {
 		return err
@@ -209,7 +209,7 @@ func (m *PTXAPIRailModelLiteTrainGeneralTrainWrapperPTXServiceDTORailSpecificati
 	return nil
 }
 
-func (m *PTXAPIRailModelLiteTrainGeneralTrainWrapperPTXServiceDTORailSpecificationV3LiteTrainGeneralTrainTimetable) validateUpdateInterval(formats strfmt.Registry) error {
+func (m *PTXAPIRailModelLiteTrainLiteTrainGeneralTrainWrapperPTXServiceDTORailSpecificationV3LiteTrainGeneralTrainTimetable) validateUpdateInterval(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateInterval", "body", m.UpdateInterval); err != nil {
 		return err
@@ -218,7 +218,7 @@ func (m *PTXAPIRailModelLiteTrainGeneralTrainWrapperPTXServiceDTORailSpecificati
 	return nil
 }
 
-func (m *PTXAPIRailModelLiteTrainGeneralTrainWrapperPTXServiceDTORailSpecificationV3LiteTrainGeneralTrainTimetable) validateUpdateTime(formats strfmt.Registry) error {
+func (m *PTXAPIRailModelLiteTrainLiteTrainGeneralTrainWrapperPTXServiceDTORailSpecificationV3LiteTrainGeneralTrainTimetable) validateUpdateTime(formats strfmt.Registry) error {
 
 	if err := validate.Required("UpdateTime", "body", m.UpdateTime); err != nil {
 		return err
@@ -231,8 +231,8 @@ func (m *PTXAPIRailModelLiteTrainGeneralTrainWrapperPTXServiceDTORailSpecificati
 	return nil
 }
 
-// ContextValidate validate this p t x API rail model lite train general train wrapper p t x service d t o rail specification v3 lite train general train timetable based on the context it is used
-func (m *PTXAPIRailModelLiteTrainGeneralTrainWrapperPTXServiceDTORailSpecificationV3LiteTrainGeneralTrainTimetable) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
+// ContextValidate validate this p t x API rail model lite train lite train general train wrapper p t x service d t o rail specification v3 lite train general train timetable based on the context it is used
+func (m *PTXAPIRailModelLiteTrainLiteTrainGeneralTrainWrapperPTXServiceDTORailSpecificationV3LiteTrainGeneralTrainTimetable) ContextValidate(ctx context.Context, formats strfmt.Registry) error {
 	var res []error
 
 	if err := m.contextValidateTrainTimetables(ctx, formats); err != nil {
@@ -245,7 +245,7 @@ func (m *PTXAPIRailModelLiteTrainGeneralTrainWrapperPTXServiceDTORailSpecificati
 	return nil
 }
 
-func (m *PTXAPIRailModelLiteTrainGeneralTrainWrapperPTXServiceDTORailSpecificationV3LiteTrainGeneralTrainTimetable) contextValidateTrainTimetables(ctx context.Context, formats strfmt.Registry) error {
+func (m *PTXAPIRailModelLiteTrainLiteTrainGeneralTrainWrapperPTXServiceDTORailSpecificationV3LiteTrainGeneralTrainTimetable) contextValidateTrainTimetables(ctx context.Context, formats strfmt.Registry) error {
 
 	for i := 0; i < len(m.TrainTimetables); i++ {
 
@@ -264,7 +264,7 @@ func (m *PTXAPIRailModelLiteTrainGeneralTrainWrapperPTXServiceDTORailSpecificati
 }
 
 // MarshalBinary interface implementation
-func (m *PTXAPIRailModelLiteTrainGeneralTrainWrapperPTXServiceDTORailSpecificationV3LiteTrainGeneralTrainTimetable) MarshalBinary() ([]byte, error) {
+func (m *PTXAPIRailModelLiteTrainLiteTrainGeneralTrainWrapperPTXServiceDTORailSpecificationV3LiteTrainGeneralTrainTimetable) MarshalBinary() ([]byte, error) {
 	if m == nil {
 		return nil, nil
 	}
@@ -272,8 +272,8 @@ func (m *PTXAPIRailModelLiteTrainGeneralTrainWrapperPTXServiceDTORailSpecificati
 }
 
 // UnmarshalBinary interface implementation
-func (m *PTXAPIRailModelLiteTrainGeneralTrainWrapperPTXServiceDTORailSpecificationV3LiteTrainGeneralTrainTimetable) UnmarshalBinary(b []byte) error {
-	var res PTXAPIRailModelLiteTrainGeneralTrainWrapperPTXServiceDTORailSpecificationV3LiteTrainGeneralTrainTimetable
+func (m *PTXAPIRailModelLiteTrainLiteTrainGeneralTrainWrapperPTXServiceDTORailSpecificationV3LiteTrainGeneralTrainTimetable) UnmarshalBinary(b []byte) error {
+	var res PTXAPIRailModelLiteTrainLiteTrainGeneralTrainWrapperPTXServiceDTORailSpecificationV3LiteTrainGeneralTrainTimetable
 	if err := swag.ReadJSON(b, &res); err != nil {
 		return err
 	}

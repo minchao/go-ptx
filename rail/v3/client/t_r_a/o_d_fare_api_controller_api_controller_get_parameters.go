@@ -59,12 +59,6 @@ func NewODFareAPIControllerAPIControllerGetParamsWithHTTPClient(client *http.Cli
 */
 type ODFareAPIControllerAPIControllerGetParams struct {
 
-	/* DollarFormat.
-
-	   指定來源格式
-	*/
-	DollarFormat string
-
 	/* Health.
 
 	   加入參數'?health=true'即可查詢此API服務的健康狀態
@@ -124,17 +118,6 @@ func (o *ODFareAPIControllerAPIControllerGetParams) SetHTTPClient(client *http.C
 	o.HTTPClient = client
 }
 
-// WithDollarFormat adds the dollarFormat to the o d fare Api controller Api controller get params
-func (o *ODFareAPIControllerAPIControllerGetParams) WithDollarFormat(dollarFormat string) *ODFareAPIControllerAPIControllerGetParams {
-	o.SetDollarFormat(dollarFormat)
-	return o
-}
-
-// SetDollarFormat adds the dollarFormat to the o d fare Api controller Api controller get params
-func (o *ODFareAPIControllerAPIControllerGetParams) SetDollarFormat(dollarFormat string) {
-	o.DollarFormat = dollarFormat
-}
-
 // WithHealth adds the health to the o d fare Api controller Api controller get params
 func (o *ODFareAPIControllerAPIControllerGetParams) WithHealth(health *string) *ODFareAPIControllerAPIControllerGetParams {
 	o.SetHealth(health)
@@ -153,16 +136,6 @@ func (o *ODFareAPIControllerAPIControllerGetParams) WriteToRequest(r runtime.Cli
 		return err
 	}
 	var res []error
-
-	// query param $format
-	qrDollarFormat := o.DollarFormat
-	qDollarFormat := qrDollarFormat
-	if qDollarFormat != "" {
-
-		if err := r.SetQueryParam("$format", qDollarFormat); err != nil {
-			return err
-		}
-	}
 
 	if o.Health != nil {
 
