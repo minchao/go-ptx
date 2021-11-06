@@ -36,11 +36,11 @@
               "Other"
             ],
             "x-enum": {
-              "MiniThreeLinks": "小三通航線",
               "Bilateral": "兩岸航線",
               "Internal": "國內航線(渡輪、藍色公路)",
-              "Other": "其他",
-              "OutlyingIslands": "離島航線"
+              "OutlyingIslands": "離島航線",
+              "MiniThreeLinks": "小三通航線",
+              "Other": "其他"
             }
           },
           {
@@ -150,11 +150,11 @@
               "Other"
             ],
             "x-enum": {
-              "OutlyingIslands": "離島航線",
-              "Bilateral": "兩岸航線",
-              "Other": "其他",
               "Internal": "國內航線(渡輪、藍色公路)",
-              "MiniThreeLinks": "小三通航線"
+              "Bilateral": "兩岸航線",
+              "OutlyingIslands": "離島航線",
+              "MiniThreeLinks": "小三通航線",
+              "Other": "其他"
             }
           },
           {
@@ -264,10 +264,10 @@
               "Other"
             ],
             "x-enum": {
-              "MiniThreeLinks": "小三通航線",
               "Other": "其他",
-              "OutlyingIslands": "離島航線",
               "Bilateral": "兩岸航線",
+              "OutlyingIslands": "離島航線",
+              "MiniThreeLinks": "小三通航線",
               "Internal": "國內航線(渡輪、藍色公路)"
             }
           },
@@ -378,11 +378,11 @@
               "Other"
             ],
             "x-enum": {
-              "OutlyingIslands": "離島航線",
               "Other": "其他",
-              "Internal": "國內航線(渡輪、藍色公路)",
+              "Bilateral": "兩岸航線",
+              "OutlyingIslands": "離島航線",
               "MiniThreeLinks": "小三通航線",
-              "Bilateral": "兩岸航線"
+              "Internal": "國內航線(渡輪、藍色公路)"
             }
           },
           {
@@ -1934,15 +1934,15 @@
               "Kaohsiung"
             ],
             "x-enum": {
-              "PingtungCounty": "屏東縣",
               "Taipei": "臺北市",
+              "Kaohsiung": "高雄市",
               "KinmenCounty": "金門縣",
               "NewTaipei": "新北市",
-              "NantouCounty": "南投縣",
-              "Kaohsiung": "高雄市",
               "LienchiangCounty": "連江縣",
-              "PenghuCounty": "澎湖縣",
-              "TaitungCounty": "臺東縣"
+              "TaitungCounty": "臺東縣",
+              "PingtungCounty": "屏東縣",
+              "NantouCounty": "南投縣",
+              "PenghuCounty": "澎湖縣"
             }
           },
           {
@@ -2056,15 +2056,15 @@
               "Kaohsiung"
             ],
             "x-enum": {
-              "LienchiangCounty": "連江縣",
-              "PingtungCounty": "屏東縣",
               "Kaohsiung": "高雄市",
-              "PenghuCounty": "澎湖縣",
+              "NantouCounty": "南投縣",
               "TaitungCounty": "臺東縣",
               "NewTaipei": "新北市",
-              "Taipei": "臺北市",
               "KinmenCounty": "金門縣",
-              "NantouCounty": "南投縣"
+              "LienchiangCounty": "連江縣",
+              "Taipei": "臺北市",
+              "PenghuCounty": "澎湖縣",
+              "PingtungCounty": "屏東縣"
             }
           },
           {
@@ -2178,15 +2178,15 @@
               "Kaohsiung"
             ],
             "x-enum": {
-              "LienchiangCounty": "連江縣",
-              "PingtungCounty": "屏東縣",
               "Kaohsiung": "高雄市",
-              "PenghuCounty": "澎湖縣",
+              "NantouCounty": "南投縣",
               "TaitungCounty": "臺東縣",
               "NewTaipei": "新北市",
-              "Taipei": "臺北市",
               "KinmenCounty": "金門縣",
-              "NantouCounty": "南投縣"
+              "LienchiangCounty": "連江縣",
+              "Taipei": "臺北市",
+              "PenghuCounty": "澎湖縣",
+              "PingtungCounty": "屏東縣"
             }
           },
           {
@@ -2307,15 +2307,15 @@
               "Kaohsiung"
             ],
             "x-enum": {
-              "Taipei": "臺北市",
-              "Kaohsiung": "高雄市",
-              "TaitungCounty": "臺東縣",
-              "NewTaipei": "新北市",
-              "PenghuCounty": "澎湖縣",
               "LienchiangCounty": "連江縣",
+              "TaitungCounty": "臺東縣",
+              "Kaohsiung": "高雄市",
+              "NantouCounty": "南投縣",
               "KinmenCounty": "金門縣",
               "PingtungCounty": "屏東縣",
-              "NantouCounty": "南投縣"
+              "PenghuCounty": "澎湖縣",
+              "Taipei": "臺北市",
+              "NewTaipei": "新北市"
             }
           },
           {
@@ -2429,15 +2429,15 @@
               "Kaohsiung"
             ],
             "x-enum": {
+              "Kaohsiung": "高雄市",
+              "PenghuCounty": "澎湖縣",
+              "TaitungCounty": "臺東縣",
+              "NewTaipei": "新北市",
               "Taipei": "臺北市",
               "KinmenCounty": "金門縣",
-              "Kaohsiung": "高雄市",
               "NantouCounty": "南投縣",
-              "TaitungCounty": "臺東縣",
-              "LienchiangCounty": "連江縣",
-              "NewTaipei": "新北市",
-              "PenghuCounty": "澎湖縣",
-              "PingtungCounty": "屏東縣"
+              "PingtungCounty": "屏東縣",
+              "LienchiangCounty": "連江縣"
             }
           },
           {
@@ -2551,15 +2551,15 @@
               "Kaohsiung"
             ],
             "x-enum": {
-              "LienchiangCounty": "連江縣",
-              "TaitungCounty": "臺東縣",
-              "Taipei": "臺北市",
-              "KinmenCounty": "金門縣",
-              "Kaohsiung": "高雄市",
-              "NewTaipei": "新北市",
               "PingtungCounty": "屏東縣",
               "NantouCounty": "南投縣",
-              "PenghuCounty": "澎湖縣"
+              "PenghuCounty": "澎湖縣",
+              "NewTaipei": "新北市",
+              "LienchiangCounty": "連江縣",
+              "Kaohsiung": "高雄市",
+              "TaitungCounty": "臺東縣",
+              "KinmenCounty": "金門縣",
+              "Taipei": "臺北市"
             }
           },
           {
@@ -2673,15 +2673,15 @@
               "Kaohsiung"
             ],
             "x-enum": {
-              "PingtungCounty": "屏東縣",
-              "PenghuCounty": "澎湖縣",
-              "TaitungCounty": "臺東縣",
               "LienchiangCounty": "連江縣",
-              "KinmenCounty": "金門縣",
+              "Kaohsiung": "高雄市",
               "NantouCounty": "南投縣",
               "NewTaipei": "新北市",
-              "Taipei": "臺北市",
-              "Kaohsiung": "高雄市"
+              "KinmenCounty": "金門縣",
+              "PingtungCounty": "屏東縣",
+              "TaitungCounty": "臺東縣",
+              "PenghuCounty": "澎湖縣",
+              "Taipei": "臺北市"
             }
           },
           {
@@ -2795,15 +2795,15 @@
               "Kaohsiung"
             ],
             "x-enum": {
-              "PingtungCounty": "屏東縣",
-              "PenghuCounty": "澎湖縣",
-              "TaitungCounty": "臺東縣",
               "LienchiangCounty": "連江縣",
-              "KinmenCounty": "金門縣",
+              "Kaohsiung": "高雄市",
               "NantouCounty": "南投縣",
               "NewTaipei": "新北市",
-              "Taipei": "臺北市",
-              "Kaohsiung": "高雄市"
+              "KinmenCounty": "金門縣",
+              "PingtungCounty": "屏東縣",
+              "TaitungCounty": "臺東縣",
+              "PenghuCounty": "澎湖縣",
+              "Taipei": "臺北市"
             }
           },
           {
@@ -2924,15 +2924,15 @@
               "Kaohsiung"
             ],
             "x-enum": {
-              "Kaohsiung": "高雄市",
-              "KinmenCounty": "金門縣",
-              "TaitungCounty": "臺東縣",
-              "NewTaipei": "新北市",
-              "Taipei": "臺北市",
-              "PingtungCounty": "屏東縣",
+              "PenghuCounty": "澎湖縣",
               "LienchiangCounty": "連江縣",
+              "Taipei": "臺北市",
+              "TaitungCounty": "臺東縣",
+              "PingtungCounty": "屏東縣",
               "NantouCounty": "南投縣",
-              "PenghuCounty": "澎湖縣"
+              "NewTaipei": "新北市",
+              "Kaohsiung": "高雄市",
+              "KinmenCounty": "金門縣"
             }
           },
           {
@@ -3046,15 +3046,15 @@
               "Kaohsiung"
             ],
             "x-enum": {
-              "Taipei": "臺北市",
-              "PenghuCounty": "澎湖縣",
-              "LienchiangCounty": "連江縣",
               "KinmenCounty": "金門縣",
+              "NantouCounty": "南投縣",
+              "PenghuCounty": "澎湖縣",
               "PingtungCounty": "屏東縣",
-              "NewTaipei": "新北市",
               "Kaohsiung": "高雄市",
+              "NewTaipei": "新北市",
               "TaitungCounty": "臺東縣",
-              "NantouCounty": "南投縣"
+              "LienchiangCounty": "連江縣",
+              "Taipei": "臺北市"
             }
           },
           {
