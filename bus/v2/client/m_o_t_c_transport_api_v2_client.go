@@ -10,7 +10,9 @@ import (
 	httptransport "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
-	"github.com/minchao/go-ptx/bus/v2/client/advanced"
+	"github.com/minchao/go-ptx/bus/v2/client/bus_advanced_by_operator"
+	"github.com/minchao/go-ptx/bus/v2/client/bus_advanced_by_station"
+	"github.com/minchao/go-ptx/bus/v2/client/bus_advanced_near_by"
 	"github.com/minchao/go-ptx/bus/v2/client/city_bus"
 	"github.com/minchao/go-ptx/bus/v2/client/inter_city_bus"
 )
@@ -57,7 +59,9 @@ func New(transport runtime.ClientTransport, formats strfmt.Registry) *MOTCTransp
 
 	cli := new(MOTCTransportAPIV2)
 	cli.Transport = transport
-	cli.Advanced = advanced.New(transport, formats)
+	cli.BusAdvancedByOperator = bus_advanced_by_operator.New(transport, formats)
+	cli.BusAdvancedByStation = bus_advanced_by_station.New(transport, formats)
+	cli.BusAdvancedNearBy = bus_advanced_near_by.New(transport, formats)
 	cli.CityBus = city_bus.New(transport, formats)
 	cli.InterCityBus = inter_city_bus.New(transport, formats)
 	return cli
@@ -104,7 +108,11 @@ func (cfg *TransportConfig) WithSchemes(schemes []string) *TransportConfig {
 
 // MOTCTransportAPIV2 is a client for m o t c transport API v2
 type MOTCTransportAPIV2 struct {
-	Advanced advanced.ClientService
+	BusAdvancedByOperator bus_advanced_by_operator.ClientService
+
+	BusAdvancedByStation bus_advanced_by_station.ClientService
+
+	BusAdvancedNearBy bus_advanced_near_by.ClientService
 
 	CityBus city_bus.ClientService
 
@@ -116,7 +124,9 @@ type MOTCTransportAPIV2 struct {
 // SetTransport changes the transport on the client and all its subresources
 func (c *MOTCTransportAPIV2) SetTransport(transport runtime.ClientTransport) {
 	c.Transport = transport
-	c.Advanced.SetTransport(transport)
+	c.BusAdvancedByOperator.SetTransport(transport)
+	c.BusAdvancedByStation.SetTransport(transport)
+	c.BusAdvancedNearBy.SetTransport(transport)
 	c.CityBus.SetTransport(transport)
 	c.InterCityBus.SetTransport(transport)
 }
