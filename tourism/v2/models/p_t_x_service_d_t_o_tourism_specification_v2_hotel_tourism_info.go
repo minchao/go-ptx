@@ -55,6 +55,17 @@ type PTXServiceDTOTourismSpecificationV2HotelTourismInfo struct {
 	//
 	// 旅館民宿代碼
 	// Required: true
+	HotelID *string `json:"HotelID" xml:"String"`
+
+	// String
+	//
+	// 旅館民宿名稱
+	HotelName string `json:"HotelName,omitempty" xml:"String,omitempty"`
+
+	// String
+	//
+	// 旅館民宿代碼
+	// Required: true
 	ID *string `json:"ID" xml:"String"`
 
 	// String
@@ -130,6 +141,10 @@ type PTXServiceDTOTourismSpecificationV2HotelTourismInfo struct {
 func (m *PTXServiceDTOTourismSpecificationV2HotelTourismInfo) Validate(formats strfmt.Registry) error {
 	var res []error
 
+	if err := m.validateHotelID(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateID(formats); err != nil {
 		res = append(res, err)
 	}
@@ -153,6 +168,15 @@ func (m *PTXServiceDTOTourismSpecificationV2HotelTourismInfo) Validate(formats s
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
+	return nil
+}
+
+func (m *PTXServiceDTOTourismSpecificationV2HotelTourismInfo) validateHotelID(formats strfmt.Registry) error {
+
+	if err := validate.Required("HotelID", "body", m.HotelID); err != nil {
+		return err
+	}
+
 	return nil
 }
 
