@@ -86,6 +86,17 @@ type PTXServiceDTOTourismSpecificationV2RestaurantTourismInfo struct {
 		PTXServiceDTOSharedSpecificationV2BasePointType
 	} `json:"Position,omitempty" xml:"PointType,omitempty"`
 
+	// String
+	//
+	// 餐飲店家代碼
+	// Required: true
+	RestaurantID *string `json:"RestaurantID" xml:"String"`
+
+	// String
+	//
+	// 餐飲店家名稱
+	RestaurantName string `json:"RestaurantName,omitempty" xml:"String,omitempty"`
+
 	// 觀光局檔案更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Required: true
 	// Format: date-time
@@ -123,6 +134,10 @@ func (m *PTXServiceDTOTourismSpecificationV2RestaurantTourismInfo) Validate(form
 		res = append(res, err)
 	}
 
+	if err := m.validateRestaurantID(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateSrcUpdateTime(formats); err != nil {
 		res = append(res, err)
 	}
@@ -157,6 +172,15 @@ func (m *PTXServiceDTOTourismSpecificationV2RestaurantTourismInfo) validatePictu
 func (m *PTXServiceDTOTourismSpecificationV2RestaurantTourismInfo) validatePosition(formats strfmt.Registry) error {
 	if swag.IsZero(m.Position) { // not required
 		return nil
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTOTourismSpecificationV2RestaurantTourismInfo) validateRestaurantID(formats strfmt.Registry) error {
+
+	if err := validate.Required("RestaurantID", "body", m.RestaurantID); err != nil {
+		return err
 	}
 
 	return nil

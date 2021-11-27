@@ -123,6 +123,17 @@ type PTXServiceDTOTourismSpecificationV2ScenicSpotTourismInfo struct {
 	// 警告及注意事項
 	Remarks string `json:"Remarks,omitempty" xml:"String,omitempty"`
 
+	// String
+	//
+	// 景點代碼
+	// Required: true
+	ScenicSpotID *string `json:"ScenicSpotID" xml:"String"`
+
+	// String
+	//
+	// 景點名稱
+	ScenicSpotName string `json:"ScenicSpotName,omitempty" xml:"String,omitempty"`
+
 	// DateTime
 	//
 	// 觀光局檔案更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
@@ -178,6 +189,10 @@ func (m *PTXServiceDTOTourismSpecificationV2ScenicSpotTourismInfo) Validate(form
 		res = append(res, err)
 	}
 
+	if err := m.validateScenicSpotID(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateSrcUpdateTime(formats); err != nil {
 		res = append(res, err)
 	}
@@ -220,6 +235,15 @@ func (m *PTXServiceDTOTourismSpecificationV2ScenicSpotTourismInfo) validatePictu
 func (m *PTXServiceDTOTourismSpecificationV2ScenicSpotTourismInfo) validatePosition(formats strfmt.Registry) error {
 	if swag.IsZero(m.Position) { // not required
 		return nil
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTOTourismSpecificationV2ScenicSpotTourismInfo) validateScenicSpotID(formats strfmt.Registry) error {
+
+	if err := validate.Required("ScenicSpotID", "body", m.ScenicSpotID); err != nil {
+		return err
 	}
 
 	return nil

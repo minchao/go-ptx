@@ -4927,6 +4927,8 @@
             "required": true,
             "type": "string",
             "enum": [
+              "Taoyuan",
+              "Taichung",
               "Hsinchu",
               "HsinchuCounty",
               "MiaoliCounty",
@@ -4957,8 +4959,8 @@
               "Kaohsiung": "高雄市",
               "Hsinchu": "新竹市",
               "Tainan": "臺南市",
-              "NewTaipei": "新北市",
               "Taoyuan": "桃園市",
+              "NewTaipei": "新北市",
               "YunlinCounty": "雲林縣",
               "Taipei": "臺北市",
               "PingtungCounty": "屏東縣",
@@ -8134,10 +8136,12 @@
             "required": true,
             "type": "string",
             "enum": [
-              "Taichung"
+              "Taichung",
+              "Taoyuan"
             ],
             "x-enum": {
-              "Taichung": "臺中市"
+              "Taichung": "臺中市",
+              "Taoyuan": "桃園市"
             }
           },
           {
@@ -8236,10 +8240,12 @@
             "required": true,
             "type": "string",
             "enum": [
-              "Taichung"
+              "Taichung",
+              "Taoyuan"
             ],
             "x-enum": {
-              "Taichung": "臺中市"
+              "Taichung": "臺中市",
+              "Taoyuan": "桃園市"
             }
           },
           {
@@ -9862,7 +9868,6 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "KinmenCounty": "金門縣",
               "MiaoliCounty": "苗栗縣",
               "PingtungCounty": "屏東縣",
               "NewTaipei": "新北市",
@@ -9878,6 +9883,7 @@
               "HualienCounty": "花蓮縣",
               "ChanghuaCounty": "彰化縣",
               "YunlinCounty": "雲林縣",
+              "KinmenCounty": "金門縣",
               "TaitungCounty": "臺東縣",
               "Hsinchu": "新竹市",
               "Taoyuan": "桃園市",
@@ -12091,7 +12097,6 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "KinmenCounty": "金門縣",
               "MiaoliCounty": "苗栗縣",
               "PingtungCounty": "屏東縣",
               "NewTaipei": "新北市",
@@ -12107,6 +12112,7 @@
               "HualienCounty": "花蓮縣",
               "ChanghuaCounty": "彰化縣",
               "YunlinCounty": "雲林縣",
+              "KinmenCounty": "金門縣",
               "TaitungCounty": "臺東縣",
               "Hsinchu": "新竹市",
               "Taoyuan": "桃園市",
