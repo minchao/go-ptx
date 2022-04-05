@@ -199,6 +199,8 @@ func (m *PTXAPIRailModelTRAGeneralStationWrapperPTXServiceDTORailSpecificationV3
 			if err := m.StationTimetables[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("StationTimetables" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("StationTimetables" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -253,6 +255,8 @@ func (m *PTXAPIRailModelTRAGeneralStationWrapperPTXServiceDTORailSpecificationV3
 			if err := m.StationTimetables[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("StationTimetables" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("StationTimetables" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

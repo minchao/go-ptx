@@ -105,6 +105,8 @@ func (m *PTXServiceDTORailSpecificationV3TRAStationTransferStationTransfer) vali
 			if err := m.ExteriorMapURLs[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("ExteriorMapURLs" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("ExteriorMapURLs" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -130,6 +132,8 @@ func (m *PTXServiceDTORailSpecificationV3TRAStationTransferStationTransfer) vali
 			if err := m.InteriorMapURLs[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("InteriorMapURLs" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("InteriorMapURLs" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -169,6 +173,8 @@ func (m *PTXServiceDTORailSpecificationV3TRAStationTransferStationTransfer) vali
 			if err := m.Transfers[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("Transfers" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("Transfers" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -213,6 +219,8 @@ func (m *PTXServiceDTORailSpecificationV3TRAStationTransferStationTransfer) cont
 			if err := m.ExteriorMapURLs[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("ExteriorMapURLs" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("ExteriorMapURLs" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -231,6 +239,8 @@ func (m *PTXServiceDTORailSpecificationV3TRAStationTransferStationTransfer) cont
 			if err := m.InteriorMapURLs[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("InteriorMapURLs" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("InteriorMapURLs" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -254,6 +264,8 @@ func (m *PTXServiceDTORailSpecificationV3TRAStationTransferStationTransfer) cont
 			if err := m.Transfers[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("Transfers" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("Transfers" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

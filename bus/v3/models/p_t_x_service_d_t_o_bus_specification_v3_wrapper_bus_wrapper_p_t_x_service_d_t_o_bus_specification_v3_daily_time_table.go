@@ -122,6 +122,8 @@ func (m *PTXServiceDTOBusSpecificationV3WrapperBusWrapperPTXServiceDTOBusSpecifi
 			if err := m.DailyTimeTables[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("DailyTimeTables" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("DailyTimeTables" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -198,6 +200,8 @@ func (m *PTXServiceDTOBusSpecificationV3WrapperBusWrapperPTXServiceDTOBusSpecifi
 			if err := m.DailyTimeTables[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("DailyTimeTables" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("DailyTimeTables" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

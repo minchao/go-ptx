@@ -48,8 +48,9 @@ type PTXServiceDTOBusSpecificationV2BusNews struct {
 	Description *string `json:"Description" xml:"String"`
 
 	// 結束時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
+	// Required: true
 	// Format: date-time
-	EndTime strfmt.DateTime `json:"EndTime,omitempty"`
+	EndTime *strfmt.DateTime `json:"EndTime"`
 
 	// String
 	//
@@ -85,8 +86,9 @@ type PTXServiceDTOBusSpecificationV2BusNews struct {
 	SrcUpdateTime strfmt.DateTime `json:"SrcUpdateTime,omitempty"`
 
 	// 開始時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
+	// Required: true
 	// Format: date-time
-	StartTime strfmt.DateTime `json:"StartTime,omitempty"`
+	StartTime *strfmt.DateTime `json:"StartTime"`
 
 	// String
 	//
@@ -158,8 +160,9 @@ func (m *PTXServiceDTOBusSpecificationV2BusNews) validateDescription(formats str
 }
 
 func (m *PTXServiceDTOBusSpecificationV2BusNews) validateEndTime(formats strfmt.Registry) error {
-	if swag.IsZero(m.EndTime) { // not required
-		return nil
+
+	if err := validate.Required("EndTime", "body", m.EndTime); err != nil {
+		return err
 	}
 
 	if err := validate.FormatOf("EndTime", "body", "date-time", m.EndTime.String(), formats); err != nil {
@@ -213,8 +216,9 @@ func (m *PTXServiceDTOBusSpecificationV2BusNews) validateSrcUpdateTime(formats s
 }
 
 func (m *PTXServiceDTOBusSpecificationV2BusNews) validateStartTime(formats strfmt.Registry) error {
-	if swag.IsZero(m.StartTime) { // not required
-		return nil
+
+	if err := validate.Required("StartTime", "body", m.StartTime); err != nil {
+		return err
 	}
 
 	if err := validate.FormatOf("StartTime", "body", "date-time", m.StartTime.String(), formats); err != nil {

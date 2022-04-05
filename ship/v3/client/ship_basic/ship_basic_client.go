@@ -30,30 +30,31 @@ type ClientOption func(*runtime.ClientOperation)
 
 // ClientService is the interface for Client methods
 type ClientService interface {
-	ShipBasicAuthority(params *ShipBasicAuthorityParams, opts ...ClientOption) (*ShipBasicAuthorityOK, *ShipBasicAuthorityStatus299, error)
+	ShipBasicAuthority3236(params *ShipBasicAuthority3236Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ShipBasicAuthority3236OK, *ShipBasicAuthority3236Status299, error)
 
-	ShipBasicPort(params *ShipBasicPortParams, opts ...ClientOption) (*ShipBasicPortOK, *ShipBasicPortStatus299, error)
+	ShipBasicPort3231(params *ShipBasicPort3231Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ShipBasicPort3231OK, *ShipBasicPort3231Status299, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
 
 /*
-  ShipBasicAuthority 取得業管機關資料s
+  ShipBasicAuthority3236 取得業管機關資料s
 */
-func (a *Client) ShipBasicAuthority(params *ShipBasicAuthorityParams, opts ...ClientOption) (*ShipBasicAuthorityOK, *ShipBasicAuthorityStatus299, error) {
+func (a *Client) ShipBasicAuthority3236(params *ShipBasicAuthority3236Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ShipBasicAuthority3236OK, *ShipBasicAuthority3236Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewShipBasicAuthorityParams()
+		params = NewShipBasicAuthority3236Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "Ship_Basic_Authority",
+		ID:                 "Ship_Basic_Authority_3236",
 		Method:             "GET",
 		PathPattern:        "/v3/Ship/Basic/Authority",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &ShipBasicAuthorityReader{formats: a.formats},
+		Reader:             &ShipBasicAuthority3236Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -66,9 +67,9 @@ func (a *Client) ShipBasicAuthority(params *ShipBasicAuthorityParams, opts ...Cl
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *ShipBasicAuthorityOK:
+	case *ShipBasicAuthority3236OK:
 		return value, nil, nil
-	case *ShipBasicAuthorityStatus299:
+	case *ShipBasicAuthority3236Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -77,22 +78,23 @@ func (a *Client) ShipBasicAuthority(params *ShipBasicAuthorityParams, opts ...Cl
 }
 
 /*
-  ShipBasicPort 取得港口資料s
+  ShipBasicPort3231 取得港口資料s
 */
-func (a *Client) ShipBasicPort(params *ShipBasicPortParams, opts ...ClientOption) (*ShipBasicPortOK, *ShipBasicPortStatus299, error) {
+func (a *Client) ShipBasicPort3231(params *ShipBasicPort3231Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ShipBasicPort3231OK, *ShipBasicPort3231Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewShipBasicPortParams()
+		params = NewShipBasicPort3231Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "Ship_Basic_Port",
+		ID:                 "Ship_Basic_Port_3231",
 		Method:             "GET",
 		PathPattern:        "/v3/Ship/Basic/Port",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &ShipBasicPortReader{formats: a.formats},
+		Reader:             &ShipBasicPort3231Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -105,9 +107,9 @@ func (a *Client) ShipBasicPort(params *ShipBasicPortParams, opts ...ClientOption
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *ShipBasicPortOK:
+	case *ShipBasicPort3231OK:
 		return value, nil, nil
-	case *ShipBasicPortStatus299:
+	case *ShipBasicPort3231Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue

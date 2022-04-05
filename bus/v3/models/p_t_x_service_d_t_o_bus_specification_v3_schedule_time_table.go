@@ -93,6 +93,8 @@ func (m *PTXServiceDTOBusSpecificationV3ScheduleTimeTable) validateSpecialDays(f
 			if err := m.SpecialDays[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("SpecialDays" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("SpecialDays" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -118,6 +120,8 @@ func (m *PTXServiceDTOBusSpecificationV3ScheduleTimeTable) validateStopTimes(for
 			if err := m.StopTimes[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("StopTimes" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("StopTimes" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -163,6 +167,8 @@ func (m *PTXServiceDTOBusSpecificationV3ScheduleTimeTable) contextValidateSpecia
 			if err := m.SpecialDays[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("SpecialDays" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("SpecialDays" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -181,6 +187,8 @@ func (m *PTXServiceDTOBusSpecificationV3ScheduleTimeTable) contextValidateStopTi
 			if err := m.StopTimes[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("StopTimes" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("StopTimes" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

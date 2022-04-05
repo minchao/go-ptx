@@ -18,9 +18,9 @@ func init() {
 }
 
 func TestBikeV2_Authority(t *testing.T) {
-	params := basic.NewBasicAPIAuthorityParams().
+	params := basic.NewBasicAPIAuthority2160Params().
 		WithDollarFormat("JSON")
-	result, err := basicV2Client.Basic.BasicAPIAuthority(params)
+	result, err := basicV2Client.Basic.BasicAPIAuthority2160(params, nil)
 	require.NoError(t, err)
 	if len(result.Payload) == 0 {
 		t.Fatal("Basic.BasicAPIAuthority return no data")

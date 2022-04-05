@@ -106,6 +106,8 @@ func (m *PTXServiceDTOBusSpecificationV2BusODFare) validateFares(formats strfmt.
 			if err := m.Fares[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("Fares" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("Fares" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -156,6 +158,8 @@ func (m *PTXServiceDTOBusSpecificationV2BusODFare) contextValidateFares(ctx cont
 			if err := m.Fares[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("Fares" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("Fares" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

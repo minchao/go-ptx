@@ -34,9 +34,8 @@ type PTXServiceDTORailSpecificationV2THSRNews struct {
 	Description *string `json:"Description" xml:"String"`
 
 	// 結束時間
-	// Required: true
 	// Format: date-time
-	EndTime *strfmt.DateTime `json:"EndTime"`
+	EndTime strfmt.DateTime `json:"EndTime,omitempty"`
 
 	// String
 	//
@@ -164,9 +163,8 @@ func (m *PTXServiceDTORailSpecificationV2THSRNews) validateDescription(formats s
 }
 
 func (m *PTXServiceDTORailSpecificationV2THSRNews) validateEndTime(formats strfmt.Registry) error {
-
-	if err := validate.Required("EndTime", "body", m.EndTime); err != nil {
-		return err
+	if swag.IsZero(m.EndTime) { // not required
+		return nil
 	}
 
 	if err := validate.FormatOf("EndTime", "body", "date-time", m.EndTime.String(), formats); err != nil {

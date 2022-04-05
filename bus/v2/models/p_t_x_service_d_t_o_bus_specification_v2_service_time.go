@@ -42,7 +42,7 @@ type PTXServiceDTOBusSpecificationV2ServiceTime struct {
 
 	// Int32
 	//
-	// 星期
+	// 星期 : [0:星期日, 1:星期一, 2:星期二, 3:星期三, 4:星期四, 5:星期五, 6:星期六, 99:不分星期]
 	// Required: true
 	Weekday *int32 `json:"Weekday"`
 }
@@ -97,6 +97,8 @@ func (m *PTXServiceDTOBusSpecificationV2ServiceTime) validateS2STimes(formats st
 			if err := m.S2STimes[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("S2STimes" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("S2STimes" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -147,6 +149,8 @@ func (m *PTXServiceDTOBusSpecificationV2ServiceTime) contextValidateS2STimes(ctx
 			if err := m.S2STimes[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("S2STimes" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("S2STimes" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

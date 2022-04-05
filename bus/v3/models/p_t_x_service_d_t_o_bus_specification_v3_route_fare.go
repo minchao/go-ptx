@@ -188,6 +188,8 @@ func (m *PTXServiceDTOBusSpecificationV3RouteFare) validateODFares(formats strfm
 			if err := m.ODFares[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("ODFares" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("ODFares" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -238,6 +240,8 @@ func (m *PTXServiceDTOBusSpecificationV3RouteFare) validateSectionFares(formats 
 			if err := m.SectionFares[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("SectionFares" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("SectionFares" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -262,6 +266,8 @@ func (m *PTXServiceDTOBusSpecificationV3RouteFare) validateStageFares(formats st
 			if err := m.StageFares[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("StageFares" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("StageFares" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -318,6 +324,8 @@ func (m *PTXServiceDTOBusSpecificationV3RouteFare) contextValidateODFares(ctx co
 			if err := m.ODFares[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("ODFares" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("ODFares" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -341,6 +349,8 @@ func (m *PTXServiceDTOBusSpecificationV3RouteFare) contextValidateSectionFares(c
 			if err := m.SectionFares[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("SectionFares" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("SectionFares" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -359,6 +369,8 @@ func (m *PTXServiceDTOBusSpecificationV3RouteFare) contextValidateStageFares(ctx
 			if err := m.StageFares[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("StageFares" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("StageFares" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

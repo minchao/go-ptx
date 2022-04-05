@@ -88,6 +88,8 @@ func (m *PTXServiceDTORailSpecificationV3TRAStationExitStationExit) validateExit
 			if err := m.ExitMapURLs[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("ExitMapURLs" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("ExitMapURLs" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -113,6 +115,8 @@ func (m *PTXServiceDTORailSpecificationV3TRAStationExitStationExit) validateExit
 			if err := m.Exits[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("Exits" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("Exits" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -167,6 +171,8 @@ func (m *PTXServiceDTORailSpecificationV3TRAStationExitStationExit) contextValid
 			if err := m.ExitMapURLs[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("ExitMapURLs" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("ExitMapURLs" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -185,6 +191,8 @@ func (m *PTXServiceDTORailSpecificationV3TRAStationExitStationExit) contextValid
 			if err := m.Exits[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("Exits" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("Exits" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

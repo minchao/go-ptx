@@ -157,6 +157,8 @@ func (m *PTXAPIShipModelShipWrapperPTXServiceDTOShipSpecificationV3Vessel) valid
 			if err := m.Vessels[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("Vessels" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("Vessels" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -189,6 +191,8 @@ func (m *PTXAPIShipModelShipWrapperPTXServiceDTOShipSpecificationV3Vessel) conte
 			if err := m.Vessels[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("Vessels" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("Vessels" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

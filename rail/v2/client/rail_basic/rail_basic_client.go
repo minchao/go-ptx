@@ -30,28 +30,29 @@ type ClientOption func(*runtime.ClientOperation)
 
 // ClientService is the interface for Client methods
 type ClientService interface {
-	RailAPIOperator(params *RailAPIOperatorParams, opts ...ClientOption) (*RailAPIOperatorOK, *RailAPIOperatorStatus299, error)
+	RailAPIOperator2165(params *RailAPIOperator2165Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*RailAPIOperator2165OK, *RailAPIOperator2165Status299, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
 
 /*
-  RailAPIOperator 取得軌道營運業者資料s
+  RailAPIOperator2165 取得軌道營運業者資料s
 */
-func (a *Client) RailAPIOperator(params *RailAPIOperatorParams, opts ...ClientOption) (*RailAPIOperatorOK, *RailAPIOperatorStatus299, error) {
+func (a *Client) RailAPIOperator2165(params *RailAPIOperator2165Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*RailAPIOperator2165OK, *RailAPIOperator2165Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewRailAPIOperatorParams()
+		params = NewRailAPIOperator2165Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "RailApi_Operator",
+		ID:                 "RailApi_Operator_2165",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/Operator",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &RailAPIOperatorReader{formats: a.formats},
+		Reader:             &RailAPIOperator2165Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -64,9 +65,9 @@ func (a *Client) RailAPIOperator(params *RailAPIOperatorParams, opts ...ClientOp
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *RailAPIOperatorOK:
+	case *RailAPIOperator2165OK:
 		return value, nil, nil
-	case *RailAPIOperatorStatus299:
+	case *RailAPIOperator2165Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue

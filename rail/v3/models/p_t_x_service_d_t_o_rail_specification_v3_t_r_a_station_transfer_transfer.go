@@ -138,6 +138,8 @@ func (m *PTXServiceDTORailSpecificationV3TRAStationTransferTransfer) validateAir
 			if err := m.AirportTransfers[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("AirportTransfers" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("AirportTransfers" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -163,6 +165,8 @@ func (m *PTXServiceDTORailSpecificationV3TRAStationTransferTransfer) validateBik
 			if err := m.BikeTransfers[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("BikeTransfers" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("BikeTransfers" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -188,6 +192,8 @@ func (m *PTXServiceDTORailSpecificationV3TRAStationTransferTransfer) validateBus
 			if err := m.BusTransfers[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("BusTransfers" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("BusTransfers" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -231,6 +237,8 @@ func (m *PTXServiceDTORailSpecificationV3TRAStationTransferTransfer) validateFer
 			if err := m.FerryTransfers[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("FerryTransfers" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("FerryTransfers" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -256,6 +264,8 @@ func (m *PTXServiceDTORailSpecificationV3TRAStationTransferTransfer) validatePar
 			if err := m.ParkingTransfers[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("ParkingTransfers" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("ParkingTransfers" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -281,6 +291,8 @@ func (m *PTXServiceDTORailSpecificationV3TRAStationTransferTransfer) validateRai
 			if err := m.RailTransfers[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("RailTransfers" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("RailTransfers" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -306,6 +318,8 @@ func (m *PTXServiceDTORailSpecificationV3TRAStationTransferTransfer) validateTax
 			if err := m.TaxiTransfers[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("TaxiTransfers" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("TaxiTransfers" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -362,6 +376,8 @@ func (m *PTXServiceDTORailSpecificationV3TRAStationTransferTransfer) contextVali
 			if err := m.AirportTransfers[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("AirportTransfers" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("AirportTransfers" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -380,6 +396,8 @@ func (m *PTXServiceDTORailSpecificationV3TRAStationTransferTransfer) contextVali
 			if err := m.BikeTransfers[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("BikeTransfers" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("BikeTransfers" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -398,6 +416,8 @@ func (m *PTXServiceDTORailSpecificationV3TRAStationTransferTransfer) contextVali
 			if err := m.BusTransfers[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("BusTransfers" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("BusTransfers" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -416,6 +436,8 @@ func (m *PTXServiceDTORailSpecificationV3TRAStationTransferTransfer) contextVali
 			if err := m.FerryTransfers[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("FerryTransfers" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("FerryTransfers" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -434,6 +456,8 @@ func (m *PTXServiceDTORailSpecificationV3TRAStationTransferTransfer) contextVali
 			if err := m.ParkingTransfers[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("ParkingTransfers" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("ParkingTransfers" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -452,6 +476,8 @@ func (m *PTXServiceDTORailSpecificationV3TRAStationTransferTransfer) contextVali
 			if err := m.RailTransfers[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("RailTransfers" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("RailTransfers" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -470,6 +496,8 @@ func (m *PTXServiceDTORailSpecificationV3TRAStationTransferTransfer) contextVali
 			if err := m.TaxiTransfers[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("TaxiTransfers" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("TaxiTransfers" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

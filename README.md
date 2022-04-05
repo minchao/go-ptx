@@ -24,7 +24,7 @@ go-ptx 使用 [go-swagger](https://github.com/go-swagger/go-swagger) 自動從 P
 - Go >= 1.14
 - GNU Make
 - golangci-lint
-- go-swagger
+- [go-swagger](https://goswagger.io/install.html)
 
 安裝依賴工具：
 
@@ -57,7 +57,10 @@ $ make generate
 # 4. 驗證客戶端庫
 $ make lint
 
-# 5. 執行整合測試
+# 5. 執行測試
+$ make test
+
+# 6. 執行整合測試
 $ make test-integration
 ```
 

@@ -271,6 +271,8 @@ func (m *PTXServiceDTORailSpecificationV3TRADailyTrainTimeTableTrainInfo) valida
 			if err := m.DiningFlagSections[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("DiningFlagSections" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("DiningFlagSections" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -384,6 +386,8 @@ func (m *PTXServiceDTORailSpecificationV3TRADailyTrainTimeTableTrainInfo) contex
 			if err := m.DiningFlagSections[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("DiningFlagSections" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("DiningFlagSections" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

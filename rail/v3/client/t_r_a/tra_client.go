@@ -30,98 +30,99 @@ type ClientOption func(*runtime.ClientOperation)
 
 // ClientService is the interface for Client methods
 type ClientService interface {
-	AlertAPIControllerGet(params *AlertAPIControllerGetParams, opts ...ClientOption) (*AlertAPIControllerGetOK, *AlertAPIControllerGetStatus299, error)
+	AlertAPIControllerGet3218(params *AlertAPIControllerGet3218Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*AlertAPIControllerGet3218OK, *AlertAPIControllerGet3218Status299, error)
 
-	DailyStationTimeTableAPIControllerGet(params *DailyStationTimeTableAPIControllerGetParams, opts ...ClientOption) (*DailyStationTimeTableAPIControllerGetOK, *DailyStationTimeTableAPIControllerGetStatus299, error)
+	DailyStationTimeTableAPIControllerGet3212(params *DailyStationTimeTableAPIControllerGet3212Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DailyStationTimeTableAPIControllerGet3212OK, *DailyStationTimeTableAPIControllerGet3212Status299, error)
 
-	DailyStationTimeTableAPIControllerGet1(params *DailyStationTimeTableAPIControllerGet1Params, opts ...ClientOption) (*DailyStationTimeTableAPIControllerGet1OK, *DailyStationTimeTableAPIControllerGet1Status299, error)
+	DailyStationTimeTableAPIControllerGet32121(params *DailyStationTimeTableAPIControllerGet32121Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DailyStationTimeTableAPIControllerGet32121OK, *DailyStationTimeTableAPIControllerGet32121Status299, error)
 
-	DailyStationTimeTableAPIControllerGet2(params *DailyStationTimeTableAPIControllerGet2Params, opts ...ClientOption) (*DailyStationTimeTableAPIControllerGet2OK, *DailyStationTimeTableAPIControllerGet2Status299, error)
+	DailyStationTimeTableAPIControllerGet32122(params *DailyStationTimeTableAPIControllerGet32122Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DailyStationTimeTableAPIControllerGet32122OK, *DailyStationTimeTableAPIControllerGet32122Status299, error)
 
-	DailyTrainTimeTableAPIControllerGet(params *DailyTrainTimeTableAPIControllerGetParams, opts ...ClientOption) (*DailyTrainTimeTableAPIControllerGetOK, *DailyTrainTimeTableAPIControllerGetStatus299, error)
+	DailyTrainTimeTableAPIControllerGet3211(params *DailyTrainTimeTableAPIControllerGet3211Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DailyTrainTimeTableAPIControllerGet3211OK, *DailyTrainTimeTableAPIControllerGet3211Status299, error)
 
-	DailyTrainTimeTableAPIControllerGet1(params *DailyTrainTimeTableAPIControllerGet1Params, opts ...ClientOption) (*DailyTrainTimeTableAPIControllerGet1OK, *DailyTrainTimeTableAPIControllerGet1Status299, error)
+	DailyTrainTimeTableAPIControllerGet32111(params *DailyTrainTimeTableAPIControllerGet32111Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DailyTrainTimeTableAPIControllerGet32111OK, *DailyTrainTimeTableAPIControllerGet32111Status299, error)
 
-	DailyTrainTimeTableAPIControllerGet2(params *DailyTrainTimeTableAPIControllerGet2Params, opts ...ClientOption) (*DailyTrainTimeTableAPIControllerGet2OK, *DailyTrainTimeTableAPIControllerGet2Status299, error)
+	DailyTrainTimeTableAPIControllerGet32112(params *DailyTrainTimeTableAPIControllerGet32112Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DailyTrainTimeTableAPIControllerGet32112OK, *DailyTrainTimeTableAPIControllerGet32112Status299, error)
 
-	DailyTrainTimeTableAPIControllerGet3(params *DailyTrainTimeTableAPIControllerGet3Params, opts ...ClientOption) (*DailyTrainTimeTableAPIControllerGet3OK, *DailyTrainTimeTableAPIControllerGet3Status299, error)
+	DailyTrainTimeTableAPIControllerGet32113(params *DailyTrainTimeTableAPIControllerGet32113Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DailyTrainTimeTableAPIControllerGet32113OK, *DailyTrainTimeTableAPIControllerGet32113Status299, error)
 
-	DailyTrainTimeTableAPIControllerGet4(params *DailyTrainTimeTableAPIControllerGet4Params, opts ...ClientOption) (*DailyTrainTimeTableAPIControllerGet4OK, *DailyTrainTimeTableAPIControllerGet4Status299, error)
+	DailyTrainTimeTableAPIControllerGet32114(params *DailyTrainTimeTableAPIControllerGet32114Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DailyTrainTimeTableAPIControllerGet32114OK, *DailyTrainTimeTableAPIControllerGet32114Status299, error)
 
-	DailyTrainTimeTableAPIControllerGet5(params *DailyTrainTimeTableAPIControllerGet5Params, opts ...ClientOption) (*DailyTrainTimeTableAPIControllerGet5OK, *DailyTrainTimeTableAPIControllerGet5Status299, error)
+	DailyTrainTimeTableAPIControllerGet32115(params *DailyTrainTimeTableAPIControllerGet32115Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DailyTrainTimeTableAPIControllerGet32115OK, *DailyTrainTimeTableAPIControllerGet32115Status299, error)
 
-	GeneralStationTimetableAPIControllerGet(params *GeneralStationTimetableAPIControllerGetParams, opts ...ClientOption) (*GeneralStationTimetableAPIControllerGetOK, *GeneralStationTimetableAPIControllerGetStatus299, error)
+	GeneralStationTimetableAPIControllerGet3209(params *GeneralStationTimetableAPIControllerGet3209Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GeneralStationTimetableAPIControllerGet3209OK, *GeneralStationTimetableAPIControllerGet3209Status299, error)
 
-	GeneralStationTimetableAPIControllerGet1(params *GeneralStationTimetableAPIControllerGet1Params, opts ...ClientOption) (*GeneralStationTimetableAPIControllerGet1OK, *GeneralStationTimetableAPIControllerGet1Status299, error)
+	GeneralStationTimetableAPIControllerGet32091(params *GeneralStationTimetableAPIControllerGet32091Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GeneralStationTimetableAPIControllerGet32091OK, *GeneralStationTimetableAPIControllerGet32091Status299, error)
 
-	GeneralTrainTimetableAPIControllerGet(params *GeneralTrainTimetableAPIControllerGetParams, opts ...ClientOption) (*GeneralTrainTimetableAPIControllerGetOK, *GeneralTrainTimetableAPIControllerGetStatus299, error)
+	GeneralTrainTimetableAPIControllerGet3208(params *GeneralTrainTimetableAPIControllerGet3208Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GeneralTrainTimetableAPIControllerGet3208OK, *GeneralTrainTimetableAPIControllerGet3208Status299, error)
 
-	GeneralTrainTimetableAPIControllerGet1(params *GeneralTrainTimetableAPIControllerGet1Params, opts ...ClientOption) (*GeneralTrainTimetableAPIControllerGet1OK, *GeneralTrainTimetableAPIControllerGet1Status299, error)
+	GeneralTrainTimetableAPIControllerGet32081(params *GeneralTrainTimetableAPIControllerGet32081Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GeneralTrainTimetableAPIControllerGet32081OK, *GeneralTrainTimetableAPIControllerGet32081Status299, error)
 
-	LineAPIControllerGet(params *LineAPIControllerGetParams, opts ...ClientOption) (*LineAPIControllerGetOK, *LineAPIControllerGetStatus299, error)
+	LineAPIControllerGet3204(params *LineAPIControllerGet3204Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*LineAPIControllerGet3204OK, *LineAPIControllerGet3204Status299, error)
 
-	LineNetworkAPIControllerGet(params *LineNetworkAPIControllerGetParams, opts ...ClientOption) (*LineNetworkAPIControllerGetOK, *LineNetworkAPIControllerGetStatus299, error)
+	LineNetworkAPIControllerGet3221(params *LineNetworkAPIControllerGet3221Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*LineNetworkAPIControllerGet3221OK, *LineNetworkAPIControllerGet3221Status299, error)
 
-	LineTransferAPIControllerGet(params *LineTransferAPIControllerGetParams, opts ...ClientOption) (*LineTransferAPIControllerGetOK, *LineTransferAPIControllerGetStatus299, error)
+	LineTransferAPIControllerGet3215(params *LineTransferAPIControllerGet3215Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*LineTransferAPIControllerGet3215OK, *LineTransferAPIControllerGet3215Status299, error)
 
-	NetworkAPIControllerGet(params *NetworkAPIControllerGetParams, opts ...ClientOption) (*NetworkAPIControllerGetOK, *NetworkAPIControllerGetStatus299, error)
+	NetworkAPIControllerGet3200(params *NetworkAPIControllerGet3200Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*NetworkAPIControllerGet3200OK, *NetworkAPIControllerGet3200Status299, error)
 
-	NewsAPIControllerGet(params *NewsAPIControllerGetParams, opts ...ClientOption) (*NewsAPIControllerGetOK, *NewsAPIControllerGetStatus299, error)
+	NewsAPIControllerGet3217(params *NewsAPIControllerGet3217Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*NewsAPIControllerGet3217OK, *NewsAPIControllerGet3217Status299, error)
 
-	ODFareAPIControllerAPIControllerGet(params *ODFareAPIControllerAPIControllerGetParams, opts ...ClientOption) (*ODFareAPIControllerAPIControllerGetOK, *ODFareAPIControllerAPIControllerGetStatus299, error)
+	ODFareAPIControllerAPIControllerGet3207(params *ODFareAPIControllerAPIControllerGet3207Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ODFareAPIControllerAPIControllerGet3207OK, *ODFareAPIControllerAPIControllerGet3207Status299, error)
 
-	ODFareAPIControllerAPIControllerGet1(params *ODFareAPIControllerAPIControllerGet1Params, opts ...ClientOption) (*ODFareAPIControllerAPIControllerGet1OK, *ODFareAPIControllerAPIControllerGet1Status299, error)
+	ODFareAPIControllerAPIControllerGet32071(params *ODFareAPIControllerAPIControllerGet32071Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ODFareAPIControllerAPIControllerGet32071OK, *ODFareAPIControllerAPIControllerGet32071Status299, error)
 
-	OperatorAPIControllerGet(params *OperatorAPIControllerGetParams, opts ...ClientOption) (*OperatorAPIControllerGetOK, *OperatorAPIControllerGetStatus299, error)
+	OperatorAPIControllerGet3220(params *OperatorAPIControllerGet3220Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*OperatorAPIControllerGet3220OK, *OperatorAPIControllerGet3220Status299, error)
 
-	ShapeAPIControllerGet(params *ShapeAPIControllerGetParams, opts ...ClientOption) (*ShapeAPIControllerGetOK, *ShapeAPIControllerGetStatus299, error)
+	ShapeAPIControllerGet3219(params *ShapeAPIControllerGet3219Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ShapeAPIControllerGet3219OK, *ShapeAPIControllerGet3219Status299, error)
 
-	SpecificTrainTimetableAPIControllerGet(params *SpecificTrainTimetableAPIControllerGetParams, opts ...ClientOption) (*SpecificTrainTimetableAPIControllerGetOK, *SpecificTrainTimetableAPIControllerGetStatus299, error)
+	SpecificTrainTimetableAPIControllerGet3210(params *SpecificTrainTimetableAPIControllerGet3210Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*SpecificTrainTimetableAPIControllerGet3210OK, *SpecificTrainTimetableAPIControllerGet3210Status299, error)
 
-	SpecificTrainTimetableAPIControllerGet1(params *SpecificTrainTimetableAPIControllerGet1Params, opts ...ClientOption) (*SpecificTrainTimetableAPIControllerGet1OK, *SpecificTrainTimetableAPIControllerGet1Status299, error)
+	SpecificTrainTimetableAPIControllerGet32101(params *SpecificTrainTimetableAPIControllerGet32101Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*SpecificTrainTimetableAPIControllerGet32101OK, *SpecificTrainTimetableAPIControllerGet32101Status299, error)
 
-	StationAPIControllerGet(params *StationAPIControllerGetParams, opts ...ClientOption) (*StationAPIControllerGetOK, *StationAPIControllerGetStatus299, error)
+	StationAPIControllerGet3201(params *StationAPIControllerGet3201Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*StationAPIControllerGet3201OK, *StationAPIControllerGet3201Status299, error)
 
-	StationExitAPIControllerGet(params *StationExitAPIControllerGetParams, opts ...ClientOption) (*StationExitAPIControllerGetOK, *StationExitAPIControllerGetStatus299, error)
+	StationExitAPIControllerGet3202(params *StationExitAPIControllerGet3202Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*StationExitAPIControllerGet3202OK, *StationExitAPIControllerGet3202Status299, error)
 
-	StationFacilityAPIControllerGet(params *StationFacilityAPIControllerGetParams, opts ...ClientOption) (*StationFacilityAPIControllerGetOK, *StationFacilityAPIControllerGetStatus299, error)
+	StationFacilityAPIControllerGet3203(params *StationFacilityAPIControllerGet3203Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*StationFacilityAPIControllerGet3203OK, *StationFacilityAPIControllerGet3203Status299, error)
 
-	StationLiveBoardAPIControllerGet(params *StationLiveBoardAPIControllerGetParams, opts ...ClientOption) (*StationLiveBoardAPIControllerGetOK, *StationLiveBoardAPIControllerGetStatus299, error)
+	StationLiveBoardAPIControllerGet3213(params *StationLiveBoardAPIControllerGet3213Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*StationLiveBoardAPIControllerGet3213OK, *StationLiveBoardAPIControllerGet3213Status299, error)
 
-	StationLiveBoardAPIControllerGet1(params *StationLiveBoardAPIControllerGet1Params, opts ...ClientOption) (*StationLiveBoardAPIControllerGet1OK, *StationLiveBoardAPIControllerGet1Status299, error)
+	StationLiveBoardAPIControllerGet32131(params *StationLiveBoardAPIControllerGet32131Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*StationLiveBoardAPIControllerGet32131OK, *StationLiveBoardAPIControllerGet32131Status299, error)
 
-	StationOfLineAPIControllerGet(params *StationOfLineAPIControllerGetParams, opts ...ClientOption) (*StationOfLineAPIControllerGetOK, *StationOfLineAPIControllerGetStatus299, error)
+	StationOfLineAPIControllerGet3205(params *StationOfLineAPIControllerGet3205Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*StationOfLineAPIControllerGet3205OK, *StationOfLineAPIControllerGet3205Status299, error)
 
-	StationTransferAPIControllerGet(params *StationTransferAPIControllerGetParams, opts ...ClientOption) (*StationTransferAPIControllerGetOK, *StationTransferAPIControllerGetStatus299, error)
+	StationTransferAPIControllerGet3216(params *StationTransferAPIControllerGet3216Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*StationTransferAPIControllerGet3216OK, *StationTransferAPIControllerGet3216Status299, error)
 
-	TrainLiveBoardAPIControllerGet(params *TrainLiveBoardAPIControllerGetParams, opts ...ClientOption) (*TrainLiveBoardAPIControllerGetOK, *TrainLiveBoardAPIControllerGetStatus299, error)
+	TrainLiveBoardAPIControllerGet3214(params *TrainLiveBoardAPIControllerGet3214Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TrainLiveBoardAPIControllerGet3214OK, *TrainLiveBoardAPIControllerGet3214Status299, error)
 
-	TrainLiveBoardAPIControllerGet1(params *TrainLiveBoardAPIControllerGet1Params, opts ...ClientOption) (*TrainLiveBoardAPIControllerGet1OK, *TrainLiveBoardAPIControllerGet1Status299, error)
+	TrainLiveBoardAPIControllerGet32141(params *TrainLiveBoardAPIControllerGet32141Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TrainLiveBoardAPIControllerGet32141OK, *TrainLiveBoardAPIControllerGet32141Status299, error)
 
-	TrainTypeAPIControllerGet(params *TrainTypeAPIControllerGetParams, opts ...ClientOption) (*TrainTypeAPIControllerGetOK, *TrainTypeAPIControllerGetStatus299, error)
+	TrainTypeAPIControllerGet3206(params *TrainTypeAPIControllerGet3206Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TrainTypeAPIControllerGet3206OK, *TrainTypeAPIControllerGet3206Status299, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
 
 /*
-  AlertAPIControllerGet 取得營運通阻資料s
+  AlertAPIControllerGet3218 取得營運通阻資料s
 
   取得營運通阻資料
 */
-func (a *Client) AlertAPIControllerGet(params *AlertAPIControllerGetParams, opts ...ClientOption) (*AlertAPIControllerGetOK, *AlertAPIControllerGetStatus299, error) {
+func (a *Client) AlertAPIControllerGet3218(params *AlertAPIControllerGet3218Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*AlertAPIControllerGet3218OK, *AlertAPIControllerGet3218Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewAlertAPIControllerGetParams()
+		params = NewAlertAPIControllerGet3218Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "AlertApiController_Get",
+		ID:                 "AlertApiController_Get_3218",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/Alert",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &AlertAPIControllerGetReader{formats: a.formats},
+		Reader:             &AlertAPIControllerGet3218Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -134,9 +135,9 @@ func (a *Client) AlertAPIControllerGet(params *AlertAPIControllerGetParams, opts
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *AlertAPIControllerGetOK:
+	case *AlertAPIControllerGet3218OK:
 		return value, nil, nil
-	case *AlertAPIControllerGetStatus299:
+	case *AlertAPIControllerGet3218Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -145,24 +146,25 @@ func (a *Client) AlertAPIControllerGet(params *AlertAPIControllerGetParams, opts
 }
 
 /*
-  DailyStationTimeTableAPIControllerGet 取得當天各站站別時刻表資料s
+  DailyStationTimeTableAPIControllerGet3212 取得當天各站站別時刻表資料s
 
   取得當天各站站別時刻表資料
 */
-func (a *Client) DailyStationTimeTableAPIControllerGet(params *DailyStationTimeTableAPIControllerGetParams, opts ...ClientOption) (*DailyStationTimeTableAPIControllerGetOK, *DailyStationTimeTableAPIControllerGetStatus299, error) {
+func (a *Client) DailyStationTimeTableAPIControllerGet3212(params *DailyStationTimeTableAPIControllerGet3212Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DailyStationTimeTableAPIControllerGet3212OK, *DailyStationTimeTableAPIControllerGet3212Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewDailyStationTimeTableAPIControllerGetParams()
+		params = NewDailyStationTimeTableAPIControllerGet3212Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "DailyStationTimeTableApiController_Get",
+		ID:                 "DailyStationTimeTableApiController_Get_3212",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/DailyStationTimetable/Today",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &DailyStationTimeTableAPIControllerGetReader{formats: a.formats},
+		Reader:             &DailyStationTimeTableAPIControllerGet3212Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -175,9 +177,9 @@ func (a *Client) DailyStationTimeTableAPIControllerGet(params *DailyStationTimeT
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *DailyStationTimeTableAPIControllerGetOK:
+	case *DailyStationTimeTableAPIControllerGet3212OK:
 		return value, nil, nil
-	case *DailyStationTimeTableAPIControllerGetStatus299:
+	case *DailyStationTimeTableAPIControllerGet3212Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -186,24 +188,25 @@ func (a *Client) DailyStationTimeTableAPIControllerGet(params *DailyStationTimeT
 }
 
 /*
-  DailyStationTimeTableAPIControllerGet1 取得當天指定s 車站 的時刻表資料
+  DailyStationTimeTableAPIControllerGet32121 取得當天指定s 車站 的時刻表資料
 
   取得當天指定[車站]的時刻表資料
 */
-func (a *Client) DailyStationTimeTableAPIControllerGet1(params *DailyStationTimeTableAPIControllerGet1Params, opts ...ClientOption) (*DailyStationTimeTableAPIControllerGet1OK, *DailyStationTimeTableAPIControllerGet1Status299, error) {
+func (a *Client) DailyStationTimeTableAPIControllerGet32121(params *DailyStationTimeTableAPIControllerGet32121Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DailyStationTimeTableAPIControllerGet32121OK, *DailyStationTimeTableAPIControllerGet32121Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewDailyStationTimeTableAPIControllerGet1Params()
+		params = NewDailyStationTimeTableAPIControllerGet32121Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "DailyStationTimeTableApiController_Get_1",
+		ID:                 "DailyStationTimeTableApiController_Get_3212_1",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/DailyStationTimetable/Today/Station/{StationID}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &DailyStationTimeTableAPIControllerGet1Reader{formats: a.formats},
+		Reader:             &DailyStationTimeTableAPIControllerGet32121Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -216,9 +219,9 @@ func (a *Client) DailyStationTimeTableAPIControllerGet1(params *DailyStationTime
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *DailyStationTimeTableAPIControllerGet1OK:
+	case *DailyStationTimeTableAPIControllerGet32121OK:
 		return value, nil, nil
-	case *DailyStationTimeTableAPIControllerGet1Status299:
+	case *DailyStationTimeTableAPIControllerGet32121Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -227,24 +230,25 @@ func (a *Client) DailyStationTimeTableAPIControllerGet1(params *DailyStationTime
 }
 
 /*
-  DailyStationTimeTableAPIControllerGet2 取得各站每日站別時刻表資料s
+  DailyStationTimeTableAPIControllerGet32122 取得各站每日站別時刻表資料s
 
   取得各站每日站別時刻表資料
 */
-func (a *Client) DailyStationTimeTableAPIControllerGet2(params *DailyStationTimeTableAPIControllerGet2Params, opts ...ClientOption) (*DailyStationTimeTableAPIControllerGet2OK, *DailyStationTimeTableAPIControllerGet2Status299, error) {
+func (a *Client) DailyStationTimeTableAPIControllerGet32122(params *DailyStationTimeTableAPIControllerGet32122Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DailyStationTimeTableAPIControllerGet32122OK, *DailyStationTimeTableAPIControllerGet32122Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewDailyStationTimeTableAPIControllerGet2Params()
+		params = NewDailyStationTimeTableAPIControllerGet32122Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "DailyStationTimeTableApiController_Get_2",
+		ID:                 "DailyStationTimeTableApiController_Get_3212_2",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/DailyStationTimetable/TrainDate/{TrainDate}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &DailyStationTimeTableAPIControllerGet2Reader{formats: a.formats},
+		Reader:             &DailyStationTimeTableAPIControllerGet32122Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -257,9 +261,9 @@ func (a *Client) DailyStationTimeTableAPIControllerGet2(params *DailyStationTime
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *DailyStationTimeTableAPIControllerGet2OK:
+	case *DailyStationTimeTableAPIControllerGet32122OK:
 		return value, nil, nil
-	case *DailyStationTimeTableAPIControllerGet2Status299:
+	case *DailyStationTimeTableAPIControllerGet32122Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -268,24 +272,25 @@ func (a *Client) DailyStationTimeTableAPIControllerGet2(params *DailyStationTime
 }
 
 /*
-  DailyTrainTimeTableAPIControllerGet 取得當天車次時刻表資料s
+  DailyTrainTimeTableAPIControllerGet3211 取得當天車次時刻表資料s
 
   取得當天車次時刻表資料
 */
-func (a *Client) DailyTrainTimeTableAPIControllerGet(params *DailyTrainTimeTableAPIControllerGetParams, opts ...ClientOption) (*DailyTrainTimeTableAPIControllerGetOK, *DailyTrainTimeTableAPIControllerGetStatus299, error) {
+func (a *Client) DailyTrainTimeTableAPIControllerGet3211(params *DailyTrainTimeTableAPIControllerGet3211Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DailyTrainTimeTableAPIControllerGet3211OK, *DailyTrainTimeTableAPIControllerGet3211Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewDailyTrainTimeTableAPIControllerGetParams()
+		params = NewDailyTrainTimeTableAPIControllerGet3211Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "DailyTrainTimeTableApiController_Get",
+		ID:                 "DailyTrainTimeTableApiController_Get_3211",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/DailyTrainTimetable/Today",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &DailyTrainTimeTableAPIControllerGetReader{formats: a.formats},
+		Reader:             &DailyTrainTimeTableAPIControllerGet3211Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -298,9 +303,9 @@ func (a *Client) DailyTrainTimeTableAPIControllerGet(params *DailyTrainTimeTable
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *DailyTrainTimeTableAPIControllerGetOK:
+	case *DailyTrainTimeTableAPIControllerGet3211OK:
 		return value, nil, nil
-	case *DailyTrainTimeTableAPIControllerGetStatus299:
+	case *DailyTrainTimeTableAPIControllerGet3211Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -309,24 +314,25 @@ func (a *Client) DailyTrainTimeTableAPIControllerGet(params *DailyTrainTimeTable
 }
 
 /*
-  DailyTrainTimeTableAPIControllerGet1 取得當天指定s 車次 的時刻表資料
+  DailyTrainTimeTableAPIControllerGet32111 取得當天指定s 車次 的時刻表資料
 
   取得當天指定[車次]的時刻表資料
 */
-func (a *Client) DailyTrainTimeTableAPIControllerGet1(params *DailyTrainTimeTableAPIControllerGet1Params, opts ...ClientOption) (*DailyTrainTimeTableAPIControllerGet1OK, *DailyTrainTimeTableAPIControllerGet1Status299, error) {
+func (a *Client) DailyTrainTimeTableAPIControllerGet32111(params *DailyTrainTimeTableAPIControllerGet32111Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DailyTrainTimeTableAPIControllerGet32111OK, *DailyTrainTimeTableAPIControllerGet32111Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewDailyTrainTimeTableAPIControllerGet1Params()
+		params = NewDailyTrainTimeTableAPIControllerGet32111Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "DailyTrainTimeTableApiController_Get_1",
+		ID:                 "DailyTrainTimeTableApiController_Get_3211_1",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/DailyTrainTimetable/Today/TrainNo/{TrainNo}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &DailyTrainTimeTableAPIControllerGet1Reader{formats: a.formats},
+		Reader:             &DailyTrainTimeTableAPIControllerGet32111Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -339,9 +345,9 @@ func (a *Client) DailyTrainTimeTableAPIControllerGet1(params *DailyTrainTimeTabl
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *DailyTrainTimeTableAPIControllerGet1OK:
+	case *DailyTrainTimeTableAPIControllerGet32111OK:
 		return value, nil, nil
-	case *DailyTrainTimeTableAPIControllerGet1Status299:
+	case *DailyTrainTimeTableAPIControllerGet32111Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -350,24 +356,25 @@ func (a *Client) DailyTrainTimeTableAPIControllerGet1(params *DailyTrainTimeTabl
 }
 
 /*
-  DailyTrainTimeTableAPIControllerGet2 取得臺鐵每日時刻表所有供應的日期資料s
+  DailyTrainTimeTableAPIControllerGet32112 取得臺鐵每日時刻表所有供應的日期資料s
 
   取得臺鐵每日時刻表所有供應的日期資料
 */
-func (a *Client) DailyTrainTimeTableAPIControllerGet2(params *DailyTrainTimeTableAPIControllerGet2Params, opts ...ClientOption) (*DailyTrainTimeTableAPIControllerGet2OK, *DailyTrainTimeTableAPIControllerGet2Status299, error) {
+func (a *Client) DailyTrainTimeTableAPIControllerGet32112(params *DailyTrainTimeTableAPIControllerGet32112Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DailyTrainTimeTableAPIControllerGet32112OK, *DailyTrainTimeTableAPIControllerGet32112Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewDailyTrainTimeTableAPIControllerGet2Params()
+		params = NewDailyTrainTimeTableAPIControllerGet32112Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "DailyTrainTimeTableApiController_Get_2",
+		ID:                 "DailyTrainTimeTableApiController_Get_3211_2",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/DailyTrainTimetable/TrainDates",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &DailyTrainTimeTableAPIControllerGet2Reader{formats: a.formats},
+		Reader:             &DailyTrainTimeTableAPIControllerGet32112Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -380,9 +387,9 @@ func (a *Client) DailyTrainTimeTableAPIControllerGet2(params *DailyTrainTimeTabl
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *DailyTrainTimeTableAPIControllerGet2OK:
+	case *DailyTrainTimeTableAPIControllerGet32112OK:
 		return value, nil, nil
-	case *DailyTrainTimeTableAPIControllerGet2Status299:
+	case *DailyTrainTimeTableAPIControllerGet32112Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -391,24 +398,25 @@ func (a *Client) DailyTrainTimeTableAPIControllerGet2(params *DailyTrainTimeTabl
 }
 
 /*
-  DailyTrainTimeTableAPIControllerGet3 取得指定s 日期 所有車次的時刻表資料
+  DailyTrainTimeTableAPIControllerGet32113 取得指定s 日期 所有車次的時刻表資料
 
   取得指定[日期]所有車次的時刻表資料(台鐵提供近60天每日時刻表)
 */
-func (a *Client) DailyTrainTimeTableAPIControllerGet3(params *DailyTrainTimeTableAPIControllerGet3Params, opts ...ClientOption) (*DailyTrainTimeTableAPIControllerGet3OK, *DailyTrainTimeTableAPIControllerGet3Status299, error) {
+func (a *Client) DailyTrainTimeTableAPIControllerGet32113(params *DailyTrainTimeTableAPIControllerGet32113Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DailyTrainTimeTableAPIControllerGet32113OK, *DailyTrainTimeTableAPIControllerGet32113Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewDailyTrainTimeTableAPIControllerGet3Params()
+		params = NewDailyTrainTimeTableAPIControllerGet32113Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "DailyTrainTimeTableApiController_Get_3",
+		ID:                 "DailyTrainTimeTableApiController_Get_3211_3",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/DailyTrainTimetable/TrainDate/{TrainDate}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &DailyTrainTimeTableAPIControllerGet3Reader{formats: a.formats},
+		Reader:             &DailyTrainTimeTableAPIControllerGet32113Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -421,9 +429,9 @@ func (a *Client) DailyTrainTimeTableAPIControllerGet3(params *DailyTrainTimeTabl
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *DailyTrainTimeTableAPIControllerGet3OK:
+	case *DailyTrainTimeTableAPIControllerGet32113OK:
 		return value, nil, nil
-	case *DailyTrainTimeTableAPIControllerGet3Status299:
+	case *DailyTrainTimeTableAPIControllerGet32113Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -432,24 +440,25 @@ func (a *Client) DailyTrainTimeTableAPIControllerGet3(params *DailyTrainTimeTabl
 }
 
 /*
-  DailyTrainTimeTableAPIControllerGet4 取得指定s 日期 起迄站間 之站間時刻表資料 僅列出查詢的停靠站
+  DailyTrainTimeTableAPIControllerGet32114 取得指定s 日期 起迄站間 之站間時刻表資料 僅列出查詢的停靠站
 
   取得指定[日期],[起迄站間]之站間時刻表資料(僅列出查詢的停靠站)
 */
-func (a *Client) DailyTrainTimeTableAPIControllerGet4(params *DailyTrainTimeTableAPIControllerGet4Params, opts ...ClientOption) (*DailyTrainTimeTableAPIControllerGet4OK, *DailyTrainTimeTableAPIControllerGet4Status299, error) {
+func (a *Client) DailyTrainTimeTableAPIControllerGet32114(params *DailyTrainTimeTableAPIControllerGet32114Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DailyTrainTimeTableAPIControllerGet32114OK, *DailyTrainTimeTableAPIControllerGet32114Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewDailyTrainTimeTableAPIControllerGet4Params()
+		params = NewDailyTrainTimeTableAPIControllerGet32114Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "DailyTrainTimeTableApiController_Get_4",
+		ID:                 "DailyTrainTimeTableApiController_Get_3211_4",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/DailyTrainTimetable/OD/{OriginStationID}/to/{DestinationStationID}/{TrainDate}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &DailyTrainTimeTableAPIControllerGet4Reader{formats: a.formats},
+		Reader:             &DailyTrainTimeTableAPIControllerGet32114Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -462,9 +471,9 @@ func (a *Client) DailyTrainTimeTableAPIControllerGet4(params *DailyTrainTimeTabl
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *DailyTrainTimeTableAPIControllerGet4OK:
+	case *DailyTrainTimeTableAPIControllerGet32114OK:
 		return value, nil, nil
-	case *DailyTrainTimeTableAPIControllerGet4Status299:
+	case *DailyTrainTimeTableAPIControllerGet32114Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -473,24 +482,25 @@ func (a *Client) DailyTrainTimeTableAPIControllerGet4(params *DailyTrainTimeTabl
 }
 
 /*
-  DailyTrainTimeTableAPIControllerGet5 取得指定s 日期 起迄站間 之站間時刻表資料
+  DailyTrainTimeTableAPIControllerGet32115 取得指定s 日期 起迄站間 之站間時刻表資料
 
   取得指定[日期],[起迄站間]之站間時刻表資料
 */
-func (a *Client) DailyTrainTimeTableAPIControllerGet5(params *DailyTrainTimeTableAPIControllerGet5Params, opts ...ClientOption) (*DailyTrainTimeTableAPIControllerGet5OK, *DailyTrainTimeTableAPIControllerGet5Status299, error) {
+func (a *Client) DailyTrainTimeTableAPIControllerGet32115(params *DailyTrainTimeTableAPIControllerGet32115Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*DailyTrainTimeTableAPIControllerGet32115OK, *DailyTrainTimeTableAPIControllerGet32115Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewDailyTrainTimeTableAPIControllerGet5Params()
+		params = NewDailyTrainTimeTableAPIControllerGet32115Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "DailyTrainTimeTableApiController_Get_5",
+		ID:                 "DailyTrainTimeTableApiController_Get_3211_5",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/DailyTrainTimetable/OD/Inclusive/{OriginStationID}/to/{DestinationStationID}/{TrainDate}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &DailyTrainTimeTableAPIControllerGet5Reader{formats: a.formats},
+		Reader:             &DailyTrainTimeTableAPIControllerGet32115Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -503,9 +513,9 @@ func (a *Client) DailyTrainTimeTableAPIControllerGet5(params *DailyTrainTimeTabl
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *DailyTrainTimeTableAPIControllerGet5OK:
+	case *DailyTrainTimeTableAPIControllerGet32115OK:
 		return value, nil, nil
-	case *DailyTrainTimeTableAPIControllerGet5Status299:
+	case *DailyTrainTimeTableAPIControllerGet32115Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -514,24 +524,25 @@ func (a *Client) DailyTrainTimeTableAPIControllerGet5(params *DailyTrainTimeTabl
 }
 
 /*
-  GeneralStationTimetableAPIControllerGet 取得各站的定期站別時刻表資料s
+  GeneralStationTimetableAPIControllerGet3209 取得各站的定期站別時刻表資料s
 
   取得各站的定期站別時刻表資料
 */
-func (a *Client) GeneralStationTimetableAPIControllerGet(params *GeneralStationTimetableAPIControllerGetParams, opts ...ClientOption) (*GeneralStationTimetableAPIControllerGetOK, *GeneralStationTimetableAPIControllerGetStatus299, error) {
+func (a *Client) GeneralStationTimetableAPIControllerGet3209(params *GeneralStationTimetableAPIControllerGet3209Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GeneralStationTimetableAPIControllerGet3209OK, *GeneralStationTimetableAPIControllerGet3209Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewGeneralStationTimetableAPIControllerGetParams()
+		params = NewGeneralStationTimetableAPIControllerGet3209Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "GeneralStationTimetableApiController_Get",
+		ID:                 "GeneralStationTimetableApiController_Get_3209",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/GeneralStationTimetable",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &GeneralStationTimetableAPIControllerGetReader{formats: a.formats},
+		Reader:             &GeneralStationTimetableAPIControllerGet3209Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -544,9 +555,9 @@ func (a *Client) GeneralStationTimetableAPIControllerGet(params *GeneralStationT
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *GeneralStationTimetableAPIControllerGetOK:
+	case *GeneralStationTimetableAPIControllerGet3209OK:
 		return value, nil, nil
-	case *GeneralStationTimetableAPIControllerGetStatus299:
+	case *GeneralStationTimetableAPIControllerGet3209Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -555,24 +566,25 @@ func (a *Client) GeneralStationTimetableAPIControllerGet(params *GeneralStationT
 }
 
 /*
-  GeneralStationTimetableAPIControllerGet1 取得指定s 車站 的定期站別時刻表資料
+  GeneralStationTimetableAPIControllerGet32091 取得指定s 車站 的定期站別時刻表資料
 
   取得指定[車站]的定期站別時刻表資料
 */
-func (a *Client) GeneralStationTimetableAPIControllerGet1(params *GeneralStationTimetableAPIControllerGet1Params, opts ...ClientOption) (*GeneralStationTimetableAPIControllerGet1OK, *GeneralStationTimetableAPIControllerGet1Status299, error) {
+func (a *Client) GeneralStationTimetableAPIControllerGet32091(params *GeneralStationTimetableAPIControllerGet32091Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GeneralStationTimetableAPIControllerGet32091OK, *GeneralStationTimetableAPIControllerGet32091Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewGeneralStationTimetableAPIControllerGet1Params()
+		params = NewGeneralStationTimetableAPIControllerGet32091Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "GeneralStationTimetableApiController_Get_1",
+		ID:                 "GeneralStationTimetableApiController_Get_3209_1",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/GeneralStationTimetable/Station/{StationID}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &GeneralStationTimetableAPIControllerGet1Reader{formats: a.formats},
+		Reader:             &GeneralStationTimetableAPIControllerGet32091Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -585,9 +597,9 @@ func (a *Client) GeneralStationTimetableAPIControllerGet1(params *GeneralStation
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *GeneralStationTimetableAPIControllerGet1OK:
+	case *GeneralStationTimetableAPIControllerGet32091OK:
 		return value, nil, nil
-	case *GeneralStationTimetableAPIControllerGet1Status299:
+	case *GeneralStationTimetableAPIControllerGet32091Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -596,24 +608,25 @@ func (a *Client) GeneralStationTimetableAPIControllerGet1(params *GeneralStation
 }
 
 /*
-  GeneralTrainTimetableAPIControllerGet 取得所有車次的定期時刻表資料s
+  GeneralTrainTimetableAPIControllerGet3208 取得所有車次的定期時刻表資料s
 
   取得所有車次的定期時刻表資料
 */
-func (a *Client) GeneralTrainTimetableAPIControllerGet(params *GeneralTrainTimetableAPIControllerGetParams, opts ...ClientOption) (*GeneralTrainTimetableAPIControllerGetOK, *GeneralTrainTimetableAPIControllerGetStatus299, error) {
+func (a *Client) GeneralTrainTimetableAPIControllerGet3208(params *GeneralTrainTimetableAPIControllerGet3208Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GeneralTrainTimetableAPIControllerGet3208OK, *GeneralTrainTimetableAPIControllerGet3208Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewGeneralTrainTimetableAPIControllerGetParams()
+		params = NewGeneralTrainTimetableAPIControllerGet3208Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "GeneralTrainTimetableApiController_Get",
+		ID:                 "GeneralTrainTimetableApiController_Get_3208",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/GeneralTrainTimetable",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &GeneralTrainTimetableAPIControllerGetReader{formats: a.formats},
+		Reader:             &GeneralTrainTimetableAPIControllerGet3208Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -626,9 +639,9 @@ func (a *Client) GeneralTrainTimetableAPIControllerGet(params *GeneralTrainTimet
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *GeneralTrainTimetableAPIControllerGetOK:
+	case *GeneralTrainTimetableAPIControllerGet3208OK:
 		return value, nil, nil
-	case *GeneralTrainTimetableAPIControllerGetStatus299:
+	case *GeneralTrainTimetableAPIControllerGet3208Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -637,24 +650,25 @@ func (a *Client) GeneralTrainTimetableAPIControllerGet(params *GeneralTrainTimet
 }
 
 /*
-  GeneralTrainTimetableAPIControllerGet1 取得指定s 車次 的定期時刻表資料
+  GeneralTrainTimetableAPIControllerGet32081 取得指定s 車次 的定期時刻表資料
 
   取得指定[車次]的定期時刻表資料
 */
-func (a *Client) GeneralTrainTimetableAPIControllerGet1(params *GeneralTrainTimetableAPIControllerGet1Params, opts ...ClientOption) (*GeneralTrainTimetableAPIControllerGet1OK, *GeneralTrainTimetableAPIControllerGet1Status299, error) {
+func (a *Client) GeneralTrainTimetableAPIControllerGet32081(params *GeneralTrainTimetableAPIControllerGet32081Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*GeneralTrainTimetableAPIControllerGet32081OK, *GeneralTrainTimetableAPIControllerGet32081Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewGeneralTrainTimetableAPIControllerGet1Params()
+		params = NewGeneralTrainTimetableAPIControllerGet32081Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "GeneralTrainTimetableApiController_Get_1",
+		ID:                 "GeneralTrainTimetableApiController_Get_3208_1",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/GeneralTrainTimetable/TrainNo/{TrainNo}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &GeneralTrainTimetableAPIControllerGet1Reader{formats: a.formats},
+		Reader:             &GeneralTrainTimetableAPIControllerGet32081Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -667,9 +681,9 @@ func (a *Client) GeneralTrainTimetableAPIControllerGet1(params *GeneralTrainTime
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *GeneralTrainTimetableAPIControllerGet1OK:
+	case *GeneralTrainTimetableAPIControllerGet32081OK:
 		return value, nil, nil
-	case *GeneralTrainTimetableAPIControllerGet1Status299:
+	case *GeneralTrainTimetableAPIControllerGet32081Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -678,24 +692,25 @@ func (a *Client) GeneralTrainTimetableAPIControllerGet1(params *GeneralTrainTime
 }
 
 /*
-  LineAPIControllerGet 取得路線基本資料s
+  LineAPIControllerGet3204 取得路線基本資料s
 
   取得路線基本資料
 */
-func (a *Client) LineAPIControllerGet(params *LineAPIControllerGetParams, opts ...ClientOption) (*LineAPIControllerGetOK, *LineAPIControllerGetStatus299, error) {
+func (a *Client) LineAPIControllerGet3204(params *LineAPIControllerGet3204Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*LineAPIControllerGet3204OK, *LineAPIControllerGet3204Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewLineAPIControllerGetParams()
+		params = NewLineAPIControllerGet3204Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "LineApiController_Get",
+		ID:                 "LineApiController_Get_3204",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/Line",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &LineAPIControllerGetReader{formats: a.formats},
+		Reader:             &LineAPIControllerGet3204Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -708,9 +723,9 @@ func (a *Client) LineAPIControllerGet(params *LineAPIControllerGetParams, opts .
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *LineAPIControllerGetOK:
+	case *LineAPIControllerGet3204OK:
 		return value, nil, nil
-	case *LineAPIControllerGetStatus299:
+	case *LineAPIControllerGet3204Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -719,24 +734,25 @@ func (a *Client) LineAPIControllerGet(params *LineAPIControllerGetParams, opts .
 }
 
 /*
-  LineNetworkAPIControllerGet 取得路線網路拓撲基本資料s
+  LineNetworkAPIControllerGet3221 取得路線網路拓撲基本資料s
 
   取得路線網路拓撲基本資料
 */
-func (a *Client) LineNetworkAPIControllerGet(params *LineNetworkAPIControllerGetParams, opts ...ClientOption) (*LineNetworkAPIControllerGetOK, *LineNetworkAPIControllerGetStatus299, error) {
+func (a *Client) LineNetworkAPIControllerGet3221(params *LineNetworkAPIControllerGet3221Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*LineNetworkAPIControllerGet3221OK, *LineNetworkAPIControllerGet3221Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewLineNetworkAPIControllerGetParams()
+		params = NewLineNetworkAPIControllerGet3221Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "LineNetworkApiController_Get",
+		ID:                 "LineNetworkApiController_Get_3221",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/LineNetwork",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &LineNetworkAPIControllerGetReader{formats: a.formats},
+		Reader:             &LineNetworkAPIControllerGet3221Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -749,9 +765,9 @@ func (a *Client) LineNetworkAPIControllerGet(params *LineNetworkAPIControllerGet
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *LineNetworkAPIControllerGetOK:
+	case *LineNetworkAPIControllerGet3221OK:
 		return value, nil, nil
-	case *LineNetworkAPIControllerGetStatus299:
+	case *LineNetworkAPIControllerGet3221Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -760,24 +776,25 @@ func (a *Client) LineNetworkAPIControllerGet(params *LineNetworkAPIControllerGet
 }
 
 /*
-  LineTransferAPIControllerGet 取得內部路線轉乘資料s
+  LineTransferAPIControllerGet3215 取得內部路線轉乘資料s
 
   取得內部路線轉乘資料
 */
-func (a *Client) LineTransferAPIControllerGet(params *LineTransferAPIControllerGetParams, opts ...ClientOption) (*LineTransferAPIControllerGetOK, *LineTransferAPIControllerGetStatus299, error) {
+func (a *Client) LineTransferAPIControllerGet3215(params *LineTransferAPIControllerGet3215Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*LineTransferAPIControllerGet3215OK, *LineTransferAPIControllerGet3215Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewLineTransferAPIControllerGetParams()
+		params = NewLineTransferAPIControllerGet3215Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "LineTransferApiController_Get",
+		ID:                 "LineTransferApiController_Get_3215",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/LineTransfer",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &LineTransferAPIControllerGetReader{formats: a.formats},
+		Reader:             &LineTransferAPIControllerGet3215Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -790,9 +807,9 @@ func (a *Client) LineTransferAPIControllerGet(params *LineTransferAPIControllerG
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *LineTransferAPIControllerGetOK:
+	case *LineTransferAPIControllerGet3215OK:
 		return value, nil, nil
-	case *LineTransferAPIControllerGetStatus299:
+	case *LineTransferAPIControllerGet3215Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -801,24 +818,25 @@ func (a *Client) LineTransferAPIControllerGet(params *LineTransferAPIControllerG
 }
 
 /*
-  NetworkAPIControllerGet 取得臺鐵路網資料s
+  NetworkAPIControllerGet3200 取得臺鐵路網資料s
 
   取得臺鐵路網資料
 */
-func (a *Client) NetworkAPIControllerGet(params *NetworkAPIControllerGetParams, opts ...ClientOption) (*NetworkAPIControllerGetOK, *NetworkAPIControllerGetStatus299, error) {
+func (a *Client) NetworkAPIControllerGet3200(params *NetworkAPIControllerGet3200Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*NetworkAPIControllerGet3200OK, *NetworkAPIControllerGet3200Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewNetworkAPIControllerGetParams()
+		params = NewNetworkAPIControllerGet3200Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "NetworkApiController_Get",
+		ID:                 "NetworkApiController_Get_3200",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/Network",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &NetworkAPIControllerGetReader{formats: a.formats},
+		Reader:             &NetworkAPIControllerGet3200Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -831,9 +849,9 @@ func (a *Client) NetworkAPIControllerGet(params *NetworkAPIControllerGetParams, 
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *NetworkAPIControllerGetOK:
+	case *NetworkAPIControllerGet3200OK:
 		return value, nil, nil
-	case *NetworkAPIControllerGetStatus299:
+	case *NetworkAPIControllerGet3200Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -842,24 +860,25 @@ func (a *Client) NetworkAPIControllerGet(params *NetworkAPIControllerGetParams, 
 }
 
 /*
-  NewsAPIControllerGet 取得最新消息s
+  NewsAPIControllerGet3217 取得最新消息s
 
   取得最新消息
 */
-func (a *Client) NewsAPIControllerGet(params *NewsAPIControllerGetParams, opts ...ClientOption) (*NewsAPIControllerGetOK, *NewsAPIControllerGetStatus299, error) {
+func (a *Client) NewsAPIControllerGet3217(params *NewsAPIControllerGet3217Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*NewsAPIControllerGet3217OK, *NewsAPIControllerGet3217Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewNewsAPIControllerGetParams()
+		params = NewNewsAPIControllerGet3217Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "NewsApiController_Get",
+		ID:                 "NewsApiController_Get_3217",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/News",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &NewsAPIControllerGetReader{formats: a.formats},
+		Reader:             &NewsAPIControllerGet3217Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -872,9 +891,9 @@ func (a *Client) NewsAPIControllerGet(params *NewsAPIControllerGetParams, opts .
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *NewsAPIControllerGetOK:
+	case *NewsAPIControllerGet3217OK:
 		return value, nil, nil
-	case *NewsAPIControllerGetStatus299:
+	case *NewsAPIControllerGet3217Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -883,24 +902,25 @@ func (a *Client) NewsAPIControllerGet(params *NewsAPIControllerGetParams, opts .
 }
 
 /*
-  ODFareAPIControllerAPIControllerGet 取得票價資料s 檔案
+  ODFareAPIControllerAPIControllerGet3207 取得票價資料s 檔案
 
   取得Gzip壓縮檔
 */
-func (a *Client) ODFareAPIControllerAPIControllerGet(params *ODFareAPIControllerAPIControllerGetParams, opts ...ClientOption) (*ODFareAPIControllerAPIControllerGetOK, *ODFareAPIControllerAPIControllerGetStatus299, error) {
+func (a *Client) ODFareAPIControllerAPIControllerGet3207(params *ODFareAPIControllerAPIControllerGet3207Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ODFareAPIControllerAPIControllerGet3207OK, *ODFareAPIControllerAPIControllerGet3207Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewODFareAPIControllerAPIControllerGetParams()
+		params = NewODFareAPIControllerAPIControllerGet3207Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "ODFareApiControllerApiController_Get",
+		ID:                 "ODFareApiControllerApiController_Get_3207",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/ODFare",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &ODFareAPIControllerAPIControllerGetReader{formats: a.formats},
+		Reader:             &ODFareAPIControllerAPIControllerGet3207Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -913,9 +933,9 @@ func (a *Client) ODFareAPIControllerAPIControllerGet(params *ODFareAPIController
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *ODFareAPIControllerAPIControllerGetOK:
+	case *ODFareAPIControllerAPIControllerGet3207OK:
 		return value, nil, nil
-	case *ODFareAPIControllerAPIControllerGetStatus299:
+	case *ODFareAPIControllerAPIControllerGet3207Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -924,24 +944,25 @@ func (a *Client) ODFareAPIControllerAPIControllerGet(params *ODFareAPIController
 }
 
 /*
-  ODFareAPIControllerAPIControllerGet1 取得指定起迄站間票價資料s
+  ODFareAPIControllerAPIControllerGet32071 取得指定起迄站間票價資料s
 
   取得指定起迄站間票價資料
 */
-func (a *Client) ODFareAPIControllerAPIControllerGet1(params *ODFareAPIControllerAPIControllerGet1Params, opts ...ClientOption) (*ODFareAPIControllerAPIControllerGet1OK, *ODFareAPIControllerAPIControllerGet1Status299, error) {
+func (a *Client) ODFareAPIControllerAPIControllerGet32071(params *ODFareAPIControllerAPIControllerGet32071Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ODFareAPIControllerAPIControllerGet32071OK, *ODFareAPIControllerAPIControllerGet32071Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewODFareAPIControllerAPIControllerGet1Params()
+		params = NewODFareAPIControllerAPIControllerGet32071Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "ODFareApiControllerApiController_Get_1",
+		ID:                 "ODFareApiControllerApiController_Get_3207_1",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/ODFare/{OriginStationID}/to/{DestinationStationID}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &ODFareAPIControllerAPIControllerGet1Reader{formats: a.formats},
+		Reader:             &ODFareAPIControllerAPIControllerGet32071Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -954,9 +975,9 @@ func (a *Client) ODFareAPIControllerAPIControllerGet1(params *ODFareAPIControlle
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *ODFareAPIControllerAPIControllerGet1OK:
+	case *ODFareAPIControllerAPIControllerGet32071OK:
 		return value, nil, nil
-	case *ODFareAPIControllerAPIControllerGet1Status299:
+	case *ODFareAPIControllerAPIControllerGet32071Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -965,24 +986,25 @@ func (a *Client) ODFareAPIControllerAPIControllerGet1(params *ODFareAPIControlle
 }
 
 /*
-  OperatorAPIControllerGet 取得台鐵營運業者基本資料s
+  OperatorAPIControllerGet3220 取得台鐵營運業者基本資料s
 
   取得台鐵營運業者基本資料
 */
-func (a *Client) OperatorAPIControllerGet(params *OperatorAPIControllerGetParams, opts ...ClientOption) (*OperatorAPIControllerGetOK, *OperatorAPIControllerGetStatus299, error) {
+func (a *Client) OperatorAPIControllerGet3220(params *OperatorAPIControllerGet3220Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*OperatorAPIControllerGet3220OK, *OperatorAPIControllerGet3220Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewOperatorAPIControllerGetParams()
+		params = NewOperatorAPIControllerGet3220Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "OperatorApiController_Get",
+		ID:                 "OperatorApiController_Get_3220",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/Operator",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &OperatorAPIControllerGetReader{formats: a.formats},
+		Reader:             &OperatorAPIControllerGet3220Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -995,9 +1017,9 @@ func (a *Client) OperatorAPIControllerGet(params *OperatorAPIControllerGetParams
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *OperatorAPIControllerGetOK:
+	case *OperatorAPIControllerGet3220OK:
 		return value, nil, nil
-	case *OperatorAPIControllerGetStatus299:
+	case *OperatorAPIControllerGet3220Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -1006,24 +1028,25 @@ func (a *Client) OperatorAPIControllerGet(params *OperatorAPIControllerGetParams
 }
 
 /*
-  ShapeAPIControllerGet 取得線型基本資料s
+  ShapeAPIControllerGet3219 取得線型基本資料s
 
   取得線型基本資料
 */
-func (a *Client) ShapeAPIControllerGet(params *ShapeAPIControllerGetParams, opts ...ClientOption) (*ShapeAPIControllerGetOK, *ShapeAPIControllerGetStatus299, error) {
+func (a *Client) ShapeAPIControllerGet3219(params *ShapeAPIControllerGet3219Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ShapeAPIControllerGet3219OK, *ShapeAPIControllerGet3219Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewShapeAPIControllerGetParams()
+		params = NewShapeAPIControllerGet3219Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "ShapeApiController_Get",
+		ID:                 "ShapeApiController_Get_3219",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/Shape",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &ShapeAPIControllerGetReader{formats: a.formats},
+		Reader:             &ShapeAPIControllerGet3219Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -1036,9 +1059,9 @@ func (a *Client) ShapeAPIControllerGet(params *ShapeAPIControllerGetParams, opts
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *ShapeAPIControllerGetOK:
+	case *ShapeAPIControllerGet3219OK:
 		return value, nil, nil
-	case *ShapeAPIControllerGetStatus299:
+	case *ShapeAPIControllerGet3219Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -1047,24 +1070,25 @@ func (a *Client) ShapeAPIControllerGet(params *ShapeAPIControllerGetParams, opts
 }
 
 /*
-  SpecificTrainTimetableAPIControllerGet 取得所有特殊車次時刻表資料s
+  SpecificTrainTimetableAPIControllerGet3210 取得所有特殊車次時刻表資料s
 
   取得所有特殊車次時刻表資料
 */
-func (a *Client) SpecificTrainTimetableAPIControllerGet(params *SpecificTrainTimetableAPIControllerGetParams, opts ...ClientOption) (*SpecificTrainTimetableAPIControllerGetOK, *SpecificTrainTimetableAPIControllerGetStatus299, error) {
+func (a *Client) SpecificTrainTimetableAPIControllerGet3210(params *SpecificTrainTimetableAPIControllerGet3210Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*SpecificTrainTimetableAPIControllerGet3210OK, *SpecificTrainTimetableAPIControllerGet3210Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewSpecificTrainTimetableAPIControllerGetParams()
+		params = NewSpecificTrainTimetableAPIControllerGet3210Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "SpecificTrainTimetableApiController_Get",
+		ID:                 "SpecificTrainTimetableApiController_Get_3210",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/SpecificTrainTimetable",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &SpecificTrainTimetableAPIControllerGetReader{formats: a.formats},
+		Reader:             &SpecificTrainTimetableAPIControllerGet3210Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -1077,9 +1101,9 @@ func (a *Client) SpecificTrainTimetableAPIControllerGet(params *SpecificTrainTim
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *SpecificTrainTimetableAPIControllerGetOK:
+	case *SpecificTrainTimetableAPIControllerGet3210OK:
 		return value, nil, nil
-	case *SpecificTrainTimetableAPIControllerGetStatus299:
+	case *SpecificTrainTimetableAPIControllerGet3210Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -1088,24 +1112,25 @@ func (a *Client) SpecificTrainTimetableAPIControllerGet(params *SpecificTrainTim
 }
 
 /*
-  SpecificTrainTimetableAPIControllerGet1 取得指定s 車次 的特殊車次時刻表資料
+  SpecificTrainTimetableAPIControllerGet32101 取得指定s 車次 的特殊車次時刻表資料
 
   取得指定[車次]的特殊車次時刻表資料
 */
-func (a *Client) SpecificTrainTimetableAPIControllerGet1(params *SpecificTrainTimetableAPIControllerGet1Params, opts ...ClientOption) (*SpecificTrainTimetableAPIControllerGet1OK, *SpecificTrainTimetableAPIControllerGet1Status299, error) {
+func (a *Client) SpecificTrainTimetableAPIControllerGet32101(params *SpecificTrainTimetableAPIControllerGet32101Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*SpecificTrainTimetableAPIControllerGet32101OK, *SpecificTrainTimetableAPIControllerGet32101Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewSpecificTrainTimetableAPIControllerGet1Params()
+		params = NewSpecificTrainTimetableAPIControllerGet32101Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "SpecificTrainTimetableApiController_Get_1",
+		ID:                 "SpecificTrainTimetableApiController_Get_3210_1",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/SpecificTrainTimetable/TrainNo/{TrainNo}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &SpecificTrainTimetableAPIControllerGet1Reader{formats: a.formats},
+		Reader:             &SpecificTrainTimetableAPIControllerGet32101Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -1118,9 +1143,9 @@ func (a *Client) SpecificTrainTimetableAPIControllerGet1(params *SpecificTrainTi
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *SpecificTrainTimetableAPIControllerGet1OK:
+	case *SpecificTrainTimetableAPIControllerGet32101OK:
 		return value, nil, nil
-	case *SpecificTrainTimetableAPIControllerGet1Status299:
+	case *SpecificTrainTimetableAPIControllerGet32101Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -1129,24 +1154,25 @@ func (a *Client) SpecificTrainTimetableAPIControllerGet1(params *SpecificTrainTi
 }
 
 /*
-  StationAPIControllerGet 取得車站基本資料s
+  StationAPIControllerGet3201 取得車站基本資料s
 
   取得車站基本資料
 */
-func (a *Client) StationAPIControllerGet(params *StationAPIControllerGetParams, opts ...ClientOption) (*StationAPIControllerGetOK, *StationAPIControllerGetStatus299, error) {
+func (a *Client) StationAPIControllerGet3201(params *StationAPIControllerGet3201Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*StationAPIControllerGet3201OK, *StationAPIControllerGet3201Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewStationAPIControllerGetParams()
+		params = NewStationAPIControllerGet3201Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "StationApiController_Get",
+		ID:                 "StationApiController_Get_3201",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/Station",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &StationAPIControllerGetReader{formats: a.formats},
+		Reader:             &StationAPIControllerGet3201Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -1159,9 +1185,9 @@ func (a *Client) StationAPIControllerGet(params *StationAPIControllerGetParams, 
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *StationAPIControllerGetOK:
+	case *StationAPIControllerGet3201OK:
 		return value, nil, nil
-	case *StationAPIControllerGetStatus299:
+	case *StationAPIControllerGet3201Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -1170,24 +1196,25 @@ func (a *Client) StationAPIControllerGet(params *StationAPIControllerGetParams, 
 }
 
 /*
-  StationExitAPIControllerGet 取得車站出入口基本資料s
+  StationExitAPIControllerGet3202 取得車站出入口基本資料s
 
   取得車站出入口基本資料
 */
-func (a *Client) StationExitAPIControllerGet(params *StationExitAPIControllerGetParams, opts ...ClientOption) (*StationExitAPIControllerGetOK, *StationExitAPIControllerGetStatus299, error) {
+func (a *Client) StationExitAPIControllerGet3202(params *StationExitAPIControllerGet3202Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*StationExitAPIControllerGet3202OK, *StationExitAPIControllerGet3202Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewStationExitAPIControllerGetParams()
+		params = NewStationExitAPIControllerGet3202Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "StationExitApiController_Get",
+		ID:                 "StationExitApiController_Get_3202",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/StationExit",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &StationExitAPIControllerGetReader{formats: a.formats},
+		Reader:             &StationExitAPIControllerGet3202Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -1200,9 +1227,9 @@ func (a *Client) StationExitAPIControllerGet(params *StationExitAPIControllerGet
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *StationExitAPIControllerGetOK:
+	case *StationExitAPIControllerGet3202OK:
 		return value, nil, nil
-	case *StationExitAPIControllerGetStatus299:
+	case *StationExitAPIControllerGet3202Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -1211,24 +1238,25 @@ func (a *Client) StationExitAPIControllerGet(params *StationExitAPIControllerGet
 }
 
 /*
-  StationFacilityAPIControllerGet 取得車站設施資料s
+  StationFacilityAPIControllerGet3203 取得車站設施資料s
 
   取得車站設施資料
 */
-func (a *Client) StationFacilityAPIControllerGet(params *StationFacilityAPIControllerGetParams, opts ...ClientOption) (*StationFacilityAPIControllerGetOK, *StationFacilityAPIControllerGetStatus299, error) {
+func (a *Client) StationFacilityAPIControllerGet3203(params *StationFacilityAPIControllerGet3203Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*StationFacilityAPIControllerGet3203OK, *StationFacilityAPIControllerGet3203Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewStationFacilityAPIControllerGetParams()
+		params = NewStationFacilityAPIControllerGet3203Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "StationFacilityApiController_Get",
+		ID:                 "StationFacilityApiController_Get_3203",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/StationFacility",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &StationFacilityAPIControllerGetReader{formats: a.formats},
+		Reader:             &StationFacilityAPIControllerGet3203Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -1241,9 +1269,9 @@ func (a *Client) StationFacilityAPIControllerGet(params *StationFacilityAPIContr
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *StationFacilityAPIControllerGetOK:
+	case *StationFacilityAPIControllerGet3203OK:
 		return value, nil, nil
-	case *StationFacilityAPIControllerGetStatus299:
+	case *StationFacilityAPIControllerGet3203Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -1252,24 +1280,25 @@ func (a *Client) StationFacilityAPIControllerGet(params *StationFacilityAPIContr
 }
 
 /*
-  StationLiveBoardAPIControllerGet 取得列車即時到離站資料s
+  StationLiveBoardAPIControllerGet3213 取得列車即時到離站資料s
 
   取得列車即時到離站資料
 */
-func (a *Client) StationLiveBoardAPIControllerGet(params *StationLiveBoardAPIControllerGetParams, opts ...ClientOption) (*StationLiveBoardAPIControllerGetOK, *StationLiveBoardAPIControllerGetStatus299, error) {
+func (a *Client) StationLiveBoardAPIControllerGet3213(params *StationLiveBoardAPIControllerGet3213Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*StationLiveBoardAPIControllerGet3213OK, *StationLiveBoardAPIControllerGet3213Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewStationLiveBoardAPIControllerGetParams()
+		params = NewStationLiveBoardAPIControllerGet3213Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "StationLiveBoardApiController_Get",
+		ID:                 "StationLiveBoardApiController_Get_3213",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/StationLiveBoard",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &StationLiveBoardAPIControllerGetReader{formats: a.formats},
+		Reader:             &StationLiveBoardAPIControllerGet3213Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -1282,9 +1311,9 @@ func (a *Client) StationLiveBoardAPIControllerGet(params *StationLiveBoardAPICon
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *StationLiveBoardAPIControllerGetOK:
+	case *StationLiveBoardAPIControllerGet3213OK:
 		return value, nil, nil
-	case *StationLiveBoardAPIControllerGetStatus299:
+	case *StationLiveBoardAPIControllerGet3213Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -1293,24 +1322,25 @@ func (a *Client) StationLiveBoardAPIControllerGet(params *StationLiveBoardAPICon
 }
 
 /*
-  StationLiveBoardAPIControllerGet1 取得指定s 車站 的列車即時到離站資料
+  StationLiveBoardAPIControllerGet32131 取得指定s 車站 的列車即時到離站資料
 
   取得指定[車站]的列車即時到離站資料
 */
-func (a *Client) StationLiveBoardAPIControllerGet1(params *StationLiveBoardAPIControllerGet1Params, opts ...ClientOption) (*StationLiveBoardAPIControllerGet1OK, *StationLiveBoardAPIControllerGet1Status299, error) {
+func (a *Client) StationLiveBoardAPIControllerGet32131(params *StationLiveBoardAPIControllerGet32131Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*StationLiveBoardAPIControllerGet32131OK, *StationLiveBoardAPIControllerGet32131Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewStationLiveBoardAPIControllerGet1Params()
+		params = NewStationLiveBoardAPIControllerGet32131Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "StationLiveBoardApiController_Get_1",
+		ID:                 "StationLiveBoardApiController_Get_3213_1",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/StationLiveBoard/Station/{StationID}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &StationLiveBoardAPIControllerGet1Reader{formats: a.formats},
+		Reader:             &StationLiveBoardAPIControllerGet32131Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -1323,9 +1353,9 @@ func (a *Client) StationLiveBoardAPIControllerGet1(params *StationLiveBoardAPICo
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *StationLiveBoardAPIControllerGet1OK:
+	case *StationLiveBoardAPIControllerGet32131OK:
 		return value, nil, nil
-	case *StationLiveBoardAPIControllerGet1Status299:
+	case *StationLiveBoardAPIControllerGet32131Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -1334,24 +1364,25 @@ func (a *Client) StationLiveBoardAPIControllerGet1(params *StationLiveBoardAPICo
 }
 
 /*
-  StationOfLineAPIControllerGet 取得路線車站基本資料s
+  StationOfLineAPIControllerGet3205 取得路線車站基本資料s
 
   取得路線車站基本資料
 */
-func (a *Client) StationOfLineAPIControllerGet(params *StationOfLineAPIControllerGetParams, opts ...ClientOption) (*StationOfLineAPIControllerGetOK, *StationOfLineAPIControllerGetStatus299, error) {
+func (a *Client) StationOfLineAPIControllerGet3205(params *StationOfLineAPIControllerGet3205Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*StationOfLineAPIControllerGet3205OK, *StationOfLineAPIControllerGet3205Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewStationOfLineAPIControllerGetParams()
+		params = NewStationOfLineAPIControllerGet3205Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "StationOfLineApiController_Get",
+		ID:                 "StationOfLineApiController_Get_3205",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/StationOfLine",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &StationOfLineAPIControllerGetReader{formats: a.formats},
+		Reader:             &StationOfLineAPIControllerGet3205Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -1364,9 +1395,9 @@ func (a *Client) StationOfLineAPIControllerGet(params *StationOfLineAPIControlle
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *StationOfLineAPIControllerGetOK:
+	case *StationOfLineAPIControllerGet3205OK:
 		return value, nil, nil
-	case *StationOfLineAPIControllerGetStatus299:
+	case *StationOfLineAPIControllerGet3205Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -1375,24 +1406,25 @@ func (a *Client) StationOfLineAPIControllerGet(params *StationOfLineAPIControlle
 }
 
 /*
-  StationTransferAPIControllerGet 取得車站跨運具轉乘資訊s
+  StationTransferAPIControllerGet3216 取得車站跨運具轉乘資訊s
 
   取得車站跨運具轉乘資訊
 */
-func (a *Client) StationTransferAPIControllerGet(params *StationTransferAPIControllerGetParams, opts ...ClientOption) (*StationTransferAPIControllerGetOK, *StationTransferAPIControllerGetStatus299, error) {
+func (a *Client) StationTransferAPIControllerGet3216(params *StationTransferAPIControllerGet3216Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*StationTransferAPIControllerGet3216OK, *StationTransferAPIControllerGet3216Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewStationTransferAPIControllerGetParams()
+		params = NewStationTransferAPIControllerGet3216Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "StationTransferApiController_Get",
+		ID:                 "StationTransferApiController_Get_3216",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/StationTransfer",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &StationTransferAPIControllerGetReader{formats: a.formats},
+		Reader:             &StationTransferAPIControllerGet3216Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -1405,9 +1437,9 @@ func (a *Client) StationTransferAPIControllerGet(params *StationTransferAPIContr
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *StationTransferAPIControllerGetOK:
+	case *StationTransferAPIControllerGet3216OK:
 		return value, nil, nil
-	case *StationTransferAPIControllerGetStatus299:
+	case *StationTransferAPIControllerGet3216Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -1416,7 +1448,7 @@ func (a *Client) StationTransferAPIControllerGet(params *StationTransferAPIContr
 }
 
 /*
-  TrainLiveBoardAPIControllerGet 取得列車即時位置動態資料s
+  TrainLiveBoardAPIControllerGet3214 取得列車即時位置動態資料s
 
   取得列車即時位置動態資料
 
@@ -1426,20 +1458,21 @@ func (a *Client) StationTransferAPIControllerGet(params *StationTransferAPIContr
 3.  提供所有經過站資料是為確保車次的準誤點資料都會是最新的 (尤其是東部幹線普悠瑪、太魯閣車次，因停靠站少，更新頻率低的話會使呈現的準誤點時間誤差過大)。
 4.  基於上述原因，本項資料並非僅提供列車停靠站資料，因為這樣提供方式會使列車位置資訊更狹隘，例如:只知道離開台北站，不曉得經過哪一站了，故請加值者使用時多加注意。
 */
-func (a *Client) TrainLiveBoardAPIControllerGet(params *TrainLiveBoardAPIControllerGetParams, opts ...ClientOption) (*TrainLiveBoardAPIControllerGetOK, *TrainLiveBoardAPIControllerGetStatus299, error) {
+func (a *Client) TrainLiveBoardAPIControllerGet3214(params *TrainLiveBoardAPIControllerGet3214Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TrainLiveBoardAPIControllerGet3214OK, *TrainLiveBoardAPIControllerGet3214Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewTrainLiveBoardAPIControllerGetParams()
+		params = NewTrainLiveBoardAPIControllerGet3214Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "TrainLiveBoardApiController_Get",
+		ID:                 "TrainLiveBoardApiController_Get_3214",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/TrainLiveBoard",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &TrainLiveBoardAPIControllerGetReader{formats: a.formats},
+		Reader:             &TrainLiveBoardAPIControllerGet3214Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -1452,9 +1485,9 @@ func (a *Client) TrainLiveBoardAPIControllerGet(params *TrainLiveBoardAPIControl
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *TrainLiveBoardAPIControllerGetOK:
+	case *TrainLiveBoardAPIControllerGet3214OK:
 		return value, nil, nil
-	case *TrainLiveBoardAPIControllerGetStatus299:
+	case *TrainLiveBoardAPIControllerGet3214Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -1463,7 +1496,7 @@ func (a *Client) TrainLiveBoardAPIControllerGet(params *TrainLiveBoardAPIControl
 }
 
 /*
-  TrainLiveBoardAPIControllerGet1 取得指定s 車次 的列車即時位置動態資料
+  TrainLiveBoardAPIControllerGet32141 取得指定s 車次 的列車即時位置動態資料
 
   取得指定[車次]的列車即時位置動態資料
 
@@ -1473,20 +1506,21 @@ func (a *Client) TrainLiveBoardAPIControllerGet(params *TrainLiveBoardAPIControl
 3.  提供所有經過站資料是為確保車次的準誤點資料都會是最新的 (尤其是東部幹線普悠瑪、太魯閣車次，因停靠站少，更新頻率低的話會使呈現的準誤點時間誤差過大)。
 4.  基於上述原因，本項資料並非僅提供列車停靠站資料，因為這樣提供方式會使列車位置資訊更狹隘，例如:只知道離開台北站，不曉得經過哪一站了，故請加值者使用時多加注意。
 */
-func (a *Client) TrainLiveBoardAPIControllerGet1(params *TrainLiveBoardAPIControllerGet1Params, opts ...ClientOption) (*TrainLiveBoardAPIControllerGet1OK, *TrainLiveBoardAPIControllerGet1Status299, error) {
+func (a *Client) TrainLiveBoardAPIControllerGet32141(params *TrainLiveBoardAPIControllerGet32141Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TrainLiveBoardAPIControllerGet32141OK, *TrainLiveBoardAPIControllerGet32141Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewTrainLiveBoardAPIControllerGet1Params()
+		params = NewTrainLiveBoardAPIControllerGet32141Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "TrainLiveBoardApiController_Get_1",
+		ID:                 "TrainLiveBoardApiController_Get_3214_1",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/TrainLiveBoard/TrainNo/{TrainNo}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &TrainLiveBoardAPIControllerGet1Reader{formats: a.formats},
+		Reader:             &TrainLiveBoardAPIControllerGet32141Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -1499,9 +1533,9 @@ func (a *Client) TrainLiveBoardAPIControllerGet1(params *TrainLiveBoardAPIContro
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *TrainLiveBoardAPIControllerGet1OK:
+	case *TrainLiveBoardAPIControllerGet32141OK:
 		return value, nil, nil
-	case *TrainLiveBoardAPIControllerGet1Status299:
+	case *TrainLiveBoardAPIControllerGet32141Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -1510,24 +1544,25 @@ func (a *Client) TrainLiveBoardAPIControllerGet1(params *TrainLiveBoardAPIContro
 }
 
 /*
-  TrainTypeAPIControllerGet 取得所有列車車種資料s
+  TrainTypeAPIControllerGet3206 取得所有列車車種資料s
 
   取得所有列車車種資料
 */
-func (a *Client) TrainTypeAPIControllerGet(params *TrainTypeAPIControllerGetParams, opts ...ClientOption) (*TrainTypeAPIControllerGetOK, *TrainTypeAPIControllerGetStatus299, error) {
+func (a *Client) TrainTypeAPIControllerGet3206(params *TrainTypeAPIControllerGet3206Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TrainTypeAPIControllerGet3206OK, *TrainTypeAPIControllerGet3206Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewTrainTypeAPIControllerGetParams()
+		params = NewTrainTypeAPIControllerGet3206Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "TrainTypeApiController_Get",
+		ID:                 "TrainTypeApiController_Get_3206",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/TRA/TrainType",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &TrainTypeAPIControllerGetReader{formats: a.formats},
+		Reader:             &TrainTypeAPIControllerGet3206Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -1540,9 +1575,9 @@ func (a *Client) TrainTypeAPIControllerGet(params *TrainTypeAPIControllerGetPara
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *TrainTypeAPIControllerGetOK:
+	case *TrainTypeAPIControllerGet3206OK:
 		return value, nil, nil
-	case *TrainTypeAPIControllerGetStatus299:
+	case *TrainTypeAPIControllerGet3206Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue

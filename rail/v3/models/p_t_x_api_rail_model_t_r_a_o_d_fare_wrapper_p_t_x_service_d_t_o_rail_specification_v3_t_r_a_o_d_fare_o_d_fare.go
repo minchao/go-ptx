@@ -133,6 +133,8 @@ func (m *PTXAPIRailModelTRAODFareWrapperPTXServiceDTORailSpecificationV3TRAODFar
 			if err := m.ODFares[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("ODFares" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("ODFares" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -209,6 +211,8 @@ func (m *PTXAPIRailModelTRAODFareWrapperPTXServiceDTORailSpecificationV3TRAODFar
 			if err := m.ODFares[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("ODFares" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("ODFares" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

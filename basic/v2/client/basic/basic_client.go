@@ -30,34 +30,35 @@ type ClientOption func(*runtime.ClientOperation)
 
 // ClientService is the interface for Client methods
 type ClientService interface {
-	BasicAPIAuthority(params *BasicAPIAuthorityParams, opts ...ClientOption) (*BasicAPIAuthorityOK, error)
+	BasicAPIAuthority2160(params *BasicAPIAuthority2160Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*BasicAPIAuthority2160OK, error)
 
-	BasicAPIOperator(params *BasicAPIOperatorParams, opts ...ClientOption) (*BasicAPIOperatorOK, error)
+	BasicAPIOperator2162(params *BasicAPIOperator2162Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*BasicAPIOperator2162OK, error)
 
-	BasicAPIProvider(params *BasicAPIProviderParams, opts ...ClientOption) (*BasicAPIProviderOK, error)
+	BasicAPIProvider2161(params *BasicAPIProvider2161Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*BasicAPIProvider2161OK, error)
 
-	WebSiteAPINews(params *WebSiteAPINewsParams, opts ...ClientOption) (*WebSiteAPINewsOK, error)
+	WebSiteAPINews2163(params *WebSiteAPINews2163Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*WebSiteAPINews2163OK, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
 
 /*
-  BasicAPIAuthority 取得業管機關資料s
+  BasicAPIAuthority2160 取得業管機關資料s
 */
-func (a *Client) BasicAPIAuthority(params *BasicAPIAuthorityParams, opts ...ClientOption) (*BasicAPIAuthorityOK, error) {
+func (a *Client) BasicAPIAuthority2160(params *BasicAPIAuthority2160Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*BasicAPIAuthority2160OK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewBasicAPIAuthorityParams()
+		params = NewBasicAPIAuthority2160Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "BasicApi_Authority",
+		ID:                 "BasicApi_Authority_2160",
 		Method:             "GET",
 		PathPattern:        "/v2/Basic/Authority",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &BasicAPIAuthorityReader{formats: a.formats},
+		Reader:             &BasicAPIAuthority2160Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -69,33 +70,34 @@ func (a *Client) BasicAPIAuthority(params *BasicAPIAuthorityParams, opts ...Clie
 	if err != nil {
 		return nil, err
 	}
-	success, ok := result.(*BasicAPIAuthorityOK)
+	success, ok := result.(*BasicAPIAuthority2160OK)
 	if ok {
 		return success, nil
 	}
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for BasicApi_Authority: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for BasicApi_Authority_2160: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
 /*
-  BasicAPIOperator 取得營運業者資料s
+  BasicAPIOperator2162 取得營運業者資料s
 */
-func (a *Client) BasicAPIOperator(params *BasicAPIOperatorParams, opts ...ClientOption) (*BasicAPIOperatorOK, error) {
+func (a *Client) BasicAPIOperator2162(params *BasicAPIOperator2162Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*BasicAPIOperator2162OK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewBasicAPIOperatorParams()
+		params = NewBasicAPIOperator2162Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "BasicApi_Operator",
+		ID:                 "BasicApi_Operator_2162",
 		Method:             "GET",
 		PathPattern:        "/v2/Basic/Operator",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &BasicAPIOperatorReader{formats: a.formats},
+		Reader:             &BasicAPIOperator2162Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -107,33 +109,34 @@ func (a *Client) BasicAPIOperator(params *BasicAPIOperatorParams, opts ...Client
 	if err != nil {
 		return nil, err
 	}
-	success, ok := result.(*BasicAPIOperatorOK)
+	success, ok := result.(*BasicAPIOperator2162OK)
 	if ok {
 		return success, nil
 	}
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for BasicApi_Operator: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for BasicApi_Operator_2162: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
 /*
-  BasicAPIProvider 取得資料提供平台資料s
+  BasicAPIProvider2161 取得資料提供平台資料s
 */
-func (a *Client) BasicAPIProvider(params *BasicAPIProviderParams, opts ...ClientOption) (*BasicAPIProviderOK, error) {
+func (a *Client) BasicAPIProvider2161(params *BasicAPIProvider2161Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*BasicAPIProvider2161OK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewBasicAPIProviderParams()
+		params = NewBasicAPIProvider2161Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "BasicApi_Provider",
+		ID:                 "BasicApi_Provider_2161",
 		Method:             "GET",
 		PathPattern:        "/v2/Basic/Provider",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &BasicAPIProviderReader{formats: a.formats},
+		Reader:             &BasicAPIProvider2161Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -145,33 +148,34 @@ func (a *Client) BasicAPIProvider(params *BasicAPIProviderParams, opts ...Client
 	if err != nil {
 		return nil, err
 	}
-	success, ok := result.(*BasicAPIProviderOK)
+	success, ok := result.(*BasicAPIProvider2161OK)
 	if ok {
 		return success, nil
 	}
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for BasicApi_Provider: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for BasicApi_Provider_2161: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 
 /*
-  WebSiteAPINews 取得s p t x官網最新消息資料
+  WebSiteAPINews2163 取得s p t x官網最新消息資料
 */
-func (a *Client) WebSiteAPINews(params *WebSiteAPINewsParams, opts ...ClientOption) (*WebSiteAPINewsOK, error) {
+func (a *Client) WebSiteAPINews2163(params *WebSiteAPINews2163Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*WebSiteAPINews2163OK, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewWebSiteAPINewsParams()
+		params = NewWebSiteAPINews2163Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "WebSiteApi_News",
+		ID:                 "WebSiteApi_News_2163",
 		Method:             "GET",
 		PathPattern:        "/v2/PTX/Web/News",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &WebSiteAPINewsReader{formats: a.formats},
+		Reader:             &WebSiteAPINews2163Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -183,13 +187,13 @@ func (a *Client) WebSiteAPINews(params *WebSiteAPINewsParams, opts ...ClientOpti
 	if err != nil {
 		return nil, err
 	}
-	success, ok := result.(*WebSiteAPINewsOK)
+	success, ok := result.(*WebSiteAPINews2163OK)
 	if ok {
 		return success, nil
 	}
 	// unexpected success response
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for WebSiteApi_News: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	msg := fmt.Sprintf("unexpected success response for WebSiteApi_News_2163: API contract not enforced by server. Client expected to get an error, but got: %T", result)
 	panic(msg)
 }
 

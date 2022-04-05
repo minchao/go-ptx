@@ -140,6 +140,8 @@ func (m *PTXAPIRailModelTRABaseWrapperPTXServiceDTORailSpecificationV3TRAStation
 			if err := m.StationExits[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("StationExits" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("StationExits" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -194,6 +196,8 @@ func (m *PTXAPIRailModelTRABaseWrapperPTXServiceDTORailSpecificationV3TRAStation
 			if err := m.StationExits[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("StationExits" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("StationExits" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

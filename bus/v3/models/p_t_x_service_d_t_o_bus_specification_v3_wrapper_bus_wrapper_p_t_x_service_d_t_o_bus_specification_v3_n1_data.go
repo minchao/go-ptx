@@ -122,6 +122,8 @@ func (m *PTXServiceDTOBusSpecificationV3WrapperBusWrapperPTXServiceDTOBusSpecifi
 			if err := m.N1Datas[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("N1Datas" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("N1Datas" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -198,6 +200,8 @@ func (m *PTXServiceDTOBusSpecificationV3WrapperBusWrapperPTXServiceDTOBusSpecifi
 			if err := m.N1Datas[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("N1Datas" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("N1Datas" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

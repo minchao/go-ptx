@@ -109,6 +109,8 @@ func (m *PTXServiceDTORailSpecificationV2MetroMRTAlertListAlertScope) validateLi
 			if err := m.LineSections[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("LineSections" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("LineSections" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -134,6 +136,8 @@ func (m *PTXServiceDTORailSpecificationV2MetroMRTAlertListAlertScope) validateLi
 			if err := m.Lines[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("Lines" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("Lines" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -167,6 +171,8 @@ func (m *PTXServiceDTORailSpecificationV2MetroMRTAlertListAlertScope) validateRo
 			if err := m.Routes[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("Routes" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("Routes" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -192,6 +198,8 @@ func (m *PTXServiceDTORailSpecificationV2MetroMRTAlertListAlertScope) validateSt
 			if err := m.Stations[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("Stations" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("Stations" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -217,6 +225,8 @@ func (m *PTXServiceDTORailSpecificationV2MetroMRTAlertListAlertScope) validateTr
 			if err := m.Trains[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("Trains" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("Trains" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -269,6 +279,8 @@ func (m *PTXServiceDTORailSpecificationV2MetroMRTAlertListAlertScope) contextVal
 			if err := m.LineSections[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("LineSections" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("LineSections" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -287,6 +299,8 @@ func (m *PTXServiceDTORailSpecificationV2MetroMRTAlertListAlertScope) contextVal
 			if err := m.Lines[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("Lines" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("Lines" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -310,6 +324,8 @@ func (m *PTXServiceDTORailSpecificationV2MetroMRTAlertListAlertScope) contextVal
 			if err := m.Routes[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("Routes" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("Routes" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -328,6 +344,8 @@ func (m *PTXServiceDTORailSpecificationV2MetroMRTAlertListAlertScope) contextVal
 			if err := m.Stations[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("Stations" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("Stations" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -346,6 +364,8 @@ func (m *PTXServiceDTORailSpecificationV2MetroMRTAlertListAlertScope) contextVal
 			if err := m.Trains[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("Trains" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("Trains" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

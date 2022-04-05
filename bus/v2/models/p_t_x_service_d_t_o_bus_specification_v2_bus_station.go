@@ -183,6 +183,8 @@ func (m *PTXServiceDTOBusSpecificationV2BusStation) validateStops(formats strfmt
 			if err := m.Stops[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("Stops" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("Stops" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -255,6 +257,8 @@ func (m *PTXServiceDTOBusSpecificationV2BusStation) contextValidateStops(ctx con
 			if err := m.Stops[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("Stops" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("Stops" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

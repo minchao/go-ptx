@@ -30,9 +30,9 @@ type ClientOption func(*runtime.ClientOperation)
 
 // ClientService is the interface for Client methods
 type ClientService interface {
-	BikeAPIAvailabilityAllCityNearBy(params *BikeAPIAvailabilityAllCityNearByParams, opts ...ClientOption) (*BikeAPIAvailabilityAllCityNearByOK, *BikeAPIAvailabilityAllCityNearByStatus299, error)
+	BikeAPIAvailabilityAllCityNearBy(params *BikeAPIAvailabilityAllCityNearByParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*BikeAPIAvailabilityAllCityNearByOK, *BikeAPIAvailabilityAllCityNearByStatus299, error)
 
-	BikeAPIStationAllCityNearBy(params *BikeAPIStationAllCityNearByParams, opts ...ClientOption) (*BikeAPIStationAllCityNearByOK, *BikeAPIStationAllCityNearByStatus299, error)
+	BikeAPIStationAllCityNearBy(params *BikeAPIStationAllCityNearByParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*BikeAPIStationAllCityNearByOK, *BikeAPIStationAllCityNearByStatus299, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
@@ -42,7 +42,7 @@ type ClientService interface {
 
   取得指定[位置,範圍]的全臺公共自行車即時車位資料
 */
-func (a *Client) BikeAPIAvailabilityAllCityNearBy(params *BikeAPIAvailabilityAllCityNearByParams, opts ...ClientOption) (*BikeAPIAvailabilityAllCityNearByOK, *BikeAPIAvailabilityAllCityNearByStatus299, error) {
+func (a *Client) BikeAPIAvailabilityAllCityNearBy(params *BikeAPIAvailabilityAllCityNearByParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*BikeAPIAvailabilityAllCityNearByOK, *BikeAPIAvailabilityAllCityNearByStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewBikeAPIAvailabilityAllCityNearByParams()
@@ -56,6 +56,7 @@ func (a *Client) BikeAPIAvailabilityAllCityNearBy(params *BikeAPIAvailabilityAll
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &BikeAPIAvailabilityAllCityNearByReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -83,7 +84,7 @@ func (a *Client) BikeAPIAvailabilityAllCityNearBy(params *BikeAPIAvailabilityAll
 
   取得指定[位置,範圍]的全臺公共自行車租借站位資料
 */
-func (a *Client) BikeAPIStationAllCityNearBy(params *BikeAPIStationAllCityNearByParams, opts ...ClientOption) (*BikeAPIStationAllCityNearByOK, *BikeAPIStationAllCityNearByStatus299, error) {
+func (a *Client) BikeAPIStationAllCityNearBy(params *BikeAPIStationAllCityNearByParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*BikeAPIStationAllCityNearByOK, *BikeAPIStationAllCityNearByStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewBikeAPIStationAllCityNearByParams()
@@ -97,6 +98,7 @@ func (a *Client) BikeAPIStationAllCityNearBy(params *BikeAPIStationAllCityNearBy
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &BikeAPIStationAllCityNearByReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}

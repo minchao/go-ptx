@@ -142,6 +142,8 @@ func (m *PTXServiceDTORailSpecificationV2MetroFrequency) validateHeadways(format
 			if err := m.Headways[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("Headways" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("Headways" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -245,6 +247,8 @@ func (m *PTXServiceDTORailSpecificationV2MetroFrequency) contextValidateHeadways
 			if err := m.Headways[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("Headways" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("Headways" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

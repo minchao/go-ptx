@@ -202,6 +202,8 @@ func (m *PTXServiceDTORailSpecificationV2THSROldAvailableSeat) validateStopStati
 			if err := m.StopStations[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("StopStations" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("StopStations" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -261,6 +263,8 @@ func (m *PTXServiceDTORailSpecificationV2THSROldAvailableSeat) contextValidateSt
 			if err := m.StopStations[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("StopStations" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("StopStations" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

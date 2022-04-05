@@ -30,58 +30,59 @@ type ClientOption func(*runtime.ClientOperation)
 
 // ClientService is the interface for Client methods
 type ClientService interface {
-	CityBusAPIEstimatedTimeOfArrivalByStation(params *CityBusAPIEstimatedTimeOfArrivalByStationParams, opts ...ClientOption) (*CityBusAPIEstimatedTimeOfArrivalByStationOK, *CityBusAPIEstimatedTimeOfArrivalByStationStatus299, error)
+	CityBusAPIEstimatedTimeOfArrivalByStation2880(params *CityBusAPIEstimatedTimeOfArrivalByStation2880Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*CityBusAPIEstimatedTimeOfArrivalByStation2880OK, *CityBusAPIEstimatedTimeOfArrivalByStation2880Status299, error)
 
-	CityBusAPIRealTimeByFrequencyByStation(params *CityBusAPIRealTimeByFrequencyByStationParams, opts ...ClientOption) (*CityBusAPIRealTimeByFrequencyByStationOK, *CityBusAPIRealTimeByFrequencyByStationStatus299, error)
+	CityBusAPIRealTimeByFrequencyByStation2878(params *CityBusAPIRealTimeByFrequencyByStation2878Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*CityBusAPIRealTimeByFrequencyByStation2878OK, *CityBusAPIRealTimeByFrequencyByStation2878Status299, error)
 
-	CityBusAPIRealTimeNearStopByStation(params *CityBusAPIRealTimeNearStopByStationParams, opts ...ClientOption) (*CityBusAPIRealTimeNearStopByStationOK, *CityBusAPIRealTimeNearStopByStationStatus299, error)
+	CityBusAPIRealTimeNearStopByStation2879(params *CityBusAPIRealTimeNearStopByStation2879Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*CityBusAPIRealTimeNearStopByStation2879OK, *CityBusAPIRealTimeNearStopByStation2879Status299, error)
 
-	CityBusAPIRouteByStation(params *CityBusAPIRouteByStationParams, opts ...ClientOption) (*CityBusAPIRouteByStationOK, *CityBusAPIRouteByStationStatus299, error)
+	CityBusAPIRouteByStation2881(params *CityBusAPIRouteByStation2881Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*CityBusAPIRouteByStation2881OK, *CityBusAPIRouteByStation2881Status299, error)
 
-	CityBusAPIScheduleByStation(params *CityBusAPIScheduleByStationParams, opts ...ClientOption) (*CityBusAPIScheduleByStationOK, *CityBusAPIScheduleByStationStatus299, error)
+	CityBusAPIScheduleByStation2884(params *CityBusAPIScheduleByStation2884Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*CityBusAPIScheduleByStation2884OK, *CityBusAPIScheduleByStation2884Status299, error)
 
-	CityBusAPIShapeByStation(params *CityBusAPIShapeByStationParams, opts ...ClientOption) (*CityBusAPIShapeByStationOK, *CityBusAPIShapeByStationStatus299, error)
+	CityBusAPIShapeByStation2885(params *CityBusAPIShapeByStation2885Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*CityBusAPIShapeByStation2885OK, *CityBusAPIShapeByStation2885Status299, error)
 
-	CityBusAPIStopOfRouteByStation(params *CityBusAPIStopOfRouteByStationParams, opts ...ClientOption) (*CityBusAPIStopOfRouteByStationOK, *CityBusAPIStopOfRouteByStationStatus299, error)
+	CityBusAPIStopOfRouteByStation2883(params *CityBusAPIStopOfRouteByStation2883Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*CityBusAPIStopOfRouteByStation2883OK, *CityBusAPIStopOfRouteByStation2883Status299, error)
 
-	CityBusAPIStopByStation(params *CityBusAPIStopByStationParams, opts ...ClientOption) (*CityBusAPIStopByStationOK, *CityBusAPIStopByStationStatus299, error)
+	CityBusAPIStopByStation2882(params *CityBusAPIStopByStation2882Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*CityBusAPIStopByStation2882OK, *CityBusAPIStopByStation2882Status299, error)
 
-	InterCityBusAPIEstimatedTimeOfArrivalByStation(params *InterCityBusAPIEstimatedTimeOfArrivalByStationParams, opts ...ClientOption) (*InterCityBusAPIEstimatedTimeOfArrivalByStationOK, *InterCityBusAPIEstimatedTimeOfArrivalByStationStatus299, error)
+	InterCityBusAPIEstimatedTimeOfArrivalByStation2898(params *InterCityBusAPIEstimatedTimeOfArrivalByStation2898Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*InterCityBusAPIEstimatedTimeOfArrivalByStation2898OK, *InterCityBusAPIEstimatedTimeOfArrivalByStation2898Status299, error)
 
-	InterCityBusAPIRealTimeByFrequencyByStation(params *InterCityBusAPIRealTimeByFrequencyByStationParams, opts ...ClientOption) (*InterCityBusAPIRealTimeByFrequencyByStationOK, *InterCityBusAPIRealTimeByFrequencyByStationStatus299, error)
+	InterCityBusAPIRealTimeByFrequencyByStation2896(params *InterCityBusAPIRealTimeByFrequencyByStation2896Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*InterCityBusAPIRealTimeByFrequencyByStation2896OK, *InterCityBusAPIRealTimeByFrequencyByStation2896Status299, error)
 
-	InterCityBusAPIRealTimeNearStopByStation(params *InterCityBusAPIRealTimeNearStopByStationParams, opts ...ClientOption) (*InterCityBusAPIRealTimeNearStopByStationOK, *InterCityBusAPIRealTimeNearStopByStationStatus299, error)
+	InterCityBusAPIRealTimeNearStopByStation2897(params *InterCityBusAPIRealTimeNearStopByStation2897Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*InterCityBusAPIRealTimeNearStopByStation2897OK, *InterCityBusAPIRealTimeNearStopByStation2897Status299, error)
 
-	InterCityBusAPIRouteByStation(params *InterCityBusAPIRouteByStationParams, opts ...ClientOption) (*InterCityBusAPIRouteByStationOK, *InterCityBusAPIRouteByStationStatus299, error)
+	InterCityBusAPIRouteByStation2899(params *InterCityBusAPIRouteByStation2899Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*InterCityBusAPIRouteByStation2899OK, *InterCityBusAPIRouteByStation2899Status299, error)
 
-	InterCityBusAPIScheduleByStation(params *InterCityBusAPIScheduleByStationParams, opts ...ClientOption) (*InterCityBusAPIScheduleByStationOK, *InterCityBusAPIScheduleByStationStatus299, error)
+	InterCityBusAPIScheduleByStation2902(params *InterCityBusAPIScheduleByStation2902Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*InterCityBusAPIScheduleByStation2902OK, *InterCityBusAPIScheduleByStation2902Status299, error)
 
-	InterCityBusAPIShapeByStation(params *InterCityBusAPIShapeByStationParams, opts ...ClientOption) (*InterCityBusAPIShapeByStationOK, *InterCityBusAPIShapeByStationStatus299, error)
+	InterCityBusAPIShapeByStation2903(params *InterCityBusAPIShapeByStation2903Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*InterCityBusAPIShapeByStation2903OK, *InterCityBusAPIShapeByStation2903Status299, error)
 
-	InterCityBusAPIStopOfRouteByStation(params *InterCityBusAPIStopOfRouteByStationParams, opts ...ClientOption) (*InterCityBusAPIStopOfRouteByStationOK, *InterCityBusAPIStopOfRouteByStationStatus299, error)
+	InterCityBusAPIStopOfRouteByStation2901(params *InterCityBusAPIStopOfRouteByStation2901Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*InterCityBusAPIStopOfRouteByStation2901OK, *InterCityBusAPIStopOfRouteByStation2901Status299, error)
 
-	InterCityBusAPIStopByStation(params *InterCityBusAPIStopByStationParams, opts ...ClientOption) (*InterCityBusAPIStopByStationOK, *InterCityBusAPIStopByStationStatus299, error)
+	InterCityBusAPIStopByStation2900(params *InterCityBusAPIStopByStation2900Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*InterCityBusAPIStopByStation2900OK, *InterCityBusAPIStopByStation2900Status299, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
 
 /*
-  CityBusAPIEstimatedTimeOfArrivalByStation 取得指定s 縣市 站位 的市區公車預估到站資料 n1
+  CityBusAPIEstimatedTimeOfArrivalByStation2880 取得指定s 縣市 站位 的市區公車預估到站資料 n1
 */
-func (a *Client) CityBusAPIEstimatedTimeOfArrivalByStation(params *CityBusAPIEstimatedTimeOfArrivalByStationParams, opts ...ClientOption) (*CityBusAPIEstimatedTimeOfArrivalByStationOK, *CityBusAPIEstimatedTimeOfArrivalByStationStatus299, error) {
+func (a *Client) CityBusAPIEstimatedTimeOfArrivalByStation2880(params *CityBusAPIEstimatedTimeOfArrivalByStation2880Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*CityBusAPIEstimatedTimeOfArrivalByStation2880OK, *CityBusAPIEstimatedTimeOfArrivalByStation2880Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewCityBusAPIEstimatedTimeOfArrivalByStationParams()
+		params = NewCityBusAPIEstimatedTimeOfArrivalByStation2880Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "CityBusApi_EstimatedTimeOfArrival_ByStation",
+		ID:                 "CityBusApi_EstimatedTimeOfArrival_ByStation_2880",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/EstimatedTimeOfArrival/City/{City}/PassThrough/Station/{StationID}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &CityBusAPIEstimatedTimeOfArrivalByStationReader{formats: a.formats},
+		Reader:             &CityBusAPIEstimatedTimeOfArrivalByStation2880Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -94,9 +95,9 @@ func (a *Client) CityBusAPIEstimatedTimeOfArrivalByStation(params *CityBusAPIEst
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *CityBusAPIEstimatedTimeOfArrivalByStationOK:
+	case *CityBusAPIEstimatedTimeOfArrivalByStation2880OK:
 		return value, nil, nil
-	case *CityBusAPIEstimatedTimeOfArrivalByStationStatus299:
+	case *CityBusAPIEstimatedTimeOfArrivalByStation2880Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -105,22 +106,23 @@ func (a *Client) CityBusAPIEstimatedTimeOfArrivalByStation(params *CityBusAPIEst
 }
 
 /*
-  CityBusAPIRealTimeByFrequencyByStation 取得指定s 縣市 站位 的市區公車動態定時資料 a1
+  CityBusAPIRealTimeByFrequencyByStation2878 取得指定s 縣市 站位 的市區公車動態定時資料 a1
 */
-func (a *Client) CityBusAPIRealTimeByFrequencyByStation(params *CityBusAPIRealTimeByFrequencyByStationParams, opts ...ClientOption) (*CityBusAPIRealTimeByFrequencyByStationOK, *CityBusAPIRealTimeByFrequencyByStationStatus299, error) {
+func (a *Client) CityBusAPIRealTimeByFrequencyByStation2878(params *CityBusAPIRealTimeByFrequencyByStation2878Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*CityBusAPIRealTimeByFrequencyByStation2878OK, *CityBusAPIRealTimeByFrequencyByStation2878Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewCityBusAPIRealTimeByFrequencyByStationParams()
+		params = NewCityBusAPIRealTimeByFrequencyByStation2878Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "CityBusApi_RealTimeByFrequency_ByStation",
+		ID:                 "CityBusApi_RealTimeByFrequency_ByStation_2878",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/RealTimeByFrequency/City/{City}/PassThrough/Station/{StationID}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &CityBusAPIRealTimeByFrequencyByStationReader{formats: a.formats},
+		Reader:             &CityBusAPIRealTimeByFrequencyByStation2878Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -133,9 +135,9 @@ func (a *Client) CityBusAPIRealTimeByFrequencyByStation(params *CityBusAPIRealTi
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *CityBusAPIRealTimeByFrequencyByStationOK:
+	case *CityBusAPIRealTimeByFrequencyByStation2878OK:
 		return value, nil, nil
-	case *CityBusAPIRealTimeByFrequencyByStationStatus299:
+	case *CityBusAPIRealTimeByFrequencyByStation2878Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -144,22 +146,23 @@ func (a *Client) CityBusAPIRealTimeByFrequencyByStation(params *CityBusAPIRealTi
 }
 
 /*
-  CityBusAPIRealTimeNearStopByStation 取得指定s 縣市 站位 的市區公車動態定點資料 a2
+  CityBusAPIRealTimeNearStopByStation2879 取得指定s 縣市 站位 的市區公車動態定點資料 a2
 */
-func (a *Client) CityBusAPIRealTimeNearStopByStation(params *CityBusAPIRealTimeNearStopByStationParams, opts ...ClientOption) (*CityBusAPIRealTimeNearStopByStationOK, *CityBusAPIRealTimeNearStopByStationStatus299, error) {
+func (a *Client) CityBusAPIRealTimeNearStopByStation2879(params *CityBusAPIRealTimeNearStopByStation2879Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*CityBusAPIRealTimeNearStopByStation2879OK, *CityBusAPIRealTimeNearStopByStation2879Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewCityBusAPIRealTimeNearStopByStationParams()
+		params = NewCityBusAPIRealTimeNearStopByStation2879Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "CityBusApi_RealTimeNearStop_ByStation",
+		ID:                 "CityBusApi_RealTimeNearStop_ByStation_2879",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/RealTimeNearStop/City/{City}/PassThrough/Station/{StationID}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &CityBusAPIRealTimeNearStopByStationReader{formats: a.formats},
+		Reader:             &CityBusAPIRealTimeNearStopByStation2879Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -172,9 +175,9 @@ func (a *Client) CityBusAPIRealTimeNearStopByStation(params *CityBusAPIRealTimeN
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *CityBusAPIRealTimeNearStopByStationOK:
+	case *CityBusAPIRealTimeNearStopByStation2879OK:
 		return value, nil, nil
-	case *CityBusAPIRealTimeNearStopByStationStatus299:
+	case *CityBusAPIRealTimeNearStopByStation2879Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -183,22 +186,23 @@ func (a *Client) CityBusAPIRealTimeNearStopByStation(params *CityBusAPIRealTimeN
 }
 
 /*
-  CityBusAPIRouteByStation 取得指定s 縣市 站位 的市區公車路線資料
+  CityBusAPIRouteByStation2881 取得指定s 縣市 站位 的市區公車路線資料
 */
-func (a *Client) CityBusAPIRouteByStation(params *CityBusAPIRouteByStationParams, opts ...ClientOption) (*CityBusAPIRouteByStationOK, *CityBusAPIRouteByStationStatus299, error) {
+func (a *Client) CityBusAPIRouteByStation2881(params *CityBusAPIRouteByStation2881Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*CityBusAPIRouteByStation2881OK, *CityBusAPIRouteByStation2881Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewCityBusAPIRouteByStationParams()
+		params = NewCityBusAPIRouteByStation2881Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "CityBusApi_Route_ByStation",
+		ID:                 "CityBusApi_Route_ByStation_2881",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/Route/City/{City}/PassThrough/Station/{StationID}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &CityBusAPIRouteByStationReader{formats: a.formats},
+		Reader:             &CityBusAPIRouteByStation2881Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -211,9 +215,9 @@ func (a *Client) CityBusAPIRouteByStation(params *CityBusAPIRouteByStationParams
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *CityBusAPIRouteByStationOK:
+	case *CityBusAPIRouteByStation2881OK:
 		return value, nil, nil
-	case *CityBusAPIRouteByStationStatus299:
+	case *CityBusAPIRouteByStation2881Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -222,22 +226,23 @@ func (a *Client) CityBusAPIRouteByStation(params *CityBusAPIRouteByStationParams
 }
 
 /*
-  CityBusAPIScheduleByStation 取得指定s 縣市 站位 的市區公車路線班表資料
+  CityBusAPIScheduleByStation2884 取得指定s 縣市 站位 的市區公車路線班表資料
 */
-func (a *Client) CityBusAPIScheduleByStation(params *CityBusAPIScheduleByStationParams, opts ...ClientOption) (*CityBusAPIScheduleByStationOK, *CityBusAPIScheduleByStationStatus299, error) {
+func (a *Client) CityBusAPIScheduleByStation2884(params *CityBusAPIScheduleByStation2884Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*CityBusAPIScheduleByStation2884OK, *CityBusAPIScheduleByStation2884Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewCityBusAPIScheduleByStationParams()
+		params = NewCityBusAPIScheduleByStation2884Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "CityBusApi_Schedule_ByStation",
+		ID:                 "CityBusApi_Schedule_ByStation_2884",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/Schedule/City/{City}/PassThrough/Station/{StationID}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &CityBusAPIScheduleByStationReader{formats: a.formats},
+		Reader:             &CityBusAPIScheduleByStation2884Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -250,9 +255,9 @@ func (a *Client) CityBusAPIScheduleByStation(params *CityBusAPIScheduleByStation
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *CityBusAPIScheduleByStationOK:
+	case *CityBusAPIScheduleByStation2884OK:
 		return value, nil, nil
-	case *CityBusAPIScheduleByStationStatus299:
+	case *CityBusAPIScheduleByStation2884Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -261,22 +266,23 @@ func (a *Client) CityBusAPIScheduleByStation(params *CityBusAPIScheduleByStation
 }
 
 /*
-  CityBusAPIShapeByStation 取得指定s 縣市 站位 的市區公車路線線型資料
+  CityBusAPIShapeByStation2885 取得指定s 縣市 站位 的市區公車路線線型資料
 */
-func (a *Client) CityBusAPIShapeByStation(params *CityBusAPIShapeByStationParams, opts ...ClientOption) (*CityBusAPIShapeByStationOK, *CityBusAPIShapeByStationStatus299, error) {
+func (a *Client) CityBusAPIShapeByStation2885(params *CityBusAPIShapeByStation2885Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*CityBusAPIShapeByStation2885OK, *CityBusAPIShapeByStation2885Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewCityBusAPIShapeByStationParams()
+		params = NewCityBusAPIShapeByStation2885Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "CityBusApi_Shape_ByStation",
+		ID:                 "CityBusApi_Shape_ByStation_2885",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/Shape/City/{City}/PassThrough/Station/{StationID}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &CityBusAPIShapeByStationReader{formats: a.formats},
+		Reader:             &CityBusAPIShapeByStation2885Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -289,9 +295,9 @@ func (a *Client) CityBusAPIShapeByStation(params *CityBusAPIShapeByStationParams
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *CityBusAPIShapeByStationOK:
+	case *CityBusAPIShapeByStation2885OK:
 		return value, nil, nil
-	case *CityBusAPIShapeByStationStatus299:
+	case *CityBusAPIShapeByStation2885Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -300,22 +306,23 @@ func (a *Client) CityBusAPIShapeByStation(params *CityBusAPIShapeByStationParams
 }
 
 /*
-  CityBusAPIStopOfRouteByStation 取得指定s 縣市 站位 的市區公車路線站序資料
+  CityBusAPIStopOfRouteByStation2883 取得指定s 縣市 站位 的市區公車路線站序資料
 */
-func (a *Client) CityBusAPIStopOfRouteByStation(params *CityBusAPIStopOfRouteByStationParams, opts ...ClientOption) (*CityBusAPIStopOfRouteByStationOK, *CityBusAPIStopOfRouteByStationStatus299, error) {
+func (a *Client) CityBusAPIStopOfRouteByStation2883(params *CityBusAPIStopOfRouteByStation2883Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*CityBusAPIStopOfRouteByStation2883OK, *CityBusAPIStopOfRouteByStation2883Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewCityBusAPIStopOfRouteByStationParams()
+		params = NewCityBusAPIStopOfRouteByStation2883Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "CityBusApi_StopOfRoute_ByStation",
+		ID:                 "CityBusApi_StopOfRoute_ByStation_2883",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/StopOfRoute/City/{City}/PassThrough/Station/{StationID}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &CityBusAPIStopOfRouteByStationReader{formats: a.formats},
+		Reader:             &CityBusAPIStopOfRouteByStation2883Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -328,9 +335,9 @@ func (a *Client) CityBusAPIStopOfRouteByStation(params *CityBusAPIStopOfRouteByS
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *CityBusAPIStopOfRouteByStationOK:
+	case *CityBusAPIStopOfRouteByStation2883OK:
 		return value, nil, nil
-	case *CityBusAPIStopOfRouteByStationStatus299:
+	case *CityBusAPIStopOfRouteByStation2883Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -339,22 +346,23 @@ func (a *Client) CityBusAPIStopOfRouteByStation(params *CityBusAPIStopOfRouteByS
 }
 
 /*
-  CityBusAPIStopByStation 取得指定s 縣市 站位 的市區公車站牌資料
+  CityBusAPIStopByStation2882 取得指定s 縣市 站位 的市區公車站牌資料
 */
-func (a *Client) CityBusAPIStopByStation(params *CityBusAPIStopByStationParams, opts ...ClientOption) (*CityBusAPIStopByStationOK, *CityBusAPIStopByStationStatus299, error) {
+func (a *Client) CityBusAPIStopByStation2882(params *CityBusAPIStopByStation2882Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*CityBusAPIStopByStation2882OK, *CityBusAPIStopByStation2882Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewCityBusAPIStopByStationParams()
+		params = NewCityBusAPIStopByStation2882Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "CityBusApi_Stop_ByStation",
+		ID:                 "CityBusApi_Stop_ByStation_2882",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/Stop/City/{City}/PassThrough/Station/{StationID}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &CityBusAPIStopByStationReader{formats: a.formats},
+		Reader:             &CityBusAPIStopByStation2882Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -367,9 +375,9 @@ func (a *Client) CityBusAPIStopByStation(params *CityBusAPIStopByStationParams, 
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *CityBusAPIStopByStationOK:
+	case *CityBusAPIStopByStation2882OK:
 		return value, nil, nil
-	case *CityBusAPIStopByStationStatus299:
+	case *CityBusAPIStopByStation2882Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -378,22 +386,23 @@ func (a *Client) CityBusAPIStopByStation(params *CityBusAPIStopByStationParams, 
 }
 
 /*
-  InterCityBusAPIEstimatedTimeOfArrivalByStation 取得指定s 站位 的公路客運預估到站資料 n1
+  InterCityBusAPIEstimatedTimeOfArrivalByStation2898 取得指定s 站位 的公路客運預估到站資料 n1
 */
-func (a *Client) InterCityBusAPIEstimatedTimeOfArrivalByStation(params *InterCityBusAPIEstimatedTimeOfArrivalByStationParams, opts ...ClientOption) (*InterCityBusAPIEstimatedTimeOfArrivalByStationOK, *InterCityBusAPIEstimatedTimeOfArrivalByStationStatus299, error) {
+func (a *Client) InterCityBusAPIEstimatedTimeOfArrivalByStation2898(params *InterCityBusAPIEstimatedTimeOfArrivalByStation2898Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*InterCityBusAPIEstimatedTimeOfArrivalByStation2898OK, *InterCityBusAPIEstimatedTimeOfArrivalByStation2898Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewInterCityBusAPIEstimatedTimeOfArrivalByStationParams()
+		params = NewInterCityBusAPIEstimatedTimeOfArrivalByStation2898Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "InterCityBusApi_EstimatedTimeOfArrival_ByStation",
+		ID:                 "InterCityBusApi_EstimatedTimeOfArrival_ByStation_2898",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/EstimatedTimeOfArrival/InterCity/PassThrough/Station/{StationID}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &InterCityBusAPIEstimatedTimeOfArrivalByStationReader{formats: a.formats},
+		Reader:             &InterCityBusAPIEstimatedTimeOfArrivalByStation2898Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -406,9 +415,9 @@ func (a *Client) InterCityBusAPIEstimatedTimeOfArrivalByStation(params *InterCit
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *InterCityBusAPIEstimatedTimeOfArrivalByStationOK:
+	case *InterCityBusAPIEstimatedTimeOfArrivalByStation2898OK:
 		return value, nil, nil
-	case *InterCityBusAPIEstimatedTimeOfArrivalByStationStatus299:
+	case *InterCityBusAPIEstimatedTimeOfArrivalByStation2898Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -417,22 +426,23 @@ func (a *Client) InterCityBusAPIEstimatedTimeOfArrivalByStation(params *InterCit
 }
 
 /*
-  InterCityBusAPIRealTimeByFrequencyByStation 取得指定s 站位 的公路客運動態定時資料 a1
+  InterCityBusAPIRealTimeByFrequencyByStation2896 取得指定s 站位 的公路客運動態定時資料 a1
 */
-func (a *Client) InterCityBusAPIRealTimeByFrequencyByStation(params *InterCityBusAPIRealTimeByFrequencyByStationParams, opts ...ClientOption) (*InterCityBusAPIRealTimeByFrequencyByStationOK, *InterCityBusAPIRealTimeByFrequencyByStationStatus299, error) {
+func (a *Client) InterCityBusAPIRealTimeByFrequencyByStation2896(params *InterCityBusAPIRealTimeByFrequencyByStation2896Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*InterCityBusAPIRealTimeByFrequencyByStation2896OK, *InterCityBusAPIRealTimeByFrequencyByStation2896Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewInterCityBusAPIRealTimeByFrequencyByStationParams()
+		params = NewInterCityBusAPIRealTimeByFrequencyByStation2896Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "InterCityBusApi_RealTimeByFrequency_ByStation",
+		ID:                 "InterCityBusApi_RealTimeByFrequency_ByStation_2896",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/RealTimeByFrequency/InterCity/PassThrough/Station/{StationID}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &InterCityBusAPIRealTimeByFrequencyByStationReader{formats: a.formats},
+		Reader:             &InterCityBusAPIRealTimeByFrequencyByStation2896Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -445,9 +455,9 @@ func (a *Client) InterCityBusAPIRealTimeByFrequencyByStation(params *InterCityBu
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *InterCityBusAPIRealTimeByFrequencyByStationOK:
+	case *InterCityBusAPIRealTimeByFrequencyByStation2896OK:
 		return value, nil, nil
-	case *InterCityBusAPIRealTimeByFrequencyByStationStatus299:
+	case *InterCityBusAPIRealTimeByFrequencyByStation2896Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -456,22 +466,23 @@ func (a *Client) InterCityBusAPIRealTimeByFrequencyByStation(params *InterCityBu
 }
 
 /*
-  InterCityBusAPIRealTimeNearStopByStation 取得指定s 站位 的公路客運動態定點資料 a2
+  InterCityBusAPIRealTimeNearStopByStation2897 取得指定s 站位 的公路客運動態定點資料 a2
 */
-func (a *Client) InterCityBusAPIRealTimeNearStopByStation(params *InterCityBusAPIRealTimeNearStopByStationParams, opts ...ClientOption) (*InterCityBusAPIRealTimeNearStopByStationOK, *InterCityBusAPIRealTimeNearStopByStationStatus299, error) {
+func (a *Client) InterCityBusAPIRealTimeNearStopByStation2897(params *InterCityBusAPIRealTimeNearStopByStation2897Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*InterCityBusAPIRealTimeNearStopByStation2897OK, *InterCityBusAPIRealTimeNearStopByStation2897Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewInterCityBusAPIRealTimeNearStopByStationParams()
+		params = NewInterCityBusAPIRealTimeNearStopByStation2897Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "InterCityBusApi_RealTimeNearStop_ByStation",
+		ID:                 "InterCityBusApi_RealTimeNearStop_ByStation_2897",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/RealTimeNearStop/InterCity/PassThrough/Station/{StationID}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &InterCityBusAPIRealTimeNearStopByStationReader{formats: a.formats},
+		Reader:             &InterCityBusAPIRealTimeNearStopByStation2897Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -484,9 +495,9 @@ func (a *Client) InterCityBusAPIRealTimeNearStopByStation(params *InterCityBusAP
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *InterCityBusAPIRealTimeNearStopByStationOK:
+	case *InterCityBusAPIRealTimeNearStopByStation2897OK:
 		return value, nil, nil
-	case *InterCityBusAPIRealTimeNearStopByStationStatus299:
+	case *InterCityBusAPIRealTimeNearStopByStation2897Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -495,22 +506,23 @@ func (a *Client) InterCityBusAPIRealTimeNearStopByStation(params *InterCityBusAP
 }
 
 /*
-  InterCityBusAPIRouteByStation 取得指定s 站位 的公路客運路線資料
+  InterCityBusAPIRouteByStation2899 取得指定s 站位 的公路客運路線資料
 */
-func (a *Client) InterCityBusAPIRouteByStation(params *InterCityBusAPIRouteByStationParams, opts ...ClientOption) (*InterCityBusAPIRouteByStationOK, *InterCityBusAPIRouteByStationStatus299, error) {
+func (a *Client) InterCityBusAPIRouteByStation2899(params *InterCityBusAPIRouteByStation2899Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*InterCityBusAPIRouteByStation2899OK, *InterCityBusAPIRouteByStation2899Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewInterCityBusAPIRouteByStationParams()
+		params = NewInterCityBusAPIRouteByStation2899Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "InterCityBusApi_Route_ByStation",
+		ID:                 "InterCityBusApi_Route_ByStation_2899",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/Route/InterCity/PassThrough/Station/{StationID}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &InterCityBusAPIRouteByStationReader{formats: a.formats},
+		Reader:             &InterCityBusAPIRouteByStation2899Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -523,9 +535,9 @@ func (a *Client) InterCityBusAPIRouteByStation(params *InterCityBusAPIRouteBySta
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *InterCityBusAPIRouteByStationOK:
+	case *InterCityBusAPIRouteByStation2899OK:
 		return value, nil, nil
-	case *InterCityBusAPIRouteByStationStatus299:
+	case *InterCityBusAPIRouteByStation2899Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -534,22 +546,23 @@ func (a *Client) InterCityBusAPIRouteByStation(params *InterCityBusAPIRouteBySta
 }
 
 /*
-  InterCityBusAPIScheduleByStation 取得指定s 站位 的公路客運路線班表資料
+  InterCityBusAPIScheduleByStation2902 取得指定s 站位 的公路客運路線班表資料
 */
-func (a *Client) InterCityBusAPIScheduleByStation(params *InterCityBusAPIScheduleByStationParams, opts ...ClientOption) (*InterCityBusAPIScheduleByStationOK, *InterCityBusAPIScheduleByStationStatus299, error) {
+func (a *Client) InterCityBusAPIScheduleByStation2902(params *InterCityBusAPIScheduleByStation2902Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*InterCityBusAPIScheduleByStation2902OK, *InterCityBusAPIScheduleByStation2902Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewInterCityBusAPIScheduleByStationParams()
+		params = NewInterCityBusAPIScheduleByStation2902Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "InterCityBusApi_Schedule_ByStation",
+		ID:                 "InterCityBusApi_Schedule_ByStation_2902",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/Schedule/InterCity/PassThrough/Station/{StationID}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &InterCityBusAPIScheduleByStationReader{formats: a.formats},
+		Reader:             &InterCityBusAPIScheduleByStation2902Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -562,9 +575,9 @@ func (a *Client) InterCityBusAPIScheduleByStation(params *InterCityBusAPISchedul
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *InterCityBusAPIScheduleByStationOK:
+	case *InterCityBusAPIScheduleByStation2902OK:
 		return value, nil, nil
-	case *InterCityBusAPIScheduleByStationStatus299:
+	case *InterCityBusAPIScheduleByStation2902Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -573,22 +586,23 @@ func (a *Client) InterCityBusAPIScheduleByStation(params *InterCityBusAPISchedul
 }
 
 /*
-  InterCityBusAPIShapeByStation 取得指定s 站位 的公路客運線型資料
+  InterCityBusAPIShapeByStation2903 取得指定s 站位 的公路客運線型資料
 */
-func (a *Client) InterCityBusAPIShapeByStation(params *InterCityBusAPIShapeByStationParams, opts ...ClientOption) (*InterCityBusAPIShapeByStationOK, *InterCityBusAPIShapeByStationStatus299, error) {
+func (a *Client) InterCityBusAPIShapeByStation2903(params *InterCityBusAPIShapeByStation2903Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*InterCityBusAPIShapeByStation2903OK, *InterCityBusAPIShapeByStation2903Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewInterCityBusAPIShapeByStationParams()
+		params = NewInterCityBusAPIShapeByStation2903Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "InterCityBusApi_Shape_ByStation",
+		ID:                 "InterCityBusApi_Shape_ByStation_2903",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/Shape/InterCity/PassThrough/Station/{StationID}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &InterCityBusAPIShapeByStationReader{formats: a.formats},
+		Reader:             &InterCityBusAPIShapeByStation2903Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -601,9 +615,9 @@ func (a *Client) InterCityBusAPIShapeByStation(params *InterCityBusAPIShapeBySta
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *InterCityBusAPIShapeByStationOK:
+	case *InterCityBusAPIShapeByStation2903OK:
 		return value, nil, nil
-	case *InterCityBusAPIShapeByStationStatus299:
+	case *InterCityBusAPIShapeByStation2903Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -612,22 +626,23 @@ func (a *Client) InterCityBusAPIShapeByStation(params *InterCityBusAPIShapeBySta
 }
 
 /*
-  InterCityBusAPIStopOfRouteByStation 取得指定s 站位 的公路客運路線站序資料
+  InterCityBusAPIStopOfRouteByStation2901 取得指定s 站位 的公路客運路線站序資料
 */
-func (a *Client) InterCityBusAPIStopOfRouteByStation(params *InterCityBusAPIStopOfRouteByStationParams, opts ...ClientOption) (*InterCityBusAPIStopOfRouteByStationOK, *InterCityBusAPIStopOfRouteByStationStatus299, error) {
+func (a *Client) InterCityBusAPIStopOfRouteByStation2901(params *InterCityBusAPIStopOfRouteByStation2901Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*InterCityBusAPIStopOfRouteByStation2901OK, *InterCityBusAPIStopOfRouteByStation2901Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewInterCityBusAPIStopOfRouteByStationParams()
+		params = NewInterCityBusAPIStopOfRouteByStation2901Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "InterCityBusApi_StopOfRoute_ByStation",
+		ID:                 "InterCityBusApi_StopOfRoute_ByStation_2901",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/StopOfRoute/InterCity/PassThrough/Station/{StationID}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &InterCityBusAPIStopOfRouteByStationReader{formats: a.formats},
+		Reader:             &InterCityBusAPIStopOfRouteByStation2901Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -640,9 +655,9 @@ func (a *Client) InterCityBusAPIStopOfRouteByStation(params *InterCityBusAPIStop
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *InterCityBusAPIStopOfRouteByStationOK:
+	case *InterCityBusAPIStopOfRouteByStation2901OK:
 		return value, nil, nil
-	case *InterCityBusAPIStopOfRouteByStationStatus299:
+	case *InterCityBusAPIStopOfRouteByStation2901Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -651,22 +666,23 @@ func (a *Client) InterCityBusAPIStopOfRouteByStation(params *InterCityBusAPIStop
 }
 
 /*
-  InterCityBusAPIStopByStation 取得指定s 站位 的公路客運站牌資料
+  InterCityBusAPIStopByStation2900 取得指定s 站位 的公路客運站牌資料
 */
-func (a *Client) InterCityBusAPIStopByStation(params *InterCityBusAPIStopByStationParams, opts ...ClientOption) (*InterCityBusAPIStopByStationOK, *InterCityBusAPIStopByStationStatus299, error) {
+func (a *Client) InterCityBusAPIStopByStation2900(params *InterCityBusAPIStopByStation2900Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*InterCityBusAPIStopByStation2900OK, *InterCityBusAPIStopByStation2900Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewInterCityBusAPIStopByStationParams()
+		params = NewInterCityBusAPIStopByStation2900Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "InterCityBusApi_Stop_ByStation",
+		ID:                 "InterCityBusApi_Stop_ByStation_2900",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/Stop/InterCity/PassThrough/Station/{StationID}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &InterCityBusAPIStopByStationReader{formats: a.formats},
+		Reader:             &InterCityBusAPIStopByStation2900Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -679,9 +695,9 @@ func (a *Client) InterCityBusAPIStopByStation(params *InterCityBusAPIStopByStati
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *InterCityBusAPIStopByStationOK:
+	case *InterCityBusAPIStopByStation2900OK:
 		return value, nil, nil
-	case *InterCityBusAPIStopByStationStatus299:
+	case *InterCityBusAPIStopByStation2900Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue

@@ -105,6 +105,8 @@ func (m *PTXAPIShipModelShipWrapperPTXServiceDTOShipSpecificationV3Route) valida
 			if err := m.Routes[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("Routes" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("Routes" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -189,6 +191,8 @@ func (m *PTXAPIShipModelShipWrapperPTXServiceDTOShipSpecificationV3Route) contex
 			if err := m.Routes[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("Routes" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("Routes" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

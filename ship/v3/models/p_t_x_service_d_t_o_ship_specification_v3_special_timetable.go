@@ -104,6 +104,8 @@ func (m *PTXServiceDTOShipSpecificationV3SpecialTimetable) validateStoptimes(for
 			if err := m.Stoptimes[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("Stoptimes" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("Stoptimes" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -163,6 +165,8 @@ func (m *PTXServiceDTOShipSpecificationV3SpecialTimetable) contextValidateStopti
 			if err := m.Stoptimes[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("Stoptimes" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("Stoptimes" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

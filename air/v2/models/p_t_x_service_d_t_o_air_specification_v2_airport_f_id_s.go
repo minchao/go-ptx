@@ -95,6 +95,8 @@ func (m *PTXServiceDTOAirSpecificationV2AirportFIDS) validateFIDSArrival(formats
 			if err := m.FIDSArrival[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("FIDSArrival" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("FIDSArrival" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -119,6 +121,8 @@ func (m *PTXServiceDTOAirSpecificationV2AirportFIDS) validateFIDSDeparture(forma
 			if err := m.FIDSDeparture[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("FIDSDeparture" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("FIDSDeparture" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -168,6 +172,8 @@ func (m *PTXServiceDTOAirSpecificationV2AirportFIDS) contextValidateFIDSArrival(
 			if err := m.FIDSArrival[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("FIDSArrival" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("FIDSArrival" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -186,6 +192,8 @@ func (m *PTXServiceDTOAirSpecificationV2AirportFIDS) contextValidateFIDSDepartur
 			if err := m.FIDSDeparture[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("FIDSDeparture" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("FIDSDeparture" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

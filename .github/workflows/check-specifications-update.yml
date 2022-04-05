@@ -25,7 +25,7 @@ jobs:
 
       - uses: minchao/setup-go-swagger@v1
         with:
-          version: v0.27.0
+          version: v0.29.0
 
       - name: Fetche all newest openapi specifications
         run: make spec

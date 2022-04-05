@@ -149,6 +149,8 @@ func (m *PTXServiceDTORailSpecificationV2MetroS2STravelTime) validateTravelTimes
 			if err := m.TravelTimes[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("TravelTimes" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("TravelTimes" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -203,6 +205,8 @@ func (m *PTXServiceDTORailSpecificationV2MetroS2STravelTime) contextValidateTrav
 			if err := m.TravelTimes[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("TravelTimes" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("TravelTimes" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

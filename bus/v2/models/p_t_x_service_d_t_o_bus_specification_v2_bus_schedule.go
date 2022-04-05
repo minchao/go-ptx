@@ -179,6 +179,8 @@ func (m *PTXServiceDTOBusSpecificationV2BusSchedule) validateFrequencys(formats 
 			if err := m.Frequencys[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("Frequencys" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("Frequencys" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -249,6 +251,8 @@ func (m *PTXServiceDTOBusSpecificationV2BusSchedule) validateTimetables(formats 
 			if err := m.Timetables[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("Timetables" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("Timetables" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -315,6 +319,8 @@ func (m *PTXServiceDTOBusSpecificationV2BusSchedule) contextValidateFrequencys(c
 			if err := m.Frequencys[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("Frequencys" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("Frequencys" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -343,6 +349,8 @@ func (m *PTXServiceDTOBusSpecificationV2BusSchedule) contextValidateTimetables(c
 			if err := m.Timetables[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("Timetables" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("Timetables" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

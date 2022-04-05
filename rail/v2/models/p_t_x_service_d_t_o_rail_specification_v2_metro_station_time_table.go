@@ -202,6 +202,8 @@ func (m *PTXServiceDTORailSpecificationV2MetroStationTimeTable) validateSpecialD
 			if err := m.SpecialDays[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("SpecialDays" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("SpecialDays" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -254,6 +256,8 @@ func (m *PTXServiceDTORailSpecificationV2MetroStationTimeTable) validateTimetabl
 			if err := m.Timetables[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("Timetables" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("Timetables" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -334,6 +338,8 @@ func (m *PTXServiceDTORailSpecificationV2MetroStationTimeTable) contextValidateS
 			if err := m.SpecialDays[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("SpecialDays" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("SpecialDays" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -357,6 +363,8 @@ func (m *PTXServiceDTORailSpecificationV2MetroStationTimeTable) contextValidateT
 			if err := m.Timetables[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("Timetables" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("Timetables" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

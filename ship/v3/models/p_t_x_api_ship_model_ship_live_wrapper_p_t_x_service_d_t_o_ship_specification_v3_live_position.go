@@ -116,6 +116,8 @@ func (m *PTXAPIShipModelShipLiveWrapperPTXServiceDTOShipSpecificationV3LivePosit
 			if err := m.LivePositions[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("LivePositions" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("LivePositions" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -192,6 +194,8 @@ func (m *PTXAPIShipModelShipLiveWrapperPTXServiceDTOShipSpecificationV3LivePosit
 			if err := m.LivePositions[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("LivePositions" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("LivePositions" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

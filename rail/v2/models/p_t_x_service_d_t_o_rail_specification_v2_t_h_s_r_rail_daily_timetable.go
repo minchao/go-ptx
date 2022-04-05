@@ -106,6 +106,8 @@ func (m *PTXServiceDTORailSpecificationV2THSRRailDailyTimetable) validateStopTim
 			if err := m.StopTimes[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("StopTimes" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("StopTimes" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -178,6 +180,8 @@ func (m *PTXServiceDTORailSpecificationV2THSRRailDailyTimetable) contextValidate
 			if err := m.StopTimes[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("StopTimes" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("StopTimes" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

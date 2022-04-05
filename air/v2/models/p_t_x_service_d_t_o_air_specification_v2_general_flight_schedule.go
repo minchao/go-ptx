@@ -261,6 +261,8 @@ func (m *PTXServiceDTOAirSpecificationV2GeneralFlightSchedule) validateCodeShare
 			if err := m.CodeShare[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("CodeShare" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("CodeShare" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -431,6 +433,8 @@ func (m *PTXServiceDTOAirSpecificationV2GeneralFlightSchedule) contextValidateCo
 			if err := m.CodeShare[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("CodeShare" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("CodeShare" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

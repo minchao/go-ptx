@@ -36,7 +36,7 @@ type PTXServiceDTOBusSpecificationV2BusVehicleInfo struct {
 
 	// Int32
 	//
-	// 車輛種類 : [0:'一般',1:'無障礙公車',2:'復康巴士',3:'小型巴士']
+	// 車輛種類 : [0:'一般',1:'無障礙公車',2:'復康巴士',3:'小型巴士',4:'專車',5:'其他']
 	// Required: true
 	VehicleType *int64 `json:"VehicleType"`
 }

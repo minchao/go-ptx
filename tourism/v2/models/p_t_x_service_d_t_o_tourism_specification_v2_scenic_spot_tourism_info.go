@@ -58,12 +58,6 @@ type PTXServiceDTOTourismSpecificationV2ScenicSpotTourismInfo struct {
 
 	// String
 	//
-	// 景點代碼
-	// Required: true
-	ID *string `json:"ID" xml:"String"`
-
-	// String
-	//
 	// 常用搜尋關鍵字
 	Keyword string `json:"Keyword,omitempty" xml:"String,omitempty"`
 
@@ -76,11 +70,6 @@ type PTXServiceDTOTourismSpecificationV2ScenicSpotTourismInfo struct {
 	//
 	// 景點地圖/簡圖介紹網址
 	MapURL string `json:"MapUrl,omitempty" xml:"String,omitempty"`
-
-	// String
-	//
-	// 景點名稱
-	Name string `json:"Name,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
@@ -173,10 +162,6 @@ type PTXServiceDTOTourismSpecificationV2ScenicSpotTourismInfo struct {
 func (m *PTXServiceDTOTourismSpecificationV2ScenicSpotTourismInfo) Validate(formats strfmt.Registry) error {
 	var res []error
 
-	if err := m.validateID(formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.validateParkingPosition(formats); err != nil {
 		res = append(res, err)
 	}
@@ -204,15 +189,6 @@ func (m *PTXServiceDTOTourismSpecificationV2ScenicSpotTourismInfo) Validate(form
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
-	return nil
-}
-
-func (m *PTXServiceDTOTourismSpecificationV2ScenicSpotTourismInfo) validateID(formats strfmt.Registry) error {
-
-	if err := validate.Required("ID", "body", m.ID); err != nil {
-		return err
-	}
-
 	return nil
 }
 

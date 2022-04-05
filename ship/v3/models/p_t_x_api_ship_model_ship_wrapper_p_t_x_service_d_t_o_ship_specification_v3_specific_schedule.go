@@ -105,6 +105,8 @@ func (m *PTXAPIShipModelShipWrapperPTXServiceDTOShipSpecificationV3SpecificSched
 			if err := m.SpecificSchedules[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("SpecificSchedules" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("SpecificSchedules" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -189,6 +191,8 @@ func (m *PTXAPIShipModelShipWrapperPTXServiceDTOShipSpecificationV3SpecificSched
 			if err := m.SpecificSchedules[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("SpecificSchedules" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("SpecificSchedules" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

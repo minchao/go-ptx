@@ -118,6 +118,8 @@ func (m *PTXAPIRailModelTRABaseWrapperPTXServiceDTORailSpecificationV3TRALineTra
 			if err := m.LineTransfers[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("LineTransfers" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("LineTransfers" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -194,6 +196,8 @@ func (m *PTXAPIRailModelTRABaseWrapperPTXServiceDTORailSpecificationV3TRALineTra
 			if err := m.LineTransfers[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("LineTransfers" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("LineTransfers" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

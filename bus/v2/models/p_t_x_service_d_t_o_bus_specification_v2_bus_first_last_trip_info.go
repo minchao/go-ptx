@@ -172,6 +172,8 @@ func (m *PTXServiceDTOBusSpecificationV2BusFirstLastTripInfo) validateFirstLastT
 			if err := m.FirstLastTrips[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("FirstLastTrips" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("FirstLastTrips" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -289,6 +291,8 @@ func (m *PTXServiceDTOBusSpecificationV2BusFirstLastTripInfo) contextValidateFir
 			if err := m.FirstLastTrips[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("FirstLastTrips" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("FirstLastTrips" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

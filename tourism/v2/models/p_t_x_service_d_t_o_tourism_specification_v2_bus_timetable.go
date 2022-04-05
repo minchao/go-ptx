@@ -90,6 +90,8 @@ func (m *PTXServiceDTOTourismSpecificationV2BusTimetable) validateSpecialDays(fo
 			if err := m.SpecialDays[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("SpecialDays" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("SpecialDays" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -115,6 +117,8 @@ func (m *PTXServiceDTOTourismSpecificationV2BusTimetable) validateStopTimes(form
 			if err := m.StopTimes[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("StopTimes" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("StopTimes" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -160,6 +164,8 @@ func (m *PTXServiceDTOTourismSpecificationV2BusTimetable) contextValidateSpecial
 			if err := m.SpecialDays[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("SpecialDays" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("SpecialDays" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -178,6 +184,8 @@ func (m *PTXServiceDTOTourismSpecificationV2BusTimetable) contextValidateStopTim
 			if err := m.StopTimes[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("StopTimes" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("StopTimes" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

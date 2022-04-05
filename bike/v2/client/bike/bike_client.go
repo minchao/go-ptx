@@ -30,11 +30,11 @@ type ClientOption func(*runtime.ClientOperation)
 
 // ClientService is the interface for Client methods
 type ClientService interface {
-	BikeAPIAvailability(params *BikeAPIAvailabilityParams, opts ...ClientOption) (*BikeAPIAvailabilityOK, *BikeAPIAvailabilityStatus299, error)
+	BikeAPIAvailability(params *BikeAPIAvailabilityParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*BikeAPIAvailabilityOK, *BikeAPIAvailabilityStatus299, error)
 
-	BikeAPIStation(params *BikeAPIStationParams, opts ...ClientOption) (*BikeAPIStationOK, *BikeAPIStationStatus299, error)
+	BikeAPIStation(params *BikeAPIStationParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*BikeAPIStationOK, *BikeAPIStationStatus299, error)
 
-	CyclingAPIShape(params *CyclingAPIShapeParams, opts ...ClientOption) (*CyclingAPIShapeOK, *CyclingAPIShapeStatus299, error)
+	CyclingAPIShape(params *CyclingAPIShapeParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*CyclingAPIShapeOK, *CyclingAPIShapeStatus299, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
@@ -44,7 +44,7 @@ type ClientService interface {
 
   取得動態指定[縣市]的公共自行車即時車位資料
 */
-func (a *Client) BikeAPIAvailability(params *BikeAPIAvailabilityParams, opts ...ClientOption) (*BikeAPIAvailabilityOK, *BikeAPIAvailabilityStatus299, error) {
+func (a *Client) BikeAPIAvailability(params *BikeAPIAvailabilityParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*BikeAPIAvailabilityOK, *BikeAPIAvailabilityStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewBikeAPIAvailabilityParams()
@@ -58,6 +58,7 @@ func (a *Client) BikeAPIAvailability(params *BikeAPIAvailabilityParams, opts ...
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &BikeAPIAvailabilityReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -85,7 +86,7 @@ func (a *Client) BikeAPIAvailability(params *BikeAPIAvailabilityParams, opts ...
 
   取得指定[縣市]的公共自行車租借站位資料
 */
-func (a *Client) BikeAPIStation(params *BikeAPIStationParams, opts ...ClientOption) (*BikeAPIStationOK, *BikeAPIStationStatus299, error) {
+func (a *Client) BikeAPIStation(params *BikeAPIStationParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*BikeAPIStationOK, *BikeAPIStationStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewBikeAPIStationParams()
@@ -99,6 +100,7 @@ func (a *Client) BikeAPIStation(params *BikeAPIStationParams, opts ...ClientOpti
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &BikeAPIStationReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -126,7 +128,7 @@ func (a *Client) BikeAPIStation(params *BikeAPIStationParams, opts ...ClientOpti
 
   取得指定縣市之自行車道路網圖資
 */
-func (a *Client) CyclingAPIShape(params *CyclingAPIShapeParams, opts ...ClientOption) (*CyclingAPIShapeOK, *CyclingAPIShapeStatus299, error) {
+func (a *Client) CyclingAPIShape(params *CyclingAPIShapeParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*CyclingAPIShapeOK, *CyclingAPIShapeStatus299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
 		params = NewCyclingAPIShapeParams()
@@ -140,6 +142,7 @@ func (a *Client) CyclingAPIShape(params *CyclingAPIShapeParams, opts ...ClientOp
 		Schemes:            []string{"https"},
 		Params:             params,
 		Reader:             &CyclingAPIShapeReader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}

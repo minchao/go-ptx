@@ -18,9 +18,9 @@ func init() {
 }
 
 func TestShipV3_ShipAPIPort(t *testing.T) {
-	params := ship_basic.NewShipBasicPortParams().
+	params := ship_basic.NewShipBasicPort3231Params().
 		WithDollarFormat("JSON")
-	result, _, err := shipV3Client.ShipBasic.ShipBasicPort(params)
+	result, _, err := shipV3Client.ShipBasic.ShipBasicPort3231(params, nil)
 	require.NoError(t, err)
 	if len(result.Payload.Ports) == 0 {
 		t.Fatal("Ship.ShipAPIPort return no data")

@@ -73,12 +73,6 @@ type PTXServiceDTOTourismSpecificationV2ActivityTourismInfo struct {
 
 	// String
 	//
-	// 活動訊息代碼
-	// Required: true
-	ID *string `json:"ID" xml:"String"`
-
-	// String
-	//
 	// 主要活動地點名稱
 	Location string `json:"Location,omitempty" xml:"String,omitempty"`
 
@@ -86,11 +80,6 @@ type PTXServiceDTOTourismSpecificationV2ActivityTourismInfo struct {
 	//
 	// 活動地圖/簡圖連結網址
 	MapURL string `json:"MapUrl,omitempty" xml:"String,omitempty"`
-
-	// String
-	//
-	// 活動名稱
-	Name string `json:"Name,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
@@ -173,10 +162,6 @@ func (m *PTXServiceDTOTourismSpecificationV2ActivityTourismInfo) Validate(format
 		res = append(res, err)
 	}
 
-	if err := m.validateID(formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.validatePicture(formats); err != nil {
 		res = append(res, err)
 	}
@@ -218,15 +203,6 @@ func (m *PTXServiceDTOTourismSpecificationV2ActivityTourismInfo) validateEndTime
 	}
 
 	if err := validate.FormatOf("EndTime", "body", "date-time", m.EndTime.String(), formats); err != nil {
-		return err
-	}
-
-	return nil
-}
-
-func (m *PTXServiceDTOTourismSpecificationV2ActivityTourismInfo) validateID(formats strfmt.Registry) error {
-
-	if err := validate.Required("ID", "body", m.ID); err != nil {
 		return err
 	}
 

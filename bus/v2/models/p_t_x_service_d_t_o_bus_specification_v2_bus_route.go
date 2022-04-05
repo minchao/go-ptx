@@ -242,6 +242,8 @@ func (m *PTXServiceDTOBusSpecificationV2BusRoute) validateOperators(formats strf
 			if err := m.Operators[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("Operators" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("Operators" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -298,6 +300,8 @@ func (m *PTXServiceDTOBusSpecificationV2BusRoute) validateSubRoutes(formats strf
 			if err := m.SubRoutes[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("SubRoutes" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("SubRoutes" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -360,6 +364,8 @@ func (m *PTXServiceDTOBusSpecificationV2BusRoute) contextValidateOperators(ctx c
 			if err := m.Operators[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("Operators" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("Operators" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -383,6 +389,8 @@ func (m *PTXServiceDTOBusSpecificationV2BusRoute) contextValidateSubRoutes(ctx c
 			if err := m.SubRoutes[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("SubRoutes" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("SubRoutes" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

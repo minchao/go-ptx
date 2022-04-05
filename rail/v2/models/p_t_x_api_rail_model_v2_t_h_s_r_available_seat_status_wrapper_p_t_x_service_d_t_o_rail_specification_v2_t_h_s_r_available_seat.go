@@ -80,6 +80,8 @@ func (m *PTXAPIRailModelV2THSRAvailableSeatStatusWrapperPTXServiceDTORailSpecifi
 			if err := m.AvailableSeats[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("AvailableSeats" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("AvailableSeats" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -136,6 +138,8 @@ func (m *PTXAPIRailModelV2THSRAvailableSeatStatusWrapperPTXServiceDTORailSpecifi
 			if err := m.AvailableSeats[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("AvailableSeats" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("AvailableSeats" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

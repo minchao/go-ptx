@@ -136,6 +136,8 @@ func (m *PTXServiceDTOBusSpecificationV3StopOfRoute) validateOperators(formats s
 			if err := m.Operators[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("Operators" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("Operators" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -184,6 +186,8 @@ func (m *PTXServiceDTOBusSpecificationV3StopOfRoute) validateStops(formats strfm
 			if err := m.Stops[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("Stops" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("Stops" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -236,6 +240,8 @@ func (m *PTXServiceDTOBusSpecificationV3StopOfRoute) contextValidateOperators(ct
 			if err := m.Operators[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("Operators" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("Operators" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -259,6 +265,8 @@ func (m *PTXServiceDTOBusSpecificationV3StopOfRoute) contextValidateStops(ctx co
 			if err := m.Stops[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("Stops" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("Stops" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

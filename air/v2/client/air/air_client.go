@@ -30,60 +30,61 @@ type ClientOption func(*runtime.ClientOperation)
 
 // ClientService is the interface for Client methods
 type ClientService interface {
-	AirAPIAirline(params *AirAPIAirlineParams, opts ...ClientOption) (*AirAPIAirlineOK, *AirAPIAirlineStatus299, error)
+	AirAPIAirline2011(params *AirAPIAirline2011Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*AirAPIAirline2011OK, *AirAPIAirline2011Status299, error)
 
-	AirAPIAirline1(params *AirAPIAirline1Params, opts ...ClientOption) (*AirAPIAirline1OK, *AirAPIAirline1Status299, error)
+	AirAPIAirline20111(params *AirAPIAirline20111Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*AirAPIAirline20111OK, *AirAPIAirline20111Status299, error)
 
-	AirAPIAirport(params *AirAPIAirportParams, opts ...ClientOption) (*AirAPIAirportOK, *AirAPIAirportStatus299, error)
+	AirAPIAirport2010(params *AirAPIAirport2010Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*AirAPIAirport2010OK, *AirAPIAirport2010Status299, error)
 
-	AirAPIAirport1(params *AirAPIAirport1Params, opts ...ClientOption) (*AirAPIAirport1OK, *AirAPIAirport1Status299, error)
+	AirAPIAirport20101(params *AirAPIAirport20101Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*AirAPIAirport20101OK, *AirAPIAirport20101Status299, error)
 
-	AirAPIArrival(params *AirAPIArrivalParams, opts ...ClientOption) (*AirAPIArrivalOK, *AirAPIArrivalStatus299, error)
+	AirAPIArrival2013(params *AirAPIArrival2013Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*AirAPIArrival2013OK, *AirAPIArrival2013Status299, error)
 
-	AirAPIArrival1(params *AirAPIArrival1Params, opts ...ClientOption) (*AirAPIArrival1OK, *AirAPIArrival1Status299, error)
+	AirAPIArrival20131(params *AirAPIArrival20131Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*AirAPIArrival20131OK, *AirAPIArrival20131Status299, error)
 
-	AirAPIDeparture(params *AirAPIDepartureParams, opts ...ClientOption) (*AirAPIDepartureOK, *AirAPIDepartureStatus299, error)
+	AirAPIDeparture2012(params *AirAPIDeparture2012Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*AirAPIDeparture2012OK, *AirAPIDeparture2012Status299, error)
 
-	AirAPIDeparture1(params *AirAPIDeparture1Params, opts ...ClientOption) (*AirAPIDeparture1OK, *AirAPIDeparture1Status299, error)
+	AirAPIDeparture20121(params *AirAPIDeparture20121Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*AirAPIDeparture20121OK, *AirAPIDeparture20121Status299, error)
 
-	AirAPIDomestic(params *AirAPIDomesticParams, opts ...ClientOption) (*AirAPIDomesticOK, *AirAPIDomesticStatus299, error)
+	AirAPIDomestic2017(params *AirAPIDomestic2017Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*AirAPIDomestic2017OK, *AirAPIDomestic2017Status299, error)
 
-	AirAPIFIDS(params *AirAPIFIDSParams, opts ...ClientOption) (*AirAPIFIDSOK, *AirAPIFIDSStatus299, error)
+	AirAPIFIDS2015(params *AirAPIFIDS2015Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*AirAPIFIDS2015OK, *AirAPIFIDS2015Status299, error)
 
-	AirAPIFIDS1(params *AirAPIFIDS1Params, opts ...ClientOption) (*AirAPIFIDS1OK, *AirAPIFIDS1Status299, error)
+	AirAPIFIDS20151(params *AirAPIFIDS20151Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*AirAPIFIDS20151OK, *AirAPIFIDS20151Status299, error)
 
-	AirAPIFlight(params *AirAPIFlightParams, opts ...ClientOption) (*AirAPIFlightOK, *AirAPIFlightStatus299, error)
+	AirAPIFlight2014(params *AirAPIFlight2014Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*AirAPIFlight2014OK, *AirAPIFlight2014Status299, error)
 
-	AirAPIFlight1(params *AirAPIFlight1Params, opts ...ClientOption) (*AirAPIFlight1OK, *AirAPIFlight1Status299, error)
+	AirAPIFlight20141(params *AirAPIFlight20141Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*AirAPIFlight20141OK, *AirAPIFlight20141Status299, error)
 
-	AirAPIInternational(params *AirAPIInternationalParams, opts ...ClientOption) (*AirAPIInternationalOK, *AirAPIInternationalStatus299, error)
+	AirAPIInternational2018(params *AirAPIInternational2018Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*AirAPIInternational2018OK, *AirAPIInternational2018Status299, error)
 
-	AirAPIMETAR(params *AirAPIMETARParams, opts ...ClientOption) (*AirAPIMETAROK, *AirAPIMETARStatus299, error)
+	AirAPIMETAR2016(params *AirAPIMETAR2016Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*AirAPIMETAR2016OK, *AirAPIMETAR2016Status299, error)
 
-	AirAPIMETAR1(params *AirAPIMETAR1Params, opts ...ClientOption) (*AirAPIMETAR1OK, *AirAPIMETAR1Status299, error)
+	AirAPIMETAR20161(params *AirAPIMETAR20161Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*AirAPIMETAR20161OK, *AirAPIMETAR20161Status299, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
 
 /*
-  AirAPIAirline 取得指定s 航空公司 資料
+  AirAPIAirline2011 取得指定s 航空公司 資料
 
   取得指定[航空公司]資料
 */
-func (a *Client) AirAPIAirline(params *AirAPIAirlineParams, opts ...ClientOption) (*AirAPIAirlineOK, *AirAPIAirlineStatus299, error) {
+func (a *Client) AirAPIAirline2011(params *AirAPIAirline2011Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*AirAPIAirline2011OK, *AirAPIAirline2011Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewAirAPIAirlineParams()
+		params = NewAirAPIAirline2011Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "AirApi_Airline",
+		ID:                 "AirApi_Airline_2011",
 		Method:             "GET",
 		PathPattern:        "/v2/Air/Airline/{IATA}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &AirAPIAirlineReader{formats: a.formats},
+		Reader:             &AirAPIAirline2011Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -96,9 +97,9 @@ func (a *Client) AirAPIAirline(params *AirAPIAirlineParams, opts ...ClientOption
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *AirAPIAirlineOK:
+	case *AirAPIAirline2011OK:
 		return value, nil, nil
-	case *AirAPIAirlineStatus299:
+	case *AirAPIAirline2011Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -107,24 +108,25 @@ func (a *Client) AirAPIAirline(params *AirAPIAirlineParams, opts ...ClientOption
 }
 
 /*
-  AirAPIAirline1 取得航空公司資料s
+  AirAPIAirline20111 取得航空公司資料s
 
   取得所有航空公司資料
 */
-func (a *Client) AirAPIAirline1(params *AirAPIAirline1Params, opts ...ClientOption) (*AirAPIAirline1OK, *AirAPIAirline1Status299, error) {
+func (a *Client) AirAPIAirline20111(params *AirAPIAirline20111Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*AirAPIAirline20111OK, *AirAPIAirline20111Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewAirAPIAirline1Params()
+		params = NewAirAPIAirline20111Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "AirApi_Airline_1",
+		ID:                 "AirApi_Airline_2011_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Air/Airline",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &AirAPIAirline1Reader{formats: a.formats},
+		Reader:             &AirAPIAirline20111Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -137,9 +139,9 @@ func (a *Client) AirAPIAirline1(params *AirAPIAirline1Params, opts ...ClientOpti
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *AirAPIAirline1OK:
+	case *AirAPIAirline20111OK:
 		return value, nil, nil
-	case *AirAPIAirline1Status299:
+	case *AirAPIAirline20111Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -148,24 +150,25 @@ func (a *Client) AirAPIAirline1(params *AirAPIAirline1Params, opts ...ClientOpti
 }
 
 /*
-  AirAPIAirport 取得機場資料s
+  AirAPIAirport2010 取得機場資料s
 
   取得所有機場資料
 */
-func (a *Client) AirAPIAirport(params *AirAPIAirportParams, opts ...ClientOption) (*AirAPIAirportOK, *AirAPIAirportStatus299, error) {
+func (a *Client) AirAPIAirport2010(params *AirAPIAirport2010Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*AirAPIAirport2010OK, *AirAPIAirport2010Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewAirAPIAirportParams()
+		params = NewAirAPIAirport2010Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "AirApi_Airport",
+		ID:                 "AirApi_Airport_2010",
 		Method:             "GET",
 		PathPattern:        "/v2/Air/Airport",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &AirAPIAirportReader{formats: a.formats},
+		Reader:             &AirAPIAirport2010Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -178,9 +181,9 @@ func (a *Client) AirAPIAirport(params *AirAPIAirportParams, opts ...ClientOption
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *AirAPIAirportOK:
+	case *AirAPIAirport2010OK:
 		return value, nil, nil
-	case *AirAPIAirportStatus299:
+	case *AirAPIAirport2010Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -189,24 +192,25 @@ func (a *Client) AirAPIAirport(params *AirAPIAirportParams, opts ...ClientOption
 }
 
 /*
-  AirAPIAirport1 取得指定s 機場 資料
+  AirAPIAirport20101 取得指定s 機場 資料
 
   取得指定[機場]資料
 */
-func (a *Client) AirAPIAirport1(params *AirAPIAirport1Params, opts ...ClientOption) (*AirAPIAirport1OK, *AirAPIAirport1Status299, error) {
+func (a *Client) AirAPIAirport20101(params *AirAPIAirport20101Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*AirAPIAirport20101OK, *AirAPIAirport20101Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewAirAPIAirport1Params()
+		params = NewAirAPIAirport20101Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "AirApi_Airport_1",
+		ID:                 "AirApi_Airport_2010_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Air/Airport/{IATA}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &AirAPIAirport1Reader{formats: a.formats},
+		Reader:             &AirAPIAirport20101Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -219,9 +223,9 @@ func (a *Client) AirAPIAirport1(params *AirAPIAirport1Params, opts ...ClientOpti
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *AirAPIAirport1OK:
+	case *AirAPIAirport20101OK:
 		return value, nil, nil
-	case *AirAPIAirport1Status299:
+	case *AirAPIAirport20101Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -230,24 +234,25 @@ func (a *Client) AirAPIAirport1(params *AirAPIAirport1Params, opts ...ClientOpti
 }
 
 /*
-  AirAPIArrival 取得機場的即時入境航班s
+  AirAPIArrival2013 取得機場的即時入境航班s
 
   取得機場的即時入境航班
 */
-func (a *Client) AirAPIArrival(params *AirAPIArrivalParams, opts ...ClientOption) (*AirAPIArrivalOK, *AirAPIArrivalStatus299, error) {
+func (a *Client) AirAPIArrival2013(params *AirAPIArrival2013Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*AirAPIArrival2013OK, *AirAPIArrival2013Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewAirAPIArrivalParams()
+		params = NewAirAPIArrival2013Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "AirApi_Arrival",
+		ID:                 "AirApi_Arrival_2013",
 		Method:             "GET",
 		PathPattern:        "/v2/Air/FIDS/Airport/Arrival",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &AirAPIArrivalReader{formats: a.formats},
+		Reader:             &AirAPIArrival2013Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -260,9 +265,9 @@ func (a *Client) AirAPIArrival(params *AirAPIArrivalParams, opts ...ClientOption
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *AirAPIArrivalOK:
+	case *AirAPIArrival2013OK:
 		return value, nil, nil
-	case *AirAPIArrivalStatus299:
+	case *AirAPIArrival2013Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -271,24 +276,25 @@ func (a *Client) AirAPIArrival(params *AirAPIArrivalParams, opts ...ClientOption
 }
 
 /*
-  AirAPIArrival1 取得指定s 機場的即時入境航班
+  AirAPIArrival20131 取得指定s 機場的即時入境航班
 
   取得[指定機場]的即時入境航班
 */
-func (a *Client) AirAPIArrival1(params *AirAPIArrival1Params, opts ...ClientOption) (*AirAPIArrival1OK, *AirAPIArrival1Status299, error) {
+func (a *Client) AirAPIArrival20131(params *AirAPIArrival20131Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*AirAPIArrival20131OK, *AirAPIArrival20131Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewAirAPIArrival1Params()
+		params = NewAirAPIArrival20131Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "AirApi_Arrival_1",
+		ID:                 "AirApi_Arrival_2013_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Air/FIDS/Airport/Arrival/{IATA}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &AirAPIArrival1Reader{formats: a.formats},
+		Reader:             &AirAPIArrival20131Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -301,9 +307,9 @@ func (a *Client) AirAPIArrival1(params *AirAPIArrival1Params, opts ...ClientOpti
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *AirAPIArrival1OK:
+	case *AirAPIArrival20131OK:
 		return value, nil, nil
-	case *AirAPIArrival1Status299:
+	case *AirAPIArrival20131Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -312,24 +318,25 @@ func (a *Client) AirAPIArrival1(params *AirAPIArrival1Params, opts ...ClientOpti
 }
 
 /*
-  AirAPIDeparture 取得機場的即時出境航班s
+  AirAPIDeparture2012 取得機場的即時出境航班s
 
   取得機場的即時出境航班
 */
-func (a *Client) AirAPIDeparture(params *AirAPIDepartureParams, opts ...ClientOption) (*AirAPIDepartureOK, *AirAPIDepartureStatus299, error) {
+func (a *Client) AirAPIDeparture2012(params *AirAPIDeparture2012Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*AirAPIDeparture2012OK, *AirAPIDeparture2012Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewAirAPIDepartureParams()
+		params = NewAirAPIDeparture2012Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "AirApi_Departure",
+		ID:                 "AirApi_Departure_2012",
 		Method:             "GET",
 		PathPattern:        "/v2/Air/FIDS/Airport/Departure",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &AirAPIDepartureReader{formats: a.formats},
+		Reader:             &AirAPIDeparture2012Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -342,9 +349,9 @@ func (a *Client) AirAPIDeparture(params *AirAPIDepartureParams, opts ...ClientOp
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *AirAPIDepartureOK:
+	case *AirAPIDeparture2012OK:
 		return value, nil, nil
-	case *AirAPIDepartureStatus299:
+	case *AirAPIDeparture2012Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -353,24 +360,25 @@ func (a *Client) AirAPIDeparture(params *AirAPIDepartureParams, opts ...ClientOp
 }
 
 /*
-  AirAPIDeparture1 取得指定s 機場的即時出境航班
+  AirAPIDeparture20121 取得指定s 機場的即時出境航班
 
   取得指定的[機場即時出境航班]
 */
-func (a *Client) AirAPIDeparture1(params *AirAPIDeparture1Params, opts ...ClientOption) (*AirAPIDeparture1OK, *AirAPIDeparture1Status299, error) {
+func (a *Client) AirAPIDeparture20121(params *AirAPIDeparture20121Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*AirAPIDeparture20121OK, *AirAPIDeparture20121Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewAirAPIDeparture1Params()
+		params = NewAirAPIDeparture20121Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "AirApi_Departure_1",
+		ID:                 "AirApi_Departure_2012_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Air/FIDS/Airport/Departure/{IATA}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &AirAPIDeparture1Reader{formats: a.formats},
+		Reader:             &AirAPIDeparture20121Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -383,9 +391,9 @@ func (a *Client) AirAPIDeparture1(params *AirAPIDeparture1Params, opts ...Client
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *AirAPIDeparture1OK:
+	case *AirAPIDeparture20121OK:
 		return value, nil, nil
-	case *AirAPIDeparture1Status299:
+	case *AirAPIDeparture20121Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -394,22 +402,23 @@ func (a *Client) AirAPIDeparture1(params *AirAPIDeparture1Params, opts ...Client
 }
 
 /*
-  AirAPIDomestic 取得國內航空定期時刻表s
+  AirAPIDomestic2017 取得國內航空定期時刻表s
 */
-func (a *Client) AirAPIDomestic(params *AirAPIDomesticParams, opts ...ClientOption) (*AirAPIDomesticOK, *AirAPIDomesticStatus299, error) {
+func (a *Client) AirAPIDomestic2017(params *AirAPIDomestic2017Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*AirAPIDomestic2017OK, *AirAPIDomestic2017Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewAirAPIDomesticParams()
+		params = NewAirAPIDomestic2017Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "AirApi_Domestic",
+		ID:                 "AirApi_Domestic_2017",
 		Method:             "GET",
 		PathPattern:        "/v2/Air/GeneralSchedule/Domestic",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &AirAPIDomesticReader{formats: a.formats},
+		Reader:             &AirAPIDomestic2017Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -422,9 +431,9 @@ func (a *Client) AirAPIDomestic(params *AirAPIDomesticParams, opts ...ClientOpti
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *AirAPIDomesticOK:
+	case *AirAPIDomestic2017OK:
 		return value, nil, nil
-	case *AirAPIDomesticStatus299:
+	case *AirAPIDomestic2017Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -433,24 +442,25 @@ func (a *Client) AirAPIDomestic(params *AirAPIDomesticParams, opts ...ClientOpti
 }
 
 /*
-  AirAPIFIDS 取得機場的即時航班資料s
+  AirAPIFIDS2015 取得機場的即時航班資料s
 
   取得即時航班資料
 */
-func (a *Client) AirAPIFIDS(params *AirAPIFIDSParams, opts ...ClientOption) (*AirAPIFIDSOK, *AirAPIFIDSStatus299, error) {
+func (a *Client) AirAPIFIDS2015(params *AirAPIFIDS2015Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*AirAPIFIDS2015OK, *AirAPIFIDS2015Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewAirAPIFIDSParams()
+		params = NewAirAPIFIDS2015Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "AirApi_FIDS",
+		ID:                 "AirApi_FIDS_2015",
 		Method:             "GET",
 		PathPattern:        "/v2/Air/FIDS/Airport",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &AirAPIFIDSReader{formats: a.formats},
+		Reader:             &AirAPIFIDS2015Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -463,9 +473,9 @@ func (a *Client) AirAPIFIDS(params *AirAPIFIDSParams, opts ...ClientOption) (*Ai
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *AirAPIFIDSOK:
+	case *AirAPIFIDS2015OK:
 		return value, nil, nil
-	case *AirAPIFIDSStatus299:
+	case *AirAPIFIDS2015Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -474,24 +484,25 @@ func (a *Client) AirAPIFIDS(params *AirAPIFIDSParams, opts ...ClientOption) (*Ai
 }
 
 /*
-  AirAPIFIDS1 取得指定s 機場的即時航班 資料
+  AirAPIFIDS20151 取得指定s 機場的即時航班 資料
 
   取得指定[機場的即時航班]資料
 */
-func (a *Client) AirAPIFIDS1(params *AirAPIFIDS1Params, opts ...ClientOption) (*AirAPIFIDS1OK, *AirAPIFIDS1Status299, error) {
+func (a *Client) AirAPIFIDS20151(params *AirAPIFIDS20151Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*AirAPIFIDS20151OK, *AirAPIFIDS20151Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewAirAPIFIDS1Params()
+		params = NewAirAPIFIDS20151Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "AirApi_FIDS_1",
+		ID:                 "AirApi_FIDS_2015_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Air/FIDS/Airport/{IATA}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &AirAPIFIDS1Reader{formats: a.formats},
+		Reader:             &AirAPIFIDS20151Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -504,9 +515,9 @@ func (a *Client) AirAPIFIDS1(params *AirAPIFIDS1Params, opts ...ClientOption) (*
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *AirAPIFIDS1OK:
+	case *AirAPIFIDS20151OK:
 		return value, nil, nil
-	case *AirAPIFIDS1Status299:
+	case *AirAPIFIDS20151Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -515,24 +526,25 @@ func (a *Client) AirAPIFIDS1(params *AirAPIFIDS1Params, opts ...ClientOption) (*
 }
 
 /*
-  AirAPIFlight 取得即時航班資料s
+  AirAPIFlight2014 取得即時航班資料s
 
   取得即時航班資料
 */
-func (a *Client) AirAPIFlight(params *AirAPIFlightParams, opts ...ClientOption) (*AirAPIFlightOK, *AirAPIFlightStatus299, error) {
+func (a *Client) AirAPIFlight2014(params *AirAPIFlight2014Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*AirAPIFlight2014OK, *AirAPIFlight2014Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewAirAPIFlightParams()
+		params = NewAirAPIFlight2014Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "AirApi_Flight",
+		ID:                 "AirApi_Flight_2014",
 		Method:             "GET",
 		PathPattern:        "/v2/Air/FIDS/Flight",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &AirAPIFlightReader{formats: a.formats},
+		Reader:             &AirAPIFlight2014Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -545,9 +557,9 @@ func (a *Client) AirAPIFlight(params *AirAPIFlightParams, opts ...ClientOption) 
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *AirAPIFlightOK:
+	case *AirAPIFlight2014OK:
 		return value, nil, nil
-	case *AirAPIFlightStatus299:
+	case *AirAPIFlight2014Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -556,22 +568,23 @@ func (a *Client) AirAPIFlight(params *AirAPIFlightParams, opts ...ClientOption) 
 }
 
 /*
-  AirAPIFlight1 取得指定s 即時航班 資料
+  AirAPIFlight20141 取得指定s 即時航班 資料
 */
-func (a *Client) AirAPIFlight1(params *AirAPIFlight1Params, opts ...ClientOption) (*AirAPIFlight1OK, *AirAPIFlight1Status299, error) {
+func (a *Client) AirAPIFlight20141(params *AirAPIFlight20141Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*AirAPIFlight20141OK, *AirAPIFlight20141Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewAirAPIFlight1Params()
+		params = NewAirAPIFlight20141Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "AirApi_Flight_1",
+		ID:                 "AirApi_Flight_2014_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Air/FIDS/Flight/{FlightNo}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &AirAPIFlight1Reader{formats: a.formats},
+		Reader:             &AirAPIFlight20141Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -584,9 +597,9 @@ func (a *Client) AirAPIFlight1(params *AirAPIFlight1Params, opts ...ClientOption
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *AirAPIFlight1OK:
+	case *AirAPIFlight20141OK:
 		return value, nil, nil
-	case *AirAPIFlight1Status299:
+	case *AirAPIFlight20141Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -595,22 +608,23 @@ func (a *Client) AirAPIFlight1(params *AirAPIFlight1Params, opts ...ClientOption
 }
 
 /*
-  AirAPIInternational 取得國際航空定期時刻表s
+  AirAPIInternational2018 取得國際航空定期時刻表s
 */
-func (a *Client) AirAPIInternational(params *AirAPIInternationalParams, opts ...ClientOption) (*AirAPIInternationalOK, *AirAPIInternationalStatus299, error) {
+func (a *Client) AirAPIInternational2018(params *AirAPIInternational2018Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*AirAPIInternational2018OK, *AirAPIInternational2018Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewAirAPIInternationalParams()
+		params = NewAirAPIInternational2018Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "AirApi_International",
+		ID:                 "AirApi_International_2018",
 		Method:             "GET",
 		PathPattern:        "/v2/Air/GeneralSchedule/International",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &AirAPIInternationalReader{formats: a.formats},
+		Reader:             &AirAPIInternational2018Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -623,9 +637,9 @@ func (a *Client) AirAPIInternational(params *AirAPIInternationalParams, opts ...
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *AirAPIInternationalOK:
+	case *AirAPIInternational2018OK:
 		return value, nil, nil
-	case *AirAPIInternationalStatus299:
+	case *AirAPIInternational2018Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -634,7 +648,7 @@ func (a *Client) AirAPIInternational(params *AirAPIInternationalParams, opts ...
 }
 
 /*
-  AirAPIMETAR 取得s 國內機場 氣象資訊觀測資料
+  AirAPIMETAR2016 取得s 國內機場 氣象資訊觀測資料
 
   取得[國內機場]氣象資訊觀測資料
 <br />目前提供之機場氣象觀測站代碼清單
@@ -646,20 +660,21 @@ func (a *Client) AirAPIInternational(params *AirAPIInternationalParams, opts ...
 <br />RCYU:花蓮機場    RCFN:臺東機場
 <br />RCLY:蘭嶼機場    RCGI:綠島機場
 */
-func (a *Client) AirAPIMETAR(params *AirAPIMETARParams, opts ...ClientOption) (*AirAPIMETAROK, *AirAPIMETARStatus299, error) {
+func (a *Client) AirAPIMETAR2016(params *AirAPIMETAR2016Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*AirAPIMETAR2016OK, *AirAPIMETAR2016Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewAirAPIMETARParams()
+		params = NewAirAPIMETAR2016Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "AirApi_METAR",
+		ID:                 "AirApi_METAR_2016",
 		Method:             "GET",
 		PathPattern:        "/v2/Air/METAR/Airport",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &AirAPIMETARReader{formats: a.formats},
+		Reader:             &AirAPIMETAR2016Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -672,9 +687,9 @@ func (a *Client) AirAPIMETAR(params *AirAPIMETARParams, opts ...ClientOption) (*
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *AirAPIMETAROK:
+	case *AirAPIMETAR2016OK:
 		return value, nil, nil
-	case *AirAPIMETARStatus299:
+	case *AirAPIMETAR2016Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -683,24 +698,25 @@ func (a *Client) AirAPIMETAR(params *AirAPIMETARParams, opts ...ClientOption) (*
 }
 
 /*
-  AirAPIMETAR1 取得指定s 國內機場 氣象資訊觀測資料
+  AirAPIMETAR20161 取得指定s 國內機場 氣象資訊觀測資料
 
   取得指定[國內機場]氣象資訊觀測資料
 */
-func (a *Client) AirAPIMETAR1(params *AirAPIMETAR1Params, opts ...ClientOption) (*AirAPIMETAR1OK, *AirAPIMETAR1Status299, error) {
+func (a *Client) AirAPIMETAR20161(params *AirAPIMETAR20161Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*AirAPIMETAR20161OK, *AirAPIMETAR20161Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewAirAPIMETAR1Params()
+		params = NewAirAPIMETAR20161Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "AirApi_METAR_1",
+		ID:                 "AirApi_METAR_2016_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Air/METAR/Airport/{IATA}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &AirAPIMETAR1Reader{formats: a.formats},
+		Reader:             &AirAPIMETAR20161Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -713,9 +729,9 @@ func (a *Client) AirAPIMETAR1(params *AirAPIMETAR1Params, opts ...ClientOption) 
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *AirAPIMETAR1OK:
+	case *AirAPIMETAR20161OK:
 		return value, nil, nil
-	case *AirAPIMETAR1Status299:
+	case *AirAPIMETAR20161Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue

@@ -61,6 +61,8 @@ func (m *PTXServiceDTOBusSpecificationV3TimeTable) validateStopTimes(formats str
 			if err := m.StopTimes[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("StopTimes" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("StopTimes" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -93,6 +95,8 @@ func (m *PTXServiceDTOBusSpecificationV3TimeTable) contextValidateStopTimes(ctx 
 			if err := m.StopTimes[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("StopTimes" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("StopTimes" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

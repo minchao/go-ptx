@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "title": "MOTC Transport API V2",
-    "description": "本平臺提供涵蓋全國尺度之公車、臺鐵、高鐵、捷運、航空、自行車等公共運輸旅運資料服務API，歡迎各產政學單位介接使用。\n                                                    <br><span class=swagger-description-indicatation>利用本平臺開放資料進行各項應用服務開發時，請考量不同特性使用者(如:性別/身心障礙/老幼等)的需求，並歡迎回饋寶貴意見。</span>\n                                                    <br><br>資料使用葵花寶典:[請點我](https://motc-ptx-api-documentation.gitbook.io/motc-ptx-api-documentation/)\n                                                    <br>資料服務開發實作參考手冊:[請點我](https://docs.google.com/viewer?url=https://github.com/ptxmotc/PTX_Web/blob/master/Swagger%E6%9C%8D%E5%8B%99%E8%AA%AA%E6%98%8E%E4%B8%8A%E5%82%B3%E5%8F%83%E8%80%83%E6%AA%94%E6%A1%88/%E5%85%AC%E5%85%B1%E9%81%8B%E8%BC%B8%E6%95%B4%E5%90%88%E8%B3%87%E8%A8%8A%E5%B9%B3%E5%8F%B0%E8%B3%87%E6%96%99%E6%9C%8D%E5%8B%99%E9%96%8B%E7%99%BC%E5%AF%A6%E4%BD%9C.pdf?raw=true)\n                                                    <br>API URI Convention文件說明:[請點我](https://docs.google.com/viewer?url=https://github.com/ptxmotc/PTX_Web/blob/master/Swagger%E6%9C%8D%E5%8B%99%E8%AA%AA%E6%98%8E%E4%B8%8A%E5%82%B3%E5%8F%83%E8%80%83%E6%AA%94%E6%A1%88/API_URI_Convention%E6%96%87%E4%BB%B6_v1.pdf?raw=true)<br>資料文本OAS描述:[請點我](https://ptx.transportdata.tw/MOTC/v2/Bus/api-docs/oas)",
+    "description": "本平臺提供涵蓋全國尺度之公車、臺鐵、高鐵、捷運、航空、自行車等公共運輸旅運資料服務API，歡迎各產政學單位介接使用。\n                                                    <br><span class=swagger-description-indicatation>利用本平臺開放資料進行各項應用服務開發時，請考量不同特性使用者(如:性別/身心障礙/老幼等)的需求，並歡迎回饋寶貴意見。</span>\n                                                    <br><br>資料使用葵花寶典:[請點我](https://motc-ptx-api-documentation.gitbook.io/motc-ptx-api-documentation/)\n                                                    <br>資料服務開發實作參考手冊:[請點我](https://docs.google.com/viewer?url=https://github.com/ptxmotc/PTX_Web/blob/master/Swagger%E6%9C%8D%E5%8B%99%E8%AA%AA%E6%98%8E%E4%B8%8A%E5%82%B3%E5%8F%83%E8%80%83%E6%AA%94%E6%A1%88/%E5%85%AC%E5%85%B1%E9%81%8B%E8%BC%B8%E6%95%B4%E5%90%88%E8%B3%87%E8%A8%8A%E5%B9%B3%E5%8F%B0%E8%B3%87%E6%96%99%E6%9C%8D%E5%8B%99%E9%96%8B%E7%99%BC%E5%AF%A6%E4%BD%9C.pdf?raw=true)\n                                                    <br>API URI Convention文件說明:[請點我](https://docs.google.com/viewer?url=https://github.com/ptxmotc/PTX_Web/blob/master/Swagger%E6%9C%8D%E5%8B%99%E8%AA%AA%E6%98%8E%E4%B8%8A%E5%82%B3%E5%8F%83%E8%80%83%E6%AA%94%E6%A1%88/API_URI_Convention%E6%96%87%E4%BB%B6_v1.pdf?raw=true)",
     "version": "v2"
   },
   "host": "ptx.transportdata.tw",
@@ -18,7 +18,7 @@
         ],
         "summary": "取得指定[縣市]的公車動態定時資料(A1)[逐筆更新]",
         "description": "### 市區公車之定時資料(A1) ###\r\n- [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))",
-        "operationId": "CityBusApi_RealTimeByFrequency_UDP",
+        "operationId": "CityBusApi_RealTimeByFrequency_UDP_2046",
         "produces": [
           "application/json",
           "application/xml"
@@ -43,9 +43,11 @@
               "YilanCounty",
               "HualienCounty",
               "TaitungCounty",
-              "PenghuCounty"
+              "PenghuCounty",
+              "Keelung"
             ],
             "x-enum": {
+              "Keelung": "基隆市",
               "YilanCounty": "宜蘭縣",
               "ChiayiCounty": "嘉義縣",
               "ChanghuaCounty": "彰化縣",
@@ -150,7 +152,7 @@
         ],
         "summary": "取得指定[縣市],[路線名稱]的公車動態定時資料(A1)[逐筆更新]",
         "description": "### 市區公車之定時資料(A1) ###\r\n- [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))",
-        "operationId": "CityBusApi_RealTimeByFrequency_UDP_1",
+        "operationId": "CityBusApi_RealTimeByFrequency_UDP_2046_1",
         "produces": [
           "application/json",
           "application/xml"
@@ -175,9 +177,11 @@
               "YilanCounty",
               "HualienCounty",
               "TaitungCounty",
-              "PenghuCounty"
+              "PenghuCounty",
+              "Keelung"
             ],
             "x-enum": {
+              "Keelung": "基隆市",
               "YilanCounty": "宜蘭縣",
               "ChiayiCounty": "嘉義縣",
               "ChanghuaCounty": "彰化縣",
@@ -289,7 +293,7 @@
         ],
         "summary": "取得指定[縣市]的公車動態定點資料(A2)[逐筆更新]",
         "description": "### 市區公車之定點資料(A2) ###\r\n- [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))",
-        "operationId": "CityBusApi_RealTimeNearStop_UDP",
+        "operationId": "CityBusApi_RealTimeNearStop_UDP_2047",
         "produces": [
           "application/json",
           "application/xml"
@@ -314,11 +318,13 @@
               "YilanCounty",
               "HualienCounty",
               "TaitungCounty",
-              "PenghuCounty"
+              "PenghuCounty",
+              "Keelung"
             ],
             "x-enum": {
               "HsinchuCounty": "新竹縣",
               "ChiayiCounty": "嘉義縣",
+              "Keelung": "基隆市",
               "HualienCounty": "花蓮縣",
               "ChanghuaCounty": "彰化縣",
               "Hsinchu": "新竹市",
@@ -415,7 +421,7 @@
         ],
         "summary": "取得指定[縣市],[路線名稱]的公車動態定點資料(A2)[逐筆更新]",
         "description": "### 市區公車之定點資料(A2) ###\r\n- [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))",
-        "operationId": "CityBusApi_RealTimeNearStop_UDP_1",
+        "operationId": "CityBusApi_RealTimeNearStop_UDP_2047_1",
         "produces": [
           "application/json",
           "application/xml"
@@ -440,11 +446,13 @@
               "YilanCounty",
               "HualienCounty",
               "TaitungCounty",
-              "PenghuCounty"
+              "PenghuCounty",
+              "Keelung"
             ],
             "x-enum": {
               "HsinchuCounty": "新竹縣",
               "ChiayiCounty": "嘉義縣",
+              "Keelung": "基隆市",
               "HualienCounty": "花蓮縣",
               "ChanghuaCounty": "彰化縣",
               "Hsinchu": "新竹市",
@@ -548,7 +556,7 @@
         ],
         "summary": "取得指定[縣市]的公車預估到站資料(N1)[逐筆更新]",
         "description": "### 市區公車之預估到站資料(N1) ###\r\n- [部分縣市] 當 StopStatus = 1(尚未發車) 且 EstimateTime > 0 (有值) 的情形, 屬正常情形, 雖目前尚未發車, 但提供EstimateTime值為預計多久後開始發車之時間。\r\n- [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))\r\n- N1僅於該路線上有任一車輛離站時，來源端才會重新計算並發佈，因此使用者需自行處理時間遞減機制，或以EstimateTime-(收到資料時間-SrcTrasTime)(秒)作為實際預估抵達時間。",
-        "operationId": "CityBusApi_EstimatedTimeOfArrival_UDP",
+        "operationId": "CityBusApi_EstimatedTimeOfArrival_UDP_2048",
         "produces": [
           "application/json",
           "application/xml"
@@ -573,9 +581,11 @@
               "YilanCounty",
               "HualienCounty",
               "TaitungCounty",
-              "PenghuCounty"
+              "PenghuCounty",
+              "Keelung"
             ],
             "x-enum": {
+              "Keelung": "基隆市",
               "YilanCounty": "宜蘭縣",
               "Hsinchu": "新竹市",
               "NantouCounty": "南投縣",
@@ -674,7 +684,7 @@
         ],
         "summary": "取得指定[縣市],[路線名稱]的公車預估到站資料(N1)[逐筆更新]",
         "description": "### 市區公車之預估到站資料(N1) ###\r\n- [部分縣市] 當 StopStatus = 1(尚未發車) 且 EstimateTime > 0 (有值) 的情形, 屬正常情形, 雖目前尚未發車, 但提供EstimateTime值為預計多久後開始發車之時間。\r\n- [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))\r\n- N1僅於該路線上有任一車輛離站時，來源端才會重新計算並發佈，因此使用者需自行處理時間遞減機制，或以EstimateTime-(收到資料時間-SrcTrasTime)(秒)作為實際預估抵達時間。",
-        "operationId": "CityBusApi_EstimatedTimeOfArrival_UDP_1",
+        "operationId": "CityBusApi_EstimatedTimeOfArrival_UDP_2048_1",
         "produces": [
           "application/json",
           "application/xml"
@@ -699,9 +709,11 @@
               "YilanCounty",
               "HualienCounty",
               "TaitungCounty",
-              "PenghuCounty"
+              "PenghuCounty",
+              "Keelung"
             ],
             "x-enum": {
+              "Keelung": "基隆市",
               "YilanCounty": "宜蘭縣",
               "Hsinchu": "新竹市",
               "NantouCounty": "南投縣",
@@ -807,7 +819,7 @@
         ],
         "summary": "取得指定[縣市]的公車動態定時資料(A1)[批次更新]",
         "description": "### 市區公車之定時資料(A1) ###\r\n- [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))",
-        "operationId": "CityBusApi_RealTimeByFrequency",
+        "operationId": "CityBusApi_RealTimeByFrequency_2030",
         "produces": [
           "application/json",
           "application/xml"
@@ -957,7 +969,7 @@
         ],
         "summary": "取得指定[縣市],[路線名稱]的公車動態定時資料(A1)[批次更新]",
         "description": "### 市區公車之定時資料(A1) ###\r\n- [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))",
-        "operationId": "CityBusApi_RealTimeByFrequency_1",
+        "operationId": "CityBusApi_RealTimeByFrequency_2030_1",
         "produces": [
           "application/json",
           "application/xml"
@@ -1114,7 +1126,7 @@
         ],
         "summary": "取得指定[縣市]的公車動態定點資料(A2)[批次更新]",
         "description": "### 市區公車之定點資料(A2) ###\r\n- [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))",
-        "operationId": "CityBusApi_RealTimeNearStop",
+        "operationId": "CityBusApi_RealTimeNearStop_2031",
         "produces": [
           "application/json",
           "application/xml"
@@ -1258,7 +1270,7 @@
         ],
         "summary": "取得指定[縣市],[路線名稱]的公車動態定點資料(A2)[批次更新]",
         "description": "### 市區公車之定點資料(A2) ###\r\n- [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))",
-        "operationId": "CityBusApi_RealTimeNearStop_1",
+        "operationId": "CityBusApi_RealTimeNearStop_2031_1",
         "produces": [
           "application/json",
           "application/xml"
@@ -1409,7 +1421,7 @@
         ],
         "summary": "取得指定[縣市]的公車預估到站資料(N1)[批次更新]",
         "description": " ### 市區公車之預估到站資料(N1) ###\r\n- [部分縣市] 當 StopStatus = 1(尚未發車) 且 EstimateTime > 0 (有值) 的情形, 屬正常情形, 雖目前尚未發車, 但提供EstimateTime值為預計多久後開始發車之時間。\r\n- [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))",
-        "operationId": "CityBusApi_EstimatedTimeOfArrival",
+        "operationId": "CityBusApi_EstimatedTimeOfArrival_2032",
         "produces": [
           "application/json",
           "application/xml"
@@ -1553,7 +1565,7 @@
         ],
         "summary": "取得指定[縣市],[路線名稱]的公車預估到站資料(N1)[批次更新]",
         "description": " ### 市區公車之預估到站資料(N1) ###\r\n- [部分縣市] 當 StopStatus = 1(尚未發車) 且 EstimateTime > 0 (有值) 的情形, 屬正常情形, 雖目前尚未發車, 但提供EstimateTime值為預計多久後開始發車之時間。\r\n- [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))",
-        "operationId": "CityBusApi_EstimatedTimeOfArrival_1",
+        "operationId": "CityBusApi_EstimatedTimeOfArrival_2032_1",
         "produces": [
           "application/json",
           "application/xml"
@@ -1704,7 +1716,7 @@
         ],
         "summary": "取得指定[縣市]目前資料的最新版本資訊",
         "description": "版本詳細資訊",
-        "operationId": "CityBusApi_DataVersion",
+        "operationId": "CityBusApi_DataVersion_2033",
         "produces": [
           "application/json",
           "application/xml"
@@ -1813,7 +1825,7 @@
         ],
         "summary": "取得指定[縣市]的市區公車營運業者資料",
         "description": "市區公車之營運業者資料",
-        "operationId": "CityBusApi_Operator",
+        "operationId": "CityBusApi_Operator_2034",
         "produces": [
           "application/json",
           "application/xml"
@@ -1957,7 +1969,7 @@
         ],
         "summary": "取得指定[縣市]的市區公車路線資料",
         "description": "市區公車之路線資料",
-        "operationId": "CityBusApi_Route",
+        "operationId": "CityBusApi_Route_2035",
         "produces": [
           "application/json",
           "application/xml"
@@ -1994,7 +2006,6 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "MiaoliCounty": "苗栗縣",
               "Chiayi": "嘉義市",
               "PenghuCounty": "澎湖縣",
               "TaitungCounty": "臺東縣",
@@ -2015,7 +2026,8 @@
               "Keelung": "基隆市",
               "Taipei": "臺北市",
               "YilanCounty": "宜蘭縣",
-              "Kaohsiung": "高雄市"
+              "Kaohsiung": "高雄市",
+              "MiaoliCounty": "苗栗縣"
             }
           },
           {
@@ -2101,7 +2113,7 @@
         ],
         "summary": "取得指定[縣市],[路線名稱]的路線資料",
         "description": "市區公車之路線資料",
-        "operationId": "CityBusApi_Route_1",
+        "operationId": "CityBusApi_Route_2035_1",
         "produces": [
           "application/json",
           "application/xml"
@@ -2138,7 +2150,6 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "MiaoliCounty": "苗栗縣",
               "Chiayi": "嘉義市",
               "PenghuCounty": "澎湖縣",
               "TaitungCounty": "臺東縣",
@@ -2159,7 +2170,8 @@
               "Keelung": "基隆市",
               "Taipei": "臺北市",
               "YilanCounty": "宜蘭縣",
-              "Kaohsiung": "高雄市"
+              "Kaohsiung": "高雄市",
+              "MiaoliCounty": "苗栗縣"
             }
           },
           {
@@ -2252,7 +2264,7 @@
         ],
         "summary": "取得指定[縣市]的市區公車站牌資料",
         "description": "市區公車之站牌資料",
-        "operationId": "CityBusApi_Stop",
+        "operationId": "CityBusApi_Stop_2036",
         "produces": [
           "application/json",
           "application/xml"
@@ -2402,7 +2414,7 @@
         ],
         "summary": "取得指定[縣市]的市區公車站位資料",
         "description": "市區公車之各站牌所屬的站位資料",
-        "operationId": "CityBusApi_Station",
+        "operationId": "CityBusApi_Station_2037",
         "produces": [
           "application/json",
           "application/xml"
@@ -2434,9 +2446,11 @@
               "Tainan",
               "KinmenCounty",
               "Taoyuan",
-              "Taichung"
+              "Taichung",
+              "Keelung"
             ],
             "x-enum": {
+              "Keelung": "基隆市",
               "Hsinchu": "新竹市",
               "KinmenCounty": "金門縣",
               "Taipei": "臺北市",
@@ -2548,7 +2562,7 @@
         ],
         "summary": "取得指定[縣市]的市區公車顯示用路線站序資料",
         "description": "市區公車之顯示用路線站序資料",
-        "operationId": "CityBusApi_DisplayStopOfRoute",
+        "operationId": "CityBusApi_DisplayStopOfRoute_2038",
         "produces": [
           "application/json",
           "application/xml"
@@ -2658,7 +2672,7 @@
         ],
         "summary": "取得指定[縣市],[路線名稱]的市區公車顯示用路線站序資料",
         "description": "市區公車之顯示用路線站序資料",
-        "operationId": "CityBusApi_DisplayStopOfRoute_1",
+        "operationId": "CityBusApi_DisplayStopOfRoute_2038_1",
         "produces": [
           "application/json",
           "application/xml"
@@ -2775,7 +2789,7 @@
         ],
         "summary": "取得指定[縣市]的市區公車路線站序資料",
         "description": "市區公車之路線站序資料",
-        "operationId": "CityBusApi_StopOfRoute",
+        "operationId": "CityBusApi_StopOfRoute_2039",
         "produces": [
           "application/json",
           "application/xml"
@@ -2919,7 +2933,7 @@
         ],
         "summary": "取得指定[縣市],[路線名稱]的市區公車路線站序資料",
         "description": "市區公車之路線站序資料",
-        "operationId": "CityBusApi_StopOfRoute_1",
+        "operationId": "CityBusApi_StopOfRoute_2039_1",
         "produces": [
           "application/json",
           "application/xml"
@@ -3070,7 +3084,7 @@
         ],
         "summary": "取得指定[縣市]的市區公車路線班表資料",
         "description": "市區公車之班表及班距資料。一般市區公車班次較多時會採用【班距】式時刻表；班次較少時會採用【班表】式時刻表",
-        "operationId": "CityBusApi_Schedule",
+        "operationId": "CityBusApi_Schedule_2040",
         "produces": [
           "application/json",
           "application/xml"
@@ -3212,7 +3226,7 @@
         ],
         "summary": "取得指定[縣市],[路線名稱]的市區公車路線班表資料",
         "description": "市區公車之預定班表及班距資料。一般市區公車班次較多時會採用【班距】式時刻表；班次較少時會採用【班表】式時刻表",
-        "operationId": "CityBusApi_Schedule_1",
+        "operationId": "CityBusApi_Schedule_2040_1",
         "produces": [
           "application/json",
           "application/xml"
@@ -3361,7 +3375,7 @@
         ],
         "summary": "取得指定[縣市]的市區公車車輛資料",
         "description": "市區公車之車輛資料",
-        "operationId": "CityBusApi_Vehicle",
+        "operationId": "CityBusApi_Vehicle_2041",
         "produces": [
           "application/json",
           "application/xml"
@@ -3397,7 +3411,6 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "YunlinCounty": "雲林縣",
               "Taichung": "臺中市",
               "HualienCounty": "花蓮縣",
               "PingtungCounty": "屏東縣",
@@ -3416,6 +3429,7 @@
               "Hsinchu": "新竹市",
               "Taoyuan": "桃園市",
               "Keelung": "基隆市",
+              "YunlinCounty": "雲林縣",
               "HsinchuCounty": "新竹縣",
               "NantouCounty": "南投縣",
               "ChanghuaCounty": "彰化縣"
@@ -3504,7 +3518,7 @@
         ],
         "summary": "取得指定[縣市]的市區公車線型資料",
         "description": "市區公車之線型資料",
-        "operationId": "CityBusApi_Shape",
+        "operationId": "CityBusApi_Shape_2042",
         "produces": [
           "application/json",
           "application/xml"
@@ -3540,7 +3554,6 @@
               "PenghuCounty"
             ],
             "x-enum": {
-              "Taipei": "臺北市",
               "ChanghuaCounty": "彰化縣",
               "Hsinchu": "新竹市",
               "NewTaipei": "新北市",
@@ -3549,6 +3562,7 @@
               "Kaohsiung": "高雄市",
               "PingtungCounty": "屏東縣",
               "Tainan": "臺南市",
+              "Taipei": "臺北市",
               "MiaoliCounty": "苗栗縣",
               "YilanCounty": "宜蘭縣",
               "NantouCounty": "南投縣",
@@ -3646,7 +3660,7 @@
         ],
         "summary": "取得指定[縣市],[路線名稱]的市區公車線型資料",
         "description": "市區公車之線型資料",
-        "operationId": "CityBusApi_Shape_1",
+        "operationId": "CityBusApi_Shape_2042_1",
         "produces": [
           "application/json",
           "application/xml"
@@ -3682,7 +3696,6 @@
               "PenghuCounty"
             ],
             "x-enum": {
-              "Taipei": "臺北市",
               "ChanghuaCounty": "彰化縣",
               "Hsinchu": "新竹市",
               "NewTaipei": "新北市",
@@ -3691,6 +3704,7 @@
               "Kaohsiung": "高雄市",
               "PingtungCounty": "屏東縣",
               "Tainan": "臺南市",
+              "Taipei": "臺北市",
               "MiaoliCounty": "苗栗縣",
               "YilanCounty": "宜蘭縣",
               "NantouCounty": "南投縣",
@@ -3795,7 +3809,7 @@
         ],
         "summary": "取得指定[縣市]的市區公車路線票價資料",
         "description": "市區公車路線票價資料",
-        "operationId": "CityBusApi_RouteFare",
+        "operationId": "CityBusApi_RouteFare_2043",
         "produces": [
           "application/json",
           "application/xml"
@@ -3808,6 +3822,8 @@
             "required": true,
             "type": "string",
             "enum": [
+              "Taipei",
+              "NewTaipei",
               "Taoyuan",
               "Taichung",
               "Kaohsiung",
@@ -3828,22 +3844,22 @@
             "x-enum": {
               "ChiayiCounty": "嘉義縣",
               "YilanCounty": "宜蘭縣",
-              "NewTaipei": "新北市",
               "Taoyuan": "桃園市",
               "Keelung": "基隆市",
               "HualienCounty": "花蓮縣",
               "Tainan": "臺南市",
               "TaitungCounty": "臺東縣",
               "Taichung": "臺中市",
+              "Taipei": "臺北市",
               "ChanghuaCounty": "彰化縣",
               "NantouCounty": "南投縣",
               "Hsinchu": "新竹市",
+              "NewTaipei": "新北市",
               "KinmenCounty": "金門縣",
               "PingtungCounty": "屏東縣",
               "Kaohsiung": "高雄市",
               "Chiayi": "嘉義市",
               "YunlinCounty": "雲林縣",
-              "Taipei": "臺北市",
               "LienchiangCounty": "連江縣",
               "HsinchuCounty": "新竹縣",
               "PenghuCounty": "澎湖縣",
@@ -3933,7 +3949,7 @@
         ],
         "summary": "取得指定[縣市],[路線名稱]的的市區公車路線票價資料",
         "description": "市區公車路線票價資料",
-        "operationId": "CityBusApi_RouteFare_1",
+        "operationId": "CityBusApi_RouteFare_2043_1",
         "produces": [
           "application/json",
           "application/xml"
@@ -3946,6 +3962,8 @@
             "required": true,
             "type": "string",
             "enum": [
+              "Taipei",
+              "NewTaipei",
               "Taoyuan",
               "Taichung",
               "Kaohsiung",
@@ -3966,22 +3984,22 @@
             "x-enum": {
               "ChiayiCounty": "嘉義縣",
               "YilanCounty": "宜蘭縣",
-              "NewTaipei": "新北市",
               "Taoyuan": "桃園市",
               "Keelung": "基隆市",
               "HualienCounty": "花蓮縣",
               "Tainan": "臺南市",
               "TaitungCounty": "臺東縣",
               "Taichung": "臺中市",
+              "Taipei": "臺北市",
               "ChanghuaCounty": "彰化縣",
               "NantouCounty": "南投縣",
               "Hsinchu": "新竹市",
+              "NewTaipei": "新北市",
               "KinmenCounty": "金門縣",
               "PingtungCounty": "屏東縣",
               "Kaohsiung": "高雄市",
               "Chiayi": "嘉義市",
               "YunlinCounty": "雲林縣",
-              "Taipei": "臺北市",
               "LienchiangCounty": "連江縣",
               "HsinchuCounty": "新竹縣",
               "PenghuCounty": "澎湖縣",
@@ -4078,7 +4096,7 @@
         ],
         "summary": "取得指定[縣市]的市區公車最新消息資料",
         "description": "市區公車最新消息資料",
-        "operationId": "CityBusApi_News",
+        "operationId": "CityBusApi_News_2044",
         "produces": [
           "application/json",
           "application/xml"
@@ -4220,7 +4238,7 @@
         ],
         "summary": "取得指定[縣市]的市區公車組站位資料",
         "description": "市區公車之各站牌所屬的組站位資料",
-        "operationId": "CityBusApi_StationGroup",
+        "operationId": "CityBusApi_StationGroup_2050",
         "produces": [
           "application/json",
           "application/xml"
@@ -4245,9 +4263,11 @@
               "YilanCounty",
               "HualienCounty",
               "TaitungCounty",
-              "PenghuCounty"
+              "PenghuCounty",
+              "Keelung"
             ],
             "x-enum": {
+              "Keelung": "基隆市",
               "MiaoliCounty": "苗栗縣",
               "YilanCounty": "宜蘭縣",
               "PenghuCounty": "澎湖縣",
@@ -4352,7 +4372,7 @@
         ],
         "summary": "取得指定[縣市]的市區公車路線首末班車資料",
         "description": "市區公車之路線首末班車資料",
-        "operationId": "CityBusApi_FirstLastTripInfo",
+        "operationId": "CityBusApi_FirstLastTripInfo_2052",
         "produces": [
           "application/json",
           "application/xml"
@@ -4458,7 +4478,7 @@
         ],
         "summary": "取得指定[縣市],[路線名稱]的路線首末班車資料",
         "description": "市區公車之路線首末班車資料",
-        "operationId": "CityBusApi_FirstLastTripInfo_1",
+        "operationId": "CityBusApi_FirstLastTripInfo_2052_1",
         "produces": [
           "application/json",
           "application/xml"
@@ -4571,7 +4591,7 @@
         ],
         "summary": "取得指定[縣市]的市區公車營運通阻資料",
         "description": "市區公車營運通阻資料",
-        "operationId": "CityBusApi_Alert",
+        "operationId": "CityBusApi_Alert_2053",
         "produces": [
           "application/json",
           "application/xml"
@@ -4599,9 +4619,13 @@
               "PenghuCounty",
               "Taichung",
               "Kaohsiung",
-              "Taoyuan"
+              "Taoyuan",
+              "Taipei",
+              "NewTaipei",
+              "Keelung"
             ],
             "x-enum": {
+              "Taipei": "臺北市",
               "ChanghuaCounty": "彰化縣",
               "HsinchuCounty": "新竹縣",
               "PingtungCounty": "屏東縣",
@@ -4613,6 +4637,8 @@
               "MiaoliCounty": "苗栗縣",
               "Taichung": "臺中市",
               "YilanCounty": "宜蘭縣",
+              "NewTaipei": "新北市",
+              "Keelung": "基隆市",
               "NantouCounty": "南投縣",
               "ChiayiCounty": "嘉義縣",
               "Kaohsiung": "高雄市",
@@ -4703,7 +4729,7 @@
         ],
         "summary": "取得指定[縣市]的市區公車路線網路拓撲資料",
         "description": "市區公車路線網路拓撲資料",
-        "operationId": "CityBusApi_RouteNetwork",
+        "operationId": "CityBusApi_RouteNetwork_2055",
         "produces": [
           "application/json",
           "application/xml"
@@ -4805,7 +4831,7 @@
         ],
         "summary": "取得指定[縣市],[路線名稱]的市區公車顯示用路線站序資料",
         "description": "市區公車之顯示用路線站序資料",
-        "operationId": "CityBusApi_RouteNetwork_1",
+        "operationId": "CityBusApi_RouteNetwork_2055_1",
         "produces": [
           "application/json",
           "application/xml"
@@ -4914,7 +4940,7 @@
         ],
         "summary": "取得指定[縣市],[路線代碼]的市區公車站間旅行時間資料",
         "description": "指定[縣市],[路線代碼]的市區公車站間旅行時間資料",
-        "operationId": "CityBusApi_S2STravelTimeDetail",
+        "operationId": "CityBusApi_S2STravelTimeDetail_2056",
         "produces": [
           "application/json",
           "application/xml"
@@ -4927,8 +4953,13 @@
             "required": true,
             "type": "string",
             "enum": [
+              "Taipei",
+              "NewTaipei",
               "Taoyuan",
               "Taichung",
+              "Tainan",
+              "Kaohsiung",
+              "Keelung",
               "Hsinchu",
               "HsinchuCounty",
               "MiaoliCounty",
@@ -4941,31 +4972,33 @@
               "YilanCounty",
               "HualienCounty",
               "TaitungCounty",
-              "PenghuCounty"
+              "KinmenCounty",
+              "PenghuCounty",
+              "LienchiangCounty"
             ],
             "x-enum": {
-              "ChanghuaCounty": "彰化縣",
-              "MiaoliCounty": "苗栗縣",
-              "TaitungCounty": "臺東縣",
-              "Chiayi": "嘉義市",
-              "NantouCounty": "南投縣",
               "LienchiangCounty": "連江縣",
-              "PenghuCounty": "澎湖縣",
-              "YilanCounty": "宜蘭縣",
-              "HsinchuCounty": "新竹縣",
-              "HualienCounty": "花蓮縣",
               "ChiayiCounty": "嘉義縣",
-              "KinmenCounty": "金門縣",
-              "Kaohsiung": "高雄市",
-              "Hsinchu": "新竹市",
-              "Tainan": "臺南市",
-              "Taoyuan": "桃園市",
-              "NewTaipei": "新北市",
-              "YunlinCounty": "雲林縣",
-              "Taipei": "臺北市",
+              "HsinchuCounty": "新竹縣",
+              "PenghuCounty": "澎湖縣",
+              "MiaoliCounty": "苗栗縣",
+              "Chiayi": "嘉義市",
               "PingtungCounty": "屏東縣",
+              "Taoyuan": "桃園市",
+              "Hsinchu": "新竹市",
+              "YilanCounty": "宜蘭縣",
+              "Taipei": "臺北市",
+              "Kaohsiung": "高雄市",
+              "Taichung": "臺中市",
+              "Tainan": "臺南市",
+              "TaitungCounty": "臺東縣",
+              "KinmenCounty": "金門縣",
+              "NewTaipei": "新北市",
+              "NantouCounty": "南投縣",
               "Keelung": "基隆市",
-              "Taichung": "臺中市"
+              "ChanghuaCounty": "彰化縣",
+              "YunlinCounty": "雲林縣",
+              "HualienCounty": "花蓮縣"
             }
           },
           {
@@ -5058,7 +5091,7 @@
         ],
         "summary": "取得公路客運的動態定時資料(A1)[逐筆更新]",
         "description": "### 公路客運之定時資料(A1) ###\r\n- [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))",
-        "operationId": "InterCityBusApi_RealTimeByFrequency_UDP",
+        "operationId": "InterCityBusApi_RealTimeByFrequency_UDP_2057",
         "produces": [
           "application/json",
           "application/xml"
@@ -5153,7 +5186,7 @@
         ],
         "summary": "取得指定[路線名稱]的公路客運動態定時資料(A1)[逐筆更新]",
         "description": "### 公路客運之定時資料(A1) ###\r\n- [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))",
-        "operationId": "InterCityBusApi_RealTimeByFrequency_UDP_1",
+        "operationId": "InterCityBusApi_RealTimeByFrequency_UDP_2057_1",
         "produces": [
           "application/json",
           "application/xml"
@@ -5255,7 +5288,7 @@
         ],
         "summary": "取得公路客運的動態定點資料(A2)[逐筆更新]",
         "description": "### 公路客運之定點資料(A2) ###\r\n- [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))",
-        "operationId": "InterCityBusApi_RealTimeNearStop_UDP",
+        "operationId": "InterCityBusApi_RealTimeNearStop_UDP_2058",
         "produces": [
           "application/json",
           "application/xml"
@@ -5344,7 +5377,7 @@
         ],
         "summary": "取得指定[路線名稱]的公路客運動態定點資料(A2)[逐筆更新]",
         "description": "### 公路客運之定點資料(A2) ###\r\n- [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))",
-        "operationId": "InterCityBusApi_RealTimeNearStop_UDP_1",
+        "operationId": "InterCityBusApi_RealTimeNearStop_UDP_2058_1",
         "produces": [
           "application/json",
           "application/xml"
@@ -5440,7 +5473,7 @@
         ],
         "summary": "取得公路客運的預估到站資料(N1)[逐筆更新]",
         "description": "### 公路客運之預估到站資料(N1) ###\r\n- 不保留[現在時間]超過[本平台資料更新時間]兩分鐘的資料\r\n- [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))\r\n- N1僅於該路線上有任一車輛離站時，來源端才會重新計算並發佈，因此使用者需自行處理時間遞減機制，或以EstimateTime-(收到資料時間-SrcTrasTime)(秒)作為實際預估抵達時間。",
-        "operationId": "InterCityBusApi_EstimatedTimeOfArrival_UDP",
+        "operationId": "InterCityBusApi_EstimatedTimeOfArrival_UDP_2059",
         "produces": [
           "application/json",
           "application/xml"
@@ -5529,7 +5562,7 @@
         ],
         "summary": "取得指定[路線名稱]的公路客運預估到站資料(N1)[逐筆更新]",
         "description": "### 公路客運之預估到站資料(N1) ###\r\n- 不保留[現在時間]超過[本平台資料更新時間]兩分鐘的資料\r\n- [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))\r\n- N1僅於該路線上有任一車輛離站時，來源端才會重新計算並發佈，因此使用者需自行處理時間遞減機制，或以EstimateTime-(收到資料時間-SrcTrasTime)(秒)作為實際預估抵達時間。",
-        "operationId": "InterCityBusApi_EstimatedTimeOfArrival_UDP_1",
+        "operationId": "InterCityBusApi_EstimatedTimeOfArrival_UDP_2059_1",
         "produces": [
           "application/json",
           "application/xml"
@@ -5625,7 +5658,7 @@
         ],
         "summary": "取得公路客運的動態定時資料(A1)[批次更新]",
         "description": "### 公路客運之定時資料(A1) ###\r\n- [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))",
-        "operationId": "InterCityBusApi_RealTimeByFrequency",
+        "operationId": "InterCityBusApi_RealTimeByFrequency_2060",
         "produces": [
           "application/json",
           "application/xml"
@@ -5720,7 +5753,7 @@
         ],
         "summary": "取得指定[路線名稱]的公路客運動態定時資料(A1)[批次更新]",
         "description": "### 公路客運之定時資料(A1) ###\r\n- [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))",
-        "operationId": "InterCityBusApi_RealTimeByFrequency_1",
+        "operationId": "InterCityBusApi_RealTimeByFrequency_2060_1",
         "produces": [
           "application/json",
           "application/xml"
@@ -5822,7 +5855,7 @@
         ],
         "summary": "取得公路客運的動態定點資料(A2)[批次更新]",
         "description": "### 公路客運之定點資料(A2) ###\r\n- [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))",
-        "operationId": "InterCityBusApi_RealTimeNearStop",
+        "operationId": "InterCityBusApi_RealTimeNearStop_2061",
         "produces": [
           "application/json",
           "application/xml"
@@ -5911,7 +5944,7 @@
         ],
         "summary": "取得指定[路線名稱]的公路客運動態定點資料(A2)[批次更新]",
         "description": "### 公路客運之定點資料(A2) ###\r\n- [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))",
-        "operationId": "InterCityBusApi_RealTimeNearStop_1",
+        "operationId": "InterCityBusApi_RealTimeNearStop_2061_1",
         "produces": [
           "application/json",
           "application/xml"
@@ -6007,7 +6040,7 @@
         ],
         "summary": "取得公路客運的預估到站資料(N1)[批次更新]",
         "description": "###公路客運之預估到站資料(N1)###\r\n- 不保留[現在時間]超過[本平台資料更新時間]兩分鐘的資料\r\n- [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))",
-        "operationId": "InterCityBusApi_EstimatedTimeOfArrival",
+        "operationId": "InterCityBusApi_EstimatedTimeOfArrival_2062",
         "produces": [
           "application/json",
           "application/xml"
@@ -6096,7 +6129,7 @@
         ],
         "summary": "取得指定[路線名稱]的公路客運預估到站資料(N1)[批次更新]",
         "description": "### 公路客運之預估到站資料(N1) ###\r\n- 不保留[現在時間]超過[本平台資料更新時間]兩分鐘的資料\r\n- [逐筆更新]與[批次更新]之差異請詳見資料使用葵花寶典([連結](https://ptxmotc.gitbooks.io/ptx-api-documentation/content/api-zi-liao-shi-yong-zhu-yi-shi-xiang/buslive.html))",
-        "operationId": "InterCityBusApi_EstimatedTimeOfArrival_1",
+        "operationId": "InterCityBusApi_EstimatedTimeOfArrival_2062_1",
         "produces": [
           "application/json",
           "application/xml"
@@ -6192,7 +6225,7 @@
         ],
         "summary": "取得公路客運目前資料的最新版本資訊",
         "description": "版本詳細資訊",
-        "operationId": "InterCityBusApi_DataVersion",
+        "operationId": "InterCityBusApi_DataVersion_2063",
         "produces": [
           "application/json",
           "application/xml"
@@ -6246,7 +6279,7 @@
         ],
         "summary": "取得公路客運的營運業者資料",
         "description": "公路客運之營運業者資料",
-        "operationId": "InterCityBusApi_Operator",
+        "operationId": "InterCityBusApi_Operator_2064",
         "produces": [
           "application/json",
           "application/xml"
@@ -6335,7 +6368,7 @@
         ],
         "summary": "取得公路客運路線資料",
         "description": "公路客運之路線資料",
-        "operationId": "InterCityBusApi_Route",
+        "operationId": "InterCityBusApi_Route_2065",
         "produces": [
           "application/json",
           "application/xml"
@@ -6424,7 +6457,7 @@
         ],
         "summary": "取得指定[路線名稱]的公路客運路線資料",
         "description": "公路客運之路線資料",
-        "operationId": "InterCityBusApi_Route_1",
+        "operationId": "InterCityBusApi_Route_2065_1",
         "produces": [
           "application/json",
           "application/xml"
@@ -6520,7 +6553,7 @@
         ],
         "summary": "取得公路客運站牌資料",
         "description": "公路客運之站牌資料",
-        "operationId": "InterCityBusApi_Stop",
+        "operationId": "InterCityBusApi_Stop_2066",
         "produces": [
           "application/json",
           "application/xml"
@@ -6615,7 +6648,7 @@
         ],
         "summary": "取得公路客運站位資料",
         "description": "公路客運之各站牌所屬的站位資料",
-        "operationId": "InterCityBusApi_Station",
+        "operationId": "InterCityBusApi_Station_2067",
         "produces": [
           "application/json",
           "application/xml"
@@ -6710,7 +6743,7 @@
         ],
         "summary": "取得公路客運路線與站牌資料",
         "description": "公路客運之路線與站牌資料",
-        "operationId": "InterCityBusApi_StopOfRoute",
+        "operationId": "InterCityBusApi_StopOfRoute_2068",
         "produces": [
           "application/json",
           "application/xml"
@@ -6799,7 +6832,7 @@
         ],
         "summary": "取得指定[路線名稱]的公路客運路線與站牌資料",
         "description": "公路客運之路線與站牌資料",
-        "operationId": "InterCityBusApi_StopOfRoute_1",
+        "operationId": "InterCityBusApi_StopOfRoute_2068_1",
         "produces": [
           "application/json",
           "application/xml"
@@ -6895,7 +6928,7 @@
         ],
         "summary": "取得公路客運路線班表資料",
         "description": "公路客運之預定班表及班距資料。公路及國道客運多採用【班表】式時刻表",
-        "operationId": "InterCityBusApi_Schedule",
+        "operationId": "InterCityBusApi_Schedule_2069",
         "produces": [
           "application/json",
           "application/xml"
@@ -6984,7 +7017,7 @@
         ],
         "summary": "取得指定[路線名稱]的公路客運路線班表資料",
         "description": "公路客運之預定班表及班距資料。公路及國道客運多採用【班表】式時刻表",
-        "operationId": "InterCityBusApi_Schedule_1",
+        "operationId": "InterCityBusApi_Schedule_2069_1",
         "produces": [
           "application/json",
           "application/xml"
@@ -7080,7 +7113,7 @@
         ],
         "summary": "取得公路客運之最新消息",
         "description": "公路客運之最新消息",
-        "operationId": "InterCityBusApi_News",
+        "operationId": "InterCityBusApi_News_2070",
         "produces": [
           "application/json",
           "application/xml"
@@ -7169,7 +7202,7 @@
         ],
         "summary": "取得公路客運之車輛資料",
         "description": "公路客運之車輛資料",
-        "operationId": "InterCityBusApi_Vehicle",
+        "operationId": "InterCityBusApi_Vehicle_2071",
         "produces": [
           "application/json",
           "application/xml"
@@ -7258,7 +7291,7 @@
         ],
         "summary": "取得公路客運之路線票價資料",
         "description": "公路客運之路線票價資料",
-        "operationId": "InterCityBusApi_RouteFare",
+        "operationId": "InterCityBusApi_RouteFare_2072",
         "produces": [
           "application/json",
           "application/xml"
@@ -7347,7 +7380,7 @@
         ],
         "summary": "取得指定[路線名稱]的公路客運路線票價資料",
         "description": "公路客運之路線票價資料",
-        "operationId": "InterCityBusApi_RouteFare_1",
+        "operationId": "InterCityBusApi_RouteFare_2072_1",
         "produces": [
           "application/json",
           "application/xml"
@@ -7443,7 +7476,7 @@
         ],
         "summary": "取得公路客運組站位資料",
         "description": "公路客運之各站牌所屬的組站位資料",
-        "operationId": "InterCityBusApi_StationGroup",
+        "operationId": "InterCityBusApi_StationGroup_2075",
         "produces": [
           "application/json",
           "application/xml"
@@ -7538,7 +7571,7 @@
         ],
         "summary": "取得公路公車線型資料",
         "description": "公路客運之線型資料",
-        "operationId": "InterCityBusApi_Shape",
+        "operationId": "InterCityBusApi_Shape_2076",
         "produces": [
           "application/json",
           "application/xml"
@@ -7627,7 +7660,7 @@
         ],
         "summary": "取得指定[路線名稱]的公路公車線型資料",
         "description": "公路客運之線型資料",
-        "operationId": "InterCityBusApi_Shape_1",
+        "operationId": "InterCityBusApi_Shape_2076_1",
         "produces": [
           "application/json",
           "application/xml"
@@ -7723,7 +7756,7 @@
         ],
         "summary": "取得指定[路線代碼]的公路客運站間旅行時間資料",
         "description": "指定[路線代碼]的公路客運站間旅行時間資料",
-        "operationId": "InterCityBusApi_S2STravelTimeDetail",
+        "operationId": "InterCityBusApi_S2STravelTimeDetail_2078",
         "produces": [
           "application/json",
           "application/xml"
@@ -7819,7 +7852,7 @@
         ],
         "summary": "取得公路客運之營運通阻資料",
         "description": "公路客運之營運通阻資料",
-        "operationId": "InterCityBusApi_Alert",
+        "operationId": "InterCityBusApi_Alert_2079",
         "produces": [
           "application/json",
           "application/xml"
@@ -7908,7 +7941,7 @@
         ],
         "summary": "取得指定[縣市]的市區公車每日營運時刻表資料",
         "description": "市區公車每日營運時刻表資料",
-        "operationId": "CityBusApi_DailyTimeTable",
+        "operationId": "CityBusApi_DailyTimeTable_2436",
         "produces": [
           "application/json",
           "application/xml"
@@ -8012,7 +8045,7 @@
         ],
         "summary": "取得指定[縣市],[路線名稱]的市區公車每日營運時刻表資料",
         "description": "市區公車之每日營運時刻表資料",
-        "operationId": "CityBusApi_DailyTimeTable_1",
+        "operationId": "CityBusApi_DailyTimeTable_2436_1",
         "produces": [
           "application/json",
           "application/xml"
@@ -8123,7 +8156,7 @@
         ],
         "summary": "取得指定[縣市]的市區公車每日站別時刻表資料",
         "description": "市區公車每日站別時刻表資料",
-        "operationId": "CityBusApi_DailyStopTimeTable",
+        "operationId": "CityBusApi_DailyStopTimeTable_2437",
         "produces": [
           "application/json",
           "application/xml"
@@ -8227,7 +8260,7 @@
         ],
         "summary": "取得指定[縣市],[路線名稱]的市區公車每日站別時刻表資料",
         "description": "市區公車每日站別時刻表資料",
-        "operationId": "CityBusApi_DailyStopTimeTable_1",
+        "operationId": "CityBusApi_DailyStopTimeTable_2437_1",
         "produces": [
           "application/json",
           "application/xml"
@@ -8338,7 +8371,7 @@
         ],
         "summary": "取得指定[位置,範圍]的全臺公車站牌資料",
         "description": "取得指定[位置,範圍]的全臺公車站牌資料",
-        "operationId": "BusApi_Stop_NearBy",
+        "operationId": "BusApi_Stop_NearBy_2850",
         "produces": [
           "application/json",
           "application/xml"
@@ -8434,7 +8467,7 @@
         ],
         "summary": "取得指定[位置,範圍]的全臺公車站位資料",
         "description": "取得指定[位置,範圍]的全臺公車站位資料",
-        "operationId": "BusApi_Station_NearBy",
+        "operationId": "BusApi_Station_NearBy_2851",
         "produces": [
           "application/json",
           "application/xml"
@@ -8530,7 +8563,7 @@
         ],
         "summary": "取得指定[位置,範圍]的全臺公車路線資料",
         "description": "取得指定[位置,範圍]的全臺公車路線資料",
-        "operationId": "BusApi_Route_NearBy",
+        "operationId": "BusApi_Route_NearBy_2852",
         "produces": [
           "application/json",
           "application/xml"
@@ -8626,7 +8659,7 @@
         ],
         "summary": "取得指定[位置,範圍]的全臺公車動態定時資料(A1)",
         "description": "取得指定[位置,範圍]的全臺公車動態定時資料(A1)",
-        "operationId": "BusApi_RealTimeByFrequency_NearBy",
+        "operationId": "BusApi_RealTimeByFrequency_NearBy_2853",
         "produces": [
           "application/json",
           "application/xml"
@@ -8722,7 +8755,7 @@
         ],
         "summary": "取得指定[位置,範圍]的全臺公車動態定點資料(A2)",
         "description": "取得指定[位置,範圍]的全臺公車動態定點資料(A2)",
-        "operationId": "BusApi_RealTimeNearStop_NearBy",
+        "operationId": "BusApi_RealTimeNearStop_NearBy_2854",
         "produces": [
           "application/json",
           "application/xml"
@@ -8818,7 +8851,7 @@
         ],
         "summary": "取得指定[位置,範圍]的全臺公車預估到站資料(N1)",
         "description": "取得指定[位置,範圍]的全臺公車預估到站資料(N1)",
-        "operationId": "BusApi_EstimatedTimeOfArrival_NearBy",
+        "operationId": "BusApi_EstimatedTimeOfArrival_NearBy_2855",
         "produces": [
           "application/json",
           "application/xml"
@@ -8913,7 +8946,7 @@
           "Bus Advanced(By Operator)"
         ],
         "summary": "取得指定[縣市],[業者編號]的市區公車動態定時資料(A1)",
-        "operationId": "CityBusApi_RealTimeByFrequency_ByOperator",
+        "operationId": "CityBusApi_RealTimeByFrequency_ByOperator_2856",
         "produces": [
           "application/json",
           "application/xml"
@@ -9069,7 +9102,7 @@
           "Bus Advanced(By Operator)"
         ],
         "summary": "取得指定[縣市],[業者編號]的市區公車動態定點資料(A2)",
-        "operationId": "CityBusApi_RealTimeNearStop_ByOperator",
+        "operationId": "CityBusApi_RealTimeNearStop_ByOperator_2857",
         "produces": [
           "application/json",
           "application/xml"
@@ -9219,7 +9252,7 @@
           "Bus Advanced(By Operator)"
         ],
         "summary": "取得指定[縣市],[業者編號]的市區公車路線資料",
-        "operationId": "CityBusApi_Route_ByOperator",
+        "operationId": "CityBusApi_Route_ByOperator_2859",
         "produces": [
           "application/json",
           "application/xml"
@@ -9369,7 +9402,7 @@
           "Bus Advanced(By Operator)"
         ],
         "summary": "取得指定[縣市],[業者編號]的市區公車站牌資料",
-        "operationId": "CityBusApi_Stop_ByOperator",
+        "operationId": "CityBusApi_Stop_ByOperator_2860",
         "produces": [
           "application/json",
           "application/xml"
@@ -9525,7 +9558,7 @@
           "Bus Advanced(By Operator)"
         ],
         "summary": "取得指定[縣市],[業者編號]的市區公車站位資料",
-        "operationId": "CityBusApi_Station_ByOperator",
+        "operationId": "CityBusApi_Station_ByOperator_2861",
         "produces": [
           "application/json",
           "application/xml"
@@ -9681,7 +9714,7 @@
           "Bus Advanced(By Operator)"
         ],
         "summary": "取得指定[縣市],[業者編號]的市區公車路線站序資料",
-        "operationId": "CityBusApi_StopOfRoute_ByOperator",
+        "operationId": "CityBusApi_StopOfRoute_ByOperator_2862",
         "produces": [
           "application/json",
           "application/xml"
@@ -9718,11 +9751,7 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "ChanghuaCounty": "彰化縣",
-              "Taoyuan": "桃園市",
               "Taipei": "臺北市",
-              "Keelung": "基隆市",
-              "Tainan": "臺南市",
               "NewTaipei": "新北市",
               "YunlinCounty": "雲林縣",
               "YilanCounty": "宜蘭縣",
@@ -9732,12 +9761,16 @@
               "Hsinchu": "新竹市",
               "TaitungCounty": "臺東縣",
               "LienchiangCounty": "連江縣",
+              "Keelung": "基隆市",
+              "Tainan": "臺南市",
               "ChiayiCounty": "嘉義縣",
               "Taichung": "臺中市",
               "HsinchuCounty": "新竹縣",
               "PenghuCounty": "澎湖縣",
               "MiaoliCounty": "苗栗縣",
+              "ChanghuaCounty": "彰化縣",
               "PingtungCounty": "屏東縣",
+              "Taoyuan": "桃園市",
               "HualienCounty": "花蓮縣",
               "Chiayi": "嘉義市"
             }
@@ -9831,7 +9864,7 @@
           "Bus Advanced(By Operator)"
         ],
         "summary": "取得指定[縣市],[業者編號]的市區公車班表資料",
-        "operationId": "CityBusApi_Schedule_ByOperator",
+        "operationId": "CityBusApi_Schedule_ByOperator_2863",
         "produces": [
           "application/json",
           "application/xml"
@@ -9981,7 +10014,7 @@
           "Bus Advanced(By Operator)"
         ],
         "summary": "取得指定[縣市],[業者編號]的市區公車線型資料",
-        "operationId": "CityBusApi_Shape_ByOperator",
+        "operationId": "CityBusApi_Shape_ByOperator_2864",
         "produces": [
           "application/json",
           "application/xml"
@@ -10131,7 +10164,7 @@
           "Bus Advanced(By Operator)"
         ],
         "summary": "取得指定[縣市],[業者編號]的市區公車路線票價資料",
-        "operationId": "CityBusApi_RouteFare_ByOperator",
+        "operationId": "CityBusApi_RouteFare_ByOperator_2865",
         "produces": [
           "application/json",
           "application/xml"
@@ -10275,7 +10308,7 @@
           "Bus Advanced(By Operator)"
         ],
         "summary": "取得指定[業者編號]的全臺公車動態定時資料(A1)",
-        "operationId": "BusApi_RealTimeByFrequency_ByOperator",
+        "operationId": "BusApi_RealTimeByFrequency_ByOperator_2866",
         "produces": [
           "application/json",
           "application/xml"
@@ -10376,7 +10409,7 @@
           "Bus Advanced(By Operator)"
         ],
         "summary": "取得指定[業者編號]的全臺公車動態定點資料(A2)",
-        "operationId": "BusApi_RealTimeNearStop_ByOperator",
+        "operationId": "BusApi_RealTimeNearStop_ByOperator_2867",
         "produces": [
           "application/json",
           "application/xml"
@@ -10471,7 +10504,7 @@
           "Bus Advanced(By Operator)"
         ],
         "summary": "取得指定[業者編號]的全臺公車路線資料",
-        "operationId": "BusApi_Route_ByOperator",
+        "operationId": "BusApi_Route_ByOperator_2869",
         "produces": [
           "application/json",
           "application/xml"
@@ -10566,7 +10599,7 @@
           "Bus Advanced(By Operator)"
         ],
         "summary": "取得指定[業者編號]的全臺公車站牌資料",
-        "operationId": "BusApi_Stop_ByOperator",
+        "operationId": "BusApi_Stop_ByOperator_2872",
         "produces": [
           "application/json",
           "application/xml"
@@ -10667,7 +10700,7 @@
           "Bus Advanced(By Operator)"
         ],
         "summary": "取得指定[業者編號]的全臺公車站位資料",
-        "operationId": "BusApi_Station_ByOperator",
+        "operationId": "BusApi_Station_ByOperator_2873",
         "produces": [
           "application/json",
           "application/xml"
@@ -10768,7 +10801,7 @@
           "Bus Advanced(By Operator)"
         ],
         "summary": "取得指定[業者編號]的全臺公車路線站序資料",
-        "operationId": "BusApi_StopOfRoute_ByOperator",
+        "operationId": "BusApi_StopOfRoute_ByOperator_2874",
         "produces": [
           "application/json",
           "application/xml"
@@ -10863,7 +10896,7 @@
           "Bus Advanced(By Operator)"
         ],
         "summary": "取得指定[業者編號]的全臺公車班表資料",
-        "operationId": "BusApi_Schedule_ByOperator",
+        "operationId": "BusApi_Schedule_ByOperator_2875",
         "produces": [
           "application/json",
           "application/xml"
@@ -10958,7 +10991,7 @@
           "Bus Advanced(By Operator)"
         ],
         "summary": "取得指定[業者編號]的全臺公車線型資料",
-        "operationId": "BusApi_Shape_ByOperator",
+        "operationId": "BusApi_Shape_ByOperator_2876",
         "produces": [
           "application/json",
           "application/xml"
@@ -11053,7 +11086,7 @@
           "Bus Advanced(By Operator)"
         ],
         "summary": "取得指定[業者編號]的全臺公車路線票價資料",
-        "operationId": "BusApi_RouteFare_ByOperator",
+        "operationId": "BusApi_RouteFare_ByOperator_2877",
         "produces": [
           "application/json",
           "application/xml"
@@ -11148,7 +11181,7 @@
           "Bus Advanced(By Station)"
         ],
         "summary": "取得指定[縣市],[站位]的市區公車動態定時資料(A1)",
-        "operationId": "CityBusApi_RealTimeByFrequency_ByStation",
+        "operationId": "CityBusApi_RealTimeByFrequency_ByStation_2878",
         "produces": [
           "application/json",
           "application/xml"
@@ -11304,7 +11337,7 @@
           "Bus Advanced(By Station)"
         ],
         "summary": "取得指定[縣市],[站位]的市區公車動態定點資料(A2)",
-        "operationId": "CityBusApi_RealTimeNearStop_ByStation",
+        "operationId": "CityBusApi_RealTimeNearStop_ByStation_2879",
         "produces": [
           "application/json",
           "application/xml"
@@ -11454,7 +11487,7 @@
           "Bus Advanced(By Station)"
         ],
         "summary": "取得指定[縣市],[站位]的市區公車預估到站資料(N1)",
-        "operationId": "CityBusApi_EstimatedTimeOfArrival_ByStation",
+        "operationId": "CityBusApi_EstimatedTimeOfArrival_ByStation_2880",
         "produces": [
           "application/json",
           "application/xml"
@@ -11604,7 +11637,7 @@
           "Bus Advanced(By Station)"
         ],
         "summary": "取得指定[縣市],[站位]的市區公車路線資料",
-        "operationId": "CityBusApi_Route_ByStation",
+        "operationId": "CityBusApi_Route_ByStation_2881",
         "produces": [
           "application/json",
           "application/xml"
@@ -11754,7 +11787,7 @@
           "Bus Advanced(By Station)"
         ],
         "summary": "取得指定[縣市],[站位]的市區公車站牌資料",
-        "operationId": "CityBusApi_Stop_ByStation",
+        "operationId": "CityBusApi_Stop_ByStation_2882",
         "produces": [
           "application/json",
           "application/xml"
@@ -11910,7 +11943,7 @@
           "Bus Advanced(By Station)"
         ],
         "summary": "取得指定[縣市],[站位]的市區公車路線站序資料",
-        "operationId": "CityBusApi_StopOfRoute_ByStation",
+        "operationId": "CityBusApi_StopOfRoute_ByStation_2883",
         "produces": [
           "application/json",
           "application/xml"
@@ -11947,11 +11980,7 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "ChanghuaCounty": "彰化縣",
-              "Taoyuan": "桃園市",
               "Taipei": "臺北市",
-              "Keelung": "基隆市",
-              "Tainan": "臺南市",
               "NewTaipei": "新北市",
               "YunlinCounty": "雲林縣",
               "YilanCounty": "宜蘭縣",
@@ -11961,12 +11990,16 @@
               "Hsinchu": "新竹市",
               "TaitungCounty": "臺東縣",
               "LienchiangCounty": "連江縣",
+              "Keelung": "基隆市",
+              "Tainan": "臺南市",
               "ChiayiCounty": "嘉義縣",
               "Taichung": "臺中市",
               "HsinchuCounty": "新竹縣",
               "PenghuCounty": "澎湖縣",
               "MiaoliCounty": "苗栗縣",
+              "ChanghuaCounty": "彰化縣",
               "PingtungCounty": "屏東縣",
+              "Taoyuan": "桃園市",
               "HualienCounty": "花蓮縣",
               "Chiayi": "嘉義市"
             }
@@ -12060,7 +12093,7 @@
           "Bus Advanced(By Station)"
         ],
         "summary": "取得指定[縣市],[站位]的市區公車路線班表資料",
-        "operationId": "CityBusApi_Schedule_ByStation",
+        "operationId": "CityBusApi_Schedule_ByStation_2884",
         "produces": [
           "application/json",
           "application/xml"
@@ -12210,7 +12243,7 @@
           "Bus Advanced(By Station)"
         ],
         "summary": "取得指定[縣市],[站位]的市區公車路線線型資料",
-        "operationId": "CityBusApi_Shape_ByStation",
+        "operationId": "CityBusApi_Shape_ByStation_2885",
         "produces": [
           "application/json",
           "application/xml"
@@ -12360,7 +12393,7 @@
           "Bus Advanced(By Operator)"
         ],
         "summary": "取得指定[業者編號]的公路客運動態定時資料(A1)",
-        "operationId": "InterCityBusApi_RealTimeByFrequency_ByOperator",
+        "operationId": "InterCityBusApi_RealTimeByFrequency_ByOperator_2886",
         "produces": [
           "application/json",
           "application/xml"
@@ -12461,7 +12494,7 @@
           "Bus Advanced(By Operator)"
         ],
         "summary": "取得指定[業者編號]的公路客運動態定點資料(A2)",
-        "operationId": "InterCityBusApi_RealTimeNearStop_ByOperator",
+        "operationId": "InterCityBusApi_RealTimeNearStop_ByOperator_2887",
         "produces": [
           "application/json",
           "application/xml"
@@ -12556,7 +12589,7 @@
           "Bus Advanced(By Operator)"
         ],
         "summary": "取得指定[業者編號]的公路客運路線資料",
-        "operationId": "InterCityBusApi_Route_ByOperator",
+        "operationId": "InterCityBusApi_Route_ByOperator_2889",
         "produces": [
           "application/json",
           "application/xml"
@@ -12651,7 +12684,7 @@
           "Bus Advanced(By Operator)"
         ],
         "summary": "取得指定[業者編號]的公路客運站牌資料",
-        "operationId": "InterCityBusApi_Stop_ByOperator",
+        "operationId": "InterCityBusApi_Stop_ByOperator_2890",
         "produces": [
           "application/json",
           "application/xml"
@@ -12752,7 +12785,7 @@
           "Bus Advanced(By Operator)"
         ],
         "summary": "取得指定[業者編號]的公路客運站位資料",
-        "operationId": "InterCityBusApi_Station_ByOperator",
+        "operationId": "InterCityBusApi_Station_ByOperator_2891",
         "produces": [
           "application/json",
           "application/xml"
@@ -12853,7 +12886,7 @@
           "Bus Advanced(By Operator)"
         ],
         "summary": "取得指定[業者編號]的公路客運路線站序資料",
-        "operationId": "InterCityBusApi_StopOfRoute_ByOperator",
+        "operationId": "InterCityBusApi_StopOfRoute_ByOperator_2892",
         "produces": [
           "application/json",
           "application/xml"
@@ -12948,7 +12981,7 @@
           "Bus Advanced(By Operator)"
         ],
         "summary": "取得指定[業者編號]的公路客運班表資料",
-        "operationId": "InterCityBusApi_Schedule_ByOperator",
+        "operationId": "InterCityBusApi_Schedule_ByOperator_2893",
         "produces": [
           "application/json",
           "application/xml"
@@ -13043,7 +13076,7 @@
           "Bus Advanced(By Operator)"
         ],
         "summary": "取得指定[業者編號]的公路客運線型資料",
-        "operationId": "InterCityBusApi_Shape_ByOperator",
+        "operationId": "InterCityBusApi_Shape_ByOperator_2894",
         "produces": [
           "application/json",
           "application/xml"
@@ -13138,7 +13171,7 @@
           "Bus Advanced(By Operator)"
         ],
         "summary": "取得指定[業者編號]的公路客運路線票價資料",
-        "operationId": "InterCityBusApi_RouteFare_ByOperator",
+        "operationId": "InterCityBusApi_RouteFare_ByOperator_2895",
         "produces": [
           "application/json",
           "application/xml"
@@ -13233,7 +13266,7 @@
           "Bus Advanced(By Station)"
         ],
         "summary": "取得指定[站位]的公路客運動態定時資料(A1)",
-        "operationId": "InterCityBusApi_RealTimeByFrequency_ByStation",
+        "operationId": "InterCityBusApi_RealTimeByFrequency_ByStation_2896",
         "produces": [
           "application/json",
           "application/xml"
@@ -13334,7 +13367,7 @@
           "Bus Advanced(By Station)"
         ],
         "summary": "取得指定[站位]的公路客運動態定點資料(A2)",
-        "operationId": "InterCityBusApi_RealTimeNearStop_ByStation",
+        "operationId": "InterCityBusApi_RealTimeNearStop_ByStation_2897",
         "produces": [
           "application/json",
           "application/xml"
@@ -13429,7 +13462,7 @@
           "Bus Advanced(By Station)"
         ],
         "summary": "取得指定[站位]的公路客運預估到站資料(N1)",
-        "operationId": "InterCityBusApi_EstimatedTimeOfArrival_ByStation",
+        "operationId": "InterCityBusApi_EstimatedTimeOfArrival_ByStation_2898",
         "produces": [
           "application/json",
           "application/xml"
@@ -13524,7 +13557,7 @@
           "Bus Advanced(By Station)"
         ],
         "summary": "取得指定[站位]的公路客運路線資料",
-        "operationId": "InterCityBusApi_Route_ByStation",
+        "operationId": "InterCityBusApi_Route_ByStation_2899",
         "produces": [
           "application/json",
           "application/xml"
@@ -13619,7 +13652,7 @@
           "Bus Advanced(By Station)"
         ],
         "summary": "取得指定[站位]的公路客運站牌資料",
-        "operationId": "InterCityBusApi_Stop_ByStation",
+        "operationId": "InterCityBusApi_Stop_ByStation_2900",
         "produces": [
           "application/json",
           "application/xml"
@@ -13720,7 +13753,7 @@
           "Bus Advanced(By Station)"
         ],
         "summary": "取得指定[站位]的公路客運路線站序資料",
-        "operationId": "InterCityBusApi_StopOfRoute_ByStation",
+        "operationId": "InterCityBusApi_StopOfRoute_ByStation_2901",
         "produces": [
           "application/json",
           "application/xml"
@@ -13815,7 +13848,7 @@
           "Bus Advanced(By Station)"
         ],
         "summary": "取得指定[站位]的公路客運路線班表資料",
-        "operationId": "InterCityBusApi_Schedule_ByStation",
+        "operationId": "InterCityBusApi_Schedule_ByStation_2902",
         "produces": [
           "application/json",
           "application/xml"
@@ -13910,7 +13943,7 @@
           "Bus Advanced(By Station)"
         ],
         "summary": "取得指定[站位]的公路客運線型資料",
-        "operationId": "InterCityBusApi_Shape_ByStation",
+        "operationId": "InterCityBusApi_Shape_ByStation_2903",
         "produces": [
           "application/json",
           "application/xml"
@@ -14347,7 +14380,9 @@
         "AlertID",
         "Department",
         "Description",
+        "EndTime",
         "Scope",
+        "StartTime",
         "Title"
       ],
       "type": "object",
@@ -14391,12 +14426,12 @@
         },
         "Cause": {
           "title": "Int32",
-          "description": "原因 : [1:'事故',2:'維護',3:'技術問題',4:'施工',5:'急救',6:'天災',7:'示威遊行',8:'維安',9:'假日',10:'罷工',254:'其他',255:'未知原因']",
+          "description": "原因 : [1:'事故(ACCIDENT)',2:'維護檢修(MAINTENANCE)',3:'技術問題(TECHNICAL_PROBLEM)',4:'施工(CONSTRUCTION)',5:'醫療緊急狀況(MEDICAL_EMERGENCY)',6:'氣候(WEATHER)',7:'示威遊行(DEMONSTRATION)',8:'政治活動/維安(POLICE_ACTIVITY)',9:'假日/節慶(HOLIDAY)',10:'罷工(STRIKE)',11:'活動(Activity)(如：國慶活動/煙火活動/跨年活動/路跑活動/新北耶誕城活動等)',254:'其他(OTHER_CAUSE)',255:'未知原因(UNKNOWN_CAUSE)']",
           "type": "integer"
         },
         "Effect": {
           "title": "Int32",
-          "description": "影響 : [1:'車輛改道',2:'服務班次增加',3:'服務班次減少',4:'服務班次取消',5:'服務班次改變',6:'站牌不停靠',7:'重大延遲',254:'其他影響',255:'未知影響']",
+          "description": "影響 : [1:'車輛改道/站牌不停靠(DETOUR)',2:'服務(班次)增加(ADDITIONAL_SERVICE)',3:'服務(班次)減少(REDUCED_SERVICE)',4:'服務(班次)取消(NO_SERVICE)',5:'服務(班次)改變(MODIFIED_SERVICE)',6:'站點異動(STOP_MOVED)',7:'重大延遲(SIGNIFICANT_DELAYS)',254:'其他影響(OTHER_EFFECT)',255:'未知影響(UNKNOWN_EFFECT)']",
           "type": "integer"
         },
         "Scope": {
@@ -15546,9 +15581,11 @@
       "description": "公車最新消息資料",
       "required": [
         "Description",
+        "EndTime",
         "Language",
         "NewsID",
         "PublishTime",
+        "StartTime",
         "Title",
         "UpdateTime"
       ],
@@ -16408,7 +16445,6 @@
       "title": "BusShape",
       "description": "公車線型資料",
       "required": [
-        "Direction",
         "EncodedPolyline",
         "Geometry",
         "RouteID",
@@ -17315,7 +17351,7 @@
         },
         "VehicleType": {
           "title": "Int32",
-          "description": "車輛種類 : [0:'一般',1:'無障礙公車',2:'復康巴士',3:'小型巴士']",
+          "description": "車輛種類 : [0:'一般',1:'無障礙公車',2:'復康巴士',3:'小型巴士',4:'專車',5:'其他']",
           "type": "integer"
         },
         "UpdateTime": {
@@ -18072,7 +18108,7 @@
         "Weekday": {
           "format": "int32",
           "title": "Int32",
-          "description": "星期",
+          "description": "星期 : [0:星期日, 1:星期一, 2:星期二, 3:星期三, 4:星期四, 5:星期五, 6:星期六, 99:不分星期]",
           "type": "integer"
         },
         "StartHour": {
@@ -18581,6 +18617,26 @@
       }
     }
   },
+  "securityDefinitions": {
+    "AppID": {
+      "type": "apiKey",
+      "name": "Authorization",
+      "in": "header",
+      "description": "Specify the authorization token."
+    },
+    "AppKey": {
+      "type": "apiKey",
+      "name": "Authorization",
+      "in": "header",
+      "description": "Specify the authorization token."
+    }
+  },
+  "security": [
+    {
+      "AppID": [],
+      "AppKey": []
+    }
+  ],
   "tags": [
     {
       "name": "CityBus",

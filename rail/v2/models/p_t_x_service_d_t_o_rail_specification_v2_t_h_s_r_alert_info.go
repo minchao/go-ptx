@@ -45,6 +45,10 @@ type PTXServiceDTORailSpecificationV2THSRAlertInfo struct {
 	// Required: true
 	Effects *string `json:"Effects" xml:"String"`
 
+	// 結束時間
+	// Format: date-time
+	EndTime strfmt.DateTime `json:"EndTime,omitempty"`
+
 	// Int32
 	//
 	// 動態事件影響等級(本資料僅作參考，實際資料請參考高鐵http://www.thsrc.com.tw/tw/Operation) : [1:'全線正常運行',2:'有異常狀況']
@@ -65,6 +69,10 @@ type PTXServiceDTORailSpecificationV2THSRAlertInfo struct {
 	// Required: true
 	// Format: date-time
 	SrcUpdateTime *strfmt.DateTime `json:"SrcUpdateTime"`
+
+	// 開始時間
+	// Format: date-time
+	StartTime strfmt.DateTime `json:"StartTime,omitempty"`
 
 	// String
 	//
@@ -106,6 +114,10 @@ func (m *PTXServiceDTORailSpecificationV2THSRAlertInfo) Validate(formats strfmt.
 		res = append(res, err)
 	}
 
+	if err := m.validateEndTime(formats); err != nil {
+		res = append(res, err)
+	}
+
 	if err := m.validateLevel(formats); err != nil {
 		res = append(res, err)
 	}
@@ -119,6 +131,10 @@ func (m *PTXServiceDTORailSpecificationV2THSRAlertInfo) Validate(formats strfmt.
 	}
 
 	if err := m.validateSrcUpdateTime(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateStartTime(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -176,6 +192,18 @@ func (m *PTXServiceDTORailSpecificationV2THSRAlertInfo) validateEffects(formats 
 	return nil
 }
 
+func (m *PTXServiceDTORailSpecificationV2THSRAlertInfo) validateEndTime(formats strfmt.Registry) error {
+	if swag.IsZero(m.EndTime) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("EndTime", "body", "date-time", m.EndTime.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
 func (m *PTXServiceDTORailSpecificationV2THSRAlertInfo) validateLevel(formats strfmt.Registry) error {
 
 	if err := validate.Required("Level", "body", m.Level); err != nil {
@@ -216,6 +244,18 @@ func (m *PTXServiceDTORailSpecificationV2THSRAlertInfo) validateSrcUpdateTime(fo
 	}
 
 	if err := validate.FormatOf("SrcUpdateTime", "body", "date-time", m.SrcUpdateTime.String(), formats); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV2THSRAlertInfo) validateStartTime(formats strfmt.Registry) error {
+	if swag.IsZero(m.StartTime) { // not required
+		return nil
+	}
+
+	if err := validate.FormatOf("StartTime", "body", "date-time", m.StartTime.String(), formats); err != nil {
 		return err
 	}
 

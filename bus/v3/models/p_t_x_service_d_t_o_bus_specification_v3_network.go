@@ -88,6 +88,8 @@ func (m *PTXServiceDTOBusSpecificationV3Network) validateLBSMapURLs(formats strf
 			if err := m.LBSMapURLs[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("LBSMapURLs" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("LBSMapURLs" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -147,6 +149,8 @@ func (m *PTXServiceDTOBusSpecificationV3Network) contextValidateLBSMapURLs(ctx c
 			if err := m.LBSMapURLs[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("LBSMapURLs" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("LBSMapURLs" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

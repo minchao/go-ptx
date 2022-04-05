@@ -105,6 +105,8 @@ func (m *PTXAPIShipModelShipWrapperPTXServiceDTOShipSpecificationV3DailySchedule
 			if err := m.DailySchedules[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("DailySchedules" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("DailySchedules" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -189,6 +191,8 @@ func (m *PTXAPIShipModelShipWrapperPTXServiceDTOShipSpecificationV3DailySchedule
 			if err := m.DailySchedules[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("DailySchedules" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("DailySchedules" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

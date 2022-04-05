@@ -30,80 +30,81 @@ type ClientOption func(*runtime.ClientOperation)
 
 // ClientService is the interface for Client methods
 type ClientService interface {
-	TRAAPIDailyTimetable(params *TRAAPIDailyTimetableParams, opts ...ClientOption) (*TRAAPIDailyTimetableOK, *TRAAPIDailyTimetableStatus299, error)
+	TRAAPIDailyTimetable2150(params *TRAAPIDailyTimetable2150Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TRAAPIDailyTimetable2150OK, *TRAAPIDailyTimetable2150Status299, error)
 
-	TRAAPIDailyTimetable1(params *TRAAPIDailyTimetable1Params, opts ...ClientOption) (*TRAAPIDailyTimetable1OK, *TRAAPIDailyTimetable1Status299, error)
+	TRAAPIDailyTimetable21501(params *TRAAPIDailyTimetable21501Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TRAAPIDailyTimetable21501OK, *TRAAPIDailyTimetable21501Status299, error)
 
-	TRAAPIDailyTimetable2(params *TRAAPIDailyTimetable2Params, opts ...ClientOption) (*TRAAPIDailyTimetable2OK, *TRAAPIDailyTimetable2Status299, error)
+	TRAAPIDailyTimetable21502(params *TRAAPIDailyTimetable21502Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TRAAPIDailyTimetable21502OK, *TRAAPIDailyTimetable21502Status299, error)
 
-	TRAAPIDailyTimetable3(params *TRAAPIDailyTimetable3Params, opts ...ClientOption) (*TRAAPIDailyTimetable3OK, *TRAAPIDailyTimetable3Status299, error)
+	TRAAPIDailyTimetable21503(params *TRAAPIDailyTimetable21503Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TRAAPIDailyTimetable21503OK, *TRAAPIDailyTimetable21503Status299, error)
 
-	TRAAPIDailyTimetable4(params *TRAAPIDailyTimetable4Params, opts ...ClientOption) (*TRAAPIDailyTimetable4OK, *TRAAPIDailyTimetable4Status299, error)
+	TRAAPIDailyTimetable21504(params *TRAAPIDailyTimetable21504Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TRAAPIDailyTimetable21504OK, *TRAAPIDailyTimetable21504Status299, error)
 
-	TRAAPIDailyTrainInfo(params *TRAAPIDailyTrainInfoParams, opts ...ClientOption) (*TRAAPIDailyTrainInfoOK, *TRAAPIDailyTrainInfoStatus299, error)
+	TRAAPIDailyTrainInfo2149(params *TRAAPIDailyTrainInfo2149Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TRAAPIDailyTrainInfo2149OK, *TRAAPIDailyTrainInfo2149Status299, error)
 
-	TRAAPIDailyTrainInfo1(params *TRAAPIDailyTrainInfo1Params, opts ...ClientOption) (*TRAAPIDailyTrainInfo1OK, *TRAAPIDailyTrainInfo1Status299, error)
+	TRAAPIDailyTrainInfo21491(params *TRAAPIDailyTrainInfo21491Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TRAAPIDailyTrainInfo21491OK, *TRAAPIDailyTrainInfo21491Status299, error)
 
-	TRAAPIDailyTrainInfo2(params *TRAAPIDailyTrainInfo2Params, opts ...ClientOption) (*TRAAPIDailyTrainInfo2OK, *TRAAPIDailyTrainInfo2Status299, error)
+	TRAAPIDailyTrainInfo21492(params *TRAAPIDailyTrainInfo21492Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TRAAPIDailyTrainInfo21492OK, *TRAAPIDailyTrainInfo21492Status299, error)
 
-	TRAAPIDailyTrainInfo3(params *TRAAPIDailyTrainInfo3Params, opts ...ClientOption) (*TRAAPIDailyTrainInfo3OK, *TRAAPIDailyTrainInfo3Status299, error)
+	TRAAPIDailyTrainInfo21493(params *TRAAPIDailyTrainInfo21493Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TRAAPIDailyTrainInfo21493OK, *TRAAPIDailyTrainInfo21493Status299, error)
 
-	TRAAPIGeneralTimetable(params *TRAAPIGeneralTimetableParams, opts ...ClientOption) (*TRAAPIGeneralTimetableOK, *TRAAPIGeneralTimetableStatus299, error)
+	TRAAPIGeneralTimetable2148(params *TRAAPIGeneralTimetable2148Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TRAAPIGeneralTimetable2148OK, *TRAAPIGeneralTimetable2148Status299, error)
 
-	TRAAPIGeneralTimetable1(params *TRAAPIGeneralTimetable1Params, opts ...ClientOption) (*TRAAPIGeneralTimetable1OK, *TRAAPIGeneralTimetable1Status299, error)
+	TRAAPIGeneralTimetable21481(params *TRAAPIGeneralTimetable21481Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TRAAPIGeneralTimetable21481OK, *TRAAPIGeneralTimetable21481Status299, error)
 
-	TRAAPIGeneralTrainInfo(params *TRAAPIGeneralTrainInfoParams, opts ...ClientOption) (*TRAAPIGeneralTrainInfoOK, *TRAAPIGeneralTrainInfoStatus299, error)
+	TRAAPIGeneralTrainInfo2147(params *TRAAPIGeneralTrainInfo2147Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TRAAPIGeneralTrainInfo2147OK, *TRAAPIGeneralTrainInfo2147Status299, error)
 
-	TRAAPIGeneralTrainInfo1(params *TRAAPIGeneralTrainInfo1Params, opts ...ClientOption) (*TRAAPIGeneralTrainInfo1OK, *TRAAPIGeneralTrainInfo1Status299, error)
+	TRAAPIGeneralTrainInfo21471(params *TRAAPIGeneralTrainInfo21471Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TRAAPIGeneralTrainInfo21471OK, *TRAAPIGeneralTrainInfo21471Status299, error)
 
-	TRAAPILine(params *TRAAPILineParams, opts ...ClientOption) (*TRAAPILineOK, *TRAAPILineStatus299, error)
+	TRAAPILine2142(params *TRAAPILine2142Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TRAAPILine2142OK, *TRAAPILine2142Status299, error)
 
-	TRAAPILiveBoard(params *TRAAPILiveBoardParams, opts ...ClientOption) (*TRAAPILiveBoardOK, *TRAAPILiveBoardStatus299, error)
+	TRAAPILiveBoard2153(params *TRAAPILiveBoard2153Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TRAAPILiveBoard2153OK, *TRAAPILiveBoard2153Status299, error)
 
-	TRAAPILiveBoard1(params *TRAAPILiveBoard1Params, opts ...ClientOption) (*TRAAPILiveBoard1OK, *TRAAPILiveBoard1Status299, error)
+	TRAAPILiveBoard21531(params *TRAAPILiveBoard21531Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TRAAPILiveBoard21531OK, *TRAAPILiveBoard21531Status299, error)
 
-	TRAAPILiveTrainDelay(params *TRAAPILiveTrainDelayParams, opts ...ClientOption) (*TRAAPILiveTrainDelayOK, *TRAAPILiveTrainDelayStatus299, error)
+	TRAAPILiveTrainDelay2154(params *TRAAPILiveTrainDelay2154Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TRAAPILiveTrainDelay2154OK, *TRAAPILiveTrainDelay2154Status299, error)
 
-	TRAAPINetwork(params *TRAAPINetworkParams, opts ...ClientOption) (*TRAAPINetworkOK, *TRAAPINetworkStatus299, error)
+	TRAAPINetwork2140(params *TRAAPINetwork2140Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TRAAPINetwork2140OK, *TRAAPINetwork2140Status299, error)
 
-	TRAAPIODDailyTimetable(params *TRAAPIODDailyTimetableParams, opts ...ClientOption) (*TRAAPIODDailyTimetableOK, *TRAAPIODDailyTimetableStatus299, error)
+	TRAAPIODDailyTimetable2152(params *TRAAPIODDailyTimetable2152Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TRAAPIODDailyTimetable2152OK, *TRAAPIODDailyTimetable2152Status299, error)
 
-	TRAAPIODFareStation(params *TRAAPIODFareStationParams, opts ...ClientOption) (*TRAAPIODFareStationOK, *TRAAPIODFareStationStatus299, error)
+	TRAAPIODFareStation2146(params *TRAAPIODFareStation2146Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TRAAPIODFareStation2146OK, *TRAAPIODFareStation2146Status299, error)
 
-	TRAAPIODFareStation1(params *TRAAPIODFareStation1Params, opts ...ClientOption) (*TRAAPIODFareStation1OK, *TRAAPIODFareStation1Status299, error)
+	TRAAPIODFareStation21461(params *TRAAPIODFareStation21461Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TRAAPIODFareStation21461OK, *TRAAPIODFareStation21461Status299, error)
 
-	TRAAPIShape(params *TRAAPIShapeParams, opts ...ClientOption) (*TRAAPIShapeOK, *TRAAPIShapeStatus299, error)
+	TRAAPIShape2145(params *TRAAPIShape2145Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TRAAPIShape2145OK, *TRAAPIShape2145Status299, error)
 
-	TRAAPIStation(params *TRAAPIStationParams, opts ...ClientOption) (*TRAAPIStationOK, *TRAAPIStationStatus299, error)
+	TRAAPIStationOfLine2143(params *TRAAPIStationOfLine2143Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TRAAPIStationOfLine2143OK, *TRAAPIStationOfLine2143Status299, error)
 
-	TRAAPIStationOfLine(params *TRAAPIStationOfLineParams, opts ...ClientOption) (*TRAAPIStationOfLineOK, *TRAAPIStationOfLineStatus299, error)
+	TRAAPIStationTimetable2151(params *TRAAPIStationTimetable2151Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TRAAPIStationTimetable2151OK, *TRAAPIStationTimetable2151Status299, error)
 
-	TRAAPIStationTimetable(params *TRAAPIStationTimetableParams, opts ...ClientOption) (*TRAAPIStationTimetableOK, *TRAAPIStationTimetableStatus299, error)
+	TRAAPIStation2141(params *TRAAPIStation2141Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TRAAPIStation2141OK, *TRAAPIStation2141Status299, error)
 
-	TRAAPITrainType(params *TRAAPITrainTypeParams, opts ...ClientOption) (*TRAAPITrainTypeOK, *TRAAPITrainTypeStatus299, error)
+	TRAAPITrainType2144(params *TRAAPITrainType2144Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TRAAPITrainType2144OK, *TRAAPITrainType2144Status299, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
 
 /*
-  TRAAPIDailyTimetable 取得當天所有車次的時刻表資料s
+  TRAAPIDailyTimetable2150 取得當天所有車次的時刻表資料s
 
   取得當天所有車次的時刻表資料
 */
-func (a *Client) TRAAPIDailyTimetable(params *TRAAPIDailyTimetableParams, opts ...ClientOption) (*TRAAPIDailyTimetableOK, *TRAAPIDailyTimetableStatus299, error) {
+func (a *Client) TRAAPIDailyTimetable2150(params *TRAAPIDailyTimetable2150Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TRAAPIDailyTimetable2150OK, *TRAAPIDailyTimetable2150Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewTRAAPIDailyTimetableParams()
+		params = NewTRAAPIDailyTimetable2150Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "TRAApi_DailyTimetable",
+		ID:                 "TRAApi_DailyTimetable_2150",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/DailyTimetable/Today",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &TRAAPIDailyTimetableReader{formats: a.formats},
+		Reader:             &TRAAPIDailyTimetable2150Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -116,9 +117,9 @@ func (a *Client) TRAAPIDailyTimetable(params *TRAAPIDailyTimetableParams, opts .
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *TRAAPIDailyTimetableOK:
+	case *TRAAPIDailyTimetable2150OK:
 		return value, nil, nil
-	case *TRAAPIDailyTimetableStatus299:
+	case *TRAAPIDailyTimetable2150Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -127,24 +128,25 @@ func (a *Client) TRAAPIDailyTimetable(params *TRAAPIDailyTimetableParams, opts .
 }
 
 /*
-  TRAAPIDailyTimetable1 取得當天指定s 車次 的時刻表資料
+  TRAAPIDailyTimetable21501 取得當天指定s 車次 的時刻表資料
 
   取得當天指定[車次]的時刻表資料
 */
-func (a *Client) TRAAPIDailyTimetable1(params *TRAAPIDailyTimetable1Params, opts ...ClientOption) (*TRAAPIDailyTimetable1OK, *TRAAPIDailyTimetable1Status299, error) {
+func (a *Client) TRAAPIDailyTimetable21501(params *TRAAPIDailyTimetable21501Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TRAAPIDailyTimetable21501OK, *TRAAPIDailyTimetable21501Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewTRAAPIDailyTimetable1Params()
+		params = NewTRAAPIDailyTimetable21501Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "TRAApi_DailyTimetable_1",
+		ID:                 "TRAApi_DailyTimetable_2150_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/DailyTimetable/Today/TrainNo/{TrainNo}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &TRAAPIDailyTimetable1Reader{formats: a.formats},
+		Reader:             &TRAAPIDailyTimetable21501Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -157,9 +159,9 @@ func (a *Client) TRAAPIDailyTimetable1(params *TRAAPIDailyTimetable1Params, opts
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *TRAAPIDailyTimetable1OK:
+	case *TRAAPIDailyTimetable21501OK:
 		return value, nil, nil
-	case *TRAAPIDailyTimetable1Status299:
+	case *TRAAPIDailyTimetable21501Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -168,24 +170,25 @@ func (a *Client) TRAAPIDailyTimetable1(params *TRAAPIDailyTimetable1Params, opts
 }
 
 /*
-  TRAAPIDailyTimetable2 取得台鐵每日時刻表所有供應的日期資料s
+  TRAAPIDailyTimetable21502 取得台鐵每日時刻表所有供應的日期資料s
 
   取得台鐵每日時刻表所有供應的日期資料
 */
-func (a *Client) TRAAPIDailyTimetable2(params *TRAAPIDailyTimetable2Params, opts ...ClientOption) (*TRAAPIDailyTimetable2OK, *TRAAPIDailyTimetable2Status299, error) {
+func (a *Client) TRAAPIDailyTimetable21502(params *TRAAPIDailyTimetable21502Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TRAAPIDailyTimetable21502OK, *TRAAPIDailyTimetable21502Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewTRAAPIDailyTimetable2Params()
+		params = NewTRAAPIDailyTimetable21502Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "TRAApi_DailyTimetable_2",
+		ID:                 "TRAApi_DailyTimetable_2150_2",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/DailyTimetable/TrainDates",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &TRAAPIDailyTimetable2Reader{formats: a.formats},
+		Reader:             &TRAAPIDailyTimetable21502Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -198,9 +201,9 @@ func (a *Client) TRAAPIDailyTimetable2(params *TRAAPIDailyTimetable2Params, opts
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *TRAAPIDailyTimetable2OK:
+	case *TRAAPIDailyTimetable21502OK:
 		return value, nil, nil
-	case *TRAAPIDailyTimetable2Status299:
+	case *TRAAPIDailyTimetable21502Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -209,24 +212,25 @@ func (a *Client) TRAAPIDailyTimetable2(params *TRAAPIDailyTimetable2Params, opts
 }
 
 /*
-  TRAAPIDailyTimetable3 取得指定s 日期 所有車次的時刻表資料
+  TRAAPIDailyTimetable21503 取得指定s 日期 所有車次的時刻表資料
 
   取得指定[日期]所有車次的時刻表資料(台鐵提供近60天每日時刻表)
 */
-func (a *Client) TRAAPIDailyTimetable3(params *TRAAPIDailyTimetable3Params, opts ...ClientOption) (*TRAAPIDailyTimetable3OK, *TRAAPIDailyTimetable3Status299, error) {
+func (a *Client) TRAAPIDailyTimetable21503(params *TRAAPIDailyTimetable21503Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TRAAPIDailyTimetable21503OK, *TRAAPIDailyTimetable21503Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewTRAAPIDailyTimetable3Params()
+		params = NewTRAAPIDailyTimetable21503Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "TRAApi_DailyTimetable_3",
+		ID:                 "TRAApi_DailyTimetable_2150_3",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/DailyTimetable/TrainDate/{TrainDate}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &TRAAPIDailyTimetable3Reader{formats: a.formats},
+		Reader:             &TRAAPIDailyTimetable21503Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -239,9 +243,9 @@ func (a *Client) TRAAPIDailyTimetable3(params *TRAAPIDailyTimetable3Params, opts
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *TRAAPIDailyTimetable3OK:
+	case *TRAAPIDailyTimetable21503OK:
 		return value, nil, nil
-	case *TRAAPIDailyTimetable3Status299:
+	case *TRAAPIDailyTimetable21503Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -250,24 +254,25 @@ func (a *Client) TRAAPIDailyTimetable3(params *TRAAPIDailyTimetable3Params, opts
 }
 
 /*
-  TRAAPIDailyTimetable4 取得指定s 日期 車次 的時刻表資料
+  TRAAPIDailyTimetable21504 取得指定s 日期 車次 的時刻表資料
 
   取得指定[日期],[車次]的時刻表資料(台鐵提供近60天每日時刻表)
 */
-func (a *Client) TRAAPIDailyTimetable4(params *TRAAPIDailyTimetable4Params, opts ...ClientOption) (*TRAAPIDailyTimetable4OK, *TRAAPIDailyTimetable4Status299, error) {
+func (a *Client) TRAAPIDailyTimetable21504(params *TRAAPIDailyTimetable21504Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TRAAPIDailyTimetable21504OK, *TRAAPIDailyTimetable21504Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewTRAAPIDailyTimetable4Params()
+		params = NewTRAAPIDailyTimetable21504Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "TRAApi_DailyTimetable_4",
+		ID:                 "TRAApi_DailyTimetable_2150_4",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/DailyTimetable/TrainNo/{TrainNo}/TrainDate/{TrainDate}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &TRAAPIDailyTimetable4Reader{formats: a.formats},
+		Reader:             &TRAAPIDailyTimetable21504Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -280,9 +285,9 @@ func (a *Client) TRAAPIDailyTimetable4(params *TRAAPIDailyTimetable4Params, opts
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *TRAAPIDailyTimetable4OK:
+	case *TRAAPIDailyTimetable21504OK:
 		return value, nil, nil
-	case *TRAAPIDailyTimetable4Status299:
+	case *TRAAPIDailyTimetable21504Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -291,24 +296,25 @@ func (a *Client) TRAAPIDailyTimetable4(params *TRAAPIDailyTimetable4Params, opts
 }
 
 /*
-  TRAAPIDailyTrainInfo 取得當天所有車次的車次資料s
+  TRAAPIDailyTrainInfo2149 取得當天所有車次的車次資料s
 
   取得當天所有車次的車次資料
 */
-func (a *Client) TRAAPIDailyTrainInfo(params *TRAAPIDailyTrainInfoParams, opts ...ClientOption) (*TRAAPIDailyTrainInfoOK, *TRAAPIDailyTrainInfoStatus299, error) {
+func (a *Client) TRAAPIDailyTrainInfo2149(params *TRAAPIDailyTrainInfo2149Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TRAAPIDailyTrainInfo2149OK, *TRAAPIDailyTrainInfo2149Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewTRAAPIDailyTrainInfoParams()
+		params = NewTRAAPIDailyTrainInfo2149Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "TRAApi_DailyTrainInfo",
+		ID:                 "TRAApi_DailyTrainInfo_2149",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/DailyTrainInfo/Today",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &TRAAPIDailyTrainInfoReader{formats: a.formats},
+		Reader:             &TRAAPIDailyTrainInfo2149Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -321,9 +327,9 @@ func (a *Client) TRAAPIDailyTrainInfo(params *TRAAPIDailyTrainInfoParams, opts .
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *TRAAPIDailyTrainInfoOK:
+	case *TRAAPIDailyTrainInfo2149OK:
 		return value, nil, nil
-	case *TRAAPIDailyTrainInfoStatus299:
+	case *TRAAPIDailyTrainInfo2149Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -332,24 +338,25 @@ func (a *Client) TRAAPIDailyTrainInfo(params *TRAAPIDailyTrainInfoParams, opts .
 }
 
 /*
-  TRAAPIDailyTrainInfo1 取得當天指定s 車次 的車次資料
+  TRAAPIDailyTrainInfo21491 取得當天指定s 車次 的車次資料
 
   取得當天指定[車次]的車次資料
 */
-func (a *Client) TRAAPIDailyTrainInfo1(params *TRAAPIDailyTrainInfo1Params, opts ...ClientOption) (*TRAAPIDailyTrainInfo1OK, *TRAAPIDailyTrainInfo1Status299, error) {
+func (a *Client) TRAAPIDailyTrainInfo21491(params *TRAAPIDailyTrainInfo21491Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TRAAPIDailyTrainInfo21491OK, *TRAAPIDailyTrainInfo21491Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewTRAAPIDailyTrainInfo1Params()
+		params = NewTRAAPIDailyTrainInfo21491Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "TRAApi_DailyTrainInfo_1",
+		ID:                 "TRAApi_DailyTrainInfo_2149_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/DailyTrainInfo/Today/TrainNo/{TrainNo}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &TRAAPIDailyTrainInfo1Reader{formats: a.formats},
+		Reader:             &TRAAPIDailyTrainInfo21491Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -362,9 +369,9 @@ func (a *Client) TRAAPIDailyTrainInfo1(params *TRAAPIDailyTrainInfo1Params, opts
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *TRAAPIDailyTrainInfo1OK:
+	case *TRAAPIDailyTrainInfo21491OK:
 		return value, nil, nil
-	case *TRAAPIDailyTrainInfo1Status299:
+	case *TRAAPIDailyTrainInfo21491Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -373,24 +380,25 @@ func (a *Client) TRAAPIDailyTrainInfo1(params *TRAAPIDailyTrainInfo1Params, opts
 }
 
 /*
-  TRAAPIDailyTrainInfo2 取得指定s 日期 所有車次的車次資料
+  TRAAPIDailyTrainInfo21492 取得指定s 日期 所有車次的車次資料
 
   取得指定[日期]所有車次的車次資料(台鐵提供近60天每日時刻表)
 */
-func (a *Client) TRAAPIDailyTrainInfo2(params *TRAAPIDailyTrainInfo2Params, opts ...ClientOption) (*TRAAPIDailyTrainInfo2OK, *TRAAPIDailyTrainInfo2Status299, error) {
+func (a *Client) TRAAPIDailyTrainInfo21492(params *TRAAPIDailyTrainInfo21492Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TRAAPIDailyTrainInfo21492OK, *TRAAPIDailyTrainInfo21492Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewTRAAPIDailyTrainInfo2Params()
+		params = NewTRAAPIDailyTrainInfo21492Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "TRAApi_DailyTrainInfo_2",
+		ID:                 "TRAApi_DailyTrainInfo_2149_2",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/DailyTrainInfo/TrainDate/{TrainDate}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &TRAAPIDailyTrainInfo2Reader{formats: a.formats},
+		Reader:             &TRAAPIDailyTrainInfo21492Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -403,9 +411,9 @@ func (a *Client) TRAAPIDailyTrainInfo2(params *TRAAPIDailyTrainInfo2Params, opts
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *TRAAPIDailyTrainInfo2OK:
+	case *TRAAPIDailyTrainInfo21492OK:
 		return value, nil, nil
-	case *TRAAPIDailyTrainInfo2Status299:
+	case *TRAAPIDailyTrainInfo21492Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -414,24 +422,25 @@ func (a *Client) TRAAPIDailyTrainInfo2(params *TRAAPIDailyTrainInfo2Params, opts
 }
 
 /*
-  TRAAPIDailyTrainInfo3 取得指定s 日期 與 車次 的車次資料
+  TRAAPIDailyTrainInfo21493 取得指定s 日期 與 車次 的車次資料
 
   取得指定[日期]與[車次]的車次資料(台鐵提供近60天每日時刻表)
 */
-func (a *Client) TRAAPIDailyTrainInfo3(params *TRAAPIDailyTrainInfo3Params, opts ...ClientOption) (*TRAAPIDailyTrainInfo3OK, *TRAAPIDailyTrainInfo3Status299, error) {
+func (a *Client) TRAAPIDailyTrainInfo21493(params *TRAAPIDailyTrainInfo21493Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TRAAPIDailyTrainInfo21493OK, *TRAAPIDailyTrainInfo21493Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewTRAAPIDailyTrainInfo3Params()
+		params = NewTRAAPIDailyTrainInfo21493Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "TRAApi_DailyTrainInfo_3",
+		ID:                 "TRAApi_DailyTrainInfo_2149_3",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/DailyTrainInfo/TrainNo/{TrainNo}/TrainDate/{TrainDate}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &TRAAPIDailyTrainInfo3Reader{formats: a.formats},
+		Reader:             &TRAAPIDailyTrainInfo21493Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -444,9 +453,9 @@ func (a *Client) TRAAPIDailyTrainInfo3(params *TRAAPIDailyTrainInfo3Params, opts
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *TRAAPIDailyTrainInfo3OK:
+	case *TRAAPIDailyTrainInfo21493OK:
 		return value, nil, nil
-	case *TRAAPIDailyTrainInfo3Status299:
+	case *TRAAPIDailyTrainInfo21493Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -455,24 +464,25 @@ func (a *Client) TRAAPIDailyTrainInfo3(params *TRAAPIDailyTrainInfo3Params, opts
 }
 
 /*
-  TRAAPIGeneralTimetable 取得所有車次的定期時刻表資料s
+  TRAAPIGeneralTimetable2148 取得所有車次的定期時刻表資料s
 
   取得所有車次的定期時刻表資料
 */
-func (a *Client) TRAAPIGeneralTimetable(params *TRAAPIGeneralTimetableParams, opts ...ClientOption) (*TRAAPIGeneralTimetableOK, *TRAAPIGeneralTimetableStatus299, error) {
+func (a *Client) TRAAPIGeneralTimetable2148(params *TRAAPIGeneralTimetable2148Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TRAAPIGeneralTimetable2148OK, *TRAAPIGeneralTimetable2148Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewTRAAPIGeneralTimetableParams()
+		params = NewTRAAPIGeneralTimetable2148Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "TRAApi_GeneralTimetable",
+		ID:                 "TRAApi_GeneralTimetable_2148",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/GeneralTimetable",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &TRAAPIGeneralTimetableReader{formats: a.formats},
+		Reader:             &TRAAPIGeneralTimetable2148Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -485,9 +495,9 @@ func (a *Client) TRAAPIGeneralTimetable(params *TRAAPIGeneralTimetableParams, op
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *TRAAPIGeneralTimetableOK:
+	case *TRAAPIGeneralTimetable2148OK:
 		return value, nil, nil
-	case *TRAAPIGeneralTimetableStatus299:
+	case *TRAAPIGeneralTimetable2148Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -496,24 +506,25 @@ func (a *Client) TRAAPIGeneralTimetable(params *TRAAPIGeneralTimetableParams, op
 }
 
 /*
-  TRAAPIGeneralTimetable1 取得指定s 車次 的定期時刻表資料
+  TRAAPIGeneralTimetable21481 取得指定s 車次 的定期時刻表資料
 
   取得指定[車次]的定期時刻表資料
 */
-func (a *Client) TRAAPIGeneralTimetable1(params *TRAAPIGeneralTimetable1Params, opts ...ClientOption) (*TRAAPIGeneralTimetable1OK, *TRAAPIGeneralTimetable1Status299, error) {
+func (a *Client) TRAAPIGeneralTimetable21481(params *TRAAPIGeneralTimetable21481Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TRAAPIGeneralTimetable21481OK, *TRAAPIGeneralTimetable21481Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewTRAAPIGeneralTimetable1Params()
+		params = NewTRAAPIGeneralTimetable21481Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "TRAApi_GeneralTimetable_1",
+		ID:                 "TRAApi_GeneralTimetable_2148_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/GeneralTimetable/TrainNo/{TrainNo}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &TRAAPIGeneralTimetable1Reader{formats: a.formats},
+		Reader:             &TRAAPIGeneralTimetable21481Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -526,9 +537,9 @@ func (a *Client) TRAAPIGeneralTimetable1(params *TRAAPIGeneralTimetable1Params, 
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *TRAAPIGeneralTimetable1OK:
+	case *TRAAPIGeneralTimetable21481OK:
 		return value, nil, nil
-	case *TRAAPIGeneralTimetable1Status299:
+	case *TRAAPIGeneralTimetable21481Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -537,24 +548,25 @@ func (a *Client) TRAAPIGeneralTimetable1(params *TRAAPIGeneralTimetable1Params, 
 }
 
 /*
-  TRAAPIGeneralTrainInfo 取得所有車次的定期車次資料s
+  TRAAPIGeneralTrainInfo2147 取得所有車次的定期車次資料s
 
   取得所有車次的定期車次資料
 */
-func (a *Client) TRAAPIGeneralTrainInfo(params *TRAAPIGeneralTrainInfoParams, opts ...ClientOption) (*TRAAPIGeneralTrainInfoOK, *TRAAPIGeneralTrainInfoStatus299, error) {
+func (a *Client) TRAAPIGeneralTrainInfo2147(params *TRAAPIGeneralTrainInfo2147Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TRAAPIGeneralTrainInfo2147OK, *TRAAPIGeneralTrainInfo2147Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewTRAAPIGeneralTrainInfoParams()
+		params = NewTRAAPIGeneralTrainInfo2147Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "TRAApi_GeneralTrainInfo",
+		ID:                 "TRAApi_GeneralTrainInfo_2147",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/GeneralTrainInfo",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &TRAAPIGeneralTrainInfoReader{formats: a.formats},
+		Reader:             &TRAAPIGeneralTrainInfo2147Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -567,9 +579,9 @@ func (a *Client) TRAAPIGeneralTrainInfo(params *TRAAPIGeneralTrainInfoParams, op
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *TRAAPIGeneralTrainInfoOK:
+	case *TRAAPIGeneralTrainInfo2147OK:
 		return value, nil, nil
-	case *TRAAPIGeneralTrainInfoStatus299:
+	case *TRAAPIGeneralTrainInfo2147Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -578,24 +590,25 @@ func (a *Client) TRAAPIGeneralTrainInfo(params *TRAAPIGeneralTrainInfoParams, op
 }
 
 /*
-  TRAAPIGeneralTrainInfo1 取得指定s 車次 的定期車次資料
+  TRAAPIGeneralTrainInfo21471 取得指定s 車次 的定期車次資料
 
   取得指定[車次]的定期車次資料
 */
-func (a *Client) TRAAPIGeneralTrainInfo1(params *TRAAPIGeneralTrainInfo1Params, opts ...ClientOption) (*TRAAPIGeneralTrainInfo1OK, *TRAAPIGeneralTrainInfo1Status299, error) {
+func (a *Client) TRAAPIGeneralTrainInfo21471(params *TRAAPIGeneralTrainInfo21471Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TRAAPIGeneralTrainInfo21471OK, *TRAAPIGeneralTrainInfo21471Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewTRAAPIGeneralTrainInfo1Params()
+		params = NewTRAAPIGeneralTrainInfo21471Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "TRAApi_GeneralTrainInfo_1",
+		ID:                 "TRAApi_GeneralTrainInfo_2147_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/GeneralTrainInfo/TrainNo/{TrainNo}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &TRAAPIGeneralTrainInfo1Reader{formats: a.formats},
+		Reader:             &TRAAPIGeneralTrainInfo21471Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -608,9 +621,9 @@ func (a *Client) TRAAPIGeneralTrainInfo1(params *TRAAPIGeneralTrainInfo1Params, 
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *TRAAPIGeneralTrainInfo1OK:
+	case *TRAAPIGeneralTrainInfo21471OK:
 		return value, nil, nil
-	case *TRAAPIGeneralTrainInfo1Status299:
+	case *TRAAPIGeneralTrainInfo21471Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -619,24 +632,25 @@ func (a *Client) TRAAPIGeneralTrainInfo1(params *TRAAPIGeneralTrainInfo1Params, 
 }
 
 /*
-  TRAAPILine 取得路線基本資料s
+  TRAAPILine2142 取得路線基本資料s
 
   取得路線基本資料
 */
-func (a *Client) TRAAPILine(params *TRAAPILineParams, opts ...ClientOption) (*TRAAPILineOK, *TRAAPILineStatus299, error) {
+func (a *Client) TRAAPILine2142(params *TRAAPILine2142Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TRAAPILine2142OK, *TRAAPILine2142Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewTRAAPILineParams()
+		params = NewTRAAPILine2142Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "TRAApi_Line",
+		ID:                 "TRAApi_Line_2142",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/Line",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &TRAAPILineReader{formats: a.formats},
+		Reader:             &TRAAPILine2142Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -649,9 +663,9 @@ func (a *Client) TRAAPILine(params *TRAAPILineParams, opts ...ClientOption) (*TR
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *TRAAPILineOK:
+	case *TRAAPILine2142OK:
 		return value, nil, nil
-	case *TRAAPILineStatus299:
+	case *TRAAPILine2142Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -660,24 +674,25 @@ func (a *Client) TRAAPILine(params *TRAAPILineParams, opts ...ClientOption) (*TR
 }
 
 /*
-  TRAAPILiveBoard 取得車站別列車即時到離站電子看板s 動態前後30分鐘的車次
+  TRAAPILiveBoard2153 取得車站別列車即時到離站電子看板s 動態前後30分鐘的車次
 
   取得車站別列車即時到離站電子看板(動態前後30分鐘的車次)。更新頻率：2分鐘。此資料已過濾離站車次資訊
 */
-func (a *Client) TRAAPILiveBoard(params *TRAAPILiveBoardParams, opts ...ClientOption) (*TRAAPILiveBoardOK, *TRAAPILiveBoardStatus299, error) {
+func (a *Client) TRAAPILiveBoard2153(params *TRAAPILiveBoard2153Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TRAAPILiveBoard2153OK, *TRAAPILiveBoard2153Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewTRAAPILiveBoardParams()
+		params = NewTRAAPILiveBoard2153Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "TRAApi_LiveBoard",
+		ID:                 "TRAApi_LiveBoard_2153",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/LiveBoard",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &TRAAPILiveBoardReader{formats: a.formats},
+		Reader:             &TRAAPILiveBoard2153Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -690,9 +705,9 @@ func (a *Client) TRAAPILiveBoard(params *TRAAPILiveBoardParams, opts ...ClientOp
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *TRAAPILiveBoardOK:
+	case *TRAAPILiveBoard2153OK:
 		return value, nil, nil
-	case *TRAAPILiveBoardStatus299:
+	case *TRAAPILiveBoard2153Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -701,24 +716,25 @@ func (a *Client) TRAAPILiveBoard(params *TRAAPILiveBoardParams, opts ...ClientOp
 }
 
 /*
-  TRAAPILiveBoard1 取得指定s 車站 列車即時到離站電子看板 動態前後30分鐘的車次
+  TRAAPILiveBoard21531 取得指定s 車站 列車即時到離站電子看板 動態前後30分鐘的車次
 
   取得指定[車站]列車即時到離站電子看板(動態前後30分鐘的車次)。更新頻率：2分鐘。此資料已過濾離站車次資訊
 */
-func (a *Client) TRAAPILiveBoard1(params *TRAAPILiveBoard1Params, opts ...ClientOption) (*TRAAPILiveBoard1OK, *TRAAPILiveBoard1Status299, error) {
+func (a *Client) TRAAPILiveBoard21531(params *TRAAPILiveBoard21531Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TRAAPILiveBoard21531OK, *TRAAPILiveBoard21531Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewTRAAPILiveBoard1Params()
+		params = NewTRAAPILiveBoard21531Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "TRAApi_LiveBoard_1",
+		ID:                 "TRAApi_LiveBoard_2153_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/LiveBoard/Station/{StationID}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &TRAAPILiveBoard1Reader{formats: a.formats},
+		Reader:             &TRAAPILiveBoard21531Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -731,9 +747,9 @@ func (a *Client) TRAAPILiveBoard1(params *TRAAPILiveBoard1Params, opts ...Client
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *TRAAPILiveBoard1OK:
+	case *TRAAPILiveBoard21531OK:
 		return value, nil, nil
-	case *TRAAPILiveBoard1Status299:
+	case *TRAAPILiveBoard21531Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -742,24 +758,25 @@ func (a *Client) TRAAPILiveBoard1(params *TRAAPILiveBoard1Params, opts ...Client
 }
 
 /*
-  TRAAPILiveTrainDelay 取得列車即時準點s 延誤時間資料
+  TRAAPILiveTrainDelay2154 取得列車即時準點s 延誤時間資料
 
   取得列車即時準點/延誤時間資料。更新頻率：2分鐘
 */
-func (a *Client) TRAAPILiveTrainDelay(params *TRAAPILiveTrainDelayParams, opts ...ClientOption) (*TRAAPILiveTrainDelayOK, *TRAAPILiveTrainDelayStatus299, error) {
+func (a *Client) TRAAPILiveTrainDelay2154(params *TRAAPILiveTrainDelay2154Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TRAAPILiveTrainDelay2154OK, *TRAAPILiveTrainDelay2154Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewTRAAPILiveTrainDelayParams()
+		params = NewTRAAPILiveTrainDelay2154Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "TRAApi_LiveTrainDelay",
+		ID:                 "TRAApi_LiveTrainDelay_2154",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/LiveTrainDelay",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &TRAAPILiveTrainDelayReader{formats: a.formats},
+		Reader:             &TRAAPILiveTrainDelay2154Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -772,9 +789,9 @@ func (a *Client) TRAAPILiveTrainDelay(params *TRAAPILiveTrainDelayParams, opts .
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *TRAAPILiveTrainDelayOK:
+	case *TRAAPILiveTrainDelay2154OK:
 		return value, nil, nil
-	case *TRAAPILiveTrainDelayStatus299:
+	case *TRAAPILiveTrainDelay2154Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -783,24 +800,25 @@ func (a *Client) TRAAPILiveTrainDelay(params *TRAAPILiveTrainDelayParams, opts .
 }
 
 /*
-  TRAAPINetwork 取得臺鐵路網資料s
+  TRAAPINetwork2140 取得臺鐵路網資料s
 
   取得臺鐵路網資料
 */
-func (a *Client) TRAAPINetwork(params *TRAAPINetworkParams, opts ...ClientOption) (*TRAAPINetworkOK, *TRAAPINetworkStatus299, error) {
+func (a *Client) TRAAPINetwork2140(params *TRAAPINetwork2140Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TRAAPINetwork2140OK, *TRAAPINetwork2140Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewTRAAPINetworkParams()
+		params = NewTRAAPINetwork2140Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "TRAApi_Network",
+		ID:                 "TRAApi_Network_2140",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/Network",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &TRAAPINetworkReader{formats: a.formats},
+		Reader:             &TRAAPINetwork2140Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -813,9 +831,9 @@ func (a *Client) TRAAPINetwork(params *TRAAPINetworkParams, opts ...ClientOption
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *TRAAPINetworkOK:
+	case *TRAAPINetwork2140OK:
 		return value, nil, nil
-	case *TRAAPINetworkStatus299:
+	case *TRAAPINetwork2140Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -824,24 +842,25 @@ func (a *Client) TRAAPINetwork(params *TRAAPINetworkParams, opts ...ClientOption
 }
 
 /*
-  TRAAPIODDailyTimetable 取得指定s 日期 起迄站間 之站間時刻表資料
+  TRAAPIODDailyTimetable2152 取得指定s 日期 起迄站間 之站間時刻表資料
 
   取得指定[日期],[起迄站間]之站間時刻表資料
 */
-func (a *Client) TRAAPIODDailyTimetable(params *TRAAPIODDailyTimetableParams, opts ...ClientOption) (*TRAAPIODDailyTimetableOK, *TRAAPIODDailyTimetableStatus299, error) {
+func (a *Client) TRAAPIODDailyTimetable2152(params *TRAAPIODDailyTimetable2152Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TRAAPIODDailyTimetable2152OK, *TRAAPIODDailyTimetable2152Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewTRAAPIODDailyTimetableParams()
+		params = NewTRAAPIODDailyTimetable2152Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "TRAApi_ODDailyTimetable",
+		ID:                 "TRAApi_ODDailyTimetable_2152",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/DailyTimetable/OD/{OriginStationID}/to/{DestinationStationID}/{TrainDate}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &TRAAPIODDailyTimetableReader{formats: a.formats},
+		Reader:             &TRAAPIODDailyTimetable2152Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -854,9 +873,9 @@ func (a *Client) TRAAPIODDailyTimetable(params *TRAAPIODDailyTimetableParams, op
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *TRAAPIODDailyTimetableOK:
+	case *TRAAPIODDailyTimetable2152OK:
 		return value, nil, nil
-	case *TRAAPIODDailyTimetableStatus299:
+	case *TRAAPIODDailyTimetable2152Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -865,24 +884,25 @@ func (a *Client) TRAAPIODDailyTimetable(params *TRAAPIODDailyTimetableParams, op
 }
 
 /*
-  TRAAPIODFareStation 取得票價資料s
+  TRAAPIODFareStation2146 取得票價資料s
 
   取得票價資料
 */
-func (a *Client) TRAAPIODFareStation(params *TRAAPIODFareStationParams, opts ...ClientOption) (*TRAAPIODFareStationOK, *TRAAPIODFareStationStatus299, error) {
+func (a *Client) TRAAPIODFareStation2146(params *TRAAPIODFareStation2146Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TRAAPIODFareStation2146OK, *TRAAPIODFareStation2146Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewTRAAPIODFareStationParams()
+		params = NewTRAAPIODFareStation2146Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "TRAApi_ODFareStation",
+		ID:                 "TRAApi_ODFareStation_2146",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/ODFare",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &TRAAPIODFareStationReader{formats: a.formats},
+		Reader:             &TRAAPIODFareStation2146Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -895,9 +915,9 @@ func (a *Client) TRAAPIODFareStation(params *TRAAPIODFareStationParams, opts ...
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *TRAAPIODFareStationOK:
+	case *TRAAPIODFareStation2146OK:
 		return value, nil, nil
-	case *TRAAPIODFareStationStatus299:
+	case *TRAAPIODFareStation2146Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -906,24 +926,25 @@ func (a *Client) TRAAPIODFareStation(params *TRAAPIODFareStationParams, opts ...
 }
 
 /*
-  TRAAPIODFareStation1 取得指定s 起訖站間 之票價資料
+  TRAAPIODFareStation21461 取得指定s 起訖站間 之票價資料
 
   取得指定[起訖站間]之票價資料
 */
-func (a *Client) TRAAPIODFareStation1(params *TRAAPIODFareStation1Params, opts ...ClientOption) (*TRAAPIODFareStation1OK, *TRAAPIODFareStation1Status299, error) {
+func (a *Client) TRAAPIODFareStation21461(params *TRAAPIODFareStation21461Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TRAAPIODFareStation21461OK, *TRAAPIODFareStation21461Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewTRAAPIODFareStation1Params()
+		params = NewTRAAPIODFareStation21461Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "TRAApi_ODFareStation_1",
+		ID:                 "TRAApi_ODFareStation_2146_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/ODFare/{OriginStationID}/to/{DestinationStationID}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &TRAAPIODFareStation1Reader{formats: a.formats},
+		Reader:             &TRAAPIODFareStation21461Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -936,9 +957,9 @@ func (a *Client) TRAAPIODFareStation1(params *TRAAPIODFareStation1Params, opts .
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *TRAAPIODFareStation1OK:
+	case *TRAAPIODFareStation21461OK:
 		return value, nil, nil
-	case *TRAAPIODFareStation1Status299:
+	case *TRAAPIODFareStation21461Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -947,24 +968,25 @@ func (a *Client) TRAAPIODFareStation1(params *TRAAPIODFareStation1Params, opts .
 }
 
 /*
-  TRAAPIShape 取得軌道路網實體路線圖資資料s
+  TRAAPIShape2145 取得軌道路網實體路線圖資資料s
 
   取得軌道路網實體路線圖資資料
 */
-func (a *Client) TRAAPIShape(params *TRAAPIShapeParams, opts ...ClientOption) (*TRAAPIShapeOK, *TRAAPIShapeStatus299, error) {
+func (a *Client) TRAAPIShape2145(params *TRAAPIShape2145Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TRAAPIShape2145OK, *TRAAPIShape2145Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewTRAAPIShapeParams()
+		params = NewTRAAPIShape2145Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "TRAApi_Shape",
+		ID:                 "TRAApi_Shape_2145",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/Shape",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &TRAAPIShapeReader{formats: a.formats},
+		Reader:             &TRAAPIShape2145Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -977,9 +999,9 @@ func (a *Client) TRAAPIShape(params *TRAAPIShapeParams, opts ...ClientOption) (*
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *TRAAPIShapeOK:
+	case *TRAAPIShape2145OK:
 		return value, nil, nil
-	case *TRAAPIShapeStatus299:
+	case *TRAAPIShape2145Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -988,65 +1010,25 @@ func (a *Client) TRAAPIShape(params *TRAAPIShapeParams, opts ...ClientOption) (*
 }
 
 /*
-  TRAAPIStation 取得車站基本資料s
-
-  取得車站基本資料
-*/
-func (a *Client) TRAAPIStation(params *TRAAPIStationParams, opts ...ClientOption) (*TRAAPIStationOK, *TRAAPIStationStatus299, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewTRAAPIStationParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "TRAApi_Station",
-		Method:             "GET",
-		PathPattern:        "/v2/Rail/TRA/Station",
-		ProducesMediaTypes: []string{"application/json", "application/xml"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &TRAAPIStationReader{formats: a.formats},
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, nil, err
-	}
-	switch value := result.(type) {
-	case *TRAAPIStationOK:
-		return value, nil, nil
-	case *TRAAPIStationStatus299:
-		return nil, value, nil
-	}
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for t_r_a: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-  TRAAPIStationOfLine 取得路線車站基本資料s
+  TRAAPIStationOfLine2143 取得路線車站基本資料s
 
   取得路線車站基本資料
 */
-func (a *Client) TRAAPIStationOfLine(params *TRAAPIStationOfLineParams, opts ...ClientOption) (*TRAAPIStationOfLineOK, *TRAAPIStationOfLineStatus299, error) {
+func (a *Client) TRAAPIStationOfLine2143(params *TRAAPIStationOfLine2143Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TRAAPIStationOfLine2143OK, *TRAAPIStationOfLine2143Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewTRAAPIStationOfLineParams()
+		params = NewTRAAPIStationOfLine2143Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "TRAApi_StationOfLine",
+		ID:                 "TRAApi_StationOfLine_2143",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/StationOfLine",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &TRAAPIStationOfLineReader{formats: a.formats},
+		Reader:             &TRAAPIStationOfLine2143Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -1059,9 +1041,9 @@ func (a *Client) TRAAPIStationOfLine(params *TRAAPIStationOfLineParams, opts ...
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *TRAAPIStationOfLineOK:
+	case *TRAAPIStationOfLine2143OK:
 		return value, nil, nil
-	case *TRAAPIStationOfLineStatus299:
+	case *TRAAPIStationOfLine2143Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -1070,24 +1052,25 @@ func (a *Client) TRAAPIStationOfLine(params *TRAAPIStationOfLineParams, opts ...
 }
 
 /*
-  TRAAPIStationTimetable 取得指定s 日期 車站 的站別時刻表資料
+  TRAAPIStationTimetable2151 取得指定s 日期 車站 的站別時刻表資料
 
   取得指定[日期],[車站]的站別時刻表資料
 */
-func (a *Client) TRAAPIStationTimetable(params *TRAAPIStationTimetableParams, opts ...ClientOption) (*TRAAPIStationTimetableOK, *TRAAPIStationTimetableStatus299, error) {
+func (a *Client) TRAAPIStationTimetable2151(params *TRAAPIStationTimetable2151Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TRAAPIStationTimetable2151OK, *TRAAPIStationTimetable2151Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewTRAAPIStationTimetableParams()
+		params = NewTRAAPIStationTimetable2151Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "TRAApi_StationTimetable",
+		ID:                 "TRAApi_StationTimetable_2151",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/TRA/DailyTimetable/Station/{StationID}/{TrainDate}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &TRAAPIStationTimetableReader{formats: a.formats},
+		Reader:             &TRAAPIStationTimetable2151Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -1100,9 +1083,9 @@ func (a *Client) TRAAPIStationTimetable(params *TRAAPIStationTimetableParams, op
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *TRAAPIStationTimetableOK:
+	case *TRAAPIStationTimetable2151OK:
 		return value, nil, nil
-	case *TRAAPIStationTimetableStatus299:
+	case *TRAAPIStationTimetable2151Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -1111,24 +1094,25 @@ func (a *Client) TRAAPIStationTimetable(params *TRAAPIStationTimetableParams, op
 }
 
 /*
-  TRAAPITrainType 取得所有列車車種資料s
+  TRAAPIStation2141 取得車站基本資料s
 
-  取得所有列車車種資料
+  取得車站基本資料
 */
-func (a *Client) TRAAPITrainType(params *TRAAPITrainTypeParams, opts ...ClientOption) (*TRAAPITrainTypeOK, *TRAAPITrainTypeStatus299, error) {
+func (a *Client) TRAAPIStation2141(params *TRAAPIStation2141Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TRAAPIStation2141OK, *TRAAPIStation2141Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewTRAAPITrainTypeParams()
+		params = NewTRAAPIStation2141Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "TRAApi_TrainType",
+		ID:                 "TRAApi_Station_2141",
 		Method:             "GET",
-		PathPattern:        "/v2/Rail/TRA/TrainType",
+		PathPattern:        "/v2/Rail/TRA/Station",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &TRAAPITrainTypeReader{formats: a.formats},
+		Reader:             &TRAAPIStation2141Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -1141,9 +1125,51 @@ func (a *Client) TRAAPITrainType(params *TRAAPITrainTypeParams, opts ...ClientOp
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *TRAAPITrainTypeOK:
+	case *TRAAPIStation2141OK:
 		return value, nil, nil
-	case *TRAAPITrainTypeStatus299:
+	case *TRAAPIStation2141Status299:
+		return nil, value, nil
+	}
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for t_r_a: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  TRAAPITrainType2144 取得所有列車車種資料s
+
+  取得所有列車車種資料
+*/
+func (a *Client) TRAAPITrainType2144(params *TRAAPITrainType2144Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TRAAPITrainType2144OK, *TRAAPITrainType2144Status299, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewTRAAPITrainType2144Params()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "TRAApi_TrainType_2144",
+		Method:             "GET",
+		PathPattern:        "/v2/Rail/TRA/TrainType",
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &TRAAPITrainType2144Reader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, nil, err
+	}
+	switch value := result.(type) {
+	case *TRAAPITrainType2144OK:
+		return value, nil, nil
+	case *TRAAPITrainType2144Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue

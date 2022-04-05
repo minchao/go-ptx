@@ -120,6 +120,8 @@ func (m *PTXServiceDTORailSpecificationV3TRAStationFacilityStationFacility) vali
 			if err := m.DrinkingFountains[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("DrinkingFountains" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("DrinkingFountains" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -145,6 +147,8 @@ func (m *PTXServiceDTORailSpecificationV3TRAStationFacilityStationFacility) vali
 			if err := m.Elevators[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("Elevators" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("Elevators" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -170,6 +174,8 @@ func (m *PTXServiceDTORailSpecificationV3TRAStationFacilityStationFacility) vali
 			if err := m.FacilityMapURLs[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("FacilityMapURLs" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("FacilityMapURLs" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -195,6 +201,8 @@ func (m *PTXServiceDTORailSpecificationV3TRAStationFacilityStationFacility) vali
 			if err := m.InformationSpots[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("InformationSpots" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("InformationSpots" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -234,6 +242,8 @@ func (m *PTXServiceDTORailSpecificationV3TRAStationFacilityStationFacility) vali
 			if err := m.Toilets[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("Toilets" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("Toilets" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -286,6 +296,8 @@ func (m *PTXServiceDTORailSpecificationV3TRAStationFacilityStationFacility) cont
 			if err := m.DrinkingFountains[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("DrinkingFountains" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("DrinkingFountains" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -304,6 +316,8 @@ func (m *PTXServiceDTORailSpecificationV3TRAStationFacilityStationFacility) cont
 			if err := m.Elevators[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("Elevators" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("Elevators" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -322,6 +336,8 @@ func (m *PTXServiceDTORailSpecificationV3TRAStationFacilityStationFacility) cont
 			if err := m.FacilityMapURLs[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("FacilityMapURLs" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("FacilityMapURLs" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -340,6 +356,8 @@ func (m *PTXServiceDTORailSpecificationV3TRAStationFacilityStationFacility) cont
 			if err := m.InformationSpots[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("InformationSpots" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("InformationSpots" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -363,6 +381,8 @@ func (m *PTXServiceDTORailSpecificationV3TRAStationFacilityStationFacility) cont
 			if err := m.Toilets[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("Toilets" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("Toilets" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

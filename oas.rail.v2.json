@@ -2,7 +2,7 @@
   "swagger": "2.0",
   "info": {
     "title": "MOTC Transport API V2",
-    "description": "本平臺提供涵蓋全國尺度之公車、臺鐵、高鐵、捷運、航空、自行車等公共運輸旅運資料服務API，歡迎各產政學單位介接使用。\n                                                    <br><span class=swagger-description-indicatation>利用本平臺開放資料進行各項應用服務開發時，請考量不同特性使用者(如:性別/身心障礙/老幼等)的需求，並歡迎回饋寶貴意見。</span>\n                                                    <br><br>資料使用葵花寶典:[請點我](https://motc-ptx-api-documentation.gitbook.io/motc-ptx-api-documentation/)\n                                                    <br>資料服務開發實作參考手冊:[請點我](https://docs.google.com/viewer?url=https://github.com/ptxmotc/PTX_Web/blob/master/Swagger%E6%9C%8D%E5%8B%99%E8%AA%AA%E6%98%8E%E4%B8%8A%E5%82%B3%E5%8F%83%E8%80%83%E6%AA%94%E6%A1%88/%E5%85%AC%E5%85%B1%E9%81%8B%E8%BC%B8%E6%95%B4%E5%90%88%E8%B3%87%E8%A8%8A%E5%B9%B3%E5%8F%B0%E8%B3%87%E6%96%99%E6%9C%8D%E5%8B%99%E9%96%8B%E7%99%BC%E5%AF%A6%E4%BD%9C.pdf?raw=true)\n                                                    <br>API URI Convention文件說明:[請點我](https://docs.google.com/viewer?url=https://github.com/ptxmotc/PTX_Web/blob/master/Swagger%E6%9C%8D%E5%8B%99%E8%AA%AA%E6%98%8E%E4%B8%8A%E5%82%B3%E5%8F%83%E8%80%83%E6%AA%94%E6%A1%88/API_URI_Convention%E6%96%87%E4%BB%B6_v1.pdf?raw=true)<br>資料文本OAS描述:[請點我](https://ptx.transportdata.tw/MOTC/v2/Rail/api-docs/oas)",
+    "description": "本平臺提供涵蓋全國尺度之公車、臺鐵、高鐵、捷運、航空、自行車等公共運輸旅運資料服務API，歡迎各產政學單位介接使用。\n                                                    <br><span class=swagger-description-indicatation>利用本平臺開放資料進行各項應用服務開發時，請考量不同特性使用者(如:性別/身心障礙/老幼等)的需求，並歡迎回饋寶貴意見。</span>\n                                                    <br><br>資料使用葵花寶典:[請點我](https://motc-ptx-api-documentation.gitbook.io/motc-ptx-api-documentation/)\n                                                    <br>資料服務開發實作參考手冊:[請點我](https://docs.google.com/viewer?url=https://github.com/ptxmotc/PTX_Web/blob/master/Swagger%E6%9C%8D%E5%8B%99%E8%AA%AA%E6%98%8E%E4%B8%8A%E5%82%B3%E5%8F%83%E8%80%83%E6%AA%94%E6%A1%88/%E5%85%AC%E5%85%B1%E9%81%8B%E8%BC%B8%E6%95%B4%E5%90%88%E8%B3%87%E8%A8%8A%E5%B9%B3%E5%8F%B0%E8%B3%87%E6%96%99%E6%9C%8D%E5%8B%99%E9%96%8B%E7%99%BC%E5%AF%A6%E4%BD%9C.pdf?raw=true)\n                                                    <br>API URI Convention文件說明:[請點我](https://docs.google.com/viewer?url=https://github.com/ptxmotc/PTX_Web/blob/master/Swagger%E6%9C%8D%E5%8B%99%E8%AA%AA%E6%98%8E%E4%B8%8A%E5%82%B3%E5%8F%83%E8%80%83%E6%AA%94%E6%A1%88/API_URI_Convention%E6%96%87%E4%BB%B6_v1.pdf?raw=true)",
     "version": "v2"
   },
   "host": "ptx.transportdata.tw",
@@ -17,7 +17,7 @@
           "RailBasic"
         ],
         "summary": "取得軌道營運業者資料",
-        "operationId": "RailApi_Operator",
+        "operationId": "RailApi_Operator_2165",
         "produces": [
           "application/json",
           "application/xml"
@@ -99,14 +99,14 @@
         }
       }
     },
-    "/v2/Rail/Metro/Network/{Operator}": {
+    "/v2/Rail/Metro/Network/{MetroSystem}": {
       "get": {
         "tags": [
           "Metro"
         ],
         "summary": "取得捷運路網資料",
         "description": "取得捷運路網資料",
-        "operationId": "MetroApi_Network",
+        "operationId": "MetroApi_Network_2090",
         "produces": [
           "application/json",
           "application/xml"
@@ -114,8 +114,8 @@
         "parameters": [
           {
             "in": "path",
-            "name": "Operator",
-            "description": "欲查詢縣市",
+            "name": "MetroSystem",
+            "description": "欲查詢捷運系統(TRTC:臺北捷運,KRTC:高雄捷運,TYMC:桃園捷運,TMRT:臺中捷運,TRTCMG:貓空纜車)",
             "required": true,
             "type": "string",
             "enum": [
@@ -209,14 +209,14 @@
         }
       }
     },
-    "/v2/Rail/Metro/Line/{Operator}": {
+    "/v2/Rail/Metro/Line/{MetroSystem}": {
       "get": {
         "tags": [
           "Metro"
         ],
         "summary": "取得捷運路線基本資料",
         "description": "取得捷運路線基本資料",
-        "operationId": "MetroApi_Line",
+        "operationId": "MetroApi_Line_2091",
         "produces": [
           "application/json",
           "application/xml"
@@ -224,8 +224,8 @@
         "parameters": [
           {
             "in": "path",
-            "name": "Operator",
-            "description": "欲查詢縣市",
+            "name": "MetroSystem",
+            "description": "欲查詢捷運系統(TRTC:臺北捷運,KRTC:高雄捷運,TYMC:桃園捷運,TMRT:臺中捷運,KLRT:高雄輕軌,NTDLRT:淡海輕軌,TRTCMG:貓空纜車)",
             "required": true,
             "type": "string",
             "enum": [
@@ -238,13 +238,13 @@
               "TMRT"
             ],
             "x-enum": {
-              "TYMC": "桃園捷運",
               "KLRT": "高雄輕軌",
               "KRTC": "高雄捷運",
               "NTDLRT": "淡海輕軌",
               "TRTC": "臺北捷運",
               "TRTCMG": "貓空纜車",
-              "TMRT": "臺中捷運"
+              "TMRT": "臺中捷運",
+              "TYMC": "桃園捷運"
             }
           },
           {
@@ -323,14 +323,14 @@
         }
       }
     },
-    "/v2/Rail/Metro/Station/{Operator}": {
+    "/v2/Rail/Metro/Station/{MetroSystem}": {
       "get": {
         "tags": [
           "Metro"
         ],
         "summary": "取得捷運車站基本資料",
         "description": "取得捷運車站基本資料",
-        "operationId": "MetroApi_Station",
+        "operationId": "MetroApi_Station_2092",
         "produces": [
           "application/json",
           "application/xml"
@@ -338,8 +338,8 @@
         "parameters": [
           {
             "in": "path",
-            "name": "Operator",
-            "description": "欲查詢縣市",
+            "name": "MetroSystem",
+            "description": "欲查詢捷運系統(TRTC:臺北捷運,KRTC:高雄捷運,TYMC:桃園捷運,TMRT:臺中捷運,KLRT:高雄輕軌,NTDLRT:淡海輕軌,TRTCMG:貓空纜車)",
             "required": true,
             "type": "string",
             "enum": [
@@ -352,13 +352,13 @@
               "TMRT"
             ],
             "x-enum": {
-              "KLRT": "高雄輕軌",
               "NTDLRT": "淡海輕軌",
               "TMRT": "臺中捷運",
               "KRTC": "高雄捷運",
               "TYMC": "桃園捷運",
               "TRTC": "臺北捷運",
-              "TRTCMG": "貓空纜車"
+              "TRTCMG": "貓空纜車",
+              "KLRT": "高雄輕軌"
             }
           },
           {
@@ -390,12 +390,6 @@
             "in": "query",
             "name": "$skip",
             "description": "跳過前幾筆",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$spatialFilter",
-            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
             "type": "string"
           },
           {
@@ -443,14 +437,14 @@
         }
       }
     },
-    "/v2/Rail/Metro/StationOfLine/{Operator}": {
+    "/v2/Rail/Metro/StationOfLine/{MetroSystem}": {
       "get": {
         "tags": [
           "Metro"
         ],
         "summary": "取得捷運路線車站基本資料",
         "description": "取得捷運路線車站基本資料",
-        "operationId": "MetroApi_StationOfLine",
+        "operationId": "MetroApi_StationOfLine_2093",
         "produces": [
           "application/json",
           "application/xml"
@@ -458,8 +452,8 @@
         "parameters": [
           {
             "in": "path",
-            "name": "Operator",
-            "description": "欲查詢縣市",
+            "name": "MetroSystem",
+            "description": "欲查詢捷運系統(TRTC:臺北捷運,KRTC:高雄捷運,TYMC:桃園捷運,TMRT:臺中捷運,KLRT:高雄輕軌,NTDLRT:淡海輕軌,TRTCMG:貓空纜車)",
             "required": true,
             "type": "string",
             "enum": [
@@ -557,14 +551,14 @@
         }
       }
     },
-    "/v2/Rail/Metro/LineTransfer/{Operator}": {
+    "/v2/Rail/Metro/LineTransfer/{MetroSystem}": {
       "get": {
         "tags": [
           "Metro"
         ],
         "summary": "取得捷運路線站間轉乘基本資料",
         "description": "取得捷運路線站間轉乘基本資料",
-        "operationId": "MetroApi_LineTransfer",
+        "operationId": "MetroApi_LineTransfer_2094",
         "produces": [
           "application/json",
           "application/xml"
@@ -572,8 +566,8 @@
         "parameters": [
           {
             "in": "path",
-            "name": "Operator",
-            "description": "欲查詢縣市",
+            "name": "MetroSystem",
+            "description": "欲查詢捷運系統(TRTC:臺北捷運,KRTC:高雄捷運)",
             "required": true,
             "type": "string",
             "enum": [
@@ -662,14 +656,14 @@
         }
       }
     },
-    "/v2/Rail/Metro/StationFacility/{Operator}": {
+    "/v2/Rail/Metro/StationFacility/{MetroSystem}": {
       "get": {
         "tags": [
           "Metro"
         ],
         "summary": "取得捷運車站設施資料",
         "description": "取得捷運車站設施資料",
-        "operationId": "MetroApi_StationFacility",
+        "operationId": "MetroApi_StationFacility_2095",
         "produces": [
           "application/json",
           "application/xml"
@@ -677,8 +671,8 @@
         "parameters": [
           {
             "in": "path",
-            "name": "Operator",
-            "description": "欲查詢縣市",
+            "name": "MetroSystem",
+            "description": "欲查詢捷運系統(TYMC:桃園捷運)",
             "required": true,
             "type": "string",
             "enum": [
@@ -766,14 +760,14 @@
         }
       }
     },
-    "/v2/Rail/Metro/StationExit/{Operator}": {
+    "/v2/Rail/Metro/StationExit/{MetroSystem}": {
       "get": {
         "tags": [
           "Metro"
         ],
         "summary": "取得捷運車站出入口基本資料",
         "description": "取得捷運車站出入口基本資料",
-        "operationId": "MetroApi_StationExit",
+        "operationId": "MetroApi_StationExit_2096",
         "produces": [
           "application/json",
           "application/xml"
@@ -781,8 +775,8 @@
         "parameters": [
           {
             "in": "path",
-            "name": "Operator",
-            "description": "欲查詢縣市",
+            "name": "MetroSystem",
+            "description": "欲查詢捷運系統(TRTC:臺北捷運,KRTC:高雄捷運,TYMC:桃園捷運,TMRT:臺中捷運,TRTCMG:貓空纜車)",
             "required": true,
             "type": "string",
             "enum": [
@@ -834,12 +828,6 @@
           },
           {
             "in": "query",
-            "name": "$spatialFilter",
-            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
-            "type": "string"
-          },
-          {
-            "in": "query",
             "name": "health",
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "type": "string",
@@ -883,14 +871,14 @@
         }
       }
     },
-    "/v2/Rail/Metro/Route/{Operator}": {
+    "/v2/Rail/Metro/Route/{MetroSystem}": {
       "get": {
         "tags": [
           "Metro"
         ],
         "summary": "取得捷運營運路線基本資料",
         "description": "取得捷運營運路線基本資料",
-        "operationId": "MetroApi_Route",
+        "operationId": "MetroApi_Route_2097",
         "produces": [
           "application/json",
           "application/xml"
@@ -898,8 +886,8 @@
         "parameters": [
           {
             "in": "path",
-            "name": "Operator",
-            "description": "欲查詢縣市",
+            "name": "MetroSystem",
+            "description": "欲查詢捷運系統(TRTC:臺北捷運,KRTC:高雄捷運,TYMC:桃園捷運,TMRT:臺中捷運,NTDLRT:淡海輕軌)",
             "required": true,
             "type": "string",
             "enum": [
@@ -993,14 +981,14 @@
         }
       }
     },
-    "/v2/Rail/Metro/StationOfRoute/{Operator}": {
+    "/v2/Rail/Metro/StationOfRoute/{MetroSystem}": {
       "get": {
         "tags": [
           "Metro"
         ],
         "summary": "取得捷運營運路線車站基本資料",
         "description": "取得捷運營運路線車站基本資料",
-        "operationId": "MetroApi_StationOfRoute",
+        "operationId": "MetroApi_StationOfRoute_2098",
         "produces": [
           "application/json",
           "application/xml"
@@ -1008,8 +996,8 @@
         "parameters": [
           {
             "in": "path",
-            "name": "Operator",
-            "description": "欲查詢縣市",
+            "name": "MetroSystem",
+            "description": "欲查詢捷運系統(TRTC:臺北捷運,KRTC:高雄捷運,TYMC:桃園捷運,TMRT:臺中捷運,NTDLRT:淡海輕軌)",
             "required": true,
             "type": "string",
             "enum": [
@@ -1020,9 +1008,9 @@
               "TMRT"
             ],
             "x-enum": {
-              "NTDLRT": "淡海輕軌",
               "TYMC": "桃園捷運",
               "TRTC": "臺北捷運",
+              "NTDLRT": "淡海輕軌",
               "KRTC": "高雄捷運",
               "TMRT": "臺中捷運"
             }
@@ -1103,14 +1091,14 @@
         }
       }
     },
-    "/v2/Rail/Metro/FirstLastTimetable/{Operator}": {
+    "/v2/Rail/Metro/FirstLastTimetable/{MetroSystem}": {
       "get": {
         "tags": [
           "Metro"
         ],
         "summary": "取得捷運首末班車時刻表資料",
         "description": "取得捷運首末班車時刻表資料",
-        "operationId": "MetroApi_FirstLastTimetable",
+        "operationId": "MetroApi_FirstLastTimetable_2099",
         "produces": [
           "application/json",
           "application/xml"
@@ -1118,8 +1106,8 @@
         "parameters": [
           {
             "in": "path",
-            "name": "Operator",
-            "description": "欲查詢縣市",
+            "name": "MetroSystem",
+            "description": "欲查詢捷運系統(TRTC:臺北捷運,KRTC:高雄捷運,TYMC:桃園捷運,TMRT:臺中捷運,KLRT:高雄輕軌)",
             "required": true,
             "type": "string",
             "enum": [
@@ -1213,14 +1201,14 @@
         }
       }
     },
-    "/v2/Rail/Metro/Frequency/{Operator}": {
+    "/v2/Rail/Metro/Frequency/{MetroSystem}": {
       "get": {
         "tags": [
           "Metro"
         ],
         "summary": "取得捷運路線發車班距頻率資料",
         "description": "取得捷運路線發車班距頻率資料",
-        "operationId": "MetroApi_Frequency",
+        "operationId": "MetroApi_Frequency_2100",
         "produces": [
           "application/json",
           "application/xml"
@@ -1228,8 +1216,8 @@
         "parameters": [
           {
             "in": "path",
-            "name": "Operator",
-            "description": "欲查詢縣市",
+            "name": "MetroSystem",
+            "description": "欲查詢捷運系統(TRTC:臺北捷運,TYMC:桃園捷運,TMRT:臺中捷運)",
             "required": true,
             "type": "string",
             "enum": [
@@ -1320,14 +1308,14 @@
         }
       }
     },
-    "/v2/Rail/Metro/S2STravelTime/{Operator}": {
+    "/v2/Rail/Metro/S2STravelTime/{MetroSystem}": {
       "get": {
         "tags": [
           "Metro"
         ],
         "summary": "取得捷運列車站間運行時間資料",
         "description": "取得捷運列車站間運行時間資料",
-        "operationId": "MetroApi_S2STravelTime",
+        "operationId": "MetroApi_S2STravelTime_2101",
         "produces": [
           "application/json",
           "application/xml"
@@ -1335,8 +1323,8 @@
         "parameters": [
           {
             "in": "path",
-            "name": "Operator",
-            "description": "欲查詢縣市",
+            "name": "MetroSystem",
+            "description": "欲查詢捷運系統(TRTC:臺北捷運,KRTC:高雄捷運,TYMC:桃園捷運,TMRT:臺中捷運,KLRT:高雄輕軌)",
             "required": true,
             "type": "string",
             "enum": [
@@ -1430,14 +1418,14 @@
         }
       }
     },
-    "/v2/Rail/Metro/ODFare/{Operator}": {
+    "/v2/Rail/Metro/ODFare/{MetroSystem}": {
       "get": {
         "tags": [
           "Metro"
         ],
         "summary": "取得捷運起迄站間票價資料",
         "description": "取得捷運起迄站間票價資料",
-        "operationId": "MetroApi_ODFare",
+        "operationId": "MetroApi_ODFare_2102",
         "produces": [
           "application/json",
           "application/xml"
@@ -1445,8 +1433,8 @@
         "parameters": [
           {
             "in": "path",
-            "name": "Operator",
-            "description": "欲查詢縣市",
+            "name": "MetroSystem",
+            "description": "欲查詢捷運系統(TRTC:臺北捷運,KRTC:高雄捷運,TYMC:桃園捷運,TMRT:臺中捷運,KLRT:高雄輕軌,NTDLRT:淡海輕軌,TRTCMG:貓空纜車)",
             "required": true,
             "type": "string",
             "enum": [
@@ -1544,14 +1532,14 @@
         }
       }
     },
-    "/v2/Rail/Metro/LiveBoard/{Operator}": {
+    "/v2/Rail/Metro/LiveBoard/{MetroSystem}": {
       "get": {
         "tags": [
           "Metro"
         ],
         "summary": "取得捷運車站別列車即時到離站電子看板資訊",
         "description": "取得捷運車站別列車即時到離站電子看板資訊",
-        "operationId": "MetroApi_LiveBoard",
+        "operationId": "MetroApi_LiveBoard_2103",
         "produces": [
           "application/json",
           "application/xml"
@@ -1559,8 +1547,8 @@
         "parameters": [
           {
             "in": "path",
-            "name": "Operator",
-            "description": "欲查詢縣市",
+            "name": "MetroSystem",
+            "description": "欲查詢捷運系統(KRTC:高雄捷運,KLRT:高雄輕軌)",
             "required": true,
             "type": "string",
             "enum": [
@@ -1650,14 +1638,14 @@
         }
       }
     },
-    "/v2/Rail/Metro/StationTimeTable/{Operator}": {
+    "/v2/Rail/Metro/StationTimeTable/{MetroSystem}": {
       "get": {
         "tags": [
           "Metro"
         ],
         "summary": "取得捷運站別時刻表資料",
         "description": "取得捷運站別時刻表資料\r\n\r\n## 使用注意事項\r\n臺北捷運目前無提供文湖線站別時刻表，建議您可使用［取得捷運路線發車班距頻率資料］取得文湖線列車相關資訊。",
-        "operationId": "MetroApi_StationTimeTable",
+        "operationId": "MetroApi_StationTimeTable_2104",
         "produces": [
           "application/json",
           "application/xml"
@@ -1665,8 +1653,8 @@
         "parameters": [
           {
             "in": "path",
-            "name": "Operator",
-            "description": "欲查詢縣市",
+            "name": "MetroSystem",
+            "description": "欲查詢捷運系統(TRTC:臺北捷運,KRTC:高雄捷運,TYMC:桃園捷運,KLRT:高雄輕軌,NTDLRT:淡海輕軌)",
             "required": true,
             "type": "string",
             "enum": [
@@ -1760,14 +1748,14 @@
         }
       }
     },
-    "/v2/Rail/Metro/Shape/{Operator}": {
+    "/v2/Rail/Metro/Shape/{MetroSystem}": {
       "get": {
         "tags": [
           "Metro"
         ],
         "summary": "取得指定營運業者之軌道路網實體路線圖資資料",
         "description": "取得指定營運業者之軌道路網實體路線圖資資料",
-        "operationId": "MetroApi_Shape",
+        "operationId": "MetroApi_Shape_2105",
         "produces": [
           "application/json",
           "application/xml"
@@ -1775,8 +1763,8 @@
         "parameters": [
           {
             "in": "path",
-            "name": "Operator",
-            "description": "",
+            "name": "MetroSystem",
+            "description": "欲查詢捷運系統(TRTC:臺北捷運,KRTC:高雄捷運,TYMC:桃園捷運,TMRT:臺中捷運,KLRT:高雄輕軌,NTDLRT:淡海輕軌)",
             "required": true,
             "type": "string",
             "enum": [
@@ -1788,9 +1776,9 @@
               "KLRT"
             ],
             "x-enum": {
-              "NTDLRT": "淡海輕軌",
               "TMRT": "臺中捷運",
               "KRTC": "高雄捷運",
+              "NTDLRT": "淡海輕軌",
               "TYMC": "桃園捷運",
               "TRTC": "臺北捷運",
               "KLRT": "高雄輕軌"
@@ -1872,14 +1860,14 @@
         }
       }
     },
-    "/v2/Rail/Metro/News/{Operator}": {
+    "/v2/Rail/Metro/News/{MetroSystem}": {
       "get": {
         "tags": [
           "Metro"
         ],
         "summary": "取得最新消息",
         "description": "取得最新消息",
-        "operationId": "MetroApi_News",
+        "operationId": "MetroApi_News_2106",
         "produces": [
           "application/json",
           "application/xml"
@@ -1887,8 +1875,8 @@
         "parameters": [
           {
             "in": "path",
-            "name": "Operator",
-            "description": "欲查詢縣市",
+            "name": "MetroSystem",
+            "description": "欲查詢捷運系統(TRTC:臺北捷運,KRTC:高雄捷運,TYMC:桃園捷運,KLRT:高雄輕軌)",
             "required": true,
             "type": "string",
             "enum": [
@@ -1986,14 +1974,14 @@
         }
       }
     },
-    "/v2/Rail/Metro/Alert/{Operator}": {
+    "/v2/Rail/Metro/Alert/{MetroSystem}": {
       "get": {
         "tags": [
           "Metro"
         ],
         "summary": "取得營運通阻資料",
         "description": "取得營運通阻資料",
-        "operationId": "MetroApi_Alert",
+        "operationId": "MetroApi_Alert_2107",
         "produces": [
           "application/json",
           "application/xml"
@@ -2001,8 +1989,8 @@
         "parameters": [
           {
             "in": "path",
-            "name": "Operator",
-            "description": "欲查詢縣市",
+            "name": "MetroSystem",
+            "description": "欲查詢捷運系統(TRTC:臺北捷運,KRTC:高雄捷運,TYMC:桃園捷運,KLRT:高雄輕軌)",
             "required": true,
             "type": "string",
             "enum": [
@@ -2107,7 +2095,7 @@
         ],
         "summary": "取得車站基本資料",
         "description": "取得車站基本資料",
-        "operationId": "THSRApi_Station",
+        "operationId": "THSRApi_Station_2120",
         "produces": [
           "application/json",
           "application/xml"
@@ -2142,12 +2130,6 @@
             "in": "query",
             "name": "$skip",
             "description": "跳過前幾筆",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$spatialFilter",
-            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
             "type": "string"
           },
           {
@@ -2202,7 +2184,7 @@
         ],
         "summary": "取得票價資料",
         "description": "取得票價資料",
-        "operationId": "THSRApi_ODFare",
+        "operationId": "THSRApi_ODFare_2121",
         "produces": [
           "application/json",
           "application/xml"
@@ -2291,7 +2273,7 @@
         ],
         "summary": "取得指定[起訖站間]之票價資料",
         "description": "取得指定[起訖站間]之票價資料",
-        "operationId": "THSRApi_ODFare_1",
+        "operationId": "THSRApi_ODFare_2121_1",
         "produces": [
           "application/json",
           "application/xml"
@@ -2394,7 +2376,7 @@
         ],
         "summary": "取得所有車次的定期時刻表資料",
         "description": "取得所有車次的定期時刻表資料",
-        "operationId": "THSRApi_GeneralTimetable",
+        "operationId": "THSRApi_GeneralTimetable_2122",
         "produces": [
           "application/json",
           "application/xml"
@@ -2483,7 +2465,7 @@
         ],
         "summary": "取得指定[車次]的定期時刻表資料",
         "description": "取得指定[車次]的定期時刻表資料",
-        "operationId": "THSRApi_GeneralTimetable_1",
+        "operationId": "THSRApi_GeneralTimetable_2122_1",
         "produces": [
           "application/json",
           "application/xml"
@@ -2579,7 +2561,7 @@
         ],
         "summary": "取得當天所有車次的車次資料",
         "description": "取得當天所有車次的車次資料",
-        "operationId": "THSRApi_DailyTrainInfo",
+        "operationId": "THSRApi_DailyTrainInfo_2123",
         "produces": [
           "application/json",
           "application/xml"
@@ -2668,7 +2650,7 @@
         ],
         "summary": "取得當天指定[車次]的車次資料",
         "description": "取得當天指定[車次]的車次資料",
-        "operationId": "THSRApi_DailyTrainInfo_1",
+        "operationId": "THSRApi_DailyTrainInfo_2123_1",
         "produces": [
           "application/json",
           "application/xml"
@@ -2764,7 +2746,7 @@
         ],
         "summary": "取得指定[日期]所有車次的車次資料",
         "description": "取得指定[日期]所有車次的車次資料(高鐵提供近28天每日時刻表)",
-        "operationId": "THSRApi_DailyTrainInfo_2",
+        "operationId": "THSRApi_DailyTrainInfo_2123_2",
         "produces": [
           "application/json",
           "application/xml"
@@ -2861,7 +2843,7 @@
         ],
         "summary": "取得指定[日期],[車次]的車次資料",
         "description": "取得指定[日期],[車次]的車次資料(高鐵提供近28天每日時刻表)",
-        "operationId": "THSRApi_DailyTrainInfo_3",
+        "operationId": "THSRApi_DailyTrainInfo_2123_3",
         "produces": [
           "application/json",
           "application/xml"
@@ -2965,7 +2947,7 @@
         ],
         "summary": "取得當天所有車次的時刻表資料",
         "description": "取得當天所有車次的時刻表資料",
-        "operationId": "THSRApi_DailyTimetable",
+        "operationId": "THSRApi_DailyTimetable_2124",
         "produces": [
           "application/json",
           "application/xml"
@@ -3054,7 +3036,7 @@
         ],
         "summary": "取得當天指定[車次]的時刻表資料",
         "description": "取得當天指定[車次]的時刻表資料",
-        "operationId": "THSRApi_DailyTimetable_1",
+        "operationId": "THSRApi_DailyTimetable_2124_1",
         "produces": [
           "application/json",
           "application/xml"
@@ -3150,7 +3132,7 @@
         ],
         "summary": "取得高鐵每日時刻表所有供應的日期資料",
         "description": "取得高鐵每日時刻表所有供應的日期資料",
-        "operationId": "THSRApi_DailyTimetable_2",
+        "operationId": "THSRApi_DailyTimetable_2124_2",
         "produces": [
           "application/json",
           "application/xml"
@@ -3201,7 +3183,7 @@
         ],
         "summary": "取得指定[日期]所有車次的時刻表資料",
         "description": "取得指定[日期]所有車次的時刻表資料(高鐵提供近28天每日時刻表)",
-        "operationId": "THSRApi_DailyTimetable_3",
+        "operationId": "THSRApi_DailyTimetable_2124_3",
         "produces": [
           "application/json",
           "application/xml"
@@ -3298,7 +3280,7 @@
         ],
         "summary": "取得指定[日期],[車次]的時刻表資料",
         "description": "取得指定[日期],[車次]的時刻表資料(高鐵提供近28天每日時刻表)",
-        "operationId": "THSRApi_DailyTimetable_4",
+        "operationId": "THSRApi_DailyTimetable_2124_4",
         "produces": [
           "application/json",
           "application/xml"
@@ -3402,7 +3384,7 @@
         ],
         "summary": "取得指定[日期],[車站]的站別時刻表資料",
         "description": "取得指定[日期],[車站]的站別時刻表資料",
-        "operationId": "THSRApi_StationTimetable",
+        "operationId": "THSRApi_StationTimetable_2125",
         "produces": [
           "application/json",
           "application/xml"
@@ -3411,12 +3393,14 @@
           {
             "in": "path",
             "name": "StationID",
+            "description": "車站代號",
             "required": true,
             "type": "string"
           },
           {
             "in": "path",
             "name": "TrainDate",
+            "description": "時刻表日期(格式: yyyy-MM-dd)",
             "required": true,
             "type": "string",
             "format": "date-time"
@@ -3504,7 +3488,7 @@
         ],
         "summary": "取得指定[日期],[起迄站間]之時刻表資料",
         "description": "取得指定[日期],[起迄站間]之時刻表資料",
-        "operationId": "THSRApi_ODDailyTimetable",
+        "operationId": "THSRApi_ODDailyTimetable_2126",
         "produces": [
           "application/json",
           "application/xml"
@@ -3615,7 +3599,7 @@
         ],
         "summary": "取得即時通阻事件資料",
         "description": "取得即時通阻事件資料",
-        "operationId": "THSRApi_AlertInfo",
+        "operationId": "THSRApi_AlertInfo_2127",
         "produces": [
           "application/json",
           "application/xml"
@@ -3704,7 +3688,7 @@
         ],
         "summary": "取得高鐵最新消息資料",
         "description": "取得高鐵最新消息資料",
-        "operationId": "THSRApi_News",
+        "operationId": "THSRApi_News_2128",
         "produces": [
           "application/json",
           "application/xml"
@@ -3793,7 +3777,7 @@
         ],
         "summary": "取得軌道路網實體路線圖資資料",
         "description": "取得軌道路網實體路線圖資資料",
-        "operationId": "THSRApi_Shape",
+        "operationId": "THSRApi_Shape_2129",
         "produces": [
           "application/json",
           "application/xml"
@@ -3882,7 +3866,7 @@
         ],
         "summary": "取得動態對號座剩餘座位資訊看板資料",
         "description": "取得動態對號座剩餘座位資訊看板資料",
-        "operationId": "THSRApi_AvailableSeatStatusList_Station",
+        "operationId": "THSRApi_AvailableSeatStatusList_Station_2130",
         "produces": [
           "application/json",
           "application/xml"
@@ -3977,7 +3961,7 @@
         ],
         "summary": "取得動態指定[車站]的對號座剩餘座位資訊看板資料",
         "description": "取得動態指定[車站]的對號座剩餘座位資訊看板資料",
-        "operationId": "THSRApi_AvailableSeatStatusList_Station_1",
+        "operationId": "THSRApi_AvailableSeatStatusList_Station_2130_1",
         "produces": [
           "application/json",
           "application/xml"
@@ -4079,7 +4063,7 @@
         ],
         "summary": "取得車站出入口基本資料",
         "description": "取得車站出入口基本資料",
-        "operationId": "THSRApi_StationExit",
+        "operationId": "THSRApi_StationExit_2132",
         "produces": [
           "application/json",
           "application/xml"
@@ -4114,12 +4098,6 @@
             "in": "query",
             "name": "$skip",
             "description": "跳過前幾筆",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$spatialFilter",
-            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
             "type": "string"
           },
           {
@@ -4174,7 +4152,7 @@
         ],
         "summary": "**(開發用測試版)** 取得當天對號座即時剩餘位資料({原始}列車區段Leg角度)",
         "description": "取得當天對號座即時剩餘位資料({原始}列車區段Leg角度)\r\n- (更新頻率為10分鐘)\r\n- **(本服務尚在測試中,穩定度及更新頻率將持續優化)**",
-        "operationId": "THSRApi_AvailableSeatStatus",
+        "operationId": "THSRApi_AvailableSeatStatus_2135",
         "produces": [
           "application/json",
           "application/xml"
@@ -4269,7 +4247,7 @@
         ],
         "summary": "**(開發用測試版)** 取得指定[日期]對號座即時剩餘位資料({原始}列車區段Leg角度)",
         "description": "取得指定[日期]對號座即時剩餘位資料({原始}列車區段Leg角度)\r\n- (更新頻率為每日的10、16、22時)\r\n- **(本服務尚在測試中,穩定度及更新頻率將持續優化)**",
-        "operationId": "THSRApi_AvailableSeatStatus_1",
+        "operationId": "THSRApi_AvailableSeatStatus_2135_1",
         "produces": [
           "application/json",
           "application/xml"
@@ -4372,7 +4350,7 @@
         ],
         "summary": "**(開發用測試版)** 取得指定[日期]對號座即時剩餘位資料(加值型列車起迄段OD角度)",
         "description": "取得指定[日期]對號座即時剩餘位資料(加值型列車起迄段OD角度)\r\n- 當日(D)之更新頻率為每10分鐘\r\n- 當日後27日(D+1~D+27)之更新頻率為每日的10、16、22時\r\n- **(本服務尚在測試中,穩定度及更新頻率將持續優化)**",
-        "operationId": "THSRApi_AvailableSeatStatus_OD",
+        "operationId": "THSRApi_AvailableSeatStatus_OD_2136",
         "produces": [
           "application/json",
           "application/xml"
@@ -4475,7 +4453,7 @@
         ],
         "summary": "**(開發用測試版)** 取得指定[日期], [起迄站]對號座即時剩餘位資料(加值型列車起迄段OD角度)",
         "description": "取得指定[日期], [起迄站]對號座即時剩餘位資料(加值型列車起迄段OD角度)\r\n- 當日(D)之更新頻率為每10分鐘\r\n- 當日後27日(D+1~D+27)之更新頻率為每日的10、16、22時\r\n- **(本服務尚在測試中,穩定度及更新頻率將持續優化)**",
-        "operationId": "THSRApi_AvailableSeatStatus_OD_1",
+        "operationId": "THSRApi_AvailableSeatStatus_OD_2136_1",
         "produces": [
           "application/json",
           "application/xml"
@@ -4592,7 +4570,7 @@
         ],
         "summary": "**(開發用測試版)** 取得指定[日期], [車次], [起迄站]對號座即時剩餘位資料(加值型列車起迄段OD角度)",
         "description": "取得指定[日期], [起迄站]對號座即時剩餘位資料(加值型列車起迄段OD角度)\r\n- 當日(D)之更新頻率為每10分鐘\r\n- 當日後27日(D+1~D+27)之更新頻率為每日的10、16、22時\r\n- **(本服務尚在測試中,穩定度及更新頻率將持續優化)**",
-        "operationId": "THSRApi_AvailableSeatStatus_OD_2",
+        "operationId": "THSRApi_AvailableSeatStatus_OD_2136_2",
         "produces": [
           "application/json",
           "application/xml"
@@ -4716,7 +4694,7 @@
         ],
         "summary": "取得臺鐵路網資料",
         "description": "取得臺鐵路網資料",
-        "operationId": "TRAApi_Network",
+        "operationId": "TRAApi_Network_2140",
         "produces": [
           "application/json",
           "application/xml"
@@ -4805,7 +4783,7 @@
         ],
         "summary": "取得車站基本資料",
         "description": "取得車站基本資料",
-        "operationId": "TRAApi_Station",
+        "operationId": "TRAApi_Station_2141",
         "produces": [
           "application/json",
           "application/xml"
@@ -4840,12 +4818,6 @@
             "in": "query",
             "name": "$skip",
             "description": "跳過前幾筆",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$spatialFilter",
-            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
             "type": "string"
           },
           {
@@ -4900,7 +4872,7 @@
         ],
         "summary": "取得路線基本資料",
         "description": "取得路線基本資料",
-        "operationId": "TRAApi_Line",
+        "operationId": "TRAApi_Line_2142",
         "produces": [
           "application/json",
           "application/xml"
@@ -4989,7 +4961,7 @@
         ],
         "summary": "取得路線車站基本資料",
         "description": "取得路線車站基本資料",
-        "operationId": "TRAApi_StationOfLine",
+        "operationId": "TRAApi_StationOfLine_2143",
         "produces": [
           "application/json",
           "application/xml"
@@ -5078,7 +5050,7 @@
         ],
         "summary": "取得所有列車車種資料",
         "description": "取得所有列車車種資料",
-        "operationId": "TRAApi_TrainType",
+        "operationId": "TRAApi_TrainType_2144",
         "produces": [
           "application/json",
           "application/xml"
@@ -5167,7 +5139,7 @@
         ],
         "summary": "取得軌道路網實體路線圖資資料",
         "description": "取得軌道路網實體路線圖資資料",
-        "operationId": "TRAApi_Shape",
+        "operationId": "TRAApi_Shape_2145",
         "produces": [
           "application/json",
           "application/xml"
@@ -5256,7 +5228,7 @@
         ],
         "summary": "取得票價資料",
         "description": "取得票價資料",
-        "operationId": "TRAApi_ODFareStation",
+        "operationId": "TRAApi_ODFareStation_2146",
         "produces": [
           "application/json",
           "application/xml"
@@ -5345,7 +5317,7 @@
         ],
         "summary": "取得指定[起訖站間]之票價資料",
         "description": "取得指定[起訖站間]之票價資料",
-        "operationId": "TRAApi_ODFareStation_1",
+        "operationId": "TRAApi_ODFareStation_2146_1",
         "produces": [
           "application/json",
           "application/xml"
@@ -5448,7 +5420,7 @@
         ],
         "summary": "取得所有車次的定期車次資料",
         "description": "取得所有車次的定期車次資料",
-        "operationId": "TRAApi_GeneralTrainInfo",
+        "operationId": "TRAApi_GeneralTrainInfo_2147",
         "produces": [
           "application/json",
           "application/xml"
@@ -5537,7 +5509,7 @@
         ],
         "summary": "取得指定[車次]的定期車次資料",
         "description": "取得指定[車次]的定期車次資料",
-        "operationId": "TRAApi_GeneralTrainInfo_1",
+        "operationId": "TRAApi_GeneralTrainInfo_2147_1",
         "produces": [
           "application/json",
           "application/xml"
@@ -5633,7 +5605,7 @@
         ],
         "summary": "取得所有車次的定期時刻表資料",
         "description": "取得所有車次的定期時刻表資料",
-        "operationId": "TRAApi_GeneralTimetable",
+        "operationId": "TRAApi_GeneralTimetable_2148",
         "produces": [
           "application/json",
           "application/xml"
@@ -5722,7 +5694,7 @@
         ],
         "summary": "取得指定[車次]的定期時刻表資料",
         "description": "取得指定[車次]的定期時刻表資料",
-        "operationId": "TRAApi_GeneralTimetable_1",
+        "operationId": "TRAApi_GeneralTimetable_2148_1",
         "produces": [
           "application/json",
           "application/xml"
@@ -5818,7 +5790,7 @@
         ],
         "summary": "取得當天所有車次的車次資料",
         "description": "取得當天所有車次的車次資料",
-        "operationId": "TRAApi_DailyTrainInfo",
+        "operationId": "TRAApi_DailyTrainInfo_2149",
         "produces": [
           "application/json",
           "application/xml"
@@ -5907,7 +5879,7 @@
         ],
         "summary": "取得當天指定[車次]的車次資料",
         "description": "取得當天指定[車次]的車次資料",
-        "operationId": "TRAApi_DailyTrainInfo_1",
+        "operationId": "TRAApi_DailyTrainInfo_2149_1",
         "produces": [
           "application/json",
           "application/xml"
@@ -6003,7 +5975,7 @@
         ],
         "summary": "取得指定[日期]所有車次的車次資料",
         "description": "取得指定[日期]所有車次的車次資料(台鐵提供近60天每日時刻表)",
-        "operationId": "TRAApi_DailyTrainInfo_2",
+        "operationId": "TRAApi_DailyTrainInfo_2149_2",
         "produces": [
           "application/json",
           "application/xml"
@@ -6100,7 +6072,7 @@
         ],
         "summary": "取得指定[日期]與[車次]的車次資料",
         "description": "取得指定[日期]與[車次]的車次資料(台鐵提供近60天每日時刻表)",
-        "operationId": "TRAApi_DailyTrainInfo_3",
+        "operationId": "TRAApi_DailyTrainInfo_2149_3",
         "produces": [
           "application/json",
           "application/xml"
@@ -6204,7 +6176,7 @@
         ],
         "summary": "取得當天所有車次的時刻表資料",
         "description": "取得當天所有車次的時刻表資料",
-        "operationId": "TRAApi_DailyTimetable",
+        "operationId": "TRAApi_DailyTimetable_2150",
         "produces": [
           "application/json",
           "application/xml"
@@ -6293,7 +6265,7 @@
         ],
         "summary": "取得當天指定[車次]的時刻表資料",
         "description": "取得當天指定[車次]的時刻表資料",
-        "operationId": "TRAApi_DailyTimetable_1",
+        "operationId": "TRAApi_DailyTimetable_2150_1",
         "produces": [
           "application/json",
           "application/xml"
@@ -6389,7 +6361,7 @@
         ],
         "summary": "取得台鐵每日時刻表所有供應的日期資料",
         "description": "取得台鐵每日時刻表所有供應的日期資料",
-        "operationId": "TRAApi_DailyTimetable_2",
+        "operationId": "TRAApi_DailyTimetable_2150_2",
         "produces": [
           "application/json",
           "application/xml"
@@ -6440,7 +6412,7 @@
         ],
         "summary": "取得指定[日期]所有車次的時刻表資料",
         "description": "取得指定[日期]所有車次的時刻表資料(台鐵提供近60天每日時刻表)",
-        "operationId": "TRAApi_DailyTimetable_3",
+        "operationId": "TRAApi_DailyTimetable_2150_3",
         "produces": [
           "application/json",
           "application/xml"
@@ -6537,7 +6509,7 @@
         ],
         "summary": "取得指定[日期],[車次]的時刻表資料",
         "description": "取得指定[日期],[車次]的時刻表資料(台鐵提供近60天每日時刻表)",
-        "operationId": "TRAApi_DailyTimetable_4",
+        "operationId": "TRAApi_DailyTimetable_2150_4",
         "produces": [
           "application/json",
           "application/xml"
@@ -6641,7 +6613,7 @@
         ],
         "summary": "取得指定[日期],[車站]的站別時刻表資料",
         "description": "取得指定[日期],[車站]的站別時刻表資料",
-        "operationId": "TRAApi_StationTimetable",
+        "operationId": "TRAApi_StationTimetable_2151",
         "produces": [
           "application/json",
           "application/xml"
@@ -6745,7 +6717,7 @@
         ],
         "summary": "取得指定[日期],[起迄站間]之站間時刻表資料",
         "description": "取得指定[日期],[起迄站間]之站間時刻表資料",
-        "operationId": "TRAApi_ODDailyTimetable",
+        "operationId": "TRAApi_ODDailyTimetable_2152",
         "produces": [
           "application/json",
           "application/xml"
@@ -6856,7 +6828,7 @@
         ],
         "summary": "取得車站別列車即時到離站電子看板(動態前後30分鐘的車次)",
         "description": "取得車站別列車即時到離站電子看板(動態前後30分鐘的車次)。更新頻率：2分鐘。此資料已過濾離站車次資訊",
-        "operationId": "TRAApi_LiveBoard",
+        "operationId": "TRAApi_LiveBoard_2153",
         "produces": [
           "application/json",
           "application/xml"
@@ -6945,7 +6917,7 @@
         ],
         "summary": "取得指定[車站]列車即時到離站電子看板(動態前後30分鐘的車次)",
         "description": "取得指定[車站]列車即時到離站電子看板(動態前後30分鐘的車次)。更新頻率：2分鐘。此資料已過濾離站車次資訊",
-        "operationId": "TRAApi_LiveBoard_1",
+        "operationId": "TRAApi_LiveBoard_2153_1",
         "produces": [
           "application/json",
           "application/xml"
@@ -7041,7 +7013,7 @@
         ],
         "summary": "取得列車即時準點/延誤時間資料",
         "description": "取得列車即時準點/延誤時間資料。更新頻率：2分鐘",
-        "operationId": "TRAApi_LiveTrainDelay",
+        "operationId": "TRAApi_LiveTrainDelay_2154",
         "produces": [
           "application/json",
           "application/xml"
@@ -9733,18 +9705,18 @@
         "TicketType": {
           "format": "int32",
           "title": "Int32",
-          "description": "票種(1:一般票(單程票), 2:來回票(悠遊卡/一卡通), 3:電子票証, 4:回數票, 5:定期票(30天期), 6：定期票(60天期))",
+          "description": "票種類型 : [1:'一般票(單程票)',2:'來回票(悠遊卡/一卡通)',3:'電子票證',4:'回數票',5:'定期票30天期',6:'定期票60天期']",
           "type": "integer"
         },
         "FareClass": {
           "format": "int32",
           "title": "Int32",
-          "description": "費率等級(1:成人(Adult), 2:學生(Student), 3:孩童(Child), 4:敬老(Senior), 5:愛心(Disabled), 6:愛心孩童(Disabled Child), 7:愛心優待/愛心陪伴, 8:團體(Group))",
+          "description": "費率等級 : [1:'成人(Adult)',2:'學生(Student)',3:'孩童(Child)',4:'敬老(Senior)',5:'愛心(Disabled)',6:'愛心孩童(Disabled Child)',7:'愛心優待/愛心陪伴',8:'團體(Group)']",
           "type": "integer"
         },
         "SaleType": {
           "title": "String",
-          "description": "販售方式 (1: 現場櫃台販售, 2: 現場機器販售, 3: 線上販售, 99: 其他)",
+          "description": "販售方式 : [1:'現場櫃台販售',2:'現場機器販售',3:'線上販售',99:'其他']",
           "type": "string",
           "xml": {
             "name": "String"
@@ -9752,7 +9724,7 @@
         },
         "CitizenCode": {
           "title": "String",
-          "description": "市民所屬縣市代碼 (TPE: 臺北市, NWT: 新北市, OTHERS: 其他)",
+          "description": "市民所屬縣市代碼 : ['TPE':'臺北市','NWT':'新北市','OTHERS':'其他')",
           "type": "string",
           "xml": {
             "name": "String"
@@ -9761,7 +9733,7 @@
         "Price": {
           "format": "int32",
           "title": "Int32",
-          "description": "票價",
+          "description": "收費價格(新台幣)",
           "type": "integer"
         }
       },
@@ -10264,6 +10236,16 @@
           "description": "訊息發布日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
           "type": "string"
         },
+        "StartTime": {
+          "format": "date-time",
+          "description": "開始時間",
+          "type": "string"
+        },
+        "EndTime": {
+          "format": "date-time",
+          "description": "結束時間",
+          "type": "string"
+        },
         "SrcUpdateTime": {
           "format": "date-time",
           "title": "DateTime",
@@ -10445,7 +10427,6 @@
       "required": [
         "AttachmentUrlList",
         "Description",
-        "EndTime",
         "Language",
         "NewsCategory",
         "NewsID",
@@ -10652,6 +10633,46 @@
       },
       "xml": {
         "name": "AvailableSeat"
+      }
+    },
+    "PTX.Service.DTO.Rail.Specification.V2.THSR.OD.Fare": {
+      "title": "Fare",
+      "description": "高鐵票價資訊",
+      "required": [
+        "CabinClass",
+        "FareClass",
+        "Price",
+        "TicketType"
+      ],
+      "type": "object",
+      "properties": {
+        "TicketType": {
+          "format": "int32",
+          "title": "Int32",
+          "description": "票種類型 : [1:'一般票(單程票)',2:'來回票',3:'電子票証(悠遊卡/一卡通)',4:'回數票',5:'定期票(30天期)',6:'定期票(60天期)',7:'早鳥票',8:'團體票']",
+          "type": "integer"
+        },
+        "FareClass": {
+          "format": "int32",
+          "title": "Int32",
+          "description": "費率等級 : [1:'成人',2:'學生',3:'孩童',4:'敬老',5:'愛心',6:'愛心孩童',7:'愛心優待/愛心陪伴',8:'軍警',9:'法優']",
+          "type": "integer"
+        },
+        "CabinClass": {
+          "format": "int32",
+          "title": "Int32",
+          "description": "費率等級 : [1:'標準座車廂',2:'商務座車廂',3:'自由座車廂']",
+          "type": "integer"
+        },
+        "Price": {
+          "format": "int32",
+          "title": "Int32",
+          "description": "收費價格(新台幣)",
+          "type": "integer"
+        }
+      },
+      "xml": {
+        "name": "Fare"
       }
     },
     "PTX.Service.DTO.Rail.Specification.V2.THSR.Old.AvailableSeat": {
@@ -11249,7 +11270,7 @@
           "description": "票價收費資訊(本項僅列標準、商務及自由之基本票價，其他優待票及團體票之折扣計算請參考高鐵網站票價產品一覽表http://www.thsrc.com.tw/tw/Article/ArticleContent/caa6fac8-b875-4ad6-b1e6-96c2902d12a6 說明)",
           "type": "array",
           "items": {
-            "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V2.Base.Fare"
+            "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V2.THSR.OD.Fare"
           },
           "xml": {
             "name": "List`1"
@@ -14489,6 +14510,26 @@
       }
     }
   },
+  "securityDefinitions": {
+    "AppID": {
+      "type": "apiKey",
+      "name": "Authorization",
+      "in": "header",
+      "description": "Specify the authorization token."
+    },
+    "AppKey": {
+      "type": "apiKey",
+      "name": "Authorization",
+      "in": "header",
+      "description": "Specify the authorization token."
+    }
+  },
+  "security": [
+    {
+      "AppID": [],
+      "AppKey": []
+    }
+  ],
   "tags": [
     {
       "name": "RailBasic",

@@ -43,19 +43,8 @@ type PTXServiceDTOTourismSpecificationV2RestaurantTourismInfo struct {
 
 	// String
 	//
-	// 餐飲店家代碼
-	// Required: true
-	ID *string `json:"ID" xml:"String"`
-
-	// String
-	//
 	// 店家地圖/簡圖介紹網址
 	MapURL string `json:"MapUrl,omitempty" xml:"String,omitempty"`
-
-	// String
-	//
-	// 餐飲店家名稱
-	Name string `json:"Name,omitempty" xml:"String,omitempty"`
 
 	// String
 	//
@@ -122,10 +111,6 @@ type PTXServiceDTOTourismSpecificationV2RestaurantTourismInfo struct {
 func (m *PTXServiceDTOTourismSpecificationV2RestaurantTourismInfo) Validate(formats strfmt.Registry) error {
 	var res []error
 
-	if err := m.validateID(formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.validatePicture(formats); err != nil {
 		res = append(res, err)
 	}
@@ -149,15 +134,6 @@ func (m *PTXServiceDTOTourismSpecificationV2RestaurantTourismInfo) Validate(form
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
-	return nil
-}
-
-func (m *PTXServiceDTOTourismSpecificationV2RestaurantTourismInfo) validateID(formats strfmt.Registry) error {
-
-	if err := validate.Required("ID", "body", m.ID); err != nil {
-		return err
-	}
-
 	return nil
 }
 

@@ -132,6 +132,8 @@ func (m *PTXServiceDTOBusSpecificationV3WrapperBusVWrapperPTXServiceDTOBusSpecif
 			if err := m.DisplayStopOfRoutes[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("DisplayStopOfRoutes" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("DisplayStopOfRoutes" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -217,6 +219,8 @@ func (m *PTXServiceDTOBusSpecificationV3WrapperBusVWrapperPTXServiceDTOBusSpecif
 			if err := m.DisplayStopOfRoutes[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("DisplayStopOfRoutes" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("DisplayStopOfRoutes" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

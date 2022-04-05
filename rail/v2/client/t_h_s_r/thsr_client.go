@@ -30,82 +30,83 @@ type ClientOption func(*runtime.ClientOperation)
 
 // ClientService is the interface for Client methods
 type ClientService interface {
-	THSRAPIAlertInfo(params *THSRAPIAlertInfoParams, opts ...ClientOption) (*THSRAPIAlertInfoOK, *THSRAPIAlertInfoStatus299, error)
+	THSRAPIAlertInfo2127(params *THSRAPIAlertInfo2127Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*THSRAPIAlertInfo2127OK, *THSRAPIAlertInfo2127Status299, error)
 
-	THSRAPIAvailableSeatStatus(params *THSRAPIAvailableSeatStatusParams, opts ...ClientOption) (*THSRAPIAvailableSeatStatusOK, *THSRAPIAvailableSeatStatusStatus299, error)
+	THSRAPIAvailableSeatStatusListStation2130(params *THSRAPIAvailableSeatStatusListStation2130Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*THSRAPIAvailableSeatStatusListStation2130OK, *THSRAPIAvailableSeatStatusListStation2130Status299, error)
 
-	THSRAPIAvailableSeatStatusListStation(params *THSRAPIAvailableSeatStatusListStationParams, opts ...ClientOption) (*THSRAPIAvailableSeatStatusListStationOK, *THSRAPIAvailableSeatStatusListStationStatus299, error)
+	THSRAPIAvailableSeatStatusListStation21301(params *THSRAPIAvailableSeatStatusListStation21301Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*THSRAPIAvailableSeatStatusListStation21301OK, *THSRAPIAvailableSeatStatusListStation21301Status299, error)
 
-	THSRAPIAvailableSeatStatusListStation1(params *THSRAPIAvailableSeatStatusListStation1Params, opts ...ClientOption) (*THSRAPIAvailableSeatStatusListStation1OK, *THSRAPIAvailableSeatStatusListStation1Status299, error)
+	THSRAPIAvailableSeatStatus2135(params *THSRAPIAvailableSeatStatus2135Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*THSRAPIAvailableSeatStatus2135OK, *THSRAPIAvailableSeatStatus2135Status299, error)
 
-	THSRAPIAvailableSeatStatus1(params *THSRAPIAvailableSeatStatus1Params, opts ...ClientOption) (*THSRAPIAvailableSeatStatus1OK, *THSRAPIAvailableSeatStatus1Status299, error)
+	THSRAPIAvailableSeatStatus21351(params *THSRAPIAvailableSeatStatus21351Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*THSRAPIAvailableSeatStatus21351OK, *THSRAPIAvailableSeatStatus21351Status299, error)
 
-	THSRAPIAvailableSeatStatusOD(params *THSRAPIAvailableSeatStatusODParams, opts ...ClientOption) (*THSRAPIAvailableSeatStatusODOK, *THSRAPIAvailableSeatStatusODStatus299, error)
+	THSRAPIAvailableSeatStatusOD2136(params *THSRAPIAvailableSeatStatusOD2136Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*THSRAPIAvailableSeatStatusOD2136OK, *THSRAPIAvailableSeatStatusOD2136Status299, error)
 
-	THSRAPIAvailableSeatStatusOD1(params *THSRAPIAvailableSeatStatusOD1Params, opts ...ClientOption) (*THSRAPIAvailableSeatStatusOD1OK, *THSRAPIAvailableSeatStatusOD1Status299, error)
+	THSRAPIAvailableSeatStatusOD21361(params *THSRAPIAvailableSeatStatusOD21361Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*THSRAPIAvailableSeatStatusOD21361OK, *THSRAPIAvailableSeatStatusOD21361Status299, error)
 
-	THSRAPIAvailableSeatStatusOD2(params *THSRAPIAvailableSeatStatusOD2Params, opts ...ClientOption) (*THSRAPIAvailableSeatStatusOD2OK, *THSRAPIAvailableSeatStatusOD2Status299, error)
+	THSRAPIAvailableSeatStatusOD21362(params *THSRAPIAvailableSeatStatusOD21362Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*THSRAPIAvailableSeatStatusOD21362OK, *THSRAPIAvailableSeatStatusOD21362Status299, error)
 
-	THSRAPIDailyTimetable(params *THSRAPIDailyTimetableParams, opts ...ClientOption) (*THSRAPIDailyTimetableOK, *THSRAPIDailyTimetableStatus299, error)
+	THSRAPIDailyTimetable2124(params *THSRAPIDailyTimetable2124Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*THSRAPIDailyTimetable2124OK, *THSRAPIDailyTimetable2124Status299, error)
 
-	THSRAPIDailyTimetable1(params *THSRAPIDailyTimetable1Params, opts ...ClientOption) (*THSRAPIDailyTimetable1OK, *THSRAPIDailyTimetable1Status299, error)
+	THSRAPIDailyTimetable21241(params *THSRAPIDailyTimetable21241Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*THSRAPIDailyTimetable21241OK, *THSRAPIDailyTimetable21241Status299, error)
 
-	THSRAPIDailyTimetable2(params *THSRAPIDailyTimetable2Params, opts ...ClientOption) (*THSRAPIDailyTimetable2OK, *THSRAPIDailyTimetable2Status299, error)
+	THSRAPIDailyTimetable21242(params *THSRAPIDailyTimetable21242Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*THSRAPIDailyTimetable21242OK, *THSRAPIDailyTimetable21242Status299, error)
 
-	THSRAPIDailyTimetable3(params *THSRAPIDailyTimetable3Params, opts ...ClientOption) (*THSRAPIDailyTimetable3OK, *THSRAPIDailyTimetable3Status299, error)
+	THSRAPIDailyTimetable21243(params *THSRAPIDailyTimetable21243Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*THSRAPIDailyTimetable21243OK, *THSRAPIDailyTimetable21243Status299, error)
 
-	THSRAPIDailyTimetable4(params *THSRAPIDailyTimetable4Params, opts ...ClientOption) (*THSRAPIDailyTimetable4OK, *THSRAPIDailyTimetable4Status299, error)
+	THSRAPIDailyTimetable21244(params *THSRAPIDailyTimetable21244Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*THSRAPIDailyTimetable21244OK, *THSRAPIDailyTimetable21244Status299, error)
 
-	THSRAPIDailyTrainInfo(params *THSRAPIDailyTrainInfoParams, opts ...ClientOption) (*THSRAPIDailyTrainInfoOK, *THSRAPIDailyTrainInfoStatus299, error)
+	THSRAPIDailyTrainInfo2123(params *THSRAPIDailyTrainInfo2123Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*THSRAPIDailyTrainInfo2123OK, *THSRAPIDailyTrainInfo2123Status299, error)
 
-	THSRAPIDailyTrainInfo1(params *THSRAPIDailyTrainInfo1Params, opts ...ClientOption) (*THSRAPIDailyTrainInfo1OK, *THSRAPIDailyTrainInfo1Status299, error)
+	THSRAPIDailyTrainInfo21231(params *THSRAPIDailyTrainInfo21231Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*THSRAPIDailyTrainInfo21231OK, *THSRAPIDailyTrainInfo21231Status299, error)
 
-	THSRAPIDailyTrainInfo2(params *THSRAPIDailyTrainInfo2Params, opts ...ClientOption) (*THSRAPIDailyTrainInfo2OK, *THSRAPIDailyTrainInfo2Status299, error)
+	THSRAPIDailyTrainInfo21232(params *THSRAPIDailyTrainInfo21232Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*THSRAPIDailyTrainInfo21232OK, *THSRAPIDailyTrainInfo21232Status299, error)
 
-	THSRAPIDailyTrainInfo3(params *THSRAPIDailyTrainInfo3Params, opts ...ClientOption) (*THSRAPIDailyTrainInfo3OK, *THSRAPIDailyTrainInfo3Status299, error)
+	THSRAPIDailyTrainInfo21233(params *THSRAPIDailyTrainInfo21233Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*THSRAPIDailyTrainInfo21233OK, *THSRAPIDailyTrainInfo21233Status299, error)
 
-	THSRAPIGeneralTimetable(params *THSRAPIGeneralTimetableParams, opts ...ClientOption) (*THSRAPIGeneralTimetableOK, *THSRAPIGeneralTimetableStatus299, error)
+	THSRAPIGeneralTimetable2122(params *THSRAPIGeneralTimetable2122Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*THSRAPIGeneralTimetable2122OK, *THSRAPIGeneralTimetable2122Status299, error)
 
-	THSRAPIGeneralTimetable1(params *THSRAPIGeneralTimetable1Params, opts ...ClientOption) (*THSRAPIGeneralTimetable1OK, *THSRAPIGeneralTimetable1Status299, error)
+	THSRAPIGeneralTimetable21221(params *THSRAPIGeneralTimetable21221Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*THSRAPIGeneralTimetable21221OK, *THSRAPIGeneralTimetable21221Status299, error)
 
-	THSRAPINews(params *THSRAPINewsParams, opts ...ClientOption) (*THSRAPINewsOK, *THSRAPINewsStatus299, error)
+	THSRAPINews2128(params *THSRAPINews2128Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*THSRAPINews2128OK, *THSRAPINews2128Status299, error)
 
-	THSRAPIODDailyTimetable(params *THSRAPIODDailyTimetableParams, opts ...ClientOption) (*THSRAPIODDailyTimetableOK, *THSRAPIODDailyTimetableStatus299, error)
+	THSRAPIODDailyTimetable2126(params *THSRAPIODDailyTimetable2126Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*THSRAPIODDailyTimetable2126OK, *THSRAPIODDailyTimetable2126Status299, error)
 
-	THSRAPIODFare(params *THSRAPIODFareParams, opts ...ClientOption) (*THSRAPIODFareOK, *THSRAPIODFareStatus299, error)
+	THSRAPIODFare2121(params *THSRAPIODFare2121Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*THSRAPIODFare2121OK, *THSRAPIODFare2121Status299, error)
 
-	THSRAPIODFare1(params *THSRAPIODFare1Params, opts ...ClientOption) (*THSRAPIODFare1OK, *THSRAPIODFare1Status299, error)
+	THSRAPIODFare21211(params *THSRAPIODFare21211Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*THSRAPIODFare21211OK, *THSRAPIODFare21211Status299, error)
 
-	THSRAPIShape(params *THSRAPIShapeParams, opts ...ClientOption) (*THSRAPIShapeOK, *THSRAPIShapeStatus299, error)
+	THSRAPIShape2129(params *THSRAPIShape2129Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*THSRAPIShape2129OK, *THSRAPIShape2129Status299, error)
 
-	THSRAPIStation(params *THSRAPIStationParams, opts ...ClientOption) (*THSRAPIStationOK, *THSRAPIStationStatus299, error)
+	THSRAPIStationExit2132(params *THSRAPIStationExit2132Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*THSRAPIStationExit2132OK, *THSRAPIStationExit2132Status299, error)
 
-	THSRAPIStationExit(params *THSRAPIStationExitParams, opts ...ClientOption) (*THSRAPIStationExitOK, *THSRAPIStationExitStatus299, error)
+	THSRAPIStationTimetable2125(params *THSRAPIStationTimetable2125Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*THSRAPIStationTimetable2125OK, *THSRAPIStationTimetable2125Status299, error)
 
-	THSRAPIStationTimetable(params *THSRAPIStationTimetableParams, opts ...ClientOption) (*THSRAPIStationTimetableOK, *THSRAPIStationTimetableStatus299, error)
+	THSRAPIStation2120(params *THSRAPIStation2120Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*THSRAPIStation2120OK, *THSRAPIStation2120Status299, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
 
 /*
-  THSRAPIAlertInfo 取得即時通阻事件資料s
+  THSRAPIAlertInfo2127 取得即時通阻事件資料s
 
   取得即時通阻事件資料
 */
-func (a *Client) THSRAPIAlertInfo(params *THSRAPIAlertInfoParams, opts ...ClientOption) (*THSRAPIAlertInfoOK, *THSRAPIAlertInfoStatus299, error) {
+func (a *Client) THSRAPIAlertInfo2127(params *THSRAPIAlertInfo2127Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*THSRAPIAlertInfo2127OK, *THSRAPIAlertInfo2127Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewTHSRAPIAlertInfoParams()
+		params = NewTHSRAPIAlertInfo2127Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "THSRApi_AlertInfo",
+		ID:                 "THSRApi_AlertInfo_2127",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/AlertInfo",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &THSRAPIAlertInfoReader{formats: a.formats},
+		Reader:             &THSRAPIAlertInfo2127Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -118,9 +119,9 @@ func (a *Client) THSRAPIAlertInfo(params *THSRAPIAlertInfoParams, opts ...Client
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *THSRAPIAlertInfoOK:
+	case *THSRAPIAlertInfo2127OK:
 		return value, nil, nil
-	case *THSRAPIAlertInfoStatus299:
+	case *THSRAPIAlertInfo2127Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -129,67 +130,25 @@ func (a *Client) THSRAPIAlertInfo(params *THSRAPIAlertInfoParams, opts ...Client
 }
 
 /*
-  THSRAPIAvailableSeatStatus 開發用測試版s 取得當天對號座即時剩餘位資料 原始 列車區段 leg角度
-
-  取得當天對號座即時剩餘位資料({原始}列車區段Leg角度)
-- (更新頻率為10分鐘)
-- **(本服務尚在測試中,穩定度及更新頻率將持續優化)**
-*/
-func (a *Client) THSRAPIAvailableSeatStatus(params *THSRAPIAvailableSeatStatusParams, opts ...ClientOption) (*THSRAPIAvailableSeatStatusOK, *THSRAPIAvailableSeatStatusStatus299, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewTHSRAPIAvailableSeatStatusParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "THSRApi_AvailableSeatStatus",
-		Method:             "GET",
-		PathPattern:        "/v2/Rail/THSR/AvailableSeatStatus/Train/Leg/Today",
-		ProducesMediaTypes: []string{"application/json", "application/xml"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &THSRAPIAvailableSeatStatusReader{formats: a.formats},
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, nil, err
-	}
-	switch value := result.(type) {
-	case *THSRAPIAvailableSeatStatusOK:
-		return value, nil, nil
-	case *THSRAPIAvailableSeatStatusStatus299:
-		return nil, value, nil
-	}
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for t_h_s_r: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-  THSRAPIAvailableSeatStatusListStation 取得動態對號座剩餘座位資訊看板資料s
+  THSRAPIAvailableSeatStatusListStation2130 取得動態對號座剩餘座位資訊看板資料s
 
   取得動態對號座剩餘座位資訊看板資料
 */
-func (a *Client) THSRAPIAvailableSeatStatusListStation(params *THSRAPIAvailableSeatStatusListStationParams, opts ...ClientOption) (*THSRAPIAvailableSeatStatusListStationOK, *THSRAPIAvailableSeatStatusListStationStatus299, error) {
+func (a *Client) THSRAPIAvailableSeatStatusListStation2130(params *THSRAPIAvailableSeatStatusListStation2130Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*THSRAPIAvailableSeatStatusListStation2130OK, *THSRAPIAvailableSeatStatusListStation2130Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewTHSRAPIAvailableSeatStatusListStationParams()
+		params = NewTHSRAPIAvailableSeatStatusListStation2130Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "THSRApi_AvailableSeatStatusList_Station",
+		ID:                 "THSRApi_AvailableSeatStatusList_Station_2130",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/AvailableSeatStatusList",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &THSRAPIAvailableSeatStatusListStationReader{formats: a.formats},
+		Reader:             &THSRAPIAvailableSeatStatusListStation2130Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -202,9 +161,9 @@ func (a *Client) THSRAPIAvailableSeatStatusListStation(params *THSRAPIAvailableS
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *THSRAPIAvailableSeatStatusListStationOK:
+	case *THSRAPIAvailableSeatStatusListStation2130OK:
 		return value, nil, nil
-	case *THSRAPIAvailableSeatStatusListStationStatus299:
+	case *THSRAPIAvailableSeatStatusListStation2130Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -213,24 +172,25 @@ func (a *Client) THSRAPIAvailableSeatStatusListStation(params *THSRAPIAvailableS
 }
 
 /*
-  THSRAPIAvailableSeatStatusListStation1 取得動態指定s 車站 的對號座剩餘座位資訊看板資料
+  THSRAPIAvailableSeatStatusListStation21301 取得動態指定s 車站 的對號座剩餘座位資訊看板資料
 
   取得動態指定[車站]的對號座剩餘座位資訊看板資料
 */
-func (a *Client) THSRAPIAvailableSeatStatusListStation1(params *THSRAPIAvailableSeatStatusListStation1Params, opts ...ClientOption) (*THSRAPIAvailableSeatStatusListStation1OK, *THSRAPIAvailableSeatStatusListStation1Status299, error) {
+func (a *Client) THSRAPIAvailableSeatStatusListStation21301(params *THSRAPIAvailableSeatStatusListStation21301Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*THSRAPIAvailableSeatStatusListStation21301OK, *THSRAPIAvailableSeatStatusListStation21301Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewTHSRAPIAvailableSeatStatusListStation1Params()
+		params = NewTHSRAPIAvailableSeatStatusListStation21301Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "THSRApi_AvailableSeatStatusList_Station_1",
+		ID:                 "THSRApi_AvailableSeatStatusList_Station_2130_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/AvailableSeatStatusList/{StationID}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &THSRAPIAvailableSeatStatusListStation1Reader{formats: a.formats},
+		Reader:             &THSRAPIAvailableSeatStatusListStation21301Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -243,9 +203,9 @@ func (a *Client) THSRAPIAvailableSeatStatusListStation1(params *THSRAPIAvailable
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *THSRAPIAvailableSeatStatusListStation1OK:
+	case *THSRAPIAvailableSeatStatusListStation21301OK:
 		return value, nil, nil
-	case *THSRAPIAvailableSeatStatusListStation1Status299:
+	case *THSRAPIAvailableSeatStatusListStation21301Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -254,26 +214,71 @@ func (a *Client) THSRAPIAvailableSeatStatusListStation1(params *THSRAPIAvailable
 }
 
 /*
-  THSRAPIAvailableSeatStatus1 開發用測試版s 取得指定 日期 對號座即時剩餘位資料 原始 列車區段 leg角度
+  THSRAPIAvailableSeatStatus2135 開發用測試版s 取得當天對號座即時剩餘位資料 原始 列車區段 leg角度
+
+  取得當天對號座即時剩餘位資料({原始}列車區段Leg角度)
+- (更新頻率為10分鐘)
+- **(本服務尚在測試中,穩定度及更新頻率將持續優化)**
+*/
+func (a *Client) THSRAPIAvailableSeatStatus2135(params *THSRAPIAvailableSeatStatus2135Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*THSRAPIAvailableSeatStatus2135OK, *THSRAPIAvailableSeatStatus2135Status299, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewTHSRAPIAvailableSeatStatus2135Params()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "THSRApi_AvailableSeatStatus_2135",
+		Method:             "GET",
+		PathPattern:        "/v2/Rail/THSR/AvailableSeatStatus/Train/Leg/Today",
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &THSRAPIAvailableSeatStatus2135Reader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, nil, err
+	}
+	switch value := result.(type) {
+	case *THSRAPIAvailableSeatStatus2135OK:
+		return value, nil, nil
+	case *THSRAPIAvailableSeatStatus2135Status299:
+		return nil, value, nil
+	}
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for t_h_s_r: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  THSRAPIAvailableSeatStatus21351 開發用測試版s 取得指定 日期 對號座即時剩餘位資料 原始 列車區段 leg角度
 
   取得指定[日期]對號座即時剩餘位資料({原始}列車區段Leg角度)
 - (更新頻率為每日的10、16、22時)
 - **(本服務尚在測試中,穩定度及更新頻率將持續優化)**
 */
-func (a *Client) THSRAPIAvailableSeatStatus1(params *THSRAPIAvailableSeatStatus1Params, opts ...ClientOption) (*THSRAPIAvailableSeatStatus1OK, *THSRAPIAvailableSeatStatus1Status299, error) {
+func (a *Client) THSRAPIAvailableSeatStatus21351(params *THSRAPIAvailableSeatStatus21351Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*THSRAPIAvailableSeatStatus21351OK, *THSRAPIAvailableSeatStatus21351Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewTHSRAPIAvailableSeatStatus1Params()
+		params = NewTHSRAPIAvailableSeatStatus21351Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "THSRApi_AvailableSeatStatus_1",
+		ID:                 "THSRApi_AvailableSeatStatus_2135_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/AvailableSeatStatus/Train/Leg/TrainDate/{TrainDate}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &THSRAPIAvailableSeatStatus1Reader{formats: a.formats},
+		Reader:             &THSRAPIAvailableSeatStatus21351Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -286,9 +291,9 @@ func (a *Client) THSRAPIAvailableSeatStatus1(params *THSRAPIAvailableSeatStatus1
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *THSRAPIAvailableSeatStatus1OK:
+	case *THSRAPIAvailableSeatStatus21351OK:
 		return value, nil, nil
-	case *THSRAPIAvailableSeatStatus1Status299:
+	case *THSRAPIAvailableSeatStatus21351Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -297,27 +302,28 @@ func (a *Client) THSRAPIAvailableSeatStatus1(params *THSRAPIAvailableSeatStatus1
 }
 
 /*
-  THSRAPIAvailableSeatStatusOD 開發用測試版s 取得指定 日期 對號座即時剩餘位資料 加值型列車起迄段 o d角度
+  THSRAPIAvailableSeatStatusOD2136 開發用測試版s 取得指定 日期 對號座即時剩餘位資料 加值型列車起迄段 o d角度
 
   取得指定[日期]對號座即時剩餘位資料(加值型列車起迄段OD角度)
 - 當日(D)之更新頻率為每10分鐘
 - 當日後27日(D+1~D+27)之更新頻率為每日的10、16、22時
 - **(本服務尚在測試中,穩定度及更新頻率將持續優化)**
 */
-func (a *Client) THSRAPIAvailableSeatStatusOD(params *THSRAPIAvailableSeatStatusODParams, opts ...ClientOption) (*THSRAPIAvailableSeatStatusODOK, *THSRAPIAvailableSeatStatusODStatus299, error) {
+func (a *Client) THSRAPIAvailableSeatStatusOD2136(params *THSRAPIAvailableSeatStatusOD2136Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*THSRAPIAvailableSeatStatusOD2136OK, *THSRAPIAvailableSeatStatusOD2136Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewTHSRAPIAvailableSeatStatusODParams()
+		params = NewTHSRAPIAvailableSeatStatusOD2136Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "THSRApi_AvailableSeatStatus_OD",
+		ID:                 "THSRApi_AvailableSeatStatus_OD_2136",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/AvailableSeatStatus/Train/OD/TrainDate/{TrainDate}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &THSRAPIAvailableSeatStatusODReader{formats: a.formats},
+		Reader:             &THSRAPIAvailableSeatStatusOD2136Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -330,9 +336,9 @@ func (a *Client) THSRAPIAvailableSeatStatusOD(params *THSRAPIAvailableSeatStatus
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *THSRAPIAvailableSeatStatusODOK:
+	case *THSRAPIAvailableSeatStatusOD2136OK:
 		return value, nil, nil
-	case *THSRAPIAvailableSeatStatusODStatus299:
+	case *THSRAPIAvailableSeatStatusOD2136Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -341,27 +347,28 @@ func (a *Client) THSRAPIAvailableSeatStatusOD(params *THSRAPIAvailableSeatStatus
 }
 
 /*
-  THSRAPIAvailableSeatStatusOD1 開發用測試版s 取得指定 日期 起迄站 對號座即時剩餘位資料 加值型列車起迄段 o d角度
+  THSRAPIAvailableSeatStatusOD21361 開發用測試版s 取得指定 日期 起迄站 對號座即時剩餘位資料 加值型列車起迄段 o d角度
 
   取得指定[日期], [起迄站]對號座即時剩餘位資料(加值型列車起迄段OD角度)
 - 當日(D)之更新頻率為每10分鐘
 - 當日後27日(D+1~D+27)之更新頻率為每日的10、16、22時
 - **(本服務尚在測試中,穩定度及更新頻率將持續優化)**
 */
-func (a *Client) THSRAPIAvailableSeatStatusOD1(params *THSRAPIAvailableSeatStatusOD1Params, opts ...ClientOption) (*THSRAPIAvailableSeatStatusOD1OK, *THSRAPIAvailableSeatStatusOD1Status299, error) {
+func (a *Client) THSRAPIAvailableSeatStatusOD21361(params *THSRAPIAvailableSeatStatusOD21361Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*THSRAPIAvailableSeatStatusOD21361OK, *THSRAPIAvailableSeatStatusOD21361Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewTHSRAPIAvailableSeatStatusOD1Params()
+		params = NewTHSRAPIAvailableSeatStatusOD21361Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "THSRApi_AvailableSeatStatus_OD_1",
+		ID:                 "THSRApi_AvailableSeatStatus_OD_2136_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/AvailableSeatStatus/Train/OD/{OriginStationID}/to/{DestinationStationID}/TrainDate/{TrainDate}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &THSRAPIAvailableSeatStatusOD1Reader{formats: a.formats},
+		Reader:             &THSRAPIAvailableSeatStatusOD21361Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -374,9 +381,9 @@ func (a *Client) THSRAPIAvailableSeatStatusOD1(params *THSRAPIAvailableSeatStatu
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *THSRAPIAvailableSeatStatusOD1OK:
+	case *THSRAPIAvailableSeatStatusOD21361OK:
 		return value, nil, nil
-	case *THSRAPIAvailableSeatStatusOD1Status299:
+	case *THSRAPIAvailableSeatStatusOD21361Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -385,27 +392,28 @@ func (a *Client) THSRAPIAvailableSeatStatusOD1(params *THSRAPIAvailableSeatStatu
 }
 
 /*
-  THSRAPIAvailableSeatStatusOD2 開發用測試版s 取得指定 日期 車次 起迄站 對號座即時剩餘位資料 加值型列車起迄段 o d角度
+  THSRAPIAvailableSeatStatusOD21362 開發用測試版s 取得指定 日期 車次 起迄站 對號座即時剩餘位資料 加值型列車起迄段 o d角度
 
   取得指定[日期], [起迄站]對號座即時剩餘位資料(加值型列車起迄段OD角度)
 - 當日(D)之更新頻率為每10分鐘
 - 當日後27日(D+1~D+27)之更新頻率為每日的10、16、22時
 - **(本服務尚在測試中,穩定度及更新頻率將持續優化)**
 */
-func (a *Client) THSRAPIAvailableSeatStatusOD2(params *THSRAPIAvailableSeatStatusOD2Params, opts ...ClientOption) (*THSRAPIAvailableSeatStatusOD2OK, *THSRAPIAvailableSeatStatusOD2Status299, error) {
+func (a *Client) THSRAPIAvailableSeatStatusOD21362(params *THSRAPIAvailableSeatStatusOD21362Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*THSRAPIAvailableSeatStatusOD21362OK, *THSRAPIAvailableSeatStatusOD21362Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewTHSRAPIAvailableSeatStatusOD2Params()
+		params = NewTHSRAPIAvailableSeatStatusOD21362Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "THSRApi_AvailableSeatStatus_OD_2",
+		ID:                 "THSRApi_AvailableSeatStatus_OD_2136_2",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/AvailableSeatStatus/Train/OD/{OriginStationID}/to/{DestinationStationID}/TrainDate/{TrainDate}/TrainNo/{TrainNo}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &THSRAPIAvailableSeatStatusOD2Reader{formats: a.formats},
+		Reader:             &THSRAPIAvailableSeatStatusOD21362Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -418,9 +426,9 @@ func (a *Client) THSRAPIAvailableSeatStatusOD2(params *THSRAPIAvailableSeatStatu
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *THSRAPIAvailableSeatStatusOD2OK:
+	case *THSRAPIAvailableSeatStatusOD21362OK:
 		return value, nil, nil
-	case *THSRAPIAvailableSeatStatusOD2Status299:
+	case *THSRAPIAvailableSeatStatusOD21362Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -429,24 +437,25 @@ func (a *Client) THSRAPIAvailableSeatStatusOD2(params *THSRAPIAvailableSeatStatu
 }
 
 /*
-  THSRAPIDailyTimetable 取得當天所有車次的時刻表資料s
+  THSRAPIDailyTimetable2124 取得當天所有車次的時刻表資料s
 
   取得當天所有車次的時刻表資料
 */
-func (a *Client) THSRAPIDailyTimetable(params *THSRAPIDailyTimetableParams, opts ...ClientOption) (*THSRAPIDailyTimetableOK, *THSRAPIDailyTimetableStatus299, error) {
+func (a *Client) THSRAPIDailyTimetable2124(params *THSRAPIDailyTimetable2124Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*THSRAPIDailyTimetable2124OK, *THSRAPIDailyTimetable2124Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewTHSRAPIDailyTimetableParams()
+		params = NewTHSRAPIDailyTimetable2124Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "THSRApi_DailyTimetable",
+		ID:                 "THSRApi_DailyTimetable_2124",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/DailyTimetable/Today",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &THSRAPIDailyTimetableReader{formats: a.formats},
+		Reader:             &THSRAPIDailyTimetable2124Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -459,9 +468,9 @@ func (a *Client) THSRAPIDailyTimetable(params *THSRAPIDailyTimetableParams, opts
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *THSRAPIDailyTimetableOK:
+	case *THSRAPIDailyTimetable2124OK:
 		return value, nil, nil
-	case *THSRAPIDailyTimetableStatus299:
+	case *THSRAPIDailyTimetable2124Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -470,24 +479,25 @@ func (a *Client) THSRAPIDailyTimetable(params *THSRAPIDailyTimetableParams, opts
 }
 
 /*
-  THSRAPIDailyTimetable1 取得當天指定s 車次 的時刻表資料
+  THSRAPIDailyTimetable21241 取得當天指定s 車次 的時刻表資料
 
   取得當天指定[車次]的時刻表資料
 */
-func (a *Client) THSRAPIDailyTimetable1(params *THSRAPIDailyTimetable1Params, opts ...ClientOption) (*THSRAPIDailyTimetable1OK, *THSRAPIDailyTimetable1Status299, error) {
+func (a *Client) THSRAPIDailyTimetable21241(params *THSRAPIDailyTimetable21241Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*THSRAPIDailyTimetable21241OK, *THSRAPIDailyTimetable21241Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewTHSRAPIDailyTimetable1Params()
+		params = NewTHSRAPIDailyTimetable21241Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "THSRApi_DailyTimetable_1",
+		ID:                 "THSRApi_DailyTimetable_2124_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/DailyTimetable/Today/TrainNo/{TrainNo}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &THSRAPIDailyTimetable1Reader{formats: a.formats},
+		Reader:             &THSRAPIDailyTimetable21241Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -500,9 +510,9 @@ func (a *Client) THSRAPIDailyTimetable1(params *THSRAPIDailyTimetable1Params, op
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *THSRAPIDailyTimetable1OK:
+	case *THSRAPIDailyTimetable21241OK:
 		return value, nil, nil
-	case *THSRAPIDailyTimetable1Status299:
+	case *THSRAPIDailyTimetable21241Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -511,24 +521,25 @@ func (a *Client) THSRAPIDailyTimetable1(params *THSRAPIDailyTimetable1Params, op
 }
 
 /*
-  THSRAPIDailyTimetable2 取得高鐵每日時刻表所有供應的日期資料s
+  THSRAPIDailyTimetable21242 取得高鐵每日時刻表所有供應的日期資料s
 
   取得高鐵每日時刻表所有供應的日期資料
 */
-func (a *Client) THSRAPIDailyTimetable2(params *THSRAPIDailyTimetable2Params, opts ...ClientOption) (*THSRAPIDailyTimetable2OK, *THSRAPIDailyTimetable2Status299, error) {
+func (a *Client) THSRAPIDailyTimetable21242(params *THSRAPIDailyTimetable21242Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*THSRAPIDailyTimetable21242OK, *THSRAPIDailyTimetable21242Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewTHSRAPIDailyTimetable2Params()
+		params = NewTHSRAPIDailyTimetable21242Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "THSRApi_DailyTimetable_2",
+		ID:                 "THSRApi_DailyTimetable_2124_2",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/DailyTimetable/TrainDates",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &THSRAPIDailyTimetable2Reader{formats: a.formats},
+		Reader:             &THSRAPIDailyTimetable21242Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -541,9 +552,9 @@ func (a *Client) THSRAPIDailyTimetable2(params *THSRAPIDailyTimetable2Params, op
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *THSRAPIDailyTimetable2OK:
+	case *THSRAPIDailyTimetable21242OK:
 		return value, nil, nil
-	case *THSRAPIDailyTimetable2Status299:
+	case *THSRAPIDailyTimetable21242Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -552,24 +563,25 @@ func (a *Client) THSRAPIDailyTimetable2(params *THSRAPIDailyTimetable2Params, op
 }
 
 /*
-  THSRAPIDailyTimetable3 取得指定s 日期 所有車次的時刻表資料
+  THSRAPIDailyTimetable21243 取得指定s 日期 所有車次的時刻表資料
 
   取得指定[日期]所有車次的時刻表資料(高鐵提供近28天每日時刻表)
 */
-func (a *Client) THSRAPIDailyTimetable3(params *THSRAPIDailyTimetable3Params, opts ...ClientOption) (*THSRAPIDailyTimetable3OK, *THSRAPIDailyTimetable3Status299, error) {
+func (a *Client) THSRAPIDailyTimetable21243(params *THSRAPIDailyTimetable21243Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*THSRAPIDailyTimetable21243OK, *THSRAPIDailyTimetable21243Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewTHSRAPIDailyTimetable3Params()
+		params = NewTHSRAPIDailyTimetable21243Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "THSRApi_DailyTimetable_3",
+		ID:                 "THSRApi_DailyTimetable_2124_3",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/DailyTimetable/TrainDate/{TrainDate}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &THSRAPIDailyTimetable3Reader{formats: a.formats},
+		Reader:             &THSRAPIDailyTimetable21243Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -582,9 +594,9 @@ func (a *Client) THSRAPIDailyTimetable3(params *THSRAPIDailyTimetable3Params, op
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *THSRAPIDailyTimetable3OK:
+	case *THSRAPIDailyTimetable21243OK:
 		return value, nil, nil
-	case *THSRAPIDailyTimetable3Status299:
+	case *THSRAPIDailyTimetable21243Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -593,24 +605,25 @@ func (a *Client) THSRAPIDailyTimetable3(params *THSRAPIDailyTimetable3Params, op
 }
 
 /*
-  THSRAPIDailyTimetable4 取得指定s 日期 車次 的時刻表資料
+  THSRAPIDailyTimetable21244 取得指定s 日期 車次 的時刻表資料
 
   取得指定[日期],[車次]的時刻表資料(高鐵提供近28天每日時刻表)
 */
-func (a *Client) THSRAPIDailyTimetable4(params *THSRAPIDailyTimetable4Params, opts ...ClientOption) (*THSRAPIDailyTimetable4OK, *THSRAPIDailyTimetable4Status299, error) {
+func (a *Client) THSRAPIDailyTimetable21244(params *THSRAPIDailyTimetable21244Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*THSRAPIDailyTimetable21244OK, *THSRAPIDailyTimetable21244Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewTHSRAPIDailyTimetable4Params()
+		params = NewTHSRAPIDailyTimetable21244Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "THSRApi_DailyTimetable_4",
+		ID:                 "THSRApi_DailyTimetable_2124_4",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/DailyTimetable/TrainNo/{TrainNo}/TrainDate/{TrainDate}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &THSRAPIDailyTimetable4Reader{formats: a.formats},
+		Reader:             &THSRAPIDailyTimetable21244Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -623,9 +636,9 @@ func (a *Client) THSRAPIDailyTimetable4(params *THSRAPIDailyTimetable4Params, op
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *THSRAPIDailyTimetable4OK:
+	case *THSRAPIDailyTimetable21244OK:
 		return value, nil, nil
-	case *THSRAPIDailyTimetable4Status299:
+	case *THSRAPIDailyTimetable21244Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -634,24 +647,25 @@ func (a *Client) THSRAPIDailyTimetable4(params *THSRAPIDailyTimetable4Params, op
 }
 
 /*
-  THSRAPIDailyTrainInfo 取得當天所有車次的車次資料s
+  THSRAPIDailyTrainInfo2123 取得當天所有車次的車次資料s
 
   取得當天所有車次的車次資料
 */
-func (a *Client) THSRAPIDailyTrainInfo(params *THSRAPIDailyTrainInfoParams, opts ...ClientOption) (*THSRAPIDailyTrainInfoOK, *THSRAPIDailyTrainInfoStatus299, error) {
+func (a *Client) THSRAPIDailyTrainInfo2123(params *THSRAPIDailyTrainInfo2123Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*THSRAPIDailyTrainInfo2123OK, *THSRAPIDailyTrainInfo2123Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewTHSRAPIDailyTrainInfoParams()
+		params = NewTHSRAPIDailyTrainInfo2123Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "THSRApi_DailyTrainInfo",
+		ID:                 "THSRApi_DailyTrainInfo_2123",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/DailyTrainInfo/Today",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &THSRAPIDailyTrainInfoReader{formats: a.formats},
+		Reader:             &THSRAPIDailyTrainInfo2123Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -664,9 +678,9 @@ func (a *Client) THSRAPIDailyTrainInfo(params *THSRAPIDailyTrainInfoParams, opts
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *THSRAPIDailyTrainInfoOK:
+	case *THSRAPIDailyTrainInfo2123OK:
 		return value, nil, nil
-	case *THSRAPIDailyTrainInfoStatus299:
+	case *THSRAPIDailyTrainInfo2123Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -675,24 +689,25 @@ func (a *Client) THSRAPIDailyTrainInfo(params *THSRAPIDailyTrainInfoParams, opts
 }
 
 /*
-  THSRAPIDailyTrainInfo1 取得當天指定s 車次 的車次資料
+  THSRAPIDailyTrainInfo21231 取得當天指定s 車次 的車次資料
 
   取得當天指定[車次]的車次資料
 */
-func (a *Client) THSRAPIDailyTrainInfo1(params *THSRAPIDailyTrainInfo1Params, opts ...ClientOption) (*THSRAPIDailyTrainInfo1OK, *THSRAPIDailyTrainInfo1Status299, error) {
+func (a *Client) THSRAPIDailyTrainInfo21231(params *THSRAPIDailyTrainInfo21231Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*THSRAPIDailyTrainInfo21231OK, *THSRAPIDailyTrainInfo21231Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewTHSRAPIDailyTrainInfo1Params()
+		params = NewTHSRAPIDailyTrainInfo21231Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "THSRApi_DailyTrainInfo_1",
+		ID:                 "THSRApi_DailyTrainInfo_2123_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/DailyTrainInfo/Today/TrainNo/{TrainNo}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &THSRAPIDailyTrainInfo1Reader{formats: a.formats},
+		Reader:             &THSRAPIDailyTrainInfo21231Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -705,9 +720,9 @@ func (a *Client) THSRAPIDailyTrainInfo1(params *THSRAPIDailyTrainInfo1Params, op
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *THSRAPIDailyTrainInfo1OK:
+	case *THSRAPIDailyTrainInfo21231OK:
 		return value, nil, nil
-	case *THSRAPIDailyTrainInfo1Status299:
+	case *THSRAPIDailyTrainInfo21231Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -716,24 +731,25 @@ func (a *Client) THSRAPIDailyTrainInfo1(params *THSRAPIDailyTrainInfo1Params, op
 }
 
 /*
-  THSRAPIDailyTrainInfo2 取得指定s 日期 所有車次的車次資料
+  THSRAPIDailyTrainInfo21232 取得指定s 日期 所有車次的車次資料
 
   取得指定[日期]所有車次的車次資料(高鐵提供近28天每日時刻表)
 */
-func (a *Client) THSRAPIDailyTrainInfo2(params *THSRAPIDailyTrainInfo2Params, opts ...ClientOption) (*THSRAPIDailyTrainInfo2OK, *THSRAPIDailyTrainInfo2Status299, error) {
+func (a *Client) THSRAPIDailyTrainInfo21232(params *THSRAPIDailyTrainInfo21232Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*THSRAPIDailyTrainInfo21232OK, *THSRAPIDailyTrainInfo21232Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewTHSRAPIDailyTrainInfo2Params()
+		params = NewTHSRAPIDailyTrainInfo21232Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "THSRApi_DailyTrainInfo_2",
+		ID:                 "THSRApi_DailyTrainInfo_2123_2",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/DailyTrainInfo/TrainDate/{TrainDate}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &THSRAPIDailyTrainInfo2Reader{formats: a.formats},
+		Reader:             &THSRAPIDailyTrainInfo21232Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -746,9 +762,9 @@ func (a *Client) THSRAPIDailyTrainInfo2(params *THSRAPIDailyTrainInfo2Params, op
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *THSRAPIDailyTrainInfo2OK:
+	case *THSRAPIDailyTrainInfo21232OK:
 		return value, nil, nil
-	case *THSRAPIDailyTrainInfo2Status299:
+	case *THSRAPIDailyTrainInfo21232Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -757,24 +773,25 @@ func (a *Client) THSRAPIDailyTrainInfo2(params *THSRAPIDailyTrainInfo2Params, op
 }
 
 /*
-  THSRAPIDailyTrainInfo3 取得指定s 日期 車次 的車次資料
+  THSRAPIDailyTrainInfo21233 取得指定s 日期 車次 的車次資料
 
   取得指定[日期],[車次]的車次資料(高鐵提供近28天每日時刻表)
 */
-func (a *Client) THSRAPIDailyTrainInfo3(params *THSRAPIDailyTrainInfo3Params, opts ...ClientOption) (*THSRAPIDailyTrainInfo3OK, *THSRAPIDailyTrainInfo3Status299, error) {
+func (a *Client) THSRAPIDailyTrainInfo21233(params *THSRAPIDailyTrainInfo21233Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*THSRAPIDailyTrainInfo21233OK, *THSRAPIDailyTrainInfo21233Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewTHSRAPIDailyTrainInfo3Params()
+		params = NewTHSRAPIDailyTrainInfo21233Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "THSRApi_DailyTrainInfo_3",
+		ID:                 "THSRApi_DailyTrainInfo_2123_3",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/DailyTrainInfo/TrainNo/{TrainNo}/TrainDate/{TrainDate}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &THSRAPIDailyTrainInfo3Reader{formats: a.formats},
+		Reader:             &THSRAPIDailyTrainInfo21233Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -787,9 +804,9 @@ func (a *Client) THSRAPIDailyTrainInfo3(params *THSRAPIDailyTrainInfo3Params, op
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *THSRAPIDailyTrainInfo3OK:
+	case *THSRAPIDailyTrainInfo21233OK:
 		return value, nil, nil
-	case *THSRAPIDailyTrainInfo3Status299:
+	case *THSRAPIDailyTrainInfo21233Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -798,24 +815,25 @@ func (a *Client) THSRAPIDailyTrainInfo3(params *THSRAPIDailyTrainInfo3Params, op
 }
 
 /*
-  THSRAPIGeneralTimetable 取得所有車次的定期時刻表資料s
+  THSRAPIGeneralTimetable2122 取得所有車次的定期時刻表資料s
 
   取得所有車次的定期時刻表資料
 */
-func (a *Client) THSRAPIGeneralTimetable(params *THSRAPIGeneralTimetableParams, opts ...ClientOption) (*THSRAPIGeneralTimetableOK, *THSRAPIGeneralTimetableStatus299, error) {
+func (a *Client) THSRAPIGeneralTimetable2122(params *THSRAPIGeneralTimetable2122Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*THSRAPIGeneralTimetable2122OK, *THSRAPIGeneralTimetable2122Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewTHSRAPIGeneralTimetableParams()
+		params = NewTHSRAPIGeneralTimetable2122Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "THSRApi_GeneralTimetable",
+		ID:                 "THSRApi_GeneralTimetable_2122",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/GeneralTimetable",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &THSRAPIGeneralTimetableReader{formats: a.formats},
+		Reader:             &THSRAPIGeneralTimetable2122Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -828,9 +846,9 @@ func (a *Client) THSRAPIGeneralTimetable(params *THSRAPIGeneralTimetableParams, 
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *THSRAPIGeneralTimetableOK:
+	case *THSRAPIGeneralTimetable2122OK:
 		return value, nil, nil
-	case *THSRAPIGeneralTimetableStatus299:
+	case *THSRAPIGeneralTimetable2122Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -839,24 +857,25 @@ func (a *Client) THSRAPIGeneralTimetable(params *THSRAPIGeneralTimetableParams, 
 }
 
 /*
-  THSRAPIGeneralTimetable1 取得指定s 車次 的定期時刻表資料
+  THSRAPIGeneralTimetable21221 取得指定s 車次 的定期時刻表資料
 
   取得指定[車次]的定期時刻表資料
 */
-func (a *Client) THSRAPIGeneralTimetable1(params *THSRAPIGeneralTimetable1Params, opts ...ClientOption) (*THSRAPIGeneralTimetable1OK, *THSRAPIGeneralTimetable1Status299, error) {
+func (a *Client) THSRAPIGeneralTimetable21221(params *THSRAPIGeneralTimetable21221Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*THSRAPIGeneralTimetable21221OK, *THSRAPIGeneralTimetable21221Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewTHSRAPIGeneralTimetable1Params()
+		params = NewTHSRAPIGeneralTimetable21221Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "THSRApi_GeneralTimetable_1",
+		ID:                 "THSRApi_GeneralTimetable_2122_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/GeneralTimetable/TrainNo/{TrainNo}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &THSRAPIGeneralTimetable1Reader{formats: a.formats},
+		Reader:             &THSRAPIGeneralTimetable21221Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -869,9 +888,9 @@ func (a *Client) THSRAPIGeneralTimetable1(params *THSRAPIGeneralTimetable1Params
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *THSRAPIGeneralTimetable1OK:
+	case *THSRAPIGeneralTimetable21221OK:
 		return value, nil, nil
-	case *THSRAPIGeneralTimetable1Status299:
+	case *THSRAPIGeneralTimetable21221Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -880,24 +899,25 @@ func (a *Client) THSRAPIGeneralTimetable1(params *THSRAPIGeneralTimetable1Params
 }
 
 /*
-  THSRAPINews 取得高鐵最新消息資料s
+  THSRAPINews2128 取得高鐵最新消息資料s
 
   取得高鐵最新消息資料
 */
-func (a *Client) THSRAPINews(params *THSRAPINewsParams, opts ...ClientOption) (*THSRAPINewsOK, *THSRAPINewsStatus299, error) {
+func (a *Client) THSRAPINews2128(params *THSRAPINews2128Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*THSRAPINews2128OK, *THSRAPINews2128Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewTHSRAPINewsParams()
+		params = NewTHSRAPINews2128Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "THSRApi_News",
+		ID:                 "THSRApi_News_2128",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/News",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &THSRAPINewsReader{formats: a.formats},
+		Reader:             &THSRAPINews2128Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -910,9 +930,9 @@ func (a *Client) THSRAPINews(params *THSRAPINewsParams, opts ...ClientOption) (*
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *THSRAPINewsOK:
+	case *THSRAPINews2128OK:
 		return value, nil, nil
-	case *THSRAPINewsStatus299:
+	case *THSRAPINews2128Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -921,24 +941,25 @@ func (a *Client) THSRAPINews(params *THSRAPINewsParams, opts ...ClientOption) (*
 }
 
 /*
-  THSRAPIODDailyTimetable 取得指定s 日期 起迄站間 之時刻表資料
+  THSRAPIODDailyTimetable2126 取得指定s 日期 起迄站間 之時刻表資料
 
   取得指定[日期],[起迄站間]之時刻表資料
 */
-func (a *Client) THSRAPIODDailyTimetable(params *THSRAPIODDailyTimetableParams, opts ...ClientOption) (*THSRAPIODDailyTimetableOK, *THSRAPIODDailyTimetableStatus299, error) {
+func (a *Client) THSRAPIODDailyTimetable2126(params *THSRAPIODDailyTimetable2126Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*THSRAPIODDailyTimetable2126OK, *THSRAPIODDailyTimetable2126Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewTHSRAPIODDailyTimetableParams()
+		params = NewTHSRAPIODDailyTimetable2126Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "THSRApi_ODDailyTimetable",
+		ID:                 "THSRApi_ODDailyTimetable_2126",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/DailyTimetable/OD/{OriginStationID}/to/{DestinationStationID}/{TrainDate}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &THSRAPIODDailyTimetableReader{formats: a.formats},
+		Reader:             &THSRAPIODDailyTimetable2126Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -951,9 +972,9 @@ func (a *Client) THSRAPIODDailyTimetable(params *THSRAPIODDailyTimetableParams, 
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *THSRAPIODDailyTimetableOK:
+	case *THSRAPIODDailyTimetable2126OK:
 		return value, nil, nil
-	case *THSRAPIODDailyTimetableStatus299:
+	case *THSRAPIODDailyTimetable2126Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -962,24 +983,25 @@ func (a *Client) THSRAPIODDailyTimetable(params *THSRAPIODDailyTimetableParams, 
 }
 
 /*
-  THSRAPIODFare 取得票價資料s
+  THSRAPIODFare2121 取得票價資料s
 
   取得票價資料
 */
-func (a *Client) THSRAPIODFare(params *THSRAPIODFareParams, opts ...ClientOption) (*THSRAPIODFareOK, *THSRAPIODFareStatus299, error) {
+func (a *Client) THSRAPIODFare2121(params *THSRAPIODFare2121Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*THSRAPIODFare2121OK, *THSRAPIODFare2121Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewTHSRAPIODFareParams()
+		params = NewTHSRAPIODFare2121Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "THSRApi_ODFare",
+		ID:                 "THSRApi_ODFare_2121",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/ODFare",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &THSRAPIODFareReader{formats: a.formats},
+		Reader:             &THSRAPIODFare2121Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -992,9 +1014,9 @@ func (a *Client) THSRAPIODFare(params *THSRAPIODFareParams, opts ...ClientOption
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *THSRAPIODFareOK:
+	case *THSRAPIODFare2121OK:
 		return value, nil, nil
-	case *THSRAPIODFareStatus299:
+	case *THSRAPIODFare2121Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -1003,24 +1025,25 @@ func (a *Client) THSRAPIODFare(params *THSRAPIODFareParams, opts ...ClientOption
 }
 
 /*
-  THSRAPIODFare1 取得指定s 起訖站間 之票價資料
+  THSRAPIODFare21211 取得指定s 起訖站間 之票價資料
 
   取得指定[起訖站間]之票價資料
 */
-func (a *Client) THSRAPIODFare1(params *THSRAPIODFare1Params, opts ...ClientOption) (*THSRAPIODFare1OK, *THSRAPIODFare1Status299, error) {
+func (a *Client) THSRAPIODFare21211(params *THSRAPIODFare21211Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*THSRAPIODFare21211OK, *THSRAPIODFare21211Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewTHSRAPIODFare1Params()
+		params = NewTHSRAPIODFare21211Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "THSRApi_ODFare_1",
+		ID:                 "THSRApi_ODFare_2121_1",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/ODFare/{OriginStationID}/to/{DestinationStationID}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &THSRAPIODFare1Reader{formats: a.formats},
+		Reader:             &THSRAPIODFare21211Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -1033,9 +1056,9 @@ func (a *Client) THSRAPIODFare1(params *THSRAPIODFare1Params, opts ...ClientOpti
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *THSRAPIODFare1OK:
+	case *THSRAPIODFare21211OK:
 		return value, nil, nil
-	case *THSRAPIODFare1Status299:
+	case *THSRAPIODFare21211Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -1044,24 +1067,25 @@ func (a *Client) THSRAPIODFare1(params *THSRAPIODFare1Params, opts ...ClientOpti
 }
 
 /*
-  THSRAPIShape 取得軌道路網實體路線圖資資料s
+  THSRAPIShape2129 取得軌道路網實體路線圖資資料s
 
   取得軌道路網實體路線圖資資料
 */
-func (a *Client) THSRAPIShape(params *THSRAPIShapeParams, opts ...ClientOption) (*THSRAPIShapeOK, *THSRAPIShapeStatus299, error) {
+func (a *Client) THSRAPIShape2129(params *THSRAPIShape2129Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*THSRAPIShape2129OK, *THSRAPIShape2129Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewTHSRAPIShapeParams()
+		params = NewTHSRAPIShape2129Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "THSRApi_Shape",
+		ID:                 "THSRApi_Shape_2129",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/Shape",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &THSRAPIShapeReader{formats: a.formats},
+		Reader:             &THSRAPIShape2129Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -1074,9 +1098,9 @@ func (a *Client) THSRAPIShape(params *THSRAPIShapeParams, opts ...ClientOption) 
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *THSRAPIShapeOK:
+	case *THSRAPIShape2129OK:
 		return value, nil, nil
-	case *THSRAPIShapeStatus299:
+	case *THSRAPIShape2129Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -1085,65 +1109,25 @@ func (a *Client) THSRAPIShape(params *THSRAPIShapeParams, opts ...ClientOption) 
 }
 
 /*
-  THSRAPIStation 取得車站基本資料s
-
-  取得車站基本資料
-*/
-func (a *Client) THSRAPIStation(params *THSRAPIStationParams, opts ...ClientOption) (*THSRAPIStationOK, *THSRAPIStationStatus299, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewTHSRAPIStationParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "THSRApi_Station",
-		Method:             "GET",
-		PathPattern:        "/v2/Rail/THSR/Station",
-		ProducesMediaTypes: []string{"application/json", "application/xml"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &THSRAPIStationReader{formats: a.formats},
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, nil, err
-	}
-	switch value := result.(type) {
-	case *THSRAPIStationOK:
-		return value, nil, nil
-	case *THSRAPIStationStatus299:
-		return nil, value, nil
-	}
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for t_h_s_r: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-  THSRAPIStationExit 取得車站出入口基本資料s
+  THSRAPIStationExit2132 取得車站出入口基本資料s
 
   取得車站出入口基本資料
 */
-func (a *Client) THSRAPIStationExit(params *THSRAPIStationExitParams, opts ...ClientOption) (*THSRAPIStationExitOK, *THSRAPIStationExitStatus299, error) {
+func (a *Client) THSRAPIStationExit2132(params *THSRAPIStationExit2132Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*THSRAPIStationExit2132OK, *THSRAPIStationExit2132Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewTHSRAPIStationExitParams()
+		params = NewTHSRAPIStationExit2132Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "THSRApi_StationExit",
+		ID:                 "THSRApi_StationExit_2132",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/StationExit",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &THSRAPIStationExitReader{formats: a.formats},
+		Reader:             &THSRAPIStationExit2132Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -1156,9 +1140,9 @@ func (a *Client) THSRAPIStationExit(params *THSRAPIStationExitParams, opts ...Cl
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *THSRAPIStationExitOK:
+	case *THSRAPIStationExit2132OK:
 		return value, nil, nil
-	case *THSRAPIStationExitStatus299:
+	case *THSRAPIStationExit2132Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -1167,24 +1151,25 @@ func (a *Client) THSRAPIStationExit(params *THSRAPIStationExitParams, opts ...Cl
 }
 
 /*
-  THSRAPIStationTimetable 取得指定s 日期 車站 的站別時刻表資料
+  THSRAPIStationTimetable2125 取得指定s 日期 車站 的站別時刻表資料
 
   取得指定[日期],[車站]的站別時刻表資料
 */
-func (a *Client) THSRAPIStationTimetable(params *THSRAPIStationTimetableParams, opts ...ClientOption) (*THSRAPIStationTimetableOK, *THSRAPIStationTimetableStatus299, error) {
+func (a *Client) THSRAPIStationTimetable2125(params *THSRAPIStationTimetable2125Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*THSRAPIStationTimetable2125OK, *THSRAPIStationTimetable2125Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewTHSRAPIStationTimetableParams()
+		params = NewTHSRAPIStationTimetable2125Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "THSRApi_StationTimetable",
+		ID:                 "THSRApi_StationTimetable_2125",
 		Method:             "GET",
 		PathPattern:        "/v2/Rail/THSR/DailyTimetable/Station/{StationID}/{TrainDate}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &THSRAPIStationTimetableReader{formats: a.formats},
+		Reader:             &THSRAPIStationTimetable2125Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -1197,9 +1182,51 @@ func (a *Client) THSRAPIStationTimetable(params *THSRAPIStationTimetableParams, 
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *THSRAPIStationTimetableOK:
+	case *THSRAPIStationTimetable2125OK:
 		return value, nil, nil
-	case *THSRAPIStationTimetableStatus299:
+	case *THSRAPIStationTimetable2125Status299:
+		return nil, value, nil
+	}
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for t_h_s_r: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  THSRAPIStation2120 取得車站基本資料s
+
+  取得車站基本資料
+*/
+func (a *Client) THSRAPIStation2120(params *THSRAPIStation2120Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*THSRAPIStation2120OK, *THSRAPIStation2120Status299, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewTHSRAPIStation2120Params()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "THSRApi_Station_2120",
+		Method:             "GET",
+		PathPattern:        "/v2/Rail/THSR/Station",
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &THSRAPIStation2120Reader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, nil, err
+	}
+	switch value := result.(type) {
+	case *THSRAPIStation2120OK:
+		return value, nil, nil
+	case *THSRAPIStation2120Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue

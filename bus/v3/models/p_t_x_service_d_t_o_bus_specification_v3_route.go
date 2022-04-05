@@ -283,6 +283,8 @@ func (m *PTXServiceDTOBusSpecificationV3Route) validateOperators(formats strfmt.
 			if err := m.Operators[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("Operators" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("Operators" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -426,6 +428,8 @@ func (m *PTXServiceDTOBusSpecificationV3Route) contextValidateOperators(ctx cont
 			if err := m.Operators[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("Operators" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("Operators" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

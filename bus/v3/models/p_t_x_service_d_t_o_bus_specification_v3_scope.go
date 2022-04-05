@@ -82,6 +82,8 @@ func (m *PTXServiceDTOBusSpecificationV3Scope) validateRoutes(formats strfmt.Reg
 			if err := m.Routes[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("Routes" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("Routes" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -106,6 +108,8 @@ func (m *PTXServiceDTOBusSpecificationV3Scope) validateStops(formats strfmt.Regi
 			if err := m.Stops[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("Stops" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("Stops" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -130,6 +134,8 @@ func (m *PTXServiceDTOBusSpecificationV3Scope) validateSubRoutes(formats strfmt.
 			if err := m.SubRoutes[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("SubRoutes" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("SubRoutes" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -154,6 +160,8 @@ func (m *PTXServiceDTOBusSpecificationV3Scope) validateTripIDs(formats strfmt.Re
 			if err := m.TripIDs[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("TripIDs" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("TripIDs" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -198,6 +206,8 @@ func (m *PTXServiceDTOBusSpecificationV3Scope) contextValidateRoutes(ctx context
 			if err := m.Routes[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("Routes" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("Routes" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -216,6 +226,8 @@ func (m *PTXServiceDTOBusSpecificationV3Scope) contextValidateStops(ctx context.
 			if err := m.Stops[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("Stops" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("Stops" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -234,6 +246,8 @@ func (m *PTXServiceDTOBusSpecificationV3Scope) contextValidateSubRoutes(ctx cont
 			if err := m.SubRoutes[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("SubRoutes" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("SubRoutes" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -252,6 +266,8 @@ func (m *PTXServiceDTOBusSpecificationV3Scope) contextValidateTripIDs(ctx contex
 			if err := m.TripIDs[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("TripIDs" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("TripIDs" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

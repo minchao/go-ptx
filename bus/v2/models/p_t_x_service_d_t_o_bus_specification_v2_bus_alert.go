@@ -32,7 +32,7 @@ type PTXServiceDTOBusSpecificationV2BusAlert struct {
 
 	// Int32
 	//
-	// 原因 : [1:'事故',2:'維護',3:'技術問題',4:'施工',5:'急救',6:'天災',7:'示威遊行',8:'維安',9:'假日',10:'罷工',254:'其他',255:'未知原因']
+	// 原因 : [1:'事故(ACCIDENT)',2:'維護檢修(MAINTENANCE)',3:'技術問題(TECHNICAL_PROBLEM)',4:'施工(CONSTRUCTION)',5:'醫療緊急狀況(MEDICAL_EMERGENCY)',6:'氣候(WEATHER)',7:'示威遊行(DEMONSTRATION)',8:'政治活動/維安(POLICE_ACTIVITY)',9:'假日/節慶(HOLIDAY)',10:'罷工(STRIKE)',11:'活動(Activity)(如：國慶活動/煙火活動/跨年活動/路跑活動/新北耶誕城活動等)',254:'其他(OTHER_CAUSE)',255:'未知原因(UNKNOWN_CAUSE)']
 	Cause int64 `json:"Cause,omitempty"`
 
 	// String
@@ -49,12 +49,13 @@ type PTXServiceDTOBusSpecificationV2BusAlert struct {
 
 	// Int32
 	//
-	// 影響 : [1:'車輛改道',2:'服務班次增加',3:'服務班次減少',4:'服務班次取消',5:'服務班次改變',6:'站牌不停靠',7:'重大延遲',254:'其他影響',255:'未知影響']
+	// 影響 : [1:'車輛改道/站牌不停靠(DETOUR)',2:'服務(班次)增加(ADDITIONAL_SERVICE)',3:'服務(班次)減少(REDUCED_SERVICE)',4:'服務(班次)取消(NO_SERVICE)',5:'服務(班次)改變(MODIFIED_SERVICE)',6:'站點異動(STOP_MOVED)',7:'重大延遲(SIGNIFICANT_DELAYS)',254:'其他影響(OTHER_EFFECT)',255:'未知影響(UNKNOWN_EFFECT)']
 	Effect int64 `json:"Effect,omitempty"`
 
 	// 結束日期時間
+	// Required: true
 	// Format: date-time
-	EndTime strfmt.DateTime `json:"EndTime,omitempty"`
+	EndTime *strfmt.DateTime `json:"EndTime"`
 
 	// 消息公告日期時間
 	// Format: date-time
@@ -75,8 +76,9 @@ type PTXServiceDTOBusSpecificationV2BusAlert struct {
 	SrcUpdateTime strfmt.DateTime `json:"SrcUpdateTime,omitempty"`
 
 	// 開始日期時間
+	// Required: true
 	// Format: date-time
-	StartTime strfmt.DateTime `json:"StartTime,omitempty"`
+	StartTime *strfmt.DateTime `json:"StartTime"`
 
 	// Int32
 	//
@@ -174,8 +176,9 @@ func (m *PTXServiceDTOBusSpecificationV2BusAlert) validateDescription(formats st
 }
 
 func (m *PTXServiceDTOBusSpecificationV2BusAlert) validateEndTime(formats strfmt.Registry) error {
-	if swag.IsZero(m.EndTime) { // not required
-		return nil
+
+	if err := validate.Required("EndTime", "body", m.EndTime); err != nil {
+		return err
 	}
 
 	if err := validate.FormatOf("EndTime", "body", "date-time", m.EndTime.String(), formats); err != nil {
@@ -215,8 +218,9 @@ func (m *PTXServiceDTOBusSpecificationV2BusAlert) validateSrcUpdateTime(formats 
 }
 
 func (m *PTXServiceDTOBusSpecificationV2BusAlert) validateStartTime(formats strfmt.Registry) error {
-	if swag.IsZero(m.StartTime) { // not required
-		return nil
+
+	if err := validate.Required("StartTime", "body", m.StartTime); err != nil {
+		return err
 	}
 
 	if err := validate.FormatOf("StartTime", "body", "date-time", m.StartTime.String(), formats); err != nil {

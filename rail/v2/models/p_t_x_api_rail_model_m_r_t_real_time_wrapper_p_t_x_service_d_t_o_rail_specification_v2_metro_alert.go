@@ -109,6 +109,8 @@ func (m *PTXAPIRailModelMRTRealTimeWrapperPTXServiceDTORailSpecificationV2MetroA
 			if err := m.Alerts[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("Alerts" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("Alerts" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -194,6 +196,8 @@ func (m *PTXAPIRailModelMRTRealTimeWrapperPTXServiceDTORailSpecificationV2MetroA
 			if err := m.Alerts[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("Alerts" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("Alerts" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

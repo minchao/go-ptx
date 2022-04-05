@@ -211,6 +211,8 @@ func (m *PTXServiceDTOShipSpecificationV3Route) validateOperators(formats strfmt
 			if err := m.Operators[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("Operators" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("Operators" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -290,6 +292,8 @@ func (m *PTXServiceDTOShipSpecificationV3Route) validateVessels(formats strfmt.R
 			if err := m.Vessels[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("Vessels" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("Vessels" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -343,6 +347,8 @@ func (m *PTXServiceDTOShipSpecificationV3Route) contextValidateOperators(ctx con
 			if err := m.Operators[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("Operators" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("Operators" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -371,6 +377,8 @@ func (m *PTXServiceDTOShipSpecificationV3Route) contextValidateVessels(ctx conte
 			if err := m.Vessels[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("Vessels" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("Vessels" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

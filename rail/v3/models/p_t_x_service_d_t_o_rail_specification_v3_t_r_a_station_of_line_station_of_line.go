@@ -96,6 +96,8 @@ func (m *PTXServiceDTORailSpecificationV3TRAStationOfLineStationOfLine) validate
 			if err := m.Stations[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("Stations" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("Stations" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -128,6 +130,8 @@ func (m *PTXServiceDTORailSpecificationV3TRAStationOfLineStationOfLine) contextV
 			if err := m.Stations[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("Stations" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("Stations" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

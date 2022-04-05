@@ -30,40 +30,41 @@ type ClientOption func(*runtime.ClientOperation)
 
 // ClientService is the interface for Client methods
 type ClientService interface {
-	BusAPIEstimatedTimeOfArrivalNearBy(params *BusAPIEstimatedTimeOfArrivalNearByParams, opts ...ClientOption) (*BusAPIEstimatedTimeOfArrivalNearByOK, *BusAPIEstimatedTimeOfArrivalNearByStatus299, error)
+	BusAPIEstimatedTimeOfArrivalNearBy2855(params *BusAPIEstimatedTimeOfArrivalNearBy2855Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*BusAPIEstimatedTimeOfArrivalNearBy2855OK, *BusAPIEstimatedTimeOfArrivalNearBy2855Status299, error)
 
-	BusAPIRealTimeByFrequencyNearBy(params *BusAPIRealTimeByFrequencyNearByParams, opts ...ClientOption) (*BusAPIRealTimeByFrequencyNearByOK, *BusAPIRealTimeByFrequencyNearByStatus299, error)
+	BusAPIRealTimeByFrequencyNearBy2853(params *BusAPIRealTimeByFrequencyNearBy2853Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*BusAPIRealTimeByFrequencyNearBy2853OK, *BusAPIRealTimeByFrequencyNearBy2853Status299, error)
 
-	BusAPIRealTimeNearStopNearBy(params *BusAPIRealTimeNearStopNearByParams, opts ...ClientOption) (*BusAPIRealTimeNearStopNearByOK, *BusAPIRealTimeNearStopNearByStatus299, error)
+	BusAPIRealTimeNearStopNearBy2854(params *BusAPIRealTimeNearStopNearBy2854Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*BusAPIRealTimeNearStopNearBy2854OK, *BusAPIRealTimeNearStopNearBy2854Status299, error)
 
-	BusAPIRouteNearBy(params *BusAPIRouteNearByParams, opts ...ClientOption) (*BusAPIRouteNearByOK, *BusAPIRouteNearByStatus299, error)
+	BusAPIRouteNearBy2852(params *BusAPIRouteNearBy2852Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*BusAPIRouteNearBy2852OK, *BusAPIRouteNearBy2852Status299, error)
 
-	BusAPIStationNearBy(params *BusAPIStationNearByParams, opts ...ClientOption) (*BusAPIStationNearByOK, *BusAPIStationNearByStatus299, error)
+	BusAPIStationNearBy2851(params *BusAPIStationNearBy2851Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*BusAPIStationNearBy2851OK, *BusAPIStationNearBy2851Status299, error)
 
-	BusAPIStopNearBy(params *BusAPIStopNearByParams, opts ...ClientOption) (*BusAPIStopNearByOK, *BusAPIStopNearByStatus299, error)
+	BusAPIStopNearBy2850(params *BusAPIStopNearBy2850Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*BusAPIStopNearBy2850OK, *BusAPIStopNearBy2850Status299, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
 
 /*
-  BusAPIEstimatedTimeOfArrivalNearBy 取得指定s 位置 範圍 的全臺公車預估到站資料 n1
+  BusAPIEstimatedTimeOfArrivalNearBy2855 取得指定s 位置 範圍 的全臺公車預估到站資料 n1
 
   取得指定[位置,範圍]的全臺公車預估到站資料(N1)
 */
-func (a *Client) BusAPIEstimatedTimeOfArrivalNearBy(params *BusAPIEstimatedTimeOfArrivalNearByParams, opts ...ClientOption) (*BusAPIEstimatedTimeOfArrivalNearByOK, *BusAPIEstimatedTimeOfArrivalNearByStatus299, error) {
+func (a *Client) BusAPIEstimatedTimeOfArrivalNearBy2855(params *BusAPIEstimatedTimeOfArrivalNearBy2855Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*BusAPIEstimatedTimeOfArrivalNearBy2855OK, *BusAPIEstimatedTimeOfArrivalNearBy2855Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewBusAPIEstimatedTimeOfArrivalNearByParams()
+		params = NewBusAPIEstimatedTimeOfArrivalNearBy2855Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "BusApi_EstimatedTimeOfArrival_NearBy",
+		ID:                 "BusApi_EstimatedTimeOfArrival_NearBy_2855",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/EstimatedTimeOfArrival/NearBy",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &BusAPIEstimatedTimeOfArrivalNearByReader{formats: a.formats},
+		Reader:             &BusAPIEstimatedTimeOfArrivalNearBy2855Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -76,9 +77,9 @@ func (a *Client) BusAPIEstimatedTimeOfArrivalNearBy(params *BusAPIEstimatedTimeO
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *BusAPIEstimatedTimeOfArrivalNearByOK:
+	case *BusAPIEstimatedTimeOfArrivalNearBy2855OK:
 		return value, nil, nil
-	case *BusAPIEstimatedTimeOfArrivalNearByStatus299:
+	case *BusAPIEstimatedTimeOfArrivalNearBy2855Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -87,24 +88,25 @@ func (a *Client) BusAPIEstimatedTimeOfArrivalNearBy(params *BusAPIEstimatedTimeO
 }
 
 /*
-  BusAPIRealTimeByFrequencyNearBy 取得指定s 位置 範圍 的全臺公車動態定時資料 a1
+  BusAPIRealTimeByFrequencyNearBy2853 取得指定s 位置 範圍 的全臺公車動態定時資料 a1
 
   取得指定[位置,範圍]的全臺公車動態定時資料(A1)
 */
-func (a *Client) BusAPIRealTimeByFrequencyNearBy(params *BusAPIRealTimeByFrequencyNearByParams, opts ...ClientOption) (*BusAPIRealTimeByFrequencyNearByOK, *BusAPIRealTimeByFrequencyNearByStatus299, error) {
+func (a *Client) BusAPIRealTimeByFrequencyNearBy2853(params *BusAPIRealTimeByFrequencyNearBy2853Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*BusAPIRealTimeByFrequencyNearBy2853OK, *BusAPIRealTimeByFrequencyNearBy2853Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewBusAPIRealTimeByFrequencyNearByParams()
+		params = NewBusAPIRealTimeByFrequencyNearBy2853Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "BusApi_RealTimeByFrequency_NearBy",
+		ID:                 "BusApi_RealTimeByFrequency_NearBy_2853",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/RealTimeByFrequency/NearBy",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &BusAPIRealTimeByFrequencyNearByReader{formats: a.formats},
+		Reader:             &BusAPIRealTimeByFrequencyNearBy2853Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -117,9 +119,9 @@ func (a *Client) BusAPIRealTimeByFrequencyNearBy(params *BusAPIRealTimeByFrequen
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *BusAPIRealTimeByFrequencyNearByOK:
+	case *BusAPIRealTimeByFrequencyNearBy2853OK:
 		return value, nil, nil
-	case *BusAPIRealTimeByFrequencyNearByStatus299:
+	case *BusAPIRealTimeByFrequencyNearBy2853Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -128,24 +130,25 @@ func (a *Client) BusAPIRealTimeByFrequencyNearBy(params *BusAPIRealTimeByFrequen
 }
 
 /*
-  BusAPIRealTimeNearStopNearBy 取得指定s 位置 範圍 的全臺公車動態定點資料 a2
+  BusAPIRealTimeNearStopNearBy2854 取得指定s 位置 範圍 的全臺公車動態定點資料 a2
 
   取得指定[位置,範圍]的全臺公車動態定點資料(A2)
 */
-func (a *Client) BusAPIRealTimeNearStopNearBy(params *BusAPIRealTimeNearStopNearByParams, opts ...ClientOption) (*BusAPIRealTimeNearStopNearByOK, *BusAPIRealTimeNearStopNearByStatus299, error) {
+func (a *Client) BusAPIRealTimeNearStopNearBy2854(params *BusAPIRealTimeNearStopNearBy2854Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*BusAPIRealTimeNearStopNearBy2854OK, *BusAPIRealTimeNearStopNearBy2854Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewBusAPIRealTimeNearStopNearByParams()
+		params = NewBusAPIRealTimeNearStopNearBy2854Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "BusApi_RealTimeNearStop_NearBy",
+		ID:                 "BusApi_RealTimeNearStop_NearBy_2854",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/RealTimeNearStop/NearBy",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &BusAPIRealTimeNearStopNearByReader{formats: a.formats},
+		Reader:             &BusAPIRealTimeNearStopNearBy2854Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -158,9 +161,9 @@ func (a *Client) BusAPIRealTimeNearStopNearBy(params *BusAPIRealTimeNearStopNear
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *BusAPIRealTimeNearStopNearByOK:
+	case *BusAPIRealTimeNearStopNearBy2854OK:
 		return value, nil, nil
-	case *BusAPIRealTimeNearStopNearByStatus299:
+	case *BusAPIRealTimeNearStopNearBy2854Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -169,24 +172,25 @@ func (a *Client) BusAPIRealTimeNearStopNearBy(params *BusAPIRealTimeNearStopNear
 }
 
 /*
-  BusAPIRouteNearBy 取得指定s 位置 範圍 的全臺公車路線資料
+  BusAPIRouteNearBy2852 取得指定s 位置 範圍 的全臺公車路線資料
 
   取得指定[位置,範圍]的全臺公車路線資料
 */
-func (a *Client) BusAPIRouteNearBy(params *BusAPIRouteNearByParams, opts ...ClientOption) (*BusAPIRouteNearByOK, *BusAPIRouteNearByStatus299, error) {
+func (a *Client) BusAPIRouteNearBy2852(params *BusAPIRouteNearBy2852Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*BusAPIRouteNearBy2852OK, *BusAPIRouteNearBy2852Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewBusAPIRouteNearByParams()
+		params = NewBusAPIRouteNearBy2852Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "BusApi_Route_NearBy",
+		ID:                 "BusApi_Route_NearBy_2852",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/Route/NearBy",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &BusAPIRouteNearByReader{formats: a.formats},
+		Reader:             &BusAPIRouteNearBy2852Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -199,9 +203,9 @@ func (a *Client) BusAPIRouteNearBy(params *BusAPIRouteNearByParams, opts ...Clie
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *BusAPIRouteNearByOK:
+	case *BusAPIRouteNearBy2852OK:
 		return value, nil, nil
-	case *BusAPIRouteNearByStatus299:
+	case *BusAPIRouteNearBy2852Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -210,24 +214,25 @@ func (a *Client) BusAPIRouteNearBy(params *BusAPIRouteNearByParams, opts ...Clie
 }
 
 /*
-  BusAPIStationNearBy 取得指定s 位置 範圍 的全臺公車站位資料
+  BusAPIStationNearBy2851 取得指定s 位置 範圍 的全臺公車站位資料
 
   取得指定[位置,範圍]的全臺公車站位資料
 */
-func (a *Client) BusAPIStationNearBy(params *BusAPIStationNearByParams, opts ...ClientOption) (*BusAPIStationNearByOK, *BusAPIStationNearByStatus299, error) {
+func (a *Client) BusAPIStationNearBy2851(params *BusAPIStationNearBy2851Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*BusAPIStationNearBy2851OK, *BusAPIStationNearBy2851Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewBusAPIStationNearByParams()
+		params = NewBusAPIStationNearBy2851Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "BusApi_Station_NearBy",
+		ID:                 "BusApi_Station_NearBy_2851",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/Station/NearBy",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &BusAPIStationNearByReader{formats: a.formats},
+		Reader:             &BusAPIStationNearBy2851Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -240,9 +245,9 @@ func (a *Client) BusAPIStationNearBy(params *BusAPIStationNearByParams, opts ...
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *BusAPIStationNearByOK:
+	case *BusAPIStationNearBy2851OK:
 		return value, nil, nil
-	case *BusAPIStationNearByStatus299:
+	case *BusAPIStationNearBy2851Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -251,24 +256,25 @@ func (a *Client) BusAPIStationNearBy(params *BusAPIStationNearByParams, opts ...
 }
 
 /*
-  BusAPIStopNearBy 取得指定s 位置 範圍 的全臺公車站牌資料
+  BusAPIStopNearBy2850 取得指定s 位置 範圍 的全臺公車站牌資料
 
   取得指定[位置,範圍]的全臺公車站牌資料
 */
-func (a *Client) BusAPIStopNearBy(params *BusAPIStopNearByParams, opts ...ClientOption) (*BusAPIStopNearByOK, *BusAPIStopNearByStatus299, error) {
+func (a *Client) BusAPIStopNearBy2850(params *BusAPIStopNearBy2850Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*BusAPIStopNearBy2850OK, *BusAPIStopNearBy2850Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewBusAPIStopNearByParams()
+		params = NewBusAPIStopNearBy2850Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "BusApi_Stop_NearBy",
+		ID:                 "BusApi_Stop_NearBy_2850",
 		Method:             "GET",
 		PathPattern:        "/v2/Bus/Stop/NearBy",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &BusAPIStopNearByReader{formats: a.formats},
+		Reader:             &BusAPIStopNearBy2850Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -281,9 +287,9 @@ func (a *Client) BusAPIStopNearBy(params *BusAPIStopNearByParams, opts ...Client
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *BusAPIStopNearByOK:
+	case *BusAPIStopNearBy2850OK:
 		return value, nil, nil
-	case *BusAPIStopNearByStatus299:
+	case *BusAPIStopNearBy2850Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue

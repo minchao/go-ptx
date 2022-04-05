@@ -66,6 +66,8 @@ func (m *PTXServiceDTOBusSpecificationV3RouteFareSectionFare) validateBufferZone
 			if err := m.BufferZones[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("BufferZones" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("BufferZones" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -91,6 +93,8 @@ func (m *PTXServiceDTOBusSpecificationV3RouteFareSectionFare) validateFares(form
 			if err := m.Fares[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("Fares" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("Fares" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -127,6 +131,8 @@ func (m *PTXServiceDTOBusSpecificationV3RouteFareSectionFare) contextValidateBuf
 			if err := m.BufferZones[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("BufferZones" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("BufferZones" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -145,6 +151,8 @@ func (m *PTXServiceDTOBusSpecificationV3RouteFareSectionFare) contextValidateFar
 			if err := m.Fares[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("Fares" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("Fares" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

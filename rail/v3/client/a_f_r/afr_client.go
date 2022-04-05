@@ -30,54 +30,55 @@ type ClientOption func(*runtime.ClientOperation)
 
 // ClientService is the interface for Client methods
 type ClientService interface {
-	LiteTrainGeneralTrainTimetable(params *LiteTrainGeneralTrainTimetableParams, opts ...ClientOption) (*LiteTrainGeneralTrainTimetableOK, *LiteTrainGeneralTrainTimetableStatus299, error)
+	LiteTrainGeneralTrainTimetable3285(params *LiteTrainGeneralTrainTimetable3285Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*LiteTrainGeneralTrainTimetable3285OK, *LiteTrainGeneralTrainTimetable3285Status299, error)
 
-	LiteTrainGeneralTrainTimetable1(params *LiteTrainGeneralTrainTimetable1Params, opts ...ClientOption) (*LiteTrainGeneralTrainTimetable1OK, *LiteTrainGeneralTrainTimetable1Status299, error)
+	LiteTrainGeneralTrainTimetable32851(params *LiteTrainGeneralTrainTimetable32851Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*LiteTrainGeneralTrainTimetable32851OK, *LiteTrainGeneralTrainTimetable32851Status299, error)
 
-	LiteTrainLine(params *LiteTrainLineParams, opts ...ClientOption) (*LiteTrainLineOK, *LiteTrainLineStatus299, error)
+	LiteTrainLine3283(params *LiteTrainLine3283Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*LiteTrainLine3283OK, *LiteTrainLine3283Status299, error)
 
-	LiteTrainNetwork(params *LiteTrainNetworkParams, opts ...ClientOption) (*LiteTrainNetworkOK, *LiteTrainNetworkStatus299, error)
+	LiteTrainNetwork3281(params *LiteTrainNetwork3281Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*LiteTrainNetwork3281OK, *LiteTrainNetwork3281Status299, error)
 
-	LiteTrainNews(params *LiteTrainNewsParams, opts ...ClientOption) (*LiteTrainNewsOK, *LiteTrainNewsStatus299, error)
+	LiteTrainNews3291(params *LiteTrainNews3291Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*LiteTrainNews3291OK, *LiteTrainNews3291Status299, error)
 
-	LiteTrainODFare(params *LiteTrainODFareParams, opts ...ClientOption) (*LiteTrainODFareOK, *LiteTrainODFareStatus299, error)
+	LiteTrainODFare3286(params *LiteTrainODFare3286Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*LiteTrainODFare3286OK, *LiteTrainODFare3286Status299, error)
 
-	LiteTrainODFare1(params *LiteTrainODFare1Params, opts ...ClientOption) (*LiteTrainODFare1OK, *LiteTrainODFare1Status299, error)
+	LiteTrainODFare32861(params *LiteTrainODFare32861Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*LiteTrainODFare32861OK, *LiteTrainODFare32861Status299, error)
 
-	LiteTrainOperator(params *LiteTrainOperatorParams, opts ...ClientOption) (*LiteTrainOperatorOK, *LiteTrainOperatorStatus299, error)
+	LiteTrainOperator3284(params *LiteTrainOperator3284Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*LiteTrainOperator3284OK, *LiteTrainOperator3284Status299, error)
 
-	LiteTrainRoute(params *LiteTrainRouteParams, opts ...ClientOption) (*LiteTrainRouteOK, *LiteTrainRouteStatus299, error)
+	LiteTrainRoute3287(params *LiteTrainRoute3287Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*LiteTrainRoute3287OK, *LiteTrainRoute3287Status299, error)
 
-	LiteTrainStation(params *LiteTrainStationParams, opts ...ClientOption) (*LiteTrainStationOK, *LiteTrainStationStatus299, error)
+	LiteTrainStationOfLine3288(params *LiteTrainStationOfLine3288Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*LiteTrainStationOfLine3288OK, *LiteTrainStationOfLine3288Status299, error)
 
-	LiteTrainStationOfLine(params *LiteTrainStationOfLineParams, opts ...ClientOption) (*LiteTrainStationOfLineOK, *LiteTrainStationOfLineStatus299, error)
+	LiteTrainStationOfRoute3290(params *LiteTrainStationOfRoute3290Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*LiteTrainStationOfRoute3290OK, *LiteTrainStationOfRoute3290Status299, error)
 
-	LiteTrainStationOfRoute(params *LiteTrainStationOfRouteParams, opts ...ClientOption) (*LiteTrainStationOfRouteOK, *LiteTrainStationOfRouteStatus299, error)
+	LiteTrainStation3282(params *LiteTrainStation3282Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*LiteTrainStation3282OK, *LiteTrainStation3282Status299, error)
 
-	LiteTrainTrainType(params *LiteTrainTrainTypeParams, opts ...ClientOption) (*LiteTrainTrainTypeOK, *LiteTrainTrainTypeStatus299, error)
+	LiteTrainTrainType3289(params *LiteTrainTrainType3289Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*LiteTrainTrainType3289OK, *LiteTrainTrainType3289Status299, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
 
 /*
-  LiteTrainGeneralTrainTimetable 取得所有車次的定期時刻表資料s
+  LiteTrainGeneralTrainTimetable3285 取得所有車次的定期時刻表資料s
 
   取得所有車次的定期時刻表資料
 */
-func (a *Client) LiteTrainGeneralTrainTimetable(params *LiteTrainGeneralTrainTimetableParams, opts ...ClientOption) (*LiteTrainGeneralTrainTimetableOK, *LiteTrainGeneralTrainTimetableStatus299, error) {
+func (a *Client) LiteTrainGeneralTrainTimetable3285(params *LiteTrainGeneralTrainTimetable3285Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*LiteTrainGeneralTrainTimetable3285OK, *LiteTrainGeneralTrainTimetable3285Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewLiteTrainGeneralTrainTimetableParams()
+		params = NewLiteTrainGeneralTrainTimetable3285Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "LiteTrain_GeneralTrainTimetable",
+		ID:                 "LiteTrain_GeneralTrainTimetable_3285",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/AFR/GeneralTrainTimetable",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &LiteTrainGeneralTrainTimetableReader{formats: a.formats},
+		Reader:             &LiteTrainGeneralTrainTimetable3285Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -90,9 +91,9 @@ func (a *Client) LiteTrainGeneralTrainTimetable(params *LiteTrainGeneralTrainTim
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *LiteTrainGeneralTrainTimetableOK:
+	case *LiteTrainGeneralTrainTimetable3285OK:
 		return value, nil, nil
-	case *LiteTrainGeneralTrainTimetableStatus299:
+	case *LiteTrainGeneralTrainTimetable3285Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -101,24 +102,25 @@ func (a *Client) LiteTrainGeneralTrainTimetable(params *LiteTrainGeneralTrainTim
 }
 
 /*
-  LiteTrainGeneralTrainTimetable1 取得指定s 車次 的定期時刻表資料
+  LiteTrainGeneralTrainTimetable32851 取得指定s 車次 的定期時刻表資料
 
   取得指定[車次]的定期時刻表資料
 */
-func (a *Client) LiteTrainGeneralTrainTimetable1(params *LiteTrainGeneralTrainTimetable1Params, opts ...ClientOption) (*LiteTrainGeneralTrainTimetable1OK, *LiteTrainGeneralTrainTimetable1Status299, error) {
+func (a *Client) LiteTrainGeneralTrainTimetable32851(params *LiteTrainGeneralTrainTimetable32851Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*LiteTrainGeneralTrainTimetable32851OK, *LiteTrainGeneralTrainTimetable32851Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewLiteTrainGeneralTrainTimetable1Params()
+		params = NewLiteTrainGeneralTrainTimetable32851Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "LiteTrain_GeneralTrainTimetable_1",
+		ID:                 "LiteTrain_GeneralTrainTimetable_3285_1",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/AFR/GeneralTrainTimetable/TrainNo/{TrainNo}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &LiteTrainGeneralTrainTimetable1Reader{formats: a.formats},
+		Reader:             &LiteTrainGeneralTrainTimetable32851Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -131,9 +133,9 @@ func (a *Client) LiteTrainGeneralTrainTimetable1(params *LiteTrainGeneralTrainTi
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *LiteTrainGeneralTrainTimetable1OK:
+	case *LiteTrainGeneralTrainTimetable32851OK:
 		return value, nil, nil
-	case *LiteTrainGeneralTrainTimetable1Status299:
+	case *LiteTrainGeneralTrainTimetable32851Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -142,24 +144,25 @@ func (a *Client) LiteTrainGeneralTrainTimetable1(params *LiteTrainGeneralTrainTi
 }
 
 /*
-  LiteTrainLine 取得路線基本資料s
+  LiteTrainLine3283 取得路線基本資料s
 
   取得路線基本資料
 */
-func (a *Client) LiteTrainLine(params *LiteTrainLineParams, opts ...ClientOption) (*LiteTrainLineOK, *LiteTrainLineStatus299, error) {
+func (a *Client) LiteTrainLine3283(params *LiteTrainLine3283Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*LiteTrainLine3283OK, *LiteTrainLine3283Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewLiteTrainLineParams()
+		params = NewLiteTrainLine3283Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "LiteTrain_Line",
+		ID:                 "LiteTrain_Line_3283",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/AFR/Line",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &LiteTrainLineReader{formats: a.formats},
+		Reader:             &LiteTrainLine3283Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -172,9 +175,9 @@ func (a *Client) LiteTrainLine(params *LiteTrainLineParams, opts ...ClientOption
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *LiteTrainLineOK:
+	case *LiteTrainLine3283OK:
 		return value, nil, nil
-	case *LiteTrainLineStatus299:
+	case *LiteTrainLine3283Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -183,24 +186,25 @@ func (a *Client) LiteTrainLine(params *LiteTrainLineParams, opts ...ClientOption
 }
 
 /*
-  LiteTrainNetwork 取得路網資料s
+  LiteTrainNetwork3281 取得路網資料s
 
   取得路網資料
 */
-func (a *Client) LiteTrainNetwork(params *LiteTrainNetworkParams, opts ...ClientOption) (*LiteTrainNetworkOK, *LiteTrainNetworkStatus299, error) {
+func (a *Client) LiteTrainNetwork3281(params *LiteTrainNetwork3281Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*LiteTrainNetwork3281OK, *LiteTrainNetwork3281Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewLiteTrainNetworkParams()
+		params = NewLiteTrainNetwork3281Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "LiteTrain_Network",
+		ID:                 "LiteTrain_Network_3281",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/AFR/Network",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &LiteTrainNetworkReader{formats: a.formats},
+		Reader:             &LiteTrainNetwork3281Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -213,9 +217,9 @@ func (a *Client) LiteTrainNetwork(params *LiteTrainNetworkParams, opts ...Client
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *LiteTrainNetworkOK:
+	case *LiteTrainNetwork3281OK:
 		return value, nil, nil
-	case *LiteTrainNetworkStatus299:
+	case *LiteTrainNetwork3281Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -224,24 +228,25 @@ func (a *Client) LiteTrainNetwork(params *LiteTrainNetworkParams, opts ...Client
 }
 
 /*
-  LiteTrainNews 取得最新消息s
+  LiteTrainNews3291 取得最新消息s
 
   取得最新消息
 */
-func (a *Client) LiteTrainNews(params *LiteTrainNewsParams, opts ...ClientOption) (*LiteTrainNewsOK, *LiteTrainNewsStatus299, error) {
+func (a *Client) LiteTrainNews3291(params *LiteTrainNews3291Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*LiteTrainNews3291OK, *LiteTrainNews3291Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewLiteTrainNewsParams()
+		params = NewLiteTrainNews3291Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "LiteTrain_News",
+		ID:                 "LiteTrain_News_3291",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/AFR/News",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &LiteTrainNewsReader{formats: a.formats},
+		Reader:             &LiteTrainNews3291Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -254,9 +259,9 @@ func (a *Client) LiteTrainNews(params *LiteTrainNewsParams, opts ...ClientOption
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *LiteTrainNewsOK:
+	case *LiteTrainNews3291OK:
 		return value, nil, nil
-	case *LiteTrainNewsStatus299:
+	case *LiteTrainNews3291Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -265,24 +270,25 @@ func (a *Client) LiteTrainNews(params *LiteTrainNewsParams, opts ...ClientOption
 }
 
 /*
-  LiteTrainODFare 取得所有票價資料s
+  LiteTrainODFare3286 取得所有票價資料s
 
   取得所有票價資料
 */
-func (a *Client) LiteTrainODFare(params *LiteTrainODFareParams, opts ...ClientOption) (*LiteTrainODFareOK, *LiteTrainODFareStatus299, error) {
+func (a *Client) LiteTrainODFare3286(params *LiteTrainODFare3286Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*LiteTrainODFare3286OK, *LiteTrainODFare3286Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewLiteTrainODFareParams()
+		params = NewLiteTrainODFare3286Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "LiteTrain_ODFare",
+		ID:                 "LiteTrain_ODFare_3286",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/AFR/ODFare",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &LiteTrainODFareReader{formats: a.formats},
+		Reader:             &LiteTrainODFare3286Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -295,9 +301,9 @@ func (a *Client) LiteTrainODFare(params *LiteTrainODFareParams, opts ...ClientOp
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *LiteTrainODFareOK:
+	case *LiteTrainODFare3286OK:
 		return value, nil, nil
-	case *LiteTrainODFareStatus299:
+	case *LiteTrainODFare3286Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -306,24 +312,25 @@ func (a *Client) LiteTrainODFare(params *LiteTrainODFareParams, opts ...ClientOp
 }
 
 /*
-  LiteTrainODFare1 取得指定起迄站間票價資料s
+  LiteTrainODFare32861 取得指定起迄站間票價資料s
 
   取得指定起迄站間票價資料
 */
-func (a *Client) LiteTrainODFare1(params *LiteTrainODFare1Params, opts ...ClientOption) (*LiteTrainODFare1OK, *LiteTrainODFare1Status299, error) {
+func (a *Client) LiteTrainODFare32861(params *LiteTrainODFare32861Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*LiteTrainODFare32861OK, *LiteTrainODFare32861Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewLiteTrainODFare1Params()
+		params = NewLiteTrainODFare32861Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "LiteTrain_ODFare_1",
+		ID:                 "LiteTrain_ODFare_3286_1",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/AFR/ODFare/{OriginStationID}/to/{DestinationStationID}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &LiteTrainODFare1Reader{formats: a.formats},
+		Reader:             &LiteTrainODFare32861Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -336,9 +343,9 @@ func (a *Client) LiteTrainODFare1(params *LiteTrainODFare1Params, opts ...Client
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *LiteTrainODFare1OK:
+	case *LiteTrainODFare32861OK:
 		return value, nil, nil
-	case *LiteTrainODFare1Status299:
+	case *LiteTrainODFare32861Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -347,24 +354,25 @@ func (a *Client) LiteTrainODFare1(params *LiteTrainODFare1Params, opts ...Client
 }
 
 /*
-  LiteTrainOperator 取得營運業者基本資料s
+  LiteTrainOperator3284 取得營運業者基本資料s
 
   取得營運業者基本資料
 */
-func (a *Client) LiteTrainOperator(params *LiteTrainOperatorParams, opts ...ClientOption) (*LiteTrainOperatorOK, *LiteTrainOperatorStatus299, error) {
+func (a *Client) LiteTrainOperator3284(params *LiteTrainOperator3284Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*LiteTrainOperator3284OK, *LiteTrainOperator3284Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewLiteTrainOperatorParams()
+		params = NewLiteTrainOperator3284Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "LiteTrain_Operator",
+		ID:                 "LiteTrain_Operator_3284",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/AFR/Operator",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &LiteTrainOperatorReader{formats: a.formats},
+		Reader:             &LiteTrainOperator3284Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -377,9 +385,9 @@ func (a *Client) LiteTrainOperator(params *LiteTrainOperatorParams, opts ...Clie
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *LiteTrainOperatorOK:
+	case *LiteTrainOperator3284OK:
 		return value, nil, nil
-	case *LiteTrainOperatorStatus299:
+	case *LiteTrainOperator3284Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -388,24 +396,25 @@ func (a *Client) LiteTrainOperator(params *LiteTrainOperatorParams, opts ...Clie
 }
 
 /*
-  LiteTrainRoute 取得營運路線基本資料s
+  LiteTrainRoute3287 取得營運路線基本資料s
 
   取得營運路線基本資料
 */
-func (a *Client) LiteTrainRoute(params *LiteTrainRouteParams, opts ...ClientOption) (*LiteTrainRouteOK, *LiteTrainRouteStatus299, error) {
+func (a *Client) LiteTrainRoute3287(params *LiteTrainRoute3287Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*LiteTrainRoute3287OK, *LiteTrainRoute3287Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewLiteTrainRouteParams()
+		params = NewLiteTrainRoute3287Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "LiteTrain_Route",
+		ID:                 "LiteTrain_Route_3287",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/AFR/Route",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &LiteTrainRouteReader{formats: a.formats},
+		Reader:             &LiteTrainRoute3287Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -418,9 +427,9 @@ func (a *Client) LiteTrainRoute(params *LiteTrainRouteParams, opts ...ClientOpti
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *LiteTrainRouteOK:
+	case *LiteTrainRoute3287OK:
 		return value, nil, nil
-	case *LiteTrainRouteStatus299:
+	case *LiteTrainRoute3287Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -429,65 +438,25 @@ func (a *Client) LiteTrainRoute(params *LiteTrainRouteParams, opts ...ClientOpti
 }
 
 /*
-  LiteTrainStation 取得車站基本資料s
-
-  取得車站基本資料
-*/
-func (a *Client) LiteTrainStation(params *LiteTrainStationParams, opts ...ClientOption) (*LiteTrainStationOK, *LiteTrainStationStatus299, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewLiteTrainStationParams()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "LiteTrain_Station",
-		Method:             "GET",
-		PathPattern:        "/v3/Rail/AFR/Station",
-		ProducesMediaTypes: []string{"application/json", "application/xml"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &LiteTrainStationReader{formats: a.formats},
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, nil, err
-	}
-	switch value := result.(type) {
-	case *LiteTrainStationOK:
-		return value, nil, nil
-	case *LiteTrainStationStatus299:
-		return nil, value, nil
-	}
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for a_f_r: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
-  LiteTrainStationOfLine 取得路線車站基本資料s
+  LiteTrainStationOfLine3288 取得路線車站基本資料s
 
   取得路線車站基本資料
 */
-func (a *Client) LiteTrainStationOfLine(params *LiteTrainStationOfLineParams, opts ...ClientOption) (*LiteTrainStationOfLineOK, *LiteTrainStationOfLineStatus299, error) {
+func (a *Client) LiteTrainStationOfLine3288(params *LiteTrainStationOfLine3288Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*LiteTrainStationOfLine3288OK, *LiteTrainStationOfLine3288Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewLiteTrainStationOfLineParams()
+		params = NewLiteTrainStationOfLine3288Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "LiteTrain_StationOfLine",
+		ID:                 "LiteTrain_StationOfLine_3288",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/AFR/StationOfLine",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &LiteTrainStationOfLineReader{formats: a.formats},
+		Reader:             &LiteTrainStationOfLine3288Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -500,9 +469,9 @@ func (a *Client) LiteTrainStationOfLine(params *LiteTrainStationOfLineParams, op
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *LiteTrainStationOfLineOK:
+	case *LiteTrainStationOfLine3288OK:
 		return value, nil, nil
-	case *LiteTrainStationOfLineStatus299:
+	case *LiteTrainStationOfLine3288Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -511,24 +480,25 @@ func (a *Client) LiteTrainStationOfLine(params *LiteTrainStationOfLineParams, op
 }
 
 /*
-  LiteTrainStationOfRoute 取得營運路線車站基本資料s
+  LiteTrainStationOfRoute3290 取得營運路線車站基本資料s
 
   取得營運路線車站基本資料
 */
-func (a *Client) LiteTrainStationOfRoute(params *LiteTrainStationOfRouteParams, opts ...ClientOption) (*LiteTrainStationOfRouteOK, *LiteTrainStationOfRouteStatus299, error) {
+func (a *Client) LiteTrainStationOfRoute3290(params *LiteTrainStationOfRoute3290Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*LiteTrainStationOfRoute3290OK, *LiteTrainStationOfRoute3290Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewLiteTrainStationOfRouteParams()
+		params = NewLiteTrainStationOfRoute3290Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "LiteTrain_StationOfRoute",
+		ID:                 "LiteTrain_StationOfRoute_3290",
 		Method:             "GET",
 		PathPattern:        "/v3/Rail/AFR/StationOfRoute",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &LiteTrainStationOfRouteReader{formats: a.formats},
+		Reader:             &LiteTrainStationOfRoute3290Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -541,9 +511,9 @@ func (a *Client) LiteTrainStationOfRoute(params *LiteTrainStationOfRouteParams, 
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *LiteTrainStationOfRouteOK:
+	case *LiteTrainStationOfRoute3290OK:
 		return value, nil, nil
-	case *LiteTrainStationOfRouteStatus299:
+	case *LiteTrainStationOfRoute3290Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -552,24 +522,25 @@ func (a *Client) LiteTrainStationOfRoute(params *LiteTrainStationOfRouteParams, 
 }
 
 /*
-  LiteTrainTrainType 取得所有列車車種資料s
+  LiteTrainStation3282 取得車站基本資料s
 
-  取得所有列車車種資料
+  取得車站基本資料
 */
-func (a *Client) LiteTrainTrainType(params *LiteTrainTrainTypeParams, opts ...ClientOption) (*LiteTrainTrainTypeOK, *LiteTrainTrainTypeStatus299, error) {
+func (a *Client) LiteTrainStation3282(params *LiteTrainStation3282Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*LiteTrainStation3282OK, *LiteTrainStation3282Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewLiteTrainTrainTypeParams()
+		params = NewLiteTrainStation3282Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "LiteTrain_TrainType",
+		ID:                 "LiteTrain_Station_3282",
 		Method:             "GET",
-		PathPattern:        "/v3/Rail/AFR/TrainType",
+		PathPattern:        "/v3/Rail/AFR/Station",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &LiteTrainTrainTypeReader{formats: a.formats},
+		Reader:             &LiteTrainStation3282Reader{formats: a.formats},
+		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
 	}
@@ -582,9 +553,51 @@ func (a *Client) LiteTrainTrainType(params *LiteTrainTrainTypeParams, opts ...Cl
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *LiteTrainTrainTypeOK:
+	case *LiteTrainStation3282OK:
 		return value, nil, nil
-	case *LiteTrainTrainTypeStatus299:
+	case *LiteTrainStation3282Status299:
+		return nil, value, nil
+	}
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for a_f_r: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  LiteTrainTrainType3289 取得所有列車車種資料s
+
+  取得所有列車車種資料
+*/
+func (a *Client) LiteTrainTrainType3289(params *LiteTrainTrainType3289Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*LiteTrainTrainType3289OK, *LiteTrainTrainType3289Status299, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewLiteTrainTrainType3289Params()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "LiteTrain_TrainType_3289",
+		Method:             "GET",
+		PathPattern:        "/v3/Rail/AFR/TrainType",
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &LiteTrainTrainType3289Reader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, nil, err
+	}
+	switch value := result.(type) {
+	case *LiteTrainTrainType3289OK:
+		return value, nil, nil
+	case *LiteTrainTrainType3289Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue

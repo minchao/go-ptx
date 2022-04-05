@@ -111,6 +111,8 @@ func (m *PTXServiceDTOBusSpecificationV2BusDailyStopTimeTableStop) validateTimeT
 			if err := m.TimeTables[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("TimeTables" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("TimeTables" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -152,6 +154,8 @@ func (m *PTXServiceDTOBusSpecificationV2BusDailyStopTimeTableStop) contextValida
 			if err := m.TimeTables[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("TimeTables" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("TimeTables" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

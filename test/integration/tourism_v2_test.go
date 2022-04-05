@@ -18,9 +18,9 @@ func init() {
 }
 
 func TestTourismV2_ScenicSpot(t *testing.T) {
-	params := tourism.NewTourismAPIScenicSpotParams().
+	params := tourism.NewTourismAPIScenicSpot2240Params().
 		WithDollarFormat("JSON")
-	result, _, err := tourismV2Client.Tourism.TourismAPIScenicSpot(params)
+	result, _, err := tourismV2Client.Tourism.TourismAPIScenicSpot2240(params, nil)
 	require.NoError(t, err)
 	if len(result.Payload) == 0 {
 		t.Fatal("Tourism.TourismAPIScenicSpot return no data")
@@ -28,9 +28,9 @@ func TestTourismV2_ScenicSpot(t *testing.T) {
 }
 
 func TestTourismV2_TaiwanTripBus_Route(t *testing.T) {
-	params := tourism.NewTaiwanTripBusAPIRouteParams().
+	params := tourism.NewTaiwanTripBusAPIRoute2263Params().
 		WithDollarFormat("JSON")
-	result, _, err := tourismV2Client.Tourism.TaiwanTripBusAPIRoute(params)
+	result, _, err := tourismV2Client.Tourism.TaiwanTripBusAPIRoute2263(params, nil)
 	require.NoError(t, err)
 	if len(result.Payload) == 0 {
 		t.Fatal("TaiwanTripBus.TaiwanTripBusAPIRoute return no data")

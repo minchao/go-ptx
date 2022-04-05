@@ -132,6 +132,8 @@ func (m *PTXServiceDTOBusSpecificationV2BusRouteNetwork) validateSegments(format
 			if err := m.Segments[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("Segments" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("Segments" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -195,6 +197,8 @@ func (m *PTXServiceDTOBusSpecificationV2BusRouteNetwork) contextValidateSegments
 			if err := m.Segments[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("Segments" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("Segments" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

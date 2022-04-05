@@ -24,8 +24,7 @@ type PTXServiceDTOBusSpecificationV2BusShape struct {
 	// Int32
 	//
 	// 去返程，若無值則表示來源尚無區分去返程 : [0:'去程',1:'返程',2:'迴圈',255:'未知']
-	// Required: true
-	Direction *int64 `json:"Direction"`
+	Direction int64 `json:"Direction,omitempty"`
 
 	// String
 	//
@@ -95,10 +94,6 @@ type PTXServiceDTOBusSpecificationV2BusShape struct {
 func (m *PTXServiceDTOBusSpecificationV2BusShape) Validate(formats strfmt.Registry) error {
 	var res []error
 
-	if err := m.validateDirection(formats); err != nil {
-		res = append(res, err)
-	}
-
 	if err := m.validateEncodedPolyline(formats); err != nil {
 		res = append(res, err)
 	}
@@ -138,15 +133,6 @@ func (m *PTXServiceDTOBusSpecificationV2BusShape) Validate(formats strfmt.Regist
 	if len(res) > 0 {
 		return errors.CompositeValidationError(res...)
 	}
-	return nil
-}
-
-func (m *PTXServiceDTOBusSpecificationV2BusShape) validateDirection(formats strfmt.Registry) error {
-
-	if err := validate.Required("Direction", "body", m.Direction); err != nil {
-		return err
-	}
-
 	return nil
 }
 

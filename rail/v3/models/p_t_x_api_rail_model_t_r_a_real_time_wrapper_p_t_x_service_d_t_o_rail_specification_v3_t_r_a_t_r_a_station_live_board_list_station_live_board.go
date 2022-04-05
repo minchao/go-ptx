@@ -140,6 +140,8 @@ func (m *PTXAPIRailModelTRARealTimeWrapperPTXServiceDTORailSpecificationV3TRATRA
 			if err := m.StationLiveBoards[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("StationLiveBoards" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("StationLiveBoards" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -194,6 +196,8 @@ func (m *PTXAPIRailModelTRARealTimeWrapperPTXServiceDTORailSpecificationV3TRATRA
 			if err := m.StationLiveBoards[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("StationLiveBoards" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("StationLiveBoards" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

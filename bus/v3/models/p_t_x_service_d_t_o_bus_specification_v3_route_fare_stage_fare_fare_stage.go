@@ -86,6 +86,8 @@ func (m *PTXServiceDTOBusSpecificationV3RouteFareStageFareFareStage) validateDis
 			if err := m.DiscountPeriods[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("DiscountPeriods" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("DiscountPeriods" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -136,6 +138,8 @@ func (m *PTXServiceDTOBusSpecificationV3RouteFareStageFareFareStage) contextVali
 			if err := m.DiscountPeriods[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("DiscountPeriods" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("DiscountPeriods" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

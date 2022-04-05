@@ -46,7 +46,7 @@ type PTXServiceDTORailSpecificationV2THSRRailODFare struct {
 	//
 	// 票價收費資訊(本項僅列標準、商務及自由之基本票價，其他優待票及團體票之折扣計算請參考高鐵網站票價產品一覽表http://www.thsrc.com.tw/tw/Article/ArticleContent/caa6fac8-b875-4ad6-b1e6-96c2902d12a6 說明)
 	// Required: true
-	Fares []*PTXServiceDTOSharedSpecificationV2BaseFare "json:\"Fares\" xml:\"List`1\""
+	Fares []*PTXServiceDTORailSpecificationV2THSRODFare "json:\"Fares\" xml:\"List`1\""
 
 	// String
 	//
@@ -167,6 +167,8 @@ func (m *PTXServiceDTORailSpecificationV2THSRRailODFare) validateFares(formats s
 			if err := m.Fares[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("Fares" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("Fares" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -261,6 +263,8 @@ func (m *PTXServiceDTORailSpecificationV2THSRRailODFare) contextValidateFares(ct
 			if err := m.Fares[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("Fares" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("Fares" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

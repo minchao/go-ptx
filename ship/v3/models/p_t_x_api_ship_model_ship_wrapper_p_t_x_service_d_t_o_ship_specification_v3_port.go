@@ -105,6 +105,8 @@ func (m *PTXAPIShipModelShipWrapperPTXServiceDTOShipSpecificationV3Port) validat
 			if err := m.Ports[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("Ports" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("Ports" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -189,6 +191,8 @@ func (m *PTXAPIShipModelShipWrapperPTXServiceDTOShipSpecificationV3Port) context
 			if err := m.Ports[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("Ports" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("Ports" + "." + strconv.Itoa(i))
 				}
 				return err
 			}

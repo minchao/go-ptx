@@ -138,6 +138,8 @@ func (m *PTXServiceDTOShipSpecificationV3SpecificSchedule) validateFrequencies(f
 			if err := m.Frequencies[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("Frequencies" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("Frequencies" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -185,6 +187,8 @@ func (m *PTXServiceDTOShipSpecificationV3SpecificSchedule) validateTimetables(fo
 			if err := m.Timetables[i].Validate(formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("Timetables" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("Timetables" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -225,6 +229,8 @@ func (m *PTXServiceDTOShipSpecificationV3SpecificSchedule) contextValidateFreque
 			if err := m.Frequencies[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("Frequencies" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("Frequencies" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
@@ -248,6 +254,8 @@ func (m *PTXServiceDTOShipSpecificationV3SpecificSchedule) contextValidateTimeta
 			if err := m.Timetables[i].ContextValidate(ctx, formats); err != nil {
 				if ve, ok := err.(*errors.Validation); ok {
 					return ve.ValidateName("Timetables" + "." + strconv.Itoa(i))
+				} else if ce, ok := err.(*errors.CompositeError); ok {
+					return ce.ValidateName("Timetables" + "." + strconv.Itoa(i))
 				}
 				return err
 			}
