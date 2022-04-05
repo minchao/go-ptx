@@ -21,7 +21,7 @@ go-ptx 使用 [go-swagger](https://github.com/go-swagger/go-swagger) 自動從 P
 
 ### 必要條件
 
-- Go >= 1.14
+- Go >= 1.18
 - GNU Make
 - golangci-lint
 - [go-swagger](https://goswagger.io/install.html)
