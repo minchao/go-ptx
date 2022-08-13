@@ -4,6 +4,8 @@
 
 go-ptx 是[公共運輸整合資訊流通服務平臺](https://ptx.transportdata.tw/)（Public Transport Data eXchange，PTX）的非官方 Golang 客戶端庫。
 
+提醒：PTX 將於 2022/12/1 停止服務，請轉往新平台 [TDX 運輸資訊整合流通服務](https://tdx.transportdata.tw/)。
+
 支援的 APIs：
 
 - 基本 [V2](https://ptx.transportdata.tw/MOTC/v2/Basic/api-docs/oas)
