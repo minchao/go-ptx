@@ -24,7 +24,7 @@ type PTXServiceDTORailSpecificationV2MetroSubClassFare struct {
 	// String
 	//
 	// 市民所屬縣市代碼 : ['TPE':'臺北市','NWT':'新北市','OTHERS':'其他')
-	CitizenCode string `json:"CitizenCode,omitempty" xml:"String,omitempty"`
+	CitizenCode string `json:"CitizenCode,omitempty" xml:"CitizenCode,omitempty"`
 
 	// Int32
 	//
@@ -41,7 +41,7 @@ type PTXServiceDTORailSpecificationV2MetroSubClassFare struct {
 	// String
 	//
 	// 販售方式 : [1:'現場櫃台販售',2:'現場機器販售',3:'線上販售',99:'其他']
-	SaleType string `json:"SaleType,omitempty" xml:"String,omitempty"`
+	SaleType string `json:"SaleType,omitempty" xml:"SaleType,omitempty"`
 
 	// Int32
 	//

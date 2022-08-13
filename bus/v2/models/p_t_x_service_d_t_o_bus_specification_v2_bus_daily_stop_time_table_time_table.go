@@ -23,13 +23,13 @@ type PTXServiceDTOBusSpecificationV2BusDailyStopTimeTableTimeTable struct {
 	//
 	// 到站時間，格式為:HH:mm
 	// Required: true
-	ArrivalTime *string `json:"ArrivalTime" xml:"String"`
+	ArrivalTime *string `json:"ArrivalTime" xml:"ArrivalTime"`
 
 	// String
 	//
 	// 離站時間，格式為:HH:mm
 	// Required: true
-	DepartureTime *string `json:"DepartureTime" xml:"String"`
+	DepartureTime *string `json:"DepartureTime" xml:"DepartureTime"`
 
 	// 該路線班次是否使用低地板公車車輛 , 0 = 否 , 1 = 是
 	IsLowFloor bool `json:"IsLowFloor,omitempty"`
@@ -49,7 +49,7 @@ type PTXServiceDTOBusSpecificationV2BusDailyStopTimeTableTimeTable struct {
 	// String
 	//
 	// 班次代碼
-	TripID string `json:"TripID,omitempty" xml:"String,omitempty"`
+	TripID string `json:"TripID,omitempty" xml:"TripID,omitempty"`
 }
 
 // Validate validates this p t x service d t o bus specification v2 bus daily stop time table time table

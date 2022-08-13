@@ -37,7 +37,7 @@ type PTXServiceDTOBusSpecificationV3ScheduleSpecialDay struct {
 	//
 	// 特殊營運描述
 	// Required: true
-	Description *string `json:"Description" xml:"String"`
+	Description *string `json:"Description" xml:"Description"`
 
 	// Int32
 	//

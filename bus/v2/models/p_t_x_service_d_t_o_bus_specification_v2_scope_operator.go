@@ -23,7 +23,7 @@ type PTXServiceDTOBusSpecificationV2ScopeOperator struct {
 	// String
 	//
 	// 營運業者代碼 ,
-	OperatorID string `json:"OperatorID,omitempty" xml:"String,omitempty"`
+	OperatorID string `json:"OperatorID,omitempty" xml:"OperatorID,omitempty"`
 
 	// NameType
 	//

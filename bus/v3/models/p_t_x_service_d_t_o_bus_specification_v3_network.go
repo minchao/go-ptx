@@ -29,7 +29,7 @@ type PTXServiceDTOBusSpecificationV3Network struct {
 	//
 	// 公車路網代碼
 	// Required: true
-	NetworkID *string `json:"NetworkID" xml:"String"`
+	NetworkID *string `json:"NetworkID" xml:"NetworkID"`
 
 	// NetworkMapURL
 	//

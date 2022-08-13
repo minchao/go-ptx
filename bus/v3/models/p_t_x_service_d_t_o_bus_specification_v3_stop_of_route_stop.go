@@ -28,7 +28,7 @@ type PTXServiceDTOBusSpecificationV3StopOfRouteStop struct {
 	// String
 	//
 	// 累積行駛距離
-	CumulativeDistance string `json:"CumulativeDistance,omitempty" xml:"String,omitempty"`
+	CumulativeDistance string `json:"CumulativeDistance,omitempty" xml:"CumulativeDistance,omitempty"`
 
 	// Boolean
 	//
@@ -39,7 +39,7 @@ type PTXServiceDTOBusSpecificationV3StopOfRouteStop struct {
 	//
 	// 地區既用中之站牌代碼(為原資料內碼)
 	// Required: true
-	StopID *string `json:"StopID" xml:"String"`
+	StopID *string `json:"StopID" xml:"StopID"`
 
 	// NameType
 	//
@@ -67,7 +67,7 @@ type PTXServiceDTOBusSpecificationV3StopOfRouteStop struct {
 	//
 	// 站牌唯一識別代碼，規則為 {業管機關簡碼} + {StopID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢
 	// Required: true
-	StopUID *string `json:"StopUID" xml:"String"`
+	StopUID *string `json:"StopUID" xml:"StopUID"`
 }
 
 // Validate validates this p t x service d t o bus specification v3 stop of route stop

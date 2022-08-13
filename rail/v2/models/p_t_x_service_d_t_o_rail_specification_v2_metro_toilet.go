@@ -25,13 +25,13 @@ type PTXServiceDTORailSpecificationV2MetroToilet struct {
 	//
 	// 位置描述
 	// Required: true
-	Description *string `json:"Description" xml:"String"`
+	Description *string `json:"Description" xml:"Description"`
 
 	// String
 	//
 	// 樓層
 	// Required: true
-	FloorLevel *string `json:"FloorLevel" xml:"String"`
+	FloorLevel *string `json:"FloorLevel" xml:"FloorLevel"`
 }
 
 // Validate validates this p t x service d t o rail specification v2 metro toilet

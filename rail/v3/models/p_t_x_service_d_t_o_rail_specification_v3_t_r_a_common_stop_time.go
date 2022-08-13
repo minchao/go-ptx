@@ -25,19 +25,19 @@ type PTXServiceDTORailSpecificationV3TRACommonStopTime struct {
 	//
 	// 到站時間(格式: HH:mm)
 	// Required: true
-	ArrivalTime *string `json:"ArrivalTime" xml:"String"`
+	ArrivalTime *string `json:"ArrivalTime" xml:"ArrivalTime"`
 
 	// String
 	//
 	// 離站時間(格式: HH:mm)
 	// Required: true
-	DepartureTime *string `json:"DepartureTime" xml:"String"`
+	DepartureTime *string `json:"DepartureTime" xml:"DepartureTime"`
 
 	// String
 	//
 	// 車站代碼
 	// Required: true
-	StationID *string `json:"StationID" xml:"String"`
+	StationID *string `json:"StationID" xml:"StationID"`
 
 	// NameType
 	//

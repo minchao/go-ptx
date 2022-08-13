@@ -35,12 +35,6 @@ func (o *StationOfLineAPIControllerGet3205Reader) ReadResponse(response runtime.
 			return nil, err
 		}
 		return result, nil
-	case 304:
-		result := NewStationOfLineAPIControllerGet3205NotModified()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return nil, result
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -106,27 +100,6 @@ func (o *StationOfLineAPIControllerGet3205Status299) readResponse(response runti
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
-
-	return nil
-}
-
-// NewStationOfLineAPIControllerGet3205NotModified creates a StationOfLineAPIControllerGet3205NotModified with default headers values
-func NewStationOfLineAPIControllerGet3205NotModified() *StationOfLineAPIControllerGet3205NotModified {
-	return &StationOfLineAPIControllerGet3205NotModified{}
-}
-
-/* StationOfLineAPIControllerGet3205NotModified describes a response with status code 304, with default header values.
-
-服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content
-*/
-type StationOfLineAPIControllerGet3205NotModified struct {
-}
-
-func (o *StationOfLineAPIControllerGet3205NotModified) Error() string {
-	return fmt.Sprintf("[GET /v3/Rail/TRA/StationOfLine][%d] stationOfLineApiControllerGet3205NotModified ", 304)
-}
-
-func (o *StationOfLineAPIControllerGet3205NotModified) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

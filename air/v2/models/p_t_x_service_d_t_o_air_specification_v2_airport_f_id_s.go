@@ -26,7 +26,7 @@ type PTXServiceDTOAirSpecificationV2AirportFIDS struct {
 	//
 	// 機場IATA國際代碼
 	// Required: true
-	AirportID *string `json:"AirportID" xml:"String"`
+	AirportID *string `json:"AirportID" xml:"AirportID"`
 
 	// Array
 	//

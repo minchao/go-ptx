@@ -40,7 +40,7 @@ type PTXServiceDTOBusSpecificationV3Vehicle struct {
 	// String
 	//
 	// 車機代號
-	InBoxID string `json:"InBoxID,omitempty" xml:"String,omitempty"`
+	InBoxID string `json:"InBoxID,omitempty" xml:"InBoxID,omitempty"`
 
 	// Boolean
 	//
@@ -64,19 +64,19 @@ type PTXServiceDTOBusSpecificationV3Vehicle struct {
 	//
 	// 營運業者簡碼
 	// Required: true
-	OperatorCode *string `json:"OperatorCode" xml:"String"`
+	OperatorCode *string `json:"OperatorCode" xml:"OperatorCode"`
 
 	// String
 	//
 	// 營運業者代碼
 	// Required: true
-	OperatorID *string `json:"OperatorID" xml:"String"`
+	OperatorID *string `json:"OperatorID" xml:"OperatorID"`
 
 	// String
 	//
 	// 車牌號碼
 	// Required: true
-	PlateNumb *string `json:"PlateNumb" xml:"String"`
+	PlateNumb *string `json:"PlateNumb" xml:"PlateNumb"`
 
 	// 購入時間
 	// Format: date-time

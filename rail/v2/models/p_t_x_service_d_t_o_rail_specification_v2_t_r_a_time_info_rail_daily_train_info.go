@@ -54,7 +54,7 @@ type PTXServiceDTORailSpecificationV2TRATimeInfoRailDailyTrainInfo struct {
 	// String
 	//
 	// 列車終點車站代號
-	EndingStationID string `json:"EndingStationID,omitempty" xml:"String,omitempty"`
+	EndingStationID string `json:"EndingStationID,omitempty" xml:"EndingStationID,omitempty"`
 
 	// NameType
 	//
@@ -73,7 +73,7 @@ type PTXServiceDTORailSpecificationV2TRATimeInfoRailDailyTrainInfo struct {
 	// String
 	//
 	// 跨夜車站代碼
-	OverNightStationID string `json:"OverNightStationID,omitempty" xml:"String,omitempty"`
+	OverNightStationID string `json:"OverNightStationID,omitempty" xml:"OverNightStationID,omitempty"`
 
 	// Int32
 	//
@@ -81,16 +81,16 @@ type PTXServiceDTORailSpecificationV2TRATimeInfoRailDailyTrainInfo struct {
 	// Required: true
 	PackageServiceFlag *int64 `json:"PackageServiceFlag"`
 
-	// Boolean
+	// Int32
 	//
-	// 是否為加班車
+	// 是否為加班車 : [0:'否',1:'是']
 	// Required: true
-	ServiceAddedFlag *bool `json:"ServiceAddedFlag"`
+	ServiceAddedFlag *int64 `json:"ServiceAddedFlag"`
 
 	// String
 	//
 	// 列車起點車站代號
-	StartingStationID string `json:"StartingStationID,omitempty" xml:"String,omitempty"`
+	StartingStationID string `json:"StartingStationID,omitempty" xml:"StartingStationID,omitempty"`
 
 	// NameType
 	//
@@ -99,21 +99,27 @@ type PTXServiceDTORailSpecificationV2TRATimeInfoRailDailyTrainInfo struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
 	} `json:"StartingStationName,omitempty" xml:"NameType,omitempty"`
 
+	// Int32
+	//
+	// 列車是否停駛 : [0:'正常行駛',1:'停駛',2:'部份停駛']
+	// Required: true
+	SuspendedFlag *int64 `json:"SuspendedFlag"`
+
 	// String
 	//
 	// 車次代碼
 	// Required: true
-	TrainNo *string `json:"TrainNo" xml:"String"`
+	TrainNo *string `json:"TrainNo" xml:"TrainNo"`
 
 	// String
 	//
 	// 列車車種簡碼
-	TrainTypeCode string `json:"TrainTypeCode,omitempty" xml:"String,omitempty"`
+	TrainTypeCode string `json:"TrainTypeCode,omitempty" xml:"TrainTypeCode,omitempty"`
 
 	// String
 	//
 	// 列車車種代碼
-	TrainTypeID string `json:"TrainTypeID,omitempty" xml:"String,omitempty"`
+	TrainTypeID string `json:"TrainTypeID,omitempty" xml:"TrainTypeID,omitempty"`
 
 	// NameType
 	//
@@ -125,7 +131,7 @@ type PTXServiceDTORailSpecificationV2TRATimeInfoRailDailyTrainInfo struct {
 	// String
 	//
 	// 車次車頭文字描述(通用以"往"+ 迄站中文站名")
-	TripHeadsign string `json:"TripHeadsign,omitempty" xml:"String,omitempty"`
+	TripHeadsign string `json:"TripHeadsign,omitempty" xml:"TripHeadsign,omitempty"`
 
 	// Int32
 	//
@@ -180,6 +186,10 @@ func (m *PTXServiceDTORailSpecificationV2TRATimeInfoRailDailyTrainInfo) Validate
 	}
 
 	if err := m.validateStartingStationName(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateSuspendedFlag(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -283,6 +293,15 @@ func (m *PTXServiceDTORailSpecificationV2TRATimeInfoRailDailyTrainInfo) validate
 func (m *PTXServiceDTORailSpecificationV2TRATimeInfoRailDailyTrainInfo) validateStartingStationName(formats strfmt.Registry) error {
 	if swag.IsZero(m.StartingStationName) { // not required
 		return nil
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV2TRATimeInfoRailDailyTrainInfo) validateSuspendedFlag(formats strfmt.Registry) error {
+
+	if err := validate.Required("SuspendedFlag", "body", m.SuspendedFlag); err != nil {
+		return err
 	}
 
 	return nil

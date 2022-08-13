@@ -25,7 +25,7 @@ type PTXServiceDTOBusSpecificationV2StationStop struct {
 	//
 	// 地區既用中之路線代碼(為原資料內碼)
 	// Required: true
-	RouteID *string `json:"RouteID" xml:"String"`
+	RouteID *string `json:"RouteID" xml:"RouteID"`
 
 	// NameType
 	//
@@ -39,13 +39,13 @@ type PTXServiceDTOBusSpecificationV2StationStop struct {
 	//
 	// 路線唯一識別代碼，規則為 {業管機關簡碼} + {RouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢
 	// Required: true
-	RouteUID *string `json:"RouteUID" xml:"String"`
+	RouteUID *string `json:"RouteUID" xml:"RouteUID"`
 
 	// String
 	//
 	// 地區既用中之站牌代碼(為原資料內碼)
 	// Required: true
-	StopID *string `json:"StopID" xml:"String"`
+	StopID *string `json:"StopID" xml:"StopID"`
 
 	// NameType
 	//
@@ -59,7 +59,7 @@ type PTXServiceDTOBusSpecificationV2StationStop struct {
 	//
 	// 站牌唯一識別代碼，規則為 {業管機關簡碼} + {StopID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢
 	// Required: true
-	StopUID *string `json:"StopUID" xml:"String"`
+	StopUID *string `json:"StopUID" xml:"StopUID"`
 }
 
 // Validate validates this p t x service d t o bus specification v2 station stop

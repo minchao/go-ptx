@@ -29,7 +29,7 @@ type PTXServiceDTOBusSpecificationV3RouteNetworkSegment struct {
 	//
 	// 表BusStop唯一碼(起點站牌)
 	// Required: true
-	FromStopID *string `json:"FromStopID" xml:"String"`
+	FromStopID *string `json:"FromStopID" xml:"FromStopID"`
 
 	// Single
 	//
@@ -41,7 +41,7 @@ type PTXServiceDTOBusSpecificationV3RouteNetworkSegment struct {
 	//
 	// 表BusStop唯一碼(迄點站牌)
 	// Required: true
-	ToStopID *string `json:"ToStopID" xml:"String"`
+	ToStopID *string `json:"ToStopID" xml:"ToStopID"`
 }
 
 // Validate validates this p t x service d t o bus specification v3 route network segment

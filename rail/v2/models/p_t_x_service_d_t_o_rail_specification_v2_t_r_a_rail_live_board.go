@@ -37,7 +37,7 @@ type PTXServiceDTORailSpecificationV2TRARailLiveBoard struct {
 	//
 	// 車次終點車站代號
 	// Required: true
-	EndingStationID *string `json:"EndingStationID" xml:"String"`
+	EndingStationID *string `json:"EndingStationID" xml:"EndingStationID"`
 
 	// NameType
 	//
@@ -51,13 +51,13 @@ type PTXServiceDTORailSpecificationV2TRARailLiveBoard struct {
 	//
 	// 表訂到站時間(格式: HH:mm:ss)
 	// Required: true
-	ScheduledArrivalTime *string `json:"ScheduledArrivalTime" xml:"String"`
+	ScheduledArrivalTime *string `json:"ScheduledArrivalTime" xml:"ScheduledArrivalTime"`
 
 	// String
 	//
 	// 表訂離站時間(格式: HH:mm:ss)
 	// Required: true
-	ScheduledDepartureTime *string `json:"ScheduledDepartureTime" xml:"String"`
+	ScheduledDepartureTime *string `json:"ScheduledDepartureTime" xml:"ScheduledDepartureTime"`
 
 	// DateTime
 	//
@@ -70,7 +70,7 @@ type PTXServiceDTORailSpecificationV2TRARailLiveBoard struct {
 	//
 	// 車站代碼
 	// Required: true
-	StationID *string `json:"StationID" xml:"String"`
+	StationID *string `json:"StationID" xml:"StationID"`
 
 	// NameType
 	//
@@ -84,17 +84,17 @@ type PTXServiceDTORailSpecificationV2TRARailLiveBoard struct {
 	//
 	// 車次代碼
 	// Required: true
-	TrainNo *string `json:"TrainNo" xml:"String"`
+	TrainNo *string `json:"TrainNo" xml:"TrainNo"`
 
 	// String
 	//
 	// 列車車種簡碼
-	TrainTypeCode string `json:"TrainTypeCode,omitempty" xml:"String,omitempty"`
+	TrainTypeCode string `json:"TrainTypeCode,omitempty" xml:"TrainTypeCode,omitempty"`
 
 	// String
 	//
 	// 列車車種代碼
-	TrainTypeID string `json:"TrainTypeID,omitempty" xml:"String,omitempty"`
+	TrainTypeID string `json:"TrainTypeID,omitempty" xml:"TrainTypeID,omitempty"`
 
 	// NameType
 	//

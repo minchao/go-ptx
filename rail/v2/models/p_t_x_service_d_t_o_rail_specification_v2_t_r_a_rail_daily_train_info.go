@@ -54,7 +54,7 @@ type PTXServiceDTORailSpecificationV2TRARailDailyTrainInfo struct {
 	// String
 	//
 	// 列車終點車站代號
-	EndingStationID string `json:"EndingStationID,omitempty" xml:"String,omitempty"`
+	EndingStationID string `json:"EndingStationID,omitempty" xml:"EndingStationID,omitempty"`
 
 	// NameType
 	//
@@ -73,7 +73,7 @@ type PTXServiceDTORailSpecificationV2TRARailDailyTrainInfo struct {
 	// String
 	//
 	// 跨夜車站代碼
-	OverNightStationID string `json:"OverNightStationID,omitempty" xml:"String,omitempty"`
+	OverNightStationID string `json:"OverNightStationID,omitempty" xml:"OverNightStationID,omitempty"`
 
 	// Int32
 	//
@@ -90,7 +90,7 @@ type PTXServiceDTORailSpecificationV2TRARailDailyTrainInfo struct {
 	// String
 	//
 	// 列車起點車站代號
-	StartingStationID string `json:"StartingStationID,omitempty" xml:"String,omitempty"`
+	StartingStationID string `json:"StartingStationID,omitempty" xml:"StartingStationID,omitempty"`
 
 	// NameType
 	//
@@ -99,23 +99,29 @@ type PTXServiceDTORailSpecificationV2TRARailDailyTrainInfo struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
 	} `json:"StartingStationName,omitempty" xml:"NameType,omitempty"`
 
+	// Int32
+	//
+	// 列車是否停駛 : [0:'正常行駛',1:'停駛',2:'部份停駛']
+	// Required: true
+	SuspendedFlag *int64 `json:"SuspendedFlag"`
+
 	// String
 	//
 	// 車次代碼
 	// Required: true
-	TrainNo *string `json:"TrainNo" xml:"String"`
+	TrainNo *string `json:"TrainNo" xml:"TrainNo"`
 
 	// String
 	//
 	// 列車車種簡碼
 	// Required: true
-	TrainTypeCode *string `json:"TrainTypeCode" xml:"String"`
+	TrainTypeCode *string `json:"TrainTypeCode" xml:"TrainTypeCode"`
 
 	// String
 	//
 	// 列車車種代碼
 	// Required: true
-	TrainTypeID *string `json:"TrainTypeID" xml:"String"`
+	TrainTypeID *string `json:"TrainTypeID" xml:"TrainTypeID"`
 
 	// NameType
 	//
@@ -128,7 +134,7 @@ type PTXServiceDTORailSpecificationV2TRARailDailyTrainInfo struct {
 	// String
 	//
 	// 車次車頭文字描述(通用以"往"+ 迄站中文站名")
-	TripHeadsign string `json:"TripHeadsign,omitempty" xml:"String,omitempty"`
+	TripHeadsign string `json:"TripHeadsign,omitempty" xml:"TripHeadsign,omitempty"`
 
 	// Int32
 	//
@@ -196,6 +202,10 @@ func (m *PTXServiceDTORailSpecificationV2TRARailDailyTrainInfo) Validate(formats
 	}
 
 	if err := m.validateStartingStationName(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateSuspendedFlag(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -315,6 +325,15 @@ func (m *PTXServiceDTORailSpecificationV2TRARailDailyTrainInfo) validateServiceA
 func (m *PTXServiceDTORailSpecificationV2TRARailDailyTrainInfo) validateStartingStationName(formats strfmt.Registry) error {
 	if swag.IsZero(m.StartingStationName) { // not required
 		return nil
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV2TRARailDailyTrainInfo) validateSuspendedFlag(formats strfmt.Registry) error {
+
+	if err := validate.Required("SuspendedFlag", "body", m.SuspendedFlag); err != nil {
+		return err
 	}
 
 	return nil

@@ -60,7 +60,7 @@ type MetroAPINews2106OK struct {
 }
 
 func (o *MetroAPINews2106OK) Error() string {
-	return fmt.Sprintf("[GET /v2/Rail/Metro/News/{MetroSystem}][%d] metroApiNews2106OK  %+v", 200, o.Payload)
+	return fmt.Sprintf("[GET /v2/Rail/Metro/News/{RailSystem}][%d] metroApiNews2106OK  %+v", 200, o.Payload)
 }
 func (o *MetroAPINews2106OK) GetPayload() *models.PTXAPIRailModelMRTRealTimeWrapperPTXServiceDTORailSpecificationV2MetroMRTNewsListNews {
 	return o.Payload
@@ -92,7 +92,7 @@ type MetroAPINews2106Status299 struct {
 }
 
 func (o *MetroAPINews2106Status299) Error() string {
-	return fmt.Sprintf("[GET /v2/Rail/Metro/News/{MetroSystem}][%d] metroApiNews2106Status299  %+v", 299, o.Payload)
+	return fmt.Sprintf("[GET /v2/Rail/Metro/News/{RailSystem}][%d] metroApiNews2106Status299  %+v", 299, o.Payload)
 }
 func (o *MetroAPINews2106Status299) GetPayload() *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth {
 	return o.Payload
@@ -123,7 +123,7 @@ type MetroAPINews2106NotModified struct {
 }
 
 func (o *MetroAPINews2106NotModified) Error() string {
-	return fmt.Sprintf("[GET /v2/Rail/Metro/News/{MetroSystem}][%d] metroApiNews2106NotModified ", 304)
+	return fmt.Sprintf("[GET /v2/Rail/Metro/News/{RailSystem}][%d] metroApiNews2106NotModified ", 304)
 }
 
 func (o *MetroAPINews2106NotModified) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {

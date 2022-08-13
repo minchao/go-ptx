@@ -30,7 +30,7 @@ type PTXAPIRailModelTRARealTimeWrapperPTXServiceDTORailSpecificationV3TRATRAAler
 	//
 	// 業管機關簡碼
 	// Required: true
-	AuthorityCode *string `json:"AuthorityCode" xml:"String"`
+	AuthorityCode *string `json:"AuthorityCode" xml:"AuthorityCode"`
 
 	// 資料總筆數
 	Count int64 `json:"Count,omitempty"`

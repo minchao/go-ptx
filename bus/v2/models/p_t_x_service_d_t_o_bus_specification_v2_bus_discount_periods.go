@@ -25,7 +25,7 @@ type PTXServiceDTOBusSpecificationV2BusDiscountPeriods struct {
 	//
 	// 結束時間(HH:mm制)
 	// Required: true
-	EndTime *string `json:"EndTime" xml:"String"`
+	EndTime *string `json:"EndTime" xml:"EndTime"`
 
 	// ServiceDay
 	//
@@ -39,7 +39,7 @@ type PTXServiceDTOBusSpecificationV2BusDiscountPeriods struct {
 	//
 	// 開始時間(HH:mm制)
 	// Required: true
-	StartTime *string `json:"StartTime" xml:"String"`
+	StartTime *string `json:"StartTime" xml:"StartTime"`
 }
 
 // Validate validates this p t x service d t o bus specification v2 bus discount periods

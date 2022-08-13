@@ -30,7 +30,7 @@ type PTXServiceDTOShipSpecificationV3Timetable struct {
 	//
 	// 班次代碼
 	// Required: true
-	TripID *string `json:"TripID" xml:"String"`
+	TripID *string `json:"TripID" xml:"TripID"`
 }
 
 // Validate validates this p t x service d t o ship specification v3 timetable

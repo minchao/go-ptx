@@ -22,7 +22,7 @@ type PTXServiceDTORailSpecificationV2PointType struct {
 	// String
 	//
 	// 地理空間編碼
-	GeoHash string `json:"GeoHash,omitempty" xml:"String,omitempty"`
+	GeoHash string `json:"GeoHash,omitempty" xml:"GeoHash,omitempty"`
 
 	// 位置緯度(WGS84)
 	PositionLat float64 `json:"PositionLat,omitempty"`

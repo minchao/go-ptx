@@ -22,32 +22,32 @@ type PTXServiceDTOTourismSpecificationV2TourismPicture struct {
 	// String
 	//
 	// 照片說明1
-	PictureDescription1 string `json:"PictureDescription1,omitempty" xml:"String,omitempty"`
+	PictureDescription1 string `json:"PictureDescription1,omitempty" xml:"PictureDescription1,omitempty"`
 
 	// String
 	//
 	// 照片說明2
-	PictureDescription2 string `json:"PictureDescription2,omitempty" xml:"String,omitempty"`
+	PictureDescription2 string `json:"PictureDescription2,omitempty" xml:"PictureDescription2,omitempty"`
 
 	// String
 	//
 	// 照片說明3
-	PictureDescription3 string `json:"PictureDescription3,omitempty" xml:"String,omitempty"`
+	PictureDescription3 string `json:"PictureDescription3,omitempty" xml:"PictureDescription3,omitempty"`
 
 	// String
 	//
 	// 照片連結網址1
-	PictureUrl1 string `json:"PictureUrl1,omitempty" xml:"String,omitempty"`
+	PictureUrl1 string `json:"PictureUrl1,omitempty" xml:"PictureUrl1,omitempty"`
 
 	// String
 	//
 	// 照片連結網址2
-	PictureUrl2 string `json:"PictureUrl2,omitempty" xml:"String,omitempty"`
+	PictureUrl2 string `json:"PictureUrl2,omitempty" xml:"PictureUrl2,omitempty"`
 
 	// String
 	//
 	// 照片連結網址3
-	PictureUrl3 string `json:"PictureUrl3,omitempty" xml:"String,omitempty"`
+	PictureUrl3 string `json:"PictureUrl3,omitempty" xml:"PictureUrl3,omitempty"`
 }
 
 // Validate validates this p t x service d t o tourism specification v2 tourism picture

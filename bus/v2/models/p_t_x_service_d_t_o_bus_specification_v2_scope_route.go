@@ -28,7 +28,7 @@ type PTXServiceDTOBusSpecificationV2ScopeRoute struct {
 	// String
 	//
 	// 地區既用中之班次代碼(為原資料內碼)
-	RouteID string `json:"RouteID,omitempty" xml:"String,omitempty"`
+	RouteID string `json:"RouteID,omitempty" xml:"RouteID,omitempty"`
 
 	// NameType
 	//

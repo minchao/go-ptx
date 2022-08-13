@@ -35,7 +35,7 @@ type PTXServiceDTOShipSpecificationV3LivePosition struct {
 	//
 	// AIS 船舶編號
 	// Required: true
-	MMSI *string `json:"MMSI" xml:"String"`
+	MMSI *string `json:"MMSI" xml:"MMSI"`
 
 	// Int32
 	//
@@ -52,7 +52,7 @@ type PTXServiceDTOShipSpecificationV3LivePosition struct {
 	//
 	// 船舶代碼
 	// Required: true
-	VesselID *string `json:"VesselID" xml:"String"`
+	VesselID *string `json:"VesselID" xml:"VesselID"`
 
 	// NameType
 	//

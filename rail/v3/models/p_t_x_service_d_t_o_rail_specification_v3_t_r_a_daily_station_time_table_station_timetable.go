@@ -28,12 +28,12 @@ type PTXServiceDTORailSpecificationV3TRADailyStationTimeTableStationTimetable st
 	// String
 	//
 	// 營運路線代碼
-	RouteID string `json:"RouteID,omitempty" xml:"String,omitempty"`
+	RouteID string `json:"RouteID,omitempty" xml:"RouteID,omitempty"`
 
 	// String
 	//
 	// 車站代碼
-	StationID string `json:"StationID,omitempty" xml:"String,omitempty"`
+	StationID string `json:"StationID,omitempty" xml:"StationID,omitempty"`
 
 	// NameType
 	//

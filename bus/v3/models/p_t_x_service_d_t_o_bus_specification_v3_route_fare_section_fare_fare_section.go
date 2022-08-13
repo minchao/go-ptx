@@ -29,7 +29,7 @@ type PTXServiceDTOBusSpecificationV3RouteFareSectionFareFareSection struct {
 	//
 	// 計費價格
 	// Required: true
-	Price *string `json:"Price" xml:"String"`
+	Price *string `json:"Price" xml:"Price"`
 
 	// Int32
 	//

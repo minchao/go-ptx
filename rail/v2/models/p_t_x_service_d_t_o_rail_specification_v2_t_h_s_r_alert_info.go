@@ -25,25 +25,25 @@ type PTXServiceDTORailSpecificationV2THSRAlertInfo struct {
 	//
 	// 事件簡易描述
 	// Required: true
-	Description *string `json:"Description" xml:"String"`
+	Description *string `json:"Description" xml:"Description"`
 
 	// String
 	//
 	// 運行方向
 	// Required: true
-	Direction *string `json:"Direction" xml:"String"`
+	Direction *string `json:"Direction" xml:"Direction"`
 
 	// String
 	//
 	// 影響區間
 	// Required: true
-	EffectedSection *string `json:"EffectedSection" xml:"String"`
+	EffectedSection *string `json:"EffectedSection" xml:"EffectedSection"`
 
 	// String
 	//
 	// 影響狀態
 	// Required: true
-	Effects *string `json:"Effects" xml:"String"`
+	Effects *string `json:"Effects" xml:"Effects"`
 
 	// 結束時間
 	// Format: date-time
@@ -78,13 +78,13 @@ type PTXServiceDTORailSpecificationV2THSRAlertInfo struct {
 	//
 	// 營運狀態 = ['空白: 正常' or '▲: 其他的異常狀態' or 'X: 全線停止運行']
 	// Required: true
-	Status *string `json:"Status" xml:"String"`
+	Status *string `json:"Status" xml:"Status"`
 
 	// String
 	//
 	// 標題
 	// Required: true
-	Title *string `json:"Title" xml:"String"`
+	Title *string `json:"Title" xml:"Title"`
 
 	// DateTime
 	//

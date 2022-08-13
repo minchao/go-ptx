@@ -24,7 +24,7 @@ type PTXServiceDTOShipSpecificationV3DailySchedule struct {
 	//
 	// 航行日期
 	// Required: true
-	Date *string `json:"Date" xml:"String"`
+	Date *string `json:"Date" xml:"Date"`
 
 	// Int32
 	//
@@ -40,13 +40,13 @@ type PTXServiceDTOShipSpecificationV3DailySchedule struct {
 	//
 	// 營運業者代碼
 	// Required: true
-	OperatorID *string `json:"OperatorID" xml:"String"`
+	OperatorID *string `json:"OperatorID" xml:"OperatorID"`
 
 	// String
 	//
 	// 航線代碼
 	// Required: true
-	RouteID *string `json:"RouteID" xml:"String"`
+	RouteID *string `json:"RouteID" xml:"RouteID"`
 
 	// NameType
 	//

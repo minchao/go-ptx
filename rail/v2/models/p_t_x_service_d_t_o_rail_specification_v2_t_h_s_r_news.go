@@ -31,7 +31,7 @@ type PTXServiceDTORailSpecificationV2THSRNews struct {
 	//
 	// 消息內容描述
 	// Required: true
-	Description *string `json:"Description" xml:"String"`
+	Description *string `json:"Description" xml:"Description"`
 
 	// 結束時間
 	// Format: date-time
@@ -41,13 +41,13 @@ type PTXServiceDTORailSpecificationV2THSRNews struct {
 	//
 	// 語系
 	// Required: true
-	Language *string `json:"Language" xml:"String"`
+	Language *string `json:"Language" xml:"Language"`
 
 	// String
 	//
 	// 消息類別
 	// Required: true
-	NewsCategory *string `json:"NewsCategory" xml:"String"`
+	NewsCategory *string `json:"NewsCategory" xml:"NewsCategory"`
 
 	// Guid
 	//
@@ -60,7 +60,7 @@ type PTXServiceDTORailSpecificationV2THSRNews struct {
 	//
 	// 消息網址連結
 	// Required: true
-	NewsURL *string `json:"NewsUrl" xml:"String"`
+	NewsURL *string `json:"NewsUrl" xml:"NewsUrl"`
 
 	// DateTime
 	//
@@ -80,7 +80,7 @@ type PTXServiceDTORailSpecificationV2THSRNews struct {
 	//
 	// 消息標題
 	// Required: true
-	Title *string `json:"Title" xml:"String"`
+	Title *string `json:"Title" xml:"Title"`
 
 	// DateTime
 	//

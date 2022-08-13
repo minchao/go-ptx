@@ -31,19 +31,19 @@ type PTXServiceDTOTourismSpecificationV2BusTaiwanTripShape struct {
 	//
 	// well-known text，為路線軌跡資料
 	// Required: true
-	Geometry *string `json:"Geometry" xml:"String"`
+	Geometry *string `json:"Geometry" xml:"Geometry"`
 
 	// String
 	//
 	// 地區既用中之路線代碼(為原資料內碼)
 	// Required: true
-	RouteID *string `json:"RouteID" xml:"String"`
+	RouteID *string `json:"RouteID" xml:"RouteID"`
 
 	// String
 	//
 	// 路線唯一識別代碼，規則為 {業管機關簡碼} + {RouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢
 	// Required: true
-	RouteUID *string `json:"RouteUID" xml:"String"`
+	RouteUID *string `json:"RouteUID" xml:"RouteUID"`
 
 	// 來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Required: true

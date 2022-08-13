@@ -23,7 +23,7 @@ type PTXAPIShipModelShipWrapperPTXServiceDTOShipSpecificationV3StopOfRoute struc
 	// String
 	//
 	// 業管機關簡碼
-	AuthorityCode string `json:"AuthorityCode,omitempty" xml:"String,omitempty"`
+	AuthorityCode string `json:"AuthorityCode,omitempty" xml:"AuthorityCode,omitempty"`
 
 	// 資料總筆數<span class="emphasis fas fa-pen" rel="與來源Inbound XML不同，為提供資料的總筆數[該欄位由本平台自動產製]"></span>
 	Count int64 `json:"Count,omitempty"`

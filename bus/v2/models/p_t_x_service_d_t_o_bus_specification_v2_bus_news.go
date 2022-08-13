@@ -24,28 +24,28 @@ type PTXServiceDTOBusSpecificationV2BusNews struct {
 	// String
 	//
 	// 相關網站連結
-	AttachmentURL string `json:"AttachmentURL,omitempty" xml:"String,omitempty"`
+	AttachmentURL string `json:"AttachmentURL,omitempty" xml:"AttachmentURL,omitempty"`
 
 	// String
 	//
 	// 聯絡人/單位
-	ContactName string `json:"ContactName,omitempty" xml:"String,omitempty"`
+	ContactName string `json:"ContactName,omitempty" xml:"ContactName,omitempty"`
 
 	// String
 	//
 	// 聯絡電話
-	ContactPhone string `json:"ContactPhone,omitempty" xml:"String,omitempty"`
+	ContactPhone string `json:"ContactPhone,omitempty" xml:"ContactPhone,omitempty"`
 
 	// String
 	//
 	// 發布單位
-	Department string `json:"Department,omitempty" xml:"String,omitempty"`
+	Department string `json:"Department,omitempty" xml:"Department,omitempty"`
 
 	// String
 	//
 	// 內容描述
 	// Required: true
-	Description *string `json:"Description" xml:"String"`
+	Description *string `json:"Description" xml:"Description"`
 
 	// 結束時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Required: true
@@ -56,7 +56,7 @@ type PTXServiceDTOBusSpecificationV2BusNews struct {
 	//
 	// 語系
 	// Required: true
-	Language *string `json:"Language" xml:"String"`
+	Language *string `json:"Language" xml:"Language"`
 
 	// Int32
 	//
@@ -67,12 +67,12 @@ type PTXServiceDTOBusSpecificationV2BusNews struct {
 	//
 	// 最新消息原單位發布代碼
 	// Required: true
-	NewsID *string `json:"NewsID" xml:"String"`
+	NewsID *string `json:"NewsID" xml:"NewsID"`
 
 	// String
 	//
 	// 報導網站連結
-	NewsURL string `json:"NewsURL,omitempty" xml:"String,omitempty"`
+	NewsURL string `json:"NewsURL,omitempty" xml:"NewsURL,omitempty"`
 
 	// DateTime
 	//
@@ -94,7 +94,7 @@ type PTXServiceDTOBusSpecificationV2BusNews struct {
 	//
 	// 消息標題
 	// Required: true
-	Title *string `json:"Title" xml:"String"`
+	Title *string `json:"Title" xml:"Title"`
 
 	// DateTime
 	//

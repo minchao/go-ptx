@@ -35,7 +35,7 @@ type PTXServiceDTOTourismSpecificationV2SpecialDay struct {
 	// String
 	//
 	// 特殊營運描述
-	Description string `json:"Description,omitempty" xml:"String,omitempty"`
+	Description string `json:"Description,omitempty" xml:"Description,omitempty"`
 
 	// Int32
 	//

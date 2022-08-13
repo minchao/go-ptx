@@ -25,12 +25,12 @@ type PTXServiceDTOBusSpecificationV2BusStage struct {
 	//
 	// 站牌代碼
 	// Required: true
-	StopID *string `json:"StopID" xml:"String"`
+	StopID *string `json:"StopID" xml:"StopID"`
 
 	// String
 	//
 	// 站牌名稱
-	StopName string `json:"StopName,omitempty" xml:"String,omitempty"`
+	StopName string `json:"StopName,omitempty" xml:"StopName,omitempty"`
 }
 
 // Validate validates this p t x service d t o bus specification v2 bus stage

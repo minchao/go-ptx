@@ -16,7 +16,7 @@ import (
 
 // PTXServiceDTORailSpecificationV2TRARailODDailyTimetable RailODDailyTimetable
 //
-// 台鐵起訖站間到離站時刻資料型別
+// 台鐵起迄站間到離站時刻資料型別
 //
 // swagger:model PTX.Service.DTO.Rail.Specification.V2.TRA.RailODDailyTimetable
 type PTXServiceDTORailSpecificationV2TRARailODDailyTimetable struct {
@@ -34,7 +34,7 @@ type PTXServiceDTORailSpecificationV2TRARailODDailyTimetable struct {
 	// 迄站停靠時間資料
 	// Required: true
 	DestinationStopTime struct {
-		PTXServiceDTORailSpecificationV2TRARailStopTime
+		PTXServiceDTORailSpecificationV2TRATimeInfoRailStopTime
 	} `json:"DestinationStopTime" xml:"RailStopTime"`
 
 	// RailStopTime
@@ -42,14 +42,14 @@ type PTXServiceDTORailSpecificationV2TRARailODDailyTimetable struct {
 	// 起站停靠時間資料
 	// Required: true
 	OriginStopTime struct {
-		PTXServiceDTORailSpecificationV2TRARailStopTime
+		PTXServiceDTORailSpecificationV2TRATimeInfoRailStopTime
 	} `json:"OriginStopTime" xml:"RailStopTime"`
 
 	// String
 	//
 	// 行駛日期(格式: yyyy:MM:dd)
 	// Required: true
-	TrainDate *string `json:"TrainDate" xml:"String"`
+	TrainDate *string `json:"TrainDate" xml:"TrainDate"`
 
 	// DateTime
 	//

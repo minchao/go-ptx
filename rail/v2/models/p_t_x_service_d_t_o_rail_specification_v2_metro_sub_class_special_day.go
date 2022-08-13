@@ -25,7 +25,7 @@ type PTXServiceDTORailSpecificationV2MetroSubClassSpecialDay struct {
 	//
 	// 描述
 	// Required: true
-	Description *string `json:"Description" xml:"String"`
+	Description *string `json:"Description" xml:"Description"`
 
 	// DateTime
 	//

@@ -25,13 +25,13 @@ type PTXServiceDTORailSpecificationV2THSRRailGeneralTimetable struct {
 	//
 	// 有效日期(格式: yyyy:MM:dd)
 	// Required: true
-	EffectiveDate *string `json:"EffectiveDate" xml:"String"`
+	EffectiveDate *string `json:"EffectiveDate" xml:"EffectiveDate"`
 
 	// String
 	//
 	// 結束日期(格式: yyyy:MM:dd)
 	// Required: true
-	ExpiringDate *string `json:"ExpiringDate" xml:"String"`
+	ExpiringDate *string `json:"ExpiringDate" xml:"ExpiringDate"`
 
 	// GeneralTimetable
 	//

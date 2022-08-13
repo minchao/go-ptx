@@ -25,7 +25,7 @@ type PTXServiceDTORailSpecificationV3TRAStationTransferAirportTransfer struct {
 	//
 	// 機場代碼
 	// Required: true
-	AirportID *string `json:"AirportID" xml:"String"`
+	AirportID *string `json:"AirportID" xml:"AirportID"`
 
 	// NameType
 	//
@@ -38,12 +38,12 @@ type PTXServiceDTORailSpecificationV3TRAStationTransferAirportTransfer struct {
 	// String
 	//
 	// 轉乘描述
-	Description string `json:"Description,omitempty" xml:"String,omitempty"`
+	Description string `json:"Description,omitempty" xml:"Description,omitempty"`
 
 	// String
 	//
 	// 轉乘樓層
-	FloorLevel string `json:"FloorLevel,omitempty" xml:"String,omitempty"`
+	FloorLevel string `json:"FloorLevel,omitempty" xml:"FloorLevel,omitempty"`
 
 	// 是否為站內或站外轉乘
 	IsOnSiteTransfer bool `json:"IsOnSiteTransfer,omitempty"`
@@ -55,13 +55,13 @@ type PTXServiceDTORailSpecificationV3TRAStationTransferAirportTransfer struct {
 	//
 	// 運具種類代碼
 	// Required: true
-	Mode *string `json:"Mode" xml:"String"`
+	Mode *string `json:"Mode" xml:"Mode"`
 
 	// String
 	//
 	// 機場營運業者簡碼
 	// Required: true
-	OperatorCode *string `json:"OperatorCode" xml:"String"`
+	OperatorCode *string `json:"OperatorCode" xml:"OperatorCode"`
 
 	// NameType
 	//

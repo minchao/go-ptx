@@ -36,7 +36,7 @@ type PTXServiceDTOBusSpecificationV2BusFare struct {
 	// String
 	//
 	// 票價名稱
-	FareName string `json:"FareName,omitempty" xml:"String,omitempty"`
+	FareName string `json:"FareName,omitempty" xml:"FareName,omitempty"`
 
 	// Int32
 	//

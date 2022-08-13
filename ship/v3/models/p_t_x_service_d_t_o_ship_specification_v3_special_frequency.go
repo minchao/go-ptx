@@ -23,7 +23,7 @@ type PTXServiceDTOShipSpecificationV3SpecialFrequency struct {
 	//
 	// 結束時間
 	// Required: true
-	EndTime *string `json:"EndTime" xml:"String"`
+	EndTime *string `json:"EndTime" xml:"EndTime"`
 
 	// Int32
 	//
@@ -40,7 +40,7 @@ type PTXServiceDTOShipSpecificationV3SpecialFrequency struct {
 	// String
 	//
 	// 尖離峰狀態[0:'離峰',1:'尖峰']
-	PeakFlag string `json:"PeakFlag,omitempty" xml:"String,omitempty"`
+	PeakFlag string `json:"PeakFlag,omitempty" xml:"PeakFlag,omitempty"`
 
 	// ServiceDay
 	//
@@ -60,7 +60,7 @@ type PTXServiceDTOShipSpecificationV3SpecialFrequency struct {
 	//
 	// 開始時間
 	// Required: true
-	StartTime *string `json:"StartTime" xml:"String"`
+	StartTime *string `json:"StartTime" xml:"StartTime"`
 }
 
 // Validate validates this p t x service d t o ship specification v3 special frequency

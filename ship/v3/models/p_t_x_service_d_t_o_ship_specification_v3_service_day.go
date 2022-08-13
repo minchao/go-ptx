@@ -8,8 +8,10 @@ package models
 import (
 	"context"
 
+	"github.com/go-openapi/errors"
 	"github.com/go-openapi/strfmt"
 	"github.com/go-openapi/swag"
+	"github.com/go-openapi/validate"
 )
 
 // PTXServiceDTOShipSpecificationV3ServiceDay ServiceDay
@@ -20,12 +22,14 @@ type PTXServiceDTOShipSpecificationV3ServiceDay struct {
 	// Int32
 	//
 	// 星期五是否營運 : [0:'否',1:'是']
-	Friday int64 `json:"Friday,omitempty"`
+	// Required: true
+	Friday *int64 `json:"Friday"`
 
 	// Int32
 	//
 	// 星期一是否營運 : [0:'否',1:'是']
-	Monday int64 `json:"Monday,omitempty"`
+	// Required: true
+	Monday *int64 `json:"Monday"`
 
 	// Int32
 	//
@@ -35,36 +39,137 @@ type PTXServiceDTOShipSpecificationV3ServiceDay struct {
 	// Int32
 	//
 	// 星期六是否營運 : [0:'否',1:'是']
-	Saturday int64 `json:"Saturday,omitempty"`
+	// Required: true
+	Saturday *int64 `json:"Saturday"`
 
 	// String
 	//
 	// 服務日標籤
-	ServiceTag string `json:"ServiceTag,omitempty" xml:"String,omitempty"`
+	ServiceTag string `json:"ServiceTag,omitempty" xml:"ServiceTag,omitempty"`
 
 	// Int32
 	//
 	// 星期日是否營運 : [0:'否',1:'是']
-	Sunday int64 `json:"Sunday,omitempty"`
+	// Required: true
+	Sunday *int64 `json:"Sunday"`
 
 	// Int32
 	//
 	// 星期四是否營運 : [0:'否',1:'是']
-	Thursday int64 `json:"Thursday,omitempty"`
+	// Required: true
+	Thursday *int64 `json:"Thursday"`
 
 	// Int32
 	//
 	// 星期二是否營運 : [0:'否',1:'是']
-	Tuesday int64 `json:"Tuesday,omitempty"`
+	// Required: true
+	Tuesday *int64 `json:"Tuesday"`
 
 	// Int32
 	//
 	// 星期三是否營運 : [0:'否',1:'是']
-	Wednesday int64 `json:"Wednesday,omitempty"`
+	// Required: true
+	Wednesday *int64 `json:"Wednesday"`
 }
 
 // Validate validates this p t x service d t o ship specification v3 service day
 func (m *PTXServiceDTOShipSpecificationV3ServiceDay) Validate(formats strfmt.Registry) error {
+	var res []error
+
+	if err := m.validateFriday(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateMonday(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateSaturday(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateSunday(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateThursday(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateTuesday(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateWednesday(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if len(res) > 0 {
+		return errors.CompositeValidationError(res...)
+	}
+	return nil
+}
+
+func (m *PTXServiceDTOShipSpecificationV3ServiceDay) validateFriday(formats strfmt.Registry) error {
+
+	if err := validate.Required("Friday", "body", m.Friday); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTOShipSpecificationV3ServiceDay) validateMonday(formats strfmt.Registry) error {
+
+	if err := validate.Required("Monday", "body", m.Monday); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTOShipSpecificationV3ServiceDay) validateSaturday(formats strfmt.Registry) error {
+
+	if err := validate.Required("Saturday", "body", m.Saturday); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTOShipSpecificationV3ServiceDay) validateSunday(formats strfmt.Registry) error {
+
+	if err := validate.Required("Sunday", "body", m.Sunday); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTOShipSpecificationV3ServiceDay) validateThursday(formats strfmt.Registry) error {
+
+	if err := validate.Required("Thursday", "body", m.Thursday); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTOShipSpecificationV3ServiceDay) validateTuesday(formats strfmt.Registry) error {
+
+	if err := validate.Required("Tuesday", "body", m.Tuesday); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTOShipSpecificationV3ServiceDay) validateWednesday(formats strfmt.Registry) error {
+
+	if err := validate.Required("Wednesday", "body", m.Wednesday); err != nil {
+		return err
+	}
+
 	return nil
 }
 

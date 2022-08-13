@@ -25,7 +25,7 @@ type PTXServiceDTORailSpecificationV2MetroFirstLastTimetable struct {
 	//
 	// 目的站車站代號
 	// Required: true
-	DestinationStaionID *string `json:"DestinationStaionID" xml:"String"`
+	DestinationStaionID *string `json:"DestinationStaionID" xml:"DestinationStaionID"`
 
 	// NameType
 	//
@@ -39,24 +39,24 @@ type PTXServiceDTORailSpecificationV2MetroFirstLastTimetable struct {
 	//
 	// 首班車時刻
 	// Required: true
-	FirstTrainTime *string `json:"FirstTrainTime" xml:"String"`
+	FirstTrainTime *string `json:"FirstTrainTime" xml:"FirstTrainTime"`
 
 	// String
 	//
 	// 末班車時刻
 	// Required: true
-	LastTrainTime *string `json:"LastTrainTime" xml:"String"`
+	LastTrainTime *string `json:"LastTrainTime" xml:"LastTrainTime"`
 
 	// String
 	//
 	// 首末班車次之路線代碼
 	// Required: true
-	LineID *string `json:"LineID" xml:"String"`
+	LineID *string `json:"LineID" xml:"LineID"`
 
 	// String
 	//
 	// 首末班車次之路線代號
-	LineNo string `json:"LineNo,omitempty" xml:"String,omitempty"`
+	LineNo string `json:"LineNo,omitempty" xml:"LineNo,omitempty"`
 
 	// ServiceDay
 	//
@@ -77,7 +77,7 @@ type PTXServiceDTORailSpecificationV2MetroFirstLastTimetable struct {
 	//
 	// 車站代號
 	// Required: true
-	StationID *string `json:"StationID" xml:"String"`
+	StationID *string `json:"StationID" xml:"StationID"`
 
 	// NameType
 	//
@@ -93,7 +93,7 @@ type PTXServiceDTORailSpecificationV2MetroFirstLastTimetable struct {
 	// String
 	//
 	// 首末班車次之目的地方向描述
-	TripHeadSign string `json:"TripHeadSign,omitempty" xml:"String,omitempty"`
+	TripHeadSign string `json:"TripHeadSign,omitempty" xml:"TripHeadSign,omitempty"`
 
 	// DateTime
 	//

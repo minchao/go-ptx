@@ -31,13 +31,13 @@ type PTXServiceDTORailSpecificationV3TRALineNetworkLineSegment struct {
 	//
 	// 線段起點站代碼
 	// Required: true
-	FromStationID *string `json:"FromStationID" xml:"String"`
+	FromStationID *string `json:"FromStationID" xml:"FromStationID"`
 
 	// String
 	//
 	// 線段代碼
 	// Required: true
-	LineSegmentID *string `json:"LineSegmentID" xml:"String"`
+	LineSegmentID *string `json:"LineSegmentID" xml:"LineSegmentID"`
 
 	// NameType
 	//
@@ -51,13 +51,13 @@ type PTXServiceDTORailSpecificationV3TRALineNetworkLineSegment struct {
 	//
 	// 線段種類 = ['M: 主路線', 'B: 分支路線']
 	// Required: true
-	SegmentType *string `json:"SegmentType" xml:"String"`
+	SegmentType *string `json:"SegmentType" xml:"SegmentType"`
 
 	// String
 	//
 	// 線段迄點站代碼
 	// Required: true
-	ToStationID *string `json:"ToStationID" xml:"String"`
+	ToStationID *string `json:"ToStationID" xml:"ToStationID"`
 }
 
 // Validate validates this p t x service d t o rail specification v3 t r a line network line segment

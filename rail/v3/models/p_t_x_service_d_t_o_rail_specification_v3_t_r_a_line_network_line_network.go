@@ -26,7 +26,7 @@ type PTXServiceDTORailSpecificationV3TRALineNetworkLineNetwork struct {
 	//
 	// 路線編號
 	// Required: true
-	LineID *string `json:"LineID" xml:"String"`
+	LineID *string `json:"LineID" xml:"LineID"`
 
 	// NameType
 	//

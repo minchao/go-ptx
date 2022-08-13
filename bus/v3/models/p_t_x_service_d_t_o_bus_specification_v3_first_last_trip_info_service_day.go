@@ -49,7 +49,7 @@ type PTXServiceDTOBusSpecificationV3FirstLastTripInfoServiceDay struct {
 	// String
 	//
 	// 服務日標籤
-	ServiceTag string `json:"ServiceTag,omitempty" xml:"String,omitempty"`
+	ServiceTag string `json:"ServiceTag,omitempty" xml:"ServiceTag,omitempty"`
 
 	// Boolean
 	//

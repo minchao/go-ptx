@@ -58,7 +58,7 @@ type PTXServiceDTOBusSpecificationV3RouteFareStageFareServiceDay struct {
 	//
 	// 服務日標籤
 	// Required: true
-	ServiceTag *string `json:"ServiceTag" xml:"String"`
+	ServiceTag *string `json:"ServiceTag" xml:"ServiceTag"`
 
 	// Int32
 	//

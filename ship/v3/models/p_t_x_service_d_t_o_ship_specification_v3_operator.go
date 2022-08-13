@@ -21,32 +21,32 @@ type PTXServiceDTOShipSpecificationV3Operator struct {
 	// String
 	//
 	// 統一編號
-	BusinessAdminstrationNo string `json:"BusinessAdminstrationNo,omitempty" xml:"String,omitempty"`
+	BusinessAdminstrationNo string `json:"BusinessAdminstrationNo,omitempty" xml:"BusinessAdminstrationNo,omitempty"`
 
 	// String
 	//
 	// 營運業者票價網址連結
-	FareURL string `json:"FareURL,omitempty" xml:"String,omitempty"`
+	FareURL string `json:"FareURL,omitempty" xml:"FareURL,omitempty"`
 
 	// String
 	//
 	// 營運業者地址
-	OperatorAddress string `json:"OperatorAddress,omitempty" xml:"String,omitempty"`
+	OperatorAddress string `json:"OperatorAddress,omitempty" xml:"OperatorAddress,omitempty"`
 
 	// String
 	//
 	// 營運業者電子信箱
-	OperatorEmail string `json:"OperatorEmail,omitempty" xml:"String,omitempty"`
+	OperatorEmail string `json:"OperatorEmail,omitempty" xml:"OperatorEmail,omitempty"`
 
 	// String
 	//
 	// 營運業者代碼
-	OperatorID string `json:"OperatorID,omitempty" xml:"String,omitempty"`
+	OperatorID string `json:"OperatorID,omitempty" xml:"OperatorID,omitempty"`
 
 	// String
 	//
 	// 營運業者Logo網址
-	OperatorLogoURL string `json:"OperatorLogoURL,omitempty" xml:"String,omitempty"`
+	OperatorLogoURL string `json:"OperatorLogoURL,omitempty" xml:"OperatorLogoURL,omitempty"`
 
 	// NameType
 	//
@@ -58,22 +58,22 @@ type PTXServiceDTOShipSpecificationV3Operator struct {
 	// String
 	//
 	// 營運業者連絡電話
-	OperatorPhone string `json:"OperatorPhone,omitempty" xml:"String,omitempty"`
+	OperatorPhone string `json:"OperatorPhone,omitempty" xml:"OperatorPhone,omitempty"`
 
 	// String
 	//
 	// 營運業者網址連結
-	OperatorURL string `json:"OperatorURL,omitempty" xml:"String,omitempty"`
+	OperatorURL string `json:"OperatorURL,omitempty" xml:"OperatorURL,omitempty"`
 
 	// String
 	//
 	// 營運業者訂票電話
-	ReservationPhone string `json:"ReservationPhone,omitempty" xml:"String,omitempty"`
+	ReservationPhone string `json:"ReservationPhone,omitempty" xml:"ReservationPhone,omitempty"`
 
 	// String
 	//
 	// 營運業者訂票網站
-	ReservationURL string `json:"ReservationURL,omitempty" xml:"String,omitempty"`
+	ReservationURL string `json:"ReservationURL,omitempty" xml:"ReservationURL,omitempty"`
 }
 
 // Validate validates this p t x service d t o ship specification v3 operator

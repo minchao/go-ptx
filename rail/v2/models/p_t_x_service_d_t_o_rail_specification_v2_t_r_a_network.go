@@ -32,43 +32,43 @@ type PTXServiceDTORailSpecificationV2TRANetwork struct {
 	//
 	// 臺鐵路網代碼
 	// Required: true
-	NetworkID *string `json:"NetworkID" xml:"String"`
+	NetworkID *string `json:"NetworkID" xml:"NetworkID"`
 
 	// String
 	//
 	// 臺鐵路網圖網址URL
 	// Required: true
-	NetworkMapURL *string `json:"NetworkMapUrl" xml:"String"`
+	NetworkMapURL *string `json:"NetworkMapUrl" xml:"NetworkMapUrl"`
 
 	// String
 	//
 	// 臺鐵路網英文名稱
 	// Required: true
-	NetworkNameEn *string `json:"NetworkNameEn" xml:"String"`
+	NetworkNameEn *string `json:"NetworkNameEn" xml:"NetworkNameEn"`
 
 	// String
 	//
 	// 臺鐵路網中文名稱
 	// Required: true
-	NetworkNameZh *string `json:"NetworkNameZh" xml:"String"`
+	NetworkNameZh *string `json:"NetworkNameZh" xml:"NetworkNameZh"`
 
 	// String
 	//
 	// 營運業者代碼
 	// Required: true
-	OperatorID *string `json:"OperatorID" xml:"String"`
+	OperatorID *string `json:"OperatorID" xml:"OperatorID"`
 
 	// String
 	//
 	// 臺鐵路網英文名稱
 	// Required: true
-	OperatorNameEn *string `json:"OperatorNameEn" xml:"String"`
+	OperatorNameEn *string `json:"OperatorNameEn" xml:"OperatorNameEn"`
 
 	// String
 	//
 	// 臺鐵路網中文名稱
 	// Required: true
-	OperatorNameZh *string `json:"OperatorNameZh" xml:"String"`
+	OperatorNameZh *string `json:"OperatorNameZh" xml:"OperatorNameZh"`
 
 	// DateTime
 	//

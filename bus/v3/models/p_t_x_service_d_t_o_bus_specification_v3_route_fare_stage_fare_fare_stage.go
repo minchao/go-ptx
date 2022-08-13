@@ -36,12 +36,12 @@ type PTXServiceDTOBusSpecificationV3RouteFareStageFareFareStage struct {
 	//
 	// 票價名稱
 	// Required: true
-	FareName *string `json:"FareName" xml:"String"`
+	FareName *string `json:"FareName" xml:"FareName"`
 
 	// String
 	//
 	// 計費價格
-	Price string `json:"Price,omitempty" xml:"String,omitempty"`
+	Price string `json:"Price,omitempty" xml:"Price,omitempty"`
 
 	// Int32
 	//

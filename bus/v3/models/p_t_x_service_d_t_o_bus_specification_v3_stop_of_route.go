@@ -35,7 +35,7 @@ type PTXServiceDTOBusSpecificationV3StopOfRoute struct {
 	//
 	// 地區既用中之路線代碼(為原資料內碼)
 	// Required: true
-	RouteID *string `json:"RouteID" xml:"String"`
+	RouteID *string `json:"RouteID" xml:"RouteID"`
 
 	// NameType
 	//
@@ -49,7 +49,7 @@ type PTXServiceDTOBusSpecificationV3StopOfRoute struct {
 	//
 	// 路線唯一識別代碼，規則為 {業管機關簡碼} + {RouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢
 	// Required: true
-	RouteUID *string `json:"RouteUID" xml:"String"`
+	RouteUID *string `json:"RouteUID" xml:"RouteUID"`
 
 	// Array
 	//
@@ -60,7 +60,7 @@ type PTXServiceDTOBusSpecificationV3StopOfRoute struct {
 	// String
 	//
 	// 地區既用中之附屬路線代碼(為原資料內碼)
-	SubRouteID string `json:"SubRouteID,omitempty" xml:"String,omitempty"`
+	SubRouteID string `json:"SubRouteID,omitempty" xml:"SubRouteID,omitempty"`
 
 	// NameType
 	//
@@ -72,7 +72,7 @@ type PTXServiceDTOBusSpecificationV3StopOfRoute struct {
 	// String
 	//
 	// 附屬路線唯一識別代碼，規則為 {業管機關簡碼} + {SubRouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢
-	SubRouteUID string `json:"SubRouteUID,omitempty" xml:"String,omitempty"`
+	SubRouteUID string `json:"SubRouteUID,omitempty" xml:"SubRouteUID,omitempty"`
 }
 
 // Validate validates this p t x service d t o bus specification v3 stop of route

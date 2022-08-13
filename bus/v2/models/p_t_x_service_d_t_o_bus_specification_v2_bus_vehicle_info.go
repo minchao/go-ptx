@@ -25,7 +25,7 @@ type PTXServiceDTOBusSpecificationV2BusVehicleInfo struct {
 	//
 	// 車牌號碼
 	// Required: true
-	PlateNumb *string `json:"PlateNumb" xml:"String"`
+	PlateNumb *string `json:"PlateNumb" xml:"PlateNumb"`
 
 	// DateTime
 	//

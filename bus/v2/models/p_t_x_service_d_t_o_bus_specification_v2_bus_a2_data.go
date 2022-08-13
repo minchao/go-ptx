@@ -57,18 +57,18 @@ type PTXServiceDTOBusSpecificationV2BusA2Data struct {
 	// String
 	//
 	// 營運業者代碼
-	OperatorID string `json:"OperatorID,omitempty" xml:"String,omitempty"`
+	OperatorID string `json:"OperatorID,omitempty" xml:"OperatorID,omitempty"`
 
 	// String
 	//
 	// 車牌號碼
 	// Required: true
-	PlateNumb *string `json:"PlateNumb" xml:"String"`
+	PlateNumb *string `json:"PlateNumb" xml:"PlateNumb"`
 
 	// String
 	//
 	// 地區既用中之路線代碼(為原資料內碼)
-	RouteID string `json:"RouteID,omitempty" xml:"String,omitempty"`
+	RouteID string `json:"RouteID,omitempty" xml:"RouteID,omitempty"`
 
 	// NameType
 	//
@@ -80,7 +80,7 @@ type PTXServiceDTOBusSpecificationV2BusA2Data struct {
 	// String
 	//
 	// 路線唯一識別代碼，規則為 {業管機關簡碼} + {RouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢
-	RouteUID string `json:"RouteUID,omitempty" xml:"String,omitempty"`
+	RouteUID string `json:"RouteUID,omitempty" xml:"RouteUID,omitempty"`
 
 	// 來源端平台接收時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Format: date-time
@@ -97,7 +97,7 @@ type PTXServiceDTOBusSpecificationV2BusA2Data struct {
 	// String
 	//
 	// 地區既用中之站牌代號(為原資料內碼)
-	StopID string `json:"StopID,omitempty" xml:"String,omitempty"`
+	StopID string `json:"StopID,omitempty" xml:"StopID,omitempty"`
 
 	// NameType
 	//
@@ -114,12 +114,12 @@ type PTXServiceDTOBusSpecificationV2BusA2Data struct {
 	// String
 	//
 	// 站牌唯一識別代碼，規則為 {業管機關簡碼} + {StopID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢
-	StopUID string `json:"StopUID,omitempty" xml:"String,omitempty"`
+	StopUID string `json:"StopUID,omitempty" xml:"StopUID,omitempty"`
 
 	// String
 	//
 	// 地區既用中之子路線代碼(為原資料內碼)
-	SubRouteID string `json:"SubRouteID,omitempty" xml:"String,omitempty"`
+	SubRouteID string `json:"SubRouteID,omitempty" xml:"SubRouteID,omitempty"`
 
 	// NameType
 	//
@@ -131,7 +131,7 @@ type PTXServiceDTOBusSpecificationV2BusA2Data struct {
 	// String
 	//
 	// 子路線唯一識別代碼，規則為 {業管機關簡碼} + {SubRouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢
-	SubRouteUID string `json:"SubRouteUID,omitempty" xml:"String,omitempty"`
+	SubRouteUID string `json:"SubRouteUID,omitempty" xml:"SubRouteUID,omitempty"`
 
 	// 車機資料傳輸時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)[多數單位沒有提供此欄位資訊]
 	// Format: date-time

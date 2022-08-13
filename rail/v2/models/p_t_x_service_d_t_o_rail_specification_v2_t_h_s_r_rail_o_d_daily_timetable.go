@@ -16,7 +16,7 @@ import (
 
 // PTXServiceDTORailSpecificationV2THSRRailODDailyTimetable RailODDailyTimetable
 //
-// 高鐵起訖站間到離站時刻資料型別
+// 高鐵起迄站間到離站時刻資料型別
 //
 // swagger:model PTX.Service.DTO.Rail.Specification.V2.THSR.RailODDailyTimetable
 type PTXServiceDTORailSpecificationV2THSRRailODDailyTimetable struct {
@@ -49,7 +49,7 @@ type PTXServiceDTORailSpecificationV2THSRRailODDailyTimetable struct {
 	//
 	// 行駛日期(格式: yyyy:MM:dd)
 	// Required: true
-	TrainDate *string `json:"TrainDate" xml:"String"`
+	TrainDate *string `json:"TrainDate" xml:"TrainDate"`
 
 	// DateTime
 	//

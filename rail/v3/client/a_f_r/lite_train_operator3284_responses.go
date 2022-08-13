@@ -35,12 +35,6 @@ func (o *LiteTrainOperator3284Reader) ReadResponse(response runtime.ClientRespon
 			return nil, err
 		}
 		return result, nil
-	case 304:
-		result := NewLiteTrainOperator3284NotModified()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return nil, result
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -106,27 +100,6 @@ func (o *LiteTrainOperator3284Status299) readResponse(response runtime.ClientRes
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
-
-	return nil
-}
-
-// NewLiteTrainOperator3284NotModified creates a LiteTrainOperator3284NotModified with default headers values
-func NewLiteTrainOperator3284NotModified() *LiteTrainOperator3284NotModified {
-	return &LiteTrainOperator3284NotModified{}
-}
-
-/* LiteTrainOperator3284NotModified describes a response with status code 304, with default header values.
-
-服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content
-*/
-type LiteTrainOperator3284NotModified struct {
-}
-
-func (o *LiteTrainOperator3284NotModified) Error() string {
-	return fmt.Sprintf("[GET /v3/Rail/AFR/Operator][%d] liteTrainOperator3284NotModified ", 304)
-}
-
-func (o *LiteTrainOperator3284NotModified) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

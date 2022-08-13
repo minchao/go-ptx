@@ -22,7 +22,7 @@ type PTXServiceDTOBusSpecificationV3RouteFareSectionFareBufferZone struct {
 	// String
 	//
 	// 收費緩衝區描述
-	BufferZoneDescription string `json:"BufferZoneDescription,omitempty" xml:"String,omitempty"`
+	BufferZoneDescription string `json:"BufferZoneDescription,omitempty" xml:"BufferZoneDescription,omitempty"`
 
 	// Int32
 	//
@@ -32,7 +32,7 @@ type PTXServiceDTOBusSpecificationV3RouteFareSectionFareBufferZone struct {
 
 	// FareBufferZone
 	//
-	// 緩衝區訖點
+	// 緩衝區迄點
 	// Required: true
 	FareBufferZoneDestination struct {
 		PTXServiceDTOBusSpecificationV3RouteFareSectionFareFareBufferZone
@@ -50,12 +50,12 @@ type PTXServiceDTOBusSpecificationV3RouteFareSectionFareBufferZone struct {
 	//
 	// 緩衝區順序
 	// Required: true
-	SectionSequence *string `json:"SectionSequence" xml:"String"`
+	SectionSequence *string `json:"SectionSequence" xml:"SectionSequence"`
 
 	// String
 	//
 	// 緩衝區代號
-	ZoneID string `json:"ZoneID,omitempty" xml:"String,omitempty"`
+	ZoneID string `json:"ZoneID,omitempty" xml:"ZoneID,omitempty"`
 }
 
 // Validate validates this p t x service d t o bus specification v3 route fare section fare buffer zone

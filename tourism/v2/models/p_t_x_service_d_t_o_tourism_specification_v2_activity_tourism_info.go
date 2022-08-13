@@ -25,47 +25,47 @@ type PTXServiceDTOTourismSpecificationV2ActivityTourismInfo struct {
 	//
 	// 活動訊息代碼
 	// Required: true
-	ActivityID *string `json:"ActivityID" xml:"String"`
+	ActivityID *string `json:"ActivityID" xml:"ActivityID"`
 
 	// String
 	//
 	// 活動名稱
-	ActivityName string `json:"ActivityName,omitempty" xml:"String,omitempty"`
+	ActivityName string `json:"ActivityName,omitempty" xml:"ActivityName,omitempty"`
 
 	// String
 	//
 	// 主要活動地點地址
-	Address string `json:"Address,omitempty" xml:"String,omitempty"`
+	Address string `json:"Address,omitempty" xml:"Address,omitempty"`
 
 	// String
 	//
 	// 費用標示
-	Charge string `json:"Charge,omitempty" xml:"String,omitempty"`
+	Charge string `json:"Charge,omitempty" xml:"Charge,omitempty"`
 
 	// String
 	//
 	// 所屬縣市
-	City string `json:"City,omitempty" xml:"String,omitempty"`
+	City string `json:"City,omitempty" xml:"City,omitempty"`
 
 	// String
 	//
 	// 活動分類1
-	Class1 string `json:"Class1,omitempty" xml:"String,omitempty"`
+	Class1 string `json:"Class1,omitempty" xml:"Class1,omitempty"`
 
 	// String
 	//
 	// 活動分類2
-	Class2 string `json:"Class2,omitempty" xml:"String,omitempty"`
+	Class2 string `json:"Class2,omitempty" xml:"Class2,omitempty"`
 
 	// String
 	//
 	// 週期性活動執行時間
-	Cycle string `json:"Cycle,omitempty" xml:"String,omitempty"`
+	Cycle string `json:"Cycle,omitempty" xml:"Cycle,omitempty"`
 
 	// String
 	//
 	// 活動簡述
-	Description string `json:"Description,omitempty" xml:"String,omitempty"`
+	Description string `json:"Description,omitempty" xml:"Description,omitempty"`
 
 	// 活動結束時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Format: date-time
@@ -74,37 +74,37 @@ type PTXServiceDTOTourismSpecificationV2ActivityTourismInfo struct {
 	// String
 	//
 	// 主要活動地點名稱
-	Location string `json:"Location,omitempty" xml:"String,omitempty"`
+	Location string `json:"Location,omitempty" xml:"Location,omitempty"`
 
 	// String
 	//
 	// 活動地圖/簡圖連結網址
-	MapURL string `json:"MapUrl,omitempty" xml:"String,omitempty"`
+	MapURL string `json:"MapUrl,omitempty" xml:"MapUrl,omitempty"`
 
 	// String
 	//
 	// 非週期性活動執行時間
-	NonCycle string `json:"NonCycle,omitempty" xml:"String,omitempty"`
+	NonCycle string `json:"NonCycle,omitempty" xml:"NonCycle,omitempty"`
 
 	// String
 	//
 	// 活動主辦單位
-	Organizer string `json:"Organizer,omitempty" xml:"String,omitempty"`
+	Organizer string `json:"Organizer,omitempty" xml:"Organizer,omitempty"`
 
 	// String
 	//
 	// 停車資訊
-	ParkingInfo string `json:"ParkingInfo,omitempty" xml:"String,omitempty"`
+	ParkingInfo string `json:"ParkingInfo,omitempty" xml:"ParkingInfo,omitempty"`
 
 	// String
 	//
 	// 活動參與對象
-	Particpation string `json:"Particpation,omitempty" xml:"String,omitempty"`
+	Particpation string `json:"Particpation,omitempty" xml:"Particpation,omitempty"`
 
 	// String
 	//
 	// 活動聯絡電話
-	Phone string `json:"Phone,omitempty" xml:"String,omitempty"`
+	Phone string `json:"Phone,omitempty" xml:"Phone,omitempty"`
 
 	// TourismPicture
 	//
@@ -123,7 +123,7 @@ type PTXServiceDTOTourismSpecificationV2ActivityTourismInfo struct {
 	// String
 	//
 	// 備註(其他活動相關事項)
-	Remarks string `json:"Remarks,omitempty" xml:"String,omitempty"`
+	Remarks string `json:"Remarks,omitempty" xml:"Remarks,omitempty"`
 
 	// 觀光局檔案更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Required: true
@@ -137,7 +137,7 @@ type PTXServiceDTOTourismSpecificationV2ActivityTourismInfo struct {
 	// String
 	//
 	// 交通資訊
-	TravelInfo string `json:"TravelInfo,omitempty" xml:"String,omitempty"`
+	TravelInfo string `json:"TravelInfo,omitempty" xml:"TravelInfo,omitempty"`
 
 	// 本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Required: true
@@ -147,7 +147,7 @@ type PTXServiceDTOTourismSpecificationV2ActivityTourismInfo struct {
 	// String
 	//
 	// 活動網址
-	WebsiteURL string `json:"WebsiteUrl,omitempty" xml:"String,omitempty"`
+	WebsiteURL string `json:"WebsiteUrl,omitempty" xml:"WebsiteUrl,omitempty"`
 }
 
 // Validate validates this p t x service d t o tourism specification v2 activity tourism info

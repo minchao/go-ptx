@@ -30,7 +30,7 @@ type PTXServiceDTORailSpecificationV2THSRTimeInfoRailDailyTrainInfo struct {
 	// String
 	//
 	// 列車終點車站代號
-	EndingStationID string `json:"EndingStationID,omitempty" xml:"String,omitempty"`
+	EndingStationID string `json:"EndingStationID,omitempty" xml:"EndingStationID,omitempty"`
 
 	// NameType
 	//
@@ -49,7 +49,7 @@ type PTXServiceDTORailSpecificationV2THSRTimeInfoRailDailyTrainInfo struct {
 	// String
 	//
 	// 列車起點車站代號
-	StartingStationID string `json:"StartingStationID,omitempty" xml:"String,omitempty"`
+	StartingStationID string `json:"StartingStationID,omitempty" xml:"StartingStationID,omitempty"`
 
 	// NameType
 	//
@@ -62,7 +62,7 @@ type PTXServiceDTORailSpecificationV2THSRTimeInfoRailDailyTrainInfo struct {
 	//
 	// 車次代碼
 	// Required: true
-	TrainNo *string `json:"TrainNo" xml:"String"`
+	TrainNo *string `json:"TrainNo" xml:"TrainNo"`
 }
 
 // Validate validates this p t x service d t o rail specification v2 t h s r time info rail daily train info

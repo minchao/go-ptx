@@ -38,7 +38,7 @@ type PTXServiceDTORailSpecificationV3TRAStationTransferStationTransfer struct {
 	//
 	// 車站代碼
 	// Required: true
-	StationID *string `json:"StationID" xml:"String"`
+	StationID *string `json:"StationID" xml:"StationID"`
 
 	// NameType
 	//
@@ -51,7 +51,7 @@ type PTXServiceDTORailSpecificationV3TRAStationTransferStationTransfer struct {
 	// String
 	//
 	// 轉乘文字描述
-	TransferDescription string `json:"TransferDescription,omitempty" xml:"String,omitempty"`
+	TransferDescription string `json:"TransferDescription,omitempty" xml:"TransferDescription,omitempty"`
 
 	// Array
 	//

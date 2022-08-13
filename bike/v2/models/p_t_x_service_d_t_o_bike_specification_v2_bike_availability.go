@@ -48,12 +48,12 @@ type PTXServiceDTOBikeSpecificationV2BikeAvailability struct {
 	// String
 	//
 	// 站點代碼
-	StationID string `json:"StationID,omitempty" xml:"String,omitempty"`
+	StationID string `json:"StationID,omitempty" xml:"StationID,omitempty"`
 
 	// String
 	//
 	// 站點唯一識別代碼，規則為 {業管機關代碼} + {StationID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢
-	StationUID string `json:"StationUID,omitempty" xml:"String,omitempty"`
+	StationUID string `json:"StationUID,omitempty" xml:"StationUID,omitempty"`
 
 	// DateTime
 	//

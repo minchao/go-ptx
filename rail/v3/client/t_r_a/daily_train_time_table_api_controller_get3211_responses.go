@@ -35,12 +35,6 @@ func (o *DailyTrainTimeTableAPIControllerGet3211Reader) ReadResponse(response ru
 			return nil, err
 		}
 		return result, nil
-	case 304:
-		result := NewDailyTrainTimeTableAPIControllerGet3211NotModified()
-		if err := result.readResponse(response, consumer, o.formats); err != nil {
-			return nil, err
-		}
-		return nil, result
 	default:
 		return nil, runtime.NewAPIError("response status code does not match any response statuses defined for this endpoint in the swagger spec", response, response.Code())
 	}
@@ -106,27 +100,6 @@ func (o *DailyTrainTimeTableAPIControllerGet3211Status299) readResponse(response
 	if err := consumer.Consume(response.Body(), o.Payload); err != nil && err != io.EOF {
 		return err
 	}
-
-	return nil
-}
-
-// NewDailyTrainTimeTableAPIControllerGet3211NotModified creates a DailyTrainTimeTableAPIControllerGet3211NotModified with default headers values
-func NewDailyTrainTimeTableAPIControllerGet3211NotModified() *DailyTrainTimeTableAPIControllerGet3211NotModified {
-	return &DailyTrainTimeTableAPIControllerGet3211NotModified{}
-}
-
-/* DailyTrainTimeTableAPIControllerGet3211NotModified describes a response with status code 304, with default header values.
-
-服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content
-*/
-type DailyTrainTimeTableAPIControllerGet3211NotModified struct {
-}
-
-func (o *DailyTrainTimeTableAPIControllerGet3211NotModified) Error() string {
-	return fmt.Sprintf("[GET /v3/Rail/TRA/DailyTrainTimetable/Today][%d] dailyTrainTimeTableApiControllerGet3211NotModified ", 304)
-}
-
-func (o *DailyTrainTimeTableAPIControllerGet3211NotModified) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
 
 	return nil
 }

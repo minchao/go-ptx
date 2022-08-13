@@ -24,7 +24,7 @@ type PTXServiceDTOBusSpecificationV3VehicleDepot struct {
 	//
 	// 營業所代碼
 	// Required: true
-	DepotID *string `json:"DepotID" xml:"String"`
+	DepotID *string `json:"DepotID" xml:"DepotID"`
 
 	// NameType
 	//

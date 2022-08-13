@@ -25,7 +25,7 @@ type PTXServiceDTORailSpecificationV3TRALineTransfer struct {
 	//
 	// 路線間轉乘(起)之路線代碼
 	// Required: true
-	FromLineID *string `json:"FromLineID" xml:"String"`
+	FromLineID *string `json:"FromLineID" xml:"FromLineID"`
 
 	// NameType
 	//
@@ -39,7 +39,7 @@ type PTXServiceDTORailSpecificationV3TRALineTransfer struct {
 	//
 	// 路線間轉乘(起)之車站代碼
 	// Required: true
-	FromStationID *string `json:"FromStationID" xml:"String"`
+	FromStationID *string `json:"FromStationID" xml:"FromStationID"`
 
 	// NameType
 	//
@@ -59,7 +59,7 @@ type PTXServiceDTORailSpecificationV3TRALineTransfer struct {
 	//
 	// 路線間轉乘(迄)之路線代碼
 	// Required: true
-	ToLineID *string `json:"ToLineID" xml:"String"`
+	ToLineID *string `json:"ToLineID" xml:"ToLineID"`
 
 	// NameType
 	//
@@ -73,7 +73,7 @@ type PTXServiceDTORailSpecificationV3TRALineTransfer struct {
 	//
 	// 路線間轉乘(迄)之車站代碼
 	// Required: true
-	ToStationID *string `json:"ToStationID" xml:"String"`
+	ToStationID *string `json:"ToStationID" xml:"ToStationID"`
 
 	// NameType
 	//
@@ -87,7 +87,7 @@ type PTXServiceDTORailSpecificationV3TRALineTransfer struct {
 	//
 	// 轉乘方式文字描述
 	// Required: true
-	TransferDescription *string `json:"TransferDescription" xml:"String"`
+	TransferDescription *string `json:"TransferDescription" xml:"TransferDescription"`
 }
 
 // Validate validates this p t x service d t o rail specification v3 t r a line transfer

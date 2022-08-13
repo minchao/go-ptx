@@ -24,28 +24,28 @@ type PTXServiceDTOAirSpecificationV2Airline struct {
 	// String
 	//
 	// 航空公司地址
-	AirlineAddress string `json:"AirlineAddress,omitempty" xml:"String,omitempty"`
+	AirlineAddress string `json:"AirlineAddress,omitempty" xml:"AirlineAddress,omitempty"`
 
 	// String
 	//
 	// 航空公司電子信箱
-	AirlineEmail string `json:"AirlineEmail,omitempty" xml:"String,omitempty"`
+	AirlineEmail string `json:"AirlineEmail,omitempty" xml:"AirlineEmail,omitempty"`
 
 	// String
 	//
 	// 航空公司IATA國際代碼
-	AirlineIATA string `json:"AirlineIATA,omitempty" xml:"String,omitempty"`
+	AirlineIATA string `json:"AirlineIATA,omitempty" xml:"AirlineIATA,omitempty"`
 
 	// String
 	//
 	// 航空公司ICAO國際代碼
-	AirlineICAO string `json:"AirlineICAO,omitempty" xml:"String,omitempty"`
+	AirlineICAO string `json:"AirlineICAO,omitempty" xml:"AirlineICAO,omitempty"`
 
 	// String
 	//
 	// 航空公司IATA國際代碼
 	// Required: true
-	AirlineID *string `json:"AirlineID" xml:"String"`
+	AirlineID *string `json:"AirlineID" xml:"AirlineID"`
 
 	// NameType
 	//
@@ -64,12 +64,12 @@ type PTXServiceDTOAirSpecificationV2Airline struct {
 	// String
 	//
 	// 航空公司國籍
-	AirlineNationality string `json:"AirlineNationality,omitempty" xml:"String,omitempty"`
+	AirlineNationality string `json:"AirlineNationality,omitempty" xml:"AirlineNationality,omitempty"`
 
 	// String
 	//
 	// 航空公司聯繫電話
-	AirlinePhone string `json:"AirlinePhone,omitempty" xml:"String,omitempty"`
+	AirlinePhone string `json:"AirlinePhone,omitempty" xml:"AirlinePhone,omitempty"`
 
 	// DateTime
 	//

@@ -22,18 +22,18 @@ type PTXServiceDTORailSpecificationV2MetroMRTNewsListNews struct {
 	// String
 	//
 	// 附件網址連結
-	AttachmentURL string `json:"AttachmentURL,omitempty" xml:"String,omitempty"`
+	AttachmentURL string `json:"AttachmentURL,omitempty" xml:"AttachmentURL,omitempty"`
 
 	// String
 	//
 	// 發布單位
-	Department string `json:"Department,omitempty" xml:"String,omitempty"`
+	Department string `json:"Department,omitempty" xml:"Department,omitempty"`
 
 	// String
 	//
 	// 內容描述
 	// Required: true
-	Description *string `json:"Description" xml:"String"`
+	Description *string `json:"Description" xml:"Description"`
 
 	// 消息結束日期時間
 	// Format: date-time
@@ -54,12 +54,12 @@ type PTXServiceDTORailSpecificationV2MetroMRTNewsListNews struct {
 	//
 	// 消息代碼
 	// Required: true
-	NewsID *string `json:"NewsID" xml:"String"`
+	NewsID *string `json:"NewsID" xml:"NewsID"`
 
 	// String
 	//
 	// 消息網址連結
-	NewsURL string `json:"NewsURL,omitempty" xml:"String,omitempty"`
+	NewsURL string `json:"NewsURL,omitempty" xml:"NewsURL,omitempty"`
 
 	// DateTime
 	//
@@ -76,7 +76,7 @@ type PTXServiceDTORailSpecificationV2MetroMRTNewsListNews struct {
 	//
 	// 消息標題
 	// Required: true
-	Title *string `json:"Title" xml:"String"`
+	Title *string `json:"Title" xml:"Title"`
 
 	// DateTime
 	//

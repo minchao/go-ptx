@@ -39,19 +39,19 @@ type PTXServiceDTOBusSpecificationV3DailyTimeTable struct {
 	//
 	// 營運業者簡碼
 	// Required: true
-	OperatorCode *string `json:"OperatorCode" xml:"String"`
+	OperatorCode *string `json:"OperatorCode" xml:"OperatorCode"`
 
 	// String
 	//
 	// 營運業者代碼
 	// Required: true
-	OperatorID *string `json:"OperatorID" xml:"String"`
+	OperatorID *string `json:"OperatorID" xml:"OperatorID"`
 
 	// String
 	//
 	// 地區既用中之路線代碼(為原資料內碼)
 	// Required: true
-	RouteID *string `json:"RouteID" xml:"String"`
+	RouteID *string `json:"RouteID" xml:"RouteID"`
 
 	// NameType
 	//
@@ -65,13 +65,13 @@ type PTXServiceDTOBusSpecificationV3DailyTimeTable struct {
 	//
 	// 路線唯一識別代碼，規則為 {業管機關簡碼} + {RouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢
 	// Required: true
-	RouteUID *string `json:"RouteUID" xml:"String"`
+	RouteUID *string `json:"RouteUID" xml:"RouteUID"`
 
 	// String
 	//
 	// 地區既用中之附屬路線代碼(為原資料內碼)
 	// Required: true
-	SubRouteID *string `json:"SubRouteID" xml:"String"`
+	SubRouteID *string `json:"SubRouteID" xml:"SubRouteID"`
 
 	// NameType
 	//
@@ -83,7 +83,7 @@ type PTXServiceDTOBusSpecificationV3DailyTimeTable struct {
 	// String
 	//
 	// 附屬路線唯一識別代碼，規則為 {業管機關簡碼} + {SubRouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢
-	SubRouteUID string `json:"SubRouteUID,omitempty" xml:"String,omitempty"`
+	SubRouteUID string `json:"SubRouteUID,omitempty" xml:"SubRouteUID,omitempty"`
 
 	// Array
 	//

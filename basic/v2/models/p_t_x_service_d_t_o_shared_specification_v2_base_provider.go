@@ -25,18 +25,18 @@ type PTXServiceDTOSharedSpecificationV2BaseProvider struct {
 	//
 	// 資料提供平台簡碼
 	// Required: true
-	ProviderCode *string `json:"ProviderCode" xml:"String"`
+	ProviderCode *string `json:"ProviderCode" xml:"ProviderCode"`
 
 	// String
 	//
 	// 資料提供平台電子信箱
-	ProviderEmail string `json:"ProviderEmail,omitempty" xml:"String,omitempty"`
+	ProviderEmail string `json:"ProviderEmail,omitempty" xml:"ProviderEmail,omitempty"`
 
 	// String
 	//
 	// 資料提供平台代碼
 	// Required: true
-	ProviderID *string `json:"ProviderID" xml:"String"`
+	ProviderID *string `json:"ProviderID" xml:"ProviderID"`
 
 	// NameType
 	//
@@ -49,12 +49,12 @@ type PTXServiceDTOSharedSpecificationV2BaseProvider struct {
 	// String
 	//
 	// 資料提供平台連絡電話
-	ProviderPhone string `json:"ProviderPhone,omitempty" xml:"String,omitempty"`
+	ProviderPhone string `json:"ProviderPhone,omitempty" xml:"ProviderPhone,omitempty"`
 
 	// String
 	//
 	// 資料提供平台網址鏈結
-	ProviderURL string `json:"ProviderUrl,omitempty" xml:"String,omitempty"`
+	ProviderURL string `json:"ProviderUrl,omitempty" xml:"ProviderUrl,omitempty"`
 
 	// DateTime
 	//

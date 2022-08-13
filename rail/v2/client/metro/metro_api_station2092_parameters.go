@@ -98,11 +98,11 @@ type MetroAPIStation2092Params struct {
 	*/
 	DollarTop *int64
 
-	/* MetroSystem.
+	/* RailSystem.
 
-	   欲查詢捷運系統(TRTC:臺北捷運,KRTC:高雄捷運,TYMC:桃園捷運,TMRT:臺中捷運,KLRT:高雄輕軌,NTDLRT:淡海輕軌,TRTCMG:貓空纜車)
+	   欲查詢軌道系統(TRTC:臺北捷運,KRTC:高雄捷運,TYMC:桃園捷運,TMRT:臺中捷運,KLRT:高雄輕軌,NTDLRT:淡海輕軌,TRTCMG:貓空纜車)
 	*/
-	MetroSystem string
+	RailSystem string
 
 	/* Health.
 
@@ -240,15 +240,15 @@ func (o *MetroAPIStation2092Params) SetDollarTop(dollarTop *int64) {
 	o.DollarTop = dollarTop
 }
 
-// WithMetroSystem adds the metroSystem to the metro Api station 2092 params
-func (o *MetroAPIStation2092Params) WithMetroSystem(metroSystem string) *MetroAPIStation2092Params {
-	o.SetMetroSystem(metroSystem)
+// WithRailSystem adds the railSystem to the metro Api station 2092 params
+func (o *MetroAPIStation2092Params) WithRailSystem(railSystem string) *MetroAPIStation2092Params {
+	o.SetRailSystem(railSystem)
 	return o
 }
 
-// SetMetroSystem adds the metroSystem to the metro Api station 2092 params
-func (o *MetroAPIStation2092Params) SetMetroSystem(metroSystem string) {
-	o.MetroSystem = metroSystem
+// SetRailSystem adds the railSystem to the metro Api station 2092 params
+func (o *MetroAPIStation2092Params) SetRailSystem(railSystem string) {
+	o.RailSystem = railSystem
 }
 
 // WithHealth adds the health to the metro Api station 2092 params
@@ -365,8 +365,8 @@ func (o *MetroAPIStation2092Params) WriteToRequest(r runtime.ClientRequest, reg 
 		}
 	}
 
-	// path param MetroSystem
-	if err := r.SetPathParam("MetroSystem", o.MetroSystem); err != nil {
+	// path param RailSystem
+	if err := r.SetPathParam("RailSystem", o.RailSystem); err != nil {
 		return err
 	}
 

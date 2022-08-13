@@ -22,19 +22,19 @@ type PTXServiceDTOBikeSpecificationV2BikeShape struct {
 	// String
 	//
 	// 業管機關名稱（可能包含多個業管機關）
-	AuthorityName string `json:"AuthorityName,omitempty" xml:"String,omitempty"`
+	AuthorityName string `json:"AuthorityName,omitempty" xml:"AuthorityName,omitempty"`
 
 	// String
 	//
 	// 路線所在縣市名稱
 	// Required: true
-	City *string `json:"City" xml:"String"`
+	City *string `json:"City" xml:"City"`
 
 	// String
 	//
 	// 路線所在縣市代碼
 	// Required: true
-	CityCode *string `json:"CityCode" xml:"String"`
+	CityCode *string `json:"CityCode" xml:"CityCode"`
 
 	// 自行車道長度
 	CyclingLength float64 `json:"CyclingLength,omitempty"`
@@ -42,50 +42,50 @@ type PTXServiceDTOBikeSpecificationV2BikeShape struct {
 	// String
 	//
 	// 自行車道類型
-	CyclingType string `json:"CyclingType,omitempty" xml:"String,omitempty"`
+	CyclingType string `json:"CyclingType,omitempty" xml:"CyclingType,omitempty"`
 
 	// String
 	//
 	// 自行車道車行方向
-	Direction string `json:"Direction,omitempty" xml:"String,omitempty"`
+	Direction string `json:"Direction,omitempty" xml:"Direction,omitempty"`
 
 	// String
 	//
 	// 路線軌跡編碼(encoded polyline)
 	// Required: true
-	EncodedPolyline *string `json:"EncodedPolyline" xml:"String"`
+	EncodedPolyline *string `json:"EncodedPolyline" xml:"EncodedPolyline"`
 
 	// String
 	//
 	// 自行車道完工日期時間
-	FinishedTime string `json:"FinishedTime,omitempty" xml:"String,omitempty"`
+	FinishedTime string `json:"FinishedTime,omitempty" xml:"FinishedTime,omitempty"`
 
 	// String
 	//
 	// well-known text，為路線軌跡資料
 	// Required: true
-	Geometry *string `json:"Geometry" xml:"String"`
+	Geometry *string `json:"Geometry" xml:"Geometry"`
 
 	// String
 	//
 	// 路線迄點描述
-	RoadSectionEnd string `json:"RoadSectionEnd,omitempty" xml:"String,omitempty"`
+	RoadSectionEnd string `json:"RoadSectionEnd,omitempty" xml:"RoadSectionEnd,omitempty"`
 
 	// String
 	//
 	// 路線起點描述
-	RoadSectionStart string `json:"RoadSectionStart,omitempty" xml:"String,omitempty"`
+	RoadSectionStart string `json:"RoadSectionStart,omitempty" xml:"RoadSectionStart,omitempty"`
 
 	// String
 	//
 	// 路線名稱
 	// Required: true
-	RouteName *string `json:"RouteName" xml:"String"`
+	RouteName *string `json:"RouteName" xml:"RouteName"`
 
 	// String
 	//
 	// 路線所在鄉鎮名稱（可能包含多個鄉鎮）
-	Town string `json:"Town,omitempty" xml:"String,omitempty"`
+	Town string `json:"Town,omitempty" xml:"Town,omitempty"`
 
 	// DateTime
 	//

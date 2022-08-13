@@ -214,11 +214,10 @@ func (a *Client) THSRAPIAvailableSeatStatusListStation21301(params *THSRAPIAvail
 }
 
 /*
-  THSRAPIAvailableSeatStatus2135 開發用測試版s 取得當天對號座即時剩餘位資料 原始 列車區段 leg角度
+  THSRAPIAvailableSeatStatus2135 取得當天對號座即時剩餘位資料s 原始 列車區段 leg角度
 
   取得當天對號座即時剩餘位資料({原始}列車區段Leg角度)
 - (更新頻率為10分鐘)
-- **(本服務尚在測試中,穩定度及更新頻率將持續優化)**
 */
 func (a *Client) THSRAPIAvailableSeatStatus2135(params *THSRAPIAvailableSeatStatus2135Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*THSRAPIAvailableSeatStatus2135OK, *THSRAPIAvailableSeatStatus2135Status299, error) {
 	// TODO: Validate the params before sending
@@ -258,11 +257,10 @@ func (a *Client) THSRAPIAvailableSeatStatus2135(params *THSRAPIAvailableSeatStat
 }
 
 /*
-  THSRAPIAvailableSeatStatus21351 開發用測試版s 取得指定 日期 對號座即時剩餘位資料 原始 列車區段 leg角度
+  THSRAPIAvailableSeatStatus21351 取得指定s 日期 對號座即時剩餘位資料 原始 列車區段 leg角度
 
   取得指定[日期]對號座即時剩餘位資料({原始}列車區段Leg角度)
 - (更新頻率為每日的10、16、22時)
-- **(本服務尚在測試中,穩定度及更新頻率將持續優化)**
 */
 func (a *Client) THSRAPIAvailableSeatStatus21351(params *THSRAPIAvailableSeatStatus21351Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*THSRAPIAvailableSeatStatus21351OK, *THSRAPIAvailableSeatStatus21351Status299, error) {
 	// TODO: Validate the params before sending
@@ -302,12 +300,11 @@ func (a *Client) THSRAPIAvailableSeatStatus21351(params *THSRAPIAvailableSeatSta
 }
 
 /*
-  THSRAPIAvailableSeatStatusOD2136 開發用測試版s 取得指定 日期 對號座即時剩餘位資料 加值型列車起迄段 o d角度
+  THSRAPIAvailableSeatStatusOD2136 取得指定s 日期 對號座即時剩餘位資料 加值型列車起迄段 o d角度
 
   取得指定[日期]對號座即時剩餘位資料(加值型列車起迄段OD角度)
 - 當日(D)之更新頻率為每10分鐘
 - 當日後27日(D+1~D+27)之更新頻率為每日的10、16、22時
-- **(本服務尚在測試中,穩定度及更新頻率將持續優化)**
 */
 func (a *Client) THSRAPIAvailableSeatStatusOD2136(params *THSRAPIAvailableSeatStatusOD2136Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*THSRAPIAvailableSeatStatusOD2136OK, *THSRAPIAvailableSeatStatusOD2136Status299, error) {
 	// TODO: Validate the params before sending
@@ -347,12 +344,11 @@ func (a *Client) THSRAPIAvailableSeatStatusOD2136(params *THSRAPIAvailableSeatSt
 }
 
 /*
-  THSRAPIAvailableSeatStatusOD21361 開發用測試版s 取得指定 日期 起迄站 對號座即時剩餘位資料 加值型列車起迄段 o d角度
+  THSRAPIAvailableSeatStatusOD21361 取得指定s 日期 起迄站 對號座即時剩餘位資料 加值型列車起迄段 o d角度
 
   取得指定[日期], [起迄站]對號座即時剩餘位資料(加值型列車起迄段OD角度)
 - 當日(D)之更新頻率為每10分鐘
 - 當日後27日(D+1~D+27)之更新頻率為每日的10、16、22時
-- **(本服務尚在測試中,穩定度及更新頻率將持續優化)**
 */
 func (a *Client) THSRAPIAvailableSeatStatusOD21361(params *THSRAPIAvailableSeatStatusOD21361Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*THSRAPIAvailableSeatStatusOD21361OK, *THSRAPIAvailableSeatStatusOD21361Status299, error) {
 	// TODO: Validate the params before sending
@@ -392,12 +388,11 @@ func (a *Client) THSRAPIAvailableSeatStatusOD21361(params *THSRAPIAvailableSeatS
 }
 
 /*
-  THSRAPIAvailableSeatStatusOD21362 開發用測試版s 取得指定 日期 車次 起迄站 對號座即時剩餘位資料 加值型列車起迄段 o d角度
+  THSRAPIAvailableSeatStatusOD21362 取得指定s 日期 車次 起迄站 對號座即時剩餘位資料 加值型列車起迄段 o d角度
 
   取得指定[日期], [起迄站]對號座即時剩餘位資料(加值型列車起迄段OD角度)
 - 當日(D)之更新頻率為每10分鐘
 - 當日後27日(D+1~D+27)之更新頻率為每日的10、16、22時
-- **(本服務尚在測試中,穩定度及更新頻率將持續優化)**
 */
 func (a *Client) THSRAPIAvailableSeatStatusOD21362(params *THSRAPIAvailableSeatStatusOD21362Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*THSRAPIAvailableSeatStatusOD21362OK, *THSRAPIAvailableSeatStatusOD21362Status299, error) {
 	// TODO: Validate the params before sending
@@ -565,7 +560,7 @@ func (a *Client) THSRAPIDailyTimetable21242(params *THSRAPIDailyTimetable21242Pa
 /*
   THSRAPIDailyTimetable21243 取得指定s 日期 所有車次的時刻表資料
 
-  取得指定[日期]所有車次的時刻表資料(高鐵提供近28天每日時刻表)
+  取得指定[日期]所有車次的時刻表資料
 */
 func (a *Client) THSRAPIDailyTimetable21243(params *THSRAPIDailyTimetable21243Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*THSRAPIDailyTimetable21243OK, *THSRAPIDailyTimetable21243Status299, error) {
 	// TODO: Validate the params before sending
@@ -607,7 +602,7 @@ func (a *Client) THSRAPIDailyTimetable21243(params *THSRAPIDailyTimetable21243Pa
 /*
   THSRAPIDailyTimetable21244 取得指定s 日期 車次 的時刻表資料
 
-  取得指定[日期],[車次]的時刻表資料(高鐵提供近28天每日時刻表)
+  取得指定[日期],[車次]的時刻表資料
 */
 func (a *Client) THSRAPIDailyTimetable21244(params *THSRAPIDailyTimetable21244Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*THSRAPIDailyTimetable21244OK, *THSRAPIDailyTimetable21244Status299, error) {
 	// TODO: Validate the params before sending
@@ -733,7 +728,7 @@ func (a *Client) THSRAPIDailyTrainInfo21231(params *THSRAPIDailyTrainInfo21231Pa
 /*
   THSRAPIDailyTrainInfo21232 取得指定s 日期 所有車次的車次資料
 
-  取得指定[日期]所有車次的車次資料(高鐵提供近28天每日時刻表)
+  取得指定[日期]所有車次的車次資料
 */
 func (a *Client) THSRAPIDailyTrainInfo21232(params *THSRAPIDailyTrainInfo21232Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*THSRAPIDailyTrainInfo21232OK, *THSRAPIDailyTrainInfo21232Status299, error) {
 	// TODO: Validate the params before sending
@@ -775,7 +770,7 @@ func (a *Client) THSRAPIDailyTrainInfo21232(params *THSRAPIDailyTrainInfo21232Pa
 /*
   THSRAPIDailyTrainInfo21233 取得指定s 日期 車次 的車次資料
 
-  取得指定[日期],[車次]的車次資料(高鐵提供近28天每日時刻表)
+  取得指定[日期],[車次]的車次資料
 */
 func (a *Client) THSRAPIDailyTrainInfo21233(params *THSRAPIDailyTrainInfo21233Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*THSRAPIDailyTrainInfo21233OK, *THSRAPIDailyTrainInfo21233Status299, error) {
 	// TODO: Validate the params before sending
@@ -1025,9 +1020,9 @@ func (a *Client) THSRAPIODFare2121(params *THSRAPIODFare2121Params, authInfo run
 }
 
 /*
-  THSRAPIODFare21211 取得指定s 起訖站間 之票價資料
+  THSRAPIODFare21211 取得指定s 起迄站間 之票價資料
 
-  取得指定[起訖站間]之票價資料
+  取得指定[起迄站間]之票價資料
 */
 func (a *Client) THSRAPIODFare21211(params *THSRAPIODFare21211Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*THSRAPIODFare21211OK, *THSRAPIODFare21211Status299, error) {
 	// TODO: Validate the params before sending

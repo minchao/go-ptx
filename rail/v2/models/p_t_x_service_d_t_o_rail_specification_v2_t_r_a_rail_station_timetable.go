@@ -25,13 +25,13 @@ type PTXServiceDTORailSpecificationV2TRARailStationTimetable struct {
 	//
 	// 到站時間(格式: HH:mm:ss)
 	// Required: true
-	ArrivalTime *string `json:"ArrivalTime" xml:"String"`
+	ArrivalTime *string `json:"ArrivalTime" xml:"ArrivalTime"`
 
 	// String
 	//
 	// 離站時間(格式: HH:mm:ss)
 	// Required: true
-	DepartureTime *string `json:"DepartureTime" xml:"String"`
+	DepartureTime *string `json:"DepartureTime" xml:"DepartureTime"`
 
 	// Int32
 	//
@@ -43,7 +43,7 @@ type PTXServiceDTORailSpecificationV2TRARailStationTimetable struct {
 	//
 	// 終點車站代號
 	// Required: true
-	EndingStationID *string `json:"EndingStationID" xml:"String"`
+	EndingStationID *string `json:"EndingStationID" xml:"EndingStationID"`
 
 	// NameType
 	//
@@ -57,7 +57,7 @@ type PTXServiceDTORailSpecificationV2TRARailStationTimetable struct {
 	//
 	// 起點車站代號
 	// Required: true
-	StartingStationID *string `json:"StartingStationID" xml:"String"`
+	StartingStationID *string `json:"StartingStationID" xml:"StartingStationID"`
 
 	// NameType
 	//
@@ -71,7 +71,7 @@ type PTXServiceDTORailSpecificationV2TRARailStationTimetable struct {
 	//
 	// 車站代號
 	// Required: true
-	StationID *string `json:"StationID" xml:"String"`
+	StationID *string `json:"StationID" xml:"StationID"`
 
 	// NameType
 	//
@@ -81,27 +81,33 @@ type PTXServiceDTORailSpecificationV2TRARailStationTimetable struct {
 		PTXServiceDTOSharedSpecificationV2BaseNameType
 	} `json:"StationName" xml:"NameType"`
 
+	// Int32
+	//
+	// 本站是否停駛 : [0:'否',1:'是']
+	// Required: true
+	SuspendedFlag *int64 `json:"SuspendedFlag"`
+
 	// String
 	//
 	// 時刻表日期(格式: yyyy-MM-dd)
 	// Required: true
-	TrainDate *string `json:"TrainDate" xml:"String"`
+	TrainDate *string `json:"TrainDate" xml:"TrainDate"`
 
 	// String
 	//
 	// 車次代號
 	// Required: true
-	TrainNo *string `json:"TrainNo" xml:"String"`
+	TrainNo *string `json:"TrainNo" xml:"TrainNo"`
 
 	// String
 	//
 	// 列車車種簡碼
-	TrainTypeCode string `json:"TrainTypeCode,omitempty" xml:"String,omitempty"`
+	TrainTypeCode string `json:"TrainTypeCode,omitempty" xml:"TrainTypeCode,omitempty"`
 
 	// String
 	//
 	// 列車車種代碼
-	TrainTypeID string `json:"TrainTypeID,omitempty" xml:"String,omitempty"`
+	TrainTypeID string `json:"TrainTypeID,omitempty" xml:"TrainTypeID,omitempty"`
 
 	// NameType
 	//
@@ -166,6 +172,10 @@ func (m *PTXServiceDTORailSpecificationV2TRARailStationTimetable) Validate(forma
 	}
 
 	if err := m.validateStationName(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateSuspendedFlag(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -260,6 +270,15 @@ func (m *PTXServiceDTORailSpecificationV2TRARailStationTimetable) validateStatio
 }
 
 func (m *PTXServiceDTORailSpecificationV2TRARailStationTimetable) validateStationName(formats strfmt.Registry) error {
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV2TRARailStationTimetable) validateSuspendedFlag(formats strfmt.Registry) error {
+
+	if err := validate.Required("SuspendedFlag", "body", m.SuspendedFlag); err != nil {
+		return err
+	}
 
 	return nil
 }

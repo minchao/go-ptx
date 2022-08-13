@@ -23,7 +23,7 @@ type PTXServiceDTOAirSpecificationV2METAR struct {
 	//
 	// 機場代碼(IATA)
 	// Required: true
-	AirportID *string `json:"AirportID" xml:"String"`
+	AirportID *string `json:"AirportID" xml:"AirportID"`
 
 	// NameType
 	//
@@ -37,7 +37,7 @@ type PTXServiceDTOAirSpecificationV2METAR struct {
 	//
 	// 雲冪(含單位)
 	// Required: true
-	Ceiling *string `json:"Ceiling" xml:"String"`
+	Ceiling *string `json:"Ceiling" xml:"Ceiling"`
 
 	// NameType
 	//
@@ -59,13 +59,13 @@ type PTXServiceDTOAirSpecificationV2METAR struct {
 	//
 	// 機場天氣報告(METAR/SPECI)
 	// Required: true
-	MetarText *string `json:"MetarText" xml:"String"`
+	MetarText *string `json:"MetarText" xml:"MetarText"`
 
 	// String
 	//
 	// 機場天氣報告時間(地方時)
 	// Required: true
-	MetarTime *string `json:"MetarTime" xml:"String"`
+	MetarTime *string `json:"MetarTime" xml:"MetarTime"`
 
 	// DateTime
 	//
@@ -78,7 +78,7 @@ type PTXServiceDTOAirSpecificationV2METAR struct {
 	//
 	// 機場氣象觀測站代碼(ICAO)
 	// Required: true
-	StationID *string `json:"StationID" xml:"String"`
+	StationID *string `json:"StationID" xml:"StationID"`
 
 	// PointType
 	//
@@ -92,7 +92,7 @@ type PTXServiceDTOAirSpecificationV2METAR struct {
 	//
 	// 溫度(含單位)
 	// Required: true
-	Temperature *string `json:"Temperature" xml:"String"`
+	Temperature *string `json:"Temperature" xml:"Temperature"`
 
 	// DateTime
 	//
@@ -105,7 +105,7 @@ type PTXServiceDTOAirSpecificationV2METAR struct {
 	//
 	// 盛行能見度(含單位，9999以10公里以上表示)
 	// Required: true
-	Visibility *string `json:"Visibility" xml:"String"`
+	Visibility *string `json:"Visibility" xml:"Visibility"`
 
 	// NameType
 	//
@@ -119,13 +119,13 @@ type PTXServiceDTOAirSpecificationV2METAR struct {
 	//
 	// 風向(含單位)
 	// Required: true
-	WindDirection *string `json:"WindDirection" xml:"String"`
+	WindDirection *string `json:"WindDirection" xml:"WindDirection"`
 
 	// String
 	//
 	// 風速(含單位)
 	// Required: true
-	WindSpeed *string `json:"WindSpeed" xml:"String"`
+	WindSpeed *string `json:"WindSpeed" xml:"WindSpeed"`
 }
 
 // Validate validates this p t x service d t o air specification v2 m e t a r

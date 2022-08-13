@@ -23,19 +23,19 @@ type PTXServiceDTOShipSpecificationV3Stoptime struct {
 	//
 	// 港口進港時間
 	// Required: true
-	ArrivalTime *string `json:"ArrivalTime" xml:"String"`
+	ArrivalTime *string `json:"ArrivalTime" xml:"ArrivalTime"`
 
 	// String
 	//
 	// 港口離港時間
 	// Required: true
-	DepartureTime *string `json:"DepartureTime" xml:"String"`
+	DepartureTime *string `json:"DepartureTime" xml:"DepartureTime"`
 
 	// String
 	//
 	// 停靠港口代碼
 	// Required: true
-	PortID *string `json:"PortID" xml:"String"`
+	PortID *string `json:"PortID" xml:"PortID"`
 
 	// NameType
 	//

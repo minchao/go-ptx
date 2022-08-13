@@ -25,13 +25,13 @@ type PTXServiceDTORailSpecificationV2MetroLiveBoard struct {
 	//
 	// 目的地車站代號
 	// Required: true
-	DestinationStaionID *string `json:"DestinationStaionID" xml:"String"`
+	DestinationStaionID *string `json:"DestinationStaionID" xml:"DestinationStaionID"`
 
 	// String
 	//
 	// 目的地車站代號
 	// Required: true
-	DestinationStationID *string `json:"DestinationStationID" xml:"String"`
+	DestinationStationID *string `json:"DestinationStationID" xml:"DestinationStationID"`
 
 	// NameType
 	//
@@ -48,12 +48,12 @@ type PTXServiceDTORailSpecificationV2MetroLiveBoard struct {
 	//
 	// 路線代碼
 	// Required: true
-	LineID *string `json:"LineID" xml:"String"`
+	LineID *string `json:"LineID" xml:"LineID"`
 
 	// String
 	//
 	// 路線編號
-	LineNO string `json:"LineNO,omitempty" xml:"String,omitempty"`
+	LineNO string `json:"LineNO,omitempty" xml:"LineNO,omitempty"`
 
 	// NameType
 	//
@@ -80,7 +80,7 @@ type PTXServiceDTORailSpecificationV2MetroLiveBoard struct {
 	//
 	// 所在車站代號
 	// Required: true
-	StationID *string `json:"StationID" xml:"String"`
+	StationID *string `json:"StationID" xml:"StationID"`
 
 	// NameType
 	//
@@ -94,7 +94,7 @@ type PTXServiceDTORailSpecificationV2MetroLiveBoard struct {
 	//
 	// 下班車次方向描述
 	// Required: true
-	TripHeadSign *string `json:"TripHeadSign" xml:"String"`
+	TripHeadSign *string `json:"TripHeadSign" xml:"TripHeadSign"`
 
 	// DateTime
 	//

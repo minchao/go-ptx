@@ -24,7 +24,7 @@ type PTXServiceDTORailSpecificationV3TRAStationFacilityFacilityMapURL struct {
 	// String
 	//
 	// 樓層
-	FloorLevel string `json:"FloorLevel,omitempty" xml:"String,omitempty"`
+	FloorLevel string `json:"FloorLevel,omitempty" xml:"FloorLevel,omitempty"`
 
 	// NameType
 	//
@@ -38,7 +38,7 @@ type PTXServiceDTORailSpecificationV3TRAStationFacilityFacilityMapURL struct {
 	//
 	// 車站設施簡圖網址
 	// Required: true
-	MapURL *string `json:"MapURL" xml:"String"`
+	MapURL *string `json:"MapURL" xml:"MapURL"`
 }
 
 // Validate validates this p t x service d t o rail specification v3 t r a station facility facility map URL

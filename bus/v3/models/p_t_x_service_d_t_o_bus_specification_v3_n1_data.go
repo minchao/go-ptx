@@ -22,7 +22,7 @@ type PTXServiceDTOBusSpecificationV3N1Data struct {
 	// String
 	//
 	// 車輛目前所在站牌代碼
-	CurrentStop string `json:"CurrentStop,omitempty" xml:"String,omitempty"`
+	CurrentStop string `json:"CurrentStop,omitempty" xml:"CurrentStop,omitempty"`
 
 	// 系統演算該筆預估到站資料的時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Format: date-time
@@ -31,7 +31,7 @@ type PTXServiceDTOBusSpecificationV3N1Data struct {
 	// String
 	//
 	// 迄點站站牌ID代碼
-	DestinationStopID string `json:"DestinationStopID,omitempty" xml:"String,omitempty"`
+	DestinationStopID string `json:"DestinationStopID,omitempty" xml:"DestinationStopID,omitempty"`
 
 	// NameType
 	//
@@ -55,7 +55,7 @@ type PTXServiceDTOBusSpecificationV3N1Data struct {
 	// String
 	//
 	// 車牌號碼 [値為値為-1時，表示目前該站牌無車輛行駛]
-	PlateNumb string `json:"PlateNumb,omitempty" xml:"String,omitempty"`
+	PlateNumb string `json:"PlateNumb,omitempty" xml:"PlateNumb,omitempty"`
 
 	// DateTime
 	//
@@ -68,7 +68,7 @@ type PTXServiceDTOBusSpecificationV3N1Data struct {
 	//
 	// 地區既用中之路線代碼(為原資料內碼)
 	// Required: true
-	RouteID *string `json:"RouteID" xml:"String"`
+	RouteID *string `json:"RouteID" xml:"RouteID"`
 
 	// NameType
 	//
@@ -80,12 +80,12 @@ type PTXServiceDTOBusSpecificationV3N1Data struct {
 	// String
 	//
 	// 路線唯一識別代碼，規則為 {業管機關代碼} + {RouteID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢
-	RouteUID string `json:"RouteUID,omitempty" xml:"String,omitempty"`
+	RouteUID string `json:"RouteUID,omitempty" xml:"RouteUID,omitempty"`
 
 	// String
 	//
 	// 預排班表時間
-	ScheduledTime string `json:"ScheduledTime,omitempty" xml:"String,omitempty"`
+	ScheduledTime string `json:"ScheduledTime,omitempty" xml:"ScheduledTime,omitempty"`
 
 	// 路線經過站牌之順序
 	StopCountDown int32 `json:"StopCountDown,omitempty"`
@@ -94,7 +94,7 @@ type PTXServiceDTOBusSpecificationV3N1Data struct {
 	//
 	// 地區既用中之站牌代碼(為原資料內碼)
 	// Required: true
-	StopID *string `json:"StopID" xml:"String"`
+	StopID *string `json:"StopID" xml:"StopID"`
 
 	// NameType
 	//
@@ -111,12 +111,12 @@ type PTXServiceDTOBusSpecificationV3N1Data struct {
 	// String
 	//
 	// 站牌唯一識別代碼，規則為 {業管機關簡碼} + {StopID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢
-	StopUID string `json:"StopUID,omitempty" xml:"String,omitempty"`
+	StopUID string `json:"StopUID,omitempty" xml:"StopUID,omitempty"`
 
 	// String
 	//
 	// 地區既用中之附屬路線代碼(為原資料內碼)
-	SubRouteID string `json:"SubRouteID,omitempty" xml:"String,omitempty"`
+	SubRouteID string `json:"SubRouteID,omitempty" xml:"SubRouteID,omitempty"`
 
 	// NameType
 	//
@@ -128,7 +128,7 @@ type PTXServiceDTOBusSpecificationV3N1Data struct {
 	// String
 	//
 	// 附屬路線唯一識別代碼，規則為 {業管機關簡碼} + {SubRouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢
-	SubRouteUID string `json:"SubRouteUID,omitempty" xml:"String,omitempty"`
+	SubRouteUID string `json:"SubRouteUID,omitempty" xml:"SubRouteUID,omitempty"`
 
 	// DateTime
 	//

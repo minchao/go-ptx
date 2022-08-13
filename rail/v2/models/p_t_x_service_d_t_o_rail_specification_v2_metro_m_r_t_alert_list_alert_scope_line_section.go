@@ -22,32 +22,32 @@ type PTXServiceDTORailSpecificationV2MetroMRTAlertListAlertScopeLineSection stru
 	// String
 	//
 	// 影響區間輔助描述
-	Description string `json:"Description,omitempty" xml:"String,omitempty"`
+	Description string `json:"Description,omitempty" xml:"Description,omitempty"`
 
 	// String
 	//
 	// 區間迄站車站代碼
-	EndingStationID string `json:"EndingStationID,omitempty" xml:"String,omitempty"`
+	EndingStationID string `json:"EndingStationID,omitempty" xml:"EndingStationID,omitempty"`
 
 	// String
 	//
 	// 區間迄站車站名稱
-	EndingStationName string `json:"EndingStationName,omitempty" xml:"String,omitempty"`
+	EndingStationName string `json:"EndingStationName,omitempty" xml:"EndingStationName,omitempty"`
 
 	// String
 	//
 	// 路線區間所在路線代碼
-	LineID string `json:"LineID,omitempty" xml:"String,omitempty"`
+	LineID string `json:"LineID,omitempty" xml:"LineID,omitempty"`
 
 	// String
 	//
 	// 區間起站車站代碼
-	StartingStationID string `json:"StartingStationID,omitempty" xml:"String,omitempty"`
+	StartingStationID string `json:"StartingStationID,omitempty" xml:"StartingStationID,omitempty"`
 
 	// String
 	//
 	// 區間起站車站名稱
-	StartingStationName string `json:"StartingStationName,omitempty" xml:"String,omitempty"`
+	StartingStationName string `json:"StartingStationName,omitempty" xml:"StartingStationName,omitempty"`
 }
 
 // Validate validates this p t x service d t o rail specification v2 metro m r t alert list alert scope line section

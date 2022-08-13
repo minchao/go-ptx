@@ -49,18 +49,18 @@ type PTXServiceDTOBusSpecificationV2BusRouteFare struct {
 	//
 	// 營運業者代碼
 	// Required: true
-	OperatorID *string `json:"OperatorID" xml:"String"`
+	OperatorID *string `json:"OperatorID" xml:"OperatorID"`
 
 	// String
 	//
 	// 機關定義路線代號
 	// Required: true
-	RouteID *string `json:"RouteID" xml:"String"`
+	RouteID *string `json:"RouteID" xml:"RouteID"`
 
 	// String
 	//
 	// 路線名稱
-	RouteName string `json:"RouteName,omitempty" xml:"String,omitempty"`
+	RouteName string `json:"RouteName,omitempty" xml:"RouteName,omitempty"`
 
 	// Array
 	//
@@ -75,12 +75,12 @@ type PTXServiceDTOBusSpecificationV2BusRouteFare struct {
 	// String
 	//
 	// 機關定義附屬路線代碼
-	SubRouteID string `json:"SubRouteID,omitempty" xml:"String,omitempty"`
+	SubRouteID string `json:"SubRouteID,omitempty" xml:"SubRouteID,omitempty"`
 
 	// String
 	//
 	// 附屬路線名稱
-	SubRouteName string `json:"SubRouteName,omitempty" xml:"String,omitempty"`
+	SubRouteName string `json:"SubRouteName,omitempty" xml:"SubRouteName,omitempty"`
 
 	// DateTime
 	//

@@ -24,50 +24,50 @@ type PTXServiceDTORailSpecificationV2TRARailStation struct {
 	// String
 	//
 	// 車站位置所屬縣市
-	LocationCity string `json:"LocationCity,omitempty" xml:"String,omitempty"`
+	LocationCity string `json:"LocationCity,omitempty" xml:"LocationCity,omitempty"`
 
 	// String
 	//
 	// 車站位置所屬縣市代碼
-	LocationCityCode string `json:"LocationCityCode,omitempty" xml:"String,omitempty"`
+	LocationCityCode string `json:"LocationCityCode,omitempty" xml:"LocationCityCode,omitempty"`
 
 	// String
 	//
 	// 車站位置所屬鄉鎮
-	LocationTown string `json:"LocationTown,omitempty" xml:"String,omitempty"`
+	LocationTown string `json:"LocationTown,omitempty" xml:"LocationTown,omitempty"`
 
 	// String
 	//
 	// 車站位置所屬鄉鎮代碼
-	LocationTownCode string `json:"LocationTownCode,omitempty" xml:"String,omitempty"`
+	LocationTownCode string `json:"LocationTownCode,omitempty" xml:"LocationTownCode,omitempty"`
 
 	// String
 	//
 	// 營運業者代碼
 	// Required: true
-	OperatorID *string `json:"OperatorID" xml:"String"`
+	OperatorID *string `json:"OperatorID" xml:"OperatorID"`
 
 	// String
 	//
 	// 票價用站牌代碼
-	ReservationCode string `json:"ReservationCode,omitempty" xml:"String,omitempty"`
+	ReservationCode string `json:"ReservationCode,omitempty" xml:"ReservationCode,omitempty"`
 
 	// String
 	//
 	// 車站地址
 	// Required: true
-	StationAddress *string `json:"StationAddress" xml:"String"`
+	StationAddress *string `json:"StationAddress" xml:"StationAddress"`
 
 	// String
 	//
 	// 車站級別
-	StationClass string `json:"StationClass,omitempty" xml:"String,omitempty"`
+	StationClass string `json:"StationClass,omitempty" xml:"StationClass,omitempty"`
 
 	// String
 	//
 	// 車站代碼
 	// Required: true
-	StationID *string `json:"StationID" xml:"String"`
+	StationID *string `json:"StationID" xml:"StationID"`
 
 	// NameType
 	//
@@ -80,7 +80,7 @@ type PTXServiceDTORailSpecificationV2TRARailStation struct {
 	// String
 	//
 	// 車站聯絡電話
-	StationPhone string `json:"StationPhone,omitempty" xml:"String,omitempty"`
+	StationPhone string `json:"StationPhone,omitempty" xml:"StationPhone,omitempty"`
 
 	// PointType
 	//
@@ -93,7 +93,7 @@ type PTXServiceDTORailSpecificationV2TRARailStation struct {
 	//
 	// 車站唯一識別代碼
 	// Required: true
-	StationUID *string `json:"StationUID" xml:"String"`
+	StationUID *string `json:"StationUID" xml:"StationUID"`
 
 	// DateTime
 	//

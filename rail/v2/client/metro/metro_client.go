@@ -82,7 +82,7 @@ func (a *Client) MetroAPIAlert2107(params *MetroAPIAlert2107Params, authInfo run
 	op := &runtime.ClientOperation{
 		ID:                 "MetroApi_Alert_2107",
 		Method:             "GET",
-		PathPattern:        "/v2/Rail/Metro/Alert/{MetroSystem}",
+		PathPattern:        "/v2/Rail/Metro/Alert/{RailSystem}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
@@ -124,7 +124,7 @@ func (a *Client) MetroAPIFirstLastTimetable2099(params *MetroAPIFirstLastTimetab
 	op := &runtime.ClientOperation{
 		ID:                 "MetroApi_FirstLastTimetable_2099",
 		Method:             "GET",
-		PathPattern:        "/v2/Rail/Metro/FirstLastTimetable/{MetroSystem}",
+		PathPattern:        "/v2/Rail/Metro/FirstLastTimetable/{RailSystem}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
@@ -166,7 +166,7 @@ func (a *Client) MetroAPIFrequency2100(params *MetroAPIFrequency2100Params, auth
 	op := &runtime.ClientOperation{
 		ID:                 "MetroApi_Frequency_2100",
 		Method:             "GET",
-		PathPattern:        "/v2/Rail/Metro/Frequency/{MetroSystem}",
+		PathPattern:        "/v2/Rail/Metro/Frequency/{RailSystem}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
@@ -208,7 +208,7 @@ func (a *Client) MetroAPILineTransfer2094(params *MetroAPILineTransfer2094Params
 	op := &runtime.ClientOperation{
 		ID:                 "MetroApi_LineTransfer_2094",
 		Method:             "GET",
-		PathPattern:        "/v2/Rail/Metro/LineTransfer/{MetroSystem}",
+		PathPattern:        "/v2/Rail/Metro/LineTransfer/{RailSystem}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
@@ -250,7 +250,7 @@ func (a *Client) MetroAPILine2091(params *MetroAPILine2091Params, authInfo runti
 	op := &runtime.ClientOperation{
 		ID:                 "MetroApi_Line_2091",
 		Method:             "GET",
-		PathPattern:        "/v2/Rail/Metro/Line/{MetroSystem}",
+		PathPattern:        "/v2/Rail/Metro/Line/{RailSystem}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
@@ -292,7 +292,7 @@ func (a *Client) MetroAPILiveBoard2103(params *MetroAPILiveBoard2103Params, auth
 	op := &runtime.ClientOperation{
 		ID:                 "MetroApi_LiveBoard_2103",
 		Method:             "GET",
-		PathPattern:        "/v2/Rail/Metro/LiveBoard/{MetroSystem}",
+		PathPattern:        "/v2/Rail/Metro/LiveBoard/{RailSystem}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
@@ -334,7 +334,7 @@ func (a *Client) MetroAPINetwork2090(params *MetroAPINetwork2090Params, authInfo
 	op := &runtime.ClientOperation{
 		ID:                 "MetroApi_Network_2090",
 		Method:             "GET",
-		PathPattern:        "/v2/Rail/Metro/Network/{MetroSystem}",
+		PathPattern:        "/v2/Rail/Metro/Network/{RailSystem}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
@@ -376,7 +376,7 @@ func (a *Client) MetroAPINews2106(params *MetroAPINews2106Params, authInfo runti
 	op := &runtime.ClientOperation{
 		ID:                 "MetroApi_News_2106",
 		Method:             "GET",
-		PathPattern:        "/v2/Rail/Metro/News/{MetroSystem}",
+		PathPattern:        "/v2/Rail/Metro/News/{RailSystem}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
@@ -418,7 +418,7 @@ func (a *Client) MetroAPIODFare2102(params *MetroAPIODFare2102Params, authInfo r
 	op := &runtime.ClientOperation{
 		ID:                 "MetroApi_ODFare_2102",
 		Method:             "GET",
-		PathPattern:        "/v2/Rail/Metro/ODFare/{MetroSystem}",
+		PathPattern:        "/v2/Rail/Metro/ODFare/{RailSystem}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
@@ -460,7 +460,7 @@ func (a *Client) MetroAPIRoute2097(params *MetroAPIRoute2097Params, authInfo run
 	op := &runtime.ClientOperation{
 		ID:                 "MetroApi_Route_2097",
 		Method:             "GET",
-		PathPattern:        "/v2/Rail/Metro/Route/{MetroSystem}",
+		PathPattern:        "/v2/Rail/Metro/Route/{RailSystem}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
@@ -502,7 +502,7 @@ func (a *Client) MetroAPIS2STravelTime2101(params *MetroAPIS2STravelTime2101Para
 	op := &runtime.ClientOperation{
 		ID:                 "MetroApi_S2STravelTime_2101",
 		Method:             "GET",
-		PathPattern:        "/v2/Rail/Metro/S2STravelTime/{MetroSystem}",
+		PathPattern:        "/v2/Rail/Metro/S2STravelTime/{RailSystem}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
@@ -544,7 +544,7 @@ func (a *Client) MetroAPIShape2105(params *MetroAPIShape2105Params, authInfo run
 	op := &runtime.ClientOperation{
 		ID:                 "MetroApi_Shape_2105",
 		Method:             "GET",
-		PathPattern:        "/v2/Rail/Metro/Shape/{MetroSystem}",
+		PathPattern:        "/v2/Rail/Metro/Shape/{RailSystem}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
@@ -586,7 +586,7 @@ func (a *Client) MetroAPIStationExit2096(params *MetroAPIStationExit2096Params, 
 	op := &runtime.ClientOperation{
 		ID:                 "MetroApi_StationExit_2096",
 		Method:             "GET",
-		PathPattern:        "/v2/Rail/Metro/StationExit/{MetroSystem}",
+		PathPattern:        "/v2/Rail/Metro/StationExit/{RailSystem}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
@@ -628,7 +628,7 @@ func (a *Client) MetroAPIStationFacility2095(params *MetroAPIStationFacility2095
 	op := &runtime.ClientOperation{
 		ID:                 "MetroApi_StationFacility_2095",
 		Method:             "GET",
-		PathPattern:        "/v2/Rail/Metro/StationFacility/{MetroSystem}",
+		PathPattern:        "/v2/Rail/Metro/StationFacility/{RailSystem}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
@@ -670,7 +670,7 @@ func (a *Client) MetroAPIStationOfLine2093(params *MetroAPIStationOfLine2093Para
 	op := &runtime.ClientOperation{
 		ID:                 "MetroApi_StationOfLine_2093",
 		Method:             "GET",
-		PathPattern:        "/v2/Rail/Metro/StationOfLine/{MetroSystem}",
+		PathPattern:        "/v2/Rail/Metro/StationOfLine/{RailSystem}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
@@ -712,7 +712,7 @@ func (a *Client) MetroAPIStationOfRoute2098(params *MetroAPIStationOfRoute2098Pa
 	op := &runtime.ClientOperation{
 		ID:                 "MetroApi_StationOfRoute_2098",
 		Method:             "GET",
-		PathPattern:        "/v2/Rail/Metro/StationOfRoute/{MetroSystem}",
+		PathPattern:        "/v2/Rail/Metro/StationOfRoute/{RailSystem}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
@@ -757,7 +757,7 @@ func (a *Client) MetroAPIStationTimeTable2104(params *MetroAPIStationTimeTable21
 	op := &runtime.ClientOperation{
 		ID:                 "MetroApi_StationTimeTable_2104",
 		Method:             "GET",
-		PathPattern:        "/v2/Rail/Metro/StationTimeTable/{MetroSystem}",
+		PathPattern:        "/v2/Rail/Metro/StationTimeTable/{RailSystem}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
@@ -799,7 +799,7 @@ func (a *Client) MetroAPIStation2092(params *MetroAPIStation2092Params, authInfo
 	op := &runtime.ClientOperation{
 		ID:                 "MetroApi_Station_2092",
 		Method:             "GET",
-		PathPattern:        "/v2/Rail/Metro/Station/{MetroSystem}",
+		PathPattern:        "/v2/Rail/Metro/Station/{RailSystem}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},

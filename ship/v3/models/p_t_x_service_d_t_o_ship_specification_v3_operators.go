@@ -23,7 +23,7 @@ type PTXServiceDTOShipSpecificationV3Operators struct {
 	//
 	// 營運業者代碼
 	// Required: true
-	OperatorID *string `json:"OperatorID" xml:"String"`
+	OperatorID *string `json:"OperatorID" xml:"OperatorID"`
 }
 
 // Validate validates this p t x service d t o ship specification v3 operators

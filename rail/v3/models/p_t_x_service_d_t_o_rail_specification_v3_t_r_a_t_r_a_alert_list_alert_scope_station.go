@@ -20,12 +20,12 @@ type PTXServiceDTORailSpecificationV3TRATRAAlertListAlertScopeStation struct {
 	// String
 	//
 	// 車站代碼
-	StationID string `json:"StationID,omitempty" xml:"String,omitempty"`
+	StationID string `json:"StationID,omitempty" xml:"StationID,omitempty"`
 
 	// String
 	//
 	// 車站名稱
-	StationName string `json:"StationName,omitempty" xml:"String,omitempty"`
+	StationName string `json:"StationName,omitempty" xml:"StationName,omitempty"`
 }
 
 // Validate validates this p t x service d t o rail specification v3 t r a t r a alert list alert scope station

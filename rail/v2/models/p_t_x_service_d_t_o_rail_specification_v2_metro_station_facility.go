@@ -51,7 +51,7 @@ type PTXServiceDTORailSpecificationV2MetroStationFacility struct {
 	//
 	// 車站代號
 	// Required: true
-	StationID *string `json:"StationID" xml:"String"`
+	StationID *string `json:"StationID" xml:"StationID"`
 
 	// NameType
 	//

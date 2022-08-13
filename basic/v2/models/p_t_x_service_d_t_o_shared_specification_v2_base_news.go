@@ -24,18 +24,18 @@ type PTXServiceDTOSharedSpecificationV2BaseNews struct {
 	// String
 	//
 	// 相關網站連結
-	AttachmentURL string `json:"AttachmentURL,omitempty" xml:"String,omitempty"`
+	AttachmentURL string `json:"AttachmentURL,omitempty" xml:"AttachmentURL,omitempty"`
 
 	// String
 	//
 	// 發布單位
-	Department string `json:"Department,omitempty" xml:"String,omitempty"`
+	Department string `json:"Department,omitempty" xml:"Department,omitempty"`
 
 	// String
 	//
 	// 內容描述
 	// Required: true
-	Description *string `json:"Description" xml:"String"`
+	Description *string `json:"Description" xml:"Description"`
 
 	// 結束時間
 	// Format: date-time
@@ -45,7 +45,7 @@ type PTXServiceDTOSharedSpecificationV2BaseNews struct {
 	//
 	// 語系
 	// Required: true
-	Language *string `json:"Language" xml:"String"`
+	Language *string `json:"Language" xml:"Language"`
 
 	// Int32
 	//
@@ -62,7 +62,7 @@ type PTXServiceDTOSharedSpecificationV2BaseNews struct {
 	// String
 	//
 	// 報導網站連結
-	NewsURL string `json:"NewsURL,omitempty" xml:"String,omitempty"`
+	NewsURL string `json:"NewsURL,omitempty" xml:"NewsURL,omitempty"`
 
 	// 消息公告日期時間
 	// Format: date-time
@@ -75,7 +75,7 @@ type PTXServiceDTOSharedSpecificationV2BaseNews struct {
 	// String
 	//
 	// 消息標題
-	Title string `json:"Title,omitempty" xml:"String,omitempty"`
+	Title string `json:"Title,omitempty" xml:"Title,omitempty"`
 
 	// DateTime
 	//

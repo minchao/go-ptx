@@ -23,7 +23,7 @@ type PTXServiceDTOShipSpecificationV3Vessels struct {
 	//
 	// 船舶代碼
 	// Required: true
-	VesselID *string `json:"VesselID" xml:"String"`
+	VesselID *string `json:"VesselID" xml:"VesselID"`
 
 	// NameType
 	//

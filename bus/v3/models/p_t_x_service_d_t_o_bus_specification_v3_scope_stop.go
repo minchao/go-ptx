@@ -23,7 +23,7 @@ type PTXServiceDTOBusSpecificationV3ScopeStop struct {
 	// String
 	//
 	// 地區既用中之站牌代碼(為原資料內碼)
-	StopID string `json:"StopID,omitempty" xml:"String,omitempty"`
+	StopID string `json:"StopID,omitempty" xml:"StopID,omitempty"`
 
 	// NameType
 	//

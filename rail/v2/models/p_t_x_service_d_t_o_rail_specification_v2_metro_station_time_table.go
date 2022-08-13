@@ -26,7 +26,7 @@ type PTXServiceDTORailSpecificationV2MetroStationTimeTable struct {
 	//
 	// 目的站車站代號
 	// Required: true
-	DestinationStaionID *string `json:"DestinationStaionID" xml:"String"`
+	DestinationStaionID *string `json:"DestinationStaionID" xml:"DestinationStaionID"`
 
 	// NameType
 	//
@@ -45,12 +45,12 @@ type PTXServiceDTORailSpecificationV2MetroStationTimeTable struct {
 	//
 	// 路線代碼
 	// Required: true
-	LineID *string `json:"LineID" xml:"String"`
+	LineID *string `json:"LineID" xml:"LineID"`
 
 	// String
 	//
 	// 營運路線代碼
-	RouteID string `json:"RouteID,omitempty" xml:"String,omitempty"`
+	RouteID string `json:"RouteID,omitempty" xml:"RouteID,omitempty"`
 
 	// ServiceDay
 	//
@@ -76,7 +76,7 @@ type PTXServiceDTORailSpecificationV2MetroStationTimeTable struct {
 	//
 	// 車站代碼
 	// Required: true
-	StationID *string `json:"StationID" xml:"String"`
+	StationID *string `json:"StationID" xml:"StationID"`
 
 	// NameType
 	//

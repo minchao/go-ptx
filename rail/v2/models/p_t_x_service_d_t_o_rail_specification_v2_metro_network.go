@@ -32,13 +32,13 @@ type PTXServiceDTORailSpecificationV2MetroNetwork struct {
 	//
 	// 捷運路網代碼
 	// Required: true
-	NetworkID *string `json:"NetworkID" xml:"String"`
+	NetworkID *string `json:"NetworkID" xml:"NetworkID"`
 
 	// String
 	//
 	// 捷運路網圖網址URL
 	// Required: true
-	NetworkMapURL *string `json:"NetworkMapURL" xml:"String"`
+	NetworkMapURL *string `json:"NetworkMapURL" xml:"NetworkMapURL"`
 
 	// NameType
 	//
@@ -52,7 +52,7 @@ type PTXServiceDTORailSpecificationV2MetroNetwork struct {
 	//
 	// 營運業者簡碼
 	// Required: true
-	OperatorCode *string `json:"OperatorCode" xml:"String"`
+	OperatorCode *string `json:"OperatorCode" xml:"OperatorCode"`
 
 	// NameType
 	//

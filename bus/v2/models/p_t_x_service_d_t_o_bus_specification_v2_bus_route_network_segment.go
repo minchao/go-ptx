@@ -29,7 +29,7 @@ type PTXServiceDTOBusSpecificationV2BusRouteNetworkSegment struct {
 	//
 	// 表BusStation唯一碼(起點站牌)
 	// Required: true
-	FromStationID *string `json:"FromStationID" xml:"String"`
+	FromStationID *string `json:"FromStationID" xml:"FromStationID"`
 
 	// Single
 	//
@@ -41,7 +41,7 @@ type PTXServiceDTOBusSpecificationV2BusRouteNetworkSegment struct {
 	//
 	// 表BusStation唯一碼(迄點站牌)
 	// Required: true
-	ToStationID *string `json:"ToStationID" xml:"String"`
+	ToStationID *string `json:"ToStationID" xml:"ToStationID"`
 }
 
 // Validate validates this p t x service d t o bus specification v2 bus route network segment

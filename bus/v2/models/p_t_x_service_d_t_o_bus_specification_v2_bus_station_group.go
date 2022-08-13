@@ -25,7 +25,7 @@ type PTXServiceDTOBusSpecificationV2BusStationGroup struct {
 	//
 	// 組站位代碼
 	// Required: true
-	StationGroupID *string `json:"StationGroupID" xml:"String"`
+	StationGroupID *string `json:"StationGroupID" xml:"StationGroupID"`
 
 	// NameType
 	//
@@ -47,7 +47,7 @@ type PTXServiceDTOBusSpecificationV2BusStationGroup struct {
 	//
 	// 組站位唯一識別代碼，規則為 {業管機關簡碼} + {StationGroupID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢
 	// Required: true
-	StationGroupUID *string `json:"StationGroupUID" xml:"String"`
+	StationGroupUID *string `json:"StationGroupUID" xml:"StationGroupUID"`
 
 	// DateTime
 	//

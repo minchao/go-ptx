@@ -24,18 +24,18 @@ type PTXServiceDTOBusSpecificationV2EmbeddedStop struct {
 	// String
 	//
 	// 站牌位置縣市之代碼(國際ISO 3166-2 三碼城市代碼)[若為公路/國道客運路線則為空值]
-	LocationCityCode string `json:"LocationCityCode,omitempty" xml:"String,omitempty"`
+	LocationCityCode string `json:"LocationCityCode,omitempty" xml:"LocationCityCode,omitempty"`
 
 	// String
 	//
 	// 站牌所屬的組站位ID
 	// Required: true
-	StationGroupID *string `json:"StationGroupID" xml:"String"`
+	StationGroupID *string `json:"StationGroupID" xml:"StationGroupID"`
 
 	// String
 	//
 	// 站牌所屬的站位ID
-	StationID string `json:"StationID,omitempty" xml:"String,omitempty"`
+	StationID string `json:"StationID,omitempty" xml:"StationID,omitempty"`
 
 	// Int32
 	//
@@ -46,7 +46,7 @@ type PTXServiceDTOBusSpecificationV2EmbeddedStop struct {
 	//
 	// 地區既用中之站牌代碼(為原資料內碼)
 	// Required: true
-	StopID *string `json:"StopID" xml:"String"`
+	StopID *string `json:"StopID" xml:"StopID"`
 
 	// NameType
 	//
@@ -74,7 +74,7 @@ type PTXServiceDTOBusSpecificationV2EmbeddedStop struct {
 	//
 	// 站牌唯一識別代碼，規則為 {業管機關簡碼} + {StopID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢
 	// Required: true
-	StopUID *string `json:"StopUID" xml:"String"`
+	StopUID *string `json:"StopUID" xml:"StopUID"`
 }
 
 // Validate validates this p t x service d t o bus specification v2 embedded stop

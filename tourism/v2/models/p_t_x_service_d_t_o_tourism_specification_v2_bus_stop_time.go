@@ -25,19 +25,19 @@ type PTXServiceDTOTourismSpecificationV2BusStopTime struct {
 	//
 	// 到站時間，格式為:HH:mm
 	// Required: true
-	ArrivalTime *string `json:"ArrivalTime" xml:"String"`
+	ArrivalTime *string `json:"ArrivalTime" xml:"ArrivalTime"`
 
 	// String
 	//
 	// 離站時間，格式為:HH:mm
 	// Required: true
-	DepartureTime *string `json:"DepartureTime" xml:"String"`
+	DepartureTime *string `json:"DepartureTime" xml:"DepartureTime"`
 
 	// String
 	//
 	// 地區既用中之站牌代碼(為原資料內碼)
 	// Required: true
-	StopID *string `json:"StopID" xml:"String"`
+	StopID *string `json:"StopID" xml:"StopID"`
 
 	// NameType
 	//
@@ -57,7 +57,7 @@ type PTXServiceDTOTourismSpecificationV2BusStopTime struct {
 	//
 	// 站牌唯一識別代碼，規則為 {業管機關代碼} + {StopID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢
 	// Required: true
-	StopUID *string `json:"StopUID" xml:"String"`
+	StopUID *string `json:"StopUID" xml:"StopUID"`
 }
 
 // Validate validates this p t x service d t o tourism specification v2 bus stop time

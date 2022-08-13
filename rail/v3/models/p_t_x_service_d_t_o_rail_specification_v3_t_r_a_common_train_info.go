@@ -60,7 +60,7 @@ type PTXServiceDTORailSpecificationV3TRACommonTrainInfo struct {
 	// String
 	//
 	// 列車終點車站代號
-	EndingStationID string `json:"EndingStationID,omitempty" xml:"String,omitempty"`
+	EndingStationID string `json:"EndingStationID,omitempty" xml:"EndingStationID,omitempty"`
 
 	// NameType
 	//
@@ -78,12 +78,12 @@ type PTXServiceDTORailSpecificationV3TRACommonTrainInfo struct {
 	// String
 	//
 	// 附註說明
-	Note string `json:"Note,omitempty" xml:"String,omitempty"`
+	Note string `json:"Note,omitempty" xml:"Note,omitempty"`
 
 	// String
 	//
 	// 跨夜車站代碼
-	OverNightStationID string `json:"OverNightStationID,omitempty" xml:"String,omitempty"`
+	OverNightStationID string `json:"OverNightStationID,omitempty" xml:"OverNightStationID,omitempty"`
 
 	// Int32
 	//
@@ -94,12 +94,12 @@ type PTXServiceDTORailSpecificationV3TRACommonTrainInfo struct {
 	// String
 	//
 	// 營運路線代碼
-	RouteID string `json:"RouteID,omitempty" xml:"String,omitempty"`
+	RouteID string `json:"RouteID,omitempty" xml:"RouteID,omitempty"`
 
 	// String
 	//
 	// 列車起點車站代號
-	StartingStationID string `json:"StartingStationID,omitempty" xml:"String,omitempty"`
+	StartingStationID string `json:"StartingStationID,omitempty" xml:"StartingStationID,omitempty"`
 
 	// NameType
 	//
@@ -112,17 +112,17 @@ type PTXServiceDTORailSpecificationV3TRACommonTrainInfo struct {
 	//
 	// 車次代碼
 	// Required: true
-	TrainNo *string `json:"TrainNo" xml:"String"`
+	TrainNo *string `json:"TrainNo" xml:"TrainNo"`
 
 	// String
 	//
 	// 車種簡碼 = ['1: 太魯閣', '2: 普悠瑪', '3: 自強', '4: 莒光', '5: 復興', '6: 區間', '7: 普快', '10: 區間快']
-	TrainTypeCode string `json:"TrainTypeCode,omitempty" xml:"String,omitempty"`
+	TrainTypeCode string `json:"TrainTypeCode,omitempty" xml:"TrainTypeCode,omitempty"`
 
 	// String
 	//
 	// 車種代嗎
-	TrainTypeID string `json:"TrainTypeID,omitempty" xml:"String,omitempty"`
+	TrainTypeID string `json:"TrainTypeID,omitempty" xml:"TrainTypeID,omitempty"`
 
 	// NameType
 	//
@@ -134,7 +134,7 @@ type PTXServiceDTORailSpecificationV3TRACommonTrainInfo struct {
 	// String
 	//
 	// 車次之目的地方向描述
-	TripHeadSign string `json:"TripHeadSign,omitempty" xml:"String,omitempty"`
+	TripHeadSign string `json:"TripHeadSign,omitempty" xml:"TripHeadSign,omitempty"`
 
 	// Int32
 	//

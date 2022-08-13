@@ -23,18 +23,18 @@ type PTXServiceDTORailSpecificationV2MetroAlert struct {
 	//
 	// 通阻訊息代碼
 	// Required: true
-	AlertID *string `json:"AlertID" xml:"String"`
+	AlertID *string `json:"AlertID" xml:"AlertID"`
 
 	// String
 	//
 	// 通阻訊息網址連結
-	AlertURL string `json:"AlertURL,omitempty" xml:"String,omitempty"`
+	AlertURL string `json:"AlertURL,omitempty" xml:"AlertURL,omitempty"`
 
 	// String
 	//
 	// 通阻訊息說明
 	// Required: true
-	Description *string `json:"Description" xml:"String"`
+	Description *string `json:"Description" xml:"Description"`
 
 	// Int32
 	//
@@ -44,7 +44,7 @@ type PTXServiceDTORailSpecificationV2MetroAlert struct {
 	// String
 	//
 	// 影響說明
-	Effect string `json:"Effect,omitempty" xml:"String,omitempty"`
+	Effect string `json:"Effect,omitempty" xml:"Effect,omitempty"`
 
 	// 訊息結束日期時間
 	// Format: date-time
@@ -62,7 +62,7 @@ type PTXServiceDTORailSpecificationV2MetroAlert struct {
 	// String
 	//
 	// 影響原因
-	Reason string `json:"Reason,omitempty" xml:"String,omitempty"`
+	Reason string `json:"Reason,omitempty" xml:"Reason,omitempty"`
 
 	// AlertScope
 	//
@@ -86,7 +86,7 @@ type PTXServiceDTORailSpecificationV2MetroAlert struct {
 	//
 	// 通阻訊息標題
 	// Required: true
-	Title *string `json:"Title" xml:"String"`
+	Title *string `json:"Title" xml:"Title"`
 
 	// DateTime
 	//
