@@ -22,12 +22,12 @@ type PTXServiceDTORailSpecificationV2MetroMRTAlertListAlertScopeRoute struct {
 	// String
 	//
 	// 營運路線代碼
-	RouteID string `json:"RouteID,omitempty" xml:"String,omitempty"`
+	RouteID string `json:"RouteID,omitempty" xml:"RouteID,omitempty"`
 
 	// String
 	//
 	// 營運路線名稱
-	RouteName string `json:"RouteName,omitempty" xml:"String,omitempty"`
+	RouteName string `json:"RouteName,omitempty" xml:"RouteName,omitempty"`
 }
 
 // Validate validates this p t x service d t o rail specification v2 metro m r t alert list alert scope route

@@ -30,34 +30,34 @@ type ClientOption func(*runtime.ClientOperation)
 
 // ClientService is the interface for Client methods
 type ClientService interface {
-	BikeAPIAvailability(params *BikeAPIAvailabilityParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*BikeAPIAvailabilityOK, *BikeAPIAvailabilityStatus299, error)
+	BikeAPIAvailability2181(params *BikeAPIAvailability2181Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*BikeAPIAvailability2181OK, *BikeAPIAvailability2181Status299, error)
 
-	BikeAPIStation(params *BikeAPIStationParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*BikeAPIStationOK, *BikeAPIStationStatus299, error)
+	BikeAPIStation2180(params *BikeAPIStation2180Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*BikeAPIStation2180OK, *BikeAPIStation2180Status299, error)
 
-	CyclingAPIShape(params *CyclingAPIShapeParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*CyclingAPIShapeOK, *CyclingAPIShapeStatus299, error)
+	CyclingAPIShape2182(params *CyclingAPIShape2182Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*CyclingAPIShape2182OK, *CyclingAPIShape2182Status299, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
 
 /*
-  BikeAPIAvailability 取得動態指定s 縣市 的公共自行車即時車位資料
+  BikeAPIAvailability2181 取得動態指定s 縣市 的公共自行車即時車位資料
 
   取得動態指定[縣市]的公共自行車即時車位資料
 */
-func (a *Client) BikeAPIAvailability(params *BikeAPIAvailabilityParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*BikeAPIAvailabilityOK, *BikeAPIAvailabilityStatus299, error) {
+func (a *Client) BikeAPIAvailability2181(params *BikeAPIAvailability2181Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*BikeAPIAvailability2181OK, *BikeAPIAvailability2181Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewBikeAPIAvailabilityParams()
+		params = NewBikeAPIAvailability2181Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "BikeApi_Availability",
+		ID:                 "BikeApi_Availability_2181",
 		Method:             "GET",
-		PathPattern:        "/v2/Bike/Availability/{City}",
+		PathPattern:        "/v2/Bike/Availability/City/{City}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &BikeAPIAvailabilityReader{formats: a.formats},
+		Reader:             &BikeAPIAvailability2181Reader{formats: a.formats},
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
@@ -71,9 +71,9 @@ func (a *Client) BikeAPIAvailability(params *BikeAPIAvailabilityParams, authInfo
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *BikeAPIAvailabilityOK:
+	case *BikeAPIAvailability2181OK:
 		return value, nil, nil
-	case *BikeAPIAvailabilityStatus299:
+	case *BikeAPIAvailability2181Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -82,24 +82,24 @@ func (a *Client) BikeAPIAvailability(params *BikeAPIAvailabilityParams, authInfo
 }
 
 /*
-  BikeAPIStation 取得指定s 縣市 的公共自行車租借站位資料
+  BikeAPIStation2180 取得指定s 縣市 的公共自行車租借站位資料
 
   取得指定[縣市]的公共自行車租借站位資料
 */
-func (a *Client) BikeAPIStation(params *BikeAPIStationParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*BikeAPIStationOK, *BikeAPIStationStatus299, error) {
+func (a *Client) BikeAPIStation2180(params *BikeAPIStation2180Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*BikeAPIStation2180OK, *BikeAPIStation2180Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewBikeAPIStationParams()
+		params = NewBikeAPIStation2180Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "BikeApi_Station",
+		ID:                 "BikeApi_Station_2180",
 		Method:             "GET",
-		PathPattern:        "/v2/Bike/Station/{City}",
+		PathPattern:        "/v2/Bike/Station/City/{City}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &BikeAPIStationReader{formats: a.formats},
+		Reader:             &BikeAPIStation2180Reader{formats: a.formats},
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
@@ -113,9 +113,9 @@ func (a *Client) BikeAPIStation(params *BikeAPIStationParams, authInfo runtime.C
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *BikeAPIStationOK:
+	case *BikeAPIStation2180OK:
 		return value, nil, nil
-	case *BikeAPIStationStatus299:
+	case *BikeAPIStation2180Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -124,24 +124,24 @@ func (a *Client) BikeAPIStation(params *BikeAPIStationParams, authInfo runtime.C
 }
 
 /*
-  CyclingAPIShape 取得指定縣市之自行車道路網圖資s
+  CyclingAPIShape2182 取得指定縣市之自行車道路網圖資s
 
   取得指定縣市之自行車道路網圖資
 */
-func (a *Client) CyclingAPIShape(params *CyclingAPIShapeParams, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*CyclingAPIShapeOK, *CyclingAPIShapeStatus299, error) {
+func (a *Client) CyclingAPIShape2182(params *CyclingAPIShape2182Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*CyclingAPIShape2182OK, *CyclingAPIShape2182Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewCyclingAPIShapeParams()
+		params = NewCyclingAPIShape2182Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "CyclingApi_Shape",
+		ID:                 "CyclingApi_Shape_2182",
 		Method:             "GET",
-		PathPattern:        "/v2/Cycling/Shape/{City}",
+		PathPattern:        "/v2/Cycling/Shape/City/{City}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &CyclingAPIShapeReader{formats: a.formats},
+		Reader:             &CyclingAPIShape2182Reader{formats: a.formats},
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
@@ -155,9 +155,9 @@ func (a *Client) CyclingAPIShape(params *CyclingAPIShapeParams, authInfo runtime
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *CyclingAPIShapeOK:
+	case *CyclingAPIShape2182OK:
 		return value, nil, nil
-	case *CyclingAPIShapeStatus299:
+	case *CyclingAPIShape2182Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue

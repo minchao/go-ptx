@@ -24,7 +24,7 @@ type PTXServiceDTOAirSpecificationV2FIDS struct {
 	// String
 	//
 	// 航空器型號
-	AcType string `json:"AcType,omitempty" xml:"String,omitempty"`
+	AcType string `json:"AcType,omitempty" xml:"AcType,omitempty"`
 
 	// 實際抵達時間(ISO8601格式:yyyy-MM-ddTHH:mm)
 	// Format: date-time
@@ -43,84 +43,84 @@ type PTXServiceDTOAirSpecificationV2FIDS struct {
 	//
 	// 航空公司IATA國際代碼
 	// Required: true
-	AirlineID *string `json:"AirlineID" xml:"String"`
+	AirlineID *string `json:"AirlineID" xml:"AirlineID"`
 
 	// String
 	//
 	// 目的地機場IATA國際代碼
 	// Required: true
-	ArrivalAirportID *string `json:"ArrivalAirportID" xml:"String"`
+	ArrivalAirportID *string `json:"ArrivalAirportID" xml:"ArrivalAirportID"`
 
 	// String
 	//
 	// 抵達停機坪(僅貨機提供)
-	ArrivalApron string `json:"ArrivalApron,omitempty" xml:"String,omitempty"`
+	ArrivalApron string `json:"ArrivalApron,omitempty" xml:"ArrivalApron,omitempty"`
 
 	// String
 	//
 	// 抵達登機門(僅客機提供)
-	ArrivalGate string `json:"ArrivalGate,omitempty" xml:"String,omitempty"`
+	ArrivalGate string `json:"ArrivalGate,omitempty" xml:"ArrivalGate,omitempty"`
 
 	// String
 	//
 	// 航班屬性狀態,為該機場觀點的狀態
-	ArrivalRemark string `json:"ArrivalRemark,omitempty" xml:"String,omitempty"`
+	ArrivalRemark string `json:"ArrivalRemark,omitempty" xml:"ArrivalRemark,omitempty"`
 
 	// String
 	//
 	// 航班屬性狀態(英文)
-	ArrivalRemarkEn string `json:"ArrivalRemarkEn,omitempty" xml:"String,omitempty"`
+	ArrivalRemarkEn string `json:"ArrivalRemarkEn,omitempty" xml:"ArrivalRemarkEn,omitempty"`
 
 	// String
 	//
 	// 抵達航廈
-	ArrivalTerminal string `json:"ArrivalTerminal,omitempty" xml:"String,omitempty"`
+	ArrivalTerminal string `json:"ArrivalTerminal,omitempty" xml:"ArrivalTerminal,omitempty"`
 
 	// String
 	//
 	// 行李轉盤
-	BaggageClaim string `json:"BaggageClaim,omitempty" xml:"String,omitempty"`
+	BaggageClaim string `json:"BaggageClaim,omitempty" xml:"BaggageClaim,omitempty"`
 
 	// String
 	//
 	// 報到櫃檯
-	CheckCounter string `json:"CheckCounter,omitempty" xml:"String,omitempty"`
+	CheckCounter string `json:"CheckCounter,omitempty" xml:"CheckCounter,omitempty"`
 
 	// String
 	//
 	// 航班共用班號
-	CodeShare string `json:"CodeShare,omitempty" xml:"String,omitempty"`
+	CodeShare string `json:"CodeShare,omitempty" xml:"CodeShare,omitempty"`
 
 	// String
 	//
 	// 起點機場IATA國際代碼
 	// Required: true
-	DepartureAirportID *string `json:"DepartureAirportID" xml:"String"`
+	DepartureAirportID *string `json:"DepartureAirportID" xml:"DepartureAirportID"`
 
 	// String
 	//
 	// 出發停機坪(僅貨機提供)
-	DepartureApron string `json:"DepartureApron,omitempty" xml:"String,omitempty"`
+	DepartureApron string `json:"DepartureApron,omitempty" xml:"DepartureApron,omitempty"`
 
 	// String
 	//
 	// 出發登機門(僅客機提供)
-	DepartureGate string `json:"DepartureGate,omitempty" xml:"String,omitempty"`
+	DepartureGate string `json:"DepartureGate,omitempty" xml:"DepartureGate,omitempty"`
 
 	// String
 	//
 	// 航班屬性狀態,為第三方觀點的狀態(資料來源:民航局)
-	DepartureRemark string `json:"DepartureRemark,omitempty" xml:"String,omitempty"`
+	DepartureRemark string `json:"DepartureRemark,omitempty" xml:"DepartureRemark,omitempty"`
 
 	// String
 	//
 	// 航班屬性狀態(英文)
-	DepartureRemarkEn string `json:"DepartureRemarkEn,omitempty" xml:"String,omitempty"`
+	DepartureRemarkEn string `json:"DepartureRemarkEn,omitempty" xml:"DepartureRemarkEn,omitempty"`
 
 	// String
 	//
 	// 出發航廈
-	DepartureTerminal string `json:"DepartureTerminal,omitempty" xml:"String,omitempty"`
+	DepartureTerminal string `json:"DepartureTerminal,omitempty" xml:"DepartureTerminal,omitempty"`
 
 	// 預估抵達時間(ISO8601格式:yyyy-MM-ddTHH:mm)
 	// Format: date-time
@@ -139,27 +139,27 @@ type PTXServiceDTOAirSpecificationV2FIDS struct {
 	//
 	// 航機班號(不包含航空公司的AirlineID，僅有班號數字)
 	// Required: true
-	FlightNumber *string `json:"FlightNumber" xml:"String"`
+	FlightNumber *string `json:"FlightNumber" xml:"FlightNumber"`
 
 	// String
 	//
 	// 航班屬性
-	FlightRemark string `json:"FlightRemark,omitempty" xml:"String,omitempty"`
+	FlightRemark string `json:"FlightRemark,omitempty" xml:"FlightRemark,omitempty"`
 
 	// String
 	//
 	// 航班運行狀態,以航班的角度的狀態
-	FlightStatus string `json:"FlightStatus,omitempty" xml:"String,omitempty"`
+	FlightStatus string `json:"FlightStatus,omitempty" xml:"FlightStatus,omitempty"`
 
 	// String
 	//
 	// 航班運行狀態(英文)
-	FlightStatusEn string `json:"FlightStatusEn,omitempty" xml:"String,omitempty"`
+	FlightStatusEn string `json:"FlightStatusEn,omitempty" xml:"FlightStatusEn,omitempty"`
 
 	// String
 	//
 	// 航班運行狀態百分比(國內線)
-	FlightStatusPC string `json:"FlightStatusPC,omitempty" xml:"String,omitempty"`
+	FlightStatusPC string `json:"FlightStatusPC,omitempty" xml:"FlightStatusPC,omitempty"`
 
 	// Boolean
 	//

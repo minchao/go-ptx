@@ -25,13 +25,13 @@ type PTXServiceDTORailSpecificationV3TRATrainType struct {
 	//
 	// 車種簡碼 = ['1: 太魯閣', '2: 普悠瑪', '3: 自強', '4: 莒光', '5: 復興', '6: 區間', '7: 普快', '10: 區間快']
 	// Required: true
-	TrainTypeCode *string `json:"TrainTypeCode" xml:"String"`
+	TrainTypeCode *string `json:"TrainTypeCode" xml:"TrainTypeCode"`
 
 	// String
 	//
 	// 列車車種代碼
 	// Required: true
-	TrainTypeID *string `json:"TrainTypeID" xml:"String"`
+	TrainTypeID *string `json:"TrainTypeID" xml:"TrainTypeID"`
 
 	// NameType
 	//

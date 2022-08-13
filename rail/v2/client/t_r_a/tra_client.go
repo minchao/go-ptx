@@ -926,9 +926,9 @@ func (a *Client) TRAAPIODFareStation2146(params *TRAAPIODFareStation2146Params, 
 }
 
 /*
-  TRAAPIODFareStation21461 取得指定s 起訖站間 之票價資料
+  TRAAPIODFareStation21461 取得指定s 起迄站間 之票價資料
 
-  取得指定[起訖站間]之票價資料
+  取得指定[起迄站間]之票價資料
 */
 func (a *Client) TRAAPIODFareStation21461(params *TRAAPIODFareStation21461Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TRAAPIODFareStation21461OK, *TRAAPIODFareStation21461Status299, error) {
 	// TODO: Validate the params before sending

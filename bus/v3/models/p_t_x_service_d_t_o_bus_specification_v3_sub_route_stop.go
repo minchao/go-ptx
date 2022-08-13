@@ -23,7 +23,7 @@ type PTXServiceDTOBusSpecificationV3SubRouteStop struct {
 	//
 	// 站牌代碼
 	// Required: true
-	StopID *string `json:"StopID" xml:"String"`
+	StopID *string `json:"StopID" xml:"StopID"`
 
 	// NameType
 	//

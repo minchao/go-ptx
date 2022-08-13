@@ -23,12 +23,12 @@ type PTXServiceDTOBusSpecificationV2ScopeStop struct {
 	// String
 	//
 	// 站位代碼
-	StationID string `json:"StationID,omitempty" xml:"String,omitempty"`
+	StationID string `json:"StationID,omitempty" xml:"StationID,omitempty"`
 
 	// String
 	//
 	// 地區既用中之站牌代碼(為原資料內碼)
-	StopID string `json:"StopID,omitempty" xml:"String,omitempty"`
+	StopID string `json:"StopID,omitempty" xml:"StopID,omitempty"`
 
 	// NameType
 	//

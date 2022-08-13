@@ -20,12 +20,12 @@ type PTXServiceDTOBusSpecificationV2DatePeriod struct {
 	// String
 	//
 	// 營運結束日(格式: yyyy-MM-dd)
-	EndDate string `json:"EndDate,omitempty" xml:"String,omitempty"`
+	EndDate string `json:"EndDate,omitempty" xml:"EndDate,omitempty"`
 
 	// String
 	//
 	// 營運起始日(格式: yyyy-MM-dd)
-	StartDate string `json:"StartDate,omitempty" xml:"String,omitempty"`
+	StartDate string `json:"StartDate,omitempty" xml:"StartDate,omitempty"`
 }
 
 // Validate validates this p t x service d t o bus specification v2 date period

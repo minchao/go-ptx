@@ -26,7 +26,7 @@ type PTXServiceDTORailSpecificationV2THSROldAvailableSeat struct {
 	//
 	// 發車時間(格式: HH:mm)
 	// Required: true
-	DepartureTime *string `json:"DepartureTime" xml:"String"`
+	DepartureTime *string `json:"DepartureTime" xml:"DepartureTime"`
 
 	// Int32
 	//
@@ -38,7 +38,7 @@ type PTXServiceDTORailSpecificationV2THSROldAvailableSeat struct {
 	//
 	// 終點車站代碼
 	// Required: true
-	EndingStationID *string `json:"EndingStationID" xml:"String"`
+	EndingStationID *string `json:"EndingStationID" xml:"EndingStationID"`
 
 	// NameType
 	//
@@ -59,7 +59,7 @@ type PTXServiceDTORailSpecificationV2THSROldAvailableSeat struct {
 	//
 	// 查詢車站代碼
 	// Required: true
-	StationID *string `json:"StationID" xml:"String"`
+	StationID *string `json:"StationID" xml:"StationID"`
 
 	// NameType
 	//
@@ -79,7 +79,7 @@ type PTXServiceDTORailSpecificationV2THSROldAvailableSeat struct {
 	//
 	// 車次號碼
 	// Required: true
-	TrainNo *string `json:"TrainNo" xml:"String"`
+	TrainNo *string `json:"TrainNo" xml:"TrainNo"`
 }
 
 // Validate validates this p t x service d t o rail specification v2 t h s r old available seat

@@ -24,7 +24,7 @@ type PTXServiceDTOShipSpecificationV3ShipStopOfRoute struct {
 	//
 	// 業管機關簡碼
 	// Required: true
-	AuthorityCode *string `json:"AuthorityCode" xml:"String"`
+	AuthorityCode *string `json:"AuthorityCode" xml:"AuthorityCode"`
 
 	// Int32
 	//
@@ -42,7 +42,7 @@ type PTXServiceDTOShipSpecificationV3ShipStopOfRoute struct {
 	//
 	// 航線代碼
 	// Required: true
-	RouteID *string `json:"RouteID" xml:"String"`
+	RouteID *string `json:"RouteID" xml:"RouteID"`
 
 	// NameType
 	//

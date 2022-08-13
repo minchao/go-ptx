@@ -30,32 +30,32 @@ type PTXServiceDTOTourismSpecificationV2BusSubRoute struct {
 	// String
 	//
 	// 平日第一班發車時間
-	FirstBusTime string `json:"FirstBusTime,omitempty" xml:"String,omitempty"`
+	FirstBusTime string `json:"FirstBusTime,omitempty" xml:"FirstBusTime,omitempty"`
 
 	// String
 	//
 	// 車頭描述
-	Headsign string `json:"Headsign,omitempty" xml:"String,omitempty"`
+	Headsign string `json:"Headsign,omitempty" xml:"Headsign,omitempty"`
 
 	// String
 	//
 	// 車頭英文描述
-	HeadsignEn string `json:"HeadsignEn,omitempty" xml:"String,omitempty"`
+	HeadsignEn string `json:"HeadsignEn,omitempty" xml:"HeadsignEn,omitempty"`
 
 	// String
 	//
 	// 假日去程第一班發車時間
-	HolidayFirstBusTime string `json:"HolidayFirstBusTime,omitempty" xml:"String,omitempty"`
+	HolidayFirstBusTime string `json:"HolidayFirstBusTime,omitempty" xml:"HolidayFirstBusTime,omitempty"`
 
 	// String
 	//
 	// 假日返程第一班發車時間
-	HolidayLastBusTime string `json:"HolidayLastBusTime,omitempty" xml:"String,omitempty"`
+	HolidayLastBusTime string `json:"HolidayLastBusTime,omitempty" xml:"HolidayLastBusTime,omitempty"`
 
 	// String
 	//
 	// 平日返程第一班發車時間
-	LastBusTime string `json:"LastBusTime,omitempty" xml:"String,omitempty"`
+	LastBusTime string `json:"LastBusTime,omitempty" xml:"LastBusTime,omitempty"`
 
 	// Array
 	//
@@ -67,7 +67,7 @@ type PTXServiceDTOTourismSpecificationV2BusSubRoute struct {
 	//
 	// 地區既用中之附屬路線代碼(為原資料內碼)
 	// Required: true
-	SubRouteID *string `json:"SubRouteID" xml:"String"`
+	SubRouteID *string `json:"SubRouteID" xml:"SubRouteID"`
 
 	// NameType
 	//
@@ -81,7 +81,7 @@ type PTXServiceDTOTourismSpecificationV2BusSubRoute struct {
 	//
 	// 附屬路線唯一識別代碼，規則為 {業管機關簡碼} + {SubRouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢
 	// Required: true
-	SubRouteUID *string `json:"SubRouteUID" xml:"String"`
+	SubRouteUID *string `json:"SubRouteUID" xml:"SubRouteUID"`
 }
 
 // Validate validates this p t x service d t o tourism specification v2 bus sub route

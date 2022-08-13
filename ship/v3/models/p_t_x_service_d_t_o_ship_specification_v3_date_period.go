@@ -20,12 +20,12 @@ type PTXServiceDTOShipSpecificationV3DatePeriod struct {
 	// String
 	//
 	// 結束日期
-	EndDate string `json:"EndDate,omitempty" xml:"String,omitempty"`
+	EndDate string `json:"EndDate,omitempty" xml:"EndDate,omitempty"`
 
 	// String
 	//
 	// 開始日期
-	StartDate string `json:"StartDate,omitempty" xml:"String,omitempty"`
+	StartDate string `json:"StartDate,omitempty" xml:"StartDate,omitempty"`
 }
 
 // Validate validates this p t x service d t o ship specification v3 date period

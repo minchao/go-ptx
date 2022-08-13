@@ -24,7 +24,7 @@ type PTXServiceDTORailSpecificationV3TRAODFareODFare struct {
 	//
 	// 迄點車站代碼
 	// Required: true
-	DestinationStationID *string `json:"DestinationStationID" xml:"String"`
+	DestinationStationID *string `json:"DestinationStationID" xml:"DestinationStationID"`
 
 	// NameType
 	//
@@ -49,7 +49,7 @@ type PTXServiceDTORailSpecificationV3TRAODFareODFare struct {
 	//
 	// 起點車站代碼
 	// Required: true
-	OriginStationID *string `json:"OriginStationID" xml:"String"`
+	OriginStationID *string `json:"OriginStationID" xml:"OriginStationID"`
 
 	// NameType
 	//

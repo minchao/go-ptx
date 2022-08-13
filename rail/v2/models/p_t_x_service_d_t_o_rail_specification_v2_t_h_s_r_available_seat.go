@@ -32,13 +32,13 @@ type PTXServiceDTORailSpecificationV2THSRAvailableSeat struct {
 	//
 	// 終點車站代碼
 	// Required: true
-	EndingStationCode *string `json:"EndingStationCode" xml:"String"`
+	EndingStationCode *string `json:"EndingStationCode" xml:"EndingStationCode"`
 
 	// String
 	//
 	// 終點車站簡碼(訂票系統用)
 	// Required: true
-	EndingStationID *string `json:"EndingStationID" xml:"String"`
+	EndingStationID *string `json:"EndingStationID" xml:"EndingStationID"`
 
 	// NameType
 	//
@@ -52,13 +52,13 @@ type PTXServiceDTORailSpecificationV2THSRAvailableSeat struct {
 	//
 	// 起站車站簡碼(訂票系統用)
 	// Required: true
-	StartingStationCode *string `json:"StartingStationCode" xml:"String"`
+	StartingStationCode *string `json:"StartingStationCode" xml:"StartingStationCode"`
 
 	// String
 	//
 	// 起點車站代碼
 	// Required: true
-	StartingStationID *string `json:"StartingStationID" xml:"String"`
+	StartingStationID *string `json:"StartingStationID" xml:"StartingStationID"`
 
 	// NameType
 	//
@@ -78,7 +78,7 @@ type PTXServiceDTORailSpecificationV2THSRAvailableSeat struct {
 	//
 	// 車次號碼
 	// Required: true
-	TrainNo *string `json:"TrainNo" xml:"String"`
+	TrainNo *string `json:"TrainNo" xml:"TrainNo"`
 }
 
 // Validate validates this p t x service d t o rail specification v2 t h s r available seat

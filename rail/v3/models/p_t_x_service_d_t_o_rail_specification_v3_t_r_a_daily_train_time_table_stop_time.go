@@ -22,18 +22,18 @@ type PTXServiceDTORailSpecificationV3TRADailyTrainTimeTableStopTime struct {
 	// String
 	//
 	// 到站時間
-	ArrivalTime string `json:"ArrivalTime,omitempty" xml:"String,omitempty"`
+	ArrivalTime string `json:"ArrivalTime,omitempty" xml:"ArrivalTime,omitempty"`
 
 	// String
 	//
 	// 離站時間
-	DepartureTime string `json:"DepartureTime,omitempty" xml:"String,omitempty"`
+	DepartureTime string `json:"DepartureTime,omitempty" xml:"DepartureTime,omitempty"`
 
 	// String
 	//
 	// 車站代碼
 	// Required: true
-	StationID *string `json:"StationID" xml:"String"`
+	StationID *string `json:"StationID" xml:"StationID"`
 
 	// NameType
 	//
@@ -48,6 +48,12 @@ type PTXServiceDTORailSpecificationV3TRADailyTrainTimeTableStopTime struct {
 	// 停靠站序
 	// Required: true
 	StopSequence *int32 `json:"StopSequence"`
+
+	// Int32
+	//
+	// 本站是否停駛 : [0:'否',1:'是']
+	// Required: true
+	SuspendedFlag *int64 `json:"SuspendedFlag"`
 }
 
 // Validate validates this p t x service d t o rail specification v3 t r a daily train time table stop time
@@ -63,6 +69,10 @@ func (m *PTXServiceDTORailSpecificationV3TRADailyTrainTimeTableStopTime) Validat
 	}
 
 	if err := m.validateStopSequence(formats); err != nil {
+		res = append(res, err)
+	}
+
+	if err := m.validateSuspendedFlag(formats); err != nil {
 		res = append(res, err)
 	}
 
@@ -89,6 +99,15 @@ func (m *PTXServiceDTORailSpecificationV3TRADailyTrainTimeTableStopTime) validat
 func (m *PTXServiceDTORailSpecificationV3TRADailyTrainTimeTableStopTime) validateStopSequence(formats strfmt.Registry) error {
 
 	if err := validate.Required("StopSequence", "body", m.StopSequence); err != nil {
+		return err
+	}
+
+	return nil
+}
+
+func (m *PTXServiceDTORailSpecificationV3TRADailyTrainTimeTableStopTime) validateSuspendedFlag(formats strfmt.Registry) error {
+
+	if err := validate.Required("SuspendedFlag", "body", m.SuspendedFlag); err != nil {
 		return err
 	}
 

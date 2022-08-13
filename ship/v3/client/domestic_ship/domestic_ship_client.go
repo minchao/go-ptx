@@ -34,7 +34,13 @@ type ClientService interface {
 
 	ShipDomesticDailySchedule32451(params *ShipDomesticDailySchedule32451Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ShipDomesticDailySchedule32451OK, *ShipDomesticDailySchedule32451Status299, error)
 
+	ShipDomesticGeneralSchedule3244(params *ShipDomesticGeneralSchedule3244Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ShipDomesticGeneralSchedule3244OK, *ShipDomesticGeneralSchedule3244Status299, error)
+
+	ShipDomesticGeneralSchedule32441(params *ShipDomesticGeneralSchedule32441Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ShipDomesticGeneralSchedule32441OK, *ShipDomesticGeneralSchedule32441Status299, error)
+
 	ShipDomesticNews3248(params *ShipDomesticNews3248Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ShipDomesticNews3248OK, *ShipDomesticNews3248Status299, error)
+
+	ShipDomesticODFare3242(params *ShipDomesticODFare3242Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ShipDomesticODFare3242OK, *ShipDomesticODFare3242Status299, error)
 
 	ShipDomesticOperator3238(params *ShipDomesticOperator3238Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ShipDomesticOperator3238OK, *ShipDomesticOperator3238Status299, error)
 
@@ -132,6 +138,86 @@ func (a *Client) ShipDomesticDailySchedule32451(params *ShipDomesticDailySchedul
 }
 
 /*
+  ShipDomesticGeneralSchedule3244 取得指定s 縣市 之定期班表資料
+*/
+func (a *Client) ShipDomesticGeneralSchedule3244(params *ShipDomesticGeneralSchedule3244Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ShipDomesticGeneralSchedule3244OK, *ShipDomesticGeneralSchedule3244Status299, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewShipDomesticGeneralSchedule3244Params()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "Ship_Domestic_GeneralSchedule_3244",
+		Method:             "GET",
+		PathPattern:        "/v3/Ship/GeneralSchedule/Domestic/City/{City}",
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &ShipDomesticGeneralSchedule3244Reader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, nil, err
+	}
+	switch value := result.(type) {
+	case *ShipDomesticGeneralSchedule3244OK:
+		return value, nil, nil
+	case *ShipDomesticGeneralSchedule3244Status299:
+		return nil, value, nil
+	}
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for domestic_ship: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  ShipDomesticGeneralSchedule32441 取得指定s 縣市 航線 之定期班表資料
+*/
+func (a *Client) ShipDomesticGeneralSchedule32441(params *ShipDomesticGeneralSchedule32441Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ShipDomesticGeneralSchedule32441OK, *ShipDomesticGeneralSchedule32441Status299, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewShipDomesticGeneralSchedule32441Params()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "Ship_Domestic_GeneralSchedule_3244_1",
+		Method:             "GET",
+		PathPattern:        "/v3/Ship/GeneralSchedule/Domestic/City/{City}/{RouteID}",
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &ShipDomesticGeneralSchedule32441Reader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, nil, err
+	}
+	switch value := result.(type) {
+	case *ShipDomesticGeneralSchedule32441OK:
+		return value, nil, nil
+	case *ShipDomesticGeneralSchedule32441Status299:
+		return nil, value, nil
+	}
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for domestic_ship: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
   ShipDomesticNews3248 取得指定s 縣市 之最新消息資料
 */
 func (a *Client) ShipDomesticNews3248(params *ShipDomesticNews3248Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ShipDomesticNews3248OK, *ShipDomesticNews3248Status299, error) {
@@ -164,6 +250,46 @@ func (a *Client) ShipDomesticNews3248(params *ShipDomesticNews3248Params, authIn
 	case *ShipDomesticNews3248OK:
 		return value, nil, nil
 	case *ShipDomesticNews3248Status299:
+		return nil, value, nil
+	}
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for domestic_ship: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  ShipDomesticODFare3242 取得指定s 縣市 之票價資料
+*/
+func (a *Client) ShipDomesticODFare3242(params *ShipDomesticODFare3242Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*ShipDomesticODFare3242OK, *ShipDomesticODFare3242Status299, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewShipDomesticODFare3242Params()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "Ship_Domestic_ODFare_3242",
+		Method:             "GET",
+		PathPattern:        "/v3/Ship/ODFare/Domestic/City/{City}",
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &ShipDomesticODFare3242Reader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, nil, err
+	}
+	switch value := result.(type) {
+	case *ShipDomesticODFare3242OK:
+		return value, nil, nil
+	case *ShipDomesticODFare3242Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue

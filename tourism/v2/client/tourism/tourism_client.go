@@ -62,21 +62,21 @@ type ClientService interface {
 
 	TaiwanTripBusAPIStopOfRoute22641(params *TaiwanTripBusAPIStopOfRoute22641Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TaiwanTripBusAPIStopOfRoute22641OK, *TaiwanTripBusAPIStopOfRoute22641Status299, error)
 
-	TourismAPIActivity02247(params *TourismAPIActivity02247Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TourismAPIActivity02247OK, *TourismAPIActivity02247Status299, error)
-
 	TourismAPIActivity2246(params *TourismAPIActivity2246Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TourismAPIActivity2246OK, *TourismAPIActivity2246Status299, error)
 
-	TourismAPIHotel02245(params *TourismAPIHotel02245Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TourismAPIHotel02245OK, *TourismAPIHotel02245Status299, error)
+	TourismAPIActivity22461(params *TourismAPIActivity22461Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TourismAPIActivity22461OK, *TourismAPIActivity22461Status299, error)
 
 	TourismAPIHotel2244(params *TourismAPIHotel2244Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TourismAPIHotel2244OK, *TourismAPIHotel2244Status299, error)
 
-	TourismAPIRestaurant02243(params *TourismAPIRestaurant02243Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TourismAPIRestaurant02243OK, *TourismAPIRestaurant02243Status299, error)
+	TourismAPIHotel22441(params *TourismAPIHotel22441Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TourismAPIHotel22441OK, *TourismAPIHotel22441Status299, error)
 
 	TourismAPIRestaurant2242(params *TourismAPIRestaurant2242Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TourismAPIRestaurant2242OK, *TourismAPIRestaurant2242Status299, error)
 
-	TourismAPIScenicSpot02241(params *TourismAPIScenicSpot02241Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TourismAPIScenicSpot02241OK, *TourismAPIScenicSpot02241Status299, error)
+	TourismAPIRestaurant22421(params *TourismAPIRestaurant22421Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TourismAPIRestaurant22421OK, *TourismAPIRestaurant22421Status299, error)
 
 	TourismAPIScenicSpot2240(params *TourismAPIScenicSpot2240Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TourismAPIScenicSpot2240OK, *TourismAPIScenicSpot2240Status299, error)
+
+	TourismAPIScenicSpot22401(params *TourismAPIScenicSpot22401Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TourismAPIScenicSpot22401OK, *TourismAPIScenicSpot22401Status299, error)
 
 	SetTransport(transport runtime.ClientTransport)
 }
@@ -754,48 +754,6 @@ func (a *Client) TaiwanTripBusAPIStopOfRoute22641(params *TaiwanTripBusAPIStopOf
 }
 
 /*
-  TourismAPIActivity02247 取得指定s 縣市 觀光活動資料
-
-  取得指定[縣市]觀光活動資料
-*/
-func (a *Client) TourismAPIActivity02247(params *TourismAPIActivity02247Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TourismAPIActivity02247OK, *TourismAPIActivity02247Status299, error) {
-	// TODO: Validate the params before sending
-	if params == nil {
-		params = NewTourismAPIActivity02247Params()
-	}
-	op := &runtime.ClientOperation{
-		ID:                 "TourismApi_Activity_0_2247",
-		Method:             "GET",
-		PathPattern:        "/v2/Tourism/Activity/{City}",
-		ProducesMediaTypes: []string{"application/json", "application/xml"},
-		ConsumesMediaTypes: []string{"application/json"},
-		Schemes:            []string{"https"},
-		Params:             params,
-		Reader:             &TourismAPIActivity02247Reader{formats: a.formats},
-		AuthInfo:           authInfo,
-		Context:            params.Context,
-		Client:             params.HTTPClient,
-	}
-	for _, opt := range opts {
-		opt(op)
-	}
-
-	result, err := a.transport.Submit(op)
-	if err != nil {
-		return nil, nil, err
-	}
-	switch value := result.(type) {
-	case *TourismAPIActivity02247OK:
-		return value, nil, nil
-	case *TourismAPIActivity02247Status299:
-		return nil, value, nil
-	}
-	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
-	msg := fmt.Sprintf("unexpected success response for tourism: API contract not enforced by server. Client expected to get an error, but got: %T", result)
-	panic(msg)
-}
-
-/*
   TourismAPIActivity2246 取得所有觀光活動資料s
 
   取得所有觀光活動資料
@@ -838,24 +796,24 @@ func (a *Client) TourismAPIActivity2246(params *TourismAPIActivity2246Params, au
 }
 
 /*
-  TourismAPIHotel02245 取得指定s 縣市 觀光旅宿資料
+  TourismAPIActivity22461 取得指定s 縣市 觀光活動資料
 
-  取得指定[縣市]觀光旅宿資料
+  取得指定[縣市]觀光活動資料
 */
-func (a *Client) TourismAPIHotel02245(params *TourismAPIHotel02245Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TourismAPIHotel02245OK, *TourismAPIHotel02245Status299, error) {
+func (a *Client) TourismAPIActivity22461(params *TourismAPIActivity22461Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TourismAPIActivity22461OK, *TourismAPIActivity22461Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewTourismAPIHotel02245Params()
+		params = NewTourismAPIActivity22461Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "TourismApi_Hotel_0_2245",
+		ID:                 "TourismApi_Activity_2246_1",
 		Method:             "GET",
-		PathPattern:        "/v2/Tourism/Hotel/{City}",
+		PathPattern:        "/v2/Tourism/Activity/{City}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &TourismAPIHotel02245Reader{formats: a.formats},
+		Reader:             &TourismAPIActivity22461Reader{formats: a.formats},
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
@@ -869,9 +827,9 @@ func (a *Client) TourismAPIHotel02245(params *TourismAPIHotel02245Params, authIn
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *TourismAPIHotel02245OK:
+	case *TourismAPIActivity22461OK:
 		return value, nil, nil
-	case *TourismAPIHotel02245Status299:
+	case *TourismAPIActivity22461Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -922,24 +880,24 @@ func (a *Client) TourismAPIHotel2244(params *TourismAPIHotel2244Params, authInfo
 }
 
 /*
-  TourismAPIRestaurant02243 取得指定s 縣市 觀光餐飲資料
+  TourismAPIHotel22441 取得指定s 縣市 觀光旅宿資料
 
-  取得指定[縣市]觀光餐飲資料
+  取得指定[縣市]觀光旅宿資料
 */
-func (a *Client) TourismAPIRestaurant02243(params *TourismAPIRestaurant02243Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TourismAPIRestaurant02243OK, *TourismAPIRestaurant02243Status299, error) {
+func (a *Client) TourismAPIHotel22441(params *TourismAPIHotel22441Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TourismAPIHotel22441OK, *TourismAPIHotel22441Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewTourismAPIRestaurant02243Params()
+		params = NewTourismAPIHotel22441Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "TourismApi_Restaurant_0_2243",
+		ID:                 "TourismApi_Hotel_2244_1",
 		Method:             "GET",
-		PathPattern:        "/v2/Tourism/Restaurant/{City}",
+		PathPattern:        "/v2/Tourism/Hotel/{City}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &TourismAPIRestaurant02243Reader{formats: a.formats},
+		Reader:             &TourismAPIHotel22441Reader{formats: a.formats},
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
@@ -953,9 +911,9 @@ func (a *Client) TourismAPIRestaurant02243(params *TourismAPIRestaurant02243Para
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *TourismAPIRestaurant02243OK:
+	case *TourismAPIHotel22441OK:
 		return value, nil, nil
-	case *TourismAPIRestaurant02243Status299:
+	case *TourismAPIHotel22441Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -1006,24 +964,24 @@ func (a *Client) TourismAPIRestaurant2242(params *TourismAPIRestaurant2242Params
 }
 
 /*
-  TourismAPIScenicSpot02241 取得指定s 縣市 觀光景點資料
+  TourismAPIRestaurant22421 取得指定s 縣市 觀光餐飲資料
 
-  取得指定[縣市]觀光景點資料
+  取得指定[縣市]觀光餐飲資料
 */
-func (a *Client) TourismAPIScenicSpot02241(params *TourismAPIScenicSpot02241Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TourismAPIScenicSpot02241OK, *TourismAPIScenicSpot02241Status299, error) {
+func (a *Client) TourismAPIRestaurant22421(params *TourismAPIRestaurant22421Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TourismAPIRestaurant22421OK, *TourismAPIRestaurant22421Status299, error) {
 	// TODO: Validate the params before sending
 	if params == nil {
-		params = NewTourismAPIScenicSpot02241Params()
+		params = NewTourismAPIRestaurant22421Params()
 	}
 	op := &runtime.ClientOperation{
-		ID:                 "TourismApi_ScenicSpot_0_2241",
+		ID:                 "TourismApi_Restaurant_2242_1",
 		Method:             "GET",
-		PathPattern:        "/v2/Tourism/ScenicSpot/{City}",
+		PathPattern:        "/v2/Tourism/Restaurant/{City}",
 		ProducesMediaTypes: []string{"application/json", "application/xml"},
 		ConsumesMediaTypes: []string{"application/json"},
 		Schemes:            []string{"https"},
 		Params:             params,
-		Reader:             &TourismAPIScenicSpot02241Reader{formats: a.formats},
+		Reader:             &TourismAPIRestaurant22421Reader{formats: a.formats},
 		AuthInfo:           authInfo,
 		Context:            params.Context,
 		Client:             params.HTTPClient,
@@ -1037,9 +995,9 @@ func (a *Client) TourismAPIScenicSpot02241(params *TourismAPIScenicSpot02241Para
 		return nil, nil, err
 	}
 	switch value := result.(type) {
-	case *TourismAPIScenicSpot02241OK:
+	case *TourismAPIRestaurant22421OK:
 		return value, nil, nil
-	case *TourismAPIScenicSpot02241Status299:
+	case *TourismAPIRestaurant22421Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
@@ -1082,6 +1040,48 @@ func (a *Client) TourismAPIScenicSpot2240(params *TourismAPIScenicSpot2240Params
 	case *TourismAPIScenicSpot2240OK:
 		return value, nil, nil
 	case *TourismAPIScenicSpot2240Status299:
+		return nil, value, nil
+	}
+	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue
+	msg := fmt.Sprintf("unexpected success response for tourism: API contract not enforced by server. Client expected to get an error, but got: %T", result)
+	panic(msg)
+}
+
+/*
+  TourismAPIScenicSpot22401 取得指定s 縣市 觀光景點資料
+
+  取得指定[縣市]觀光景點資料
+*/
+func (a *Client) TourismAPIScenicSpot22401(params *TourismAPIScenicSpot22401Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*TourismAPIScenicSpot22401OK, *TourismAPIScenicSpot22401Status299, error) {
+	// TODO: Validate the params before sending
+	if params == nil {
+		params = NewTourismAPIScenicSpot22401Params()
+	}
+	op := &runtime.ClientOperation{
+		ID:                 "TourismApi_ScenicSpot_2240_1",
+		Method:             "GET",
+		PathPattern:        "/v2/Tourism/ScenicSpot/{City}",
+		ProducesMediaTypes: []string{"application/json", "application/xml"},
+		ConsumesMediaTypes: []string{"application/json"},
+		Schemes:            []string{"https"},
+		Params:             params,
+		Reader:             &TourismAPIScenicSpot22401Reader{formats: a.formats},
+		AuthInfo:           authInfo,
+		Context:            params.Context,
+		Client:             params.HTTPClient,
+	}
+	for _, opt := range opts {
+		opt(op)
+	}
+
+	result, err := a.transport.Submit(op)
+	if err != nil {
+		return nil, nil, err
+	}
+	switch value := result.(type) {
+	case *TourismAPIScenicSpot22401OK:
+		return value, nil, nil
+	case *TourismAPIScenicSpot22401Status299:
 		return nil, value, nil
 	}
 	// safeguard: normally, absent a default response, unknown success responses return an error above: so this is a codegen issue

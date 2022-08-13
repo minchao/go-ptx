@@ -11,10 +11,105 @@
     "https"
   ],
   "paths": {
+    "/v3/Ship/DailySchedule/RouteID/{RouteID}": {
+      "get": {
+        "tags": [
+          "Ship Advanced(By RouteType)"
+        ],
+        "summary": "取得指定[航線]的全臺航運之每日班表資料",
+        "operationId": "Ship_RouteType_DailySchedule2_3260",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "RouteID",
+            "description": "指定航運路線代碼",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "title": "Array",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PTX.Service.DTO.Ship.Specification.V3.ShipDailySchedule"
+              }
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
     "/v3/Ship/DailySchedule/RouteType/{RouteType}": {
       "get": {
         "tags": [
-          "ShipByRouteType"
+          "Ship Advanced(By RouteType)"
         ],
         "summary": "取得指定[航線類別]的全臺航運之每日班表資料",
         "operationId": "Ship_RouteType_DailySchedule_3259",
@@ -117,10 +212,210 @@
         }
       }
     },
+    "/v3/Ship/GeneralSchedule/RouteID/{RouteID}": {
+      "get": {
+        "tags": [
+          "Ship Advanced(By RouteType)"
+        ],
+        "summary": "取得指定[航線]的全臺航運之定期班表資料",
+        "operationId": "Ship_RouteType_GeneralSchedule2_3269",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "RouteID",
+            "description": "指定航運路線代碼",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "title": "Array",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PTX.Service.DTO.Ship.Specification.V3.ShipGeneralSchedule"
+              }
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v3/Ship/GeneralSchedule/RouteType/{RouteType}": {
+      "get": {
+        "tags": [
+          "Ship Advanced(By RouteType)"
+        ],
+        "summary": "取得指定[航線類別]的全臺航運之定期班表資料",
+        "operationId": "Ship_RouteType_GeneralSchedule_3268",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "RouteType",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "Internal",
+              "Other"
+            ],
+            "x-enum": {
+              "Bilateral": "兩岸航線",
+              "Internal": "國內航線(渡輪、藍色公路)",
+              "MiniThreeLinks": "小三通航線",
+              "Other": "其他",
+              "OutlyingIslands": "離島航線"
+            }
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "title": "Array",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PTX.Service.DTO.Ship.Specification.V3.ShipGeneralSchedule"
+              }
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
     "/v3/Ship/Route/RouteType/{RouteType}": {
       "get": {
         "tags": [
-          "ShipByRouteType"
+          "Ship Advanced(By RouteType)"
         ],
         "summary": "取得指定[航線類別]的全臺航運之航線資料",
         "operationId": "Ship_RouteType_Route_3257",
@@ -223,10 +518,306 @@
         }
       }
     },
+    "/v3/Ship/ODFare/RouteType/{RouteType}": {
+      "get": {
+        "tags": [
+          "Ship Advanced(By RouteType)"
+        ],
+        "summary": "取得指定[航線類別]的全臺航運之票價資料",
+        "operationId": "Ship_RouteTypel_ODFare_3266",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "RouteType",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "Internal",
+              "Other"
+            ],
+            "x-enum": {
+              "OutlyingIslands": "離島航線",
+              "Internal": "國內航線(渡輪、藍色公路)",
+              "Bilateral": "兩岸航線",
+              "Other": "其他",
+              "MiniThreeLinks": "小三通航線"
+            }
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "title": "Array",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PTX.Service.DTO.Ship.Specification.V3.RouteFare"
+              }
+            }
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v3/Ship/ODFare/{OriginPortID}/to/{DestinationPortID}": {
+      "get": {
+        "tags": [
+          "Ship Advanced(By RouteType)"
+        ],
+        "summary": "取得航運指定[起迄港間]之票價資料",
+        "operationId": "Ship_ODFare_3267",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "OriginPortID",
+            "description": "指定[起]之票價資料",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "path",
+            "name": "DestinationPortID",
+            "description": "指定[迄]之票價資料",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "title": "Array",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PTX.Service.DTO.Ship.Specification.V3.RouteFare"
+              }
+            }
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v3/Ship/SpecificSchedule/RouteID/{RouteID}": {
+      "get": {
+        "tags": [
+          "Ship Advanced(By RouteType)"
+        ],
+        "summary": "取得指定[航線]的全臺航運之特殊班表資料",
+        "operationId": "Ship_RouteType_SpecificSchedule2_3262",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "RouteID",
+            "description": "指定航運路線代碼",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "title": "Array",
+              "type": "array",
+              "items": {
+                "$ref": "#/definitions/PTX.Service.DTO.Ship.Specification.V3.ShipSpecificSchedule"
+              }
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
     "/v3/Ship/SpecificSchedule/RouteType/{RouteType}": {
       "get": {
         "tags": [
-          "ShipByRouteType"
+          "Ship Advanced(By RouteType)"
         ],
         "summary": "取得指定[航線類別]的全臺航運之特殊班表資料",
         "operationId": "Ship_RouteType_SpecificSchedule_3261",
@@ -245,11 +836,11 @@
               "Other"
             ],
             "x-enum": {
-              "Internal": "國內航線(渡輪、藍色公路)",
               "OutlyingIslands": "離島航線",
               "MiniThreeLinks": "小三通航線",
               "Other": "其他",
-              "Bilateral": "兩岸航線"
+              "Bilateral": "兩岸航線",
+              "Internal": "國內航線(渡輪、藍色公路)"
             }
           },
           {
@@ -331,7 +922,7 @@
     "/v3/Ship/StopOfRoute/RouteType/{RouteType}": {
       "get": {
         "tags": [
-          "ShipByRouteType"
+          "Ship Advanced(By RouteType)"
         ],
         "summary": "取得指定[航線類別]之航線靠港順序資料",
         "operationId": "Ship_RouteType_StopOfRoute_3258",
@@ -434,10 +1025,10 @@
         }
       }
     },
-    "/v3/Ship/Basic/Authority": {
+    "/v3/Ship/Authority": {
       "get": {
         "tags": [
-          "ShipBasic"
+          "Common"
         ],
         "summary": "取得業管機關資料",
         "operationId": "Ship_Basic_Authority_3236",
@@ -528,10 +1119,10 @@
         }
       }
     },
-    "/v3/Ship/LivePosition/International": {
+    "/v3/Ship/LivePosition": {
       "get": {
         "tags": [
-          "InternationalShip"
+          "Ship (Domestic + International)"
         ],
         "summary": "取得國際航運之船舶即時位置資料",
         "operationId": "Ship_International_LivePosition_3237",
@@ -622,10 +1213,10 @@
         }
       }
     },
-    "/v3/Ship/Basic/Port": {
+    "/v3/Ship/Port": {
       "get": {
         "tags": [
-          "ShipBasic"
+          "Common"
         ],
         "summary": "取得港口資料",
         "operationId": "Ship_Basic_Port_3231",
@@ -702,196 +1293,6 @@
             "description": "Success",
             "schema": {
               "$ref": "#/definitions/PTX.API.Ship.Model.ShipWrapper[PTX.Service.DTO.Ship.Specification.V3.Port]"
-            }
-          },
-          "304": {
-            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
-          },
-          "299": {
-            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
-            "schema": {
-              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
-            }
-          }
-        }
-      }
-    },
-    "/v3/Ship/DailySchedule/RouteID/{RouteID}": {
-      "get": {
-        "tags": [
-          "ShipByRouteType"
-        ],
-        "summary": "取得指定[航線]的全臺航運之每日班表資料",
-        "operationId": "Ship_RouteType_DailySchedule2_3260",
-        "produces": [
-          "application/json",
-          "application/xml"
-        ],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "RouteID",
-            "description": "指定航運路線代碼",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$select",
-            "description": "挑選",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$filter",
-            "description": "過濾",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$orderby",
-            "description": "排序",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$top",
-            "description": "取前幾筆",
-            "type": "integer",
-            "default": 30
-          },
-          {
-            "in": "query",
-            "name": "$skip",
-            "description": "跳過前幾筆",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "health",
-            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
-            "type": "string",
-            "enum": [
-              "true",
-              "false"
-            ]
-          },
-          {
-            "in": "query",
-            "name": "$format",
-            "description": "指定來源格式",
-            "required": true,
-            "type": "string",
-            "enum": [
-              "JSON",
-              "XML"
-            ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "schema": {
-              "title": "Array",
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/PTX.Service.DTO.Ship.Specification.V3.ShipDailySchedule"
-              }
-            }
-          },
-          "304": {
-            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
-          },
-          "299": {
-            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
-            "schema": {
-              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
-            }
-          }
-        }
-      }
-    },
-    "/v3/Ship/SpecificSchedule/RouteID/{RouteID}": {
-      "get": {
-        "tags": [
-          "ShipByRouteType"
-        ],
-        "summary": "取得指定[航線]的全臺航運之特殊班表資料",
-        "operationId": "Ship_RouteType_SpecificSchedule2_3262",
-        "produces": [
-          "application/json",
-          "application/xml"
-        ],
-        "parameters": [
-          {
-            "in": "path",
-            "name": "RouteID",
-            "description": "指定航運路線代碼",
-            "required": true,
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$select",
-            "description": "挑選",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$filter",
-            "description": "過濾",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$orderby",
-            "description": "排序",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$top",
-            "description": "取前幾筆",
-            "type": "integer",
-            "default": 30
-          },
-          {
-            "in": "query",
-            "name": "$skip",
-            "description": "跳過前幾筆",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "health",
-            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
-            "type": "string",
-            "enum": [
-              "true",
-              "false"
-            ]
-          },
-          {
-            "in": "query",
-            "name": "$format",
-            "description": "指定來源格式",
-            "required": true,
-            "type": "string",
-            "enum": [
-              "JSON",
-              "XML"
-            ]
-          }
-        ],
-        "responses": {
-          "200": {
-            "description": "Success",
-            "schema": {
-              "title": "Array",
-              "type": "array",
-              "items": {
-                "$ref": "#/definitions/PTX.Service.DTO.Ship.Specification.V3.ShipSpecificSchedule"
-              }
             }
           },
           "304": {
@@ -1145,6 +1546,249 @@
         }
       }
     },
+    "/v3/Ship/GeneralSchedule/Domestic/City/{City}": {
+      "get": {
+        "tags": [
+          "DomesticShip"
+        ],
+        "summary": "取得指定[縣市]之定期班表資料",
+        "operationId": "Ship_Domestic_GeneralSchedule_3244",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "City",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "NewTaipei",
+              "KinmenCounty",
+              "PenghuCounty",
+              "Taipei",
+              "Kaohsiung"
+            ],
+            "x-enum": {
+              "KinmenCounty": "金門縣",
+              "PenghuCounty": "澎湖縣",
+              "Taipei": "臺北市",
+              "Kaohsiung": "高雄市",
+              "PingtungCounty": "屏東縣",
+              "NewTaipei": "新北市",
+              "TaitungCounty": "臺東縣",
+              "NantouCounty": "南投縣",
+              "LienchiangCounty": "連江縣"
+            }
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$count",
+            "description": "查詢數量",
+            "type": "boolean",
+            "enum": [
+              true,
+              false
+            ]
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/PTX.API.Ship.Model.ShipWrapper[PTX.Service.DTO.Ship.Specification.V3.GeneralSchedule]"
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
+    "/v3/Ship/GeneralSchedule/Domestic/City/{City}/{RouteID}": {
+      "get": {
+        "tags": [
+          "DomesticShip"
+        ],
+        "summary": "取得指定[縣市],[航線]之定期班表資料",
+        "operationId": "Ship_Domestic_GeneralSchedule_3244_1",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "City",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "NewTaipei",
+              "KinmenCounty",
+              "PenghuCounty",
+              "Taipei",
+              "Kaohsiung"
+            ],
+            "x-enum": {
+              "KinmenCounty": "金門縣",
+              "PenghuCounty": "澎湖縣",
+              "Taipei": "臺北市",
+              "Kaohsiung": "高雄市",
+              "PingtungCounty": "屏東縣",
+              "NewTaipei": "新北市",
+              "TaitungCounty": "臺東縣",
+              "NantouCounty": "南投縣",
+              "LienchiangCounty": "連江縣"
+            }
+          },
+          {
+            "in": "path",
+            "name": "RouteID",
+            "description": "指定航運路線代碼",
+            "required": true,
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$count",
+            "description": "查詢數量",
+            "type": "boolean",
+            "enum": [
+              true,
+              false
+            ]
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/PTX.API.Ship.Model.ShipWrapper[PTX.Service.DTO.Ship.Specification.V3.GeneralSchedule]"
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
     "/v3/Ship/News/Domestic/City/{City}": {
       "get": {
         "tags": [
@@ -1166,13 +1810,13 @@
               "KinmenCounty"
             ],
             "x-enum": {
-              "NewTaipei": "新北市",
               "TaitungCounty": "臺東縣",
               "LienchiangCounty": "連江縣",
               "PingtungCounty": "屏東縣",
               "KinmenCounty": "金門縣",
               "Taipei": "臺北市",
               "Kaohsiung": "高雄市",
+              "NewTaipei": "新北市",
               "PenghuCounty": "澎湖縣",
               "NantouCounty": "南投縣"
             }
@@ -1286,7 +1930,6 @@
               "Kaohsiung"
             ],
             "x-enum": {
-              "PingtungCounty": "屏東縣",
               "PenghuCounty": "澎湖縣",
               "NewTaipei": "新北市",
               "Kaohsiung": "高雄市",
@@ -1294,7 +1937,8 @@
               "TaitungCounty": "臺東縣",
               "KinmenCounty": "金門縣",
               "NantouCounty": "南投縣",
-              "Taipei": "臺北市"
+              "Taipei": "臺北市",
+              "PingtungCounty": "屏東縣"
             }
           },
           {
@@ -1499,6 +2143,124 @@
         }
       }
     },
+    "/v3/Ship/ODFare/Domestic/City/{City}": {
+      "get": {
+        "tags": [
+          "DomesticShip"
+        ],
+        "summary": "取得指定[縣市]之票價資料",
+        "operationId": "Ship_Domestic_ODFare_3242",
+        "produces": [
+          "application/json",
+          "application/xml"
+        ],
+        "parameters": [
+          {
+            "in": "path",
+            "name": "City",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "NewTaipei",
+              "KinmenCounty",
+              "PenghuCounty",
+              "Taipei",
+              "Kaohsiung"
+            ],
+            "x-enum": {
+              "TaitungCounty": "臺東縣",
+              "NantouCounty": "南投縣",
+              "KinmenCounty": "金門縣",
+              "NewTaipei": "新北市",
+              "LienchiangCounty": "連江縣",
+              "PenghuCounty": "澎湖縣",
+              "Taipei": "臺北市",
+              "PingtungCounty": "屏東縣",
+              "Kaohsiung": "高雄市"
+            }
+          },
+          {
+            "in": "query",
+            "name": "$select",
+            "description": "挑選",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$filter",
+            "description": "過濾",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$orderby",
+            "description": "排序",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$top",
+            "description": "取前幾筆",
+            "type": "integer",
+            "default": 30
+          },
+          {
+            "in": "query",
+            "name": "$skip",
+            "description": "跳過前幾筆",
+            "type": "string"
+          },
+          {
+            "in": "query",
+            "name": "$count",
+            "description": "查詢數量",
+            "type": "boolean",
+            "enum": [
+              true,
+              false
+            ]
+          },
+          {
+            "in": "query",
+            "name": "health",
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "type": "string",
+            "enum": [
+              "true",
+              "false"
+            ]
+          },
+          {
+            "in": "query",
+            "name": "$format",
+            "description": "指定來源格式",
+            "required": true,
+            "type": "string",
+            "enum": [
+              "JSON",
+              "XML"
+            ]
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "Success",
+            "schema": {
+              "$ref": "#/definitions/PTX.API.Ship.Model.ShipWrapper[PTX.Service.DTO.Ship.Specification.V3.RouteFare]"
+            }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
+          },
+          "299": {
+            "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
+            "schema": {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth"
+            }
+          }
+        }
+      }
+    },
     "/v3/Ship/SpecificSchedule/Domestic/City/{City}": {
       "get": {
         "tags": [
@@ -1520,7 +2282,6 @@
               "NewTaipei"
             ],
             "x-enum": {
-              "LienchiangCounty": "連江縣",
               "Taipei": "臺北市",
               "PenghuCounty": "澎湖縣",
               "PingtungCounty": "屏東縣",
@@ -1528,7 +2289,8 @@
               "KinmenCounty": "金門縣",
               "NantouCounty": "南投縣",
               "NewTaipei": "新北市",
-              "TaitungCounty": "臺東縣"
+              "TaitungCounty": "臺東縣",
+              "LienchiangCounty": "連江縣"
             }
           },
           {
@@ -1634,7 +2396,6 @@
               "NewTaipei"
             ],
             "x-enum": {
-              "LienchiangCounty": "連江縣",
               "Taipei": "臺北市",
               "PenghuCounty": "澎湖縣",
               "PingtungCounty": "屏東縣",
@@ -1642,7 +2403,8 @@
               "KinmenCounty": "金門縣",
               "NantouCounty": "南投縣",
               "NewTaipei": "新北市",
-              "TaitungCounty": "臺東縣"
+              "TaitungCounty": "臺東縣",
+              "LienchiangCounty": "連江縣"
             }
           },
           {
@@ -2012,7 +2774,7 @@
           "description": "業管機關簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityCode"
           }
         },
         "Count": {
@@ -2076,7 +2838,7 @@
           "description": "業管機關簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityCode"
           }
         },
         "Count": {
@@ -2127,7 +2889,7 @@
           "description": "業管機關簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityCode"
           }
         },
         "VersionID": {
@@ -2193,7 +2955,7 @@
           "description": "業管機關簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityCode"
           }
         },
         "VersionID": {
@@ -2233,6 +2995,72 @@
         "namespace": "http://ptx.transportdata.tw/standard/schema/"
       }
     },
+    "PTX.API.Ship.Model.ShipWrapper[PTX.Service.DTO.Ship.Specification.V3.GeneralSchedule]": {
+      "title": "ShipGeneralScheduleList",
+      "required": [
+        "SrcUpdateInterval",
+        "SrcUpdateTime",
+        "UpdateInterval",
+        "VersionID"
+      ],
+      "type": "object",
+      "properties": {
+        "UpdateInterval": {
+          "format": "int32",
+          "title": "Int32",
+          "description": "本平台資料更新週期(秒)",
+          "type": "integer"
+        },
+        "SrcUpdateInterval": {
+          "format": "int32",
+          "description": "[來源端平臺]資料更新週期(秒)['-1: 不定期更新']<span class=\"emphasis fas fa-pen\" rel=\"為來源Inbound XML中的UpdateInterval [該欄位由本平台自動產製]\"></span>",
+          "type": "integer"
+        },
+        "AuthorityCode": {
+          "title": "String",
+          "description": "業管機關簡碼",
+          "type": "string",
+          "xml": {
+            "name": "AuthorityCode"
+          }
+        },
+        "VersionID": {
+          "format": "int32",
+          "description": "資料版本編號<span class=\"emphasis fas fa-pen\" rel=\"與來源Inbound XML不同，為提供資料的版本編號[該欄位由本平台自動產製]\"></span>",
+          "type": "integer"
+        },
+        "GeneralSchedules": {
+          "title": "Array",
+          "description": "資料(陣列)",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PTX.Service.DTO.Ship.Specification.V3.GeneralSchedule"
+          },
+          "xml": {
+            "name": "List`1"
+          }
+        },
+        "Count": {
+          "format": "int64",
+          "description": "資料總筆數<span class=\"emphasis fas fa-pen\" rel=\"與來源Inbound XML不同，為提供資料的總筆數[該欄位由本平台自動產製]\"></span>",
+          "type": "integer"
+        },
+        "UpdateTime": {
+          "format": "date-time",
+          "description": "XML更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "SrcUpdateTime": {
+          "format": "date-time",
+          "description": "[來源端平臺]資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)<span class=\"emphasis fas fa-pen\" rel=\"為來源Inbound XML中的UpdateTime [該欄位由本平台自動產製]\"></span>",
+          "type": "string"
+        }
+      },
+      "xml": {
+        "name": "ShipWrapperOfGeneralSchedule",
+        "namespace": "http://ptx.transportdata.tw/standard/schema/"
+      }
+    },
     "PTX.API.Ship.Model.ShipWrapper[PTX.Service.DTO.Ship.Specification.V3.Operator]": {
       "title": "ShipOperatorList",
       "required": [
@@ -2259,7 +3087,7 @@
           "description": "業管機關簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityCode"
           }
         },
         "VersionID": {
@@ -2325,7 +3153,7 @@
           "description": "業管機關簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityCode"
           }
         },
         "VersionID": {
@@ -2365,6 +3193,72 @@
         "namespace": "http://ptx.transportdata.tw/standard/schema/"
       }
     },
+    "PTX.API.Ship.Model.ShipWrapper[PTX.Service.DTO.Ship.Specification.V3.RouteFare]": {
+      "title": "ShipRouteFareList",
+      "required": [
+        "SrcUpdateInterval",
+        "SrcUpdateTime",
+        "UpdateInterval",
+        "VersionID"
+      ],
+      "type": "object",
+      "properties": {
+        "UpdateInterval": {
+          "format": "int32",
+          "title": "Int32",
+          "description": "本平台資料更新週期(秒)",
+          "type": "integer"
+        },
+        "SrcUpdateInterval": {
+          "format": "int32",
+          "description": "[來源端平臺]資料更新週期(秒)['-1: 不定期更新']<span class=\"emphasis fas fa-pen\" rel=\"為來源Inbound XML中的UpdateInterval [該欄位由本平台自動產製]\"></span>",
+          "type": "integer"
+        },
+        "AuthorityCode": {
+          "title": "String",
+          "description": "業管機關簡碼",
+          "type": "string",
+          "xml": {
+            "name": "AuthorityCode"
+          }
+        },
+        "VersionID": {
+          "format": "int32",
+          "description": "資料版本編號<span class=\"emphasis fas fa-pen\" rel=\"與來源Inbound XML不同，為提供資料的版本編號[該欄位由本平台自動產製]\"></span>",
+          "type": "integer"
+        },
+        "RouteFares": {
+          "title": "Array",
+          "description": "資料(陣列)",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PTX.Service.DTO.Ship.Specification.V3.RouteFare"
+          },
+          "xml": {
+            "name": "List`1"
+          }
+        },
+        "Count": {
+          "format": "int64",
+          "description": "資料總筆數<span class=\"emphasis fas fa-pen\" rel=\"與來源Inbound XML不同，為提供資料的總筆數[該欄位由本平台自動產製]\"></span>",
+          "type": "integer"
+        },
+        "UpdateTime": {
+          "format": "date-time",
+          "description": "XML更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "SrcUpdateTime": {
+          "format": "date-time",
+          "description": "[來源端平臺]資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)<span class=\"emphasis fas fa-pen\" rel=\"為來源Inbound XML中的UpdateTime [該欄位由本平台自動產製]\"></span>",
+          "type": "string"
+        }
+      },
+      "xml": {
+        "name": "ShipWrapperOfRouteFare",
+        "namespace": "http://ptx.transportdata.tw/standard/schema/"
+      }
+    },
     "PTX.API.Ship.Model.ShipWrapper[PTX.Service.DTO.Ship.Specification.V3.Route]": {
       "title": "ShipRouteList",
       "required": [
@@ -2391,7 +3285,7 @@
           "description": "業管機關簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityCode"
           }
         },
         "VersionID": {
@@ -2457,7 +3351,7 @@
           "description": "業管機關簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityCode"
           }
         },
         "VersionID": {
@@ -2523,7 +3417,7 @@
           "description": "業管機關簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityCode"
           }
         },
         "VersionID": {
@@ -2589,7 +3483,7 @@
           "description": "業管機關簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityCode"
           }
         },
         "VersionID": {
@@ -2648,7 +3542,7 @@
           "description": "業管機關簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityCode"
           }
         },
         "AuthorityName": {
@@ -2668,7 +3562,7 @@
           "description": "業管機關識別代碼(可參閱: https://oid.nat.gov.tw/OIDWeb/)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityOID"
           }
         },
         "AuthorityPhone": {
@@ -2676,7 +3570,7 @@
           "description": "業管機關連絡電話",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityPhone"
           }
         },
         "AuthorityEmail": {
@@ -2684,7 +3578,7 @@
           "description": "業管機關電子信箱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityEmail"
           }
         },
         "AuthorityAddress": {
@@ -2692,7 +3586,7 @@
           "description": "業管機關地址",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityAddress"
           }
         },
         "AuthorityUrl": {
@@ -2700,7 +3594,7 @@
           "description": "業管機關官網網址",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityUrl"
           }
         },
         "LogoURL": {
@@ -2708,7 +3602,7 @@
           "description": "業管機關Logo網址",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "LogoURL"
           }
         },
         "UpdateTime": {
@@ -2736,7 +3630,7 @@
           "description": "API服務代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ServiceID"
           }
         },
         "ServiceName": {
@@ -2744,7 +3638,7 @@
           "description": "API服務中文名稱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ServiceName"
           }
         },
         "Inbound": {
@@ -2793,7 +3687,7 @@
         },
         "Status": {
           "title": "Int32",
-          "description": "檢核結果狀態 : [0:'失敗',1:'成功']",
+          "description": "檢核結果狀態 : [0:'失敗',1:'成功',2:'資料清洗中']",
           "type": "integer"
         },
         "Reason": {
@@ -2801,7 +3695,7 @@
           "description": "檢核失敗原因",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Reason"
           }
         }
       },
@@ -2818,7 +3712,7 @@
           "description": "中文繁體名稱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Zh_tw"
           }
         },
         "En": {
@@ -2826,7 +3720,7 @@
           "description": "英文名稱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "En"
           }
         }
       },
@@ -2851,7 +3745,7 @@
         },
         "Status": {
           "title": "Int32",
-          "description": "檢核結果狀態 : [0:'失敗',1:'成功']",
+          "description": "檢核結果狀態 : [0:'失敗',1:'成功',2:'資料清洗中']",
           "type": "integer"
         },
         "Reason": {
@@ -2859,7 +3753,7 @@
           "description": "檢核失敗原因",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Reason"
           }
         }
       },
@@ -2882,7 +3776,7 @@
           "description": "航線代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteID"
           }
         },
         "RouteName": {
@@ -2902,7 +3796,7 @@
           "description": "營運業者代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorID"
           }
         },
         "Date": {
@@ -2910,7 +3804,7 @@
           "description": "航行日期",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Date"
           }
         },
         "Direction": {
@@ -2954,7 +3848,7 @@
           "description": "開始日期",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StartDate"
           }
         },
         "EndDate": {
@@ -2962,7 +3856,7 @@
           "description": "結束日期",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "EndDate"
           }
         }
       },
@@ -2979,12 +3873,59 @@
           "description": "特殊日期",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Date"
           }
         }
       },
       "xml": {
         "name": "Dates"
+      }
+    },
+    "PTX.Service.DTO.Ship.Specification.V3.Fare": {
+      "title": "Fare",
+      "required": [
+        "FareClass",
+        "FareName",
+        "Price",
+        "TicketType"
+      ],
+      "type": "object",
+      "properties": {
+        "FareName": {
+          "title": "String",
+          "description": "票價名稱",
+          "type": "string",
+          "xml": {
+            "name": "FareName"
+          }
+        },
+        "TicketType": {
+          "title": "Int32",
+          "description": "票種類型 : [1:'一般票',2:'來回票',3:'電子票證',4:'回數票']",
+          "type": "integer"
+        },
+        "FareClass": {
+          "title": "Int32",
+          "description": "費率等級 : [1:'成人',2:'學生',3:'孩童',4:'敬老',5:'愛心',6:'愛心孩童',7:'愛心優待或愛心陪伴',8:'團體',9:'軍警']",
+          "type": "integer"
+        },
+        "CabinClass": {
+          "title": "String",
+          "description": "艙等",
+          "type": "string",
+          "xml": {
+            "name": "CabinClass"
+          }
+        },
+        "Price": {
+          "format": "int32",
+          "title": "Int32",
+          "description": "計費價格",
+          "type": "integer"
+        }
+      },
+      "xml": {
+        "name": "Fare"
       }
     },
     "PTX.Service.DTO.Ship.Specification.V3.Frequency": {
@@ -3002,7 +3943,7 @@
           "description": "開始時間",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StartTime"
           }
         },
         "EndTime": {
@@ -3010,7 +3951,7 @@
           "description": "結束時間",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "EndTime"
           }
         },
         "MinHeadwayMins": {
@@ -3030,12 +3971,206 @@
           "description": "尖離峰狀態[0:'離峰',1:'尖峰']",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "PeakFlag"
           }
         }
       },
       "xml": {
         "name": "Frequency"
+      }
+    },
+    "PTX.Service.DTO.Ship.Specification.V3.GeneralFrequency": {
+      "title": "GeneralFrequency",
+      "required": [
+        "EndTime",
+        "MaxHeadwayMins",
+        "MinHeadwayMins",
+        "StartTime"
+      ],
+      "type": "object",
+      "properties": {
+        "ServiceDay": {
+          "title": "ServiceDay",
+          "description": "服務日型態",
+          "allOf": [
+            {
+              "$ref": "#/definitions/PTX.Service.DTO.Ship.Specification.V3.ServiceDay"
+            }
+          ],
+          "xml": {
+            "name": "ServiceDay"
+          }
+        },
+        "StartTime": {
+          "title": "String",
+          "description": "開始時間",
+          "type": "string",
+          "xml": {
+            "name": "StartTime"
+          }
+        },
+        "EndTime": {
+          "title": "String",
+          "description": "結束時間",
+          "type": "string",
+          "xml": {
+            "name": "EndTime"
+          }
+        },
+        "MinHeadwayMins": {
+          "format": "int32",
+          "title": "Int32",
+          "description": "最小班距時間",
+          "type": "integer"
+        },
+        "MaxHeadwayMins": {
+          "format": "int32",
+          "title": "Int32",
+          "description": "最大班距時間",
+          "type": "integer"
+        },
+        "PeakFlag": {
+          "title": "String",
+          "description": "尖離峰狀態[0:'離峰',1:'尖峰']",
+          "type": "string",
+          "xml": {
+            "name": "PeakFlag"
+          }
+        }
+      },
+      "xml": {
+        "name": "GeneralFrequency"
+      }
+    },
+    "PTX.Service.DTO.Ship.Specification.V3.GeneralSchedule": {
+      "title": "GeneralSchedule",
+      "required": [
+        "Direction",
+        "EffectiveDate",
+        "OperatorID",
+        "RouteID",
+        "RouteName"
+      ],
+      "type": "object",
+      "properties": {
+        "RouteID": {
+          "title": "String",
+          "description": "航線代碼",
+          "type": "string",
+          "xml": {
+            "name": "RouteID"
+          }
+        },
+        "RouteName": {
+          "title": "NameType",
+          "description": "航線名稱",
+          "allOf": [
+            {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.NameType"
+            }
+          ],
+          "xml": {
+            "name": "NameType"
+          }
+        },
+        "OperatorID": {
+          "title": "String",
+          "description": "營運業者代碼",
+          "type": "string",
+          "xml": {
+            "name": "OperatorID"
+          }
+        },
+        "EffectiveDate": {
+          "title": "String",
+          "description": "有效起始日期",
+          "type": "string",
+          "xml": {
+            "name": "EffectiveDate"
+          }
+        },
+        "ExpireDate": {
+          "title": "String",
+          "description": "有效終止日期",
+          "type": "string",
+          "xml": {
+            "name": "ExpireDate"
+          }
+        },
+        "Direction": {
+          "title": "Int32",
+          "description": "方向性描述 : [0:'去程',1:'返程',2:'迴圈']",
+          "type": "integer"
+        },
+        "Timetables": {
+          "title": "Array",
+          "description": "營運定期班表資訊",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PTX.Service.DTO.Ship.Specification.V3.GeneralTimetable"
+          },
+          "xml": {
+            "name": "List`1"
+          }
+        },
+        "Frequencies": {
+          "title": "Array",
+          "description": "發車班距資訊",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PTX.Service.DTO.Ship.Specification.V3.GeneralFrequency"
+          },
+          "xml": {
+            "name": "List`1"
+          }
+        }
+      },
+      "xml": {
+        "name": "GeneralSchedule"
+      }
+    },
+    "PTX.Service.DTO.Ship.Specification.V3.GeneralTimetable": {
+      "title": "GeneralTimetable",
+      "required": [
+        "Stoptimes",
+        "TripID"
+      ],
+      "type": "object",
+      "properties": {
+        "ServiceDay": {
+          "title": "ServiceDay",
+          "description": "服務日型態",
+          "allOf": [
+            {
+              "$ref": "#/definitions/PTX.Service.DTO.Ship.Specification.V3.ServiceDay"
+            }
+          ],
+          "xml": {
+            "name": "ServiceDay"
+          }
+        },
+        "TripID": {
+          "title": "String",
+          "description": "班次代碼",
+          "type": "string",
+          "xml": {
+            "name": "TripID"
+          }
+        },
+        "Stoptimes": {
+          "title": "Array",
+          "description": "航線停靠資料",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PTX.Service.DTO.Ship.Specification.V3.Stoptime"
+          },
+          "xml": {
+            "name": "List`1"
+          }
+        }
+      },
+      "xml": {
+        "name": "GeneralTimetable"
       }
     },
     "PTX.Service.DTO.Ship.Specification.V3.LivePosition": {
@@ -3054,7 +4189,7 @@
           "description": "船舶代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "VesselID"
           }
         },
         "MMSI": {
@@ -3062,7 +4197,7 @@
           "description": "AIS 船舶編號",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "MMSI"
           }
         },
         "VesselName": {
@@ -3145,7 +4280,7 @@
           "description": "消息代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "NewsID"
           }
         },
         "Language": {
@@ -3153,7 +4288,7 @@
           "description": "語系",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Language"
           }
         },
         "Description": {
@@ -3161,7 +4296,7 @@
           "description": "內容描述",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Description"
           }
         },
         "Department": {
@@ -3169,7 +4304,7 @@
           "description": "發布單位",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Department"
           }
         },
         "OperatorID": {
@@ -3177,7 +4312,7 @@
           "description": "營運業者代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorID"
           }
         },
         "NewsCategory": {
@@ -3190,7 +4325,7 @@
           "description": "消息標題",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Title"
           }
         },
         "ContactName": {
@@ -3198,7 +4333,7 @@
           "description": "聯絡人",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ContactName"
           }
         },
         "Telephone": {
@@ -3206,7 +4341,7 @@
           "description": "連絡電話",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Telephone"
           }
         },
         "NewsURL": {
@@ -3214,7 +4349,7 @@
           "description": "消息網址連結",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "NewsURL"
           }
         },
         "AttachmentURL": {
@@ -3222,7 +4357,7 @@
           "description": "附件網址連結",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AttachmentURL"
           }
         },
         "StartTime": {
@@ -3251,6 +4386,59 @@
         "name": "News"
       }
     },
+    "PTX.Service.DTO.Ship.Specification.V3.ODFare": {
+      "title": "ODFare",
+      "required": [
+        "Direction",
+        "Fares"
+      ],
+      "type": "object",
+      "properties": {
+        "Direction": {
+          "title": "Int32",
+          "description": "方向性描述 : [0:'去程',1:'返程',2:'迴圈']",
+          "type": "integer"
+        },
+        "OriginPort": {
+          "title": "PortInformation",
+          "description": "起始港口資訊",
+          "allOf": [
+            {
+              "$ref": "#/definitions/PTX.Service.DTO.Ship.Specification.V3.PortInformation"
+            }
+          ],
+          "xml": {
+            "name": "PortInformation"
+          }
+        },
+        "DestinationPort": {
+          "title": "PortInformation",
+          "description": "迄點港口資訊",
+          "allOf": [
+            {
+              "$ref": "#/definitions/PTX.Service.DTO.Ship.Specification.V3.PortInformation"
+            }
+          ],
+          "xml": {
+            "name": "PortInformation"
+          }
+        },
+        "Fares": {
+          "title": "Array",
+          "description": "票價內容",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PTX.Service.DTO.Ship.Specification.V3.Fare"
+          },
+          "xml": {
+            "name": "List`1"
+          }
+        }
+      },
+      "xml": {
+        "name": "ODFare"
+      }
+    },
     "PTX.Service.DTO.Ship.Specification.V3.Operator": {
       "title": "Operator",
       "type": "object",
@@ -3260,7 +4448,7 @@
           "description": "營運業者代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorID"
           }
         },
         "OperatorName": {
@@ -3280,7 +4468,7 @@
           "description": "營運業者連絡電話",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorPhone"
           }
         },
         "OperatorEmail": {
@@ -3288,7 +4476,7 @@
           "description": "營運業者電子信箱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorEmail"
           }
         },
         "OperatorAddress": {
@@ -3296,7 +4484,7 @@
           "description": "營運業者地址",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorAddress"
           }
         },
         "OperatorURL": {
@@ -3304,7 +4492,7 @@
           "description": "營運業者網址連結",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorURL"
           }
         },
         "FareURL": {
@@ -3312,7 +4500,7 @@
           "description": "營運業者票價網址連結",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "FareURL"
           }
         },
         "ReservationURL": {
@@ -3320,7 +4508,7 @@
           "description": "營運業者訂票網站",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ReservationURL"
           }
         },
         "ReservationPhone": {
@@ -3328,7 +4516,7 @@
           "description": "營運業者訂票電話",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ReservationPhone"
           }
         },
         "OperatorLogoURL": {
@@ -3336,7 +4524,7 @@
           "description": "營運業者Logo網址",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorLogoURL"
           }
         },
         "BusinessAdminstrationNo": {
@@ -3344,7 +4532,7 @@
           "description": "統一編號",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "BusinessAdminstrationNo"
           }
         }
       },
@@ -3364,7 +4552,7 @@
           "description": "營運業者代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorID"
           }
         }
       },
@@ -3415,7 +4603,7 @@
           "description": "港口代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "PortID"
           }
         },
         "PortCode": {
@@ -3423,7 +4611,7 @@
           "description": "港口簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "PortCode"
           }
         },
         "PortName": {
@@ -3455,7 +4643,7 @@
           "description": "港口地址",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "PortAddress"
           }
         },
         "PortPhone": {
@@ -3463,7 +4651,7 @@
           "description": "港口聯繫電話",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "PortPhone"
           }
         },
         "City": {
@@ -3471,7 +4659,7 @@
           "description": "港口所屬城市",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "City"
           }
         },
         "CityCode": {
@@ -3479,7 +4667,7 @@
           "description": "城市簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "CityCode"
           }
         },
         "Country": {
@@ -3487,7 +4675,7 @@
           "description": "港口所屬國家",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Country"
           }
         },
         "CountryCode": {
@@ -3495,7 +4683,7 @@
           "description": "國家簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "CountryCode"
           }
         },
         "PortURL": {
@@ -3503,12 +4691,45 @@
           "description": "港口官網網址",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "PortURL"
           }
         }
       },
       "xml": {
         "name": "Port"
+      }
+    },
+    "PTX.Service.DTO.Ship.Specification.V3.PortInformation": {
+      "title": "PortInformation",
+      "required": [
+        "PortID",
+        "PortName"
+      ],
+      "type": "object",
+      "properties": {
+        "PortID": {
+          "title": "String",
+          "description": "營運業者代碼",
+          "type": "string",
+          "xml": {
+            "name": "PortID"
+          }
+        },
+        "PortName": {
+          "title": "NameType",
+          "description": "港口名稱",
+          "allOf": [
+            {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.NameType"
+            }
+          ],
+          "xml": {
+            "name": "NameType"
+          }
+        }
+      },
+      "xml": {
+        "name": "PortInformation"
       }
     },
     "PTX.Service.DTO.Ship.Specification.V3.Route": {
@@ -3534,7 +4755,7 @@
           "description": "航線代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteID"
           }
         },
         "RouteName": {
@@ -3554,7 +4775,7 @@
           "description": "航線描述",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Description"
           }
         },
         "Operators": {
@@ -3573,7 +4794,7 @@
           "description": "航線起點港口代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StartPortID"
           }
         },
         "StartPortName": {
@@ -3581,7 +4802,7 @@
           "description": "航線起點港口名稱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StartPortName"
           }
         },
         "EndPortID": {
@@ -3589,7 +4810,7 @@
           "description": "航線迄點港口代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "EndPortID"
           }
         },
         "EndPortName": {
@@ -3597,7 +4818,7 @@
           "description": "航線迄點港口名稱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "EndPortName"
           }
         },
         "TicketPriceDescription": {
@@ -3633,7 +4854,7 @@
           "description": "航運路線簡圖網址",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteMapURL"
           }
         },
         "RouteDistance": {
@@ -3647,7 +4868,7 @@
           "description": "氣象預報連結",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "WeatherURL"
           }
         }
       },
@@ -3655,8 +4876,79 @@
         "name": "Route"
       }
     },
+    "PTX.Service.DTO.Ship.Specification.V3.RouteFare": {
+      "title": "RouteFare",
+      "required": [
+        "ODFares",
+        "OperatorID",
+        "RouteID",
+        "RouteName"
+      ],
+      "type": "object",
+      "properties": {
+        "RouteID": {
+          "title": "String",
+          "description": "航線代碼",
+          "type": "string",
+          "xml": {
+            "name": "RouteID"
+          }
+        },
+        "RouteName": {
+          "title": "NameType",
+          "description": "航線名稱",
+          "allOf": [
+            {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.NameType"
+            }
+          ],
+          "xml": {
+            "name": "NameType"
+          }
+        },
+        "OperatorID": {
+          "title": "String",
+          "description": "營運業者代碼",
+          "type": "string",
+          "xml": {
+            "name": "OperatorID"
+          }
+        },
+        "FareID": {
+          "title": "String",
+          "description": "票價代碼",
+          "type": "string",
+          "xml": {
+            "name": "FareID"
+          }
+        },
+        "ODFares": {
+          "title": "Array",
+          "description": "起迄站間票價資訊",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PTX.Service.DTO.Ship.Specification.V3.ODFare"
+          },
+          "xml": {
+            "name": "List`1"
+          }
+        }
+      },
+      "xml": {
+        "name": "RouteFare"
+      }
+    },
     "PTX.Service.DTO.Ship.Specification.V3.ServiceDay": {
       "title": "ServiceDay",
+      "required": [
+        "Friday",
+        "Monday",
+        "Saturday",
+        "Sunday",
+        "Thursday",
+        "Tuesday",
+        "Wednesday"
+      ],
       "type": "object",
       "properties": {
         "ServiceTag": {
@@ -3664,7 +4956,7 @@
           "description": "服務日標籤",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ServiceTag"
           }
         },
         "Monday": {
@@ -3742,7 +5034,7 @@
           "description": "業管機關簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityCode"
           }
         },
         "RouteID": {
@@ -3750,7 +5042,7 @@
           "description": "航線代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteID"
           }
         },
         "RouteName": {
@@ -3770,7 +5062,7 @@
           "description": "營運業者代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorID"
           }
         },
         "Date": {
@@ -3778,7 +5070,7 @@
           "description": "航行日期",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Date"
           }
         },
         "Direction": {
@@ -3811,6 +5103,116 @@
       },
       "xml": {
         "name": "ShipDailySchedule"
+      }
+    },
+    "PTX.Service.DTO.Ship.Specification.V3.ShipGeneralSchedule": {
+      "title": "ShipGeneralSchedule",
+      "required": [
+        "AuthorityCode",
+        "Direction",
+        "EffectiveDate",
+        "OperatorID",
+        "RouteID",
+        "RouteName",
+        "SrcUpdateTime",
+        "UpdateTime"
+      ],
+      "type": "object",
+      "properties": {
+        "UpdateTime": {
+          "format": "date-time",
+          "title": "DateTime",
+          "description": "[平臺]資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "SrcUpdateTime": {
+          "format": "date-time",
+          "title": "DateTime",
+          "description": "[來源端平臺]資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "AuthorityCode": {
+          "title": "String",
+          "description": "業管機關簡碼",
+          "type": "string",
+          "xml": {
+            "name": "AuthorityCode"
+          }
+        },
+        "RouteID": {
+          "title": "String",
+          "description": "航線代碼",
+          "type": "string",
+          "xml": {
+            "name": "RouteID"
+          }
+        },
+        "RouteName": {
+          "title": "NameType",
+          "description": "航線名稱",
+          "allOf": [
+            {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.NameType"
+            }
+          ],
+          "xml": {
+            "name": "NameType"
+          }
+        },
+        "OperatorID": {
+          "title": "String",
+          "description": "營運業者代碼",
+          "type": "string",
+          "xml": {
+            "name": "OperatorID"
+          }
+        },
+        "EffectiveDate": {
+          "title": "String",
+          "description": "有效起始日期",
+          "type": "string",
+          "xml": {
+            "name": "EffectiveDate"
+          }
+        },
+        "ExpireDate": {
+          "title": "String",
+          "description": "有效終止日期",
+          "type": "string",
+          "xml": {
+            "name": "ExpireDate"
+          }
+        },
+        "Direction": {
+          "title": "Int32",
+          "description": "方向性描述 : [0:'去程',1:'返程',2:'迴圈']",
+          "type": "integer"
+        },
+        "Timetables": {
+          "title": "Array",
+          "description": "營運定期班表資訊",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PTX.Service.DTO.Ship.Specification.V3.GeneralTimetable"
+          },
+          "xml": {
+            "name": "List`1"
+          }
+        },
+        "Frequencies": {
+          "title": "Array",
+          "description": "發車班距資訊",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PTX.Service.DTO.Ship.Specification.V3.GeneralFrequency"
+          },
+          "xml": {
+            "name": "List`1"
+          }
+        }
+      },
+      "xml": {
+        "name": "ShipGeneralSchedule"
       }
     },
     "PTX.Service.DTO.Ship.Specification.V3.ShipRoute": {
@@ -3851,7 +5253,7 @@
           "description": "業管機關簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityCode"
           }
         },
         "RouteID": {
@@ -3859,7 +5261,7 @@
           "description": "航線代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteID"
           }
         },
         "RouteName": {
@@ -3879,7 +5281,7 @@
           "description": "航線描述",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Description"
           }
         },
         "Operators": {
@@ -3898,7 +5300,7 @@
           "description": "航線起點港口代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StartPortID"
           }
         },
         "StartPortName": {
@@ -3906,7 +5308,7 @@
           "description": "航線起點港口名稱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StartPortName"
           }
         },
         "EndPortID": {
@@ -3914,7 +5316,7 @@
           "description": "航線迄點港口代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "EndPortID"
           }
         },
         "EndPortName": {
@@ -3922,7 +5324,7 @@
           "description": "航線迄點港口名稱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "EndPortName"
           }
         },
         "TicketPriceDescription": {
@@ -3958,7 +5360,7 @@
           "description": "航運路線簡圖網址",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteMapURL"
           }
         },
         "RouteDistance": {
@@ -3972,7 +5374,7 @@
           "description": "氣象預報連結",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "WeatherURL"
           }
         }
       },
@@ -3999,7 +5401,7 @@
           "description": "業管機關簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityCode"
           }
         },
         "UpdateTime": {
@@ -4019,7 +5421,7 @@
           "description": "航線代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteID"
           }
         },
         "RouteName": {
@@ -4039,7 +5441,7 @@
           "description": "營運業者代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorID"
           }
         },
         "EffectiveDate": {
@@ -4047,7 +5449,7 @@
           "description": "有效起始日期",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "EffectiveDate"
           }
         },
         "ExpireDate": {
@@ -4055,7 +5457,7 @@
           "description": "有效終止日期",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ExpireDate"
           }
         },
         "Direction": {
@@ -4109,7 +5511,7 @@
           "description": "業管機關簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityCode"
           }
         },
         "UpdateTime": {
@@ -4129,7 +5531,7 @@
           "description": "航線代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteID"
           }
         },
         "RouteName": {
@@ -4209,7 +5611,7 @@
           "description": "營運服務狀態代碼: [0:'停止營運',1:'正常營運',2:'加班營運']",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ServiceStatus"
           }
         },
         "Description": {
@@ -4217,7 +5619,7 @@
           "description": "特殊營運描述",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Description"
           }
         }
       },
@@ -4264,7 +5666,7 @@
           "description": "開始時間",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StartTime"
           }
         },
         "EndTime": {
@@ -4272,7 +5674,7 @@
           "description": "結束時間",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "EndTime"
           }
         },
         "MinHeadwayMins": {
@@ -4292,7 +5694,7 @@
           "description": "尖離峰狀態[0:'離峰',1:'尖峰']",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "PeakFlag"
           }
         }
       },
@@ -4313,7 +5715,7 @@
           "description": "班次代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "TripID"
           }
         },
         "Stoptimes": {
@@ -4372,7 +5774,7 @@
           "description": "航線代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteID"
           }
         },
         "RouteName": {
@@ -4392,7 +5794,7 @@
           "description": "營運業者代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorID"
           }
         },
         "EffectiveDate": {
@@ -4400,7 +5802,7 @@
           "description": "有效起始日期",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "EffectiveDate"
           }
         },
         "ExpireDate": {
@@ -4408,7 +5810,7 @@
           "description": "有效終止日期",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ExpireDate"
           }
         },
         "Direction": {
@@ -4459,7 +5861,7 @@
           "description": "航線代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteID"
           }
         },
         "RouteName": {
@@ -4526,7 +5928,7 @@
           "description": "港口代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "PortID"
           }
         },
         "PortName": {
@@ -4569,7 +5971,7 @@
           "description": "停靠港口代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "PortID"
           }
         },
         "PortName": {
@@ -4589,7 +5991,7 @@
           "description": "港口進港時間",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ArrivalTime"
           }
         },
         "DepartureTime": {
@@ -4597,7 +5999,7 @@
           "description": "港口離港時間",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "DepartureTime"
           }
         },
         "TravelTime": {
@@ -4624,7 +6026,7 @@
           "description": "班次代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "TripID"
           }
         },
         "Stoptimes": {
@@ -4658,7 +6060,7 @@
           "description": "船舶代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "VesselID"
           }
         },
         "MMSI": {
@@ -4666,7 +6068,7 @@
           "description": "AIS船舶編號",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "MMSI"
           }
         },
         "IMO": {
@@ -4674,7 +6076,7 @@
           "description": "國際船舶編號",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "IMO"
           }
         },
         "VesselNo": {
@@ -4682,7 +6084,7 @@
           "description": "台灣船舶號數",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "VesselNo"
           }
         },
         "CallSign": {
@@ -4690,7 +6092,7 @@
           "description": "船呼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "CallSign"
           }
         },
         "VesselName": {
@@ -4710,7 +6112,7 @@
           "description": "船舶所屬國籍",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Nationality"
           }
         },
         "OperatorID": {
@@ -4718,7 +6120,7 @@
           "description": "船舶所屬營運業者代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorID"
           }
         },
         "GrossTonnage": {
@@ -4746,7 +6148,7 @@
           "description": "船舶分類",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "VesselClass"
           }
         },
         "LoadDraft": {
@@ -4759,7 +6161,7 @@
           "description": "備註",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Note"
           }
         }
       },
@@ -4780,7 +6182,7 @@
           "description": "船舶代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "VesselID"
           }
         },
         "VesselName": {
@@ -4823,20 +6225,20 @@
   ],
   "tags": [
     {
-      "name": "ShipBasic",
-      "description": "基礎API"
+      "name": "Common",
+      "description": "共通資料(航運)"
     },
     {
       "name": "DomesticShip",
       "description": "國內航運"
     },
     {
-      "name": "InternationalShip",
-      "description": "國際航運"
+      "name": "Ship Advanced(By RouteType)",
+      "description": "航運進階(指定路線別)"
     },
     {
-      "name": "ShipByRouteType",
-      "description": "路線別航運"
+      "name": "Ship (Domestic + International)",
+      "description": "航運(國內+國際)"
     }
   ]
 }

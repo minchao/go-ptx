@@ -20,7 +20,7 @@ type PTXServiceDTORailSpecificationV3TRATRAAlertListAlertScopeTrain struct {
 	// String
 	//
 	// 受影響的車次
-	TrainNo string `json:"TrainNo,omitempty" xml:"String,omitempty"`
+	TrainNo string `json:"TrainNo,omitempty" xml:"TrainNo,omitempty"`
 }
 
 // Validate validates this p t x service d t o rail specification v3 t r a t r a alert list alert scope train

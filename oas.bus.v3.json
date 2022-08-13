@@ -176,12 +176,6 @@
           },
           {
             "in": "query",
-            "name": "$spatialFilter",
-            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
-            "type": "string"
-          },
-          {
-            "in": "query",
             "name": "$count",
             "description": "查詢數量",
             "type": "boolean",
@@ -285,12 +279,6 @@
             "in": "query",
             "name": "$skip",
             "description": "跳過前幾筆",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$spatialFilter",
-            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
             "type": "string"
           },
           {
@@ -721,12 +709,6 @@
             "in": "query",
             "name": "$skip",
             "description": "跳過前幾筆",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$spatialFilter",
-            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
             "type": "string"
           },
           {
@@ -1375,12 +1357,6 @@
           },
           {
             "in": "query",
-            "name": "$spatialFilter",
-            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
-            "type": "string"
-          },
-          {
-            "in": "query",
             "name": "$count",
             "description": "查詢數量",
             "type": "boolean",
@@ -1492,12 +1468,6 @@
             "in": "query",
             "name": "$skip",
             "description": "跳過前幾筆",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$spatialFilter",
-            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
             "type": "string"
           },
           {
@@ -2987,7 +2957,7 @@
           "description": "車牌號碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "PlateNumb"
           }
         },
         "OperatorID": {
@@ -2995,7 +2965,7 @@
           "description": "營運業者代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorID"
           }
         },
         "OperatorName": {
@@ -3015,7 +2985,7 @@
           "description": "營運業者簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorCode"
           }
         },
         "RouteUID": {
@@ -3023,7 +2993,7 @@
           "description": "路線唯一識別代碼，規則為 {業管機關簡碼} + {RouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteUID"
           }
         },
         "RouteID": {
@@ -3031,7 +3001,7 @@
           "description": "地區既用中之路線代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteID"
           }
         },
         "RouteName": {
@@ -3051,7 +3021,7 @@
           "description": "附屬路線唯一識別代碼，規則為 {業管機關簡碼} + {SubRouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SubRouteUID"
           }
         },
         "SubRouteID": {
@@ -3059,7 +3029,7 @@
           "description": "地區既用中之附屬路線代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SubRouteID"
           }
         },
         "SubRouteName": {
@@ -3079,7 +3049,7 @@
           "description": "班次代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "TripID"
           }
         },
         "Direction": {
@@ -3178,7 +3148,7 @@
           "description": "車牌號碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "PlateNumb"
           }
         },
         "OperatorID": {
@@ -3186,7 +3156,7 @@
           "description": "營運業者代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorID"
           }
         },
         "OperatorName": {
@@ -3206,7 +3176,7 @@
           "description": "營運業者簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorCode"
           }
         },
         "RouteUID": {
@@ -3214,7 +3184,7 @@
           "description": "路線唯一識別代碼，規則為 {業管機關簡碼} + {RouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteUID"
           }
         },
         "RouteID": {
@@ -3222,7 +3192,7 @@
           "description": "地區既用中之路線代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteID"
           }
         },
         "RouteName": {
@@ -3242,7 +3212,7 @@
           "description": "附屬路線唯一識別代碼，規則為 {業管機關簡碼} + {SubRouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SubRouteUID"
           }
         },
         "SubRouteID": {
@@ -3250,7 +3220,7 @@
           "description": "地區既用中之附屬路線代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SubRouteID"
           }
         },
         "SubRouteName": {
@@ -3270,7 +3240,7 @@
           "description": "班次代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "TripID"
           }
         },
         "Direction": {
@@ -3283,7 +3253,7 @@
           "description": "站牌唯一識別代碼，規則為 {業管機關簡碼} + {StopID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StopUID"
           }
         },
         "StopID": {
@@ -3291,7 +3261,7 @@
           "description": "地區既用中之站牌代號(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StopID"
           }
         },
         "StopName": {
@@ -3371,7 +3341,7 @@
           "description": "通阻事件原單位發布代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AlertID"
           }
         },
         "Title": {
@@ -3379,7 +3349,7 @@
           "description": "通阻標題",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Title"
           }
         },
         "Scope": {
@@ -3399,7 +3369,7 @@
           "description": "影響方向",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Direction"
           }
         },
         "Description": {
@@ -3407,7 +3377,7 @@
           "description": "事件描述",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Description"
           }
         },
         "AlertURL": {
@@ -3415,7 +3385,7 @@
           "description": "詳細描述網站連結",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AlertURL"
           }
         },
         "PublishTime": {
@@ -3471,7 +3441,7 @@
           "description": "路線唯一識別代碼，規則為 {業管機關簡碼} + {RouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteUID"
           }
         },
         "RouteID": {
@@ -3479,7 +3449,7 @@
           "description": "地區既用中之路線代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteID"
           }
         },
         "RouteName": {
@@ -3499,7 +3469,7 @@
           "description": "營運業者代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorID"
           }
         },
         "OperatorCode": {
@@ -3507,7 +3477,7 @@
           "description": "營運業者簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorCode"
           }
         },
         "SubRouteUID": {
@@ -3515,7 +3485,7 @@
           "description": "附屬路線唯一識別代碼，規則為 {業管機關簡碼} + {SubRouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SubRouteUID"
           }
         },
         "SubRouteID": {
@@ -3523,7 +3493,7 @@
           "description": "地區既用中之附屬路線代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SubRouteID"
           }
         },
         "SubRouteName": {
@@ -3576,7 +3546,7 @@
           "description": "營業所唯一識別代碼，規則為 {業管機關簡碼} + {DepotID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "DepotUID"
           }
         },
         "DepotID": {
@@ -3584,7 +3554,7 @@
           "description": "營業所代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "DepotID"
           }
         },
         "DepotName": {
@@ -3616,7 +3586,7 @@
           "description": "營業所地址",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "DepotAddress"
           }
         },
         "DepotPhone": {
@@ -3624,7 +3594,7 @@
           "description": "營業所電話",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "DepotPhone"
           }
         }
       },
@@ -3648,7 +3618,7 @@
           "description": "路線唯一識別代碼，規則為 {業管機關簡碼} + {RouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteUID"
           }
         },
         "RouteID": {
@@ -3656,7 +3626,7 @@
           "description": "地區既用中之路線代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteID"
           }
         },
         "RouteName": {
@@ -3709,7 +3679,7 @@
           "description": "站牌唯一識別代碼，規則為 {業管機關簡碼} + {StopID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StopUID"
           }
         },
         "StopID": {
@@ -3717,7 +3687,7 @@
           "description": "地區既用中之站牌代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StopID"
           }
         },
         "StopName": {
@@ -3772,7 +3742,7 @@
           "description": "路線唯一識別代碼，規則為 {業管機關簡碼} + {RouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteUID"
           }
         },
         "RouteID": {
@@ -3780,7 +3750,7 @@
           "description": "地區既用中之路線代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteID"
           }
         },
         "RouteName": {
@@ -3800,7 +3770,7 @@
           "description": "營運業者代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorID"
           }
         },
         "SubRouteUID": {
@@ -3808,7 +3778,7 @@
           "description": "附屬路線唯一識別代碼，規則為 {業管機關簡碼} + {SubRouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SubRouteUID"
           }
         },
         "SubRouteID": {
@@ -3816,7 +3786,7 @@
           "description": "地區既用中之附屬路線代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SubRouteID"
           }
         },
         "SubRouteName": {
@@ -3878,7 +3848,7 @@
           "description": "頭班車發車時間(HH:mm)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "FirstTripDepTime"
           }
         },
         "LastTripDepTime": {
@@ -3886,7 +3856,7 @@
           "description": "末班車發車時間(HH:mm)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "LastTripDepTime"
           }
         }
       },
@@ -3912,7 +3882,7 @@
           "description": "服務日標籤",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ServiceTag"
           }
         },
         "Monday": {
@@ -3987,7 +3957,7 @@
           "description": "路線唯一識別代碼，規則為 {業管機關代碼} + {RouteID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteUID"
           }
         },
         "RouteID": {
@@ -3995,7 +3965,7 @@
           "description": "地區既用中之路線代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteID"
           }
         },
         "RouteName": {
@@ -4015,7 +3985,7 @@
           "description": "附屬路線唯一識別代碼，規則為 {業管機關簡碼} + {SubRouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SubRouteUID"
           }
         },
         "SubRouteID": {
@@ -4023,7 +3993,7 @@
           "description": "地區既用中之附屬路線代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SubRouteID"
           }
         },
         "SubRouteName": {
@@ -4048,7 +4018,7 @@
           "description": "迄點站站牌ID代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "DestinationStopID"
           }
         },
         "DestinationStopName": {
@@ -4068,7 +4038,7 @@
           "description": "站牌唯一識別代碼，規則為 {業管機關簡碼} + {StopID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StopUID"
           }
         },
         "StopID": {
@@ -4076,7 +4046,7 @@
           "description": "地區既用中之站牌代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StopID"
           }
         },
         "StopName": {
@@ -4096,7 +4066,7 @@
           "description": "車牌號碼 [値為値為-1時，表示目前該站牌無車輛行駛]",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "PlateNumb"
           }
         },
         "EstimateTime": {
@@ -4109,7 +4079,7 @@
           "description": "預排班表時間",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ScheduledTime"
           }
         },
         "IsLastBus": {
@@ -4121,7 +4091,7 @@
           "description": "車輛目前所在站牌代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "CurrentStop"
           }
         },
         "StopStatus": {
@@ -4170,7 +4140,7 @@
           "description": "公車路網代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "NetworkID"
           }
         },
         "NetworkName": {
@@ -4222,7 +4192,7 @@
           "description": "路網圖",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "MapName"
           }
         },
         "Zh_tw": {
@@ -4230,7 +4200,7 @@
           "description": "路網圖網址URL(中文版)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Zh_tw"
           }
         },
         "En": {
@@ -4238,7 +4208,7 @@
           "description": "路網圖網址URL(英文版)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "En"
           }
         },
         "LBSLocation": {
@@ -4271,7 +4241,7 @@
           "description": "路網圖名稱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "MapName"
           }
         },
         "MapNameURL": {
@@ -4308,7 +4278,7 @@
           "description": "最新消息原單位發布代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "NewsID"
           }
         },
         "Language": {
@@ -4316,7 +4286,7 @@
           "description": "語系",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Language"
           }
         },
         "Department": {
@@ -4324,7 +4294,7 @@
           "description": "發布單位",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Department"
           }
         },
         "Title": {
@@ -4332,7 +4302,7 @@
           "description": "消息標題",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Title"
           }
         },
         "NewsCategory": {
@@ -4340,7 +4310,7 @@
           "description": "消息類別= ['1: 最新消息', '2: 新聞稿', '3: 營運資訊', '4: 轉乘資訊', '5: 活動訊息', '6: 系統公告', '99: 其他']",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "NewsCategory"
           }
         },
         "Description": {
@@ -4348,7 +4318,7 @@
           "description": "內容描述",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Description"
           }
         },
         "NewsURL": {
@@ -4356,7 +4326,7 @@
           "description": "報導網站連結",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "NewsURL"
           }
         },
         "AttachmentURL": {
@@ -4364,7 +4334,7 @@
           "description": "相關網站連結",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AttachmentURL"
           }
         },
         "PublishTime": {
@@ -4411,7 +4381,7 @@
           "description": "營運業者代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorID"
           }
         },
         "OperatorCode": {
@@ -4419,7 +4389,7 @@
           "description": "營運業者簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorCode"
           }
         },
         "OperatorName": {
@@ -4439,7 +4409,7 @@
           "description": "營運業者編號[交通部票證資料系統定義]",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorNo"
           }
         },
         "SubAuthorityCode": {
@@ -4447,7 +4417,7 @@
           "description": "營運業者所屬業管子機關簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SubAuthorityCode"
           }
         },
         "OperatorPhone": {
@@ -4455,7 +4425,7 @@
           "description": "營運業者連絡電話",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorPhone"
           }
         },
         "OperatorEmail": {
@@ -4463,7 +4433,7 @@
           "description": "營運業者電子信箱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorEmail"
           }
         },
         "OperatorUrl": {
@@ -4471,7 +4441,7 @@
           "description": "營運業者網址鏈結",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorUrl"
           }
         },
         "FareURL": {
@@ -4479,7 +4449,7 @@
           "description": "營運業者票價查詢網站連結",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "FareURL"
           }
         },
         "ReservationUrl": {
@@ -4487,7 +4457,7 @@
           "description": "訂票網址鏈結",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ReservationUrl"
           }
         },
         "ReservationPhone": {
@@ -4495,7 +4465,7 @@
           "description": "訂票連絡電話",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ReservationPhone"
           }
         },
         "OperatorLogoURL": {
@@ -4503,7 +4473,7 @@
           "description": "營運業者Logo網址",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorLogoURL"
           }
         }
       },
@@ -4536,7 +4506,7 @@
           "description": "路線唯一識別代碼，規則為 {業管機關簡碼} + {RouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteUID"
           }
         },
         "RouteID": {
@@ -4544,7 +4514,7 @@
           "description": "地區既用中之路線代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteID"
           }
         },
         "RouteName": {
@@ -4576,7 +4546,7 @@
           "description": "路線描述",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteDescription"
           }
         },
         "HasSubRoutes": {
@@ -4694,7 +4664,7 @@
           "description": "路線資訊說明網址",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteURL"
           }
         },
         "LiveBusURL": {
@@ -4702,7 +4672,7 @@
           "description": "路線公車動態資訊網址",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "LiveBusURL"
           }
         },
         "RouteMapImageURL": {
@@ -4710,7 +4680,7 @@
           "description": "路線簡圖網址",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteMapImageURL"
           }
         },
         "FareURL": {
@@ -4718,7 +4688,7 @@
           "description": "收費資訊說明網址",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "FareURL"
           }
         },
         "RouteDistance": {
@@ -4747,7 +4717,7 @@
           "description": "營運業者代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorID"
           }
         },
         "OperatorName": {
@@ -4767,7 +4737,7 @@
           "description": "平台代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorCode"
           }
         },
         "OperatorNo": {
@@ -4775,7 +4745,7 @@
           "description": "營運業者編號[交通部票證資料系統定義]",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorNo"
           }
         }
       },
@@ -4796,7 +4766,7 @@
           "description": "站牌代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StopID"
           }
         },
         "StopName": {
@@ -4833,7 +4803,7 @@
           "description": "路線唯一識別代碼，規則為 {業管機關簡碼} + {RouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteUID"
           }
         },
         "RouteID": {
@@ -4841,7 +4811,7 @@
           "description": "地區既用中之路線代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteID"
           }
         },
         "RouteName": {
@@ -4861,7 +4831,7 @@
           "description": "營運業者代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorID"
           }
         },
         "SubRouteUID": {
@@ -4869,7 +4839,7 @@
           "description": "附屬路線唯一識別代碼，規則為 {業管機關簡碼} + {SubRouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SubRouteUID"
           }
         },
         "SubRouteID": {
@@ -4877,7 +4847,7 @@
           "description": "地區既用中之附屬路線代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SubRouteID"
           }
         },
         "SubRouteName": {
@@ -5024,7 +4994,7 @@
           "description": "計費價格",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Price"
           }
         }
       },
@@ -5045,7 +5015,7 @@
           "description": "站牌唯一識別代碼，規則為 {業管機關簡碼} + {StopID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StopUID"
           }
         },
         "StopID": {
@@ -5053,7 +5023,7 @@
           "description": "計費起點站牌代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StopID"
           }
         },
         "StopName": {
@@ -5123,7 +5093,7 @@
           "description": "緩衝區代號",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ZoneID"
           }
         },
         "SectionSequence": {
@@ -5131,7 +5101,7 @@
           "description": "緩衝區順序",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SectionSequence"
           }
         },
         "Direction": {
@@ -5153,7 +5123,7 @@
         },
         "FareBufferZoneDestination": {
           "title": "FareBufferZone",
-          "description": "緩衝區訖點",
+          "description": "緩衝區迄點",
           "allOf": [
             {
               "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V3.RouteFare+SectionFare+FareBufferZone"
@@ -5168,7 +5138,7 @@
           "description": "收費緩衝區描述",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "BufferZoneDescription"
           }
         }
       },
@@ -5189,7 +5159,7 @@
           "description": "站牌唯一識別代碼，規則為 {業管機關簡碼} + {StopID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StopUID"
           }
         },
         "StopID": {
@@ -5197,7 +5167,7 @@
           "description": "緩衝區站牌代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StopID"
           }
         },
         "StopName": {
@@ -5241,7 +5211,7 @@
           "description": "計費價格",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Price"
           }
         }
       },
@@ -5278,7 +5248,7 @@
         },
         "DestinationStage": {
           "title": "Stage",
-          "description": "訖點計費站",
+          "description": "迄點計費站",
           "allOf": [
             {
               "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V3.RouteFare+StageFare+Stage"
@@ -5331,7 +5301,7 @@
           "description": "開始時間(HH:mm制)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StartTime"
           }
         },
         "EndTime": {
@@ -5339,7 +5309,7 @@
           "description": "結束時間(HH:mm制)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "EndTime"
           }
         }
       },
@@ -5361,7 +5331,7 @@
           "description": "票價名稱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "FareName"
           }
         },
         "TicketType": {
@@ -5390,7 +5360,7 @@
           "description": "計費價格",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Price"
           }
         }
       },
@@ -5418,7 +5388,7 @@
           "description": "服務日標籤",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ServiceTag"
           }
         },
         "Sunday": {
@@ -5494,15 +5464,15 @@
           "description": "站牌唯一識別代碼，規則為 {業管機關簡碼} + {StopID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StopUID"
           }
         },
         "StopID": {
           "title": "String",
-          "description": "計費訖點站牌代碼",
+          "description": "計費迄點站牌代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StopID"
           }
         },
         "StopName": {
@@ -5537,7 +5507,7 @@
           "description": "路線唯一識別代碼，規則為 {業管機關簡碼} + {RouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteUID"
           }
         },
         "RouteID": {
@@ -5545,7 +5515,7 @@
           "description": "地區既用中之路線代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteID"
           }
         },
         "RouteName": {
@@ -5597,7 +5567,7 @@
           "description": "表BusStop唯一碼(起點站牌)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "FromStopID"
           }
         },
         "ToStopID": {
@@ -5605,7 +5575,7 @@
           "description": "表BusStop唯一碼(迄點站牌)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ToStopID"
           }
         },
         "Distance": {
@@ -5633,7 +5603,7 @@
           "description": "路線唯一識別代碼，規則為 {業管機關簡碼} + {RouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteUID"
           }
         },
         "RouteID": {
@@ -5641,7 +5611,7 @@
           "description": "路線代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteID"
           }
         },
         "SubRouteUID": {
@@ -5649,7 +5619,7 @@
           "description": "附屬路線唯一識別代碼，規則為 {業管機關簡碼} + {SubRouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SubRouteUID"
           }
         },
         "SubRouteID": {
@@ -5657,7 +5627,7 @@
           "description": "附屬路線代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SubRouteID"
           }
         },
         "TravelTimes": {
@@ -5699,7 +5669,7 @@
           "description": "起站站牌代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "FromStopID"
           }
         },
         "ToStopID": {
@@ -5707,7 +5677,7 @@
           "description": "迄站站牌代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ToStopID"
           }
         },
         "Distance": {
@@ -5752,7 +5722,7 @@
           "description": "路線唯一識別代碼，規則為 {業管機關簡碼} + {RouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteUID"
           }
         },
         "RouteID": {
@@ -5760,7 +5730,7 @@
           "description": "地區既用中之路線代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteID"
           }
         },
         "RouteName": {
@@ -5780,7 +5750,7 @@
           "description": "營運業者代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorID"
           }
         },
         "OperatorCode": {
@@ -5788,7 +5758,7 @@
           "description": "營運業者簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorCode"
           }
         },
         "SubRouteUID": {
@@ -5796,7 +5766,7 @@
           "description": "附屬路線唯一識別代碼，規則為 {業管機關簡碼} + {SubRouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SubRouteUID"
           }
         },
         "SubRouteID": {
@@ -5804,7 +5774,7 @@
           "description": "地區既用中之附屬路線代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SubRouteID"
           }
         },
         "SubRouteName": {
@@ -5829,7 +5799,7 @@
           "description": "營運班表說明網址",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ScheduleURL"
           }
         },
         "Timetables": {
@@ -5861,7 +5831,7 @@
           "description": "開始日期",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StartDate"
           }
         },
         "EndDate": {
@@ -5869,7 +5839,7 @@
           "description": "結束日期",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "EndDate"
           }
         }
       },
@@ -5886,7 +5856,7 @@
           "description": "服務日標籤",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ServiceTag"
           }
         },
         "Monday": {
@@ -5966,9 +5936,7 @@
           "items": {
             "title": "String",
             "type": "string",
-            "xml": {
-              "name": "String"
-            }
+            "xml": {}
           },
           "xml": {
             "name": "List`1"
@@ -5996,7 +5964,7 @@
           "description": "特殊營運描述",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Description"
           }
         }
       },
@@ -6026,7 +5994,7 @@
           "description": "站牌唯一識別代碼，規則為 {業管機關代碼} + {StopID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StopUID"
           }
         },
         "StopID": {
@@ -6034,7 +6002,7 @@
           "description": "地區既用中之站牌代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StopID"
           }
         },
         "StopName": {
@@ -6054,7 +6022,7 @@
           "description": "到站時間，格式為:HH:mm",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ArrivalTime"
           }
         },
         "DepartureTime": {
@@ -6062,7 +6030,7 @@
           "description": "離站時間，格式為:HH:mm",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "DepartureTime"
           }
         }
       },
@@ -6084,7 +6052,7 @@
           "description": "班次代碼，為無意義之編碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "TripID"
           }
         },
         "IsLowFloor": {
@@ -6092,7 +6060,7 @@
           "description": "該路線班次是否使用低地板公車車輛",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "IsLowFloor"
           }
         },
         "StopTimes": {
@@ -6198,7 +6166,7 @@
           "description": "地區既用中之班次代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteID"
           }
         },
         "RouteName": {
@@ -6228,7 +6196,7 @@
           "description": "地區既用中之站牌代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StopID"
           }
         },
         "StopName": {
@@ -6258,7 +6226,7 @@
           "description": "地區既用中之附屬班次代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SubRouteID"
           }
         },
         "SubRouteName": {
@@ -6288,7 +6256,7 @@
           "description": "地區既用中之班次代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "TripID"
           }
         }
       },
@@ -6404,7 +6372,7 @@
           "description": "路線唯一識別代碼，規則為 {業管機關簡碼} + {RouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteUID"
           }
         },
         "RouteID": {
@@ -6412,7 +6380,7 @@
           "description": "地區既用中之路線代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteID"
           }
         },
         "RouteName": {
@@ -6432,7 +6400,7 @@
           "description": "附屬路線唯一識別代碼，規則為 {業管機關簡碼} + {SubRouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SubRouteUID"
           }
         },
         "SubRouteID": {
@@ -6440,7 +6408,7 @@
           "description": "地區既用中之附屬路線代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SubRouteID"
           }
         },
         "SubRouteName": {
@@ -6465,7 +6433,7 @@
           "description": "公車線型資料(WKT)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Geometry"
           }
         }
       },
@@ -6488,7 +6456,7 @@
           "description": "站位唯一識別代碼，規則為 {業管機關簡碼} + {StationID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StationUID"
           }
         },
         "StationID": {
@@ -6496,7 +6464,7 @@
           "description": "站位代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StationID"
           }
         },
         "StationName": {
@@ -6528,7 +6496,7 @@
           "description": "站牌所在道路上之路名。",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RoadName"
           }
         },
         "Bearing": {
@@ -6536,7 +6504,7 @@
           "description": "方位角，E:東行;W:西行;S:南行;N:北行;SE:東南行;NE:東北行;SW:西南行;NW:西北行",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Bearing"
           }
         },
         "StationAddress": {
@@ -6544,7 +6512,7 @@
           "description": "站位地址",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StationAddress"
           }
         },
         "StationDescription": {
@@ -6552,7 +6520,7 @@
           "description": "站牌詳細說明描述",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StationDescription"
           }
         }
       },
@@ -6575,7 +6543,7 @@
           "description": "站牌唯一識別代碼，規則為 {業管機關簡碼} + {StopID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StopUID"
           }
         },
         "StopID": {
@@ -6583,7 +6551,7 @@
           "description": "地區既用中之站牌代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StopID"
           }
         },
         "StopName": {
@@ -6615,7 +6583,7 @@
           "description": "路名",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RoadName"
           }
         },
         "Bearing": {
@@ -6623,7 +6591,7 @@
           "description": "方位角，E:東行;W:西行;S:南行;N:北行;SE:東南行;NE:東北行;SW:西南行;NW:西北行",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Bearing"
           }
         },
         "CityCode": {
@@ -6631,7 +6599,7 @@
           "description": "站牌權管所屬縣市之代碼(國際ISO 3166-2 三碼城市代碼)[若為公路/國道客運路線則為空值]",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "CityCode"
           }
         },
         "StopURL": {
@@ -6639,7 +6607,7 @@
           "description": "站牌資訊說明網址",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StopURL"
           }
         },
         "StopAddress": {
@@ -6647,7 +6615,7 @@
           "description": "站牌地址",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StopAddress"
           }
         },
         "StationUID": {
@@ -6655,7 +6623,7 @@
           "description": "站位唯一識別代碼，規則為 {業管機關簡碼} + {StationID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StationUID"
           }
         },
         "StationID": {
@@ -6663,7 +6631,7 @@
           "description": "站位代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StationID"
           }
         },
         "StopCode": {
@@ -6671,7 +6639,7 @@
           "description": "站牌簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StopCode"
           }
         },
         "StopDescription": {
@@ -6679,7 +6647,7 @@
           "description": "站牌詳細說明描述",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StopDescription"
           }
         }
       },
@@ -6703,7 +6671,7 @@
           "description": "路線唯一識別代碼，規則為 {業管機關簡碼} + {RouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteUID"
           }
         },
         "RouteID": {
@@ -6711,7 +6679,7 @@
           "description": "地區既用中之路線代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteID"
           }
         },
         "RouteName": {
@@ -6742,7 +6710,7 @@
           "description": "附屬路線唯一識別代碼，規則為 {業管機關簡碼} + {SubRouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SubRouteUID"
           }
         },
         "SubRouteID": {
@@ -6750,7 +6718,7 @@
           "description": "地區既用中之附屬路線代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SubRouteID"
           }
         },
         "SubRouteName": {
@@ -6802,7 +6770,7 @@
           "description": "營運業者代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorID"
           }
         },
         "OperatorName": {
@@ -6822,7 +6790,7 @@
           "description": "平台代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorCode"
           }
         },
         "OperatorNo": {
@@ -6830,7 +6798,7 @@
           "description": "營運業者編號[交通部票證資料系統定義]",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorNo"
           }
         }
       },
@@ -6855,7 +6823,7 @@
           "description": "站牌唯一識別代碼，規則為 {業管機關簡碼} + {StopID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StopUID"
           }
         },
         "StopID": {
@@ -6863,7 +6831,7 @@
           "description": "地區既用中之站牌代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StopID"
           }
         },
         "StopName": {
@@ -6911,7 +6879,7 @@
           "description": "累積行駛距離",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "CumulativeDistance"
           }
         }
       },
@@ -6941,7 +6909,7 @@
           "description": "站牌唯一識別代碼，規則為 {業管機關代碼} + {StopID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StopUID"
           }
         },
         "StopID": {
@@ -6949,7 +6917,7 @@
           "description": "地區既用中之站牌代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StopID"
           }
         },
         "StopName": {
@@ -6969,7 +6937,7 @@
           "description": "到站時間，格式為:HH:mm",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ArrivalTime"
           }
         },
         "DepartureTime": {
@@ -6977,7 +6945,7 @@
           "description": "離站時間，格式為:HH:mm",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "DepartureTime"
           }
         }
       },
@@ -7004,7 +6972,7 @@
           "description": "路線唯一識別代碼，規則為 {業管機關簡碼} + {RouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteUID"
           }
         },
         "RouteID": {
@@ -7012,7 +6980,7 @@
           "description": "機關定義路線代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteID"
           }
         },
         "RouteName": {
@@ -7032,7 +7000,7 @@
           "description": "附屬路線唯一識別代碼，規則為 {業管機關簡碼} + {SubRouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SubRouteUID"
           }
         },
         "SubRouteID": {
@@ -7040,7 +7008,7 @@
           "description": "地區既用中之附屬路線代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SubRouteID"
           }
         },
         "SubRouteName": {
@@ -7088,7 +7056,7 @@
           "description": "車頭描述",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "HeadSign"
           }
         },
         "DepartureStopName": {
@@ -7159,7 +7127,7 @@
           "description": "營運業者代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorID"
           }
         },
         "OperatorName": {
@@ -7179,7 +7147,7 @@
           "description": "平台代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorCode"
           }
         },
         "OperatorNo": {
@@ -7187,7 +7155,7 @@
           "description": "營運業者編號[交通部票證資料系統定義]",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorNo"
           }
         }
       },
@@ -7208,7 +7176,7 @@
           "description": "站牌代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StopID"
           }
         },
         "StopName": {
@@ -7240,7 +7208,7 @@
           "description": "班次代碼，為無意義之編碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "TripID"
           }
         },
         "StopTimes": {
@@ -7281,7 +7249,7 @@
           "description": "車牌號碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "PlateNumb"
           }
         },
         "OperatorID": {
@@ -7289,7 +7257,7 @@
           "description": "營運業者代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorID"
           }
         },
         "OperatorCode": {
@@ -7297,7 +7265,7 @@
           "description": "營運業者簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorCode"
           }
         },
         "VehicleClass": {
@@ -7346,7 +7314,7 @@
           "description": "車機代號",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "InBoxID"
           }
         },
         "PurchaseTime": {
@@ -7373,7 +7341,7 @@
           "description": "營業所代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "DepotID"
           }
         },
         "DepotName": {
@@ -7413,7 +7381,7 @@
           "description": "車牌號碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "PlateNumb"
           }
         }
       },
@@ -7436,7 +7404,7 @@
           "description": "路線唯一識別代碼，規則為 {業管機關簡碼} + {RouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteUID"
           }
         },
         "RouteID": {
@@ -7444,7 +7412,7 @@
           "description": "地區既用中之路線代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteID"
           }
         },
         "RouteName": {
@@ -7464,7 +7432,7 @@
           "description": "地區既用中之附屬路線代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SubRouteID"
           }
         },
         "SubRouteUID": {
@@ -7472,7 +7440,7 @@
           "description": "附屬路線唯一識別代碼，規則為 {業管機關簡碼} + {SubRouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SubRouteUID"
           }
         },
         "SubRouteName": {
@@ -7492,7 +7460,7 @@
           "description": "車牌號碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "PlateNumb"
           }
         }
       },
@@ -7530,7 +7498,7 @@
           "description": "公車定期營運班表名稱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ScheduleName"
           }
         },
         "ValidityDesciption": {
@@ -7538,7 +7506,7 @@
           "description": "時刻表適用情形說明",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ValidityDesciption"
           }
         },
         "UpdateTime": {
@@ -7570,7 +7538,7 @@
           "description": "業管機關簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityCode"
           }
         },
         "Count": {
@@ -7644,7 +7612,7 @@
           "description": "業管機關簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityCode"
           }
         },
         "Count": {
@@ -7718,7 +7686,7 @@
           "description": "業管機關簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityCode"
           }
         },
         "Count": {
@@ -7792,7 +7760,7 @@
           "description": "業管機關簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityCode"
           }
         },
         "Count": {
@@ -7866,7 +7834,7 @@
           "description": "業管機關簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityCode"
           }
         },
         "Count": {
@@ -7940,7 +7908,7 @@
           "description": "業管機關簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityCode"
           }
         },
         "Count": {
@@ -7962,80 +7930,6 @@
       },
       "xml": {
         "name": "BusVWrapperOfOperator",
-        "namespace": "https://ptx.transportdata.tw/standard/schema/"
-      }
-    },
-    "PTX.Service.DTO.Bus.Specification.V3.Wrapper.BusVWrapper[PTX.Service.DTO.Bus.Specification.V3.Route]": {
-      "title": "BusRouteList",
-      "description": "版本 wrapper (具有版本資訊)",
-      "required": [
-        "AuthorityCode",
-        "Routes",
-        "SrcUpdateInterval",
-        "SrcUpdateTime",
-        "UpdateInterval",
-        "UpdateTime",
-        "VersionID"
-      ],
-      "type": "object",
-      "properties": {
-        "VersionID": {
-          "format": "int32",
-          "title": "Int32",
-          "description": "資料版本編號",
-          "type": "integer"
-        },
-        "UpdateTime": {
-          "format": "date-time",
-          "title": "DateTime",
-          "description": "[平臺]資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
-          "type": "string"
-        },
-        "UpdateInterval": {
-          "format": "int32",
-          "title": "Int32",
-          "description": "[平臺]資料更新週期(秒)",
-          "type": "integer"
-        },
-        "SrcUpdateTime": {
-          "format": "date-time",
-          "title": "DateTime",
-          "description": "[來源端平臺]資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
-          "type": "string"
-        },
-        "SrcUpdateInterval": {
-          "format": "int32",
-          "title": "Int32",
-          "description": "來源端平台資料更新週期(秒)['-1: 不定期更新']",
-          "type": "integer"
-        },
-        "AuthorityCode": {
-          "title": "String",
-          "description": "業管機關簡碼",
-          "type": "string",
-          "xml": {
-            "name": "String"
-          }
-        },
-        "Count": {
-          "format": "int64",
-          "description": "資料總筆數",
-          "type": "integer"
-        },
-        "Routes": {
-          "title": "Array",
-          "description": "資料列表",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V3.Route"
-          },
-          "xml": {
-            "name": "List`1"
-          }
-        }
-      },
-      "xml": {
-        "name": "BusVWrapperOfRoute",
         "namespace": "https://ptx.transportdata.tw/standard/schema/"
       }
     },
@@ -8088,7 +7982,7 @@
           "description": "業管機關簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityCode"
           }
         },
         "Count": {
@@ -8110,6 +8004,80 @@
       },
       "xml": {
         "name": "BusVWrapperOfRouteNetwork",
+        "namespace": "https://ptx.transportdata.tw/standard/schema/"
+      }
+    },
+    "PTX.Service.DTO.Bus.Specification.V3.Wrapper.BusVWrapper[PTX.Service.DTO.Bus.Specification.V3.Route]": {
+      "title": "BusRouteList",
+      "description": "版本 wrapper (具有版本資訊)",
+      "required": [
+        "AuthorityCode",
+        "Routes",
+        "SrcUpdateInterval",
+        "SrcUpdateTime",
+        "UpdateInterval",
+        "UpdateTime",
+        "VersionID"
+      ],
+      "type": "object",
+      "properties": {
+        "VersionID": {
+          "format": "int32",
+          "title": "Int32",
+          "description": "資料版本編號",
+          "type": "integer"
+        },
+        "UpdateTime": {
+          "format": "date-time",
+          "title": "DateTime",
+          "description": "[平臺]資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "UpdateInterval": {
+          "format": "int32",
+          "title": "Int32",
+          "description": "[平臺]資料更新週期(秒)",
+          "type": "integer"
+        },
+        "SrcUpdateTime": {
+          "format": "date-time",
+          "title": "DateTime",
+          "description": "[來源端平臺]資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "SrcUpdateInterval": {
+          "format": "int32",
+          "title": "Int32",
+          "description": "來源端平台資料更新週期(秒)['-1: 不定期更新']",
+          "type": "integer"
+        },
+        "AuthorityCode": {
+          "title": "String",
+          "description": "業管機關簡碼",
+          "type": "string",
+          "xml": {
+            "name": "AuthorityCode"
+          }
+        },
+        "Count": {
+          "format": "int64",
+          "description": "資料總筆數",
+          "type": "integer"
+        },
+        "Routes": {
+          "title": "Array",
+          "description": "資料列表",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V3.Route"
+          },
+          "xml": {
+            "name": "List`1"
+          }
+        }
+      },
+      "xml": {
+        "name": "BusVWrapperOfRoute",
         "namespace": "https://ptx.transportdata.tw/standard/schema/"
       }
     },
@@ -8162,7 +8130,7 @@
           "description": "業管機關簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityCode"
           }
         },
         "Count": {
@@ -8236,7 +8204,7 @@
           "description": "業管機關簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityCode"
           }
         },
         "Count": {
@@ -8310,7 +8278,7 @@
           "description": "業管機關簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityCode"
           }
         },
         "Count": {
@@ -8332,80 +8300,6 @@
       },
       "xml": {
         "name": "BusVWrapperOfStation",
-        "namespace": "https://ptx.transportdata.tw/standard/schema/"
-      }
-    },
-    "PTX.Service.DTO.Bus.Specification.V3.Wrapper.BusVWrapper[PTX.Service.DTO.Bus.Specification.V3.Stop]": {
-      "title": "BusStopList",
-      "description": "版本 wrapper (具有版本資訊)",
-      "required": [
-        "AuthorityCode",
-        "SrcUpdateInterval",
-        "SrcUpdateTime",
-        "Stops",
-        "UpdateInterval",
-        "UpdateTime",
-        "VersionID"
-      ],
-      "type": "object",
-      "properties": {
-        "VersionID": {
-          "format": "int32",
-          "title": "Int32",
-          "description": "資料版本編號",
-          "type": "integer"
-        },
-        "UpdateTime": {
-          "format": "date-time",
-          "title": "DateTime",
-          "description": "[平臺]資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
-          "type": "string"
-        },
-        "UpdateInterval": {
-          "format": "int32",
-          "title": "Int32",
-          "description": "[平臺]資料更新週期(秒)",
-          "type": "integer"
-        },
-        "SrcUpdateTime": {
-          "format": "date-time",
-          "title": "DateTime",
-          "description": "[來源端平臺]資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
-          "type": "string"
-        },
-        "SrcUpdateInterval": {
-          "format": "int32",
-          "title": "Int32",
-          "description": "來源端平台資料更新週期(秒)['-1: 不定期更新']",
-          "type": "integer"
-        },
-        "AuthorityCode": {
-          "title": "String",
-          "description": "業管機關簡碼",
-          "type": "string",
-          "xml": {
-            "name": "String"
-          }
-        },
-        "Count": {
-          "format": "int64",
-          "description": "資料總筆數",
-          "type": "integer"
-        },
-        "Stops": {
-          "title": "Array",
-          "description": "資料列表",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V3.Stop"
-          },
-          "xml": {
-            "name": "List`1"
-          }
-        }
-      },
-      "xml": {
-        "name": "BusVWrapperOfStop",
         "namespace": "https://ptx.transportdata.tw/standard/schema/"
       }
     },
@@ -8458,7 +8352,7 @@
           "description": "業管機關簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityCode"
           }
         },
         "Count": {
@@ -8480,6 +8374,80 @@
       },
       "xml": {
         "name": "BusVWrapperOfStopOfRoute",
+        "namespace": "https://ptx.transportdata.tw/standard/schema/"
+      }
+    },
+    "PTX.Service.DTO.Bus.Specification.V3.Wrapper.BusVWrapper[PTX.Service.DTO.Bus.Specification.V3.Stop]": {
+      "title": "BusStopList",
+      "description": "版本 wrapper (具有版本資訊)",
+      "required": [
+        "AuthorityCode",
+        "SrcUpdateInterval",
+        "SrcUpdateTime",
+        "Stops",
+        "UpdateInterval",
+        "UpdateTime",
+        "VersionID"
+      ],
+      "type": "object",
+      "properties": {
+        "VersionID": {
+          "format": "int32",
+          "title": "Int32",
+          "description": "資料版本編號",
+          "type": "integer"
+        },
+        "UpdateTime": {
+          "format": "date-time",
+          "title": "DateTime",
+          "description": "[平臺]資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "UpdateInterval": {
+          "format": "int32",
+          "title": "Int32",
+          "description": "[平臺]資料更新週期(秒)",
+          "type": "integer"
+        },
+        "SrcUpdateTime": {
+          "format": "date-time",
+          "title": "DateTime",
+          "description": "[來源端平臺]資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "SrcUpdateInterval": {
+          "format": "int32",
+          "title": "Int32",
+          "description": "來源端平台資料更新週期(秒)['-1: 不定期更新']",
+          "type": "integer"
+        },
+        "AuthorityCode": {
+          "title": "String",
+          "description": "業管機關簡碼",
+          "type": "string",
+          "xml": {
+            "name": "AuthorityCode"
+          }
+        },
+        "Count": {
+          "format": "int64",
+          "description": "資料總筆數",
+          "type": "integer"
+        },
+        "Stops": {
+          "title": "Array",
+          "description": "資料列表",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V3.Stop"
+          },
+          "xml": {
+            "name": "List`1"
+          }
+        }
+      },
+      "xml": {
+        "name": "BusVWrapperOfStop",
         "namespace": "https://ptx.transportdata.tw/standard/schema/"
       }
     },
@@ -8532,7 +8500,7 @@
           "description": "業管機關簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityCode"
           }
         },
         "Count": {
@@ -8554,80 +8522,6 @@
       },
       "xml": {
         "name": "BusVWrapperOfSubRoute",
-        "namespace": "https://ptx.transportdata.tw/standard/schema/"
-      }
-    },
-    "PTX.Service.DTO.Bus.Specification.V3.Wrapper.BusVWrapper[PTX.Service.DTO.Bus.Specification.V3.Vehicle]": {
-      "title": "BusVehicleList",
-      "description": "版本 wrapper (具有版本資訊)",
-      "required": [
-        "AuthorityCode",
-        "SrcUpdateInterval",
-        "SrcUpdateTime",
-        "UpdateInterval",
-        "UpdateTime",
-        "Vehicles",
-        "VersionID"
-      ],
-      "type": "object",
-      "properties": {
-        "VersionID": {
-          "format": "int32",
-          "title": "Int32",
-          "description": "資料版本編號",
-          "type": "integer"
-        },
-        "UpdateTime": {
-          "format": "date-time",
-          "title": "DateTime",
-          "description": "[平臺]資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
-          "type": "string"
-        },
-        "UpdateInterval": {
-          "format": "int32",
-          "title": "Int32",
-          "description": "[平臺]資料更新週期(秒)",
-          "type": "integer"
-        },
-        "SrcUpdateTime": {
-          "format": "date-time",
-          "title": "DateTime",
-          "description": "[來源端平臺]資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
-          "type": "string"
-        },
-        "SrcUpdateInterval": {
-          "format": "int32",
-          "title": "Int32",
-          "description": "來源端平台資料更新週期(秒)['-1: 不定期更新']",
-          "type": "integer"
-        },
-        "AuthorityCode": {
-          "title": "String",
-          "description": "業管機關簡碼",
-          "type": "string",
-          "xml": {
-            "name": "String"
-          }
-        },
-        "Count": {
-          "format": "int64",
-          "description": "資料總筆數",
-          "type": "integer"
-        },
-        "Vehicles": {
-          "title": "Array",
-          "description": "資料列表",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V3.Vehicle"
-          },
-          "xml": {
-            "name": "List`1"
-          }
-        }
-      },
-      "xml": {
-        "name": "BusVWrapperOfVehicle",
         "namespace": "https://ptx.transportdata.tw/standard/schema/"
       }
     },
@@ -8680,7 +8574,7 @@
           "description": "業管機關簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityCode"
           }
         },
         "Count": {
@@ -8754,7 +8648,7 @@
           "description": "業管機關簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityCode"
           }
         },
         "Count": {
@@ -8776,6 +8670,80 @@
       },
       "xml": {
         "name": "BusVWrapperOfVehicleRoute",
+        "namespace": "https://ptx.transportdata.tw/standard/schema/"
+      }
+    },
+    "PTX.Service.DTO.Bus.Specification.V3.Wrapper.BusVWrapper[PTX.Service.DTO.Bus.Specification.V3.Vehicle]": {
+      "title": "BusVehicleList",
+      "description": "版本 wrapper (具有版本資訊)",
+      "required": [
+        "AuthorityCode",
+        "SrcUpdateInterval",
+        "SrcUpdateTime",
+        "UpdateInterval",
+        "UpdateTime",
+        "Vehicles",
+        "VersionID"
+      ],
+      "type": "object",
+      "properties": {
+        "VersionID": {
+          "format": "int32",
+          "title": "Int32",
+          "description": "資料版本編號",
+          "type": "integer"
+        },
+        "UpdateTime": {
+          "format": "date-time",
+          "title": "DateTime",
+          "description": "[平臺]資料更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "UpdateInterval": {
+          "format": "int32",
+          "title": "Int32",
+          "description": "[平臺]資料更新週期(秒)",
+          "type": "integer"
+        },
+        "SrcUpdateTime": {
+          "format": "date-time",
+          "title": "DateTime",
+          "description": "[來源端平臺]資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "SrcUpdateInterval": {
+          "format": "int32",
+          "title": "Int32",
+          "description": "來源端平台資料更新週期(秒)['-1: 不定期更新']",
+          "type": "integer"
+        },
+        "AuthorityCode": {
+          "title": "String",
+          "description": "業管機關簡碼",
+          "type": "string",
+          "xml": {
+            "name": "AuthorityCode"
+          }
+        },
+        "Count": {
+          "format": "int64",
+          "description": "資料總筆數",
+          "type": "integer"
+        },
+        "Vehicles": {
+          "title": "Array",
+          "description": "資料列表",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V3.Vehicle"
+          },
+          "xml": {
+            "name": "List`1"
+          }
+        }
+      },
+      "xml": {
+        "name": "BusVWrapperOfVehicle",
         "namespace": "https://ptx.transportdata.tw/standard/schema/"
       }
     },
@@ -8821,7 +8789,7 @@
           "description": "業管機關簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityCode"
           }
         },
         "Count": {
@@ -8888,7 +8856,7 @@
           "description": "業管機關簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityCode"
           }
         },
         "Count": {
@@ -8955,7 +8923,7 @@
           "description": "業管機關簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityCode"
           }
         },
         "Count": {
@@ -9022,7 +8990,7 @@
           "description": "業管機關簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityCode"
           }
         },
         "Count": {
@@ -9089,7 +9057,7 @@
           "description": "業管機關簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityCode"
           }
         },
         "Count": {
@@ -9156,7 +9124,7 @@
           "description": "業管機關簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityCode"
           }
         },
         "Count": {
@@ -9223,7 +9191,7 @@
           "description": "業管機關簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityCode"
           }
         },
         "Count": {
@@ -9262,7 +9230,7 @@
           "description": "API服務代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ServiceID"
           }
         },
         "ServiceName": {
@@ -9270,7 +9238,7 @@
           "description": "API服務中文名稱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ServiceName"
           }
         },
         "Inbound": {
@@ -9319,7 +9287,7 @@
         },
         "Status": {
           "title": "Int32",
-          "description": "檢核結果狀態 : [0:'失敗',1:'成功']",
+          "description": "檢核結果狀態 : [0:'失敗',1:'成功',2:'資料清洗中']",
           "type": "integer"
         },
         "Reason": {
@@ -9327,7 +9295,7 @@
           "description": "檢核失敗原因",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Reason"
           }
         }
       },
@@ -9344,7 +9312,7 @@
           "description": "中文繁體名稱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Zh_tw"
           }
         },
         "En": {
@@ -9352,7 +9320,7 @@
           "description": "英文名稱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "En"
           }
         }
       },
@@ -9377,7 +9345,7 @@
         },
         "Status": {
           "title": "Int32",
-          "description": "檢核結果狀態 : [0:'失敗',1:'成功']",
+          "description": "檢核結果狀態 : [0:'失敗',1:'成功',2:'資料清洗中']",
           "type": "integer"
         },
         "Reason": {
@@ -9385,7 +9353,7 @@
           "description": "檢核失敗原因",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Reason"
           }
         }
       },

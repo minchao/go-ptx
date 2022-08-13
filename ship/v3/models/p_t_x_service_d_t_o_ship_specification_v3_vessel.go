@@ -22,7 +22,7 @@ type PTXServiceDTOShipSpecificationV3Vessel struct {
 	// String
 	//
 	// 船呼
-	CallSign string `json:"CallSign,omitempty" xml:"String,omitempty"`
+	CallSign string `json:"CallSign,omitempty" xml:"CallSign,omitempty"`
 
 	// 船舶總噸位
 	GrossTonnage float32 `json:"GrossTonnage,omitempty"`
@@ -30,7 +30,7 @@ type PTXServiceDTOShipSpecificationV3Vessel struct {
 	// String
 	//
 	// 國際船舶編號
-	IMO string `json:"IMO,omitempty" xml:"String,omitempty"`
+	IMO string `json:"IMO,omitempty" xml:"IMO,omitempty"`
 
 	// 船長
 	Length float32 `json:"Length,omitempty"`
@@ -41,7 +41,7 @@ type PTXServiceDTOShipSpecificationV3Vessel struct {
 	// String
 	//
 	// AIS船舶編號
-	MMSI string `json:"MMSI,omitempty" xml:"String,omitempty"`
+	MMSI string `json:"MMSI,omitempty" xml:"MMSI,omitempty"`
 
 	// 最大載客數
 	MaxPassengerCount int32 `json:"MaxPassengerCount,omitempty"`
@@ -50,29 +50,29 @@ type PTXServiceDTOShipSpecificationV3Vessel struct {
 	//
 	// 船舶所屬國籍
 	// Required: true
-	Nationality *string `json:"Nationality" xml:"String"`
+	Nationality *string `json:"Nationality" xml:"Nationality"`
 
 	// String
 	//
 	// 備註
-	Note string `json:"Note,omitempty" xml:"String,omitempty"`
+	Note string `json:"Note,omitempty" xml:"Note,omitempty"`
 
 	// String
 	//
 	// 船舶所屬營運業者代碼
 	// Required: true
-	OperatorID *string `json:"OperatorID" xml:"String"`
+	OperatorID *string `json:"OperatorID" xml:"OperatorID"`
 
 	// String
 	//
 	// 船舶分類
-	VesselClass string `json:"VesselClass,omitempty" xml:"String,omitempty"`
+	VesselClass string `json:"VesselClass,omitempty" xml:"VesselClass,omitempty"`
 
 	// String
 	//
 	// 船舶代碼
 	// Required: true
-	VesselID *string `json:"VesselID" xml:"String"`
+	VesselID *string `json:"VesselID" xml:"VesselID"`
 
 	// NameType
 	//
@@ -85,7 +85,7 @@ type PTXServiceDTOShipSpecificationV3Vessel struct {
 	// String
 	//
 	// 台灣船舶號數
-	VesselNo string `json:"VesselNo,omitempty" xml:"String,omitempty"`
+	VesselNo string `json:"VesselNo,omitempty" xml:"VesselNo,omitempty"`
 
 	// 船寬
 	Width float32 `json:"Width,omitempty"`

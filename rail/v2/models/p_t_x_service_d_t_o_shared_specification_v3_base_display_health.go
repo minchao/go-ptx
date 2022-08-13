@@ -39,13 +39,13 @@ type PTXServiceDTOSharedSpecificationV3BaseDisplayHealth struct {
 	//
 	// API服務代碼
 	// Required: true
-	ServiceID *string `json:"ServiceID" xml:"String"`
+	ServiceID *string `json:"ServiceID" xml:"ServiceID"`
 
 	// String
 	//
 	// API服務中文名稱
 	// Required: true
-	ServiceName *string `json:"ServiceName" xml:"String"`
+	ServiceName *string `json:"ServiceName" xml:"ServiceName"`
 }
 
 // Validate validates this p t x service d t o shared specification v3 base display health

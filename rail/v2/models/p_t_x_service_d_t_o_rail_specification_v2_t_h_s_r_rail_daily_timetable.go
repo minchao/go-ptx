@@ -40,7 +40,7 @@ type PTXServiceDTORailSpecificationV2THSRRailDailyTimetable struct {
 	//
 	// 行駛日期(格式: yyyy:MM:dd)
 	// Required: true
-	TrainDate *string `json:"TrainDate" xml:"String"`
+	TrainDate *string `json:"TrainDate" xml:"TrainDate"`
 
 	// DateTime
 	//

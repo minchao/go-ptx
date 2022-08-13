@@ -24,19 +24,19 @@ type PTXServiceDTOShipSpecificationV3Route struct {
 	//
 	// 航線描述
 	// Required: true
-	Description *string `json:"Description" xml:"String"`
+	Description *string `json:"Description" xml:"Description"`
 
 	// String
 	//
 	// 航線迄點港口代碼
 	// Required: true
-	EndPortID *string `json:"EndPortID" xml:"String"`
+	EndPortID *string `json:"EndPortID" xml:"EndPortID"`
 
 	// String
 	//
 	// 航線迄點港口名稱
 	// Required: true
-	EndPortName *string `json:"EndPortName" xml:"String"`
+	EndPortName *string `json:"EndPortName" xml:"EndPortName"`
 
 	// Array
 	//
@@ -54,12 +54,12 @@ type PTXServiceDTOShipSpecificationV3Route struct {
 	//
 	// 航線代碼
 	// Required: true
-	RouteID *string `json:"RouteID" xml:"String"`
+	RouteID *string `json:"RouteID" xml:"RouteID"`
 
 	// String
 	//
 	// 航運路線簡圖網址
-	RouteMapURL string `json:"RouteMapURL,omitempty" xml:"String,omitempty"`
+	RouteMapURL string `json:"RouteMapURL,omitempty" xml:"RouteMapURL,omitempty"`
 
 	// NameType
 	//
@@ -79,13 +79,13 @@ type PTXServiceDTOShipSpecificationV3Route struct {
 	//
 	// 航線起點港口代碼
 	// Required: true
-	StartPortID *string `json:"StartPortID" xml:"String"`
+	StartPortID *string `json:"StartPortID" xml:"StartPortID"`
 
 	// String
 	//
 	// 航線起點港口名稱
 	// Required: true
-	StartPortName *string `json:"StartPortName" xml:"String"`
+	StartPortName *string `json:"StartPortName" xml:"StartPortName"`
 
 	// NameType
 	//
@@ -104,7 +104,7 @@ type PTXServiceDTOShipSpecificationV3Route struct {
 	//
 	// 氣象預報連結
 	// Required: true
-	WeatherURL *string `json:"WeatherURL" xml:"String"`
+	WeatherURL *string `json:"WeatherURL" xml:"WeatherURL"`
 }
 
 // Validate validates this p t x service d t o ship specification v3 route

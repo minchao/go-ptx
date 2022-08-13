@@ -22,25 +22,25 @@ type PTXServiceDTOShipSpecificationV3News struct {
 	// String
 	//
 	// 附件網址連結
-	AttachmentURL string `json:"AttachmentURL,omitempty" xml:"String,omitempty"`
+	AttachmentURL string `json:"AttachmentURL,omitempty" xml:"AttachmentURL,omitempty"`
 
 	// String
 	//
 	// 聯絡人
 	// Required: true
-	ContactName *string `json:"ContactName" xml:"String"`
+	ContactName *string `json:"ContactName" xml:"ContactName"`
 
 	// String
 	//
 	// 發布單位
 	// Required: true
-	Department *string `json:"Department" xml:"String"`
+	Department *string `json:"Department" xml:"Department"`
 
 	// String
 	//
 	// 內容描述
 	// Required: true
-	Description *string `json:"Description" xml:"String"`
+	Description *string `json:"Description" xml:"Description"`
 
 	// 訊息結束日期時間
 	// Required: true
@@ -51,7 +51,7 @@ type PTXServiceDTOShipSpecificationV3News struct {
 	//
 	// 語系
 	// Required: true
-	Language *string `json:"Language" xml:"String"`
+	Language *string `json:"Language" xml:"Language"`
 
 	// Int32
 	//
@@ -63,17 +63,17 @@ type PTXServiceDTOShipSpecificationV3News struct {
 	//
 	// 消息代碼
 	// Required: true
-	NewsID *string `json:"NewsID" xml:"String"`
+	NewsID *string `json:"NewsID" xml:"NewsID"`
 
 	// String
 	//
 	// 消息網址連結
-	NewsURL string `json:"NewsURL,omitempty" xml:"String,omitempty"`
+	NewsURL string `json:"NewsURL,omitempty" xml:"NewsURL,omitempty"`
 
 	// String
 	//
 	// 營運業者代碼
-	OperatorID string `json:"OperatorID,omitempty" xml:"String,omitempty"`
+	OperatorID string `json:"OperatorID,omitempty" xml:"OperatorID,omitempty"`
 
 	// 消息發佈日期時間
 	// Required: true
@@ -89,13 +89,13 @@ type PTXServiceDTOShipSpecificationV3News struct {
 	//
 	// 連絡電話
 	// Required: true
-	Telephone *string `json:"Telephone" xml:"String"`
+	Telephone *string `json:"Telephone" xml:"Telephone"`
 
 	// String
 	//
 	// 消息標題
 	// Required: true
-	Title *string `json:"Title" xml:"String"`
+	Title *string `json:"Title" xml:"Title"`
 
 	// DateTime
 	//

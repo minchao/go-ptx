@@ -23,19 +23,19 @@ type PTXServiceDTORailSpecificationV2THSRTHSRShape struct {
 	//
 	// 路線軌跡編碼(encoded polyline)
 	// Required: true
-	EncodedPolyline *string `json:"EncodedPolyline" xml:"String"`
+	EncodedPolyline *string `json:"EncodedPolyline" xml:"EncodedPolyline"`
 
 	// String
 	//
 	// well-known text，為路線軌跡資料
 	// Required: true
-	Geometry *string `json:"Geometry" xml:"String"`
+	Geometry *string `json:"Geometry" xml:"Geometry"`
 
 	// String
 	//
 	// 路線代碼
 	// Required: true
-	LineID *string `json:"LineID" xml:"String"`
+	LineID *string `json:"LineID" xml:"LineID"`
 
 	// NameType
 	//

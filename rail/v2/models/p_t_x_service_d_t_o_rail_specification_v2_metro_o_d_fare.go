@@ -26,7 +26,7 @@ type PTXServiceDTORailSpecificationV2MetroODFare struct {
 	//
 	// 迄站車站代碼
 	// Required: true
-	DestinationStationID *string `json:"DestinationStationID" xml:"String"`
+	DestinationStationID *string `json:"DestinationStationID" xml:"DestinationStationID"`
 
 	// NameType
 	//
@@ -46,7 +46,7 @@ type PTXServiceDTORailSpecificationV2MetroODFare struct {
 	//
 	// 起站車站代碼
 	// Required: true
-	OriginStationID *string `json:"OriginStationID" xml:"String"`
+	OriginStationID *string `json:"OriginStationID" xml:"OriginStationID"`
 
 	// NameType
 	//

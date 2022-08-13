@@ -56,7 +56,7 @@ type PTXServiceDTOBusSpecificationV3Route struct {
 	// String
 	//
 	// 收費資訊說明網址
-	FareURL string `json:"FareURL,omitempty" xml:"String,omitempty"`
+	FareURL string `json:"FareURL,omitempty" xml:"FareURL,omitempty"`
 
 	// Boolean
 	//
@@ -73,7 +73,7 @@ type PTXServiceDTOBusSpecificationV3Route struct {
 	// String
 	//
 	// 路線公車動態資訊網址
-	LiveBusURL string `json:"LiveBusURL,omitempty" xml:"String,omitempty"`
+	LiveBusURL string `json:"LiveBusURL,omitempty" xml:"LiveBusURL,omitempty"`
 
 	// Array
 	//
@@ -84,7 +84,7 @@ type PTXServiceDTOBusSpecificationV3Route struct {
 	// String
 	//
 	// 路線描述
-	RouteDescription string `json:"RouteDescription,omitempty" xml:"String,omitempty"`
+	RouteDescription string `json:"RouteDescription,omitempty" xml:"RouteDescription,omitempty"`
 
 	// 路線旅行長度
 	RouteDistance float32 `json:"RouteDistance,omitempty"`
@@ -93,7 +93,7 @@ type PTXServiceDTOBusSpecificationV3Route struct {
 	//
 	// 地區既用中之路線代碼(為原資料內碼)
 	// Required: true
-	RouteID *string `json:"RouteID" xml:"String"`
+	RouteID *string `json:"RouteID" xml:"RouteID"`
 
 	// NameType
 	//
@@ -105,7 +105,7 @@ type PTXServiceDTOBusSpecificationV3Route struct {
 	// String
 	//
 	// 路線簡圖網址
-	RouteMapImageURL string `json:"RouteMapImageURL,omitempty" xml:"String,omitempty"`
+	RouteMapImageURL string `json:"RouteMapImageURL,omitempty" xml:"RouteMapImageURL,omitempty"`
 
 	// NameType
 	//
@@ -125,12 +125,12 @@ type PTXServiceDTOBusSpecificationV3Route struct {
 	//
 	// 路線唯一識別代碼，規則為 {業管機關簡碼} + {RouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢
 	// Required: true
-	RouteUID *string `json:"RouteUID" xml:"String"`
+	RouteUID *string `json:"RouteUID" xml:"RouteUID"`
 
 	// String
 	//
 	// 路線資訊說明網址
-	RouteURL string `json:"RouteURL,omitempty" xml:"String,omitempty"`
+	RouteURL string `json:"RouteURL,omitempty" xml:"RouteURL,omitempty"`
 
 	// ServiceType
 	//

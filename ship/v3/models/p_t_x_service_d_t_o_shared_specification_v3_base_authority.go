@@ -25,19 +25,19 @@ type PTXServiceDTOSharedSpecificationV3BaseAuthority struct {
 	//
 	// 業管機關地址
 	// Required: true
-	AuthorityAddress *string `json:"AuthorityAddress" xml:"String"`
+	AuthorityAddress *string `json:"AuthorityAddress" xml:"AuthorityAddress"`
 
 	// String
 	//
 	// 業管機關簡碼
 	// Required: true
-	AuthorityCode *string `json:"AuthorityCode" xml:"String"`
+	AuthorityCode *string `json:"AuthorityCode" xml:"AuthorityCode"`
 
 	// String
 	//
 	// 業管機關電子信箱
 	// Required: true
-	AuthorityEmail *string `json:"AuthorityEmail" xml:"String"`
+	AuthorityEmail *string `json:"AuthorityEmail" xml:"AuthorityEmail"`
 
 	// NameType
 	//
@@ -51,23 +51,23 @@ type PTXServiceDTOSharedSpecificationV3BaseAuthority struct {
 	//
 	// 業管機關識別代碼(可參閱: https://oid.nat.gov.tw/OIDWeb/)
 	// Required: true
-	AuthorityOID *string `json:"AuthorityOID" xml:"String"`
+	AuthorityOID *string `json:"AuthorityOID" xml:"AuthorityOID"`
 
 	// String
 	//
 	// 業管機關連絡電話
 	// Required: true
-	AuthorityPhone *string `json:"AuthorityPhone" xml:"String"`
+	AuthorityPhone *string `json:"AuthorityPhone" xml:"AuthorityPhone"`
 
 	// String
 	//
 	// 業管機關官網網址
-	AuthorityURL string `json:"AuthorityUrl,omitempty" xml:"String,omitempty"`
+	AuthorityURL string `json:"AuthorityUrl,omitempty" xml:"AuthorityUrl,omitempty"`
 
 	// String
 	//
 	// 業管機關Logo網址
-	LogoURL string `json:"LogoURL,omitempty" xml:"String,omitempty"`
+	LogoURL string `json:"LogoURL,omitempty" xml:"LogoURL,omitempty"`
 
 	// DateTime
 	//

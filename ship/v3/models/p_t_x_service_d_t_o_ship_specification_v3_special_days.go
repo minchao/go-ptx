@@ -35,12 +35,12 @@ type PTXServiceDTOShipSpecificationV3SpecialDays struct {
 	// String
 	//
 	// 特殊營運描述
-	Description string `json:"Description,omitempty" xml:"String,omitempty"`
+	Description string `json:"Description,omitempty" xml:"Description,omitempty"`
 
 	// String
 	//
 	// 營運服務狀態代碼: [0:'停止營運',1:'正常營運',2:'加班營運']
-	ServiceStatus string `json:"ServiceStatus,omitempty" xml:"String,omitempty"`
+	ServiceStatus string `json:"ServiceStatus,omitempty" xml:"ServiceStatus,omitempty"`
 }
 
 // Validate validates this p t x service d t o ship specification v3 special days

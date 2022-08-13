@@ -36,7 +36,7 @@ type PTXServiceDTOShipSpecificationV3StopOfRoute struct {
 	//
 	// 航線代碼
 	// Required: true
-	RouteID *string `json:"RouteID" xml:"String"`
+	RouteID *string `json:"RouteID" xml:"RouteID"`
 
 	// NameType
 	//

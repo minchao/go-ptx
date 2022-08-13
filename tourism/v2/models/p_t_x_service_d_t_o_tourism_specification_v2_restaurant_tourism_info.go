@@ -24,42 +24,42 @@ type PTXServiceDTOTourismSpecificationV2RestaurantTourismInfo struct {
 	// String
 	//
 	// 店家地址
-	Address string `json:"Address,omitempty" xml:"String,omitempty"`
+	Address string `json:"Address,omitempty" xml:"Address,omitempty"`
 
 	// String
 	//
 	// 所屬縣市
-	City string `json:"City,omitempty" xml:"String,omitempty"`
+	City string `json:"City,omitempty" xml:"City,omitempty"`
 
 	// String
 	//
 	// 店家分類
-	Class string `json:"Class,omitempty" xml:"String,omitempty"`
+	Class string `json:"Class,omitempty" xml:"Class,omitempty"`
 
 	// String
 	//
 	// 店家簡述
-	Description string `json:"Description,omitempty" xml:"String,omitempty"`
+	Description string `json:"Description,omitempty" xml:"Description,omitempty"`
 
 	// String
 	//
 	// 店家地圖/簡圖介紹網址
-	MapURL string `json:"MapUrl,omitempty" xml:"String,omitempty"`
+	MapURL string `json:"MapUrl,omitempty" xml:"MapUrl,omitempty"`
 
 	// String
 	//
 	// 營業時間
-	OpenTime string `json:"OpenTime,omitempty" xml:"String,omitempty"`
+	OpenTime string `json:"OpenTime,omitempty" xml:"OpenTime,omitempty"`
 
 	// String
 	//
 	// 停車資訊
-	ParkingInfo string `json:"ParkingInfo,omitempty" xml:"String,omitempty"`
+	ParkingInfo string `json:"ParkingInfo,omitempty" xml:"ParkingInfo,omitempty"`
 
 	// String
 	//
 	// 預約電話
-	Phone string `json:"Phone,omitempty" xml:"String,omitempty"`
+	Phone string `json:"Phone,omitempty" xml:"Phone,omitempty"`
 
 	// TourismPicture
 	//
@@ -79,12 +79,12 @@ type PTXServiceDTOTourismSpecificationV2RestaurantTourismInfo struct {
 	//
 	// 餐飲店家代碼
 	// Required: true
-	RestaurantID *string `json:"RestaurantID" xml:"String"`
+	RestaurantID *string `json:"RestaurantID" xml:"RestaurantID"`
 
 	// String
 	//
 	// 餐飲店家名稱
-	RestaurantName string `json:"RestaurantName,omitempty" xml:"String,omitempty"`
+	RestaurantName string `json:"RestaurantName,omitempty" xml:"RestaurantName,omitempty"`
 
 	// 觀光局檔案更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Required: true
@@ -99,12 +99,12 @@ type PTXServiceDTOTourismSpecificationV2RestaurantTourismInfo struct {
 	// String
 	//
 	// 店家網站網址
-	WebsiteURL string `json:"WebsiteUrl,omitempty" xml:"String,omitempty"`
+	WebsiteURL string `json:"WebsiteUrl,omitempty" xml:"WebsiteUrl,omitempty"`
 
 	// String
 	//
 	// 郵遞區號
-	ZipCode string `json:"ZipCode,omitempty" xml:"String,omitempty"`
+	ZipCode string `json:"ZipCode,omitempty" xml:"ZipCode,omitempty"`
 }
 
 // Validate validates this p t x service d t o tourism specification v2 restaurant tourism info

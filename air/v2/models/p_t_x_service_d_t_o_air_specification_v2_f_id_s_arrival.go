@@ -24,7 +24,7 @@ type PTXServiceDTOAirSpecificationV2FIDSArrival struct {
 	// String
 	//
 	// 航空器型號
-	AcType string `json:"AcType,omitempty" xml:"String,omitempty"`
+	AcType string `json:"AcType,omitempty" xml:"AcType,omitempty"`
 
 	// 實際抵達時間(ISO8601格式:yyyy-MM-ddTHH:mm)
 	// Format: date-time
@@ -39,49 +39,49 @@ type PTXServiceDTOAirSpecificationV2FIDSArrival struct {
 	//
 	// 航空公司IATA國際代碼
 	// Required: true
-	AirlineID *string `json:"AirlineID" xml:"String"`
+	AirlineID *string `json:"AirlineID" xml:"AirlineID"`
 
 	// String
 	//
 	// 停機坪(僅貨機提供)
-	Apron string `json:"Apron,omitempty" xml:"String,omitempty"`
+	Apron string `json:"Apron,omitempty" xml:"Apron,omitempty"`
 
 	// String
 	//
 	// 目的地機場IATA國際代碼
 	// Required: true
-	ArrivalAirportID *string `json:"ArrivalAirportID" xml:"String"`
+	ArrivalAirportID *string `json:"ArrivalAirportID" xml:"ArrivalAirportID"`
 
 	// String
 	//
 	// 航班屬性狀態,為該機場觀點的狀態
-	ArrivalRemark string `json:"ArrivalRemark,omitempty" xml:"String,omitempty"`
+	ArrivalRemark string `json:"ArrivalRemark,omitempty" xml:"ArrivalRemark,omitempty"`
 
 	// String
 	//
 	// 航班屬性狀態(英文)
-	ArrivalRemarkEn string `json:"ArrivalRemarkEn,omitempty" xml:"String,omitempty"`
+	ArrivalRemarkEn string `json:"ArrivalRemarkEn,omitempty" xml:"ArrivalRemarkEn,omitempty"`
 
 	// String
 	//
 	// 行李轉盤(到站FIDS可能有「行李轉盤」資訊, 離站FIDS不會有, 貨機則無此資訊)
-	BaggageClaim string `json:"BaggageClaim,omitempty" xml:"String,omitempty"`
+	BaggageClaim string `json:"BaggageClaim,omitempty" xml:"BaggageClaim,omitempty"`
 
 	// String
 	//
 	// 報到櫃檯(離站FIDS可能有「報到櫃台」資訊, 到站FIDS不會有, 貨機則無此資訊)
-	CheckCounter string `json:"CheckCounter,omitempty" xml:"String,omitempty"`
+	CheckCounter string `json:"CheckCounter,omitempty" xml:"CheckCounter,omitempty"`
 
 	// String
 	//
 	// 航班共用班號
-	CodeShare string `json:"CodeShare,omitempty" xml:"String,omitempty"`
+	CodeShare string `json:"CodeShare,omitempty" xml:"CodeShare,omitempty"`
 
 	// String
 	//
 	// 起點機場IATA國際代碼
 	// Required: true
-	DepartureAirportID *string `json:"DepartureAirportID" xml:"String"`
+	DepartureAirportID *string `json:"DepartureAirportID" xml:"DepartureAirportID"`
 
 	// 預估抵達時間(ISO8601格式:yyyy-MM-ddTHH:mm)
 	// Format: date-time
@@ -96,12 +96,12 @@ type PTXServiceDTOAirSpecificationV2FIDSArrival struct {
 	//
 	// 航機班號(不包含航空公司的AirlineID，僅有班號數字)
 	// Required: true
-	FlightNumber *string `json:"FlightNumber" xml:"String"`
+	FlightNumber *string `json:"FlightNumber" xml:"FlightNumber"`
 
 	// String
 	//
 	// 登機門(僅客機提供)
-	Gate string `json:"Gate,omitempty" xml:"String,omitempty"`
+	Gate string `json:"Gate,omitempty" xml:"Gate,omitempty"`
 
 	// Boolean
 	//
@@ -115,7 +115,7 @@ type PTXServiceDTOAirSpecificationV2FIDSArrival struct {
 	// String
 	//
 	// 航廈
-	Terminal string `json:"Terminal,omitempty" xml:"String,omitempty"`
+	Terminal string `json:"Terminal,omitempty" xml:"Terminal,omitempty"`
 
 	// DateTime
 	//

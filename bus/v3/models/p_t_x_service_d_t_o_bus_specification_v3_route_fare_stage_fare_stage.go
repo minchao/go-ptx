@@ -23,8 +23,8 @@ type PTXServiceDTOBusSpecificationV3RouteFareStageFareStage struct {
 
 	// String
 	//
-	// 計費訖點站牌代碼
-	StopID string `json:"StopID,omitempty" xml:"String,omitempty"`
+	// 計費迄點站牌代碼
+	StopID string `json:"StopID,omitempty" xml:"StopID,omitempty"`
 
 	// NameType
 	//
@@ -37,7 +37,7 @@ type PTXServiceDTOBusSpecificationV3RouteFareStageFareStage struct {
 	//
 	// 站牌唯一識別代碼，規則為 {業管機關簡碼} + {StopID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢
 	// Required: true
-	StopUID *string `json:"StopUID" xml:"String"`
+	StopUID *string `json:"StopUID" xml:"StopUID"`
 }
 
 // Validate validates this p t x service d t o bus specification v3 route fare stage fare stage

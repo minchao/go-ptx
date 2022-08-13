@@ -24,7 +24,7 @@ type PTXServiceDTOBikeSpecificationV2BikeStation struct {
 	// String
 	//
 	// 業管單位代碼
-	AuthorityID string `json:"AuthorityID,omitempty" xml:"String,omitempty"`
+	AuthorityID string `json:"AuthorityID,omitempty" xml:"AuthorityID,omitempty"`
 
 	// Int32
 	//
@@ -50,7 +50,7 @@ type PTXServiceDTOBikeSpecificationV2BikeStation struct {
 	// String
 	//
 	// 站點代碼
-	StationID string `json:"StationID,omitempty" xml:"String,omitempty"`
+	StationID string `json:"StationID,omitempty" xml:"StationID,omitempty"`
 
 	// NameType
 	//
@@ -69,12 +69,12 @@ type PTXServiceDTOBikeSpecificationV2BikeStation struct {
 	// String
 	//
 	// 站點唯一識別代碼，規則為 {業管機關代碼} + {StationID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢
-	StationUID string `json:"StationUID,omitempty" xml:"String,omitempty"`
+	StationUID string `json:"StationUID,omitempty" xml:"StationUID,omitempty"`
 
 	// String
 	//
 	// 站點描述
-	StopDescription string `json:"StopDescription,omitempty" xml:"String,omitempty"`
+	StopDescription string `json:"StopDescription,omitempty" xml:"StopDescription,omitempty"`
 
 	// DateTime
 	//

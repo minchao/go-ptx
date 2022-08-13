@@ -25,7 +25,6 @@ type PTXServiceDTOBusSpecificationV2SectionFare struct {
 	// Array
 	//
 	// 緩衝區資訊
-	// Required: true
 	BufferZones []*PTXServiceDTOBusSpecificationV2SectionFareBufferZone "json:\"BufferZones\" xml:\"List`1\""
 
 	// Array
@@ -54,9 +53,8 @@ func (m *PTXServiceDTOBusSpecificationV2SectionFare) Validate(formats strfmt.Reg
 }
 
 func (m *PTXServiceDTOBusSpecificationV2SectionFare) validateBufferZones(formats strfmt.Registry) error {
-
-	if err := validate.Required("BufferZones", "body", m.BufferZones); err != nil {
-		return err
+	if swag.IsZero(m.BufferZones) { // not required
+		return nil
 	}
 
 	for i := 0; i < len(m.BufferZones); i++ {

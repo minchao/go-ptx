@@ -24,7 +24,7 @@ type PTXServiceDTOBusSpecificationV2BusStageFare struct {
 
 	// BusStage
 	//
-	// 訖點計費站
+	// 迄點計費站
 	// Required: true
 	DestinationStage struct {
 		PTXServiceDTOBusSpecificationV2BusStage

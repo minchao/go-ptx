@@ -26,7 +26,7 @@ type PTXServiceDTOBusSpecificationV2BusFrequency struct {
 	//
 	// 發車班距結束適用時間，格式為: HH:mm
 	// Required: true
-	EndTime *string `json:"EndTime" xml:"String"`
+	EndTime *string `json:"EndTime" xml:"EndTime"`
 
 	// Int32
 	//
@@ -56,7 +56,7 @@ type PTXServiceDTOBusSpecificationV2BusFrequency struct {
 	//
 	// 發車班距起始適用時間，格式為: HH:mm
 	// Required: true
-	StartTime *string `json:"StartTime" xml:"String"`
+	StartTime *string `json:"StartTime" xml:"StartTime"`
 }
 
 // Validate validates this p t x service d t o bus specification v2 bus frequency

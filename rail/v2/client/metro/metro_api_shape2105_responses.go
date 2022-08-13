@@ -60,7 +60,7 @@ type MetroAPIShape2105OK struct {
 }
 
 func (o *MetroAPIShape2105OK) Error() string {
-	return fmt.Sprintf("[GET /v2/Rail/Metro/Shape/{MetroSystem}][%d] metroApiShape2105OK  %+v", 200, o.Payload)
+	return fmt.Sprintf("[GET /v2/Rail/Metro/Shape/{RailSystem}][%d] metroApiShape2105OK  %+v", 200, o.Payload)
 }
 func (o *MetroAPIShape2105OK) GetPayload() []*models.PTXServiceDTORailSpecificationV2MetroMetroShape {
 	return o.Payload
@@ -90,7 +90,7 @@ type MetroAPIShape2105Status299 struct {
 }
 
 func (o *MetroAPIShape2105Status299) Error() string {
-	return fmt.Sprintf("[GET /v2/Rail/Metro/Shape/{MetroSystem}][%d] metroApiShape2105Status299  %+v", 299, o.Payload)
+	return fmt.Sprintf("[GET /v2/Rail/Metro/Shape/{RailSystem}][%d] metroApiShape2105Status299  %+v", 299, o.Payload)
 }
 func (o *MetroAPIShape2105Status299) GetPayload() *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth {
 	return o.Payload
@@ -121,7 +121,7 @@ type MetroAPIShape2105NotModified struct {
 }
 
 func (o *MetroAPIShape2105NotModified) Error() string {
-	return fmt.Sprintf("[GET /v2/Rail/Metro/Shape/{MetroSystem}][%d] metroApiShape2105NotModified ", 304)
+	return fmt.Sprintf("[GET /v2/Rail/Metro/Shape/{RailSystem}][%d] metroApiShape2105NotModified ", 304)
 }
 
 func (o *MetroAPIShape2105NotModified) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {

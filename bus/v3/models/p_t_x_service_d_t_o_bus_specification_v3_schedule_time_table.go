@@ -23,7 +23,7 @@ type PTXServiceDTOBusSpecificationV3ScheduleTimeTable struct {
 	// String
 	//
 	// 該路線班次是否使用低地板公車車輛
-	IsLowFloor string `json:"IsLowFloor,omitempty" xml:"String,omitempty"`
+	IsLowFloor string `json:"IsLowFloor,omitempty" xml:"IsLowFloor,omitempty"`
 
 	// ServiceDay
 	//
@@ -48,7 +48,7 @@ type PTXServiceDTOBusSpecificationV3ScheduleTimeTable struct {
 	// String
 	//
 	// 班次代碼，為無意義之編碼
-	TripID string `json:"TripID,omitempty" xml:"String,omitempty"`
+	TripID string `json:"TripID,omitempty" xml:"TripID,omitempty"`
 }
 
 // Validate validates this p t x service d t o bus specification v3 schedule time table

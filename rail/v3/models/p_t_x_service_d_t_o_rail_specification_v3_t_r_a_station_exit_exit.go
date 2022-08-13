@@ -24,7 +24,7 @@ type PTXServiceDTORailSpecificationV3TRAStationExitExit struct {
 	// String
 	//
 	// 出入口所在道路路段方位角
-	Bearing string `json:"Bearing,omitempty" xml:"String,omitempty"`
+	Bearing string `json:"Bearing,omitempty" xml:"Bearing,omitempty"`
 
 	// Boolean
 	//
@@ -41,7 +41,7 @@ type PTXServiceDTORailSpecificationV3TRAStationExitExit struct {
 	//
 	// 出入口代碼
 	// Required: true
-	ExitID *string `json:"ExitID" xml:"String"`
+	ExitID *string `json:"ExitID" xml:"ExitID"`
 
 	// NameType
 	//
@@ -62,12 +62,12 @@ type PTXServiceDTORailSpecificationV3TRAStationExitExit struct {
 	// String
 	//
 	// 地址描述
-	LocationDescription string `json:"LocationDescription,omitempty" xml:"String,omitempty"`
+	LocationDescription string `json:"LocationDescription,omitempty" xml:"LocationDescription,omitempty"`
 
 	// String
 	//
 	// 出入口所在道路名稱
-	RoadName string `json:"RoadName,omitempty" xml:"String,omitempty"`
+	RoadName string `json:"RoadName,omitempty" xml:"RoadName,omitempty"`
 
 	// Boolean
 	//

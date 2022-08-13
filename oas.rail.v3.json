@@ -94,9 +94,6 @@
               "$ref": "#/definitions/PTX.API.Rail.Model.TRABaseWrapper[PTX.Service.DTO.Rail.Specification.V3.TRA.Network.Network]"
             }
           },
-          "304": {
-            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
-          },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
@@ -188,9 +185,6 @@
             "schema": {
               "$ref": "#/definitions/PTX.API.Rail.Model.TRABaseWrapper[PTX.Service.DTO.Rail.Specification.V3.TRA.Station]"
             }
-          },
-          "304": {
-            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
@@ -284,9 +278,6 @@
               "$ref": "#/definitions/PTX.API.Rail.Model.TRABaseWrapper[PTX.Service.DTO.Rail.Specification.V3.TRA.StationExit.StationExit]"
             }
           },
-          "304": {
-            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
-          },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
@@ -378,9 +369,6 @@
             "schema": {
               "$ref": "#/definitions/PTX.API.Rail.Model.TRABaseWrapper[PTX.Service.DTO.Rail.Specification.V3.TRA.StationFacility.StationFacility]"
             }
-          },
-          "304": {
-            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
@@ -474,9 +462,6 @@
               "$ref": "#/definitions/PTX.API.Rail.Model.TRABaseWrapper[PTX.Service.DTO.Rail.Specification.V3.TRA.Line]"
             }
           },
-          "304": {
-            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
-          },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
@@ -569,9 +554,6 @@
               "$ref": "#/definitions/PTX.API.Rail.Model.TRABaseWrapper[PTX.Service.DTO.Rail.Specification.V3.TRA.StationOfLine.StationOfLine]"
             }
           },
-          "304": {
-            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
-          },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
@@ -663,9 +645,6 @@
             "schema": {
               "$ref": "#/definitions/PTX.API.Rail.Model.TRABaseWrapper[PTX.Service.DTO.Rail.Specification.V3.TRA.TrainType]"
             }
-          },
-          "304": {
-            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
@@ -813,9 +792,6 @@
               "$ref": "#/definitions/PTX.API.Rail.Model.TRAODFareWrapper[PTX.Service.DTO.Rail.Specification.V3.TRA.ODFare.ODFare]"
             }
           },
-          "304": {
-            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
-          },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
@@ -907,9 +883,6 @@
             "schema": {
               "$ref": "#/definitions/PTX.API.Rail.Model.TRAGeneralTrainWrapper[PTX.Service.DTO.Rail.Specification.V3.TRA.GeneralTrainTimetable]"
             }
-          },
-          "304": {
-            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
@@ -1010,9 +983,6 @@
               "$ref": "#/definitions/PTX.API.Rail.Model.TRAGeneralTrainWrapper[PTX.Service.DTO.Rail.Specification.V3.TRA.GeneralTrainTimetable]"
             }
           },
-          "304": {
-            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
-          },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
@@ -1104,9 +1074,6 @@
             "schema": {
               "$ref": "#/definitions/PTX.API.Rail.Model.TRAGeneralStationWrapper[PTX.Service.DTO.Rail.Specification.V3.TRA.GeneralStationTimetable.GeneralStationTimetable]"
             }
-          },
-          "304": {
-            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
@@ -1207,9 +1174,6 @@
               "$ref": "#/definitions/PTX.API.Rail.Model.TRAGeneralStationWrapper[PTX.Service.DTO.Rail.Specification.V3.TRA.GeneralStationTimetable.GeneralStationTimetable]"
             }
           },
-          "304": {
-            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
-          },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
@@ -1301,9 +1265,6 @@
             "schema": {
               "$ref": "#/definitions/PTX.API.Rail.Model.TRASpecificWrapper[PTX.Service.DTO.Rail.Specification.V3.TRA.SpecificTrainTimetable]"
             }
-          },
-          "304": {
-            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
@@ -1404,9 +1365,6 @@
               "$ref": "#/definitions/PTX.API.Rail.Model.TRASpecificWrapper[PTX.Service.DTO.Rail.Specification.V3.TRA.SpecificTrainTimetable]"
             }
           },
-          "304": {
-            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
-          },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
@@ -1498,9 +1456,6 @@
             "schema": {
               "$ref": "#/definitions/PTX.API.Rail.Model.TraDailyTrainWrapper[PTX.Service.DTO.Rail.Specification.V3.TRA.DailyTrainTimeTable.TrainTimetable]"
             }
-          },
-          "304": {
-            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
@@ -1601,9 +1556,6 @@
               "$ref": "#/definitions/PTX.API.Rail.Model.TraDailyTrainWrapper[PTX.Service.DTO.Rail.Specification.V3.TRA.DailyTrainTimeTable.TrainTimetable]"
             }
           },
-          "304": {
-            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
-          },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
@@ -1654,6 +1606,9 @@
             "schema": {
               "$ref": "#/definitions/PTX.API.Rail.Model.TrainDateList"
             }
+          },
+          "304": {
+            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
@@ -1754,9 +1709,6 @@
             "schema": {
               "$ref": "#/definitions/PTX.API.Rail.Model.TraDailyTrainWrapper[PTX.Service.DTO.Rail.Specification.V3.TRA.DailyTrainTimeTable.TrainTimetable]"
             }
-          },
-          "304": {
-            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
@@ -1872,9 +1824,6 @@
               "$ref": "#/definitions/PTX.API.Rail.Model.TraDailyTrainWrapper[PTX.Service.DTO.Rail.Specification.V3.TRA.DailyTrainTimeTable.TrainTimetable]"
             }
           },
-          "304": {
-            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
-          },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
@@ -1989,9 +1938,6 @@
               "$ref": "#/definitions/PTX.API.Rail.Model.TraDailyTrainWrapper[PTX.Service.DTO.Rail.Specification.V3.TRA.DailyTrainTimeTable.TrainTimetable]"
             }
           },
-          "304": {
-            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
-          },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
@@ -2083,9 +2029,6 @@
             "schema": {
               "$ref": "#/definitions/PTX.API.Rail.Model.TraDailyStationWrapper[PTX.Service.DTO.Rail.Specification.V3.TRA.DailyStationTimeTable.StationTimetable]"
             }
-          },
-          "304": {
-            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
@@ -2186,9 +2129,6 @@
               "$ref": "#/definitions/PTX.API.Rail.Model.TraDailyStationWrapper[PTX.Service.DTO.Rail.Specification.V3.TRA.DailyStationTimeTable.StationTimetable]"
             }
           },
-          "304": {
-            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
-          },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
@@ -2288,9 +2228,6 @@
             "schema": {
               "$ref": "#/definitions/PTX.API.Rail.Model.TraDailyStationWrapper[PTX.Service.DTO.Rail.Specification.V3.TRA.DailyStationTimeTable.StationTimetable]"
             }
-          },
-          "304": {
-            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
@@ -2778,9 +2715,6 @@
               "$ref": "#/definitions/PTX.API.Rail.Model.TRABaseWrapper[PTX.Service.DTO.Rail.Specification.V3.TRA.LineTransfer]"
             }
           },
-          "304": {
-            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
-          },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
@@ -2872,9 +2806,6 @@
             "schema": {
               "$ref": "#/definitions/PTX.API.Rail.Model.TRABaseWrapper[PTX.Service.DTO.Rail.Specification.V3.TRA.StationTransfer.StationTransfer]"
             }
-          },
-          "304": {
-            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
@@ -3253,9 +3184,6 @@
               "$ref": "#/definitions/PTX.API.Rail.Model.TRABaseWrapper[PTX.Service.DTO.Rail.Specification.V3.TRA.Operator]"
             }
           },
-          "304": {
-            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
-          },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
@@ -3347,9 +3275,6 @@
             "schema": {
               "$ref": "#/definitions/PTX.API.Rail.Model.TRABaseWrapper[PTX.Service.DTO.Rail.Specification.V3.TRA.LineNetwork.LineNetwork]"
             }
-          },
-          "304": {
-            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
@@ -3443,9 +3368,6 @@
               "$ref": "#/definitions/PTX.API.Rail.Model.LiteTrain.LiteTrainBaseWrapper[PTX.Service.DTO.Rail.Specification.V3.LiteTrain.Network.Network]"
             }
           },
-          "304": {
-            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
-          },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
@@ -3537,9 +3459,6 @@
             "schema": {
               "$ref": "#/definitions/PTX.API.Rail.Model.LiteTrain.LiteTrainBaseWrapper[PTX.Service.DTO.Rail.Specification.V3.LiteTrain.Station]"
             }
-          },
-          "304": {
-            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
@@ -3633,9 +3552,6 @@
               "$ref": "#/definitions/PTX.API.Rail.Model.LiteTrain.LiteTrainBaseWrapper[PTX.Service.DTO.Rail.Specification.V3.LiteTrain.Line]"
             }
           },
-          "304": {
-            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
-          },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
@@ -3728,9 +3644,6 @@
               "$ref": "#/definitions/PTX.API.Rail.Model.LiteTrain.LiteTrainBaseWrapper[PTX.Service.DTO.Rail.Specification.V3.LiteTrain.Operator]"
             }
           },
-          "304": {
-            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
-          },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
@@ -3822,9 +3735,6 @@
             "schema": {
               "$ref": "#/definitions/PTX.API.Rail.Model.LiteTrain.LiteTrainGeneralTrainWrapper[PTX.Service.DTO.Rail.Specification.V3.LiteTrain.GeneralTrainTimetable]"
             }
-          },
-          "304": {
-            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
@@ -3925,9 +3835,6 @@
               "$ref": "#/definitions/PTX.API.Rail.Model.LiteTrain.LiteTrainGeneralTrainWrapper[PTX.Service.DTO.Rail.Specification.V3.LiteTrain.GeneralTrainTimetable]"
             }
           },
-          "304": {
-            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
-          },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
@@ -4019,9 +3926,6 @@
             "schema": {
               "$ref": "#/definitions/PTX.API.Rail.Model.LiteTrain.LiteTrainODFareWrapper[PTX.Service.DTO.Rail.Specification.V3.LiteTrain.ODFare.ODFare]"
             }
-          },
-          "304": {
-            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
@@ -4129,9 +4033,6 @@
               "$ref": "#/definitions/PTX.API.Rail.Model.LiteTrain.LiteTrainODFareWrapper[PTX.Service.DTO.Rail.Specification.V3.LiteTrain.ODFare.ODFare]"
             }
           },
-          "304": {
-            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
-          },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
@@ -4223,9 +4124,6 @@
             "schema": {
               "$ref": "#/definitions/PTX.API.Rail.Model.LiteTrain.LiteTrainBaseWrapper[PTX.Service.DTO.Rail.Specification.V3.LiteTrain.Route]"
             }
-          },
-          "304": {
-            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
@@ -4319,9 +4217,6 @@
               "$ref": "#/definitions/PTX.API.Rail.Model.LiteTrain.LiteTrainBaseWrapper[PTX.Service.DTO.Rail.Specification.V3.LiteTrain.StationOfLine.StationOfLine]"
             }
           },
-          "304": {
-            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
-          },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
@@ -4414,9 +4309,6 @@
               "$ref": "#/definitions/PTX.API.Rail.Model.LiteTrain.LiteTrainBaseWrapper[PTX.Service.DTO.Rail.Specification.V3.LiteTrain.TrainType]"
             }
           },
-          "304": {
-            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
-          },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "schema": {
@@ -4508,9 +4400,6 @@
             "schema": {
               "$ref": "#/definitions/PTX.API.Rail.Model.LiteTrain.LiteTrainBaseWrapper[PTX.Service.DTO.Rail.Specification.V3.LiteTrain.StationOfRoute.StationOfRoute]"
             }
-          },
-          "304": {
-            "description": "服務端會在Response加上Last-Modified header，表示最近的更新時間。客戶端能利用此時間，於Request加上If-Modified-Since header，若沒有更新，服務端會回應304 StatusCode且空值Content"
           },
           "299": {
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
@@ -4658,7 +4547,7 @@
           "description": "業管機關簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityCode"
           }
         },
         "Lines": {
@@ -4723,7 +4612,7 @@
           "description": "業管機關簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityCode"
           }
         },
         "Networks": {
@@ -4788,7 +4677,7 @@
           "description": "業管機關簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityCode"
           }
         },
         "Operators": {
@@ -4853,7 +4742,7 @@
           "description": "業管機關簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityCode"
           }
         },
         "Routes": {
@@ -4875,71 +4764,6 @@
       },
       "xml": {
         "name": "LiteTrainBaseWrapperOfRoute",
-        "namespace": "https://ptx.transportdata.tw/standard/schema/"
-      }
-    },
-    "PTX.API.Rail.Model.LiteTrain.LiteTrainBaseWrapper[PTX.Service.DTO.Rail.Specification.V3.LiteTrain.Station]": {
-      "title": "LiteTrainStationList",
-      "required": [
-        "AuthorityCode",
-        "SrcUpdateInterval",
-        "SrcUpdateTime",
-        "Stations",
-        "UpdateInterval",
-        "UpdateTime"
-      ],
-      "type": "object",
-      "properties": {
-        "UpdateTime": {
-          "format": "date-time",
-          "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
-          "type": "string"
-        },
-        "UpdateInterval": {
-          "format": "int32",
-          "title": "Int32",
-          "description": "本平台資料更新週期(秒)",
-          "type": "integer"
-        },
-        "SrcUpdateTime": {
-          "format": "date-time",
-          "title": "DateTime",
-          "description": "來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
-          "type": "string"
-        },
-        "SrcUpdateInterval": {
-          "format": "int32",
-          "title": "Int32",
-          "description": "來源端平台資料更新週期(秒)['-1: 不定期更新']",
-          "type": "integer"
-        },
-        "AuthorityCode": {
-          "title": "String",
-          "description": "業管機關簡碼",
-          "type": "string",
-          "xml": {
-            "name": "String"
-          }
-        },
-        "Stations": {
-          "title": "Array",
-          "description": "資料(陣列)",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V3.LiteTrain.Station"
-          },
-          "xml": {
-            "name": "List`1"
-          }
-        },
-        "Count": {
-          "format": "int64",
-          "description": "資料總筆數",
-          "type": "integer"
-        }
-      },
-      "xml": {
-        "name": "LiteTrainBaseWrapperOfStation",
         "namespace": "https://ptx.transportdata.tw/standard/schema/"
       }
     },
@@ -4983,7 +4807,7 @@
           "description": "業管機關簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityCode"
           }
         },
         "StationOfLines": {
@@ -5048,7 +4872,7 @@
           "description": "業管機關簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityCode"
           }
         },
         "StationOfRoutes": {
@@ -5070,6 +4894,71 @@
       },
       "xml": {
         "name": "LiteTrainBaseWrapperOfStationOfRoute",
+        "namespace": "https://ptx.transportdata.tw/standard/schema/"
+      }
+    },
+    "PTX.API.Rail.Model.LiteTrain.LiteTrainBaseWrapper[PTX.Service.DTO.Rail.Specification.V3.LiteTrain.Station]": {
+      "title": "LiteTrainStationList",
+      "required": [
+        "AuthorityCode",
+        "SrcUpdateInterval",
+        "SrcUpdateTime",
+        "Stations",
+        "UpdateInterval",
+        "UpdateTime"
+      ],
+      "type": "object",
+      "properties": {
+        "UpdateTime": {
+          "format": "date-time",
+          "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "UpdateInterval": {
+          "format": "int32",
+          "title": "Int32",
+          "description": "本平台資料更新週期(秒)",
+          "type": "integer"
+        },
+        "SrcUpdateTime": {
+          "format": "date-time",
+          "title": "DateTime",
+          "description": "來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "SrcUpdateInterval": {
+          "format": "int32",
+          "title": "Int32",
+          "description": "來源端平台資料更新週期(秒)['-1: 不定期更新']",
+          "type": "integer"
+        },
+        "AuthorityCode": {
+          "title": "String",
+          "description": "業管機關簡碼",
+          "type": "string",
+          "xml": {
+            "name": "AuthorityCode"
+          }
+        },
+        "Stations": {
+          "title": "Array",
+          "description": "資料(陣列)",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V3.LiteTrain.Station"
+          },
+          "xml": {
+            "name": "List`1"
+          }
+        },
+        "Count": {
+          "format": "int64",
+          "description": "資料總筆數",
+          "type": "integer"
+        }
+      },
+      "xml": {
+        "name": "LiteTrainBaseWrapperOfStation",
         "namespace": "https://ptx.transportdata.tw/standard/schema/"
       }
     },
@@ -5113,7 +5002,7 @@
           "description": "業管機關簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityCode"
           }
         },
         "TrainTypes": {
@@ -5179,7 +5068,7 @@
           "description": "業管機關簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityCode"
           }
         },
         "EffectiveDate": {
@@ -5198,7 +5087,7 @@
           "description": "來源版號",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SrcVersion"
           }
         },
         "TimetableName": {
@@ -5206,7 +5095,7 @@
           "description": "定期性站別時刻表名稱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "TimetableName"
           }
         },
         "ValidityDesciption": {
@@ -5214,7 +5103,7 @@
           "description": "時刻表適用情形說明",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ValidityDesciption"
           }
         },
         "TrainTimetables": {
@@ -5279,7 +5168,7 @@
           "description": "業管機關簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityCode"
           }
         },
         "EffectiveDate": {
@@ -5287,7 +5176,7 @@
           "description": "有效起始日期",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "EffectiveDate"
           }
         },
         "ExpireDate": {
@@ -5295,7 +5184,7 @@
           "description": "有效終止日期",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ExpireDate"
           }
         },
         "SrcVersion": {
@@ -5303,7 +5192,7 @@
           "description": "資料版本",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SrcVersion"
           }
         },
         "ODFares": {
@@ -5368,7 +5257,7 @@
           "description": "業管機關簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityCode"
           }
         },
         "Newses": {
@@ -5390,71 +5279,6 @@
       },
       "xml": {
         "name": "LiteTrainRealTimeWrapperOfNews",
-        "namespace": "https://ptx.transportdata.tw/standard/schema/"
-      }
-    },
-    "PTX.API.Rail.Model.TRABaseWrapper[PTX.Service.DTO.Rail.Specification.V3.TRA.Line]": {
-      "title": "TRALineList",
-      "required": [
-        "AuthorityCode",
-        "Lines",
-        "SrcUpdateInterval",
-        "SrcUpdateTime",
-        "UpdateInterval",
-        "UpdateTime"
-      ],
-      "type": "object",
-      "properties": {
-        "UpdateTime": {
-          "format": "date-time",
-          "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
-          "type": "string"
-        },
-        "UpdateInterval": {
-          "format": "int32",
-          "title": "Int32",
-          "description": "本平台資料更新週期(秒)",
-          "type": "integer"
-        },
-        "SrcUpdateTime": {
-          "format": "date-time",
-          "title": "DateTime",
-          "description": "來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
-          "type": "string"
-        },
-        "SrcUpdateInterval": {
-          "format": "int32",
-          "title": "Int32",
-          "description": "來源端平台資料更新週期(秒)['-1: 不定期更新']",
-          "type": "integer"
-        },
-        "AuthorityCode": {
-          "title": "String",
-          "description": "業管機關簡碼",
-          "type": "string",
-          "xml": {
-            "name": "String"
-          }
-        },
-        "Lines": {
-          "title": "Array",
-          "description": "資料(陣列)",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V3.TRA.Line"
-          },
-          "xml": {
-            "name": "List`1"
-          }
-        },
-        "Count": {
-          "format": "int64",
-          "description": "資料總筆數",
-          "type": "integer"
-        }
-      },
-      "xml": {
-        "name": "TRABaseWrapperOfLine",
         "namespace": "https://ptx.transportdata.tw/standard/schema/"
       }
     },
@@ -5498,7 +5322,7 @@
           "description": "業管機關簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityCode"
           }
         },
         "LineNetworks": {
@@ -5563,7 +5387,7 @@
           "description": "業管機關簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityCode"
           }
         },
         "LineTransfers": {
@@ -5585,6 +5409,71 @@
       },
       "xml": {
         "name": "TRABaseWrapperOfLineTransfer",
+        "namespace": "https://ptx.transportdata.tw/standard/schema/"
+      }
+    },
+    "PTX.API.Rail.Model.TRABaseWrapper[PTX.Service.DTO.Rail.Specification.V3.TRA.Line]": {
+      "title": "TRALineList",
+      "required": [
+        "AuthorityCode",
+        "Lines",
+        "SrcUpdateInterval",
+        "SrcUpdateTime",
+        "UpdateInterval",
+        "UpdateTime"
+      ],
+      "type": "object",
+      "properties": {
+        "UpdateTime": {
+          "format": "date-time",
+          "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "UpdateInterval": {
+          "format": "int32",
+          "title": "Int32",
+          "description": "本平台資料更新週期(秒)",
+          "type": "integer"
+        },
+        "SrcUpdateTime": {
+          "format": "date-time",
+          "title": "DateTime",
+          "description": "來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "SrcUpdateInterval": {
+          "format": "int32",
+          "title": "Int32",
+          "description": "來源端平台資料更新週期(秒)['-1: 不定期更新']",
+          "type": "integer"
+        },
+        "AuthorityCode": {
+          "title": "String",
+          "description": "業管機關簡碼",
+          "type": "string",
+          "xml": {
+            "name": "AuthorityCode"
+          }
+        },
+        "Lines": {
+          "title": "Array",
+          "description": "資料(陣列)",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V3.TRA.Line"
+          },
+          "xml": {
+            "name": "List`1"
+          }
+        },
+        "Count": {
+          "format": "int64",
+          "description": "資料總筆數",
+          "type": "integer"
+        }
+      },
+      "xml": {
+        "name": "TRABaseWrapperOfLine",
         "namespace": "https://ptx.transportdata.tw/standard/schema/"
       }
     },
@@ -5628,7 +5517,7 @@
           "description": "業管機關簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityCode"
           }
         },
         "Networks": {
@@ -5693,7 +5582,7 @@
           "description": "業管機關簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityCode"
           }
         },
         "Operators": {
@@ -5758,7 +5647,7 @@
           "description": "業管機關簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityCode"
           }
         },
         "Shapes": {
@@ -5780,71 +5669,6 @@
       },
       "xml": {
         "name": "TRABaseWrapperOfShape",
-        "namespace": "https://ptx.transportdata.tw/standard/schema/"
-      }
-    },
-    "PTX.API.Rail.Model.TRABaseWrapper[PTX.Service.DTO.Rail.Specification.V3.TRA.Station]": {
-      "title": "TRAStationList",
-      "required": [
-        "AuthorityCode",
-        "SrcUpdateInterval",
-        "SrcUpdateTime",
-        "Stations",
-        "UpdateInterval",
-        "UpdateTime"
-      ],
-      "type": "object",
-      "properties": {
-        "UpdateTime": {
-          "format": "date-time",
-          "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
-          "type": "string"
-        },
-        "UpdateInterval": {
-          "format": "int32",
-          "title": "Int32",
-          "description": "本平台資料更新週期(秒)",
-          "type": "integer"
-        },
-        "SrcUpdateTime": {
-          "format": "date-time",
-          "title": "DateTime",
-          "description": "來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
-          "type": "string"
-        },
-        "SrcUpdateInterval": {
-          "format": "int32",
-          "title": "Int32",
-          "description": "來源端平台資料更新週期(秒)['-1: 不定期更新']",
-          "type": "integer"
-        },
-        "AuthorityCode": {
-          "title": "String",
-          "description": "業管機關簡碼",
-          "type": "string",
-          "xml": {
-            "name": "String"
-          }
-        },
-        "Stations": {
-          "title": "Array",
-          "description": "資料(陣列)",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V3.TRA.Station"
-          },
-          "xml": {
-            "name": "List`1"
-          }
-        },
-        "Count": {
-          "format": "int64",
-          "description": "資料總筆數",
-          "type": "integer"
-        }
-      },
-      "xml": {
-        "name": "TRABaseWrapperOfStation",
         "namespace": "https://ptx.transportdata.tw/standard/schema/"
       }
     },
@@ -5888,7 +5712,7 @@
           "description": "業管機關簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityCode"
           }
         },
         "StationExits": {
@@ -5953,7 +5777,7 @@
           "description": "業管機關簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityCode"
           }
         },
         "StationFacilities": {
@@ -6018,7 +5842,7 @@
           "description": "業管機關簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityCode"
           }
         },
         "StationOfLines": {
@@ -6083,7 +5907,7 @@
           "description": "業管機關簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityCode"
           }
         },
         "StationTransfers": {
@@ -6105,6 +5929,71 @@
       },
       "xml": {
         "name": "TRABaseWrapperOfStationTransfer",
+        "namespace": "https://ptx.transportdata.tw/standard/schema/"
+      }
+    },
+    "PTX.API.Rail.Model.TRABaseWrapper[PTX.Service.DTO.Rail.Specification.V3.TRA.Station]": {
+      "title": "TRAStationList",
+      "required": [
+        "AuthorityCode",
+        "SrcUpdateInterval",
+        "SrcUpdateTime",
+        "Stations",
+        "UpdateInterval",
+        "UpdateTime"
+      ],
+      "type": "object",
+      "properties": {
+        "UpdateTime": {
+          "format": "date-time",
+          "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "UpdateInterval": {
+          "format": "int32",
+          "title": "Int32",
+          "description": "本平台資料更新週期(秒)",
+          "type": "integer"
+        },
+        "SrcUpdateTime": {
+          "format": "date-time",
+          "title": "DateTime",
+          "description": "來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "SrcUpdateInterval": {
+          "format": "int32",
+          "title": "Int32",
+          "description": "來源端平台資料更新週期(秒)['-1: 不定期更新']",
+          "type": "integer"
+        },
+        "AuthorityCode": {
+          "title": "String",
+          "description": "業管機關簡碼",
+          "type": "string",
+          "xml": {
+            "name": "AuthorityCode"
+          }
+        },
+        "Stations": {
+          "title": "Array",
+          "description": "資料(陣列)",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V3.TRA.Station"
+          },
+          "xml": {
+            "name": "List`1"
+          }
+        },
+        "Count": {
+          "format": "int64",
+          "description": "資料總筆數",
+          "type": "integer"
+        }
+      },
+      "xml": {
+        "name": "TRABaseWrapperOfStation",
         "namespace": "https://ptx.transportdata.tw/standard/schema/"
       }
     },
@@ -6148,7 +6037,7 @@
           "description": "業管機關簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityCode"
           }
         },
         "TrainTypes": {
@@ -6170,153 +6059,6 @@
       },
       "xml": {
         "name": "TRABaseWrapperOfTrainType",
-        "namespace": "https://ptx.transportdata.tw/standard/schema/"
-      }
-    },
-    "PTX.API.Rail.Model.TraDailyStationWrapper[PTX.Service.DTO.Rail.Specification.V3.TRA.DailyStationTimeTable.StationTimetable]": {
-      "title": "TRADailyStationTimeTableList",
-      "required": [
-        "AuthorityCode",
-        "SrcUpdateInterval",
-        "SrcUpdateTime",
-        "StationTimetables",
-        "TrainDate",
-        "UpdateInterval",
-        "UpdateTime"
-      ],
-      "type": "object",
-      "properties": {
-        "UpdateTime": {
-          "format": "date-time",
-          "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
-          "type": "string"
-        },
-        "UpdateInterval": {
-          "format": "int32",
-          "title": "Int32",
-          "description": "本平台資料更新週期(秒)",
-          "type": "integer"
-        },
-        "SrcUpdateTime": {
-          "format": "date-time",
-          "title": "DateTime",
-          "description": "來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
-          "type": "string"
-        },
-        "SrcUpdateInterval": {
-          "format": "int32",
-          "title": "Int32",
-          "description": "來源端平台資料更新週期(秒)['-1: 不定期更新']",
-          "type": "integer"
-        },
-        "AuthorityCode": {
-          "title": "String",
-          "description": "業管機關簡碼",
-          "type": "string",
-          "xml": {
-            "name": "String"
-          }
-        },
-        "TrainDate": {
-          "title": "String",
-          "description": "營運日說明(yyyy-MM-dd)",
-          "type": "string",
-          "xml": {
-            "name": "String"
-          }
-        },
-        "StationTimetables": {
-          "title": "Array",
-          "description": "資料(陣列)",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V3.TRA.DailyStationTimeTable.StationTimetable"
-          },
-          "xml": {
-            "name": "List`1"
-          }
-        },
-        "Count": {
-          "format": "int64",
-          "description": "資料總筆數",
-          "type": "integer"
-        }
-      },
-      "xml": {
-        "name": "TraDailyStationWrapperOfStationTimetable",
-        "namespace": "https://ptx.transportdata.tw/standard/schema/"
-      }
-    },
-    "PTX.API.Rail.Model.TraDailyTrainWrapper[PTX.Service.DTO.Rail.Specification.V3.TRA.DailyTrainTimeTable.TrainTimetable]": {
-      "title": "TRADailyTrainTimeTableList",
-      "required": [
-        "AuthorityCode",
-        "SrcUpdateInterval",
-        "SrcUpdateTime",
-        "TrainDate",
-        "UpdateInterval",
-        "UpdateTime"
-      ],
-      "type": "object",
-      "properties": {
-        "UpdateTime": {
-          "format": "date-time",
-          "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
-          "type": "string"
-        },
-        "UpdateInterval": {
-          "format": "int32",
-          "title": "Int32",
-          "description": "本平台資料更新週期(秒)",
-          "type": "integer"
-        },
-        "SrcUpdateTime": {
-          "format": "date-time",
-          "title": "DateTime",
-          "description": "來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
-          "type": "string"
-        },
-        "SrcUpdateInterval": {
-          "format": "int32",
-          "title": "Int32",
-          "description": "來源端平台資料更新週期(秒)['-1: 不定期更新']",
-          "type": "integer"
-        },
-        "AuthorityCode": {
-          "title": "String",
-          "description": "業管機關簡碼",
-          "type": "string",
-          "xml": {
-            "name": "String"
-          }
-        },
-        "TrainDate": {
-          "title": "String",
-          "description": "營運日說明(yyyy-MM-dd)",
-          "type": "string",
-          "xml": {
-            "name": "String"
-          }
-        },
-        "TrainTimetables": {
-          "title": "Array",
-          "description": "資料(陣列)",
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V3.TRA.DailyTrainTimeTable.TrainTimetable"
-          },
-          "xml": {
-            "name": "List`1"
-          }
-        },
-        "Count": {
-          "format": "int64",
-          "description": "資料總筆數",
-          "type": "integer"
-        }
-      },
-      "xml": {
-        "name": "TraDailyTrainWrapperOfTrainTimetable",
         "namespace": "https://ptx.transportdata.tw/standard/schema/"
       }
     },
@@ -6361,7 +6103,7 @@
           "description": "業管機關簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityCode"
           }
         },
         "EffectiveDate": {
@@ -6380,7 +6122,7 @@
           "description": "來源版號",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SrcVersion"
           }
         },
         "TimetableName": {
@@ -6388,7 +6130,7 @@
           "description": "定期性站別時刻表名稱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "TimetableName"
           }
         },
         "ValidityDesciption": {
@@ -6396,7 +6138,7 @@
           "description": "時刻表適用情形說明",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ValidityDesciption"
           }
         },
         "StationTimetables": {
@@ -6462,7 +6204,7 @@
           "description": "業管機關簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityCode"
           }
         },
         "EffectiveDate": {
@@ -6481,7 +6223,7 @@
           "description": "來源版號",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SrcVersion"
           }
         },
         "TimetableName": {
@@ -6489,7 +6231,7 @@
           "description": "定期性站別時刻表名稱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "TimetableName"
           }
         },
         "ValidityDesciption": {
@@ -6497,7 +6239,7 @@
           "description": "時刻表適用情形說明",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ValidityDesciption"
           }
         },
         "TrainTimetables": {
@@ -6520,81 +6262,6 @@
       "xml": {
         "name": "TRAGeneralTrainWrapperOfGeneralTrainTimetable",
         "namespace": "https://ptx.transportdata.tw/standard/schema/"
-      }
-    },
-    "PTX.API.Rail.Model.TrainDateList": {
-      "title": "TrainDateList",
-      "required": [
-        "AuthorityCode",
-        "Count",
-        "EndDate",
-        "StartDate",
-        "TrainDates",
-        "UpdateInterval",
-        "UpdateTime"
-      ],
-      "type": "object",
-      "properties": {
-        "UpdateTime": {
-          "format": "date-time",
-          "title": "DateTime",
-          "description": "[平臺]資料更新日期時間(ISO8601格式: yyyy-MM-ddTHH:mm:sszzz)",
-          "type": "string"
-        },
-        "UpdateInterval": {
-          "format": "int32",
-          "title": "Int32",
-          "description": "[平臺]資料更新週期(秒)",
-          "type": "integer"
-        },
-        "AuthorityCode": {
-          "title": "String",
-          "description": "業管機關簡碼",
-          "type": "string",
-          "xml": {
-            "name": "String"
-          }
-        },
-        "StartDate": {
-          "title": "String",
-          "description": "每日時刻表供應起始日期(格式: yyyy-MM-dd)",
-          "type": "string",
-          "xml": {
-            "name": "String"
-          }
-        },
-        "EndDate": {
-          "title": "String",
-          "description": "每日時刻表供應最終日期(格式: yyyy-MM-dd)",
-          "type": "string",
-          "xml": {
-            "name": "String"
-          }
-        },
-        "TrainDates": {
-          "title": "Array",
-          "description": "每日時刻表供應日期清單資料",
-          "type": "array",
-          "items": {
-            "title": "String",
-            "type": "string",
-            "xml": {
-              "name": "String"
-            }
-          },
-          "xml": {
-            "name": "List`1"
-          }
-        },
-        "Count": {
-          "format": "int64",
-          "title": "Int64",
-          "description": "資料總筆數",
-          "type": "integer"
-        }
-      },
-      "xml": {
-        "name": "TrainDateList"
       }
     },
     "PTX.API.Rail.Model.TRAODFareWrapper[PTX.Service.DTO.Rail.Specification.V3.TRA.ODFare.ODFare]": {
@@ -6637,7 +6304,7 @@
           "description": "業管機關簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityCode"
           }
         },
         "EffectiveDate": {
@@ -6645,7 +6312,7 @@
           "description": "有效起始日期",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "EffectiveDate"
           }
         },
         "ExpireDate": {
@@ -6653,7 +6320,7 @@
           "description": "有效終止日期",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ExpireDate"
           }
         },
         "SrcVersion": {
@@ -6661,7 +6328,7 @@
           "description": "資料版本",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SrcVersion"
           }
         },
         "ODFares": {
@@ -6726,7 +6393,7 @@
           "description": "業管機關簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityCode"
           }
         },
         "Alerts": {
@@ -6791,7 +6458,7 @@
           "description": "業管機關簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityCode"
           }
         },
         "Newses": {
@@ -6856,7 +6523,7 @@
           "description": "業管機關簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityCode"
           }
         },
         "StationLiveBoards": {
@@ -6921,7 +6588,7 @@
           "description": "業管機關簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityCode"
           }
         },
         "TrainLiveBoards": {
@@ -6987,7 +6654,7 @@
           "description": "業管機關簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityCode"
           }
         },
         "EffectiveDate": {
@@ -7006,7 +6673,7 @@
           "description": "來源版號",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SrcVersion"
           }
         },
         "TimetableName": {
@@ -7014,7 +6681,7 @@
           "description": "定期性站別時刻表名稱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "TimetableName"
           }
         },
         "ValidityDesciption": {
@@ -7022,7 +6689,7 @@
           "description": "時刻表適用情形說明",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ValidityDesciption"
           }
         },
         "TrainTimetables": {
@@ -7045,6 +6712,226 @@
       "xml": {
         "name": "TRASpecificWrapperOfSpecificTrainTimetable",
         "namespace": "https://ptx.transportdata.tw/standard/schema/"
+      }
+    },
+    "PTX.API.Rail.Model.TraDailyStationWrapper[PTX.Service.DTO.Rail.Specification.V3.TRA.DailyStationTimeTable.StationTimetable]": {
+      "title": "TRADailyStationTimeTableList",
+      "required": [
+        "AuthorityCode",
+        "SrcUpdateInterval",
+        "SrcUpdateTime",
+        "StationTimetables",
+        "TrainDate",
+        "UpdateInterval",
+        "UpdateTime"
+      ],
+      "type": "object",
+      "properties": {
+        "UpdateTime": {
+          "format": "date-time",
+          "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "UpdateInterval": {
+          "format": "int32",
+          "title": "Int32",
+          "description": "本平台資料更新週期(秒)",
+          "type": "integer"
+        },
+        "SrcUpdateTime": {
+          "format": "date-time",
+          "title": "DateTime",
+          "description": "來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "SrcUpdateInterval": {
+          "format": "int32",
+          "title": "Int32",
+          "description": "來源端平台資料更新週期(秒)['-1: 不定期更新']",
+          "type": "integer"
+        },
+        "AuthorityCode": {
+          "title": "String",
+          "description": "業管機關簡碼",
+          "type": "string",
+          "xml": {
+            "name": "AuthorityCode"
+          }
+        },
+        "TrainDate": {
+          "title": "String",
+          "description": "營運日說明(yyyy-MM-dd)",
+          "type": "string",
+          "xml": {
+            "name": "TrainDate"
+          }
+        },
+        "StationTimetables": {
+          "title": "Array",
+          "description": "資料(陣列)",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V3.TRA.DailyStationTimeTable.StationTimetable"
+          },
+          "xml": {
+            "name": "List`1"
+          }
+        },
+        "Count": {
+          "format": "int64",
+          "description": "資料總筆數",
+          "type": "integer"
+        }
+      },
+      "xml": {
+        "name": "TraDailyStationWrapperOfStationTimetable",
+        "namespace": "https://ptx.transportdata.tw/standard/schema/"
+      }
+    },
+    "PTX.API.Rail.Model.TraDailyTrainWrapper[PTX.Service.DTO.Rail.Specification.V3.TRA.DailyTrainTimeTable.TrainTimetable]": {
+      "title": "TRADailyTrainTimeTableList",
+      "required": [
+        "AuthorityCode",
+        "SrcUpdateInterval",
+        "SrcUpdateTime",
+        "TrainDate",
+        "UpdateInterval",
+        "UpdateTime"
+      ],
+      "type": "object",
+      "properties": {
+        "UpdateTime": {
+          "format": "date-time",
+          "description": "本平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "UpdateInterval": {
+          "format": "int32",
+          "title": "Int32",
+          "description": "本平台資料更新週期(秒)",
+          "type": "integer"
+        },
+        "SrcUpdateTime": {
+          "format": "date-time",
+          "title": "DateTime",
+          "description": "來源端平台資料更新時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "SrcUpdateInterval": {
+          "format": "int32",
+          "title": "Int32",
+          "description": "來源端平台資料更新週期(秒)['-1: 不定期更新']",
+          "type": "integer"
+        },
+        "AuthorityCode": {
+          "title": "String",
+          "description": "業管機關簡碼",
+          "type": "string",
+          "xml": {
+            "name": "AuthorityCode"
+          }
+        },
+        "TrainDate": {
+          "title": "String",
+          "description": "營運日說明(yyyy-MM-dd)",
+          "type": "string",
+          "xml": {
+            "name": "TrainDate"
+          }
+        },
+        "TrainTimetables": {
+          "title": "Array",
+          "description": "資料(陣列)",
+          "type": "array",
+          "items": {
+            "$ref": "#/definitions/PTX.Service.DTO.Rail.Specification.V3.TRA.DailyTrainTimeTable.TrainTimetable"
+          },
+          "xml": {
+            "name": "List`1"
+          }
+        },
+        "Count": {
+          "format": "int64",
+          "description": "資料總筆數",
+          "type": "integer"
+        }
+      },
+      "xml": {
+        "name": "TraDailyTrainWrapperOfTrainTimetable",
+        "namespace": "https://ptx.transportdata.tw/standard/schema/"
+      }
+    },
+    "PTX.API.Rail.Model.TrainDateList": {
+      "title": "TrainDateList",
+      "required": [
+        "AuthorityCode",
+        "Count",
+        "EndDate",
+        "StartDate",
+        "TrainDates",
+        "UpdateInterval",
+        "UpdateTime"
+      ],
+      "type": "object",
+      "properties": {
+        "UpdateTime": {
+          "format": "date-time",
+          "title": "DateTime",
+          "description": "[平臺]資料更新日期時間(ISO8601格式: yyyy-MM-ddTHH:mm:sszzz)",
+          "type": "string"
+        },
+        "UpdateInterval": {
+          "format": "int32",
+          "title": "Int32",
+          "description": "[平臺]資料更新週期(秒)",
+          "type": "integer"
+        },
+        "AuthorityCode": {
+          "title": "String",
+          "description": "業管機關簡碼",
+          "type": "string",
+          "xml": {
+            "name": "AuthorityCode"
+          }
+        },
+        "StartDate": {
+          "title": "String",
+          "description": "每日時刻表供應起始日期(格式: yyyy-MM-dd)",
+          "type": "string",
+          "xml": {
+            "name": "StartDate"
+          }
+        },
+        "EndDate": {
+          "title": "String",
+          "description": "每日時刻表供應最終日期(格式: yyyy-MM-dd)",
+          "type": "string",
+          "xml": {
+            "name": "EndDate"
+          }
+        },
+        "TrainDates": {
+          "title": "Array",
+          "description": "每日時刻表供應日期清單資料",
+          "type": "array",
+          "items": {
+            "title": "String",
+            "type": "string",
+            "xml": {}
+          },
+          "xml": {
+            "name": "List`1"
+          }
+        },
+        "Count": {
+          "format": "int64",
+          "title": "Int64",
+          "description": "資料總筆數",
+          "type": "integer"
+        }
+      },
+      "xml": {
+        "name": "TrainDateList"
       }
     },
     "PTX.Service.DTO.Rail.Specification.V3.LiteTrain.GeneralTrainTimetable": {
@@ -7114,7 +7001,7 @@
           "description": "路線編號",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "LineNo"
           }
         },
         "LineID": {
@@ -7122,7 +7009,7 @@
           "description": "路線代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "LineID"
           }
         },
         "LineName": {
@@ -7154,7 +7041,7 @@
           "description": "路線顏色",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "LineColor"
           }
         },
         "IsBranch": {
@@ -7167,7 +7054,7 @@
           "description": "路線群組",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "LineGroup"
           }
         },
         "LineURL": {
@@ -7175,7 +7062,7 @@
           "description": "路線群組",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "LineURL"
           }
         }
       },
@@ -7201,7 +7088,7 @@
           "description": "路網代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "NetworkID"
           }
         },
         "NetworkName": {
@@ -7221,7 +7108,7 @@
           "description": "營運業者代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorCode"
           }
         },
         "OperatorName": {
@@ -7281,7 +7168,7 @@
           "description": "起點車站代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OriginStationID"
           }
         },
         "OriginStationName": {
@@ -7301,7 +7188,7 @@
           "description": "迄點車站代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "DestinationStationID"
           }
         },
         "DestinationStationName": {
@@ -7362,7 +7249,7 @@
           "description": "營運業者簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorCode"
           }
         },
         "OperatorName": {
@@ -7382,7 +7269,7 @@
           "description": "營運業者連絡電話",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorPhone"
           }
         },
         "OperatorEmail": {
@@ -7390,7 +7277,7 @@
           "description": "營運業者電子信箱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorEmail"
           }
         },
         "OperatorURL": {
@@ -7398,7 +7285,7 @@
           "description": "營運業者網址連結",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorURL"
           }
         },
         "FareURL": {
@@ -7406,7 +7293,7 @@
           "description": "營運業者票價查詢網站連結",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "FareURL"
           }
         },
         "ReservationURL": {
@@ -7414,7 +7301,7 @@
           "description": "營運業者訂票網站",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ReservationURL"
           }
         },
         "ReservationPhone": {
@@ -7422,7 +7309,7 @@
           "description": "營運業者訂票電話",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ReservationPhone"
           }
         },
         "OperatorLogoURL": {
@@ -7430,7 +7317,7 @@
           "description": "營運業者Logo網址",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorLogoURL"
           }
         }
       },
@@ -7460,7 +7347,7 @@
           "description": "營運路線所屬之路線編號",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "LineNo"
           }
         },
         "LineID": {
@@ -7468,7 +7355,7 @@
           "description": "營運路線所屬之路線代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "LineID"
           }
         },
         "RouteID": {
@@ -7476,7 +7363,7 @@
           "description": "營運路線代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteID"
           }
         },
         "OperatorCode": {
@@ -7484,7 +7371,7 @@
           "description": "營運業者代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorCode"
           }
         },
         "RouteName": {
@@ -7510,7 +7397,7 @@
           "description": "營運路線起站代號",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StartStationID"
           }
         },
         "StartStationName": {
@@ -7530,7 +7417,7 @@
           "description": "營運路線迄站代號",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "EndStationID"
           }
         },
         "EndStationName": {
@@ -7550,7 +7437,7 @@
           "description": "營運路線來源網址",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteURL"
           }
         },
         "RouteDistance": {
@@ -7580,7 +7467,7 @@
           "description": "車站級別 = ['0: 特等', '1: 一等', '2: 二等', '3: 三等', '4: 簡易', '5: 招呼', '6: 號誌', '7:其他']",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StationClass"
           }
         },
         "StationUID": {
@@ -7588,7 +7475,7 @@
           "description": "車站唯一識別代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StationUID"
           }
         },
         "StationID": {
@@ -7596,7 +7483,7 @@
           "description": "車站代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StationID"
           }
         },
         "ReservationCode": {
@@ -7604,7 +7491,7 @@
           "description": "訂票車站代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ReservationCode"
           }
         },
         "StationName": {
@@ -7636,7 +7523,7 @@
           "description": "車站地址",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StationAddress"
           }
         },
         "StationPhone": {
@@ -7644,7 +7531,7 @@
           "description": "車站聯絡電話",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StationPhone"
           }
         },
         "StationURL": {
@@ -7652,7 +7539,7 @@
           "description": "車站資訊說明網址",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StationURL"
           }
         }
       },
@@ -7675,7 +7562,7 @@
           "description": "路線編號",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "LineNo"
           }
         },
         "LineID": {
@@ -7683,7 +7570,7 @@
           "description": "路線代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "LineID"
           }
         },
         "Stations": {
@@ -7724,7 +7611,7 @@
           "description": "車站代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StationID"
           }
         },
         "StationName": {
@@ -7768,7 +7655,7 @@
           "description": "營運路線所屬之路線編號",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "LineNo"
           }
         },
         "LineID": {
@@ -7776,7 +7663,7 @@
           "description": "營運路線所屬之路線代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "LineID"
           }
         },
         "RouteID": {
@@ -7784,7 +7671,7 @@
           "description": "營運路線代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteID"
           }
         },
         "RouteName": {
@@ -7836,7 +7723,7 @@
           "description": "車種簡碼 = ['1: 中興號', '2: 區間', '3: 主題式列車', '5: 阿里山號', '6: 祝客', '7: 祝客(祝山線)', '8: 檜木車廂']",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "TrainTypeCode"
           }
         },
         "TrainTypeID": {
@@ -7844,7 +7731,7 @@
           "description": "列車車種代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "TrainTypeID"
           }
         },
         "TrainTypeName": {
@@ -7887,7 +7774,7 @@
           "description": "服務日標籤",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ServiceTag"
           }
         },
         "Monday": {
@@ -7960,7 +7847,7 @@
           "description": "不連續特殊日期",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Dates"
           }
         },
         "StartDate": {
@@ -7983,7 +7870,7 @@
           "description": "特殊營運描述",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Description"
           }
         }
       },
@@ -8014,7 +7901,7 @@
           "description": "車站代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StationID"
           }
         },
         "StationName": {
@@ -8034,7 +7921,7 @@
           "description": "到站時間(格式: HH:mm)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ArrivalTime"
           }
         },
         "DepartureTime": {
@@ -8042,7 +7929,7 @@
           "description": "離站時間(格式: HH:mm)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "DepartureTime"
           }
         }
       },
@@ -8072,7 +7959,7 @@
           "description": "車次代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "TrainNo"
           }
         },
         "RouteID": {
@@ -8080,7 +7967,7 @@
           "description": "營運路線代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteID"
           }
         },
         "Direction": {
@@ -8093,7 +7980,7 @@
           "description": "車種代嗎",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "TrainTypeID"
           }
         },
         "TrainTypeCode": {
@@ -8101,7 +7988,7 @@
           "description": "車種簡碼 = ['1: 太魯閣', '2: 普悠瑪', '3: 自強', '4: 莒光', '5: 復興', '6: 區間', '7: 普快', '10: 區間快']",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "TrainTypeCode"
           }
         },
         "TrainTypeName": {
@@ -8121,7 +8008,7 @@
           "description": "車次之目的地方向描述",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "TripHeadSign"
           }
         },
         "StartingStationID": {
@@ -8129,7 +8016,7 @@
           "description": "列車起點車站代號",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StartingStationID"
           }
         },
         "StartingStationName": {
@@ -8149,7 +8036,7 @@
           "description": "列車終點車站代號",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "EndingStationID"
           }
         },
         "EndingStationName": {
@@ -8169,7 +8056,7 @@
           "description": "跨夜車站代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OverNightStationID"
           }
         },
         "TripLine": {
@@ -8222,7 +8109,7 @@
           "description": "附註說明",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Note"
           }
         }
       },
@@ -8242,7 +8129,7 @@
           "description": "營運路線代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteID"
           }
         },
         "StationID": {
@@ -8250,7 +8137,7 @@
           "description": "車站代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StationID"
           }
         },
         "StationName": {
@@ -8289,7 +8176,8 @@
     "PTX.Service.DTO.Rail.Specification.V3.TRA.DailyStationTimeTable.TimeTable": {
       "title": "TimeTable",
       "required": [
-        "Sequence"
+        "Sequence",
+        "SuspendedFlag"
       ],
       "type": "object",
       "properties": {
@@ -8304,7 +8192,7 @@
           "description": "車次代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "TrainNo"
           }
         },
         "DestinationStationID": {
@@ -8312,7 +8200,7 @@
           "description": "目的站車站代號",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "DestinationStationID"
           }
         },
         "DestinationStationName": {
@@ -8332,7 +8220,7 @@
           "description": "車種代嗎",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "TrainTypeID"
           }
         },
         "TrainTypeCode": {
@@ -8340,7 +8228,7 @@
           "description": "車種簡碼 = ['1: 太魯閣', '2: 普悠瑪', '3: 自強', '4: 莒光', '5: 復興', '6: 區間', '7: 普快', '10: 區間快']",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "TrainTypeCode"
           }
         },
         "TrainTypeName": {
@@ -8360,7 +8248,7 @@
           "description": "到站時刻",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ArrivalTime"
           }
         },
         "DepartureTime": {
@@ -8368,8 +8256,13 @@
           "description": "發車時刻",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "DepartureTime"
           }
+        },
+        "SuspendedFlag": {
+          "title": "Int32",
+          "description": "列車於本站停駛 : [0:'否',1:'是']",
+          "type": "integer"
         }
       },
       "xml": {
@@ -8426,7 +8319,7 @@
           "description": "起站車站代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StartStationID"
           }
         },
         "EndStationID": {
@@ -8434,7 +8327,7 @@
           "description": "迄站車站代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "EndStationID"
           }
         }
       },
@@ -8447,7 +8340,8 @@
       "required": [
         "StationID",
         "StationName",
-        "StopSequence"
+        "StopSequence",
+        "SuspendedFlag"
       ],
       "type": "object",
       "properties": {
@@ -8462,7 +8356,7 @@
           "description": "車站代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StationID"
           }
         },
         "StationName": {
@@ -8482,7 +8376,7 @@
           "description": "到站時間",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ArrivalTime"
           }
         },
         "DepartureTime": {
@@ -8490,8 +8384,13 @@
           "description": "離站時間",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "DepartureTime"
           }
+        },
+        "SuspendedFlag": {
+          "title": "Int32",
+          "description": "本站是否停駛 : [0:'否',1:'是']",
+          "type": "integer"
         }
       },
       "xml": {
@@ -8511,6 +8410,7 @@
         "PackageServiceFlag",
         "RouteID",
         "StartingStationName",
+        "SuspendedFlag",
         "TrainNo",
         "TrainTypeName",
         "WheelChairFlag"
@@ -8522,7 +8422,7 @@
           "description": "車次代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "TrainNo"
           }
         },
         "RouteID": {
@@ -8530,7 +8430,7 @@
           "description": "營運路線代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteID"
           }
         },
         "Direction": {
@@ -8543,7 +8443,7 @@
           "description": "車種代嗎",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "TrainTypeID"
           }
         },
         "TrainTypeCode": {
@@ -8551,7 +8451,7 @@
           "description": "車種簡碼 = ['1: 太魯閣', '2: 普悠瑪', '3: 自強', '4: 莒光', '5: 復興', '6: 區間', '7: 普快', '10: 區間快']",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "TrainTypeCode"
           }
         },
         "TrainTypeName": {
@@ -8571,7 +8471,7 @@
           "description": "車次之目的地方向描述",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "TripHeadSign"
           }
         },
         "StartingStationID": {
@@ -8579,7 +8479,7 @@
           "description": "車次之起始站車站代號",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StartingStationID"
           }
         },
         "StartingStationName": {
@@ -8599,7 +8499,7 @@
           "description": "車次之終點站車站代號",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "EndingStationID"
           }
         },
         "EndingStationName": {
@@ -8619,7 +8519,7 @@
           "description": "跨夜車站代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OverNightStationID"
           }
         },
         "TripLine": {
@@ -8678,12 +8578,17 @@
           "description": "是否為加班車 : [0:'否',1:'是']",
           "type": "integer"
         },
+        "SuspendedFlag": {
+          "title": "Int32",
+          "description": "列車是否停駛 : [0:'正常行駛',1:'停駛',2:'部份停駛']",
+          "type": "integer"
+        },
         "Note": {
           "title": "String",
           "description": "附註說明",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Note"
           }
         }
       },
@@ -8743,7 +8648,7 @@
           "description": "營運路線代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteID"
           }
         },
         "StationID": {
@@ -8751,7 +8656,7 @@
           "description": "車站代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StationID"
           }
         },
         "StationName": {
@@ -8818,7 +8723,7 @@
           "description": "服務日標籤",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ServiceTag"
           }
         },
         "Monday": {
@@ -8893,7 +8798,7 @@
           "description": "車次代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "TrainNo"
           }
         },
         "DestinationStationID": {
@@ -8901,7 +8806,7 @@
           "description": "目的站車站代號",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "DestinationStationID"
           }
         },
         "DestinationStationName": {
@@ -8921,7 +8826,7 @@
           "description": "車種代嗎",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "TrainTypeID"
           }
         },
         "TrainTypeCode": {
@@ -8929,7 +8834,7 @@
           "description": "車種簡碼 = ['1: 太魯閣', '2: 普悠瑪', '3: 自強', '4: 莒光', '5: 復興', '6: 區間', '7: 普快', '10: 區間快']",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "TrainTypeCode"
           }
         },
         "TrainTypeName": {
@@ -8949,7 +8854,7 @@
           "description": "到站時刻",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ArrivalTime"
           }
         },
         "DepartureTime": {
@@ -8957,7 +8862,7 @@
           "description": "發車時刻",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "DepartureTime"
           }
         }
       },
@@ -9032,7 +8937,7 @@
           "description": "路線編號",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "LineNo"
           }
         },
         "LineID": {
@@ -9040,7 +8945,7 @@
           "description": "路線代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "LineID"
           }
         },
         "LineName": {
@@ -9072,7 +8977,7 @@
           "description": "路線顏色",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "LineColor"
           }
         },
         "IsBranch": {
@@ -9085,7 +8990,7 @@
           "description": "路線群組",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "LineGroup"
           }
         },
         "LineURL": {
@@ -9093,7 +8998,7 @@
           "description": "路線群組",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "LineURL"
           }
         }
       },
@@ -9115,7 +9020,7 @@
           "description": "路線編號",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "LineID"
           }
         },
         "LineName": {
@@ -9164,7 +9069,7 @@
           "description": "線段代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "LineSegmentID"
           }
         },
         "LineSegmentName": {
@@ -9184,7 +9089,7 @@
           "description": "線段起點站代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "FromStationID"
           }
         },
         "ToStationID": {
@@ -9192,7 +9097,7 @@
           "description": "線段迄點站代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ToStationID"
           }
         },
         "SegmentType": {
@@ -9200,7 +9105,7 @@
           "description": "線段種類 = ['M: 主路線', 'B: 分支路線']",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SegmentType"
           }
         },
         "Distance": {
@@ -9236,7 +9141,7 @@
           "description": "路線間轉乘(起)之路線代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "FromLineID"
           }
         },
         "FromLineName": {
@@ -9256,7 +9161,7 @@
           "description": "路線間轉乘(起)之車站代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "FromStationID"
           }
         },
         "FromStationName": {
@@ -9276,7 +9181,7 @@
           "description": "路線間轉乘(迄)之路線代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ToLineID"
           }
         },
         "ToLineName": {
@@ -9296,7 +9201,7 @@
           "description": "路線間轉乘(迄)之車站代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ToStationID"
           }
         },
         "ToStationName": {
@@ -9322,7 +9227,7 @@
           "description": "轉乘方式文字描述",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "TransferDescription"
           }
         }
       },
@@ -9344,7 +9249,7 @@
           "description": "路線編號",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "LineNo"
           }
         },
         "LineID": {
@@ -9352,7 +9257,7 @@
           "description": "路線代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "LineID"
           }
         }
       },
@@ -9369,7 +9274,7 @@
           "description": "路網圖名稱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "MapName"
           }
         },
         "Zh_tw": {
@@ -9377,7 +9282,7 @@
           "description": "路網圖網址(中文版)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Zh_tw"
           }
         },
         "En": {
@@ -9385,7 +9290,7 @@
           "description": "路網圖網址(英文版)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "En"
           }
         }
       },
@@ -9411,7 +9316,7 @@
           "description": "路網代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "NetworkID"
           }
         },
         "NetworkName": {
@@ -9431,7 +9336,7 @@
           "description": "營運業者代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorCode"
           }
         },
         "OperatorName": {
@@ -9530,7 +9435,7 @@
           "description": "起點車站代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OriginStationID"
           }
         },
         "OriginStationName": {
@@ -9550,7 +9455,7 @@
           "description": "迄點車站代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "DestinationStationID"
           }
         },
         "DestinationStationName": {
@@ -9611,7 +9516,7 @@
           "description": "營運業者簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorCode"
           }
         },
         "OperatorName": {
@@ -9631,7 +9536,7 @@
           "description": "營運業者連絡電話",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorPhone"
           }
         },
         "OperatorEmail": {
@@ -9639,7 +9544,7 @@
           "description": "營運業者電子信箱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorEmail"
           }
         },
         "OperatorURL": {
@@ -9647,7 +9552,7 @@
           "description": "營運業者網址連結",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorURL"
           }
         },
         "FareURL": {
@@ -9655,7 +9560,7 @@
           "description": "營運業者票價查詢網站連結",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "FareURL"
           }
         },
         "ReservationURL": {
@@ -9663,7 +9568,7 @@
           "description": "營運業者訂票網站",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ReservationURL"
           }
         },
         "ReservationPhone": {
@@ -9671,7 +9576,7 @@
           "description": "營運業者訂票電話",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ReservationPhone"
           }
         },
         "OperatorLogoURL": {
@@ -9679,7 +9584,7 @@
           "description": "營運業者Logo網址",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorLogoURL"
           }
         }
       },
@@ -9704,7 +9609,7 @@
           "description": "路線編號",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "LineNo"
           }
         },
         "LineID": {
@@ -9712,7 +9617,7 @@
           "description": "路線代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "LineID"
           }
         },
         "LineName": {
@@ -9732,7 +9637,7 @@
           "description": "well-known text，為路線軌跡資料",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Geometry"
           }
         },
         "UpdateTime": {
@@ -9812,7 +9717,7 @@
           "description": "車站唯一識別代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StationUID"
           }
         },
         "StationID": {
@@ -9820,7 +9725,7 @@
           "description": "車站代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StationID"
           }
         },
         "ReservationCode": {
@@ -9828,7 +9733,7 @@
           "description": "訂票車站代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ReservationCode"
           }
         },
         "StationName": {
@@ -9860,7 +9765,7 @@
           "description": "車站地址",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StationAddress"
           }
         },
         "StationPhone": {
@@ -9868,7 +9773,7 @@
           "description": "車站聯絡電話",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StationPhone"
           }
         },
         "StationClass": {
@@ -9876,7 +9781,7 @@
           "description": "車站級別 = ['0: 特等', '1: 一等', '2: 二等', '3: 三等', '4: 簡易', '5: 招呼', '6: 號誌', 'A: 貨運', 'B: 基地', 'X: 非車']",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StationClass"
           }
         },
         "StationURL": {
@@ -9884,7 +9789,7 @@
           "description": "車站資訊說明網址",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StationURL"
           }
         }
       },
@@ -9908,7 +9813,7 @@
           "description": "出入口代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ExitID"
           }
         },
         "ExitName": {
@@ -9940,7 +9845,7 @@
           "description": "出入口所在道路路段方位角",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Bearing"
           }
         },
         "RoadName": {
@@ -9948,7 +9853,7 @@
           "description": "出入口所在道路名稱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RoadName"
           }
         },
         "LocationDescription": {
@@ -9956,7 +9861,7 @@
           "description": "地址描述",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "LocationDescription"
           }
         },
         "Stair": {
@@ -10004,7 +9909,7 @@
           "description": "車站出入口簡圖網址",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "MapURL"
           }
         },
         "FloorLevel": {
@@ -10012,7 +9917,7 @@
           "description": "樓層",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "FloorLevel"
           }
         }
       },
@@ -10035,7 +9940,7 @@
           "description": "出入口所屬車站代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StationID"
           }
         },
         "StationName": {
@@ -10089,7 +9994,7 @@
           "description": "位置描述",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Description"
           }
         },
         "FloorLevel": {
@@ -10097,7 +10002,7 @@
           "description": "樓層",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "FloorLevel"
           }
         }
       },
@@ -10131,7 +10036,7 @@
           "description": "車站設施簡圖網址",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "MapURL"
           }
         },
         "FloorLevel": {
@@ -10139,7 +10044,7 @@
           "description": "樓層",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "FloorLevel"
           }
         }
       },
@@ -10166,7 +10071,7 @@
           "description": "車站代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StationID"
           }
         },
         "StationName": {
@@ -10263,7 +10168,7 @@
           "description": "車站代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StationID"
           }
         },
         "StationName": {
@@ -10304,7 +10209,7 @@
           "description": "路線編號",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "LineNo"
           }
         },
         "LineID": {
@@ -10312,7 +10217,7 @@
           "description": "路線代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "LineID"
           }
         },
         "Stations": {
@@ -10348,7 +10253,7 @@
           "description": "運具種類代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Mode"
           }
         },
         "OperatorCode": {
@@ -10356,7 +10261,7 @@
           "description": "機場營運業者簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorCode"
           }
         },
         "OperatorName": {
@@ -10376,7 +10281,7 @@
           "description": "機場代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AirportID"
           }
         },
         "AirportName": {
@@ -10401,7 +10306,7 @@
           "description": "轉乘樓層",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "FloorLevel"
           }
         },
         "Description": {
@@ -10409,7 +10314,7 @@
           "description": "轉乘描述",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Description"
           }
         },
         "IsOnSiteTransfer": {
@@ -10438,7 +10343,7 @@
           "description": "運具種類代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Mode"
           }
         },
         "OperatorCode": {
@@ -10446,7 +10351,7 @@
           "description": "公共自行車營運業者簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorCode"
           }
         },
         "OperatorName": {
@@ -10466,7 +10371,7 @@
           "description": "公共自行車租借站位代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StationID"
           }
         },
         "StationName": {
@@ -10491,7 +10396,7 @@
           "description": "轉乘樓層",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "FloorLevel"
           }
         },
         "Description": {
@@ -10499,7 +10404,7 @@
           "description": "轉乘描述",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Description"
           }
         },
         "IsOnSiteTransfer": {
@@ -10531,7 +10436,7 @@
           "description": "運具種類代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Mode"
           }
         },
         "OperatorCode": {
@@ -10539,7 +10444,7 @@
           "description": "公車營運業者簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorCode"
           }
         },
         "OperatorName": {
@@ -10559,7 +10464,7 @@
           "description": "轉乘公車路線代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteID"
           }
         },
         "RouteName": {
@@ -10579,7 +10484,7 @@
           "description": "轉乘公車站牌代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StopID"
           }
         },
         "StopName": {
@@ -10599,7 +10504,7 @@
           "description": "轉乘公車開往方向",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Destination"
           }
         },
         "MinTransferTime": {
@@ -10612,7 +10517,7 @@
           "description": "轉乘樓層",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "FloorLevel"
           }
         },
         "Description": {
@@ -10620,7 +10525,7 @@
           "description": "轉乘描述",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Description"
           }
         },
         "IsOnSiteTransfer": {
@@ -10632,7 +10537,7 @@
           "description": "轉乘公車所在月台",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Platform"
           }
         }
       },
@@ -10656,7 +10561,7 @@
           "description": "運具種類代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Mode"
           }
         },
         "OperatorCode": {
@@ -10664,7 +10569,7 @@
           "description": "航運營運業者簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorCode"
           }
         },
         "OperatorName": {
@@ -10684,7 +10589,7 @@
           "description": "計程車招呼站代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "FerryStationID"
           }
         },
         "FerryStationName": {
@@ -10709,7 +10614,7 @@
           "description": "轉乘樓層",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "FloorLevel"
           }
         },
         "Description": {
@@ -10717,7 +10622,7 @@
           "description": "轉乘描述",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Description"
           }
         },
         "IsOnSiteTransfer": {
@@ -10743,7 +10648,7 @@
           "description": "地圖名稱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "MapName"
           }
         },
         "MapURL": {
@@ -10751,7 +10656,7 @@
           "description": "地圖簡圖連結",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "MapUrl"
           }
         },
         "FloorLevel": {
@@ -10759,7 +10664,7 @@
           "description": "樓層",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "FloorLevel"
           }
         }
       },
@@ -10782,7 +10687,7 @@
           "description": "運具種類代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Mode"
           }
         },
         "CarParkID": {
@@ -10790,7 +10695,7 @@
           "description": "停車場代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "CarParkID"
           }
         },
         "CarParkName": {
@@ -10815,7 +10720,7 @@
           "description": "轉乘樓層",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "FloorLevel"
           }
         },
         "Description": {
@@ -10823,7 +10728,7 @@
           "description": "轉乘描述",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Description"
           }
         },
         "IsOnSiteTransfer": {
@@ -10852,7 +10757,7 @@
           "description": "運具種類代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Mode"
           }
         },
         "OperatorCode": {
@@ -10860,7 +10765,7 @@
           "description": "軌道營運業者簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorCode"
           }
         },
         "OperatorName": {
@@ -10880,7 +10785,7 @@
           "description": "軌道場站代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StationID"
           }
         },
         "StationName": {
@@ -10905,7 +10810,7 @@
           "description": "轉乘樓層",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "FloorLevel"
           }
         },
         "Description": {
@@ -10913,7 +10818,7 @@
           "description": "轉乘描述",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Description"
           }
         },
         "IsOnSiteTransfer": {
@@ -10942,7 +10847,7 @@
           "description": "車站代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StationID"
           }
         },
         "StationName": {
@@ -10962,7 +10867,7 @@
           "description": "轉乘文字描述",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "TransferDescription"
           }
         },
         "InteriorMapURLs": {
@@ -11017,7 +10922,7 @@
           "description": "運具種類代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Mode"
           }
         },
         "TaxiStopID": {
@@ -11025,7 +10930,7 @@
           "description": "計程車招呼站代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "TaxiStopID"
           }
         },
         "TaxiStopName": {
@@ -11050,7 +10955,7 @@
           "description": "轉乘樓層",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "FloorLevel"
           }
         },
         "Description": {
@@ -11058,7 +10963,7 @@
           "description": "轉乘描述",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Description"
           }
         },
         "IsOnSiteTransfer": {
@@ -11091,7 +10996,7 @@
           "description": "出口代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ExitID"
           }
         },
         "ExitName": {
@@ -11099,7 +11004,7 @@
           "description": "出口名稱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ExitName"
           }
         },
         "RailTransfers": {
@@ -11200,7 +11105,7 @@
           "description": "通阻訊息代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AlertID"
           }
         },
         "Title": {
@@ -11208,7 +11113,7 @@
           "description": "通阻訊息標題",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Title"
           }
         },
         "Description": {
@@ -11216,7 +11121,7 @@
           "description": "通阻訊息說明",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Description"
           }
         },
         "Status": {
@@ -11251,7 +11156,7 @@
           "description": "影響說明",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Effect"
           }
         },
         "Reason": {
@@ -11259,7 +11164,7 @@
           "description": "影響原因",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Reason"
           }
         },
         "AlertURL": {
@@ -11267,7 +11172,7 @@
           "description": "通阻訊息網址連結",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AlertURL"
           }
         },
         "StartTime": {
@@ -11381,7 +11286,7 @@
           "description": "實體路線代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "LineID"
           }
         },
         "LineName": {
@@ -11389,7 +11294,7 @@
           "description": "實體路線名稱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "LineName"
           }
         }
       },
@@ -11406,7 +11311,7 @@
           "description": "路線區間所在路線代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "LineID"
           }
         },
         "StartingStationID": {
@@ -11414,7 +11319,7 @@
           "description": "區間起站車站代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StartingStationID"
           }
         },
         "StartingStationName": {
@@ -11422,7 +11327,7 @@
           "description": "區間起站車站名稱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StartingStationName"
           }
         },
         "EndingStationID": {
@@ -11430,7 +11335,7 @@
           "description": "區間迄站車站代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "EndingStationID"
           }
         },
         "EndingStationName": {
@@ -11438,7 +11343,7 @@
           "description": "區間迄站車站名稱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "EndingStationName"
           }
         },
         "Description": {
@@ -11446,7 +11351,7 @@
           "description": "影響區間輔助描述",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Description"
           }
         }
       },
@@ -11463,7 +11368,7 @@
           "description": "路網代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "NetworkID"
           }
         },
         "NetworkName": {
@@ -11471,7 +11376,7 @@
           "description": "路網名稱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "NetworkName"
           }
         }
       },
@@ -11488,7 +11393,7 @@
           "description": "營運路線代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteID"
           }
         },
         "RouteName": {
@@ -11496,7 +11401,7 @@
           "description": "營運路線名稱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteName"
           }
         }
       },
@@ -11513,7 +11418,7 @@
           "description": "車站代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StationID"
           }
         },
         "StationName": {
@@ -11521,7 +11426,7 @@
           "description": "車站名稱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StationName"
           }
         }
       },
@@ -11538,55 +11443,12 @@
           "description": "受影響的車次",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "TrainNo"
           }
         }
       },
       "xml": {
         "name": "AlertScopeTrain"
-      }
-    },
-    "PTX.Service.DTO.Rail.Specification.V3.TRA.TrainType": {
-      "title": "TrainType",
-      "description": "列車車種資料",
-      "required": [
-        "TrainTypeCode",
-        "TrainTypeID",
-        "TrainTypeName"
-      ],
-      "type": "object",
-      "properties": {
-        "TrainTypeID": {
-          "title": "String",
-          "description": "列車車種代碼",
-          "type": "string",
-          "xml": {
-            "name": "String"
-          }
-        },
-        "TrainTypeCode": {
-          "title": "String",
-          "description": "車種簡碼 = ['1: 太魯閣', '2: 普悠瑪', '3: 自強', '4: 莒光', '5: 復興', '6: 區間', '7: 普快', '10: 區間快']",
-          "type": "string",
-          "xml": {
-            "name": "String"
-          }
-        },
-        "TrainTypeName": {
-          "title": "NameType",
-          "description": "列車車種名稱",
-          "allOf": [
-            {
-              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.NameType"
-            }
-          ],
-          "xml": {
-            "name": "NameType"
-          }
-        }
-      },
-      "xml": {
-        "name": "TrainType"
       }
     },
     "PTX.Service.DTO.Rail.Specification.V3.TRA.TRANewsList.News": {
@@ -11607,7 +11469,7 @@
           "description": "消息代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "NewsID"
           }
         },
         "Language": {
@@ -11620,7 +11482,7 @@
           "description": "發布單位",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Department"
           }
         },
         "Title": {
@@ -11628,7 +11490,7 @@
           "description": "消息標題",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Title"
           }
         },
         "NewsCategory": {
@@ -11641,7 +11503,7 @@
           "description": "內容描述",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Description"
           }
         },
         "NewsURL": {
@@ -11649,7 +11511,7 @@
           "description": "消息網址連結",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "NewsURL"
           }
         },
         "AttachmentURL": {
@@ -11657,7 +11519,7 @@
           "description": "附件網址連結",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AttachmentURL"
           }
         },
         "StartTime": {
@@ -11705,7 +11567,7 @@
           "description": "車站代號",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StationID"
           }
         },
         "StationName": {
@@ -11725,7 +11587,7 @@
           "description": "車次代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "TrainNo"
           }
         },
         "Direction": {
@@ -11738,7 +11600,7 @@
           "description": "車種代嗎",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "TrainTypeID"
           }
         },
         "TrainTypeCode": {
@@ -11746,7 +11608,7 @@
           "description": "車種簡碼 = ['1: 太魯閣', '2: 普悠瑪', '3: 自強', '4: 莒光', '5: 復興', '6: 區間', '7: 普快', '10: 區間快']",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "TrainTypeCode"
           }
         },
         "TrainTypeName": {
@@ -11766,7 +11628,7 @@
           "description": "終點站代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "EndingStationID"
           }
         },
         "EndingStationName": {
@@ -11791,7 +11653,7 @@
           "description": "停靠月台(00代表當時尚未確定停靠的月台，待確定好停靠的月台後，就會更新Platfrom。)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Platform"
           }
         },
         "ScheduleArrivalTime": {
@@ -11799,7 +11661,7 @@
           "description": "表訂到站時刻",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ScheduleArrivalTime"
           }
         },
         "ScheduleDepartureTime": {
@@ -11807,7 +11669,7 @@
           "description": "表定離站時刻",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ScheduleDepartureTime"
           }
         },
         "DelayTime": {
@@ -11847,7 +11709,7 @@
           "description": "車次代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "TrainNo"
           }
         },
         "TrainTypeID": {
@@ -11855,7 +11717,7 @@
           "description": "車種代嗎",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "TrainTypeID"
           }
         },
         "TrainTypeCode": {
@@ -11863,7 +11725,7 @@
           "description": "車種簡碼 = ['1: 太魯閣', '2: 普悠瑪', '3: 自強', '4: 莒光', '5: 復興', '6: 區間', '7: 普快', '10: 區間快']",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "TrainTypeCode"
           }
         },
         "TrainTypeName": {
@@ -11883,7 +11745,7 @@
           "description": "車站代號",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StationID"
           }
         },
         "StationName": {
@@ -11920,6 +11782,49 @@
         "name": "TrainLiveBoard"
       }
     },
+    "PTX.Service.DTO.Rail.Specification.V3.TRA.TrainType": {
+      "title": "TrainType",
+      "description": "列車車種資料",
+      "required": [
+        "TrainTypeCode",
+        "TrainTypeID",
+        "TrainTypeName"
+      ],
+      "type": "object",
+      "properties": {
+        "TrainTypeID": {
+          "title": "String",
+          "description": "列車車種代碼",
+          "type": "string",
+          "xml": {
+            "name": "TrainTypeID"
+          }
+        },
+        "TrainTypeCode": {
+          "title": "String",
+          "description": "車種簡碼 = ['1: 太魯閣', '2: 普悠瑪', '3: 自強', '4: 莒光', '5: 復興', '6: 區間', '7: 普快', '10: 區間快']",
+          "type": "string",
+          "xml": {
+            "name": "TrainTypeCode"
+          }
+        },
+        "TrainTypeName": {
+          "title": "NameType",
+          "description": "列車車種名稱",
+          "allOf": [
+            {
+              "$ref": "#/definitions/PTX.Service.DTO.Shared.Specification.V3.Base.NameType"
+            }
+          ],
+          "xml": {
+            "name": "NameType"
+          }
+        }
+      },
+      "xml": {
+        "name": "TrainType"
+      }
+    },
     "PTX.Service.DTO.Shared.Specification.V3.Base.DisplayHealth": {
       "title": "DisplayHealth",
       "description": "API服務健康狀態",
@@ -11934,7 +11839,7 @@
           "description": "API服務代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ServiceID"
           }
         },
         "ServiceName": {
@@ -11942,7 +11847,7 @@
           "description": "API服務中文名稱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ServiceName"
           }
         },
         "Inbound": {
@@ -11991,7 +11896,7 @@
         },
         "Status": {
           "title": "Int32",
-          "description": "檢核結果狀態 : [0:'失敗',1:'成功']",
+          "description": "檢核結果狀態 : [0:'失敗',1:'成功',2:'資料清洗中']",
           "type": "integer"
         },
         "Reason": {
@@ -11999,7 +11904,7 @@
           "description": "檢核失敗原因",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Reason"
           }
         }
       },
@@ -12016,7 +11921,7 @@
           "description": "中文繁體名稱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Zh_tw"
           }
         },
         "En": {
@@ -12024,7 +11929,7 @@
           "description": "英文名稱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "En"
           }
         }
       },
@@ -12049,7 +11954,7 @@
         },
         "Status": {
           "title": "Int32",
-          "description": "檢核結果狀態 : [0:'失敗',1:'成功']",
+          "description": "檢核結果狀態 : [0:'失敗',1:'成功',2:'資料清洗中']",
           "type": "integer"
         },
         "Reason": {
@@ -12057,7 +11962,7 @@
           "description": "檢核失敗原因",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Reason"
           }
         }
       },

@@ -60,7 +60,7 @@ type MetroAPIFirstLastTimetable2099OK struct {
 }
 
 func (o *MetroAPIFirstLastTimetable2099OK) Error() string {
-	return fmt.Sprintf("[GET /v2/Rail/Metro/FirstLastTimetable/{MetroSystem}][%d] metroApiFirstLastTimetable2099OK  %+v", 200, o.Payload)
+	return fmt.Sprintf("[GET /v2/Rail/Metro/FirstLastTimetable/{RailSystem}][%d] metroApiFirstLastTimetable2099OK  %+v", 200, o.Payload)
 }
 func (o *MetroAPIFirstLastTimetable2099OK) GetPayload() []*models.PTXServiceDTORailSpecificationV2MetroFirstLastTimetable {
 	return o.Payload
@@ -90,7 +90,7 @@ type MetroAPIFirstLastTimetable2099Status299 struct {
 }
 
 func (o *MetroAPIFirstLastTimetable2099Status299) Error() string {
-	return fmt.Sprintf("[GET /v2/Rail/Metro/FirstLastTimetable/{MetroSystem}][%d] metroApiFirstLastTimetable2099Status299  %+v", 299, o.Payload)
+	return fmt.Sprintf("[GET /v2/Rail/Metro/FirstLastTimetable/{RailSystem}][%d] metroApiFirstLastTimetable2099Status299  %+v", 299, o.Payload)
 }
 func (o *MetroAPIFirstLastTimetable2099Status299) GetPayload() *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth {
 	return o.Payload
@@ -121,7 +121,7 @@ type MetroAPIFirstLastTimetable2099NotModified struct {
 }
 
 func (o *MetroAPIFirstLastTimetable2099NotModified) Error() string {
-	return fmt.Sprintf("[GET /v2/Rail/Metro/FirstLastTimetable/{MetroSystem}][%d] metroApiFirstLastTimetable2099NotModified ", 304)
+	return fmt.Sprintf("[GET /v2/Rail/Metro/FirstLastTimetable/{RailSystem}][%d] metroApiFirstLastTimetable2099NotModified ", 304)
 }
 
 func (o *MetroAPIFirstLastTimetable2099NotModified) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {

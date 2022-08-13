@@ -25,12 +25,12 @@ type PTXServiceDTORailSpecificationV2MetroNetworkSubClassLine struct {
 	//
 	// 路線代碼
 	// Required: true
-	LineID *string `json:"LineID" xml:"String"`
+	LineID *string `json:"LineID" xml:"LineID"`
 
 	// String
 	//
 	// 路線編號
-	LineNo string `json:"LineNo,omitempty" xml:"String,omitempty"`
+	LineNo string `json:"LineNo,omitempty" xml:"LineNo,omitempty"`
 }
 
 // Validate validates this p t x service d t o rail specification v2 metro network sub class line

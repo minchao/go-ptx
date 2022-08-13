@@ -23,7 +23,7 @@ type PTXServiceDTOShipSpecificationV3Stops struct {
 	//
 	// 港口代碼
 	// Required: true
-	PortID *string `json:"PortID" xml:"String"`
+	PortID *string `json:"PortID" xml:"PortID"`
 
 	// NameType
 	//

@@ -25,13 +25,13 @@ type PTXServiceDTOBusSpecificationV2EmbeddedRouteOperator struct {
 	//
 	// 營運業者簡碼
 	// Required: true
-	OperatorCode *string `json:"OperatorCode" xml:"String"`
+	OperatorCode *string `json:"OperatorCode" xml:"OperatorCode"`
 
 	// String
 	//
 	// 營運業者代碼
 	// Required: true
-	OperatorID *string `json:"OperatorID" xml:"String"`
+	OperatorID *string `json:"OperatorID" xml:"OperatorID"`
 
 	// NameType
 	//
@@ -45,7 +45,7 @@ type PTXServiceDTOBusSpecificationV2EmbeddedRouteOperator struct {
 	//
 	// 營運業者編號[交通部票證資料系統定義]
 	// Required: true
-	OperatorNo *string `json:"OperatorNo" xml:"String"`
+	OperatorNo *string `json:"OperatorNo" xml:"OperatorNo"`
 }
 
 // Validate validates this p t x service d t o bus specification v2 embedded route operator

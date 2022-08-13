@@ -23,7 +23,7 @@ type PTXServiceDTOBusSpecificationV3RouteFareSectionFareFareBufferZone struct {
 	//
 	// 緩衝區站牌代碼
 	// Required: true
-	StopID *string `json:"StopID" xml:"String"`
+	StopID *string `json:"StopID" xml:"StopID"`
 
 	// NameType
 	//
@@ -36,7 +36,7 @@ type PTXServiceDTOBusSpecificationV3RouteFareSectionFareFareBufferZone struct {
 	//
 	// 站牌唯一識別代碼，規則為 {業管機關簡碼} + {StopID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢
 	// Required: true
-	StopUID *string `json:"StopUID" xml:"String"`
+	StopUID *string `json:"StopUID" xml:"StopUID"`
 }
 
 // Validate validates this p t x service d t o bus specification v3 route fare section fare fare buffer zone

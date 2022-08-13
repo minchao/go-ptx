@@ -11,14 +11,14 @@
     "https"
   ],
   "paths": {
-    "/v2/Bike/Station/{City}": {
+    "/v2/Bike/Station/City/{City}": {
       "get": {
         "tags": [
           "Bike"
         ],
         "summary": "取得指定[縣市]的公共自行車租借站位資料",
         "description": "取得指定[縣市]的公共自行車租借站位資料",
-        "operationId": "BikeApi_Station",
+        "operationId": "BikeApi_Station_2180",
         "produces": [
           "application/json",
           "application/xml"
@@ -91,12 +91,6 @@
           },
           {
             "in": "query",
-            "name": "$spatialFilter",
-            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
-            "type": "string"
-          },
-          {
-            "in": "query",
             "name": "health",
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "type": "string",
@@ -140,14 +134,14 @@
         }
       }
     },
-    "/v2/Bike/Availability/{City}": {
+    "/v2/Bike/Availability/City/{City}": {
       "get": {
         "tags": [
           "Bike"
         ],
         "summary": "取得動態指定[縣市]的公共自行車即時車位資料",
         "description": "取得動態指定[縣市]的公共自行車即時車位資料",
-        "operationId": "BikeApi_Availability",
+        "operationId": "BikeApi_Availability_2181",
         "produces": [
           "application/json",
           "application/xml"
@@ -173,8 +167,6 @@
               "Chiayi"
             ],
             "x-enum": {
-              "Taoyuan": "桃園市",
-              "Kaohsiung": "高雄市",
               "Taichung": "臺中市",
               "NewTaipei": "新北市",
               "Taipei": "臺北市",
@@ -184,7 +176,9 @@
               "ChanghuaCounty": "彰化縣",
               "KinmenCounty": "金門縣",
               "MiaoliCounty": "苗栗縣",
-              "Hsinchu": "新竹市"
+              "Hsinchu": "新竹市",
+              "Taoyuan": "桃園市",
+              "Kaohsiung": "高雄市"
             }
           },
           {
@@ -263,14 +257,14 @@
         }
       }
     },
-    "/v2/Cycling/Shape/{City}": {
+    "/v2/Cycling/Shape/City/{City}": {
       "get": {
         "tags": [
           "Bike"
         ],
         "summary": "取得指定縣市之自行車道路網圖資",
         "description": "取得指定縣市之自行車道路網圖資",
-        "operationId": "CyclingApi_Shape",
+        "operationId": "CyclingApi_Shape_2182",
         "produces": [
           "application/json",
           "application/xml"
@@ -305,10 +299,6 @@
               "Tainan"
             ],
             "x-enum": {
-              "KinmenCounty": "金門縣",
-              "ChiayiCounty": "嘉義縣",
-              "Taipei": "臺北市",
-              "PingtungCounty": "屏東縣",
               "Kaohsiung": "高雄市",
               "YilanCounty": "宜蘭縣",
               "Taoyuan": "桃園市",
@@ -321,12 +311,16 @@
               "NantouCounty": "南投縣",
               "Chiayi": "嘉義市",
               "ChanghuaCounty": "彰化縣",
+              "PingtungCounty": "屏東縣",
               "MiaoliCounty": "苗栗縣",
               "PenghuCounty": "澎湖縣",
               "Taichung": "臺中市",
               "YunlinCounty": "雲林縣",
               "Keelung": "基隆市",
-              "Tainan": "臺南市"
+              "Tainan": "臺南市",
+              "KinmenCounty": "金門縣",
+              "ChiayiCounty": "嘉義縣",
+              "Taipei": "臺北市"
             }
           },
           {
@@ -408,11 +402,11 @@
     "/v2/Bike/Station/NearBy": {
       "get": {
         "tags": [
-          "Advanced"
+          "Bike Advanced(Nearby)"
         ],
         "summary": "取得指定[位置,範圍]的全臺公共自行車租借站位資料",
         "description": "取得指定[位置,範圍]的全臺公共自行車租借站位資料",
-        "operationId": "BikeApi_Station_AllCity_NearBy",
+        "operationId": "BikeApi_Station_AllCity_NearBy_2870",
         "produces": [
           "application/json",
           "application/xml"
@@ -504,11 +498,11 @@
     "/v2/Bike/Availability/NearBy": {
       "get": {
         "tags": [
-          "Advanced"
+          "Bike Advanced(Nearby)"
         ],
         "summary": "取得指定[位置,範圍]的全臺公共自行車即時車位資料",
         "description": "取得指定[位置,範圍]的全臺公共自行車即時車位資料",
-        "operationId": "BikeApi_Availability_AllCity_NearBy",
+        "operationId": "BikeApi_Availability_AllCity_NearBy_2871",
         "produces": [
           "application/json",
           "application/xml"
@@ -612,7 +606,7 @@
           "description": "站點唯一識別代碼，規則為 {業管機關代碼} + {StationID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StationUID"
           }
         },
         "StationID": {
@@ -620,7 +614,7 @@
           "description": "站點代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StationID"
           }
         },
         "ServiceStatus": {
@@ -678,7 +672,7 @@
           "description": "路線名稱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteName"
           }
         },
         "AuthorityName": {
@@ -686,7 +680,7 @@
           "description": "業管機關名稱（可能包含多個業管機關）",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityName"
           }
         },
         "CityCode": {
@@ -694,7 +688,7 @@
           "description": "路線所在縣市代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "CityCode"
           }
         },
         "City": {
@@ -702,7 +696,7 @@
           "description": "路線所在縣市名稱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "City"
           }
         },
         "Town": {
@@ -710,7 +704,7 @@
           "description": "路線所在鄉鎮名稱（可能包含多個鄉鎮）",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Town"
           }
         },
         "RoadSectionStart": {
@@ -718,7 +712,7 @@
           "description": "路線起點描述",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RoadSectionStart"
           }
         },
         "RoadSectionEnd": {
@@ -726,7 +720,7 @@
           "description": "路線迄點描述",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RoadSectionEnd"
           }
         },
         "Direction": {
@@ -734,7 +728,7 @@
           "description": "自行車道車行方向",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Direction"
           }
         },
         "CyclingType": {
@@ -742,7 +736,7 @@
           "description": "自行車道類型",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "CyclingType"
           }
         },
         "CyclingLength": {
@@ -755,7 +749,7 @@
           "description": "自行車道完工日期時間",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "FinishedTime"
           }
         },
         "UpdateTime": {
@@ -769,7 +763,7 @@
           "description": "well-known text，為路線軌跡資料",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Geometry"
           }
         },
         "EncodedPolyline": {
@@ -777,7 +771,7 @@
           "description": "路線軌跡編碼(encoded polyline)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "EncodedPolyline"
           }
         }
       },
@@ -798,7 +792,7 @@
           "description": "站點唯一識別代碼，規則為 {業管機關代碼} + {StationID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StationUID"
           }
         },
         "StationID": {
@@ -806,7 +800,7 @@
           "description": "站點代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StationID"
           }
         },
         "AuthorityID": {
@@ -814,7 +808,7 @@
           "description": "業管單位代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityID"
           }
         },
         "StationName": {
@@ -858,7 +852,7 @@
           "description": "站點描述",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StopDescription"
           }
         },
         "BikesCapacity": {
@@ -898,7 +892,7 @@
           "description": "中文繁體名稱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Zh_tw"
           }
         },
         "En": {
@@ -906,7 +900,7 @@
           "description": "英文名稱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "En"
           }
         }
       },
@@ -934,7 +928,7 @@
           "description": "地理空間編碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "GeoHash"
           }
         }
       },
@@ -956,7 +950,7 @@
           "description": "API服務代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ServiceID"
           }
         },
         "ServiceName": {
@@ -964,7 +958,7 @@
           "description": "API服務中文名稱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ServiceName"
           }
         },
         "Inbound": {
@@ -1013,7 +1007,7 @@
         },
         "Status": {
           "title": "Int32",
-          "description": "檢核結果狀態 : [0:'失敗',1:'成功']",
+          "description": "檢核結果狀態 : [0:'失敗',1:'成功',2:'資料清洗中']",
           "type": "integer"
         },
         "Reason": {
@@ -1021,7 +1015,7 @@
           "description": "檢核失敗原因",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Reason"
           }
         }
       },
@@ -1046,7 +1040,7 @@
         },
         "Status": {
           "title": "Int32",
-          "description": "檢核結果狀態 : [0:'失敗',1:'成功']",
+          "description": "檢核結果狀態 : [0:'失敗',1:'成功',2:'資料清洗中']",
           "type": "integer"
         },
         "Reason": {
@@ -1054,7 +1048,7 @@
           "description": "檢核失敗原因",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Reason"
           }
         }
       },
@@ -1089,8 +1083,8 @@
       "description": "自行車"
     },
     {
-      "name": "Advanced",
-      "description": "進階"
+      "name": "Bike Advanced(Nearby)",
+      "description": "自行車進階(指定位置範圍)"
     }
   ]
 }

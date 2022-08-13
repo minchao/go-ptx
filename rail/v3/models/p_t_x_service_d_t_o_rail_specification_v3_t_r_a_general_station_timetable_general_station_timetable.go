@@ -31,7 +31,7 @@ type PTXServiceDTORailSpecificationV3TRAGeneralStationTimetableGeneralStationTim
 	// String
 	//
 	// 營運路線代碼
-	RouteID string `json:"RouteID,omitempty" xml:"String,omitempty"`
+	RouteID string `json:"RouteID,omitempty" xml:"RouteID,omitempty"`
 
 	// ServiceDay
 	//
@@ -45,7 +45,7 @@ type PTXServiceDTORailSpecificationV3TRAGeneralStationTimetableGeneralStationTim
 	//
 	// 車站代碼
 	// Required: true
-	StationID *string `json:"StationID" xml:"String"`
+	StationID *string `json:"StationID" xml:"StationID"`
 
 	// NameType
 	//

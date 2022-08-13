@@ -25,13 +25,13 @@ type PTXServiceDTORailSpecificationV2MetroSubClassOperationTime struct {
 	//
 	// 營運結束時間
 	// Required: true
-	EndTime *string `json:"EndTime" xml:"String"`
+	EndTime *string `json:"EndTime" xml:"EndTime"`
 
 	// String
 	//
 	// 營運開始時間
 	// Required: true
-	StartTime *string `json:"StartTime" xml:"String"`
+	StartTime *string `json:"StartTime" xml:"StartTime"`
 }
 
 // Validate validates this p t x service d t o rail specification v2 metro sub class operation time

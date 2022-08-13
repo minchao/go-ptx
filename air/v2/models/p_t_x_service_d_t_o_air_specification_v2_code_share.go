@@ -25,13 +25,13 @@ type PTXServiceDTOAirSpecificationV2CodeShare struct {
 	//
 	// 航空公司IATA國際代碼
 	// Required: true
-	AirlineID *string `json:"AirlineID" xml:"String"`
+	AirlineID *string `json:"AirlineID" xml:"AirlineID"`
 
 	// String
 	//
 	// 航機班號(不包含航空公司的AirlineID，僅有班號數字)
 	// Required: true
-	FlightNumber *string `json:"FlightNumber" xml:"String"`
+	FlightNumber *string `json:"FlightNumber" xml:"FlightNumber"`
 }
 
 // Validate validates this p t x service d t o air specification v2 code share

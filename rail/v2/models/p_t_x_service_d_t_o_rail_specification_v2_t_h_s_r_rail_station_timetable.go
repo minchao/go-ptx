@@ -25,13 +25,13 @@ type PTXServiceDTORailSpecificationV2THSRRailStationTimetable struct {
 	//
 	// 到站時間(格式: HH:mm:ss)
 	// Required: true
-	ArrivalTime *string `json:"ArrivalTime" xml:"String"`
+	ArrivalTime *string `json:"ArrivalTime" xml:"ArrivalTime"`
 
 	// String
 	//
 	// 離站時間(格式: HH:mm:ss)
 	// Required: true
-	DepartureTime *string `json:"DepartureTime" xml:"String"`
+	DepartureTime *string `json:"DepartureTime" xml:"DepartureTime"`
 
 	// Int32
 	//
@@ -43,7 +43,7 @@ type PTXServiceDTORailSpecificationV2THSRRailStationTimetable struct {
 	//
 	// 終點車站代號
 	// Required: true
-	EndingStationID *string `json:"EndingStationID" xml:"String"`
+	EndingStationID *string `json:"EndingStationID" xml:"EndingStationID"`
 
 	// NameType
 	//
@@ -57,7 +57,7 @@ type PTXServiceDTORailSpecificationV2THSRRailStationTimetable struct {
 	//
 	// 起點車站代號
 	// Required: true
-	StartingStationID *string `json:"StartingStationID" xml:"String"`
+	StartingStationID *string `json:"StartingStationID" xml:"StartingStationID"`
 
 	// NameType
 	//
@@ -71,7 +71,7 @@ type PTXServiceDTORailSpecificationV2THSRRailStationTimetable struct {
 	//
 	// 車站代號
 	// Required: true
-	StationID *string `json:"StationID" xml:"String"`
+	StationID *string `json:"StationID" xml:"StationID"`
 
 	// NameType
 	//
@@ -85,13 +85,13 @@ type PTXServiceDTORailSpecificationV2THSRRailStationTimetable struct {
 	//
 	// 時刻表日期(格式: yyyy-MM-dd)
 	// Required: true
-	TrainDate *string `json:"TrainDate" xml:"String"`
+	TrainDate *string `json:"TrainDate" xml:"TrainDate"`
 
 	// String
 	//
 	// 車次代號
 	// Required: true
-	TrainNo *string `json:"TrainNo" xml:"String"`
+	TrainNo *string `json:"TrainNo" xml:"TrainNo"`
 
 	// DateTime
 	//

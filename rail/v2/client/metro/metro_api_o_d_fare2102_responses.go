@@ -60,7 +60,7 @@ type MetroAPIODFare2102OK struct {
 }
 
 func (o *MetroAPIODFare2102OK) Error() string {
-	return fmt.Sprintf("[GET /v2/Rail/Metro/ODFare/{MetroSystem}][%d] metroApiODFare2102OK  %+v", 200, o.Payload)
+	return fmt.Sprintf("[GET /v2/Rail/Metro/ODFare/{RailSystem}][%d] metroApiODFare2102OK  %+v", 200, o.Payload)
 }
 func (o *MetroAPIODFare2102OK) GetPayload() []*models.PTXServiceDTORailSpecificationV2MetroODFare {
 	return o.Payload
@@ -90,7 +90,7 @@ type MetroAPIODFare2102Status299 struct {
 }
 
 func (o *MetroAPIODFare2102Status299) Error() string {
-	return fmt.Sprintf("[GET /v2/Rail/Metro/ODFare/{MetroSystem}][%d] metroApiODFare2102Status299  %+v", 299, o.Payload)
+	return fmt.Sprintf("[GET /v2/Rail/Metro/ODFare/{RailSystem}][%d] metroApiODFare2102Status299  %+v", 299, o.Payload)
 }
 func (o *MetroAPIODFare2102Status299) GetPayload() *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth {
 	return o.Payload
@@ -121,7 +121,7 @@ type MetroAPIODFare2102NotModified struct {
 }
 
 func (o *MetroAPIODFare2102NotModified) Error() string {
-	return fmt.Sprintf("[GET /v2/Rail/Metro/ODFare/{MetroSystem}][%d] metroApiODFare2102NotModified ", 304)
+	return fmt.Sprintf("[GET /v2/Rail/Metro/ODFare/{RailSystem}][%d] metroApiODFare2102NotModified ", 304)
 }
 
 func (o *MetroAPIODFare2102NotModified) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {

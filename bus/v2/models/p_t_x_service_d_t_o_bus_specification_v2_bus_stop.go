@@ -25,54 +25,54 @@ type PTXServiceDTOBusSpecificationV2BusStop struct {
 	//
 	// 業管機關代碼
 	// Required: true
-	AuthorityID *string `json:"AuthorityID" xml:"String"`
+	AuthorityID *string `json:"AuthorityID" xml:"AuthorityID"`
 
 	// String
 	//
 	// 方位角，E:東行;W:西行;S:南行;N:北行;SE:東南行;NE:東北行;SW:西南行;NW:西北行
-	Bearing string `json:"Bearing,omitempty" xml:"String,omitempty"`
+	Bearing string `json:"Bearing,omitempty" xml:"Bearing,omitempty"`
 
 	// String
 	//
 	// 站牌權管所屬縣市(相當於市區公車API的City參數)[若為公路/國道客運路線則為空值]
-	City string `json:"City,omitempty" xml:"String,omitempty"`
+	City string `json:"City,omitempty" xml:"City,omitempty"`
 
 	// String
 	//
 	// 站牌權管所屬縣市之代碼(國際ISO 3166-2 三碼城市代碼)[若為公路/國道客運路線則為空值]
-	CityCode string `json:"CityCode,omitempty" xml:"String,omitempty"`
+	CityCode string `json:"CityCode,omitempty" xml:"CityCode,omitempty"`
 
 	// String
 	//
 	// 站牌位置縣市之代碼(國際ISO 3166-2 三碼城市代碼)[若為公路/國道客運路線則為空值]
-	LocationCityCode string `json:"LocationCityCode,omitempty" xml:"String,omitempty"`
+	LocationCityCode string `json:"LocationCityCode,omitempty" xml:"LocationCityCode,omitempty"`
 
 	// String
 	//
 	// 站牌所屬的組站位ID
 	// Required: true
-	StationGroupID *string `json:"StationGroupID" xml:"String"`
+	StationGroupID *string `json:"StationGroupID" xml:"StationGroupID"`
 
 	// String
 	//
 	// 站牌所屬的站位ID
-	StationID string `json:"StationID,omitempty" xml:"String,omitempty"`
+	StationID string `json:"StationID,omitempty" xml:"StationID,omitempty"`
 
 	// String
 	//
 	// 站牌地址
-	StopAddress string `json:"StopAddress,omitempty" xml:"String,omitempty"`
+	StopAddress string `json:"StopAddress,omitempty" xml:"StopAddress,omitempty"`
 
 	// String
 	//
 	// 站牌詳細說明描述
-	StopDescription string `json:"StopDescription,omitempty" xml:"String,omitempty"`
+	StopDescription string `json:"StopDescription,omitempty" xml:"StopDescription,omitempty"`
 
 	// String
 	//
 	// 地區既用中之站牌代碼(為原資料內碼)
 	// Required: true
-	StopID *string `json:"StopID" xml:"String"`
+	StopID *string `json:"StopID" xml:"StopID"`
 
 	// NameType
 	//
@@ -94,7 +94,7 @@ type PTXServiceDTOBusSpecificationV2BusStop struct {
 	//
 	// 站牌唯一識別代碼，規則為 {業管機關簡碼} + {StopID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢
 	// Required: true
-	StopUID *string `json:"StopUID" xml:"String"`
+	StopUID *string `json:"StopUID" xml:"StopUID"`
 
 	// DateTime
 	//

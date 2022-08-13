@@ -20,7 +20,7 @@ type PTXServiceDTOShipSpecificationV3Dates struct {
 	// String
 	//
 	// 特殊日期
-	Date string `json:"Date,omitempty" xml:"String,omitempty"`
+	Date string `json:"Date,omitempty" xml:"Date,omitempty"`
 }
 
 // Validate validates this p t x service d t o ship specification v3 dates

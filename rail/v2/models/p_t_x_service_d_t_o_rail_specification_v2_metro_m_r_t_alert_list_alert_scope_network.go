@@ -22,7 +22,7 @@ type PTXServiceDTORailSpecificationV2MetroMRTAlertListAlertScopeNetwork struct {
 	// String
 	//
 	// 路網代碼
-	NetworkID string `json:"NetworkID,omitempty" xml:"String,omitempty"`
+	NetworkID string `json:"NetworkID,omitempty" xml:"NetworkID,omitempty"`
 }
 
 // Validate validates this p t x service d t o rail specification v2 metro m r t alert list alert scope network

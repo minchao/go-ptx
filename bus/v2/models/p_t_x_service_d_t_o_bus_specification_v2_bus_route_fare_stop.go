@@ -23,13 +23,13 @@ type PTXServiceDTOBusSpecificationV2BusRouteFareStop struct {
 	//
 	// 緩衝區站牌代碼
 	// Required: true
-	StopID *string `json:"StopID" xml:"String"`
+	StopID *string `json:"StopID" xml:"StopID"`
 
 	// String
 	//
 	// 緩衝區站牌名稱
 	// Required: true
-	StopName *string `json:"StopName" xml:"String"`
+	StopName *string `json:"StopName" xml:"StopName"`
 }
 
 // Validate validates this p t x service d t o bus specification v2 bus route fare stop

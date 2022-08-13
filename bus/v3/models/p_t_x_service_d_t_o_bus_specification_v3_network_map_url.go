@@ -23,7 +23,7 @@ type PTXServiceDTOBusSpecificationV3NetworkMapURL struct {
 	//
 	// 路網圖名稱
 	// Required: true
-	MapName *string `json:"MapName" xml:"String"`
+	MapName *string `json:"MapName" xml:"MapName"`
 
 	// NameType
 	//

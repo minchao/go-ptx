@@ -60,7 +60,7 @@ type MetroAPIStationExit2096OK struct {
 }
 
 func (o *MetroAPIStationExit2096OK) Error() string {
-	return fmt.Sprintf("[GET /v2/Rail/Metro/StationExit/{MetroSystem}][%d] metroApiStationExit2096OK  %+v", 200, o.Payload)
+	return fmt.Sprintf("[GET /v2/Rail/Metro/StationExit/{RailSystem}][%d] metroApiStationExit2096OK  %+v", 200, o.Payload)
 }
 func (o *MetroAPIStationExit2096OK) GetPayload() []*models.PTXServiceDTORailSpecificationV2MetroStationExit {
 	return o.Payload
@@ -90,7 +90,7 @@ type MetroAPIStationExit2096Status299 struct {
 }
 
 func (o *MetroAPIStationExit2096Status299) Error() string {
-	return fmt.Sprintf("[GET /v2/Rail/Metro/StationExit/{MetroSystem}][%d] metroApiStationExit2096Status299  %+v", 299, o.Payload)
+	return fmt.Sprintf("[GET /v2/Rail/Metro/StationExit/{RailSystem}][%d] metroApiStationExit2096Status299  %+v", 299, o.Payload)
 }
 func (o *MetroAPIStationExit2096Status299) GetPayload() *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth {
 	return o.Payload
@@ -121,7 +121,7 @@ type MetroAPIStationExit2096NotModified struct {
 }
 
 func (o *MetroAPIStationExit2096NotModified) Error() string {
-	return fmt.Sprintf("[GET /v2/Rail/Metro/StationExit/{MetroSystem}][%d] metroApiStationExit2096NotModified ", 304)
+	return fmt.Sprintf("[GET /v2/Rail/Metro/StationExit/{RailSystem}][%d] metroApiStationExit2096NotModified ", 304)
 }
 
 func (o *MetroAPIStationExit2096NotModified) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {

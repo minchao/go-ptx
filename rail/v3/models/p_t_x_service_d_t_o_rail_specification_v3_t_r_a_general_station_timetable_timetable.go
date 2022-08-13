@@ -23,17 +23,17 @@ type PTXServiceDTORailSpecificationV3TRAGeneralStationTimetableTimetable struct 
 	// String
 	//
 	// 到站時刻
-	ArrivalTime string `json:"ArrivalTime,omitempty" xml:"String,omitempty"`
+	ArrivalTime string `json:"ArrivalTime,omitempty" xml:"ArrivalTime,omitempty"`
 
 	// String
 	//
 	// 發車時刻
-	DepartureTime string `json:"DepartureTime,omitempty" xml:"String,omitempty"`
+	DepartureTime string `json:"DepartureTime,omitempty" xml:"DepartureTime,omitempty"`
 
 	// String
 	//
 	// 目的站車站代號
-	DestinationStationID string `json:"DestinationStationID,omitempty" xml:"String,omitempty"`
+	DestinationStationID string `json:"DestinationStationID,omitempty" xml:"DestinationStationID,omitempty"`
 
 	// NameType
 	//
@@ -50,17 +50,17 @@ type PTXServiceDTORailSpecificationV3TRAGeneralStationTimetableTimetable struct 
 	// String
 	//
 	// 車次代碼
-	TrainNo string `json:"TrainNo,omitempty" xml:"String,omitempty"`
+	TrainNo string `json:"TrainNo,omitempty" xml:"TrainNo,omitempty"`
 
 	// String
 	//
 	// 車種簡碼 = ['1: 太魯閣', '2: 普悠瑪', '3: 自強', '4: 莒光', '5: 復興', '6: 區間', '7: 普快', '10: 區間快']
-	TrainTypeCode string `json:"TrainTypeCode,omitempty" xml:"String,omitempty"`
+	TrainTypeCode string `json:"TrainTypeCode,omitempty" xml:"TrainTypeCode,omitempty"`
 
 	// String
 	//
 	// 車種代嗎
-	TrainTypeID string `json:"TrainTypeID,omitempty" xml:"String,omitempty"`
+	TrainTypeID string `json:"TrainTypeID,omitempty" xml:"TrainTypeID,omitempty"`
 
 	// NameType
 	//

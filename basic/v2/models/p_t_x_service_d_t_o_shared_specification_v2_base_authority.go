@@ -25,18 +25,18 @@ type PTXServiceDTOSharedSpecificationV2BaseAuthority struct {
 	//
 	// 業管機關簡碼
 	// Required: true
-	AuthorityCode *string `json:"AuthorityCode" xml:"String"`
+	AuthorityCode *string `json:"AuthorityCode" xml:"AuthorityCode"`
 
 	// String
 	//
 	// 業管機關電子信箱
-	AuthorityEmail string `json:"AuthorityEmail,omitempty" xml:"String,omitempty"`
+	AuthorityEmail string `json:"AuthorityEmail,omitempty" xml:"AuthorityEmail,omitempty"`
 
 	// String
 	//
 	// 業管機關代碼
 	// Required: true
-	AuthorityID *string `json:"AuthorityID" xml:"String"`
+	AuthorityID *string `json:"AuthorityID" xml:"AuthorityID"`
 
 	// NameType
 	//
@@ -49,12 +49,12 @@ type PTXServiceDTOSharedSpecificationV2BaseAuthority struct {
 	// String
 	//
 	// 業管機關連絡電話
-	AuthorityPhone string `json:"AuthorityPhone,omitempty" xml:"String,omitempty"`
+	AuthorityPhone string `json:"AuthorityPhone,omitempty" xml:"AuthorityPhone,omitempty"`
 
 	// String
 	//
 	// 業管機關網址鏈結
-	AuthorityURL string `json:"AuthorityUrl,omitempty" xml:"String,omitempty"`
+	AuthorityURL string `json:"AuthorityUrl,omitempty" xml:"AuthorityUrl,omitempty"`
 
 	// DateTime
 	//

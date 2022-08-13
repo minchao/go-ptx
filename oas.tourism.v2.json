@@ -57,12 +57,6 @@
           },
           {
             "in": "query",
-            "name": "$spatialFilter",
-            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
-            "type": "string"
-          },
-          {
-            "in": "query",
             "name": "health",
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "type": "string",
@@ -113,7 +107,7 @@
         ],
         "summary": "取得指定[縣市]觀光景點資料",
         "description": "取得指定[縣市]觀光景點資料",
-        "operationId": "TourismApi_ScenicSpot_0_2241",
+        "operationId": "TourismApi_ScenicSpot_2240_1",
         "produces": [
           "application/json",
           "application/xml"
@@ -150,8 +144,6 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "NantouCounty": "南投縣",
-              "PingtungCounty": "屏東縣",
               "ChiayiCounty": "嘉義縣",
               "MiaoliCounty": "苗栗縣",
               "YunlinCounty": "雲林縣",
@@ -166,6 +158,8 @@
               "ChanghuaCounty": "彰化縣",
               "NewTaipei": "新北市",
               "HualienCounty": "花蓮縣",
+              "NantouCounty": "南投縣",
+              "PingtungCounty": "屏東縣",
               "HsinchuCounty": "新竹縣",
               "Kaohsiung": "高雄市",
               "Keelung": "基隆市",
@@ -203,12 +197,6 @@
             "in": "query",
             "name": "$skip",
             "description": "跳過前幾筆",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$spatialFilter",
-            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
             "type": "string"
           },
           {
@@ -302,12 +290,6 @@
           },
           {
             "in": "query",
-            "name": "$spatialFilter",
-            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
-            "type": "string"
-          },
-          {
-            "in": "query",
             "name": "health",
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "type": "string",
@@ -358,7 +340,7 @@
         ],
         "summary": "取得指定[縣市]觀光餐飲資料",
         "description": "取得指定[縣市]觀光餐飲資料",
-        "operationId": "TourismApi_Restaurant_0_2243",
+        "operationId": "TourismApi_Restaurant_2242_1",
         "produces": [
           "application/json",
           "application/xml"
@@ -452,12 +434,6 @@
           },
           {
             "in": "query",
-            "name": "$spatialFilter",
-            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
-            "type": "string"
-          },
-          {
-            "in": "query",
             "name": "health",
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "type": "string",
@@ -547,12 +523,6 @@
           },
           {
             "in": "query",
-            "name": "$spatialFilter",
-            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
-            "type": "string"
-          },
-          {
-            "in": "query",
             "name": "health",
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "type": "string",
@@ -603,7 +573,7 @@
         ],
         "summary": "取得指定[縣市]觀光旅宿資料",
         "description": "取得指定[縣市]觀光旅宿資料",
-        "operationId": "TourismApi_Hotel_0_2245",
+        "operationId": "TourismApi_Hotel_2244_1",
         "produces": [
           "application/json",
           "application/xml"
@@ -640,9 +610,6 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "TaitungCounty": "臺東縣",
-              "Keelung": "基隆市",
-              "NewTaipei": "新北市",
               "Hsinchu": "新竹市",
               "HsinchuCounty": "新竹縣",
               "Chiayi": "嘉義市",
@@ -653,6 +620,7 @@
               "PenghuCounty": "澎湖縣",
               "Taichung": "臺中市",
               "MiaoliCounty": "苗栗縣",
+              "TaitungCounty": "臺東縣",
               "ChiayiCounty": "嘉義縣",
               "ChanghuaCounty": "彰化縣",
               "Taoyuan": "桃園市",
@@ -661,6 +629,8 @@
               "PingtungCounty": "屏東縣",
               "Kaohsiung": "高雄市",
               "HualienCounty": "花蓮縣",
+              "Keelung": "基隆市",
+              "NewTaipei": "新北市",
               "YilanCounty": "宜蘭縣"
             }
           },
@@ -693,12 +663,6 @@
             "in": "query",
             "name": "$skip",
             "description": "跳過前幾筆",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$spatialFilter",
-            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
             "type": "string"
           },
           {
@@ -792,12 +756,6 @@
           },
           {
             "in": "query",
-            "name": "$spatialFilter",
-            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
-            "type": "string"
-          },
-          {
-            "in": "query",
             "name": "health",
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "type": "string",
@@ -848,7 +806,7 @@
         ],
         "summary": "取得指定[縣市]觀光活動資料",
         "description": "取得指定[縣市]觀光活動資料",
-        "operationId": "TourismApi_Activity_0_2247",
+        "operationId": "TourismApi_Activity_2246_1",
         "produces": [
           "application/json",
           "application/xml"
@@ -885,9 +843,6 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "TaitungCounty": "臺東縣",
-              "Keelung": "基隆市",
-              "NewTaipei": "新北市",
               "Hsinchu": "新竹市",
               "HsinchuCounty": "新竹縣",
               "Chiayi": "嘉義市",
@@ -898,6 +853,7 @@
               "PenghuCounty": "澎湖縣",
               "Taichung": "臺中市",
               "MiaoliCounty": "苗栗縣",
+              "TaitungCounty": "臺東縣",
               "ChiayiCounty": "嘉義縣",
               "ChanghuaCounty": "彰化縣",
               "Taoyuan": "桃園市",
@@ -906,6 +862,8 @@
               "PingtungCounty": "屏東縣",
               "Kaohsiung": "高雄市",
               "HualienCounty": "花蓮縣",
+              "Keelung": "基隆市",
+              "NewTaipei": "新北市",
               "YilanCounty": "宜蘭縣"
             }
           },
@@ -938,12 +896,6 @@
             "in": "query",
             "name": "$skip",
             "description": "跳過前幾筆",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$spatialFilter",
-            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
             "type": "string"
           },
           {
@@ -2440,7 +2392,7 @@
           "description": "中文繁體名稱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Zh_tw"
           }
         },
         "En": {
@@ -2448,7 +2400,7 @@
           "description": "英文名稱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "En"
           }
         }
       },
@@ -2476,7 +2428,7 @@
           "description": "地理空間編碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "GeoHash"
           }
         }
       },
@@ -2498,7 +2450,7 @@
           "description": "API服務代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ServiceID"
           }
         },
         "ServiceName": {
@@ -2506,7 +2458,7 @@
           "description": "API服務中文名稱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ServiceName"
           }
         },
         "Inbound": {
@@ -2555,7 +2507,7 @@
         },
         "Status": {
           "title": "Int32",
-          "description": "檢核結果狀態 : [0:'失敗',1:'成功']",
+          "description": "檢核結果狀態 : [0:'失敗',1:'成功',2:'資料清洗中']",
           "type": "integer"
         },
         "Reason": {
@@ -2563,7 +2515,7 @@
           "description": "檢核失敗原因",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Reason"
           }
         }
       },
@@ -2588,7 +2540,7 @@
         },
         "Status": {
           "title": "Int32",
-          "description": "檢核結果狀態 : [0:'失敗',1:'成功']",
+          "description": "檢核結果狀態 : [0:'失敗',1:'成功',2:'資料清洗中']",
           "type": "integer"
         },
         "Reason": {
@@ -2596,7 +2548,7 @@
           "description": "檢核失敗原因",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Reason"
           }
         }
       },
@@ -2619,7 +2571,7 @@
           "description": "活動訊息代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ActivityID"
           }
         },
         "ActivityName": {
@@ -2627,7 +2579,7 @@
           "description": "活動名稱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ActivityName"
           }
         },
         "Description": {
@@ -2635,7 +2587,7 @@
           "description": "活動簡述",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Description"
           }
         },
         "Particpation": {
@@ -2643,7 +2595,7 @@
           "description": "活動參與對象",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Particpation"
           }
         },
         "Location": {
@@ -2651,7 +2603,7 @@
           "description": "主要活動地點名稱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Location"
           }
         },
         "Address": {
@@ -2659,7 +2611,7 @@
           "description": "主要活動地點地址",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Address"
           }
         },
         "Phone": {
@@ -2667,7 +2619,7 @@
           "description": "活動聯絡電話",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Phone"
           }
         },
         "Organizer": {
@@ -2675,7 +2627,7 @@
           "description": "活動主辦單位",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Organizer"
           }
         },
         "StartTime": {
@@ -2693,7 +2645,7 @@
           "description": "週期性活動執行時間",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Cycle"
           }
         },
         "NonCycle": {
@@ -2701,7 +2653,7 @@
           "description": "非週期性活動執行時間",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "NonCycle"
           }
         },
         "WebsiteUrl": {
@@ -2709,7 +2661,7 @@
           "description": "活動網址",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "WebsiteUrl"
           }
         },
         "Picture": {
@@ -2741,7 +2693,7 @@
           "description": "活動分類1",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Class1"
           }
         },
         "Class2": {
@@ -2749,7 +2701,7 @@
           "description": "活動分類2",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Class2"
           }
         },
         "MapUrl": {
@@ -2757,7 +2709,7 @@
           "description": "活動地圖/簡圖連結網址",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "MapUrl"
           }
         },
         "TravelInfo": {
@@ -2765,7 +2717,7 @@
           "description": "交通資訊",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "TravelInfo"
           }
         },
         "ParkingInfo": {
@@ -2773,7 +2725,7 @@
           "description": "停車資訊",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ParkingInfo"
           }
         },
         "Charge": {
@@ -2781,7 +2733,7 @@
           "description": "費用標示",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Charge"
           }
         },
         "Remarks": {
@@ -2789,7 +2741,7 @@
           "description": "備註(其他活動相關事項)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Remarks"
           }
         },
         "City": {
@@ -2797,7 +2749,7 @@
           "description": "所屬縣市",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "City"
           }
         },
         "SrcUpdateTime": {
@@ -2834,7 +2786,7 @@
           "description": "車牌號碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "PlateNumb"
           }
         },
         "OperatorID": {
@@ -2842,7 +2794,7 @@
           "description": "營運業者代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorID"
           }
         },
         "RouteUID": {
@@ -2850,7 +2802,7 @@
           "description": "路線唯一識別代碼，規則為 {業管機關代碼} + {RouteID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteUID"
           }
         },
         "RouteID": {
@@ -2858,7 +2810,7 @@
           "description": "地區既用中之路線代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteID"
           }
         },
         "TaiwanTripName": {
@@ -2878,7 +2830,7 @@
           "description": "子路線唯一識別代碼，規則為 {業管機關代碼} + {SubRouteID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SubRouteUID"
           }
         },
         "SubRouteID": {
@@ -2886,7 +2838,7 @@
           "description": "地區既用中之子路線代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SubRouteID"
           }
         },
         "SubRouteName": {
@@ -2991,7 +2943,7 @@
           "description": "車牌號碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "PlateNumb"
           }
         },
         "OperatorID": {
@@ -2999,7 +2951,7 @@
           "description": "營運業者代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorID"
           }
         },
         "RouteUID": {
@@ -3007,7 +2959,7 @@
           "description": "路線唯一識別代碼，規則為 {業管機關代碼} + {RouteID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteUID"
           }
         },
         "RouteID": {
@@ -3015,7 +2967,7 @@
           "description": "地區既用中之路線代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteID"
           }
         },
         "TaiwanTripName": {
@@ -3035,7 +2987,7 @@
           "description": "子路線唯一識別代碼，規則為 {業管機關代碼} + {SubRouteID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SubRouteUID"
           }
         },
         "SubRouteID": {
@@ -3043,7 +2995,7 @@
           "description": "地區既用中之子路線代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SubRouteID"
           }
         },
         "SubRouteName": {
@@ -3068,7 +3020,7 @@
           "description": "站牌唯一識別代碼，規則為 {平台代碼} + {StopID}，其中 {平台代碼} 可於Provider API中的ProviderCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StopUID"
           }
         },
         "StopID": {
@@ -3076,7 +3028,7 @@
           "description": "地區既用中之站牌代號(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StopID"
           }
         },
         "StopName": {
@@ -3159,7 +3111,7 @@
           "description": "發車班距起始適用時間，格式為: HH:mm",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StartTime"
           }
         },
         "EndTime": {
@@ -3167,7 +3119,7 @@
           "description": "發車班距結束適用時間，格式為: HH:mm",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "EndTime"
           }
         },
         "MinHeadwayMins": {
@@ -3223,7 +3175,7 @@
           "description": "車牌號碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "PlateNumb"
           }
         },
         "StopUID": {
@@ -3231,7 +3183,7 @@
           "description": "站牌唯一識別代碼，規則為 {業管機關代碼} + {StopID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StopUID"
           }
         },
         "StopID": {
@@ -3239,7 +3191,7 @@
           "description": "地區既用中之站牌代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StopID"
           }
         },
         "StopName": {
@@ -3259,7 +3211,7 @@
           "description": "路線唯一識別代碼，規則為 {業管機關代碼} + {RouteID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteUID"
           }
         },
         "RouteID": {
@@ -3267,7 +3219,7 @@
           "description": "地區既用中之路線代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteID"
           }
         },
         "TaiwanTripName": {
@@ -3287,7 +3239,7 @@
           "description": "子路線唯一識別代碼，規則為 {業管機關代碼} + {SubRouteID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SubRouteUID"
           }
         },
         "SubRouteID": {
@@ -3295,7 +3247,7 @@
           "description": "地區既用中之子路線代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SubRouteID"
           }
         },
         "SubRouteName": {
@@ -3330,7 +3282,7 @@
           "description": "車輛目前所在站牌代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "CurrentStop"
           }
         },
         "DestinationStop": {
@@ -3338,7 +3290,7 @@
           "description": "車輛目的站牌代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "DestinationStop"
           }
         },
         "StopStatus": {
@@ -3408,7 +3360,7 @@
           "description": "路線唯一識別代碼，規則為 {業管機關代碼} + {RouteID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteUID"
           }
         },
         "RouteID": {
@@ -3416,7 +3368,7 @@
           "description": "地區既用中之路線代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteID"
           }
         },
         "HasSubRoutes": {
@@ -3431,9 +3383,7 @@
           "items": {
             "title": "String",
             "type": "string",
-            "xml": {
-              "name": "String"
-            }
+            "xml": {}
           },
           "xml": {
             "name": "List`1"
@@ -3455,7 +3405,7 @@
           "description": "業管單位代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityID"
           }
         },
         "ProviderID": {
@@ -3463,7 +3413,7 @@
           "description": "資料提供平台代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ProviderID"
           }
         },
         "SubRoutes": {
@@ -3499,7 +3449,7 @@
           "description": "起站中文名稱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "DepartureStopNameZh"
           }
         },
         "DepartureStopNameEn": {
@@ -3507,7 +3457,7 @@
           "description": "起站英文名稱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "DepartureStopNameEn"
           }
         },
         "DestinationStopNameZh": {
@@ -3515,7 +3465,7 @@
           "description": "終點站中文名稱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "DestinationStopNameZh"
           }
         },
         "DestinationStopNameEn": {
@@ -3523,7 +3473,7 @@
           "description": "終點站英文名稱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "DestinationStopNameEn"
           }
         },
         "TicketPriceDescriptionZh": {
@@ -3531,7 +3481,7 @@
           "description": "票價中文敘述",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "TicketPriceDescriptionZh"
           }
         },
         "TicketPriceDescriptionEn": {
@@ -3539,7 +3489,7 @@
           "description": "票價英文敘述",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "TicketPriceDescriptionEn"
           }
         },
         "FareBufferZoneDescriptionZh": {
@@ -3547,7 +3497,7 @@
           "description": "收費緩衝區中文敘述",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "FareBufferZoneDescriptionZh"
           }
         },
         "FareBufferZoneDescriptionEn": {
@@ -3555,7 +3505,7 @@
           "description": "收費緩衝區英文敘述",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "FareBufferZoneDescriptionEn"
           }
         },
         "RouteUrl": {
@@ -3563,7 +3513,7 @@
           "description": "路線資訊說明網址",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteUrl"
           }
         },
         "LiveBusUrl": {
@@ -3571,7 +3521,7 @@
           "description": "路線公車動態資訊網址",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "LiveBusUrl"
           }
         },
         "RouteMapImageUrl": {
@@ -3579,7 +3529,7 @@
           "description": "路線簡圖網址",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteMapImageUrl"
           }
         },
         "City": {
@@ -3587,7 +3537,7 @@
           "description": "路線權管所屬縣市(相當於市區公車API的City參數)[若為公路/國道客運路線則為空值]",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "City"
           }
         },
         "CityCode": {
@@ -3595,7 +3545,7 @@
           "description": "路線權管所屬縣市之代碼(國際ISO 3166-2 三碼城市代碼)[若為公路/國道客運路線則為空值]",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "CityCode"
           }
         },
         "UpdateTime": {
@@ -3628,7 +3578,7 @@
           "description": "路線唯一識別代碼，規則為 {業管機關代碼} + {RouteID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteUID"
           }
         },
         "RouteID": {
@@ -3636,7 +3586,7 @@
           "description": "地區既用中之路線代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteID"
           }
         },
         "TaiwanTripName": {
@@ -3656,7 +3606,7 @@
           "description": "子路線唯一識別代碼，規則為 {業管機關代碼} + {SubRouteID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SubRouteUID"
           }
         },
         "SubRouteID": {
@@ -3664,7 +3614,7 @@
           "description": "地區既用中之子路線代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SubRouteID"
           }
         },
         "SubRouteName": {
@@ -3739,7 +3689,7 @@
           "description": "路線唯一識別代碼，規則為 {業管機關代碼} + {RouteID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteUID"
           }
         },
         "RouteID": {
@@ -3747,7 +3697,7 @@
           "description": "地區既用中之路線代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteID"
           }
         },
         "TaiwanTripName": {
@@ -3772,7 +3722,7 @@
           "description": "子路線唯一識別代碼，規則為 {業管機關代碼} + {SubRouteID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SubRouteUID"
           }
         },
         "SubRouteID": {
@@ -3780,7 +3730,7 @@
           "description": "地區既用中之子路線代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SubRouteID"
           }
         },
         "SubRouteName": {
@@ -3846,7 +3796,7 @@
           "description": "站牌唯一識別代碼，規則為 {業管機關代碼} + {StopID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StopUID"
           }
         },
         "StopID": {
@@ -3854,7 +3804,7 @@
           "description": "地區既用中之站牌代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StopID"
           }
         },
         "StopName": {
@@ -3874,7 +3824,7 @@
           "description": "到站時間，格式為:HH:mm",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ArrivalTime"
           }
         },
         "DepartureTime": {
@@ -3882,7 +3832,7 @@
           "description": "離站時間，格式為:HH:mm",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "DepartureTime"
           }
         }
       },
@@ -3907,7 +3857,7 @@
           "description": "附屬路線唯一識別代碼，規則為 {業管機關簡碼} + {SubRouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SubRouteUID"
           }
         },
         "SubRouteID": {
@@ -3915,7 +3865,7 @@
           "description": "地區既用中之附屬路線代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SubRouteID"
           }
         },
         "OperatorIDs": {
@@ -3925,9 +3875,7 @@
           "items": {
             "title": "String",
             "type": "string",
-            "xml": {
-              "name": "String"
-            }
+            "xml": {}
           },
           "xml": {
             "name": "List`1"
@@ -3950,7 +3898,7 @@
           "description": "車頭描述",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Headsign"
           }
         },
         "HeadsignEn": {
@@ -3958,7 +3906,7 @@
           "description": "車頭英文描述",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "HeadsignEn"
           }
         },
         "Direction": {
@@ -3971,7 +3919,7 @@
           "description": "平日第一班發車時間",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "FirstBusTime"
           }
         },
         "LastBusTime": {
@@ -3979,7 +3927,7 @@
           "description": "平日返程第一班發車時間",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "LastBusTime"
           }
         },
         "HolidayFirstBusTime": {
@@ -3987,7 +3935,7 @@
           "description": "假日去程第一班發車時間",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "HolidayFirstBusTime"
           }
         },
         "HolidayLastBusTime": {
@@ -3995,7 +3943,7 @@
           "description": "假日返程第一班發車時間",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "HolidayLastBusTime"
           }
         }
       },
@@ -4020,7 +3968,7 @@
           "description": "最新消息原單位發布代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "NewsID"
           }
         },
         "Language": {
@@ -4028,7 +3976,7 @@
           "description": "語系",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Language"
           }
         },
         "NewsCategory": {
@@ -4036,7 +3984,7 @@
           "description": "消息類別",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "NewsCategory"
           }
         },
         "Title": {
@@ -4044,7 +3992,7 @@
           "description": "消息標題",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Title"
           }
         },
         "Description": {
@@ -4052,7 +4000,7 @@
           "description": "內容描述",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Description"
           }
         },
         "PublishTime": {
@@ -4101,7 +4049,7 @@
           "description": "路線唯一識別代碼，規則為 {業管機關簡碼} + {RouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteUID"
           }
         },
         "RouteID": {
@@ -4109,7 +4057,7 @@
           "description": "路線代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteID"
           }
         },
         "SubRouteUID": {
@@ -4117,7 +4065,7 @@
           "description": "附屬路線唯一識別代碼，規則為 {業管機關簡碼} + {SubRouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SubRouteUID"
           }
         },
         "SubRouteID": {
@@ -4125,7 +4073,7 @@
           "description": "附屬路線代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SubRouteID"
           }
         },
         "TravelTimes": {
@@ -4173,7 +4121,7 @@
           "description": "起站站牌代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "FromStopID"
           }
         },
         "ToStopID": {
@@ -4181,7 +4129,7 @@
           "description": "迄站站牌代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ToStopID"
           }
         },
         "Distance": {
@@ -4225,7 +4173,7 @@
           "description": "路線唯一識別代碼，規則為 {業管機關簡碼} + {RouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteUID"
           }
         },
         "RouteID": {
@@ -4233,7 +4181,7 @@
           "description": "地區既用中之路線代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteID"
           }
         },
         "TaiwanTripName": {
@@ -4258,7 +4206,7 @@
           "description": "well-known text，為路線軌跡資料",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Geometry"
           }
         },
         "SrcUpdateTime": {
@@ -4290,7 +4238,7 @@
           "description": "班次代碼，為無意義之編碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "TripID"
           }
         },
         "ServiceDay": {
@@ -4341,7 +4289,7 @@
           "description": "營運起始日(格式: yyyy-MM-dd)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StartDate"
           }
         },
         "EndDate": {
@@ -4349,7 +4297,7 @@
           "description": "營運結束日(格式: yyyy-MM-dd)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "EndDate"
           }
         }
       },
@@ -4372,7 +4320,7 @@
           "description": "旅館民宿代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "HotelID"
           }
         },
         "HotelName": {
@@ -4380,7 +4328,7 @@
           "description": "旅館民宿名稱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "HotelName"
           }
         },
         "Description": {
@@ -4388,7 +4336,7 @@
           "description": "旅館民宿簡述",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Description"
           }
         },
         "Grade": {
@@ -4396,7 +4344,7 @@
           "description": "觀光旅館星級",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Grade"
           }
         },
         "Address": {
@@ -4404,7 +4352,7 @@
           "description": "旅館民宿地址",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Address"
           }
         },
         "ZipCode": {
@@ -4412,7 +4360,7 @@
           "description": "郵遞區號",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ZipCode"
           }
         },
         "Phone": {
@@ -4420,7 +4368,7 @@
           "description": "旅館民宿電話",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Phone"
           }
         },
         "Fax": {
@@ -4428,7 +4376,7 @@
           "description": "旅館民宿傳真",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Fax"
           }
         },
         "WebsiteUrl": {
@@ -4436,7 +4384,7 @@
           "description": "旅館民宿網站網址",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "WebsiteUrl"
           }
         },
         "Picture": {
@@ -4468,7 +4416,7 @@
           "description": "旅館民宿分類",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Class"
           }
         },
         "MapUrl": {
@@ -4476,7 +4424,7 @@
           "description": "旅館民宿地點簡圖連結網址",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "MapUrl"
           }
         },
         "Spec": {
@@ -4484,7 +4432,7 @@
           "description": "房型、價目及數量說明",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Spec"
           }
         },
         "ServiceInfo": {
@@ -4492,7 +4440,7 @@
           "description": "服務內容介紹",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ServiceInfo"
           }
         },
         "ParkingInfo": {
@@ -4500,7 +4448,7 @@
           "description": "停車資訊",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ParkingInfo"
           }
         },
         "City": {
@@ -4508,7 +4456,7 @@
           "description": "所屬縣市",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "City"
           }
         },
         "SrcUpdateTime": {
@@ -4543,7 +4491,7 @@
           "description": "餐飲店家代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RestaurantID"
           }
         },
         "RestaurantName": {
@@ -4551,7 +4499,7 @@
           "description": "餐飲店家名稱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RestaurantName"
           }
         },
         "Description": {
@@ -4559,7 +4507,7 @@
           "description": "店家簡述",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Description"
           }
         },
         "Address": {
@@ -4567,7 +4515,7 @@
           "description": "店家地址",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Address"
           }
         },
         "ZipCode": {
@@ -4575,7 +4523,7 @@
           "description": "郵遞區號",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ZipCode"
           }
         },
         "Phone": {
@@ -4583,7 +4531,7 @@
           "description": "預約電話",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Phone"
           }
         },
         "OpenTime": {
@@ -4591,7 +4539,7 @@
           "description": "營業時間",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OpenTime"
           }
         },
         "WebsiteUrl": {
@@ -4599,7 +4547,7 @@
           "description": "店家網站網址",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "WebsiteUrl"
           }
         },
         "Picture": {
@@ -4631,7 +4579,7 @@
           "description": "店家分類",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Class"
           }
         },
         "MapUrl": {
@@ -4639,7 +4587,7 @@
           "description": "店家地圖/簡圖介紹網址",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "MapUrl"
           }
         },
         "ParkingInfo": {
@@ -4647,7 +4595,7 @@
           "description": "停車資訊",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ParkingInfo"
           }
         },
         "City": {
@@ -4655,7 +4603,7 @@
           "description": "所屬縣市",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "City"
           }
         },
         "SrcUpdateTime": {
@@ -4689,7 +4637,7 @@
           "description": "營運業者代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorID"
           }
         },
         "OperatorName": {
@@ -4709,7 +4657,7 @@
           "description": "營運業者簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorCode"
           }
         },
         "OperatorNo": {
@@ -4717,7 +4665,7 @@
           "description": "營運業者編號[交通部票證資料系統定義]",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorNo"
           }
         }
       },
@@ -4740,7 +4688,7 @@
           "description": "景點代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ScenicSpotID"
           }
         },
         "ScenicSpotName": {
@@ -4748,7 +4696,7 @@
           "description": "景點名稱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ScenicSpotName"
           }
         },
         "DescriptionDetail": {
@@ -4756,7 +4704,7 @@
           "description": "景點特色詳細說明",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "DescriptionDetail"
           }
         },
         "Description": {
@@ -4764,7 +4712,7 @@
           "description": "景點特色精簡說明",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Description"
           }
         },
         "Phone": {
@@ -4772,7 +4720,7 @@
           "description": "景點服務電話",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Phone"
           }
         },
         "Address": {
@@ -4780,7 +4728,7 @@
           "description": "景點地址",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Address"
           }
         },
         "ZipCode": {
@@ -4788,7 +4736,7 @@
           "description": "郵遞區號",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ZipCode"
           }
         },
         "TravelInfo": {
@@ -4796,7 +4744,7 @@
           "description": "交通資訊",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "TravelInfo"
           }
         },
         "OpenTime": {
@@ -4804,7 +4752,7 @@
           "description": "開放時間",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OpenTime"
           }
         },
         "Picture": {
@@ -4824,7 +4772,7 @@
           "description": "景點地圖/簡圖介紹網址",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "MapUrl"
           }
         },
         "Position": {
@@ -4844,7 +4792,7 @@
           "description": "景點分類1",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Class1"
           }
         },
         "Class2": {
@@ -4852,7 +4800,7 @@
           "description": "景點分類2",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Class2"
           }
         },
         "Class3": {
@@ -4860,7 +4808,7 @@
           "description": "景點分類3",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Class3"
           }
         },
         "Level": {
@@ -4868,7 +4816,7 @@
           "description": "古蹟分級",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Level"
           }
         },
         "WebsiteUrl": {
@@ -4876,7 +4824,7 @@
           "description": "景點官方網站網址",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "WebsiteUrl"
           }
         },
         "ParkingInfo": {
@@ -4884,7 +4832,7 @@
           "description": "停車資訊",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ParkingInfo"
           }
         },
         "ParkingPosition": {
@@ -4904,7 +4852,7 @@
           "description": "票價資訊",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "TicketInfo"
           }
         },
         "Remarks": {
@@ -4912,7 +4860,7 @@
           "description": "警告及注意事項",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Remarks"
           }
         },
         "Keyword": {
@@ -4920,7 +4868,7 @@
           "description": "常用搜尋關鍵字",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Keyword"
           }
         },
         "City": {
@@ -4928,7 +4876,7 @@
           "description": "所屬縣市",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "City"
           }
         },
         "SrcUpdateTime": {
@@ -5019,9 +4967,7 @@
           "items": {
             "title": "String",
             "type": "string",
-            "xml": {
-              "name": "String"
-            }
+            "xml": {}
           },
           "xml": {
             "name": "List`1"
@@ -5049,7 +4995,7 @@
           "description": "特殊營運描述",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Description"
           }
         }
       },
@@ -5075,7 +5021,7 @@
           "description": "站牌唯一識別代碼，規則為 {業管機關簡碼} + {StopID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StopUID"
           }
         },
         "StopID": {
@@ -5083,7 +5029,7 @@
           "description": "地區既用中之站牌代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StopID"
           }
         },
         "StopName": {
@@ -5126,7 +5072,7 @@
           "description": "站牌所屬的站位ID",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StationID"
           }
         },
         "StationGroupID": {
@@ -5134,7 +5080,7 @@
           "description": "站牌所屬的組站位ID",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StationGroupID"
           }
         },
         "LocationCityCode": {
@@ -5142,7 +5088,7 @@
           "description": "站牌位置縣市之代碼(國際ISO 3166-2 三碼城市代碼)[若為公路/國道客運路線則為空值]",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "LocationCityCode"
           }
         }
       },
@@ -5160,7 +5106,7 @@
           "description": "照片連結網址1",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "PictureUrl1"
           }
         },
         "PictureDescription1": {
@@ -5168,7 +5114,7 @@
           "description": "照片說明1",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "PictureDescription1"
           }
         },
         "PictureUrl2": {
@@ -5176,7 +5122,7 @@
           "description": "照片連結網址2",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "PictureUrl2"
           }
         },
         "PictureDescription2": {
@@ -5184,7 +5130,7 @@
           "description": "照片說明2",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "PictureDescription2"
           }
         },
         "PictureUrl3": {
@@ -5192,7 +5138,7 @@
           "description": "照片連結網址3",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "PictureUrl3"
           }
         },
         "PictureDescription3": {
@@ -5200,7 +5146,7 @@
           "description": "照片說明3",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "PictureDescription3"
           }
         }
       },

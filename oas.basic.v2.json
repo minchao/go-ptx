@@ -14,7 +14,7 @@
     "/v2/Basic/Authority": {
       "get": {
         "tags": [
-          "Basic"
+          "Common"
         ],
         "summary": "取得業管機關資料",
         "operationId": "BasicApi_Authority_2160",
@@ -86,7 +86,7 @@
     "/v2/Basic/Provider": {
       "get": {
         "tags": [
-          "Basic"
+          "Common"
         ],
         "summary": "取得資料提供平台資料",
         "operationId": "BasicApi_Provider_2161",
@@ -158,7 +158,7 @@
     "/v2/Basic/Operator": {
       "get": {
         "tags": [
-          "Basic"
+          "Common"
         ],
         "summary": "取得營運業者資料",
         "operationId": "BasicApi_Operator_2162",
@@ -230,7 +230,7 @@
     "/v2/PTX/Web/News": {
       "get": {
         "tags": [
-          "Basic"
+          "Common"
         ],
         "summary": "取得PTX官網最新消息資料",
         "operationId": "WebSiteApi_News_2163",
@@ -365,7 +365,7 @@
           "description": "業管機關代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityID"
           }
         },
         "AuthorityName": {
@@ -385,7 +385,7 @@
           "description": "業管機關連絡電話",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityPhone"
           }
         },
         "AuthorityEmail": {
@@ -393,7 +393,7 @@
           "description": "業管機關電子信箱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityEmail"
           }
         },
         "AuthorityUrl": {
@@ -401,7 +401,7 @@
           "description": "業管機關網址鏈結",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityUrl"
           }
         },
         "AuthorityCode": {
@@ -409,7 +409,7 @@
           "description": "業管機關簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityCode"
           }
         },
         "UpdateTime": {
@@ -433,7 +433,7 @@
           "description": "中文繁體名稱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Zh_tw"
           }
         },
         "En": {
@@ -441,7 +441,7 @@
           "description": "英文名稱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "En"
           }
         }
       },
@@ -470,7 +470,7 @@
           "description": "語系",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Language"
           }
         },
         "Department": {
@@ -478,7 +478,7 @@
           "description": "發布單位",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Department"
           }
         },
         "Title": {
@@ -486,7 +486,7 @@
           "description": "消息標題",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Title"
           }
         },
         "NewsCategory": {
@@ -499,7 +499,7 @@
           "description": "內容描述",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Description"
           }
         },
         "NewsURL": {
@@ -507,7 +507,7 @@
           "description": "報導網站連結",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "NewsURL"
           }
         },
         "AttachmentURL": {
@@ -515,7 +515,7 @@
           "description": "相關網站連結",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AttachmentURL"
           }
         },
         "PublishTime": {
@@ -563,7 +563,7 @@
           "description": "資料提供平台代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ProviderID"
           }
         },
         "OperatorID": {
@@ -571,7 +571,7 @@
           "description": "營運業者代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorID"
           }
         },
         "OperatorName": {
@@ -591,7 +591,7 @@
           "description": "營運業者連絡電話",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorPhone"
           }
         },
         "OperatorEmail": {
@@ -599,7 +599,7 @@
           "description": "營運業者電子信箱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorEmail"
           }
         },
         "OperatorUrl": {
@@ -607,7 +607,7 @@
           "description": "營運業者網址鏈結",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorUrl"
           }
         },
         "ReservationUrl": {
@@ -615,7 +615,7 @@
           "description": "訂票網址鏈結",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ReservationUrl"
           }
         },
         "ReservationPhone": {
@@ -623,7 +623,7 @@
           "description": "訂票連絡電話",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ReservationPhone"
           }
         },
         "OperatorCode": {
@@ -631,7 +631,7 @@
           "description": "營運業者簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorCode"
           }
         },
         "AuthorityCode": {
@@ -639,7 +639,7 @@
           "description": "營運業者業管機關簡碼(對於於公路客運/國道客運而言為THB)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityCode"
           }
         },
         "SubAuthorityCode": {
@@ -647,7 +647,7 @@
           "description": "營運業者所屬業管子機關簡碼(對於公路客運/國道客運路線而言為區監理所如THB-VO10-1..等)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SubAuthorityCode"
           }
         },
         "OperatorNo": {
@@ -655,7 +655,7 @@
           "description": "營運業者編號[交通部票證資料系統定義]",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorNo"
           }
         },
         "UpdateTime": {
@@ -685,7 +685,7 @@
           "description": "資料提供平台代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ProviderID"
           }
         },
         "ProviderName": {
@@ -705,7 +705,7 @@
           "description": "資料提供平台連絡電話",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ProviderPhone"
           }
         },
         "ProviderEmail": {
@@ -713,7 +713,7 @@
           "description": "資料提供平台電子信箱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ProviderEmail"
           }
         },
         "ProviderUrl": {
@@ -721,7 +721,7 @@
           "description": "資料提供平台網址鏈結",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ProviderUrl"
           }
         },
         "UpdateTime": {
@@ -735,7 +735,7 @@
           "description": "資料提供平台簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ProviderCode"
           }
         }
       },
@@ -766,8 +766,8 @@
   ],
   "tags": [
     {
-      "name": "Basic",
-      "description": "基礎資料"
+      "name": "Common",
+      "description": "共通資料(公共運輸)"
     }
   ]
 }

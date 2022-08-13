@@ -29,7 +29,7 @@ type PTXServiceDTOBusSpecificationV3TimeTable struct {
 	// String
 	//
 	// 班次代碼，為無意義之編碼
-	TripID string `json:"TripID,omitempty" xml:"String,omitempty"`
+	TripID string `json:"TripID,omitempty" xml:"TripID,omitempty"`
 }
 
 // Validate validates this p t x service d t o bus specification v3 time table

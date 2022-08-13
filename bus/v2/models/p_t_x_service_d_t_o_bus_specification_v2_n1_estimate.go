@@ -26,7 +26,7 @@ type PTXServiceDTOBusSpecificationV2N1Estimate struct {
 	// String
 	//
 	// 車輛車牌號碼
-	PlateNumb string `json:"PlateNumb,omitempty" xml:"String,omitempty"`
+	PlateNumb string `json:"PlateNumb,omitempty" xml:"PlateNumb,omitempty"`
 
 	// Int32
 	//

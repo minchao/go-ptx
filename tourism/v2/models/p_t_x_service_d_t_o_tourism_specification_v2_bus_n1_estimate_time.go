@@ -22,12 +22,12 @@ type PTXServiceDTOTourismSpecificationV2BusN1EstimateTime struct {
 	// String
 	//
 	// 車輛目前所在站牌代碼
-	CurrentStop string `json:"CurrentStop,omitempty" xml:"String,omitempty"`
+	CurrentStop string `json:"CurrentStop,omitempty" xml:"CurrentStop,omitempty"`
 
 	// String
 	//
 	// 車輛目的站牌代碼
-	DestinationStop string `json:"DestinationStop,omitempty" xml:"String,omitempty"`
+	DestinationStop string `json:"DestinationStop,omitempty" xml:"DestinationStop,omitempty"`
 
 	// Int32
 	//
@@ -53,17 +53,17 @@ type PTXServiceDTOTourismSpecificationV2BusN1EstimateTime struct {
 	// String
 	//
 	// 車牌號碼
-	PlateNumb string `json:"PlateNumb,omitempty" xml:"String,omitempty"`
+	PlateNumb string `json:"PlateNumb,omitempty" xml:"PlateNumb,omitempty"`
 
 	// String
 	//
 	// 地區既用中之路線代碼(為原資料內碼)
-	RouteID string `json:"RouteID,omitempty" xml:"String,omitempty"`
+	RouteID string `json:"RouteID,omitempty" xml:"RouteID,omitempty"`
 
 	// String
 	//
 	// 路線唯一識別代碼，規則為 {業管機關代碼} + {RouteID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢
-	RouteUID string `json:"RouteUID,omitempty" xml:"String,omitempty"`
+	RouteUID string `json:"RouteUID,omitempty" xml:"RouteUID,omitempty"`
 
 	// 來源端平台接收時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Format: date-time
@@ -79,7 +79,7 @@ type PTXServiceDTOTourismSpecificationV2BusN1EstimateTime struct {
 	// String
 	//
 	// 地區既用中之站牌代碼(為原資料內碼)
-	StopID string `json:"StopID,omitempty" xml:"String,omitempty"`
+	StopID string `json:"StopID,omitempty" xml:"StopID,omitempty"`
 
 	// NameType
 	//
@@ -96,12 +96,12 @@ type PTXServiceDTOTourismSpecificationV2BusN1EstimateTime struct {
 	// String
 	//
 	// 站牌唯一識別代碼，規則為 {業管機關代碼} + {StopID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢
-	StopUID string `json:"StopUID,omitempty" xml:"String,omitempty"`
+	StopUID string `json:"StopUID,omitempty" xml:"StopUID,omitempty"`
 
 	// String
 	//
 	// 地區既用中之子路線代碼(為原資料內碼)
-	SubRouteID string `json:"SubRouteID,omitempty" xml:"String,omitempty"`
+	SubRouteID string `json:"SubRouteID,omitempty" xml:"SubRouteID,omitempty"`
 
 	// NameType
 	//
@@ -113,7 +113,7 @@ type PTXServiceDTOTourismSpecificationV2BusN1EstimateTime struct {
 	// String
 	//
 	// 子路線唯一識別代碼，規則為 {業管機關代碼} + {SubRouteID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢
-	SubRouteUID string `json:"SubRouteUID,omitempty" xml:"String,omitempty"`
+	SubRouteUID string `json:"SubRouteUID,omitempty" xml:"SubRouteUID,omitempty"`
 
 	// NameType
 	//

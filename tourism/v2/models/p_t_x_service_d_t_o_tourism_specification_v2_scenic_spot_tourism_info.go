@@ -24,62 +24,62 @@ type PTXServiceDTOTourismSpecificationV2ScenicSpotTourismInfo struct {
 	// String
 	//
 	// 景點地址
-	Address string `json:"Address,omitempty" xml:"String,omitempty"`
+	Address string `json:"Address,omitempty" xml:"Address,omitempty"`
 
 	// String
 	//
 	// 所屬縣市
-	City string `json:"City,omitempty" xml:"String,omitempty"`
+	City string `json:"City,omitempty" xml:"City,omitempty"`
 
 	// String
 	//
 	// 景點分類1
-	Class1 string `json:"Class1,omitempty" xml:"String,omitempty"`
+	Class1 string `json:"Class1,omitempty" xml:"Class1,omitempty"`
 
 	// String
 	//
 	// 景點分類2
-	Class2 string `json:"Class2,omitempty" xml:"String,omitempty"`
+	Class2 string `json:"Class2,omitempty" xml:"Class2,omitempty"`
 
 	// String
 	//
 	// 景點分類3
-	Class3 string `json:"Class3,omitempty" xml:"String,omitempty"`
+	Class3 string `json:"Class3,omitempty" xml:"Class3,omitempty"`
 
 	// String
 	//
 	// 景點特色精簡說明
-	Description string `json:"Description,omitempty" xml:"String,omitempty"`
+	Description string `json:"Description,omitempty" xml:"Description,omitempty"`
 
 	// String
 	//
 	// 景點特色詳細說明
-	DescriptionDetail string `json:"DescriptionDetail,omitempty" xml:"String,omitempty"`
+	DescriptionDetail string `json:"DescriptionDetail,omitempty" xml:"DescriptionDetail,omitempty"`
 
 	// String
 	//
 	// 常用搜尋關鍵字
-	Keyword string `json:"Keyword,omitempty" xml:"String,omitempty"`
+	Keyword string `json:"Keyword,omitempty" xml:"Keyword,omitempty"`
 
 	// String
 	//
 	// 古蹟分級
-	Level string `json:"Level,omitempty" xml:"String,omitempty"`
+	Level string `json:"Level,omitempty" xml:"Level,omitempty"`
 
 	// String
 	//
 	// 景點地圖/簡圖介紹網址
-	MapURL string `json:"MapUrl,omitempty" xml:"String,omitempty"`
+	MapURL string `json:"MapUrl,omitempty" xml:"MapUrl,omitempty"`
 
 	// String
 	//
 	// 開放時間
-	OpenTime string `json:"OpenTime,omitempty" xml:"String,omitempty"`
+	OpenTime string `json:"OpenTime,omitempty" xml:"OpenTime,omitempty"`
 
 	// String
 	//
 	// 停車資訊
-	ParkingInfo string `json:"ParkingInfo,omitempty" xml:"String,omitempty"`
+	ParkingInfo string `json:"ParkingInfo,omitempty" xml:"ParkingInfo,omitempty"`
 
 	// PointType
 	//
@@ -91,7 +91,7 @@ type PTXServiceDTOTourismSpecificationV2ScenicSpotTourismInfo struct {
 	// String
 	//
 	// 景點服務電話
-	Phone string `json:"Phone,omitempty" xml:"String,omitempty"`
+	Phone string `json:"Phone,omitempty" xml:"Phone,omitempty"`
 
 	// TourismPicture
 	//
@@ -110,18 +110,18 @@ type PTXServiceDTOTourismSpecificationV2ScenicSpotTourismInfo struct {
 	// String
 	//
 	// 警告及注意事項
-	Remarks string `json:"Remarks,omitempty" xml:"String,omitempty"`
+	Remarks string `json:"Remarks,omitempty" xml:"Remarks,omitempty"`
 
 	// String
 	//
 	// 景點代碼
 	// Required: true
-	ScenicSpotID *string `json:"ScenicSpotID" xml:"String"`
+	ScenicSpotID *string `json:"ScenicSpotID" xml:"ScenicSpotID"`
 
 	// String
 	//
 	// 景點名稱
-	ScenicSpotName string `json:"ScenicSpotName,omitempty" xml:"String,omitempty"`
+	ScenicSpotName string `json:"ScenicSpotName,omitempty" xml:"ScenicSpotName,omitempty"`
 
 	// DateTime
 	//
@@ -133,12 +133,12 @@ type PTXServiceDTOTourismSpecificationV2ScenicSpotTourismInfo struct {
 	// String
 	//
 	// 票價資訊
-	TicketInfo string `json:"TicketInfo,omitempty" xml:"String,omitempty"`
+	TicketInfo string `json:"TicketInfo,omitempty" xml:"TicketInfo,omitempty"`
 
 	// String
 	//
 	// 交通資訊
-	TravelInfo string `json:"TravelInfo,omitempty" xml:"String,omitempty"`
+	TravelInfo string `json:"TravelInfo,omitempty" xml:"TravelInfo,omitempty"`
 
 	// DateTime
 	//
@@ -150,12 +150,12 @@ type PTXServiceDTOTourismSpecificationV2ScenicSpotTourismInfo struct {
 	// String
 	//
 	// 景點官方網站網址
-	WebsiteURL string `json:"WebsiteUrl,omitempty" xml:"String,omitempty"`
+	WebsiteURL string `json:"WebsiteUrl,omitempty" xml:"WebsiteUrl,omitempty"`
 
 	// String
 	//
 	// 郵遞區號
-	ZipCode string `json:"ZipCode,omitempty" xml:"String,omitempty"`
+	ZipCode string `json:"ZipCode,omitempty" xml:"ZipCode,omitempty"`
 }
 
 // Validate validates this p t x service d t o tourism specification v2 scenic spot tourism info

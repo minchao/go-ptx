@@ -26,13 +26,13 @@ type PTXServiceDTORailSpecificationV2TRAStationOfLine struct {
 	//
 	// 路線代碼
 	// Required: true
-	LineID *string `json:"LineID" xml:"String"`
+	LineID *string `json:"LineID" xml:"LineID"`
 
 	// String
 	//
 	// 路線編號
 	// Required: true
-	LineNo *string `json:"LineNo" xml:"String"`
+	LineNo *string `json:"LineNo" xml:"LineNo"`
 
 	// Array
 	//

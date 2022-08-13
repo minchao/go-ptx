@@ -650,15 +650,14 @@ func (a *Client) AirAPIInternational2018(params *AirAPIInternational2018Params, 
 /*
   AirAPIMETAR2016 取得s 國內機場 氣象資訊觀測資料
 
-  取得[國內機場]氣象資訊觀測資料
-<br />目前提供之機場氣象觀測站代碼清單
-<br />RCSS:松山機場    RCKH:高雄機場
-<br />RCTP:桃園機場    RCMT:北竿機場
-<br />RCFG:南竿機場    RCBS:金門機場
-<br />RCQC:馬公機場    RCMQ:臺中機場
-<br />RCKU:嘉義機場    RCNN:臺南機場
-<br />RCYU:花蓮機場    RCFN:臺東機場
-<br />RCLY:蘭嶼機場    RCGI:綠島機場
+  ### 目前提供之機場氣象觀測站IATA代碼清單
+- TSA:松山機場 KHH:高雄機場
+- TPE:桃園機場 MFK:北竿機場
+- LZN:南竿機場 KNH:金門機場
+- MZG:澎湖機場 RMQ:臺中機場
+- CYI:嘉義機場 TNN:臺南機場
+- HUN:花蓮機場 TTT:臺東機場
+- KYD:蘭嶼機場 GNI:綠島機場
 */
 func (a *Client) AirAPIMETAR2016(params *AirAPIMETAR2016Params, authInfo runtime.ClientAuthInfoWriter, opts ...ClientOption) (*AirAPIMETAR2016OK, *AirAPIMETAR2016Status299, error) {
 	// TODO: Validate the params before sending

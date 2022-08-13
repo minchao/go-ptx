@@ -24,7 +24,7 @@ type PTXServiceDTOAirSpecificationV2Airport struct {
 	// String
 	//
 	// 機場地址
-	AirportAddress string `json:"AirportAddress,omitempty" xml:"String,omitempty"`
+	AirportAddress string `json:"AirportAddress,omitempty" xml:"AirportAddress,omitempty"`
 
 	// NameType
 	//
@@ -36,18 +36,18 @@ type PTXServiceDTOAirSpecificationV2Airport struct {
 	// String
 	//
 	// 機場IATA國際代碼
-	AirportIATA string `json:"AirportIATA,omitempty" xml:"String,omitempty"`
+	AirportIATA string `json:"AirportIATA,omitempty" xml:"AirportIATA,omitempty"`
 
 	// String
 	//
 	// 機場ICAO國際代碼
-	AirportICAO string `json:"AirportICAO,omitempty" xml:"String,omitempty"`
+	AirportICAO string `json:"AirportICAO,omitempty" xml:"AirportICAO,omitempty"`
 
 	// String
 	//
 	// 機場IATA國際代碼
 	// Required: true
-	AirportID *string `json:"AirportID" xml:"String"`
+	AirportID *string `json:"AirportID" xml:"AirportID"`
 
 	// NameType
 	//
@@ -59,12 +59,12 @@ type PTXServiceDTOAirSpecificationV2Airport struct {
 	// String
 	//
 	// 機場國籍
-	AirportNationality string `json:"AirportNationality,omitempty" xml:"String,omitempty"`
+	AirportNationality string `json:"AirportNationality,omitempty" xml:"AirportNationality,omitempty"`
 
 	// String
 	//
 	// 機場聯繫電話
-	AirportPhone string `json:"AirportPhone,omitempty" xml:"String,omitempty"`
+	AirportPhone string `json:"AirportPhone,omitempty" xml:"AirportPhone,omitempty"`
 
 	// PointType
 	//
@@ -76,7 +76,7 @@ type PTXServiceDTOAirSpecificationV2Airport struct {
 	// String
 	//
 	// 業管機關代碼(流水號)
-	AuthorityID string `json:"AuthorityID,omitempty" xml:"String,omitempty"`
+	AuthorityID string `json:"AuthorityID,omitempty" xml:"AuthorityID,omitempty"`
 
 	// DateTime
 	//

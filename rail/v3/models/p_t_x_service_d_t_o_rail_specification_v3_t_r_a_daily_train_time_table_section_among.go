@@ -23,13 +23,13 @@ type PTXServiceDTORailSpecificationV3TRADailyTrainTimeTableSectionAmong struct {
 	//
 	// 迄站車站代碼
 	// Required: true
-	EndStationID *string `json:"EndStationID" xml:"String"`
+	EndStationID *string `json:"EndStationID" xml:"EndStationID"`
 
 	// String
 	//
 	// 起站車站代碼
 	// Required: true
-	StartStationID *string `json:"StartStationID" xml:"String"`
+	StartStationID *string `json:"StartStationID" xml:"StartStationID"`
 }
 
 // Validate validates this p t x service d t o rail specification v3 t r a daily train time table section among

@@ -25,7 +25,7 @@ type PTXServiceDTORailSpecificationV3LiteTrainRoute struct {
 	//
 	// 營運路線迄站代號
 	// Required: true
-	EndStationID *string `json:"EndStationID" xml:"String"`
+	EndStationID *string `json:"EndStationID" xml:"EndStationID"`
 
 	// NameType
 	//
@@ -39,18 +39,18 @@ type PTXServiceDTORailSpecificationV3LiteTrainRoute struct {
 	//
 	// 營運路線所屬之路線代碼
 	// Required: true
-	LineID *string `json:"LineID" xml:"String"`
+	LineID *string `json:"LineID" xml:"LineID"`
 
 	// String
 	//
 	// 營運路線所屬之路線編號
-	LineNo string `json:"LineNo,omitempty" xml:"String,omitempty"`
+	LineNo string `json:"LineNo,omitempty" xml:"LineNo,omitempty"`
 
 	// String
 	//
 	// 營運業者代碼
 	// Required: true
-	OperatorCode *string `json:"OperatorCode" xml:"String"`
+	OperatorCode *string `json:"OperatorCode" xml:"OperatorCode"`
 
 	// 路線旅行長度
 	RouteDistance float32 `json:"RouteDistance,omitempty"`
@@ -59,7 +59,7 @@ type PTXServiceDTORailSpecificationV3LiteTrainRoute struct {
 	//
 	// 營運路線代碼
 	// Required: true
-	RouteID *string `json:"RouteID" xml:"String"`
+	RouteID *string `json:"RouteID" xml:"RouteID"`
 
 	// NameType
 	//
@@ -79,13 +79,13 @@ type PTXServiceDTORailSpecificationV3LiteTrainRoute struct {
 	//
 	// 營運路線來源網址
 	// Required: true
-	RouteURL *string `json:"RouteURL" xml:"String"`
+	RouteURL *string `json:"RouteURL" xml:"RouteURL"`
 
 	// String
 	//
 	// 營運路線起站代號
 	// Required: true
-	StartStationID *string `json:"StartStationID" xml:"String"`
+	StartStationID *string `json:"StartStationID" xml:"StartStationID"`
 
 	// NameType
 	//

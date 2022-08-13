@@ -23,7 +23,7 @@ type PTXServiceDTOBusSpecificationV3ScopeSubRoute struct {
 	// String
 	//
 	// 地區既用中之附屬班次代碼(為原資料內碼)
-	SubRouteID string `json:"SubRouteID,omitempty" xml:"String,omitempty"`
+	SubRouteID string `json:"SubRouteID,omitempty" xml:"SubRouteID,omitempty"`
 
 	// NameType
 	//

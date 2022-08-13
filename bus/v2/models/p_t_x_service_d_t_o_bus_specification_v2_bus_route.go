@@ -26,7 +26,7 @@ type PTXServiceDTOBusSpecificationV2BusRoute struct {
 	//
 	// 業管機關代碼
 	// Required: true
-	AuthorityID *string `json:"AuthorityID" xml:"String"`
+	AuthorityID *string `json:"AuthorityID" xml:"AuthorityID"`
 
 	// Int32
 	//
@@ -37,42 +37,42 @@ type PTXServiceDTOBusSpecificationV2BusRoute struct {
 	// String
 	//
 	// 路線權管所屬縣市(相當於市區公車API的City參數)[若為公路/國道客運路線則為空值]
-	City string `json:"City,omitempty" xml:"String,omitempty"`
+	City string `json:"City,omitempty" xml:"City,omitempty"`
 
 	// String
 	//
 	// 路線權管所屬縣市之代碼(國際ISO 3166-2 三碼城市代碼)[若為公路/國道客運路線則為空值]
-	CityCode string `json:"CityCode,omitempty" xml:"String,omitempty"`
+	CityCode string `json:"CityCode,omitempty" xml:"CityCode,omitempty"`
 
 	// String
 	//
 	// 起站英文名稱
-	DepartureStopNameEn string `json:"DepartureStopNameEn,omitempty" xml:"String,omitempty"`
+	DepartureStopNameEn string `json:"DepartureStopNameEn,omitempty" xml:"DepartureStopNameEn,omitempty"`
 
 	// String
 	//
 	// 起站中文名稱
-	DepartureStopNameZh string `json:"DepartureStopNameZh,omitempty" xml:"String,omitempty"`
+	DepartureStopNameZh string `json:"DepartureStopNameZh,omitempty" xml:"DepartureStopNameZh,omitempty"`
 
 	// String
 	//
 	// 終點站英文名稱
-	DestinationStopNameEn string `json:"DestinationStopNameEn,omitempty" xml:"String,omitempty"`
+	DestinationStopNameEn string `json:"DestinationStopNameEn,omitempty" xml:"DestinationStopNameEn,omitempty"`
 
 	// String
 	//
 	// 終點站中文名稱
-	DestinationStopNameZh string `json:"DestinationStopNameZh,omitempty" xml:"String,omitempty"`
+	DestinationStopNameZh string `json:"DestinationStopNameZh,omitempty" xml:"DestinationStopNameZh,omitempty"`
 
 	// String
 	//
 	// 收費緩衝區英文敘述
-	FareBufferZoneDescriptionEn string `json:"FareBufferZoneDescriptionEn,omitempty" xml:"String,omitempty"`
+	FareBufferZoneDescriptionEn string `json:"FareBufferZoneDescriptionEn,omitempty" xml:"FareBufferZoneDescriptionEn,omitempty"`
 
 	// String
 	//
 	// 收費緩衝區中文敘述
-	FareBufferZoneDescriptionZh string `json:"FareBufferZoneDescriptionZh,omitempty" xml:"String,omitempty"`
+	FareBufferZoneDescriptionZh string `json:"FareBufferZoneDescriptionZh,omitempty" xml:"FareBufferZoneDescriptionZh,omitempty"`
 
 	// Boolean
 	//
@@ -90,18 +90,18 @@ type PTXServiceDTOBusSpecificationV2BusRoute struct {
 	//
 	// 資料提供平台代碼
 	// Required: true
-	ProviderID *string `json:"ProviderID" xml:"String"`
+	ProviderID *string `json:"ProviderID" xml:"ProviderID"`
 
 	// String
 	//
 	// 地區既用中之路線代碼(為原資料內碼)
 	// Required: true
-	RouteID *string `json:"RouteID" xml:"String"`
+	RouteID *string `json:"RouteID" xml:"RouteID"`
 
 	// String
 	//
 	// 路線簡圖網址
-	RouteMapImageURL string `json:"RouteMapImageUrl,omitempty" xml:"String,omitempty"`
+	RouteMapImageURL string `json:"RouteMapImageUrl,omitempty" xml:"RouteMapImageUrl,omitempty"`
 
 	// NameType
 	//
@@ -115,7 +115,7 @@ type PTXServiceDTOBusSpecificationV2BusRoute struct {
 	//
 	// 路線唯一識別代碼，規則為 {業管機關簡碼} + {RouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢
 	// Required: true
-	RouteUID *string `json:"RouteUID" xml:"String"`
+	RouteUID *string `json:"RouteUID" xml:"RouteUID"`
 
 	// Array
 	//
@@ -125,12 +125,12 @@ type PTXServiceDTOBusSpecificationV2BusRoute struct {
 	// String
 	//
 	// 票價英文敘述
-	TicketPriceDescriptionEn string `json:"TicketPriceDescriptionEn,omitempty" xml:"String,omitempty"`
+	TicketPriceDescriptionEn string `json:"TicketPriceDescriptionEn,omitempty" xml:"TicketPriceDescriptionEn,omitempty"`
 
 	// String
 	//
 	// 票價中文敘述
-	TicketPriceDescriptionZh string `json:"TicketPriceDescriptionZh,omitempty" xml:"String,omitempty"`
+	TicketPriceDescriptionZh string `json:"TicketPriceDescriptionZh,omitempty" xml:"TicketPriceDescriptionZh,omitempty"`
 
 	// DateTime
 	//

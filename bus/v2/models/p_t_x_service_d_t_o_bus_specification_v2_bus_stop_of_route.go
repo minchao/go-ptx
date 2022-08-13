@@ -25,12 +25,12 @@ type PTXServiceDTOBusSpecificationV2BusStopOfRoute struct {
 	// String
 	//
 	// 站牌權管所屬縣市(相當於市區公車API的City參數)[若為公路/國道客運路線則為空值]
-	City string `json:"City,omitempty" xml:"String,omitempty"`
+	City string `json:"City,omitempty" xml:"City,omitempty"`
 
 	// String
 	//
 	// 站牌權管所屬縣市之代碼(國際ISO 3166-2 三碼城市代碼)[若為公路/國道客運路線則為空值]
-	CityCode string `json:"CityCode,omitempty" xml:"String,omitempty"`
+	CityCode string `json:"CityCode,omitempty" xml:"CityCode,omitempty"`
 
 	// Int32
 	//
@@ -46,7 +46,7 @@ type PTXServiceDTOBusSpecificationV2BusStopOfRoute struct {
 	//
 	// 地區既用中之路線代碼(為原資料內碼)
 	// Required: true
-	RouteID *string `json:"RouteID" xml:"String"`
+	RouteID *string `json:"RouteID" xml:"RouteID"`
 
 	// NameType
 	//
@@ -60,7 +60,7 @@ type PTXServiceDTOBusSpecificationV2BusStopOfRoute struct {
 	//
 	// 路線唯一識別代碼，規則為 {業管機關簡碼} + {RouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢
 	// Required: true
-	RouteUID *string `json:"RouteUID" xml:"String"`
+	RouteUID *string `json:"RouteUID" xml:"RouteUID"`
 
 	// Array
 	//
@@ -72,7 +72,7 @@ type PTXServiceDTOBusSpecificationV2BusStopOfRoute struct {
 	//
 	// 地區既用中之附屬路線代碼(為原資料內碼)
 	// Required: true
-	SubRouteID *string `json:"SubRouteID" xml:"String"`
+	SubRouteID *string `json:"SubRouteID" xml:"SubRouteID"`
 
 	// NameType
 	//
@@ -86,7 +86,7 @@ type PTXServiceDTOBusSpecificationV2BusStopOfRoute struct {
 	//
 	// 附屬路線唯一識別代碼，規則為 {業管機關簡碼} + {SubRouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢
 	// Required: true
-	SubRouteUID *string `json:"SubRouteUID" xml:"String"`
+	SubRouteUID *string `json:"SubRouteUID" xml:"SubRouteUID"`
 
 	// DateTime
 	//

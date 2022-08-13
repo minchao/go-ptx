@@ -90,12 +90,6 @@ type CityBusAPIStop2036Params struct {
 	*/
 	DollarSkip *string
 
-	/* DollarSpatialFilter.
-
-	   空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)
-	*/
-	DollarSpatialFilter *string
-
 	/* DollarTop.
 
 	   取前幾筆
@@ -235,17 +229,6 @@ func (o *CityBusAPIStop2036Params) SetDollarSkip(dollarSkip *string) {
 	o.DollarSkip = dollarSkip
 }
 
-// WithDollarSpatialFilter adds the dollarSpatialFilter to the city bus Api stop 2036 params
-func (o *CityBusAPIStop2036Params) WithDollarSpatialFilter(dollarSpatialFilter *string) *CityBusAPIStop2036Params {
-	o.SetDollarSpatialFilter(dollarSpatialFilter)
-	return o
-}
-
-// SetDollarSpatialFilter adds the dollarSpatialFilter to the city bus Api stop 2036 params
-func (o *CityBusAPIStop2036Params) SetDollarSpatialFilter(dollarSpatialFilter *string) {
-	o.DollarSpatialFilter = dollarSpatialFilter
-}
-
 // WithDollarTop adds the dollarTop to the city bus Api stop 2036 params
 func (o *CityBusAPIStop2036Params) WithDollarTop(dollarTop *int64) *CityBusAPIStop2036Params {
 	o.SetDollarTop(dollarTop)
@@ -360,23 +343,6 @@ func (o *CityBusAPIStop2036Params) WriteToRequest(r runtime.ClientRequest, reg s
 		if qDollarSkip != "" {
 
 			if err := r.SetQueryParam("$skip", qDollarSkip); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.DollarSpatialFilter != nil {
-
-		// query param $spatialFilter
-		var qrDollarSpatialFilter string
-
-		if o.DollarSpatialFilter != nil {
-			qrDollarSpatialFilter = *o.DollarSpatialFilter
-		}
-		qDollarSpatialFilter := qrDollarSpatialFilter
-		if qDollarSpatialFilter != "" {
-
-			if err := r.SetQueryParam("$spatialFilter", qDollarSpatialFilter); err != nil {
 				return err
 			}
 		}

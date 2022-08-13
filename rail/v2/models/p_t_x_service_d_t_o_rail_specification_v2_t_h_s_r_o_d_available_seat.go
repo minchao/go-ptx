@@ -25,19 +25,19 @@ type PTXServiceDTORailSpecificationV2THSRODAvailableSeat struct {
 	//
 	// 商務席剩餘座位狀態
 	// Required: true
-	BusinessSeatStatus *string `json:"BusinessSeatStatus" xml:"String"`
+	BusinessSeatStatus *string `json:"BusinessSeatStatus" xml:"BusinessSeatStatus"`
 
 	// String
 	//
 	// 迄站車站簡碼(訂票系統用)
 	// Required: true
-	DestinationStationCode *string `json:"DestinationStationCode" xml:"String"`
+	DestinationStationCode *string `json:"DestinationStationCode" xml:"DestinationStationCode"`
 
 	// String
 	//
 	// 迄點車站代碼
 	// Required: true
-	DestinationStationID *string `json:"DestinationStationID" xml:"String"`
+	DestinationStationID *string `json:"DestinationStationID" xml:"DestinationStationID"`
 
 	// NameType
 	//
@@ -57,13 +57,13 @@ type PTXServiceDTORailSpecificationV2THSRODAvailableSeat struct {
 	//
 	// 起站車站簡碼(訂票系統用)
 	// Required: true
-	OriginStationCode *string `json:"OriginStationCode" xml:"String"`
+	OriginStationCode *string `json:"OriginStationCode" xml:"OriginStationCode"`
 
 	// String
 	//
 	// 起點車站代碼
 	// Required: true
-	OriginStationID *string `json:"OriginStationID" xml:"String"`
+	OriginStationID *string `json:"OriginStationID" xml:"OriginStationID"`
 
 	// NameType
 	//
@@ -77,13 +77,13 @@ type PTXServiceDTORailSpecificationV2THSRODAvailableSeat struct {
 	//
 	// 標準席剩餘座位狀態
 	// Required: true
-	StandardSeatStatus *string `json:"StandardSeatStatus" xml:"String"`
+	StandardSeatStatus *string `json:"StandardSeatStatus" xml:"StandardSeatStatus"`
 
 	// String
 	//
 	// 車次號碼
 	// Required: true
-	TrainNo *string `json:"TrainNo" xml:"String"`
+	TrainNo *string `json:"TrainNo" xml:"TrainNo"`
 }
 
 // Validate validates this p t x service d t o rail specification v2 t h s r o d available seat

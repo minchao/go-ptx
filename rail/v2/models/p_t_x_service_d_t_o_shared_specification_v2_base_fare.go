@@ -25,7 +25,7 @@ type PTXServiceDTOSharedSpecificationV2BaseFare struct {
 	// String
 	//
 	// 票種名稱
-	TicketType string `json:"TicketType,omitempty" xml:"String,omitempty"`
+	TicketType string `json:"TicketType,omitempty" xml:"TicketType,omitempty"`
 }
 
 // Validate validates this p t x service d t o shared specification v2 base fare

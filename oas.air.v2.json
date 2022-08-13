@@ -1086,7 +1086,7 @@
           "Air"
         ],
         "summary": "取得[國內機場]氣象資訊觀測資料",
-        "description": "取得[國內機場]氣象資訊觀測資料\r\n<br />目前提供之機場氣象觀測站代碼清單\r\n<br />RCSS:松山機場    RCKH:高雄機場\r\n<br />RCTP:桃園機場    RCMT:北竿機場\r\n<br />RCFG:南竿機場    RCBS:金門機場\r\n<br />RCQC:馬公機場    RCMQ:臺中機場\r\n<br />RCKU:嘉義機場    RCNN:臺南機場\r\n<br />RCYU:花蓮機場    RCFN:臺東機場\r\n<br />RCLY:蘭嶼機場    RCGI:綠島機場",
+        "description": "### 目前提供之機場氣象觀測站IATA代碼清單\r\n- TSA:松山機場 KHH:高雄機場\r\n- TPE:桃園機場 MFK:北竿機場\r\n- LZN:南竿機場 KNH:金門機場\r\n- MZG:澎湖機場 RMQ:臺中機場\r\n- CYI:嘉義機場 TNN:臺南機場\r\n- HUN:花蓮機場 TTT:臺東機場\r\n- KYD:蘭嶼機場 GNI:綠島機場",
         "operationId": "AirApi_METAR_2016",
         "produces": [
           "application/json",
@@ -1458,7 +1458,7 @@
           "description": "航空公司IATA國際代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AirlineID"
           }
         },
         "AirlineName": {
@@ -1490,7 +1490,7 @@
           "description": "航空公司IATA國際代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AirlineIATA"
           }
         },
         "AirlineICAO": {
@@ -1498,7 +1498,7 @@
           "description": "航空公司ICAO國際代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AirlineICAO"
           }
         },
         "AirlineEmail": {
@@ -1506,7 +1506,7 @@
           "description": "航空公司電子信箱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AirlineEmail"
           }
         },
         "AirlineAddress": {
@@ -1514,7 +1514,7 @@
           "description": "航空公司地址",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AirlineAddress"
           }
         },
         "AirlinePhone": {
@@ -1522,7 +1522,7 @@
           "description": "航空公司聯繫電話",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AirlinePhone"
           }
         },
         "AirlineNationality": {
@@ -1530,7 +1530,7 @@
           "description": "航空公司國籍",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AirlineNationality"
           }
         },
         "UpdateTime": {
@@ -1565,7 +1565,7 @@
           "description": "機場IATA國際代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AirportID"
           }
         },
         "AirportName": {
@@ -1585,7 +1585,7 @@
           "description": "機場IATA國際代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AirportIATA"
           }
         },
         "AirportICAO": {
@@ -1593,7 +1593,7 @@
           "description": "機場ICAO國際代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AirportICAO"
           }
         },
         "AirportPosition": {
@@ -1625,7 +1625,7 @@
           "description": "機場地址",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AirportAddress"
           }
         },
         "AirportPhone": {
@@ -1633,7 +1633,7 @@
           "description": "機場聯繫電話",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AirportPhone"
           }
         },
         "AirportNationality": {
@@ -1641,7 +1641,7 @@
           "description": "機場國籍",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AirportNationality"
           }
         },
         "AuthorityID": {
@@ -1649,7 +1649,7 @@
           "description": "業管機關代碼(流水號)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityID"
           }
         },
         "UpdateTime": {
@@ -1683,7 +1683,7 @@
           "description": "機場IATA國際代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AirportID"
           }
         },
         "FIDSDeparture": {
@@ -1733,7 +1733,7 @@
           "description": "航空公司IATA國際代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AirlineID"
           }
         },
         "FlightNumber": {
@@ -1741,7 +1741,7 @@
           "description": "航機班號(不包含航空公司的AirlineID，僅有班號數字)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "FlightNumber"
           }
         }
       },
@@ -1772,7 +1772,7 @@
           "description": "航機班號(不包含航空公司的AirlineID，僅有班號數字)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "FlightNumber"
           }
         },
         "AirRouteType": {
@@ -1785,7 +1785,7 @@
           "description": "航空公司IATA國際代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AirlineID"
           }
         },
         "DepartureAirportID": {
@@ -1793,7 +1793,7 @@
           "description": "起點機場IATA國際代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "DepartureAirportID"
           }
         },
         "ArrivalAirportID": {
@@ -1801,7 +1801,7 @@
           "description": "目的地機場IATA國際代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ArrivalAirportID"
           }
         },
         "ScheduleDepartureTime": {
@@ -1839,7 +1839,7 @@
           "description": "航班屬性狀態,為第三方觀點的狀態(資料來源:民航局)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "DepartureRemark"
           }
         },
         "DepartureRemarkEn": {
@@ -1847,7 +1847,7 @@
           "description": "航班屬性狀態(英文)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "DepartureRemarkEn"
           }
         },
         "ArrivalRemark": {
@@ -1855,7 +1855,7 @@
           "description": "航班屬性狀態,為該機場觀點的狀態",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ArrivalRemark"
           }
         },
         "ArrivalRemarkEn": {
@@ -1863,7 +1863,7 @@
           "description": "航班屬性狀態(英文)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ArrivalRemarkEn"
           }
         },
         "FlightStatus": {
@@ -1871,7 +1871,7 @@
           "description": "航班運行狀態,以航班的角度的狀態",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "FlightStatus"
           }
         },
         "FlightStatusEn": {
@@ -1879,7 +1879,7 @@
           "description": "航班運行狀態(英文)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "FlightStatusEn"
           }
         },
         "FlightStatusPC": {
@@ -1887,7 +1887,7 @@
           "description": "航班運行狀態百分比(國內線)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "FlightStatusPC"
           }
         },
         "FlightRemark": {
@@ -1895,7 +1895,7 @@
           "description": "航班屬性",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "FlightRemark"
           }
         },
         "ArrivalTerminal": {
@@ -1903,7 +1903,7 @@
           "description": "抵達航廈",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ArrivalTerminal"
           }
         },
         "DepartureTerminal": {
@@ -1911,7 +1911,7 @@
           "description": "出發航廈",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "DepartureTerminal"
           }
         },
         "ArrivalGate": {
@@ -1919,7 +1919,7 @@
           "description": "抵達登機門(僅客機提供)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ArrivalGate"
           }
         },
         "DepartureGate": {
@@ -1927,7 +1927,7 @@
           "description": "出發登機門(僅客機提供)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "DepartureGate"
           }
         },
         "ArrivalApron": {
@@ -1935,7 +1935,7 @@
           "description": "抵達停機坪(僅貨機提供)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ArrivalApron"
           }
         },
         "DepartureApron": {
@@ -1943,7 +1943,7 @@
           "description": "出發停機坪(僅貨機提供)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "DepartureApron"
           }
         },
         "CodeShare": {
@@ -1951,7 +1951,7 @@
           "description": "航班共用班號",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "CodeShare"
           }
         },
         "IsCargo": {
@@ -1964,7 +1964,7 @@
           "description": "航空器型號",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AcType"
           }
         },
         "BaggageClaim": {
@@ -1972,7 +1972,7 @@
           "description": "行李轉盤",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "BaggageClaim"
           }
         },
         "CheckCounter": {
@@ -1980,7 +1980,7 @@
           "description": "報到櫃檯",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "CheckCounter"
           }
         },
         "UpdateTime": {
@@ -2017,7 +2017,7 @@
           "description": "航機班號(不包含航空公司的AirlineID，僅有班號數字)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "FlightNumber"
           }
         },
         "AirRouteType": {
@@ -2030,7 +2030,7 @@
           "description": "航空公司IATA國際代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AirlineID"
           }
         },
         "DepartureAirportID": {
@@ -2038,7 +2038,7 @@
           "description": "起點機場IATA國際代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "DepartureAirportID"
           }
         },
         "ArrivalAirportID": {
@@ -2046,7 +2046,7 @@
           "description": "目的地機場IATA國際代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ArrivalAirportID"
           }
         },
         "ScheduleArrivalTime": {
@@ -2069,7 +2069,7 @@
           "description": "航班屬性狀態,為該機場觀點的狀態",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ArrivalRemark"
           }
         },
         "ArrivalRemarkEn": {
@@ -2077,7 +2077,7 @@
           "description": "航班屬性狀態(英文)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ArrivalRemarkEn"
           }
         },
         "Terminal": {
@@ -2085,7 +2085,7 @@
           "description": "航廈",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Terminal"
           }
         },
         "Gate": {
@@ -2093,7 +2093,7 @@
           "description": "登機門(僅客機提供)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Gate"
           }
         },
         "Apron": {
@@ -2101,7 +2101,7 @@
           "description": "停機坪(僅貨機提供)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Apron"
           }
         },
         "CodeShare": {
@@ -2109,7 +2109,7 @@
           "description": "航班共用班號",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "CodeShare"
           }
         },
         "IsCargo": {
@@ -2122,7 +2122,7 @@
           "description": "航空器型號",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AcType"
           }
         },
         "BaggageClaim": {
@@ -2130,7 +2130,7 @@
           "description": "行李轉盤(到站FIDS可能有「行李轉盤」資訊, 離站FIDS不會有, 貨機則無此資訊)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "BaggageClaim"
           }
         },
         "CheckCounter": {
@@ -2138,7 +2138,7 @@
           "description": "報到櫃檯(離站FIDS可能有「報到櫃台」資訊, 到站FIDS不會有, 貨機則無此資訊)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "CheckCounter"
           }
         },
         "UpdateTime": {
@@ -2175,7 +2175,7 @@
           "description": "航機班號(不包含航空公司的AirlineID，僅有班號數字)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "FlightNumber"
           }
         },
         "AirRouteType": {
@@ -2188,7 +2188,7 @@
           "description": "航空公司IATA國際代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AirlineID"
           }
         },
         "DepartureAirportID": {
@@ -2196,7 +2196,7 @@
           "description": "起點機場IATA國際代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "DepartureAirportID"
           }
         },
         "ArrivalAirportID": {
@@ -2204,7 +2204,7 @@
           "description": "目的地機場IATA國際代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ArrivalAirportID"
           }
         },
         "ScheduleDepartureTime": {
@@ -2227,7 +2227,7 @@
           "description": "航班屬性狀態, ,為該機場觀點的狀態",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "DepartureRemark"
           }
         },
         "DepartureRemarkEn": {
@@ -2235,7 +2235,7 @@
           "description": "航班屬性狀態(英文)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "DepartureRemarkEn"
           }
         },
         "Terminal": {
@@ -2243,7 +2243,7 @@
           "description": "航廈",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Terminal"
           }
         },
         "Gate": {
@@ -2251,7 +2251,7 @@
           "description": "登機門(僅客機提供)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Gate"
           }
         },
         "Apron": {
@@ -2259,7 +2259,7 @@
           "description": "停機坪(僅貨機提供)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Apron"
           }
         },
         "CodeShare": {
@@ -2267,7 +2267,7 @@
           "description": "航班共用班號",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "CodeShare"
           }
         },
         "IsCargo": {
@@ -2280,7 +2280,7 @@
           "description": "航空器型號",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AcType"
           }
         },
         "BaggageClaim": {
@@ -2288,7 +2288,7 @@
           "description": "行李轉盤(到站FIDS可能有「行李轉盤」資訊, 離站FIDS不會有, 貨機則無此資訊)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "BaggageClaim"
           }
         },
         "CheckCounter": {
@@ -2296,7 +2296,7 @@
           "description": "報到櫃檯(離站FIDS可能有「報到櫃台」資訊, 到站FIDS不會有, 貨機則無此資訊)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "CheckCounter"
           }
         },
         "UpdateTime": {
@@ -2339,7 +2339,7 @@
           "description": "航空公司IATA國際代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AirlineID"
           }
         },
         "ScheduleStartDate": {
@@ -2359,7 +2359,7 @@
           "description": "班機號碼(包含航空公司的AirlineID，結構為AirlineID加上3~4碼航機班號數字；若班號僅有兩碼，其結構會加上0補足三碼，\"AirlineID + 0 + 兩碼班號\")",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "FlightNumber"
           }
         },
         "DepartureAirportID": {
@@ -2367,7 +2367,7 @@
           "description": "起點機場IATA國際代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "DepartureAirportID"
           }
         },
         "DepartureTime": {
@@ -2375,7 +2375,7 @@
           "description": "起點機場出發時間 (格式: HH:mm 當地時間，跨日以+1 表示)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "DepartureTime"
           }
         },
         "CodeShare": {
@@ -2394,7 +2394,7 @@
           "description": "目的地機場IATA國際代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ArrivalAirportID"
           }
         },
         "ArrivalTime": {
@@ -2402,7 +2402,7 @@
           "description": "終點機場抵達時間 (格式: HH:mm 當地時間，跨日以+1 表示)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ArrivalTime"
           }
         },
         "Monday": {
@@ -2445,7 +2445,7 @@
           "description": "航廈",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Terminal"
           }
         },
         "UpdateTime": {
@@ -2492,7 +2492,7 @@
           "description": "機場代碼(IATA)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AirportID"
           }
         },
         "StationID": {
@@ -2500,7 +2500,7 @@
           "description": "機場氣象觀測站代碼(ICAO)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StationID"
           }
         },
         "CountryName": {
@@ -2562,7 +2562,7 @@
           "description": "機場天氣報告(METAR/SPECI)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "MetarText"
           }
         },
         "MetarTime": {
@@ -2570,7 +2570,7 @@
           "description": "機場天氣報告時間(地方時)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "MetarTime"
           }
         },
         "WindDirection": {
@@ -2578,7 +2578,7 @@
           "description": "風向(含單位)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "WindDirection"
           }
         },
         "WindSpeed": {
@@ -2586,7 +2586,7 @@
           "description": "風速(含單位)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "WindSpeed"
           }
         },
         "Visibility": {
@@ -2594,7 +2594,7 @@
           "description": "盛行能見度(含單位，9999以10公里以上表示)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Visibility"
           }
         },
         "Ceiling": {
@@ -2602,7 +2602,7 @@
           "description": "雲冪(含單位)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Ceiling"
           }
         },
         "Temperature": {
@@ -2610,7 +2610,7 @@
           "description": "溫度(含單位)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Temperature"
           }
         },
         "WeatherDescription": {
@@ -2646,7 +2646,7 @@
           "description": "中文繁體名稱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Zh_tw"
           }
         },
         "En": {
@@ -2654,7 +2654,7 @@
           "description": "英文名稱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "En"
           }
         }
       },
@@ -2682,7 +2682,7 @@
           "description": "地理空間編碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "GeoHash"
           }
         }
       },
@@ -2704,7 +2704,7 @@
           "description": "API服務代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ServiceID"
           }
         },
         "ServiceName": {
@@ -2712,7 +2712,7 @@
           "description": "API服務中文名稱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ServiceName"
           }
         },
         "Inbound": {
@@ -2761,7 +2761,7 @@
         },
         "Status": {
           "title": "Int32",
-          "description": "檢核結果狀態 : [0:'失敗',1:'成功']",
+          "description": "檢核結果狀態 : [0:'失敗',1:'成功',2:'資料清洗中']",
           "type": "integer"
         },
         "Reason": {
@@ -2769,7 +2769,7 @@
           "description": "檢核失敗原因",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Reason"
           }
         }
       },
@@ -2794,7 +2794,7 @@
         },
         "Status": {
           "title": "Int32",
-          "description": "檢核結果狀態 : [0:'失敗',1:'成功']",
+          "description": "檢核結果狀態 : [0:'失敗',1:'成功',2:'資料清洗中']",
           "type": "integer"
         },
         "Reason": {
@@ -2802,7 +2802,7 @@
           "description": "檢核失敗原因",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Reason"
           }
         }
       },

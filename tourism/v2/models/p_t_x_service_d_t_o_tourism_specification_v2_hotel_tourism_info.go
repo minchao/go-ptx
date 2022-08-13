@@ -24,58 +24,58 @@ type PTXServiceDTOTourismSpecificationV2HotelTourismInfo struct {
 	// String
 	//
 	// 旅館民宿地址
-	Address string `json:"Address,omitempty" xml:"String,omitempty"`
+	Address string `json:"Address,omitempty" xml:"Address,omitempty"`
 
 	// String
 	//
 	// 所屬縣市
-	City string `json:"City,omitempty" xml:"String,omitempty"`
+	City string `json:"City,omitempty" xml:"City,omitempty"`
 
 	// String
 	//
 	// 旅館民宿分類
-	Class string `json:"Class,omitempty" xml:"String,omitempty"`
+	Class string `json:"Class,omitempty" xml:"Class,omitempty"`
 
 	// String
 	//
 	// 旅館民宿簡述
-	Description string `json:"Description,omitempty" xml:"String,omitempty"`
+	Description string `json:"Description,omitempty" xml:"Description,omitempty"`
 
 	// String
 	//
 	// 旅館民宿傳真
-	Fax string `json:"Fax,omitempty" xml:"String,omitempty"`
+	Fax string `json:"Fax,omitempty" xml:"Fax,omitempty"`
 
 	// String
 	//
 	// 觀光旅館星級
-	Grade string `json:"Grade,omitempty" xml:"String,omitempty"`
+	Grade string `json:"Grade,omitempty" xml:"Grade,omitempty"`
 
 	// String
 	//
 	// 旅館民宿代碼
 	// Required: true
-	HotelID *string `json:"HotelID" xml:"String"`
+	HotelID *string `json:"HotelID" xml:"HotelID"`
 
 	// String
 	//
 	// 旅館民宿名稱
-	HotelName string `json:"HotelName,omitempty" xml:"String,omitempty"`
+	HotelName string `json:"HotelName,omitempty" xml:"HotelName,omitempty"`
 
 	// String
 	//
 	// 旅館民宿地點簡圖連結網址
-	MapURL string `json:"MapUrl,omitempty" xml:"String,omitempty"`
+	MapURL string `json:"MapUrl,omitempty" xml:"MapUrl,omitempty"`
 
 	// String
 	//
 	// 停車資訊
-	ParkingInfo string `json:"ParkingInfo,omitempty" xml:"String,omitempty"`
+	ParkingInfo string `json:"ParkingInfo,omitempty" xml:"ParkingInfo,omitempty"`
 
 	// String
 	//
 	// 旅館民宿電話
-	Phone string `json:"Phone,omitempty" xml:"String,omitempty"`
+	Phone string `json:"Phone,omitempty" xml:"Phone,omitempty"`
 
 	// TourismPicture
 	//
@@ -94,12 +94,12 @@ type PTXServiceDTOTourismSpecificationV2HotelTourismInfo struct {
 	// String
 	//
 	// 服務內容介紹
-	ServiceInfo string `json:"ServiceInfo,omitempty" xml:"String,omitempty"`
+	ServiceInfo string `json:"ServiceInfo,omitempty" xml:"ServiceInfo,omitempty"`
 
 	// String
 	//
 	// 房型、價目及數量說明
-	Spec string `json:"Spec,omitempty" xml:"String,omitempty"`
+	Spec string `json:"Spec,omitempty" xml:"Spec,omitempty"`
 
 	// DateTime
 	//
@@ -118,12 +118,12 @@ type PTXServiceDTOTourismSpecificationV2HotelTourismInfo struct {
 	// String
 	//
 	// 旅館民宿網站網址
-	WebsiteURL string `json:"WebsiteUrl,omitempty" xml:"String,omitempty"`
+	WebsiteURL string `json:"WebsiteUrl,omitempty" xml:"WebsiteUrl,omitempty"`
 
 	// String
 	//
 	// 郵遞區號
-	ZipCode string `json:"ZipCode,omitempty" xml:"String,omitempty"`
+	ZipCode string `json:"ZipCode,omitempty" xml:"ZipCode,omitempty"`
 }
 
 // Validate validates this p t x service d t o tourism specification v2 hotel tourism info

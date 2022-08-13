@@ -25,19 +25,19 @@ type PTXServiceDTORailSpecificationV2THSRStopStation struct {
 	//
 	// 商務席剩餘座位狀態 =  ['O: 尚有座位' or 'L: 座位有限' or 'X: 已無座位']
 	// Required: true
-	BusinessSeatStatus *string `json:"BusinessSeatStatus" xml:"String"`
+	BusinessSeatStatus *string `json:"BusinessSeatStatus" xml:"BusinessSeatStatus"`
 
 	// String
 	//
 	// 下一停靠站車站簡碼(訂票系統用)
 	// Required: true
-	NextStationCode *string `json:"NextStationCode" xml:"String"`
+	NextStationCode *string `json:"NextStationCode" xml:"NextStationCode"`
 
 	// String
 	//
 	// 下一停靠站車站代碼
 	// Required: true
-	NextStationID *string `json:"NextStationID" xml:"String"`
+	NextStationID *string `json:"NextStationID" xml:"NextStationID"`
 
 	// NameType
 	//
@@ -51,19 +51,19 @@ type PTXServiceDTORailSpecificationV2THSRStopStation struct {
 	//
 	// 標準席剩餘座位狀態 = ['O: 尚有座位' or 'L: 座位有限' or 'X: 已無座位']
 	// Required: true
-	StandardSeatStatus *string `json:"StandardSeatStatus" xml:"String"`
+	StandardSeatStatus *string `json:"StandardSeatStatus" xml:"StandardSeatStatus"`
 
 	// String
 	//
 	// 車站簡碼(訂票系統用)
 	// Required: true
-	StationCode *string `json:"StationCode" xml:"String"`
+	StationCode *string `json:"StationCode" xml:"StationCode"`
 
 	// String
 	//
 	// 車站代碼
 	// Required: true
-	StationID *string `json:"StationID" xml:"String"`
+	StationID *string `json:"StationID" xml:"StationID"`
 
 	// NameType
 	//

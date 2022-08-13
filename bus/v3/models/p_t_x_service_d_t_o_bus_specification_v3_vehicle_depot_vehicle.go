@@ -20,7 +20,7 @@ type PTXServiceDTOBusSpecificationV3VehicleDepotVehicle struct {
 	// String
 	//
 	// 車牌號碼
-	PlateNumb string `json:"PlateNumb,omitempty" xml:"String,omitempty"`
+	PlateNumb string `json:"PlateNumb,omitempty" xml:"PlateNumb,omitempty"`
 }
 
 // Validate validates this p t x service d t o bus specification v3 vehicle depot vehicle

@@ -25,13 +25,13 @@ type PTXServiceDTORailSpecificationV2THSRTrainDateList struct {
 	//
 	// 每日時刻表供應最終日期(格式: yyyy-MM-dd)
 	// Required: true
-	EndDate *string `json:"EndDate" xml:"String"`
+	EndDate *string `json:"EndDate" xml:"EndDate"`
 
 	// String
 	//
 	// 每日時刻表供應起始日期(格式: yyyy-MM-dd)
 	// Required: true
-	StartDate *string `json:"StartDate" xml:"String"`
+	StartDate *string `json:"StartDate" xml:"StartDate"`
 
 	// Array
 	//

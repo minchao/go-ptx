@@ -22,7 +22,7 @@ type PTXServiceDTOBusSpecificationV3RouteFareStageFare struct {
 
 	// Stage
 	//
-	// 訖點計費站
+	// 迄點計費站
 	// Required: true
 	DestinationStage struct {
 		PTXServiceDTOBusSpecificationV3RouteFareStageFareStage

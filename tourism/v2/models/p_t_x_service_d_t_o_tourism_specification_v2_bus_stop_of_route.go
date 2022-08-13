@@ -38,13 +38,13 @@ type PTXServiceDTOTourismSpecificationV2BusStopOfRoute struct {
 	//
 	// 地區既用中之路線代碼(為原資料內碼)
 	// Required: true
-	RouteID *string `json:"RouteID" xml:"String"`
+	RouteID *string `json:"RouteID" xml:"RouteID"`
 
 	// String
 	//
 	// 路線唯一識別代碼，規則為 {業管機關代碼} + {RouteID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢
 	// Required: true
-	RouteUID *string `json:"RouteUID" xml:"String"`
+	RouteUID *string `json:"RouteUID" xml:"RouteUID"`
 
 	// Array
 	//
@@ -56,7 +56,7 @@ type PTXServiceDTOTourismSpecificationV2BusStopOfRoute struct {
 	//
 	// 地區既用中之子路線代碼(為原資料內碼)
 	// Required: true
-	SubRouteID *string `json:"SubRouteID" xml:"String"`
+	SubRouteID *string `json:"SubRouteID" xml:"SubRouteID"`
 
 	// NameType
 	//
@@ -70,7 +70,7 @@ type PTXServiceDTOTourismSpecificationV2BusStopOfRoute struct {
 	//
 	// 子路線唯一識別代碼，規則為 {業管機關代碼} + {SubRouteID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢
 	// Required: true
-	SubRouteUID *string `json:"SubRouteUID" xml:"String"`
+	SubRouteUID *string `json:"SubRouteUID" xml:"SubRouteUID"`
 
 	// NameType
 	//

@@ -25,7 +25,7 @@ type PTXServiceDTORailSpecificationV2MetroSubClassTravelTime struct {
 	//
 	// 起站車站代號
 	// Required: true
-	FromStationID *string `json:"FromStationID" xml:"String"`
+	FromStationID *string `json:"FromStationID" xml:"FromStationID"`
 
 	// NameType
 	//
@@ -54,7 +54,7 @@ type PTXServiceDTORailSpecificationV2MetroSubClassTravelTime struct {
 	//
 	// 迄站車站代號
 	// Required: true
-	ToStationID *string `json:"ToStationID" xml:"String"`
+	ToStationID *string `json:"ToStationID" xml:"ToStationID"`
 
 	// NameType
 	//

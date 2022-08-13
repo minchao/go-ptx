@@ -20,12 +20,12 @@ type PTXServiceDTORailSpecificationV3TRATRAAlertListAlertScopeLine struct {
 	// String
 	//
 	// 實體路線代碼
-	LineID string `json:"LineID,omitempty" xml:"String,omitempty"`
+	LineID string `json:"LineID,omitempty" xml:"LineID,omitempty"`
 
 	// String
 	//
 	// 實體路線名稱
-	LineName string `json:"LineName,omitempty" xml:"String,omitempty"`
+	LineName string `json:"LineName,omitempty" xml:"LineName,omitempty"`
 }
 
 // Validate validates this p t x service d t o rail specification v3 t r a t r a alert list alert scope line

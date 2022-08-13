@@ -31,11 +31,11 @@ type PTXServiceDTOSharedSpecificationV3BaseOutbound struct {
 	// String
 	//
 	// 檢核失敗原因
-	Reason string `json:"Reason,omitempty" xml:"String,omitempty"`
+	Reason string `json:"Reason,omitempty" xml:"Reason,omitempty"`
 
 	// Int32
 	//
-	// 檢核結果狀態 : [0:'失敗',1:'成功']
+	// 檢核結果狀態 : [0:'失敗',1:'成功',2:'資料清洗中']
 	// Required: true
 	Status *int64 `json:"Status"`
 }

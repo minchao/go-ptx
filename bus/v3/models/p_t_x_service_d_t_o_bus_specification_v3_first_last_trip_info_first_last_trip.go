@@ -23,13 +23,13 @@ type PTXServiceDTOBusSpecificationV3FirstLastTripInfoFirstLastTrip struct {
 	//
 	// 頭班車發車時間(HH:mm)
 	// Required: true
-	FirstTripDepTime *string `json:"FirstTripDepTime" xml:"String"`
+	FirstTripDepTime *string `json:"FirstTripDepTime" xml:"FirstTripDepTime"`
 
 	// String
 	//
 	// 末班車發車時間(HH:mm)
 	// Required: true
-	LastTripDepTime *string `json:"LastTripDepTime" xml:"String"`
+	LastTripDepTime *string `json:"LastTripDepTime" xml:"LastTripDepTime"`
 
 	// ServiceDay
 	//

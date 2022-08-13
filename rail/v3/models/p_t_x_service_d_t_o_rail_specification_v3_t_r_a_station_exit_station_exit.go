@@ -37,7 +37,7 @@ type PTXServiceDTORailSpecificationV3TRAStationExitStationExit struct {
 	//
 	// 出入口所屬車站代碼
 	// Required: true
-	StationID *string `json:"StationID" xml:"String"`
+	StationID *string `json:"StationID" xml:"StationID"`
 
 	// NameType
 	//

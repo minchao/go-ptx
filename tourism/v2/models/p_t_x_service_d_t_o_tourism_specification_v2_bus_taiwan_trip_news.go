@@ -25,7 +25,7 @@ type PTXServiceDTOTourismSpecificationV2BusTaiwanTripNews struct {
 	//
 	// 內容描述
 	// Required: true
-	Description *string `json:"Description" xml:"String"`
+	Description *string `json:"Description" xml:"Description"`
 
 	// 結束時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Format: date-time
@@ -35,18 +35,18 @@ type PTXServiceDTOTourismSpecificationV2BusTaiwanTripNews struct {
 	//
 	// 語系
 	// Required: true
-	Language *string `json:"Language" xml:"String"`
+	Language *string `json:"Language" xml:"Language"`
 
 	// String
 	//
 	// 消息類別
-	NewsCategory string `json:"NewsCategory,omitempty" xml:"String,omitempty"`
+	NewsCategory string `json:"NewsCategory,omitempty" xml:"NewsCategory,omitempty"`
 
 	// String
 	//
 	// 最新消息原單位發布代碼
 	// Required: true
-	NewsID *string `json:"NewsID" xml:"String"`
+	NewsID *string `json:"NewsID" xml:"NewsID"`
 
 	// 消息公告日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Format: date-time
@@ -64,7 +64,7 @@ type PTXServiceDTOTourismSpecificationV2BusTaiwanTripNews struct {
 	//
 	// 消息標題
 	// Required: true
-	Title *string `json:"Title" xml:"String"`
+	Title *string `json:"Title" xml:"Title"`
 
 	// DateTime
 	//

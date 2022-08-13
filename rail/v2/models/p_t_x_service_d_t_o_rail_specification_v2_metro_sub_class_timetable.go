@@ -25,13 +25,13 @@ type PTXServiceDTORailSpecificationV2MetroSubClassTimetable struct {
 	//
 	// 到站時刻(hh:mm)
 	// Required: true
-	ArrivalTime *string `json:"ArrivalTime" xml:"String"`
+	ArrivalTime *string `json:"ArrivalTime" xml:"ArrivalTime"`
 
 	// String
 	//
 	// 發車時刻(hh:mm)
 	// Required: true
-	DepartureTime *string `json:"DepartureTime" xml:"String"`
+	DepartureTime *string `json:"DepartureTime" xml:"DepartureTime"`
 
 	// Int32
 	//
@@ -43,7 +43,7 @@ type PTXServiceDTORailSpecificationV2MetroSubClassTimetable struct {
 	//
 	// 車次號碼(捷運通常沒有TrainNo車次資訊)
 	// Required: true
-	TrainNo *string `json:"TrainNo" xml:"String"`
+	TrainNo *string `json:"TrainNo" xml:"TrainNo"`
 
 	// 車種(0:不分車種, 1:普通車, 2:直達車)
 	TrainType int32 `json:"TrainType,omitempty"`

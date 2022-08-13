@@ -36,7 +36,7 @@ type PTXAPIRailModelV2THSRAvailableSeatStatusWrapperPTXServiceDTORailSpecificati
 	// String
 	//
 	// 營運日說明(格式: yyyy-MM-dd)
-	TrainDate string `json:"TrainDate,omitempty" xml:"String,omitempty"`
+	TrainDate string `json:"TrainDate,omitempty" xml:"TrainDate,omitempty"`
 
 	// PTX平台更新日期時間(ISO8601格式:yyyy-MM-ddTHH:mm:sszzz)
 	// Format: date-time

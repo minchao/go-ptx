@@ -90,12 +90,6 @@ type CityBusAPIRealTimeByFrequencyUDP20461Params struct {
 	*/
 	DollarSkip *string
 
-	/* DollarSpatialFilter.
-
-	   空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)
-	*/
-	DollarSpatialFilter *string
-
 	/* DollarTop.
 
 	   取前幾筆
@@ -241,17 +235,6 @@ func (o *CityBusAPIRealTimeByFrequencyUDP20461Params) SetDollarSkip(dollarSkip *
 	o.DollarSkip = dollarSkip
 }
 
-// WithDollarSpatialFilter adds the dollarSpatialFilter to the city bus Api real time by frequency UDP 2046 1 params
-func (o *CityBusAPIRealTimeByFrequencyUDP20461Params) WithDollarSpatialFilter(dollarSpatialFilter *string) *CityBusAPIRealTimeByFrequencyUDP20461Params {
-	o.SetDollarSpatialFilter(dollarSpatialFilter)
-	return o
-}
-
-// SetDollarSpatialFilter adds the dollarSpatialFilter to the city bus Api real time by frequency UDP 2046 1 params
-func (o *CityBusAPIRealTimeByFrequencyUDP20461Params) SetDollarSpatialFilter(dollarSpatialFilter *string) {
-	o.DollarSpatialFilter = dollarSpatialFilter
-}
-
 // WithDollarTop adds the dollarTop to the city bus Api real time by frequency UDP 2046 1 params
 func (o *CityBusAPIRealTimeByFrequencyUDP20461Params) WithDollarTop(dollarTop *int64) *CityBusAPIRealTimeByFrequencyUDP20461Params {
 	o.SetDollarTop(dollarTop)
@@ -377,23 +360,6 @@ func (o *CityBusAPIRealTimeByFrequencyUDP20461Params) WriteToRequest(r runtime.C
 		if qDollarSkip != "" {
 
 			if err := r.SetQueryParam("$skip", qDollarSkip); err != nil {
-				return err
-			}
-		}
-	}
-
-	if o.DollarSpatialFilter != nil {
-
-		// query param $spatialFilter
-		var qrDollarSpatialFilter string
-
-		if o.DollarSpatialFilter != nil {
-			qrDollarSpatialFilter = *o.DollarSpatialFilter
-		}
-		qDollarSpatialFilter := qrDollarSpatialFilter
-		if qDollarSpatialFilter != "" {
-
-			if err := r.SetQueryParam("$spatialFilter", qDollarSpatialFilter); err != nil {
 				return err
 			}
 		}

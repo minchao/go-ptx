@@ -24,12 +24,12 @@ type PTXServiceDTORailSpecificationV3TRACommonSpecialDay struct {
 	// String
 	//
 	// 不連續特殊日期
-	Dates string `json:"Dates,omitempty" xml:"String,omitempty"`
+	Dates string `json:"Dates,omitempty" xml:"Dates,omitempty"`
 
 	// String
 	//
 	// 特殊營運描述
-	Description string `json:"Description,omitempty" xml:"String,omitempty"`
+	Description string `json:"Description,omitempty" xml:"Description,omitempty"`
 
 	// 結束日期
 	// Format: date-time

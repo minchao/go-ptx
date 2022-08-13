@@ -30,18 +30,18 @@ type PTXServiceDTORailSpecificationV3LiteTrainLine struct {
 	// String
 	//
 	// 路線顏色
-	LineColor string `json:"LineColor,omitempty" xml:"String,omitempty"`
+	LineColor string `json:"LineColor,omitempty" xml:"LineColor,omitempty"`
 
 	// String
 	//
 	// 路線群組
-	LineGroup string `json:"LineGroup,omitempty" xml:"String,omitempty"`
+	LineGroup string `json:"LineGroup,omitempty" xml:"LineGroup,omitempty"`
 
 	// String
 	//
 	// 路線代碼
 	// Required: true
-	LineID *string `json:"LineID" xml:"String"`
+	LineID *string `json:"LineID" xml:"LineID"`
 
 	// NameType
 	//
@@ -55,7 +55,7 @@ type PTXServiceDTORailSpecificationV3LiteTrainLine struct {
 	//
 	// 路線編號
 	// Required: true
-	LineNo *string `json:"LineNo" xml:"String"`
+	LineNo *string `json:"LineNo" xml:"LineNo"`
 
 	// NameType
 	//
@@ -68,7 +68,7 @@ type PTXServiceDTORailSpecificationV3LiteTrainLine struct {
 	// String
 	//
 	// 路線群組
-	LineURL string `json:"LineURL,omitempty" xml:"String,omitempty"`
+	LineURL string `json:"LineURL,omitempty" xml:"LineURL,omitempty"`
 }
 
 // Validate validates this p t x service d t o rail specification v3 lite train line

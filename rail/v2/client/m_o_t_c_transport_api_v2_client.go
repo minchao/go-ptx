@@ -10,8 +10,8 @@ import (
 	httptransport "github.com/go-openapi/runtime/client"
 	"github.com/go-openapi/strfmt"
 
+	"github.com/minchao/go-ptx/rail/v2/client/common"
 	"github.com/minchao/go-ptx/rail/v2/client/metro"
-	"github.com/minchao/go-ptx/rail/v2/client/rail_basic"
 	"github.com/minchao/go-ptx/rail/v2/client/t_h_s_r"
 	"github.com/minchao/go-ptx/rail/v2/client/t_r_a"
 )
@@ -58,8 +58,8 @@ func New(transport runtime.ClientTransport, formats strfmt.Registry) *MOTCTransp
 
 	cli := new(MOTCTransportAPIV2)
 	cli.Transport = transport
+	cli.Common = common.New(transport, formats)
 	cli.Metro = metro.New(transport, formats)
-	cli.RailBasic = rail_basic.New(transport, formats)
 	cli.Thsr = t_h_s_r.New(transport, formats)
 	cli.Tra = t_r_a.New(transport, formats)
 	return cli
@@ -106,9 +106,9 @@ func (cfg *TransportConfig) WithSchemes(schemes []string) *TransportConfig {
 
 // MOTCTransportAPIV2 is a client for m o t c transport API v2
 type MOTCTransportAPIV2 struct {
-	Metro metro.ClientService
+	Common common.ClientService
 
-	RailBasic rail_basic.ClientService
+	Metro metro.ClientService
 
 	Thsr t_h_s_r.ClientService
 
@@ -120,8 +120,8 @@ type MOTCTransportAPIV2 struct {
 // SetTransport changes the transport on the client and all its subresources
 func (c *MOTCTransportAPIV2) SetTransport(transport runtime.ClientTransport) {
 	c.Transport = transport
+	c.Common.SetTransport(transport)
 	c.Metro.SetTransport(transport)
-	c.RailBasic.SetTransport(transport)
 	c.Thsr.SetTransport(transport)
 	c.Tra.SetTransport(transport)
 }

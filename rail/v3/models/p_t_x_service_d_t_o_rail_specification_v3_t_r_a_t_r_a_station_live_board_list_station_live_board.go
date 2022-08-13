@@ -33,7 +33,7 @@ type PTXServiceDTORailSpecificationV3TRATRAStationLiveBoardListStationLiveBoard 
 	// String
 	//
 	// 終點站代碼
-	EndingStationID string `json:"EndingStationID,omitempty" xml:"String,omitempty"`
+	EndingStationID string `json:"EndingStationID,omitempty" xml:"EndingStationID,omitempty"`
 
 	// NameType
 	//
@@ -46,7 +46,7 @@ type PTXServiceDTORailSpecificationV3TRATRAStationLiveBoardListStationLiveBoard 
 	// String
 	//
 	// 停靠月台(00代表當時尚未確定停靠的月台，待確定好停靠的月台後，就會更新Platfrom。)
-	Platform string `json:"Platform,omitempty" xml:"String,omitempty"`
+	Platform string `json:"Platform,omitempty" xml:"Platform,omitempty"`
 
 	// Int32
 	//
@@ -56,18 +56,18 @@ type PTXServiceDTORailSpecificationV3TRATRAStationLiveBoardListStationLiveBoard 
 	// String
 	//
 	// 表訂到站時刻
-	ScheduleArrivalTime string `json:"ScheduleArrivalTime,omitempty" xml:"String,omitempty"`
+	ScheduleArrivalTime string `json:"ScheduleArrivalTime,omitempty" xml:"ScheduleArrivalTime,omitempty"`
 
 	// String
 	//
 	// 表定離站時刻
-	ScheduleDepartureTime string `json:"ScheduleDepartureTime,omitempty" xml:"String,omitempty"`
+	ScheduleDepartureTime string `json:"ScheduleDepartureTime,omitempty" xml:"ScheduleDepartureTime,omitempty"`
 
 	// String
 	//
 	// 車站代號
 	// Required: true
-	StationID *string `json:"StationID" xml:"String"`
+	StationID *string `json:"StationID" xml:"StationID"`
 
 	// NameType
 	//
@@ -81,17 +81,17 @@ type PTXServiceDTORailSpecificationV3TRATRAStationLiveBoardListStationLiveBoard 
 	//
 	// 車次代碼
 	// Required: true
-	TrainNo *string `json:"TrainNo" xml:"String"`
+	TrainNo *string `json:"TrainNo" xml:"TrainNo"`
 
 	// String
 	//
 	// 車種簡碼 = ['1: 太魯閣', '2: 普悠瑪', '3: 自強', '4: 莒光', '5: 復興', '6: 區間', '7: 普快', '10: 區間快']
-	TrainTypeCode string `json:"TrainTypeCode,omitempty" xml:"String,omitempty"`
+	TrainTypeCode string `json:"TrainTypeCode,omitempty" xml:"TrainTypeCode,omitempty"`
 
 	// String
 	//
 	// 車種代嗎
-	TrainTypeID string `json:"TrainTypeID,omitempty" xml:"String,omitempty"`
+	TrainTypeID string `json:"TrainTypeID,omitempty" xml:"TrainTypeID,omitempty"`
 
 	// NameType
 	//

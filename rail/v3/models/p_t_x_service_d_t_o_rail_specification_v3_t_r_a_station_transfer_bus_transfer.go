@@ -24,18 +24,18 @@ type PTXServiceDTORailSpecificationV3TRAStationTransferBusTransfer struct {
 	// String
 	//
 	// 轉乘描述
-	Description string `json:"Description,omitempty" xml:"String,omitempty"`
+	Description string `json:"Description,omitempty" xml:"Description,omitempty"`
 
 	// String
 	//
 	// 轉乘公車開往方向
 	// Required: true
-	Destination *string `json:"Destination" xml:"String"`
+	Destination *string `json:"Destination" xml:"Destination"`
 
 	// String
 	//
 	// 轉乘樓層
-	FloorLevel string `json:"FloorLevel,omitempty" xml:"String,omitempty"`
+	FloorLevel string `json:"FloorLevel,omitempty" xml:"FloorLevel,omitempty"`
 
 	// 是否為站內或站外轉乘
 	IsOnSiteTransfer bool `json:"IsOnSiteTransfer,omitempty"`
@@ -47,13 +47,13 @@ type PTXServiceDTORailSpecificationV3TRAStationTransferBusTransfer struct {
 	//
 	// 運具種類代碼
 	// Required: true
-	Mode *string `json:"Mode" xml:"String"`
+	Mode *string `json:"Mode" xml:"Mode"`
 
 	// String
 	//
 	// 公車營運業者簡碼
 	// Required: true
-	OperatorCode *string `json:"OperatorCode" xml:"String"`
+	OperatorCode *string `json:"OperatorCode" xml:"OperatorCode"`
 
 	// NameType
 	//
@@ -66,13 +66,13 @@ type PTXServiceDTORailSpecificationV3TRAStationTransferBusTransfer struct {
 	// String
 	//
 	// 轉乘公車所在月台
-	Platform string `json:"Platform,omitempty" xml:"String,omitempty"`
+	Platform string `json:"Platform,omitempty" xml:"Platform,omitempty"`
 
 	// String
 	//
 	// 轉乘公車路線代碼
 	// Required: true
-	RouteID *string `json:"RouteID" xml:"String"`
+	RouteID *string `json:"RouteID" xml:"RouteID"`
 
 	// NameType
 	//
@@ -86,7 +86,7 @@ type PTXServiceDTORailSpecificationV3TRAStationTransferBusTransfer struct {
 	//
 	// 轉乘公車站牌代碼
 	// Required: true
-	StopID *string `json:"StopID" xml:"String"`
+	StopID *string `json:"StopID" xml:"StopID"`
 
 	// NameType
 	//

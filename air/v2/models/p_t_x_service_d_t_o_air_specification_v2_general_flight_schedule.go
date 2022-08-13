@@ -26,19 +26,19 @@ type PTXServiceDTOAirSpecificationV2GeneralFlightSchedule struct {
 	//
 	// 航空公司IATA國際代碼
 	// Required: true
-	AirlineID *string `json:"AirlineID" xml:"String"`
+	AirlineID *string `json:"AirlineID" xml:"AirlineID"`
 
 	// String
 	//
 	// 目的地機場IATA國際代碼
 	// Required: true
-	ArrivalAirportID *string `json:"ArrivalAirportID" xml:"String"`
+	ArrivalAirportID *string `json:"ArrivalAirportID" xml:"ArrivalAirportID"`
 
 	// String
 	//
 	// 終點機場抵達時間 (格式: HH:mm 當地時間，跨日以+1 表示)
 	// Required: true
-	ArrivalTime *string `json:"ArrivalTime" xml:"String"`
+	ArrivalTime *string `json:"ArrivalTime" xml:"ArrivalTime"`
 
 	// Array
 	//
@@ -49,19 +49,19 @@ type PTXServiceDTOAirSpecificationV2GeneralFlightSchedule struct {
 	//
 	// 起點機場IATA國際代碼
 	// Required: true
-	DepartureAirportID *string `json:"DepartureAirportID" xml:"String"`
+	DepartureAirportID *string `json:"DepartureAirportID" xml:"DepartureAirportID"`
 
 	// String
 	//
 	// 起點機場出發時間 (格式: HH:mm 當地時間，跨日以+1 表示)
 	// Required: true
-	DepartureTime *string `json:"DepartureTime" xml:"String"`
+	DepartureTime *string `json:"DepartureTime" xml:"DepartureTime"`
 
 	// String
 	//
 	// 班機號碼(包含航空公司的AirlineID，結構為AirlineID加上3~4碼航機班號數字；若班號僅有兩碼，其結構會加上0補足三碼，"AirlineID + 0 + 兩碼班號")
 	// Required: true
-	FlightNumber *string `json:"FlightNumber" xml:"String"`
+	FlightNumber *string `json:"FlightNumber" xml:"FlightNumber"`
 
 	// Boolean
 	//
@@ -104,7 +104,7 @@ type PTXServiceDTOAirSpecificationV2GeneralFlightSchedule struct {
 	// String
 	//
 	// 航廈
-	Terminal string `json:"Terminal,omitempty" xml:"String,omitempty"`
+	Terminal string `json:"Terminal,omitempty" xml:"Terminal,omitempty"`
 
 	// Boolean
 	//

@@ -44,13 +44,13 @@ type PTXServiceDTORailSpecificationV3TRAStationTransferTransfer struct {
 	//
 	// 出口代碼
 	// Required: true
-	ExitID *string `json:"ExitID" xml:"String"`
+	ExitID *string `json:"ExitID" xml:"ExitID"`
 
 	// String
 	//
 	// 出口名稱
 	// Required: true
-	ExitName *string `json:"ExitName" xml:"String"`
+	ExitName *string `json:"ExitName" xml:"ExitName"`
 
 	// Array
 	//

@@ -32,12 +32,12 @@ type PTXServiceDTORailSpecificationV2MetroFrequency struct {
 	//
 	// 營運路線所屬之路線代碼
 	// Required: true
-	LineID *string `json:"LineID" xml:"String"`
+	LineID *string `json:"LineID" xml:"LineID"`
 
 	// String
 	//
 	// 營運路線所屬之路線編號
-	LineNo string `json:"LineNo,omitempty" xml:"String,omitempty"`
+	LineNo string `json:"LineNo,omitempty" xml:"LineNo,omitempty"`
 
 	// OperationTime
 	//
@@ -51,7 +51,7 @@ type PTXServiceDTORailSpecificationV2MetroFrequency struct {
 	//
 	// 營運路線代碼
 	// Required: true
-	RouteID *string `json:"RouteID" xml:"String"`
+	RouteID *string `json:"RouteID" xml:"RouteID"`
 
 	// ServiceDay
 	//

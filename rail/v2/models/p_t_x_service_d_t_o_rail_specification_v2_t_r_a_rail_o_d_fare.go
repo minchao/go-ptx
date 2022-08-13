@@ -17,7 +17,7 @@ import (
 
 // PTXServiceDTORailSpecificationV2TRARailODFare RailODFare
 //
-// 臺鐵起訖站票價資料
+// 臺鐵起迄站票價資料
 //
 // swagger:model PTX.Service.DTO.Rail.Specification.V2.TRA.RailODFare
 type PTXServiceDTORailSpecificationV2TRARailODFare struct {
@@ -26,7 +26,7 @@ type PTXServiceDTORailSpecificationV2TRARailODFare struct {
 	//
 	// 迄點車站代碼
 	// Required: true
-	DestinationStationID *string `json:"DestinationStationID" xml:"String"`
+	DestinationStationID *string `json:"DestinationStationID" xml:"DestinationStationID"`
 
 	// NameType
 	//
@@ -52,7 +52,7 @@ type PTXServiceDTORailSpecificationV2TRARailODFare struct {
 	//
 	// 起點車站代碼
 	// Required: true
-	OriginStationID *string `json:"OriginStationID" xml:"String"`
+	OriginStationID *string `json:"OriginStationID" xml:"OriginStationID"`
 
 	// NameType
 	//

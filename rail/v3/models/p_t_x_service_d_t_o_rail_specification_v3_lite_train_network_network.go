@@ -32,7 +32,7 @@ type PTXServiceDTORailSpecificationV3LiteTrainNetworkNetwork struct {
 	//
 	// 路網代碼
 	// Required: true
-	NetworkID *string `json:"NetworkID" xml:"String"`
+	NetworkID *string `json:"NetworkID" xml:"NetworkID"`
 
 	// MapNameType
 	//
@@ -54,7 +54,7 @@ type PTXServiceDTORailSpecificationV3LiteTrainNetworkNetwork struct {
 	//
 	// 營運業者代碼
 	// Required: true
-	OperatorCode *string `json:"OperatorCode" xml:"String"`
+	OperatorCode *string `json:"OperatorCode" xml:"OperatorCode"`
 
 	// NameType
 	//

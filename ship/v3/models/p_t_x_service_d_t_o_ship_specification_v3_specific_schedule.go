@@ -30,12 +30,12 @@ type PTXServiceDTOShipSpecificationV3SpecificSchedule struct {
 	//
 	// 有效起始日期
 	// Required: true
-	EffectiveDate *string `json:"EffectiveDate" xml:"String"`
+	EffectiveDate *string `json:"EffectiveDate" xml:"EffectiveDate"`
 
 	// String
 	//
 	// 有效終止日期
-	ExpireDate string `json:"ExpireDate,omitempty" xml:"String,omitempty"`
+	ExpireDate string `json:"ExpireDate,omitempty" xml:"ExpireDate,omitempty"`
 
 	// Array
 	//
@@ -46,13 +46,13 @@ type PTXServiceDTOShipSpecificationV3SpecificSchedule struct {
 	//
 	// 營運業者代碼
 	// Required: true
-	OperatorID *string `json:"OperatorID" xml:"String"`
+	OperatorID *string `json:"OperatorID" xml:"OperatorID"`
 
 	// String
 	//
 	// 航線代碼
 	// Required: true
-	RouteID *string `json:"RouteID" xml:"String"`
+	RouteID *string `json:"RouteID" xml:"RouteID"`
 
 	// NameType
 	//

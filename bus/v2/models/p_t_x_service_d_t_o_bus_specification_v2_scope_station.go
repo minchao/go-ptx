@@ -23,7 +23,7 @@ type PTXServiceDTOBusSpecificationV2ScopeStation struct {
 	// String
 	//
 	// 站位代碼
-	StationID string `json:"StationID,omitempty" xml:"String,omitempty"`
+	StationID string `json:"StationID,omitempty" xml:"StationID,omitempty"`
 
 	// NameType
 	//

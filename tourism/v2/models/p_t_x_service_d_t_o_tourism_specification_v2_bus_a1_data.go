@@ -64,23 +64,23 @@ type PTXServiceDTOTourismSpecificationV2BusA1Data struct {
 	// String
 	//
 	// 營運業者代碼
-	OperatorID string `json:"OperatorID,omitempty" xml:"String,omitempty"`
+	OperatorID string `json:"OperatorID,omitempty" xml:"OperatorID,omitempty"`
 
 	// String
 	//
 	// 車牌號碼
 	// Required: true
-	PlateNumb *string `json:"PlateNumb" xml:"String"`
+	PlateNumb *string `json:"PlateNumb" xml:"PlateNumb"`
 
 	// String
 	//
 	// 地區既用中之路線代碼(為原資料內碼)
-	RouteID string `json:"RouteID,omitempty" xml:"String,omitempty"`
+	RouteID string `json:"RouteID,omitempty" xml:"RouteID,omitempty"`
 
 	// String
 	//
 	// 路線唯一識別代碼，規則為 {業管機關代碼} + {RouteID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢
-	RouteUID string `json:"RouteUID,omitempty" xml:"String,omitempty"`
+	RouteUID string `json:"RouteUID,omitempty" xml:"RouteUID,omitempty"`
 
 	// 行駛速度(kph)
 	// Required: true
@@ -97,7 +97,7 @@ type PTXServiceDTOTourismSpecificationV2BusA1Data struct {
 	// String
 	//
 	// 地區既用中之子路線代碼(為原資料內碼)
-	SubRouteID string `json:"SubRouteID,omitempty" xml:"String,omitempty"`
+	SubRouteID string `json:"SubRouteID,omitempty" xml:"SubRouteID,omitempty"`
 
 	// NameType
 	//
@@ -109,7 +109,7 @@ type PTXServiceDTOTourismSpecificationV2BusA1Data struct {
 	// String
 	//
 	// 子路線唯一識別代碼，規則為 {業管機關代碼} + {SubRouteID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢
-	SubRouteUID string `json:"SubRouteUID,omitempty" xml:"String,omitempty"`
+	SubRouteUID string `json:"SubRouteUID,omitempty" xml:"SubRouteUID,omitempty"`
 
 	// NameType
 	//

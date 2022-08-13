@@ -96,12 +96,6 @@
           },
           {
             "in": "query",
-            "name": "$spatialFilter",
-            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
-            "type": "string"
-          },
-          {
-            "in": "query",
             "name": "health",
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "type": "string",
@@ -233,12 +227,6 @@
             "in": "query",
             "name": "$skip",
             "description": "跳過前幾筆",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$spatialFilter",
-            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
             "type": "string"
           },
           {
@@ -856,7 +844,6 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "HualienCounty": "花蓮縣",
               "LienchiangCounty": "連江縣",
               "PingtungCounty": "屏東縣",
               "MiaoliCounty": "苗栗縣",
@@ -868,6 +855,7 @@
               "Keelung": "基隆市",
               "Kaohsiung": "高雄市",
               "KinmenCounty": "金門縣",
+              "HualienCounty": "花蓮縣",
               "YunlinCounty": "雲林縣",
               "NantouCounty": "南投縣",
               "Taipei": "臺北市",
@@ -909,12 +897,6 @@
             "in": "query",
             "name": "$skip",
             "description": "跳過前幾筆",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$spatialFilter",
-            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
             "type": "string"
           },
           {
@@ -1006,7 +988,6 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "HualienCounty": "花蓮縣",
               "LienchiangCounty": "連江縣",
               "PingtungCounty": "屏東縣",
               "MiaoliCounty": "苗栗縣",
@@ -1018,6 +999,7 @@
               "Keelung": "基隆市",
               "Kaohsiung": "高雄市",
               "KinmenCounty": "金門縣",
+              "HualienCounty": "花蓮縣",
               "YunlinCounty": "雲林縣",
               "NantouCounty": "南投縣",
               "Taipei": "臺北市",
@@ -1066,12 +1048,6 @@
             "in": "query",
             "name": "$skip",
             "description": "跳過前幾筆",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$spatialFilter",
-            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
             "type": "string"
           },
           {
@@ -1163,8 +1139,6 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "Taoyuan": "桃園市",
-              "ChiayiCounty": "嘉義縣",
               "Hsinchu": "新竹市",
               "NantouCounty": "南投縣",
               "HualienCounty": "花蓮縣",
@@ -1184,7 +1158,9 @@
               "ChanghuaCounty": "彰化縣",
               "TaitungCounty": "臺東縣",
               "MiaoliCounty": "苗栗縣",
-              "PenghuCounty": "澎湖縣"
+              "PenghuCounty": "澎湖縣",
+              "Taoyuan": "桃園市",
+              "ChiayiCounty": "嘉義縣"
             }
           },
           {
@@ -1307,8 +1283,6 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "Taoyuan": "桃園市",
-              "ChiayiCounty": "嘉義縣",
               "Hsinchu": "新竹市",
               "NantouCounty": "南投縣",
               "HualienCounty": "花蓮縣",
@@ -1328,7 +1302,9 @@
               "ChanghuaCounty": "彰化縣",
               "TaitungCounty": "臺東縣",
               "MiaoliCounty": "苗栗縣",
-              "PenghuCounty": "澎湖縣"
+              "PenghuCounty": "澎湖縣",
+              "Taoyuan": "桃園市",
+              "ChiayiCounty": "嘉義縣"
             }
           },
           {
@@ -1458,8 +1434,6 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "Taoyuan": "桃園市",
-              "Keelung": "基隆市",
               "Hsinchu": "新竹市",
               "NewTaipei": "新北市",
               "ChiayiCounty": "嘉義縣",
@@ -1472,6 +1446,8 @@
               "MiaoliCounty": "苗栗縣",
               "HualienCounty": "花蓮縣",
               "YilanCounty": "宜蘭縣",
+              "Taoyuan": "桃園市",
+              "Keelung": "基隆市",
               "ChanghuaCounty": "彰化縣",
               "PingtungCounty": "屏東縣",
               "Kaohsiung": "高雄市",
@@ -1602,8 +1578,6 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "Taoyuan": "桃園市",
-              "Keelung": "基隆市",
               "Hsinchu": "新竹市",
               "NewTaipei": "新北市",
               "ChiayiCounty": "嘉義縣",
@@ -1616,6 +1590,8 @@
               "MiaoliCounty": "苗栗縣",
               "HualienCounty": "花蓮縣",
               "YilanCounty": "宜蘭縣",
+              "Taoyuan": "桃園市",
+              "Keelung": "基隆市",
               "ChanghuaCounty": "彰化縣",
               "PingtungCounty": "屏東縣",
               "Kaohsiung": "高雄市",
@@ -1753,10 +1729,6 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "MiaoliCounty": "苗栗縣",
-              "ChanghuaCounty": "彰化縣",
-              "LienchiangCounty": "連江縣",
-              "NewTaipei": "新北市",
               "YilanCounty": "宜蘭縣",
               "Keelung": "基隆市",
               "Taoyuan": "桃園市",
@@ -1765,6 +1737,7 @@
               "Chiayi": "嘉義市",
               "TaitungCounty": "臺東縣",
               "HsinchuCounty": "新竹縣",
+              "MiaoliCounty": "苗栗縣",
               "Kaohsiung": "高雄市",
               "YunlinCounty": "雲林縣",
               "PingtungCounty": "屏東縣",
@@ -1774,7 +1747,10 @@
               "ChiayiCounty": "嘉義縣",
               "Taichung": "臺中市",
               "PenghuCounty": "澎湖縣",
-              "Taipei": "臺北市"
+              "Taipei": "臺北市",
+              "ChanghuaCounty": "彰化縣",
+              "LienchiangCounty": "連江縣",
+              "NewTaipei": "新北市"
             }
           },
           {
@@ -1862,7 +1838,6 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "YilanCounty": "宜蘭縣",
               "PingtungCounty": "屏東縣",
               "Taoyuan": "桃園市",
               "NantouCounty": "南投縣",
@@ -1875,6 +1850,7 @@
               "KinmenCounty": "金門縣",
               "HualienCounty": "花蓮縣",
               "Tainan": "臺南市",
+              "YilanCounty": "宜蘭縣",
               "Taipei": "臺北市",
               "ChiayiCounty": "嘉義縣",
               "YunlinCounty": "雲林縣",
@@ -2006,7 +1982,6 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "Chiayi": "嘉義市",
               "PenghuCounty": "澎湖縣",
               "TaitungCounty": "臺東縣",
               "Taoyuan": "桃園市",
@@ -2027,7 +2002,8 @@
               "Taipei": "臺北市",
               "YilanCounty": "宜蘭縣",
               "Kaohsiung": "高雄市",
-              "MiaoliCounty": "苗栗縣"
+              "MiaoliCounty": "苗栗縣",
+              "Chiayi": "嘉義市"
             }
           },
           {
@@ -2150,7 +2126,6 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "Chiayi": "嘉義市",
               "PenghuCounty": "澎湖縣",
               "TaitungCounty": "臺東縣",
               "Taoyuan": "桃園市",
@@ -2171,7 +2146,8 @@
               "Taipei": "臺北市",
               "YilanCounty": "宜蘭縣",
               "Kaohsiung": "高雄市",
-              "MiaoliCounty": "苗栗縣"
+              "MiaoliCounty": "苗栗縣",
+              "Chiayi": "嘉義市"
             }
           },
           {
@@ -2301,10 +2277,6 @@
               "Taipei"
             ],
             "x-enum": {
-              "PenghuCounty": "澎湖縣",
-              "ChiayiCounty": "嘉義縣",
-              "Kaohsiung": "高雄市",
-              "TaitungCounty": "臺東縣",
               "KinmenCounty": "金門縣",
               "YilanCounty": "宜蘭縣",
               "NewTaipei": "新北市",
@@ -2318,11 +2290,15 @@
               "YunlinCounty": "雲林縣",
               "Taoyuan": "桃園市",
               "Tainan": "臺南市",
+              "ChiayiCounty": "嘉義縣",
+              "Kaohsiung": "高雄市",
               "Keelung": "基隆市",
               "Taipei": "臺北市",
               "Chiayi": "嘉義市",
               "Hsinchu": "新竹市",
-              "HsinchuCounty": "新竹縣"
+              "HsinchuCounty": "新竹縣",
+              "PenghuCounty": "澎湖縣",
+              "TaitungCounty": "臺東縣"
             }
           },
           {
@@ -2354,12 +2330,6 @@
             "in": "query",
             "name": "$skip",
             "description": "跳過前幾筆",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$spatialFilter",
-            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
             "type": "string"
           },
           {
@@ -2450,10 +2420,6 @@
               "Keelung"
             ],
             "x-enum": {
-              "Keelung": "基隆市",
-              "Hsinchu": "新竹市",
-              "KinmenCounty": "金門縣",
-              "Taipei": "臺北市",
               "HsinchuCounty": "新竹縣",
               "PenghuCounty": "澎湖縣",
               "NantouCounty": "南投縣",
@@ -2466,11 +2432,15 @@
               "NewTaipei": "新北市",
               "MiaoliCounty": "苗栗縣",
               "PingtungCounty": "屏東縣",
+              "Keelung": "基隆市",
+              "KinmenCounty": "金門縣",
               "Tainan": "臺南市",
               "YunlinCounty": "雲林縣",
               "TaitungCounty": "臺東縣",
               "YilanCounty": "宜蘭縣",
-              "ChiayiCounty": "嘉義縣"
+              "ChiayiCounty": "嘉義縣",
+              "Hsinchu": "新竹市",
+              "Taipei": "臺北市"
             }
           },
           {
@@ -2502,12 +2472,6 @@
             "in": "query",
             "name": "$skip",
             "description": "跳過前幾筆",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$spatialFilter",
-            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
             "type": "string"
           },
           {
@@ -2826,7 +2790,6 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "Taichung": "臺中市",
               "HsinchuCounty": "新竹縣",
               "Tainan": "臺南市",
               "Chiayi": "嘉義市",
@@ -2844,6 +2807,7 @@
               "HualienCounty": "花蓮縣",
               "ChanghuaCounty": "彰化縣",
               "Kaohsiung": "高雄市",
+              "Taichung": "臺中市",
               "PenghuCounty": "澎湖縣",
               "NewTaipei": "新北市",
               "Taipei": "臺北市",
@@ -2970,7 +2934,6 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "Taichung": "臺中市",
               "HsinchuCounty": "新竹縣",
               "Tainan": "臺南市",
               "Chiayi": "嘉義市",
@@ -2988,6 +2951,7 @@
               "HualienCounty": "花蓮縣",
               "ChanghuaCounty": "彰化縣",
               "Kaohsiung": "高雄市",
+              "Taichung": "臺中市",
               "PenghuCounty": "澎湖縣",
               "NewTaipei": "新北市",
               "Taipei": "臺北市",
@@ -3120,9 +3084,6 @@
               "Kaohsiung"
             ],
             "x-enum": {
-              "Tainan": "臺南市",
-              "TaitungCounty": "臺東縣",
-              "Taoyuan": "桃園市",
               "HualienCounty": "花蓮縣",
               "NantouCounty": "南投縣",
               "PenghuCounty": "澎湖縣",
@@ -3140,7 +3101,10 @@
               "ChanghuaCounty": "彰化縣",
               "Taipei": "臺北市",
               "ChiayiCounty": "嘉義縣",
-              "Kaohsiung": "高雄市"
+              "TaitungCounty": "臺東縣",
+              "Taoyuan": "桃園市",
+              "Kaohsiung": "高雄市",
+              "Tainan": "臺南市"
             }
           },
           {
@@ -3262,9 +3226,6 @@
               "Kaohsiung"
             ],
             "x-enum": {
-              "Tainan": "臺南市",
-              "TaitungCounty": "臺東縣",
-              "Taoyuan": "桃園市",
               "HualienCounty": "花蓮縣",
               "NantouCounty": "南投縣",
               "PenghuCounty": "澎湖縣",
@@ -3282,7 +3243,10 @@
               "ChanghuaCounty": "彰化縣",
               "Taipei": "臺北市",
               "ChiayiCounty": "嘉義縣",
-              "Kaohsiung": "高雄市"
+              "TaitungCounty": "臺東縣",
+              "Taoyuan": "桃園市",
+              "Kaohsiung": "高雄市",
+              "Tainan": "臺南市"
             }
           },
           {
@@ -3411,8 +3375,6 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "Taichung": "臺中市",
-              "HualienCounty": "花蓮縣",
               "PingtungCounty": "屏東縣",
               "TaitungCounty": "臺東縣",
               "ChiayiCounty": "嘉義縣",
@@ -3430,9 +3392,11 @@
               "Taoyuan": "桃園市",
               "Keelung": "基隆市",
               "YunlinCounty": "雲林縣",
+              "HualienCounty": "花蓮縣",
               "HsinchuCounty": "新竹縣",
               "NantouCounty": "南投縣",
-              "ChanghuaCounty": "彰化縣"
+              "ChanghuaCounty": "彰化縣",
+              "Taichung": "臺中市"
             }
           },
           {
@@ -3842,8 +3806,6 @@
               "KinmenCounty"
             ],
             "x-enum": {
-              "ChiayiCounty": "嘉義縣",
-              "YilanCounty": "宜蘭縣",
               "Taoyuan": "桃園市",
               "Keelung": "基隆市",
               "HualienCounty": "花蓮縣",
@@ -3859,6 +3821,8 @@
               "PingtungCounty": "屏東縣",
               "Kaohsiung": "高雄市",
               "Chiayi": "嘉義市",
+              "ChiayiCounty": "嘉義縣",
+              "YilanCounty": "宜蘭縣",
               "YunlinCounty": "雲林縣",
               "LienchiangCounty": "連江縣",
               "HsinchuCounty": "新竹縣",
@@ -3982,8 +3946,6 @@
               "KinmenCounty"
             ],
             "x-enum": {
-              "ChiayiCounty": "嘉義縣",
-              "YilanCounty": "宜蘭縣",
               "Taoyuan": "桃園市",
               "Keelung": "基隆市",
               "HualienCounty": "花蓮縣",
@@ -3999,6 +3961,8 @@
               "PingtungCounty": "屏東縣",
               "Kaohsiung": "高雄市",
               "Chiayi": "嘉義市",
+              "ChiayiCounty": "嘉義縣",
+              "YilanCounty": "宜蘭縣",
               "YunlinCounty": "雲林縣",
               "LienchiangCounty": "連江縣",
               "HsinchuCounty": "新竹縣",
@@ -4132,7 +4096,6 @@
               "Taoyuan"
             ],
             "x-enum": {
-              "NewTaipei": "新北市",
               "Kaohsiung": "高雄市",
               "Tainan": "臺南市",
               "PenghuCounty": "澎湖縣",
@@ -4146,6 +4109,7 @@
               "HsinchuCounty": "新竹縣",
               "KinmenCounty": "金門縣",
               "MiaoliCounty": "苗栗縣",
+              "NewTaipei": "新北市",
               "Taichung": "臺中市",
               "Keelung": "基隆市",
               "YilanCounty": "宜蘭縣",
@@ -4267,7 +4231,6 @@
               "Keelung"
             ],
             "x-enum": {
-              "Keelung": "基隆市",
               "MiaoliCounty": "苗栗縣",
               "YilanCounty": "宜蘭縣",
               "PenghuCounty": "澎湖縣",
@@ -4280,7 +4243,8 @@
               "HsinchuCounty": "新竹縣",
               "Chiayi": "嘉義市",
               "ChiayiCounty": "嘉義縣",
-              "Hsinchu": "新竹市"
+              "Hsinchu": "新竹市",
+              "Keelung": "基隆市"
             }
           },
           {
@@ -4312,12 +4276,6 @@
             "in": "query",
             "name": "$skip",
             "description": "跳過前幾筆",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$spatialFilter",
-            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
             "type": "string"
           },
           {
@@ -4625,9 +4583,6 @@
               "Keelung"
             ],
             "x-enum": {
-              "Taipei": "臺北市",
-              "ChanghuaCounty": "彰化縣",
-              "HsinchuCounty": "新竹縣",
               "PingtungCounty": "屏東縣",
               "Chiayi": "嘉義市",
               "Taoyuan": "桃園市",
@@ -4636,6 +4591,7 @@
               "HualienCounty": "花蓮縣",
               "MiaoliCounty": "苗栗縣",
               "Taichung": "臺中市",
+              "ChanghuaCounty": "彰化縣",
               "YilanCounty": "宜蘭縣",
               "NewTaipei": "新北市",
               "Keelung": "基隆市",
@@ -4643,7 +4599,9 @@
               "ChiayiCounty": "嘉義縣",
               "Kaohsiung": "高雄市",
               "TaitungCounty": "臺東縣",
-              "PenghuCounty": "澎湖縣"
+              "PenghuCounty": "澎湖縣",
+              "Taipei": "臺北市",
+              "HsinchuCounty": "新竹縣"
             }
           },
           {
@@ -4977,9 +4935,6 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "LienchiangCounty": "連江縣",
-              "ChiayiCounty": "嘉義縣",
-              "HsinchuCounty": "新竹縣",
               "PenghuCounty": "澎湖縣",
               "MiaoliCounty": "苗栗縣",
               "Chiayi": "嘉義市",
@@ -4988,7 +4943,9 @@
               "Hsinchu": "新竹市",
               "YilanCounty": "宜蘭縣",
               "Taipei": "臺北市",
+              "LienchiangCounty": "連江縣",
               "Kaohsiung": "高雄市",
+              "HsinchuCounty": "新竹縣",
               "Taichung": "臺中市",
               "Tainan": "臺南市",
               "TaitungCounty": "臺東縣",
@@ -4998,7 +4955,8 @@
               "Keelung": "基隆市",
               "ChanghuaCounty": "彰化縣",
               "YunlinCounty": "雲林縣",
-              "HualienCounty": "花蓮縣"
+              "HualienCounty": "花蓮縣",
+              "ChiayiCounty": "嘉義縣"
             }
           },
           {
@@ -5130,12 +5088,6 @@
           },
           {
             "in": "query",
-            "name": "$spatialFilter",
-            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
-            "type": "string"
-          },
-          {
-            "in": "query",
             "name": "health",
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "type": "string",
@@ -5228,12 +5180,6 @@
             "in": "query",
             "name": "$skip",
             "description": "跳過前幾筆",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$spatialFilter",
-            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
             "type": "string"
           },
           {
@@ -5697,12 +5643,6 @@
           },
           {
             "in": "query",
-            "name": "$spatialFilter",
-            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
-            "type": "string"
-          },
-          {
-            "in": "query",
             "name": "health",
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "type": "string",
@@ -5795,12 +5735,6 @@
             "in": "query",
             "name": "$skip",
             "description": "跳過前幾筆",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$spatialFilter",
-            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
             "type": "string"
           },
           {
@@ -6592,12 +6526,6 @@
           },
           {
             "in": "query",
-            "name": "$spatialFilter",
-            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
-            "type": "string"
-          },
-          {
-            "in": "query",
             "name": "health",
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "type": "string",
@@ -6683,12 +6611,6 @@
             "in": "query",
             "name": "$skip",
             "description": "跳過前幾筆",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$spatialFilter",
-            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
             "type": "string"
           },
           {
@@ -7511,12 +7433,6 @@
             "in": "query",
             "name": "$skip",
             "description": "跳過前幾筆",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$spatialFilter",
-            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
             "type": "string"
           },
           {
@@ -8983,9 +8899,6 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "TaitungCounty": "臺東縣",
-              "Taipei": "臺北市",
-              "LienchiangCounty": "連江縣",
               "Taoyuan": "桃園市",
               "HsinchuCounty": "新竹縣",
               "PingtungCounty": "屏東縣",
@@ -8999,12 +8912,15 @@
               "Taichung": "臺中市",
               "ChiayiCounty": "嘉義縣",
               "YunlinCounty": "雲林縣",
+              "Taipei": "臺北市",
               "Kaohsiung": "高雄市",
               "HualienCounty": "花蓮縣",
               "Tainan": "臺南市",
               "Keelung": "基隆市",
               "ChanghuaCounty": "彰化縣",
-              "NewTaipei": "新北市"
+              "NewTaipei": "新北市",
+              "TaitungCounty": "臺東縣",
+              "LienchiangCounty": "連江縣"
             }
           },
           {
@@ -9043,12 +8959,6 @@
             "in": "query",
             "name": "$skip",
             "description": "跳過前幾筆",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$spatialFilter",
-            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
             "type": "string"
           },
           {
@@ -9139,10 +9049,6 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "TaitungCounty": "臺東縣",
-              "NewTaipei": "新北市",
-              "YilanCounty": "宜蘭縣",
-              "ChanghuaCounty": "彰化縣",
               "MiaoliCounty": "苗栗縣",
               "ChiayiCounty": "嘉義縣",
               "Hsinchu": "新竹市",
@@ -9153,6 +9059,9 @@
               "Tainan": "臺南市",
               "HsinchuCounty": "新竹縣",
               "Taoyuan": "桃園市",
+              "TaitungCounty": "臺東縣",
+              "NewTaipei": "新北市",
+              "YilanCounty": "宜蘭縣",
               "PingtungCounty": "屏東縣",
               "NantouCounty": "南投縣",
               "Taipei": "臺北市",
@@ -9160,7 +9069,8 @@
               "HualienCounty": "花蓮縣",
               "YunlinCounty": "雲林縣",
               "LienchiangCounty": "連江縣",
-              "PenghuCounty": "澎湖縣"
+              "PenghuCounty": "澎湖縣",
+              "ChanghuaCounty": "彰化縣"
             }
           },
           {
@@ -9439,8 +9349,6 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "KinmenCounty": "金門縣",
-              "Keelung": "基隆市",
               "PingtungCounty": "屏東縣",
               "Taipei": "臺北市",
               "HualienCounty": "花蓮縣",
@@ -9454,13 +9362,15 @@
               "LienchiangCounty": "連江縣",
               "NantouCounty": "南投縣",
               "TaitungCounty": "臺東縣",
+              "Keelung": "基隆市",
               "ChanghuaCounty": "彰化縣",
               "MiaoliCounty": "苗栗縣",
               "ChiayiCounty": "嘉義縣",
               "Taichung": "臺中市",
               "Taoyuan": "桃園市",
               "NewTaipei": "新北市",
-              "Tainan": "臺南市"
+              "Tainan": "臺南市",
+              "KinmenCounty": "金門縣"
             }
           },
           {
@@ -9499,12 +9409,6 @@
             "in": "query",
             "name": "$skip",
             "description": "跳過前幾筆",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$spatialFilter",
-            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
             "type": "string"
           },
           {
@@ -9595,8 +9499,6 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "Taipei": "臺北市",
-              "PingtungCounty": "屏東縣",
               "HsinchuCounty": "新竹縣",
               "LienchiangCounty": "連江縣",
               "Keelung": "基隆市",
@@ -9616,7 +9518,9 @@
               "Tainan": "臺南市",
               "PenghuCounty": "澎湖縣",
               "YunlinCounty": "雲林縣",
-              "MiaoliCounty": "苗栗縣"
+              "MiaoliCounty": "苗栗縣",
+              "Taipei": "臺北市",
+              "PingtungCounty": "屏東縣"
             }
           },
           {
@@ -9655,12 +9559,6 @@
             "in": "query",
             "name": "$skip",
             "description": "跳過前幾筆",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$spatialFilter",
-            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
             "type": "string"
           },
           {
@@ -9751,8 +9649,6 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "Taipei": "臺北市",
-              "NewTaipei": "新北市",
               "YunlinCounty": "雲林縣",
               "YilanCounty": "宜蘭縣",
               "NantouCounty": "南投縣",
@@ -9760,6 +9656,7 @@
               "KinmenCounty": "金門縣",
               "Hsinchu": "新竹市",
               "TaitungCounty": "臺東縣",
+              "Taipei": "臺北市",
               "LienchiangCounty": "連江縣",
               "Keelung": "基隆市",
               "Tainan": "臺南市",
@@ -9772,7 +9669,8 @@
               "PingtungCounty": "屏東縣",
               "Taoyuan": "桃園市",
               "HualienCounty": "花蓮縣",
-              "Chiayi": "嘉義市"
+              "Chiayi": "嘉義市",
+              "NewTaipei": "新北市"
             }
           },
           {
@@ -9901,10 +9799,6 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "MiaoliCounty": "苗栗縣",
-              "PingtungCounty": "屏東縣",
-              "NewTaipei": "新北市",
-              "Kaohsiung": "高雄市",
               "Keelung": "基隆市",
               "Chiayi": "嘉義市",
               "HsinchuCounty": "新竹縣",
@@ -9917,12 +9811,16 @@
               "ChanghuaCounty": "彰化縣",
               "YunlinCounty": "雲林縣",
               "KinmenCounty": "金門縣",
+              "MiaoliCounty": "苗栗縣",
+              "PingtungCounty": "屏東縣",
+              "NewTaipei": "新北市",
               "TaitungCounty": "臺東縣",
               "Hsinchu": "新竹市",
               "Taoyuan": "桃園市",
               "LienchiangCounty": "連江縣",
               "PenghuCounty": "澎湖縣",
-              "Tainan": "臺南市"
+              "Tainan": "臺南市",
+              "Kaohsiung": "高雄市"
             }
           },
           {
@@ -10051,9 +9949,6 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "NantouCounty": "南投縣",
-              "MiaoliCounty": "苗栗縣",
-              "ChanghuaCounty": "彰化縣",
               "YilanCounty": "宜蘭縣",
               "Tainan": "臺南市",
               "LienchiangCounty": "連江縣",
@@ -10065,6 +9960,9 @@
               "Kaohsiung": "高雄市",
               "Keelung": "基隆市",
               "HualienCounty": "花蓮縣",
+              "NantouCounty": "南投縣",
+              "MiaoliCounty": "苗栗縣",
+              "ChanghuaCounty": "彰化縣",
               "Taichung": "臺中市",
               "PenghuCounty": "澎湖縣",
               "NewTaipei": "新北市",
@@ -10354,12 +10252,6 @@
           },
           {
             "in": "query",
-            "name": "$spatialFilter",
-            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
-            "type": "string"
-          },
-          {
-            "in": "query",
             "name": "health",
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "type": "string",
@@ -10645,12 +10537,6 @@
           },
           {
             "in": "query",
-            "name": "$spatialFilter",
-            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
-            "type": "string"
-          },
-          {
-            "in": "query",
             "name": "health",
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "type": "string",
@@ -10742,12 +10628,6 @@
             "in": "query",
             "name": "$skip",
             "description": "跳過前幾筆",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$spatialFilter",
-            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
             "type": "string"
           },
           {
@@ -11221,7 +11101,6 @@
               "Taipei": "臺北市",
               "Tainan": "臺南市",
               "Taoyuan": "桃園市",
-              "MiaoliCounty": "苗栗縣",
               "Keelung": "基隆市",
               "YilanCounty": "宜蘭縣",
               "PingtungCounty": "屏東縣",
@@ -11239,7 +11118,8 @@
               "Taichung": "臺中市",
               "YunlinCounty": "雲林縣",
               "Chiayi": "嘉義市",
-              "LienchiangCounty": "連江縣"
+              "LienchiangCounty": "連江縣",
+              "MiaoliCounty": "苗栗縣"
             }
           },
           {
@@ -11278,12 +11158,6 @@
             "in": "query",
             "name": "$skip",
             "description": "跳過前幾筆",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$spatialFilter",
-            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
             "type": "string"
           },
           {
@@ -11374,9 +11248,6 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "ChanghuaCounty": "彰化縣",
-              "Chiayi": "嘉義市",
-              "YilanCounty": "宜蘭縣",
               "Taoyuan": "桃園市",
               "PenghuCounty": "澎湖縣",
               "YunlinCounty": "雲林縣",
@@ -11390,12 +11261,15 @@
               "Taichung": "臺中市",
               "MiaoliCounty": "苗栗縣",
               "HsinchuCounty": "新竹縣",
+              "ChanghuaCounty": "彰化縣",
               "PingtungCounty": "屏東縣",
               "KinmenCounty": "金門縣",
               "NantouCounty": "南投縣",
               "ChiayiCounty": "嘉義縣",
               "Hsinchu": "新竹市",
-              "NewTaipei": "新北市"
+              "NewTaipei": "新北市",
+              "Chiayi": "嘉義市",
+              "YilanCounty": "宜蘭縣"
             }
           },
           {
@@ -11824,8 +11698,6 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "KinmenCounty": "金門縣",
-              "Keelung": "基隆市",
               "PingtungCounty": "屏東縣",
               "Taipei": "臺北市",
               "HualienCounty": "花蓮縣",
@@ -11839,13 +11711,15 @@
               "LienchiangCounty": "連江縣",
               "NantouCounty": "南投縣",
               "TaitungCounty": "臺東縣",
+              "Keelung": "基隆市",
               "ChanghuaCounty": "彰化縣",
               "MiaoliCounty": "苗栗縣",
               "ChiayiCounty": "嘉義縣",
               "Taichung": "臺中市",
               "Taoyuan": "桃園市",
               "NewTaipei": "新北市",
-              "Tainan": "臺南市"
+              "Tainan": "臺南市",
+              "KinmenCounty": "金門縣"
             }
           },
           {
@@ -11884,12 +11758,6 @@
             "in": "query",
             "name": "$skip",
             "description": "跳過前幾筆",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$spatialFilter",
-            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
             "type": "string"
           },
           {
@@ -11980,8 +11848,6 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "Taipei": "臺北市",
-              "NewTaipei": "新北市",
               "YunlinCounty": "雲林縣",
               "YilanCounty": "宜蘭縣",
               "NantouCounty": "南投縣",
@@ -11989,6 +11855,7 @@
               "KinmenCounty": "金門縣",
               "Hsinchu": "新竹市",
               "TaitungCounty": "臺東縣",
+              "Taipei": "臺北市",
               "LienchiangCounty": "連江縣",
               "Keelung": "基隆市",
               "Tainan": "臺南市",
@@ -12001,7 +11868,8 @@
               "PingtungCounty": "屏東縣",
               "Taoyuan": "桃園市",
               "HualienCounty": "花蓮縣",
-              "Chiayi": "嘉義市"
+              "Chiayi": "嘉義市",
+              "NewTaipei": "新北市"
             }
           },
           {
@@ -12130,10 +11998,6 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "MiaoliCounty": "苗栗縣",
-              "PingtungCounty": "屏東縣",
-              "NewTaipei": "新北市",
-              "Kaohsiung": "高雄市",
               "Keelung": "基隆市",
               "Chiayi": "嘉義市",
               "HsinchuCounty": "新竹縣",
@@ -12146,12 +12010,16 @@
               "ChanghuaCounty": "彰化縣",
               "YunlinCounty": "雲林縣",
               "KinmenCounty": "金門縣",
+              "MiaoliCounty": "苗栗縣",
+              "PingtungCounty": "屏東縣",
+              "NewTaipei": "新北市",
               "TaitungCounty": "臺東縣",
               "Hsinchu": "新竹市",
               "Taoyuan": "桃園市",
               "LienchiangCounty": "連江縣",
               "PenghuCounty": "澎湖縣",
-              "Tainan": "臺南市"
+              "Tainan": "臺南市",
+              "Kaohsiung": "高雄市"
             }
           },
           {
@@ -12280,9 +12148,6 @@
               "LienchiangCounty"
             ],
             "x-enum": {
-              "NantouCounty": "南投縣",
-              "MiaoliCounty": "苗栗縣",
-              "ChanghuaCounty": "彰化縣",
               "YilanCounty": "宜蘭縣",
               "Tainan": "臺南市",
               "LienchiangCounty": "連江縣",
@@ -12294,6 +12159,9 @@
               "Kaohsiung": "高雄市",
               "Keelung": "基隆市",
               "HualienCounty": "花蓮縣",
+              "NantouCounty": "南投縣",
+              "MiaoliCounty": "苗栗縣",
+              "ChanghuaCounty": "彰化縣",
               "Taichung": "臺中市",
               "PenghuCounty": "澎湖縣",
               "NewTaipei": "新北市",
@@ -12435,12 +12303,6 @@
             "in": "query",
             "name": "$skip",
             "description": "跳過前幾筆",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$spatialFilter",
-            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
             "type": "string"
           },
           {
@@ -12730,12 +12592,6 @@
           },
           {
             "in": "query",
-            "name": "$spatialFilter",
-            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
-            "type": "string"
-          },
-          {
-            "in": "query",
             "name": "health",
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "type": "string",
@@ -12827,12 +12683,6 @@
             "in": "query",
             "name": "$skip",
             "description": "跳過前幾筆",
-            "type": "string"
-          },
-          {
-            "in": "query",
-            "name": "$spatialFilter",
-            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
             "type": "string"
           },
           {
@@ -13312,12 +13162,6 @@
           },
           {
             "in": "query",
-            "name": "$spatialFilter",
-            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
-            "type": "string"
-          },
-          {
-            "in": "query",
             "name": "health",
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "type": "string",
@@ -13698,12 +13542,6 @@
           },
           {
             "in": "query",
-            "name": "$spatialFilter",
-            "description": "空間過濾，語法為nearby({Lat},{Lon},{DistanceInMeters})，例如nearby(25.047675, 121.517055, 100)",
-            "type": "string"
-          },
-          {
-            "in": "query",
             "name": "health",
             "description": "加入參數'?health=true'即可查詢此API服務的健康狀態",
             "type": "string",
@@ -14049,7 +13887,7 @@
           "description": "車牌號碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "PlateNumb"
           }
         },
         "OperatorID": {
@@ -14057,7 +13895,7 @@
           "description": "營運業者代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorID"
           }
         },
         "RouteUID": {
@@ -14065,7 +13903,7 @@
           "description": "路線唯一識別代碼，規則為 {業管機關簡碼} + {RouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteUID"
           }
         },
         "RouteID": {
@@ -14073,7 +13911,7 @@
           "description": "地區既用中之路線代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteID"
           }
         },
         "RouteName": {
@@ -14093,7 +13931,7 @@
           "description": "子路線唯一識別代碼，規則為 {業管機關簡碼} + {SubRouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SubRouteUID"
           }
         },
         "SubRouteID": {
@@ -14101,7 +13939,7 @@
           "description": "地區既用中之子路線代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SubRouteID"
           }
         },
         "SubRouteName": {
@@ -14211,7 +14049,7 @@
           "description": "車牌號碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "PlateNumb"
           }
         },
         "OperatorID": {
@@ -14219,7 +14057,7 @@
           "description": "營運業者代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorID"
           }
         },
         "RouteUID": {
@@ -14227,7 +14065,7 @@
           "description": "路線唯一識別代碼，規則為 {業管機關簡碼} + {RouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteUID"
           }
         },
         "RouteID": {
@@ -14235,7 +14073,7 @@
           "description": "地區既用中之路線代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteID"
           }
         },
         "RouteName": {
@@ -14255,7 +14093,7 @@
           "description": "子路線唯一識別代碼，規則為 {業管機關簡碼} + {SubRouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SubRouteUID"
           }
         },
         "SubRouteID": {
@@ -14263,7 +14101,7 @@
           "description": "地區既用中之子路線代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SubRouteID"
           }
         },
         "SubRouteName": {
@@ -14288,7 +14126,7 @@
           "description": "站牌唯一識別代碼，規則為 {業管機關簡碼} + {StopID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StopUID"
           }
         },
         "StopID": {
@@ -14296,7 +14134,7 @@
           "description": "地區既用中之站牌代號(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StopID"
           }
         },
         "StopName": {
@@ -14392,7 +14230,7 @@
           "description": "通阻事件原單位發布代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AlertID"
           }
         },
         "Title": {
@@ -14400,7 +14238,7 @@
           "description": "通阻標題",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Title"
           }
         },
         "Description": {
@@ -14408,7 +14246,7 @@
           "description": "事件描述",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Description"
           }
         },
         "Department": {
@@ -14416,7 +14254,7 @@
           "description": "發布單位",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Department"
           }
         },
         "Status": {
@@ -14451,7 +14289,7 @@
           "description": "詳細描述網站連結",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AlertURL"
           }
         },
         "PublishTime": {
@@ -14514,7 +14352,7 @@
           "description": "路線唯一識別代碼，規則為 {業管機關簡碼} + {RouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteUID"
           }
         },
         "RouteID": {
@@ -14522,7 +14360,7 @@
           "description": "地區既用中之路線代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteID"
           }
         },
         "RouteName": {
@@ -14542,7 +14380,7 @@
           "description": "營運業者代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorID"
           }
         },
         "OperatorCode": {
@@ -14550,7 +14388,7 @@
           "description": "營運業者簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorCode"
           }
         },
         "SubRouteUID": {
@@ -14558,7 +14396,7 @@
           "description": "附屬路線唯一識別代碼，規則為 {業管機關簡碼} + {SubRouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SubRouteUID"
           }
         },
         "SubRouteID": {
@@ -14566,7 +14404,7 @@
           "description": "地區既用中之附屬路線代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SubRouteID"
           }
         },
         "SubRouteName": {
@@ -14586,7 +14424,7 @@
           "description": "迄點站站牌代碼,機關定義站牌代號(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "DestinationStopID"
           }
         },
         "DestinationStopName": {
@@ -14636,7 +14474,7 @@
           "description": "站牌唯一識別代碼，規則為 {業管機關代碼} + {StopID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StopUID"
           }
         },
         "StopID": {
@@ -14644,7 +14482,7 @@
           "description": "地區既用中之站牌代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StopID"
           }
         },
         "StopName": {
@@ -14696,7 +14534,7 @@
           "description": "班次代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "TripID"
           }
         },
         "IsLowFloor": {
@@ -14708,7 +14546,7 @@
           "description": "到站時間，格式為:HH:mm",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ArrivalTime"
           }
         },
         "DepartureTime": {
@@ -14716,7 +14554,7 @@
           "description": "離站時間，格式為:HH:mm",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "DepartureTime"
           }
         },
         "TimeType": {
@@ -14755,7 +14593,7 @@
           "description": "路線唯一識別代碼，規則為 {業管機關簡碼} + {RouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteUID"
           }
         },
         "RouteID": {
@@ -14763,7 +14601,7 @@
           "description": "地區既用中之路線代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteID"
           }
         },
         "RouteName": {
@@ -14783,7 +14621,7 @@
           "description": "營運業者代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorID"
           }
         },
         "OperatorCode": {
@@ -14791,7 +14629,7 @@
           "description": "營運業者簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorCode"
           }
         },
         "SubRouteUID": {
@@ -14799,7 +14637,7 @@
           "description": "附屬路線唯一識別代碼，規則為 {業管機關簡碼} + {SubRouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SubRouteUID"
           }
         },
         "SubRouteID": {
@@ -14807,7 +14645,7 @@
           "description": "地區既用中之附屬路線代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SubRouteID"
           }
         },
         "SubRouteName": {
@@ -14872,7 +14710,7 @@
           "description": "站牌唯一識別代碼，規則為 {業管機關代碼} + {StopID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StopUID"
           }
         },
         "StopID": {
@@ -14880,7 +14718,7 @@
           "description": "地區既用中之站牌代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StopID"
           }
         },
         "StopName": {
@@ -14900,7 +14738,7 @@
           "description": "到站時間，格式為:HH:mm",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ArrivalTime"
           }
         },
         "DepartureTime": {
@@ -14908,7 +14746,7 @@
           "description": "離站時間，格式為:HH:mm",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "DepartureTime"
           }
         },
         "TimeType": {
@@ -14933,7 +14771,7 @@
           "description": "班次代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "TripID"
           }
         },
         "StopTimes": {
@@ -14979,7 +14817,7 @@
           "description": "開始時間(HH:mm制)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StartTime"
           }
         },
         "EndTime": {
@@ -14987,7 +14825,7 @@
           "description": "結束時間(HH:mm制)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "EndTime"
           }
         }
       },
@@ -15013,7 +14851,7 @@
           "description": "路線唯一識別代碼，規則為 {業管機關代碼} + {RouteID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteUID"
           }
         },
         "RouteID": {
@@ -15021,7 +14859,7 @@
           "description": "地區既用中之路線代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteID"
           }
         },
         "RouteName": {
@@ -15084,7 +14922,7 @@
           "description": "票價名稱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "FareName"
           }
         },
         "TicketType": {
@@ -15142,7 +14980,7 @@
           "description": "路線唯一識別代碼，規則為 {業管機關簡碼} + {RouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteUID"
           }
         },
         "RouteID": {
@@ -15150,7 +14988,7 @@
           "description": "地區既用中之路線代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteID"
           }
         },
         "RouteName": {
@@ -15170,7 +15008,7 @@
           "description": "營運業者代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorID"
           }
         },
         "SubRouteUID": {
@@ -15178,7 +15016,7 @@
           "description": "附屬路線唯一識別代碼，規則為 {業管機關簡碼} + {SubRouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SubRouteUID"
           }
         },
         "SubRouteID": {
@@ -15186,7 +15024,7 @@
           "description": "地區既用中之附屬路線代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SubRouteID"
           }
         },
         "SubRouteName": {
@@ -15323,7 +15161,7 @@
           "description": "發車班距起始適用時間，格式為: HH:mm",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StartTime"
           }
         },
         "EndTime": {
@@ -15331,7 +15169,7 @@
           "description": "發車班距結束適用時間，格式為: HH:mm",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "EndTime"
           }
         },
         "MinHeadwayMins": {
@@ -15387,7 +15225,7 @@
           "description": "車牌號碼 [値為値為-1時，表示目前該站位無車輛行駛]",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "PlateNumb"
           }
         },
         "StopUID": {
@@ -15395,7 +15233,7 @@
           "description": "站牌唯一識別代碼，規則為 {業管機關簡碼} + {StopID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StopUID"
           }
         },
         "StopID": {
@@ -15403,7 +15241,7 @@
           "description": "地區既用中之站牌代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StopID"
           }
         },
         "StopName": {
@@ -15423,7 +15261,7 @@
           "description": "路線唯一識別代碼，規則為 {業管機關代碼} + {RouteID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteUID"
           }
         },
         "RouteID": {
@@ -15431,7 +15269,7 @@
           "description": "地區既用中之路線代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteID"
           }
         },
         "RouteName": {
@@ -15451,7 +15289,7 @@
           "description": "子路線唯一識別代碼，規則為 {業管機關簡碼} + {SubRouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SubRouteUID"
           }
         },
         "SubRouteID": {
@@ -15459,7 +15297,7 @@
           "description": "地區既用中之子路線代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SubRouteID"
           }
         },
         "SubRouteName": {
@@ -15494,7 +15332,7 @@
           "description": "車輛目前所在站牌代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "CurrentStop"
           }
         },
         "DestinationStop": {
@@ -15502,7 +15340,7 @@
           "description": "車輛目的站牌代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "DestinationStop"
           }
         },
         "StopSequence": {
@@ -15596,7 +15434,7 @@
           "description": "最新消息原單位發布代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "NewsID"
           }
         },
         "Language": {
@@ -15604,7 +15442,7 @@
           "description": "語系",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Language"
           }
         },
         "Department": {
@@ -15612,7 +15450,7 @@
           "description": "發布單位",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Department"
           }
         },
         "Title": {
@@ -15620,7 +15458,7 @@
           "description": "消息標題",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Title"
           }
         },
         "NewsCategory": {
@@ -15633,7 +15471,7 @@
           "description": "內容描述",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Description"
           }
         },
         "ContactName": {
@@ -15641,7 +15479,7 @@
           "description": "聯絡人/單位",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ContactName"
           }
         },
         "ContactPhone": {
@@ -15649,7 +15487,7 @@
           "description": "聯絡電話",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ContactPhone"
           }
         },
         "NewsURL": {
@@ -15657,7 +15495,7 @@
           "description": "報導網站連結",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "NewsURL"
           }
         },
         "AttachmentURL": {
@@ -15665,7 +15503,7 @@
           "description": "相關網站連結",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AttachmentURL"
           }
         },
         "PublishTime": {
@@ -15778,7 +15616,7 @@
           "description": "路線唯一識別代碼，規則為 {業管機關簡碼} + {RouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteUID"
           }
         },
         "RouteID": {
@@ -15786,7 +15624,7 @@
           "description": "地區既用中之路線代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteID"
           }
         },
         "HasSubRoutes": {
@@ -15810,7 +15648,7 @@
           "description": "業管機關代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityID"
           }
         },
         "ProviderID": {
@@ -15818,7 +15656,7 @@
           "description": "資料提供平台代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ProviderID"
           }
         },
         "SubRoutes": {
@@ -15854,7 +15692,7 @@
           "description": "起站中文名稱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "DepartureStopNameZh"
           }
         },
         "DepartureStopNameEn": {
@@ -15862,7 +15700,7 @@
           "description": "起站英文名稱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "DepartureStopNameEn"
           }
         },
         "DestinationStopNameZh": {
@@ -15870,7 +15708,7 @@
           "description": "終點站中文名稱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "DestinationStopNameZh"
           }
         },
         "DestinationStopNameEn": {
@@ -15878,7 +15716,7 @@
           "description": "終點站英文名稱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "DestinationStopNameEn"
           }
         },
         "TicketPriceDescriptionZh": {
@@ -15886,7 +15724,7 @@
           "description": "票價中文敘述",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "TicketPriceDescriptionZh"
           }
         },
         "TicketPriceDescriptionEn": {
@@ -15894,7 +15732,7 @@
           "description": "票價英文敘述",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "TicketPriceDescriptionEn"
           }
         },
         "FareBufferZoneDescriptionZh": {
@@ -15902,7 +15740,7 @@
           "description": "收費緩衝區中文敘述",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "FareBufferZoneDescriptionZh"
           }
         },
         "FareBufferZoneDescriptionEn": {
@@ -15910,7 +15748,7 @@
           "description": "收費緩衝區英文敘述",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "FareBufferZoneDescriptionEn"
           }
         },
         "RouteMapImageUrl": {
@@ -15918,7 +15756,7 @@
           "description": "路線簡圖網址",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteMapImageUrl"
           }
         },
         "City": {
@@ -15926,7 +15764,7 @@
           "description": "路線權管所屬縣市(相當於市區公車API的City參數)[若為公路/國道客運路線則為空值]",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "City"
           }
         },
         "CityCode": {
@@ -15934,7 +15772,7 @@
           "description": "路線權管所屬縣市之代碼(國際ISO 3166-2 三碼城市代碼)[若為公路/國道客運路線則為空值]",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "CityCode"
           }
         },
         "UpdateTime": {
@@ -15972,7 +15810,7 @@
           "description": "機關定義路線代號",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteID"
           }
         },
         "RouteName": {
@@ -15980,7 +15818,7 @@
           "description": "路線名稱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteName"
           }
         },
         "OperatorID": {
@@ -15988,7 +15826,7 @@
           "description": "營運業者代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorID"
           }
         },
         "SubRouteID": {
@@ -15996,7 +15834,7 @@
           "description": "機關定義附屬路線代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SubRouteID"
           }
         },
         "SubRouteName": {
@@ -16004,7 +15842,7 @@
           "description": "附屬路線名稱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SubRouteName"
           }
         },
         "FarePricingType": {
@@ -16109,7 +15947,7 @@
           "description": "緩衝區站牌代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StopID"
           }
         },
         "StopName": {
@@ -16117,7 +15955,7 @@
           "description": "緩衝區站牌名稱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StopName"
           }
         }
       },
@@ -16142,7 +15980,7 @@
           "description": "路線唯一識別代碼，規則為 {業管機關簡碼} + {RouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteUID"
           }
         },
         "RouteID": {
@@ -16150,7 +15988,7 @@
           "description": "地區既用中之路線代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteID"
           }
         },
         "RouteName": {
@@ -16214,7 +16052,7 @@
           "description": "表BusStation唯一碼(起點站牌)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "FromStationID"
           }
         },
         "ToStationID": {
@@ -16222,7 +16060,7 @@
           "description": "表BusStation唯一碼(迄點站牌)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ToStationID"
           }
         },
         "Distance": {
@@ -16255,7 +16093,7 @@
           "description": "路線唯一識別代碼，規則為 {業管機關簡碼} + {RouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteUID"
           }
         },
         "RouteID": {
@@ -16263,7 +16101,7 @@
           "description": "地區既用中之路線代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteID"
           }
         },
         "SubRouteUID": {
@@ -16271,7 +16109,7 @@
           "description": "附屬路線唯一識別代碼，規則為 {業管機關簡碼} + {SubRouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SubRouteUID"
           }
         },
         "SubRouteID": {
@@ -16279,7 +16117,7 @@
           "description": "地區既用中之附屬路線代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SubRouteID"
           }
         },
         "Direction": {
@@ -16330,7 +16168,7 @@
           "description": "路線唯一識別代碼，規則為 {業管機關簡碼} + {RouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteUID"
           }
         },
         "RouteID": {
@@ -16338,7 +16176,7 @@
           "description": "地區既用中之路線代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteID"
           }
         },
         "RouteName": {
@@ -16358,7 +16196,7 @@
           "description": "附屬路線唯一識別代碼，規則為 {業管機關簡碼} + {SubRouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SubRouteUID"
           }
         },
         "SubRouteID": {
@@ -16366,7 +16204,7 @@
           "description": "地區既用中之附屬路線代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SubRouteID"
           }
         },
         "SubRouteName": {
@@ -16391,7 +16229,7 @@
           "description": "營運業者代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorID"
           }
         },
         "OperatorCode": {
@@ -16399,7 +16237,7 @@
           "description": "營運業者簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorCode"
           }
         },
         "Timetables": {
@@ -16461,7 +16299,7 @@
           "description": "路線唯一識別代碼，規則為 {業管機關簡碼} + {RouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteUID"
           }
         },
         "RouteID": {
@@ -16469,7 +16307,7 @@
           "description": "地區既用中之路線代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteID"
           }
         },
         "RouteName": {
@@ -16489,7 +16327,7 @@
           "description": "附屬路線唯一識別代碼，規則為 {業管機關簡碼} + {SubRouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SubRouteUID"
           }
         },
         "SubRouteID": {
@@ -16497,7 +16335,7 @@
           "description": "附屬路線唯一識別代碼，規則為 {業管機關簡碼} + {SubRouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SubRouteID"
           }
         },
         "SubRouteName": {
@@ -16522,7 +16360,7 @@
           "description": "well-known text，為路線軌跡資料",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Geometry"
           }
         },
         "EncodedPolyline": {
@@ -16530,7 +16368,7 @@
           "description": "路線軌跡編碼(encoded polyline)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "EncodedPolyline"
           }
         },
         "UpdateTime": {
@@ -16563,7 +16401,7 @@
           "description": "站牌代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StopID"
           }
         },
         "StopName": {
@@ -16571,7 +16409,7 @@
           "description": "站牌名稱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StopName"
           }
         }
       },
@@ -16609,7 +16447,7 @@
         },
         "DestinationStage": {
           "title": "BusStage",
-          "description": "訖點計費站",
+          "description": "迄點計費站",
           "allOf": [
             {
               "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusStage"
@@ -16654,7 +16492,7 @@
           "description": "站位唯一識別代碼，規則為 {業管機關簡碼} + {StationID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StationUID"
           }
         },
         "StationID": {
@@ -16662,7 +16500,7 @@
           "description": "站位代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StationID"
           }
         },
         "StationName": {
@@ -16694,7 +16532,7 @@
           "description": "站位地址",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StationAddress"
           }
         },
         "StationGroupID": {
@@ -16702,7 +16540,7 @@
           "description": "站牌所屬的組站位ID",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StationGroupID"
           }
         },
         "Stops": {
@@ -16721,7 +16559,7 @@
           "description": "站牌位置縣市之代碼(國際ISO 3166-2 三碼城市代碼)[若為公路/國道客運路線則為空值]",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "LocationCityCode"
           }
         },
         "Bearing": {
@@ -16729,7 +16567,7 @@
           "description": "方位角，E:東行;W:西行;S:南行;N:北行;SE:東南行;NE:東北行;SW:西南行;NW:西北行",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Bearing"
           }
         },
         "UpdateTime": {
@@ -16767,7 +16605,7 @@
           "description": "組站位唯一識別代碼，規則為 {業管機關簡碼} + {StationGroupID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StationGroupUID"
           }
         },
         "StationGroupID": {
@@ -16775,7 +16613,7 @@
           "description": "組站位代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StationGroupID"
           }
         },
         "StationGroupName": {
@@ -16839,7 +16677,7 @@
           "description": "站牌唯一識別代碼，規則為 {業管機關簡碼} + {StopID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StopUID"
           }
         },
         "StopID": {
@@ -16847,7 +16685,7 @@
           "description": "地區既用中之站牌代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StopID"
           }
         },
         "AuthorityID": {
@@ -16855,7 +16693,7 @@
           "description": "業管機關代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityID"
           }
         },
         "StopName": {
@@ -16887,7 +16725,7 @@
           "description": "站牌地址",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StopAddress"
           }
         },
         "Bearing": {
@@ -16895,7 +16733,7 @@
           "description": "方位角，E:東行;W:西行;S:南行;N:北行;SE:東南行;NE:東北行;SW:西南行;NW:西北行",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Bearing"
           }
         },
         "StationID": {
@@ -16903,7 +16741,7 @@
           "description": "站牌所屬的站位ID",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StationID"
           }
         },
         "StationGroupID": {
@@ -16911,7 +16749,7 @@
           "description": "站牌所屬的組站位ID",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StationGroupID"
           }
         },
         "StopDescription": {
@@ -16919,7 +16757,7 @@
           "description": "站牌詳細說明描述",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StopDescription"
           }
         },
         "City": {
@@ -16927,7 +16765,7 @@
           "description": "站牌權管所屬縣市(相當於市區公車API的City參數)[若為公路/國道客運路線則為空值]",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "City"
           }
         },
         "CityCode": {
@@ -16935,7 +16773,7 @@
           "description": "站牌權管所屬縣市之代碼(國際ISO 3166-2 三碼城市代碼)[若為公路/國道客運路線則為空值]",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "CityCode"
           }
         },
         "LocationCityCode": {
@@ -16943,7 +16781,7 @@
           "description": "站牌位置縣市之代碼(國際ISO 3166-2 三碼城市代碼)[若為公路/國道客運路線則為空值]",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "LocationCityCode"
           }
         },
         "UpdateTime": {
@@ -16984,7 +16822,7 @@
           "description": "路線唯一識別代碼，規則為 {業管機關簡碼} + {RouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteUID"
           }
         },
         "RouteID": {
@@ -16992,7 +16830,7 @@
           "description": "地區既用中之路線代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteID"
           }
         },
         "RouteName": {
@@ -17023,7 +16861,7 @@
           "description": "附屬路線唯一識別代碼，規則為 {業管機關簡碼} + {SubRouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SubRouteUID"
           }
         },
         "SubRouteID": {
@@ -17031,7 +16869,7 @@
           "description": "地區既用中之附屬路線代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SubRouteID"
           }
         },
         "SubRouteName": {
@@ -17056,7 +16894,7 @@
           "description": "站牌權管所屬縣市(相當於市區公車API的City參數)[若為公路/國道客運路線則為空值]",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "City"
           }
         },
         "CityCode": {
@@ -17064,7 +16902,7 @@
           "description": "站牌權管所屬縣市之代碼(國際ISO 3166-2 三碼城市代碼)[若為公路/國道客運路線則為空值]",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "CityCode"
           }
         },
         "Stops": {
@@ -17119,7 +16957,7 @@
           "description": "站牌唯一識別代碼，規則為 {業管機關代碼} + {StopID}，其中 {業管機關代碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StopUID"
           }
         },
         "StopID": {
@@ -17127,7 +16965,7 @@
           "description": "地區既用中之站牌代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StopID"
           }
         },
         "StopName": {
@@ -17147,7 +16985,7 @@
           "description": "到站時間，格式為:HH:mm",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ArrivalTime"
           }
         },
         "DepartureTime": {
@@ -17155,7 +16993,7 @@
           "description": "離站時間，格式為:HH:mm",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "DepartureTime"
           }
         }
       },
@@ -17180,7 +17018,7 @@
           "description": "附屬路線唯一識別代碼，規則為 {業管機關簡碼} + {SubRouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SubRouteUID"
           }
         },
         "SubRouteID": {
@@ -17188,7 +17026,7 @@
           "description": "地區既用中之附屬路線代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SubRouteID"
           }
         },
         "OperatorIDs": {
@@ -17198,9 +17036,7 @@
           "items": {
             "title": "String",
             "type": "string",
-            "xml": {
-              "name": "String"
-            }
+            "xml": {}
           },
           "xml": {
             "name": "List`1"
@@ -17223,7 +17059,7 @@
           "description": "車頭描述",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Headsign"
           }
         },
         "HeadsignEn": {
@@ -17231,7 +17067,7 @@
           "description": "車頭英文描述",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "HeadsignEn"
           }
         },
         "Direction": {
@@ -17244,7 +17080,7 @@
           "description": "平日第一班發車時間",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "FirstBusTime"
           }
         },
         "LastBusTime": {
@@ -17252,7 +17088,7 @@
           "description": "平日返程第一班發車時間",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "LastBusTime"
           }
         },
         "HolidayFirstBusTime": {
@@ -17260,7 +17096,7 @@
           "description": "假日去程第一班發車時間",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "HolidayFirstBusTime"
           }
         },
         "HolidayLastBusTime": {
@@ -17268,7 +17104,7 @@
           "description": "假日返程第一班發車時間",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "HolidayLastBusTime"
           }
         }
       },
@@ -17289,7 +17125,7 @@
           "description": "班次代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "TripID"
           }
         },
         "ServiceDay": {
@@ -17346,7 +17182,7 @@
           "description": "車牌號碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "PlateNumb"
           }
         },
         "VehicleType": {
@@ -17407,7 +17243,7 @@
           "description": "營運起始日(格式: yyyy-MM-dd)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StartDate"
           }
         },
         "EndDate": {
@@ -17415,7 +17251,7 @@
           "description": "營運結束日(格式: yyyy-MM-dd)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "EndDate"
           }
         }
       },
@@ -17439,7 +17275,7 @@
           "description": "營運業者代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorID"
           }
         },
         "OperatorName": {
@@ -17459,7 +17295,7 @@
           "description": "營運業者簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorCode"
           }
         },
         "OperatorNo": {
@@ -17467,7 +17303,7 @@
           "description": "營運業者編號[交通部票證資料系統定義]",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorNo"
           }
         }
       },
@@ -17552,7 +17388,7 @@
           "description": "站牌唯一識別代碼，規則為 {業管機關簡碼} + {StopID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StopUID"
           }
         },
         "StopID": {
@@ -17560,7 +17396,7 @@
           "description": "地區既用中之站牌代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StopID"
           }
         },
         "StopName": {
@@ -17603,7 +17439,7 @@
           "description": "站牌所屬的站位ID",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StationID"
           }
         },
         "StationGroupID": {
@@ -17611,7 +17447,7 @@
           "description": "站牌所屬的組站位ID",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StationGroupID"
           }
         },
         "LocationCityCode": {
@@ -17619,7 +17455,7 @@
           "description": "站牌位置縣市之代碼(國際ISO 3166-2 三碼城市代碼)[若為公路/國道客運路線則為空值]",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "LocationCityCode"
           }
         }
       },
@@ -17654,7 +17490,7 @@
           "description": "頭班車發車時間(HH:mm)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "FirstTripDepTime"
           }
         },
         "LastTripDepTime": {
@@ -17662,7 +17498,7 @@
           "description": "末班車發車時間(HH:mm)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "LastTripDepTime"
           }
         }
       },
@@ -17679,7 +17515,7 @@
           "description": "車輛車牌號碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "PlateNumb"
           }
         },
         "EstimateTime": {
@@ -17787,7 +17623,7 @@
           "description": "營運業者代碼 ,",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorID"
           }
         },
         "OperatorName": {
@@ -17817,7 +17653,7 @@
           "description": "地區既用中之班次代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteID"
           }
         },
         "RouteName": {
@@ -17852,7 +17688,7 @@
           "description": "站位代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StationID"
           }
         },
         "StationName": {
@@ -17882,7 +17718,7 @@
           "description": "地區既用中之站牌代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StopID"
           }
         },
         "StopName": {
@@ -17902,7 +17738,7 @@
           "description": "站位代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StationID"
           }
         }
       },
@@ -17920,7 +17756,7 @@
           "description": "地區既用中之附屬班次代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SubRouteID"
           }
         },
         "SubRouteName": {
@@ -17955,7 +17791,7 @@
           "description": "地區既用中之班次代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "TripID"
           }
         },
         "RouteID": {
@@ -17963,7 +17799,7 @@
           "description": "地區既用中之班次代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteID"
           }
         },
         "SubRouteID": {
@@ -17971,7 +17807,7 @@
           "description": "地區既用中之附屬班次代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SubRouteID"
           }
         },
         "Direction": {
@@ -17984,7 +17820,7 @@
           "description": "首站發車時間(HH:mm)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "TripDepTime"
           }
         }
       },
@@ -17996,7 +17832,6 @@
       "title": "SectionFare",
       "description": "段次計費",
       "required": [
-        "BufferZones",
         "Fares"
       ],
       "type": "object",
@@ -18043,7 +17878,7 @@
           "description": "緩衝區代號",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ZoneID"
           }
         },
         "SectionSequence": {
@@ -18071,7 +17906,7 @@
         },
         "FareBufferZoneDestination": {
           "title": "Stop",
-          "description": "緩衝區訖點",
+          "description": "緩衝區迄點",
           "allOf": [
             {
               "$ref": "#/definitions/PTX.Service.DTO.Bus.Specification.V2.BusRouteFare+Stop"
@@ -18086,7 +17921,7 @@
           "description": "收費緩衝區描述",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "BufferZoneDescription"
           }
         }
       },
@@ -18151,9 +17986,7 @@
           "items": {
             "title": "String",
             "type": "string",
-            "xml": {
-              "name": "String"
-            }
+            "xml": {}
           },
           "xml": {
             "name": "List`1"
@@ -18181,7 +18014,7 @@
           "description": "特殊營運描述",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Description"
           }
         }
       },
@@ -18207,7 +18040,7 @@
           "description": "站牌唯一識別代碼，規則為 {業管機關簡碼} + {StopID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StopUID"
           }
         },
         "StopID": {
@@ -18215,7 +18048,7 @@
           "description": "地區既用中之站牌代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "StopID"
           }
         },
         "StopName": {
@@ -18235,7 +18068,7 @@
           "description": "路線唯一識別代碼，規則為 {業管機關簡碼} + {RouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteUID"
           }
         },
         "RouteID": {
@@ -18243,7 +18076,7 @@
           "description": "地區既用中之路線代碼(為原資料內碼)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "RouteID"
           }
         },
         "RouteName": {
@@ -18279,7 +18112,7 @@
           "description": "起始站牌代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "FromStopID"
           }
         },
         "ToStopID": {
@@ -18287,7 +18120,7 @@
           "description": "終點站牌代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ToStopID"
           }
         },
         "FromStationID": {
@@ -18295,7 +18128,7 @@
           "description": "起始站位代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "FromStationID"
           }
         },
         "ToStationID": {
@@ -18303,7 +18136,7 @@
           "description": "終點站位代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ToStationID"
           }
         },
         "RunTime": {
@@ -18327,7 +18160,7 @@
           "description": "中文繁體名稱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Zh_tw"
           }
         },
         "En": {
@@ -18335,7 +18168,7 @@
           "description": "英文名稱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "En"
           }
         }
       },
@@ -18362,7 +18195,7 @@
           "description": "資料提供平台代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ProviderID"
           }
         },
         "OperatorID": {
@@ -18370,7 +18203,7 @@
           "description": "營運業者代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorID"
           }
         },
         "OperatorName": {
@@ -18390,7 +18223,7 @@
           "description": "營運業者連絡電話",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorPhone"
           }
         },
         "OperatorEmail": {
@@ -18398,7 +18231,7 @@
           "description": "營運業者電子信箱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorEmail"
           }
         },
         "OperatorUrl": {
@@ -18406,7 +18239,7 @@
           "description": "營運業者網址鏈結",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorUrl"
           }
         },
         "ReservationUrl": {
@@ -18414,7 +18247,7 @@
           "description": "訂票網址鏈結",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ReservationUrl"
           }
         },
         "ReservationPhone": {
@@ -18422,7 +18255,7 @@
           "description": "訂票連絡電話",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ReservationPhone"
           }
         },
         "OperatorCode": {
@@ -18430,7 +18263,7 @@
           "description": "營運業者簡碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorCode"
           }
         },
         "AuthorityCode": {
@@ -18438,7 +18271,7 @@
           "description": "營運業者業管機關簡碼(對於於公路客運/國道客運而言為THB)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "AuthorityCode"
           }
         },
         "SubAuthorityCode": {
@@ -18446,7 +18279,7 @@
           "description": "營運業者所屬業管子機關簡碼(對於公路客運/國道客運路線而言為區監理所如THB-VO10-1..等)",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "SubAuthorityCode"
           }
         },
         "OperatorNo": {
@@ -18454,7 +18287,7 @@
           "description": "營運業者編號[交通部票證資料系統定義]",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "OperatorNo"
           }
         },
         "UpdateTime": {
@@ -18488,7 +18321,7 @@
           "description": "地理空間編碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "GeoHash"
           }
         }
       },
@@ -18510,7 +18343,7 @@
           "description": "API服務代碼",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ServiceID"
           }
         },
         "ServiceName": {
@@ -18518,7 +18351,7 @@
           "description": "API服務中文名稱",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "ServiceName"
           }
         },
         "Inbound": {
@@ -18567,7 +18400,7 @@
         },
         "Status": {
           "title": "Int32",
-          "description": "檢核結果狀態 : [0:'失敗',1:'成功']",
+          "description": "檢核結果狀態 : [0:'失敗',1:'成功',2:'資料清洗中']",
           "type": "integer"
         },
         "Reason": {
@@ -18575,7 +18408,7 @@
           "description": "檢核失敗原因",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Reason"
           }
         }
       },
@@ -18600,7 +18433,7 @@
         },
         "Status": {
           "title": "Int32",
-          "description": "檢核結果狀態 : [0:'失敗',1:'成功']",
+          "description": "檢核結果狀態 : [0:'失敗',1:'成功',2:'資料清洗中']",
           "type": "integer"
         },
         "Reason": {
@@ -18608,7 +18441,7 @@
           "description": "檢核失敗原因",
           "type": "string",
           "xml": {
-            "name": "String"
+            "name": "Reason"
           }
         }
       },

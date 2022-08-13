@@ -58,13 +58,13 @@ type PTXServiceDTOBusSpecificationV3A2Data struct {
 	//
 	// 營運業者簡碼
 	// Required: true
-	OperatorCode *string `json:"OperatorCode" xml:"String"`
+	OperatorCode *string `json:"OperatorCode" xml:"OperatorCode"`
 
 	// String
 	//
 	// 營運業者代碼
 	// Required: true
-	OperatorID *string `json:"OperatorID" xml:"String"`
+	OperatorID *string `json:"OperatorID" xml:"OperatorID"`
 
 	// NameType
 	//
@@ -77,7 +77,7 @@ type PTXServiceDTOBusSpecificationV3A2Data struct {
 	//
 	// 車牌號碼
 	// Required: true
-	PlateNumb *string `json:"PlateNumb" xml:"String"`
+	PlateNumb *string `json:"PlateNumb" xml:"PlateNumb"`
 
 	// DateTime
 	//
@@ -90,7 +90,7 @@ type PTXServiceDTOBusSpecificationV3A2Data struct {
 	//
 	// 地區既用中之路線代碼(為原資料內碼)
 	// Required: true
-	RouteID *string `json:"RouteID" xml:"String"`
+	RouteID *string `json:"RouteID" xml:"RouteID"`
 
 	// NameType
 	//
@@ -102,13 +102,13 @@ type PTXServiceDTOBusSpecificationV3A2Data struct {
 	// String
 	//
 	// 路線唯一識別代碼，規則為 {業管機關簡碼} + {RouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢
-	RouteUID string `json:"RouteUID,omitempty" xml:"String,omitempty"`
+	RouteUID string `json:"RouteUID,omitempty" xml:"RouteUID,omitempty"`
 
 	// String
 	//
 	// 地區既用中之站牌代號(為原資料內碼)
 	// Required: true
-	StopID *string `json:"StopID" xml:"String"`
+	StopID *string `json:"StopID" xml:"StopID"`
 
 	// NameType
 	//
@@ -120,12 +120,12 @@ type PTXServiceDTOBusSpecificationV3A2Data struct {
 	// String
 	//
 	// 站牌唯一識別代碼，規則為 {業管機關簡碼} + {StopID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢
-	StopUID string `json:"StopUID,omitempty" xml:"String,omitempty"`
+	StopUID string `json:"StopUID,omitempty" xml:"StopUID,omitempty"`
 
 	// String
 	//
 	// 地區既用中之附屬路線代碼(為原資料內碼)
-	SubRouteID string `json:"SubRouteID,omitempty" xml:"String,omitempty"`
+	SubRouteID string `json:"SubRouteID,omitempty" xml:"SubRouteID,omitempty"`
 
 	// NameType
 	//
@@ -137,7 +137,7 @@ type PTXServiceDTOBusSpecificationV3A2Data struct {
 	// String
 	//
 	// 附屬路線唯一識別代碼，規則為 {業管機關簡碼} + {SubRouteID}，其中 {業管機關簡碼} 可於Authority API中的AuthorityCode欄位查詢
-	SubRouteUID string `json:"SubRouteUID,omitempty" xml:"String,omitempty"`
+	SubRouteUID string `json:"SubRouteUID,omitempty" xml:"SubRouteUID,omitempty"`
 
 	// DateTime
 	//
@@ -149,7 +149,7 @@ type PTXServiceDTOBusSpecificationV3A2Data struct {
 	// String
 	//
 	// 班次代碼
-	TripID string `json:"TripID,omitempty" xml:"String,omitempty"`
+	TripID string `json:"TripID,omitempty" xml:"TripID,omitempty"`
 
 	// Int32
 	//

@@ -60,7 +60,7 @@ type MetroAPIFrequency2100OK struct {
 }
 
 func (o *MetroAPIFrequency2100OK) Error() string {
-	return fmt.Sprintf("[GET /v2/Rail/Metro/Frequency/{MetroSystem}][%d] metroApiFrequency2100OK  %+v", 200, o.Payload)
+	return fmt.Sprintf("[GET /v2/Rail/Metro/Frequency/{RailSystem}][%d] metroApiFrequency2100OK  %+v", 200, o.Payload)
 }
 func (o *MetroAPIFrequency2100OK) GetPayload() []*models.PTXServiceDTORailSpecificationV2MetroFrequency {
 	return o.Payload
@@ -90,7 +90,7 @@ type MetroAPIFrequency2100Status299 struct {
 }
 
 func (o *MetroAPIFrequency2100Status299) Error() string {
-	return fmt.Sprintf("[GET /v2/Rail/Metro/Frequency/{MetroSystem}][%d] metroApiFrequency2100Status299  %+v", 299, o.Payload)
+	return fmt.Sprintf("[GET /v2/Rail/Metro/Frequency/{RailSystem}][%d] metroApiFrequency2100Status299  %+v", 299, o.Payload)
 }
 func (o *MetroAPIFrequency2100Status299) GetPayload() *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth {
 	return o.Payload
@@ -121,7 +121,7 @@ type MetroAPIFrequency2100NotModified struct {
 }
 
 func (o *MetroAPIFrequency2100NotModified) Error() string {
-	return fmt.Sprintf("[GET /v2/Rail/Metro/Frequency/{MetroSystem}][%d] metroApiFrequency2100NotModified ", 304)
+	return fmt.Sprintf("[GET /v2/Rail/Metro/Frequency/{RailSystem}][%d] metroApiFrequency2100NotModified ", 304)
 }
 
 func (o *MetroAPIFrequency2100NotModified) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {

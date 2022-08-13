@@ -32,19 +32,19 @@ type PTXServiceDTORailSpecificationV3LiteTrainStationOfRouteStationOfRoute struc
 	//
 	// 營運路線所屬之路線代碼
 	// Required: true
-	LineID *string `json:"LineID" xml:"String"`
+	LineID *string `json:"LineID" xml:"LineID"`
 
 	// String
 	//
 	// 營運路線所屬之路線編號
 	// Required: true
-	LineNo *string `json:"LineNo" xml:"String"`
+	LineNo *string `json:"LineNo" xml:"LineNo"`
 
 	// String
 	//
 	// 營運路線代碼
 	// Required: true
-	RouteID *string `json:"RouteID" xml:"String"`
+	RouteID *string `json:"RouteID" xml:"RouteID"`
 
 	// NameType
 	//

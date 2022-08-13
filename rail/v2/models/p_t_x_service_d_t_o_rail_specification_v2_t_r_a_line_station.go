@@ -31,13 +31,13 @@ type PTXServiceDTORailSpecificationV2TRALineStation struct {
 	//
 	// 車站代碼
 	// Required: true
-	StationID *string `json:"StationID" xml:"String"`
+	StationID *string `json:"StationID" xml:"StationID"`
 
 	// String
 	//
 	// 車站名稱
 	// Required: true
-	StationName *string `json:"StationName" xml:"String"`
+	StationName *string `json:"StationName" xml:"StationName"`
 
 	// Single
 	//

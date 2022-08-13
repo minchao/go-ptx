@@ -60,7 +60,7 @@ type PTXServiceDTORailSpecificationV3TRACommonServiceDay struct {
 	// String
 	//
 	// 服務日標籤
-	ServiceTag string `json:"ServiceTag,omitempty" xml:"String,omitempty"`
+	ServiceTag string `json:"ServiceTag,omitempty" xml:"ServiceTag,omitempty"`
 
 	// Int32
 	//

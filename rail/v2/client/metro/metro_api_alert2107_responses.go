@@ -60,7 +60,7 @@ type MetroAPIAlert2107OK struct {
 }
 
 func (o *MetroAPIAlert2107OK) Error() string {
-	return fmt.Sprintf("[GET /v2/Rail/Metro/Alert/{MetroSystem}][%d] metroApiAlert2107OK  %+v", 200, o.Payload)
+	return fmt.Sprintf("[GET /v2/Rail/Metro/Alert/{RailSystem}][%d] metroApiAlert2107OK  %+v", 200, o.Payload)
 }
 func (o *MetroAPIAlert2107OK) GetPayload() *models.PTXAPIRailModelMRTRealTimeWrapperPTXServiceDTORailSpecificationV2MetroAlert {
 	return o.Payload
@@ -92,7 +92,7 @@ type MetroAPIAlert2107Status299 struct {
 }
 
 func (o *MetroAPIAlert2107Status299) Error() string {
-	return fmt.Sprintf("[GET /v2/Rail/Metro/Alert/{MetroSystem}][%d] metroApiAlert2107Status299  %+v", 299, o.Payload)
+	return fmt.Sprintf("[GET /v2/Rail/Metro/Alert/{RailSystem}][%d] metroApiAlert2107Status299  %+v", 299, o.Payload)
 }
 func (o *MetroAPIAlert2107Status299) GetPayload() *models.PTXServiceDTOSharedSpecificationV3BaseDisplayHealth {
 	return o.Payload
@@ -123,7 +123,7 @@ type MetroAPIAlert2107NotModified struct {
 }
 
 func (o *MetroAPIAlert2107NotModified) Error() string {
-	return fmt.Sprintf("[GET /v2/Rail/Metro/Alert/{MetroSystem}][%d] metroApiAlert2107NotModified ", 304)
+	return fmt.Sprintf("[GET /v2/Rail/Metro/Alert/{RailSystem}][%d] metroApiAlert2107NotModified ", 304)
 }
 
 func (o *MetroAPIAlert2107NotModified) readResponse(response runtime.ClientResponse, consumer runtime.Consumer, formats strfmt.Registry) error {
